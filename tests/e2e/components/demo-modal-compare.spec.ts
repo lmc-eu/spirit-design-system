@@ -1,7 +1,7 @@
 /* eslint-disable no-console -- we want to log when test fails */
 import { isTesting as isTestingEnvironment } from '@lmc-eu/spirit-common/constants/environments';
 import { test, Page } from '@playwright/test';
-import { formatPackageName, getServerUrl, waitForPageLoad, takeScreenshot } from '../../helpers';
+import { formatPackageName, getServerUrl, hideFromVisualTests, waitForPageLoad, takeScreenshot } from '../../helpers';
 
 type TestConfig = {
   componentsDir: string;
@@ -25,6 +25,7 @@ const runComponentCompareTests = ({ componentsDir, packageName, componentName }:
         const url = getServerUrl(packageName);
         await page.goto(`${url}${componentsDir}/${componentName}/${packageName === 'web-twig' ? '?HIDE_TOOLBAR' : ''}`);
         await waitForPageLoad(page);
+        await hideFromVisualTests(page);
         await runModalTests(page, componentName);
       } catch (error) {
         console.error(`Test for demo ${formattedPackageName} component ${componentName} failed. ${error}`);

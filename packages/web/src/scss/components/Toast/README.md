@@ -164,7 +164,7 @@ elements.
 Minimum example:
 
 ```html
-<div class="ToastBar ToastBar--inverted">
+<div class="ToastBar ToastBar--neutral">
   <div class="ToastBar__box">
     <div class="ToastBar__container">
       <div class="ToastBar__content">
@@ -180,7 +180,7 @@ Minimum example:
 An icon can be added to the ToastBar component:
 
 ```html
-<div class="ToastBar ToastBar--inverted">
+<div class="ToastBar ToastBar--neutral">
   <div class="ToastBar__box">
     <div class="ToastBar__container">
       <svg width="20" height="20" aria-hidden="true">
@@ -205,7 +205,7 @@ The content of `ToastBar` can be assembled from the following subcomponents:
 Usage example:
 
 ```html
-<div class="ToastBar ToastBar--inverted">
+<div class="ToastBar ToastBar--neutral">
   <div class="ToastBar__box">
     <div class="ToastBar__container">
       <div class="ToastBar__content">
@@ -223,12 +223,12 @@ Usage example:
 Usage example:
 
 ```html
-<div class="ToastBar ToastBar--inverted">
+<div class="ToastBar ToastBar--neutral">
   <div class="ToastBar__box">
     <div class="ToastBar__container">
       <div class="ToastBar__content">
         <div class="text-truncate-multiline">Message with action</div>
-        <a href="#" class="link-inverted link-underlined ToastBar__link">Action</a>
+        <a href="#" class="ToastBar__link link-underlined">Action</a>
       </div>
     </div>
   </div>
@@ -241,7 +241,7 @@ said action), as it is very hard (if not impossible) to reach for users with ass
 
 ### Colors
 
-The ToastBar component is available in all [emotion colors][dictionary-color], plus the `inverted` variant (default).
+The ToastBar component is available in all [emotion colors][dictionary-color], plus the `neutral` variant (default).
 Use the `ToastBar--<color>` modifier class to change the color of the ToastBar component.
 
 For example:
@@ -286,7 +286,7 @@ To make the ToastBar dismissible, add the `ToastBar--dismissible` modifier class
 button:
 
 ```html
-<div id="my-dismissible-toast" class="ToastBar ToastBar--inverted ToastBar--dismissible">
+<div id="my-dismissible-toast" class="ToastBar ToastBar--neutral ToastBar--dismissible">
   <div class="ToastBar__box">
     <div class="ToastBar__container">
       <div class="ToastBar__content">
@@ -295,7 +295,7 @@ button:
     </div>
     <button
       type="button"
-      class="Button Button--small Button--square Button--inverted"
+      class="ToastBar__close"
       data-spirit-dismiss="toast"
       data-spirit-target="#my-dismissible-toast"
       aria-controls="my-dismissible-toast"
@@ -330,7 +330,7 @@ button:
 <div class="Toast Toast--bottom Toast--center" role="log">
   <div class="Toast__queue">
     <!-- ToastBar: start -->
-    <div id="my-dismissible-toast" class="ToastBar ToastBar--inverted ToastBar--dismissible is-hidden">
+    <div id="my-dismissible-toast" class="ToastBar ToastBar--neutral ToastBar--dismissible is-hidden">
       <div class="ToastBar__box">
         <div class="ToastBar__container">
           <svg width="20" height="20" aria-hidden="true">
@@ -338,12 +338,12 @@ button:
           </svg>
           <div class="ToastBar__content">
             <div class="text-truncate-multiline">Toast message</div>
-            <a href="#" class="link-inverted link-underlined ToastBar__link">Action</a>
+            <a href="#" class="ToastBar__link link-underlined">Action</a>
           </div>
         </div>
         <button
           type="button"
-          class="Button Button--small Button--square Button--inverted"
+          class="ToastBar__close"
           data-spirit-dismiss="toast"
           aria-controls="my-dismissible-toast"
           aria-expanded="true"
@@ -373,7 +373,7 @@ the template and apply it on any toasts to be shown to the user, using the confi
   <div class="Toast__queue" data-spirit-element="toast-queue">
     <!-- This is the template for new ToastBar components: -->
     <template data-spirit-snippet="item">
-      <div class="ToastBar is-hidden" data-spirit-color="inverted" data-spirit-populate-field="item">
+      <div class="ToastBar is-hidden" data-spirit-color="neutral" data-spirit-populate-field="item">
         <div class="ToastBar__box">
           <div class="ToastBar__container">
             <svg width="20" height="20" aria-hidden="true" data-spirit-populate-field="icon">
@@ -381,13 +381,12 @@ the template and apply it on any toasts to be shown to the user, using the confi
             </svg>
             <div class="ToastBar__content">
               <div class="text-truncate-multiline" data-spirit-populate-field="message"></div>
-              <a href="#" class="link-inverted link-underlined ToastBar__link" data-spirit-populate-field="link"></a>
+              <a href="#" class="ToastBar__link link-underlined" data-spirit-populate-field="link"></a>
             </div>
           </div>
           <button
             type="button"
-            class="Button Button--small Button--square"
-            data-spirit-color="inverted"
+            class="ToastBar__close"
             data-spirit-populate-field="close-button"
             data-spirit-dismiss="toast"
             aria-expanded="true"
@@ -411,7 +410,7 @@ import Toast from '@lmc-eu/spirit-web/dist/js/Toast';
 
 const toast = new Toast(null, {
   autoCloseInterval: 3000, // Set interval after ToastBar will be closed in ms, default: 3000
-  color: 'informative', // One of ['inverted' (default), 'success', 'warning, 'danger', 'informative']
+  color: 'informative', // One of ['neutral' (default), 'success', 'warning, 'danger', 'informative']
   containerId: 'toast-example', // Must match the ID of the Toast container in HTML
   enableAutoClose: true, // If true, ToastBar will close after `autoCloseInterval`, default: true
   message: 'Hello, this is my toast message!', // Can be plain text or HTML

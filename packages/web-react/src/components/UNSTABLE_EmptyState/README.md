@@ -44,7 +44,7 @@ The component is based on the [Stack][stack] component and accepts all its prope
 ## Full Example
 
 ```jsx
-<UNSTABLE_EmptyState spacing="space-700">
+<UNSTABLE_EmptyState spacing="space-900">
   <UNSTABLE_EmptyStateSection>
     <Icon name="search" isSymbol />
   </UNSTABLE_EmptyStateSection>

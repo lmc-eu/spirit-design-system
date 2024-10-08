@@ -1,11 +1,13 @@
 import {
   ActionColors,
+  ActionButtonColors,
   ActionLinkColors,
   AlignmentX,
   AlignmentXExtended,
   AlignmentY,
   AlignmentYExtended,
   EmotionColors,
+  Emphasis,
   Placements,
   Sizes,
   SizesExtended,
@@ -34,6 +36,11 @@ export type AlignmentYExtendedDictionaryType<T = undefined> =
 export type ActionColorsDictionaryKeys = keyof typeof ActionColors;
 export type ActionColorsDictionaryType<C = undefined> = (typeof ActionColors)[ActionColorsDictionaryKeys] | C;
 
+export type ActionButtonColorsDictionaryKeys = keyof typeof ActionButtonColors;
+export type ActionButtonColorsDictionaryType<C = undefined> =
+  | (typeof ActionButtonColors)[ActionButtonColorsDictionaryKeys]
+  | C;
+
 export type ActionLinkColorsDictionaryKeys = keyof typeof ActionLinkColors;
 export type ActionLinkColorsDictionaryType<C = undefined> =
   | (typeof ActionLinkColors)[ActionLinkColorsDictionaryKeys]
@@ -41,6 +48,13 @@ export type ActionLinkColorsDictionaryType<C = undefined> =
 
 export type EmotionColorsDictionaryKeys = keyof typeof EmotionColors;
 export type EmotionColorsDictionaryType<C = undefined> = (typeof EmotionColors)[EmotionColorsDictionaryKeys] | C;
+
+export type EmphasisDictionaryKeys = keyof typeof Emphasis;
+export type EmphasisDictionaryType<C = undefined> = (typeof Emphasis)[EmphasisDictionaryKeys] | C;
+
+export interface EmphasisProps<E> {
+  emphasis?: E;
+}
 
 export type TextColorsDictionaryKeys = keyof typeof TextColors;
 export type TextColorsDictionaryType<C = undefined> = (typeof TextColors)[TextColorsDictionaryKeys] | C;

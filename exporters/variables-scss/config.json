@@ -1,9 +1,9 @@
 [
   {
-    "key": "generateDisclaimer",
+    "key": "generateOriginalDataFiles",
     "type": "boolean",
     "default": false,
-    "title": "Show Generated File Disclaimer",
-    "description": "When enabled, a disclaimer showing the fact that the file was generated automatically and should not be changed manually will appear in all style styles"
+    "title": "Generate Original Data Files",
+    "description": "When enabled, the original data files will be generated in the output directory"
   }
 ]

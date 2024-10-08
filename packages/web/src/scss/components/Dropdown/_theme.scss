@@ -1,10 +1,11 @@
-@use '@tokens' as tokens;
+@use '@global' as global-tokens;
 @use '../../settings/dictionaries';
+@use '../../settings/globals';
 
-$breakpoints: tokens.$breakpoints;
-$offset: tokens.$space-400;
-$padding: tokens.$space-600;
-$border-radius: tokens.$radius-200;
-$background: tokens.$background-basic;
-$shadow: tokens.$shadow-200;
+$breakpoints: global-tokens.$breakpoints;
+$offset: global-tokens.$space-500;
+$padding: global-tokens.$space-700;
+$border-radius: global-tokens.$radius-300;
+$background: var(--#{globals.$prefix}color-background-primary);
+$shadow: global-tokens.$shadow-200;
 $placement-dictionary: dictionaries.$placement;

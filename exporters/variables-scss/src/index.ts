@@ -1,13 +1,16 @@
 import { FileHelper } from '@supernovaio/export-helpers';
 import {
   AnyOutputFile,
+  OutputTextFile,
   PulsarContext,
   RemoteVersionIdentifier,
   Supernova,
-  OutputTextFile,
 } from '@supernovaio/sdk-exporters';
 import { ExporterConfiguration } from '../config';
 import { generateOutputFilesByThemes } from './generators/fileGenerator';
+import { safeStringify } from './helpers/safeStringify';
+
+export const exportConfiguration = Pulsar.exportConfig<ExporterConfiguration>();
 
 // https://github.com/Supernova-Studio/exporters/issues/4
 // @ts-ignore-next-line
@@ -46,35 +49,13 @@ Pulsar.export(async (sdk: Supernova, context: PulsarContext): Promise<Array<AnyO
     return createTextFile(file.path, file.fileName, file.content);
   });
 
-  // TODO: Only for debugging purposes, remove for production!
-  const safeStringify = (obj: object) => {
-    let cache: string[] | null = [];
-    const str = JSON.stringify(
-      obj,
-      (key, value) => {
-        if (typeof value === 'object' && value !== null) {
-          if (cache?.includes(value)) {
-            return 'CIRCULAR_REFERENCE';
-          }
-          cache?.push(value);
-        }
-
-        return value;
-      },
-      2,
+  // Export the original data only if 'generateOriginalDataFiles' is set to true in config.local.json
+  if (exportConfiguration.generateOriginalDataFiles) {
+    textFiles.push(
+      createTextFile('./original-data/', '_original-tokens.json', safeStringify(tokens)),
+      createTextFile('./original-data/', '_original-groups.json', JSON.stringify(tokenGroups, null, 2)),
     );
-    cache = null;
-
-    return str;
-  };
-
-  // TODO: Only for debugging purposes - remove for production!
-  textFiles.push(
-    createTextFile('./original-data/', '_original-tokens.json', safeStringify(tokens)),
-    createTextFile('./original-data/', '_original-groups.json', JSON.stringify(tokenGroups, null, 2)),
-  );
+  }
 
   return textFiles;
 });
-
-export const exportConfiguration = Pulsar.exportConfig<ExporterConfiguration>();

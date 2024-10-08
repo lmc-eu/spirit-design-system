@@ -1,24 +1,22 @@
 {# API #}
-{%- set props = props | default([]) -%}
-{%- set _color = props.color | default('inverted') -%}
-{%- set _isUnderlined = props.isUnderlined ?? true -%}
-{%- set _children = block('content') -%}
+{%- set _color = props.color | default('primary') -%}
+{%- set _href = props.href -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'ToastBar__link' -%}
+{%- set _rootUnderlinedClassName = _spiritClassPrefix ~ 'link-underlined' -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
+{%- set _classNames = [ _rootClassName, _rootUnderlinedClassName, _styleProps.className ] -%}
 {%- set _allowedAttributes = [ 'target', 'title' ] -%}
-{%- set _classNames = [ _rootClassName, _styleProps.className  ] -%}
 
-{% embed "@spirit/link.twig" with { props: props | merge({
-    color: _color,
-    isUnderlined: _isUnderlined,
-    'data-spirit-populate-field': 'link',
-    UNSAFE_className: _classNames | join(' '),
-    UNSAFE_style: _styleProps.style,
-}) } %}
-    {% block content %}{{ _children }}{% endblock %}
-{% endembed %}
-
+<a
+    {{ mainProps(props, _allowedAttributes) }}
+    href="{{ _href }}"
+    {{ styleProp(_styleProps) }}
+    {{ classProp(_classNames) }}
+    data-spirit-populate-field="link"
+>
+    {%- block content %}{% endblock %}
+</a>

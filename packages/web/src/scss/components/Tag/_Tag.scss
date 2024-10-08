@@ -1,33 +1,35 @@
 @use 'sass:map';
+@use '../../settings/globals';
 @use '../../tools/dictionaries';
 @use '../../tools/typography';
 @use 'theme';
 
 .Tag {
-    @include typography.generate(map.get(theme.$sizes, medium, typography));
-
     display: inline-block;
+    padding-inline: var(--#{globals.$prefix}tag-padding-x);
+    padding-block: var(--#{globals.$prefix}tag-padding-y);
     text-align: center;
+    color: var(--#{globals.$prefix}tag-color);
+    border-width: theme.$border-width;
+    border-style: theme.$border-style;
+    border-color: var(--#{globals.$prefix}tag-border-color);
     border-radius: theme.$border-radius;
+    background-color: var(--#{globals.$prefix}tag-background-color);
 }
 
+.Tag--subtle {
+    color: var(--#{globals.$prefix}tag-subtle-color);
+    background-color: var(--#{globals.$prefix}tag-subtle-background-color);
+}
+
+@include dictionaries.generate-colors(
+    $class-name: 'Tag',
+    $dictionary-values: theme.$color-dictionary,
+    $config: theme.$color-dictionary-config
+);
 @include dictionaries.generate-sizes('Tag', theme.$sizes);
-@include dictionaries.generate-colors(
-    'Tag',
-    theme.$color-dictionary,
-    theme.$color-dictionary-config,
-    null,
-    theme.$color-dictionary-overrides
-);
-@include dictionaries.generate-colors(
-    'Tag--subtle.Tag',
-    theme.$color-dictionary,
-    theme.$subtle-color-dictionary-config,
-    null,
-    theme.$subtle-color-dictionary-overrides,
-    'tag-subtle'
-);
 
 .Tag--subtle.Tag--xsmall {
+    border-color: transparent;
     background-color: transparent;
 }

@@ -2,7 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
 import { HeaderDialogActionsProps } from '../../../types';
 import { Link } from '../../Link';
-import SpiritLogo from '../demo/SpiritLogo';
+import { ProductLogo } from '../../ProductLogo';
+import JobBoardLogo from '../demo/JobBoardLogo';
 import {
   Header,
   HeaderDesktopActions,
@@ -23,6 +24,9 @@ import {
 const meta: Meta<typeof HeaderDialogActions> = {
   title: 'Components/Header',
   component: HeaderDialogActions,
+  parameters: {
+    layout: 'fullscreen',
+  },
   argTypes: {
     children: {
       control: 'object',
@@ -54,9 +58,11 @@ const HeaderWithHooks = (args: HeaderDialogActionsProps) => {
 
   return (
     <>
-      <Header color="inverted">
+      <Header>
         <Link href="/">
-          <SpiritLogo />
+          <ProductLogo>
+            <JobBoardLogo />
+          </ProductLogo>
         </Link>
         <HeaderMobileActions dialogId="header-dialog-example-1" isOpen={isMenuOpen} onOpen={handleMenuOpen} />
         <HeaderDesktopActions aria-label="Main navigation">
@@ -118,7 +124,7 @@ const HeaderWithHooks = (args: HeaderDialogActionsProps) => {
         <HeaderDialogActions color="secondary" aria-label="Menu">
           <HeaderDialogNav>
             <HeaderDialogNavItem>
-              <HeaderDialogText UNSAFE_className="text-primary-inverted-disabled">Marian</HeaderDialogText>
+              <HeaderDialogText UNSAFE_className="text-tertiary">Marian</HeaderDialogText>
             </HeaderDialogNavItem>
             <HeaderDialogNavItem>
               <HeaderDialogLink>Dashboard</HeaderDialogLink>

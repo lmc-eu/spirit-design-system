@@ -1,60 +1,48 @@
 @use 'sass:list';
-@use '@tokens' as tokens;
+@use '@global' as global-tokens;
 @use '../../settings/dictionaries';
 
-$_tag-colors: neutral;
+$border-width: global-tokens.$border-width-100;
+$border-style: solid;
+$border-radius: global-tokens.$radius-300;
 
-$color-dictionary: list.join(dictionaries.$emotion-colors, $_tag-colors);
+$color-dictionary: (
+    emotion: dictionaries.$emotion-colors,
+    neutral: neutral,
+);
 
 $color-dictionary-config: (
-    color: tokens.$text-primary-inverted-default,
-    background-color: 'default',
+    color: 'content-subtle',
+    border-color: 'border-basic',
+    background-color: 'background-basic',
+    subtle-color: 'content-basic',
+    subtle-background-color: 'background-subtle',
 );
-
-$color-dictionary-overrides: (
-    neutral: (
-        background-color: tokens.$background-inverted,
-    ),
-);
-
-$subtle-color-dictionary-config: (
-    color: 'default',
-    background-color: 'background',
-);
-
-$subtle-color-dictionary-overrides: (
-    neutral: (
-        color: tokens.$text-primary-default,
-        background-color: tokens.$background-cover,
-    ),
-);
-
-$border-radius: tokens.$radius-100;
 
 $sizes: (
     xsmall: (
-        padding-x: tokens.$space-300,
-        padding-y: tokens.$space-0,
-        typography: tokens.$body-xsmall-text-bold,
+        padding-x: global-tokens.$space-500,
+        padding-y: global-tokens.$space-200,
+        typography: global-tokens.$body-xsmall-semibold,
     ),
     small: (
-        padding-x: tokens.$space-400,
-        padding-y: tokens.$space-200,
-        typography: tokens.$body-small-text-regular,
+        padding-x: global-tokens.$space-500,
+        padding-y: global-tokens.$space-300,
+        typography: global-tokens.$body-small-semibold,
     ),
     medium: (
-        padding-x: tokens.$space-400,
-        padding-y: tokens.$space-300,
-        typography: tokens.$body-medium-text-regular,
+        padding-x: global-tokens.$space-600,
+        padding-y: global-tokens.$space-400,
+        typography: global-tokens.$body-medium-semibold,
     ),
     large: (
-        padding-x: tokens.$space-500,
-        padding-y: tokens.$space-400,
-        typography: tokens.$body-large-text-regular,
+        padding-x: global-tokens.$space-700,
+        padding-y: global-tokens.$space-500,
+        typography: global-tokens.$body-large-semibold,
     ),
     xlarge: (
-        padding-x: tokens.$space-600,
-        padding-y: tokens.$space-400,
-        typography: tokens.$body-xlarge-text-regular,
+        padding-x: global-tokens.$space-700,
+        padding-y: global-tokens.$space-500,
+        typography: global-tokens.$body-xlarge-semibold,
     ),
 );

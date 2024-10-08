@@ -7,8 +7,9 @@ import { SpiritHeadingProps } from '../../types';
 import { useHeadingStyleProps } from './useHeadingStyleProps';
 
 const defaultProps: Partial<SpiritHeadingProps> = {
-  size: 'medium',
   elementType: 'div',
+  emphasis: 'bold',
+  size: 'medium',
 };
 
 export const Heading = <T extends ElementType = 'div', S = void>(props: SpiritHeadingProps<T, S>): JSX.Element => {

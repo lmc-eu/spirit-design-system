@@ -72,12 +72,12 @@ const TooltipAdvancedFloating = () => {
 
   return (
     <div className="docs-Stack docs-Stack-stretch">
-      <p className="mb-600">
+      <p className="mb-700">
         Try scrolling the frame or resizing the window to see how the Tooltip behaves. The Floating UI library is trying
         to keep the Tooltip in the viewport and it is also flipping, shifting and resizing the Tooltip when it is not
         possible to keep it in the viewport.
       </p>
-      <Grid cols={{ mobile: 1, tablet: 2, desktop: 4 }} marginBottom="space-600">
+      <Grid cols={{ mobile: 1, tablet: 2, desktop: 4 }} marginBottom="space-700">
         <Checkbox id="flip" isChecked={flip} label="Enable flipping" onChange={() => setFlip(!flip)} />
         <Checkbox
           id="flip-cross-axis"
@@ -88,7 +88,7 @@ const TooltipAdvancedFloating = () => {
         <Checkbox id="shift" isChecked={shift} label="Enable shifting" onChange={() => setShift(!shift)} />
         <Checkbox id="size" isChecked={size} label="Enable sizing" onChange={() => setSize(!size)} />
       </Grid>
-      <Grid cols={{ mobile: 1, tablet: 2, desktop: 2 }} marginBottom="space-600">
+      <Grid cols={{ mobile: 1, tablet: 2, desktop: 2 }} marginBottom="space-700">
         <Select
           id="advanced-placement"
           name="advanced-placement"
@@ -127,7 +127,7 @@ const TooltipAdvancedFloating = () => {
         </Select>
       </Grid>
       <div
-        className="bg-cover"
+        className="bg-secondary"
         style={{ width: '100%', maxWidth: '100%', height: '30rem', overflow: 'auto' }}
         ref={viewportRef}
       >

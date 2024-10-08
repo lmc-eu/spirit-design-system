@@ -35,6 +35,7 @@ export const generateBarrelFile = (files: { fileName: string; content: string }[
 
       return hasJsOutput ? `export * from './${baseName}';` : `@forward '${baseName}';`;
     })
+    .sort()
     .join('\n')}\n`;
 };
 export const jsImportStatement = (name: string) => {

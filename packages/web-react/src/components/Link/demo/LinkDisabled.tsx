@@ -1,5 +1,4 @@
 import React from 'react';
-import DocsBox from '../../../../docs/DocsBox';
 import Link from '../Link';
 
 const LinkDisabled = () => (
@@ -12,11 +11,9 @@ const LinkDisabled = () => (
       Secondary Disabled Link
     </Link>
 
-    <DocsBox>
-      <Link href="#" color="inverted" isDisabled>
-        Inverted Disabled Link
-      </Link>
-    </DocsBox>
+    <Link href="#" color="tertiary" isDisabled>
+      Tertiary Disabled Link
+    </Link>
   </>
 );
 

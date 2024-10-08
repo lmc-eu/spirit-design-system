@@ -1,10 +1,10 @@
 @use 'sass:map';
 @use 'sass:string';
 @use 'breakpoint';
-@use '@tokens' as tokens;
+@use '@global' as global-tokens;
 
 @mixin generate($token) {
-    @each $breakpoint-name, $breakpoint-value in tokens.$breakpoints {
+    @each $breakpoint-name, $breakpoint-value in global-tokens.$breakpoints {
         @include breakpoint.up($breakpoint-value) {
             @if map.has-key($token, $breakpoint-name, font-style) {
                 font-style: map.get($token, $breakpoint-name, font-style);

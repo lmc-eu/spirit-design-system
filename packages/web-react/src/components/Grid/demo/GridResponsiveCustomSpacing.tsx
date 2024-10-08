@@ -6,13 +6,13 @@ const GridResponsiveCustomSpacing = () => (
   <Grid
     cols={{ mobile: 2, tablet: 3, desktop: 4 }}
     spacingX={{
-      mobile: 'space-1000',
-      tablet: 'space-900',
-      desktop: 'space-1200',
+      mobile: 'space-1200',
+      tablet: 'space-1100',
+      desktop: 'space-1600',
     }}
     spacingY={{
-      mobile: 'space-800',
-      tablet: 'space-1000',
+      mobile: 'space-1000',
+      tablet: 'space-1200',
       desktop: 'space-0',
     }}
   >

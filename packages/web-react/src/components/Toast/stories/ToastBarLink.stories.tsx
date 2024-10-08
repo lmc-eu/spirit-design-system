@@ -1,7 +1,7 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { LinkProps } from '../../../types';
+import { ToastLinkProps } from '../../../types';
 import ReadMe from '../README.md';
 import { Toast, ToastBar, ToastBarMessage, ToastBarLink } from '..';
 
@@ -17,21 +17,13 @@ const meta: Meta<typeof ToastBarLink & { message: string }> = {
     children: {
       control: 'text',
     },
-    color: {
-      control: 'text',
-    },
     href: {
       control: 'text',
-    },
-    isUnderlined: {
-      control: 'boolean',
     },
   },
   args: {
     children: 'This is a toast link',
     href: '#',
-    color: 'inverted',
-    isUnderlined: true,
   },
 };
 
@@ -39,7 +31,7 @@ export default meta;
 
 type Story = StoryObj<typeof ToastBarLink>;
 
-const ToastBarComponent = (args: LinkProps) => {
+const ToastBarComponent = (args: ToastLinkProps) => {
   const { children, ...restProps } = args;
 
   return (

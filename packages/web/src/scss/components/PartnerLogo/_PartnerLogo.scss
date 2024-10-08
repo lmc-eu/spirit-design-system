@@ -1,0 +1,25 @@
+@use 'theme' as theme;
+@use '../../settings/globals';
+@use '../../tools/dictionaries';
+
+.PartnerLogo {
+    --#{globals.$prefix}partner-logo-padding: 0;
+
+    display: inline-block;
+    max-width: 100%;
+    height: fit-content;
+    border-radius: theme.$border-radius;
+    background: theme.$background-color;
+}
+
+.PartnerLogo > img,
+.PartnerLogo > svg {
+    width: fit-content;
+    height: var(--#{globals.$prefix}partner-logo-image-height);
+}
+
+@include dictionaries.generate-sizes($class-name: 'PartnerLogo', $sizes: theme.$sizes);
+
+.PartnerLogo--safeArea {
+    padding: var(--#{globals.$prefix}partner-logo-padding);
+}

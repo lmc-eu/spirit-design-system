@@ -42,7 +42,7 @@ const FlexVerticalAlignment = () => (
         Item 2<br />
         is taller
       </DocsBox>
-      <DocsBox UNSAFE_className="typography-heading-small-text">Item 3 has bigger font size</DocsBox>
+      <DocsBox UNSAFE_className="typography-heading-small-bold">Item 3 has bigger font size</DocsBox>
     </Flex>
   </>
 );

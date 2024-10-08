@@ -28,7 +28,7 @@
     "build": "npm-run-all --serial build:prepare build:scss build:js",
     "build:prepare": "yarn clean",
     "build:js": "vite build",
-    "build:scss": "shx mkdir -p scss && shx cp -r src/scss/generated/* src/scss/@tokens.scss scss/",
+    "build:scss": "shx mkdir -p scss && shx cp -r src/scss/* scss/",
     "clean": "rimraf esm cjs umd scss types",
     "lint": "stylelint ./src/**/*.scss",
     "test": "yarn lint",

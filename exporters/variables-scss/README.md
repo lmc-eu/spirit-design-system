@@ -40,5 +40,13 @@ Tokens are sorted alphabetically by origin (Figma) name or by name (Supernova). 
 
 The index file contains SCSS forwards of all other outputs.
 
+## Development
+
+To generate the original unformatted data from Supernova, enable the `generateOriginalDataFiles` option in the `config.local.json` file.
+Once activated, the original data will be generated alongside other outputs and stored in the `original-data` folder.
+
+- \_original-tokens.json
+- \_original-groups.json
+
 [supernova-studio]: https://github.com/Supernova-Studio
 [alma-career]: https://github.com/lmc-eu

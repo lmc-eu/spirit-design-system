@@ -2,27 +2,60 @@
 
 This is Twig implementation of the [Heading][heading] component.
 
-Basic example usage:
+## Basic Usage
 
 ```twig
-<Heading>Heading</Heading>
+<Heading>This is a heading</Heading>
 ```
 
-Advanced example usage:
+## Element Type
+
+Use the `elementType` prop to set the HTML tag of the Heading component.
 
 ```twig
-<Heading size="large" elementType="h2">Text content</Heading>
+<Heading elementType="h1">
+  Heading
+</Heading>
 ```
 
-Without lexer:
+## Size
+
+Use the `size` prop to set the size of the text.
+
+```twig
+<Heading size="large">
+  Heading
+</Heading>
+```
+
+## Emphasis
+
+Use the `emphasis` prop to set the emphasis of the text.
+
+⚠️ This prop only affects styling, not the semantics of the element.
+
+```twig
+<Heading emphasis="semibold">Semibold heading</Heading>
+```
+
+## Full Example
+
+```twig
+<Heading elementType="h1" size="large" emphasis="semibold">
+  Heading
+</Heading>
+```
+
+## Without Lexer
 
 ```twig
 {% embed "@spirit/heading.twig" with { props: {
-    size: 'medium'
+  emphasis: 'semibold',
+  size: 'medium'
 }} %}
-    {% block content %}
-        Text content
-    {% endblock %}
+  {% block content %}
+    Text content
+  {% endblock %}
 {% endembed %}
 ```
 
@@ -30,14 +63,16 @@ Without lexer:
 
 | Name          | Type                                        | Default  | Required | Description                                                    |
 | ------------- | ------------------------------------------- | -------- | -------- | -------------------------------------------------------------- |
-| `size`        | [Size Extended dictionary][dictionary-size] | `medium` | ✕        | Size of the text                                               |
 | `elementType` | `string`                                    | `div`    | ✕        | HTML tag to render                                             |
-| `translate`   | [`yes` \| `no` \| `''`]                     | `null`   | ✕        | Set to `no` to disable machine translation of the text content |
+| `emphasis`    | [Emphasis dictionary][dictionary-emphasis]  | `bold`   | ✕        | Emphasis of the text                                           |
+| `size`        | [Size Extended dictionary][dictionary-size] | `medium` | ✕        | Size of the text                                               |
+| `translate`   | \[`yes` \| `no` \| `''`]                    | `null`   | ✕        | Set to `no` to disable machine translation of the text content |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
+[dictionary-emphasis]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#emphasis
 [dictionary-size]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#size
 [heading]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/src/components/Heading
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#additional-attributes

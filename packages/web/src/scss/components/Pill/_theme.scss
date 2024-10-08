@@ -1,27 +1,28 @@
 @use 'sass:list';
 @use 'sass:map';
-@use '@tokens' as tokens;
+@use '@global' as global-tokens;
 @use '../../settings/dictionaries';
 
-$typography: tokens.$body-xsmall-text-bold;
-$padding-x: tokens.$space-300;
-$padding-y: tokens.$space-0;
-$border-radius: tokens.$radius-300;
+$typography: global-tokens.$body-xsmall-bold;
+$padding-x: global-tokens.$space-300;
+$padding-y: global-tokens.$space-0;
+$border-radius: global-tokens.$radius-400;
 
-$_pill-colors: selected, unselected;
-
-$color-dictionary: list.join(list.join(dictionaries.$emotion-colors, dictionaries.$action-colors), $_pill-colors);
-
-$color-dictionary-config: (
-    color: tokens.$text-primary-inverted-default,
-    background-color: 'default',
+$color-dictionary: (
+    emotion: dictionaries.$emotion-colors,
+    neutral: neutral,
 );
 
-$color-dictionary-overrides: (
-    tertiary: (
-        color: tokens.$text-primary-default,
-    ),
-    inverted: (
-        color: tokens.$text-primary-default,
-    ),
+$color-dictionary-config: (
+    color: 'content-subtle',
+    background-color: 'background-basic',
+);
+
+$color-selected-dictionary: (
+    selected: selected,
+);
+
+$color-selected-dictionary-config: (
+    color: 'content-subtle',
+    background-color: 'default',
 );

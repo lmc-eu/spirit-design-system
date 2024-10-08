@@ -14,7 +14,7 @@ import {
 } from './shared';
 
 export type HeaderActionsColorType = 'primary' | 'secondary';
-export type HeaderColorType = 'inverted' | 'transparent';
+export type HeaderColorType = 'primary' | 'transparent';
 
 export type HeaderDialogHandlingProps = {
   isOpen: boolean;

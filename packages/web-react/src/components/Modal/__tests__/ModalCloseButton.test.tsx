@@ -30,10 +30,10 @@ describe('ModalCloseButton', () => {
     expect(buttonText).toHaveClass('accessibility-hidden');
   });
 
-  it('should be square', () => {
+  it('should be symmetrical', () => {
     render(<ModalCloseButton label="close" id="test" isOpen onClose={() => {}} />);
 
-    expect(screen.getByRole('button')).toHaveClass('Button--square');
+    expect(screen.getByRole('button')).toHaveClass('Button--symmetrical');
   });
 
   it('should have tertiary color', () => {

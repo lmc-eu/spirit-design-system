@@ -11,6 +11,7 @@ This project uses `dictionaries` to unify props between different components.
 
 - [Alignment](#alignment)
 - [Color](#color)
+- [Emphasis](#emphasis)
 - [Placement](#placement)
 - [Size](#size)
 - [Validation](#validation)
@@ -32,6 +33,12 @@ This project uses `dictionaries` to unify props between different components.
 | Action Link Color | `primary`, `secondary`, `inverted`                               | ActionLinkColor |
 | Emotion Color     | `success`, `informative`, `warning`, `danger`                    | EmotionColor    |
 | Text Color        | `primary`, `secondary`, `primary-inverted`, `secondary-inverted` | TextColor       |
+
+### Emphasis
+
+| Dictionary | Values                                  | Code name |
+| ---------- | --------------------------------------- | --------- |
+| Emphasis   | `regular`, `bold`, `semibold`, `italic` | Emphasis  |
 
 ### Placement
 

@@ -1,5 +1,13 @@
 import { ElementType, JSXElementConstructor } from 'react';
-import { ChildrenProps, SizeExtendedDictionaryType, SizeProps, StyleProps, TransferProps } from './shared';
+import {
+  ChildrenProps,
+  EmphasisDictionaryType,
+  EmphasisProps,
+  SizeExtendedDictionaryType,
+  SizeProps,
+  StyleProps,
+  TransferProps,
+} from './shared';
 
 export interface HeadingElementTypeProps<T extends ElementType = 'div'> {
   /**
@@ -16,6 +24,7 @@ export interface HeadingProps<T extends ElementType = 'div'>
     StyleProps,
     TransferProps {}
 
-export interface SpiritHeadingProps<T extends ElementType = 'div', S = void>
+export interface SpiritHeadingProps<T extends ElementType = 'div', S = void, E = void>
   extends HeadingProps<T>,
-    SizeProps<SizeExtendedDictionaryType<S>> {}
+    SizeProps<SizeExtendedDictionaryType<S>>,
+    EmphasisProps<EmphasisDictionaryType<E>> {}
