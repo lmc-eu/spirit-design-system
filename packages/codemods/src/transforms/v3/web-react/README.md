@@ -52,3 +52,19 @@ npx @lmc-eu/spirit-codemods -p <path> -t v3/web-react/buttonLink-isSquare-prop-n
 - <ButtonLink isSquare … />
 + <ButtonLink isSymmetrical … />
 ```
+
+### `v3/web-react/heading-elementType-prop` — Add `elementType="div"` to Heading component
+
+The `elementType` prop is now mandatory in the `Heading` component.
+This codemod updates the `Heading` component by adding `elementType="div"` if the `elementType` prop is missing.
+
+```sh
+npx @lmc-eu/spirit-codemods -p <path> -t v3/web-react/heading-elementType-prop
+```
+
+#### Example
+
+```diff
+- <Heading … />
++ <Heading elementType="div" … />
+```
