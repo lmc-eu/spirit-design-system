@@ -3,11 +3,21 @@ import Heading from '../Heading';
 
 const HeadingSizes = () => (
   <>
-    <Heading size="xsmall">Heading xsmall</Heading>
-    <Heading size="small">Heading small</Heading>
-    <Heading size="medium">Heading medium</Heading>
-    <Heading size="large">Heading large</Heading>
-    <Heading size="xlarge">Heading xlarge</Heading>
+    <Heading elementType="h2" size="xsmall">
+      Heading xsmall
+    </Heading>
+    <Heading elementType="h2" size="small">
+      Heading small
+    </Heading>
+    <Heading elementType="h2" size="medium">
+      Heading medium
+    </Heading>
+    <Heading elementType="h2" size="large">
+      Heading large
+    </Heading>
+    <Heading elementType="h2" size="xlarge">
+      Heading xlarge
+    </Heading>
   </>
 );
 

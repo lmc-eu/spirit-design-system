@@ -4,12 +4,6 @@ The Heading component provides helper classes to render headings.
 
 ## Basic Usage
 
-```jsx
-<Heading>This is a heading</Heading>
-```
-
-## Element Type
-
 Use the `elementType` prop to set the HTML tag of the Heading component.
 
 ```jsx
@@ -21,7 +15,9 @@ Use the `elementType` prop to set the HTML tag of the Heading component.
 Use the `size` prop to set the size of the text.
 
 ```jsx
-<Heading size="large">Heading</Heading>
+<Heading elementType="h1" size="large">
+  Heading
+</Heading>
 ```
 
 ## Emphasis
@@ -31,7 +27,9 @@ Use the `emphasis` prop to set the emphasis of the text.
 ⚠️ This prop only affects styling, not the semantics of the element.
 
 ```jsx
-<Heading emphasis="semibold">Semibold heading</Heading>
+<Heading elementType="h1" emphasis="semibold">
+  Semibold heading
+</Heading>
 ```
 
 ## Full Example
@@ -46,7 +44,7 @@ Use the `emphasis` prop to set the emphasis of the text.
 
 | Name          | Type                                        | Default  | Required | Description          |
 | ------------- | ------------------------------------------- | -------- | -------- | -------------------- |
-| `elementType` | `React.Element`                             | `div`    | ✕        | HTML tag             |
+| `elementType` | `React.Element`                             | -        | ✓        | HTML tag             |
 | `emphasis`    | [Emphasis dictionary][dictionary-emphasis]  | `bold`   | ✕        | Emphasis of the text |
 | `size`        | [Size Extended dictionary][dictionary-size] | `medium` | ✕        | Size of the text     |
 
