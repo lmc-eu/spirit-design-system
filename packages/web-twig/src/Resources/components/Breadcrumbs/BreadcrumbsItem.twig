@@ -30,7 +30,7 @@
         <Link
             href={ _href }
             color="{{ _isCurrent ? 'secondary' : 'primary' }}"
-            isUnderlined="{{ _isCurrent is not same as(true) }}"
+            underlined="{{ _isCurrent ? 'hover' : 'always' }}"
             aria-current="{{ _isCurrent ? 'page' : 'false' }}"
         >
             {{ _children }}
