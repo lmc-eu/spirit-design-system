@@ -29,7 +29,7 @@ const BreadcrumbsCustom = () => {
         const isLastItem = index === items.length - 1;
 
         const linkParams = {
-          isUnderlined: !isLastItem,
+          underlined: isLastItem ? 'hover' : 'always',
           'aria-current': isLastItem ? 'page' : undefined,
           color: isLastItem ? 'secondary' : 'primary',
         };
@@ -39,7 +39,7 @@ const BreadcrumbsCustom = () => {
             {index === items.length - 2 && (
               <li className="d-tablet-none">
                 <Icon name="chevron-left" />
-                <Link href={item.url} color="primary" isUnderlined>
+                <Link href={item.url} color="primary" underlined="always">
                   Back
                 </Link>
               </li>
