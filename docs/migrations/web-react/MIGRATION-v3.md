@@ -64,6 +64,28 @@ Manually replace the props in your project.
 - `<Heading … />` → `<Heading elementType="{/* Your semantic HTML element here */}" … />`
 </details>
 
+### Link `isUnderlined`
+
+The `isUnderlined` property was removed, please use `underlined` instead.
+
+#### Migration Guide
+
+🪄 Use codemods to automatically update your codebase:
+
+```sh
+npx @lmc-eu/spirit-codemods -p <path> -t v3/web-react/link-underlined-prop
+```
+
+👉 See [Codemods documentation][readme-codemods] for more details.
+
+<details>
+  <summary>🔧 Manual Migration Steps</summary>
+
+Manually replace the props in your project.
+
+- `<Link isUnderlined … />` → `<Link underlined="always" … />`
+</details>
+
 ---
 
 Please refer back to these instructions or reach out to our team if you encounter any issues during migration.
