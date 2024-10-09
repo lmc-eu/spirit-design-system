@@ -15,16 +15,16 @@
     <Breadcrumbs>
       <ol>
         <li class="d-flex">
-          <Link href="http://localhost:3456" color="primary" isUnderlined>Spirit</Link>
+          <Link href="http://localhost:3456" color="primary" underlined="always">Spirit</Link>
           <Icon name="chevron-right" />
         </li>
         <li class="d-flex">
-          <Link href="/" color="primary" isUnderlined>Web Twig</Link>
+          <Link href="/" color="primary" underlined="always">Web Twig</Link>
           <Icon name="chevron-right" />
         </li>
         {% if parentPageName %}
           <li class="d-flex">
-            <Link href="{{ parentPageUrl }}" color="primary" isUnderlined>{{ parentPageName }}</Link>
+            <Link href="{{ parentPageUrl }}" color="primary" underlined="always">{{ parentPageName }}</Link>
             <Icon name="chevron-right" />
           </li>
         {% endif %}
