@@ -18,29 +18,17 @@ describe('Link', () => {
 
   restPropsTest(Link, 'a');
 
-  it.each(linkPropsDataProvider)('should have class', (color, isUnderlined, isDisabled, expectedClassName) => {
+  it.each(linkPropsDataProvider)('should have class', (color, underlined, isDisabled, expectedClassName) => {
     render(
       <Link
         href="/"
         color={color as ActionLinkColorsDictionaryType<string>}
-        isUnderlined={isUnderlined as boolean}
-        isDisabled={isDisabled as boolean}
+        underlined={underlined}
+        isDisabled={isDisabled}
       />,
     );
 
     expect(screen.getByRole('link')).toHaveClass(expectedClassName as string);
-  });
-
-  it('should have class link-underlined', () => {
-    render(<Link href="/" underlined="always" />);
-
-    expect(screen.getByRole('link')).toHaveClass('link-underlined');
-  });
-
-  it('should have class link-not-underlined', () => {
-    render(<Link href="/" underlined="never" />);
-
-    expect(screen.getByRole('link')).toHaveClass('link-not-underlined');
   });
 
   it('should have correct href', () => {
