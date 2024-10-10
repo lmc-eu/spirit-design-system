@@ -12,7 +12,13 @@ type AttachmentImagePreviewProps = {
   imageObjectFit?: 'contain' | 'cover';
 };
 
-const AttachmentImagePreview = ({ label, imagePreview, meta, imageObjectFit }: AttachmentImagePreviewProps) => {
+const defaultProps: Partial<AttachmentImagePreviewProps> = {
+  meta: undefined,
+  imageObjectFit: 'cover',
+};
+
+const AttachmentImagePreview = (props: AttachmentImagePreviewProps) => {
+  const { label, imagePreview, meta = defaultProps.meta, imageObjectFit = defaultProps.imageObjectFit } = props;
   const { classProps } = useFileUploaderStyleProps({ meta, imageObjectFit });
   const { imageCropStyles, attachmentStyles } = classProps;
 
@@ -27,11 +33,6 @@ const AttachmentImagePreview = ({ label, imagePreview, meta, imageObjectFit }: A
       />
     </span>
   );
-};
-
-AttachmentImagePreview.defaultProps = {
-  meta: undefined,
-  imageObjectFit: 'cover',
 };
 
 export default AttachmentImagePreview;
