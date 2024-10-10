@@ -1,7 +1,7 @@
 {
-  "name": "@almacareer/spirit-exporters-variables-scss",
+  "name": "@almacareer/spirit-tokens-exporter",
   "version": "1.1.0",
-  "description": "Spirit SCSS Exporter for Supernova",
+  "description": "Spirit Tokens Exporter for Supernova",
   "author": "Spirit Team",
   "license": "MIT",
   "main": "generated/exporter.cjs",
