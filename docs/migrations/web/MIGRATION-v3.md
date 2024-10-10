@@ -9,11 +9,22 @@ Introducing version 3 of the _spirit-web_ package.
 - [General Changes](#general-changes)
   - [Themes](#themes)
   - [Spacing Values](#spacing-values)
+  - [Helpers: Inverted Link](#helpers-inverted-link)
   - [Helpers: Typography and Headings](#helpers-typography-and-headings)
   - [Utilities: Removed and New Classes](#utilities-removed-and-new-classes)
   - [Migrating Your Own Components](#migrating-your-own-components)
 - [Component Changes](#component-changes)
-  - [Button: `square` Modifier Renamed to `symmetrical`](#button-square-modifier-renamed-to-symmetrical)
+  - [Button: Renamed modifier `square`](#button-square-modifier-renamed-to-symmetrical)
+  - [Button: The `inverted` modifier removed](#button-the-inverted-modifier-removed)
+  - [Field Group: Alignment](#field-group-alignment)
+  - [Header: The `inverted` variant removed](#header-the-inverted-variant-removed)
+  - [Partner Logo: Stabilized](#partner-logo-stabilized)
+  - [Pill: Renamed and removed variants](#pill-renamed-and-removed-variants)
+  - [Product Logo: The `inverted` modifier removed](#product-logo-the-inverted-modifier-removed)
+  - [Product Logo: Stabilized](#product-logo-stabilized)
+  - [TextField: CSS variables renamed](#textfield-css-variables-renamed)
+  - [Toast: The `inverted` variant removed](#toast-the-inverted-variant-removed)
+  - [Toast: Link and Close button](#toast-link-and-close-button)
 
 ## General Changes
 
@@ -80,6 +91,10 @@ Use this table to update the spacing tokens in your project.
 If you are going to use fulltext search-and-replace in your project, we suggest you to
 start from the largest values and work your way down to the smallest ones.
 This way you will avoid replacing values you already replaced.
+
+### Helpers: Inverted Link
+
+The `link-inverted` helper was removed. Use themes to switch the link colors.
 
 ### Helpers: Typography and Headings
 
@@ -177,6 +192,85 @@ Button `square` modifier was renamed to `symmetrical`.
 Instead of using `.Button--square`, use a `.Button--symmetrical`.
 
 - `.Button--square` → `.Button--symmetrical`
+
+### Button: The `inverted` modifier removed
+
+Button `inverted` modifier was removed. Use themes to switch the button colors.
+
+### Field Group: Alignment
+
+Field Group component children are not aligned to `start` except when the `FieldGroup--fluid` modifier is used.
+
+### Header: The `inverted` variant removed
+
+Header `inverted` variant was removed. Instead, the `primary` variant was added.
+
+### Partner Logo: Stabilized
+
+Partner Logo component was stabilized.
+
+#### Migration Guide
+
+Rename all usages of `UNSTABLE_PartnerLogo` to `PartnerLogo`.
+
+- `<div class="PartnerLogo PartnerLogo--small PartnerLogo--safeArea">` → `<div class="PartnerLogo PartnerLogo--small PartnerLogo--safeArea">`
+
+### Pill: Renamed and removed variants
+
+Pill component variants `primary`, `secondary`, `tertiary`, `inverted` and `unselected` were removed.
+Instead, the `neutral` variant was added.
+
+#### Migration Guide
+
+Use the `neutral` or emotion variants. If you need other variants, please, let us know.
+
+### Product Logo: The `inverted` modifier removed
+
+Product Logo `inverted` modifier was removed. Use themes to switch the logo colors.
+
+### Product Logo: Stabilized
+
+Product Logo component was stabilized.
+
+#### Migration Guide
+
+Rename all usages of `UNSTABLE_ProductLogo` to `ProductLogo`.
+
+- `<div class="UNSTABLE_ProductLogo">` → `<div class="ProductLogo">`
+
+### TextField: CSS variables renamed
+
+TextField CSS variable `--width` was renamed to `--text-field-input-width`.
+
+#### Migration Guide
+
+Replace all usages of `--width` with `--text-field-input-width` in TextField component.
+
+- `<input class="TextField__input" style="--width: 4em;" />` → `<input class="TextField__input" style="--text-field-input-width: 4em;" />`
+
+### Toast: The `inverted` variant removed
+
+Toast `inverted` variant was removed. Use `neutral` variant instead.
+
+#### Migration Guide
+
+Replace all usages of `ToastBar--inverted` with `ToastBar--neutral`.
+
+- `<div class="ToastBar ToastBar--inverted">` → `<div class="ToastBar ToastBar--neutral">`
+
+### Toast: Link and Close button
+
+Toast component now has its own close button and link.
+
+#### Migration Guide
+
+1. Remove `link-inverted` class from Toast link.
+
+   - `<a href="#" class="ToastBar__link link-inverted link-underlined">` → `<a href="#" class="ToastBar__link link-underlined">`
+
+2. Replace `Button` classes with `Toast__close` class at the close button.
+
+   - `<button class="Button Button--square Button--inverted">` → `<button class="ToastBar__close">`
 
 ---
 
