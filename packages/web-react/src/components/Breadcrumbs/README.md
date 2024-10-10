@@ -45,7 +45,7 @@ Use custom content for the ordered list as component's children instead of passi
 <Breadcrumbs>
   {items.map((item) => (
     <li key={`BreadcrumbsItem_${item.title}`}>
-      <Link color="primary" isUnderlined>
+      <Link color="primary" underlined="always">
         {item.title}
       </Link>
     </li>

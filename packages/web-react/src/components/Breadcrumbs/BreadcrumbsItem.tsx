@@ -30,7 +30,7 @@ export const BreadcrumbsItem = (props: SpiritBreadcrumbsItemProps) => {
         <Link
           href={href}
           color={isCurrent ? 'secondary' : 'primary'}
-          isUnderlined={!isCurrent}
+          underlined={isCurrent ? 'hover' : 'always'}
           aria-current={isCurrent ? 'page' : undefined}
         >
           {children}
