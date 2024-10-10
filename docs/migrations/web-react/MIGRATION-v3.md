@@ -40,7 +40,7 @@ Manually replace the props in your project.
 
 ### Link `isUnderlined`
 
-`isUnderlined` property will be replaced in the next major version. Please use `underlined` instead.
+The `isUnderlined` property was removed, please use `underlined` instead.
 
 #### Migration Guide
 
@@ -57,7 +57,7 @@ npx @lmc-eu/spirit-codemods -p <path> -t v3/web-react/link-underlined-prop
 
 Manually replace the props in your project.
 
-- `<Link isUnderlined … />` → `<Button underlined="always" … />`
+- `<Link isUnderlined … />` → `<Link underlined="always" … />`
 </details>
 
 ---
