@@ -68,9 +68,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@almacareer/spirit-exporters-variables-scss@workspace:exporters/variables-scss":
+"@almacareer/spirit-tokens-exporter@workspace:exporters/tokens":
   version: 0.0.0-use.local
-  resolution: "@almacareer/spirit-exporters-variables-scss@workspace:exporters/variables-scss"
+  resolution: "@almacareer/spirit-tokens-exporter@workspace:exporters/tokens"
   dependencies:
     "@lmc-eu/eslint-config-typescript": "npm:2.1.4"
     "@supernovaio/export-helpers": "npm:1.0.16"
