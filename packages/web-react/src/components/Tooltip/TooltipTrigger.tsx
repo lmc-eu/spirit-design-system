@@ -10,8 +10,14 @@ interface TooltipTriggerProps extends StyleProps, TransferProps {
   children?: string | ReactNode | ((props: { isOpen: boolean }) => ReactNode);
 }
 
+const defaultProps: TooltipTriggerProps = {
+  elementType: 'button',
+  children: null,
+};
+
 const TooltipTrigger = (props: TooltipTriggerProps) => {
-  const { elementType = 'button', children, ...rest } = props;
+  const propsWithDefaults = { ...defaultProps, ...props };
+  const { elementType = 'button', children, ...rest } = propsWithDefaults;
   const { id, isOpen, triggerRef, getReferenceProps } = useTooltipContext();
 
   const Component = elementType;
@@ -23,11 +29,6 @@ const TooltipTrigger = (props: TooltipTriggerProps) => {
       {typeof children === 'function' ? children({ isOpen }) : children}
     </Component>
   );
-};
-
-TooltipTrigger.defaultProps = {
-  elementType: 'button',
-  children: null,
 };
 
 export default TooltipTrigger;
