@@ -24,7 +24,8 @@ export default {
         'exporter-js',
         'exporter-scss',
         'exporter-svg',
-        'exporter-variables-scss',
+        'exporter-assets',
+        'exporter-tokens',
         // Use when committing changes/additions/removals to exact config
         'jest-config',
         'prettier-config',

@@ -28,7 +28,7 @@ module.exports = {
     'packages/codemods',
     'exporters/scss',
     'exporters/js',
-    'exporters/variables-scss',
+    'exporters/tokens',
     'examples/*'
   ],
 

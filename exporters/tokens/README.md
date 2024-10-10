@@ -1,6 +1,6 @@
-# Exporter Spirit Variables SCSS
+# Spirit Tokens Exporter
 
-[Supernova][supernova-studio] SCSS exporter made for Spirit Design System developed by [Alma Career (formerly LMC)][alma-career].
+[Supernova][supernova-studio] tokens exporter made for Spirit Design System developed by [Alma Career (formerly LMC)][alma-career].
 
 ## Token operations
 
