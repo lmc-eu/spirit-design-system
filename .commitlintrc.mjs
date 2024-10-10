@@ -24,6 +24,7 @@ export default {
         'exporter-js',
         'exporter-scss',
         'exporter-svg',
+        'spirit-assets-exporter',
         'spirit-tokens-exporter',
         // Use when committing changes/additions/removals to exact config
         'jest-config',
