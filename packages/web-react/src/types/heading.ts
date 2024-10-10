@@ -11,7 +11,7 @@ import {
 
 export interface HeadingElementTypeProps<T extends ElementType> {
   /**
-   * The HTML element or React element used to render the Heading, e.g. 'div'.
+   * The HTML element or React element used to render the Heading, e.g. 'h2'.
    */
   elementType: T | JSXElementConstructor<unknown>;
 }
