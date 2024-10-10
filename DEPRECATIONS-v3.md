@@ -17,6 +17,6 @@ Introducing deprecations and feature flags to be removed in the version 3 lists.
 
 ---
 
-Please refer back to this list or reach out to our team if you encounter any issues during migration.
+If you face any problems during migration, please check this list or contact our team for assistance.
 
 [web-twig-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/DEPRECATIONS.md

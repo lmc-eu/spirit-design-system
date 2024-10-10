@@ -43,7 +43,7 @@ Rename and use `Checkbox` component instead of `CheckboxField`.
 
 - Instead of the `message` prop, use `validationText`.
 - The `validationState` prop is now required when using `validationText`.
-  If `validationState` is not set, `validationText` won't render.
+  If `validationState` is not set, `validationText` won’t render.
 - To show a permanent helper, use `helperText`.
 
 - `<… validationState="danger" message="error" …>` → `<… validationState="danger" validationText="error" …>`
@@ -67,7 +67,7 @@ The most notable change is that the mobile and desktop navigation are now separa
 - `HeaderDialog`
 
 Formerly, the desktop dialog (holding the site navigation) was a responsive CSS modification of a shared HTML code.
-With the new `Header` and `HeaderDialog`, each component has its own instance of the navigation, i.e. the navigation code is duplicated.
+With the new `Header` and `HeaderDialog`, each component has its own instance of the navigation, that is the navigation code is duplicated.
 This is because `HeaderDialog` will become an independent component in the future.
 
 You may need to take additional measures so your SEO is not affected by the duplicate HTML code of the navigation.
@@ -93,7 +93,7 @@ If you need the `Stack` to have a spacing, add `hasSpacing` prop. By default, `S
 
 - `<Stack …>` → `<Stack hasSpacing …>`
 
-If you already used the feature class, you can remove it and don't need to do any other changes.
+If you already used the feature class, you can remove it and don’t need to do any other changes.
 
 ## Remove `theme` and `tag` props and `default` color from `Tag` [#DS-648](https://jira.lmc.cz/browse/DS-648) ([f2f26eb](https://github.com/lmc-eu/spirit-design-system/commit/f2f26eb))
 

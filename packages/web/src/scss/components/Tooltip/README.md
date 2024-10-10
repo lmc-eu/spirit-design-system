@@ -20,8 +20,8 @@ Tooltip is positioned relative to the closest parent element with
 yourself or you can use the prepared TooltipWrapper component.
 
 👉 Depending on your layout, you may need to provide additional styling to
-shrink TooltipWrapper box model, e.g. using `d-inline-block` utility class.
-(This probably won't be necessary inside flexbox and grid layouts.)
+shrink TooltipWrapper box model, for example using `d-inline-block` utility class.
+(This probably won’t be necessary inside flexbox and grid layouts.)
 
 👉 Link Tooltip to your content using `id` and `aria-describedby` attributes for
 improved accessibility.
@@ -41,7 +41,7 @@ improved accessibility.
 ## Placement
 
 Tooltip implements the [Placement Dictionary][dictionary-placement] for placement. The dictionary values are used as
-a value of data attribute `data-spirit-placement`, e.g. `data-spirit-placement="top"`, `data-spirit-placement="right-end"`, etc.
+a value of data attribute `data-spirit-placement`, for example `data-spirit-placement="top"`, `data-spirit-placement="right-end"`, etc.
 
 ```html
 <div class="Tooltip d-inline-block" data-spirit-element="tooltip">
@@ -102,7 +102,7 @@ Tooltip can be made dismissible by following these steps:
 ## Advanced Positioning
 
 While the basic setup can be sufficient in some scenarios, dropping a Tooltip
-usually won't be so easy. To handle all tricky situations and edge cases
+usually won’t be so easy. To handle all tricky situations and edge cases
 automatically, including smart position updates to ensure Tooltip visibility,
 we recommend involving an external library designed specifically for this
 purpose.
@@ -127,7 +127,7 @@ on the `.TooltipPopover__arrow` to control it.
 ### Trigger
 
 You can choose whether you want to open the tooltip on `click` and/or `hover`.
-By default, both options are active, e.g., `data-spirit-trigger="click, hover"`.
+By default, both options are active, for example, `data-spirit-trigger="click, hover"`.
 If you only want the `click` trigger, you need to specify the trigger, as shown in the example below.
 This setup might be preferable when you have a link in your tooltip, for example.
 
@@ -192,13 +192,13 @@ works and to get an idea of all possible cases you may need to cover.
 
 ### Methods
 
-| Method                | Description                                                                                                                                                                                                                                                       |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `getInstance`         | _Static_ method which allows you to get the tooltip instance associated with a DOM. element                                                                                                                                                                       |
-| `getOrCreateInstance` | _Static_ method which allows you to get the tooltip instance associated with a DOM element, or create a new one in case it wasn’t initialized.                                                                                                                    |
-| `hide`                | Hides an element’s tooltip. Returns to the caller before the tooltip has actually been hidden (i.e. before the `hidden.tooltip` event occurs). This is considered a “manual” triggering of the tooltip.                                                           |
-| `show`                | Reveals an element’s tooltip. **Returns to the caller before the tooltip has actually been shown** (i.e. before the `shown.tooltip` event occurs). This is considered a “manual” triggering of the tooltip. Tooltips with zero-length titles are never displayed. |
-| `toggle`              | Toggles an element’s tooltip. **Returns to the caller before the tooltip has actually been shown or hidden** (i.e. before the `shown.tooltip` or `hidden.tooltip` event occurs). This is considered a “manual” triggering of the tooltip.                         |
+| Method                | Description                                                                                                                                                                                                                                                          |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `getInstance`         | _Static_ method which allows you to get the tooltip instance associated with a DOM. element                                                                                                                                                                          |
+| `getOrCreateInstance` | _Static_ method which allows you to get the tooltip instance associated with a DOM element, or create a new one in case it wasn’t initialized.                                                                                                                       |
+| `hide`                | Hides an element’s tooltip. Returns to the caller before the tooltip has actually been hidden (that is before the `hidden.tooltip` event occurs). This is considered a “manual” triggering of the tooltip.                                                           |
+| `show`                | Reveals an element’s tooltip. **Returns to the caller before the tooltip has actually been shown** (that is before the `shown.tooltip` event occurs). This is considered a “manual” triggering of the tooltip. Tooltips with zero-length titles are never displayed. |
+| `toggle`              | Toggles an element’s tooltip. **Returns to the caller before the tooltip has actually been shown or hidden** (that is before the `shown.tooltip` or `hidden.tooltip` event occurs). This is considered a “manual” triggering of the tooltip.                         |
 
 ```js
 const tooltip = Tooltip.getInstance('#example'); // Returns a tooltip instance

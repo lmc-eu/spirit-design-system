@@ -80,7 +80,7 @@ the state of the form and closing the dialog.
 
 ### Dropdowns in Modal
 
-Dropdowns can be safely used inside **non-scrollable** Modals so that the Dropdown popover is not clipped by the Modal's
+Dropdowns can be safely used inside **non-scrollable** Modals so that the Dropdown popover is not clipped by the Modal’s
 boundaries.
 
 👉 See the [Scrolling Long Content](#scrolling-long-content) section for more information on scroll control of Modals.
@@ -145,7 +145,7 @@ and allows users to easily close it.
 
 ### Hidden Title
 
-Even in cases you don't need the title to be visible you should provide an accessible name for the dialog, e.g.
+Even in cases you don’t need the title to be visible you should provide an accessible name for the dialog, e.g.
 using the `aria-label` attribute on `<Modal>` component:
 
 ```twig
@@ -268,7 +268,7 @@ and [escape hatches][readme-escape-hatches].
 
 ## Opening the Modal
 
-Use our JavaScript plugin to open your Modal, e.g.:
+Use our JavaScript plugin to open your Modal, for example:
 
 ```twig
 <Button
@@ -283,7 +283,7 @@ Use our JavaScript plugin to open your Modal, e.g.:
 
 ## Scrolling Long Content
 
-In case the content is longer than user's viewport or device, the ModalBody will expand to fit the height of its content
+In case the content is longer than user’s viewport or device, the ModalBody will expand to fit the height of its content
 and the whole ModalDialog will scroll.
 
 ### Enable Scrolling Inside ModalDialog
@@ -299,7 +299,7 @@ Scrolling inside ModalDialog can be turned on by adding the `isScrollable` prop:
 ### Scrolling with ScrollView
 
 To make content overflow more obvious to users, you can wrap the ModalBody content in a [ScrollView][scroll-view] that
-takes over the responsibility for scrolling and provides visual overflow decorators, e.g.:
+takes over the responsibility for scrolling and provides visual overflow decorators, for example:
 
 ```twig
 <ModalDialog isScrollable>
@@ -325,7 +325,7 @@ The custom properties fall back to the previous breakpoint using the mobile-firs
 `height="{{ { tablet: '500px' } }}"` while not setting the `desktop` breakpoint, the value will be used for
 both tablet and desktop screens. The single non-object value will be used for all breakpoints.
 
-This is useful for Modals with dynamic content, e.g. a list of items that can be added or removed, or a multistep wizard.
+This is useful for Modals with dynamic content, for example a list of items that can be added or removed, or a multistep wizard.
 
 ```twig
 <ModalDialog isScrollable height="500px">
@@ -365,7 +365,7 @@ both tablet and desktop screens. The single non-object value will be used for al
 
 ⚠️ This feature is only available for ModalDialogs with the `isScrollable` prop.
 
-👉 If a [custom height](#custom-height) is set, the custom max height is only applied if it's smaller than the custom
+👉 If a [custom height](#custom-height) is set, the custom max height is only applied if it’s smaller than the custom
 height.
 
 ## Stacking Modals
@@ -430,7 +430,7 @@ Please consult the [main README][web-readme] for how to include JavaScript plugi
 
 Or, feel free to write the controlling script yourself.
 
-👉 Check the [component's docs in the web package][web-js-api] to see the full documentation and API of the plugin.
+👉 Check the [component’s docs in the web package][web-js-api] to see the full documentation and API of the plugin.
 
 [autocomplete-attr]: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment

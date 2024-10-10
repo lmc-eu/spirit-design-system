@@ -161,7 +161,7 @@ If you need the `Stack` to have a spacing, add `hasSpacing` prop. By default, `S
 
 - `<Stack …>` → `<Stack hasSpacing …>`
 
-If you already used the feature class, you can remove it and don't need to do any other changes.
+If you already used the feature class, you can remove it and don’t need to do any other changes.
 
 ## Remove `onClick` prop [#DS-686](https://jira.lmc.cz/browse/DS-686) ([836e826](https://github.com/lmc-eu/spirit-design-system/commit/836e826))
 
@@ -193,7 +193,7 @@ Instead of the `size` prop, use `boxSize` in `Icon` component.
 
 - Instead of the `message` prop, use `validationText`.
 - The `validationState` prop is now required when using `validationText`.
-  If `validationState` is not set, `validationText` won't render.
+  If `validationState` is not set, `validationText` won’t render.
 - To show a permanent helper, use `helperText`.
 
 ### Other Notable Changes

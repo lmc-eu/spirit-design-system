@@ -77,7 +77,7 @@ Example:
 Positioning becomes trickier on mobile screens due to the presence of notches, rounded corners, and the virtual
 keyboard. The Toast component tries to find the best position to be visible using the following detection mechanisms:
 
-1. On **devices with rounded displays and/or notches** (e.g. iPhone X and newer), the Toast component is pushed inwards
+1. On **devices with rounded displays and/or notches** (for example iPhone X and newer), the Toast component is pushed inwards
    to avoid the rounded corners. The `viewport-fit="cover"` meta tag is required for this feature to work:
 
    ```twig
@@ -129,7 +129,7 @@ set the `isCollapsible` prop to `false`.
 👉 Please note only the _visible_ ToastBar components are scrollable. Collapsed items are not accessible until visible
 items are dismissed.
 
-👉 For the sake of simplicity, the collapsible items limit cannot be configured at the moment.
+👉 For the sake of simplicity, the collapsible items limit cannot be configured now.
 
 ### API
 
@@ -225,7 +225,7 @@ and [escape hatches][readme-escape-hatches].
 | -------------- | ------------------------------------------------ | ---------- | -------- | ------------------------------ |
 | `children`     | `string`                                         | —          | ✓        | Content of the link            |
 | `color`        | [Action Link Color dictionary][dictionary-color] | `inverted` | ✕        | Color of the link              |
-| `href`         | `string`                                         | —          | ✕        | ToastBarLink's href attribute  |
+| `href`         | `string`                                         | —          | ✕        | ToastBarLink’s href attribute  |
 | `isDisabled`   | `bool`                                           | `false`    | ✕        | Whether is the link disabled   |
 | `isUnderlined` | `bool`                                           | `true`     | ✕        | Whether is the link underlined |
 
@@ -235,7 +235,7 @@ and [escape hatches][readme-escape-hatches].
 
 👉 **Do not put any important actions** like "Undo" in the ToastBar component (unless there are other means to perform
 said action), as it is very hard (if not impossible) to reach for users with assistive technologies. Read more about
-[Toast accessibility][scott-o-hara-toast] at Scott O'Hara's blog.
+[Toast accessibility][scott-o-hara-toast] at Scott O’Hara's blog.
 
 ### Colors
 
@@ -257,7 +257,7 @@ JavaScript plugin.
 
 #### Showing the Static ToastBar
 
-Use our JavaScript plugin to show a Toast **that is present in the DOM,** e.g.:
+Use our JavaScript plugin to show a Toast **that is present in the DOM,** for example:
 
 ```twig
 <Button
@@ -320,7 +320,7 @@ The `<template>` tag must be inserted anywhere inside the Toast container. Our [
 the template and apply it on any toasts to be shown to the user, using the configuration provided.
 The template `ToastBar` has to have the `isTemplate` prop set.
 
-⚠️ In order to make the dynamic ToastBar icons work, you need to include the SVG sprites in your project. You
+⚠️ To make the dynamic ToastBar icons work, you need to include the SVG sprites in your project. You
 can use the `Icon` component with `isSymbol` prop. Otherwise, the icons will not be displayed as the JS plugin
 does not render the icons by itself, it just sets the `use` tag with the correct `xlink:href` attribute.
 Also, do not forget to set the `hidden` attribute on the wrapping element to hide the icons from the screen.
@@ -398,7 +398,7 @@ Please consult the [main package README][web-readme] for how to include JavaScri
 
 Or feel free to write controlling scripts yourself.
 
-👉 Check the [component's docs in the web package][web-js-api] to see the full documentation and API of the plugin.
+👉 Check the [component’s docs in the web package][web-js-api] to see the full documentation and API of the plugin.
 
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
 [dictionary-color]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#color

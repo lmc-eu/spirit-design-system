@@ -23,7 +23,7 @@ These include:
 
 ### System Requirements
 
-For you to install all the dependencies in this project and successfully develop it, you'll need to:
+For you to install all the dependencies in this project and successfully develop it, you’ll need to:
 
 - [install Node.js][install-nodejs]
 - [install Yarn][install-yarn]
@@ -45,8 +45,8 @@ This strategy is particularly useful during development and tooling like Lerna
 will pick up on when packages are linked in this way and will automatically
 update versions when publishing new versions of packages.
 
-Next up, you'll most likely want to build all of the package files so that
-things don't fail while you are working on a package.
+Next up, you’ll most likely want to build all of the package files so that
+things don’t fail while you are working on a package.
 To do this, you can run the following command:
 
 ```bash

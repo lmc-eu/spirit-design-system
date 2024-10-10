@@ -69,7 +69,7 @@ Add an icon with correct size.
 </div>
 ```
 
-ℹ️ Don't forget to add the `aria-label` attribute for accessible title.
+ℹ️ Don’t forget to add the `aria-label` attribute for accessible title.
 
 ### Image
 
@@ -81,7 +81,7 @@ Add an image, it will be resized to fit the avatar.
 </div>
 ```
 
-ℹ️ Don't forget to add the `aria-label` attribute for accessible title.
+ℹ️ Don’t forget to add the `aria-label` attribute for accessible title.
 The image should have an `alt` attribute set and can be aria-hidden, because the `aria-label`
 attribute is set on the container.
 
@@ -97,7 +97,7 @@ take care of the text length and case. The rest is handled by the component.
 </div>
 ```
 
-ℹ️ Don't forget to add the `aria-label` attribute for accessible title, especially when
+ℹ️ Don’t forget to add the `aria-label` attribute for accessible title, especially when
 using an abbreviation. The `aria-hidden` attribute is set on the text span, because the `aria-label`
 attribute is set on the container and the abbreviation is not useful for screen readers.
 

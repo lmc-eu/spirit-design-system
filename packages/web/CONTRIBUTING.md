@@ -37,32 +37,32 @@ This is an example of a typical file structure of a component:
 ## Structuring Styles
 
 To keep actual stylesheet of the component as clean as possible, definitions of
-Sass variables, functions and mixins related to the component always have their
-place in standalone Sass partials, namely `_theme.scss` (theme) and
+SASS variables, functions and mixins related to the component always have their
+place in standalone SASS partials, namely `_theme.scss` (theme) and
 `_tools.scss` (tools).
 
 ### `_theme.scss`
 
-Component's theme serves as:
+Component’s theme serves as:
 
-1. a centralized storage of component's references to **design tokens** (see
+1. a centralized storage of component’s references to **design tokens** (see
    further),
-2. a place where **component's visual variants** are defined as Sass maps, so we
+2. a place where **component’s visual variants** are defined as SASS maps, so we
    can iterate over them later on,
-3. a source of definition of other Sass variables of the component.
+3. a source of definition of other SASS variables of the component.
 
 ### `_tools.scss`
 
-Similarly, component's tools serve as a storage of component-scoped:
+Similarly, component’s tools serve as a storage of component-scoped:
 
-1. Sass **mixins,** mostly to generate visual variants from theme,
-2. Sass **functions.**
+1. SASS **mixins,** mostly to generate visual variants from theme,
+2. SASS **functions.**
 
 ## Linking Design Tokens
 
 Components can (and should!) reuse Spirit [design tokens][design-tokens].
 
-Component's theme properties can be linked to design tokens. This way, the
+Component’s theme properties can be linked to design tokens. This way, the
 appearance of individual components is always unified and coherent: **anytime
 design tokens change, all components are updated consistently.**
 
@@ -77,23 +77,23 @@ structure and naming.
 
 ### Sass Implementation
 
-When contributing to Spirit Sass styles, always link Spirit design tokens via
+When contributing to Spirit SASS styles, always link Spirit design tokens via
 the [`@tokens` API][tokens-api] with
 [configured load path][configuring-load-path]. This is crucial for the
 [rebranding][rebranding] functionality of Spirit.
 
-From the implementation point of view, design tokens are Sass variables
-organized in Sass modules. Within component styles, Sass modules with design
+From the implementation point of view, design tokens are SASS variables
+organized in SASS modules. Within component styles, SASS modules with design
 tokens are referred to just by filename. However, because the modules do not
 exist in the place they are called in (the [`spirit-design-tokens`][design-tokens] package is
 stored in `node_modules`), the correct load path for the desired set of design
 tokens must be [provided on build time][configuring-load-path]. This is the only
-way how Sass modules can be affected from outside, without giving in their
+way how SASS modules can be affected from outside, without giving in their
 advantages.
 
 #### Example
 
-At first, let's define a reference to design tokens in component's theme:
+At first, let’s define a reference to design tokens in component’s theme:
 
 ```scss
 // src/components/Button/_theme.scss
@@ -119,7 +119,7 @@ Now use the reference from the theme in component styles:
 
 ### JavaScript
 
-Our JavaScript plugins are documented in components' `README.md` files in the `src/scss` directory.
+Our JavaScript plugins are documented in components’ `README.md` files in the `src/scss` directory.
 The documentation should include these sections:
 
 - Information that a JavaScript plugin is available, usually at the top of the README.
@@ -155,14 +155,14 @@ specified in this document.
 
 To make your code ready for rebranding before moving to Spirit:
 
-1. Remove full path to your `@tokens` whenever it's @used:
+1. Remove full path to your `@tokens` whenever it’s @used:
 
    ```diff
    - @use '../path/to/my/design/@tokens' as tokens;
    + @use '@tokens' as tokens;
    ```
 
-2. Add the previously removed path to load paths of your Sass compiler.
+2. Add the previously removed path to load paths of your SASS compiler.
    See the [`spirit-design-tokens` docs][configuring-load-path] to learn how to
    do that.
 
@@ -183,8 +183,8 @@ adjusting the common parts of visual design.
 <details>
 <summary>What are Sass modules?</summary>
 
-Sass modules are a [new way of organizing Sass source][sass-modules]. Aside
-from new methods of structuring and loading Sass files, Sass modules offer a
+SASS modules are a [new way of organizing SASS source][sass-modules]. Aside
+from new methods of structuring and loading SASS files, SASS modules offer a
 great portion of encapsulation, traceability, and more.
 
 </details>
@@ -200,7 +200,7 @@ global context, `@use` is scoped and works more like `import` in [ES modules][es
 <details>
 <summary>Why are <code>@tokens</code> prefixed with <code>@</code>?</summary>
 
-By prefixing a Sass file name with `@`, we communicate that such file is loaded
+By prefixing a SASS file name with `@`, we communicate that such file is loaded
 in a special way. Read more about it in
 [`spirit-design-tokens` docs][design-tokens-faq].
 

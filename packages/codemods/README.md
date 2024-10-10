@@ -4,7 +4,7 @@
 
 `spirit-codemods` is a **CLI tool** designed to assist you in migrating to the latest version of our Spirit Design System library. This tool efficiently handles the removal of breaking changes and deprecations with simple commands.
 
-For React transformations, it utilizes the [jscodeshift][jscodeshift] library.
+For React transformations, it uses the [jscodeshift][jscodeshift] library.
 
 ## Install
 

@@ -186,7 +186,7 @@ The Accordion itself consists of several components which cannot be used indepen
 | Name          | Type     | Default   | Required | Description                                                                                       |
 | ------------- | -------- | --------- | -------- | ------------------------------------------------------------------------------------------------- |
 | `elementType` | `string` | `section` | ✕        | Custom element type                                                                               |
-| `id`          | `string` | `null`    | optional | It depends on whether the "Stay open" functionality is used. If so, the id field is not required. |
+| `id`          | `string` | `null`    | optional | It depends on whether the "Stay open" functionality is used. If so, the ID field is not required. |
 
 ### AccordionItem
 
@@ -230,7 +230,7 @@ Please consult the [main README][web-readme] for how to include JavaScript plugi
 
 Or, feel free to write the controlling script yourself.
 
-👉 Check the [component's docs in the web package][web-js-api] to see the full documentation and API of the plugin.
+👉 Check the [component’s docs in the web package][web-js-api] to see the full documentation and API of the plugin.
 
 [accordion]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Accordion
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#additional-attributes

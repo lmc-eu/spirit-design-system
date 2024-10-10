@@ -45,7 +45,7 @@ See [Offcanvas documentation][offcanvas-docs] for more details.
   technologies.
 - Indicate the current item by using `aria-current="page"` for the current
   page or `aria-current="true"` for the current item in a set.
-- Don't forget to provide textual equivalents for icon buttons. Use either the
+- Don’t forget to provide textual equivalents for icon buttons. Use either the
   `aria-label` attribute, or the provided `accessibility-hidden` helper class.
 - For Header to work correctly with assistive technologies, the `aria-expanded`
   attributes need to be updated by JavaScript when Header is toggled.
@@ -53,7 +53,7 @@ See [Offcanvas documentation][offcanvas-docs] for more details.
 👉 The animation effect of this component is dependent on the
 `prefers-reduced-motion` media query.
 
-🌍 Although we don't need it yet, this component experimentally supports RTL
+🌍 Although we don’t need it yet, this component experimentally supports RTL
 languages (because just a single line had to be added to make it all work 🎉).
 
 ## Minimal Header
@@ -130,7 +130,7 @@ Toggle button reveals the [Header Dialog](#header-dialog) containing actions for
 small screens (up to the desktop breakpoint). It makes use of an inverted Button
 by default.
 
-The toggle button implements Spirit's Off-canvas JavaScript plugin. It is linked
+The toggle button implements Spirit’s Off-canvas JavaScript plugin. It is linked
 to the corresponding instance of Header Dialog via ID placed in `data-spirit-target`
 and `aria-controls` attributes.
 
@@ -155,7 +155,7 @@ and `aria-controls` attributes.
 As the name suggests, desktop-only actions are intended to display on desktop screens only. They generally work as flex
 containers that define vertical alignment and spacing.
 
-If you need to align actions to the end of the Header, use the `HeaderDesktopActions--end` modifier class.
+To align actions to the end of the Header, use the `HeaderDesktopActions--end` modifier class.
 
 👉 It is critical to **make sure all your actions fit the Header on the
 desktop breakpoint**. Spirit intentionally does not provide any overflow
@@ -231,7 +231,7 @@ the same container:
 
 ## Header Dialog
 
-Header Dialog is Spirit's solution for responsive navigation and selected use
+Header Dialog is Spirit’s solution for responsive navigation and selected use
 cases such as the user menu. Please note Header Dialog is not intended to be
 used for second-level navigation in general.
 

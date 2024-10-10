@@ -45,7 +45,7 @@ Without lexer:
 ## Custom Spacing
 
 You can use the `spacing` prop to apply custom spacing between tab items. The prop
-accepts either a spacing token (e.g. `space-100`) or an object with breakpoint keys and spacing token values.
+accepts either a spacing token (for example `space-100`) or an object with breakpoint keys and spacing token values.
 
 Custom spacing:
 
@@ -109,7 +109,7 @@ Please consult the [main README][web-readme] for how to include JavaScript plugi
 
 Or, feel free to write the controlling script yourself.
 
-👉 Check the [component's docs in the web package][web-js-api] to see the full documentation and API of the plugin.
+👉 Check the [component’s docs in the web package][web-js-api] to see the full documentation and API of the plugin.
 
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#escape-hatches

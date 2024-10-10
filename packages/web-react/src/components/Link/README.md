@@ -52,7 +52,7 @@ The underline is never visible, even when the link is hovered over.
 | -------------- | ------------------------------------------------ | --------- | -------- | ------------------------------------------------------------------------------------ |
 | `color`        | [Action Link Color dictionary][dictionary-color] | `primary` | ✕        | Color of the link                                                                    |
 | `elementType`  | `ElementType`                                    | `a`       | ✕        | Type of element used as                                                              |
-| `href`         | `string`                                         | —         | ✕        | Link's href attribute                                                                |
+| `href`         | `string`                                         | —         | ✕        | Link’s href attribute                                                                |
 | `isDisabled`   | `bool`                                           | `false`   | ✕        | Whether is the link disabled                                                         |
 | `isUnderlined` | `bool`                                           | `false`   | ✕        | [**DEPRECATED**][deprecated] in favor of `underline`; Whether is the link underlined |
 | `ref`          | `ForwardedRef<HTMLAnchorElement>`                | —         | ✕        | Link element reference                                                               |
