@@ -6,12 +6,171 @@ Introducing version 3 of the _spirit-web_ package.
 
 ## Overview
 
+- [General Changes](#general-changes)
+  - [Themes](#themes)
+  - [Spacing Values](#spacing-values)
+  - [Helpers: Typography and Headings](#helpers-typography-and-headings)
+  - [Utilities: Removed and New Classes](#utilities-removed-and-new-classes)
+  - [Migrating Your Own Components](#migrating-your-own-components)
 - [Component Changes](#component-changes)
-  - [Button: renamed modifier `square`](#button-square-modifier-renamed-to-symmetrical)
+  - [Button: `square` Modifier Renamed to `symmetrical`](#button-square-modifier-renamed-to-symmetrical)
+
+## General Changes
+
+### Themes
+
+Starting from version 3, the design system now supports multiple themes based on the
+theme tokens.
+
+See our [Themes decision][themes-decision] for more information and why we decided to implement this feature.
+
+#### Introduction
+
+The design system now supports multiple themes based on the theme tokens. As in
+[Figma][spirit-figma-file] where the first theme column is the default, the first theme in the
+`@themes` tokens map is the **default**.
+
+We use CSS variables to apply colors to the components. The CSS variables of the default theme
+are set on the `:root` element.
+
+To switch themes, we also generate CSS classes that can be applied to any element.
+Theme names are the key names of the `$themes` map in the `@themes` file in the _design-tokens_ package.
+
+#### Component Changes
+
+We did all the work and our components are now using CSS variables to
+apply colors.
+
+Also, all your components or any custom styles you have that previously used
+color tokens should be updated to use CSS variables. See [Migrating Your Own Components](#migrating-your-own-components) for more information.
+
+#### Inverted Variants
+
+Using themes, we were able to remove the `inverted` design tokens and component variants, and also some `brand` tokens.
+
+### Spacing Values
+
+New spacing values were added to the design system, updating spacing design tokens and affecting all spacing props and utility classes.
+
+#### Migration Guide
+
+Use this table to update the spacing tokens in your project.
+
+|       | **Old tokens** | **New tokens** |
+| ----- | -------------- | -------------- |
+| 0     | space-0        | space-0        |
+| 1 px  | space-100      | space-100      |
+| 2 px  | space-200      | space-200      |
+| 4 px  | space-300      | space-300      |
+| 6 px  | —              | space-400      |
+| 8 px  | space-400      | space-500      |
+| 12 px | space-500      | space-600      |
+| 16 px | space-600      | space-700      |
+| 20 px | —              | space-800      |
+| 24 px | space-700      | space-900      |
+| 32 px | space-800      | space-1000     |
+| 40 px | space-900      | space-1100     |
+| 48 px | space-1000     | space-1200     |
+| 56 px | —              | space-1300     |
+| 64 px | space-1100     | space-1400     |
+| 72 px | —              | space-1500     |
+| 80 px | space-1200     | space-1600     |
+| 96 px | —              | space-1700     |
+
+If you are going to use fulltext search-and-replace in your project, we suggest you to
+start from the largest values and work your way down to the smallest ones.
+This way you will avoid replacing values you already replaced.
+
+### Helpers: Typography and Headings
+
+As the word `text` was omitted from the typography tokens, the typography helpers
+were updated to reflect this change. Also, the `heading` helpers were updated to
+support the emphasis.
+
+#### Migration Guide
+
+Remove the `text` infix from `body` typography helpers.
+
+For example:
+
+- `.typography-body-large-text-bold` → `.typography-body-large-bold`
+- `.typography-body-xsmall-text-regular` → `.typography-body-xsmall-regular`
+
+More font weights are now available for headings.
+Rename `text` to `bold` in the `heading` helpers.
+
+For example:
+
+- `.typography-heading-xlarge-text` → `.typography-heading-xlarge-bold`
+- `.typography-heading-xsmall-text` → `.typography-heading-xsmall-bold`
+
+### Utilities: Removed and New Classes
+
+Some utility classes were removed and new ones were added.
+
+Removed utility classes:
+
+- `.text-brand-primary`
+- `.text-brand-secondary`
+- `.bg-basic`
+- `.bg-cover`
+- `.bg-inverted`
+- `.bg-brand-primary`
+- `.bg-brand-secondary`
+
+New utility classes:
+
+- `.text-tertiary`
+- `.bg-primary`
+- `.bg-secondary`
+- `.bg-tertiary`
+
+### Migrating Your Own Components
+
+First, you need to update your design tokens. You can either use Supernova to export
+your design tokens in new structure, or you can manually update your tokens, or update
+our tokens package if you are using it.
+
+Here are the steps to migrate your own components to use the new design tokens and themes:
+
+1. If you load `foundation`, `components`, `helpers`, and `utilities` separately, you need
+   to `@forward 'themes'` before them in your main SCSS file. If you load the whole `scss` folder,
+   you don't need to do anything.
+2. Replace module load `@use '@tokens' as tokens;` in your components with `@use '@global-tokens' as global-tokens;`.
+3. Rename all the tokens in your components to use the new structure.
+   1. Replace module name in all variable usages: `tokens.*` → `global-tokens.*`.
+   2. Replace all spacing tokens with new values. See [Spacing Values](#spacing-values) for more information.
+   3. Replace all radius tokens with new values. We added a new radius token in between, so you need to update all of them.
+   4. Replace all typography tokens with new values. We removed the `text` infix from typography tokens and added emphasized headings.
+   5. Switch all color tokens to use CSS variables. Use the `token-prefix` token to set the prefix. // TODO update this after implementing DS-1493
+   6. If you used `$border-style` tokens, you need to replace them with direct values (`solid`, `dashed`, etc.).
+   7. If you used the `$focus` token, you need to replace it with the `$focus-ring` token.
+   8. If you used `$grid-gutter` tokens, you need to replace them with equivalent `$grid-spacing` tokens.
+4. That's it! You should now have your components updated to use the new design tokens and themes. 🎉
+
+Here is a simple example of how to update your component styles:
+
+Before:
+
+```scss
+@use '@tokens' as tokens;
+
+$color: tokens.$text-primary;
+$gap: tokens.$space-400;
+```
+
+After:
+
+```scss
+@use '@global-tokens' as global-tokens;
+
+$color: var(--#{global-tokens.$token-prefix}color-text-primary);
+$gap: global-tokens.$space-500;
+```
 
 ## Component Changes
 
-### Button: `square` modifier renamed to `symmetrical`
+### Button: `square` Modifier Renamed to `symmetrical`
 
 Button `square` modifier was renamed to `symmetrical`.
 
@@ -22,3 +181,6 @@ Instead of using `.Button--square`, use a `.Button--symmetrical`.
 - `.Button--square` → `.Button--symmetrical`
 
 ---
+
+[spirit-figma-file]: https://www.figma.com/design/w9Ca4hvkuYLshsrHu1bYwT/
+[themes-decision]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/decisions/008-themes.md
