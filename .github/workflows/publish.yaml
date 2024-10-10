@@ -6,12 +6,12 @@ on:
       - main
 
 jobs:
-  hasTag:
+  has-tags:
     name: 🏷️ Analyze Tags
     runs-on: ubuntu-24.04
 
     outputs:
-      hasTag: ${{ steps.checkTagExists.outputs.has-tag }}
+      has-tag: ${{ steps.check-tag-exists.outputs.has-tag }}
 
     steps:
       - name: Clone repository
@@ -22,7 +22,7 @@ jobs:
       # ⚠️ This check works only if the tag is pushed alongside the commit
       # Please, use `git push && git push --tags` or `git push --follow-tags` (works only for annonated tags)
       - name: Check Tag On Commit
-        id: checkTagExists
+        id: check-tag-exists
         run: |
           if [ -n "$(git tag --points-at HEAD)" ]; then
             echo "has-tag=true" >> $GITHUB_OUTPUT
@@ -32,8 +32,8 @@ jobs:
 
   publish:
     name: 📦 Publish Packages
-    needs: hasTag
-    if: ${{ needs.hasTag.outputs.hasTag == 'true' }}
+    needs: has-tags
+    if: ${{ needs.has-tags.outputs.has-tag == 'true' }}
     runs-on: ubuntu-24.04
 
     steps:
