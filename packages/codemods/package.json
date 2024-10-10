@@ -47,7 +47,7 @@
     "test:unit:coverage": "yarn test:unit --coverage"
   },
   "dependencies": {
-    "@types/jscodeshift": "^0.11.11",
+    "@types/jscodeshift": "^0.12.0",
     "execa": "^9.0.0",
     "filedirname": "^3.0.0",
     "jscodeshift": "^0.16.0",
@@ -57,14 +57,14 @@
   "devDependencies": {
     "@lmc-eu/eslint-config-jest": "3.0.5",
     "@types/eslint": "8.56.12",
-    "@types/jest": "29.5.12",
-    "@types/node": "20.16.5",
+    "@types/jest": "29.5.13",
+    "@types/node": "20.16.11",
     "@typescript-eslint/eslint-plugin": "6.21.0",
     "@typescript-eslint/parser": "6.21.0",
-    "eslint": "8.57.0",
+    "eslint": "8.57.1",
     "jest": "29.7.0",
     "shx": "0.3.4",
-    "tsup": "8.2.4",
-    "typescript": "5.6.2"
+    "tsup": "8.3.0",
+    "typescript": "5.6.3"
   }
 }
