@@ -78,4 +78,4 @@ CODEOWNERS
 **/__fixtures__/unformatted*
 
 # variable-scss exporter generated cjs
-exporters/variables-scss/generated/**/*.cjs
+exporters/spirit-tokens-exporter/generated/**/*.cjs

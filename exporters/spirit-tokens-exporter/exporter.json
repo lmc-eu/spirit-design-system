@@ -1,7 +1,7 @@
 {
-  "id": "almacareer.exporter-spirit-variables-scss",
-  "name": "Spirit Varibles SCSS Exporter",
-  "description": "Spirit SCSS Exporter",
+  "id": "almacareer.spirit-tokens-exporter",
+  "name": "Spirit Tokens Exporter",
+  "description": "Spirit Tokens Exporter",
   "author": "Spirit Team",
   "organization": "Alma Career",
   "version": "1.0.0",
