@@ -1,11 +1,6 @@
 import React from 'react';
 import Heading from '../Heading';
 
-const HeadingDefault = () => (
-  <>
-    <Heading>Heading</Heading>
-    <Heading elementType="h2">Heading H2</Heading>
-  </>
-);
+const HeadingDefault = () => <Heading elementType="h2">Heading</Heading>;
 
 export default HeadingDefault;

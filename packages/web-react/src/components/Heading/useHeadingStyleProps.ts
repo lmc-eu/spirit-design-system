@@ -2,15 +2,15 @@ import { ElementType } from 'react';
 import { useClassNamePrefix } from '../../hooks';
 import { SpiritHeadingProps, HeadingProps } from '../../types';
 
-export interface HeadingStyles<T extends ElementType = 'p'> {
+export interface HeadingStyles<T extends ElementType> {
   /** className props */
   classProps: string | null;
   /** props to be passed to the input element */
   props: HeadingProps<T>;
 }
 
-export function useHeadingStyleProps<T extends ElementType = 'div', S = void>(
-  props: SpiritHeadingProps<T, S>,
+export function useHeadingStyleProps<T extends ElementType, S = void, E = void>(
+  props: SpiritHeadingProps<T, S, E>,
 ): HeadingStyles<T> {
   const { size, emphasis, ...restProps } = props;
 

@@ -23,6 +23,15 @@ Button `isSquare` prop was renamed to `isSymmetrical`.
 - `<Button isSquare … />` → `<Button isSymmetrical … />`
 - `<ButtonLink isSquare … />` → `<ButtonLink isSymmetrical … />`
 
+### Heading elementType prop is now mandatory
+
+The `Heading` component previously had a default `elementType` of `"div"`.
+We've removed this default to encourage developers to explicitly choose a more appropriate semantic HTML element.
+
+#### Migration Guide
+
+- `<Heading … />` → `<Heading elementType="{/* Your semantic HTML element here */}" … />`
+
 ---
 
 Please refer back to this guide or reach out to our team if you encounter any issues during migration.

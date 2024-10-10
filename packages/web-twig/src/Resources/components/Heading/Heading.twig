@@ -2,7 +2,7 @@
 {%- set props = props | default([]) -%}
 {%- set _emphasis = props.emphasis | default('bold') -%}
 {%- set _size = props.size | default('medium') -%}
-{%- set _elementType = props.elementType | default('div') -%}
+{%- set _elementType = props.elementType -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'typography-heading-' ~ _size ~ '-' ~ _emphasis -%}
