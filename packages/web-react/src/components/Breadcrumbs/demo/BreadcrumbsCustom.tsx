@@ -29,7 +29,7 @@ const BreadcrumbsCustom = () => {
         const isLastItem = index === items.length - 1;
 
         const linkParams = {
-          underlined: !isLastItem ? 'always' : undefined,
+          underlined: isLastItem ? 'hover' : 'always',
           'aria-current': isLastItem ? 'page' : undefined,
           color: isLastItem ? 'secondary' : 'primary',
         };

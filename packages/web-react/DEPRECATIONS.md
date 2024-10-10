@@ -6,6 +6,8 @@ This document lists all deprecations that will be removed in the next major vers
 
 ## Deprecations
 
+Nothing here right now! 🎉
+
 👉 [What are deprecations?][readme-deprecations]
 
 [readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#deprecations
