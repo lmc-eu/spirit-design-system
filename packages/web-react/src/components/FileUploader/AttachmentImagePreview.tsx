@@ -1,18 +1,18 @@
 'use client';
 
 import React from 'react';
-import { FileMetadata } from '../../types/fileUploader';
+import { AttachmentImagePreviewProps } from '../../types';
 import { IMAGE_DIMENSION } from './constants';
 import { useFileUploaderStyleProps } from './useFileUploaderStyleProps';
 
-type AttachmentImagePreviewProps = {
-  imagePreview: string;
-  label: string;
-  meta?: FileMetadata;
-  imageObjectFit?: 'contain' | 'cover';
+const defaultProps: Partial<AttachmentImagePreviewProps> = {
+  meta: undefined,
+  imageObjectFit: 'cover',
 };
 
-const AttachmentImagePreview = ({ label, imagePreview, meta, imageObjectFit }: AttachmentImagePreviewProps) => {
+const AttachmentImagePreview = (props: AttachmentImagePreviewProps) => {
+  const propsWithDefaults = { ...defaultProps, ...props };
+  const { label, imagePreview, meta, imageObjectFit } = propsWithDefaults;
   const { classProps } = useFileUploaderStyleProps({ meta, imageObjectFit });
   const { imageCropStyles, attachmentStyles } = classProps;
 
@@ -27,11 +27,6 @@ const AttachmentImagePreview = ({ label, imagePreview, meta, imageObjectFit }: A
       />
     </span>
   );
-};
-
-AttachmentImagePreview.defaultProps = {
-  meta: undefined,
-  imageObjectFit: 'cover',
 };
 
 export default AttachmentImagePreview;

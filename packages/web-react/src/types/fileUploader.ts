@@ -65,6 +65,13 @@ export interface AttachmentActionButtonBaseProps extends SpiritButtonElementProp
 
 export interface AttachmentDismissButtonBaseProps extends SpiritButtonElementProps {}
 
+export interface AttachmentImagePreviewProps {
+  imagePreview: string;
+  label: string;
+  meta?: FileMetadata;
+  imageObjectFit?: 'contain' | 'cover';
+}
+
 export interface FileUploaderInputBaseProps
   extends Omit<SpiritInputElementProps, 'onError'>,
     FileUploaderIntermediateProps,
