@@ -6,11 +6,8 @@ import {
   RemoteVersionIdentifier,
   Supernova,
 } from '@supernovaio/sdk-exporters';
-import { ExporterConfiguration } from '../config';
-import { generateOutputFilesByThemes } from './generators/fileGenerator';
-import { safeStringify } from './helpers/safeStringify';
-
-export const exportConfiguration = Pulsar.exportConfig<ExporterConfiguration>();
+import { themesData } from './data/themes-data';
+import { tokensData } from './data/tokens-data';
 
 // https://github.com/Supernova-Studio/exporters/issues/4
 // @ts-ignore-next-line
@@ -22,18 +19,16 @@ Pulsar.export(async (sdk: Supernova, context: PulsarContext): Promise<Array<AnyO
   };
 
   // Fetch the necessary data
-  let tokens = await sdk.tokens.getTokens(remoteVersionIdentifier);
-  let tokenGroups = await sdk.tokens.getTokenGroups(remoteVersionIdentifier);
+  let tokens = tokensData;
 
   // Filter by brand, if specified by the VSCode extension or pipeline configuration
   if (context.brandId) {
     tokens = tokens.filter((token) => token.brandId === context.brandId);
-    tokenGroups = tokenGroups.filter((tokenGroup) => tokenGroup.brandId === context.brandId);
   }
 
   // Convert all color tokens to CSS variables
-  const mappedTokens = new Map(tokens.map((token) => [token.id, token]));
-  const themes = await sdk.tokens.getTokenThemes(remoteVersionIdentifier);
+  // const themes = await sdk.tokens.getTokenThemes(remoteVersionIdentifier);
+  const themes = themesData;
 
   const createTextFile = (relativePath: string, fileName: string, content: string): OutputTextFile => {
     return FileHelper.createTextFile({
@@ -43,19 +38,17 @@ Pulsar.export(async (sdk: Supernova, context: PulsarContext): Promise<Array<AnyO
     });
   };
 
-  let textFiles: Array<OutputTextFile> = [];
-  const outputFilesData = await generateOutputFilesByThemes(tokens, mappedTokens, tokenGroups, themes, sdk);
-  textFiles = outputFilesData.map((file) => {
-    return createTextFile(file.path, file.fileName, file.content);
-  });
+  const textFiles: Array<OutputTextFile> = [];
 
-  // Export the original data only if 'generateOriginalDataFiles' is set to true in config.local.json
-  if (exportConfiguration.generateOriginalDataFiles) {
-    textFiles.push(
-      createTextFile('./original-data/', '_original-tokens.json', safeStringify(tokens)),
-      createTextFile('./original-data/', '_original-groups.json', JSON.stringify(tokenGroups, null, 2)),
-    );
-  }
+  const allThemes = await Promise.all(
+    themes.map(async (theme) => {
+      const themedTokens = await sdk.tokens.computeTokensByApplyingThemes(tokens, [theme]);
+
+      return { themedTokens, theme };
+    }),
+  );
+
+  textFiles.push(createTextFile('./original-data/', '_original-groups.json', JSON.stringify(allThemes, null, 2)));
 
   return textFiles;
 });
