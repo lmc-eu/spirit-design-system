@@ -160,6 +160,8 @@ jobs:
     needs: [lint, unit-tests, types]
     runs-on: ubuntu-24.04
     timeout-minutes: 10
+    # Ensure this job runs regardless of previous job outcomes
+    if: always()
 
     steps:
       - name: Checkout
