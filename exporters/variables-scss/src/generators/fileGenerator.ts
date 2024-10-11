@@ -122,8 +122,6 @@ export const generateOutputFilesByThemes = async (
   // Compute themed tokens for all themes in parallel
   const allThemes = await Promise.all(
     themes.map(async (theme) => {
-      // Undocumented API change and bad typings
-      // @ts-expect-error -- Expected 2 arguments, but got 3.
       const themedTokens = sdk.tokens.computeTokensByApplyingThemes([], tokens, [theme]);
 
       return { themedTokens, theme };
