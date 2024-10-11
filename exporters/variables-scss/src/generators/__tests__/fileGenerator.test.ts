@@ -65,7 +65,7 @@ describe('fileGenerator', () => {
       const tokens = Array.from(exampleDimensionAndStringTokens.values());
       const sdk = {
         tokens: {
-          computeTokensByApplyingThemes: jest.fn().mockResolvedValue(tokens),
+          computeTokensByApplyingThemes: jest.fn().mockReturnValue(tokens),
         },
       };
       const themes = [{ name: 'theme-light' }, { name: 'theme-light-inverted' }];
