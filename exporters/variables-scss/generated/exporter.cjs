@@ -39,7 +39,7 @@
 `,f+=1):o.includes(m)?(f-=1,r+=`${a.repeat(f)}${o}
 `):r+=`${a.repeat(f)}${o}
 `;return r=_t(r),r=Ct(r),r},Le=i=>({radius:"radii",spacing:"spaces"})[i]||(i.endsWith("s")?i:`${i}s`),C=i=>O.NamingHelper.codeSafeVariableName(i,O.StringCase.camelCase),D=(i,c,d)=>{let a;return d?a=c.find(T=>T.id===i.parentGroupId):a=null,O.NamingHelper.codeSafeVariableNameForToken(i,O.StringCase.paramCase,a,"")},Dt=(i,c)=>i===0?0:`${i}${c}`,M=(i,c,d,a)=>{const T=a?Dt(c,a):c;return d?`export const ${C(i)} = ${typeof T=="number"?T:`'${T}'`};`:`$${i}: ${T} !default;`},Et=(i,c,d,a,T)=>i.sort((f,r)=>{if(T){const e=l=>l.tokenType===P.TokenType.dimension?l.value.measure:l.tokenType===P.TokenType.string?l.value.text:l.value,n=e(f),p=e(r);if(n&&p)return parseInt(n.toString(),10)-parseInt(p.toString(),10)}const t=D(f,c,d),o=D(r,c,d);return t.localeCompare(o)}),Nt=i=>{let c=null;const d=[];return i.forEach(({css:a,parentGroupId:T})=>{c&&T!==c&&a&&d.push(""),a&&d.push(a),c=T}),d.join(`
-`)},Rt=i=>{const c=/linear-gradient\(([^,]+),\s*(.+)\)/,d=i.match(c);if(d){const a=d[1].trim(),T=Number(a.match(/\d+/))+90,m=a.match(/deg/),f=d[2].trim();return`linear-gradient(var(--gradient-angle, ${T}${m}), ${f})`}return i},Bt=i=>i.replace(/([a-z])([A-Z])/g,"$1-$2").toLowerCase(),jt=i=>{const c=/^'([^']*)'$/;return i.replace(c,"$1")},xt=i=>typeof i=="number",Lt=i=>`{
+`)},Rt=i=>{const c=/linear-gradient\(([^,]+),\s*(.+)\)/,d=i.match(c);if(d){const a=d[1].trim(),T=Number(a.match(/\d+/)),m=a.match(/deg/),f=d[2].trim();return`linear-gradient(var(--gradient-angle, ${T}${m}), ${f})`}return i},Bt=i=>i.replace(/([a-z])([A-Z])/g,"$1-$2").toLowerCase(),jt=i=>{const c=/^'([^']*)'$/;return i.replace(c,"$1")},xt=i=>typeof i=="number",Lt=i=>`{
 ${i.join(`,
 `)},
 }`,Ft=i=>`(
