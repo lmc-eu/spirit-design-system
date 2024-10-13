@@ -19,8 +19,8 @@
     "types": "true"
   },
   "dependencies": {
-    "@supernovaio/export-helpers": "^1.0.9",
-    "@supernovaio/sdk-exporters": "^2.0.17",
+    "@supernovaio/export-helpers": "1.0.15",
+    "@supernovaio/sdk-exporters": "2.0.23",
     "vite": "5.4.4"
   },
   "devDependencies": {
