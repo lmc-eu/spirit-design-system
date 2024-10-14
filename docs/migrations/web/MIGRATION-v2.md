@@ -74,7 +74,7 @@ is now default.
 
 #### Migration Guide
 
-You can now safely delete the CSS class `.spirit-feature-alert-enable-bordered` and/or the Sass variable
+You can now safely delete the CSS class `.spirit-feature-alert-enable-bordered` and/or the SASS variable
 `$alert-enable-bordered` from your project as they have no effect.
 
 ### Dropdown: Shadow
@@ -84,7 +84,7 @@ shadow is now default.
 
 #### Migration Guide
 
-You can now safely delete the CSS class `.spirit-feature-dropdown-enable-enhanced-shadow` and/or the Sass variable
+You can now safely delete the CSS class `.spirit-feature-dropdown-enable-enhanced-shadow` and/or the SASS variable
 `$dropdown-enable-enhanced-shadow` from your project as they have no effect.
 
 ### Modal: Uniform Variant
@@ -94,7 +94,7 @@ uniform variant is now default.
 
 #### Migration Guide
 
-You can now safely delete the CSS class `.spirit-feature-modal-enable-uniform-dialog` and/or the Sass variable
+You can now safely delete the CSS class `.spirit-feature-modal-enable-uniform-dialog` and/or the SASS variable
 `$modal-enable-uniform-dialog` from your project as they have no effect.
 
 ### Tooltip: Controlled Placement
@@ -104,7 +104,7 @@ was removed. The controlled placement is now default.
 
 #### Migration Guide
 
-You can now safely delete the CSS class `.spirit-feature-tooltip-enable-data-placement` and/or the Sass variable
+You can now safely delete the CSS class `.spirit-feature-tooltip-enable-data-placement` and/or the SASS variable
 `$tooltip-enable-data-placement` from your project as they have no effect.
 
 ## JavaScript Plugins
@@ -114,7 +114,7 @@ You can now safely delete the CSS class `.spirit-feature-tooltip-enable-data-pla
 
 ### Tooltip: Floating UI only
 
-Non-Floating-UI and CSS-only Tooltips are no longer supported. That's because we found out that most users want the
+Non-Floating-UI and CSS-only Tooltips are no longer supported. That’s because we found out that most users want the
 advanced positioning options anyway. The Tooltip component is now dependent on the [Floating UI][floating-ui] library
 and has a new structure. See the updated [Tooltip documentation][readme-tooltip] for more details on how to use Tooltip
 now.
@@ -286,7 +286,7 @@ wrapping component. Similarly, Tooltip (the tip itself) was renamed to TooltipPo
    1. either add a new `.Tooltip` component wrapping the `.TooltipPopover`, or
    2. rename your existing `.TooltipWrapper` to `.Tooltip`.
 
-Also, Tooltip now has a different API and uses the [Floating UI][floating-ui] library. That's because we found out that
+Also, Tooltip now has a different API and uses the [Floating UI][floating-ui] library. That’s because we found out that
 most users want the advanced positioning options anyway.
 
 See [Tooltip documentation][readme-tooltip] for more details and examples.

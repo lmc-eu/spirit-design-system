@@ -21,7 +21,7 @@ For full functionality, you need to provide Spirit JavaScript, which will handle
 
 You will find the [full documentation](#javascript-plugin-api) of the plugin below on this page.
 
-Please consult the [main README][web-readme] for how to include JavaScript plugins.
+Please see the [main README][web-readme] for how to include JavaScript plugins.
 
 Or, feel free to write the controlling script yourself.
 
@@ -166,7 +166,7 @@ Microsoft Word documents:
 
 ### Required Input
 
-To mark the input as required, simply add the `FileUploaderInput__label--required` to the label:
+To mark the input as required, add the `FileUploaderInput__label--required` to the label:
 
 ```html
 <div class="FileUploaderInput" data-spirit-element="wrapper">
@@ -184,7 +184,7 @@ To mark the input as required, simply add the `FileUploaderInput__label--require
 </div>
 ```
 
-> ⚠️ We don't use the `required` attribute on the input element. This is because it triggers the browser's default validation, which can block form submission.
+> ⚠️ We don’t use the `required` attribute on the input element. This is because it triggers the browser’s default validation, which can block form submission.
 > Instead, the `FileUploaderInput` component is used to open the system file dialog, and our [JS plugin](#javascript-plugin) manages the file(s).
 > Please note, the validation for required files is not automatically handled. Developers need to implement this validation independently, using our JS plugin. This approach provides more flexibility and customization to meet specific validation requirements.
 
@@ -251,8 +251,8 @@ own way.**
 
 ##### Localization
 
-There are four types of validation errors that have their default validation text.
-You can customize those validation texts using `data-spirit-message-*` that is passed to the components' root element.
+Four types of validation errors have their default validation text.
+You can customize those validation texts using `data-spirit-message-*` that is passed to the components’ root element.
 
 ```html
 <div class="FileUploaderInput has-danger" data-spirit-element="wrapper" data-spirit-message-maxfilesize="File too big!">
@@ -425,7 +425,7 @@ Full example:
 
 As long as the FileUploaderAttachment lives inside the `<template>` tag, no functionality can be attached to it.
 
-👉 Don't use IDs to attach functionality to custom actions. IDs must be unique, and the FileUploaderAttachment template
+👉 Don’t use IDs to attach functionality to custom actions. IDs must be unique, and the FileUploaderAttachment template
 is used for every attachment.
 
 To attach functionality, you need to do so after the `queuedFile.fileUploader` event has been fired:
@@ -443,7 +443,7 @@ document.addEventListener('queuedFile.fileUploader', () => {
 });
 ```
 
-Don't forget to remove the event listener when the FileUploaderAttachment is removed from the DOM:
+Don’t forget to remove the event listener when the FileUploaderAttachment is removed from the DOM:
 
 ```js
 let filesQueueCounter = 0;
@@ -613,7 +613,7 @@ const input = myUploaderInstance.inputElement; // Returns an input element, for 
 
 ⚠️ The `name` attribute on hidden input will be always set as an array `[]` for both single-file and multiple-file usage. Make sure you handle it correctly in your code.
 
-The `name` attribute on the default input element is used for the component's picked attachments, which are actually hidden
+The `name` attribute on the default input element is used for the component’s picked attachments, which are actually hidden
 inputs using this attribute as an array. The `name` attribute remains on the original input element until the first attachment
 is picked, then the original `name` attribute disappears and its value is used for individual attachments. If the
 attachment is removed from the queue, its original value is returned to the input to avoid possible error states due

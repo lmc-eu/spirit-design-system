@@ -85,7 +85,7 @@ To display close button, add `isDismissible` prop to the `TooltipPopover` subcom
 ### Trigger
 
 You can choose whether you want to open the tooltip on `click` and/or `hover`.
-By default, both options are active, e.g., `trigger="click, hover"`.
+By default, both options are active, for example, `trigger="click, hover"`.
 If you only want the `click` trigger, you need to specify the trigger, as shown in the example below.
 This setup might be preferable when you have a link in your tooltip, for example.
 
@@ -156,7 +156,7 @@ Please consult the [main README][web-readme] for how to include JavaScript plugi
 
 Or, feel free to write the controlling script yourself.
 
-👉 Check the [component's docs in the web package][web-js-api] to see the full documentation and API of the plugin.
+👉 Check the [component’s docs in the web package][web-js-api] to see the full documentation and API of the plugin.
 
 [dictionary-placement]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#placement
 [floating-ui-flip-cross-axis]: https://floating-ui.com/docs/flip#crossaxis

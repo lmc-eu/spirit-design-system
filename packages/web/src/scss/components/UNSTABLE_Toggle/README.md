@@ -21,7 +21,7 @@ the native input element and styles it to look like a toggle switch.
 
 ## Indicators
 
-If you need to indicate the state of the toggle, you can add the `UNSTABLE_Toggle__input--indicators`
+To indicate the state of the toggle, you can add the `UNSTABLE_Toggle__input--indicators`
 modifier class to the input. This will add a visual indicators to the toggle switch.
 
 ```html

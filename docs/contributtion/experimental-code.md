@@ -73,7 +73,7 @@ introduced it is marked `false` or "off" by default to ensure backward
 compatibility. A feature flag may be configured in JavaScript, SASS, or both.
 
 All the currently available feature flags, as well as how to enable them, is
-documented in each package's main README file in the section `Feature Flags`.
+documented in each package’s main README file in the section `Feature Flags`.
 
 ### Feature Flag Naming Convention
 
@@ -81,24 +81,24 @@ All feature flags follow a prefix naming convention that indicates status.
 
 #### Flags Prefixed with `enable-*`
 
-- Contain new features that we'd like consuming projects to test
+- Contain new features that we’d like consuming projects to test
 - Are generally stable and unlikely to change but may change based on user
   feedback
 - May require some manual migration or code changes within your project
-- Are documented in the package's main README file
-- Need user feedback to ensure we've met all concerns relating to this feature
+- Are documented in the package’s main README file
+- Need user feedback to ensure we’ve met all concerns relating to this feature
 - Are used for introducing visual changes that are considered breaking
 
-If you use these flags, make sure to check our release notes where we'll outline
+If you use these flags, make sure to check our release notes where we’ll outline
 any changes to them across our releases.
 
 #### Flags Prefixed with `enable-v#-*`
 
 As the usage of an existing flag increases or we determine a feature to be of high
-importance, we'll "commit" it to a future major release and rename it to use the
+importance, we’ll "commit" it to a future major release and rename it to use the
 `enable-v#-*` prefix. At this point, the API or functionality behind this flag is
-now fixed and won't change. We intend to ship this flag as "on by default" in
-the major version indicated in the name. e.g. `enable-v3-some-feature`
+now fixed and won’t change. We intend to ship this flag as "on by default" in
+the major version indicated in the name. for example `enable-v3-some-feature`
 
 All breaking changes will be shipped as `enable-v#-*` flags within the current
 releases. This enables projects to opt-in to breaking changes earlier
@@ -127,19 +127,19 @@ Folders and stories within this section in the Storybook show components with al
 All the currently available feature flags, as well as how to enable them, are documented in the main documentation.
 
 Individual feature flags that are available for some components only will be also documented in
-the component's README file.
+the component’s README file.
 
 ## Expanding Existing APIs
 
 New experimental functionality might sometimes be added with the need for an
 `UNSTABLE_` export or a feature flag. Oftentimes, this ends up being a new prop
 on a component.
-The documentation associated with this prop (TypeScript types, Storybook controls, etc.) will state that it's experimental.
+The documentation associated with this prop (TypeScript types, Storybook controls, etc.) will state that it’s experimental.
 
 ## Moving to Stable
 
 Over time it becomes apparent an experimental API has stabilized and suits the
-needs of most users. If it isn't a breaking change, and there hasn't been much
+needs of most users. If it isn’t a breaking change, and there hasn’t been much
 movement, it can be moved from "experimental" status to "stable".
 
 To initiate a move to stable, a new issue can be opened to request the team to evaluate
@@ -162,18 +162,18 @@ be met to move a component from experimental to stable:
           `onClick = () => {}` can cause re-renders since the function identity
           is not stable
   - [ ] Component has a story in `<ComponentName>.stories.ts`
-    - [ ] The story has an MDX overview that embeds the main component's README file
+    - [ ] The story has an MDX overview that embeds the main component’s README file
     - [ ] MDX document covers at least common component states and provides a prop
           table
     - [ ] Stories cover at least common component states
     - [ ] Stories generate a `Playground` for controls
       - [ ] Controls with no meaningful change to the component visuals should
-            be hidden from the controls panel, eg. `className`
+            be hidden from the controls panel, for example `className`
       - [ ] Props of type `node` with no proper controls available for
             configuration should be hidden from the controls panel, eg.
             `children`
     - [ ] Stories should mirror the intended usage of the component
-  - [ ] The component has unit/integration/snapshot tests written using the project's unit testing library for testing the component API
-  - [ ] The component has visual tests written using the project's End-to-End testing library for testing the component design
+  - [ ] The component has unit/integration/snapshot tests written using the project’s unit testing library for testing the component API
+  - [ ] The component has visual tests written using the project’s End-to-End testing library for testing the component design
 
 [docs-feature-flags]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/contributtion/feature-flags.md

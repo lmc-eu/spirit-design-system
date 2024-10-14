@@ -92,7 +92,7 @@ Please consult the [main README][web-readme] for how to include JavaScript plugi
 
 Or, feel free to write the controlling script yourself.
 
-👉 Check the [component's docs in the web package][web-js-api] to see the full documentation and API of the plugin.
+👉 Check the [component’s docs in the web package][web-js-api] to see the full documentation and API of the plugin.
 
 [dictionary-placement]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#placement
 [dropdown]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Dropdown

@@ -109,7 +109,7 @@ Use `data-spirit-fullwidthmode` instead of `Dropdown--fullWidth` and `data-break
 Remove the feature class which enabled this behavior.
 
 Remove feature class `.spirit-v1-links-underlined`, if used.
-No other actions are required. However, if you didn't use the feature class, you might want to check if the links in your product design system components behave as expected in both hover and active states, because they are now underlined.
+No other actions are required. However, if you didn’t use the feature class, you might want to check if the links in your product design system components behave as expected in both hover and active states, because they are now underlined.
 
 ## Update `TextField` and `TextArea` default disabled style [#DS-649](https://jira.lmc.cz/browse/DS-649) ([a7bb986](https://github.com/lmc-eu/spirit-design-system/commit/a7bb986))
 
@@ -131,7 +131,7 @@ The most notable change is that the mobile and desktop navigation are now separa
 - `HeaderDialog`
 
 Formerly, the desktop dialog (holding the site navigation) was a responsive CSS modification of a shared HTML code.
-With the new `Header` and `HeaderDialog`, each component has its own instance of the navigation, i.e. the navigation code is duplicated.
+With the new `Header` and `HeaderDialog`, each component has its own instance of the navigation, that is the navigation code is duplicated.
 This is because `HeaderDialog` will become an independent component in the future.
 
 You may need to take additional measures so your SEO is not affected by the duplicate HTML code of the navigation.
@@ -188,7 +188,7 @@ If you need the `Stack` to have a spacing, add `hasSpacing` class. By default, `
 
 - `<ul class="Stack" …>` → `<ul class="Stack Stack--hasSpacing" …>`
 
-If you already used the feature class, you can remove it and don't need to do any other changes.
+If you already used the feature class, you can remove it and don’t need to do any other changes.
 
 ## Remove `default` (now `neutral`) and `light` (`subtle`) `Tag` variants [#DS-648](https://jira.lmc.cz/browse/DS-648) ([f272c54](https://github.com/lmc-eu/spirit-design-system/commit/f272c54))
 

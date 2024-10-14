@@ -25,9 +25,9 @@ Support the minimal Node.js version which is used by our adopters.
 
 ## Consequences
 
-Folks should hopefully run into a few compatibility issues. They may need features that are not back-ported to the current active LTS version, however, it's trivial to update the Node.js version.
+Folks should hopefully run into a few compatibility issues. They may need features that are not back-ported to the current active LTS version, however, it’s trivial to update the Node.js version.
 
-We'll need to update the Node.js version in the packages whenever the active LTS
+We’ll need to update the Node.js version in the packages whenever the active LTS
 version changes.
 
 [node-releases]: https://nodejs.org/en/about/releases/

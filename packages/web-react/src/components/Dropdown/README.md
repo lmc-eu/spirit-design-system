@@ -56,7 +56,7 @@ import { UncontrolledDropdown, DropdownTrigger, DropdownPopover } from '@lmc-eu/
 | ----------------- | ------------------------------------------------ | -------------- | -------- | ---------------------------------------------- |
 | `enableAutoClose` | `bool`                                           | `true`         | ✕        | Enables close on click outside of Dropdown     |
 | `fullWidthMode`   | [`DropdownFullwidthMode`][dropdownfullwidthmode] | `off`          | ✕        | Full-width mode                                |
-| `id`              | `string`                                         | —              | ✓        | Component id                                   |
+| `id`              | `string`                                         | —              | ✓        | Component ID                                   |
 | `isOpen`          | `bool`                                           | `false`        | ✓        | Open state                                     |
 | `onAutoClose`     | `(event: Event) => void`                         | —              | ✕        | Callback on close on click outside of Dropdown |
 | `onToggle`        | `() => void`                                     | —              | ✓        | Function for toggle open state of dropdown     |
@@ -93,7 +93,7 @@ and [escape hatches][readme-escape-hatches].
 | ----------------- | ------------------------------------------------ | -------------- | -------- | ---------------------------------------------- |
 | `enableAutoClose` | `bool`                                           | `true`         | ✕        | Enables close on click outside of Dropdown     |
 | `fullWidthMode`   | [`DropdownFullwidthMode`][dropdownfullwidthmode] | `off`          | ✕        | Full-width mode                                |
-| `id`              | `string`                                         | `<random>`     | ✕        | Component id                                   |
+| `id`              | `string`                                         | `<random>`     | ✕        | Component ID                                   |
 | `onAutoClose`     | `(event: Event) => void`                         | —              | ✕        | Callback on close on click outside of Dropdown |
 | `placement`       | [Placement dictionary][dictionary-placement]     | `bottom-start` | ✕        | Alignment of the component                     |
 

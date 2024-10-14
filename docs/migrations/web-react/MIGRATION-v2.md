@@ -4,7 +4,7 @@ Introducing version 2 of the _spirit-web-react_ package.
 
 > Please follow these steps to safely upgrade to Spirit Design System v2 components.
 
-> ℹ️ Don't forget to check the [migration guide of the _spirit-web_ package][migration-guide-web] for general changes in
+> ℹ️ Don’t forget to check the [migration guide of the _spirit-web_ package][migration-guide-web] for general changes in
 > available feature flags, CSS, and other changes that might affect your project.
 
 ## Overview
@@ -89,7 +89,7 @@ The `danger` icon for `danger` color in the Alert component is now required.
 
 #### Migration Guide
 
-Either install newer version of the _spirit-icons_ package, or add an icon named `danger` to your project's icons.
+Either install newer version of the _spirit-icons_ package, or add an icon named `danger` to your project’s icons.
 
 ### Alert: `role="alert"`
 
@@ -99,13 +99,13 @@ As explained in the [ARIA: alert role][alert-role-documentation] documentation:
 
 > The alert role is used to communicate an important and usually time-sensitive message to the user. When this role is
 > added to an element, the browser will send out an accessible alert event to assistive technology products which can
-> then notify the user. The alert role should only be used for information that requires the user's immediate attention,
+> then notify the user. The alert role should only be used for information that requires the user’s immediate attention,
 > which is typically content that is dynamically displayed (such as form validation message etc.), not for content that
-> appears on page load. It should not be used on HTML that the user hasn't interacted with.
+> appears on page load. It should not be used on HTML that the user hasn’t interacted with.
 
 #### Migration Guide
 
-In case you need to use the component as an information that requires the user's immediate attention, you can use
+In case you need to use the component as an information that requires the user’s immediate attention, you can use
 `role="alert"` as an [additional attribute][readme-additional-attributes].
 
 ### Collapse: `id` Prop
@@ -450,7 +450,7 @@ The `label` prop is now required by the TextField component.
 #### Migration Guide
 
 Please ensure that `label` is added to all instances of the TextField component.
-If you need to hide the `label`, you can use the `isLabelHidden` prop.
+To hide the `label`, you can use the `isLabelHidden` prop.
 
 ### Tooltip: `off` Placement
 
@@ -469,7 +469,7 @@ wrapping component. Similarly, Tooltip (the tip itself) was renamed to TooltipPo
 
 👉 See [Tooltip documentation][tooltip-readme] for more details and examples.
 
-Tooltip now has a different API and uses the [Floating UI][floating-ui] library. That's because we found out that most
+Tooltip now has a different API and uses the [Floating UI][floating-ui] library. That’s because we found out that most
 users want the advanced positioning options anyway.
 
 Instead of:

@@ -10,8 +10,8 @@ In our design system, we have been using semantic versioning for individual pack
 We have been also talking about the version of the entire design system like we have v1 and v2.
 In the beginning, this was fine, as the individual packages were mostly updated together and the major versions were the same.
 But as the entire system evolved, we started to have different versions for different packages.
-We've found that this can lead to confusion about the state of the entire system, as different packages can be at different versions.
-To address this, we've decided to introduce a global version of the entire design system, which we're calling a "distribution" or "edition".
+We’ve found that this can lead to confusion about the state of the entire system, as different packages can be at different versions.
+To address this, we’ve decided to introduce a global version of the entire design system, which we’re calling a "distribution" or "edition".
 Each distribution will also have a unique name to make it easier to refer to specific releases.
 
 ## Decision
@@ -24,7 +24,7 @@ This version name will be updated on every major release, regardless of which pa
 This will give us a single version name that represents the state of the entire system.
 
 Each distribution of the design system will thus have a unique name.
-We've chosen a list of names that we will use for future distributions.
+We’ve chosen a list of names that we will use for future distributions.
 
 List of Distribution Names:
 

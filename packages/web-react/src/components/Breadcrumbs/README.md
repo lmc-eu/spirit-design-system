@@ -39,7 +39,7 @@ Simply pass the breadcrumbs array as a prop:
 
 ### Custom usage
 
-Use custom content for the ordered list as component's children instead of passing breadcrumb items array via props:
+Use custom content for the ordered list as component’s children instead of passing breadcrumb items array via props:
 
 ```jsx
 <Breadcrumbs>
@@ -59,7 +59,7 @@ Use custom content for the ordered list as component's children instead of passi
 | ------------- | ------------------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `children`    | `ReactNode`         | —       | ✕        | Custom content to override items rendering from array                                                                                                                                            |
 | `elementType` | `ElementType`       | `nav`   | ✕        | Type of element used as wrapper                                                                                                                                                                  |
-| `goBackTitle` | `string`            | —       | ✕        | Title/translation for back link to previous page on mobile. It's essential to be set along with items. If items property is not passed, the back link is to be created within children property. |
+| `goBackTitle` | `string`            | —       | ✕        | Title/translation for back link to previous page on mobile. It’s essential to be set along with items. If items property is not passed, the back link is to be created within children property. |
 | `items`       | `BreadcrumbsItem[]` | —       | ✕        | Navigation menu items                                                                                                                                                                            |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
@@ -68,7 +68,7 @@ and [escape hatches][readme-escape-hatches].
 
 ## BreadcrumbsItem
 
-Use the `BreadcrumbsItem` component for the ordered list as the component's children instead of passing the breadcrumb items array via props:
+Use the `BreadcrumbsItem` component for the ordered list as the component’s children instead of passing the breadcrumb items array via props:
 
 ```jsx
 <Breadcrumbs>
@@ -100,7 +100,7 @@ and [escape hatches][readme-escape-hatches].
 ### Dealing with long titles
 
 When you need to shorten the title of the BreadcrumbsItem the preferred way is to use platform native helpers.
-There are multiple ways in JavaScript which will truncate a string for you like `.slice` or `.substring`, e.g. `str.slice(0, num) + '…'`.
+There are multiple ways in JavaScript which will truncate a string for you like `.slice` or `.substring`, for example `str.slice(0, num) + '…'`.
 
 Additional option is to use helper class `text-truncate` with defined width.
 

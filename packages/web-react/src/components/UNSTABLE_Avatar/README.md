@@ -3,7 +3,7 @@
 > ⚠️ This component is UNSTABLE. It may significantly change at any point in the future.
 > Please use it with caution.
 
-The `UNSTABLE_Avatar` component is used to display a user's profile picture or initials.
+The `UNSTABLE_Avatar` component is used to display a user’s profile picture or initials.
 
 ```jsx
 import { UNSTABLE_Avatar } from '@lmc-eu/spirit-web-react';
@@ -62,7 +62,7 @@ Add an Icon with correct size.
 </UNSTABLE_Avatar>
 ```
 
-ℹ️ Don't forget to add the `aria-label` attribute for accessible title.
+ℹ️ Don’t forget to add the `aria-label` attribute for accessible title.
 
 ### Image
 
@@ -74,7 +74,7 @@ Add an image, it will be resized to fit the avatar.
 </UNSTABLE_Avatar>
 ```
 
-ℹ️ Don't forget to add the `aria-label` attribute for accessible title.
+ℹ️ Don’t forget to add the `aria-label` attribute for accessible title.
 The image should have an `alt` attribute set and can be aria-hidden, because the `aria-label`
 attribute is set on the container.
 
@@ -90,7 +90,7 @@ take care of the text length and case. The rest is handled by the component.
 </UNSTABLE_Avatar>
 ```
 
-ℹ️ Don't forget to add the `aria-label` attribute for accessible title, especially when
+ℹ️ Don’t forget to add the `aria-label` attribute for accessible title, especially when
 using an abbreviation. The `aria-hidden` attribute is set on the text span, because the `aria-label`
 attribute is set on the container and the abbreviation is not useful for screen readers.
 

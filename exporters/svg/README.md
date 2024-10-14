@@ -18,7 +18,7 @@ This behavior can be fully customized by simply modifying the path generation te
 
 ## Installing
 
-In order to make the Supernova SVG Asset exporter available for your organization so you can start generating code from your design system, please follow the installation guide in our [developer documentation](https://developers.supernova.io/using-exporters/installing-exporters).
+To make the Supernova SVG Asset exporter available for your organization so you can start generating code from your design system, please follow the installation guide in our [developer documentation](https://developers.supernova.io/using-exporters/installing-exporters).
 
 ## Useful Links
 

@@ -66,7 +66,7 @@ the state of the form and closing the dialog.
 
 ### Dropdowns in Modal
 
-Dropdowns can be safely used inside **non-scrollable** Modals so that the Dropdown popover is not clipped by the Modal's
+Dropdowns can be safely used inside **non-scrollable** Modals so that the Dropdown popover is not clipped by the Modal’s
 boundaries.
 
 👉 See the [Scrolling Long Content](#scrolling-long-content) section for more information on scroll control of Modals.
@@ -121,7 +121,7 @@ and allows users to easily close it.
 
 ### Hidden Title
 
-Even in cases you don't need the title to be visible you should provide an accessible name for the dialog, e.g. using
+Even in cases you don’t need the title to be visible you should provide an accessible name for the dialog, for example using
 the `aria-label` attribute on the `<dialog>` element:
 
 ```html
@@ -204,7 +204,7 @@ accordingly:
 
 ## Opening the Modal
 
-Use our JavaScript plugin to open your Modal, e.g.:
+Use our JavaScript plugin to open your Modal, for example:
 
 ```html
 <button
@@ -232,7 +232,7 @@ You can still close modal with close buttons or ESC key.
 
 ## Scrolling Long Content
 
-In case the content is longer than user's viewport or device, the ModalBody will expand to fit the height of its content
+In case the content is longer than user’s viewport or device, the ModalBody will expand to fit the height of its content
 and the whole ModalDialog will scroll.
 
 ### Enable Scrolling Inside ModalDialog
@@ -248,7 +248,7 @@ Scrolling inside ModalDialog can be turned on by adding the `ModalDialog--scroll
 ### Scrolling with ScrollView
 
 Additionally, you can wrap the ModalBody content in a [ScrollView][scroll-view] to take over the responsibility for
-scrolling, e.g.:
+scrolling, for example:
 
 ```html
 <article class="ModalDialog ModalDialog--scrollable">
@@ -282,7 +282,7 @@ The custom properties fall back to the previous breakpoint using the mobile-firs
 `--modal-dialog-height-tablet` while leaving `--modal-dialog-height-desktop` unset, the value will be used for
 both tablet and desktop screens.
 
-This is useful for Modals with dynamic content, e.g. a list of items that can be added or removed, or a multistep wizard.
+This is useful for Modals with dynamic content, for example a list of items that can be added or removed, or a multistep wizard.
 
 ```html
 <article
@@ -326,7 +326,7 @@ desktop screens.
 
 ⚠️ This feature is only available for ModalDialogs with the `ModalDialog--scrollable` modifier class.
 
-👉 If a [custom height](#custom-height) is set, the custom max height is only applied if it's smaller than the custom
+👉 If a [custom height](#custom-height) is set, the custom max height is only applied if it’s smaller than the custom
 height.
 
 ## Stacking Modals

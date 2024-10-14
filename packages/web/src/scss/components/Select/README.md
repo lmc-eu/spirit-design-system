@@ -64,7 +64,7 @@ Use the `option` with no value and the `selected` attribute. This
 creates a placeholder in the selection list.
 
 If you must fill out the selection list, also use the `disabled`
-attribute for the placeholder. This way, the form can't be sent
+attribute for the placeholder. This way, the form can’t be sent
 until the user picks a real option, not the placeholder. This makes
 sure users give all needed details before sending the form.
 

@@ -138,7 +138,7 @@ import { AccordionOpenStateType } from '@lmc-eu/spirit-web-react/types';
 
 | Name          | Type                              | Default   | Required | Description                                      |
 | ------------- | --------------------------------- | --------- | -------- | ------------------------------------------------ |
-| `children`    | `ReactNode`                       | —         | ✓        | Accordion children's nodes                       |
+| `children`    | `ReactNode`                       | —         | ✓        | Accordion children’s nodes                       |
 | `elementType` | [`section` \| `article` \| `div`] | `section` | ✕        | Type of element used as wrapper                  |
 | `open`        | [`string` \| `string[]`]          | —         | ✕        | Open item or list of open items \*               |
 | `toggle`      | `(id: string) => void`            | —         | ✕        | A generic handler for a single **AccordionItem** |
@@ -153,7 +153,7 @@ and [escape hatches][readme-escape-hatches].
 
 | Name          | Type                              | Default   | Required | Description                                    |
 | ------------- | --------------------------------- | --------- | -------- | ---------------------------------------------- |
-| `children`    | `ReactNode`                       | —         | ✓        | Accordion children's nodes                     |
+| `children`    | `ReactNode`                       | —         | ✓        | Accordion children’s nodes                     |
 | `defaultOpen` | [`string` \| `string[]`]          | —         | ✕        | Default open item(s) \*                        |
 | `elementType` | [`section` \| `article` \| `div`] | `section` | ✕        | Type of element used as wrapper                |
 | `stayOpen`    | `bool`                            | —         | ✕        | Item stay open when another one is also opened |
@@ -170,7 +170,7 @@ and [escape hatches][readme-escape-hatches].
 | ------------- | --------------------------------- | --------- | -------- | ----------------------------------------------- |
 | `children`    | `ReactNode`                       | —         | ✓        | Item children node                              |
 | `elementType` | [`article` \| `section` \| `div`] | `article` | ✕        | Type of element used as wrapper for single item |
-| `id`          | `string`                          | —         | ✓        | Item id                                         |
+| `id`          | `string`                          | —         | ✓        | Item ID                                         |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

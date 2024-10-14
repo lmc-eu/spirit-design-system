@@ -40,7 +40,7 @@ alignment API consistency.
 
 ## Responsive Direction
 
-To create a responsive layout, use the `tablet` and `desktop` infixes, e.g. `Flex--tablet--row` or `Flex--desktop--column`.
+To create a responsive layout, use the `tablet` and `desktop` infixes, for example `Flex--tablet--row` or `Flex--desktop--column`.
 
 ```html
 <div class="Flex Flex--column Flex--tablet--row Flex--noWrap Flex--alignmentXStretch Flex--alignmentYStretch">
@@ -65,7 +65,7 @@ By default, Flex items will not wrap (the `Flex--noWrap` modifier). To enable wr
 
 ### Responsive Wrapping
 
-To create a responsive layout, use the `tablet` and `desktop` infixes, e.g. `Flex--tablet--wrap` or `Flex--desktop--wrap`.
+To create a responsive layout, use the `tablet` and `desktop` infixes, for example `Flex--tablet--wrap` or `Flex--desktop--wrap`.
 
 ```html
 <div
@@ -123,7 +123,7 @@ Example:
 
 ### Responsive Alignment
 
-To create a responsive layout, use the `tablet` and `desktop` infixes, e.g. `Flex--tablet--alignmentXRight` or
+To create a responsive layout, use the `tablet` and `desktop` infixes, for example `Flex--tablet--alignmentXRight` or
 `Flex--desktop--alignmentYBaseline`.
 
 Example:
@@ -149,7 +149,7 @@ Example:
 ## Custom Spacing
 
 Use CSS custom properties to define custom spacing between items. Set the `--flex-spacing` property to one of the
-spacing token values defined on the `:root` element, e.g. `--flex-spacing: var(--spirit-space-800)`.
+spacing token values defined on the `:root` element, for example `--flex-spacing: var(--spirit-space-800)`.
 This will set the spacing to `var(--spirit-space-800)` for all breakpoints.
 
 ```html
@@ -166,10 +166,10 @@ This will set the spacing to `var(--spirit-space-800)` for all breakpoints.
 ℹ️ We highly discourage from using absolute values like `--flex-spacing: 1rem`. It will work, but you will lose
 the consistency between the spacing and the design tokens.
 
-If you need to set custom spacing from a specific breakpoint, use the `--flex-spacing-{breakpoint}` property,
-e.g. `--flex-spacing-tablet: var(--spirit-space-800)`. The breakpoint value must be one of the breakpoint tokens
-except for the `mobile` breakpoint you don't need the suffix at all. The spacing is set to all larger breakpoints
-automatically if you don't set them explicitly. E.g. if you set only `--flex-spacing-tablet: var(--spirit-space-800)`
+To set custom spacing from a specific breakpoint, use the `--flex-spacing-{breakpoint}` property,
+for example `--flex-spacing-tablet: var(--spirit-space-800)`. The breakpoint value must be one of the breakpoint tokens
+except for the `mobile` breakpoint you don’t need the suffix at all. The spacing is set to all larger breakpoints
+automatically if you don’t set them explicitly. For example if you set only `--flex-spacing-tablet: var(--spirit-space-800)`
 the spacing will be set to `var(--spirit-space-800)` for `tablet` and `desktop` breakpoints while on the `mobile`
 breakpoint the default spacing will be used.
 

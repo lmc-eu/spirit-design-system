@@ -78,7 +78,7 @@ Example:
 Positioning becomes trickier on mobile screens due to the presence of notches, rounded corners, and the virtual
 keyboard. The Toast component tries to find the best position to be visible using the following detection mechanisms:
 
-1. On **devices with rounded displays and/or notches** (e.g. iPhone X and newer), the Toast component is pushed inwards
+1. On **devices with rounded displays and/or notches** (for example iPhone X and newer), the Toast component is pushed inwards
    to avoid the rounded corners. The `viewport-fit="cover"` meta tag is required for this feature to work:
 
    ```html
@@ -130,7 +130,7 @@ set the `isCollapsible` prop to `false`.
 👉 Please note only the _visible_ ToastBar components are scrollable. Collapsed items are not accessible until visible
 items are dismissed.
 
-👉 For the sake of simplicity, the collapsible items limit cannot be configured at the moment.
+👉 For the sake of simplicity, the collapsible items limit cannot be configured now.
 
 ### API
 
@@ -232,7 +232,7 @@ Usage example:
 | `children`     | `ReactNode`                                      | —          | ✓        | Content of the ToastBarLink    |
 | `color`        | [Action Link Color dictionary][dictionary-color] | `inverted` | ✕        | Color of the link              |
 | `elementType`  | `ElementType`                                    | `a`        | ✕        | Type of element used as        |
-| `href`         | `string`                                         | —          | ✕        | ToastBarLink's href attribute  |
+| `href`         | `string`                                         | —          | ✕        | ToastBarLink’s href attribute  |
 | `isDisabled`   | `bool`                                           | `false`    | ✕        | Whether is the link disabled   |
 | `isUnderlined` | `bool`                                           | `true`     | ✕        | Whether is the link underlined |
 | `ref`          | `ForwardedRef<HTMLAnchorElement>`                | —          | ✕        | Link element reference         |
@@ -243,7 +243,7 @@ and [escape hatches][readme-escape-hatches].
 
 👉 **Do not put any important actions** like "Undo" in the ToastBar component (unless there are other means to perform
 said action), as it is very hard (if not impossible) to reach for users with assistive technologies. Read more about
-[Toast accessibility][scott-o-hara-toast] at Scott O'Hara's blog.
+[Toast accessibility][scott-o-hara-toast] at Scott O’Hara's blog.
 
 ### Colors
 
@@ -262,7 +262,7 @@ import { ToastBarMessage } from '@lmc-eu/spirit-web-react/components';
 
 ### Opening the ToastBar
 
-Set `isOpen` prop to `true` to open a Toast **that is present in the DOM,** e.g.:
+Set `isOpen` prop to `true` to open a Toast **that is present in the DOM,** for example:
 
 ```jsx
 <ToastBar id="my-toast" isOpen>

@@ -3,7 +3,7 @@
 ## Usage
 
 To make scrolling and scroll overflow decorators function correctly, the parent
-container's height must be limited. In our examples, we set this height
+container’s height must be limited. In our examples, we set this height
 limit using inline styles for demonstration purposes only.
 
 ### Default (Vertical)
@@ -67,7 +67,7 @@ Or both:
 
 | Name                  | Type                               | Default    | Required | Description                        |
 | --------------------- | ---------------------------------- | ---------- | -------- | ---------------------------------- |
-| `children`            | `ReactNode`                        | —          | ✓        | ScrollView children's nodes        |
+| `children`            | `ReactNode`                        | —          | ✓        | ScrollView children’s nodes        |
 | `direction`           | [`horizontal` \| `vertical`]       | `vertical` | ✕        | Direction of the wrapper           |
 | `isScrollbarDisabled` | `bool`                             | `false`    | ✕        | If true, the Scrollbar is disabled |
 | `overflowDecorators`  | [`borders` \| `shadows` \| `both`] | `shadows`  | ✕        | ScrollView overflow decorators     |
