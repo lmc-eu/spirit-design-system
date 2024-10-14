@@ -108,8 +108,12 @@ publish: ## Publish packages to repository, pass the parameter "pkg=" to publish
 else
 publish:
 	@$(eval pkg ?=)
-	@$(eval dist-tag ?= latest)
-	$(PKG_EXECUTE) $(MONOREPO_TOOL) publish dist-tag=$(dist-tag) from-package --yes $(MONOREPO_TOOL_FLAGS)
+	@$(eval dist-tag := $(strip $(dist-tag)))
+  @if [ -n "$(dist-tag)" ]; then \
+    $(PKG_EXECUTE) $(MONOREPO_TOOL) publish dist-tag=$(dist-tag) from-package --yes $(MONOREPO_TOOL_FLAGS); \
+  else \
+    $(PKG_EXECUTE) $(MONOREPO_TOOL) publish from-package --yes $(MONOREPO_TOOL_FLAGS); \
+  fi
 endif
 
 ## —— Miscellaneous 🛠️ ——————————————————————————————————————————————————————————————
