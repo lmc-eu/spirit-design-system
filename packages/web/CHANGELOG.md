@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.5.0"></a>
+
+# [2.5.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@2.4.0...@lmc-eu/spirit-web@2.5.0) (2024-10-14)
+
+### Bug Fixes
+
+- **web:** Use `alt` and `<title>` in `UNSTABLE_PartnerLogo` and `UNSTABLE_ProductLogo` ([8a0f0cc](https://github.com/lmc-eu/spirit-design-system/commit/8a0f0cc))
+
+### Dependencies
+
+- Pin dependencies ([8570d79](https://github.com/lmc-eu/spirit-design-system/commit/8570d79))
+- **repo:** Add missing required dependencies by other packages ([2ae9e26](https://github.com/lmc-eu/spirit-design-system/commit/2ae9e26))
+- **repo:** Switch from deprecated rollup-plugin-terser to @rollup/plugin-terser ([2050811](https://github.com/lmc-eu/spirit-design-system/commit/2050811))
+- Update all non-major dependencies ([97f71bd](https://github.com/lmc-eu/spirit-design-system/commit/97f71bd))
+
+### Features
+
+- **web:** Introduce `Footer` composition [#DS-1419](https://github.com/lmc-eu/spirit-design-system/issues/DS-1419) ([b04f824](https://github.com/lmc-eu/spirit-design-system/commit/b04f824))
+- **web:** Update demo for footer component ([c9d35e3](https://github.com/lmc-eu/spirit-design-system/commit/c9d35e3))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="2.4.0"></a>
 
 # [2.4.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@2.3.0...@lmc-eu/spirit-web@2.4.0) (2024-09-09)

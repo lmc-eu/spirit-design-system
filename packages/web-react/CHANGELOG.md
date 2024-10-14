@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.5.0"></a>
+
+# [2.5.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@2.4.0...@lmc-eu/spirit-web-react@2.5.0) (2024-10-14)
+
+### Bug Fixes
+
+- **web-react:** Disable password toggle on TextField [#DS-1478](https://github.com/lmc-eu/spirit-design-system/issues/DS-1478) ([a080d85](https://github.com/lmc-eu/spirit-design-system/commit/a080d85))
+- **web-react:** Export `Flex` component in components index file ([01aa3cf](https://github.com/lmc-eu/spirit-design-system/commit/01aa3cf))
+- **web-react:** FileUploader document object not found when ssr [#DS-1470](https://github.com/lmc-eu/spirit-design-system/issues/DS-1470) ([5516d61](https://github.com/lmc-eu/spirit-design-system/commit/5516d61))
+- **web-react:** Fix `underlined` prop default value name in Link ([bbd6137](https://github.com/lmc-eu/spirit-design-system/commit/bbd6137))
+- **web-react:** Use `alt` and `<title>` in `UNSTABLE_PartnerLogo` and `UNSTABLE_ProductLogo` ([4ab9f62](https://github.com/lmc-eu/spirit-design-system/commit/4ab9f62))
+- **web-react:** Use Resize Observer hook with better handling of window object ([fb39034](https://github.com/lmc-eu/spirit-design-system/commit/fb39034)), closes [#DS-1465](https://github.com/lmc-eu/spirit-design-system/issues/DS-1465)
+
+### Chores
+
+- **web-react:** Remove already ignored resolution field ([7af090c](https://github.com/lmc-eu/spirit-design-system/commit/7af090c))
+
+### Dependencies
+
+- Pin dependencies ([8570d79](https://github.com/lmc-eu/spirit-design-system/commit/8570d79))
+- **repo:** Add missing required dependencies by other packages ([2ae9e26](https://github.com/lmc-eu/spirit-design-system/commit/2ae9e26))
+- **repo:** Remove resolution for the React types and downgrade types for React and Node ([276c7b3](https://github.com/lmc-eu/spirit-design-system/commit/276c7b3))
+- **repo:** Switch from deprecated rollup-plugin-terser to @rollup/plugin-terser ([2050811](https://github.com/lmc-eu/spirit-design-system/commit/2050811))
+- Update all non-major dependencies ([529be6a](https://github.com/lmc-eu/spirit-design-system/commit/529be6a))
+- Update all non-major dependencies ([97f71bd](https://github.com/lmc-eu/spirit-design-system/commit/97f71bd))
+
+### Features
+
+- **web-react:** Introduce Footer component [#DS-1368](https://github.com/lmc-eu/spirit-design-system/issues/DS-1368) ([68b693f](https://github.com/lmc-eu/spirit-design-system/commit/68b693f))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="2.4.0"></a>
 
 # [2.4.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@2.3.0...@lmc-eu/spirit-web-react@2.4.0) (2024-09-09)

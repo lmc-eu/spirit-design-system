@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.1"></a>
+
+## [1.1.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@1.1.0...@lmc-eu/spirit-codemods@1.1.1) (2024-10-14)
+
+### Dependencies
+
+- Pin dependencies ([8570d79](https://github.com/lmc-eu/spirit-design-system/commit/8570d79))
+- **repo:** Add missing required dependencies by other packages ([2ae9e26](https://github.com/lmc-eu/spirit-design-system/commit/2ae9e26))
+- Update all non-major dependencies ([97f71bd](https://github.com/lmc-eu/spirit-design-system/commit/97f71bd))
+
+**Note:** Version bump only for package @lmc-eu/spirit-codemods
+
 <a name="1.1.0"></a>
 
 # [1.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@1.0.2...@lmc-eu/spirit-codemods@1.1.0) (2024-09-09)

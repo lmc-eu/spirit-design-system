@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.0.7"></a>
+
+## [0.0.7](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo-app@0.0.6...@lmc-eu/spirit-demo-app@0.0.7) (2024-10-14)
+
+### Dependencies
+
+- Pin dependencies ([8570d79](https://github.com/lmc-eu/spirit-design-system/commit/8570d79))
+- **repo:** Add missing required dependencies by other packages ([2ae9e26](https://github.com/lmc-eu/spirit-design-system/commit/2ae9e26))
+- **repo:** Switch from deprecated rollup-plugin-terser to @rollup/plugin-terser ([2050811](https://github.com/lmc-eu/spirit-design-system/commit/2050811))
+- Update all non-major dependencies ([97f71bd](https://github.com/lmc-eu/spirit-design-system/commit/97f71bd))
+- Update all non-major dependencies ([ec96d80](https://github.com/lmc-eu/spirit-design-system/commit/ec96d80))
+- Update all non-major dependencies ([bca6b32](https://github.com/lmc-eu/spirit-design-system/commit/bca6b32))
+
+### Styles
+
+- **demo:** Apply TOML formatting rules ([d0fde3a](https://github.com/lmc-eu/spirit-design-system/commit/d0fde3a))
+
+**Note:** Version bump only for package @lmc-eu/spirit-demo-app
+
 <a name="0.0.6"></a>
 
 ## [0.0.6](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo-app@0.0.5...@lmc-eu/spirit-demo-app@0.0.6) (2024-07-24)

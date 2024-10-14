@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.1.3"></a>
+
+## [0.1.3](https://github.com/lmc-eu/spirit-design-system/compare/prettier-config-spirit@0.1.2...prettier-config-spirit@0.1.3) (2024-10-14)
+
+### Dependencies
+
+- Update all non-major dependencies ([97f71bd](https://github.com/lmc-eu/spirit-design-system/commit/97f71bd))
+
+**Note:** Version bump only for package prettier-config-spirit
+
 <a name="0.1.2"></a>
 
 ## [0.1.2](https://github.com/lmc-eu/spirit-design-system/compare/prettier-config-spirit@0.1.1...prettier-config-spirit@0.1.2) (2024-09-09)

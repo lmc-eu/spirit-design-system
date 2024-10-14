@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.0.7"></a>
+
+## [0.0.7](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-storybook@0.0.6...@lmc-eu/spirit-storybook@0.0.7) (2024-10-14)
+
+### Chores
+
+- **storybook:** Allow cross origin request to Storybook app ([439f553](https://github.com/lmc-eu/spirit-design-system/commit/439f553))
+
+### Dependencies
+
+- Update all non-major dependencies ([97f71bd](https://github.com/lmc-eu/spirit-design-system/commit/97f71bd))
+- Update all non-major dependencies ([bca6b32](https://github.com/lmc-eu/spirit-design-system/commit/bca6b32))
+- Update monorepo:storybook to v8.2.9 ([457349c](https://github.com/lmc-eu/spirit-design-system/commit/457349c))
+- Update monorepo:storybook to v8.3.0 ([186261a](https://github.com/lmc-eu/spirit-design-system/commit/186261a))
+- Update monorepo:storybook to v8.3.2 ([7903f3c](https://github.com/lmc-eu/spirit-design-system/commit/7903f3c))
+- Update monorepo:storybook to v8.3.4 ([f2a263b](https://github.com/lmc-eu/spirit-design-system/commit/f2a263b))
+
+**Note:** Version bump only for package @lmc-eu/spirit-storybook
+
 <a name="0.0.6"></a>
 
 ## [0.0.6](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-storybook@0.0.5...@lmc-eu/spirit-storybook@0.0.6) (2024-07-24)

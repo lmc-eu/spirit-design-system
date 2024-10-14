@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.1.1"></a>
+
+## [2.1.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@2.1.0...@lmc-eu/spirit-design-tokens@2.1.1) (2024-10-14)
+
+### Bug Fixes
+
+- **design-tokens:** Fix eslint configuration [#DS-1503](https://github.com/lmc-eu/spirit-design-system/issues/DS-1503) ([dd91257](https://github.com/lmc-eu/spirit-design-system/commit/dd91257))
+
+### Dependencies
+
+- Update all non-major dependencies ([97f71bd](https://github.com/lmc-eu/spirit-design-system/commit/97f71bd))
+
+**Note:** Version bump only for package @lmc-eu/spirit-design-tokens
+
 <a name="2.1.0"></a>
 
 # [2.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@2.0.3...@lmc-eu/spirit-design-tokens@2.1.0) (2024-09-09)

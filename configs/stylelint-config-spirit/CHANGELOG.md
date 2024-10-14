@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.1.3"></a>
+
+## [0.1.3](https://github.com/lmc-eu/spirit-design-system/compare/stylelint-config-spirit@0.1.2...stylelint-config-spirit@0.1.3) (2024-10-14)
+
+### Dependencies
+
+- **repo:** Add missing required dependencies by other packages ([2ae9e26](https://github.com/lmc-eu/spirit-design-system/commit/2ae9e26))
+- Update all non-major dependencies ([97f71bd](https://github.com/lmc-eu/spirit-design-system/commit/97f71bd))
+
+**Note:** Version bump only for package stylelint-config-spirit
+
 <a name="0.1.2"></a>
 
 ## [0.1.2](https://github.com/lmc-eu/spirit-design-system/compare/stylelint-config-spirit@0.1.1...stylelint-config-spirit@0.1.2) (2024-09-09)

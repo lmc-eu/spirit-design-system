@@ -3558,7 +3558,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@lmc-eu/spirit-common@npm:^0.3.5, @lmc-eu/spirit-common@workspace:packages/common":
+"@lmc-eu/spirit-common@npm:^0.3.6, @lmc-eu/spirit-common@workspace:packages/common":
   version: 0.0.0-use.local
   resolution: "@lmc-eu/spirit-common@workspace:packages/common"
   dependencies:
@@ -3594,7 +3594,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@lmc-eu/spirit-design-tokens@npm:^2.1.0, @lmc-eu/spirit-design-tokens@workspace:^, @lmc-eu/spirit-design-tokens@workspace:packages/design-tokens":
+"@lmc-eu/spirit-design-tokens@npm:^2.1.1, @lmc-eu/spirit-design-tokens@workspace:^, @lmc-eu/spirit-design-tokens@workspace:packages/design-tokens":
   version: 0.0.0-use.local
   resolution: "@lmc-eu/spirit-design-tokens@workspace:packages/design-tokens"
   dependencies:
@@ -3707,10 +3707,10 @@ __metadata:
     "@lmc-eu/eslint-config-jest": "npm:3.0.5"
     "@lmc-eu/eslint-config-react": "npm:2.0.5"
     "@lmc-eu/eslint-config-typescript": "npm:2.1.4"
-    "@lmc-eu/spirit-common": "npm:^0.3.5"
+    "@lmc-eu/spirit-common": "npm:^0.3.6"
     "@lmc-eu/spirit-demo": "npm:^0.1.3"
-    "@lmc-eu/spirit-design-tokens": "npm:^2.1.0"
-    "@lmc-eu/spirit-web": "npm:^2.4.0"
+    "@lmc-eu/spirit-design-tokens": "npm:^2.1.1"
+    "@lmc-eu/spirit-web": "npm:^2.5.0"
     "@rollup/plugin-node-resolve": "npm:15.2.3"
     "@rollup/plugin-terser": "npm:0.4.4"
     "@testing-library/dom": "npm:10.4.0"
@@ -3773,16 +3773,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@lmc-eu/spirit-web@npm:^2.4.0, @lmc-eu/spirit-web@workspace:^, @lmc-eu/spirit-web@workspace:packages/web":
+"@lmc-eu/spirit-web@npm:^2.5.0, @lmc-eu/spirit-web@workspace:^, @lmc-eu/spirit-web@workspace:packages/web":
   version: 0.0.0-use.local
   resolution: "@lmc-eu/spirit-web@workspace:packages/web"
   dependencies:
     "@csstools/normalize.css": "npm:^12.0.0"
     "@floating-ui/dom": "npm:^1.5.3"
     "@lmc-eu/browserslist-config": "npm:2.0.1"
-    "@lmc-eu/spirit-common": "npm:^0.3.5"
+    "@lmc-eu/spirit-common": "npm:^0.3.6"
     "@lmc-eu/spirit-demo": "npm:^0.1.3"
-    "@lmc-eu/spirit-design-tokens": "npm:^2.1.0"
+    "@lmc-eu/spirit-design-tokens": "npm:^2.1.1"
     "@lmc-eu/spirit-icons": "npm:^0.10.2"
     "@rollup/plugin-terser": "npm:0.4.4"
     "@rollup/plugin-typescript": "npm:11.1.6"

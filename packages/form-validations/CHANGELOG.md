@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.4"></a>
+
+## [2.0.4](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@2.0.3...@lmc-eu/spirit-form-validations@2.0.4) (2024-10-14)
+
+### Bug Fixes
+
+- **form-validations:** Fix form IDs in form-validations demo ([dbd2d5d](https://github.com/lmc-eu/spirit-design-system/commit/dbd2d5d))
+
+### Dependencies
+
+- Update all non-major dependencies ([97f71bd](https://github.com/lmc-eu/spirit-design-system/commit/97f71bd))
+- Update all non-major dependencies ([bca6b32](https://github.com/lmc-eu/spirit-design-system/commit/bca6b32))
+
+**Note:** Version bump only for package @lmc-eu/spirit-form-validations
+
 <a name="2.0.3"></a>
 
 ## [2.0.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@2.0.2...@lmc-eu/spirit-form-validations@2.0.3) (2024-07-24)
