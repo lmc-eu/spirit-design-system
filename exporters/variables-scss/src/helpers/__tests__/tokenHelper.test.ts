@@ -139,7 +139,7 @@ describe('tokenHelper', () => {
 
   describe('addAngleVarToGradient', () => {
     it('should add angle variable to gradient', () => {
-      const inputString = 'linear-gradient(0deg, #000 0%, #fff 100%)';
+      const inputString = 'linear-gradient(90deg, #000 0%, #fff 100%)';
       const expectedOutput = 'linear-gradient(var(--gradient-angle, 90deg), #000 0%, #fff 100%)';
 
       const result = addAngleVarToGradient(inputString);
