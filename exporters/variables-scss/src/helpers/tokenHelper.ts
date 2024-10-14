@@ -109,7 +109,7 @@ export const addAngleVarToGradient = (inputString: string): string => {
 
   if (match) {
     const angle = match[1].trim(); // Extract the angle
-    const angleValue = Number(angle.match(/\d+/)) + 90; // Normalize angle and add 90 degrees
+    const angleValue = Number(angle.match(/\d+/));
     const angleUnit = angle.match(/deg/);
     const colorStops = match[2].trim(); // Extract the rest (color stops)
     const cssAngleVar = '--gradient-angle';
