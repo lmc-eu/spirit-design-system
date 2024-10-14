@@ -24476,7 +24476,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier-plugin-toml@npm:^2.0.1":
+"prettier-plugin-toml@npm:2.0.1":
   version: 2.0.1
   resolution: "prettier-plugin-toml@npm:2.0.1"
   dependencies:
@@ -27759,7 +27759,7 @@ __metadata:
     postcss: "npm:8.4.47"
     prettier: "npm:3.3.3"
     prettier-config-spirit: "workspace:^"
-    prettier-plugin-toml: "npm:^2.0.1"
+    prettier-plugin-toml: "npm:2.0.1"
     react: "npm:18.3.1"
     react-dom: "npm:18.3.1"
     react-syntax-highlighter: "npm:15.5.0"
