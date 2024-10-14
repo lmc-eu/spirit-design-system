@@ -1,6 +1,6 @@
 # Executables (local)
 PKG_MANAGER   = yarn
-PKG_EXECUTE   = npx
+PKG_EXECUTE   = yarn dlx
 MONOREPO_TOOL = lerna
 
 # Flags
