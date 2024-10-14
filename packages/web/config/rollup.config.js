@@ -19,12 +19,6 @@ const plugins = [
     // Include the helpers in the bundle, at most one copy of each
     babelHelpers: 'bundled',
   }),
-  typescript({
-    target: 'es6',
-    compilerOptions: { rootDir: './src' },
-    exclude: ['**/__tests__', '**/*.test.ts'],
-    declaration: false,
-  }),
 ];
 
 if (BUNDLE) {
@@ -39,6 +33,18 @@ if (BUNDLE) {
     nodeResolve(),
   );
 }
+
+plugins.push(
+  typescript({
+    target: 'es6',
+    compilerOptions: {
+      rootDir: './src',
+      outDir: path.resolve(__dirname, `../dist/js/${fileDirectory}`),
+    },
+    exclude: ['**/__tests__', '**/*.test.ts'],
+    declaration: false,
+  }),
+);
 
 const filePath = `../dist/js/${fileDirectory}/${fileDestination}`;
 const format = ESM ? 'esm' : 'umd';
