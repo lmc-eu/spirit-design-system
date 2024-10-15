@@ -195,7 +195,7 @@ class Toast extends BaseComponent {
     if (linkContent) {
       const linkElementWithType = document.createElement(linkProps.elementType || 'a');
       linkElement.replaceWith(linkElementWithType);
-      const isUnderlined = linkProps.isUnderlined !== undefined ? linkProps.isUnderlined : true;
+      const isUnderlined = linkProps.isUnderlined != null ? linkProps.isUnderlined : true;
 
       linkElementWithType.classList.add('ToastBar__link');
       if (isUnderlined) {
