@@ -44,6 +44,6 @@
     "stylelint-config-spirit": "workspace:^",
     "typescript": "5.6.2",
     "vite": "5.4.9",
-    "vite-plugin-dts": "3.9.1"
+    "vite-plugin-dts": "4.2.4"
   }
 }
