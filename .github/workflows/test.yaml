@@ -43,7 +43,7 @@ jobs:
   lint:
     name: 📐 Code Linting
     needs: [install-build]
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     env:
       HUSKY: 0
@@ -65,7 +65,7 @@ jobs:
   unit-tests:
     name: 🧪 Unit Testing
     needs: [install-build]
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     env:
       HUSKY: 0
@@ -118,7 +118,7 @@ jobs:
 
   format:
     name: 💅 Code Formatting
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     env:
       HUSKY: 0
@@ -136,7 +136,7 @@ jobs:
   types:
     name: 📘 Type Checking
     needs: [install-build]
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     env:
       HUSKY: 0
