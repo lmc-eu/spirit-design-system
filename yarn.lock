@@ -40,7 +40,7 @@ __metadata:
     next: "npm:14.2.15"
     react: "npm:^18"
     react-dom: "npm:^18"
-    typescript: "npm:4.9.5"
+    typescript: "npm:5.6.3"
   languageName: unknown
   linkType: soft
 
@@ -64,7 +64,7 @@ __metadata:
     next: "npm:14.2.15"
     react: "npm:^18"
     react-dom: "npm:^18"
-    typescript: "npm:4.9.5"
+    typescript: "npm:5.6.3"
   languageName: unknown
   linkType: soft
 
