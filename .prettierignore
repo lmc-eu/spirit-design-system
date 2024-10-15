@@ -79,3 +79,6 @@ CODEOWNERS
 
 # tokens exporter generated cjs
 exporters/tokens/generated/**/*.cjs
+
+# exporter proprietary files
+*.pr
