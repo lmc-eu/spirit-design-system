@@ -32,6 +32,14 @@ We've removed this default to encourage developers to explicitly choose a more a
 
 - `<Heading … />` → `<Heading elementType="{/* Your semantic HTML element here */}" … />`
 
+### Link `isUnderlined`
+
+The `isUnderlined` property was removed, please use `underlined` instead.
+
+#### Migration Guide
+
+- `<Link isUnderlined … />` → `<Link underlined="always" … />`
+
 ---
 
 Please refer back to this guide or reach out to our team if you encounter any issues during migration.
