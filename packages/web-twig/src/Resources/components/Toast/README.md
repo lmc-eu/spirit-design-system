@@ -370,7 +370,7 @@ const toast = new Toast(null, {
   linkProps: {
     href: 'https://example.com', // Link URL
     target: '_blank', // Optional link target attribute
-    isUnderlined: false, // Optional link underlining, default: true
+    underlined: 'never', // Optional link underlining, one of ['always' (default), 'hover', 'never']
     isDisabled: false, // Optional link disabling, default: false
     elementType: 'a', // Optional link element type, default: 'a'
   },
