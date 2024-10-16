@@ -13,6 +13,7 @@ export const CLASS_NAME_OPEN = 'is-open';
 export const CLASS_NAME_TRANSITIONING = 'is-transitioning';
 export const CLASS_NAME_VISIBLE = 'is-visible';
 export const CLASS_NAME_LINK_UNDERLINED = 'link-underlined';
+export const CLASS_NAME_LINK_NOT_UNDERLINED = 'link-not-underlined';
 export const CLASS_NAME_LINK_DISABLED = 'link-disabled';
 
 export const DEFAULT_TOAST_AUTO_CLOSE_INTERVAL = 3000; // milliseconds
