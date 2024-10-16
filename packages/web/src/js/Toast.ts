@@ -14,6 +14,7 @@ import {
   CLASS_NAME_TRANSITIONING,
   CLASS_NAME_VISIBLE,
   DEFAULT_TOAST_AUTO_CLOSE_INTERVAL,
+  CLASS_NAME_LINK_NOT_UNDERLINED,
 } from './constants';
 import { EventHandler, SelectorEngine } from './dom';
 import { enableDismissTrigger, enableToggleTrigger, executeAfterTransition, SpiritConfig } from './utils';
@@ -35,6 +36,12 @@ const COLOR_ICON_MAP = {
   warning: 'warning',
 };
 
+const UNDERLINE_MAP = {
+  hover: 'hover',
+  always: 'always',
+  never: 'never',
+};
+
 const SELECTOR_QUEUE_ELEMENT = `[${ATTRIBUTE_DATA_ELEMENT}="toast-queue"]`;
 const SELECTOR_TEMPLATE_ELEMENT = `[${ATTRIBUTE_DATA_SNIPPET}="item"]`;
 const SELECTOR_ITEM_ELEMENT = `[${ATTRIBUTE_DATA_POPULATE_FIELD}="item"]`;
@@ -52,6 +59,7 @@ export const PROPERTY_NAME_SLOWEST_TRANSITION = {
 const PROPERTY_NAME_FALLBACK_TRANSITION = 'opacity';
 
 type Color = keyof typeof COLOR_ICON_MAP;
+type Underlined = keyof typeof UNDERLINE_MAP;
 
 type Config = {
   autoCloseInterval: number;
@@ -66,7 +74,7 @@ type Config = {
     elementType: string;
     href: string;
     isDisabled: boolean;
-    isUnderlined: boolean;
+    underlined: Underlined;
     target: '_blank' | '_self' | '_parent' | '_top';
   };
   hasIcon: boolean;
@@ -195,11 +203,14 @@ class Toast extends BaseComponent {
     if (linkContent) {
       const linkElementWithType = document.createElement(linkProps.elementType || 'a');
       linkElement.replaceWith(linkElementWithType);
-      const isUnderlined = linkProps.isUnderlined != null ? linkProps.isUnderlined : true;
+      const { underlined = UNDERLINE_MAP.always } = linkProps;
 
       linkElementWithType.classList.add('ToastBar__link');
-      if (isUnderlined) {
+      if (underlined === UNDERLINE_MAP.always) {
         linkElementWithType.classList.add(CLASS_NAME_LINK_UNDERLINED);
+      }
+      if (underlined === UNDERLINE_MAP.never) {
+        linkElementWithType.classList.add(CLASS_NAME_LINK_NOT_UNDERLINED);
       }
       if (linkProps.isDisabled) {
         linkElementWithType.classList.add(CLASS_NAME_LINK_DISABLED);
