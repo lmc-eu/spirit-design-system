@@ -19,8 +19,8 @@ However, this approach has several drawbacks:
 3. **Manual composition**: In a larger inverted composition, all components need to be switched to the inverted variant
    manually.
 4. **Dark mode (un)readiness**: The concept of the inverted tokens and component variants is not flexible enough to
-   support a dark mode. The name "inverted" is too specific and does not work for a dark mode where the inversion cannot
-   be really applied.
+   support a dark mode. The name "inverted" is too specific and does not work for a dark mode where, from the design
+   point of view, the inversion cannot be really applied.
 
 ## Decision
 
@@ -44,11 +44,12 @@ tokens will now be used in the design system and the inverted tokens will be rem
 
 ### Components Migration
 
-All inverted tokens and component variants will be removed. All inverted component variants need to be replaced either
-with the new neutral tokens or with the new themes.
+All components will be updated to use the new design tokens structure. All inverted component variants will need to be
+replaced either with the new neutral variant or with the new themes.
 
 ### Unlimited Theming
 
-As a result, the design system is now more flexible and can support a dark mode in the future. Also, product designers
-can create new themes that can be easily applied throughout the design system, for example a high-contrast theme or a
-theme for colored sections.
+As a result, the design system will be more flexible and able to support a dark mode in the future. Also, product
+designers will be able to create new themes that can be easily applied throughout the design system, for example a
+high-contrast theme or a theme for colored sections. In theory, the number of themes is unlimited, and it's mostly a
+question of the design tool capabilities.
