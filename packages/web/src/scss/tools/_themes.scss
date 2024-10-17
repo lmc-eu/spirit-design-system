@@ -13,15 +13,15 @@
     $is-default-theme: true;
 
     @each $key, $value in $themes {
-        $selector: if($is-default-theme, ':root, .#{globals.$prefix}#{$key}', '.#{globals.$prefix}#{$key}');
+        $selector: if($is-default-theme, ':root, .#{$key}', '.#{$key}');
 
         #{$selector} {
             @each $token-type-key, $token-type-value in $value {
                 $token-type-name: string-tools.singularize($token-type-key);
 
                 @include tokens-tools.generate-css-variables(
-                    $token-type-value,
-                    '#{globals.$prefix}#{$token-type-name}'
+                    $map: $token-type-value,
+                    $prefix: '#{global-tokens.$token-prefix}#{$token-type-name}'
                 );
             }
 
