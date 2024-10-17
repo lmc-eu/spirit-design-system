@@ -35,19 +35,19 @@ $test-themes: (
 
             @include test.expect() {
                 :root,
-                .spirit-theme-light-default {
+                .theme-light-default {
                     --spirit-color-action-button-active: #fff;
                 }
 
-                :where(:root, .spirit-theme-light-default) {
+                :where(:root, .theme-light-default) {
                     color: var(--spirit-color-text-primary);
                 }
 
-                .spirit-theme-light-on-brand {
+                .theme-light-on-brand {
                     --spirit-color-action-button-active: #000;
                 }
 
-                :where(.spirit-theme-light-on-brand) {
+                :where(.theme-light-on-brand) {
                     color: var(--spirit-color-text-primary);
                 }
             }

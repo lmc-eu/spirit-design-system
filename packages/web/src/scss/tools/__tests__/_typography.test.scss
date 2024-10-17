@@ -1,7 +1,7 @@
 @use 'sass:map';
 @use 'true' as test;
 @use '../typography';
-@use '@global' as global-tokens;
+@use '@global-tokens' as global-tokens;
 
 @include test.describe('generate mixin') {
     @include test.it('should generate typography styles for a given token and breakpoint') {

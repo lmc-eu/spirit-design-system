@@ -1,6 +1,5 @@
 @use 'sass:meta';
-@use '@global' as global-tokens;
-@use '../settings/globals';
+@use '@global-tokens' as global-tokens;
 @use '../tools/tokens';
 
 $tokens: (
@@ -21,6 +20,6 @@ $tokens: (
     --spirit-border-width-200: #{global-tokens.$border-width-200};
 
     @each $key, $value in $tokens {
-        @include tokens.generate-css-variables($value, globals.$prefix + $key);
+        @include tokens.generate-css-variables($map: $value, $prefix: '#{global-tokens.$token-prefix}#{$key}');
     }
 }

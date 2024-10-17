@@ -1,5 +1,4 @@
-@use '@global' as global-tokens;
-@use '../../settings/globals';
+@use '@global-tokens' as global-tokens;
 @use '../../settings/transitions';
 
 $breakpoints: global-tokens.$breakpoints;
@@ -11,7 +10,7 @@ $transition-duration: transitions.$duration-200;
 $transition-scale-ratio: transitions.$scale-ratio-large-objects;
 $transition-shift-distance: transitions.$shift-distance-medium;
 
-$backdrop-background-color: var(--#{globals.$prefix}color-background-backdrop);
+$backdrop-background-color: var(--#{global-tokens.$token-prefix}color-background-backdrop);
 
 $common-padding-x: global-tokens.$space-900;
 $common-padding-x-tablet: global-tokens.$space-1000;
@@ -21,9 +20,9 @@ $dialog-width: 640px;
 $dialog-width-desktop: 680px;
 $dialog-height: auto;
 $dialog-max-height: none;
-$dialog-text-color: var(--#{globals.$prefix}color-text-primary);
+$dialog-text-color: var(--#{global-tokens.$token-prefix}color-text-primary);
 $dialog-border-radius: global-tokens.$radius-300;
-$dialog-background-color: var(--#{globals.$prefix}color-background-primary);
+$dialog-background-color: var(--#{global-tokens.$token-prefix}color-background-primary);
 $dialog-shadow: global-tokens.$shadow-300;
 
 $_dialog-scrollable-default-height: min-content;

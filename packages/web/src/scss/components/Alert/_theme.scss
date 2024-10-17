@@ -1,5 +1,5 @@
 @use 'sass:map';
-@use '@global' as global-tokens;
+@use '@global-tokens' as global-tokens;
 @use '../../settings/dictionaries';
 
 $typography: global-tokens.$body-medium-regular;

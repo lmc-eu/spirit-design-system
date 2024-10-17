@@ -1,53 +1,52 @@
-@use '@global' as global-tokens;
-@use '../settings/globals';
+@use '@global-tokens' as global-tokens;
 
 // Common for all form components
 $input-typography: global-tokens.$body-medium-regular;
-$input-color-disabled: var(--#{globals.$prefix}color-disabled-content);
-$input-background-color: var(--#{globals.$prefix}color-form-field-default);
-$input-background-color-hover: var(--#{globals.$prefix}color-form-field-hover);
-$input-background-color-active: var(--#{globals.$prefix}color-form-field-active);
-$input-background-color-disabled: var(--#{globals.$prefix}color-disabled-background);
-$input-border-color: var(--#{globals.$prefix}color-form-field-border-default);
-$input-border-color-success: var(--#{globals.$prefix}color-form-field-success);
-$input-border-color-warning: var(--#{globals.$prefix}color-form-field-warning);
-$input-border-color-danger: var(--#{globals.$prefix}color-form-field-danger);
-$input-border-color-disabled: var(--#{globals.$prefix}color-disabled-border);
+$input-color-disabled: var(--#{global-tokens.$token-prefix}color-disabled-content);
+$input-background-color: var(--#{global-tokens.$token-prefix}color-form-field-default);
+$input-background-color-hover: var(--#{global-tokens.$token-prefix}color-form-field-hover);
+$input-background-color-active: var(--#{global-tokens.$token-prefix}color-form-field-active);
+$input-background-color-disabled: var(--#{global-tokens.$token-prefix}color-disabled-background);
+$input-border-color: var(--#{global-tokens.$token-prefix}color-form-field-border-default);
+$input-border-color-success: var(--#{global-tokens.$token-prefix}color-form-field-success);
+$input-border-color-warning: var(--#{global-tokens.$token-prefix}color-form-field-warning);
+$input-border-color-danger: var(--#{global-tokens.$token-prefix}color-form-field-danger);
+$input-border-color-disabled: var(--#{global-tokens.$token-prefix}color-disabled-border);
 $input-focus-shadow: global-tokens.$focus;
-$label-color-default: var(--#{globals.$prefix}color-form-field-label);
-$label-color-disabled: var(--#{globals.$prefix}color-disabled-content);
+$label-color-default: var(--#{global-tokens.$token-prefix}color-form-field-label);
+$label-color-disabled: var(--#{global-tokens.$token-prefix}color-disabled-content);
 $label-required-typography: global-tokens.$body-small-regular;
 $label-required-margin-left: global-tokens.$space-200;
-$label-required-color: var(--#{globals.$prefix}color-form-field-danger);
+$label-required-color: var(--#{global-tokens.$token-prefix}color-form-field-danger);
 $validation-text-typography: global-tokens.$body-small-semibold;
 $validation-text-margin-top: global-tokens.$space-400;
-$validation-text-color-disabled: var(--#{globals.$prefix}color-disabled-content);
-$validation-text-color-success: var(--#{globals.$prefix}color-form-field-success);
-$validation-text-color-warning: var(--#{globals.$prefix}color-form-field-warning);
-$validation-text-color-danger: var(--#{globals.$prefix}color-form-field-danger);
+$validation-text-color-disabled: var(--#{global-tokens.$token-prefix}color-disabled-content);
+$validation-text-color-success: var(--#{global-tokens.$token-prefix}color-form-field-success);
+$validation-text-color-warning: var(--#{global-tokens.$token-prefix}color-form-field-warning);
+$validation-text-color-danger: var(--#{global-tokens.$token-prefix}color-form-field-danger);
 $helper-text-typography: global-tokens.$body-small-regular;
 $helper-text-margin-top: global-tokens.$space-400;
-$helper-text-color-default: var(--#{globals.$prefix}color-form-field-helper-text);
-$helper-text-color-disabled: var(--#{globals.$prefix}color-disabled-content);
+$helper-text-color-default: var(--#{global-tokens.$token-prefix}color-form-field-helper-text);
+$helper-text-color-disabled: var(--#{global-tokens.$token-prefix}color-disabled-content);
 
 // Inline field form components – Checkbox, Radio, etc.
 $inline-field-gap: global-tokens.$space-500;
 $inline-field-margin-y: global-tokens.$space-500;
-$inline-field-input-border-color-checked: var(--#{globals.$prefix}color-form-field-border-selected);
-$inline-field-input-border-color-checked-disabled: var(--#{globals.$prefix}color-disabled-background);
+$inline-field-input-border-color-checked: var(--#{global-tokens.$token-prefix}color-form-field-border-selected);
+$inline-field-input-border-color-checked-disabled: var(--#{global-tokens.$token-prefix}color-disabled-background);
 $inline-field-input-border-width: global-tokens.$border-width-200;
-$inline-field-input-background-color-checked: var(--#{globals.$prefix}color-selected-default);
+$inline-field-input-background-color-checked: var(--#{global-tokens.$token-prefix}color-selected-default);
 
 // Box field form components – TextField, TextArea, etc.
-$box-field-input-color-default: var(--#{globals.$prefix}color-form-field-content);
+$box-field-input-color-default: var(--#{global-tokens.$token-prefix}color-form-field-content);
 $box-field-input-border-width: global-tokens.$border-width-100;
 $box-field-input-border-style: solid;
-$box-field-input-border-color-focus: var(--#{globals.$prefix}color-border-focus);
+$box-field-input-border-color-focus: var(--#{global-tokens.$token-prefix}color-border-focus);
 $box-field-input-focus-shadow: global-tokens.$focus;
 
 $box-field-input-border-radius: global-tokens.$radius-300;
-$box-field-input-placeholder-color-default: var(--#{globals.$prefix}color-form-field-placeholder);
-$box-field-input-placeholder-color-disabled: var(--#{globals.$prefix}color-disabled-content);
+$box-field-input-placeholder-color-default: var(--#{global-tokens.$token-prefix}color-form-field-placeholder);
+$box-field-input-placeholder-color-disabled: var(--#{global-tokens.$token-prefix}color-disabled-content);
 $box-field-input-padding-x: global-tokens.$space-600;
 $box-field-input-padding-y: calc(#{global-tokens.$space-500} - #{global-tokens.$border-width-100});
 $box-field-input-width: 18rem;
@@ -73,9 +72,9 @@ $validation-states: (
 $item-padding-x: global-tokens.$space-700;
 $item-padding-y: global-tokens.$space-500;
 $item-border-radius: global-tokens.$radius-200;
-$item-background-color-default: var(--#{globals.$prefix}color-background-interactive-default);
-$item-background-color-hover: var(--#{globals.$prefix}color-background-interactive-hover);
-$item-background-color-active: var(--#{globals.$prefix}color-background-interactive-active);
+$item-background-color-default: var(--#{global-tokens.$token-prefix}color-background-interactive-default);
+$item-background-color-hover: var(--#{global-tokens.$token-prefix}color-background-interactive-hover);
+$item-background-color-active: var(--#{global-tokens.$token-prefix}color-background-interactive-active);
 $item-label-typography: global-tokens.$body-medium-semibold;
 $item-validation-text-typography: global-tokens.$body-small-semibold;
 $item-helper-text-typography: global-tokens.$body-small-regular;

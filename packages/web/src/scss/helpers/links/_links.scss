@@ -8,10 +8,9 @@
 // 8. Disable link underline everywhere.
 
 @use 'sass:map';
-@use '@global' as global-tokens;
+@use '@global-tokens' as global-tokens;
 @use '../../settings/cursors';
 @use '../../settings/dictionaries' as dictionaries-settings;
-@use '../../settings/globals';
 @use '../../settings/links' as links-settings;
 @use '../../tools/dictionaries';
 @use '../../tools/links' as links-tools;
@@ -41,7 +40,7 @@
 // stylelint-disable selector-no-qualifying-type -- Increase specificity to override button variant styles.
 :is(.link-disabled, button.link-disabled),
 :is(.link-disabled, button.link-disabled):is(:hover, :focus, :active) {
-    color: var(--#{globals.$prefix}color-disabled-content);
+    color: var(--#{global-tokens.$token-prefix}color-disabled-content);
     cursor: cursors.$disabled;
 }
 
@@ -58,7 +57,7 @@
 
 // 7.
 [class*='typography-heading'] :visited {
-    color: var(--#{globals.$prefix}color-action-link-visited-default);
+    color: var(--#{global-tokens.$token-prefix}color-action-link-visited-default);
 }
 
 // 8.

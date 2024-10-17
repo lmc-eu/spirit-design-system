@@ -1,7 +1,7 @@
 @use 'sass:map';
 @use 'sass:string';
 @use 'breakpoint';
-@use '@global' as global-tokens;
+@use '@global-tokens' as global-tokens;
 
 @mixin generate($token) {
     @each $breakpoint-name, $breakpoint-value in global-tokens.$breakpoints {

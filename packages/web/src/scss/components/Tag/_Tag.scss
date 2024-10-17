@@ -1,25 +1,25 @@
 @use 'sass:map';
-@use '../../settings/globals';
+@use '@global-tokens' as global-tokens;
 @use '../../tools/dictionaries';
 @use '../../tools/typography';
 @use 'theme';
 
 .Tag {
     display: inline-block;
-    padding-inline: var(--#{globals.$prefix}tag-padding-x);
-    padding-block: var(--#{globals.$prefix}tag-padding-y);
+    padding-inline: var(--#{global-tokens.$token-prefix}tag-padding-x);
+    padding-block: var(--#{global-tokens.$token-prefix}tag-padding-y);
     text-align: center;
-    color: var(--#{globals.$prefix}tag-color);
+    color: var(--#{global-tokens.$token-prefix}tag-color);
     border-width: theme.$border-width;
     border-style: theme.$border-style;
-    border-color: var(--#{globals.$prefix}tag-border-color);
+    border-color: var(--#{global-tokens.$token-prefix}tag-border-color);
     border-radius: theme.$border-radius;
-    background-color: var(--#{globals.$prefix}tag-background-color);
+    background-color: var(--#{global-tokens.$token-prefix}tag-background-color);
 }
 
 .Tag--subtle {
-    color: var(--#{globals.$prefix}tag-subtle-color);
-    background-color: var(--#{globals.$prefix}tag-subtle-background-color);
+    color: var(--#{global-tokens.$token-prefix}tag-subtle-color);
+    background-color: var(--#{global-tokens.$token-prefix}tag-subtle-background-color);
 }
 
 @include dictionaries.generate-colors(
