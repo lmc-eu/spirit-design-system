@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "@lmc-eu/eslint-config-typescript": "2.1.4",
-    "@swc/core": "1.7.35",
+    "@swc/core": "1.7.36",
     "@swc/jest": "0.2.36",
     "eslint": "8.57.1",
     "jest": "29.7.0",
