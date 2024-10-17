@@ -1,4 +1,10 @@
-@use 'sass:map';
+// 1. We allow descending specificity order here because we don't want to set the background-image with SVG twice
+//    and therefore bloating the CSS.
+// 2. We need to set the background-color of the non-disabled Checkbox input to initial color when it is hovered
+//    or active, because we need it contrasting with the background color.
+// 3. We need to set the color of the validation text and helper text to inherit when the Item is hovered or active,
+//    because we need it contrasting with the background color.
+
 @use 'theme';
 @use '../../theme/form-fields' as form-fields-theme;
 @use '../../tools/form-fields' as form-fields-tools;
@@ -11,7 +17,7 @@ $_field-name: 'Checkbox';
 }
 
 .Checkbox__text {
-    margin-left: form-fields-theme.$gap;
+    margin-left: form-fields-theme.$inline-field-gap;
 }
 
 .Checkbox__label {
@@ -37,17 +43,20 @@ $_field-name: 'Checkbox';
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+    background-color: form-fields-theme.$input-background-color;
+
+    &:checked,
+    &:indeterminate {
+        border-color: form-fields-theme.$inline-field-input-border-color-checked;
+        background-color: form-fields-theme.$inline-field-input-background-color-checked;
+    }
 
     &:checked {
-        color: form-fields-theme.$inline-field-input-color-checked;
         background-image: svg.escape(theme.$input-checked-mark);
-        background-color: form-fields-theme.$inline-field-input-color-checked;
     }
 
     &:indeterminate {
-        color: form-fields-theme.$inline-field-input-color-checked;
         background-image: svg.escape(theme.$input-indeterminate-mark);
-        background-color: form-fields-theme.$inline-field-input-color-checked;
     }
 }
 
@@ -62,47 +71,12 @@ $_field-name: 'Checkbox';
 
 @include form-fields-tools.input-field-validation-states($_field-name);
 
-.Checkbox--disabled {
-    @include form-fields-tools.inline-field-root-disabled();
-}
-
-.Checkbox--disabled .Checkbox__label {
-    @include form-fields-tools.label-disabled();
-}
-
-.Checkbox--disabled .Checkbox__validationText {
-    @include form-fields-tools.validation-text-disabled();
-}
-
-.Checkbox--disabled .Checkbox__helperText {
-    @include form-fields-tools.helper-text-disabled();
-}
-
-.Checkbox--disabled > .Checkbox__input,
-.Checkbox > .Checkbox__input:disabled {
-    @include form-fields-tools.input-disabled();
-}
-
-.Checkbox--disabled > .Checkbox__input:checked,
-.Checkbox--disabled > .Checkbox__input:indeterminate,
-.Checkbox > .Checkbox__input:disabled:checked,
-.Checkbox > .Checkbox__input:disabled:indeterminate {
-    background-color: form-fields-theme.$input-color-disabled;
-}
-
 .Checkbox--item {
     @include form-fields-tools.item();
-
-    display: flex;
 }
 
-.Checkbox--item.Checkbox--disabled {
-    @include form-fields-tools.item-disabled();
-}
-
-// stylelint-disable-next-line selector-max-class, selector-max-compound-selectors, selector-max-specificity -- We need to override the default styles for the label in Item.
-.Checkbox--item .Checkbox__input:checked ~ .Checkbox__text > .Checkbox__label {
-    @include form-fields-tools.item-label-checked();
+.Checkbox--item .Checkbox__label {
+    @include form-fields-tools.item-label();
 }
 
 .Checkbox--item .Checkbox__validationText {
@@ -113,9 +87,56 @@ $_field-name: 'Checkbox';
     @include form-fields-tools.item-helper-text();
 }
 
-.Checkbox--item:not(.Checkbox--disabled):hover .Checkbox__validationText,
-.Checkbox--item:not(.Checkbox--disabled):active .Checkbox__validationText,
-.Checkbox--item:not(.Checkbox--disabled):hover .Checkbox__helperText,
-.Checkbox--item:not(.Checkbox--disabled):active .Checkbox__helperText {
+.Checkbox--item:is(.Checkbox--disabled, .Checkbox.is-disabled) {
+    @include form-fields-tools.item-disabled();
+}
+
+:is(.Checkbox--disabled, .Checkbox.is-disabled) {
+    @include form-fields-tools.inline-field-root-disabled();
+}
+
+:is(.Checkbox--disabled, .Checkbox.is-disabled) .Checkbox__label {
+    @include form-fields-tools.label-disabled();
+}
+
+:is(.Checkbox--disabled, .Checkbox.is-disabled) .Checkbox__validationText {
+    @include form-fields-tools.validation-text-disabled();
+}
+
+:is(.Checkbox--disabled, .Checkbox.is-disabled) .Checkbox__helperText {
+    @include form-fields-tools.helper-text-disabled();
+}
+
+:is(.Checkbox--disabled, .Checkbox.is-disabled) > .Checkbox__input,
+.Checkbox > .Checkbox__input:disabled {
+    @include form-fields-tools.input-disabled();
+
+    border-color: form-fields-theme.$input-border-color-disabled;
+    background-color: form-fields-theme.$input-background-color-disabled;
+
+    &:checked,
+    &:indeterminate {
+        border-color: form-fields-theme.$inline-field-input-border-color-checked-disabled;
+    }
+
+    &:checked {
+        background-image: svg.escape(theme.$input-checked-mark-disabled);
+    }
+
+    // stylelint-disable-next-line no-descending-specificity -- 1.
+    &:indeterminate {
+        background-image: svg.escape(theme.$input-indeterminate-mark-disabled);
+    }
+}
+
+// stylelint-disable selector-max-specificity -- 2.
+.Checkbox--item:not(.Checkbox--disabled, .Checkbox.is-disabled) .Checkbox__input:is(:hover, :active):not(:checked) {
+    background-color: form-fields-theme.$input-background-color;
+}
+
+// 3.
+.Checkbox--item:not(.Checkbox--disabled, .Checkbox.is-disabled):is(:hover, :active)
+    :is(.Checkbox__helperText, .Checkbox__validationText) {
     color: inherit;
 }
+// stylelint-enable selector-max-specificity

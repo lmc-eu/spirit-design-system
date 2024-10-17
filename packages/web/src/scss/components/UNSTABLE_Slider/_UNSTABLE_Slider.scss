@@ -46,7 +46,7 @@ $_field-name: 'UNSTABLE_Slider';
             --slider-track-background: #{theme.$track-background-hover};
             --slider-track-lower-background: #{theme.$track-lower-background-hover};
             --slider-thumb-border-color: #{theme.$thumb-border-color-hover};
-            --slider-thumb-background-image: #{svg.escape(theme.$thumb-background-image-hover)};
+            --slider-thumb-background-color: #{theme.$thumb-background-color-hover};
             --slider-thumb-box-shadow: #{theme.$thumb-box-shadow-hover};
         }
     }
@@ -55,7 +55,7 @@ $_field-name: 'UNSTABLE_Slider';
         --slider-track-background: #{theme.$track-background-active};
         --slider-track-lower-background: #{theme.$track-lower-background-active};
         --slider-thumb-border-color: #{theme.$thumb-border-color-active};
-        --slider-thumb-background-image: #{svg.escape(theme.$thumb-background-image-active)};
+        --slider-thumb-background-color: #{theme.$thumb-background-color-active};
         --slider-thumb-box-shadow: #{theme.$thumb-box-shadow-active};
     }
 
@@ -146,6 +146,7 @@ $_field-name: 'UNSTABLE_Slider';
     --slider-track-lower-background: #{theme.$track-lower-background-disabled};
     --slider-thumb-border-width: #{theme.$thumb-border-width-disabled};
     --slider-thumb-border-color: #{theme.$thumb-border-color-disabled};
+    --slider-thumb-background-color: #{theme.$thumb-background-color-disabled};
     --slider-thumb-background-image: #{svg.escape(theme.$thumb-background-image-disabled)};
     --slider-thumb-box-shadow: #{theme.$thumb-box-shadow-disabled};
 

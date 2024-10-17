@@ -2,7 +2,7 @@
 @use '../../tools/breakpoint';
 @use '../../tools/dictionaries';
 @use '../../tools/placement';
-@use 'theme' as theme;
+@use 'theme';
 
 .DropdownPopover {
     @include placement.child();

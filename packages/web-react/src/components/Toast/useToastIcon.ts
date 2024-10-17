@@ -8,7 +8,7 @@ export function useToastIcon({ color, iconName }: Partial<SpiritToastBarProps>) 
     {
       danger: 'danger',
       informative: 'info',
-      inverted: 'info',
+      neutral: 'info',
       success: 'check-plain',
       warning: 'warning',
     },

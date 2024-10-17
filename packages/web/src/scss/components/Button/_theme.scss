@@ -1,84 +1,73 @@
 @use 'sass:list';
 @use 'sass:map';
-@use '@tokens' as tokens;
+@use '@global' as global-tokens;
+@use '../../settings/globals';
 @use '../../settings/dictionaries';
 
-// We subtract the border width to achieve the same dimensions as other form elements
-$typography: tokens.$body-medium-text-bold;
-$border-width: tokens.$border-width-100;
-$border-style: tokens.$border-style-100;
-$border-radius: tokens.$radius-100;
-$breakpoints: tokens.$breakpoints;
+$typography: global-tokens.$body-small-semibold;
+$typography-large: global-tokens.$body-medium-semibold;
+$border-width: global-tokens.$border-width-100;
+$border-style: solid;
+$border-radius: global-tokens.$radius-full;
+$breakpoints: global-tokens.$breakpoints;
 
-$color-dictionary: list.join(dictionaries.$action-colors, dictionaries.$emotion-colors);
+$disabled-color: var(--#{globals.$prefix}color-disabled-content);
+$disabled-border-color: var(--#{globals.$prefix}color-disabled-border);
+$disabled-background-color: var(--#{globals.$prefix}color-disabled-background);
 
-$color-dictionary-config: (
-    color: tokens.$text-primary-inverted-default,
-    border-color: 'default',
+$color-action-button-dictionary: (
+    action-button: dictionaries.$action-button-colors,
+);
+
+$color-emotion-dictionary: (
+    emotion: dictionaries.$emotion-colors,
+);
+
+$color-action-button-dictionary-config: (
+    color: 'content',
+    border-color: 'border',
     background-color: 'default',
+    background-color-hover: 'hover',
+    background-color-active: 'active',
 );
 
-$color-dictionary-states: (
-    '&:hover, &:focus': (
-        color: tokens.$text-primary-inverted-default,
-        border-color: 'hover',
-        background-color: 'hover',
-    ),
-    '&:active': (
-        color: tokens.$text-primary-inverted-default,
-        border-color: 'active',
-        background-color: 'active',
-    ),
-    '&:disabled:not(.Button--loading), &.is-disabled:not(.Button--loading), &.Button--disabled:not(.Button--loading)': (
-        color: tokens.$text-primary-inverted-disabled,
-        border-color: 'disabled',
-        background-color: 'disabled',
-    ),
+$color-emotion-dictionary-config: (
+    color: 'content-subtle',
+    border-color: 'border-basic',
+    background-color: 'default',
+    background-color-hover: 'hover',
+    background-color-active: 'active',
 );
 
-$color-dictionary-overrides: (
-    secondary: (
-        color: tokens.$text-primary-default,
-        background-color: tokens.$background-interactive-default,
-        states: (
-            '&:hover, &:focus': (
-                color: tokens.$text-primary-default,
-                background-color: tokens.$background-interactive-hover,
-            ),
-            '&:active': (
-                color: tokens.$text-primary-default,
-                background-color: tokens.$background-interactive-active,
-            ),
-            '&:disabled, &.is-disabled, &.Button--disabled': (
-                color: tokens.$text-primary-disabled,
-                background-color: tokens.$background-interactive-default,
-            ),
-        ),
-    ),
-    tertiary: (
-        color: tokens.$text-primary-default,
-        states: (
-            '&:disabled, &.is-disabled, &.Button--disabled': (
-                color: tokens.$text-primary-inverted-disabled,
-            ),
-        ),
-    ),
-    inverted: (
-        background-color: transparent,
+$loading-color-dictionary-config: (
+    color: 'content',
+);
+
+$loading-color-dictionary-overrides: (
+    emotion: (
+        color: 'content-subtle',
+        border-color: 'border-basic',
     ),
 );
 
+// We subtract the border width to achieve the same dimensions as other form elements
 $sizes: (
     small: (
-        padding-x: calc(#{tokens.$space-600} - #{tokens.$border-width-100}),
-        padding-y: calc(#{tokens.$space-300} - #{tokens.$border-width-100}),
+        height: 32px,
+        padding-x: calc(#{global-tokens.$space-700} - #{global-tokens.$border-width-100}),
+        padding-y: calc(#{global-tokens.$space-300} - #{global-tokens.$border-width-100}),
+        typography: $typography,
     ),
     medium: (
-        padding-x: calc(#{tokens.$space-700} - #{tokens.$border-width-100}),
-        padding-y: calc(#{tokens.$space-400} - #{tokens.$border-width-100}),
+        height: 40px,
+        padding-x: calc(#{global-tokens.$space-900} - #{global-tokens.$border-width-100}),
+        padding-y: calc(#{global-tokens.$space-500} - #{global-tokens.$border-width-100}),
+        typography: $typography,
     ),
     large: (
-        padding-x: calc(#{tokens.$space-800} - #{tokens.$border-width-100}),
-        padding-y: calc(#{tokens.$space-500} - #{tokens.$border-width-100}),
+        height: 48px,
+        padding-x: calc(#{global-tokens.$space-900} - #{global-tokens.$border-width-100}),
+        padding-y: calc(#{global-tokens.$space-500} - #{global-tokens.$border-width-100}),
+        typography: $typography-large,
     ),
 );

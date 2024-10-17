@@ -6,8 +6,6 @@ $_field-name: 'FieldGroup';
 .FieldGroup {
     @include form-fields-tools.box-field-root();
 
-    display: inline-grid;
-    row-gap: theme.$gap;
     border: 0;
 }
 
@@ -21,11 +19,15 @@ $_field-name: 'FieldGroup';
 
 .FieldGroup__fields {
     display: grid;
-    row-gap: theme.$fields-gap;
+    row-gap: theme.$gap;
 }
 
 .FieldGroup--fluid {
     @include form-fields-tools.box-field-fluid();
+}
+
+.FieldGroup:not(.FieldGroup--fluid) .FieldGroup__fields {
+    justify-content: start;
 }
 
 .FieldGroup__validationText,

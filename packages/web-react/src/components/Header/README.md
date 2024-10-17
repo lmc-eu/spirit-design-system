@@ -37,21 +37,25 @@ unless you specify a color variant.
 ```jsx
 <Header>
   <Link href="/">
-    <img src="https://www.example.com/logo.png" width="65" height="24" alt="Spirit" />
+    <ProductLogo>
+      <img src="https://www.example.com/logo.png" width="65" height="24" alt="Spirit" />
+    </ProductLogo>
   </Link>
 </Header>
 ```
 
 ## Color Variants
 
-Currently, Header comes in two color variants: **transparent** (for dark
-backgrounds) and **inverted** (for light backgrounds). Use the `color` property
+Currently, Header comes in two color variants: **primary** and **transparent**
+(for non-solid backgrounds like gradients or images). Use the `color` property
 to apply the desired background color to Header.
 
 ```jsx
-<Header color="inverted">
+<Header color="transparent">
   <Link href="/">
-    <img src="https://www.example.com/logo.png" width="65" height="24" alt="Spirit" />
+    <ProductLogo>
+      <img src="https://www.example.com/logo.png" width="65" height="24" alt="Spirit" />
+    </ProductLogo>
   </Link>
 </Header>
 ```
@@ -64,19 +68,21 @@ just branding.
 
 ```jsx
 <Header isSimple>
-  <a href="/">
-    <img src="https://www.example.com/logo.png" width="65" height="24" alt="Spirit" />
-  </a>
+  <Link href="/">
+    <ProductLogo>
+      <img src="https://www.example.com/logo.png" width="65" height="24" alt="Spirit" />
+    </ProductLogo>
+  </Link>
 </Header>
 ```
 
 ## API
 
-| Name       | Type                          | Default       | Required | Description                         |
-| ---------- | ----------------------------- | ------------- | -------- | ----------------------------------- |
-| `children` | `ReactNode`                   | —             | ✕        | Children node                       |
-| `color`    | [`transparent` \| `inverted`] | `transparent` | ✕        | Color variant                       |
-| `isSimple` | `bool`                        | `false`       | ✕        | Shorter, centered version of Header |
+| Name       | Type                           | Default       | Required | Description                         |
+| ---------- | ------------------------------ | ------------- | -------- | ----------------------------------- |
+| `children` | `ReactNode`                    | —             | ✕        | Children node                       |
+| `color`    | \[`primary` \| `transparent`\] | `transparent` | ✕        | Color variant                       |
+| `isSimple` | `bool`                         | `false`       | ✕        | Shorter, centered version of Header |
 
 The component implements the [`HTMLElement`][mdn-api-html-element] interface.
 
@@ -461,7 +467,7 @@ This is how all supported building blocks of the Header build up the complete
 composition:
 
 ```jsx
-<Header color="inverted">
+<Header>
   {/* Branding */}
   <HeaderMobileActions dialogId="header-dialog-example" isOpen={isOpen} onOpen={handleOpen}>
     {/* Optional mobile-only actions */}
@@ -506,9 +512,11 @@ const [isOpen, setOpen] = React.useState(false);
 const handleOpen = () => setOpen(true);
 const handleClose = () => setOpen(false);
 
-<Header color="inverted">
+<Header>
   <Link href="/" aria-label="Spirit homepage">
-    <img src="…" width="65" height="24" alt="Spirit" />
+    <ProductLogo>
+      <img src="…" width="65" height="24" alt="Spirit" />
+    </ProductLogo>
   </Link>
   <HeaderMobileActions dialogId="my-menu" isOpen={isOpen} onOpen={handleOpen} />
   <HeaderDesktopActions aria-label="Navigation">
@@ -532,7 +540,7 @@ const handleClose = () => setOpen(false);
   </HeaderDesktopActions>
   <HeaderDesktopActions isAtEnd>
     <ButtonLink color="primary" href="/">Sign in</ButtonLink>
-    <ButtonLink color="inverted" href="/">Enterprise</ButtonLink>
+    <ButtonLink color="secondary" href="/">Enterprise</ButtonLink>
   </HeaderDesktopActions>
 </Header>
 
@@ -564,7 +572,7 @@ const handleClose = () => setOpen(false);
   </HeaderDialogActions>
   <HeaderDialogActions color="secondary">
     <ButtonLink color="primary" href="/">Sign in</ButtonLink>
-    <ButtonLink color="inverted" href="/">Enterprise</ButtonLink>
+    <ButtonLink color="secondary" href="/">Enterprise</ButtonLink>
   </HeaderDialogActions>
 </HeaderDialog>
 ```

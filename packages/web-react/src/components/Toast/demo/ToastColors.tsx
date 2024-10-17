@@ -6,8 +6,8 @@ import ToastBarMessage from '../ToastBarMessage';
 const ToastColors = () => {
   return (
     <>
-      <ToastBar id="inverted" onClose={() => {}} color="inverted" hasIcon isDismissible>
-        <ToastBarMessage>Inverted</ToastBarMessage>
+      <ToastBar id="neutral" onClose={() => {}} color="neutral" hasIcon isDismissible>
+        <ToastBarMessage>Neutral</ToastBarMessage>
         <ToastBarLink href="#">Action</ToastBarLink>
       </ToastBar>
       <ToastBar id="informative" onClose={() => {}} color="informative" hasIcon isDismissible>

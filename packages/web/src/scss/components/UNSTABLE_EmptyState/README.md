@@ -42,7 +42,7 @@ This component is based on the [Stack][stack] component and accepts all its vari
 <div class="Stack Stack--hasSpacing UNSTABLE_EmptyState" style="--stack-spacing: var(--spirit-space-700);">
   <div class="Stack UNSTABLE_EmptyState__section">Placeholder</div>
   <div class="Stack Stack--hasSpacing UNSTABLE_EmptyState__section" style="--stack-spacing: var(--spirit-space-500);">
-    <h2 class="typography-heading-xsmall-text">Headline</h2>
+    <h2 class="typography-heading-xsmall-bold">Headline</h2>
     <p color="secondary" class="typography-body-medium-text-regular">Description</p>
   </div>
   <div class="Stack UNSTABLE_EmptyState__section">

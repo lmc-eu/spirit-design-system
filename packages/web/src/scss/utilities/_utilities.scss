@@ -1,11 +1,11 @@
 @use 'sass:map';
 @use 'sass:meta';
-@use '@tokens' as tokens;
+@use '@global' as global-tokens;
 @use '../settings/utilities' as utilities-settings;
 @use '../tools/breakpoint';
 @use '../tools/utilities';
 
-@each $breakpoint-name, $breakpoint-value in tokens.$breakpoints {
+@each $breakpoint-name, $breakpoint-value in global-tokens.$breakpoints {
     @include breakpoint.up($breakpoint-value) {
         $infix: if($breakpoint-value == 0, '', '-#{$breakpoint-name}');
 

@@ -1,3 +1,5 @@
+// 1. Force the color to be printed as-is, without any color adjustment.
+
 @use 'sass:map';
 @use '../settings/cursors';
 @use '../theme/form-fields' as form-fields-theme;
@@ -17,6 +19,8 @@
 }
 
 @mixin label-required() {
+    @include typography.generate(form-fields-theme.$label-required-typography);
+
     content: '*';
     margin-left: form-fields-theme.$label-required-margin-left;
     color: form-fields-theme.$label-required-color;
@@ -33,7 +37,6 @@
     display: block;
     margin-top: form-fields-theme.$validation-text-margin-top;
     list-style: none;
-    color: form-fields-theme.$validation-text-color-default;
 }
 
 @mixin validation-text-disabled() {
@@ -42,7 +45,7 @@
 
 @mixin inline-field-root() {
     display: inline-flex;
-    margin-block: form-fields-theme.$gap;
+    margin-block: form-fields-theme.$inline-field-margin-y;
     cursor: cursors.$form-fields;
 }
 
@@ -72,13 +75,24 @@
 
 @mixin inline-field-input() {
     appearance: none;
-    color: form-fields-theme.$inline-field-input-color-unchecked;
-    border: form-fields-theme.$inline-field-input-outline-width solid currentcolor;
+    border: form-fields-theme.$inline-field-input-border-width solid form-fields-theme.$input-border-color;
+    background-color: form-fields-theme.$input-background-color;
     cursor: cursors.$form-fields;
+    print-color-adjust: exact; // 1.
 
     &:focus-visible {
         outline: 0;
         box-shadow: form-fields-theme.$input-focus-shadow;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            background-color: form-fields-theme.$input-background-color-hover;
+        }
+    }
+
+    &:active {
+        background-color: form-fields-theme.$input-background-color-active;
     }
 }
 
@@ -90,17 +104,28 @@
     padding: form-fields-theme.$box-field-input-padding-y form-fields-theme.$box-field-input-padding-x;
     color: form-fields-theme.$box-field-input-color-default;
     border: form-fields-theme.$box-field-input-border-width form-fields-theme.$box-field-input-border-style
-        form-fields-theme.$box-field-input-border-color-default;
+        form-fields-theme.$input-border-color;
     border-radius: form-fields-theme.$box-field-input-border-radius;
-    background: form-fields-theme.$box-field-input-background;
+    background: form-fields-theme.$input-background-color;
 
     &::placeholder {
         color: form-fields-theme.$box-field-input-placeholder-color-default;
         opacity: 1;
     }
+
+    @media (hover: hover) {
+        &:hover {
+            background-color: form-fields-theme.$input-background-color-hover;
+        }
+    }
+
+    &:active,
+    &:focus-within {
+        background-color: form-fields-theme.$input-background-color-active;
+    }
 }
 
-@mixin input-field-validation-states($field-name, $shadow-x: null, $shadow-y: null) {
+@mixin input-field-validation-states($field-name) {
     @each $validation-state-name, $validation-state-value in form-fields-theme.$validation-states {
         @if $field-name == 'FileUploaderInput' {
             :is(.#{$field-name}--#{$validation-state-name}, .#{$field-name}.has-#{$validation-state-name})
@@ -131,7 +156,6 @@
                 @if $field-name == 'Radio' {
                     &::before {
                         background-color: map.get($validation-state-value, input-border-color);
-                        box-shadow: inset $shadow-x $shadow-y map.get($validation-state-value, input-border-color);
                     }
                 }
             }
@@ -172,8 +196,8 @@
 @mixin box-field-disabled-input() {
     @include input-disabled();
 
-    border-color: form-fields-theme.$box-field-input-border-color-disabled;
-    background-color: form-fields-theme.$box-field-input-background-disabled;
+    border-color: form-fields-theme.$input-border-color-disabled;
+    background-color: form-fields-theme.$input-background-color-disabled;
 
     &::placeholder {
         color: form-fields-theme.$box-field-input-placeholder-color-disabled;
@@ -181,8 +205,9 @@
 }
 
 @mixin item() {
+    align-items: center;
     width: 100%;
-    padding: form-fields-theme.$item-gap;
+    padding: form-fields-theme.$item-padding-y form-fields-theme.$item-padding-x;
     margin-block: 0;
     border-radius: form-fields-theme.$item-border-radius;
     background-color: form-fields-theme.$item-background-color-default;
@@ -206,8 +231,10 @@
     @include typography.generate(form-fields-theme.$item-validation-text-typography);
 }
 
-@mixin item-label-checked() {
-    @include typography.generate(form-fields-theme.$item-label-checked-typography);
+@mixin item-label() {
+    @include typography.generate(form-fields-theme.$item-label-typography);
+
+    color: form-fields-theme.$label-color-default;
 }
 
 @mixin helper-text() {

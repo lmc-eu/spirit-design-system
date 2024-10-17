@@ -23,16 +23,16 @@ export interface ButtonStyles {
 export function useButtonStyleProps<T extends ElementType = 'button', C = void, S = void>(
   props: SpiritButtonProps<T, C, S>,
 ): ButtonStyles {
-  const { color, isBlock, isDisabled, isLoading, isSquare, size, ...restProps } = props;
+  const { color, isBlock, isDisabled, isLoading, isSymmetrical, size, ...restProps } = props;
 
   const buttonClass = useClassNamePrefix('Button');
   const buttonBlockClass = `${buttonClass}--block`;
   const buttonDisabledClass = `${buttonClass}--disabled`;
   const buttonLoadingClass = `${buttonClass}--loading`;
-  const buttonSquareClass = `${buttonClass}--square`;
+  const buttonSymmetricalClass = `${buttonClass}--symmetrical`;
 
-  if (isBlock && isSquare) {
-    warning(false, 'isBlock and isSquare props are mutually exclusive');
+  if (isBlock && isSymmetrical) {
+    warning(false, 'isBlock and isSymmetrical props are mutually exclusive');
   }
 
   const classProps = classNames(
@@ -40,10 +40,10 @@ export function useButtonStyleProps<T extends ElementType = 'button', C = void, 
     getButtonColorClassname(buttonClass, color as ButtonColor<C>),
     getButtonSizeClassname(buttonClass, size as ButtonSize<S>),
     {
-      [buttonBlockClass]: isBlock && !isSquare,
+      [buttonBlockClass]: isBlock && !isSymmetrical,
       [buttonDisabledClass]: isDisabled || isLoading,
       [buttonLoadingClass]: isLoading,
-      [buttonSquareClass]: isSquare && !isBlock,
+      [buttonSymmetricalClass]: isSymmetrical && !isBlock,
     },
   );
 
