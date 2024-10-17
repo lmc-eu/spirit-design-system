@@ -1,6 +1,6 @@
 @use 'sass:map';
 @use 'sass:meta';
-@use '@global' as global-tokens;
+@use '@global-tokens' as global-tokens;
 @use '../settings/utilities' as utilities-settings;
 @use '../tools/breakpoint';
 @use '../tools/utilities';

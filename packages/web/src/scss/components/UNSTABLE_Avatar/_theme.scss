@@ -1,13 +1,12 @@
-@use '@global' as global-tokens;
-@use '../../settings/globals';
+@use '@global-tokens' as global-tokens;
 
-$color: var(--#{globals.$prefix}color-text-secondary);
+$color: var(--#{global-tokens.$token-prefix}color-text-secondary);
 $border-width: global-tokens.$border-width-100;
 $border-style: solid;
-$border-color: var(--#{globals.$prefix}color-border-basic);
+$border-color: var(--#{global-tokens.$token-prefix}color-border-basic);
 $border-radius: global-tokens.$radius-full;
 $border-radius-square: global-tokens.$radius-200;
-$background-color: var(--#{globals.$prefix}color-background-secondary);
+$background-color: var(--#{global-tokens.$token-prefix}color-background-secondary);
 
 $sizes: (
     xsmall: (

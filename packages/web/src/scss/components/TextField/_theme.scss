@@ -1,5 +1,4 @@
-@use '@global' as global-tokens;
-@use '../../settings/globals';
+@use '@global-tokens' as global-tokens;
 
 $input-number-arrows-width: 1.25rem;
 $input-password-toggle-padding: global-tokens.$space-500;

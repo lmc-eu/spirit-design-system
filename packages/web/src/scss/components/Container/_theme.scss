@@ -1,5 +1,5 @@
 @use 'sass:map';
-@use '@global' as global-tokens;
+@use '@global-tokens' as global-tokens;
 
 $container-max-width: global-tokens.$container-max-width;
 $container-paddings: map.get(global-tokens.$containers, padding);

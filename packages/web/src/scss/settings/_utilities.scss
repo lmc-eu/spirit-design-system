@@ -1,6 +1,5 @@
 @use 'sass:map';
-@use '@global' as global-tokens;
-@use 'globals';
+@use '@global-tokens' as global-tokens;
 
 $utilities: (
     'display': (
@@ -136,9 +135,9 @@ $utilities: (
         property: color,
         class: text,
         values: (
-            primary: var(--#{globals.$prefix}color-text-primary),
-            secondary: var(--#{globals.$prefix}color-text-secondary),
-            tertiary: var(--#{globals.$prefix}color-text-tertiary),
+            primary: var(--#{global-tokens.$token-prefix}color-text-primary),
+            secondary: var(--#{global-tokens.$token-prefix}color-text-secondary),
+            tertiary: var(--#{global-tokens.$token-prefix}color-text-tertiary),
         ),
     ),
     'background-color': (
@@ -146,11 +145,11 @@ $utilities: (
         property: background-color,
         class: bg,
         values: (
-            primary: var(--#{globals.$prefix}color-background-primary),
-            secondary: var(--#{globals.$prefix}color-background-secondary),
-            tertiary: var(--#{globals.$prefix}color-background-tertiary),
-            brand-primary: var(--#{globals.$prefix}color-background-brand-primary),
-            brand-secondary: var(--#{globals.$prefix}color-background-brand-secondary),
+            primary: var(--#{global-tokens.$token-prefix}color-background-primary),
+            secondary: var(--#{global-tokens.$token-prefix}color-background-secondary),
+            tertiary: var(--#{global-tokens.$token-prefix}color-background-tertiary),
+            brand-primary: var(--#{global-tokens.$token-prefix}color-background-brand-primary),
+            brand-secondary: var(--#{global-tokens.$token-prefix}color-background-brand-secondary),
         ),
     ),
     'border-radius': (
