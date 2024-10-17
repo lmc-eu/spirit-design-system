@@ -1,14 +1,15 @@
 @use '@global' as global-tokens;
+@use '@theme' as theme-tokens;
 @use '../../settings/globals';
 @use '../../settings/transitions';
-@use '../../tools/tokens';
+@use '../../tools/tokens' as *;
 
 // Header
 $header-typography: global-tokens.$body-medium-semibold;
 $header-breakpoint: global-tokens.$breakpoint-desktop;
 $header-padding-x: global-tokens.$space-1000;
 $header-gap: global-tokens.$space-1200;
-$header-background-color: var(--#{globals.$prefix}color-background-primary);
+$header-background-color: css-var(theme-tokens.$background-primary); // TODO Consider.
 
 // HeaderMobileActions
 $header-mobile-actions-gap: global-tokens.$space-700;

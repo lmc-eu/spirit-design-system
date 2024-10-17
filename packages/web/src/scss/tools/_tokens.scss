@@ -1,6 +1,9 @@
 @use 'sass:meta';
-@use '@global' as *;
-@use '@themes' as *;
+@use '../settings/globals';
+
+@function css-var($name) {
+    @return var(--#{globals.$prefix + $name});
+}
 
 @mixin generate-css-variables($map, $prefix: '') {
     @each $key, $value in $map {
@@ -9,22 +12,5 @@
         } @else {
             --#{$prefix + '-' + $key}: #{$value};
         }
-    }
-}
-
-// $background-interactive-default: #fff0;
-
-// Function to get the first item from a map.
-@function get-first-item($map) {
-    @each $key, $value in $map {
-        @return $value;
-    }
-}
-
-@function get-css-variable($name) {
-    @if meta.variable-exists($name) {
-        @return var(--#{'globals.$prefix' + '-' + $name});
-    } @else {
-        @error 'Design token with name `#{$name}` does not exist.';
     }
 }
