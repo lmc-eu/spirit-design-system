@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.6"></a>
+
+## [2.0.6](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@2.0.5...@lmc-eu/spirit-form-validations@2.0.6) (2024-10-17)
+
+### Documentation
+
+- **form-validations,web,web-react:** Redesign the demo app [#DS-1479](https://github.com/lmc-eu/spirit-design-system/issues/DS-1479) ([2a2e309](https://github.com/lmc-eu/spirit-design-system/commit/2a2e309))
+
+**Note:** Version bump only for package @lmc-eu/spirit-form-validations
+
 <a name="2.0.5"></a>
 
 ## [2.0.5](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@2.0.4...@lmc-eu/spirit-form-validations@2.0.5) (2024-10-17)
