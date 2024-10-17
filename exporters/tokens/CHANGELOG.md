@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.0"></a>
+
+# 2.0.0 (2024-10-17)
+
+### BREAKING CHANGES
+
+- **exporter-tokens:** Rename variables-scss exporter to exporter-tokens [#DS-1483](https://github.com/lmc-eu/spirit-design-system/issues/DS-1483) ([e695df8](https://github.com/lmc-eu/spirit-design-system/commit/e695df8))
+
+**Note:** Version bump only for package @almacareer/spirit-tokens-exporter
+
 <a name="1.2.0"></a>
 
 # [1.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-exporters-variables-scss@1.1.0...@almacareer/spirit-exporters-variables-scss@1.2.0) (2024-10-14)

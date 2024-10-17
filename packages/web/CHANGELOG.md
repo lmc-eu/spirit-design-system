@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.5.1"></a>
+
+## [2.5.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@2.5.0...@lmc-eu/spirit-web@2.5.1) (2024-10-17)
+
+### Chores
+
+- **web:** Use `outDir` to corectly setup output directory ([2182419](https://github.com/lmc-eu/spirit-design-system/commit/2182419))
+
+### Dependencies
+
+- Update all non-major dependencies ([949b633](https://github.com/lmc-eu/spirit-design-system/commit/949b633))
+- Update dependency @rollup/plugin-typescript to v12 ([fb46f50](https://github.com/lmc-eu/spirit-design-system/commit/fb46f50))
+- **web, web-react:** Move `@rollup/plugin-replace` to workspaces ([9bafc0c](https://github.com/lmc-eu/spirit-design-system/commit/9bafc0c))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="2.5.0"></a>
 
 # [2.5.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@2.4.0...@lmc-eu/spirit-web@2.5.0) (2024-10-14)

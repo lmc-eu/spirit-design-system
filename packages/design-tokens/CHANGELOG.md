@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.1.2"></a>
+
+## [2.1.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@2.1.1...@lmc-eu/spirit-design-tokens@2.1.2) (2024-10-17)
+
+### Dependencies
+
+- Update all non-major dependencies ([949b633](https://github.com/lmc-eu/spirit-design-system/commit/949b633))
+- Update dependency vite-plugin-dts to v4 ([fa6a656](https://github.com/lmc-eu/spirit-design-system/commit/fa6a656))
+
+**Note:** Version bump only for package @lmc-eu/spirit-design-tokens
+
 <a name="2.1.1"></a>
 
 ## [2.1.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@2.1.0...@lmc-eu/spirit-design-tokens@2.1.1) (2024-10-14)

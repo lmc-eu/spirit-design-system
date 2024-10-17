@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.5.1"></a>
+
+## [2.5.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@2.5.0...@lmc-eu/spirit-web-react@2.5.1) (2024-10-17)
+
+### Code Refactoring
+
+- **web-react:** No longer use default props in the rest of the components ([6eebe64](https://github.com/lmc-eu/spirit-design-system/commit/6eebe64))
+
+### Dependencies
+
+- Update all non-major dependencies ([949b633](https://github.com/lmc-eu/spirit-design-system/commit/949b633))
+- Update dependency webpack-merge to v6 ([eb62a49](https://github.com/lmc-eu/spirit-design-system/commit/eb62a49))
+- **web, web-react:** Move `@rollup/plugin-replace` to workspaces ([9bafc0c](https://github.com/lmc-eu/spirit-design-system/commit/9bafc0c))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="2.5.0"></a>
 
 # [2.5.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@2.4.0...@lmc-eu/spirit-web-react@2.5.0) (2024-10-14)

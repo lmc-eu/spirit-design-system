@@ -2,7 +2,7 @@
   "name": "jest-config-spirit",
   "private": true,
   "description": "Jest configuration and preset for Spirit Design System",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "license": "MIT",
   "keywords": [
     "lmc-eu",

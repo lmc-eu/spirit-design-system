@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.2"></a>
+
+## [1.1.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@1.1.1...@lmc-eu/spirit-codemods@1.1.2) (2024-10-17)
+
+### Dependencies
+
+- Update all non-major dependencies ([949b633](https://github.com/lmc-eu/spirit-design-system/commit/949b633))
+- Update dependency jscodeshift to v17 ([ecfd30c](https://github.com/lmc-eu/spirit-design-system/commit/ecfd30c))
+
+**Note:** Version bump only for package @lmc-eu/spirit-codemods
+
 <a name="1.1.1"></a>
 
 ## [1.1.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@1.1.0...@lmc-eu/spirit-codemods@1.1.1) (2024-10-14)

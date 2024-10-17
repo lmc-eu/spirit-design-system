@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.0.8"></a>
+
+## [0.0.8](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo-app@0.0.7...@lmc-eu/spirit-demo-app@0.0.8) (2024-10-17)
+
+### Dependencies
+
+- Update all non-major dependencies ([949b633](https://github.com/lmc-eu/spirit-design-system/commit/949b633))
+- Update dependency @rollup/plugin-typescript to v12 ([fb46f50](https://github.com/lmc-eu/spirit-design-system/commit/fb46f50))
+
+**Note:** Version bump only for package @lmc-eu/spirit-demo-app
+
 <a name="0.0.7"></a>
 
 ## [0.0.7](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo-app@0.0.6...@lmc-eu/spirit-demo-app@0.0.7) (2024-10-14)
