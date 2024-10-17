@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.0.0-alpha.0"></a>
+
+# [4.0.0-alpha.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@3.4.1...@lmc-eu/spirit-web-twig@4.0.0-alpha.0) (2024-10-17)
+
+### BREAKING CHANGES
+
+- **web-twig:** Button/ButtonLink have isSymmetrical prop instead of isSquare [#DS-1484](https://github.com/lmc-eu/spirit-design-system/issues/DS-1484) ([7fdccb4](https://github.com/lmc-eu/spirit-design-system/commit/7fdccb4))
+- **web-twig:** Remove action colors from Pill [#DS-1446](https://github.com/lmc-eu/spirit-design-system/issues/DS-1446) ([83702bc](https://github.com/lmc-eu/spirit-design-system/commit/83702bc))
+- **web-twig:** Remove inverted variant from Button and ButtonLink [#DS-1445](https://github.com/lmc-eu/spirit-design-system/issues/DS-1445) ([21708e8](https://github.com/lmc-eu/spirit-design-system/commit/21708e8))
+- **web-twig:** Remove isUnderlined prop from Link component ([4d3fd03](https://github.com/lmc-eu/spirit-design-system/commit/4d3fd03)), closes [#DS-1509](https://github.com/lmc-eu/spirit-design-system/issues/DS-1509)
+- **web-twig:** Rename `inverted` variant of `Toast` to `neutral` [#DS-1446](https://github.com/lmc-eu/spirit-design-system/issues/DS-1446) ([9ef6fb9](https://github.com/lmc-eu/spirit-design-system/commit/9ef6fb9))
+- **web-twig:** Switch `Header` component to v3 design tokens [#DS-1453](https://github.com/lmc-eu/spirit-design-system/issues/DS-1453) ([aa9c549](https://github.com/lmc-eu/spirit-design-system/commit/aa9c549))
+- **web-twig:** Switch Link, Heading and Text to v3 design tokens [#DS-1451](https://github.com/lmc-eu/spirit-design-system/issues/DS-1451) ([fd7eca2](https://github.com/lmc-eu/spirit-design-system/commit/fd7eca2))
+- **web-twig:** Toast JS Plugin docs updated ([f5ad8a7](https://github.com/lmc-eu/spirit-design-system/commit/f5ad8a7)), closes [#DS-1509](https://github.com/lmc-eu/spirit-design-system/issues/DS-1509)
+
+### Documentation
+
+- **web-react,web-twig:** Use new spacing tokens values in ScrollView [#DS-1451](https://github.com/lmc-eu/spirit-design-system/issues/DS-1451) ([1aec1c9](https://github.com/lmc-eu/spirit-design-system/commit/1aec1c9))
+- **web-react,web-twig:** Use new spacing tokens values in Tooltip [#DS-1451](https://github.com/lmc-eu/spirit-design-system/issues/DS-1451) ([5481a20](https://github.com/lmc-eu/spirit-design-system/commit/5481a20))
+- **web-twig:** Redesign the demo app [#DS-1479](https://github.com/lmc-eu/spirit-design-system/issues/DS-1479) ([18f7fe0](https://github.com/lmc-eu/spirit-design-system/commit/18f7fe0))
+- **web,web-react,web-twig:** Switch Grid spacing tokens to v3 structure ([7cd1186](https://github.com/lmc-eu/spirit-design-system/commit/7cd1186))
+- **web,web-react,web-twig:** Switch to v3 spacings in Tabs [#DS-1444](https://github.com/lmc-eu/spirit-design-system/issues/DS-1444) ([9c2603e](https://github.com/lmc-eu/spirit-design-system/commit/9c2603e))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="3.4.1"></a>
 
 ## [3.4.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@3.4.0...@lmc-eu/spirit-web-twig@3.4.1) (2024-10-14)

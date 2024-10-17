@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.2.3-alpha.0"></a>
+
+## [0.2.3-alpha.0](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-example-next-with-pages-router@0.2.2...@almacareer/spirit-example-next-with-pages-router@0.2.3-alpha.0) (2024-10-17)
+
+Miscellaneous changes
+
 <a name="0.2.3"></a>
 
 ## [0.2.3](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-example-next-with-pages-router@0.2.2...@almacareer/spirit-example-next-with-pages-router@0.2.3) (2024-11-22)

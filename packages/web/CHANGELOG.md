@@ -3,6 +3,70 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.0.0-alpha.0"></a>
+
+# [3.0.0-alpha.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@2.5.1...@lmc-eu/spirit-web@3.0.0-alpha.0) (2024-10-17)
+
+### BREAKING CHANGES
+
+- **web:** Button has isSymmetrical prop instead of isSquare [#DS-1484](https://github.com/lmc-eu/spirit-design-system/issues/DS-1484) ([04a6ebb](https://github.com/lmc-eu/spirit-design-system/commit/04a6ebb))
+- **web:** Introduce themes and use new design tokens for foundations [#DS-1431](https://github.com/lmc-eu/spirit-design-system/issues/DS-1431) ([72be637](https://github.com/lmc-eu/spirit-design-system/commit/72be637))
+- **web:** Remove action colors from Pill and switch it to v3 design tokens [#DS-1446](https://github.com/lmc-eu/spirit-design-system/issues/DS-1446) ([2b02fae](https://github.com/lmc-eu/spirit-design-system/commit/2b02fae))
+- **web:** Remove inverted variant of `ProductLogo` [#DS-1450](https://github.com/lmc-eu/spirit-design-system/issues/DS-1450) ([4b7a72c](https://github.com/lmc-eu/spirit-design-system/commit/4b7a72c))
+- **web:** Switch `Header` component to v3 design tokens [#DS-1453](https://github.com/lmc-eu/spirit-design-system/issues/DS-1453) ([840c28a](https://github.com/lmc-eu/spirit-design-system/commit/840c28a))
+- **web:** Switch Button to v3 design tokens and remove inverted variant [#DS-1445](https://github.com/lmc-eu/spirit-design-system/issues/DS-1445) ([81cf2e6](https://github.com/lmc-eu/spirit-design-system/commit/81cf2e6))
+- **web:** Switch FieldGroup component to v3 design tokens and improve alignment [#DS-1447](https://github.com/lmc-eu/spirit-design-system/issues/DS-1447) ([34c8e89](https://github.com/lmc-eu/spirit-design-system/commit/34c8e89))
+- **web:** Switch Link and typography helpers to v3 design tokens [#DS-1451](https://github.com/lmc-eu/spirit-design-system/issues/DS-1451) ([24c2a4b](https://github.com/lmc-eu/spirit-design-system/commit/24c2a4b))
+- **web:** Switch TextField component to v3 design tokens [#DS-1447](https://github.com/lmc-eu/spirit-design-system/issues/DS-1447) ([d461a25](https://github.com/lmc-eu/spirit-design-system/commit/d461a25))
+- **web:** Switch Toast component to v3 design tokens [#DS-1446](https://github.com/lmc-eu/spirit-design-system/issues/DS-1446) ([fa4d505](https://github.com/lmc-eu/spirit-design-system/commit/fa4d505))
+- **web:** Toast JS plugin linkProps changed to underlined ([556a8b6](https://github.com/lmc-eu/spirit-design-system/commit/556a8b6)), closes [#DS-1509](https://github.com/lmc-eu/spirit-design-system/issues/DS-1509)
+
+### Documentation
+
+- **form-validations,web,web-react:** Redesign the demo app [#DS-1479](https://github.com/lmc-eu/spirit-design-system/issues/DS-1479) ([2a2e309](https://github.com/lmc-eu/spirit-design-system/commit/2a2e309))
+- **web,web-react,web-twig:** Switch Grid spacing tokens to v3 structure ([7cd1186](https://github.com/lmc-eu/spirit-design-system/commit/7cd1186))
+- **web,web-react,web-twig:** Switch to v3 spacings in Tabs [#DS-1444](https://github.com/lmc-eu/spirit-design-system/issues/DS-1444) ([9c2603e](https://github.com/lmc-eu/spirit-design-system/commit/9c2603e))
+
+### Features
+
+- **web:** Class modifier `hasSafeAreaDisabled` changed to `safeArea` in `PartnerLogo` class ([82f52f9](https://github.com/lmc-eu/spirit-design-system/commit/82f52f9)), closes [#DS-1373](https://github.com/lmc-eu/spirit-design-system/issues/DS-1373)
+- **web:** Introduce background image urls generator to themes [#DS-1447](https://github.com/lmc-eu/spirit-design-system/issues/DS-1447) ([fdb4666](https://github.com/lmc-eu/spirit-design-system/commit/fdb4666))
+- **web:** Stabilization of PartnerLogo component [#DS-1443](https://github.com/lmc-eu/spirit-design-system/issues/DS-1443) ([2ef188b](https://github.com/lmc-eu/spirit-design-system/commit/2ef188b))
+- **web:** Stabilization of ProductLogo component [#DS-1374](https://github.com/lmc-eu/spirit-design-system/issues/DS-1374) ([4999797](https://github.com/lmc-eu/spirit-design-system/commit/4999797))
+- **web:** Switch `Breadcrumbs` component to v3 design tokens [#DS-1450](https://github.com/lmc-eu/spirit-design-system/issues/DS-1450) ([d075c90](https://github.com/lmc-eu/spirit-design-system/commit/d075c90))
+- **web:** Switch Accordion component to v3 design tokens [#DS-1451](https://github.com/lmc-eu/spirit-design-system/issues/DS-1451) ([5132059](https://github.com/lmc-eu/spirit-design-system/commit/5132059))
+- **web:** Switch Alert component to v3 design tokens [#DS-1446](https://github.com/lmc-eu/spirit-design-system/issues/DS-1446) ([b9bd0a0](https://github.com/lmc-eu/spirit-design-system/commit/b9bd0a0))
+- **web:** Switch Avatar component to v3 design tokens [#DS-1450](https://github.com/lmc-eu/spirit-design-system/issues/DS-1450) ([49d725f](https://github.com/lmc-eu/spirit-design-system/commit/49d725f))
+- **web:** Switch Checkbox component to v3 design tokens [#DS-1447](https://github.com/lmc-eu/spirit-design-system/issues/DS-1447) ([c2044e4](https://github.com/lmc-eu/spirit-design-system/commit/c2044e4))
+- **web:** Switch Collapse, Divider, Stack, ActionLayout & EmptyState to v3 design tokens [#DS-1444](https://github.com/lmc-eu/spirit-design-system/issues/DS-1444) ([97d85cf](https://github.com/lmc-eu/spirit-design-system/commit/97d85cf))
+- **web:** Switch Container and Grid styles to v3 design tokens structure ([59a52fe](https://github.com/lmc-eu/spirit-design-system/commit/59a52fe))
+- **web:** Switch Dropdown component to v3 design tokens [#DS-1450](https://github.com/lmc-eu/spirit-design-system/issues/DS-1450) ([f842d23](https://github.com/lmc-eu/spirit-design-system/commit/f842d23))
+- **web:** Switch FileUploader component to v3 design tokens [#DS-1448](https://github.com/lmc-eu/spirit-design-system/issues/DS-1448) ([d9c9802](https://github.com/lmc-eu/spirit-design-system/commit/d9c9802))
+- **web:** Switch Flex component to v3 design tokens [#DS-1444](https://github.com/lmc-eu/spirit-design-system/issues/DS-1444) ([4ee25aa](https://github.com/lmc-eu/spirit-design-system/commit/4ee25aa))
+- **web:** Switch Footer component to v3 design tokens ([345cb66](https://github.com/lmc-eu/spirit-design-system/commit/345cb66))
+- **web:** Switch Item component to v3 design tokens [#DS-1451](https://github.com/lmc-eu/spirit-design-system/issues/DS-1451) ([8040a5e](https://github.com/lmc-eu/spirit-design-system/commit/8040a5e))
+- **web:** Switch Modal component to v3 design tokens [#DS-1452](https://github.com/lmc-eu/spirit-design-system/issues/DS-1452) ([58bda05](https://github.com/lmc-eu/spirit-design-system/commit/58bda05))
+- **web:** Switch Pagination component to v3 design tokens [#DS-1450](https://github.com/lmc-eu/spirit-design-system/issues/DS-1450) ([d23d984](https://github.com/lmc-eu/spirit-design-system/commit/d23d984))
+- **web:** Switch PartnerLogo component to v3 design tokens [#DS-1450](https://github.com/lmc-eu/spirit-design-system/issues/DS-1450) ([098acd4](https://github.com/lmc-eu/spirit-design-system/commit/098acd4))
+- **web:** Switch Radio component to v3 design tokens [#DS-1447](https://github.com/lmc-eu/spirit-design-system/issues/DS-1447) ([b7131be](https://github.com/lmc-eu/spirit-design-system/commit/b7131be))
+- **web:** Switch ScrollView component to v3 design tokens [#DS-1451](https://github.com/lmc-eu/spirit-design-system/issues/DS-1451) ([9b8cfef](https://github.com/lmc-eu/spirit-design-system/commit/9b8cfef))
+- **web:** Switch Select component to v3 design tokens [#DS-1447](https://github.com/lmc-eu/spirit-design-system/issues/DS-1447) ([347ebc1](https://github.com/lmc-eu/spirit-design-system/commit/347ebc1))
+- **web:** Switch Slider component to v3 design tokens [#DS-1449](https://github.com/lmc-eu/spirit-design-system/issues/DS-1449) ([c0b284d](https://github.com/lmc-eu/spirit-design-system/commit/c0b284d))
+- **web:** Switch Tabs to v3 design tokens [#DS-1444](https://github.com/lmc-eu/spirit-design-system/issues/DS-1444) ([9b4bdb9](https://github.com/lmc-eu/spirit-design-system/commit/9b4bdb9))
+- **web:** Switch Tag component to v3 design tokens [#DS-1445](https://github.com/lmc-eu/spirit-design-system/issues/DS-1445) ([039bf73](https://github.com/lmc-eu/spirit-design-system/commit/039bf73))
+- **web:** Switch TextArea component to v3 design tokens [#DS-1447](https://github.com/lmc-eu/spirit-design-system/issues/DS-1447) ([5e29977](https://github.com/lmc-eu/spirit-design-system/commit/5e29977))
+- **web:** Switch Toggle component to v3 design tokens [#DS-1449](https://github.com/lmc-eu/spirit-design-system/issues/DS-1449) ([d9a4123](https://github.com/lmc-eu/spirit-design-system/commit/d9a4123))
+- **web:** Switch Tooltip component to v3 design tokens [#DS-1451](https://github.com/lmc-eu/spirit-design-system/issues/DS-1451) ([e8b8877](https://github.com/lmc-eu/spirit-design-system/commit/e8b8877))
+
+### Styles
+
+- **web:** Fix selector order and undefined check in Toast component ([5ff547c](https://github.com/lmc-eu/spirit-design-system/commit/5ff547c))
+
+### Tests
+
+- Temporarily disable all visual tests and SCSS loading ([080683f](https://github.com/lmc-eu/spirit-design-system/commit/080683f))
+- **web:** Allow SASS Unit tests to run again ([087e6d0](https://github.com/lmc-eu/spirit-design-system/commit/087e6d0))
+
 <a name="2.5.2"></a>
 
 ## [2.5.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@2.5.1...@lmc-eu/spirit-web@2.5.2) (2024-11-22)

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.1.0-alpha.0"></a>
+
+# [0.1.0-alpha.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-storybook@0.0.8...@lmc-eu/spirit-storybook@0.1.0-alpha.0) (2024-10-17)
+
+### Features
+
+- **storybook:** Add themes to Storybook ([66bbed8](https://github.com/lmc-eu/spirit-design-system/commit/66bbed8))
+
 <a name="0.0.9"></a>
 
 ## [0.0.9](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-storybook@0.0.8...@lmc-eu/spirit-storybook@0.0.9) (2024-11-22)

@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.2.0-alpha.0"></a>
+
+# [1.2.0-alpha.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@1.1.2...@lmc-eu/spirit-codemods@1.2.0-alpha.0) (2024-10-17)
+
+### Features
+
+- **codemods:** Add elementType prop to Heading component ([7f0ac04](https://github.com/lmc-eu/spirit-design-system/commit/7f0ac04))
+- **codemods:** Button and ButtonLink have isSymmetrical prop instead of isSquare [#DS-1484](https://github.com/lmc-eu/spirit-design-system/issues/DS-1484) ([20eed49](https://github.com/lmc-eu/spirit-design-system/commit/20eed49))
+
 <a name="1.1.3"></a>
 
 ## [1.1.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@1.1.2...@lmc-eu/spirit-codemods@1.1.3) (2024-11-22)

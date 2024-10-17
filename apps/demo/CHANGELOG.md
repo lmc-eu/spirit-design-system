@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.0-alpha.0"></a>
+
+# [1.0.0-alpha.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo-app@0.0.8...@lmc-eu/spirit-demo-app@1.0.0-alpha.0) (2024-10-17)
+
+### BREAKING CHANGES
+
+- **web:** Switch `Header` component to v3 design tokens [#DS-1453](https://github.com/lmc-eu/spirit-design-system/issues/DS-1453) ([840c28a](https://github.com/lmc-eu/spirit-design-system/commit/840c28a))
+
+### Documentation
+
+- **form-validations,web,web-react:** Add theme switcher to the demo app [#DS-1479](https://github.com/lmc-eu/spirit-design-system/issues/DS-1479) ([02381f2](https://github.com/lmc-eu/spirit-design-system/commit/02381f2))
+- **form-validations,web,web-react:** Redesign the demo app [#DS-1479](https://github.com/lmc-eu/spirit-design-system/issues/DS-1479) ([2a2e309](https://github.com/lmc-eu/spirit-design-system/commit/2a2e309))
+- Set default background color to main element in demos ([ed4d322](https://github.com/lmc-eu/spirit-design-system/commit/ed4d322))
+- **web-twig:** Redesign the demo app [#DS-1479](https://github.com/lmc-eu/spirit-design-system/issues/DS-1479) ([18f7fe0](https://github.com/lmc-eu/spirit-design-system/commit/18f7fe0))
+
+### Features
+
+- **web:** Switch Demo styles to v3 design tokens structure [#DS-1430](https://github.com/lmc-eu/spirit-design-system/issues/DS-1430) ([8f27889](https://github.com/lmc-eu/spirit-design-system/commit/8f27889))
+
+### Tests
+
+- **web,web-react:** Update visual snapshots after demo apps redesign [#DS-1479](https://github.com/lmc-eu/spirit-design-system/issues/DS-1479) ([b9b23e5](https://github.com/lmc-eu/spirit-design-system/commit/b9b23e5))
+
 <a name="0.0.9"></a>
 
 ## [0.0.9](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo-app@0.0.8...@lmc-eu/spirit-demo-app@0.0.9) (2024-11-22)

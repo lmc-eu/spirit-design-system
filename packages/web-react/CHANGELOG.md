@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.0.0-alpha.0"></a>
+
+# [3.0.0-alpha.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@2.5.1...@lmc-eu/spirit-web-react@3.0.0-alpha.0) (2024-10-17)
+
+### BREAKING CHANGES
+
+- **web-react:** Button/ButtonLink have isSymmetrical prop instead of isSquare [#DS-1484](https://github.com/lmc-eu/spirit-design-system/issues/DS-1484) ([a4e9ec5](https://github.com/lmc-eu/spirit-design-system/commit/a4e9ec5))
+- **web-react:** Remove action colors from Pill [#DS-1446](https://github.com/lmc-eu/spirit-design-system/issues/DS-1446) ([2b41701](https://github.com/lmc-eu/spirit-design-system/commit/2b41701))
+- **web-react:** Remove default elementType value for Heading component ([10fcaaa](https://github.com/lmc-eu/spirit-design-system/commit/10fcaaa))
+- **web-react:** Remove inverted variant from Button and ButtonLink [#DS-1445](https://github.com/lmc-eu/spirit-design-system/issues/DS-1445) ([e7f2a94](https://github.com/lmc-eu/spirit-design-system/commit/e7f2a94))
+- **web-react:** Remove inverted variant of `ProductLogo` [#DS-1450](https://github.com/lmc-eu/spirit-design-system/issues/DS-1450) ([4002ab2](https://github.com/lmc-eu/spirit-design-system/commit/4002ab2))
+- **web-react:** Remove isUnderlined prop from Link component ([e7d4ff5](https://github.com/lmc-eu/spirit-design-system/commit/e7d4ff5)), closes [#DS-1509](https://github.com/lmc-eu/spirit-design-system/issues/DS-1509)
+- **web-react:** Rename `inverted` variant of `Toast` to `neutral` [#DS-1446](https://github.com/lmc-eu/spirit-design-system/issues/DS-1446) ([a18768d](https://github.com/lmc-eu/spirit-design-system/commit/a18768d))
+- **web-react:** Switch `Header` component to v3 design tokens [#DS-1453](https://github.com/lmc-eu/spirit-design-system/issues/DS-1453) ([af628ed](https://github.com/lmc-eu/spirit-design-system/commit/af628ed))
+- **web-react:** Switch Link, Heading and Text to v3 design tokens [#DS-1451](https://github.com/lmc-eu/spirit-design-system/issues/DS-1451) ([d150851](https://github.com/lmc-eu/spirit-design-system/commit/d150851))
+- **web:** Switch Link and typography helpers to v3 design tokens [#DS-1451](https://github.com/lmc-eu/spirit-design-system/issues/DS-1451) ([24c2a4b](https://github.com/lmc-eu/spirit-design-system/commit/24c2a4b))
+
+### Documentation
+
+- **form-validations,web,web-react:** Redesign the demo app [#DS-1479](https://github.com/lmc-eu/spirit-design-system/issues/DS-1479) ([2a2e309](https://github.com/lmc-eu/spirit-design-system/commit/2a2e309))
+- **web-react,web-twig:** Use new spacing tokens values in ScrollView [#DS-1451](https://github.com/lmc-eu/spirit-design-system/issues/DS-1451) ([1aec1c9](https://github.com/lmc-eu/spirit-design-system/commit/1aec1c9))
+- **web-react,web-twig:** Use new spacing tokens values in Tooltip [#DS-1451](https://github.com/lmc-eu/spirit-design-system/issues/DS-1451) ([5481a20](https://github.com/lmc-eu/spirit-design-system/commit/5481a20))
+- **web-react:** Add more disabled combinations to Toggle demo [#DS-1449](https://github.com/lmc-eu/spirit-design-system/issues/DS-1449) ([395193c](https://github.com/lmc-eu/spirit-design-system/commit/395193c))
+- **web-react:** Switch Avatar demo spacings to v3 design token values [#DS-1450](https://github.com/lmc-eu/spirit-design-system/issues/DS-1450) ([da898a7](https://github.com/lmc-eu/spirit-design-system/commit/da898a7))
+- **web-react:** Use correct typography helper and spacings in Flex [#DS-1444](https://github.com/lmc-eu/spirit-design-system/issues/DS-1444) ([eafd4b6](https://github.com/lmc-eu/spirit-design-system/commit/eafd4b6))
+- **web,web-react,web-twig:** Switch Grid spacing tokens to v3 structure ([7cd1186](https://github.com/lmc-eu/spirit-design-system/commit/7cd1186))
+- **web,web-react,web-twig:** Switch to v3 spacings in Tabs [#DS-1444](https://github.com/lmc-eu/spirit-design-system/issues/DS-1444) ([9c2603e](https://github.com/lmc-eu/spirit-design-system/commit/9c2603e))
+
+### Features
+
+- **web-react:** Prop `hasSafeAreaDisabled` changed to `hasSafeArea` in `PartnerLogo` component ([0eb75fc](https://github.com/lmc-eu/spirit-design-system/commit/0eb75fc)), closes [#DS-1373](https://github.com/lmc-eu/spirit-design-system/issues/DS-1373)
+- **web-react:** Stabilization of PartnerLogo component [#DS-1443](https://github.com/lmc-eu/spirit-design-system/issues/DS-1443) ([f035513](https://github.com/lmc-eu/spirit-design-system/commit/f035513))
+- **web-react:** Stabilization of ProductLogo component [#DS-1374](https://github.com/lmc-eu/spirit-design-system/issues/DS-1374) ([acc5469](https://github.com/lmc-eu/spirit-design-system/commit/acc5469))
+- **web-react:** Switch Footer component to v3 design tokens ([be55bd7](https://github.com/lmc-eu/spirit-design-system/commit/be55bd7))
+
 <a name="2.5.2"></a>
 
 ## [2.5.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@2.5.1...@lmc-eu/spirit-web-react@2.5.2) (2024-11-22)

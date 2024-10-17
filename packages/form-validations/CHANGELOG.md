@@ -17,6 +17,14 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 - Update all non-major dependencies ([da33775](https://github.com/lmc-eu/spirit-design-system/commit/da33775))
 - **web, web-react, web-twig:** Implement sass-embedded library ([07df504](https://github.com/lmc-eu/spirit-design-system/commit/07df504))
 
+<a name="2.0.6"></a>
+
+## [2.0.6](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@2.0.5...@lmc-eu/spirit-form-validations@2.0.6) (2024-10-17)
+
+### Documentation
+
+- **form-validations,web,web-react:** Redesign the demo app [#DS-1479](https://github.com/lmc-eu/spirit-design-system/issues/DS-1479) ([2a2e309](https://github.com/lmc-eu/spirit-design-system/commit/2a2e309))
+
 **Note:** Version bump only for package @lmc-eu/spirit-form-validations
 
 <a name="2.0.5"></a>
