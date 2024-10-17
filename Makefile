@@ -122,29 +122,29 @@ else
 publish:
 	@$(eval pkg ?=)
 	@$(eval dist-tag := $(strip $(dist-tag)))
-  @if [ -n "$(dist-tag)" ]; then \
-    $(PKG_EXECUTE) $(MONOREPO_TOOL) publish dist-tag=$(dist-tag) from-package --yes $(MONOREPO_TOOL_FLAGS); \
-  else \
-    $(PKG_EXECUTE) $(MONOREPO_TOOL) publish from-package --yes $(MONOREPO_TOOL_FLAGS); \
-  fi
+	@if [ -n "$(dist-tag)" ]; then \
+		$(PKG_EXECUTE) $(MONOREPO_TOOL) publish dist-tag=$(dist-tag) from-package --yes $(MONOREPO_TOOL_FLAGS); \
+	else \
+		$(PKG_EXECUTE) $(MONOREPO_TOOL) publish from-package --yes $(MONOREPO_TOOL_FLAGS); \
+	fi
 endif
 
 ## —— Miscellaneous 🛠️ ——————————————————————————————————————————————————————————————
 
 clean: ## Clean output files
 	find . -path ./node_modules -prune -o -type d \( \
-        -name '.nyc_output' -o \
-        -name 'coverage' -o \
-        -name '.coverage' -o \
-        -name '.cache' -o \
-        -name '.nx' -o \
-        -name 'dist' -o \
-        -name 'build' -o \
-        -name 'esm' -o \
-        -name 'cjs' -o \
-        -name 'umd' -o \
-        -name 'playwright-report' -o \
-        -name 'test-results' -o \
-        -name '.next' \
-    \) -exec rm -rf {} +
+				-name '.nyc_output' -o \
+				-name 'coverage' -o \
+				-name '.coverage' -o \
+				-name '.cache' -o \
+				-name '.nx' -o \
+				-name 'dist' -o \
+				-name 'build' -o \
+				-name 'esm' -o \
+				-name 'cjs' -o \
+				-name 'umd' -o \
+				-name 'playwright-report' -o \
+				-name 'test-results' -o \
+				-name '.next' \
+		\) -exec rm -rf {} +
 		find . -path ./node_modules -prune -o -name '*.log' -print -delete
