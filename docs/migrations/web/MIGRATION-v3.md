@@ -218,7 +218,13 @@ Rename all usages of `UNSTABLE_PartnerLogo` to `PartnerLogo`.
 ### Pill: Renamed and Removed Variants
 
 Pill component variants `primary`, `secondary`, `tertiary`, `inverted` and `unselected` were removed.
-Instead, the `neutral` variant was added.
+Instead, the `neutral` variant was added. The current list of variants is
+
+- `neutral`
+- `danger`
+- `informative`
+- `success`
+- `warning`
 
 #### Migration Guide
 
