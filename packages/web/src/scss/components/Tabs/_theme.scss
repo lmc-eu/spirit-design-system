@@ -1,12 +1,11 @@
-@use '@global' as global-tokens;
-@use '../../settings/globals';
+@use '@global-tokens' as global-tokens;
 
 $breakpoints: global-tokens.$breakpoints;
 $item-padding-x: global-tokens.$space-700;
 $link-padding-y: global-tokens.$space-500;
-$link-color-default: var(--#{globals.$prefix}color-action-link-secondary-default);
-$link-color-hover: var(--#{globals.$prefix}color-action-link-secondary-hover);
-$link-color-active: var(--#{globals.$prefix}color-action-link-secondary-active);
+$link-color-default: var(--#{global-tokens.$token-prefix}color-action-link-secondary-default);
+$link-color-hover: var(--#{global-tokens.$token-prefix}color-action-link-secondary-hover);
+$link-color-active: var(--#{global-tokens.$token-prefix}color-action-link-secondary-active);
 $link-color-selected: $link-color-active;
 $spacing-fallback: global-tokens.$space-900;
 $item-typography: global-tokens.$body-medium-semibold;

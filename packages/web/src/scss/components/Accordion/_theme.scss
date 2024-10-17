@@ -1,17 +1,16 @@
-@use '@global' as global-tokens;
-@use '../../settings/globals';
+@use '@global-tokens' as global-tokens;
 
-$accordion-item-background-color-default: var(--#{globals.$prefix}color-background-interactive-default);
-$accordion-item-background-color-hover: var(--#{globals.$prefix}color-background-interactive-hover);
-$accordion-item-background-color-active: var(--#{globals.$prefix}color-background-interactive-active);
+$accordion-item-background-color-default: var(--#{global-tokens.$token-prefix}color-background-interactive-default);
+$accordion-item-background-color-hover: var(--#{global-tokens.$token-prefix}color-background-interactive-hover);
+$accordion-item-background-color-active: var(--#{global-tokens.$token-prefix}color-background-interactive-active);
 $accordion-header-typography: global-tokens.$body-medium-regular;
 $accordion-header-typography-active: global-tokens.$body-medium-bold;
-$accordion-header-typography-color: var(--#{globals.$prefix}color-text-primary);
+$accordion-header-typography-color: var(--#{global-tokens.$token-prefix}color-text-primary);
 $accordion-header-gap: global-tokens.$space-600;
 $accordion-header-padding-y: global-tokens.$space-900;
 $accordion-header-padding-x: global-tokens.$space-700;
 $accordion-border-radius: global-tokens.$radius-200;
-$accordion-divider-color: var(--#{globals.$prefix}color-border-basic);
+$accordion-divider-color: var(--#{global-tokens.$token-prefix}color-border-basic);
 $accordion-divider-width: global-tokens.$border-width-100;
 $accordion-divider-style: solid;
 $accordion-content-padding-bottom: global-tokens.$space-700;

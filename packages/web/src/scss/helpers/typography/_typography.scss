@@ -1,5 +1,5 @@
 @use 'sass:map';
-@use '@global' as global-tokens;
+@use '@global-tokens' as global-tokens;
 @use '../../tools/typography';
 
 @each $style-name, $style-value in global-tokens.$styles {

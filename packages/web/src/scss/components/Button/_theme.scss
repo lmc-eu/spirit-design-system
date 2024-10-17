@@ -1,7 +1,6 @@
 @use 'sass:list';
 @use 'sass:map';
-@use '@global' as global-tokens;
-@use '../../settings/globals';
+@use '@global-tokens' as global-tokens;
 @use '../../settings/dictionaries';
 
 $typography: global-tokens.$body-small-semibold;
@@ -11,9 +10,9 @@ $border-style: solid;
 $border-radius: global-tokens.$radius-full;
 $breakpoints: global-tokens.$breakpoints;
 
-$disabled-color: var(--#{globals.$prefix}color-disabled-content);
-$disabled-border-color: var(--#{globals.$prefix}color-disabled-border);
-$disabled-background-color: var(--#{globals.$prefix}color-disabled-background);
+$disabled-color: var(--#{global-tokens.$token-prefix}color-disabled-content);
+$disabled-border-color: var(--#{global-tokens.$token-prefix}color-disabled-border);
+$disabled-background-color: var(--#{global-tokens.$token-prefix}color-disabled-background);
 
 $color-action-button-dictionary: (
     action-button: dictionaries.$action-button-colors,

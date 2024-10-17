@@ -1,6 +1,6 @@
 // 1. We are able to handle our text sizing ourselves, disable any auto adjustments.
 
-@use '@global' as global-tokens;
+@use '@global-tokens' as global-tokens;
 @use '../tools/typography';
 
 :where(html) {

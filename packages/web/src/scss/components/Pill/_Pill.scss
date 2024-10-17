@@ -1,5 +1,5 @@
 @use 'theme';
-@use '../../settings/globals';
+@use '@global-tokens' as global-tokens;
 @use '../../tools/dictionaries';
 @use '../../tools/typography';
 
@@ -11,9 +11,9 @@
     height: 1rem;
     padding: theme.$padding-y theme.$padding-x;
     text-align: center;
-    color: var(--#{globals.$prefix}pill-color);
+    color: var(--#{global-tokens.$token-prefix}pill-color);
     border-radius: theme.$border-radius;
-    background-color: var(--#{globals.$prefix}pill-background-color);
+    background-color: var(--#{global-tokens.$token-prefix}pill-background-color);
 }
 
 @include dictionaries.generate-colors(

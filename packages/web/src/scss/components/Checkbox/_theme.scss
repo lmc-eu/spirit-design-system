@@ -1,10 +1,11 @@
-@use '@global' as global-tokens;
-@use '../../settings/globals';
+@use '@global-tokens' as global-tokens;
 
 $input-border-radius: global-tokens.$radius-200;
 $input-width: 18px;
 $input-margin: 3px;
-$input-checked-mark: var(--#{globals.$prefix}checkbox-input-background-image-url);
-$input-checked-mark-disabled: var(--#{globals.$prefix}checkbox-input-disabled-background-image-url);
-$input-indeterminate-mark: var(--#{globals.$prefix}checkbox-input-indeterminate-background-image-url);
-$input-indeterminate-mark-disabled: var(--#{globals.$prefix}checkbox-input-indeterminate-disabled-background-image-url);
+$input-checked-mark: var(--#{global-tokens.$token-prefix}checkbox-input-background-image-url);
+$input-checked-mark-disabled: var(--#{global-tokens.$token-prefix}checkbox-input-disabled-background-image-url);
+$input-indeterminate-mark: var(--#{global-tokens.$token-prefix}checkbox-input-indeterminate-background-image-url);
+$input-indeterminate-mark-disabled: var(
+    --#{global-tokens.$token-prefix}checkbox-input-indeterminate-disabled-background-image-url
+);

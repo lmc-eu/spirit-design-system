@@ -1,5 +1,5 @@
 @use 'sass:list';
-@use '@global' as global-tokens;
+@use '@global-tokens' as global-tokens;
 @use '../../settings/dictionaries';
 
 $border-width: global-tokens.$border-width-100;

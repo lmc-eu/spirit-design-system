@@ -1,7 +1,6 @@
-@use '@global' as global-tokens;
-@use '../../settings/globals';
+@use '@global-tokens' as global-tokens;
 
-$background-color: var(--#{globals.$prefix}color-background-primary);
+$background-color: var(--#{global-tokens.$token-prefix}color-background-primary);
 $border-radius: global-tokens.$radius-200;
 $sizes: (
     small: (

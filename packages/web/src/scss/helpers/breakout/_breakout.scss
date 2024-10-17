@@ -1,5 +1,5 @@
 @use 'sass:map';
-@use '@global' as global-tokens;
+@use '@global-tokens' as global-tokens;
 @use '../../tools/breakpoint';
 
 @each $breakpoint-name, $breakpoint-value in global-tokens.$breakpoints {

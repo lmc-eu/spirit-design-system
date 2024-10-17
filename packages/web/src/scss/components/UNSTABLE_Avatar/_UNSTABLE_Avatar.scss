@@ -1,13 +1,13 @@
 @use 'theme';
-@use '../../settings/globals';
+@use '@global-tokens' as global-tokens;
 @use '../../tools/dictionaries';
 
 .UNSTABLE_Avatar {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: var(--#{globals.$prefix}avatar-width);
-    height: var(--#{globals.$prefix}avatar-height);
+    width: var(--#{global-tokens.$token-prefix}avatar-width);
+    height: var(--#{global-tokens.$token-prefix}avatar-height);
     overflow: hidden;
     text-decoration: none;
     color: theme.$color;

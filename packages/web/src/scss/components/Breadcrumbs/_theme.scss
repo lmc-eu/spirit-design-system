@@ -1,10 +1,9 @@
-@use '@global' as global-tokens;
-@use '../../settings/globals';
+@use '@global-tokens' as global-tokens;
 
 $breakpoints: global-tokens.$breakpoints;
 
 $typography: global-tokens.$body-small-regular;
-$color: var(--#{globals.$prefix}color-text-secondary);
+$color: var(--#{global-tokens.$token-prefix}color-text-secondary);
 
 $gap-mobile-up: global-tokens.$space-300;
 $gap-tablet-up: global-tokens.$space-500;

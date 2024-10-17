@@ -1,6 +1,5 @@
-@use '@global' as global-tokens;
-@use '../../settings/globals';
+@use '@global-tokens' as global-tokens;
 
 $gap: global-tokens.$space-500;
-$icon-color-default: var(--#{globals.$prefix}color-selected-content-basic);
-$icon-color-disabled: var(--#{globals.$prefix}color-disabled-content);
+$icon-color-default: var(--#{global-tokens.$token-prefix}color-selected-content-basic);
+$icon-color-disabled: var(--#{global-tokens.$token-prefix}color-disabled-content);
