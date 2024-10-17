@@ -1,6 +1,7 @@
 @use '@global' as global-tokens;
 @use '../../settings/globals';
 @use '../../settings/transitions';
+@use '../../tools/tokens';
 
 // Header
 $header-typography: global-tokens.$body-medium-semibold;

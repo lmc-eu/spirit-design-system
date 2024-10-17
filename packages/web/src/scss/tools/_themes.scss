@@ -8,7 +8,7 @@
 @use 'svg';
 @use 'tokens' as tokens-tools;
 
-@mixin generate($themes, $addBackgroundImageUrls: true) {
+@mixin generate($themes, $add-background-image-urls: true) {
     // 1.
     $is-default-theme: true;
 
@@ -25,7 +25,7 @@
                 );
             }
 
-            @if $addBackgroundImageUrls {
+            @if $add-background-image-urls {
                 @include generate-background-image-urls($value);
             }
         }
