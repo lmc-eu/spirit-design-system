@@ -1,10 +1,9 @@
-@use '@global' as global-tokens;
-@use '../../settings/globals';
+@use '@global-tokens' as global-tokens;
 @use '../../settings/transitions';
 
 $border-width: global-tokens.$border-width-100;
 $border-style: solid;
-$border-color: var(--#{globals.$prefix}color-border-basic);
+$border-color: var(--#{global-tokens.$token-prefix}color-border-basic);
 
 $start-shadow-size: global-tokens.$space-700;
 $start-shadow-initial-offset: -1 * transitions.$shift-distance-medium;

@@ -1,6 +1,5 @@
-@use '@global' as global-tokens;
-@use '../../settings/globals';
+@use '@global-tokens' as global-tokens;
 
 $border-width: global-tokens.$border-width-100;
 $border-style: solid;
-$border-color: var(--#{globals.$prefix}color-border-basic);
+$border-color: var(--#{global-tokens.$token-prefix}color-border-basic);
