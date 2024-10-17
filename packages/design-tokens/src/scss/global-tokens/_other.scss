@@ -15,6 +15,8 @@ $grid-spacing-mobile: 16px !default;
 $grid-spacing-tablet: 32px !default;
 $grid-spacing-desktop: 32px !default;
 
+$token-prefix: 'spirit-' !default;
+
 $containers: (
     max-width: $container-max-width,
     padding: (
