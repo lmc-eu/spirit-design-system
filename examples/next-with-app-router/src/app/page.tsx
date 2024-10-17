@@ -1,5 +1,5 @@
-import { NextPage } from 'next';
 import FileuploaderTest from '@/app/fileuploader';
+import { NextPage } from 'next';
 
 const Home: NextPage = () => <FileuploaderTest />;
 

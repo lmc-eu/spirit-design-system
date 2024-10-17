@@ -1,6 +1,5 @@
 'use client';
 
-import React, { useState } from 'react';
 import {
   FileUploader,
   FileUploaderAttachment,
@@ -9,6 +8,7 @@ import {
   SpiritFileUploaderAttachmentProps,
   useFileQueue,
 } from '@lmc-eu/spirit-web-react';
+import React, { useState } from 'react';
 
 const FileuploaderTest = () => {
   const [errorMessage, setErrorMessage] = useState<(string | Error)[]>([]);
