@@ -14,6 +14,7 @@ import {
   CLASS_NAME_TRANSITIONING,
   CLASS_NAME_VISIBLE,
   DEFAULT_TOAST_AUTO_CLOSE_INTERVAL,
+  CLASS_NAME_LINK_NOT_UNDERLINED,
 } from './constants';
 import { EventHandler, SelectorEngine } from './dom';
 import { enableDismissTrigger, enableToggleTrigger, executeAfterTransition, SpiritConfig } from './utils';
@@ -30,9 +31,15 @@ const EVENT_SHOWN = `shown${EVENT_KEY}`;
 const COLOR_ICON_MAP = {
   danger: 'danger',
   informative: 'info',
-  inverted: 'info',
+  neutral: 'info',
   success: 'check-plain',
   warning: 'warning',
+};
+
+const UNDERLINE_MAP = {
+  hover: 'hover',
+  always: 'always',
+  never: 'never',
 };
 
 const SELECTOR_QUEUE_ELEMENT = `[${ATTRIBUTE_DATA_ELEMENT}="toast-queue"]`;
@@ -52,6 +59,7 @@ export const PROPERTY_NAME_SLOWEST_TRANSITION = {
 const PROPERTY_NAME_FALLBACK_TRANSITION = 'opacity';
 
 type Color = keyof typeof COLOR_ICON_MAP;
+type Underlined = keyof typeof UNDERLINE_MAP;
 
 type Config = {
   autoCloseInterval: number;
@@ -62,11 +70,11 @@ type Config = {
   enableLink: boolean;
   linkContent: HTMLElement | string;
   linkProps: {
-    color: 'primary' | 'secondary' | 'inverted';
+    color: 'primary' | 'secondary' | 'tertiary';
     elementType: string;
     href: string;
     isDisabled: boolean;
-    isUnderlined: boolean;
+    underlined: Underlined;
     target: '_blank' | '_self' | '_parent' | '_top';
   };
   hasIcon: boolean;
@@ -160,10 +168,9 @@ class Toast extends BaseComponent {
   }
 
   updateOrRemoveCloseButton(closeButtonElement: HTMLElement) {
-    const { color, id, isDismissible } = this.config as Config;
+    const { id, isDismissible } = this.config as Config;
 
     if (isDismissible) {
-      closeButtonElement!.setAttribute('data-spirit-color', color);
       closeButtonElement!.setAttribute('data-spirit-dismiss', 'toast');
       closeButtonElement!.setAttribute('data-spirit-target', `#${id}`);
       closeButtonElement!.setAttribute('aria-controls', id);
@@ -196,17 +203,18 @@ class Toast extends BaseComponent {
     if (linkContent) {
       const linkElementWithType = document.createElement(linkProps.elementType || 'a');
       linkElement.replaceWith(linkElementWithType);
-      const color = linkProps.color || 'inverted';
-      const isUnderlined = linkProps.isUnderlined !== undefined ? linkProps.isUnderlined : true;
+      const { underlined = UNDERLINE_MAP.always } = linkProps;
 
-      if (isUnderlined) {
+      linkElementWithType.classList.add('ToastBar__link');
+      if (underlined === UNDERLINE_MAP.always) {
         linkElementWithType.classList.add(CLASS_NAME_LINK_UNDERLINED);
+      }
+      if (underlined === UNDERLINE_MAP.never) {
+        linkElementWithType.classList.add(CLASS_NAME_LINK_NOT_UNDERLINED);
       }
       if (linkProps.isDisabled) {
         linkElementWithType.classList.add(CLASS_NAME_LINK_DISABLED);
       }
-      linkElementWithType.classList.add('ToastBar__link');
-      linkElementWithType.classList.add(`link-${color}`);
       linkElementWithType.setAttribute('href', linkProps.href);
       linkProps.target && linkElementWithType.setAttribute('target', linkProps.target);
       linkElementWithType!.innerHTML = typeof linkContent === 'string' ? linkContent : linkContent.outerHTML;

@@ -1,8 +1,9 @@
 import React from 'react';
 import { Heading } from '../../Heading';
 import { Link } from '../../Link';
+import { ProductLogo } from '../../ProductLogo';
 import { Header } from '..';
-import SpiritLogo from './SpiritLogo';
+import JobBoardLogoInverted from './JobBoardLogoInverted';
 
 const HeaderSimpleTransparent = () => {
   return (
@@ -16,9 +17,11 @@ const HeaderSimpleTransparent = () => {
         background: 'linear-gradient(121.59deg, #073256 0%, #185C95 100%)',
       }}
     >
-      <Header isSimple>
+      <Header color="transparent" isSimple>
         <Link href="/">
-          <SpiritLogo />
+          <ProductLogo>
+            <JobBoardLogoInverted />
+          </ProductLogo>
         </Link>
       </Header>
 

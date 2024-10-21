@@ -1,6 +1,6 @@
-@use '@tokens' as tokens;
+@use '@global' as global-tokens;
 
-$breakpoints: tokens.$breakpoints;
-$root-padding: tokens.$space-1000 tokens.$space-700;
-$root-padding-desktop: tokens.$space-1000 tokens.$space-800;
-$buttons-gap: tokens.$space-600;
+$breakpoints: global-tokens.$breakpoints;
+$root-padding: global-tokens.$space-1200 global-tokens.$space-900;
+$root-padding-desktop: global-tokens.$space-1200 global-tokens.$space-1000;
+$buttons-gap: global-tokens.$space-700;

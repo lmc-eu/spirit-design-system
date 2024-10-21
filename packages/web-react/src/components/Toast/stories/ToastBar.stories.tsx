@@ -27,9 +27,9 @@ const meta: Meta<typeof ToastBar> = {
     },
     color: {
       control: 'select',
-      options: ['inverted', 'informative', 'success', 'warning', 'danger'],
+      options: ['neutral', 'informative', 'success', 'warning', 'danger'],
       table: {
-        defaultValue: { summary: 'inverted' },
+        defaultValue: { summary: 'neutral' },
       },
     },
     hasIcon: {
@@ -66,7 +66,7 @@ const meta: Meta<typeof ToastBar> = {
       </>
     ),
     closeLabel: 'Close',
-    color: 'inverted',
+    color: 'neutral',
     hasIcon: false,
     iconName: '',
     isDismissible: false,

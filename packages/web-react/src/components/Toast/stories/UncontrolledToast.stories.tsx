@@ -2,7 +2,7 @@ import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { AlignmentX, EmotionColors } from '../../../constants';
-import { LinkProps, ToastColorType, UncontrolledToastProps } from '../../../types';
+import { ToastColorType, ToastLinkProps, UncontrolledToastProps } from '../../../types';
 import { Button } from '../../Button';
 import { DEFAULT_TOAST_AUTO_CLOSE_INTERVAL } from '../constants';
 import ReadMe from '../README.md';
@@ -54,9 +54,9 @@ const meta: Meta<UncontrolledToastPlaygroundProps> = {
     },
     color: {
       control: 'select',
-      options: ['inverted', ...Object.values(EmotionColors)],
+      options: ['neutral', ...Object.values(EmotionColors)],
       table: {
-        defaultValue: { summary: 'inverted' },
+        defaultValue: { summary: 'neutral' },
       },
     },
     iconName: {
@@ -91,7 +91,7 @@ const meta: Meta<UncontrolledToastPlaygroundProps> = {
     closeLabel: 'Close',
     hasIcon: false,
     isDismissible: true,
-    color: 'inverted',
+    color: 'neutral',
     iconName: '',
     isCollapsible: true,
     enableAutoClose: true,
@@ -112,7 +112,7 @@ const ShowButton = (props: {
   hasIcon: boolean;
   iconName?: string;
   isDismissible: boolean;
-  linkProps: LinkProps;
+  linkProps: ToastLinkProps;
   content: { message: string | JSX.Element; link?: string | JSX.Element };
 }) => {
   const { content, color, hasIcon, isDismissible, iconName, enableAutoClose, autoCloseInterval, linkProps } = props;

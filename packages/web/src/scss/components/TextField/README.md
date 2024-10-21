@@ -93,7 +93,7 @@ The `size` attribute is supported on inputs of the following types: `email`,
 This option is generally recommended for inputs with a limited value length
 (e.g. numeric representation of day, month, year). Supported values are `2`, `3`
 and `4` (characters). If you need any other value or prefer using `em` unit
-instead of default `ch`, define a `--width` CSS custom property on the `<input>`
+instead of default `ch`, define a `--text-field-input-width` CSS custom property on the `<input>`
 element:
 
 ```html
@@ -110,7 +110,7 @@ element:
     class="TextField__input"
     name="sizeEm"
     placeholder="Placeholder"
-    style="--width: 4em;"
+    style="--text-field-input-width: 4em;"
   />
 </div>
 ```

@@ -24,9 +24,6 @@ export interface LinkBaseProps<C = void> extends ChildrenProps, StyleProps, Tran
   target?: LinkTarget;
   /** Color of the Link */
   color?: ActionLinkColorsDictionaryType<C>;
-  /** Whether is the Link underlined */
-  /** @deprecated "isUnderlined" property will be replaced in the next major version. Please use "underlined" instead. */
-  isUnderlined?: boolean;
   /** When is the Link underlined */
   underlined?: UnderlineOptions;
   /** Whether is the Link disabled */

@@ -13,7 +13,7 @@ const defaultProps: Partial<SpiritButtonProps> = {
   isBlock: false,
   isDisabled: false,
   isLoading: false,
-  isSquare: false,
+  isSymmetrical: false,
   size: 'medium',
   type: 'button',
   elementType: 'button',

@@ -1,6 +1,6 @@
-@use '@tokens' as tokens;
+@use '@global' as global-tokens;
 
 // Always declare margins in the same direction.
 :where(address, blockquote, h1, h2, h3, h4, h5, h6, p, pre, dl, ol, ul, figure, hr, table, fieldset):not(:last-child) {
-    margin-bottom: tokens.$space-600;
+    margin-bottom: global-tokens.$space-700;
 }

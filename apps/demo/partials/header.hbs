@@ -1,20 +1,149 @@
-<header class='bg-inverted text-secondary-inverted py-1000 py-tablet-1100'>
-  <div class='Container'>
+<header class="Header spirit-theme-light-on-brand {{#unless (eq page 'components')}}hide-from-visual-tests{{/unless}}">
+  <a href="/" aria-label="Spirit Development Preview">
+    {{> web/assets/spiritLogoInverted }}
+  </a>
 
-    <h1 class='typography-heading-xlarge-text'>Spirit Design System</h1>
-    <h2 class='typography-heading-medium-text text-secondary-inverted-disabled mb-900'>{{#if package}}{{package}} - {{/if}}Development Preview</h2>
-
-    <div class='d-grid d-tablet-block'>
-      <a
-        href='https://github.com/lmc-eu/spirit-design-system'
-        class='Button Button--inverted Button--large mb-400 mb-tablet-0 mr-tablet-400'
-      >
-        GitHub Project
-      </a>
-      <a href='https://spirit.supernova-docs.io/spirit/' class='Button Button--inverted Button--large'>
-        Spirit Docs →
-      </a>
-    </div>
-
+  <!-- HeaderMobileActions: start -->
+  <div class="HeaderMobileActions">
+    <button
+      type="button"
+      class="Button Button--secondary Button--medium Button--square"
+      data-spirit-toggle="offcanvas"
+      data-spirit-target="#off-canvas-navigation"
+      aria-controls="off-canvas-navigation"
+      aria-expanded="false"
+    >
+      <svg width="24" height="24" aria-hidden="true">
+        <use xlink:href="/assets/icons/svg/sprite.svg#hamburger" />
+      </svg>
+      <span class="accessibility-hidden">Menu</span>
+    </button>
   </div>
+  <!-- HeaderMobileActions: end -->
+
+  <!-- HeaderDesktopActions: start -->
+  <nav class="HeaderDesktopActions" aria-label="Main navigation">
+    <!-- HeaderNav: start -->
+    <ul class="HeaderNav">
+      <li class="HeaderNavItem">
+        <a
+          href="/packages/web/"
+          class="HeaderLink {{# if (eq package 'Web')}}HeaderLink--current{{/if}}"
+          {{# if (eq package 'Web')}}aria-current="page"{{/if}}
+        >
+          Web
+        </a>
+      </li>
+      <li class="HeaderNavItem">
+        <a
+          href="/packages/web-react/"
+          class="HeaderLink {{# if (eq package 'Web React')}}HeaderLink--current{{/if}}"
+          {{# if (eq package 'Web React')}}aria-current="page"{{/if}}
+        >
+          Web React
+        </a>
+      </li>
+      {{!-- Hide link to the Twig implementation in production. Twig demo app only runs on localhost, we don't deploy it anywhere. --}}
+      {{!-- For the same reason, we don't include the link in the visual tests. --}}
+      {{#if @is_development}}
+        <li class="HeaderNavItem hide-from-visual-tests">
+          <a href="https://localhost:4443" class="HeaderLink">Web Twig</a>
+        </li>
+      {{/if}}
+      <li class="HeaderNavItem">
+        <a
+          href="/packages/form-validations/"
+          class="HeaderLink {{# if (eq package 'Form Validations')}}HeaderLink--current{{/if}}"
+          {{# if (eq package 'Form Validations')}}aria-current="page"{{/if}}
+        >
+          Form Validations
+        </a>
+      </li>
+    </ul>
+    <!-- HeaderNav: end -->
+  </nav>
+  <!-- HeaderDesktopActions: end -->
+
+  <!-- HeaderDesktopActions: start -->
+  <nav class="HeaderDesktopActions HeaderDesktopActions--end">
+
+    {{> themeSwitcher isLabelHidden=true}}
+
+  </nav>
+  <!-- HeaderDesktopActions: end -->
 </header>
+
+<!-- HeaderDialog: start -->
+<dialog id="off-canvas-navigation" class="HeaderDialog" aria-label="Menu">
+  <div class="HeaderDialog__panel">
+    <div class="HeaderDialog__content">
+
+      <!-- HeaderDialogCloseButton: start -->
+      <button
+        type="button"
+        class="HeaderDialogCloseButton"
+        data-spirit-dismiss="off-canvas-navigation"
+        data-spirit-target="#off-canvas-navigation"
+        aria-controls="off-canvas-navigation"
+        aria-expanded="false"
+      >
+        <svg width="24" height="24" aria-hidden="true">
+          <use xlink:href="/assets/icons/svg/sprite.svg#close" />
+        </svg>
+        <span class="accessibility-hidden">Close</span>
+      </button>
+      <!-- HeaderDialogCloseButton: end -->
+
+      <!-- HeaderDialogActions: start -->
+      <nav class="HeaderDialogActions HeaderDialogActions--primary" aria-label="Main navigation">
+
+        <!-- HeaderDialogNav: start -->
+        <ul class="HeaderDialogNav">
+          <li class="HeaderDialogNavItem">
+            <a
+              href="/packages/web/"
+              class="HeaderDialogLink {{# if (eq package 'Web')}}HeaderDialogLink--current{{/if}}"
+              {{# if (eq package 'Web')}}aria-current="page"{{/if}}
+            >
+              Web
+            </a>
+          </li>
+          <li class="HeaderDialogNavItem">
+            <a
+              href="/packages/web-react/"
+              class="HeaderDialogLink {{# if (eq package 'Web React')}}HeaderDialogLink--current{{/if}}"
+              {{# if (eq package 'Web React')}}aria-current="page"{{/if}}
+            >
+              Web React
+            </a>
+          </li>
+          {{!-- Hide link to the Twig implementation in production. Twig demo app only runs on localhost, we don't deploy it anywhere. --}}
+          {{#if @is_development}}
+            <li class="HeaderDialogNavItem">
+              <a href="https://localhost:4443" class="HeaderDialogLink">Web Twig</a>
+            </li>
+          {{/if}}
+          <li class="HeaderDialogNavItem">
+            <a
+              href="/packages/form-validations/"
+              class="HeaderDialogLink {{# if (eq package 'Form Validations')}}HeaderDialogLink--current{{/if}}"
+              {{# if (eq package 'Form Validations')}}aria-current="page"{{/if}}
+            >
+              Form Validations
+            </a>
+          </li>
+        </ul>
+        <!-- HeaderDialogNav: end -->
+
+      </nav>
+      <nav class="HeaderDialogActions HeaderDialogActions--secondary" aria-label="Secondary navigation">
+
+        {{> themeSwitcher isLabelHidden=false}}
+
+      </nav>
+      <!-- HeaderDialogActions: end -->
+
+    </div>
+  </div>
+</dialog>
+<!-- HeaderDialog: end -->

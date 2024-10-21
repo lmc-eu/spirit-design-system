@@ -1,3 +1,4 @@
+// This code is commented out until we switch it to the new token system
 @forward 'Accordion';
 @forward 'Alert';
 @forward 'Breadcrumbs';
@@ -15,7 +16,9 @@
 @forward 'Item';
 @forward 'Modal';
 @forward 'Pagination';
+@forward 'PartnerLogo';
 @forward 'Pill';
+@forward 'ProductLogo';
 @forward 'Radio';
 @forward 'ScrollView';
 @forward 'Select';
@@ -29,8 +32,6 @@
 @forward 'UNSTABLE_ActionLayout';
 @forward 'UNSTABLE_Avatar';
 @forward 'UNSTABLE_EmptyState';
-@forward 'UNSTABLE_PartnerLogo';
-@forward 'UNSTABLE_ProductLogo';
 @forward 'UNSTABLE_Section';
 @forward 'UNSTABLE_Slider';
 @forward 'UNSTABLE_Toggle';

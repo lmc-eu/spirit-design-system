@@ -23,20 +23,25 @@
     padding-inline: theme.$item-padding-inline;
     font-weight: theme.$item-emphasis-font-weight;
     color: theme.$item-default-color;
-    border-radius: theme.$item-radius;
-    background-color: theme.$item-default-background;
+    border-width: theme.$item-border-width;
+    border-style: theme.$item-border-style;
+    border-color: theme.$item-default-border-color;
+    border-radius: theme.$item-border-radius;
+    background-color: theme.$item-default-background-color;
 
     &:hover,
     &:focus {
         text-decoration: none;
         color: theme.$item-hover-color;
-        background-color: theme.$item-hover-background;
+        border-color: theme.$item-hover-border-color;
+        background-color: theme.$item-hover-background-color;
     }
 
     &:active {
         text-decoration: none;
         color: theme.$item-active-color;
-        background-color: theme.$item-active-background;
+        border-color: theme.$item-active-border-color;
+        background-color: theme.$item-active-background-color;
     }
 }
 
@@ -45,6 +50,7 @@
 .Pagination__link--current:focus,
 .Pagination__link--current:active {
     color: theme.$item-selected-color;
-    background-color: theme.$item-selected-background;
+    border-color: theme.$item-selected-border-color;
+    background-color: theme.$item-selected-background-color;
     cursor: cursors.$disabled;
 }

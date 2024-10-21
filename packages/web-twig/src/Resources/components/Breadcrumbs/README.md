@@ -44,16 +44,16 @@ Example of custom usage:
 <Breadcrumbs>
   <ol>
     <li class="d-none d-tablet-flex">
-      <Link href="#rootUrl" color="primary" isUnderlined>Root</Link>
+      <Link href="#rootUrl" color="primary" underlined="always">Root</Link>
     </li>
     <li class="d-none d-tablet-flex">
-      <Link href="#categoryUrl" color="primary" isUnderlined>Category</Link>
+      <Link href="#categoryUrl" color="primary" underlined="always">Category</Link>
     </li>
     <li class="d-tablet-none">
-      <Link href="#subcategoryUrl" color="primary" isUnderlined>Custom go back link</Link>
+      <Link href="#subcategoryUrl" color="primary" underlined="always">Custom go back link</Link>
     </li>
     <li class="d-none d-tablet-flex">
-      <Link href="#subcategoryUrl" color="primary" isUnderlined>Subcategory</Link>
+      <Link href="#subcategoryUrl" color="primary" underlined="always">Subcategory</Link>
     </li>
     <li class="d-none d-tablet-flex">
       <Link href="#currentUrl" color="secondary" aria-current="page">Current page</Link>
@@ -70,16 +70,16 @@ Without lexer:
 }} %}
     {% block content %}
       <li class="d-none d-tablet-flex">
-        <Link href="#rootUrl" color="primary" isUnderlined>Root</Link>
+        <Link href="#rootUrl" color="primary" underlined="always">Root</Link>
       </li>
       <li class="d-none d-tablet-flex">
-        <Link href="#categoryUrl" color="primary" isUnderlined>Category</Link>
+        <Link href="#categoryUrl" color="primary" underlined="always">Category</Link>
       </li>
       <li class="d-tablet-none">
-        <Link href="#subcategoryUrl" color="primary" isUnderlined>Custom go back link</Link>
+        <Link href="#subcategoryUrl" color="primary" underlined="always">Custom go back link</Link>
       </li>
       <li class="d-none d-tablet-flex">
-        <Link href="#subcategoryUrl" color="primary" isUnderlined>Subcategory</Link>
+        <Link href="#subcategoryUrl" color="primary" underlined="always">Subcategory</Link>
       </li>
       <li class="d-none d-tablet-flex">
         <Link href="#currentUrl" color="secondary" aria-current="page">Current page</Link>

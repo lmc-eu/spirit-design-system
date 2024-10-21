@@ -1,7 +1,7 @@
 @use 'sass:map';
 @use 'true' as test;
 @use '../typography';
-@use '@tokens' as tokens;
+@use '@global' as global-tokens;
 
 @include test.describe('generate mixin') {
     @include test.it('should generate typography styles for a given token and breakpoint') {
@@ -27,7 +27,7 @@
             }
 
             @include test.expect() {
-                @media (width >= #{map.get(tokens.$breakpoints, 'tablet')}) {
+                @media (width >= #{map.get(global-tokens.$breakpoints, 'tablet')}) {
                     .typography-test {
                         font-style: italic;
                         font-weight: 700;

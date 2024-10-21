@@ -1,19 +1,16 @@
-{{#> layout/base package="Spirit Web"}}
+{{#> layout/base package="Web" packageUrl="/packages/web/" title=title}}
 
-  {{> header package="Web"}}
+  {{> header}}
+  {{> cover}}
 
-  {{#*inline "scripts"}}
-  <script src="/packages/web/src/js/index.esm.ts" type="module"></script>
-  {{/inline}}
-
-  <main class="py-900 py-tablet-1200">
+  <main class="py-1000">
     <div class="Container">
-
-      {{> web/tabs}}
 
       {{> @partial-block}}
 
     </div>
   </main>
+
+  {{> footer}}
 
 {{/layout/base}}

@@ -1,5 +1,4 @@
 @use 'sass:map';
-@use '@tokens' as tokens;
 @use '../../tools/breakpoint';
 
 @mixin paddings($paddings, $breakpoints) {
