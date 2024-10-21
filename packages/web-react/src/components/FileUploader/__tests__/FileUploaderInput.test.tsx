@@ -15,7 +15,7 @@ describe('FileUploaderInput', () => {
   validationTextPropsTest(FileUploaderInput, '.FileUploaderInput__validationText');
 
   it('should have drag-and-drop listeners in CSR when draggable is supported', () => {
-    render(<FileUploaderInput id="test-uploader" name="test-uploader" />);
+    render(<FileUploaderInput id="test-uploader" name="test-uploader" label="upload" />);
 
     const dropZone = screen.getByLabelText(/upload/i).parentElement;
 
@@ -26,7 +26,7 @@ describe('FileUploaderInput', () => {
   });
 
   it('should not have drag-and-drop listeners in SSR', () => {
-    const ui = <FileUploaderInput id="test-uploader" name="test-uploader" />;
+    const ui = <FileUploaderInput id="test-uploader" name="test-uploader" label="upload" />;
     const container = document.createElement('div');
     document.body.appendChild(container);
     container.innerHTML = ReactDOMServer.renderToString(ui);
