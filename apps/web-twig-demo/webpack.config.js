@@ -2,7 +2,7 @@ const path = require('path');
 // eslint-disable-next-line import/no-unresolved
 const Encore = require('@symfony/webpack-encore');
 // eslint-disable-next-line import/no-extraneous-dependencies
-const sass = require('sass');
+const sass = require('sass-embedded');
 
 // Manually configure the runtime environment if not already configured yet by the "encore" command.
 // It's useful when you use tools that rely on webpack.config.js file.
@@ -73,8 +73,10 @@ Encore
           // eslint-disable-next-line no-param-reassign
           options.implementation = sass;
           // eslint-disable-next-line no-param-reassign
+          options.api = 'modern-compiler';
+          // eslint-disable-next-line no-param-reassign
           options.sassOptions = {
-              includePaths: [
+              loadPaths: [
                 // used in docker image
                 './node_modules',
                 './node_modules/@lmc-eu/spirit-design-tokens/scss',

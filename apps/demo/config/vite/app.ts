@@ -57,7 +57,8 @@ export default defineConfig({
     postcss: resolve(__dirname, 'config'),
     preprocessorOptions: {
       scss: {
-        includePaths: [
+        api: 'modern-compiler',
+        loadPaths: [
           join(pathRelativeToRepositoryRoot, 'node_modules'),
           join(pathRelativeToRepositoryRoot, 'node_modules/@lmc-eu/spirit-design-tokens/src/scss'),
         ],
