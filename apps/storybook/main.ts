@@ -30,7 +30,8 @@ const config: StorybookConfig = {
         postcss: resolve(__dirname, 'config'),
         preprocessorOptions: {
           scss: {
-            includePaths: [
+            api: 'modern-compiler',
+            loadPaths: [
               resolve(__dirname, '../../node_modules'),
               resolve(__dirname, '../../node_modules/@lmc-eu/spirit-design-tokens/src/scss'),
             ],

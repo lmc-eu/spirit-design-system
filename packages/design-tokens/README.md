@@ -153,10 +153,12 @@ module: {
         {
           loader: 'sass-loader',
           options: {
+            api: 'modern-compiler',
             sassOptions: {
-              includePaths: [
+              loadPaths: [
                 path.resolve(__dirname, 'node_modules'),
                 path.resolve(__dirname, 'node_modules/@lmc-eu/spirit-design-tokens/scss'),
+              ],
             },
           },
         },
