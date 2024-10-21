@@ -118,6 +118,8 @@ Example:
 You can use the `spacing` prop to apply custom spacing between items in both horizontal and vertical directions. The prop
 accepts either a spacing token (e.g. `space-100`) or an object with breakpoint keys and spacing token values.
 
+Alternatively, you can set custom spacing in the horizontal (x-axis) and vertical (y-axis) direction separately using the `spacingX` and `spacingY` props.
+
 Custom spacing:
 
 ```jsx
@@ -138,6 +140,22 @@ Custom responsive spacing:
 </Flex>
 ```
 
+Custom horizontal (x-axis) spacing:
+
+```jsx
+<Flex spacingX={{ mobile: 'space-400', tablet: 'space-800' }}>
+  <!-- Flex content -->
+</Flex>
+```
+
+Custom vertical (y-axis) spacing:
+
+```jsx
+<Flex spacingY={{ mobile: 'space-400', tablet: 'space-800' }}>
+  <!-- Flex content -->
+</Flex>
+```
+
 ## API
 
 | Name          | Type                                                                 | Default   | Required | Description                                                                                                                                |
@@ -148,6 +166,8 @@ Custom responsive spacing:
 | `elementType` | HTML element                                                         | `div`     | ✕        | Element type to use for the Grid                                                                                                           |
 | `isWrapping`  | \[ `bool` \| `object` ]                                              | `false`   | ✕        | Whether items will wrap, use an object to set responsive values, e.g. `{ mobile: true, tablet: true, desktop: false }`                     |
 | `spacing`     | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]    | —         | ✕        | Apply [custom spacing](#custom-spacing) in both horizontal and vertical directions between items                                           |
+| `spacingX`    | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]    | —         | ✕        | Apply horizontal [custom spacing](#custom-spacing) between items                                                                           |
+| `spacingY`    | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]    | —         | ✕        | Apply vertical [custom spacing](#custom-spacing) between items                                                                             |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
