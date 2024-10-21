@@ -72,7 +72,7 @@ describe('Listener approach', () => {
   });
 });
 
-describe('mock useeffect approach', () => {
+describe('mock useEffect approach', () => {
   it('should not register onDragOver event listener during SSR', () => {
     jest.spyOn(React, 'useEffect').mockImplementation(() => {});
     const addEventListenerSpy = jest.spyOn(window, 'addEventListener');
@@ -99,7 +99,7 @@ describe('mock useeffect approach', () => {
   });
 });
 
-describe('is-dragging class on drag vent', () => {
+describe('is-dragging class onDragOver event', () => {
   it('should have is-dragging class on dragOver', () => {
     render(<FileUploaderInput name="bagr" id="pokus" data-testid="test" />);
     const dropZone = screen.getAllByTestId('test')[0];
