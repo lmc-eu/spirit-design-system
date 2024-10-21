@@ -58,14 +58,35 @@ describe('useFlexStyleProps', () => {
   it.each([
     // props, expectedStyleProps
     [{}, {}],
-    [{ spacing: 'space-100' }, { '--flex-spacing': 'var(--spirit-space-100)' }],
+    [
+      { spacing: 'space-100' },
+      { '--flex-spacing-x': 'var(--spirit-space-100)', '--flex-spacing-y': 'var(--spirit-space-100)' },
+    ],
+    [
+      { spacingX: 'space-100', spacingY: 'space-200' },
+      { '--flex-spacing-x': 'var(--spirit-space-100)', '--flex-spacing-y': 'var(--spirit-space-200)' },
+    ],
     [
       {
         spacing: { mobile: 'space-100', tablet: 'space-200' },
       },
       {
-        '--flex-spacing': 'var(--spirit-space-100)',
-        '--flex-spacing-tablet': 'var(--spirit-space-200)',
+        '--flex-spacing-x': 'var(--spirit-space-100)',
+        '--flex-spacing-x-tablet': 'var(--spirit-space-200)',
+        '--flex-spacing-y': 'var(--spirit-space-100)',
+        '--flex-spacing-y-tablet': 'var(--spirit-space-200)',
+      },
+    ],
+    [
+      {
+        spacingX: { mobile: 'space-100', tablet: 'space-200' },
+        spacingY: { mobile: 'space-300', tablet: 'space-400' },
+      },
+      {
+        '--flex-spacing-x': 'var(--spirit-space-100)',
+        '--flex-spacing-x-tablet': 'var(--spirit-space-200)',
+        '--flex-spacing-y': 'var(--spirit-space-300)',
+        '--flex-spacing-y-tablet': 'var(--spirit-space-400)',
       },
     ],
     [
@@ -73,9 +94,22 @@ describe('useFlexStyleProps', () => {
         spacing: { mobile: 'space-100', tablet: 'space-200', desktop: 'space-400' },
       },
       {
-        '--flex-spacing': 'var(--spirit-space-100)',
-        '--flex-spacing-tablet': 'var(--spirit-space-200)',
-        '--flex-spacing-desktop': 'var(--spirit-space-400)',
+        '--flex-spacing-x': 'var(--spirit-space-100)',
+        '--flex-spacing-x-tablet': 'var(--spirit-space-200)',
+        '--flex-spacing-x-desktop': 'var(--spirit-space-400)',
+        '--flex-spacing-y': 'var(--spirit-space-100)',
+        '--flex-spacing-y-tablet': 'var(--spirit-space-200)',
+        '--flex-spacing-y-desktop': 'var(--spirit-space-400)',
+      },
+    ],
+    [
+      {
+        spacingX: { mobile: 'space-100', tablet: 'space-200', desktop: 'space-400' },
+      },
+      {
+        '--flex-spacing-x': 'var(--spirit-space-100)',
+        '--flex-spacing-x-tablet': 'var(--spirit-space-200)',
+        '--flex-spacing-x-desktop': 'var(--spirit-space-400)',
       },
     ],
   ])('should return the correct style properties for props %o', (props, expectedStyleProps) => {
