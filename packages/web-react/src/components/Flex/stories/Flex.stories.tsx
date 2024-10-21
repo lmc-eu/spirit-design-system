@@ -51,6 +51,12 @@ const meta: Meta<typeof Flex> = {
     spacing: {
       control: 'object',
     },
+    spacingX: {
+      control: 'object',
+    },
+    spacingY: {
+      control: 'object',
+    },
   },
   args: {
     alignmentX: undefined,
@@ -59,6 +65,16 @@ const meta: Meta<typeof Flex> = {
     elementType: 'div',
     isWrapping: false,
     spacing: {
+      mobile: 'space-600',
+      tablet: 'space-800',
+      desktop: 'space-1000',
+    },
+    spacingX: {
+      mobile: 'space-600',
+      tablet: 'space-800',
+      desktop: 'space-1000',
+    },
+    spacingY: {
       mobile: 'space-600',
       tablet: 'space-800',
       desktop: 'space-1000',
