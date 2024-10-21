@@ -1,6 +1,5 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import '@testing-library/jest-dom';
-// eslint-disable-next-line import/no-extraneous-dependencies
+import { TextEncoder, TextDecoder } from 'util';
 import ResizeObserverPolyfill from 'resize-observer-polyfill';
 
 /**
@@ -18,3 +17,8 @@ global.ResizeObserver = ResizeObserverPolyfill;
  * Also consider better patching of the Console.
  * @see { @link https://github.com/carbon-design-system/carbon/blob/main/config/jest-config-carbon/setup/setupAfterEnv.js }
  */
+
+/**
+ * While it should be bundled with jsdom, it isn't with jsdom 16.
+ */
+Object.assign(global, { TextDecoder, TextEncoder });
