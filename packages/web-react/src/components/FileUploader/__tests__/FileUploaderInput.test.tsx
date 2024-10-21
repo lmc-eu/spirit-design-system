@@ -19,10 +19,7 @@ describe('FileUploaderInput', () => {
 
     const dropZone = screen.getAllByTestId('test')[0];
 
-    expect(dropZone).toHaveAttribute('ondragover');
-    expect(dropZone).toHaveAttribute('ondragenter');
-    expect(dropZone).toHaveAttribute('ondragleave');
-    expect(dropZone).toHaveAttribute('ondrop');
+    expect(dropZone).toHaveClass('has-drag-and-drop');
   });
 
   it('should not have drag-and-drop listeners in SSR', () => {
@@ -37,10 +34,7 @@ describe('FileUploaderInput', () => {
 
     const dropZone = screen.getAllByTestId('test')[0];
 
-    expect(dropZone).not.toHaveAttribute('ondragover');
-    expect(dropZone).not.toHaveAttribute('ondragenter');
-    expect(dropZone).not.toHaveAttribute('ondragleave');
-    expect(dropZone).not.toHaveAttribute('ondrop');
+    expect(dropZone).not.toHaveClass('has-drag-and-drop');
   });
 });
 
