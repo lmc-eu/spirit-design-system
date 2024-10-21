@@ -106,7 +106,15 @@ describe('Flex', () => {
   it('should render with custom spacing', () => {
     render(<Flex spacing="space-600" data-testid={testId} />);
 
-    expect(screen.getByTestId(testId)).toHaveStyle({ '--flex-spacing': 'var(--spirit-space-600)' });
+    expect(screen.getByTestId(testId)).toHaveStyle({ '--flex-spacing-x': 'var(--spirit-space-600)' });
+    expect(screen.getByTestId(testId)).toHaveStyle({ '--flex-spacing-y': 'var(--spirit-space-600)' });
+  });
+
+  it('should render with custom spacingX and spacingY', () => {
+    render(<Flex spacingX="space-500" spacingY="space-1600" data-testid={testId} />);
+
+    expect(screen.getByTestId(testId)).toHaveStyle({ '--flex-spacing-x': 'var(--spirit-space-500)' });
+    expect(screen.getByTestId(testId)).toHaveStyle({ '--flex-spacing-y': 'var(--spirit-space-1600)' });
   });
 
   it('should render with custom spacing for each breakpoint', () => {
@@ -116,8 +124,30 @@ describe('Flex', () => {
 
     const element = screen.getByTestId(testId) as HTMLElement;
 
-    expect(element).toHaveStyle({ '--flex-spacing': 'var(--spirit-space-100)' });
-    expect(element).toHaveStyle({ '--flex-spacing-tablet': 'var(--spirit-space-1000)' });
-    expect(element).toHaveStyle({ '--flex-spacing-desktop': 'var(--spirit-space-1200)' });
+    expect(element).toHaveStyle({ '--flex-spacing-x': 'var(--spirit-space-100)' });
+    expect(element).toHaveStyle({ '--flex-spacing-y': 'var(--spirit-space-100)' });
+    expect(element).toHaveStyle({ '--flex-spacing-x-tablet': 'var(--spirit-space-1000)' });
+    expect(element).toHaveStyle({ '--flex-spacing-y-tablet': 'var(--spirit-space-1000)' });
+    expect(element).toHaveStyle({ '--flex-spacing-x-desktop': 'var(--spirit-space-1200)' });
+    expect(element).toHaveStyle({ '--flex-spacing-y-desktop': 'var(--spirit-space-1200)' });
+  });
+
+  it('should render with custom spacingX and spacingY for each breakpoint', () => {
+    render(
+      <Flex
+        spacingX={{ mobile: 'space-100', tablet: 'space-1000', desktop: 'space-1200' }}
+        spacingY={{ mobile: 'space-200', tablet: 'space-1100', desktop: 'space-1600' }}
+        data-testid={testId}
+      />,
+    );
+
+    const element = screen.getByTestId(testId) as HTMLElement;
+
+    expect(element).toHaveStyle({ '--flex-spacing-x': 'var(--spirit-space-100)' });
+    expect(element).toHaveStyle({ '--flex-spacing-y': 'var(--spirit-space-200)' });
+    expect(element).toHaveStyle({ '--flex-spacing-x-tablet': 'var(--spirit-space-1000)' });
+    expect(element).toHaveStyle({ '--flex-spacing-y-tablet': 'var(--spirit-space-1100)' });
+    expect(element).toHaveStyle({ '--flex-spacing-x-desktop': 'var(--spirit-space-1200)' });
+    expect(element).toHaveStyle({ '--flex-spacing-y-desktop': 'var(--spirit-space-1600)' });
   });
 });
