@@ -157,6 +157,49 @@ module: {
               includePaths: [
                 path.resolve(__dirname, 'node_modules'),
                 path.resolve(__dirname, 'node_modules/@lmc-eu/spirit-design-tokens/scss'),
+              ],
+            },
+          },
+        },
+      ],
+    },
+  ];
+}
+// …
+```
+
+</details>
+
+##### Using the sass-embedded Library
+
+If you're using `sass-embedded`, you can specify the API as `legacy`, `modern`, or `modern-compiler`. More information can be found in [sass documentation](sass-embedded).
+
+We recommend using the `modern-compiler` option.
+Please note that this change also requires updating `includePaths` to `loadPaths`.
+
+<details>
+<summary>Webpack and <code>sass-embedded</code>:</summary>
+
+```javascript
+// webpack.config.js
+
+// …
+module: {
+  rules: [
+    {
+      test: /\.scss$/,
+      use: [
+        'style-loader',
+        'css-loader',
+        {
+          loader: 'sass-loader',
+          options: {
+            api: 'modern-compiler',
+            sassOptions: {
+              loadPaths: [
+                path.resolve(__dirname, 'node_modules'),
+                path.resolve(__dirname, 'node_modules/@lmc-eu/spirit-design-tokens/scss'),
+              ],
             },
           },
         },
@@ -287,3 +330,4 @@ See the [LICENSE](LICENSE.md) file for information.
 [`_typography.sass`]: src/scss/generated/_typography.scss
 [`spirit-web`]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web
 [migrate-to-spirit]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/CONTRIBUTING.md#migrating-your-components-to-spirit
+[sass-embedded]: https://sass-lang.com/documentation/breaking-changes/legacy-js-api/#bundlers
