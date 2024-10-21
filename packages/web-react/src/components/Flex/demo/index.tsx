@@ -10,6 +10,8 @@ import FlexResponsiveSpacing from './FlexResponsiveSpacing';
 import FlexRowLayout from './FlexRowLayout';
 import FlexVerticalAlignment from './FlexVerticalAlignment';
 import FlexWrapping from './FlexWrapping';
+import FlexResponsiveCustomHorizontalSpacing from './FlexResponsiveCustomHorizontalSpacing';
+import FlexResponsiveCustomVerticalSpacing from './FlexResponsiveCustomVerticalSpacing';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -39,6 +41,12 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     </DocsSection>
     <DocsSection title="Responsive Spacing">
       <FlexResponsiveSpacing />
+    </DocsSection>
+    <DocsSection title="Responsive Custom Horizontal Spacing">
+      <FlexResponsiveCustomHorizontalSpacing />
+    </DocsSection>
+    <DocsSection title="Responsive Custom Vertical Spacing">
+      <FlexResponsiveCustomVerticalSpacing />
     </DocsSection>
   </React.StrictMode>,
 );
