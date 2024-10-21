@@ -3,7 +3,7 @@ import DocsBox from '../../../../docs/DocsBox';
 import Flex from '../Flex';
 
 const FlexColumnLayout = () => (
-  <Flex direction="column">
+  <Flex direction="column" spacingY="space-1000">
     <DocsBox size="small">Item 1</DocsBox>
     <DocsBox size="small">Item 2</DocsBox>
     <DocsBox size="small">Item 3</DocsBox>

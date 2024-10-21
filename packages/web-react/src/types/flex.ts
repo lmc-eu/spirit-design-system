@@ -35,6 +35,10 @@ export interface FlexCustomLayoutProps {
   isWrapping?: FlexWrapType;
   /** Custom spacing between items */
   spacing?: SpaceToken | Partial<Record<BreakpointToken, SpaceToken>>;
+  /** Custom horizontal spacing between items */
+  spacingX?: SpaceToken | Partial<Record<BreakpointToken, SpaceToken>>;
+  /** Custom vertical spacing between items */
+  spacingY?: SpaceToken | Partial<Record<BreakpointToken, SpaceToken>>;
 }
 
 export interface FlexProps<T extends ElementType = 'div'> extends FlexElementTypeProps<T>, FlexCustomLayoutProps {}

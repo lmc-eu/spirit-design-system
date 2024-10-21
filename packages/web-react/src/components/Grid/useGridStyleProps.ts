@@ -23,10 +23,8 @@ export function useGridStyleProps(props: SpiritGridProps<ElementType>): GridStyl
   const gridClass = useClassNamePrefix('Grid');
 
   const gridStyle: GridCSSProperties = {
-    ...{
-      ...useSpacingStyle(spacing, 'grid', DirectionAxis.X),
-      ...useSpacingStyle(spacing, 'grid', DirectionAxis.Y),
-    },
+    ...useSpacingStyle(spacing, 'grid', DirectionAxis.X),
+    ...useSpacingStyle(spacing, 'grid', DirectionAxis.Y),
     ...useSpacingStyle(spacingX, 'grid', DirectionAxis.X),
     ...useSpacingStyle(spacingY, 'grid', DirectionAxis.Y),
   };
