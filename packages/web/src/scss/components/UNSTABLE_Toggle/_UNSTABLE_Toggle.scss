@@ -109,7 +109,7 @@ $_field-name: 'UNSTABLE_Toggle';
     @media (hover: hover) {
         &:hover,
         &:active {
-            background-color: theme.$input-background-color-hover;
+            background-color: theme.$input-background-color-state-hover;
         }
 
         &:checked:hover,
