@@ -1,9 +1,8 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "module": "es2015",
-    "target": "es2015",
     "noEmit": false
   },
+  "include": ["../src/js/*"],
   "exclude": ["../docs/**/*", "../src/**/__tests__/**/*"]
 }
