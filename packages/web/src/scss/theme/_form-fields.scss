@@ -44,15 +44,17 @@ $inline-field-input-border-width: global-tokens.$border-width-200;
 $inline-field-input-background-color-checked: var(--#{global-tokens.$token-prefix}color-selected-state-default);
 
 // Box field form components – TextField, TextArea, etc.
-$box-field-input-color-default: var(--#{global-tokens.$token-prefix}color-form-field-content);
+$box-field-input-color-state-default: var(--#{global-tokens.$token-prefix}color-form-field-filled-content);
 $box-field-input-border-width: global-tokens.$border-width-100;
 $box-field-input-border-style: solid;
 $box-field-input-border-color-focus: var(--#{global-tokens.$token-prefix}color-border-focus);
 $box-field-input-focus-shadow: global-tokens.$focus;
 
 $box-field-input-border-radius: global-tokens.$radius-300;
-$box-field-input-placeholder-color-default: var(--#{global-tokens.$token-prefix}color-form-field-placeholder);
-$box-field-input-placeholder-color-disabled: var(--#{global-tokens.$token-prefix}color-disabled-content);
+$box-field-input-placeholder-color-state-default: var(
+    --#{global-tokens.$token-prefix}color-form-field-filled-placeholder
+);
+$box-field-input-placeholder-color-state-disabled: var(--#{global-tokens.$token-prefix}color-disabled-content);
 $box-field-input-padding-x: global-tokens.$space-600;
 $box-field-input-padding-y: calc(#{global-tokens.$space-500} - #{global-tokens.$border-width-100});
 $box-field-input-width: 18rem;
