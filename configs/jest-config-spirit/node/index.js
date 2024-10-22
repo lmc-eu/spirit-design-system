@@ -34,7 +34,7 @@ export const config = {
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected.
   // https://jestjs.io/docs/configuration#collectcoveragefrom-array
-  collectCoverageFrom: ['<rootDir>/src/**/*.{js,jsx,ts,tsx}', '!<rootDir>/src/**/*.d.ts'],
+  collectCoverageFrom: ['<rootDir>/src/**/*.{js,jsx,ts,tsx}', '!<rootDir>/src/**/*.d.ts', '!<rootDir>/src/**/index.ts'],
 
   // An array of regexp pattern strings that are matched against all file paths before executing the test.
   // https://jestjs.io/docs/configuration#coveragepathignorepatterns-arraystring
