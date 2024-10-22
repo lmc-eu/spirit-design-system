@@ -1,0 +1,148 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    /* Visit https://aka.ms/tsconfig to read more about this file */
+
+    /*
+     * Projects
+     */
+    // Save .tsbuildinfo files to allow for incremental compilation of projects.
+    // @see: https://www.typescriptlang.org/tsconfig/#incremental
+    // "incremental": true,
+
+    /*
+     * Language and Environment
+     */
+    // Set the JavaScript language version for emitted JavaScript and include compatible library declarations.
+    // @see: https://www.typescriptlang.org/tsconfig/#target
+    "target": "esnext",
+
+    /*
+     * Modules
+     */
+    // Specify how TypeScript looks up a file from a given module specifier.
+    // @see: https://www.typescriptlang.org/tsconfig/#moduleResolution
+    "moduleResolution": "node",
+
+    // Specify the base directory to resolve non-relative module names.
+    // @see: https://www.typescriptlang.org/tsconfig/#baseUrl
+    "baseUrl": ".",
+
+    // Specify type package names to be included without being referenced in a source file.
+    // If types is specified, only packages listed will be included in the global scope.
+    // @see: https://www.typescriptlang.org/tsconfig/#types
+    "types": ["node", "jest"],
+
+    // Specify multiple folders that act like './node_modules/@types'.
+    // @see: https://www.typescriptlang.org/tsconfig/#typeRoots
+    "typeRoots": ["../../node_modules/@types"],
+
+    // Enable importing .json files.
+    // @see: https://www.typescriptlang.org/tsconfig/#resolveJsonModule
+    "resolveJsonModule": true,
+
+    /*
+     * JavaScript Support
+     */
+    // Allow JavaScript files to be a part of your program. Use the 'checkJS' option to get errors from these files.
+    // @see: https://www.typescriptlang.org/tsconfig/#allowJs
+    "allowJs": true,
+
+    /*
+     * Emit
+     */
+    // Generate .d.ts files from TypeScript and JavaScript files in your project.
+    // @see: https://www.typescriptlang.org/tsconfig/#declaration
+    "declaration": true,
+
+    // Create sourcemaps for d.ts files.
+    // @see: https://www.typescriptlang.org/tsconfig/#sourceMap
+    "sourceMap": true,
+
+    // Specify an output folder for all emitted files.
+    // @see: https://www.typescriptlang.org/tsconfig/#outDir
+    "outDir": "./dist",
+
+    // Disable emitting comments.
+    // @see: https://www.typescriptlang.org/tsconfig/#removeComments
+    "removeComments": true,
+
+    // Disable emitting files from a compilation.
+    // @see: https://www.typescriptlang.org/tsconfig/#noEmit
+    "noEmit": true,
+
+    // Disable emitting files if any type checking errors are reported.
+    // @see: https://www.typescriptlang.org/tsconfig/#noEmitOnError
+    "noEmitOnError": true,
+
+    /*
+     * Interop Constraints
+     */
+    // Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility.
+    // @see: https://www.typescriptlang.org/tsconfig/#esModuleInterop
+    "esModuleInterop": true,
+
+    // Allow 'import x from y' when a module doesn't have a default export.
+    // @see: https://www.typescriptlang.org/tsconfig/#allowSyntheticDefaultImports
+    "allowSyntheticDefaultImports": true,
+
+    // Ensure that casing is correct in imports.
+    // @see: https://www.typescriptlang.org/tsconfig/#forceConsistentCasingInFileNames
+    "forceConsistentCasingInFileNames": true,
+
+    /*
+     * Type Checking
+     * Note: some checks are set to false since linting takes care of them
+     */
+    // When type checking, take into account 'null' and 'undefined'.
+    // @see: https://www.typescriptlang.org/tsconfig/#strictNullChecks
+    "strictNullChecks": true,
+
+    // When assigning functions, check to ensure parameters and the return values are subtype-compatible.
+    // @see: https://www.typescriptlang.org/tsconfig/#strictFunctionTypes
+    "strictFunctionTypes": true,
+
+    // Enable error reporting for expressions and declarations with an implied 'any' type.
+    // @see: https://www.typescriptlang.org/tsconfig/#noImplicitAny
+    "noImplicitAny": true,
+
+    // Check for class properties that are declared but not set in the constructor.
+    // @see: https://www.typescriptlang.org/tsconfig/#strictPropertyInitialization
+    "strictPropertyInitialization": true,
+
+    // Enable error reporting when 'this' is given the type 'any'.
+    // @see: https://www.typescriptlang.org/tsconfig/#noImplicitThis
+    "noImplicitThis": true,
+
+    // Ensure 'use strict' is always emitted.
+    // @see: https://www.typescriptlang.org/tsconfig/#alwaysStrict
+    "alwaysStrict": true,
+
+    // Enable error reporting when local variables aren't read.
+    // @see: https://www.typescriptlang.org/tsconfig/#noUnusedLocals
+    "noUnusedLocals": false,
+
+    // Raise an error when a function parameter isn't read.
+    // @see: https://www.typescriptlang.org/tsconfig/#noUnusedParameters
+    "noUnusedParameters": false,
+
+    // Enable error reporting for codepaths that do not explicitly return in a function.
+    // @see: https://www.typescriptlang.org/tsconfig/#noImplicitReturns
+    "noImplicitReturns": true,
+
+    // Enable error reporting for fallthrough cases in switch statements.
+    // @see: https://www.typescriptlang.org/tsconfig/#noFallthroughCasesInSwitch
+    "noFallthroughCasesInSwitch": false,
+
+    // Disable error reporting for unreachable code.
+    // @see: https://www.typescriptlang.org/tsconfig/#allowUnreachableCode
+    "allowUnreachableCode": true,
+
+    /*
+     * Completeness
+     */
+    // Skip type checking all .d.ts files.
+    // @see: https://www.typescriptlang.org/tsconfig/#skipLibCheck
+    "skipLibCheck": true
+  }
+}
