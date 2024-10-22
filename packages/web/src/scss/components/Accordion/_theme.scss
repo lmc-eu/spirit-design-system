@@ -1,8 +1,8 @@
 @use '@tokens' as tokens;
 
-$accordion-item-background-color-default: tokens.$background-interactive-default;
-$accordion-item-background-color-hover: tokens.$background-interactive-hover;
-$accordion-item-background-color-active: tokens.$background-interactive-active;
+$accordion-item-background-color-state-default: tokens.$background-interactive-state-default;
+$accordion-item-background-color-state-hover: tokens.$background-interactive-state-hover;
+$accordion-item-background-color-state-active: tokens.$background-interactive-state-active;
 $accordion-header-typography: tokens.$body-medium-regular;
 $accordion-header-typography-active: tokens.$body-medium-bold;
 $accordion-header-typography-color: tokens.$text-primary;
