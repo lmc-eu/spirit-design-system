@@ -1,8 +1,4 @@
 {
-  "compilerOptions": {
-    "types": ["node"],
-    "noEmit": true,
-    "moduleResolution": "node"
-  },
+  "extends": "../../configs/typescript-config-spirit/base",
   "include": ["src/**/*"]
 }

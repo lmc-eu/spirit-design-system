@@ -1,32 +1,13 @@
 {
-  "compileOnSave": true,
+  "extends": "../../configs/typescript-config-spirit/dom",
   "compilerOptions": {
-    "baseUrl": ".",
+    // Specify an output folder for all emitted files.
+    // @see: https://www.typescriptlang.org/tsconfig/#outDir
     "outDir": "./dist/js",
-    "sourceMap": true,
-    "declaration": true,
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "module": "es2015",
-    "target": "es2015",
-    "noEmit": true,
-    "strictNullChecks": true,
-    "strictPropertyInitialization": true,
-    "resolveJsonModule": true,
-    "noImplicitReturns": true,
-    "allowUnreachableCode": false,
-    "allowSyntheticDefaultImports": true,
-    "alwaysStrict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noUnusedParameters": false,
-    "noUnusedLocals": true,
-    "strictFunctionTypes": true,
-    "noImplicitAny": true,
-    "esModuleInterop": true,
-    "typeRoots": ["../../node_modules/@types"],
-    "lib": ["es2015", "dom", "dom.iterable"],
-    "types": ["node", "jest", "@testing-library/jest-dom"]
+
+    // Enable error reporting when 'this' is given the type 'any'.
+    // @see: https://www.typescriptlang.org/tsconfig/#noImplicitThis
+    "noImplicitThis": false
   },
   "include": ["./src/**/*"],
   "exclude": ["./node_modules", "./dist/**/*"]
