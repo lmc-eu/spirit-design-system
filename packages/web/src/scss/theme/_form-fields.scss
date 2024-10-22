@@ -2,40 +2,40 @@
 
 // Common for all form components
 $input-typography: tokens.$body-medium-regular;
-$input-color-disabled: tokens.$disabled-content;
-$input-background-color: tokens.$form-field-default;
-$input-background-color-hover: tokens.$form-field-hover;
-$input-background-color-active: tokens.$form-field-active;
-$input-background-color-disabled: tokens.$disabled-background;
-$input-border-color: tokens.$form-field-border-default;
+$input-color-state-disabled: tokens.$disabled-content;
+$input-background-color: tokens.$form-field-filled-background-state-default;
+$input-background-color-state-hover: tokens.$form-field-filled-background-state-hover;
+$input-background-color-state-active: tokens.$form-field-filled-background-state-active;
+$input-background-color-state-disabled: tokens.$disabled-background;
+$input-border-color: tokens.$form-field-filled-border-state-default;
 $input-border-color-success: tokens.$form-field-success;
 $input-border-color-warning: tokens.$form-field-warning;
 $input-border-color-danger: tokens.$form-field-danger;
-$input-border-color-disabled: tokens.$disabled-border;
+$input-border-color-state-disabled: tokens.$disabled-border;
 $input-focus-shadow: tokens.$focus;
-$label-color-default: tokens.$form-field-label;
-$label-color-disabled: tokens.$disabled-content;
+$label-color-state-default: tokens.$form-field-label;
+$label-color-state-disabled: tokens.$disabled-content;
 $label-required-typography: tokens.$body-small-regular;
 $label-required-margin-left: tokens.$space-200;
 $label-required-color: tokens.$form-field-danger;
 $validation-text-typography: tokens.$body-small-semibold;
 $validation-text-margin-top: tokens.$space-400;
-$validation-text-color-disabled: tokens.$disabled-content;
+$validation-text-color-state-disabled: tokens.$disabled-content;
 $validation-text-color-success: tokens.$form-field-success;
 $validation-text-color-warning: tokens.$form-field-warning;
 $validation-text-color-danger: tokens.$form-field-danger;
 $helper-text-typography: tokens.$body-small-regular;
 $helper-text-margin-top: tokens.$space-400;
-$helper-text-color-default: tokens.$form-field-helper-text;
-$helper-text-color-disabled: tokens.$disabled-content;
+$helper-text-color-state-default: tokens.$form-field-helper-text;
+$helper-text-color-state-disabled: tokens.$disabled-content;
 
 // Inline field form components – Checkbox, Radio, etc.
 $inline-field-gap: tokens.$space-500;
 $inline-field-margin-y: tokens.$space-500;
-$inline-field-input-border-color-checked: tokens.$form-field-border-selected;
+$inline-field-input-border-color-checked: tokens.$form-field-filled-border-state-selected;
 $inline-field-input-border-color-checked-disabled: tokens.$disabled-background;
 $inline-field-input-border-width: tokens.$border-width-200;
-$inline-field-input-background-color-checked: tokens.$selected-default;
+$inline-field-input-background-color-checked: tokens.$selected-state-default;
 
 // Box field form components – TextField, TextArea, etc.
 $box-field-input-color-default: tokens.$form-field-content;
@@ -72,9 +72,9 @@ $validation-states: (
 $item-padding-x: tokens.$space-700;
 $item-padding-y: tokens.$space-500;
 $item-border-radius: tokens.$radius-200;
-$item-background-color-default: tokens.$background-interactive-default;
-$item-background-color-hover: tokens.$background-interactive-hover;
-$item-background-color-active: tokens.$background-interactive-active;
+$item-background-color-state-default: tokens.$background-interactive-state-default;
+$item-background-color-state-hover: tokens.$background-interactive-state-hover;
+$item-background-color-state-active: tokens.$background-interactive-state-active;
 $item-label-typography: tokens.$body-medium-semibold;
 $item-validation-text-typography: tokens.$body-small-semibold;
 $item-helper-text-typography: tokens.$body-small-regular;

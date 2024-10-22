@@ -111,8 +111,8 @@ $_field-name: 'Checkbox';
 .Checkbox > .Checkbox__input:disabled {
     @include form-fields-tools.input-disabled();
 
-    border-color: form-fields-theme.$input-border-color-disabled;
-    background-color: form-fields-theme.$input-background-color-disabled;
+    border-color: form-fields-theme.$input-border-color-state-disabled;
+    background-color: form-fields-theme.$input-background-color-state-disabled;
 
     &:checked,
     &:indeterminate {
