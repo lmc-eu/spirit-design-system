@@ -14,10 +14,10 @@
 
             @include test.expect() {
                 .label-disabled-test {
-                    color: form-fields-theme.$label-color-disabled;
+                    color: form-fields-theme.$label-color-state-disabled;
 
                     &::after {
-                        color: form-fields-theme.$label-color-disabled;
+                        color: form-fields-theme.$label-color-state-disabled;
                     }
                 }
             }
@@ -34,7 +34,7 @@
 
             @include test.expect() {
                 .input-disabled-test {
-                    color: form-fields-theme.$input-color-disabled;
+                    color: form-fields-theme.$input-color-state-disabled;
                     cursor: cursors.$disabled;
                 }
             }

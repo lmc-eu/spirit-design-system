@@ -52,7 +52,7 @@
                     $class-name: 'Test',
                     $dictionary-values: (
                         this-is-long-so-prettier-breaks-the-output-to-new-line:
-                            dictionaries-settings.$action-button-colors,
+                            dictionaries-settings.$component-button-colors,
                     ),
                     $config: (
                         color: 'content',
@@ -89,7 +89,7 @@
                     $class-name: 'Test',
                     $dictionary-values: (
                         this-is-long-so-prettier-breaks-the-output-to-new-line:
-                            dictionaries-settings.$action-button-colors,
+                            dictionaries-settings.$component-button-colors,
                     ),
                     $config: (
                         color: 'content',
@@ -129,7 +129,7 @@
         @include test.assert() {
             @include test.output() {
                 @include dictionaries.prepare-button-links(
-                    $dictionary-values: dictionaries-settings.$action-button-colors
+                    $dictionary-values: dictionaries-settings.$component-button-colors
                 );
             }
 
@@ -180,45 +180,45 @@
             @include test.output() {
                 @include dictionaries.generate-link-colors(
                     $selector: '.link',
-                    $dictionary-values: dictionaries-settings.$action-link-colors
+                    $dictionary-values: dictionaries-settings.$link-colors
                 );
             }
 
             @include test.expect() {
                 .link-primary {
-                    color: var(--spirit-color-action-link-primary-default);
+                    color: var(--spirit-color-link-primary-state-default);
                 }
 
                 .link-primary:hover {
-                    color: var(--spirit-color-action-link-primary-hover);
+                    color: var(--spirit-color-link-primary-state-hover);
                 }
 
                 .link-primary:active {
-                    color: var(--spirit-color-action-link-primary-active);
+                    color: var(--spirit-color-link-primary-state-active);
                 }
 
                 .link-secondary {
-                    color: var(--spirit-color-action-link-secondary-default);
+                    color: var(--spirit-color-link-secondary-state-default);
                 }
 
                 .link-secondary:hover {
-                    color: var(--spirit-color-action-link-secondary-hover);
+                    color: var(--spirit-color-link-secondary-state-hover);
                 }
 
                 .link-secondary:active {
-                    color: var(--spirit-color-action-link-secondary-active);
+                    color: var(--spirit-color-link-secondary-state-active);
                 }
 
                 .link-tertiary {
-                    color: var(--spirit-color-action-link-tertiary-default);
+                    color: var(--spirit-color-link-tertiary-state-default);
                 }
 
                 .link-tertiary:hover {
-                    color: var(--spirit-color-action-link-tertiary-hover);
+                    color: var(--spirit-color-link-tertiary-state-hover);
                 }
 
                 .link-tertiary:active {
-                    color: var(--spirit-color-action-link-tertiary-active);
+                    color: var(--spirit-color-link-tertiary-state-active);
                 }
             }
         }
