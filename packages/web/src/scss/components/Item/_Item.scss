@@ -49,7 +49,7 @@
 .Item__icon {
     display: flex;
     grid-row: span 2; // 1.
-    color: theme.$icon-color-default;
+    color: theme.$icon-color-state-default;
 }
 
 .Item__icon--start {
@@ -78,11 +78,6 @@
     @include form-fields.helper-text-disabled();
 }
 
-.Item:not(.Item--disabled):hover .Item__helperText,
-.Item:not(.Item--disabled):active .Item__helperText {
-    color: inherit;
-}
-
 .Item--disabled .Item__icon {
-    color: theme.$icon-color-disabled;
+    color: theme.$icon-color-state-disabled;
 }
