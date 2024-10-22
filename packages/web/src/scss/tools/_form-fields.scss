@@ -70,7 +70,7 @@
 
     display: block;
     margin-bottom: form-fields-theme.$box-field-label-margin-bottom;
-    color: form-fields-theme.$label-color-default;
+    color: form-fields-theme.$label-color-state-default;
 }
 
 @mixin inline-field-input() {
@@ -87,12 +87,12 @@
 
     @media (hover: hover) {
         &:hover {
-            background-color: form-fields-theme.$input-background-color-hover;
+            background-color: form-fields-theme.$input-background-color-state-hover;
         }
     }
 
     &:active {
-        background-color: form-fields-theme.$input-background-color-active;
+        background-color: form-fields-theme.$input-background-color-state-active;
     }
 }
 
@@ -102,26 +102,26 @@
     display: block;
     width: 100%;
     padding: form-fields-theme.$box-field-input-padding-y form-fields-theme.$box-field-input-padding-x;
-    color: form-fields-theme.$box-field-input-color-default;
+    color: form-fields-theme.$box-field-input-color-state-default;
     border: form-fields-theme.$box-field-input-border-width form-fields-theme.$box-field-input-border-style
         form-fields-theme.$input-border-color;
     border-radius: form-fields-theme.$box-field-input-border-radius;
     background: form-fields-theme.$input-background-color;
 
     &::placeholder {
-        color: form-fields-theme.$box-field-input-placeholder-color-default;
+        color: form-fields-theme.$box-field-input-placeholder-color-state-default;
         opacity: 1;
     }
 
     @media (hover: hover) {
         &:hover {
-            background-color: form-fields-theme.$input-background-color-hover;
+            background-color: form-fields-theme.$input-background-color-state-hover;
         }
     }
 
     &:active,
     &:focus-within {
-        background-color: form-fields-theme.$input-background-color-active;
+        background-color: form-fields-theme.$input-background-color-state-active;
     }
 }
 
@@ -196,11 +196,11 @@
 @mixin box-field-disabled-input() {
     @include input-disabled();
 
-    border-color: form-fields-theme.$input-border-color-disabled;
-    background-color: form-fields-theme.$input-background-color-disabled;
+    border-color: form-fields-theme.$input-border-color-state-disabled;
+    background-color: form-fields-theme.$input-background-color-state-disabled;
 
     &::placeholder {
-        color: form-fields-theme.$box-field-input-placeholder-color-disabled;
+        color: form-fields-theme.$box-field-input-placeholder-color-state-disabled;
     }
 }
 
