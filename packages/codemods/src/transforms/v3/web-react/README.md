@@ -87,3 +87,19 @@ npx @lmc-eu/spirit-codemods -p <path> -t v3/web-react/link-hasVisitedStyleAllowe
 - <Heading><Link … /></Heading>
 + <Heading><Link hasVisitedStyleAllowed … /></Heading>
 ```
+
+### `v3/web-react/toastbar-inverted-neutral` — Replace `inverted` with `neutral` in ToastBar component `color` prop
+
+The `inverted` variant was removed from the `ToastBar` component.
+This codemod updates the `ToastBar` component by replacing the `inverted` value with `neutral` in the `color` prop.
+
+```sh
+npx @lmc-eu/spirit-codemods -p <path> -t v3/web-react/toastbar-inverted-neutral
+```
+
+#### Example
+
+```diff
+- <ToastBar color="inverted" … />
++ <ToastBar color="neutral" … />
+```
