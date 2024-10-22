@@ -1,8 +1,14 @@
 @use '@global-tokens' as global-tokens;
 
-$accordion-item-background-color-default: var(--#{global-tokens.$token-prefix}color-background-interactive-default);
-$accordion-item-background-color-hover: var(--#{global-tokens.$token-prefix}color-background-interactive-hover);
-$accordion-item-background-color-active: var(--#{global-tokens.$token-prefix}color-background-interactive-active);
+$accordion-item-background-color-state-default: var(
+    --#{global-tokens.$token-prefix}color-background-interactive-state-default
+);
+$accordion-item-background-color-state-hover: var(
+    --#{global-tokens.$token-prefix}color-background-interactive-state-hover
+);
+$accordion-item-background-color-state-active: var(
+    --#{global-tokens.$token-prefix}color-background-interactive-state-active
+);
 $accordion-header-typography: global-tokens.$body-medium-regular;
 $accordion-header-typography-active: global-tokens.$body-medium-bold;
 $accordion-header-typography-color: var(--#{global-tokens.$token-prefix}color-text-primary);
