@@ -52,8 +52,11 @@
                 @include dictionaries.generate-colors(
                     $class-name: 'Test',
                     $dictionary-values: (
-                        this-is-long-so-prettier-breaks-the-output-to-new-line:
-                            dictionaries-settings.$component-button-colors,
+                        this-is-long-so-prettier-breaks-the-output-to-new-line: (
+                            primary,
+                            secondary,
+                            tertiary,
+                        ),
                     ),
                     $config: (
                         color: 'content',
@@ -89,8 +92,11 @@
                 @include dictionaries.generate-colors(
                     $class-name: 'Test',
                     $dictionary-values: (
-                        this-is-long-so-prettier-breaks-the-output-to-new-line:
-                            dictionaries-settings.$component-button-colors,
+                        this-is-long-so-prettier-breaks-the-output-to-new-line: (
+                            primary,
+                            secondary,
+                            tertiary,
+                        ),
                     ),
                     $config: (
                         color: 'content',
@@ -130,7 +136,11 @@
         @include test.assert() {
             @include test.output() {
                 @include dictionaries.prepare-button-links(
-                    $dictionary-values: dictionaries-settings.$component-button-colors
+                    $dictionary-values: (
+                        primary,
+                        secondary,
+                        tertiary,
+                    )
                 );
             }
 

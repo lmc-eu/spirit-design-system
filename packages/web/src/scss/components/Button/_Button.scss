@@ -34,11 +34,11 @@
     }
 
     &:hover {
-        background-color: var(--#{tokens.$token-prefix}button-background-color-hover);
+        background-color: var(--#{tokens.$token-prefix}button-background-color-state-hover);
     }
 
     &:active {
-        background-color: var(--#{tokens.$token-prefix}button-background-color-active);
+        background-color: var(--#{tokens.$token-prefix}button-background-color-state-active);
     }
 
     &:disabled,
@@ -51,7 +51,7 @@
 
 @include dictionaries.generate-colors(
     $class-name: 'Button',
-    $dictionary-values: theme.$color-action-button-dictionary,
+    $dictionary-values: theme.$color-component-button-dictionary,
     $config: theme.$color-action-button-dictionary-config
 );
 @include dictionaries.generate-colors(

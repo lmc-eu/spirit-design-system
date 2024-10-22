@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use '@tokens' as tokens;
 @use '../../settings/dictionaries';
 
@@ -12,8 +13,8 @@ $disabled-color: tokens.$disabled-content;
 $disabled-border-color: tokens.$disabled-border;
 $disabled-background-color: tokens.$disabled-background;
 
-$color-action-button-dictionary: (
-    action-button: dictionaries.$action-button-colors,
+$color-component-button-dictionary: (
+    component-button: map.keys(map.get(tokens.$component-colors, button)),
 );
 
 $color-emotion-dictionary: (
@@ -23,17 +24,17 @@ $color-emotion-dictionary: (
 $color-action-button-dictionary-config: (
     color: 'content',
     border-color: 'border',
-    background-color: 'default',
-    background-color-hover: 'hover',
-    background-color-active: 'active',
+    background-color: 'state-default',
+    background-color-state-hover: 'state-hover',
+    background-color-state-active: 'state-active',
 );
 
 $color-emotion-dictionary-config: (
     color: 'content-subtle',
     border-color: 'border-basic',
-    background-color: 'default',
-    background-color-hover: 'hover',
-    background-color-active: 'active',
+    background-color: 'state-default',
+    background-color-state-hover: 'state-hover',
+    background-color-state-active: 'state-active',
 );
 
 $loading-color-dictionary-config: (
