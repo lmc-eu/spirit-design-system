@@ -29,8 +29,8 @@ However, this approach has several drawbacks:
    over the responsibility of defining the colors.
 2. **Introduction of themes.** To enable component independent, **scoped changes of appearance**, themes will be
    introduced. Themes are another layer of abstraction that can be applied to any design token. We decided to start with
-   theming the colors and introduce a light and an on-brand theme for branded sections like site header and cover
-   sections.
+   **theming the colors** and introduce **two light themes:** a default theme for the primary content, and an on-brand
+   theme for branded sections like site header or hero sections.
 3. **Removal of brand color modifiers.** The brand colors will now be applied through a theme which can affect any
    component in the design system.
 
@@ -39,8 +39,9 @@ However, this approach has several drawbacks:
 ### Design Tokens
 
 All design token names need to be carefully reviewed and renamed if necessary to be flexible enough within the new
-theming system, which means we must avoid words like "light", "dark", or "inverted" in the token names. The new neutral
-tokens will now be used in the design system and the inverted tokens will be removed.
+theming system, which means **words suggesting the color brightness like "light", "dark", or "inverted" must be
+avoided** in the token names. The new neutral tokens will now be used in the design system and the inverted tokens will
+be removed.
 
 ### Components Migration
 
