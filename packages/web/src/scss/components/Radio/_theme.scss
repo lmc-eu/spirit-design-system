@@ -7,7 +7,7 @@ $input-size: 20px;
 $input-margin: tokens.$space-200;
 $input-inner-dot-size: 10px;
 $input-background-color: form-fields-theme.$inline-field-input-background-color-checked;
-$input-background-color-disabled: form-fields-theme.$input-color-disabled;
+$input-background-color-state-disabled: form-fields-theme.$input-color-state-disabled;
 $input-transition-duration: transitions.$duration-100;
 $input-transition-timing: transitions.$timing-eased-in-out;
 $input-focus-shadow: tokens.$focus;

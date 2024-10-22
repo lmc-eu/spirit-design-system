@@ -105,15 +105,15 @@ $_field-name: 'Radio';
 .Radio > .Radio__input:disabled {
     @include form-fields-tools.input-disabled();
 
-    border-color: form-fields-theme.$input-border-color-disabled;
-    background-color: form-fields-theme.$input-background-color-disabled;
+    border-color: form-fields-theme.$input-border-color-state-disabled;
+    background-color: form-fields-theme.$input-background-color-state-disabled;
 
     &:checked {
-        border-color: form-fields-theme.$input-border-color-disabled;
+        border-color: form-fields-theme.$input-border-color-state-disabled;
     }
 
     &::before {
-        background-color: theme.$input-background-color-disabled;
+        background-color: theme.$input-background-color-state-disabled;
     }
 }
 
