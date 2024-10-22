@@ -1,0 +1,25 @@
+{
+  "name": "typescript-config-spirit",
+  "description": "TypeScript configuration for Spirit Design System",
+  "version": "0.0.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lmc-eu/spirit-design-system.git",
+    "directory": "configs/typescript-config-spirit"
+  },
+  "bugs": "https://github.com/lmc-eu/spirit-design-system/issues",
+  "keywords": [
+    "alma",
+    "career",
+    "config",
+    "spirit",
+    "spirit-design-system",
+    "typescript",
+    "lint",
+    "preset"
+  ],
+  "dependencies": {
+    "typescript": "5.5.4"
+  }
+}
