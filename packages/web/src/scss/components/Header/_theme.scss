@@ -17,16 +17,20 @@ $header-desktop-actions-gap: global-tokens.$space-900;
 // HeaderLink
 $header-link-padding-x: global-tokens.$space-700;
 $header-link-padding-y: global-tokens.$space-600;
-$header-link-color: var(--#{global-tokens.$token-prefix}color-action-link-primary-default);
-$header-link-background-color: var(--#{global-tokens.$token-prefix}color-background-interactive-default);
-$header-link-color-hover: var(--#{global-tokens.$token-prefix}color-action-link-primary-hover);
-$header-link-background-color-hover: var(--#{global-tokens.$token-prefix}color-background-interactive-hover);
-$header-link-color-active: var(--#{global-tokens.$token-prefix}color-action-link-primary-active);
-$header-link-background-color-active: var(--#{global-tokens.$token-prefix}color-background-interactive-active);
-$header-link-color-current: var(--#{global-tokens.$token-prefix}color-selected-default);
-$header-link-background-color-current: var(--#{global-tokens.$token-prefix}color-background-interactive-active);
+$header-link-color: var(--#{global-tokens.$token-prefix}color-link-primary-state-default);
+$header-link-background-color: var(--#{global-tokens.$token-prefix}color-background-interactive-state-default);
+$header-link-color-state-hover: var(--#{global-tokens.$token-prefix}color-link-primary-state-hover);
+$header-link-background-color-state-hover: var(
+    --#{global-tokens.$token-prefix}color-background-interactive-state-hover
+);
+$header-link-color-state-active: var(--#{global-tokens.$token-prefix}color-link-primary-state-active);
+$header-link-background-color-state-active: var(
+    --#{global-tokens.$token-prefix}color-background-interactive-state-active
+);
+$header-link-color-current: var(--#{global-tokens.$token-prefix}color-selected-state-default);
+$header-link-background-color-current: var(--#{global-tokens.$token-prefix}color-background-interactive-state-active);
 $header-link-current-border-thickness: global-tokens.$border-width-200;
-$header-link-current-border-color: var(--#{global-tokens.$token-prefix}color-selected-default);
+$header-link-current-border-color: var(--#{global-tokens.$token-prefix}color-selected-state-default);
 $header-link-transition-duration: transitions.$duration-200;
 $header-link-transition-timing: transitions.$timing-eased-out;
 
