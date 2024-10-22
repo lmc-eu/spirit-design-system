@@ -3,10 +3,10 @@
 $breakpoints: tokens.$breakpoints;
 $item-padding-x: tokens.$space-700;
 $link-padding-y: tokens.$space-500;
-$link-color-default: tokens.$action-link-secondary-default;
-$link-color-hover: tokens.$action-link-secondary-hover;
-$link-color-active: tokens.$action-link-secondary-active;
-$link-color-selected: $link-color-active;
+$link-color-state-default: tokens.$link-secondary-state-default;
+$link-color-state-hover: tokens.$link-secondary-state-hover;
+$link-color-state-active: tokens.$link-secondary-state-active;
+$link-color-state-selected: $link-color-state-active;
 $spacing-fallback: tokens.$space-900;
 $item-typography: tokens.$body-medium-semibold;
 $item-selected-underline-border-radius: tokens.$radius-100;
