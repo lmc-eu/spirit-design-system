@@ -61,7 +61,6 @@ $_field-name: 'UNSTABLE_Toggle';
         height: theme.$input-mark-size;
         margin: theme.$input-mark-spacing;
         border-radius: theme.$input-mark-border-radius;
-        background-color: theme.$input-mark-background-color;
         box-shadow: theme.$input-mark-shadow;
         transform: translateX(0);
 
@@ -73,11 +72,13 @@ $_field-name: 'UNSTABLE_Toggle';
     }
 
     &::before {
+        background-color: theme.$input-mark-background-color;
         visibility: visible;
         opacity: 1;
     }
 
     &::after {
+        background-color: theme.$input-mark-background-color-checked;
         visibility: hidden;
         opacity: 0;
     }
@@ -87,8 +88,8 @@ $_field-name: 'UNSTABLE_Toggle';
     }
 
     &:checked {
-        border-color: theme.$input-border-color-checked;
-        background-color: theme.$input-background-color-checked;
+        border-color: theme.$input-border-color-state-checked;
+        background-color: theme.$input-background-color-state-checked;
 
         &::before,
         &::after {
@@ -109,12 +110,12 @@ $_field-name: 'UNSTABLE_Toggle';
     @media (hover: hover) {
         &:hover,
         &:active {
-            background-color: theme.$input-background-color-hover;
+            background-color: theme.$input-background-color-state-hover;
         }
 
         &:checked:hover,
         &:checked:active {
-            background-color: theme.$input-background-color-checked-hover;
+            background-color: theme.$input-background-color-state-checked-hover;
         }
     }
 }
@@ -130,7 +131,7 @@ $_field-name: 'UNSTABLE_Toggle';
 }
 
 .UNSTABLE_Toggle__input--indicators::after {
-    background-image: theme.$input-mark-image-checked;
+    background-image: theme.$input-mark-image-state-checked;
 }
 
 .UNSTABLE_Toggle__validationText,
@@ -156,12 +157,12 @@ $_field-name: 'UNSTABLE_Toggle';
 .UNSTABLE_Toggle > .UNSTABLE_Toggle__input:disabled {
     @include form-fields-tools.input-disabled();
 
-    border-color: theme.$input-border-color-disabled;
-    background-color: theme.$input-background-color-disabled;
+    border-color: theme.$input-border-color-state-disabled;
+    background-color: theme.$input-background-color-state-disabled;
 
     &::before,
     &::after {
-        background-color: theme.$input-mark-background-color-disabled;
+        background-color: theme.$input-mark-background-color-state-disabled;
         box-shadow: none;
     }
 }
@@ -174,11 +175,11 @@ $_field-name: 'UNSTABLE_Toggle';
     }
 
     &::before {
-        background-image: theme.$input-mark-image-disabled;
+        background-image: theme.$input-mark-image-state-disabled;
     }
 
     &::after {
-        background-image: theme.$input-mark-image-checked-disabled;
+        background-image: theme.$input-mark-image-state-checked-disabled;
     }
 }
 

@@ -5,14 +5,14 @@ $max-width: 21rem;
 $input-width: 44px;
 $input-height: 24px;
 $input-border-width: tokens.$border-width-100;
-$input-border-color: tokens.$action-toggle-unselected-border;
-$input-border-color-checked: tokens.$action-toggle-selected-border;
-$input-border-color-disabled: tokens.$disabled-border;
-$input-background-color: tokens.$action-toggle-unselected-default;
-$input-background-color-hover: tokens.$action-toggle-unselected-hover;
-$input-background-color-checked: tokens.$action-toggle-selected-default;
-$input-background-color-checked-hover: tokens.$action-toggle-selected-hover;
-$input-background-color-disabled: tokens.$disabled-background;
+$input-border-color: tokens.$component-toggle-unselected-border;
+$input-border-color-state-checked: tokens.$component-toggle-selected-border;
+$input-border-color-state-disabled: tokens.$disabled-border;
+$input-background-color: tokens.$component-toggle-unselected-state-default;
+$input-background-color-state-hover: tokens.$component-toggle-unselected-state-hover;
+$input-background-color-state-checked: tokens.$component-toggle-selected-state-default;
+$input-background-color-state-checked-hover: tokens.$component-toggle-selected-state-hover;
+$input-background-color-state-disabled: tokens.$disabled-background;
 $input-border-radius: tokens.$radius-400;
 $input-focus-shadow: tokens.$focus;
 
@@ -21,12 +21,13 @@ $input-mark-spacing: tokens.$space-100;
 $input-mark-position-x: tokens.$space-100;
 $input-mark-position-y: tokens.$space-100;
 $input-mark-border-radius: tokens.$radius-full;
-$input-mark-background-color: tokens.$action-toggle-selected-content;
-$input-mark-background-color-disabled: tokens.$disabled-foreground;
+$input-mark-background-color: tokens.$component-toggle-unselected-content;
+$input-mark-background-color-checked: tokens.$component-toggle-selected-content;
+$input-mark-background-color-state-disabled: tokens.$disabled-foreground;
 $input-mark-image: var(--#{tokens.$token-prefix}toggle-input-mark-background-image-url);
-$input-mark-image-checked: var(--#{tokens.$token-prefix}toggle-input-mark-checked-background-image-url);
-$input-mark-image-disabled: var(--#{tokens.$token-prefix}toggle-input-mark-disabled-background-image-url);
-$input-mark-image-checked-disabled: var(
+$input-mark-image-state-checked: var(--#{tokens.$token-prefix}toggle-input-mark-checked-background-image-url);
+$input-mark-image-state-disabled: var(--#{tokens.$token-prefix}toggle-input-mark-disabled-background-image-url);
+$input-mark-image-state-checked-disabled: var(
     --#{tokens.$token-prefix}toggle-input-mark-checked-disabled-background-image-url
 );
 $input-mark-shadow: tokens.$shadow-200;
