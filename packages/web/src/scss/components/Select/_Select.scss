@@ -38,7 +38,7 @@ $_field-name: 'Select';
     align-items: center;
     justify-content: center;
     aspect-ratio: 1;
-    color: form-fields-theme.$box-field-input-color-default;
+    color: form-fields-theme.$box-field-input-color-state-default;
     pointer-events: none;
 }
 
@@ -89,7 +89,7 @@ $_field-name: 'Select';
 }
 
 :is(.Select--disabled, .Select.is-disabled) .Select__icon {
-    color: form-fields-theme.$input-color-disabled;
+    color: form-fields-theme.$input-color-state-disabled;
 }
 
 :is(.Select--disabled, .Select.is-disabled) > :is(.Select__validationText, [data-spirit-element='validation_text']) {
