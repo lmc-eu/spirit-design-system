@@ -16,13 +16,10 @@
 @use '../../tools/links' as links-tools;
 
 // 1.
-@include dictionaries.prepare-button-links(dictionaries-settings.$action-link-colors);
+@include dictionaries.prepare-button-links(links-settings.$colors);
 
 // 2.
-@include dictionaries.generate-link-colors(
-    $selector: '.link',
-    $dictionary-values: dictionaries-settings.$action-link-colors
-);
+@include dictionaries.generate-link-colors($selector: '.link', $dictionary-values: links-settings.$colors);
 
 // 3.
 [class*='typography-heading'] a {
@@ -38,7 +35,7 @@
 
 // 5.
 .link-allow-visited-style:visited {
-    color: var(--#{tokens.$token-prefix}color-action-link-visited-default);
+    color: tokens.$link-state-visited;
 }
 
 // 6.

@@ -1,5 +1,6 @@
 @use 'true' as test;
 @use '../../settings/dictionaries' as dictionaries-settings;
+@use '../../settings/links' as links-settings;
 @use '../dictionaries';
 
 @include test.describe('generate-alignments mixin') {
@@ -180,7 +181,7 @@
             @include test.output() {
                 @include dictionaries.generate-link-colors(
                     $selector: '.link',
-                    $dictionary-values: dictionaries-settings.$link-colors
+                    $dictionary-values: links-settings.$colors
                 );
             }
 

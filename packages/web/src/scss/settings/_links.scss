@@ -1,3 +1,16 @@
+@use 'sass:list';
+@use 'sass:map';
+@use 'sass:meta';
+@use '@tokens' as tokens;
+
+$colors: ();
+
+@each $key, $value in tokens.$link-colors {
+    @if meta.type-of($value) == 'map' {
+        $colors: list.append($colors, $key);
+    }
+}
+
 $text-decoration-default: none;
 $text-decoration-hover: underline;
 $text-decoration-skip-ink: none;

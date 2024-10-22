@@ -101,7 +101,7 @@
 
             #{$selector}-#{string.unquote($variant-class)} {
                 color: var(
-                    --#{tokens.$token-prefix}color-action-link-#{string.unquote($dictionary-value)}-#{string.unquote(
+                    --#{tokens.$token-prefix}color-link-#{string.unquote($dictionary-value)}-state-#{string.unquote(
                             $state
                         )}
                 );
