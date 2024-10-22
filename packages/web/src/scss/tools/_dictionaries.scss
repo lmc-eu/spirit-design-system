@@ -100,9 +100,9 @@
 
             #{$selector}-#{string.unquote($variant-class)} {
                 color: var(
-                    --#{global-tokens.$token-prefix}color-action-link-#{string.unquote(
+                    --#{global-tokens.$token-prefix}color-link-#{string.unquote(
                             $dictionary-value
-                        )}-#{string.unquote($state)}
+                        )}-state-#{string.unquote($state)}
                 );
             }
         }
