@@ -2,62 +2,11 @@
 // The theme CSS classes and custom properties are generated in the `web` package from the `themes` directory here.
 
 // Manually created from Figma
-$action-button-plain-active: var(--spirit-color-action-button-plain-active);
-$action-button-plain-border: var(--spirit-color-action-button-plain-border);
-$action-button-plain-content: var(--spirit-color-action-button-plain-content);
-$action-button-plain-default: var(--spirit-color-action-button-plain-default);
-$action-button-plain-hover: var(--spirit-color-action-button-plain-hover);
-
-$action-button-primary-active: var(--spirit-color-action-button-primary-active);
-$action-button-primary-border: var(--spirit-color-action-button-primary-border);
-$action-button-primary-content: var(--spirit-color-action-button-primary-content);
-$action-button-primary-default: var(--spirit-color-action-button-primary-default);
-$action-button-primary-hover: var(--spirit-color-action-button-primary-hover);
-
-$action-button-secondary-active: var(--spirit-color-action-button-secondary-active);
-$action-button-secondary-border: var(--spirit-color-action-button-secondary-border);
-$action-button-secondary-content: var(--spirit-color-action-button-secondary-content);
-$action-button-secondary-default: var(--spirit-color-action-button-secondary-default);
-$action-button-secondary-hover: var(--spirit-color-action-button-secondary-hover);
-
-$action-button-tertiary-active: var(--spirit-color-action-button-tertiary-active);
-$action-button-tertiary-border: var(--spirit-color-action-button-tertiary-border);
-$action-button-tertiary-content: var(--spirit-color-action-button-tertiary-content);
-$action-button-tertiary-default: var(--spirit-color-action-button-tertiary-default);
-$action-button-tertiary-hover: var(--spirit-color-action-button-tertiary-hover);
-
-$action-link-primary-active: var(--spirit-color-action-link-primary-active);
-$action-link-primary-default: var(--spirit-color-action-link-primary-default);
-$action-link-primary-hover: var(--spirit-color-action-link-primary-hover);
-
-$action-link-secondary-active: var(--spirit-color-action-link-secondary-active);
-$action-link-secondary-default: var(--spirit-color-action-link-secondary-default);
-$action-link-secondary-hover: var(--spirit-color-action-link-secondary-hover);
-
-$action-link-tertiary-active: var(--spirit-color-action-link-tertiary-active);
-$action-link-tertiary-default: var(--spirit-color-action-link-tertiary-default);
-$action-link-tertiary-hover: var(--spirit-color-action-link-tertiary-hover);
-
-$action-link-visited-default: var(--spirit-color-action-link-visited-default);
-
-$action-toggle-selected-border: var(--spirit-color-action-toggle-selected-border);
-$action-toggle-selected-content: var(--spirit-color-action-toggle-selected-content);
-$action-toggle-selected-default: var(--spirit-color-action-toggle-selected-default);
-$action-toggle-selected-hover: var(--spirit-color-action-toggle-selected-hover);
-$action-toggle-unselected-border: var(--spirit-color-action-toggle-unselected-border);
-$action-toggle-unselected-content: var(--spirit-color-action-toggle-unselected-content);
-$action-toggle-unselected-default: var(--spirit-color-action-toggle-unselected-default);
-$action-toggle-unselected-hover: var(--spirit-color-action-toggle-unselected-hover);
-
 $background-backdrop: var(--spirit-color-background-backdrop);
 
-$background-brand-primary: var(--spirit-color-background-brand-primary);
-$background-brand-secondary: var(--spirit-color-background-brand-secondary);
-
-$background-interactive-active: var(--spirit-color-background-interactive-active);
-$background-interactive-default: var(--spirit-color-background-interactive-default);
-$background-interactive-hover: var(--spirit-color-background-interactive-hover);
-$background-interactive-selected: var(--spirit-color-background-interactive-selected);
+$background-interactive-state-active: var(--spirit-color-background-interactive-state-active);
+$background-interactive-state-default: var(--spirit-color-background-interactive-state-default);
+$background-interactive-state-hover: var(--spirit-color-background-interactive-state-hover);
 
 $background-primary: var(--spirit-color-background-primary);
 $background-secondary: var(--spirit-color-background-secondary);
@@ -66,199 +15,173 @@ $background-tertiary: var(--spirit-color-background-tertiary);
 $border-basic: var(--spirit-color-border-basic);
 $border-focus: var(--spirit-color-border-focus);
 
-$border-interactive-active: var(--spirit-color-border-interactive-active);
-$border-interactive-danger: var(--spirit-color-border-interactive-danger);
-$border-interactive-default: var(--spirit-color-border-interactive-default);
-$border-interactive-hover: var(--spirit-color-border-interactive-hover);
-$border-interactive-informative: var(--spirit-color-border-interactive-informative);
-$border-interactive-selected: var(--spirit-color-border-interactive-selected);
-$border-interactive-success: var(--spirit-color-border-interactive-success);
-$border-interactive-warning: var(--spirit-color-border-interactive-warning);
+$border-interactive-state-active: var(--spirit-color-border-interactive-state-active);
+$border-interactive-state-default: var(--spirit-color-border-interactive-state-default);
+$border-interactive-state-hover: var(--spirit-color-border-interactive-state-hover);
+$border-interactive-state-selected: var(--spirit-color-border-interactive-state-selected);
 
-$custom-01-active: var(--spirit-color-custom-01-active);
-$custom-01-background-basic: var(--spirit-color-custom-01-background-basic);
-$custom-01-background-subtle: var(--spirit-color-custom-01-background-subtle);
-$custom-01-border-basic: var(--spirit-color-custom-01-border-basic);
-$custom-01-border-subtle: var(--spirit-color-custom-01-border-subtle);
-$custom-01-content-basic: var(--spirit-color-custom-01-content-basic);
-$custom-01-content-subtle: var(--spirit-color-custom-01-content-subtle);
-$custom-01-default: var(--spirit-color-custom-01-default);
-$custom-01-hover: var(--spirit-color-custom-01-hover);
+$component-button-plain-border: var(--spirit-color-component-button-plain-border);
+$component-button-plain-content: var(--spirit-color-component-button-plain-content);
+$component-button-plain-state-active: var(--spirit-color-component-button-plain-state-active);
+$component-button-plain-state-default: var(--spirit-color-component-button-plain-state-default);
+$component-button-plain-state-hover: var(--spirit-color-component-button-plain-state-hover);
 
-$custom-02-active: var(--spirit-color-custom-02-active);
-$custom-02-background-basic: var(--spirit-color-custom-02-background-basic);
-$custom-02-background-subtle: var(--spirit-color-custom-02-background-subtle);
-$custom-02-border-basic: var(--spirit-color-custom-02-border-basic);
-$custom-02-border-subtle: var(--spirit-color-custom-02-border-subtle);
-$custom-02-content-basic: var(--spirit-color-custom-02-content-basic);
-$custom-02-content-subtle: var(--spirit-color-custom-02-content-subtle);
-$custom-02-default: var(--spirit-color-custom-02-default);
-$custom-02-hover: var(--spirit-color-custom-02-hover);
+$component-button-primary-border: var(--spirit-color-component-button-primary-border);
+$component-button-primary-content: var(--spirit-color-component-button-primary-content);
+$component-button-primary-state-active: var(--spirit-color-component-button-primary-state-active);
+$component-button-primary-state-default: var(--spirit-color-component-button-primary-state-default);
+$component-button-primary-state-hover: var(--spirit-color-component-button-primary-state-hover);
+
+$component-button-secondary-border: var(--spirit-color-component-button-secondary-border);
+$component-button-secondary-content: var(--spirit-color-component-button-secondary-content);
+$component-button-secondary-state-active: var(--spirit-color-component-button-secondary-state-active);
+$component-button-secondary-state-default: var(--spirit-color-component-button-secondary-state-default);
+$component-button-secondary-state-hover: var(--spirit-color-component-button-secondary-state-hover);
+
+$component-button-tertiary-border: var(--spirit-color-component-button-tertiary-border);
+$component-button-tertiary-content: var(--spirit-color-component-button-tertiary-content);
+$component-button-tertiary-state-active: var(--spirit-color-component-button-tertiary-state-active);
+$component-button-tertiary-state-default: var(--spirit-color-component-button-tertiary-state-default);
+$component-button-tertiary-state-hover: var(--spirit-color-component-button-tertiary-state-hover);
+
+$component-header-background: var(--spirit-color-component-header-background);
+$component-header-item-background-state-active: var(--spirit-color-component-header-item-background-state-active);
+$component-header-item-background-state-default: var(--spirit-color-component-header-item-background-state-default);
+$component-header-item-background-state-hover: var(--spirit-color-component-header-item-background-state-hover);
+$component-header-item-background-state-selected: var(--spirit-color-component-header-item-background-state-selected);
+$component-header-item-state-active: var(--spirit-color-component-header-item-state-active);
+$component-header-item-state-default: var(--spirit-color-component-header-item-state-default);
+$component-header-item-state-hover: var(--spirit-color-component-header-item-state-hover);
+$component-header-item-state-selected: var(--spirit-color-component-header-item-state-selected);
+$component-header-stripe-state-selected: var(--spirit-color-component-header-stripe-state-selected);
+$component-header-stripe-state-unselected: var(--spirit-color-component-header-stripe-state-unselected);
+
+$component-toggle-selected-border: var(--spirit-color-component-toggle-selected-border);
+$component-toggle-selected-content: var(--spirit-color-component-toggle-selected-content);
+$component-toggle-selected-state-active: var(--spirit-color-component-toggle-selected-state-active);
+$component-toggle-selected-state-default: var(--spirit-color-component-toggle-selected-state-default);
+$component-toggle-selected-state-hover: var(--spirit-color-component-toggle-selected-state-hover);
+$component-toggle-unselected-border: var(--spirit-color-component-toggle-unselected-border);
+$component-toggle-unselected-content: var(--spirit-color-component-toggle-unselected-content);
+$component-toggle-unselected-state-active: var(--spirit-color-component-toggle-unselected-state-active);
+$component-toggle-unselected-state-default: var(--spirit-color-component-toggle-unselected-state-default);
+$component-toggle-unselected-state-hover: var(--spirit-color-component-toggle-unselected-state-hover);
 
 $disabled-background: var(--spirit-color-disabled-background);
 $disabled-border: var(--spirit-color-disabled-border);
 $disabled-content: var(--spirit-color-disabled-content);
 $disabled-foreground: var(--spirit-color-disabled-foreground);
 
-$emotion-danger-active: var(--spirit-color-emotion-danger-active);
-$emotion-danger-background-subtle: var(--spirit-color-emotion-danger-background-subtle);
 $emotion-danger-background-basic: var(--spirit-color-emotion-danger-background-basic);
-$emotion-danger-border-subtle: var(--spirit-color-emotion-danger-border-subtle);
+$emotion-danger-background-subtle: var(--spirit-color-emotion-danger-background-subtle);
 $emotion-danger-border-basic: var(--spirit-color-emotion-danger-border-basic);
+$emotion-danger-border-subtle: var(--spirit-color-emotion-danger-border-subtle);
 $emotion-danger-content-basic: var(--spirit-color-emotion-danger-content-basic);
 $emotion-danger-content-subtle: var(--spirit-color-emotion-danger-content-subtle);
-$emotion-danger-default: var(--spirit-color-emotion-danger-default);
-$emotion-danger-hover: var(--spirit-color-emotion-danger-hover);
+$emotion-danger-state-active: var(--spirit-color-emotion-danger-state-active);
+$emotion-danger-state-default: var(--spirit-color-emotion-danger-state-default);
+$emotion-danger-state-hover: var(--spirit-color-emotion-danger-state-hover);
 
-$emotion-informative-active: var(--spirit-color-emotion-informative-active);
 $emotion-informative-background-basic: var(--spirit-color-emotion-informative-background-basic);
 $emotion-informative-background-subtle: var(--spirit-color-emotion-informative-background-subtle);
 $emotion-informative-border-basic: var(--spirit-color-emotion-informative-border-basic);
 $emotion-informative-border-subtle: var(--spirit-color-emotion-informative-border-subtle);
 $emotion-informative-content-basic: var(--spirit-color-emotion-informative-content-basic);
 $emotion-informative-content-subtle: var(--spirit-color-emotion-informative-content-subtle);
-$emotion-informative-default: var(--spirit-color-emotion-informative-default);
-$emotion-informative-hover: var(--spirit-color-emotion-informative-hover);
+$emotion-informative-state-active: var(--spirit-color-emotion-informative-state-active);
+$emotion-informative-state-default: var(--spirit-color-emotion-informative-state-default);
+$emotion-informative-state-hover: var(--spirit-color-emotion-informative-state-hover);
 
-$emotion-success-active: var(--spirit-color-emotion-success-active);
 $emotion-success-background-basic: var(--spirit-color-emotion-success-background-basic);
 $emotion-success-background-subtle: var(--spirit-color-emotion-success-background-subtle);
 $emotion-success-border-basic: var(--spirit-color-emotion-success-border-basic);
 $emotion-success-border-subtle: var(--spirit-color-emotion-success-border-subtle);
 $emotion-success-content-basic: var(--spirit-color-emotion-success-content-basic);
 $emotion-success-content-subtle: var(--spirit-color-emotion-success-content-subtle);
-$emotion-success-default: var(--spirit-color-emotion-success-default);
-$emotion-success-hover: var(--spirit-color-emotion-success-hover);
+$emotion-success-state-active: var(--spirit-color-emotion-success-state-active);
+$emotion-success-state-default: var(--spirit-color-emotion-success-state-default);
+$emotion-success-state-hover: var(--spirit-color-emotion-success-state-hover);
 
-$emotion-warning-active: var(--spirit-color-emotion-warning-active);
 $emotion-warning-background-basic: var(--spirit-color-emotion-warning-background-basic);
 $emotion-warning-background-subtle: var(--spirit-color-emotion-warning-background-subtle);
 $emotion-warning-border-basic: var(--spirit-color-emotion-warning-border-basic);
 $emotion-warning-border-subtle: var(--spirit-color-emotion-warning-border-subtle);
 $emotion-warning-content-basic: var(--spirit-color-emotion-warning-content-basic);
 $emotion-warning-content-subtle: var(--spirit-color-emotion-warning-content-subtle);
-$emotion-warning-default: var(--spirit-color-emotion-warning-default);
-$emotion-warning-hover: var(--spirit-color-emotion-warning-hover);
+$emotion-warning-state-active: var(--spirit-color-emotion-warning-state-active);
+$emotion-warning-state-default: var(--spirit-color-emotion-warning-state-default);
+$emotion-warning-state-hover: var(--spirit-color-emotion-warning-state-hover);
 
 $focus-focus-ring-color-01: var(--spirit-color-focus-focus-ring-color-01);
 
-$form-field-active: var(--spirit-color-form-field-active);
-$form-field-border-active: var(--spirit-color-form-field-border-active);
-$form-field-border-default: var(--spirit-color-form-field-border-default);
-$form-field-border-hover: var(--spirit-color-form-field-border-hover);
-$form-field-border-selected: var(--spirit-color-form-field-border-selected);
-$form-field-content: var(--spirit-color-form-field-content);
 $form-field-danger: var(--spirit-color-form-field-danger);
-$form-field-default: var(--spirit-color-form-field-default);
+
+$form-field-filled-background-state-active: var(--spirit-color-form-field-filled-background-state-active);
+$form-field-filled-background-state-default: var(--spirit-color-form-field-filled-background-state-default);
+$form-field-filled-background-state-hover: var(--spirit-color-form-field-filled-background-state-hover);
+$form-field-filled-border-state-active: var(--spirit-color-form-field-filled-border-state-active);
+$form-field-filled-border-state-default: var(--spirit-color-form-field-filled-border-state-default);
+$form-field-filled-border-state-hover: var(--spirit-color-form-field-filled-border-state-hover);
+$form-field-filled-border-state-selected: var(--spirit-color-form-field-filled-border-state-selected);
+$form-field-filled-content: var(--spirit-color-form-field-filled-content);
+$form-field-filled-placeholder: var(--spirit-color-form-field-filled-placeholder);
+
 $form-field-helper-text: var(--spirit-color-form-field-helper-text);
-$form-field-hover: var(--spirit-color-form-field-hover);
 $form-field-label: var(--spirit-color-form-field-label);
-$form-field-placeholder: var(--spirit-color-form-field-placeholder);
 $form-field-success: var(--spirit-color-form-field-success);
 $form-field-warning: var(--spirit-color-form-field-warning);
 
-$gradients-basic-overlay-color-01: var(--spirit-color-gradients-basic-overlay-color-01);
-$gradients-basic-overlay-color-02: var(--spirit-color-gradients-basic-overlay-color-02);
+$gradient-basic-overlay-color-01: var(--spirit-color-gradient-basic-overlay-color-01);
+$gradient-basic-overlay-color-02: var(--spirit-color-gradient-basic-overlay-color-02);
 
-$neutral-active: var(--spirit-color-neutral-active);
+$link-primary-state-active: var(--spirit-color-link-primary-state-active);
+$link-primary-state-default: var(--spirit-color-link-primary-state-default);
+$link-primary-state-hover: var(--spirit-color-link-primary-state-hover);
+
+$link-secondary-state-active: var(--spirit-color-link-secondary-state-active);
+$link-secondary-state-default: var(--spirit-color-link-secondary-state-default);
+$link-secondary-state-hover: var(--spirit-color-link-secondary-state-hover);
+
+$link-state-visited: var(--spirit-color-link-state-visited);
+
+$link-tertiary-state-active: var(--spirit-color-link-tertiary-state-active);
+$link-tertiary-state-default: var(--spirit-color-link-tertiary-state-default);
+$link-tertiary-state-hover: var(--spirit-color-link-tertiary-state-hover);
+
 $neutral-background-basic: var(--spirit-color-neutral-background-basic);
 $neutral-background-subtle: var(--spirit-color-neutral-background-subtle);
 $neutral-border-basic: var(--spirit-color-neutral-border-basic);
 $neutral-border-subtle: var(--spirit-color-neutral-border-subtle);
 $neutral-content-basic: var(--spirit-color-neutral-content-basic);
 $neutral-content-subtle: var(--spirit-color-neutral-content-subtle);
-$neutral-default: var(--spirit-color-neutral-default);
-$neutral-hover: var(--spirit-color-neutral-hover);
+$neutral-state-active: var(--spirit-color-neutral-state-active);
+$neutral-state-default: var(--spirit-color-neutral-state-default);
+$neutral-state-hover: var(--spirit-color-neutral-state-hover);
 
-$selected-active: var(--spirit-color-selected-active);
 $selected-content-basic: var(--spirit-color-selected-content-basic);
 $selected-content-subtle: var(--spirit-color-selected-content-subtle);
-$selected-default: var(--spirit-color-selected-default);
-$selected-hover: var(--spirit-color-selected-hover);
+$selected-state-active: var(--spirit-color-selected-state-active);
+$selected-state-default: var(--spirit-color-selected-state-default);
+$selected-state-hover: var(--spirit-color-selected-state-hover);
 
-$shadows-shadow-100-color-01: var(--spirit-color-shadows-shadow-100-color-01);
-$shadows-shadow-200-color-01: var(--spirit-color-shadows-shadow-200-color-01);
-$shadows-shadow-300-color-01: var(--spirit-color-shadows-shadow-300-color-01);
-$shadows-shadow-400-color-01: var(--spirit-color-shadows-shadow-400-color-01);
+$shadow-shadow-100-color-01: var(--spirit-color-shadow-shadow-100-color-01);
+
+$shadow-shadow-200-color-01: var(--spirit-color-shadow-shadow-200-color-01);
+
+$shadow-shadow-300-color-01: var(--spirit-color-shadow-shadow-300-color-01);
+
+$shadow-shadow-400-color-01: var(--spirit-color-shadow-shadow-400-color-01);
 
 $text-primary: var(--spirit-color-text-primary);
 $text-secondary: var(--spirit-color-text-secondary);
 $text-tertiary: var(--spirit-color-text-tertiary);
 
-$action-colors: (
-    button: (
-        primary: (
-            active: $action-button-primary-active,
-            border: $action-button-primary-border,
-            content: $action-button-primary-content,
-            default: $action-button-primary-default,
-            hover: $action-button-primary-hover,
-        ),
-        secondary: (
-            active: $action-button-secondary-active,
-            border: $action-button-secondary-border,
-            content: $action-button-secondary-content,
-            default: $action-button-secondary-default,
-            hover: $action-button-secondary-hover,
-        ),
-        tertiary: (
-            active: $action-button-tertiary-active,
-            border: $action-button-tertiary-border,
-            content: $action-button-tertiary-content,
-            default: $action-button-tertiary-default,
-            hover: $action-button-tertiary-hover,
-        ),
-        plain: (
-            active: $action-button-plain-active,
-            border: $action-button-plain-border,
-            content: $action-button-plain-content,
-            default: $action-button-plain-default,
-            hover: $action-button-plain-hover,
-        ),
-    ),
-    link: (
-        primary: (
-            active: $action-link-primary-active,
-            default: $action-link-primary-default,
-            hover: $action-link-primary-hover,
-        ),
-        secondary: (
-            active: $action-link-secondary-active,
-            default: $action-link-secondary-default,
-            hover: $action-link-secondary-hover,
-        ),
-        tertiary: (
-            active: $action-link-tertiary-active,
-            default: $action-link-tertiary-default,
-            hover: $action-link-tertiary-hover,
-        ),
-        visited: (
-            default: $action-link-visited-default,
-        ),
-    ),
-    toggle: (
-        selected-border: $action-toggle-selected-border,
-        selected-content: $action-toggle-selected-content,
-        selected-default: $action-toggle-selected-default,
-        selected-hover: $action-toggle-selected-hover,
-        unselected-border: $action-toggle-unselected-border,
-        unselected-content: $action-toggle-unselected-content,
-        unselected-default: $action-toggle-unselected-default,
-        unselected-hover: $action-toggle-unselected-hover,
-    ),
-) !default;
-
 $background-colors: (
     backdrop: $background-backdrop,
-    brand: (
-        primary: $background-brand-primary,
-        secondary: $background-brand-secondary,
-    ),
     interactive: (
-        active: $background-interactive-active,
-        default: $background-interactive-default,
-        hover: $background-interactive-hover,
-        selected: $background-interactive-selected,
+        state-active: $background-interactive-state-active,
+        state-default: $background-interactive-state-default,
+        state-hover: $background-interactive-state-hover,
     ),
     primary: $background-primary,
     secondary: $background-secondary,
@@ -269,39 +192,68 @@ $border-colors: (
     basic: $border-basic,
     focus: $border-focus,
     interactive: (
-        active: $border-interactive-active,
-        danger: $border-interactive-danger,
-        default: $border-interactive-default,
-        hover: $border-interactive-hover,
-        informative: $border-interactive-informative,
-        selected: $border-interactive-selected,
-        success: $border-interactive-success,
-        warning: $border-interactive-warning,
+        state-active: $border-interactive-state-active,
+        state-default: $border-interactive-state-default,
+        state-hover: $border-interactive-state-hover,
+        state-selected: $border-interactive-state-selected,
     ),
 ) !default;
 
-$custom-colors: (
-    01: (
-        active: $custom-01-active,
-        background-basic: $custom-01-background-basic,
-        background-subtle: $custom-01-background-subtle,
-        border-basic: $custom-01-border-basic,
-        border-subtle: $custom-01-border-subtle,
-        content-basic: $custom-01-content-basic,
-        content-subtle: $custom-01-content-subtle,
-        default: $custom-01-default,
-        hover: $custom-01-hover,
+$component-colors: (
+    button: (
+        plain: (
+            border: $component-button-plain-border,
+            content: $component-button-plain-content,
+            state-active: $component-button-plain-state-active,
+            state-default: $component-button-plain-state-default,
+            state-hover: $component-button-plain-state-hover,
+        ),
+        primary: (
+            border: $component-button-primary-border,
+            content: $component-button-primary-content,
+            state-active: $component-button-primary-state-active,
+            state-default: $component-button-primary-state-default,
+            state-hover: $component-button-primary-state-hover,
+        ),
+        secondary: (
+            border: $component-button-secondary-border,
+            content: $component-button-secondary-content,
+            state-active: $component-button-secondary-state-active,
+            state-default: $component-button-secondary-state-default,
+            state-hover: $component-button-secondary-state-hover,
+        ),
+        tertiary: (
+            border: $component-button-tertiary-border,
+            content: $component-button-tertiary-content,
+            state-active: $component-button-tertiary-state-active,
+            state-default: $component-button-tertiary-state-default,
+            state-hover: $component-button-tertiary-state-hover,
+        ),
     ),
-    02: (
-        active: $custom-02-active,
-        background-basic: $custom-02-background-basic,
-        background-subtle: $custom-02-background-subtle,
-        border-basic: $custom-02-border-basic,
-        border-subtle: $custom-02-border-subtle,
-        content-basic: $custom-02-content-basic,
-        content-subtle: $custom-02-content-subtle,
-        default: $custom-02-default,
-        hover: $custom-02-hover,
+    header: (
+        background: $component-header-background,
+        item-background-state-active: $component-header-item-background-state-active,
+        item-background-state-default: $component-header-item-background-state-default,
+        item-background-state-hover: $component-header-item-background-state-hover,
+        item-background-state-selected: $component-header-item-background-state-selected,
+        item-state-active: $component-header-item-state-active,
+        item-state-default: $component-header-item-state-default,
+        item-state-hover: $component-header-item-state-hover,
+        item-state-selected: $component-header-item-state-selected,
+        stripe-state-selected: $component-header-stripe-state-selected,
+        stripe-state-unselected: $component-header-stripe-state-unselected,
+    ),
+    toggle: (
+        selected-border: $component-toggle-selected-border,
+        selected-content: $component-toggle-selected-content,
+        selected-state-active: $component-toggle-selected-state-active,
+        selected-state-default: $component-toggle-selected-state-default,
+        selected-state-hover: $component-toggle-selected-state-hover,
+        unselected-border: $component-toggle-unselected-border,
+        unselected-content: $component-toggle-unselected-content,
+        unselected-state-active: $component-toggle-unselected-state-active,
+        unselected-state-default: $component-toggle-unselected-state-default,
+        unselected-state-hover: $component-toggle-unselected-state-hover,
     ),
 ) !default;
 
@@ -314,48 +266,48 @@ $disabled-colors: (
 
 $emotion-colors: (
     danger: (
-        active: $emotion-danger-active,
         background-basic: $emotion-danger-background-basic,
         background-subtle: $emotion-danger-background-subtle,
         border-basic: $emotion-danger-border-basic,
         border-subtle: $emotion-danger-border-subtle,
         content-basic: $emotion-danger-content-basic,
         content-subtle: $emotion-danger-content-subtle,
-        default: $emotion-danger-default,
-        hover: $emotion-danger-hover,
+        state-active: $emotion-danger-state-active,
+        state-default: $emotion-danger-state-default,
+        state-hover: $emotion-danger-state-hover,
     ),
     informative: (
-        active: $emotion-informative-active,
         background-basic: $emotion-informative-background-basic,
         background-subtle: $emotion-informative-background-subtle,
         border-basic: $emotion-informative-border-basic,
         border-subtle: $emotion-informative-border-subtle,
         content-basic: $emotion-informative-content-basic,
         content-subtle: $emotion-informative-content-subtle,
-        default: $emotion-informative-default,
-        hover: $emotion-informative-hover,
+        state-active: $emotion-informative-state-active,
+        state-default: $emotion-informative-state-default,
+        state-hover: $emotion-informative-state-hover,
     ),
     success: (
-        active: $emotion-success-active,
         background-basic: $emotion-success-background-basic,
         background-subtle: $emotion-success-background-subtle,
         border-basic: $emotion-success-border-basic,
         border-subtle: $emotion-success-border-subtle,
         content-basic: $emotion-success-content-basic,
         content-subtle: $emotion-success-content-subtle,
-        default: $emotion-success-default,
-        hover: $emotion-success-hover,
+        state-active: $emotion-success-state-active,
+        state-default: $emotion-success-state-default,
+        state-hover: $emotion-success-state-hover,
     ),
     warning: (
-        active: $emotion-warning-active,
         background-basic: $emotion-warning-background-basic,
         background-subtle: $emotion-warning-background-subtle,
         border-basic: $emotion-warning-border-basic,
         border-subtle: $emotion-warning-border-subtle,
         content-basic: $emotion-warning-content-basic,
         content-subtle: $emotion-warning-content-subtle,
-        default: $emotion-warning-default,
-        hover: $emotion-warning-hover,
+        state-active: $emotion-warning-state-active,
+        state-default: $emotion-warning-state-default,
+        state-hover: $emotion-warning-state-hover,
     ),
 ) !default;
 
@@ -366,61 +318,82 @@ $focus-colors: (
 ) !default;
 
 $form-field-colors: (
-    active: $form-field-active,
-    border-active: $form-field-border-active,
-    border-default: $form-field-border-default,
-    border-hover: $form-field-border-hover,
-    border-selected: $form-field-border-selected,
-    content: $form-field-content,
     danger: $form-field-danger,
-    default: $form-field-default,
+    filled: (
+        background-state-active: $form-field-filled-background-state-active,
+        background-state-default: $form-field-filled-background-state-default,
+        background-state-hover: $form-field-filled-background-state-hover,
+        border-state-active: $form-field-filled-border-state-active,
+        border-state-default: $form-field-filled-border-state-default,
+        border-state-hover: $form-field-filled-border-state-hover,
+        border-state-selected: $form-field-filled-border-state-selected,
+        content: $form-field-filled-content,
+        placeholder: $form-field-filled-placeholder,
+    ),
     helper-text: $form-field-helper-text,
-    hover: $form-field-hover,
     label: $form-field-label,
-    placeholder: $form-field-placeholder,
     success: $form-field-success,
     warning: $form-field-warning,
 ) !default;
 
 $gradient-colors: (
     basic-overlay: (
-        color-01: $gradients-basic-overlay-color-01,
-        color-02: $gradients-basic-overlay-color-02,
+        color-01: $gradient-basic-overlay-color-01,
+        color-02: $gradient-basic-overlay-color-02,
+    ),
+) !default;
+
+$link-colors: (
+    primary: (
+        state-active: $link-primary-state-active,
+        state-default: $link-primary-state-default,
+        state-hover: $link-primary-state-hover,
+    ),
+    secondary: (
+        state-active: $link-secondary-state-active,
+        state-default: $link-secondary-state-default,
+        state-hover: $link-secondary-state-hover,
+    ),
+    state-visited: $link-state-visited,
+    tertiary: (
+        state-active: $link-tertiary-state-active,
+        state-default: $link-tertiary-state-default,
+        state-hover: $link-tertiary-state-hover,
     ),
 ) !default;
 
 $neutral-colors: (
-    active: $neutral-active,
     background-basic: $neutral-background-basic,
     background-subtle: $neutral-background-subtle,
     border-basic: $neutral-border-basic,
     border-subtle: $neutral-border-subtle,
     content-basic: $neutral-content-basic,
     content-subtle: $neutral-content-subtle,
-    default: $neutral-default,
-    hover: $neutral-hover,
+    state-active: $neutral-state-active,
+    state-default: $neutral-state-default,
+    state-hover: $neutral-state-hover,
 ) !default;
 
 $selected-colors: (
-    active: $selected-active,
     content-basic: $selected-content-basic,
     content-subtle: $selected-content-subtle,
-    default: $selected-default,
-    hover: $selected-hover,
+    state-active: $selected-state-active,
+    state-default: $selected-state-default,
+    state-hover: $selected-state-hover,
 ) !default;
 
 $shadow-colors: (
     shadow-100: (
-        color-01: $shadows-shadow-100-color-01,
+        color-01: $shadow-shadow-100-color-01,
     ),
     shadow-200: (
-        color-01: $shadows-shadow-200-color-01,
+        color-01: $shadow-shadow-200-color-01,
     ),
     shadow-300: (
-        color-01: $shadows-shadow-300-color-01,
+        color-01: $shadow-shadow-300-color-01,
     ),
     shadow-400: (
-        color-01: $shadows-shadow-400-color-01,
+        color-01: $shadow-shadow-400-color-01,
     ),
 ) !default;
 
@@ -431,15 +404,15 @@ $text-colors: (
 ) !default;
 
 $colors: (
-    action: $action-colors,
     background: $background-colors,
     border: $border-colors,
-    custom: $custom-colors,
+    component: $component-colors,
     disabled: $disabled-colors,
     emotion: $emotion-colors,
     focus: $focus-colors,
     form-field: $form-field-colors,
     gradient: $gradient-colors,
+    link: $link-colors,
     neutral: $neutral-colors,
     selected: $selected-colors,
     shadow: $shadow-colors,
