@@ -45,18 +45,18 @@ $_field-name: 'UNSTABLE_Slider';
         &:hover {
             --slider-track-background: #{theme.$track-background-hover};
             --slider-track-lower-background: #{theme.$track-lower-background-hover};
-            --slider-thumb-border-color: #{theme.$thumb-border-color-hover};
-            --slider-thumb-background-color: #{theme.$thumb-background-color-hover};
-            --slider-thumb-box-shadow: #{theme.$thumb-box-shadow-hover};
+            --slider-thumb-border-color: #{theme.$thumb-border-color-state-hover};
+            --slider-thumb-background-color: #{theme.$thumb-background-color-state-hover};
+            --slider-thumb-box-shadow: #{theme.$thumb-box-shadow-state-hover};
         }
     }
 
     &:active {
         --slider-track-background: #{theme.$track-background-active};
         --slider-track-lower-background: #{theme.$track-lower-background-active};
-        --slider-thumb-border-color: #{theme.$thumb-border-color-active};
-        --slider-thumb-background-color: #{theme.$thumb-background-color-active};
-        --slider-thumb-box-shadow: #{theme.$thumb-box-shadow-active};
+        --slider-thumb-border-color: #{theme.$thumb-border-color-state-active};
+        --slider-thumb-background-color: #{theme.$thumb-background-color-state-active};
+        --slider-thumb-box-shadow: #{theme.$thumb-box-shadow-state-active};
     }
 
     &:focus {
@@ -144,11 +144,11 @@ $_field-name: 'UNSTABLE_Slider';
 :is(.UNSTABLE_Slider--disabled, .UNSTABLE_Slider.is-disabled) .UNSTABLE_Slider__input {
     --slider-track-background: #{theme.$track-background-disabled};
     --slider-track-lower-background: #{theme.$track-lower-background-disabled};
-    --slider-thumb-border-width: #{theme.$thumb-border-width-disabled};
-    --slider-thumb-border-color: #{theme.$thumb-border-color-disabled};
-    --slider-thumb-background-color: #{theme.$thumb-background-color-disabled};
+    --slider-thumb-border-width: #{theme.$thumb-border-width-state-disabled};
+    --slider-thumb-border-color: #{theme.$thumb-border-color-state-disabled};
+    --slider-thumb-background-color: #{theme.$thumb-background-color-state-disabled};
     --slider-thumb-background-image: #{svg.escape(theme.$thumb-background-image-disabled)};
-    --slider-thumb-box-shadow: #{theme.$thumb-box-shadow-disabled};
+    --slider-thumb-box-shadow: #{theme.$thumb-box-shadow-state-disabled};
 
     @include form-fields-tools.input-disabled();
 
