@@ -17,16 +17,16 @@ $header-desktop-actions-gap: tokens.$space-900;
 // HeaderLink
 $header-link-padding-x: tokens.$space-700;
 $header-link-padding-y: tokens.$space-600;
-$header-link-color: tokens.$action-link-primary-default;
-$header-link-background-color: tokens.$background-interactive-default;
-$header-link-color-hover: tokens.$action-link-primary-hover;
-$header-link-background-color-hover: tokens.$background-interactive-hover;
-$header-link-color-active: tokens.$action-link-primary-active;
-$header-link-background-color-active: tokens.$background-interactive-active;
-$header-link-color-current: tokens.$selected-default;
-$header-link-background-color-current: tokens.$background-interactive-active;
+$header-link-color: tokens.$link-primary-state-default;
+$header-link-background-color: tokens.$background-interactive-state-default;
+$header-link-color-state-hover: tokens.$link-primary-state-hover;
+$header-link-background-color-state-hover: tokens.$background-interactive-state-hover;
+$header-link-color-state-active: tokens.$link-primary-state-active;
+$header-link-background-color-state-active: tokens.$background-interactive-state-active;
+$header-link-color-current: tokens.$selected-state-default;
+$header-link-background-color-current: tokens.$background-interactive-state-active;
 $header-link-current-border-thickness: tokens.$border-width-200;
-$header-link-current-border-color: tokens.$selected-default;
+$header-link-current-border-color: tokens.$selected-state-default;
 $header-link-transition-duration: transitions.$duration-200;
 $header-link-transition-timing: transitions.$timing-eased-out;
 
