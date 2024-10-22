@@ -7,10 +7,10 @@
 @use 'typography';
 
 @mixin label-disabled() {
-    color: form-fields-theme.$label-color-disabled;
+    color: form-fields-theme.$label-color-state-disabled;
 
     &::after {
-        color: form-fields-theme.$label-color-disabled;
+        color: form-fields-theme.$label-color-state-disabled;
     }
 }
 
@@ -27,7 +27,7 @@
 }
 
 @mixin input-disabled() {
-    color: form-fields-theme.$input-color-disabled;
+    color: form-fields-theme.$input-color-state-disabled;
     cursor: cursors.$disabled;
 }
 
@@ -40,7 +40,7 @@
 }
 
 @mixin validation-text-disabled() {
-    color: form-fields-theme.$validation-text-color-disabled;
+    color: form-fields-theme.$validation-text-color-state-disabled;
 }
 
 @mixin inline-field-root() {
@@ -62,7 +62,7 @@
     @include typography.generate(form-fields-theme.$input-typography);
 
     display: inline-block;
-    color: form-fields-theme.$label-color-default;
+    color: form-fields-theme.$label-color-state-default;
 }
 
 @mixin box-field-label() {
@@ -210,21 +210,21 @@
     padding: form-fields-theme.$item-padding-y form-fields-theme.$item-padding-x;
     margin-block: 0;
     border-radius: form-fields-theme.$item-border-radius;
-    background-color: form-fields-theme.$item-background-color-default;
+    background-color: form-fields-theme.$item-background-color-state-default;
 
     @media (hover: hover) {
         &:hover {
-            background-color: form-fields-theme.$item-background-color-hover;
+            background-color: form-fields-theme.$item-background-color-state-hover;
         }
     }
 
     &:active {
-        background-color: form-fields-theme.$item-background-color-active;
+        background-color: form-fields-theme.$item-background-color-state-active;
     }
 }
 
 @mixin item-disabled() {
-    background-color: form-fields-theme.$item-background-color-default;
+    background-color: form-fields-theme.$item-background-color-state-default;
 }
 
 @mixin item-validation-text() {
@@ -234,7 +234,7 @@
 @mixin item-label() {
     @include typography.generate(form-fields-theme.$item-label-typography);
 
-    color: form-fields-theme.$label-color-default;
+    color: form-fields-theme.$label-color-state-default;
 }
 
 @mixin helper-text() {
@@ -242,11 +242,11 @@
 
     display: block;
     margin-top: form-fields-theme.$helper-text-margin-top;
-    color: form-fields-theme.$helper-text-color-default;
+    color: form-fields-theme.$helper-text-color-state-default;
 }
 
 @mixin helper-text-disabled() {
-    color: form-fields-theme.$helper-text-color-disabled;
+    color: form-fields-theme.$helper-text-color-state-disabled;
 }
 
 @mixin item-helper-text() {
