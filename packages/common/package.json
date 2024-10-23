@@ -4,6 +4,7 @@
   "description": "Common code and scripts for Spirit Design System",
   "license": "MIT",
   "private": true,
+  "type": "module",
   "keywords": [
     "spirit",
     "common",
