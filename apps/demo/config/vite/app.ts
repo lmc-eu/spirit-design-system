@@ -1,6 +1,12 @@
 import { join, resolve } from 'path';
 import { defineConfig } from 'vite';
 import handlebars from 'vite-plugin-handlebars';
+// Vite config cannot import untranspiled ES modules
+// so `import { SERVERS } from '@lmc-eu/spirit-commmon';` will not work
+// to make it work the package must be transpiled into CommonJS
+// as a workaround, we can import the file directly
+// @see: https://github.com/vitejs/vite/issues/5370
+import { SERVERS } from '../../../../packages/common/constants/servers';
 import { getNestedDirs, mapKeys } from '../../scripts/prepareDist';
 import { getListOfIcons, getListOfNestedDirectories } from '../../scripts/utils';
 
@@ -15,10 +21,7 @@ export default defineConfig({
     hmr: {
       overlay: false,
     },
-    host: 'localhost',
-    https: false,
-    port: 3456,
-    strictPort: true,
+    ...SERVERS.DEVELOPMENT.web,
   },
   resolve: {
     alias: {
