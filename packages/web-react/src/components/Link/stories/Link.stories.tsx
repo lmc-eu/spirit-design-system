@@ -60,6 +60,7 @@ const meta: Meta<typeof Link> = {
     isDisabled: false,
     target: '_blank',
     underlined: undefined,
+    hasVisitedStyleAllowed: false,
   },
 };
 
