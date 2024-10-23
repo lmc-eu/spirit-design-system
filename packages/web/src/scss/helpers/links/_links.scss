@@ -4,7 +4,7 @@
 // 4. Allow link underline everywhere, except for headings in default state.
 // 5. Disable pointer and text decoration changes for "disabled" links (intended for link-like `<button>` elements).
 // 6. Allow link stretching over the closest element with `position: relative`.
-// 7. Only links in headings can have visited state (that's our design decision).
+// 7. Allow link to obtain the visited state style
 // 8. Disable link underline everywhere.
 
 @use 'sass:map';
@@ -56,7 +56,7 @@
 }
 
 // 7.
-[class*='typography-heading'] :visited {
+.link-allow-visited:visited {
     color: var(--#{global-tokens.$token-prefix}color-action-link-visited-default);
 }
 
