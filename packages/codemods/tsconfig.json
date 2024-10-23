@@ -25,7 +25,8 @@
     "skipLibCheck": true,
     "typeRoots": ["../../node_modules/@types"],
     "types": ["node", "jest"],
-    "module": "es2020"
+    "module": "es2020",
+    "target": "es2020"
   },
   "include": ["./", "./.eslintrc.js"],
   "exclude": ["./node_modules", "**/__testfixtures__/**"]
