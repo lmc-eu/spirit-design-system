@@ -1,6 +1,7 @@
 {# API #}
 {%- set props = props | default([]) -%}
 {%- set _color = props.color | default('primary') -%}
+{%- set _hasVisitedStyleAllowed = props.hasVisitedStyleAllowed | default(false) -%}
 {%- set _href = props.href -%}
 {%- set _isDisabled = props.isDisabled | default(false) -%}
 {%- set _underlined = props.underlined | default('hover') -%}
@@ -16,10 +17,11 @@
 {% elseif _underlined is same as('never') %}
     {%- set rootUnderlinedClassName = _spiritClassPrefix ~ 'link-not-underlined' -%}
 {% endif %}
+{%- set _rootAllowVisitedStyleClassName = _hasVisitedStyleAllowed ? _spiritClassPrefix ~ 'link-allow-visited-style' : null -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
-{%- set _classNames = [ _colorClassName, _rootDisabledClassName, rootUnderlinedClassName, _styleProps.className ] -%}
+{%- set _classNames = [ _colorClassName, _rootDisabledClassName, rootUnderlinedClassName, _rootAllowVisitedStyleClassName, _styleProps.className ] -%}
 {%- set _allowedAttributes = [ 'target', 'title' ] -%}
 <a
     {{ mainProps(props, _allowedAttributes) }}
