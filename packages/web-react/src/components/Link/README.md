@@ -46,16 +46,27 @@ The underline is never visible, even when the link is hovered over.
 </Link>
 ```
 
+## Visited Style Allowed
+
+You can allow the link to have visited state style with the `hasVisitedStyleAllowed` prop.
+
+```jsx
+<Link href="/" hasVisitedStyleAllowed>
+  …
+</Link>
+```
+
 ## API
 
-| Name          | Type                                             | Default   | Required | Description                  |
-| ------------- | ------------------------------------------------ | --------- | -------- | ---------------------------- |
-| `color`       | [Action Link Color dictionary][dictionary-color] | `primary` | ✕        | Color of the link            |
-| `elementType` | `ElementType`                                    | `a`       | ✕        | Type of element used as      |
-| `href`        | `string`                                         | —         | ✕        | Link's href attribute        |
-| `isDisabled`  | `bool`                                           | `false`   | ✕        | Whether is the link disabled |
-| `ref`         | `ForwardedRef<HTMLAnchorElement>`                | —         | ✕        | Link element reference       |
-| `underlined`  | `hover` \| `always` \| `never`                   | `hover`   | ✕        | When is the link underlined  |
+| Name                     | Type                                             | Default   | Required | Description                      |
+| ------------------------ | ------------------------------------------------ | --------- | -------- | -------------------------------- |
+| `color`                  | [Action Link Color dictionary][dictionary-color] | `primary` | ✕        | Color of the link                |
+| `elementType`            | `ElementType`                                    | `a`       | ✕        | Type of element used as          |
+| `hasVisitedStyleAllowed` | `bool`                                           | `false`   | ✕        | Allow link to have visited style |
+| `href`                   | `string`                                         | —         | ✕        | Link's href attribute            |
+| `isDisabled`             | `bool`                                           | `false`   | ✕        | Whether is the link disabled     |
+| `ref`                    | `ForwardedRef<HTMLAnchorElement>`                | —         | ✕        | Link element reference           |
+| `underlined`             | `hover` \| `always` \| `never`                   | `hover`   | ✕        | When is the link underlined      |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
