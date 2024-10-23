@@ -67,16 +67,27 @@ The underline is never visible, even when the link is hovered over.
 <Link href="/" underlined="never">…</Link>
 ```
 
+## Visited Style Allowed
+
+You can allow the link to have visited state style with the `hasVisitedStyleAllowed` prop.
+
+```twig
+<Link href="/" hasVisitedStyleAllowed>
+  …
+</Link>
+```
+
 ## API
 
-| Name         | Type                                             | Default   | Required | Description                        |
-| ------------ | ------------------------------------------------ | --------- | -------- | ---------------------------------- |
-| `color`      | [Action Link Color dictionary][dictionary-color] | `primary` | ✕        | Color variant                      |
-| `href`       | `string`                                         | —         | ✓        | Link URL                           |
-| `isDisabled` | `bool`                                           | `false`   | ✕        | If true, Link is disabled          |
-| `target`     | `string`                                         | `null`    | ✕        | Browsing context for the link      |
-| `title`      | `string`                                         | `null`    | ✕        | Optional title to display on hover |
-| `underlined` | `hover` \| `always` \| `never`                   | `hover`   | ✕        | When is the link underlined        |
+| Name                     | Type                                             | Default   | Required | Description                        |
+| ------------------------ | ------------------------------------------------ | --------- | -------- | ---------------------------------- |
+| `color`                  | [Action Link Color dictionary][dictionary-color] | `primary` | ✕        | Color variant                      |
+| `hasVisitedStyleAllowed` | `bool`                                           | `false`   | ✕        | Allow link to have visited style   |
+| `href`                   | `string`                                         | —         | ✓        | Link URL                           |
+| `isDisabled`             | `bool`                                           | `false`   | ✕        | If true, Link is disabled          |
+| `target`                 | `string`                                         | `null`    | ✕        | Browsing context for the link      |
+| `title`                  | `string`                                         | `null`    | ✕        | Optional title to display on hover |
+| `underlined`             | `hover` \| `always` \| `never`                   | `hover`   | ✕        | When is the link underlined        |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
