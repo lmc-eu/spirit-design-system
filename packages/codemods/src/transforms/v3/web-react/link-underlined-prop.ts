@@ -8,6 +8,7 @@ import {
   ImportDeclaration,
   JSXOpeningElement,
 } from 'jscodeshift';
+import { removeCircleBrackets } from '../../../helpers';
 
 const transform = (fileInfo: FileInfo, api: API): string => {
   const j: JSCodeshift = api.jscodeshift;
@@ -61,7 +62,7 @@ const transform = (fileInfo: FileInfo, api: API): string => {
     });
   }
 
-  return root.toSource();
+  return removeCircleBrackets(root.toSource());
 };
 
 export default transform;
