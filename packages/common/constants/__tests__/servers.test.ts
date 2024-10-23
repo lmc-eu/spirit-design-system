@@ -1,4 +1,3 @@
-// @ts-expect-error TS2306: File is not a module.
 import { getDevelopmentEndpointUri } from '../servers';
 
 describe('servers', () => {
