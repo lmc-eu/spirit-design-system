@@ -1,6 +1,9 @@
 import { join, resolve } from 'path';
 import { defineConfig } from 'vite';
 import handlebars from 'vite-plugin-handlebars';
+// Vite config cannot import untranspiled ES modules
+// @see: https://github.com/vitejs/vite/issues/5370
+import { SERVERS } from '../../../../packages/common/constants/servers';
 import { getNestedDirs, mapKeys } from '../../scripts/prepareDist';
 import { getListOfIcons, getListOfNestedDirectories } from '../../scripts/utils';
 
@@ -15,10 +18,7 @@ export default defineConfig({
     hmr: {
       overlay: false,
     },
-    host: 'localhost',
-    https: false,
-    port: 3456,
-    strictPort: true,
+    ...SERVERS.DEVELOPMENT.web,
   },
   resolve: {
     alias: {
