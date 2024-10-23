@@ -1,13 +1,11 @@
-/**
- * ⚠️ This file is in CommonJS format only.
- * It is mainly used in Vite configuration (`vite.config.ts`).
- * Due to use of ESbuild, Vite configuration only supports importing CommonJS modules.
- *
- * @see https://github.com/vitejs/vite/issues/7981
- */
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
-const SERVERS = {
+export type PackageName = 'web' | 'web-react' | 'web-twig' | 'form-validations';
+export type ServerOptions = { host: string; https: boolean; port: number; path?: string; strictPort?: boolean };
+export type ServerEnvironments = {
+  DEVELOPMENT: Record<PackageName, ServerOptions>;
+  TESTING: Partial<Record<PackageName, string>>;
+};
+
+const SERVERS: ServerEnvironments = {
   DEVELOPMENT: {
     // @see: https://vitejs.dev/config/server-options.html
     web: {
@@ -45,10 +43,10 @@ const SERVERS = {
   },
 };
 
-const getDevelopmentEndpointUri = (packageName, { isDocker } = { isDocker: false }) => {
+const getDevelopmentEndpointUri = (packageName: PackageName, { isDocker } = { isDocker: false }) => {
   const { https, host, port, path } = SERVERS.DEVELOPMENT[packageName];
 
   return `http${https ? 's' : ''}://${isDocker ? 'host.docker.internal' : host}:${port}${path ? `/${path}` : ''}`;
 };
 
-module.exports = { SERVERS, getDevelopmentEndpointUri };
+export { SERVERS, getDevelopmentEndpointUri };
