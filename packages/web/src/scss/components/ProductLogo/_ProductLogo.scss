@@ -1,0 +1,12 @@
+@use 'theme' as theme;
+
+.ProductLogo {
+    display: inline-block;
+    max-width: 100%;
+}
+
+.ProductLogo > img,
+.ProductLogo > svg {
+    width: auto;
+    height: theme.$logo-height;
+}

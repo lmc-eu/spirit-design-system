@@ -8,6 +8,7 @@ import { useTextStyleProps } from './useTextStyleProps';
 
 const defaultProps: Partial<SpiritTextProps> = {
   elementType: 'p',
+  emphasis: 'regular',
   size: 'medium',
 };
 

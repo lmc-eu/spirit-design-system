@@ -1,5 +1,5 @@
-@use '@tokens' as tokens;
+@use '@global-tokens' as global-tokens;
 
-$gap: tokens.$space-400;
-$icon-color-default: tokens.$action-selected-default;
-$icon-color-disabled: tokens.$action-selected-disabled;
+$gap: global-tokens.$space-500;
+$icon-color-default: var(--#{global-tokens.$token-prefix}color-selected-content-basic);
+$icon-color-disabled: var(--#{global-tokens.$token-prefix}color-disabled-content);

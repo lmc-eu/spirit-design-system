@@ -5,7 +5,7 @@
     </title>
   </head>
   <body>
-    <div class="ToastBar ToastBar--inverted is-open" data-spirit-populate-field="item">
+    <div class="ToastBar ToastBar--neutral is-open" data-spirit-populate-field="item">
       <div class="ToastBar__box">
         <div class="ToastBar__container">
           <div class="ToastBar__content">
@@ -18,7 +18,7 @@
     </div>
     <!-- Render with default icon -->
 
-    <div class="ToastBar ToastBar--inverted is-open" data-spirit-populate-field="item">
+    <div class="ToastBar ToastBar--neutral is-open" data-spirit-populate-field="item">
       <div class="ToastBar__box">
         <div class="ToastBar__container">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" aria-hidden="true">
@@ -34,7 +34,7 @@
     </div>
     <!-- Render with custom icon using `iconName` alone -->
 
-    <div class="ToastBar ToastBar--inverted is-open" data-spirit-populate-field="item">
+    <div class="ToastBar ToastBar--neutral is-open" data-spirit-populate-field="item">
       <div class="ToastBar__box">
         <div class="ToastBar__container">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" aria-hidden="true">
@@ -59,14 +59,14 @@
             </div>
           </div>
         </div>
-        <button data-spirit-dismiss="toast" data-spirit-populate-field="close-button" data-spirit-target="#toast-dismiss" aria-controls="toast-dismiss" aria-expanded="true" class="Button Button--success Button--small Button--square" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" aria-hidden="true">
+        <button class="ToastBar__close" type="button" data-spirit-dismiss="toast" data-spirit-populate-field="close-button" data-spirit-target="#toast-dismiss" aria-controls="toast-dismiss" aria-expanded="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M18.3 5.70997C17.91 5.31997 17.28 5.31997 16.89 5.70997L12 10.59L7.11 5.69997C6.72 5.30997 6.09 5.30997 5.7 5.69997C5.31 6.08997 5.31 6.71997 5.7 7.10997L10.59 12L5.7 16.89C5.31 17.28 5.31 17.91 5.7 18.3C6.09 18.69 6.72 18.69 7.11 18.3L12 13.41L16.89 18.3C17.28 18.69 17.91 18.69 18.3 18.3C18.69 17.91 18.69 17.28 18.3 16.89L13.41 12L18.3 7.10997C18.68 6.72997 18.68 6.08997 18.3 5.70997Z" fill="currentColor">
         </path></svg> <span class="accessibility-hidden">Close</span></button>
       </div>
     </div>
     <!-- Render as template -->
 
-    <div class="ToastBar ToastBar--inverted is-open" data-spirit-populate-field="item">
+    <div class="ToastBar ToastBar--neutral is-open" data-spirit-populate-field="item">
       <div class="ToastBar__box">
         <div class="ToastBar__container">
           <div class="ToastBar__content">
@@ -76,7 +76,7 @@
     </div>
     <!-- Render as template with props -->
 
-    <div class="ToastBar ToastBar--inverted is-open" id="template-toast" data-spirit-populate-field="item">
+    <div class="ToastBar ToastBar--neutral is-open" id="template-toast" data-spirit-populate-field="item">
       <div class="ToastBar__box">
         <div class="ToastBar__container">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" aria-hidden="true" data-spirit-populate-field="icon">
@@ -85,7 +85,7 @@
           <div class="ToastBar__content">
           </div>
         </div>
-        <button data-spirit-dismiss="toast" data-spirit-populate-field="close-button" data-spirit-target="#template-toast" aria-controls="template-toast" aria-expanded="true" class="Button Button--inverted Button--small Button--square" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" aria-hidden="true">
+        <button class="ToastBar__close" type="button" data-spirit-dismiss="toast" data-spirit-populate-field="close-button" data-spirit-target="#template-toast" aria-controls="template-toast" aria-expanded="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M18.3 5.70997C17.91 5.31997 17.28 5.31997 16.89 5.70997L12 10.59L7.11 5.69997C6.72 5.30997 6.09 5.30997 5.7 5.69997C5.31 6.08997 5.31 6.71997 5.7 7.10997L10.59 12L5.7 16.89C5.31 17.28 5.31 17.91 5.7 18.3C6.09 18.69 6.72 18.69 7.11 18.3L12 13.41L16.89 18.3C17.28 18.69 17.91 18.69 18.3 18.3C18.69 17.91 18.69 17.28 18.3 16.89L13.41 12L18.3 7.10997C18.68 6.72997 18.68 6.08997 18.3 5.70997Z" fill="currentColor">
         </path></svg> <span class="accessibility-hidden">Close</span></button>
       </div>
@@ -102,10 +102,10 @@
             <div class="text-truncate-multiline" data-spirit-populate-field="message">
               Dismissible message with custom icon and action
             </div>
-            <a data-spirit-populate-field="link" href="#" class="link-inverted link-underlined ToastBar__link">Action</a>
+            <a href="#" class="ToastBar__link link-underlined" data-spirit-populate-field="link">Action</a>
           </div>
         </div>
-        <button data-spirit-dismiss="toast" data-spirit-populate-field="close-button" data-spirit-target="#my-toast" aria-controls="my-toast" aria-expanded="true" class="Button Button--success Button--small Button--square" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" aria-hidden="true">
+        <button class="ToastBar__close" type="button" data-spirit-dismiss="toast" data-spirit-populate-field="close-button" data-spirit-target="#my-toast" aria-controls="my-toast" aria-expanded="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M18.3 5.70997C17.91 5.31997 17.28 5.31997 16.89 5.70997L12 10.59L7.11 5.69997C6.72 5.30997 6.09 5.30997 5.7 5.69997C5.31 6.08997 5.31 6.71997 5.7 7.10997L10.59 12L5.7 16.89C5.31 17.28 5.31 17.91 5.7 18.3C6.09 18.69 6.72 18.69 7.11 18.3L12 13.41L16.89 18.3C17.28 18.69 17.91 18.69 18.3 18.3C18.69 17.91 18.69 17.28 18.3 16.89L13.41 12L18.3 7.10997C18.68 6.72997 18.68 6.08997 18.3 5.70997Z" fill="currentColor">
         </path></svg> <span class="accessibility-hidden">Dismiss</span></button>
       </div>
@@ -122,10 +122,10 @@
             <div class="text-truncate-multiline" data-spirit-populate-field="message">
               Dismissible message with custom icon and action
             </div>
-            <a data-spirit-populate-field="link" href="#" class="link-inverted link-underlined ToastBar__link">Action</a>
+            <a href="#" class="ToastBar__link link-underlined" data-spirit-populate-field="link">Action</a>
           </div>
         </div>
-        <button data-spirit-dismiss="toast" data-spirit-populate-field="close-button" data-spirit-target="#my-toast-template" aria-controls="my-toast-template" aria-expanded="true" class="Button Button--success Button--small Button--square" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" aria-hidden="true">
+        <button class="ToastBar__close" type="button" data-spirit-dismiss="toast" data-spirit-populate-field="close-button" data-spirit-target="#my-toast-template" aria-controls="my-toast-template" aria-expanded="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M18.3 5.70997C17.91 5.31997 17.28 5.31997 16.89 5.70997L12 10.59L7.11 5.69997C6.72 5.30997 6.09 5.30997 5.7 5.69997C5.31 6.08997 5.31 6.71997 5.7 7.10997L10.59 12L5.7 16.89C5.31 17.28 5.31 17.91 5.7 18.3C6.09 18.69 6.72 18.69 7.11 18.3L12 13.41L16.89 18.3C17.28 18.69 17.91 18.69 18.3 18.3C18.69 17.91 18.69 17.28 18.3 16.89L13.41 12L18.3 7.10997C18.68 6.72997 18.68 6.08997 18.3 5.70997Z" fill="currentColor">
         </path></svg> <span class="accessibility-hidden">Dismiss</span></button>
       </div>

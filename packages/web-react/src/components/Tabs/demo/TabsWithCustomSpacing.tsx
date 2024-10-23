@@ -18,7 +18,7 @@ const TabsWithCustomSpacing = () => {
     <Tabs
       selectedTab={selectedId}
       toggle={selectTab}
-      spacing={{ mobile: 'space-400', tablet: 'space-800', desktop: 'space-1200' }}
+      spacing={{ mobile: 'space-500', tablet: 'space-1000', desktop: 'space-1600' }}
     >
       <TabList>
         <TabItem forTabPane={1}>Item 1</TabItem>

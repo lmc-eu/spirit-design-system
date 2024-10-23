@@ -1,0 +1,11 @@
+@use 'sass:meta';
+
+@mixin generate-css-variables($map, $prefix: '') {
+    @each $key, $value in $map {
+        @if meta.type-of($value) == map {
+            @include generate-css-variables($value, $prefix + '-' + $key);
+        } @else {
+            --#{$prefix + '-' + $key}: #{$value};
+        }
+    }
+}

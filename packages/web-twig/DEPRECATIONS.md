@@ -6,17 +6,8 @@ This document lists all deprecations that will be removed in the next major vers
 
 ## Deprecations
 
+Nothing here right now! 🎉
+
 👉 [What are deprecations?][readme-deprecations]
-
-### Link `isUnderlined`
-
-`isUnderlined` property will be replaced in the next major version. Please use `underlined` instead.
-
-#### Migration Guide
-
-```diff
-- <Link isUnderlined … />
-+ <Link underlined="always" … />
-```
 
 [readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#deprecations

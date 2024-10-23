@@ -8,7 +8,7 @@ import { SpiritFooterProps } from '../../types';
 export const Footer = (props: SpiritFooterProps): JSX.Element => {
   const { children, ...restProps } = props;
   const { styleProps, props: otherProps } = useStyleProps(restProps);
-  const footerClasses = 'bg-cover pt-1100 pb-1000';
+  const footerClasses = 'bg-secondary pt-1400 pb-1200';
 
   return (
     <footer {...styleProps} {...otherProps} className={classNames(footerClasses, styleProps.className)}>

@@ -23,14 +23,14 @@
             {% for item in customItems %}
                 {% if loop.index is same as(customItems|length - 1) %}
                     <li class="d-tablet-none">
-                        <Link href="{{ item.url }}" color="primary" isUnderlined>{{ _goBackTitle }}</Link>
+                        <Link href="{{ item.url }}" color="primary" underlined="always">{{ _goBackTitle }}</Link>
                     </li>
                 {% endif %}
                 <li class="d-none d-tablet-flex">
                     <Link
                         href="{{ item.url }}"
                         color="{{ loop.last ? 'secondary' : 'primary' }}"
-                        isUnderlined="{{ loop.last is not same as(true) }}"
+                        underlined="{{ loop.last ? 'hover' : 'always' }}"
                         aria-current="{{ loop.last ? 'page' : 'false' }}"
                     >{{ item.title }}</Link>
                 </li>

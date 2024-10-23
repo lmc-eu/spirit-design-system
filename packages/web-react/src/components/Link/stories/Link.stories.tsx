@@ -37,13 +37,6 @@ const meta: Meta<typeof Link> = {
         defaultValue: { summary: 'false' },
       },
     },
-    isUnderlined: {
-      control: 'boolean',
-      description: '⚠️ **Deprecated**. Please use `underlined` instead. \n\n',
-      table: {
-        defaultValue: { summary: 'false' },
-      },
-    },
     target: {
       control: 'select',
       options: ['_blank', '_self', '_parent', '_top', undefined],
@@ -65,7 +58,6 @@ const meta: Meta<typeof Link> = {
     elementType: 'a',
     href: 'https://www.example.com',
     isDisabled: false,
-    isUnderlined: false,
     target: '_blank',
     underlined: undefined,
   },

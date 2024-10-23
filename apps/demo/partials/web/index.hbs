@@ -1,11 +1,11 @@
-{{#> web/layout/default page="components"}}
+{{#> web/layout/default page="components" title="Components"}}
 
-  {{#>section title="Components"}}
-    {{#> boxList}}
-      {{#each @web_components as |component|}}
-        {{> component component=component path="src/scss/components"}}
-      {{/each}}
-    {{/boxList}}
-  {{/section}}
+  {{> web/tabs}}
+
+  {{#> cardList}}
+    {{#each @web_components as |component|}}
+      {{> card content=component.title path="src/scss/components" urlname=component.name}}
+    {{/each}}
+  {{/cardList}}
 
 {{/web/layout/default}}

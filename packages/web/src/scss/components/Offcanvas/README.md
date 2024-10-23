@@ -22,7 +22,7 @@ The `data-spirit-target` attribute accepts a CSS selector to apply the Offcanvas
 ```html
 <button
   type="button"
-  class="Button Button--inverted Button--medium Button--square"
+  class="Button Button--inverted Button--medium Button--symmetrical"
   data-spirit-toggle="offcanvas"
   data-spirit-target="#offcanvas-example"
   aria-controls="offcanvas-example"

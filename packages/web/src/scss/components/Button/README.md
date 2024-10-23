@@ -6,7 +6,6 @@ Variants:
 <button type="button" class="Button Button--primary Button--medium">Primary Button</button>
 <button type="button" class="Button Button--secondary Button--medium">Secondary Button</button>
 <button type="button" class="Button Button--tertiary Button--medium">Tertiary Button</button>
-<button type="button" class="Button Button--inverted Button--medium">Inverted button</button>
 <button type="button" class="Button Button--success Button--medium">Success button</button>
 <button type="button" class="Button Button--informative Button--medium">Informative button</button>
 <button type="button" class="Button Button--warning Button--medium">Warning button</button>
@@ -46,7 +45,7 @@ Loading Button:
     <use xlink:href="/icons/svg/sprite.svg#spinner" />
   </svg>
 </button>
-<button type="button" class="Button Button--primary Button--medium Button--square Button--loading" disabled>
+<button type="button" class="Button Button--primary Button--medium Button--symmetrical Button--loading" disabled>
   <span class="accessibility-hidden">Menu</span>
   <svg width="24" height="24" aria-hidden="true">
     <use xlink:href="/icons/svg/sprite.svg#hamburger" />

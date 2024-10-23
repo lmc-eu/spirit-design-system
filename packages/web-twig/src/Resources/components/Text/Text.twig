@@ -5,7 +5,7 @@
 {%- set _elementType = props.elementType | default('p') -%}
 
 {# Class names #}
-{%- set _rootClassName = _spiritClassPrefix ~ 'typography-body-' ~ _size ~ '-text-' ~ _emphasis -%}
+{%- set _rootClassName = _spiritClassPrefix ~ 'typography-body-' ~ _size ~ '-' ~ _emphasis -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}

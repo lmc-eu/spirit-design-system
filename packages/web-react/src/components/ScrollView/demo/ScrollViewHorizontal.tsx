@@ -4,7 +4,7 @@ import { HORIZONTAL_CONTENT } from './scrollViewContent';
 
 const ScrollViewHorizontal = () => (
   <ScrollView direction="horizontal">
-    <p className="py-700" style={{ whiteSpace: 'nowrap' }}>
+    <p className="py-900" style={{ whiteSpace: 'nowrap' }}>
       {HORIZONTAL_CONTENT}
     </p>
   </ScrollView>

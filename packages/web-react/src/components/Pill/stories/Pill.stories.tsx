@@ -1,7 +1,7 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { ActionColors, EmotionColors } from '../../../constants';
+import { EmotionColors } from '../../../constants';
 import ReadMe from '../README.md';
 import { Pill } from '..';
 
@@ -19,7 +19,7 @@ const meta: Meta<typeof Pill> = {
     },
     color: {
       control: 'select',
-      options: [...Object.values(ActionColors), ...Object.values(EmotionColors), 'selected', 'unselected'],
+      options: [...Object.values(EmotionColors), 'selected', 'neutral'],
       table: {
         defaultValue: { summary: 'selected' },
       },

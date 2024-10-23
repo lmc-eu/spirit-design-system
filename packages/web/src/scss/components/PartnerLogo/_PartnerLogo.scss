@@ -1,0 +1,25 @@
+@use 'theme';
+@use '@global-tokens' as global-tokens;
+@use '../../tools/dictionaries';
+
+.PartnerLogo {
+    --#{global-tokens.$token-prefix}partner-logo-padding: 0;
+
+    display: inline-block;
+    max-width: 100%;
+    height: fit-content;
+    border-radius: theme.$border-radius;
+    background: theme.$background-color;
+}
+
+.PartnerLogo > img,
+.PartnerLogo > svg {
+    width: fit-content;
+    height: var(--#{global-tokens.$token-prefix}partner-logo-image-height);
+}
+
+@include dictionaries.generate-sizes($class-name: 'PartnerLogo', $sizes: theme.$sizes);
+
+.PartnerLogo--safeArea {
+    padding: var(--#{global-tokens.$token-prefix}partner-logo-padding);
+}

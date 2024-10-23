@@ -28,5 +28,5 @@ type Story = StoryObj<typeof Footer>;
 
 export const Playground: Story = {
   name: 'Footer',
-  render: (args) => <Footer UNSAFE_className="bg-cover pt-1000 pb-1000" {...args} />,
+  render: (args) => <Footer UNSAFE_className="bg-secondary pt-1400 pb-1200" {...args} />,
 };

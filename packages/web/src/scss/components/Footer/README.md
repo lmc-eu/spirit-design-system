@@ -16,7 +16,7 @@ The Footer supports several ready-to-use building blocks:
 This is how all supported building blocks of the Footer build up the complete composition:
 
 ```html
-<footer class="bg-cover pt-1100 pb-1000">
+<footer class="bg-secondary pt-1400 pb-1200">
   <div class="Container">
     <!-- Grid with navigation links -->
     <!-- Grid with product logo, social media links and language switch -->
@@ -45,8 +45,8 @@ the `<h3>` element matches the value of the `aria-labelledby` attribute of the `
 
 ```html
 <nav aria-labelledby="footer-navigation-section">
-  <h3 class="typography-body-large-text-bold mb-600" id="footer-navigation-section">Section headline</h3>
-  <ul class="Stack Stack--hasSpacing" style="--stack-spacing: var(--spirit-space-500)">
+  <h3 class="typography-heading-xsmall-semibold mb-700" id="footer-navigation-section">Section headline</h3>
+  <ul class="Stack Stack--hasSpacing" style="--stack-spacing: var(--spirit-space-600)">
     <li>
       <a href="https://www.example.com">Link</a>
     </li>
@@ -69,7 +69,7 @@ This section is optional and consists of a [Grid][grid] layout with up to three 
 ```html
 <div
   class="Grid Grid--cols-1 Grid--desktop--cols-3 Grid--alignmentXCenter Grid--desktop--alignmentXStretch Grid--alignmentYCenter"
-  style="--grid-spacing-x: var(--spirit-space-900); --grid-spacing-y: var(--spirit-space-900)"
+  style="--grid-spacing-x: var(--spirit-space-1100); --grid-spacing-y: var(--spirit-space-1100)"
 >
   <div class="text-desktop-left">
     <!-- Product logo -->
@@ -96,7 +96,7 @@ Use the secondary [Button][button] component to create social media links inside
 <ul class="Flex Flex--row Flex--wrap Flex--alignmentXCenter Flex--alignmentYCenter">
   <!-- Repeat the `<li>` block for each social media link. -->
   <li>
-    <a href="https://www.example.com" class="Button Button--secondary Button--medium Button--square">
+    <a href="https://www.example.com" class="Button Button--secondary Button--medium Button--symmetrical">
       <span class="accessibility-hidden">Facebook</span>
       <svg width="24" height="24" aria-hidden="true">
         <use xlink:href="/assets/icons/svg/sprite.svg#logo-facebook" />
@@ -119,7 +119,7 @@ This section is optional and consists of a [Flex][flex] layout with secondary li
 <nav aria-label="Secondary links">
   <ul
     class="Flex Flex--column Flex--tablet--row Flex--wrap Flex--alignmentXStretch Flex--tablet--alignmentXCenter Flex--alignmentYStretch"
-    style="--flex-spacing: var(--spirit-space-500); --flex-spacing-tablet: var(--spirit-space-700)"
+    style="--flex-spacing: var(--spirit-space-600); --flex-spacing-tablet: var(--spirit-space-900)"
   >
     <!-- Repeat the `<li>` block for each secondary link. -->
     <li>
@@ -134,17 +134,17 @@ This section is optional and consists of a [Flex][flex] layout with secondary li
 ## Full Example
 
 ```html
-<footer class="bg-cover pt-1100 pb-1000">
+<footer class="bg-secondary pt-1400 pb-1200">
   <div class="Container">
     <!-- Grid with navigation links -->
     <div
       class="Grid Grid--cols-1 Grid--tablet--cols-2 Grid--desktop--cols-4"
-      style="--grid-spacing-x: var(--spirit-space-800); --grid-spacing-y: var(--spirit-space-800)"
+      style="--grid-spacing-x: var(--spirit-space-1000); --grid-spacing-y: var(--spirit-space-1000)"
     >
       <!-- Repeat the `<nav>` block as many times as needed. -->
       <nav aria-labelledby="footer-navigation-section">
-        <h3 class="typography-body-large-text-bold mb-600" id="footer-navigation-section">Section headline</h3>
-        <ul class="Stack Stack--hasSpacing" style="--stack-spacing: var(--spirit-space-500)">
+        <h3 class="typography-heading-xsmall-semibold mb-700" id="footer-navigation-section">Section headline</h3>
+        <ul class="Stack Stack--hasSpacing" style="--stack-spacing: var(--spirit-space-600)">
           <li>
             <a href="https://www.example.com">Link</a>
           </li>
@@ -159,17 +159,17 @@ This section is optional and consists of a [Flex][flex] layout with secondary li
     </div>
 
     <!-- Divider -->
-    <hr class="Divider my-900" />
+    <hr class="Divider my-1200" />
 
     <!-- Grid with product logo, social media links and language switch -->
     <div
       class="Grid Grid--cols-1 Grid--desktop--cols-3 Grid--alignmentXCenter Grid--desktop--alignmentXStretch Grid--alignmentYCenter"
-      style="--grid-spacing-x: var(--spirit-space-900); --grid-spacing-y: var(--spirit-space-900)"
+      style="--grid-spacing-x: var(--spirit-space-1100); --grid-spacing-y: var(--spirit-space-1100)"
     >
       <!-- Product logo -->
       <div class="text-desktop-left">
         <a href="https://www.example.com">
-          <div class="UNSTABLE_ProductLogo">
+          <div class="ProductLogo">
             <!-- Product logo image -->
           </div>
         </a>
@@ -177,7 +177,7 @@ This section is optional and consists of a [Flex][flex] layout with secondary li
       <!-- Flex with social media links -->
       <ul class="Flex Flex--row Flex--wrap Flex--alignmentXCenter Flex--alignmentYCenter" aria-label="Social media">
         <li>
-          <a href="https://www.example.com" class="Button Button--secondary Button--medium Button--square">
+          <a href="https://www.example.com" class="Button Button--secondary Button--medium Button--symmetrical">
             <span class="accessibility-hidden">Facebook</span>
             <svg width="24" height="24" aria-hidden="true">
               <use xlink:href="/assets/icons/svg/sprite.svg#logo-facebook" />
@@ -185,7 +185,7 @@ This section is optional and consists of a [Flex][flex] layout with secondary li
           </a>
         </li>
         <li>
-          <a href="https://www.example.com" class="Button Button--secondary Button--medium Button--square">
+          <a href="https://www.example.com" class="Button Button--secondary Button--medium Button--symmetrical">
             <span class="accessibility-hidden">X</span>
             <svg width="24" height="24" aria-hidden="true">
               <use xlink:href="/assets/icons/svg/sprite.svg#logo-x" />
@@ -193,7 +193,7 @@ This section is optional and consists of a [Flex][flex] layout with secondary li
           </a>
         </li>
         <li>
-          <a href="https://www.example.com" class="Button Button--secondary Button--medium Button--square">
+          <a href="https://www.example.com" class="Button Button--secondary Button--medium Button--symmetrical">
             <span class="accessibility-hidden">YouTube</span>
             <svg width="24" height="24" aria-hidden="true">
               <use xlink:href="/assets/icons/svg/sprite.svg#logo-youtube" />
@@ -221,13 +221,13 @@ This section is optional and consists of a [Flex][flex] layout with secondary li
     </div>
 
     <!-- Divider -->
-    <hr class="Divider my-900" />
+    <hr class="Divider my-1200" />
 
     <!-- Flex with secondary links -->
     <nav aria-label="Secondary links">
       <ul
         class="Flex Flex--column Flex--tablet--row Flex--wrap Flex--alignmentXStretch Flex--tablet--alignmentXCenter Flex--alignmentYStretch"
-        style="--flex-spacing: var(--spirit-space-500); --flex-spacing-tablet: var(--spirit-space-700)"
+        style="--flex-spacing: var(--spirit-space-600); --flex-spacing-tablet: var(--spirit-space-900)"
       >
         <li>
           <a href="https://www.example.com" class="link-secondary">Legal notice</a>
@@ -251,6 +251,6 @@ This section is optional and consists of a [Flex][flex] layout with secondary li
 [divider]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Divider/README.md
 [flex]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Flex/README.md
 [grid]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Grid/README.md
-[product-logo]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/UNSTABLE_ProductLogo/README.md
+[product-logo]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/ProductLogo/README.md
 [select]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Select/README.md
 [stack]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Stack/README.md

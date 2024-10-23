@@ -1,4 +1,7 @@
-{% extends 'layout/plain.html.twig' %}
+{% extends 'layout/default.html.twig' %}
+
+{% block title %}Heading{% endblock %}
+{% block parentPageName %}Components{% endblock %}
 
 {% block content %}
 
@@ -8,6 +11,10 @@
 
     <DocsSection title="Sizes">
         {% include '@components/Heading/stories/HeadingSizes.twig' %}
+    </DocsSection>
+
+    <DocsSection title="Emphasis">
+        {% include '@components/Heading/stories/HeadingEmphasis.twig' %}
     </DocsSection>
 
 {% endblock %}

@@ -142,7 +142,7 @@ const TooltipPlacements = () => {
           />
         </GridItem>
         <GridItem columnStart={2} rowStart={2}>
-          <div className="mx-auto space-1200">
+          <div className="mx-auto space-1600">
             <Tooltip
               isOpen
               id="tooltip-placement"
@@ -151,7 +151,7 @@ const TooltipPlacements = () => {
               enableFlipping={false}
             >
               <TooltipTrigger elementType="div" UNSAFE_style={{ margin: '5rem auto' }}>
-                <DocsBox UNSAFE_className="px-900 py-900">
+                <DocsBox UNSAFE_className="px-1100 py-1100">
                   Click
                   <br /> the dots!
                 </DocsBox>

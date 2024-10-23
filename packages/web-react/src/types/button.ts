@@ -1,6 +1,6 @@
 import { ElementType } from 'react';
 import {
-  ActionColorsDictionaryType,
+  ActionButtonColorsDictionaryType,
   AriaLabelingProps,
   ChildrenProps,
   ClickEvents,
@@ -10,7 +10,7 @@ import {
   StyleProps,
 } from './shared';
 
-export type ButtonColor<C> = ActionColorsDictionaryType | EmotionColorsDictionaryType | C;
+export type ButtonColor<C> = ActionButtonColorsDictionaryType | EmotionColorsDictionaryType | C;
 export type ButtonSize<S> = SizesDictionaryType | S;
 export type ButtonType = 'button' | 'submit' | 'reset';
 
@@ -23,8 +23,8 @@ export interface ButtonBaseProps<C = void, S = void> extends ChildrenProps, Styl
   isBlock?: boolean;
   /** Whether the button should be in a loading state. */
   isLoading?: boolean;
-  /** Whether the button should be displayed as a square. */
-  isSquare?: boolean;
+  /** Whether the button should be symmetrical. */
+  isSymmetrical?: boolean;
   /** The size of the button. */
   size?: ButtonSize<S>;
 }

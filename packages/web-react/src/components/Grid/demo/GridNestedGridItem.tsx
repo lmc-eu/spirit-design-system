@@ -6,7 +6,7 @@ import GridItem from '../GridItem';
 const GridNestedGridItem = () => (
   <Grid>
     <GridItem columnStart={1} columnEnd={{ mobile: 9, tablet: 10 }}>
-      <div className="bg-cover py-400">
+      <div className="bg-secondary py-500">
         <Grid>
           <GridItem columnStart={1} columnEnd="span 4">
             <DocsBox size="small">First Nested Content</DocsBox>

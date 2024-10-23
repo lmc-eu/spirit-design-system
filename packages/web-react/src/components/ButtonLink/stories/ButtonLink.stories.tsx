@@ -1,7 +1,7 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { ActionColors, EmotionColors, Sizes } from '../../../constants';
+import { ActionButtonColors, EmotionColors, Sizes } from '../../../constants';
 import { Icon } from '../../Icon';
 import ReadMe from '../README.md';
 import { ButtonLink } from '..';
@@ -34,9 +34,9 @@ const meta: Meta<typeof ButtonLink> = {
     },
     color: {
       control: 'select',
-      options: [...Object.values(ActionColors), ...Object.values(EmotionColors)],
+      options: [...Object.values(ActionButtonColors), ...Object.values(EmotionColors)],
       table: {
-        defaultValue: { summary: ActionColors.PRIMARY },
+        defaultValue: { summary: ActionButtonColors.PRIMARY },
       },
     },
     isBlock: {
@@ -48,7 +48,7 @@ const meta: Meta<typeof ButtonLink> = {
     isLoading: {
       control: 'boolean',
     },
-    isSquare: {
+    isSymmetrical: {
       control: 'boolean',
     },
     size: {
@@ -58,11 +58,11 @@ const meta: Meta<typeof ButtonLink> = {
   },
   args: {
     children: 'Click me',
-    color: ActionColors.PRIMARY,
+    color: ActionButtonColors.PRIMARY,
     isBlock: false,
     isDisabled: false,
     isLoading: false,
-    isSquare: false,
+    isSymmetrical: false,
     size: Sizes.MEDIUM,
   },
 };

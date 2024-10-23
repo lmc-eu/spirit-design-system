@@ -1,5 +1,4 @@
 import React from 'react';
-import DocsBox from '../../../../docs/DocsBox';
 import Link from '../Link';
 
 const LinkColors = () => (
@@ -12,11 +11,9 @@ const LinkColors = () => (
       Secondary Link
     </Link>
 
-    <DocsBox>
-      <Link href="#" color="inverted">
-        Inverted Link
-      </Link>
-    </DocsBox>
+    <Link href="#" color="tertiary">
+      Tertiary Link
+    </Link>
   </>
 );
 
