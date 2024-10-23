@@ -9,6 +9,7 @@ import { useLinkStyleProps } from './useLinkStyleProps';
 const defaultProps: Partial<SpiritLinkProps> = {
   elementType: 'a',
   color: 'primary',
+  hasVisitedStyleAllowed: false,
   underlined: 'hover',
 };
 

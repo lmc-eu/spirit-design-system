@@ -18,11 +18,13 @@ export function useLinkStyleProps<E extends ElementType = 'a', T = void>(props: 
   const linkDisabledClass = `${linkClass}-disabled`;
   const linkUnderlinedClass = `${linkClass}-underlined`;
   const linkNotUnderlinedClass = `${linkClass}-not-underlined`;
+  const linkVisitedStyleAllowedClass = `${linkClass}-allow-visited-style`;
 
   const className = classNames(linkColorClass, {
     [linkDisabledClass]: isDisabled,
     [linkUnderlinedClass]: underlined === UNDERLINED_OPTIONS.ALWAYS,
     [linkNotUnderlinedClass]: underlined === UNDERLINED_OPTIONS.NEVER,
+    [linkVisitedStyleAllowedClass]: props.hasVisitedStyleAllowed,
   });
 
   return {
