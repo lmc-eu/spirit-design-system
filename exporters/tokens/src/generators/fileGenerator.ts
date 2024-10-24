@@ -122,7 +122,7 @@ export const generateOutputFilesByThemes = async (
   // Compute themed tokens for all themes in parallel
   const allThemes = await Promise.all(
     themes.map(async (theme) => {
-      const themedTokens = sdk.tokens.computeTokensByApplyingThemes([], tokens, [theme]);
+      const themedTokens = sdk.tokens.computeTokensByApplyingThemes(tokens, tokens, [theme]);
 
       return { themedTokens, theme };
     }),
