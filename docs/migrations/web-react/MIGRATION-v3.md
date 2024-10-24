@@ -11,6 +11,9 @@ Introducing version 3 of the _spirit-web-react_ package.
 
 - [Component Changes](#component-changes)
   - [Button and ButtonLink: `isSquare` prop](#button-and-buttonlink-issquare-prop-renamed-to-issymmetrical)
+  - [Heading elementType prop is now mandatory](#heading-elementtype-prop-is-now-mandatory)
+  - [Link `hasVisitedStyleAllowed`](#link-hasvisitedstyleallowed)
+  - [Link `isUnderlined`](#link-isunderlined)
 
 ## Component Changes
 
@@ -62,6 +65,27 @@ npx @lmc-eu/spirit-codemods -p <path> -t v3/web-react/heading-elementType-prop
 Manually replace the props in your project.
 
 - `<Heading … />` → `<Heading elementType="{/* Your semantic HTML element here */}" … />`
+</details>
+
+### Link: The `hasVisitedStyleAllowed` prop was added
+
+The `hasVisitedStyleAllowed` property was added. This property allows the link to have visited state style. There is also a change in the use of the visited state style for the `Heading` component, which had previously this state set by default.
+Now a prop `hasVisitedStyleAllowed` has to be added to enable the visited state.
+
+#### Migration Guide
+
+🪄 Use codemods to automatically update your codebase:
+
+```sh
+npx @lmc-eu/spirit-codemods -p <path> -t v3/web-react/link-hasVisitedStyleAllowed-prop
+```
+
+👉 See [Codemods documentation][readme-codemods] for more details.
+
+<details>
+  <summary>🔧 Manual Migration Steps</summary>
+
+- `<Link … />` → `<Link hasVisitedStyleAllowed … />`
 </details>
 
 ### Link `isUnderlined`
