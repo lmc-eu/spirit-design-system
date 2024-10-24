@@ -157,6 +157,49 @@ module: {
               includePaths: [
                 path.resolve(__dirname, 'node_modules'),
                 path.resolve(__dirname, 'node_modules/@lmc-eu/spirit-design-tokens/scss'),
+              ],
+            },
+          },
+        },
+      ],
+    },
+  ];
+}
+// …
+```
+
+</details>
+
+##### Using the sass-embedded Library
+
+If you're using `sass-embedded`, you can specify the API as `legacy`, `modern`, or `modern-compiler`. More information can be found [here](https://sass-lang.com/documentation/breaking-changes/legacy-js-api/#bundlers).
+
+We recommend using the `modern-compiler` option.
+Please note that this change also requires updating `includePaths` to `loadPaths`.
+
+<details>
+<summary>Webpack and <code>sass-embedded</code>:</summary>
+
+```javascript
+// webpack.config.js
+
+// …
+module: {
+  rules: [
+    {
+      test: /\.scss$/,
+      use: [
+        'style-loader',
+        'css-loader',
+        {
+          loader: 'sass-loader',
+          options: {
+            api: 'modern-compiler',
+            sassOptions: {
+              loadPaths: [
+                path.resolve(__dirname, 'node_modules'),
+                path.resolve(__dirname, 'node_modules/@lmc-eu/spirit-design-tokens/scss'),
+              ],
             },
           },
         },

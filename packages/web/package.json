@@ -74,7 +74,7 @@
     "postcss": "8.4.47",
     "postcss-cli": "11.0.0",
     "rollup": "4.24.0",
-    "sass": "1.79.5",
+    "sass-embedded": "1.79.5",
     "sass-true": "8.1.0",
     "shx": "0.3.4",
     "stylelint": "16.10.0",
@@ -83,7 +83,7 @@
     "typescript": "5.6.2"
   },
   "peerDependencies": {
-    "sass": ">=1.57.0 < 2"
+    "sass-embedded": ">=1.57.0 < 2"
   },
   "peerDependenciesMeta": {
     "sass": {
