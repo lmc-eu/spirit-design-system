@@ -49,18 +49,18 @@
     @include typography.generate(theme.$item-typography);
 
     padding-block: theme.$link-padding-y;
-    color: theme.$link-color-default;
+    color: theme.$link-color-state-default;
 
     @media (hover: hover) {
         &:hover {
             text-decoration: none;
-            color: theme.$link-color-hover;
+            color: theme.$link-color-state-hover;
         }
     }
 
     &:active {
         text-decoration: none;
-        color: theme.$link-color-active;
+        color: theme.$link-color-state-active;
     }
 }
 

@@ -98,7 +98,7 @@ $_field-name: 'TextField';
     align-items: center;
     justify-content: center;
     padding: theme.$input-password-toggle-padding;
-    color: form-fields-theme.$box-field-input-color-default;
+    color: form-fields-theme.$box-field-input-color-state-default;
     border-radius: 0 form-fields-theme.$box-field-input-border-radius form-fields-theme.$box-field-input-border-radius 0;
     background-color: form-fields-theme.$input-background-color;
 
@@ -121,12 +121,12 @@ $_field-name: 'TextField';
 }
 
 .TextField__input:hover + .TextField__passwordToggle__button {
-    background-color: form-fields-theme.$input-background-color-hover;
+    background-color: form-fields-theme.$input-background-color-state-hover;
 }
 
 .TextField__input:active + .TextField__passwordToggle__button,
 .TextField__input:focus-within + .TextField__passwordToggle__button {
-    background-color: form-fields-theme.$input-background-color-active;
+    background-color: form-fields-theme.$input-background-color-state-active;
 }
 
 .TextField__passwordToggle__icon {
@@ -196,14 +196,14 @@ $_field-name: 'TextField';
 :is(.TextField--disabled, .TextField.is-disabled)
     .TextField__passwordToggle
     .TextField__passwordToggle__button::before {
-    border-color: form-fields-theme.$input-border-color-disabled;
+    border-color: form-fields-theme.$input-border-color-state-disabled;
 }
 
 .TextField .TextField__input:disabled ~ .TextField__passwordToggle__button,
 :is(.TextField--disabled, .TextField.is-disabled) .TextField__passwordToggle__button {
     @include form-fields-tools.input-disabled();
 
-    background-color: form-fields-theme.$input-background-color-disabled;
+    background-color: form-fields-theme.$input-background-color-state-disabled;
     pointer-events: none;
     cursor: cursors.$disabled;
 }

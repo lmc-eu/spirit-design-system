@@ -29,14 +29,14 @@
 
     &:hover {
         text-decoration: none;
-        color: theme.$header-link-color-hover;
-        background-color: theme.$header-link-background-color-hover;
+        color: theme.$header-link-color-state-hover;
+        background-color: theme.$header-link-background-color-state-hover;
     }
 
     &:active {
         text-decoration: none;
-        color: theme.$header-link-color-active;
-        background-color: theme.$header-link-background-color-active;
+        color: theme.$header-link-color-state-active;
+        background-color: theme.$header-link-background-color-state-active;
     }
 
     @media (prefers-reduced-motion: no-preference) {

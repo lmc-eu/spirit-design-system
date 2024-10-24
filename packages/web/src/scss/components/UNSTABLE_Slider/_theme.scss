@@ -8,13 +8,13 @@ $transition-timing: transitions.$timing-eased-out;
 
 $track-height: global-tokens.$space-300;
 $track-border-radius: global-tokens.$radius-100;
-$track-background: var(--#{global-tokens.$token-prefix}color-border-interactive-default);
-$track-background-hover: var(--#{global-tokens.$token-prefix}color-border-interactive-hover);
-$track-background-active: var(--#{global-tokens.$token-prefix}color-border-interactive-active);
+$track-background: var(--#{global-tokens.$token-prefix}color-border-interactive-state-default);
+$track-background-hover: var(--#{global-tokens.$token-prefix}color-border-interactive-state-hover);
+$track-background-active: var(--#{global-tokens.$token-prefix}color-border-interactive-state-active);
 $track-background-disabled: var(--#{global-tokens.$token-prefix}color-disabled-background);
-$track-lower-background: var(--#{global-tokens.$token-prefix}color-selected-default);
-$track-lower-background-hover: var(--#{global-tokens.$token-prefix}color-selected-default);
-$track-lower-background-active: var(--#{global-tokens.$token-prefix}color-selected-default);
+$track-lower-background: var(--#{global-tokens.$token-prefix}color-selected-state-default);
+$track-lower-background-hover: var(--#{global-tokens.$token-prefix}color-selected-state-default);
+$track-lower-background-active: var(--#{global-tokens.$token-prefix}color-selected-state-default);
 $track-lower-background-disabled: var(--#{global-tokens.$token-prefix}color-disabled-foreground);
 
 $thumb-width: global-tokens.$space-900;
@@ -22,14 +22,18 @@ $thumb-height: global-tokens.$space-1100;
 $thumb-border-width: global-tokens.$border-width-200;
 $thumb-border-width-disabled: global-tokens.$border-width-100;
 $thumb-border-style: solid;
-$thumb-border-color: var(--#{global-tokens.$token-prefix}color-form-field-border-default);
-$thumb-border-color-hover: var(--#{global-tokens.$token-prefix}color-form-field-border-hover);
-$thumb-border-color-active: var(--#{global-tokens.$token-prefix}color-selected-default);
+$thumb-border-color: var(--#{global-tokens.$token-prefix}color-form-field-filled-border-state-default);
+$thumb-border-color-state-hover: var(--#{global-tokens.$token-prefix}color-form-field-filled-border-state-hover);
+$thumb-border-color-state-active: var(--#{global-tokens.$token-prefix}color-selected-state-default);
 $thumb-border-color-disabled: var(--#{global-tokens.$token-prefix}color-disabled-foreground);
 $thumb-border-radius: global-tokens.$radius-200;
-$thumb-background-color: var(--#{global-tokens.$token-prefix}color-form-field-default);
-$thumb-background-color-hover: var(--#{global-tokens.$token-prefix}color-form-field-hover);
-$thumb-background-color-active: var(--#{global-tokens.$token-prefix}color-form-field-active);
+$thumb-background-color: var(--#{global-tokens.$token-prefix}color-form-field-filled-background-state-default);
+$thumb-background-color-state-hover: var(
+    --#{global-tokens.$token-prefix}color-form-field-filled-background-state-hover
+);
+$thumb-background-color-state-active: var(
+    --#{global-tokens.$token-prefix}color-form-field-filled-background-state-active
+);
 $thumb-background-color-disabled: var(--#{global-tokens.$token-prefix}color-disabled-background);
 $thumb-background-image: var(--#{global-tokens.$token-prefix}slider-thumb-background-image-url);
 $thumb-background-image-disabled: var(--#{global-tokens.$token-prefix}slider-thumb-disabled-background-image-url);

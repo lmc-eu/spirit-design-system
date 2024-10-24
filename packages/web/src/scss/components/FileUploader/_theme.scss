@@ -3,20 +3,24 @@
 $input-drop-zone-padding: global-tokens.$space-700;
 $input-drop-zone-column-gap: global-tokens.$space-700;
 $input-drop-zone-border: global-tokens.$border-width-200 solid
-    var(--#{global-tokens.$token-prefix}color-form-field-border-default);
+    var(--#{global-tokens.$token-prefix}color-form-field-filled-border-state-default);
 $input-drop-zone-draggable-border: global-tokens.$border-width-200 dashed
-    var(--#{global-tokens.$token-prefix}color-form-field-border-default);
+    var(--#{global-tokens.$token-prefix}color-form-field-filled-border-state-default);
 $input-drop-zone-dragging-border: global-tokens.$border-width-200 dashed
-    var(--#{global-tokens.$token-prefix}color-form-field-border-selected);
-$input-drop-zone-border-color-hover: var(--#{global-tokens.$token-prefix}color-form-field-border-hover);
-$input-drop-zone-border-color-active: var(--#{global-tokens.$token-prefix}color-form-field-border-active);
+    var(--#{global-tokens.$token-prefix}color-form-field-filled-border-state-selected);
+$input-drop-zone-border-color-state-hover: var(
+    --#{global-tokens.$token-prefix}color-form-field-filled-border-state-hover
+);
+$input-drop-zone-border-color-state-active: var(
+    --#{global-tokens.$token-prefix}color-form-field-filled-border-state-active
+);
 $input-drop-zone-border-radius: global-tokens.$radius-300;
-$input-drop-zone-background: var(--#{global-tokens.$token-prefix}color-background-interactive-default);
-$input-drop-zone-background-hover: var(--#{global-tokens.$token-prefix}color-background-interactive-hover);
-$input-drop-zone-background-active: var(--#{global-tokens.$token-prefix}color-background-interactive-active);
+$input-drop-zone-background: var(--#{global-tokens.$token-prefix}color-background-interactive-state-default);
+$input-drop-zone-background-hover: var(--#{global-tokens.$token-prefix}color-background-interactive-state-hover);
+$input-drop-zone-background-active: var(--#{global-tokens.$token-prefix}color-background-interactive-state-active);
 $input-drop-zone-label-typography: global-tokens.$body-medium-regular;
 $input-drop-zone-label-color: var(--#{global-tokens.$token-prefix}color-text-primary);
-$input-drop-zone-icon-color: var(--#{global-tokens.$token-prefix}color-action-link-primary-default);
+$input-drop-zone-icon-color: var(--#{global-tokens.$token-prefix}color-link-primary-state-default);
 
 $list-row-gap: global-tokens.$space-700;
 

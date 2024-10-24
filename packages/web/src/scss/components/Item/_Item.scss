@@ -49,7 +49,7 @@
 .Item__icon {
     display: flex;
     grid-row: span 2; // 1.
-    color: theme.$icon-color-default;
+    color: theme.$icon-color-state-default;
 }
 
 .Item__icon--start {

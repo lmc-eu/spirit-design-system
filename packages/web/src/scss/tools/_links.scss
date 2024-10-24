@@ -6,7 +6,7 @@
     text-underline-offset: links.$text-underline-offset;
 
     @if $set-color {
-        color: var(--#{global-tokens.$token-prefix}color-action-link-primary-default);
+        color: var(--#{global-tokens.$token-prefix}color-link-primary-state-default);
     }
 
     @media (hover: hover) {
@@ -14,7 +14,7 @@
             text-decoration: links.$text-decoration-hover;
 
             @if $set-color {
-                color: var(--#{global-tokens.$token-prefix}color-action-link-primary-hover);
+                color: var(--#{global-tokens.$token-prefix}color-link-primary-state-hover);
             }
         }
     }
@@ -23,7 +23,7 @@
         text-decoration: links.$text-decoration-hover;
 
         @if $set-color {
-            color: var(--#{global-tokens.$token-prefix}color-action-link-primary-active);
+            color: var(--#{global-tokens.$token-prefix}color-link-primary-state-active);
         }
     }
 }
