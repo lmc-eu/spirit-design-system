@@ -10,10 +10,14 @@ const FileUploaderDraggingNotAvailable = () => {
   );
 
   useEffect(() => {
-    const element = document
-      .getElementById('file-uploader-dragging-not-available')
-      ?.querySelector('.has-drag-and-drop');
-    element?.classList.remove('has-drag-and-drop');
+    const timer = setTimeout(() => {
+      const element = document
+        .getElementById('file-uploader-dragging-not-available')
+        ?.querySelector('.has-drag-and-drop');
+      element?.classList.remove('has-drag-and-drop');
+    }, 0);
+
+    return () => clearTimeout(timer);
   }, []);
 
   // ⚠️ VISUAL EXAMPLE ONLY, DO NOT COPY-PASTE
