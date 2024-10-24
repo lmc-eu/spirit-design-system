@@ -10,6 +10,7 @@ const defaultProps: Partial<SpiritLinkProps> = {
   elementType: 'a',
   color: 'primary',
   underlined: 'hover',
+  hasVisitedStyleAllowed: false,
 };
 
 /* We need an exception for components exported with forwardRef */

@@ -5,6 +5,7 @@ import LinkColors from './LinkColors';
 import LinkDefault from './LinkDefault';
 import LinkDisabled from './LinkDisabled';
 import LinkUnderlined from './LinkUnderlined';
+import LinkVisited from './LinkVisited';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -19,6 +20,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     </DocsSection>
     <DocsSection title="Underlined">
       <LinkUnderlined />
+    </DocsSection>
+    <DocsSection title="Visited">
+      <LinkVisited />
     </DocsSection>
   </React.StrictMode>,
 );
