@@ -18,6 +18,7 @@ Introducing version 3 of the _spirit-web_ package.
   - [Button: The `inverted` Modifier Removed](#button-the-inverted-modifier-removed)
   - [Field Group: Alignment](#field-group-alignment)
   - [Header: The `inverted` Variant Removed](#header-the-inverted-variant-removed)
+  - [Link: The `link-allow-visited` class added](#link-the-link-allow-visited-class-added)
   - [Partner Logo: Stabilized](#partner-logo-stabilized)
   - [Pill: Renamed and Removed Variants](#pill-renamed-and-removed-variants)
   - [Product Logo: The `inverted` Modifier Removed](#product-logo-the-inverted-modifier-removed)
@@ -204,6 +205,17 @@ Field Group component children are not aligned to `start` except when the `Field
 ### Header: The `inverted` Variant Removed
 
 Header `inverted` variant was removed. Instead, the `primary` variant was added to be further adjusted with themes.
+
+### Link: The `link-allow-visited` class added
+
+The `link-allow-visited` class was added. This class allows the link to have visited state style. There is also
+a change in the use of the visited state style for the typography heading classes, which had previously this state set by default.
+
+#### Migration Guide
+
+If you want to enable the visited state style, please manually add the `link-allow-visited-style` class.
+
+- `<a href="#" class="link-primary">` → `<a href="#" class="link-primary link-allow-visited-style">`
 
 ### Partner Logo: Stabilized
 
