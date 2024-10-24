@@ -51,4 +51,4 @@ const getDevelopmentEndpointUri = (packageName, { isDocker } = { isDocker: false
   return `http${https ? 's' : ''}://${isDocker ? 'host.docker.internal' : host}:${port}${path ? `/${path}` : ''}`;
 };
 
-module.exports = { SERVERS, getDevelopmentEndpointUri };
+export { SERVERS, getDevelopmentEndpointUri };
