@@ -1,0 +1,98 @@
+<Header color="inverted">
+    {% include '@components/Header/stories/_partials/SpiritLogo.twig' %}
+
+    <HeaderMobileActions dialogId="header_inverted_with_actions_and_dropdown__dialog">
+        <DropdownWrapper>
+            <Button
+                color="inverted"
+                data-spirit-toggle="dropdown"
+                data-spirit-target="#dropdown_user_mobile"
+                aria-controls="dropdown_user_mobile"
+                aria-expanded="false"
+                isSquare
+            >
+                <Icon name="profile" />
+                <VisuallyHidden>My Profile</VisuallyHidden>
+            </Button>
+            <Dropdown id="dropdown_user_mobile" placement="bottom-right">
+                <Stack hasSpacing>
+                    <a href="#">Dashboard</a>
+                    <a href="#">Profile</a>
+                    <a href="#">Favourites</a>
+                    <a href="#">Notifications</a>
+                    <a href="#">Sign out</a>
+                </Stack>
+            </Dropdown>
+        </DropdownWrapper>
+    </HeaderMobileActions>
+
+    <HeaderDesktopActions aria-label="Main navigation">
+        <HeaderNav>
+            <HeaderNavItem>
+                <HeaderLink href="#" isCurrent>Job offers</HeaderLink>
+            </HeaderNavItem>
+            <HeaderNavItem>
+                <HeaderLink href="#">Part-time jobs</HeaderLink>
+            </HeaderNavItem>
+            <HeaderNavItem>
+                <HeaderLink href="#">Inspiration</HeaderLink>
+            </HeaderNavItem>
+            <HeaderNavItem>
+                <HeaderLink href="#">Replies</HeaderLink>
+            </HeaderNavItem>
+            <HeaderNavItem>
+                <HeaderLink href="#">Employers</HeaderLink>
+            </HeaderNavItem>
+        </HeaderNav>
+    </HeaderDesktopActions>
+
+    <HeaderDesktopActions color="secondary">
+        <DropdownWrapper UNSAFE_className="d-flex" UNSAFE_style="align-self: stretch">
+            <HeaderButton
+                data-spirit-toggle="dropdown"
+                data-spirit-target="#dropdown_user_desktop"
+                aria-controls="dropdown_user_desktop"
+                aria-expanded="false"
+            >
+                Marian
+                <span class="pl-500">▾</span>
+            </HeaderButton>
+            <Dropdown id="dropdown_user_desktop" placement="bottom-right">
+                <Stack hasSpacing>
+                    <a href="#">Dashboard</a>
+                    <a href="#">Profile</a>
+                    <a href="#">Favourites</a>
+                    <a href="#">Notifications</a>
+                    <a href="#">Sign out</a>
+                </Stack>
+            </Dropdown>
+        </DropdownWrapper>
+        <Button color="inverted" isSquare>
+            <Icon name="search" />
+            <VisuallyHidden>Search</VisuallyHidden>
+        </Button>
+    </HeaderDesktopActions>
+</Header>
+
+<HeaderDialog id="header_inverted_with_actions_and_dropdown__dialog">
+    <HeaderDialogCloseButton dialogId="header_inverted_with_actions_and_dropdown__dialog" />
+    <HeaderDialogActions aria-label="Main navigation">
+        <HeaderDialogNav>
+            <HeaderDialogNavItem>
+                <HeaderDialogLink href="/" isCurrent>Job offers</HeaderDialogLink>
+            </HeaderDialogNavItem>
+            <HeaderDialogNavItem>
+                <HeaderDialogLink href="/">Part-time jobs</HeaderDialogLink>
+            </HeaderDialogNavItem>
+            <HeaderDialogNavItem>
+                <HeaderDialogLink href="/">Inspiration</HeaderDialogLink>
+            </HeaderDialogNavItem>
+            <HeaderDialogNavItem>
+                <HeaderDialogLink href="/">Replies</HeaderDialogLink>
+            </HeaderDialogNavItem>
+            <HeaderDialogNavItem>
+                <HeaderDialogLink href="/">Employers</HeaderDialogLink>
+            </HeaderDialogNavItem>
+        </HeaderDialogNav>
+    </HeaderDialogActions>
+</HeaderDialog>
