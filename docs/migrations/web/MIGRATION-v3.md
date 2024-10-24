@@ -278,6 +278,17 @@ The Toast component now has its own close button and link.
 
    - `<button class="Button Button--square Button--inverted">` → `<button class="ToastBar__close">`
 
+### Link `hasVisitedStyleAllowed`
+
+The `link-allow-visited` class was added. This class allows the link to have visited state style. There is also a change in the use of the visited state style for the `typography-heading` class, which had previously this state set by default.
+Now a prop `link-allow-visited` have to be added to enable the visited state.
+
+#### Migration Guide
+
+If you want to enable the visited state style, please manually add the `link-allow-visited` prop.
+
+- `<a href="#" class="link-primary">` → `<a href="#" class="link-primary link-allow-visited">`
+
 ---
 
 [spirit-figma-file]: https://www.figma.com/design/w9Ca4hvkuYLshsrHu1bYwT/

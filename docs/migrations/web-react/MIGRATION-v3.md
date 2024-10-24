@@ -88,6 +88,21 @@ Manually replace the props in your project.
 
 ---
 
+### Link `hasVisitedStyleAllowed`
+
+The `hasVisitedStyleAllowed` property was added. This property allows the link to have visited state style. There is also a change in the use of the visited state style for the `Heading` component, which had previously this state set by default.
+Now a prop `hasVisitedStyleAllowed` has to be added to enable the visited state.
+
+#### Migration Guide
+
+If you want to enable the visited state style for the `Link` component, please manually add the `hasVisitedStyleAllowed` prop.
+
+<details>
+  <summary>🔧 Manual Migration Steps</summary>
+
+- `<Link … />` → `<Link hasVisitedStyleAllowed … />`
+</details>
+
 Please refer back to these instructions or reach out to our team if you encounter any issues during migration.
 
 [migration-guide-web]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/migrations/web/MIGRATION-v3.md
