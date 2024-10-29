@@ -1,6 +1,3 @@
-@use 'sass:math';
-@use 'sass:string';
-@use '../../tools/breakpoint';
 @use '../../tools/reset';
 @use '../../tools/spacing';
 @use 'theme';
@@ -13,8 +10,8 @@
 
 .Stack--hasSpacing {
     @include spacing.create(
+        $input-property-base-name: '--stack-spacing',
         $output-property-name: '--stack-gap',
-        $responsive-property-base-name: '--stack-spacing',
         $breakpoints: theme.$breakpoints,
         $default-spacing: theme.$spacing-fallback
     );
@@ -37,7 +34,7 @@
 
 .Stack--hasSpacing > * {
     @include spacing.prevent-inheritance(
-        $responsive-property-base-name: '--stack-spacing',
+        $input-property-base-names: '--stack-spacing',
         $breakpoints: theme.$breakpoints
     );
 }
