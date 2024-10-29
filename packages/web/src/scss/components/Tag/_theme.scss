@@ -1,10 +1,10 @@
 @use 'sass:list';
-@use '@global-tokens' as global-tokens;
+@use '@tokens' as tokens;
 @use '../../settings/dictionaries';
 
-$border-width: global-tokens.$border-width-100;
+$border-width: tokens.$border-width-100;
 $border-style: solid;
-$border-radius: global-tokens.$radius-300;
+$border-radius: tokens.$radius-300;
 
 $color-dictionary: (
     emotion: dictionaries.$emotion-colors,
@@ -21,28 +21,28 @@ $color-dictionary-config: (
 
 $sizes: (
     xsmall: (
-        padding-x: global-tokens.$space-500,
-        padding-y: global-tokens.$space-200,
-        typography: global-tokens.$body-xsmall-semibold,
+        padding-x: tokens.$space-500,
+        padding-y: tokens.$space-200,
+        typography: tokens.$body-xsmall-semibold,
     ),
     small: (
-        padding-x: global-tokens.$space-500,
-        padding-y: global-tokens.$space-300,
-        typography: global-tokens.$body-small-semibold,
+        padding-x: tokens.$space-500,
+        padding-y: tokens.$space-300,
+        typography: tokens.$body-small-semibold,
     ),
     medium: (
-        padding-x: global-tokens.$space-600,
-        padding-y: global-tokens.$space-400,
-        typography: global-tokens.$body-medium-semibold,
+        padding-x: tokens.$space-600,
+        padding-y: tokens.$space-400,
+        typography: tokens.$body-medium-semibold,
     ),
     large: (
-        padding-x: global-tokens.$space-700,
-        padding-y: global-tokens.$space-500,
-        typography: global-tokens.$body-large-semibold,
+        padding-x: tokens.$space-700,
+        padding-y: tokens.$space-500,
+        typography: tokens.$body-large-semibold,
     ),
     xlarge: (
-        padding-x: global-tokens.$space-700,
-        padding-y: global-tokens.$space-500,
-        typography: global-tokens.$body-xlarge-semibold,
+        padding-x: tokens.$space-700,
+        padding-y: tokens.$space-500,
+        typography: tokens.$body-xlarge-semibold,
     ),
 );
