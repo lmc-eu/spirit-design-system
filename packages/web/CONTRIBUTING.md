@@ -60,9 +60,7 @@ Similarly, component's tools serve as a storage of component-scoped:
 
 ## Linking Design Tokens
 
-Components can (and should!) reuse Spirit [design tokens][design-tokens].
-
-Component's theme properties can be linked to design tokens. This way, the
+Component's theme properties are very often linked to [design tokens][design-tokens]. This way, the
 appearance of individual components is always unified and coherent: **anytime
 design tokens change, all components are updated consistently.**
 
@@ -77,9 +75,8 @@ structure and naming.
 
 ### Sass Implementation
 
-When contributing to Spirit Sass styles, always link Spirit design tokens via
-the [`@tokens` API][tokens-api] with
-[configured load path][configuring-load-path]. This is crucial for the
+When contributing to Spirit Sass styles, always [link Spirit design tokens][design-tokens-in-sass]
+with a [configured load path][design-tokens-in-sass]. This is crucial for the
 [rebranding][rebranding] functionality of Spirit.
 
 From the implementation point of view, design tokens are Sass variables
@@ -87,7 +84,7 @@ organized in Sass modules. Within component styles, Sass modules with design
 tokens are referred to just by filename. However, because the modules do not
 exist in the place they are called in (the [`spirit-design-tokens`][design-tokens] package is
 stored in `node_modules`), the correct load path for the desired set of design
-tokens must be [provided on build time][configuring-load-path]. This is the only
+tokens must be [provided on build time][design-tokens-in-sass]. This is the only
 way how Sass modules can be affected from outside, without giving in their
 advantages.
 
@@ -136,13 +133,13 @@ The documentation should include these sections:
 - `% yarn test` for test package (lint, format, unit testing, types)
 - `% yarn test:unit` for unit tests
 
-### SASS Unit Testing
+### Sass Unit Testing
 
-We use [sass-true][sass-true] for unit testing of our SASS components. The
+We use [sass-true][sass-true] for unit testing of our Sass components. The
 tests are located in `src/scss/components/<ComponentName>/__tests__` and are
 named `<ComponentName>.test.scss`. The tests are run as a part of the Jest
 testing suite. Our primary focus is on testing mixins and functions as they
-are the most complex parts of our SASS components.
+are the most complex parts of our Sass components.
 
 ## Migrating Your Components to Spirit
 
@@ -163,7 +160,7 @@ To make your code ready for rebranding before moving to Spirit:
    ```
 
 2. Add the previously removed path to load paths of your Sass compiler.
-   See the [`spirit-design-tokens` docs][configuring-load-path] to learn how to
+   See the [`spirit-design-tokens` docs][design-tokens-in-sass] to learn how to
    do that.
 
 3. Try using another `@tokens` file with a different brand and see how your
@@ -218,10 +215,9 @@ To avoid conflicts, we need a convention to distinguish situations when somethin
 </details>
 
 [design-tokens]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens
-[tokens-api]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#tokens-api
-[configuring-load-path]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#configuring-load-path
-[rebranding]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web#rebranding
+[design-tokens-in-sass]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#in-sass
 [design-tokens-faq]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#faq
+[rebranding]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web#rebranding
 [sass-modules]: https://sass-lang.com/blog/the-module-system-is-launched
 [es-modules]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
 [sass-true]: https://github.com/oddbird/true
