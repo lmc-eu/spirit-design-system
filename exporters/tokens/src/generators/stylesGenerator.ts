@@ -27,6 +27,7 @@ export const tokenToStyleByType = (
   token: Token,
   mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
+  tokenPrefix: string,
   withParent: boolean,
   hasJsOutput: boolean,
 ): string | null => {
@@ -82,7 +83,7 @@ export const tokenToStyleByType = (
     });
     // add group name to the variable if it is not already in the name
     const groupName = withParent ? undefined : origin?.name?.split('/')[0].toLowerCase();
-    shadow = transformColorsToVariables(name, shadow, groupName); // add color variables
+    shadow = transformColorsToVariables(name, shadow, tokenPrefix, groupName); // add color variables
     shadow = findAllHexColorsInStringAndNormalize(shadow); // find hex codes and normalize them
 
     return formatTokenStyleByOutput(name, shadow, hasJsOutput);
@@ -101,7 +102,7 @@ export const tokenToStyleByType = (
     gradient = addAngleVarToGradient(gradient); // add angle variable
     // add group name to the variable if it is not already in the name
     const groupName = withParent ? undefined : origin?.name?.split('/')[0].toLowerCase();
-    gradient = transformColorsToVariables(name, gradient, groupName); // add color variables
+    gradient = transformColorsToVariables(name, gradient, tokenPrefix, groupName); // add color variables
     gradient = findAllHexColorsInStringAndNormalize(gradient); // find hex codes and normalize them
 
     return formatTokenStyleByOutput(name, gradient, hasJsOutput);
@@ -114,6 +115,7 @@ export const generateStylesFromTokens = (
   tokens: Token[],
   mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
+  tokenPrefix: string,
   group: string,
   hasParentPrefix: boolean,
   sortByNumValue: boolean,
@@ -122,7 +124,7 @@ export const generateStylesFromTokens = (
   const sortedTokens = sortTokens(tokens, tokenGroups, hasParentPrefix, group, sortByNumValue);
 
   const cssTokens = sortedTokens.map((token) => ({
-    css: tokenToStyleByType(token, mappedTokens, tokenGroups, hasParentPrefix, hasJsOutput),
+    css: tokenToStyleByType(token, mappedTokens, tokenGroups, tokenPrefix, hasParentPrefix, hasJsOutput),
     parentGroupId: token.parentGroupId,
   }));
 

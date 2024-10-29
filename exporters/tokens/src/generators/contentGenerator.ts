@@ -4,6 +4,7 @@ import { indentAndFormat } from '../formatters/stylesFormatter';
 import { convertToJs, convertToScss, deepMergeObjects } from '../helpers/objectHelper';
 import { generateStylesFromTokens } from './stylesGenerator';
 import { StylesObjectType, generateStylesObjectFromTokens } from './stylesObjectGenerator';
+import { findTokenPrefix } from '../helpers/findTokenPrefix';
 
 // Add disclaimer to the top of the content
 export const addDisclaimer = (content: string): string => {
@@ -101,6 +102,7 @@ export const generateFileContent = (
 
     groups.forEach((group) => {
       const filteredTokens = filterTokensByTypeAndGroup(tokens, tokenType, group);
+      const tokenPrefix = findTokenPrefix(tokens);
 
       // Generate css tokens
       if (tokenType !== TokenType.typography) {
@@ -108,6 +110,7 @@ export const generateFileContent = (
           filteredTokens,
           mappedTokens,
           tokenGroups,
+          tokenPrefix,
           group,
           hasParentPrefix,
           sortByNumValue,

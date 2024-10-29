@@ -1,3 +1,4 @@
+import { examplePrefixToken } from '../../../tests/fixtures/examplePrefixToken';
 import {
   canHexBeShortened,
   findAllHexColorsInStringAndNormalize,
@@ -6,6 +7,7 @@ import {
   shortenHex,
   transformColorsToVariables,
 } from '../colorHelper';
+import { findTokenPrefix } from '../findTokenPrefix';
 
 const dataProviderItems = [
   ['ffffffff', '#fff'],
@@ -20,20 +22,31 @@ const dataProviderItems = [
   ['00000040', '#00000040'],
 ];
 
-// [group, name, value, expectedValue]
 const dataProviderItemsTransformColorsToVariables = [
-  [
-    'shadows',
-    'shadow-100',
-    '0px 1px 0px #ffffff, 0px 1px 0px #00000001',
-    '0 1px 0 var(--spirit-color-shadows-shadow-100-color-01, #ffffff), 0 1px 0 var(--spirit-color-shadows-shadow-100-color-02, #00000001)',
-  ],
-  [
-    '',
-    'shadow-200',
-    '0px 1px 0px #ffffff, 0px 1px 0px #00000001, 0px 1px 0px #00000002',
-    '0 1px 0 var(--spirit-color-shadow-200-color-01, #ffffff), 0 1px 0 var(--spirit-color-shadow-200-color-02, #00000001), 0 1px 0 var(--spirit-color-shadow-200-color-03, #00000002)',
-  ],
+  {
+    hasTokenPrefix: true,
+    group: 'shadows',
+    name: 'shadow-100',
+    value: '0px 1px 0px #ffffff, 0px 1px 0px #00000001',
+    expectedValue:
+      '0 1px 0 var(--spirit-color-shadows-shadow-100-color-01, #ffffff), 0 1px 0 var(--spirit-color-shadows-shadow-100-color-02, #00000001)',
+  },
+  {
+    hasTokenPrefix: true,
+    group: '',
+    name: 'shadow-200',
+    value: '0px 1px 0px #ffffff, 0px 1px 0px #00000001, 0px 1px 0px #00000002',
+    expectedValue:
+      '0 1px 0 var(--spirit-color-shadow-200-color-01, #ffffff), 0 1px 0 var(--spirit-color-shadow-200-color-02, #00000001), 0 1px 0 var(--spirit-color-shadow-200-color-03, #00000002)',
+  },
+  {
+    hasTokenPrefix: false,
+    group: '',
+    name: 'shadow-200',
+    value: '0px 1px 0px #ffffff, 0px 1px 0px #00000001, 0px 1px 0px #00000002',
+    expectedValue:
+      '0 1px 0 var(--color-shadow-200-color-01, #ffffff), 0 1px 0 var(--color-shadow-200-color-02, #00000001), 0 1px 0 var(--color-shadow-200-color-03, #00000002)',
+  },
 ];
 
 describe('colorHelper', () => {
@@ -83,9 +96,12 @@ describe('colorHelper', () => {
 
   describe.each(dataProviderItemsTransformColorsToVariables)(
     'transformColorsToVariables',
-    (group, name, value, expectedValue) => {
+    ({ hasTokenPrefix, group, name, value, expectedValue }) => {
       it('should transform colors to variables', () => {
-        expect(transformColorsToVariables(name, value, group)).toBe(expectedValue);
+        const prefixTokens = Array.from(examplePrefixToken.values());
+        const tokenPrefix = hasTokenPrefix ? findTokenPrefix(prefixTokens) : '';
+
+        expect(transformColorsToVariables(name, value, tokenPrefix, group)).toBe(expectedValue);
       });
     },
   );
