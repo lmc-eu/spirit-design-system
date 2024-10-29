@@ -38,17 +38,75 @@ Link the complete, vendor-prefixed and minimised CSS with default Spirit brandin
 
 👉 Alternatively, you can use [CDN](#cdn) links when you don't want to install any npm packages.
 
+### Theming
+
+To enable component independent, **scoped changes of appearance**, Spirit Design System uses themes. You can use any of
+the provided themes or [create your own](#custom-themes). Just include the theme CSS file before the foundation CSS file.
+Given the naming convention `theme-<NAME OF THE THEME>`, you can easily switch the theme at any point in your HTML:
+
+```html
+<body class="text-primary bg-primary">
+  <p>This paragraph uses the default light theme.</p>
+  <section class="theme-light-on-brand bg-primary">
+    <p class="text-primary">This paragraph uses the light theme on brand background.</p>
+  </section>
+</body>
+```
+
 ### Advanced Implementation in Product with Sass
 
-❗ **Important:** Make sure you have `sass` dependency installed in your project (`sass` is marked as optional peer dependency since you can use the pre-built distribution CSS).
-And also [configure Sass load path][configuring-load-path] for `@tokens` and
-`node_modules` so all dependencies are resolved correctly by Sass.
+❗ **Important:** Make sure you have the `sass` dependency installed in your project (`sass` is marked as optional peer dependency since you can use the pre-built distribution CSS).
+Also [configure Sass load path][design-tokens-load-path] for `@tokens`, `@themes`, and `node_modules` so all dependencies are resolved correctly by Sass.
 
-Having the Sass load path configured, import just the components you need in
-your Sass stylesheet:
+Having the Sass load path configured, you can import just the components you need in your Sass stylesheet:
 
 ```scss
+// my-product-styles.scss
+
+// Spirit themes and foundation are mandatory
+@use 'node_modules/@lmc-eu/spirit-web/scss/themes';
+@use 'node_modules/@lmc-eu/spirit-web/scss/foundation';
+
+// Spirit components can be hand-picked
 @use 'node_modules/@lmc-eu/spirit-web/scss/components/Button';
+
+// Spirit helpers and utilities are optional
+@use 'node_modules/@lmc-eu/spirit-web/scss/helpers';
+@use 'node_modules/@lmc-eu/spirit-web/scss/utilities';
+```
+
+### Custom Themes
+
+#### Automatically: Using Figma and Supernova
+
+The recommended way to create custom themes is using Figma and Supernova to define and export your design tokens, including their themed variants.
+Once you have your design tokens, you can [use them in your Sass project][design-tokens-usage].
+
+To generate actual themes based on provided design tokens, just include our `themes` file in your Sass project:
+
+```scss
+@use 'node_modules/@lmc-eu/spirit-web/scss/themes';
+```
+
+#### Manual Theme Creation
+
+If you don't use Figma and Supernova or you need to theme just a small piece of your UI, you can create your own themes manually.
+Just define your theme variables so they match the structure outlined in the
+[`scss/themes/_color-tokens.scss`][design-tokens-color-tokens] file in the design tokens package.
+
+For example:
+
+```scss
+@use '@tokens' as tokens;
+
+:root,
+.my-theme-light {
+  --#{tokens.$token-prefix}color-text-primary: #007bff;
+}
+
+.my-theme-dark {
+  --#{tokens.$token-prefix}color-text-primary: #beddff;
+}
 ```
 
 ### Prefixing CSS Class Names
@@ -82,13 +140,13 @@ Some components require JavaScript plugins for their full functionality. You can
 
 #### Individual or Compiled
 
-Plugins can be included individually as an EcmaScript module (using `import { <plugin> } from '@lmc-eu/spirit-web'`, see [Using Spirit Web as a module](#using-spirit-web-as-a-module)), or all at once using `js/{cjs|esm|bundle}/spirit-web.js` or the minified `js/{cjs|esm|bundle}/spirit-web.min.js` (do not include both), all files are UMD ready.
+Plugins can be included individually as an ECMAScript module (using `import { <plugin> } from '@lmc-eu/spirit-web'`, see [Using Spirit Web as a module](#using-spirit-web-as-a-module-in-browser)), or all at once using `js/{cjs|esm|bundle}/spirit-web.js` or the minified `js/{cjs|esm|bundle}/spirit-web.min.js` (do not include both), all files are UMD ready.
 
 ```html
 <script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
 ```
 
-If you use a bundler (Webpack, Rollup, ...), you can use `/js/*.js` files which are EcmaScript modules.
+If you use a bundler (Webpack, Rollup, …), you can use `/js/*.js` files which are ECMAScript modules.
 
 #### Using Spirit Web as a Module in Browser
 
@@ -107,11 +165,11 @@ We provide a version of Spirit Web as `ESM` (`spirit-web.esm.js` and `spirit-web
 Nearly all Spirit-Web plugins can be enabled and configured through HTML alone with data attributes (our preferred way of using JavaScript functionality).
 Be sure to only use one set of data attributes on a single element (e.g., you cannot trigger a tooltip and modal from the same button.).
 
-ℹ️ For turning off this functionality just do not set the `data-spirit-toggle` attribute and use the Programnatic API.
+ℹ️ For turning off this functionality just do not set the `data-spirit-toggle` attribute and use the Programmatic API.
 
 > #### Selectors
 >
-> Currently to query DOM elements we use the native methods `querySelector` and `querySelectorAll` for performance reasons, so you have to use valid selectors.
+> Currently, to query DOM elements we use the native methods `querySelector` and `querySelectorAll` for performance reasons, so you have to use valid selectors.
 > If you use special selectors, for example: `collapse:Example` be sure to escape them.
 
 #### Events
@@ -146,7 +204,7 @@ If you’d like to get a particular plugin instance, each plugin exposes a `getI
 #### CSS Selectors in Constructors
 
 You can also use a CSS selector as the first argument instead of a DOM element to initialize the plugin.
-Currently the element for the plugin is found by the `querySelector` method since our plugins support a single element only.
+Currently, the element for the plugin is found by the `querySelector` method since our plugins support a single element only.
 
 ```javascript
 var modal = new Modal('#myModal');
@@ -170,10 +228,9 @@ Spirit Design System is also available on CDN:
 
 ## Rebranding
 
-Design tokens and their [`@tokens` API][tokens-api] enable quick and easy
-rebranding of Spirit Sass components and styles. Once you have created your own
-design tokens, just provide them to your Sass compiler and you are ready to go!
-Learn more in the [`spirit-design-tokens` docs][rebranding].
+Design tokens enable quick and easy rebranding of Spirit Sass components and styles.
+Once you have created your own design tokens, just provide them to your Sass compiler and you are ready to go!
+Learn more in the [`spirit-design-tokens` docs][design-tokens-rebranding].
 
 ## Development
 
@@ -200,12 +257,13 @@ Check your browser console to see if you are using any of the deprecated functio
 
 See the [LICENSE][license] file for information.
 
-[configuring-load-path]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#configuring-load-path
+[design-tokens-usage]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#basic-usage
+[design-tokens-load-path]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#in-sass
+[design-tokens-color-tokens]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/design-tokens/src/scss/themes/_color-tokens.scss
+[design-tokens-rebranding]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#rebranding-spirit
 [deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/static/deprecations-browser-console.png?raw=true
 [examples]: https://spirit-design-system.netlify.app/packages/web/
 [feature-flags-docs]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/contributtion/feature-flags.md
 [license]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/LICENSE.md
 [postcss-prefix-selector]: https://www.npmjs.com/package/postcss-prefix-selector
-[rebranding]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#b-via-load-path
-[tokens-api]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#tokens-api
 [vite]: https://vitejs.dev
