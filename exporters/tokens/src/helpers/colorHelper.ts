@@ -49,16 +49,20 @@ export const findAllHexColorsInStringAndNormalize = (input: string): string => {
 };
 
 // @TODO: This is a temporary solution. This function can be removed when Supernova supports variables.
-export const transformColorsToVariables = (name: string, value: string, groupName?: string): string => {
+export const transformColorsToVariables = (
+  name: string,
+  value: string,
+  tokenPrefix: string,
+  groupName?: string,
+): string => {
   let counter = 1;
-  const spiritVariableColorPrefix = 'spirit-color';
   const renderGroupName = groupName ? `${groupName}-` : '';
 
   const transformedValue = value
     .split(',')
     .map((part) => {
       return part.replace(HEX_COLOR_REGEX, (match) => {
-        const cssVar = `var(--${spiritVariableColorPrefix}-${renderGroupName}${name}-color-${counter.toString().padStart(2, '0')}, ${match})`;
+        const cssVar = `var(--${tokenPrefix}color-${renderGroupName}${name}-color-${counter.toString().padStart(2, '0')}, ${match})`;
         counter += 1;
 
         return cssVar;
