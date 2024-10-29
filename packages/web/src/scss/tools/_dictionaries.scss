@@ -2,7 +2,7 @@
 @use 'sass:map';
 @use 'sass:meta';
 @use 'sass:string';
-@use '@global-tokens' as global-tokens;
+@use '@tokens' as tokens;
 @use './alignment';
 @use './links';
 @use './list' as spirit-list;
@@ -60,8 +60,8 @@
                         #{$dictionary-group-name}-#{$dictionary-item-name}
                     );
 
-                    --#{global-tokens.$token-prefix}#{$component-infix}-#{$property-name}: var(
-                        --#{global-tokens.$token-prefix}color-#{$color-group}-#{$property-value}
+                    --#{tokens.$token-prefix}#{$component-infix}-#{$property-name}: var(
+                        --#{tokens.$token-prefix}color-#{$color-group}-#{$property-value}
                     );
                 }
             }
@@ -100,9 +100,9 @@
 
             #{$selector}-#{string.unquote($variant-class)} {
                 color: var(
-                    --#{global-tokens.$token-prefix}color-action-link-#{string.unquote(
-                            $dictionary-value
-                        )}-#{string.unquote($state)}
+                    --#{tokens.$token-prefix}color-action-link-#{string.unquote($dictionary-value)}-#{string.unquote(
+                            $state
+                        )}
                 );
             }
         }
@@ -150,7 +150,7 @@
                 @if $variable-key == 'typography' {
                     @include typography.generate($variable-value);
                 } @else {
-                    --#{global-tokens.$token-prefix}#{$component-infix}-#{$variable-key}: #{$variable-value};
+                    --#{tokens.$token-prefix}#{$component-infix}-#{$variable-key}: #{$variable-value};
                 }
             }
         }

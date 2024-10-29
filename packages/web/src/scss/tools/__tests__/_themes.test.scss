@@ -30,7 +30,7 @@ $test-themes: (
     @include test.it('should generate default and other themes') {
         @include test.assert() {
             @include test.output() {
-                @include themes.generate($themes: $test-themes, $addBackgroundImageUrls: false);
+                @include themes.generate($themes: $test-themes, $add-background-image-urls: false);
             }
 
             @include test.expect() {
