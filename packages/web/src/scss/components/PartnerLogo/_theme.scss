@@ -1,18 +1,18 @@
-@use '@global-tokens' as global-tokens;
+@use '@tokens' as tokens;
 
-$background-color: var(--#{global-tokens.$token-prefix}color-background-primary);
-$border-radius: global-tokens.$radius-200;
+$background-color: tokens.$background-primary;
+$border-radius: tokens.$radius-200;
 $sizes: (
     small: (
         image-height: 32px,
-        padding: global-tokens.$space-500,
+        padding: tokens.$space-500,
     ),
     medium: (
         image-height: 48px,
-        padding: global-tokens.$space-500,
+        padding: tokens.$space-500,
     ),
     large: (
         image-height: 60px,
-        padding: global-tokens.$space-600,
+        padding: tokens.$space-600,
     ),
 );

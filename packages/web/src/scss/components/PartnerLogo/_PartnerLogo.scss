@@ -1,9 +1,9 @@
 @use 'theme';
-@use '@global-tokens' as global-tokens;
+@use '@tokens' as tokens;
 @use '../../tools/dictionaries';
 
 .PartnerLogo {
-    --#{global-tokens.$token-prefix}partner-logo-padding: 0;
+    --#{tokens.$token-prefix}partner-logo-padding: 0;
 
     display: inline-block;
     max-width: 100%;
@@ -15,11 +15,11 @@
 .PartnerLogo > img,
 .PartnerLogo > svg {
     width: fit-content;
-    height: var(--#{global-tokens.$token-prefix}partner-logo-image-height);
+    height: var(--#{tokens.$token-prefix}partner-logo-image-height);
 }
 
 @include dictionaries.generate-sizes($class-name: 'PartnerLogo', $sizes: theme.$sizes);
 
 .PartnerLogo--safeArea {
-    padding: var(--#{global-tokens.$token-prefix}partner-logo-padding);
+    padding: var(--#{tokens.$token-prefix}partner-logo-padding);
 }
