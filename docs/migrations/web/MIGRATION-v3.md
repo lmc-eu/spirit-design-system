@@ -152,36 +152,42 @@ Here are the steps to migrate your own components to use the new design tokens a
 1. If you load `foundation`, `components`, `helpers`, and `utilities` separately, you need
    to `@forward 'themes'` before them in your main SCSS file. If you load the whole `scss` folder,
    you don't need to do anything.
-2. Replace module load `@use '@tokens' as tokens;` in your components with `@use '@global-tokens' as global-tokens;`.
-3. Rename all the tokens in your components to use the new structure.
-   1. Replace module name in all variable usages: `tokens.*` → `global-tokens.*`.
-   2. Replace all spacing tokens with new values. See [Spacing Values](#spacing-values) for more information.
-   3. Replace all radius tokens with new values. We added a new radius token in between, so you need to update all of them.
-   4. Replace all typography tokens with new values. We removed the `text` infix from typography tokens and added emphasized headings.
-   5. Switch all color tokens to use CSS variables. Use the `token-prefix` token to set the prefix. // TODO update this after implementing DS-1493
-   6. If you used `$border-style` tokens, you need to replace them with direct values (`solid`, `dashed`, etc.).
-   7. If you used the `$focus` token, you need to replace it with the `$focus-ring` token.
-   8. If you used `$grid-gutter` tokens, you need to replace them with equivalent `$grid-spacing` tokens.
-4. That's it! You should now have your components updated to use the new design tokens and themes. 🎉
+2. Rename all the tokens in your components to use the new structure.
+   1. Replace all spacing tokens with new values. See [Spacing Values](#spacing-values) for more information.
+   2. Replace all radius tokens with new values. We added a new radius token in between, so you need to update all of them.
+   3. Replace all typography tokens with new values. We removed the `text` infix from typography tokens and added emphasized headings.
+   4. Revisit all color tokens to use the new structure.
+   5. If you used `$border-style` tokens, you need to replace them with direct values (`solid`, `dashed`, etc.).
+   6. If you used the `$focus` token, you need to replace it with the `$focus-ring` token.
+   7. If you used `$grid-gutter` tokens, you need to replace them with equivalent `$grid-spacing` tokens.
+3. That's it! You should now have your components updated to use the new design tokens and themes. 🎉
 
 Here is a simple example of how to update your component styles:
 
 Before:
 
 ```scss
+// _theme.scss
+
 @use '@tokens' as tokens;
 
-$color: tokens.$text-primary;
+$border-style: tokens.$border-style-100;
+$border-color: tokens.$border-secondary-default;
+$background-color: tokens.$background-cover;
 $gap: tokens.$space-400;
 ```
 
 After:
 
 ```scss
-@use '@global-tokens' as global-tokens;
+// _theme.scss
 
-$color: var(--#{global-tokens.$token-prefix}color-text-primary);
-$gap: global-tokens.$space-500;
+@use '@tokens' as tokens;
+
+$border-style: solid;
+$border-color: tokens.$border-basic;
+$background-color: tokens.$background-primary; // This may require using the "light-on-brand" theme in HTML/JSX. Check with your designer.
+$gap: tokens.$space-500;
 ```
 
 ## Component Changes
