@@ -1,59 +1,59 @@
-@use '@global-tokens' as global-tokens;
+@use '@tokens' as tokens;
 @use '../../settings/transitions';
 
 // Header
-$header-typography: global-tokens.$body-medium-semibold;
-$header-breakpoint: global-tokens.$breakpoint-desktop;
-$header-padding-x: global-tokens.$space-1000;
-$header-gap: global-tokens.$space-1200;
-$header-background-color: var(--#{global-tokens.$token-prefix}color-background-primary);
+$header-typography: tokens.$body-medium-semibold;
+$header-breakpoint: tokens.$breakpoint-desktop;
+$header-padding-x: tokens.$space-1000;
+$header-gap: tokens.$space-1200;
+$header-background-color: tokens.$background-primary;
 
 // HeaderMobileActions
-$header-mobile-actions-gap: global-tokens.$space-700;
+$header-mobile-actions-gap: tokens.$space-700;
 
 // HeaderDesktopActions
-$header-desktop-actions-gap: global-tokens.$space-900;
+$header-desktop-actions-gap: tokens.$space-900;
 
 // HeaderLink
-$header-link-padding-x: global-tokens.$space-700;
-$header-link-padding-y: global-tokens.$space-600;
-$header-link-color: var(--#{global-tokens.$token-prefix}color-action-link-primary-default);
-$header-link-background-color: var(--#{global-tokens.$token-prefix}color-background-interactive-default);
-$header-link-color-hover: var(--#{global-tokens.$token-prefix}color-action-link-primary-hover);
-$header-link-background-color-hover: var(--#{global-tokens.$token-prefix}color-background-interactive-hover);
-$header-link-color-active: var(--#{global-tokens.$token-prefix}color-action-link-primary-active);
-$header-link-background-color-active: var(--#{global-tokens.$token-prefix}color-background-interactive-active);
-$header-link-color-current: var(--#{global-tokens.$token-prefix}color-selected-default);
-$header-link-background-color-current: var(--#{global-tokens.$token-prefix}color-background-interactive-active);
-$header-link-current-border-thickness: global-tokens.$border-width-200;
-$header-link-current-border-color: var(--#{global-tokens.$token-prefix}color-selected-default);
+$header-link-padding-x: tokens.$space-700;
+$header-link-padding-y: tokens.$space-600;
+$header-link-color: tokens.$action-link-primary-default;
+$header-link-background-color: tokens.$background-interactive-default;
+$header-link-color-hover: tokens.$action-link-primary-hover;
+$header-link-background-color-hover: tokens.$background-interactive-hover;
+$header-link-color-active: tokens.$action-link-primary-active;
+$header-link-background-color-active: tokens.$background-interactive-active;
+$header-link-color-current: tokens.$selected-default;
+$header-link-background-color-current: tokens.$background-interactive-active;
+$header-link-current-border-thickness: tokens.$border-width-200;
+$header-link-current-border-color: tokens.$selected-default;
 $header-link-transition-duration: transitions.$duration-200;
 $header-link-transition-timing: transitions.$timing-eased-out;
 
 // HeaderDialog
-$header-dialog-typography: global-tokens.$body-medium-semibold;
+$header-dialog-typography: tokens.$body-medium-semibold;
 $header-dialog-width: 280px;
-$header-dialog-padding: global-tokens.$space-900;
-$header-dialog-color: var(--#{global-tokens.$token-prefix}color-text-primary);
-$header-dialog-background-color: var(--#{global-tokens.$token-prefix}color-background-primary);
-$header-dialog-shadow: global-tokens.$shadow-400;
+$header-dialog-padding: tokens.$space-900;
+$header-dialog-color: tokens.$text-primary;
+$header-dialog-background-color: tokens.$background-primary;
+$header-dialog-shadow: tokens.$shadow-400;
 $header-dialog-transition-duration: transitions.$duration-200;
 $header-dialog-transition-timing: transitions.$timing-eased-in-out;
-$header-dialog-backdrop-background-color: var(--#{global-tokens.$token-prefix}color-background-backdrop);
+$header-dialog-backdrop-background-color: tokens.$background-backdrop;
 
 // HeaderDialogCloseButton
-$header-dialog-close-button-size: global-tokens.$space-1200;
+$header-dialog-close-button-size: tokens.$space-1200;
 $header-dialog-close-button-color: inherit;
 
 // HeaderDialogActions
 $header-dialog-actions-padding-x: $header-dialog-padding;
-$header-dialog-actions-padding-y: global-tokens.$space-1100;
-$header-dialog-actions-gap: global-tokens.$space-900;
+$header-dialog-actions-padding-y: tokens.$space-1100;
+$header-dialog-actions-gap: tokens.$space-900;
 
 // HeaderDialogLink
 $header-dialog-link-padding-x: $header-dialog-actions-padding-x;
-$header-dialog-link-padding-y: global-tokens.$space-600;
-$header-dialog-link-current-border-thickness: global-tokens.$border-width-200;
+$header-dialog-link-padding-y: tokens.$space-600;
+$header-dialog-link-current-border-thickness: tokens.$border-width-200;
 
 // HeaderDialogText
 $header-dialog-text-padding-x: $header-dialog-actions-padding-x;
