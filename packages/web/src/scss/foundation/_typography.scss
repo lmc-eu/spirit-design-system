@@ -1,6 +1,6 @@
 // 1. We are able to handle our text sizing ourselves, disable any auto adjustments.
 
-@use '@global-tokens' as global-tokens;
+@use '@tokens' as tokens;
 @use '../tools/typography';
 
 :where(html) {
@@ -8,5 +8,5 @@
 }
 
 :where(body) {
-    @include typography.generate(global-tokens.$body-medium-regular);
+    @include typography.generate(tokens.$body-medium-regular);
 }
