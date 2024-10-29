@@ -29,10 +29,11 @@ However, this approach has several drawbacks:
    over the responsibility of defining the colors.
 2. **Introduction of themes.** To enable component independent, **scoped changes of appearance**, themes will be
    introduced. Themes are another layer of abstraction that can be applied to any design token. We decided to start with
-   **theming the colors** and introduce **two light themes:** a default theme for the primary content, and an on-brand
-   theme for branded sections like site header or hero sections.
-3. **Removal of brand color modifiers.** The brand colors will now be applied through a theme which can affect any
-   component in the design system.
+   **theming the colors** and introducing **two light-mode themes** (with dark-mode themes to come in the future):
+   1. default theme with dark text on light backgrounds for the primary page content,
+   2. on-brand theme with light text on brand-colored backgrounds for branded sections like site header or hero sections.
+3. **Removal of brand color component modifiers.** The brand colors will now be applied through a theme which can affect
+   any component in the design system.
 
 ## Consequences
 
