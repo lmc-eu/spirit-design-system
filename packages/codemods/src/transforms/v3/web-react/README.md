@@ -68,3 +68,22 @@ npx @lmc-eu/spirit-codemods -p <path> -t v3/web-react/heading-elementType-prop
 - <Heading … />
 + <Heading elementType="div" … />
 ```
+
+### `v3/web-react/link-hasVisitedStyleAllowed-prop` — Add `hasVisitedStyleAllowed` to Link component inside Heading component
+
+The Link component now allows to have visited state style. The `Heading` component had previously set visited state styling by default.
+This codemod updates the `Link` component inside the `Heading` component by adding `hasVisitedStyleAllowed`.
+Do not use this codemode if you don't want to allow visited state style for the `Link` component inside the `Heading` component.
+
+This codemod updates the `Link` component inside `Heading` component by adding `hasVisitedStyleAllowed` prop.
+
+```sh
+npx @lmc-eu/spirit-codemods -p <path> -t v3/web-react/link-hasVisitedStyleAllowed-prop
+```
+
+#### Example
+
+```diff
+- <Heading><Link … /></Heading>
++ <Heading><Link hasVisitedStyleAllowed … /></Heading>
+```
