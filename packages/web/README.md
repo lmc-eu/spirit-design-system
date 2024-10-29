@@ -200,7 +200,7 @@ See the [LICENSE][license] file for information.
 [configuring-load-path]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#configuring-load-path
 [deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/static/deprecations-browser-console.png?raw=true
 [examples]: https://spirit-design-system.netlify.app/packages/web/
-[feature-flags-docs]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/contributtion/feature-flags.md
+[feature-flags-docs]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/contribution/feature-flags.md
 [license]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/LICENSE.md
 [postcss-prefix-selector]: https://www.npmjs.com/package/postcss-prefix-selector
 [rebranding]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#b-via-load-path
