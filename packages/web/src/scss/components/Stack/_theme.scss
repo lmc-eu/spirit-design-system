@@ -1,5 +1,5 @@
-@use '@global-tokens' as global-tokens;
+@use '@tokens' as tokens;
 
-$breakpoints: global-tokens.$breakpoints;
-$border: global-tokens.$border-width-100 solid var(--#{global-tokens.$token-prefix}color-border-basic);
-$spacing-fallback: global-tokens.$space-600;
+$breakpoints: tokens.$breakpoints;
+$border: tokens.$border-width-100 solid tokens.$border-basic;
+$spacing-fallback: tokens.$space-600;
