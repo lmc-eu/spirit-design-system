@@ -1,35 +1,35 @@
-@use '@global-tokens' as global-tokens;
+@use '@tokens' as tokens;
 @use '../../settings/transitions';
 
 $max-width: 21rem;
 $input-width: 44px;
 $input-height: 24px;
-$input-border-width: global-tokens.$border-width-100;
-$input-border-color: var(--#{global-tokens.$token-prefix}color-action-toggle-unselected-border);
-$input-border-color-checked: var(--#{global-tokens.$token-prefix}color-action-toggle-selected-border);
-$input-border-color-disabled: var(--#{global-tokens.$token-prefix}color-disabled-border);
-$input-background-color: var(--#{global-tokens.$token-prefix}color-action-toggle-unselected-default);
-$input-background-color-hover: var(--#{global-tokens.$token-prefix}color-action-toggle-unselected-hover);
-$input-background-color-checked: var(--#{global-tokens.$token-prefix}color-action-toggle-selected-default);
-$input-background-color-checked-hover: var(--#{global-tokens.$token-prefix}color-action-toggle-selected-hover);
-$input-background-color-disabled: var(--#{global-tokens.$token-prefix}color-disabled-background);
-$input-border-radius: global-tokens.$radius-400;
-$input-focus-shadow: global-tokens.$focus;
+$input-border-width: tokens.$border-width-100;
+$input-border-color: tokens.$action-toggle-unselected-border;
+$input-border-color-checked: tokens.$action-toggle-selected-border;
+$input-border-color-disabled: tokens.$disabled-border;
+$input-background-color: tokens.$action-toggle-unselected-default;
+$input-background-color-hover: tokens.$action-toggle-unselected-hover;
+$input-background-color-checked: tokens.$action-toggle-selected-default;
+$input-background-color-checked-hover: tokens.$action-toggle-selected-hover;
+$input-background-color-disabled: tokens.$disabled-background;
+$input-border-radius: tokens.$radius-400;
+$input-focus-shadow: tokens.$focus;
 
 $input-mark-size: 20px;
-$input-mark-spacing: global-tokens.$space-100;
-$input-mark-position-x: global-tokens.$space-100;
-$input-mark-position-y: global-tokens.$space-100;
-$input-mark-border-radius: global-tokens.$radius-full;
-$input-mark-background-color: var(--#{global-tokens.$token-prefix}color-action-toggle-selected-content);
-$input-mark-background-color-disabled: var(--#{global-tokens.$token-prefix}color-disabled-foreground);
-$input-mark-image: var(--#{global-tokens.$token-prefix}toggle-input-mark-background-image-url);
-$input-mark-image-checked: var(--#{global-tokens.$token-prefix}toggle-input-mark-checked-background-image-url);
-$input-mark-image-disabled: var(--#{global-tokens.$token-prefix}toggle-input-mark-disabled-background-image-url);
+$input-mark-spacing: tokens.$space-100;
+$input-mark-position-x: tokens.$space-100;
+$input-mark-position-y: tokens.$space-100;
+$input-mark-border-radius: tokens.$radius-full;
+$input-mark-background-color: tokens.$action-toggle-selected-content;
+$input-mark-background-color-disabled: tokens.$disabled-foreground;
+$input-mark-image: var(--#{tokens.$token-prefix}toggle-input-mark-background-image-url);
+$input-mark-image-checked: var(--#{tokens.$token-prefix}toggle-input-mark-checked-background-image-url);
+$input-mark-image-disabled: var(--#{tokens.$token-prefix}toggle-input-mark-disabled-background-image-url);
 $input-mark-image-checked-disabled: var(
-    --#{global-tokens.$token-prefix}toggle-input-mark-checked-disabled-background-image-url
+    --#{tokens.$token-prefix}toggle-input-mark-checked-disabled-background-image-url
 );
-$input-mark-shadow: global-tokens.$shadow-200;
+$input-mark-shadow: tokens.$shadow-200;
 
 $input-transition-duration: transitions.$duration-100;
 $input-transition-timing: transitions.$timing-eased-in-out;
