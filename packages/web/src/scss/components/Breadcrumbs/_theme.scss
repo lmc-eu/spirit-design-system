@@ -1,9 +1,9 @@
-@use '@global-tokens' as global-tokens;
+@use '@tokens' as tokens;
 
-$breakpoints: global-tokens.$breakpoints;
+$breakpoints: tokens.$breakpoints;
 
-$typography: global-tokens.$body-small-regular;
-$color: var(--#{global-tokens.$token-prefix}color-text-secondary);
+$typography: tokens.$body-small-regular;
+$color: tokens.$text-secondary;
 
-$gap-mobile-up: global-tokens.$space-300;
-$gap-tablet-up: global-tokens.$space-500;
+$gap-mobile-up: tokens.$space-300;
+$gap-tablet-up: tokens.$space-500;
