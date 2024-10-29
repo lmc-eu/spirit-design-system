@@ -28,16 +28,17 @@
                 @include dictionaries.generate-alignments(
                     $class-name: 'Test',
                     $dictionary-values: (
-                        'space-between',
+                        'stretch',
                     ),
                     $axis: 'x',
+                    $property: 'justify-items',
                     $infix: 'tablet--'
                 );
             }
 
             @include test.expect() {
-                .Test--tablet--alignmentXSpaceBetween {
-                    justify-content: space-between;
+                .Test--tablet--alignmentXStretch {
+                    justify-items: stretch;
                 }
             }
         }
