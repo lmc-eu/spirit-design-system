@@ -1,29 +1,29 @@
-@use '@global-tokens' as global-tokens;
+@use '@tokens' as tokens;
 @use '../../settings/transitions';
 
-$breakpoints: global-tokens.$breakpoints;
-$padding-x: global-tokens.$space-900;
-$padding-x-tablet: global-tokens.$space-1400;
-$padding-y: global-tokens.$space-700;
-$typography: global-tokens.$body-medium-regular;
+$breakpoints: tokens.$breakpoints;
+$padding-x: tokens.$space-900;
+$padding-x-tablet: tokens.$space-1400;
+$padding-y: tokens.$space-700;
+$typography: tokens.$body-medium-regular;
 $transition-duration: transitions.$duration-200;
 $transition-scale-ratio: transitions.$scale-ratio-large-objects;
 $transition-shift-distance: transitions.$shift-distance-medium;
 
-$backdrop-background-color: var(--#{global-tokens.$token-prefix}color-background-backdrop);
+$backdrop-background-color: tokens.$background-backdrop;
 
-$common-padding-x: global-tokens.$space-900;
-$common-padding-x-tablet: global-tokens.$space-1000;
+$common-padding-x: tokens.$space-900;
+$common-padding-x-tablet: tokens.$space-1000;
 
 // ModalDialog
 $dialog-width: 640px;
 $dialog-width-desktop: 680px;
 $dialog-height: auto;
 $dialog-max-height: none;
-$dialog-text-color: var(--#{global-tokens.$token-prefix}color-text-primary);
-$dialog-border-radius: global-tokens.$radius-300;
-$dialog-background-color: var(--#{global-tokens.$token-prefix}color-background-primary);
-$dialog-shadow: global-tokens.$shadow-300;
+$dialog-text-color: tokens.$text-primary;
+$dialog-border-radius: tokens.$radius-300;
+$dialog-background-color: tokens.$background-primary;
+$dialog-shadow: tokens.$shadow-300;
 
 $_dialog-scrollable-default-height: min-content;
 $_dialog-scrollable-default-max-height: 600px;
@@ -54,7 +54,7 @@ $dialog-scrollable-max-height-desktop: min(
 );
 
 $dialog-docked-width: 100%;
-$dialog-docked-margin-top: global-tokens.$space-1400;
+$dialog-docked-margin-top: tokens.$space-1400;
 
 $dialog-docked-expanded-min-height: calc(100dvh - #{$dialog-docked-margin-top});
 
@@ -62,22 +62,22 @@ $dialog-docked-scrollable-height: var(--modal-dialog-height, #{$_dialog-scrollab
 $dialog-docked-scrollable-max-height: $dialog-docked-expanded-min-height;
 
 // ModalHeader
-$header-gap: global-tokens.$space-500;
-$header-padding-top: global-tokens.$space-900;
-$header-padding-top-tablet: global-tokens.$space-1000;
-$header-padding-bottom: global-tokens.$space-700;
-$header-title-typography: global-tokens.$heading-small-bold;
+$header-gap: tokens.$space-500;
+$header-padding-top: tokens.$space-900;
+$header-padding-top-tablet: tokens.$space-1000;
+$header-padding-bottom: tokens.$space-700;
+$header-title-typography: tokens.$heading-small-bold;
 
-$header-docked-padding-top: global-tokens.$space-1000;
+$header-docked-padding-top: tokens.$space-1000;
 
 // ModalBody
-$body-padding-y: global-tokens.$space-700;
+$body-padding-y: tokens.$space-700;
 
 // ModalFooter
-$footer-gap: global-tokens.$space-700;
-$footer-padding-top: global-tokens.$space-900;
-$footer-padding-bottom: global-tokens.$space-900;
-$footer-padding-top-tablet: global-tokens.$space-700;
-$footer-padding-bottom-tablet: global-tokens.$space-1000;
-$footer-actions-column-gap: global-tokens.$space-900;
-$footer-actions-row-gap: global-tokens.$space-700;
+$footer-gap: tokens.$space-700;
+$footer-padding-top: tokens.$space-900;
+$footer-padding-bottom: tokens.$space-900;
+$footer-padding-top-tablet: tokens.$space-700;
+$footer-padding-bottom-tablet: tokens.$space-1000;
+$footer-actions-column-gap: tokens.$space-900;
+$footer-actions-row-gap: tokens.$space-700;
