@@ -1,27 +1,27 @@
 @use 'sass:map';
-@use '@global-tokens' as global-tokens;
+@use '@tokens' as tokens;
 
-$item-gap: global-tokens.$space-300;
+$item-gap: tokens.$space-300;
 $item-min-width: 40px;
 $item-height: 2.5em; /* It is in relative units due to possible resizing of the system font. */
-$item-padding-inline: global-tokens.$space-600;
-$item-emphasis-font-weight: map.get(global-tokens.$body-medium-bold, 'mobile', 'font-weight');
-$item-border-width: global-tokens.$border-width-100;
+$item-padding-inline: tokens.$space-600;
+$item-emphasis-font-weight: map.get(tokens.$body-medium-bold, 'mobile', 'font-weight');
+$item-border-width: tokens.$border-width-100;
 $item-border-style: solid;
-$item-border-radius: global-tokens.$radius-full;
+$item-border-radius: tokens.$radius-full;
 
-$item-default-color: var(--#{global-tokens.$token-prefix}color-action-button-secondary-content);
-$item-default-border-color: var(--#{global-tokens.$token-prefix}color-action-button-secondary-border);
-$item-default-background-color: var(--#{global-tokens.$token-prefix}color-action-button-secondary-default);
+$item-default-color: tokens.$action-button-secondary-content;
+$item-default-border-color: tokens.$action-button-secondary-border;
+$item-default-background-color: tokens.$action-button-secondary-default;
 
-$item-active-color: var(--#{global-tokens.$token-prefix}color-action-button-secondary-content);
-$item-active-border-color: var(--#{global-tokens.$token-prefix}color-action-button-secondary-border);
-$item-active-background-color: var(--#{global-tokens.$token-prefix}color-action-button-secondary-active);
+$item-active-color: tokens.$action-button-secondary-content;
+$item-active-border-color: tokens.$action-button-secondary-border;
+$item-active-background-color: tokens.$action-button-secondary-active;
 
-$item-hover-color: var(--#{global-tokens.$token-prefix}color-action-button-secondary-content);
-$item-hover-border-color: var(--#{global-tokens.$token-prefix}color-action-button-secondary-border);
-$item-hover-background-color: var(--#{global-tokens.$token-prefix}color-action-button-secondary-hover);
+$item-hover-color: tokens.$action-button-secondary-content;
+$item-hover-border-color: tokens.$action-button-secondary-border;
+$item-hover-background-color: tokens.$action-button-secondary-hover;
 
-$item-selected-color: var(--#{global-tokens.$token-prefix}color-action-button-primary-content);
-$item-selected-border-color: var(--#{global-tokens.$token-prefix}color-action-button-primary-border);
-$item-selected-background-color: var(--#{global-tokens.$token-prefix}color-action-button-primary-default);
+$item-selected-color: tokens.$action-button-primary-content;
+$item-selected-border-color: tokens.$action-button-primary-border;
+$item-selected-background-color: tokens.$action-button-primary-default;
