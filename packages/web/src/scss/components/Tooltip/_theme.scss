@@ -1,23 +1,23 @@
-@use '@global-tokens' as global-tokens;
+@use '@tokens' as tokens;
 @use '../../settings/dictionaries';
 @use '../../settings/transitions';
 
 $max-width: 288px;
-$typography: global-tokens.$body-medium-regular;
-$padding: global-tokens.$space-600 global-tokens.$space-700;
-$gap: global-tokens.$space-600;
-$border-radius: global-tokens.$radius-300;
-$color: var(--#{global-tokens.$token-prefix}color-neutral-content-subtle);
-$background-color: var(--#{global-tokens.$token-prefix}color-neutral-background-basic);
-$box-shadow: global-tokens.$shadow-400;
+$typography: tokens.$body-medium-regular;
+$padding: tokens.$space-600 tokens.$space-700;
+$gap: tokens.$space-600;
+$border-radius: tokens.$radius-300;
+$color: tokens.$neutral-content-subtle;
+$background-color: tokens.$neutral-background-basic;
+$box-shadow: tokens.$shadow-400;
 $transition-duration: transitions.$duration-200;
 $transition-scale-ratio: transitions.$scale-ratio-small-objects;
 
-$arrow-shape: var(--#{global-tokens.$token-prefix}tooltip-arrow-background-image-url);
+$arrow-shape: var(--#{tokens.$token-prefix}tooltip-arrow-background-image-url);
 $arrow-width: 13px;
 $arrow-height: 8px;
-$arrow-corner-offset: global-tokens.$space-600;
+$arrow-corner-offset: tokens.$space-600;
 
-$close-button-size: global-tokens.$space-900;
+$close-button-size: tokens.$space-900;
 
 $placement-dictionary: dictionaries.$placement;
