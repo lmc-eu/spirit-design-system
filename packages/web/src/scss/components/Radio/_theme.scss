@@ -1,13 +1,13 @@
-@use '@global-tokens' as global-tokens;
+@use '@tokens' as tokens;
 @use '../../settings/transitions';
 @use '../../theme/form-fields' as form-fields-theme;
 
-$input-border-radius: global-tokens.$radius-full;
+$input-border-radius: tokens.$radius-full;
 $input-size: 20px;
-$input-margin: global-tokens.$space-200;
+$input-margin: tokens.$space-200;
 $input-inner-dot-size: 10px;
 $input-background-color: form-fields-theme.$inline-field-input-background-color-checked;
 $input-background-color-disabled: form-fields-theme.$input-color-disabled;
 $input-transition-duration: transitions.$duration-100;
 $input-transition-timing: transitions.$timing-eased-in-out;
-$input-focus-shadow: global-tokens.$focus;
+$input-focus-shadow: tokens.$focus;
