@@ -173,245 +173,146 @@ $text-primary: #202020 !default;
 $text-secondary: #535353 !default;
 $text-tertiary: #7f7f7f !default;
 
-$background-colors: (
-    backdrop: $background-backdrop,
-    interactive: (
-        state-active: $background-interactive-state-active,
-        state-default: $background-interactive-state-default,
-        state-hover: $background-interactive-state-hover,
-    ),
-    primary: $background-primary,
-    secondary: $background-secondary,
-    tertiary: $background-tertiary,
-) !default;
-
-$border-colors: (
-    basic: $border-basic,
-    focus: $border-focus,
-    interactive: (
-        state-active: $border-interactive-state-active,
-        state-default: $border-interactive-state-default,
-        state-hover: $border-interactive-state-hover,
-        state-selected: $border-interactive-state-selected,
-    ),
-) !default;
-
-$component-colors: (
-    button: (
-        plain: (
-            border: $component-button-plain-border,
-            content: $component-button-plain-content,
-            state-active: $component-button-plain-state-active,
-            state-default: $component-button-plain-state-default,
-            state-hover: $component-button-plain-state-hover,
-        ),
-        primary: (
-            border: $component-button-primary-border,
-            content: $component-button-primary-content,
-            state-active: $component-button-primary-state-active,
-            state-default: $component-button-primary-state-default,
-            state-hover: $component-button-primary-state-hover,
-        ),
-        secondary: (
-            border: $component-button-secondary-border,
-            content: $component-button-secondary-content,
-            state-active: $component-button-secondary-state-active,
-            state-default: $component-button-secondary-state-default,
-            state-hover: $component-button-secondary-state-hover,
-        ),
-        tertiary: (
-            border: $component-button-tertiary-border,
-            content: $component-button-tertiary-content,
-            state-active: $component-button-tertiary-state-active,
-            state-default: $component-button-tertiary-state-default,
-            state-hover: $component-button-tertiary-state-hover,
-        ),
-    ),
-    header: (
-        background: $component-header-background,
-        item-background-state-active: $component-header-item-background-state-active,
-        item-background-state-default: $component-header-item-background-state-default,
-        item-background-state-hover: $component-header-item-background-state-hover,
-        item-background-state-selected: $component-header-item-background-state-selected,
-        item-state-active: $component-header-item-state-active,
-        item-state-default: $component-header-item-state-default,
-        item-state-hover: $component-header-item-state-hover,
-        item-state-selected: $component-header-item-state-selected,
-        stripe-state-selected: $component-header-stripe-state-selected,
-        stripe-state-unselected: $component-header-stripe-state-unselected,
-    ),
-    toggle: (
-        selected-border: $component-toggle-selected-border,
-        selected-content: $component-toggle-selected-content,
-        selected-state-active: $component-toggle-selected-state-active,
-        selected-state-default: $component-toggle-selected-state-default,
-        selected-state-hover: $component-toggle-selected-state-hover,
-        unselected-border: $component-toggle-unselected-border,
-        unselected-content: $component-toggle-unselected-content,
-        unselected-state-active: $component-toggle-unselected-state-active,
-        unselected-state-default: $component-toggle-unselected-state-default,
-        unselected-state-hover: $component-toggle-unselected-state-hover,
-    ),
-) !default;
-
-$disabled-colors: (
-    background: $disabled-background,
-    border: $disabled-border,
-    content: $disabled-content,
-    foreground: $disabled-foreground,
-) !default;
-
-$emotion-colors: (
-    danger: (
-        background-basic: $emotion-danger-background-basic,
-        background-subtle: $emotion-danger-background-subtle,
-        border-basic: $emotion-danger-border-basic,
-        border-subtle: $emotion-danger-border-subtle,
-        content-basic: $emotion-danger-content-basic,
-        content-subtle: $emotion-danger-content-subtle,
-        state-active: $emotion-danger-state-active,
-        state-default: $emotion-danger-state-default,
-        state-hover: $emotion-danger-state-hover,
-    ),
-    informative: (
-        background-basic: $emotion-informative-background-basic,
-        background-subtle: $emotion-informative-background-subtle,
-        border-basic: $emotion-informative-border-basic,
-        border-subtle: $emotion-informative-border-subtle,
-        content-basic: $emotion-informative-content-basic,
-        content-subtle: $emotion-informative-content-subtle,
-        state-active: $emotion-informative-state-active,
-        state-default: $emotion-informative-state-default,
-        state-hover: $emotion-informative-state-hover,
-    ),
-    success: (
-        background-basic: $emotion-success-background-basic,
-        background-subtle: $emotion-success-background-subtle,
-        border-basic: $emotion-success-border-basic,
-        border-subtle: $emotion-success-border-subtle,
-        content-basic: $emotion-success-content-basic,
-        content-subtle: $emotion-success-content-subtle,
-        state-active: $emotion-success-state-active,
-        state-default: $emotion-success-state-default,
-        state-hover: $emotion-success-state-hover,
-    ),
-    warning: (
-        background-basic: $emotion-warning-background-basic,
-        background-subtle: $emotion-warning-background-subtle,
-        border-basic: $emotion-warning-border-basic,
-        border-subtle: $emotion-warning-border-subtle,
-        content-basic: $emotion-warning-content-basic,
-        content-subtle: $emotion-warning-content-subtle,
-        state-active: $emotion-warning-state-active,
-        state-default: $emotion-warning-state-default,
-        state-hover: $emotion-warning-state-hover,
-    ),
-) !default;
-
-$focus-colors: (
-    focus-ring: (
-        color-01: $focus-focus-ring-color-01,
-    ),
-) !default;
-
-$form-field-colors: (
-    danger: $form-field-danger,
-    filled: (
-        background-state-active: $form-field-filled-background-state-active,
-        background-state-default: $form-field-filled-background-state-default,
-        background-state-hover: $form-field-filled-background-state-hover,
-        border-state-active: $form-field-filled-border-state-active,
-        border-state-default: $form-field-filled-border-state-default,
-        border-state-hover: $form-field-filled-border-state-hover,
-        border-state-selected: $form-field-filled-border-state-selected,
-        content: $form-field-filled-content,
-        placeholder: $form-field-filled-placeholder,
-    ),
-    helper-text: $form-field-helper-text,
-    label: $form-field-label,
-    success: $form-field-success,
-    warning: $form-field-warning,
-) !default;
-
-$gradient-colors: (
-    basic-overlay: (
-        color-01: $gradient-basic-overlay-color-01,
-        color-02: $gradient-basic-overlay-color-02,
-    ),
-) !default;
-
-$link-colors: (
-    primary: (
-        state-active: $link-primary-state-active,
-        state-default: $link-primary-state-default,
-        state-hover: $link-primary-state-hover,
-    ),
-    secondary: (
-        state-active: $link-secondary-state-active,
-        state-default: $link-secondary-state-default,
-        state-hover: $link-secondary-state-hover,
-    ),
-    state-visited: $link-state-visited,
-    tertiary: (
-        state-active: $link-tertiary-state-active,
-        state-default: $link-tertiary-state-default,
-        state-hover: $link-tertiary-state-hover,
-    ),
-) !default;
-
-$neutral-colors: (
-    background-basic: $neutral-background-basic,
-    background-subtle: $neutral-background-subtle,
-    border-basic: $neutral-border-basic,
-    border-subtle: $neutral-border-subtle,
-    content-basic: $neutral-content-basic,
-    content-subtle: $neutral-content-subtle,
-    state-active: $neutral-state-active,
-    state-default: $neutral-state-default,
-    state-hover: $neutral-state-hover,
-) !default;
-
-$selected-colors: (
-    content-basic: $selected-content-basic,
-    content-subtle: $selected-content-subtle,
-    state-active: $selected-state-active,
-    state-default: $selected-state-default,
-    state-hover: $selected-state-hover,
-) !default;
-
-$shadow-colors: (
-    shadow-100: (
-        color-01: $shadow-shadow-100-color-01,
-    ),
-    shadow-200: (
-        color-01: $shadow-shadow-200-color-01,
-    ),
-    shadow-300: (
-        color-01: $shadow-shadow-300-color-01,
-    ),
-    shadow-400: (
-        color-01: $shadow-shadow-400-color-01,
-    ),
-) !default;
-
-$text-colors: (
-    primary: $text-primary,
-    secondary: $text-secondary,
-    tertiary: $text-tertiary,
-) !default;
-
-$colors: (
-    background: $background-colors,
-    border: $border-colors,
-    component: $component-colors,
-    disabled: $disabled-colors,
-    emotion: $emotion-colors,
-    focus: $focus-colors,
-    form-field: $form-field-colors,
-    gradient: $gradient-colors,
-    link: $link-colors,
-    neutral: $neutral-colors,
-    selected: $selected-colors,
-    shadow: $shadow-colors,
-    text: $text-colors,
-) !default;
+@mixin css-variables {
+    --spirit-color-background-backdrop: #{$background-backdrop};
+    --spirit-color-background-interactive-state-active: #{$background-interactive-state-active};
+    --spirit-color-background-interactive-state-default: #{$background-interactive-state-default};
+    --spirit-color-background-interactive-state-hover: #{$background-interactive-state-hover};
+    --spirit-color-background-primary: #{$background-primary};
+    --spirit-color-background-secondary: #{$background-secondary};
+    --spirit-color-background-tertiary: #{$background-tertiary};
+    --spirit-color-border-basic: #{$border-basic};
+    --spirit-color-border-focus: #{$border-focus};
+    --spirit-color-border-interactive-state-active: #{$border-interactive-state-active};
+    --spirit-color-border-interactive-state-default: #{$border-interactive-state-default};
+    --spirit-color-border-interactive-state-hover: #{$border-interactive-state-hover};
+    --spirit-color-border-interactive-state-selected: #{$border-interactive-state-selected};
+    --spirit-color-component-button-plain-border: #{$component-button-plain-border};
+    --spirit-color-component-button-plain-content: #{$component-button-plain-content};
+    --spirit-color-component-button-plain-state-active: #{$component-button-plain-state-active};
+    --spirit-color-component-button-plain-state-default: #{$component-button-plain-state-default};
+    --spirit-color-component-button-plain-state-hover: #{$component-button-plain-state-hover};
+    --spirit-color-component-button-primary-border: #{$component-button-primary-border};
+    --spirit-color-component-button-primary-content: #{$component-button-primary-content};
+    --spirit-color-component-button-primary-state-active: #{$component-button-primary-state-active};
+    --spirit-color-component-button-primary-state-default: #{$component-button-primary-state-default};
+    --spirit-color-component-button-primary-state-hover: #{$component-button-primary-state-hover};
+    --spirit-color-component-button-secondary-border: #{$component-button-secondary-border};
+    --spirit-color-component-button-secondary-content: #{$component-button-secondary-content};
+    --spirit-color-component-button-secondary-state-active: #{$component-button-secondary-state-active};
+    --spirit-color-component-button-secondary-state-default: #{$component-button-secondary-state-default};
+    --spirit-color-component-button-secondary-state-hover: #{$component-button-secondary-state-hover};
+    --spirit-color-component-button-tertiary-border: #{$component-button-tertiary-border};
+    --spirit-color-component-button-tertiary-content: #{$component-button-tertiary-content};
+    --spirit-color-component-button-tertiary-state-active: #{$component-button-tertiary-state-active};
+    --spirit-color-component-button-tertiary-state-default: #{$component-button-tertiary-state-default};
+    --spirit-color-component-button-tertiary-state-hover: #{$component-button-tertiary-state-hover};
+    --spirit-color-component-header-background: #{$component-header-background};
+    --spirit-color-component-header-item-background-state-default: #{$component-header-item-background-state-default};
+    --spirit-color-component-header-item-background-state-hover: #{$component-header-item-background-state-hover};
+    --spirit-color-component-header-item-background-state-selected: #{$component-header-item-background-state-selected};
+    --spirit-color-component-header-item-state-active: #{$component-header-item-state-active};
+    --spirit-color-component-header-item-state-default: #{$component-header-item-state-default};
+    --spirit-color-component-header-item-state-hover: #{$component-header-item-state-hover};
+    --spirit-color-component-header-item-state-selected: #{$component-header-item-state-selected};
+    --spirit-color-component-header-stripe-state-selected: #{$component-header-stripe-state-selected};
+    --spirit-color-component-header-stripe-state-unselected: #{$component-header-stripe-state-unselected};
+    --spirit-color-component-toggle-selected-border: #{$component-toggle-selected-border};
+    --spirit-color-component-toggle-selected-content: #{$component-toggle-selected-content};
+    --spirit-color-component-toggle-selected-state-active: #{$component-toggle-selected-state-active};
+    --spirit-color-component-toggle-selected-state-default: #{$component-toggle-selected-state-default};
+    --spirit-color-component-toggle-selected-state-hover: #{$component-toggle-selected-state-hover};
+    --spirit-color-component-toggle-unselected-border: #{$component-toggle-unselected-border};
+    --spirit-color-component-toggle-unselected-content: #{$component-toggle-unselected-content};
+    --spirit-color-component-toggle-unselected-state-active: #{$component-toggle-unselected-state-active};
+    --spirit-color-component-toggle-unselected-state-default: #{$component-toggle-unselected-state-default};
+    --spirit-color-component-toggle-unselected-state-hover: #{$component-toggle-unselected-state-hover};
+    --spirit-color-disabled-background: #{$disabled-background};
+    --spirit-color-disabled-border: #{$disabled-border};
+    --spirit-color-disabled-content: #{$disabled-content};
+    --spirit-color-disabled-foreground: #{$disabled-foreground};
+    --spirit-color-emotion-danger-background-basic: #{$emotion-danger-background-basic};
+    --spirit-color-emotion-danger-background-subtle: #{$emotion-danger-background-subtle};
+    --spirit-color-emotion-danger-border-basic: #{$emotion-danger-border-basic};
+    --spirit-color-emotion-danger-border-subtle: #{$emotion-danger-border-subtle};
+    --spirit-color-emotion-danger-content-basic: #{$emotion-danger-content-basic};
+    --spirit-color-emotion-danger-content-subtle: #{$emotion-danger-content-subtle};
+    --spirit-color-emotion-danger-state-active: #{$emotion-danger-state-active};
+    --spirit-color-emotion-danger-state-default: #{$emotion-danger-state-default};
+    --spirit-color-emotion-danger-state-hover: #{$emotion-danger-state-hover};
+    --spirit-color-emotion-informative-background-basic: #{$emotion-informative-background-basic};
+    --spirit-color-emotion-informative-background-subtle: #{$emotion-informative-background-subtle};
+    --spirit-color-emotion-informative-border-basic: #{$emotion-informative-border-basic};
+    --spirit-color-emotion-informative-border-subtle: #{$emotion-informative-border-subtle};
+    --spirit-color-emotion-informative-content-basic: #{$emotion-informative-content-basic};
+    --spirit-color-emotion-informative-content-subtle: #{$emotion-informative-content-subtle};
+    --spirit-color-emotion-informative-state-active: #{$emotion-informative-state-active};
+    --spirit-color-emotion-informative-state-default: #{$emotion-informative-state-default};
+    --spirit-color-emotion-informative-state-hover: #{$emotion-informative-state-hover};
+    --spirit-color-emotion-success-background-basic: #{$emotion-success-background-basic};
+    --spirit-color-emotion-success-background-subtle: #{$emotion-success-background-subtle};
+    --spirit-color-emotion-success-border-basic: #{$emotion-success-border-basic};
+    --spirit-color-emotion-success-border-subtle: #{$emotion-success-border-subtle};
+    --spirit-color-emotion-success-content-basic: #{$emotion-success-content-basic};
+    --spirit-color-emotion-success-content-subtle: #{$emotion-success-content-subtle};
+    --spirit-color-emotion-success-state-active: #{$emotion-success-state-active};
+    --spirit-color-emotion-success-state-default: #{$emotion-success-state-default};
+    --spirit-color-emotion-success-state-hover: #{$emotion-success-state-hover};
+    --spirit-color-emotion-warning-background-basic: #{$emotion-warning-background-basic};
+    --spirit-color-emotion-warning-background-subtle: #{$emotion-warning-background-subtle};
+    --spirit-color-emotion-warning-border-basic: #{$emotion-warning-border-basic};
+    --spirit-color-emotion-warning-border-subtle: #{$emotion-warning-border-subtle};
+    --spirit-color-emotion-warning-content-basic: #{$emotion-warning-content-basic};
+    --spirit-color-emotion-warning-content-subtle: #{$emotion-warning-content-subtle};
+    --spirit-color-emotion-warning-state-active: #{$emotion-warning-state-active};
+    --spirit-color-emotion-warning-state-default: #{$emotion-warning-state-default};
+    --spirit-color-emotion-warning-state-hover: #{$emotion-warning-state-hover};
+    --spirit-color-focus-focus-ring-color-01: #{$focus-focus-ring-color-01};
+    --spirit-color-form-field-danger: #{$form-field-danger};
+    --spirit-color-form-field-filled-background-state-active: #{$form-field-filled-background-state-active};
+    --spirit-color-form-field-filled-background-state-default: #{$form-field-filled-background-state-default};
+    --spirit-color-form-field-filled-background-state-hover: #{$form-field-filled-background-state-hover};
+    --spirit-color-form-field-filled-border-state-active: #{$form-field-filled-border-state-active};
+    --spirit-color-form-field-filled-border-state-default: #{$form-field-filled-border-state-default};
+    --spirit-color-form-field-filled-border-state-hover: #{$form-field-filled-border-state-hover};
+    --spirit-color-form-field-filled-border-state-selected: #{$form-field-filled-border-state-selected};
+    --spirit-color-form-field-filled-content: #{$form-field-filled-content};
+    --spirit-color-form-field-filled-placeholder: #{$form-field-filled-placeholder};
+    --spirit-color-form-field-helper-text: #{$form-field-helper-text};
+    --spirit-color-form-field-label: #{$form-field-label};
+    --spirit-color-form-field-success: #{$form-field-success};
+    --spirit-color-form-field-warning: #{$form-field-warning};
+    --spirit-color-gradient-basic-overlay-color-01: #{$gradient-basic-overlay-color-01};
+    --spirit-color-gradient-basic-overlay-color-02: #{$gradient-basic-overlay-color-02};
+    --spirit-color-link-primary-state-active: #{$link-primary-state-active};
+    --spirit-color-link-primary-state-default: #{$link-primary-state-default};
+    --spirit-color-link-primary-state-hover: #{$link-primary-state-hover};
+    --spirit-color-link-secondary-state-active: #{$link-secondary-state-active};
+    --spirit-color-link-secondary-state-default: #{$link-secondary-state-default};
+    --spirit-color-link-secondary-state-hover: #{$link-secondary-state-hover};
+    --spirit-color-link-state-visited: #{$link-state-visited};
+    --spirit-color-link-tertiary-state-active: #{$link-tertiary-state-active};
+    --spirit-color-link-tertiary-state-default: #{$link-tertiary-state-default};
+    --spirit-color-link-tertiary-state-hover: #{$link-tertiary-state-hover};
+    --spirit-color-neutral-background-basic: #{$neutral-background-basic};
+    --spirit-color-neutral-background-subtle: #{$neutral-background-subtle};
+    --spirit-color-neutral-border-basic: #{$neutral-border-basic};
+    --spirit-color-neutral-border-subtle: #{$neutral-border-subtle};
+    --spirit-color-neutral-content-basic: #{$neutral-content-basic};
+    --spirit-color-neutral-content-subtle: #{$neutral-content-subtle};
+    --spirit-color-neutral-state-active: #{$neutral-state-active};
+    --spirit-color-neutral-state-default: #{$neutral-state-default};
+    --spirit-color-neutral-state-hover: #{$neutral-state-hover};
+    --spirit-color-selected-content-basic: #{$selected-content-basic};
+    --spirit-color-selected-content-subtle: #{$selected-content-subtle};
+    --spirit-color-selected-state-active: #{$selected-state-active};
+    --spirit-color-selected-state-default: #{$selected-state-default};
+    --spirit-color-selected-state-hover: #{$selected-state-hover};
+    --spirit-color-shadow-shadow-100-color-01: #{$shadow-shadow-100-color-01};
+    --spirit-color-shadow-shadow-200-color-01: #{$shadow-shadow-200-color-01};
+    --spirit-color-shadow-shadow-300-color-01: #{$shadow-shadow-300-color-01};
+    --spirit-color-shadow-shadow-400-color-01: #{$shadow-shadow-400-color-01};
+    --spirit-color-text-primary: #{$text-primary};
+    --spirit-color-text-secondary: #{$text-secondary};
+    --spirit-color-text-tertiary: #{$text-tertiary};
+}
