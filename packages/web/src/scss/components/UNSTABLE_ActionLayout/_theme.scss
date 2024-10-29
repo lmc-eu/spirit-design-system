@@ -1,4 +1,4 @@
-@use '@global-tokens' as global-tokens;
+@use '@tokens' as tokens;
 
-$breakpoints: global-tokens.$breakpoints;
-$root-gap: global-tokens.$space-700;
+$breakpoints: tokens.$breakpoints;
+$root-gap: tokens.$space-700;
