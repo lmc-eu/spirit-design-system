@@ -1,8 +1,8 @@
 @use 'sass:map';
-@use '@global-tokens' as global-tokens;
+@use '@tokens' as tokens;
 @use '../../tools/breakpoint';
 
-@each $breakpoint-name, $breakpoint-value in global-tokens.$breakpoints {
+@each $breakpoint-name, $breakpoint-value in tokens.$breakpoints {
     $suffix: breakpoint.get-modifier('suffix', $breakpoint-name, $breakpoint-value);
 
     @include breakpoint.up($breakpoint-value) {
@@ -17,7 +17,7 @@ $previous-breakpoint: (
     value: 0,
 );
 
-@each $breakpoint-name, $breakpoint-value in global-tokens.$breakpoints {
+@each $breakpoint-name, $breakpoint-value in tokens.$breakpoints {
     @if map.get($previous-breakpoint, name) != '' {
         @include breakpoint.up(map.get($previous-breakpoint, value)) {
             @include breakpoint.down($breakpoint-value) {
