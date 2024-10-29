@@ -1,59 +1,4 @@
-@use 'sass:map';
-@use 'sass:string';
 @use '../../tools/breakpoint';
-
-// Generates column-gap and row-gap values for each breakpoint
-// Parameters are:
-// * $spacings: the gaps map
-// * $breakpoints: the breakpoints map
-@mixin spacings($spacings, $breakpoints) {
-    $gap-fallback: map.get($spacings, 'mobile');
-
-    $column-property-name: '--grid-spacing-x';
-    $row-property-name: '--grid-spacing-y';
-
-    $column-fallback: var(--grid-default-gap, #{$gap-fallback});
-    $row-fallback: var(--grid-default-gap, #{$gap-fallback});
-
-    @each $breakpoint-name, $breakpoint-value in $breakpoints {
-        @if not map.has-key($spacings, $breakpoint-name) {
-            @error 'Invalid breakpoint specified! #{$breakpoint-name} doesn\'t exist. Use one of #{map.keys($breakpoints)}';
-        }
-
-        @if $breakpoint-value > 0 {
-            $column-property-name: --grid-spacing-x-#{$breakpoint-name};
-            $row-property-name: --grid-spacing-y-#{$breakpoint-name};
-        }
-
-        @include breakpoint.up($breakpoint-value) {
-            --grid-default-gap: #{map.get($spacings, $breakpoint-name)};
-            --grid-column-gap: var(#{string.unquote($column-property-name)}, #{$column-fallback});
-            --grid-row-gap: var(#{string.unquote($row-property-name)}, #{$row-fallback});
-        }
-
-        $column-fallback: var(#{string.unquote($column-property-name)}, #{$column-fallback});
-        $row-fallback: var(#{string.unquote($row-property-name)}, #{$row-fallback});
-    }
-
-    grid-column-gap: var(--grid-column-gap);
-    grid-row-gap: var(--grid-row-gap);
-}
-
-// Generates grid-template-columns values for each breakpoint in equal columns Grid
-// Parameters are:
-// * $grid-equal-columns: the list of columns to generate
-// * $breakpoints: the breakpoints map
-@mixin equal-columns($column-count, $breakpoints) {
-    @each $breakpoint-name, $breakpoint-value in $breakpoints {
-        @include breakpoint.up($breakpoint-value) {
-            @each $column in $column-count {
-                .Grid--#{breakpoint.get-modifier('infix', $breakpoint-name, $breakpoint-value)}cols-#{$column} {
-                    grid-template-columns: repeat(#{$column}, 1fr);
-                }
-            }
-        }
-    }
-}
 
 // Generates grid-column values for each breakpoint with fallbacks to the previous breakpoint.
 // Parameters are:
@@ -79,17 +24,6 @@
                 grid-row-start: $row-start;
                 grid-row-end: $row-end;
             }
-        }
-    }
-
-    :where(.GridItem .GridItem) {
-        @each $breakpoint-name, $breakpoint-value in $breakpoints {
-            $suffix: breakpoint.get-modifier('suffix', $breakpoint-name, $breakpoint-value);
-
-            --grid-item-column-start#{$suffix}: initial;
-            --grid-item-column-end#{$suffix}: initial;
-            --grid-item-row-start#{$suffix}: initial;
-            --grid-item-row-end#{$suffix}: initial;
         }
     }
 }
