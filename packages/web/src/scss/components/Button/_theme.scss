@@ -1,18 +1,16 @@
-@use 'sass:list';
-@use 'sass:map';
-@use '@global-tokens' as global-tokens;
+@use '@tokens' as tokens;
 @use '../../settings/dictionaries';
 
-$typography: global-tokens.$body-small-semibold;
-$typography-large: global-tokens.$body-medium-semibold;
-$border-width: global-tokens.$border-width-100;
+$typography: tokens.$body-small-semibold;
+$typography-large: tokens.$body-medium-semibold;
+$border-width: tokens.$border-width-100;
 $border-style: solid;
-$border-radius: global-tokens.$radius-full;
-$breakpoints: global-tokens.$breakpoints;
+$border-radius: tokens.$radius-full;
+$breakpoints: tokens.$breakpoints;
 
-$disabled-color: var(--#{global-tokens.$token-prefix}color-disabled-content);
-$disabled-border-color: var(--#{global-tokens.$token-prefix}color-disabled-border);
-$disabled-background-color: var(--#{global-tokens.$token-prefix}color-disabled-background);
+$disabled-color: tokens.$disabled-content;
+$disabled-border-color: tokens.$disabled-border;
+$disabled-background-color: tokens.$disabled-background;
 
 $color-action-button-dictionary: (
     action-button: dictionaries.$action-button-colors,
@@ -53,20 +51,20 @@ $loading-color-dictionary-overrides: (
 $sizes: (
     small: (
         height: 32px,
-        padding-x: calc(#{global-tokens.$space-700} - #{global-tokens.$border-width-100}),
-        padding-y: calc(#{global-tokens.$space-300} - #{global-tokens.$border-width-100}),
+        padding-x: calc(#{tokens.$space-700} - #{tokens.$border-width-100}),
+        padding-y: calc(#{tokens.$space-300} - #{tokens.$border-width-100}),
         typography: $typography,
     ),
     medium: (
         height: 40px,
-        padding-x: calc(#{global-tokens.$space-900} - #{global-tokens.$border-width-100}),
-        padding-y: calc(#{global-tokens.$space-500} - #{global-tokens.$border-width-100}),
+        padding-x: calc(#{tokens.$space-900} - #{tokens.$border-width-100}),
+        padding-y: calc(#{tokens.$space-500} - #{tokens.$border-width-100}),
         typography: $typography,
     ),
     large: (
         height: 48px,
-        padding-x: calc(#{global-tokens.$space-900} - #{global-tokens.$border-width-100}),
-        padding-y: calc(#{global-tokens.$space-500} - #{global-tokens.$border-width-100}),
+        padding-x: calc(#{tokens.$space-900} - #{tokens.$border-width-100}),
+        padding-y: calc(#{tokens.$space-500} - #{tokens.$border-width-100}),
         typography: $typography-large,
     ),
 );
