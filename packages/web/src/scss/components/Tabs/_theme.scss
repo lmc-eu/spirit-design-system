@@ -1,12 +1,12 @@
-@use '@global-tokens' as global-tokens;
+@use '@tokens' as tokens;
 
-$breakpoints: global-tokens.$breakpoints;
-$item-padding-x: global-tokens.$space-700;
-$link-padding-y: global-tokens.$space-500;
-$link-color-default: var(--#{global-tokens.$token-prefix}color-action-link-secondary-default);
-$link-color-hover: var(--#{global-tokens.$token-prefix}color-action-link-secondary-hover);
-$link-color-active: var(--#{global-tokens.$token-prefix}color-action-link-secondary-active);
+$breakpoints: tokens.$breakpoints;
+$item-padding-x: tokens.$space-700;
+$link-padding-y: tokens.$space-500;
+$link-color-default: tokens.$action-link-secondary-default;
+$link-color-hover: tokens.$action-link-secondary-hover;
+$link-color-active: tokens.$action-link-secondary-active;
 $link-color-selected: $link-color-active;
-$spacing-fallback: global-tokens.$space-900;
-$item-typography: global-tokens.$body-medium-semibold;
-$item-selected-underline-border-radius: global-tokens.$radius-100;
+$spacing-fallback: tokens.$space-900;
+$item-typography: tokens.$body-medium-semibold;
+$item-selected-underline-border-radius: tokens.$radius-100;
