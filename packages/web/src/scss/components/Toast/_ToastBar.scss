@@ -6,7 +6,7 @@
 // 6. Add margin to the action to separate it from the dismiss button.
 // 7. Invisible items should not take up space in the queue.
 
-@use '@global-tokens' as global-tokens;
+@use '@tokens' as tokens;
 @use '../../tools/dictionaries';
 @use '../../tools/reset';
 @use '../../tools/typography';
@@ -33,9 +33,9 @@
 .ToastBar__box {
     max-width: theme.$bar-max-width;
     padding: theme.$bar-padding;
-    color: var(--#{global-tokens.$token-prefix}toast-bar-color);
+    color: var(--#{tokens.$token-prefix}toast-bar-color);
     border-radius: theme.$bar-border-radius;
-    background-color: var(--#{global-tokens.$token-prefix}toast-bar-background-color);
+    background-color: var(--#{tokens.$token-prefix}toast-bar-background-color);
     box-shadow: theme.$bar-box-shadow;
     pointer-events: var(--toast-bar-pointer-events, initial); // 3.
 
