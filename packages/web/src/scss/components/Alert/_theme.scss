@@ -1,14 +1,14 @@
 @use 'sass:map';
-@use '@global-tokens' as global-tokens;
+@use '@tokens' as tokens;
 @use '../../settings/dictionaries';
 
-$typography: global-tokens.$body-medium-regular;
+$typography: tokens.$body-medium-regular;
 
-$gap: global-tokens.$space-700;
-$padding: global-tokens.$space-700;
-$border-radius: global-tokens.$radius-300;
+$gap: tokens.$space-700;
+$padding: tokens.$space-700;
+$border-radius: tokens.$radius-300;
 $border-style: solid;
-$border-width: global-tokens.$border-width-100;
+$border-width: tokens.$border-width-100;
 
 $content-max-width: 800px;
 

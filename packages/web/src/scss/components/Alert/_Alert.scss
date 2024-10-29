@@ -1,5 +1,5 @@
 @use 'theme';
-@use '@global-tokens' as global-tokens;
+@use '@tokens' as tokens;
 @use '../../tools/dictionaries';
 @use '../../tools/typography';
 
@@ -12,12 +12,12 @@
     justify-content: flex-start;
     width: 100%;
     padding: theme.$padding;
-    color: var(--#{global-tokens.$token-prefix}alert-color);
+    color: var(--#{tokens.$token-prefix}alert-color);
     border-width: theme.$border-width;
     border-style: theme.$border-style;
-    border-color: var(--#{global-tokens.$token-prefix}alert-border-color);
+    border-color: var(--#{tokens.$token-prefix}alert-border-color);
     border-radius: theme.$border-radius;
-    background-color: var(--#{global-tokens.$token-prefix}alert-background-color);
+    background-color: var(--#{tokens.$token-prefix}alert-background-color);
 }
 
 .Alert--center {
@@ -32,15 +32,15 @@
 );
 
 .Alert :where(a) {
-    color: var(--#{global-tokens.$token-prefix}alert-color);
+    color: var(--#{tokens.$token-prefix}alert-color);
 
     @media (hover: hover) {
         &:hover {
-            color: var(--#{global-tokens.$token-prefix}alert-color);
+            color: var(--#{tokens.$token-prefix}alert-color);
         }
     }
 
     &:active {
-        color: var(--#{global-tokens.$token-prefix}alert-color);
+        color: var(--#{tokens.$token-prefix}alert-color);
     }
 }
