@@ -1,5 +1,5 @@
 @use 'sass:list';
-@use '@global-tokens' as global-tokens;
+@use '@tokens' as tokens;
 @use '../../settings/dictionaries';
 @use '../../settings/transitions';
 
@@ -12,7 +12,7 @@ $alignments-y: (
     top: start,
     bottom: end,
 );
-$breakpoints: global-tokens.$breakpoints;
+$breakpoints: tokens.$breakpoints;
 
 $color-dictionary: (
     emotion: dictionaries.$emotion-colors,
@@ -24,26 +24,26 @@ $color-dictionary-config: (
     background-color: 'background-basic',
 );
 
-$padding-x: global-tokens.$space-900;
-$padding-x-tablet: global-tokens.$space-1000;
-$padding-x-desktop: global-tokens.$space-1100;
-$padding-y: global-tokens.$space-900;
+$padding-x: tokens.$space-900;
+$padding-x-tablet: tokens.$space-1000;
+$padding-x-desktop: tokens.$space-1100;
+$padding-y: tokens.$space-900;
 
 $queue-collapse-after: 3;
-$queue-gap: global-tokens.$space-700;
+$queue-gap: tokens.$space-700;
 
-$bar-typography: global-tokens.$body-small-bold;
+$bar-typography: tokens.$body-small-bold;
 $bar-max-width: 480px;
 $bar-max-height: 200px; // Whatever larger than the largest toast message. ⚠️ CAUTION: Affects animation timing!
-$bar-gap: global-tokens.$space-700;
-$bar-padding: global-tokens.$space-700;
-$bar-border-radius: global-tokens.$radius-300;
-$bar-box-shadow: global-tokens.$shadow-400;
-$bar-content-gap: global-tokens.$space-600;
-$bar-message-gap-x: global-tokens.$space-900;
-$bar-message-gap-y: global-tokens.$space-600;
-$bar-action-margin-inline-end: global-tokens.$space-500;
-$bar-close-padding: global-tokens.$space-300;
+$bar-gap: tokens.$space-700;
+$bar-padding: tokens.$space-700;
+$bar-border-radius: tokens.$radius-300;
+$bar-box-shadow: tokens.$shadow-400;
+$bar-content-gap: tokens.$space-600;
+$bar-message-gap-x: tokens.$space-900;
+$bar-message-gap-y: tokens.$space-600;
+$bar-action-margin-inline-end: tokens.$space-500;
+$bar-close-padding: tokens.$space-300;
 
 // ⚠️ Keep the slowest transition in sync with `js/Toast.ts`.
 $bar-transition-delay-margin: transitions.$duration-300;
