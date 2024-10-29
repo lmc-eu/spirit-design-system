@@ -1,12 +1,12 @@
 @use 'sass:list';
 @use 'sass:map';
-@use '@global-tokens' as global-tokens;
+@use '@tokens' as tokens;
 @use '../../settings/dictionaries';
 
-$typography: global-tokens.$body-xsmall-bold;
-$padding-x: global-tokens.$space-300;
-$padding-y: global-tokens.$space-0;
-$border-radius: global-tokens.$radius-400;
+$typography: tokens.$body-xsmall-bold;
+$padding-x: tokens.$space-300;
+$padding-y: tokens.$space-0;
+$border-radius: tokens.$radius-400;
 
 $color-dictionary: (
     emotion: dictionaries.$emotion-colors,
