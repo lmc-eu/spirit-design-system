@@ -1,4 +1,4 @@
-@use '@global-tokens' as global-tokens;
+@use '@tokens' as tokens;
 
 $_coefficient: 1; // Tweak this to adjust the duration of all transitions during development.
 
@@ -16,4 +16,4 @@ $timing-eased-in-out-fast: cubic-bezier(0.4, 0, 0.2, 1);
 $scale-ratio-small-objects: 0.95;
 $scale-ratio-large-objects: 0.975;
 
-$shift-distance-medium: global-tokens.$space-700;
+$shift-distance-medium: tokens.$space-700;

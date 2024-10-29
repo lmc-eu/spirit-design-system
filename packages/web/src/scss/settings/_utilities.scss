@@ -1,5 +1,5 @@
 @use 'sass:map';
-@use '@global-tokens' as global-tokens;
+@use '@tokens' as tokens;
 
 $utilities: (
     'display': (
@@ -22,7 +22,7 @@ $utilities: (
         class: mt,
         values:
             map.merge(
-                global-tokens.$spaces,
+                tokens.$spaces,
                 (
                     auto: auto,
                 )
@@ -34,7 +34,7 @@ $utilities: (
         class: mr,
         values:
             map.merge(
-                global-tokens.$spaces,
+                tokens.$spaces,
                 (
                     auto: auto,
                 )
@@ -46,7 +46,7 @@ $utilities: (
         class: mb,
         values:
             map.merge(
-                global-tokens.$spaces,
+                tokens.$spaces,
                 (
                     auto: auto,
                 )
@@ -58,7 +58,7 @@ $utilities: (
         class: ml,
         values:
             map.merge(
-                global-tokens.$spaces,
+                tokens.$spaces,
                 (
                     auto: auto,
                 )
@@ -70,7 +70,7 @@ $utilities: (
         class: mx,
         values:
             map.merge(
-                global-tokens.$spaces,
+                tokens.$spaces,
                 (
                     auto: auto,
                 )
@@ -82,7 +82,7 @@ $utilities: (
         class: my,
         values:
             map.merge(
-                global-tokens.$spaces,
+                tokens.$spaces,
                 (
                     auto: auto,
                 )
@@ -92,37 +92,37 @@ $utilities: (
         responsive: true,
         property: padding-top,
         class: pt,
-        values: global-tokens.$spaces,
+        values: tokens.$spaces,
     ),
     'padding-right': (
         responsive: true,
         property: padding-right,
         class: pr,
-        values: global-tokens.$spaces,
+        values: tokens.$spaces,
     ),
     'padding-bottom': (
         responsive: true,
         property: padding-bottom,
         class: pb,
-        values: global-tokens.$spaces,
+        values: tokens.$spaces,
     ),
     'padding-left': (
         responsive: true,
         property: padding-left,
         class: pl,
-        values: global-tokens.$spaces,
+        values: tokens.$spaces,
     ),
     'padding-x': (
         responsive: true,
         property: padding-inline,
         class: px,
-        values: global-tokens.$spaces,
+        values: tokens.$spaces,
     ),
     'padding-y': (
         responsive: true,
         property: padding-block,
         class: py,
-        values: global-tokens.$spaces,
+        values: tokens.$spaces,
     ),
     'text-align': (
         responsive: true,
@@ -135,9 +135,9 @@ $utilities: (
         property: color,
         class: text,
         values: (
-            primary: var(--#{global-tokens.$token-prefix}color-text-primary),
-            secondary: var(--#{global-tokens.$token-prefix}color-text-secondary),
-            tertiary: var(--#{global-tokens.$token-prefix}color-text-tertiary),
+            primary: tokens.$text-primary,
+            secondary: tokens.$text-secondary,
+            tertiary: tokens.$text-tertiary,
         ),
     ),
     'background-color': (
@@ -145,17 +145,17 @@ $utilities: (
         property: background-color,
         class: bg,
         values: (
-            primary: var(--#{global-tokens.$token-prefix}color-background-primary),
-            secondary: var(--#{global-tokens.$token-prefix}color-background-secondary),
-            tertiary: var(--#{global-tokens.$token-prefix}color-background-tertiary),
-            brand-primary: var(--#{global-tokens.$token-prefix}color-background-brand-primary),
-            brand-secondary: var(--#{global-tokens.$token-prefix}color-background-brand-secondary),
+            primary: tokens.$background-primary,
+            secondary: tokens.$background-secondary,
+            tertiary: tokens.$background-tertiary,
+            brand-primary: tokens.$background-brand-primary,
+            brand-secondary: tokens.$background-brand-secondary,
         ),
     ),
     'border-radius': (
         responsive: false,
         property: border-radius,
         class: rounded,
-        values: global-tokens.$radii,
+        values: tokens.$radii,
     ),
 );
