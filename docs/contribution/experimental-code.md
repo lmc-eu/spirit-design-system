@@ -176,4 +176,4 @@ be met to move a component from experimental to stable:
   - [ ] The component has unit/integration/snapshot tests written using the project's unit testing library for testing the component API
   - [ ] The component has visual tests written using the project's End-to-End testing library for testing the component design
 
-[docs-feature-flags]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/contributtion/feature-flags.md
+[docs-feature-flags]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/contribution/feature-flags.md

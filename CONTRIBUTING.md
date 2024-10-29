@@ -278,7 +278,7 @@ PR can be merged only by the appropriate group of maintainers.
 [conventional-commits]: https://www.conventionalcommits.org
 [commitlint-config]: https://github.com/lmc-eu/code-quality-tools/tree/main/packages/commitlint-config
 [dictionary]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md
-[developer-handbook]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/contributtion/development.md
+[developer-handbook]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/contribution/development.md
 [docker]: https://www.docker.com/
 [eslint]: https://eslint.org/
 [jest]: https://jestjs.io/
