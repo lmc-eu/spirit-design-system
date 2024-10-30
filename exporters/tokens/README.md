@@ -48,5 +48,16 @@ Once activated, the original data will be generated alongside other outputs and 
 - \_original-tokens.json
 - \_original-groups.json
 
+## Naming Rules for Themes
+
+For the proper functionality of themes in the Spirit Tokens Exporter in Supernova, all theme names must adhere to specific conventions.
+Themes names are imported to Supernova from Figma, and designers are responsible for following these naming rules to ensure the correct
+export of design tokens.
+
+- Spaces are not allowed in theme names, as they disrupt the structure of the generated CSS (SCSS), which relies on precise syntax.
+- We recommend using a kebab-case naming format such as `theme-light-default` to ensure consistency and compatibility.
+
+Adhering to these guidelines helps maintain the integrity of the exported files, ensuring they operate smoothly and without errors.
+
 [supernova-studio]: https://github.com/Supernova-Studio
 [alma-career]: https://github.com/lmc-eu
