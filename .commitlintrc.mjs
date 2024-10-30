@@ -23,7 +23,6 @@ export default {
         // Use when committing changes/additions/removals to exact exporter
         'exporter-js',
         'exporter-scss',
-        'exporter-svg',
         'exporter-assets',
         'exporter-tokens',
         // Use when committing changes/additions/removals to exact config
