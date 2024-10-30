@@ -2,7 +2,7 @@
 
 import classNames from 'classnames';
 import React, { useEffect, useState } from 'react';
-import { useDeprecationMessage, useStyleProps } from '../../hooks';
+import { useStyleProps } from '../../hooks';
 import { SpiritFileUploaderInputProps } from '../../types';
 import { HelperText, ValidationText, useAriaIds } from '../Field';
 import { Icon } from '../Icon';
@@ -69,13 +69,6 @@ const FileUploaderInput = (props: SpiritFileUploaderInputProps) => {
   useEffect(() => {
     setIsDragAndDropSupported('draggable' in document.createElement('span'));
   }, []);
-
-  useDeprecationMessage({
-    method: 'custom',
-    trigger: !id,
-    componentName: 'FileUploader',
-    customText: 'The "id" property will be required instead of optional starting from the next major version.',
-  });
 
   return (
     <div
