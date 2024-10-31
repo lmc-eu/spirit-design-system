@@ -11,8 +11,16 @@
 .Flex {
     @include reset.list();
     @include spacing.create(
-        $input-property-base-name: '--flex-spacing',
-        $output-property-name: '--flex-gap',
+        $input-property-base-name: '--flex-spacing-x',
+        $output-property-name: '--flex-column-gap',
+        $property: 'column-gap',
+        $breakpoints: theme.$breakpoints,
+        $default-spacing: theme.$gap
+    );
+    @include spacing.create(
+        $input-property-base-name: '--flex-spacing-y',
+        $output-property-name: '--flex-row-gap',
+        $property: 'row-gap',
         $breakpoints: theme.$breakpoints,
         $default-spacing: theme.$gap
     );
@@ -25,7 +33,10 @@
 // stylelint-disable-next-line selector-max-universal -- Let's be bold and tweak all direct descendants regardless of their type to avoid inheritance of spacing for nested Flex.
 .Flex > * {
     @include spacing.prevent-inheritance(
-        $input-property-base-names: '--flex-spacing',
+        $input-property-base-names: (
+            '--flex-spacing-x',
+            '--flex-spacing-y',
+        ),
         $breakpoints: theme.$breakpoints
     );
 }
