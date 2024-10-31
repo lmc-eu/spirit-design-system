@@ -131,6 +131,8 @@ Removed utility classes:
 - `.bg-basic`
 - `.bg-cover`
 - `.bg-inverted`
+- `.bg-brand-primary`
+- `.bg-brand-secondary`
 
 New utility classes:
 
