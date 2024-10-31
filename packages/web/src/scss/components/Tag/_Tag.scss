@@ -19,6 +19,7 @@
 
 .Tag--subtle {
     color: var(--#{tokens.$token-prefix}tag-subtle-color);
+    border-color: var(--#{tokens.$token-prefix}tag-subtle-border-color);
     background-color: var(--#{tokens.$token-prefix}tag-subtle-background-color);
 }
 
