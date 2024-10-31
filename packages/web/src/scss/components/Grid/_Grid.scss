@@ -1,55 +1,33 @@
-// 1. For each breakpoint, generate:
-//
-//    a) responsive alignment classes for both axes,
-//    b) `grid-template-columns` values for the equal-column Grid variant,
-//    c) responsive GridItem classes.
-
 @use '../../tools/breakpoint';
 @use '../../tools/dictionaries';
 @use '../../tools/reset';
-@use '../../tools/spacing';
+@use '../../tools/responsive-properties';
 @use 'theme';
-@use 'tools';
 
 .Grid {
     display: grid;
-    grid-template-columns: repeat(theme.$grid-columns, 1fr);
+    grid-template-columns: repeat(theme.$columns, 1fr);
     width: 100%;
 
     @include reset.list();
-    @include spacing.create(
-        $input-property-base-name: '--grid-spacing-x',
-        $output-property-name: '--grid-column-gap',
+    @include responsive-properties.create-cascade(
         $property: 'column-gap',
+        $input-custom-property-base-name: 'grid-spacing-x',
         $breakpoints: theme.$breakpoints,
-        $default-spacing: theme.$grid-spacings
+        $fallback-value: theme.$default-spacings
     );
-    @include spacing.create(
-        $input-property-base-name: '--grid-spacing-y',
-        $output-property-name: '--grid-row-gap',
+    @include responsive-properties.create-cascade(
         $property: 'row-gap',
+        $input-custom-property-base-name: 'grid-spacing-y',
         $breakpoints: theme.$breakpoints,
-        $default-spacing: theme.$grid-spacings
+        $fallback-value: theme.$default-spacings
     );
 }
 
-// stylelint-disable-next-line selector-max-universal -- Let's be bold and reset spacing for all direct descendants regardless of their type to avoid inheritance of spacing for nested Grid.
-.Grid > * {
-    @include spacing.prevent-inheritance(
-        $input-property-base-names: (
-            '--grid-spacing-x',
-            '--grid-spacing-y',
-        ),
-        $breakpoints: theme.$breakpoints
-    );
-}
-
-// 1.
 @each $breakpoint-name, $breakpoint-value in theme.$breakpoints {
     $infix: breakpoint.get-modifier('infix', $breakpoint-name, $breakpoint-value);
 
     @include breakpoint.up($breakpoint-value) {
-        // 1.a
         @include dictionaries.generate-alignments(
             $class-name: 'Grid',
             $dictionary-values: theme.$alignment-x-dictionary,
@@ -64,27 +42,10 @@
             $infix: $infix
         );
 
-        // 1.b
-        @each $column in theme.$grid-equal-columns {
+        @each $column in theme.$equal-columns {
             .Grid--#{breakpoint.get-modifier('infix', $breakpoint-name, $breakpoint-value)}cols-#{$column} {
                 grid-template-columns: repeat(#{$column}, 1fr);
             }
         }
     }
-}
-
-// 1.c
-@include tools.item(theme.$breakpoints);
-
-// stylelint-disable-next-line selector-max-universal -- Let's be bold and reset spacing for all direct descendants regardless of their type to avoid inheritance of spacing for nested GridItem.
-.GridItem > * {
-    @include spacing.prevent-inheritance(
-        $input-property-base-names: (
-            '--grid-item-column-start',
-            '--grid-item-column-end',
-            '--grid-item-row-start',
-            '--grid-item-row-end',
-        ),
-        $breakpoints: theme.$breakpoints
-    );
 }
