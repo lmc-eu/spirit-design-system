@@ -1,0 +1,118 @@
+@use 'true' as test;
+@use '../responsive-properties';
+
+@include test.describe('responsive properties functions and mixins') {
+    @include test.it('should return correct property with custom property cascade') {
+        @include test.assert() {
+            @include test.output() {
+                .test {
+                    @include responsive-properties.create-cascade(
+                        $property: 'row-gap',
+                        $input-custom-property-base-name: 'gap',
+                        $breakpoints: (
+                            'mobile': 0,
+                            'tablet': 768px,
+                        ),
+                        $fallback-value: 16px
+                    );
+                }
+            }
+
+            @include test.expect() {
+                .test {
+                    --gap-internal: var(--gap, 16px);
+
+                    row-gap: var(--gap-internal);
+                }
+
+                @media (width >= 768px) {
+                    .test {
+                        --gap-internal: var(--gap-tablet, var(--gap, 16px));
+                    }
+                }
+
+                // stylelint-disable-next-line selector-max-universal -- We need the universal selector to reset the custom properties.
+                .test > * {
+                    --gap: initial;
+                    --gap-tablet: initial;
+                }
+            }
+        }
+    }
+
+    @include test.it('should return correct property with custom property cascade and no inheritance prevention') {
+        @include test.assert() {
+            @include test.output() {
+                .test {
+                    @include responsive-properties.create-cascade(
+                        $property: 'row-gap',
+                        $input-custom-property-base-name: 'gap',
+                        $breakpoints: (
+                            'mobile': 0,
+                            'tablet': 768px,
+                        ),
+                        $fallback-value: 16px,
+                        $prevent-inheritance: false
+                    );
+                }
+            }
+
+            @include test.expect() {
+                .test {
+                    --gap-internal: var(--gap, 16px);
+
+                    row-gap: var(--gap-internal);
+                }
+
+                @media (width >= 768px) {
+                    .test {
+                        --gap-internal: var(--gap-tablet, var(--gap, 16px));
+                    }
+                }
+            }
+        }
+    }
+
+    @include test.it('should return correct property with custom property cascade and responsive fallbacks') {
+        @include test.assert() {
+            @include test.output() {
+                .test {
+                    @include responsive-properties.create-cascade(
+                        $property: 'row-gap',
+                        $input-custom-property-base-name: 'gap',
+                        $breakpoints: (
+                            'mobile': 0,
+                            'tablet': 768px,
+                        ),
+                        $fallback-value: (
+                            'mobile': 16px,
+                            'tablet': 32px,
+                        )
+                    );
+                }
+            }
+
+            @include test.expect() {
+                .test {
+                    --gap-default-internal: 16px;
+                    --gap-internal: var(--gap, var(--gap-default-internal, 16px));
+
+                    row-gap: var(--gap-internal);
+                }
+
+                @media (width >= 768px) {
+                    .test {
+                        --gap-default-internal: 32px;
+                        --gap-internal: var(--gap-tablet, var(--gap, var(--gap-default-internal, 16px)));
+                    }
+                }
+
+                // stylelint-disable-next-line selector-max-universal -- We need the universal selector to reset the custom properties.
+                .test > * {
+                    --gap: initial;
+                    --gap-tablet: initial;
+                }
+            }
+        }
+    }
+}
