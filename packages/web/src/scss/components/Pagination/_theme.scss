@@ -10,18 +10,18 @@ $item-border-width: tokens.$border-width-100;
 $item-border-style: solid;
 $item-border-radius: tokens.$radius-full;
 
-$item-default-color: tokens.$action-button-secondary-content;
-$item-default-border-color: tokens.$action-button-secondary-border;
-$item-default-background-color: tokens.$action-button-secondary-default;
+$item-default-color: tokens.$component-button-secondary-content;
+$item-default-border-color: tokens.$component-button-secondary-border;
+$item-default-background-color: tokens.$component-button-secondary-state-default;
 
-$item-active-color: tokens.$action-button-secondary-content;
-$item-active-border-color: tokens.$action-button-secondary-border;
-$item-active-background-color: tokens.$action-button-secondary-active;
+$item-active-color: tokens.$component-button-secondary-content;
+$item-active-border-color: tokens.$component-button-secondary-border;
+$item-active-background-color: tokens.$component-button-secondary-state-active;
 
-$item-hover-color: tokens.$action-button-secondary-content;
-$item-hover-border-color: tokens.$action-button-secondary-border;
-$item-hover-background-color: tokens.$action-button-secondary-hover;
+$item-hover-color: tokens.$component-button-secondary-content;
+$item-hover-border-color: tokens.$component-button-secondary-border;
+$item-hover-background-color: tokens.$component-button-secondary-state-hover;
 
-$item-selected-color: tokens.$action-button-primary-content;
-$item-selected-border-color: tokens.$action-button-primary-border;
-$item-selected-background-color: tokens.$action-button-primary-default;
+$item-selected-color: tokens.$component-button-primary-content;
+$item-selected-border-color: tokens.$component-button-primary-border;
+$item-selected-background-color: tokens.$component-button-primary-state-default;
