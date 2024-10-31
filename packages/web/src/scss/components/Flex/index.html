@@ -156,7 +156,7 @@
 
     <div
       class="Flex Flex--row Flex--noWrap Flex--alignmentXStretch Flex--alignmentYStretch"
-      style="--flex-spacing: var(--spirit-space-1600)"
+      style="--flex-spacing-x: var(--spirit-space-1600)"
     >
       <div class="docs-Box docs-Box--small">Item 1</div>
       <div class="docs-Box docs-Box--small">Item 2</div>
@@ -172,11 +172,43 @@
 
     <div
       class="Flex Flex--row Flex--noWrap Flex--alignmentXStretch Flex--alignmentYStretch"
-      style="--flex-spacing: var(--spirit-space-1000); --flex-spacing-tablet: var(--spirit-space-1200); --flex-spacing-desktop: var(--spirit-space-1600)"
+      style="--flex-spacing-x: var(--spirit-space-1000); --flex-spacing-x-tablet: var(--spirit-space-1200); --flex-spacing-x-desktop: var(--spirit-space-1600)"
     >
       <div class="docs-Box docs-Box--small">Item 1</div>
       <div class="docs-Box docs-Box--small">Item 2</div>
       <div class="docs-Box docs-Box--small">Item 3</div>
+    </div>
+
+  </div>
+</section>
+
+<section class="UNSTABLE_Section">
+  <h2 class="docs-Heading">Responsive Custom Horizontal Spacing</h2>
+  <div class="docs-Stack docs-Stack--stretch">
+
+    <div
+      class="Flex Flex--row Flex--noWrap Flex--alignmentXStretch Flex--alignmentYStretch"
+      style="--flex-spacing-x: var(--spirit-space-800); --flex-spacing-x-tablet: var(--spirit-space-1000); --flex-spacing-x-desktop: var(--spirit-space-1200)"
+    >
+      <div class="docs-Box docs-Box--small">Item 1</div>
+      <div class="docs-Box docs-Box--small">Item 2</div>
+      <div class="docs-Box docs-Box--small">Item 3</div>
+    </div>
+
+  </div>
+</section>
+
+<section class="UNSTABLE_Section">
+  <h2 class="docs-Heading">Responsive Custom Vertical Spacing</h2>
+  <div class="docs-Stack docs-Stack--stretch">
+
+    <div class="Flex Flex--row Flex--wrap Flex--alignmentXStretch Flex--alignmentYStretch"
+         style="--flex-spacing-y: var(--spirit-space-800); --flex-spacing-y-tablet: var(--spirit-space-1000); --flex-spacing-y-desktop: var(--spirit-space-1200)"
+    >
+      {{setVar "items" 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 }}
+      {{#each @root.items}}
+      <div class="docs-Box docs-Box--small">Item {{this}}</div>
+      {{/each}}
     </div>
 
   </div>
