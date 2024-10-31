@@ -5,40 +5,27 @@
 @use '../../tools/breakpoint';
 @use '../../tools/dictionaries';
 @use '../../tools/reset';
-@use '../../tools/spacing';
+@use '../../tools/responsive-properties';
 @use 'theme';
 
 .Flex {
     @include reset.list();
-    @include spacing.create(
-        $input-property-base-name: '--flex-spacing-x',
-        $output-property-name: '--flex-column-gap',
+    @include responsive-properties.create-cascade(
         $property: 'column-gap',
+        $input-custom-property-base-name: 'flex-spacing-x',
         $breakpoints: theme.$breakpoints,
-        $default-spacing: theme.$gap
+        $fallback-value: theme.$default-spacing
     );
-    @include spacing.create(
-        $input-property-base-name: '--flex-spacing-y',
-        $output-property-name: '--flex-row-gap',
+    @include responsive-properties.create-cascade(
         $property: 'row-gap',
+        $input-custom-property-base-name: 'flex-spacing-y',
         $breakpoints: theme.$breakpoints,
-        $default-spacing: theme.$gap
+        $fallback-value: theme.$default-spacing
     );
 }
 
 .Flex > svg {
     flex: none; // 1.
-}
-
-// stylelint-disable-next-line selector-max-universal -- Let's be bold and tweak all direct descendants regardless of their type to avoid inheritance of spacing for nested Flex.
-.Flex > * {
-    @include spacing.prevent-inheritance(
-        $input-property-base-names: (
-            '--flex-spacing-x',
-            '--flex-spacing-y',
-        ),
-        $breakpoints: theme.$breakpoints
-    );
 }
 
 @each $breakpoint-name, $breakpoint-value in theme.$breakpoints {
