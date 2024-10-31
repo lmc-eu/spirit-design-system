@@ -184,3 +184,264 @@ $shadows-shadow-400-color-01: var(--spirit-color-shadows-shadow-400-color-01);
 $text-primary: var(--spirit-color-text-primary);
 $text-secondary: var(--spirit-color-text-secondary);
 $text-tertiary: var(--spirit-color-text-tertiary);
+
+$action-colors: (
+    button: (
+        primary: (
+            active: $action-button-primary-active,
+            border: $action-button-primary-border,
+            content: $action-button-primary-content,
+            default: $action-button-primary-default,
+            hover: $action-button-primary-hover,
+        ),
+        secondary: (
+            active: $action-button-secondary-active,
+            border: $action-button-secondary-border,
+            content: $action-button-secondary-content,
+            default: $action-button-secondary-default,
+            hover: $action-button-secondary-hover,
+        ),
+        tertiary: (
+            active: $action-button-tertiary-active,
+            border: $action-button-tertiary-border,
+            content: $action-button-tertiary-content,
+            default: $action-button-tertiary-default,
+            hover: $action-button-tertiary-hover,
+        ),
+        plain: (
+            active: $action-button-plain-active,
+            border: $action-button-plain-border,
+            content: $action-button-plain-content,
+            default: $action-button-plain-default,
+            hover: $action-button-plain-hover,
+        ),
+    ),
+    link: (
+        primary: (
+            active: $action-link-primary-active,
+            default: $action-link-primary-default,
+            hover: $action-link-primary-hover,
+        ),
+        secondary: (
+            active: $action-link-secondary-active,
+            default: $action-link-secondary-default,
+            hover: $action-link-secondary-hover,
+        ),
+        tertiary: (
+            active: $action-link-tertiary-active,
+            default: $action-link-tertiary-default,
+            hover: $action-link-tertiary-hover,
+        ),
+        visited: (
+            default: $action-link-visited-default,
+        ),
+    ),
+    toggle: (
+        selected-border: $action-toggle-selected-border,
+        selected-content: $action-toggle-selected-content,
+        selected-default: $action-toggle-selected-default,
+        selected-hover: $action-toggle-selected-hover,
+        unselected-border: $action-toggle-unselected-border,
+        unselected-content: $action-toggle-unselected-content,
+        unselected-default: $action-toggle-unselected-default,
+        unselected-hover: $action-toggle-unselected-hover,
+    ),
+) !default;
+
+$background-colors: (
+    backdrop: $background-backdrop,
+    brand: (
+        primary: $background-brand-primary,
+        secondary: $background-brand-secondary,
+    ),
+    interactive: (
+        active: $background-interactive-active,
+        default: $background-interactive-default,
+        hover: $background-interactive-hover,
+        selected: $background-interactive-selected,
+    ),
+    primary: $background-primary,
+    secondary: $background-secondary,
+    tertiary: $background-tertiary,
+) !default;
+
+$border-colors: (
+    basic: $border-basic,
+    focus: $border-focus,
+    interactive: (
+        active: $border-interactive-active,
+        danger: $border-interactive-danger,
+        default: $border-interactive-default,
+        hover: $border-interactive-hover,
+        informative: $border-interactive-informative,
+        selected: $border-interactive-selected,
+        success: $border-interactive-success,
+        warning: $border-interactive-warning,
+    ),
+) !default;
+
+$custom-colors: (
+    01: (
+        active: $custom-01-active,
+        background-basic: $custom-01-background-basic,
+        background-subtle: $custom-01-background-subtle,
+        border-basic: $custom-01-border-basic,
+        border-subtle: $custom-01-border-subtle,
+        content-basic: $custom-01-content-basic,
+        content-subtle: $custom-01-content-subtle,
+        default: $custom-01-default,
+        hover: $custom-01-hover,
+    ),
+    02: (
+        active: $custom-02-active,
+        background-basic: $custom-02-background-basic,
+        background-subtle: $custom-02-background-subtle,
+        border-basic: $custom-02-border-basic,
+        border-subtle: $custom-02-border-subtle,
+        content-basic: $custom-02-content-basic,
+        content-subtle: $custom-02-content-subtle,
+        default: $custom-02-default,
+        hover: $custom-02-hover,
+    ),
+) !default;
+
+$disabled-colors: (
+    background: $disabled-background,
+    border: $disabled-border,
+    content: $disabled-content,
+    foreground: $disabled-foreground,
+) !default;
+
+$emotion-colors: (
+    danger: (
+        active: $emotion-danger-active,
+        background-basic: $emotion-danger-background-basic,
+        background-subtle: $emotion-danger-background-subtle,
+        border-basic: $emotion-danger-border-basic,
+        border-subtle: $emotion-danger-border-subtle,
+        content-basic: $emotion-danger-content-basic,
+        content-subtle: $emotion-danger-content-subtle,
+        default: $emotion-danger-default,
+        hover: $emotion-danger-hover,
+    ),
+    informative: (
+        active: $emotion-informative-active,
+        background-basic: $emotion-informative-background-basic,
+        background-subtle: $emotion-informative-background-subtle,
+        border-basic: $emotion-informative-border-basic,
+        border-subtle: $emotion-informative-border-subtle,
+        content-basic: $emotion-informative-content-basic,
+        content-subtle: $emotion-informative-content-subtle,
+        default: $emotion-informative-default,
+        hover: $emotion-informative-hover,
+    ),
+    success: (
+        active: $emotion-success-active,
+        background-basic: $emotion-success-background-basic,
+        background-subtle: $emotion-success-background-subtle,
+        border-basic: $emotion-success-border-basic,
+        border-subtle: $emotion-success-border-subtle,
+        content-basic: $emotion-success-content-basic,
+        content-subtle: $emotion-success-content-subtle,
+        default: $emotion-success-default,
+        hover: $emotion-success-hover,
+    ),
+    warning: (
+        active: $emotion-warning-active,
+        background-basic: $emotion-warning-background-basic,
+        background-subtle: $emotion-warning-background-subtle,
+        border-basic: $emotion-warning-border-basic,
+        border-subtle: $emotion-warning-border-subtle,
+        content-basic: $emotion-warning-content-basic,
+        content-subtle: $emotion-warning-content-subtle,
+        default: $emotion-warning-default,
+        hover: $emotion-warning-hover,
+    ),
+) !default;
+
+$focus-colors: (
+    focus-ring: (
+        color-01: $focus-focus-ring-color-01,
+    ),
+) !default;
+
+$form-field-colors: (
+    active: $form-field-active,
+    border-active: $form-field-border-active,
+    border-default: $form-field-border-default,
+    border-hover: $form-field-border-hover,
+    border-selected: $form-field-border-selected,
+    content: $form-field-content,
+    danger: $form-field-danger,
+    default: $form-field-default,
+    helper-text: $form-field-helper-text,
+    hover: $form-field-hover,
+    label: $form-field-label,
+    placeholder: $form-field-placeholder,
+    success: $form-field-success,
+    warning: $form-field-warning,
+) !default;
+
+$gradient-colors: (
+    basic-overlay: (
+        color-01: $gradients-basic-overlay-color-01,
+        color-02: $gradients-basic-overlay-color-02,
+    ),
+) !default;
+
+$neutral-colors: (
+    active: $neutral-active,
+    background-basic: $neutral-background-basic,
+    background-subtle: $neutral-background-subtle,
+    border-basic: $neutral-border-basic,
+    border-subtle: $neutral-border-subtle,
+    content-basic: $neutral-content-basic,
+    content-subtle: $neutral-content-subtle,
+    default: $neutral-default,
+    hover: $neutral-hover,
+) !default;
+
+$selected-colors: (
+    active: $selected-active,
+    content-basic: $selected-content-basic,
+    content-subtle: $selected-content-subtle,
+    default: $selected-default,
+    hover: $selected-hover,
+) !default;
+
+$shadow-colors: (
+    shadow-100: (
+        color-01: $shadows-shadow-100-color-01,
+    ),
+    shadow-200: (
+        color-01: $shadows-shadow-200-color-01,
+    ),
+    shadow-300: (
+        color-01: $shadows-shadow-300-color-01,
+    ),
+    shadow-400: (
+        color-01: $shadows-shadow-400-color-01,
+    ),
+) !default;
+
+$text-colors: (
+    primary: $text-primary,
+    secondary: $text-secondary,
+    tertiary: $text-tertiary,
+) !default;
+
+$colors: (
+    action: $action-colors,
+    background: $background-colors,
+    border: $border-colors,
+    custom: $custom-colors,
+    disabled: $disabled-colors,
+    emotion: $emotion-colors,
+    focus: $focus-colors,
+    form-field: $form-field-colors,
+    gradient: $gradient-colors,
+    neutral: $neutral-colors,
+    selected: $selected-colors,
+    shadow: $shadow-colors,
+    text: $text-colors,
+) !default;
