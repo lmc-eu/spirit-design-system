@@ -1,0 +1,29 @@
+@use '../../tools/responsive-properties';
+@use 'theme';
+
+.GridItem {
+    @include responsive-properties.create-cascade(
+        $property: 'grid-column-start',
+        $input-custom-property-base-name: 'grid-item-column-start',
+        $breakpoints: theme.$breakpoints,
+        $fallback-value: 'initial'
+    );
+    @include responsive-properties.create-cascade(
+        $property: 'grid-column-end',
+        $input-custom-property-base-name: 'grid-item-column-end',
+        $breakpoints: theme.$breakpoints,
+        $fallback-value: 'initial'
+    );
+    @include responsive-properties.create-cascade(
+        $property: 'grid-row-start',
+        $input-custom-property-base-name: 'grid-item-row-start',
+        $breakpoints: theme.$breakpoints,
+        $fallback-value: 'initial'
+    );
+    @include responsive-properties.create-cascade(
+        $property: 'grid-row-end',
+        $input-custom-property-base-name: 'grid-item-row-end',
+        $breakpoints: theme.$breakpoints,
+        $fallback-value: 'initial'
+    );
+}

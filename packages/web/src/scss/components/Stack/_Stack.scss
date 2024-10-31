@@ -1,5 +1,5 @@
 @use '../../tools/reset';
-@use '../../tools/spacing';
+@use '../../tools/responsive-properties';
 @use 'theme';
 
 .Stack {
@@ -9,11 +9,11 @@
 }
 
 .Stack--hasSpacing {
-    @include spacing.create(
-        $input-property-base-name: '--stack-spacing',
-        $output-property-name: '--stack-gap',
+    @include responsive-properties.create-cascade(
+        $property: 'gap',
+        $input-custom-property-base-name: 'stack-spacing',
         $breakpoints: theme.$breakpoints,
-        $default-spacing: theme.$spacing-fallback
+        $fallback-value: theme.$default-spacing
     );
 }
 
@@ -23,7 +23,7 @@
     gap: 0;
 }
 
-// stylelint-disable selector-max-universal -- Let's be bold and tweak all direct descendants regardless of their type to avoid inheritance of spacing for nested Stack.
+// stylelint-disable selector-max-universal -- Remove any margins from all direct descendants regardless of their type.
 .Stack > * {
     margin-block: 0;
 }
@@ -32,20 +32,13 @@
     border-block-start: theme.$border;
 }
 
-.Stack--hasSpacing > * {
-    @include spacing.prevent-inheritance(
-        $input-property-base-names: '--stack-spacing',
-        $breakpoints: theme.$breakpoints
-    );
-}
-
 .Stack--hasSpacing.Stack--hasStartDivider > *,
 .Stack--hasSpacing.Stack--hasEndDivider > * {
-    padding-block: calc(var(--stack-gap) / 2);
+    padding-block: calc(var(--stack-spacing-internal) / 2);
 }
 
 .Stack--hasSpacing.Stack--hasIntermediateDividers > * {
-    padding-block: var(--stack-gap);
+    padding-block: var(--stack-spacing-internal);
 }
 // stylelint-enable
 
@@ -74,9 +67,9 @@
 }
 
 .Stack--hasSpacing.Stack--hasStartDivider > :first-child {
-    padding-block-start: var(--stack-gap);
+    padding-block-start: var(--stack-spacing-internal);
 }
 
 .Stack--hasSpacing.Stack--hasEndDivider > :last-child {
-    padding-block-end: var(--stack-gap);
+    padding-block-end: var(--stack-spacing-internal);
 }

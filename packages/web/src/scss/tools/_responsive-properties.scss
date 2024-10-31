@@ -1,0 +1,88 @@
+@use 'sass:list';
+@use 'sass:map';
+@use 'sass:meta';
+@use 'sass:string';
+@use 'breakpoint';
+
+// Mixin to generate custom properties cascade with fallbacks
+//
+// Parameters are:
+// * $property: the CSS property to apply the value to
+// * $input-custom-property-base-name: the base name of the responsive CSS custom property passed in via inline styles (API), without the `--` prefix
+// * $breakpoints: the breakpoints map
+// * $fallback-value: the default value in case no input properties have been set; CSS value or breakpoint-to-value map
+// * $prevent-inheritance: whether to prevent the custom property value from being inherited by the child elements in case of nesting
+//
+// Implementation Notes
+// ====================
+//
+// 1. Internal variables:
+//
+//    a) Internal custom property which the input custom properties are applied to.
+//    b) Default custom property to store the default value (needed for responsive `$fallback-value`).
+//    c) Responsive custom property name for the current breakpoint, i.e. with the breakpoint suffix.
+//    d) Dynamic list of all responsive custom property names c).
+//
+// 2. Create custom property cascade with fallbacks. This is where the magic happens! 🎩
+// 3. Assign the custom property cascade (stored in the internal custom property 1.a) to the CSS property `$property`.
+// 4. Prevent the custom property value from being inherited by **any child elements** in case of nesting. Write out all
+//    custom properties at once to reduce the number of declaration blocks.
+//
+@mixin create-cascade(
+    $property,
+    $input-custom-property-base-name,
+    $breakpoints,
+    $fallback-value,
+    $prevent-inheritance: true
+) {
+    $internal-custom-property-name: --#{$input-custom-property-base-name}-internal; // 1.a
+    $default-custom-property-name: --#{$input-custom-property-base-name}-default-internal; // 1.b
+    $responsive-custom-property-name: --#{$input-custom-property-base-name}; // 1.c
+    $responsive-custom-property-names: ($responsive-custom-property-name); // 1.d
+
+    // 2.
+    $fallback: if(
+        meta.type-of($fallback-value) == 'map',
+        var(#{$default-custom-property-name}, #{map.get($fallback-value, 'mobile')}),
+        $fallback-value
+    );
+
+    @each $breakpoint-name, $breakpoint-value in $breakpoints {
+        @if $breakpoint-value > 0 {
+            $responsive-custom-property-name: '--#{$input-custom-property-base-name}-#{$breakpoint-name}';
+
+            @if $prevent-inheritance {
+                $responsive-custom-property-names: list.append(
+                    $responsive-custom-property-names,
+                    $responsive-custom-property-name
+                );
+            }
+        }
+
+        @include breakpoint.up($breakpoint-value) {
+            @if meta.type-of($fallback-value) == 'map' {
+                #{$default-custom-property-name}: #{map.get($fallback-value, $breakpoint-name)};
+            }
+
+            // 2.
+            #{$internal-custom-property-name}: var(#{string.unquote($responsive-custom-property-name)}, #{$fallback});
+
+            // 3.
+            @if $breakpoint-value == 0 {
+                #{$property}: var(#{$internal-custom-property-name});
+            }
+        }
+
+        // 2.
+        $fallback: var(#{string.unquote($responsive-custom-property-name)}, #{$fallback});
+    }
+
+    @if $prevent-inheritance {
+        // stylelint-disable-next-line selector-max-universal -- 4.
+        & > * {
+            @each $property-name in $responsive-custom-property-names {
+                #{$property-name}: initial;
+            }
+        }
+    }
+}
