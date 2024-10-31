@@ -5,13 +5,13 @@ import FlexColumnLayout from './FlexColumnLayout';
 import FlexCustomSpacing from './FlexCustomSpacing';
 import FlexHorizontalAlignment from './FlexHorizontalAlignment';
 import FlexResponsiveAlignment from './FlexResponsiveAlignment';
+import FlexResponsiveCustomHorizontalSpacing from './FlexResponsiveCustomHorizontalSpacing';
+import FlexResponsiveCustomVerticalSpacing from './FlexResponsiveCustomVerticalSpacing';
 import FlexResponsiveLayout from './FlexResponsiveLayout';
 import FlexResponsiveSpacing from './FlexResponsiveSpacing';
 import FlexRowLayout from './FlexRowLayout';
 import FlexVerticalAlignment from './FlexVerticalAlignment';
 import FlexWrapping from './FlexWrapping';
-import FlexResponsiveCustomHorizontalSpacing from './FlexResponsiveCustomHorizontalSpacing';
-import FlexResponsiveCustomVerticalSpacing from './FlexResponsiveCustomVerticalSpacing';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
