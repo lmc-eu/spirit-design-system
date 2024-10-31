@@ -7,6 +7,6 @@ $alignment-y-dictionary: dictionaries.$alignments-y-extended;
 
 $breakpoints: tokens.$breakpoints;
 
-$grid-columns: tokens.$grid-columns;
-$grid-spacings: map.get(tokens.$grids, spacing);
-$grid-equal-columns: 1, 2, 3, 4, 5, 6, 12;
+$columns: tokens.$grid-columns;
+$equal-columns: 1, 2, 3, 4, 5, 6, 12;
+$default-spacings: map.get(tokens.$grids, spacing);
