@@ -1,3 +1,5 @@
+import { JS_INDENTATION, SCSS_INDENTATION } from '../constants';
+
 export const removeExtraBlankLines = (css: string): string => {
   return css.replace(/\n{3,}/g, '\n\n');
 };
@@ -8,12 +10,12 @@ export const formatLinesAtEndOfTheFile = (css: string): string => {
 
 const formattingConfig = {
   js: {
-    indentation: '  ',
+    indentation: JS_INDENTATION,
     openingBracket: '{',
     closingBracket: '}',
   },
   scss: {
-    indentation: '    ',
+    indentation: SCSS_INDENTATION,
     openingBracket: '(',
     closingBracket: ')',
   },

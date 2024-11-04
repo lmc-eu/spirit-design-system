@@ -139,7 +139,15 @@ describe('stylesGenerator', () => {
       ({ token, expectedStyles, hasParentPrefix, hasTokenPrefix, hasJsOutput }) => {
         const prefixTokens = Array.from(examplePrefixToken.values());
         const tokenPrefix = hasTokenPrefix ? findTokenPrefix(prefixTokens) : '';
-        const styles = tokenToStyleByType(token, mappedTokens, tokenGroups, tokenPrefix, hasParentPrefix, hasJsOutput);
+        const styles = tokenToStyleByType(
+          token,
+          mappedTokens,
+          tokenGroups,
+          tokenPrefix,
+          false,
+          hasParentPrefix,
+          hasJsOutput,
+        );
 
         expect(styles).toBe(expectedStyles);
       },
@@ -152,6 +160,7 @@ describe('stylesGenerator', () => {
         tokens: exampleDimensionAndStringTokens,
         groupName: 'Grid',
         hasJsOutput: false,
+        hasMixin: false,
         hasParentPrefix: true,
         hasTokenPrefix: false,
         description: 'should generate styles from tokens',
@@ -161,6 +170,7 @@ describe('stylesGenerator', () => {
         tokens: exampleDimensionAndStringTokens,
         groupName: 'Grid',
         hasJsOutput: true,
+        hasMixin: false,
         hasParentPrefix: true,
         hasTokenPrefix: false,
         description: 'should generate styles from tokens with js output',
@@ -170,15 +180,27 @@ describe('stylesGenerator', () => {
         tokens: exampleColorsTokens,
         groupName: '',
         hasJsOutput: false,
+        hasMixin: true,
         hasParentPrefix: false,
         hasTokenPrefix: false,
-        description: 'should generate styles from tokens with colors',
+        description: 'should generate styles from tokens with colors and mixin',
         expectedStyles: '$active: #ca2026 !default;\n\n$primary: #fff !default;',
       },
       {
         tokens: exampleColorsTokens,
         groupName: '',
+        hasJsOutput: false,
+        hasMixin: false,
+        hasParentPrefix: false,
+        hasTokenPrefix: true,
+        description: 'should generate styles from tokens with colors and without mixin',
+        expectedStyles: '$active: var(--spirit-color-active);\n\n$primary: var(--spirit-color-primary);',
+      },
+      {
+        tokens: exampleColorsTokens,
+        groupName: '',
         hasJsOutput: true,
+        hasMixin: true,
         hasParentPrefix: false,
         hasTokenPrefix: false,
         description: 'should generate styles from tokens with colors with js output',
@@ -188,6 +210,7 @@ describe('stylesGenerator', () => {
         tokens: exampleShadowTokens,
         groupName: '',
         hasJsOutput: false,
+        hasMixin: false,
         hasParentPrefix: false,
         hasTokenPrefix: true,
         description: 'should generate styles from tokens with shadows',
@@ -197,6 +220,7 @@ describe('stylesGenerator', () => {
         tokens: exampleShadowTokens,
         groupName: '',
         hasJsOutput: false,
+        hasMixin: false,
         hasParentPrefix: false,
         hasTokenPrefix: false,
         description: 'should generate styles from tokens with shadows',
@@ -206,6 +230,7 @@ describe('stylesGenerator', () => {
         tokens: exampleGradientTokens,
         groupName: '',
         hasJsOutput: false,
+        hasMixin: false,
         hasParentPrefix: false,
         hasTokenPrefix: true,
         description: 'should generate styles from tokens with gradients',
@@ -216,6 +241,7 @@ describe('stylesGenerator', () => {
         tokens: exampleGradientTokens,
         groupName: '',
         hasJsOutput: false,
+        hasMixin: false,
         hasParentPrefix: false,
         hasTokenPrefix: false,
         description: 'should generate styles from tokens with gradients',
@@ -226,7 +252,7 @@ describe('stylesGenerator', () => {
 
     it.each(dataProvider)(
       '$description',
-      ({ tokens, groupName, hasJsOutput, hasParentPrefix, hasTokenPrefix, expectedStyles }) => {
+      ({ tokens, groupName, hasJsOutput, hasMixin, hasParentPrefix, hasTokenPrefix, expectedStyles }) => {
         const prefixTokens = Array.from(examplePrefixToken.values());
         const tokenPrefix = hasTokenPrefix ? findTokenPrefix(prefixTokens) : '';
         const styles = generateStylesFromTokens(
@@ -235,6 +261,7 @@ describe('stylesGenerator', () => {
           tokenGroups,
           tokenPrefix,
           groupName,
+          hasMixin,
           hasParentPrefix,
           false,
           hasJsOutput,

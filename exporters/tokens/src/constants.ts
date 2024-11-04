@@ -1,0 +1,10 @@
+export const COLOR_JS_SUFFIX = 'Colors';
+export const COLOR_KEY = 'colors';
+export const COLOR_SCSS_SUFFIX = '-colors';
+export const GLOBAL_DIRECTORY = 'global-tokens';
+export const JS_DIRECTORY = 'js';
+export const JS_INDENTATION = '  ';
+export const SCSS_DIRECTORY = 'scss';
+export const SCSS_INDENTATION = '    ';
+export const THEMES_DIRECTORY = 'themes';
+export const TYPOGRAPHY_KEY = 'styles';

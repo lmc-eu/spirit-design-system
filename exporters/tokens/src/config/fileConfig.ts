@@ -5,6 +5,7 @@ export type FileData = {
   tokenTypes: TokenType[];
   groupNames?: string[];
   excludeGroupNames?: string[] | null;
+  hasMixin?: boolean;
   hasStylesObject?: boolean;
   hasParentPrefix?: boolean;
   sortByNumValue?: boolean;
@@ -59,5 +60,9 @@ export const themedFilesData: FileData[] = [
   {
     fileName: 'colors',
     tokenTypes: [TokenType.color],
+    hasMixin: true,
+    hasStylesObject: false,
   },
 ];
+
+export const commonThemedFilesData: FileData[] = [{ fileName: 'color-tokens', tokenTypes: [TokenType.color] }];

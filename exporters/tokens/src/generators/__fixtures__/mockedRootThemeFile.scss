@@ -1,12 +1,15 @@
+@use 'sass:meta';
 @use 'themes/theme-light';
 @use 'themes/theme-light-inverted';
 
 // The first theme is the default theme, as the left column in the Figma table.
 $themes: (
     theme-light: (
-        colors: theme-light.$colors,
+        variables: meta.module-variables(theme-light),
+        mixins: meta.module-mixins(theme-light),
     ),
     theme-light-inverted: (
-        colors: theme-light-inverted.$colors,
+        variables: meta.module-variables(theme-light-inverted),
+        mixins: meta.module-mixins(theme-light-inverted),
     ),
 );

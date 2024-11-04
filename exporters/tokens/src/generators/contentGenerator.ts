@@ -5,6 +5,7 @@ import { convertToJs, convertToScss, deepMergeObjects } from '../helpers/objectH
 import { generateStylesFromTokens } from './stylesGenerator';
 import { StylesObjectType, generateStylesObjectFromTokens } from './stylesObjectGenerator';
 import { findTokenPrefix } from '../helpers/findTokenPrefix';
+import { generateMixinFromTokens } from './mixinGenerator';
 
 // Add disclaimer to the top of the content
 export const addDisclaimer = (content: string): string => {
@@ -87,10 +88,12 @@ export const generateFileContent = (
 ) => {
   let styledTokens = '';
   let stylesObject: StylesObjectType = {};
+  let styledMixin = '';
   const {
     groupNames = [''],
     hasParentPrefix = true,
     sortByNumValue = false,
+    hasMixin = false,
     hasStylesObject = true,
     tokenTypes,
     excludeGroupNames = null,
@@ -112,11 +115,25 @@ export const generateFileContent = (
           tokenGroups,
           tokenPrefix,
           group,
+          hasMixin,
           hasParentPrefix,
           sortByNumValue,
           hasJsOutput,
         );
         styledTokens += '\n\n';
+      }
+
+      // Generate mixin
+      if (!hasJsOutput && hasMixin) {
+        styledMixin += generateMixinFromTokens(
+          filteredTokens,
+          mappedTokens,
+          tokenGroups,
+          tokenPrefix,
+          group,
+          hasParentPrefix,
+          sortByNumValue,
+        );
       }
 
       // Generate css object and merge it with the existing one
@@ -136,6 +153,10 @@ export const generateFileContent = (
   // convert css object to scss or js structure based on file extension
   if (hasStylesObject) {
     content += hasJsOutput ? generateJsObjectOutput(stylesObject) : generateScssObjectOutput(stylesObject);
+  }
+
+  if (!hasJsOutput && hasMixin) {
+    content += styledMixin;
   }
 
   return {
