@@ -2,12 +2,7 @@ import { Token, TokenGroup, TokenType, TypographyToken } from '@supernovaio/sdk-
 import { formatTypographyName, getBreakpoint, getTokenAlias, normalizeFirstNamePart } from '../helpers/objectHelper';
 import { tokenVariableName, typographyValue } from '../helpers/tokenHelper';
 import { toCamelCase } from '../helpers/stringHelper';
-
-export const COLOR_SCSS_SUFFIX = '-colors';
-export const COLOR_JS_SUFFIX = 'Colors';
-
-export const COLOR_KEY = 'colors';
-export const TYPOGRAPHY_KEY = 'styles';
+import { COLOR_JS_SUFFIX, COLOR_KEY, COLOR_SCSS_SUFFIX, TYPOGRAPHY_KEY } from '../constants';
 
 export type StylesObjectType = { [key: string]: (string | object) & { moveToTheEnd?: string } };
 
@@ -72,7 +67,7 @@ export const createStylesObjectStructureFromTokenNameParts = (
   const { tokenType } = token;
   const tokenNameParts = token.origin?.name?.split('/');
 
-  if (!tokenNameParts) {
+  if (!tokenNameParts || tokenNameParts.length <= 1) {
     return stylesObjectRef;
   }
 

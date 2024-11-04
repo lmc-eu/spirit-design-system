@@ -1,14 +1,9 @@
 import { TokenGroup, Token, Supernova, TokenTheme } from '@supernovaio/sdk-exporters';
 import { generateFileContent } from './contentGenerator';
-import { FileData, nonThemedFilesData, themedFilesData } from '../config/fileConfig';
+import { commonThemedFilesData, FileData, nonThemedFilesData, themedFilesData } from '../config/fileConfig';
 import { toCamelCase } from '../helpers/stringHelper';
 import { indentAndFormat } from '../formatters/stylesFormatter';
-import { COLOR_KEY } from './stylesObjectGenerator';
-
-export const THEMES_DIRECTORY = 'themes';
-export const GLOBAL_DIRECTORY = 'global';
-export const SCSS_DIRECTORY = 'scss';
-export const JS_DIRECTORY = 'js';
+import { GLOBAL_DIRECTORY, JS_DIRECTORY, SCSS_DIRECTORY, THEMES_DIRECTORY } from '../constants';
 
 export const generateFiles = (
   tokens: Array<Token>,
@@ -55,9 +50,12 @@ export const generateRootThemesFileImports = (themes: TokenTheme[], hasJsOutput:
 export const generateRootThemesFileContent = (themes: TokenTheme[], hasJsOutput: boolean): string => {
   return themes
     .map((theme) => {
+      const variables = `variables: meta.module-variables(${theme.name}),\n`;
+      const mixins = `mixins: meta.module-mixins(${theme.name}),\n`;
+
       return hasJsOutput
-        ? `${toCamelCase(theme.name)}: {\n${COLOR_KEY}: ${toCamelCase(theme.name)}.${COLOR_KEY},\n},`
-        : `${theme.name}: (\n${COLOR_KEY}: ${theme.name}.$${COLOR_KEY},\n),`;
+        ? `${toCamelCase(theme.name)}: {\ntokens: ${toCamelCase(theme.name)},\n},`
+        : `${theme.name}: (\n${variables}${mixins}),`;
     })
     .join('\n');
 };
@@ -67,7 +65,8 @@ export const generateThemesRootFile = (themes: TokenTheme[], hasJsOutput: boolea
   const themesContent = generateRootThemesFileContent(themes, hasJsOutput);
   const defaultThemeNote = '// The first theme is the default theme, as the left column in the Figma table.';
   const stylesObjectWrapper = hasJsOutput ? 'export const themes = {\n' : '$themes: (\n';
-  const content = `${imports}\n\n${defaultThemeNote}\n${stylesObjectWrapper}${themesContent}\n${hasJsOutput ? '};\n' : ');\n'}`;
+  const sassMetaImport = hasJsOutput ? '' : "@use 'sass:meta';\n";
+  const content = `${sassMetaImport}${imports}\n\n${defaultThemeNote}\n${stylesObjectWrapper}${themesContent}\n${hasJsOutput ? '};\n' : ');\n'}`;
 
   return indentAndFormat(content, hasJsOutput);
 };
@@ -110,8 +109,8 @@ export const generateOutputFilesByThemes = async (
   });
   outputFiles.push({
     path: `./${SCSS_DIRECTORY}/`,
-    fileName: '@global.scss',
-    content: `@forward '${GLOBAL_DIRECTORY}';\n`,
+    fileName: '@tokens.scss',
+    content: `@forward '${GLOBAL_DIRECTORY}';\n@forward '${THEMES_DIRECTORY}';\n`,
   });
   outputFiles.push({
     path: `./${JS_DIRECTORY}/`,
@@ -161,12 +160,26 @@ export const generateOutputFilesByThemes = async (
   // Generate root themes file
   const rootThemesFileContent = generateThemesRootFile(themes);
   const rootTsThemesFileContent = generateThemesRootFile(themes, true);
+  const rootScssThemesFile = `@forward 'color-tokens';\n`;
+  const colorTokensFile = generateFiles(tokens, mappedTokens, tokenGroups, commonThemedFilesData, false);
   outputFiles.push({ path: `./${SCSS_DIRECTORY}/`, fileName: '@themes.scss', content: rootThemesFileContent });
   outputFiles.push({
     path: `./${JS_DIRECTORY}/${THEMES_DIRECTORY}`,
     fileName: 'index.ts',
     content: rootTsThemesFileContent,
   });
+  outputFiles.push({
+    path: `./${SCSS_DIRECTORY}/${THEMES_DIRECTORY}`,
+    fileName: 'index.scss',
+    content: rootScssThemesFile,
+  });
+  outputFiles.push(
+    ...colorTokensFile.map((file) => ({
+      path: `./${SCSS_DIRECTORY}/${THEMES_DIRECTORY}`,
+      fileName: `_${file.fileName}.scss`,
+      content: file.content,
+    })),
+  );
 
   return outputFiles;
 };

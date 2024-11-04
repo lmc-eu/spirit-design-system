@@ -1,7 +1,8 @@
 import { Token, TokenType } from '@supernovaio/sdk-exporters';
-import { COLOR_SCSS_SUFFIX, StylesObjectType } from '../generators/stylesObjectGenerator';
+import { StylesObjectType } from '../generators/stylesObjectGenerator';
 import { handleInvariantTokenAlias } from './specialCaseHelper';
 import { toCamelCase, toPlural } from './stringHelper';
+import { COLOR_SCSS_SUFFIX } from '../constants';
 
 export const deepMergeObjects = (obj1: StylesObjectType, obj2: StylesObjectType): StylesObjectType => {
   // First, perform the deep merge logic
