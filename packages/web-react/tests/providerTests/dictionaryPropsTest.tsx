@@ -1,6 +1,8 @@
 import { render, waitFor } from '@testing-library/react';
 import React, { ComponentType } from 'react';
 import {
+  ActionButtonColorsDictionaryType,
+  ActionButtonColors,
   ActionColorsDictionaryType,
   ActionColors,
   ActionLinkColorsDictionaryType,
@@ -46,6 +48,18 @@ export const sizeExtendedPropsTest = (Component: ComponentType<any>, testId?: st
 export const actionColorPropsTest = (Component: ComponentType<any>, prefix: string, testId?: string) => {
   it.each([Object.values(ActionColors)])('should render action color %s', async (color) => {
     const dom = render(<Component color={color as ActionColorsDictionaryType<string>} />);
+
+    await waitFor(() => {
+      const element = getElement(dom, testId);
+      expect(element).toHaveClass(`${prefix}${color}`);
+    });
+  });
+};
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const actionButtonColorPropsTest = (Component: ComponentType<any>, prefix: string, testId?: string) => {
+  it.each([Object.values(ActionButtonColors)])('should render action color %s', async (color) => {
+    const dom = render(<Component color={color as ActionButtonColorsDictionaryType<string>} />);
 
     await waitFor(() => {
       const element = getElement(dom, testId);
