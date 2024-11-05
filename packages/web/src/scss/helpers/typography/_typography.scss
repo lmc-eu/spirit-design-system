@@ -1,8 +1,8 @@
 @use 'sass:map';
-@use '@global' as global-tokens;
+@use '@tokens' as tokens;
 @use '../../tools/typography';
 
-@each $style-name, $style-value in global-tokens.$styles {
+@each $style-name, $style-value in tokens.$styles {
     .typography-#{$style-name} {
         @include typography.generate($style-value);
     }
