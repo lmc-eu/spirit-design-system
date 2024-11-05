@@ -10,6 +10,7 @@ import { ButtonLink } from '@lmc-eu/spirit-web-react';
   <ButtonLink color="primary">Click me</ButtonLink>
   <ButtonLink color="secondary">Click me</ButtonLink>
   <ButtonLink color="tertiary">Click me</ButtonLink>
+  <ButtonLink color="plain">Click me</ButtonLink>
   <ButtonLink color="success">Click me</ButtonLink>
   <ButtonLink color="informative">Click me</ButtonLink>
   <ButtonLink color="warning">Click me</ButtonLink>
