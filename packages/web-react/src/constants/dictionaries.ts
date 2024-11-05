@@ -35,6 +35,7 @@ export const ActionButtonColors = {
   PRIMARY: 'primary',
   SECONDARY: 'secondary',
   TERTIARY: 'tertiary',
+  PLAIN: 'plain',
 } as const;
 
 export const ActionLinkColors = {

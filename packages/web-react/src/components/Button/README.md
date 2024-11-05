@@ -12,6 +12,7 @@ import { Button } from '@lmc-eu/spirit-web-react';
   <Button color="primary">Click me</Button>
   <Button color="secondary">Click me</Button>
   <Button color="tertiary">Click me</Button>
+  <Button color="plain">Click me</Button>
   <Button color="success">Click me</Button>
   <Button color="informative">Click me</Button>
   <Button color="warning">Click me</Button>

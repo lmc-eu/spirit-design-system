@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import {
-  actionColorPropsTest,
+  actionButtonColorPropsTest,
   emotionColorPropsTest,
   sizePropsTest,
 } from '../../../../tests/providerTests/dictionaryPropsTest';
@@ -15,7 +15,7 @@ import ButtonLink from '../ButtonLink';
 describe('ButtonLink', () => {
   classNamePrefixProviderTest(ButtonLink, 'Button');
 
-  actionColorPropsTest(ButtonLink, 'Button--');
+  actionButtonColorPropsTest(ButtonLink, 'Button--');
 
   emotionColorPropsTest(ButtonLink, 'Button--');
 
