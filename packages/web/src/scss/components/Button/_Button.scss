@@ -41,9 +41,7 @@
         background-color: var(--#{tokens.$css-variable-prefix}button-background-color-state-active);
     }
 
-    &:disabled,
-    &.is-disabled,
-    &.Button--disabled {
+    &:is(:disabled, .is-disabled, .Button--disabled) {
         pointer-events: none;
         cursor: cursors.$disabled;
     }
@@ -72,12 +70,16 @@
     padding-inline: 0;
 }
 
-.Button:disabled:not(.Button--loading),
-.Button.is-disabled:not(.Button--loading),
-.Button.Button--disabled:not(.Button--loading) {
+.Button:is(:disabled, .is-disabled, .Button--disabled):not(.Button--loading) {
     color: theme.$disabled-color;
     border-color: theme.$disabled-border-color;
     background-color: theme.$disabled-background-color;
+}
+
+// We need to override the default disabled styles for plain buttons, because we want them to be still plain.
+.Button--plain:is(:disabled, .is-disabled, .Button--disabled):not(.Button--loading) {
+    border-color: transparent;
+    background-color: transparent;
 }
 
 .Button.Button--loading {

@@ -6,6 +6,7 @@ Variants:
 <button type="button" class="Button Button--primary Button--medium">Primary Button</button>
 <button type="button" class="Button Button--secondary Button--medium">Secondary Button</button>
 <button type="button" class="Button Button--tertiary Button--medium">Tertiary Button</button>
+<button type="button" class="Button Button--plain Button--medium">Plain Button</button>
 <button type="button" class="Button Button--success Button--medium">Success button</button>
 <button type="button" class="Button Button--informative Button--medium">Informative button</button>
 <button type="button" class="Button Button--warning Button--medium">Warning button</button>
