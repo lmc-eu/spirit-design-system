@@ -1,5 +1,4 @@
-@use '@global' as global-tokens;
-@use '../settings/globals';
+@use '@tokens' as tokens;
 @use '../settings/links';
 
 @mixin base($set-color: false) {
@@ -7,7 +6,7 @@
     text-underline-offset: links.$text-underline-offset;
 
     @if $set-color {
-        color: var(--#{globals.$prefix}color-action-link-primary-default);
+        color: tokens.$link-primary-state-default;
     }
 
     @media (hover: hover) {
@@ -15,7 +14,7 @@
             text-decoration: links.$text-decoration-hover;
 
             @if $set-color {
-                color: var(--#{globals.$prefix}color-action-link-primary-hover);
+                color: tokens.$link-primary-state-hover;
             }
         }
     }
@@ -24,7 +23,7 @@
         text-decoration: links.$text-decoration-hover;
 
         @if $set-color {
-            color: var(--#{globals.$prefix}color-action-link-primary-active);
+            color: tokens.$link-primary-state-active;
         }
     }
 }
