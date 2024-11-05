@@ -1,9 +1,8 @@
 @use 'sass:list';
 @use 'sass:map';
+@use 'sass:meta';
 @use 'sass:string';
-
-// @use '@global' as global-tokens;
-@use '../settings/globals';
+@use '@tokens' as tokens;
 @use './alignment';
 @use './links';
 @use './list' as spirit-list;
