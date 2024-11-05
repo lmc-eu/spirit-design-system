@@ -6,9 +6,6 @@ $_placement-sides: top, bottom, left, right;
 $_placement-side-corners: top-start, top-end, bottom-start, bottom-end, left-start, left-end, right-start, right-end;
 $_size-extended: xsmall, xlarge;
 
-$action-colors: primary, secondary, tertiary, inverted;
-$action-button-colors: primary, secondary, tertiary;
-$action-link-colors: primary, secondary, inverted;
 $alignments-x: left, center, right;
 $alignments-x-extended: list.join($alignments-x, $_alignments-x-extended);
 $alignments-y: top, center, bottom;

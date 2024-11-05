@@ -8,28 +8,18 @@
 // 8. Disable link underline everywhere.
 
 @use 'sass:map';
-@use '@global' as global-tokens;
+@use '@tokens' as tokens;
 @use '../../settings/cursors';
-@use '../../settings/globals';
-
-// @use '../../settings/dictionaries' as dictionaries-settings;
+@use '../../settings/dictionaries' as dictionaries-settings;
 @use '../../settings/links' as links-settings;
-
-// @use '../../tools/dictionaries';
+@use '../../tools/dictionaries';
 @use '../../tools/links' as links-tools;
 
-// TODO
 // 1.
-// @include dictionaries.prepare-button-links(dictionaries-settings.$action-link-colors);
+@include dictionaries.prepare-button-links(links-settings.$colors);
 
-// TODO
 // 2.
-// @include dictionaries.generate-link-colors(
-//    '.link',
-//    dictionaries-settings.$action-link-colors,
-//    tokens.$action-colors,
-//    (default, hover, active, disabled)
-// );
+@include dictionaries.generate-link-colors($selector: '.link', $dictionary-values: links-settings.$colors);
 
 // 3.
 [class*='typography-heading'] a {
@@ -44,15 +34,20 @@
 }
 
 // 5.
+.link-allow-visited-style:visited {
+    color: tokens.$link-state-visited;
+}
+
+// 6.
 // stylelint-disable selector-no-qualifying-type -- Increase specificity to override button variant styles.
-.link-disabled,
-button.link-disabled {
+:is(.link-disabled, button.link-disabled),
+:is(.link-disabled, button.link-disabled):is(:hover, :focus, :active) {
+    color: tokens.$disabled-content;
     cursor: cursors.$disabled;
 }
 
 // 5.
-.link-disabled:not(.link-underlined),
-button.link-disabled:not(.link-underlined) {
+:is(.link-disabled, button.link-disabled):not(.link-underlined) {
     text-decoration: links-settings.$text-decoration-default;
 }
 // stylelint-enable selector-no-qualifying-type
@@ -64,26 +59,13 @@ button.link-disabled:not(.link-underlined) {
 
 // 7.
 [class*='typography-heading'] :visited {
-    color: var(--#{globals.$prefix}color-action-link-visited-default);
+    color: var(--#{global-tokens.$token-prefix}color-action-link-visited-default);
 }
-
-// TODO
-// 7.
-// @include dictionaries.generate-link-colors(
-//    '[class*="typography-heading"] .link',
-//    dictionaries-settings.$text-colors,
-//    tokens.$action-colors,
-//    visited
-// );
 
 // 8.
 // stylelint-disable selector-no-qualifying-type -- Increase specificity to override button variant styles.
-.link-not-underlined,
-.link-not-underlined:hover,
-.link-not-underlined:active,
-button.link-not-underlined,
-button.link-not-underlined:hover,
-button.link-not-underlined:active {
+:is(.link-not-underlined, button.link-not-underlined),
+:is(.link-not-underlined, button.link-not-underlined):is(:hover, :focus, :active) {
     text-decoration: links-settings.$text-decoration-default;
 }
 // stylelint-enable selector-no-qualifying-type
