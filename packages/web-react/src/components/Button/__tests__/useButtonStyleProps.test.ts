@@ -8,6 +8,7 @@ describe('useButtonStyleProps', () => {
     ['primary', 'medium', false, false, false, false, 'Button Button--primary Button--medium'],
     ['secondary', 'medium', false, false, false, false, 'Button Button--secondary Button--medium'],
     ['tertiary', 'medium', false, false, false, false, 'Button Button--tertiary Button--medium'],
+    ['plain', 'medium', false, false, false, false, 'Button Button--plain Button--medium'],
     ['danger', 'medium', false, false, false, false, 'Button Button--danger Button--medium'],
     ['primary', 'medium', true, false, false, false, 'Button Button--primary Button--medium Button--block'],
     ['primary', 'medium', false, true, false, false, 'Button Button--primary Button--medium Button--disabled'],
