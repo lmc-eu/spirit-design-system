@@ -1,9 +1,10 @@
-import { TokenGroup, Token, Supernova, TokenTheme } from '@supernovaio/sdk-exporters';
-import { generateFileContent } from './contentGenerator';
+import { Supernova, Token, TokenGroup, TokenTheme } from '@supernovaio/sdk-exporters';
 import { commonThemedFilesData, FileData, nonThemedFilesData, themedFilesData } from '../config/fileConfig';
-import { toCamelCase } from '../helpers/stringHelper';
-import { indentAndFormat } from '../formatters/stylesFormatter';
 import { GLOBAL_DIRECTORY, JS_DIRECTORY, SCSS_DIRECTORY, THEMES_DIRECTORY } from '../constants';
+import { indentAndFormat } from '../formatters/stylesFormatter';
+import { filterColorCollections } from '../helpers/colorHelper';
+import { toCamelCase } from '../helpers/stringHelper';
+import { generateFileContent } from './contentGenerator';
 
 export const generateFiles = (
   tokens: Array<Token>,
@@ -79,6 +80,7 @@ export const generateOutputFilesByThemes = async (
   sdk: Supernova,
 ): Promise<{ path: string; fileName: string; content: string }[]> => {
   const outputFiles: { path: string; fileName: string; content: string }[] = [];
+  const filteredColorCollections = filterColorCollections(tokens);
 
   // Generate global files for non-themed tokens
   const globalFiles = generateFiles(tokens, mappedTokens, tokenGroups, nonThemedFilesData);
@@ -121,7 +123,7 @@ export const generateOutputFilesByThemes = async (
   // Compute themed tokens for all themes in parallel
   const allThemes = await Promise.all(
     themes.map(async (theme) => {
-      const themedTokens = sdk.tokens.computeTokensByApplyingThemes(tokens, tokens, [theme]);
+      const themedTokens = sdk.tokens.computeTokensByApplyingThemes(tokens, filteredColorCollections, [theme]);
 
       return { themedTokens, theme };
     }),
@@ -161,7 +163,13 @@ export const generateOutputFilesByThemes = async (
   const rootThemesFileContent = generateThemesRootFile(themes);
   const rootTsThemesFileContent = generateThemesRootFile(themes, true);
   const rootScssThemesFile = `@forward 'color-tokens';\n`;
-  const colorTokensFile = generateFiles(tokens, mappedTokens, tokenGroups, commonThemedFilesData, false);
+  const colorTokensFile = generateFiles(
+    filteredColorCollections,
+    mappedTokens,
+    tokenGroups,
+    commonThemedFilesData,
+    false,
+  );
   outputFiles.push({ path: `./${SCSS_DIRECTORY}/`, fileName: '@themes.scss', content: rootThemesFileContent });
   outputFiles.push({
     path: `./${JS_DIRECTORY}/${THEMES_DIRECTORY}`,
