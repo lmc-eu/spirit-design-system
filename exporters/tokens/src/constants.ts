@@ -7,4 +7,6 @@ export const JS_INDENTATION = '  ';
 export const SCSS_DIRECTORY = 'scss';
 export const SCSS_INDENTATION = '    ';
 export const THEMES_DIRECTORY = 'themes';
+export const TOKEN_COLLECTION_NAME = 'Theme tokens';
+export const TOKEN_PROPERTY_NAME = 'Collection';
 export const TYPOGRAPHY_KEY = 'styles';

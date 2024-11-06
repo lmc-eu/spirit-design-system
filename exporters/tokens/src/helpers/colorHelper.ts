@@ -1,3 +1,6 @@
+import { Token, TokenType } from '@supernovaio/sdk-exporters';
+import { TOKEN_COLLECTION_NAME, TOKEN_PROPERTY_NAME } from '../constants';
+
 const HEX_COLOR_REGEX = /#([A-Fa-f0-9]{6,8})\b/g;
 const LONG_HEX_WITH_ALPHA_LENGTH = 8;
 const SHORT_HEX_WITH_ALPHA_LENGTH = 4;
@@ -72,4 +75,26 @@ export const transformColorsToVariables = (
     .replace(/0px/g, '0');
 
   return transformedValue;
+};
+
+export const filterColorCollections = (tokens: Token[]) => {
+  return tokens.filter((item) => {
+    // Include all tokens that are not of tokenType "Color"
+    if (item.tokenType !== TokenType.color) {
+      return true;
+    }
+
+    // Proceed with filtering for "Color" tokenType
+    const collectionProperty = item.properties.find((prop) => prop.name === TOKEN_PROPERTY_NAME);
+    if (!collectionProperty) {
+      return false;
+    }
+
+    const themeTokenOption = collectionProperty.options?.find((option) => option.name === TOKEN_COLLECTION_NAME);
+    if (!themeTokenOption) {
+      return false;
+    }
+
+    return item.propertyValues?.Collection === themeTokenOption.id;
+  });
 };
