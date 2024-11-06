@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.0.0-alpha.1"></a>
+
+# [3.0.0-alpha.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.0.0-alpha.0...@lmc-eu/spirit-web-react@3.0.0-alpha.1) (2024-11-06)
+
+### BREAKING CHANGES
+
+- **web-react:** Add the option to allow visited state in Link [#DS-1501](https://github.com/lmc-eu/spirit-design-system/issues/DS-1501) ([13b7485](https://github.com/lmc-eu/spirit-design-system/commit/13b7485))
+
+### Features
+
+- **web-react:** Rename spaces token object ([15d514c](https://github.com/lmc-eu/spirit-design-system/commit/15d514c))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="3.0.0-alpha.0"></a>
 
 # [3.0.0-alpha.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@2.5.1...@lmc-eu/spirit-web-react@3.0.0-alpha.0) (2024-10-17)

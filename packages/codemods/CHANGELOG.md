@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.2.0-alpha.1"></a>
+
+# [1.2.0-alpha.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@1.2.0-alpha.0...@lmc-eu/spirit-codemods@1.2.0-alpha.1) (2024-11-06)
+
+### Features
+
+- **codemods:** Add the option to allow visited state in Link [#DS-1501](https://github.com/lmc-eu/spirit-design-system/issues/DS-1501) ([98ba1da](https://github.com/lmc-eu/spirit-design-system/commit/98ba1da))
+- **codemods:** Introduce ToastBar color inverted to neutral codemod ([2225b32](https://github.com/lmc-eu/spirit-design-system/commit/2225b32))
+
+**Note:** Version bump only for package @lmc-eu/spirit-codemods
+
 <a name="1.2.0-alpha.0"></a>
 
 # [1.2.0-alpha.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@1.1.2...@lmc-eu/spirit-codemods@1.2.0-alpha.0) (2024-10-17)

@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.0.0-alpha.1"></a>
+
+# [4.0.0-alpha.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@4.0.0-alpha.0...@lmc-eu/spirit-web-twig@4.0.0-alpha.1) (2024-11-06)
+
+### BREAKING CHANGES
+
+- **web-twig:** Add the option to allow visited state in Link [#DS-1501](https://github.com/lmc-eu/spirit-design-system/issues/DS-1501) ([f2084b6](https://github.com/lmc-eu/spirit-design-system/commit/f2084b6))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="4.0.0-alpha.0"></a>
 
 # [4.0.0-alpha.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@3.4.1...@lmc-eu/spirit-web-twig@4.0.0-alpha.0) (2024-10-17)

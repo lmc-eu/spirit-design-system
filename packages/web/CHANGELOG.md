@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.0.0-alpha.1"></a>
+
+# [3.0.0-alpha.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.0.0-alpha.0...@lmc-eu/spirit-web@3.0.0-alpha.1) (2024-11-06)
+
+### BREAKING CHANGES
+
+- **web:** Add the option to allow visited state in Link [#DS-1501](https://github.com/lmc-eu/spirit-design-system/issues/DS-1501) ([6504f54](https://github.com/lmc-eu/spirit-design-system/commit/6504f54))
+
+### Code Refactoring
+
+- **web:** Unify generation of responsive spacing and alignment in layout components [#DS-1423](https://github.com/lmc-eu/spirit-design-system/issues/DS-1423) ([e20f3a9](https://github.com/lmc-eu/spirit-design-system/commit/e20f3a9))
+
+### Documentation
+
+- **web:** Document usage of the updated design tokens and themes [#DS-1489](https://github.com/lmc-eu/spirit-design-system/issues/DS-1489) ([19372da](https://github.com/lmc-eu/spirit-design-system/commit/19372da))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="3.0.0-alpha.0"></a>
 
 # [3.0.0-alpha.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@2.5.1...@lmc-eu/spirit-web@3.0.0-alpha.0) (2024-10-17)

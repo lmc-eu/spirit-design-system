@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.0-alpha.1"></a>
+
+# [1.0.0-alpha.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo-app@1.0.0-alpha.0...@lmc-eu/spirit-demo-app@1.0.0-alpha.1) (2024-11-06)
+
+### Features
+
+- **web:** Remove `spirit-` prefix from themes ([29ededb](https://github.com/lmc-eu/spirit-design-system/commit/29ededb))
+
+**Note:** Version bump only for package @lmc-eu/spirit-demo-app
+
 <a name="1.0.0-alpha.0"></a>
 
 # [1.0.0-alpha.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo-app@0.0.8...@lmc-eu/spirit-demo-app@1.0.0-alpha.0) (2024-10-17)

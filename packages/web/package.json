@@ -1,6 +1,6 @@
 {
   "name": "@lmc-eu/spirit-web",
-  "version": "3.0.0-alpha.0",
+  "version": "3.0.0-alpha.1",
   "description": "CSS and vanilla JS implementation of Spirit Design System",
   "license": "MIT",
   "engines": {
