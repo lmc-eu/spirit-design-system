@@ -17,6 +17,7 @@ Introducing version 3 of the _spirit-web_ package.
   - [Button: Renamed `square` Modifier](#button-square-modifier-renamed-to-symmetrical)
   - [Button: The `inverted` Modifier Removed](#button-the-inverted-modifier-removed)
   - [Field Group: Alignment](#field-group-alignment)
+  - [Flex: Change in Spacing Property](#flex-change-in-spacing-property)
   - [Header: The `inverted` Variant Removed](#header-the-inverted-variant-removed)
   - [Link: The `link-allow-visited` class added](#link-the-link-allow-visited-class-added)
   - [Partner Logo: Stabilized](#partner-logo-stabilized)
@@ -209,6 +210,25 @@ Button `inverted` modifier was removed. Use themes to switch the button colors.
 ### Field Group: Alignment
 
 Field Group component children are not aligned to `start` except when the `FieldGroup--fluid` modifier is used.
+
+### Flex: Change in Spacing Property
+
+The original property `--flex-spacing` has been replaced to allow separate control over spacing on the x and y axes.
+You can now use the properties `--flex-spacing-x` and `--flex-spacing-y` to apply spacing only on the x-axis or y-axis, respectively.
+
+Similarly, when applying responsive spacing for a specific breakpoint, the previous property `--flex-spacing-{breakpoint}` has been replaced.
+You should now use `--flex-spacing-x-{breakpoint}` for horizontal spacing or `--flex-spacing-y-{breakpoint}` for vertical spacing from that specific breakpoint upwards.
+
+#### Migration Guide
+
+To separate spacing on the x and y axes, please manually replace the original `--flex-spacing` property with `--flex-spacing-x` and/or `--flex-spacing-y`,
+depending on the axis you want to apply the spacing to.
+
+- `<div class="Flex …" style="--flex-spacing: var(--spirit-space-1200)">` → `<div class="Flex …" style="--flex-spacing-x: var(--spirit-space-1200)">`
+
+- For breakpoint-specific spacing, replace `--flex-spacing-{breakpoint}` with `--flex-spacing-x-{breakpoint}` and/or `--flex-spacing-y-{breakpoint}`.
+
+- `<div class="Flex …" style="--flex-spacing-tablet: var(--spirit-space-1000)">` → `<div class="Flex …" style="--flex-spacing-x-tablet: var(--spirit-space-1000); --flex-spacing-y-tablet: var(--spirit-space-1000);">`
 
 ### Header: The `inverted` Variant Removed
 
