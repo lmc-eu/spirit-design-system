@@ -123,7 +123,7 @@ publish:
 	@$(eval pkg ?=)
 	@$(eval dist-tag := $(strip $(dist-tag)))
 	@if [ -n "$(dist-tag)" ]; then \
-		$(PKG_EXECUTE) $(MONOREPO_TOOL) publish dist-tag=$(dist-tag) from-package --yes $(MONOREPO_TOOL_FLAGS); \
+		$(PKG_EXECUTE) $(MONOREPO_TOOL) publish from-package --dist-tag $(dist-tag) --yes $(MONOREPO_TOOL_FLAGS); \
 	else \
 		$(PKG_EXECUTE) $(MONOREPO_TOOL) publish from-package --yes $(MONOREPO_TOOL_FLAGS); \
 	fi
