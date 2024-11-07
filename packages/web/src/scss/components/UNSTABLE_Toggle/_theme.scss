@@ -24,11 +24,11 @@ $input-mark-border-radius: tokens.$radius-full;
 $input-mark-background-color: tokens.$component-toggle-unselected-content;
 $input-mark-background-color-checked: tokens.$component-toggle-selected-content;
 $input-mark-background-color-state-disabled: tokens.$disabled-foreground;
-$input-mark-image: var(--#{tokens.$token-prefix}toggle-input-mark-background-image-url);
-$input-mark-image-state-checked: var(--#{tokens.$token-prefix}toggle-input-mark-checked-background-image-url);
-$input-mark-image-state-disabled: var(--#{tokens.$token-prefix}toggle-input-mark-disabled-background-image-url);
+$input-mark-image: var(--#{tokens.$css-variable-prefix}toggle-input-mark-background-image-url);
+$input-mark-image-state-checked: var(--#{tokens.$css-variable-prefix}toggle-input-mark-checked-background-image-url);
+$input-mark-image-state-disabled: var(--#{tokens.$css-variable-prefix}toggle-input-mark-disabled-background-image-url);
 $input-mark-image-state-checked-disabled: var(
-    --#{tokens.$token-prefix}toggle-input-mark-checked-disabled-background-image-url
+    --#{tokens.$css-variable-prefix}toggle-input-mark-checked-disabled-background-image-url
 );
 $input-mark-shadow: tokens.$shadow-200;
 
