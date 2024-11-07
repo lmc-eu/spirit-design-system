@@ -448,10 +448,16 @@ class FormValidations {
       input.setAttribute('aria-describedby', errorId);
       input.setAttribute('aria-invalid', 'true');
     }
+
     if (validationTextElement) {
       validationTextElement.setAttribute('id', errorId);
       validationTextElement.setAttribute('role', 'alert');
-      validationTextElement.innerHTML = field.errors?.join('<br/>') || '';
+      const errorMessages = field.errors || [];
+      const errorListHTML =
+        errorMessages.length > 1
+          ? `<ul>${errorMessages.map((error) => `<li>${error}</li>`).join('')}</ul>`
+          : errorMessages[0];
+      validationTextElement.innerHTML = errorListHTML;
       validationTextElement.style.display = validationTextElement.formValidationsDisplay || '';
     }
   }
