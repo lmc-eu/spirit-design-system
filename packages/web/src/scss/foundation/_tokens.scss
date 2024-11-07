@@ -20,6 +20,6 @@ $tokens: (
     --spirit-border-width-200: #{tokens.$border-width-200};
 
     @each $key, $value in $tokens {
-        @include tokens-tools.generate-css-variables($map: $value, $prefix: '#{tokens.$token-prefix}#{$key}');
+        @include tokens-tools.generate-css-variables($map: $value, $prefix: 'spirit-#{$key}');
     }
 }
