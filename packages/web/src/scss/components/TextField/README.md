@@ -216,10 +216,12 @@ a JS interaction class when controlled by JavaScript (`has-success`,
     placeholder="Placeholder"
     value="Filled"
   />
-  <ul class="TextField__validationText">
-    <li>Validation text</li>
-    <li>Second validation text</li>
-  </ul>
+  <div class="TextField__validationText">
+    <ul>
+      <li>Validation text</li>
+      <li>Second validation text</li>
+    </ul>
+  </div>
 </div>
 ```
 

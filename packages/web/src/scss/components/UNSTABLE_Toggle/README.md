@@ -144,7 +144,7 @@ a JS interaction class when controlled by JavaScript (`has-success`,
 
 When implementing client-side form validation, use JS interaction state classes
 (`has-success`, `has-warning`, `has-danger`) on the wrapping `<div>` element and
-render validation texts in a `<div>` or `<ul>` with `data-spirit-element="validation_text"`
+render validation texts in a `<div>` with `data-spirit-element="validation_text"`
 attribute. This way your JS remains disconnected from CSS that may or may not be
 [prefixed][prefixed].
 
@@ -171,6 +171,17 @@ components mix CSS with JS by design and handle prefixes their own way.**
     aria-describedby="toggle-success-validation-text"
   />
 </label>
+```
+
+To render validation text as a list, use `<ul>` element inside of `<div>`.
+
+```html
+<div class="UNSTABLE_Toggle__validationText" id="toggle-success-validation-text" data-spirit-element="validation_text">
+  <ul>
+    <li>First validation text</li>
+    <li>Second validation text</li>
+  </ul>
+</div>
 ```
 
 ## Disabled State

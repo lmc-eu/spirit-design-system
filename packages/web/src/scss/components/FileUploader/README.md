@@ -208,6 +208,21 @@ When validated on server:
 </div>
 ```
 
+To render validation text as a list, use `<ul>` element inside of `<div>`.
+
+```html
+<div class="FileUploaderInput FileUploaderInput--success" data-spirit-element="wrapper">
+  <!-- Label -->
+  <!-- Drop zone with input -->
+  <div class="FileUploaderInput__validationText">
+    <ul>
+      <li>First validation text</li>
+      <li>Second validation text</li>
+    </ul>
+  </div>
+</div>
+```
+
 ### Disabled State
 
 You can turn on the disabled state by adding the `disabled` attribute to the native `input`
