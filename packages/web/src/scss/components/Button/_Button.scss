@@ -11,18 +11,18 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    height: var(--#{tokens.$token-prefix}button-height);
-    padding-inline: var(--#{tokens.$token-prefix}button-padding-x);
-    padding-block: var(--#{tokens.$token-prefix}button-padding-y);
+    height: var(--#{tokens.$css-variable-prefix}button-height);
+    padding-inline: var(--#{tokens.$css-variable-prefix}button-padding-x);
+    padding-block: var(--#{tokens.$css-variable-prefix}button-padding-y);
     text-align: center;
     text-decoration: none;
     vertical-align: middle;
-    color: var(--#{tokens.$token-prefix}button-color);
+    color: var(--#{tokens.$css-variable-prefix}button-color);
     border-width: theme.$border-width;
     border-style: theme.$border-style;
-    border-color: var(--#{tokens.$token-prefix}button-border-color);
+    border-color: var(--#{tokens.$css-variable-prefix}button-border-color);
     border-radius: theme.$border-radius;
-    background-color: var(--#{tokens.$token-prefix}button-background-color);
+    background-color: var(--#{tokens.$css-variable-prefix}button-background-color);
     user-select: none;
     cursor: cursors.$buttons;
 
@@ -30,15 +30,15 @@
     &:active,
     &:focus {
         text-decoration: none;
-        color: var(--#{tokens.$token-prefix}button-color);
+        color: var(--#{tokens.$css-variable-prefix}button-color);
     }
 
     &:hover {
-        background-color: var(--#{tokens.$token-prefix}button-background-color-state-hover);
+        background-color: var(--#{tokens.$css-variable-prefix}button-background-color-state-hover);
     }
 
     &:active {
-        background-color: var(--#{tokens.$token-prefix}button-background-color-state-active);
+        background-color: var(--#{tokens.$css-variable-prefix}button-background-color-state-active);
     }
 
     &:disabled,
@@ -98,6 +98,6 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    color: var(--#{tokens.$token-prefix}button-color);
+    color: var(--#{tokens.$css-variable-prefix}button-color);
     transform: translate(-50%, -50%);
 }
