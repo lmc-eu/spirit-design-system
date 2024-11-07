@@ -144,13 +144,15 @@ Validation states can be presented either by adding a CSS modifier class (`Field
 </fieldset>
 ```
 
-To render validation text as a list, use `<ul>` element instead of `<div>`.
+To render validation text as a list, use `<ul>` element inside of `<div>`.
 
 ```html
-<ul id="field-group-danger-validation-text" class="FieldGroup__validationText">
-  <li>First validation text</li>
-  <li>Second validation text</li>
-</ul>
+<div id="field-group-danger-validation-text" class="FieldGroup__validationText">
+  <ul>
+    <li>First validation text</li>
+    <li>Second validation text</li>
+  </ul>
+</div>
 ```
 
 👉 To improve the UX for users with assistive technologies, connect the validation text to the group using the

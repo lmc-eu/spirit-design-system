@@ -4,6 +4,7 @@
 @use '../settings/cursors';
 @use '../theme/form-fields' as form-fields-theme;
 @use 'accessibility';
+@use 'reset';
 @use 'typography';
 
 @mixin label-disabled() {
@@ -36,7 +37,10 @@
 
     display: block;
     margin-top: form-fields-theme.$validation-text-margin-top;
-    list-style: none;
+
+    & > ul {
+        @include reset.list();
+    }
 }
 
 @mixin validation-text-disabled() {

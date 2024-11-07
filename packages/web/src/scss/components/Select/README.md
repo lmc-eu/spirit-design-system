@@ -193,10 +193,12 @@ a JS interaction class when controlled by JavaScript (`has-success`,
       </svg>
     </div>
   </div>
-  <ul class="Select__validationText">
-    <li>First validation text</li>
-    <li>Second validation text</li>
-  </ul>
+  <div class="Select__validationText">
+    <ul>
+      <li>First validation text</li>
+      <li>Second validation text</li>
+    </ul>
+  </div>
 </div>
 ```
 
