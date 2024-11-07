@@ -6,21 +6,21 @@
 
 .Tag {
     display: inline-block;
-    padding-inline: var(--#{tokens.$token-prefix}tag-padding-x);
-    padding-block: var(--#{tokens.$token-prefix}tag-padding-y);
+    padding-inline: var(--#{tokens.$css-variable-prefix}tag-padding-x);
+    padding-block: var(--#{tokens.$css-variable-prefix}tag-padding-y);
     text-align: center;
-    color: var(--#{tokens.$token-prefix}tag-color);
+    color: var(--#{tokens.$css-variable-prefix}tag-color);
     border-width: theme.$border-width;
     border-style: theme.$border-style;
-    border-color: var(--#{tokens.$token-prefix}tag-border-color);
+    border-color: var(--#{tokens.$css-variable-prefix}tag-border-color);
     border-radius: theme.$border-radius;
-    background-color: var(--#{tokens.$token-prefix}tag-background-color);
+    background-color: var(--#{tokens.$css-variable-prefix}tag-background-color);
 }
 
 .Tag--subtle {
-    color: var(--#{tokens.$token-prefix}tag-subtle-color);
-    border-color: var(--#{tokens.$token-prefix}tag-subtle-border-color);
-    background-color: var(--#{tokens.$token-prefix}tag-subtle-background-color);
+    color: var(--#{tokens.$css-variable-prefix}tag-subtle-color);
+    border-color: var(--#{tokens.$css-variable-prefix}tag-subtle-border-color);
+    background-color: var(--#{tokens.$css-variable-prefix}tag-subtle-background-color);
 }
 
 @include dictionaries.generate-colors(
