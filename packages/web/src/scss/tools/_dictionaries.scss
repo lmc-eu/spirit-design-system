@@ -61,8 +61,8 @@
                         #{$dictionary-group-name}-#{$dictionary-item-name}
                     );
 
-                    --#{tokens.$token-prefix}#{$component-infix}-#{$property-name}: var(
-                        --#{tokens.$token-prefix}color-#{$color-group}-#{$property-value}
+                    --#{tokens.$css-variable-prefix}#{$component-infix}-#{$property-name}: var(
+                        --#{tokens.$css-variable-prefix}color-#{$color-group}-#{$property-value}
                     );
                 }
             }
@@ -101,9 +101,9 @@
 
             #{$selector}-#{string.unquote($variant-class)} {
                 color: var(
-                    --#{tokens.$token-prefix}color-link-#{string.unquote($dictionary-value)}-state-#{string.unquote(
-                            $state
-                        )}
+                    --#{tokens.$css-variable-prefix}color-link-#{string.unquote(
+                            $dictionary-value
+                        )}-state-#{string.unquote($state)}
                 );
             }
         }
@@ -151,7 +151,7 @@
                 @if $variable-key == 'typography' {
                     @include typography.generate($variable-value);
                 } @else {
-                    --#{tokens.$token-prefix}#{$component-infix}-#{$variable-key}: #{$variable-value};
+                    --#{tokens.$css-variable-prefix}#{$component-infix}-#{$variable-key}: #{$variable-value};
                 }
             }
         }
