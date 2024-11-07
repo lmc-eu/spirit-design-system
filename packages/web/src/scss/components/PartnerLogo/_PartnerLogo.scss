@@ -3,7 +3,7 @@
 @use '../../tools/dictionaries';
 
 .PartnerLogo {
-    --#{tokens.$token-prefix}partner-logo-padding: 0;
+    --#{tokens.$css-variable-prefix}partner-logo-padding: 0;
 
     display: inline-block;
     max-width: 100%;
@@ -15,11 +15,11 @@
 .PartnerLogo > img,
 .PartnerLogo > svg {
     width: fit-content;
-    height: var(--#{tokens.$token-prefix}partner-logo-image-height);
+    height: var(--#{tokens.$css-variable-prefix}partner-logo-image-height);
 }
 
 @include dictionaries.generate-sizes($class-name: 'PartnerLogo', $sizes: theme.$sizes);
 
 .PartnerLogo--safeArea {
-    padding: var(--#{tokens.$token-prefix}partner-logo-padding);
+    padding: var(--#{tokens.$css-variable-prefix}partner-logo-padding);
 }
