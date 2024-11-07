@@ -13,7 +13,7 @@ $box-shadow: tokens.$shadow-400;
 $transition-duration: transitions.$duration-200;
 $transition-scale-ratio: transitions.$scale-ratio-small-objects;
 
-$arrow-shape: var(--#{tokens.$token-prefix}tooltip-arrow-background-image-url);
+$arrow-shape: var(--#{tokens.$css-variable-prefix}tooltip-arrow-background-image-url);
 $arrow-width: 13px;
 $arrow-height: 8px;
 $arrow-corner-offset: tokens.$space-600;
