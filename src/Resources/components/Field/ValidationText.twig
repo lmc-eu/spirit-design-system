@@ -12,11 +12,13 @@
 
 {% if _validationState and _validationText and not _unsafeValidationText %}
     {%- if _validationText is iterable -%}
-        <ul class="{{ _className }}" {{ _idAttr | raw }}>
-            {% for _validationTextItem in _validationText %}
-                <li>{{ _validationTextItem }}</li>
-            {% endfor %}
-        </ul>
+        <{{ _elementType }} class="{{ _className }}" {{ _idAttr | raw }}>
+            <ul>
+                {% for _validationTextItem in _validationText %}
+                    <li>{{ _validationTextItem }}</li>
+                {% endfor %}
+            </ul>
+        </{{ _elementType }}>
     {% else %}
         <{{ _elementType }} class="{{ _className }}" {{ _idAttr | raw }}>
             {{ _validationText }}
@@ -25,11 +27,13 @@
 {% endif %}
 {% if _validationState and _unsafeValidationText %}
     {%- if _unsafeValidationText is iterable -%}
-        <ul class="{{ _className }}" {{ _idAttr | raw }}>
-            {% for _validationTextItem in _unsafeValidationText %}
-                <li>{{ _validationTextItem | raw }}</li>
-            {% endfor %}
-        </ul>
+        <{{ _elementType }} class="{{ _className }}" {{ _idAttr | raw }}>
+            <ul>
+                {% for _validationTextItem in _unsafeValidationText %}
+                    <li>{{ _validationTextItem | raw }}</li>
+                {% endfor %}
+            </ul>
+        </{{ _elementType }}>
     {% else %}
         <{{ _elementType }} class="{{ _className }}" {{ _idAttr | raw }}>
             {{ _unsafeValidationText | raw }}
