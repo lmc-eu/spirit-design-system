@@ -6,8 +6,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: var(--#{tokens.$token-prefix}avatar-width);
-    height: var(--#{tokens.$token-prefix}avatar-height);
+    width: var(--#{tokens.$css-variable-prefix}avatar-width);
+    height: var(--#{tokens.$css-variable-prefix}avatar-height);
     overflow: hidden;
     text-decoration: none;
     color: theme.$color;
