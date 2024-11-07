@@ -1,6 +1,6 @@
 import { StringToken, Token, TokenType } from '@supernovaio/sdk-exporters';
 
-const TOKEN_PREFIX_NAME = 'token-prefix';
+const TOKEN_PREFIX_NAME = 'css-variable-prefix';
 
 export const findTokenPrefix = (tokens: Token[]): string => {
   const prefixToken = tokens.find(
