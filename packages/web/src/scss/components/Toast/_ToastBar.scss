@@ -33,9 +33,9 @@
 .ToastBar__box {
     max-width: theme.$bar-max-width;
     padding: theme.$bar-padding;
-    color: var(--#{tokens.$token-prefix}toast-bar-color);
+    color: var(--#{tokens.$css-variable-prefix}toast-bar-color);
     border-radius: theme.$bar-border-radius;
-    background-color: var(--#{tokens.$token-prefix}toast-bar-background-color);
+    background-color: var(--#{tokens.$css-variable-prefix}toast-bar-background-color);
     box-shadow: theme.$bar-box-shadow;
     pointer-events: var(--toast-bar-pointer-events, initial); // 3.
 
