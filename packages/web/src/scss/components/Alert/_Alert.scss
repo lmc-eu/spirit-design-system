@@ -12,12 +12,12 @@
     justify-content: flex-start;
     width: 100%;
     padding: theme.$padding;
-    color: var(--#{tokens.$token-prefix}alert-color);
+    color: var(--#{tokens.$css-variable-prefix}alert-color);
     border-width: theme.$border-width;
     border-style: theme.$border-style;
-    border-color: var(--#{tokens.$token-prefix}alert-border-color);
+    border-color: var(--#{tokens.$css-variable-prefix}alert-border-color);
     border-radius: theme.$border-radius;
-    background-color: var(--#{tokens.$token-prefix}alert-background-color);
+    background-color: var(--#{tokens.$css-variable-prefix}alert-background-color);
 }
 
 .Alert--center {
@@ -32,15 +32,15 @@
 );
 
 .Alert :where(a) {
-    color: var(--#{tokens.$token-prefix}alert-color);
+    color: var(--#{tokens.$css-variable-prefix}alert-color);
 
     @media (hover: hover) {
         &:hover {
-            color: var(--#{tokens.$token-prefix}alert-color);
+            color: var(--#{tokens.$css-variable-prefix}alert-color);
         }
     }
 
     &:active {
-        color: var(--#{tokens.$token-prefix}alert-color);
+        color: var(--#{tokens.$css-variable-prefix}alert-color);
     }
 }
