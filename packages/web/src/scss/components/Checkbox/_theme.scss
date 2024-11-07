@@ -3,9 +3,9 @@
 $input-border-radius: tokens.$radius-200;
 $input-width: 18px;
 $input-margin: 3px;
-$input-checked-mark: var(--#{tokens.$token-prefix}checkbox-input-background-image-url);
-$input-checked-mark-disabled: var(--#{tokens.$token-prefix}checkbox-input-disabled-background-image-url);
-$input-indeterminate-mark: var(--#{tokens.$token-prefix}checkbox-input-indeterminate-background-image-url);
+$input-checked-mark: var(--#{tokens.$css-variable-prefix}checkbox-input-background-image-url);
+$input-checked-mark-disabled: var(--#{tokens.$css-variable-prefix}checkbox-input-disabled-background-image-url);
+$input-indeterminate-mark: var(--#{tokens.$css-variable-prefix}checkbox-input-indeterminate-background-image-url);
 $input-indeterminate-mark-disabled: var(
-    --#{tokens.$token-prefix}checkbox-input-indeterminate-disabled-background-image-url
+    --#{tokens.$css-variable-prefix}checkbox-input-indeterminate-disabled-background-image-url
 );
