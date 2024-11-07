@@ -2,6 +2,7 @@
 @use '../../settings/cursors';
 @use '../../theme/form-fields' as form-fields-theme;
 @use '../../tools/form-fields' as form-fields-tools;
+@use '../../tools/reset';
 
 $_field-name: 'UNSTABLE_Toggle';
 
