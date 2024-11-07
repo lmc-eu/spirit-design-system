@@ -106,9 +106,20 @@ a JS interaction class when controlled by JavaScript (`has-success`,
 <div class="TextArea has-danger">
   <label for="text-area-danger-has-danger" class="TextArea__label">Label</label>
   <textarea id="text-area-danger-has-danger" class="TextArea__input" name="hasDanger" placeholder="Placeholder">
-Filled</textarea
-  >
+    Filled
+  </textarea>
   <div class="TextArea__validationText">Danger validation text</div>
+</div>
+```
+
+To render validation text as a list, use `<ul>` element inside of `<div>`.
+
+```html
+<div class="TextArea__validationText">
+  <ul>
+    <li>First validation text</li>
+    <li>Second validation text</li>
+  </ul>
 </div>
 ```
 

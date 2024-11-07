@@ -160,10 +160,12 @@ a JS interaction class when controlled by JavaScript (`has-success`,
     value="30"
     oninput="this.style.setProperty('--slider-position', `${Math.round((100 * this.value) / 100)}%`);"
   />
-  <ul id="slider-danger-validation-text" class="UNSTABLE_Slider__validationText">
-    <li>First validation text</li>
-    <li>Second validation text</li>
-  </ul>
+  <div id="slider-danger-validation-text" class="UNSTABLE_Slider__validationText">
+    <ul>
+      <li>First validation text</li>
+      <li>Second validation text</li>
+    </ul>
+  </div>
 </div>
 ```
 
@@ -171,7 +173,7 @@ a JS interaction class when controlled by JavaScript (`has-success`,
 
 When implementing client-side form validation, use JS interaction state classes
 (`has-success`, `has-warning`, `has-danger`) on the wrapping `<div>` element and
-render validation texts in a `<div>` or `<ul>` with `data-spirit-element="validation_text"`
+render validation texts in a `<div>` with `data-spirit-element="validation_text"`
 attribute. This way your JS remains disconnected from CSS that may or may not be
 [prefixed][prefixed].
 

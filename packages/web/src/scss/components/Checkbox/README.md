@@ -39,10 +39,12 @@ See Validation state [dictionary][dictionary-validation].
   <input type="checkbox" id="checkbox-danger" class="Checkbox__input" name="danger" />
   <span class="Checkbox__text">
     <span class="Checkbox__label">Checkbox Label</span>
-    <ul class="Checkbox__validationText">
-      <li>First validation text</li>
-      <li>Second validation text</li>
-    </ul>
+    <div class="Checkbox__validationText">
+      <ul>
+        <li>First validation text</li>
+        <li>Second validation text</li>
+      </ul>
+    </div>
   </span>
 </label>
 ```
