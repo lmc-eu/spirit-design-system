@@ -11,9 +11,9 @@
     height: 1rem;
     padding: theme.$padding-y theme.$padding-x;
     text-align: center;
-    color: var(--#{tokens.$token-prefix}pill-color);
+    color: var(--#{tokens.$css-variable-prefix}pill-color);
     border-radius: theme.$border-radius;
-    background-color: var(--#{tokens.$token-prefix}pill-background-color);
+    background-color: var(--#{tokens.$css-variable-prefix}pill-background-color);
 }
 
 @include dictionaries.generate-colors(
