@@ -8,7 +8,7 @@ import { ChildrenProps, StyleProps, TransferProps } from '../../types';
 
 export interface ContainerProps extends ChildrenProps, StyleProps, TransferProps {}
 
-export const Container = ({ children, ...restProps }: ContainerProps): JSX.Element => {
+const Container = ({ children, ...restProps }: ContainerProps): JSX.Element => {
   const containerClass = useClassNamePrefix('Container');
   const { styleProps, props: otherProps } = useStyleProps(restProps);
 

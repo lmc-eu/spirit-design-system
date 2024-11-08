@@ -1,6 +1,6 @@
 import React from 'react';
 import { ButtonLink } from '../../Button';
-import { UNSTABLE_ActionLayout } from '../index';
+import UNSTABLE_ActionLayout from '../UNSTABLE_ActionLayout';
 
 const ActionLayoutDefault = () => (
   <UNSTABLE_ActionLayout>

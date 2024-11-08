@@ -6,7 +6,7 @@ import { useStyleProps } from '../../hooks';
 import { SpiritDividerProps } from '../../types';
 import { useDividerStyleProps } from './useDividerStyleProps';
 
-export const Divider = (props: SpiritDividerProps): JSX.Element => {
+const Divider = (props: SpiritDividerProps): JSX.Element => {
   const { classProps, props: modifiedProps } = useDividerStyleProps(props);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
 

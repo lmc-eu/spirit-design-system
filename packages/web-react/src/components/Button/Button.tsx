@@ -50,6 +50,6 @@ const _Button = <T extends ElementType = 'button', C = void, S = void>(
   );
 };
 
-export const Button = forwardRef<HTMLButtonElement, SpiritButtonProps<ElementType>>(_Button);
+const Button = forwardRef<HTMLButtonElement, SpiritButtonProps<ElementType>>(_Button);
 
 export default Button;

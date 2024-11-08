@@ -29,6 +29,6 @@ const _ToastBarLink = (props: ToastLinkProps, ref: ForwardedRef<HTMLAnchorElemen
   );
 };
 
-export const ToastBarLink = forwardRef<HTMLAnchorElement, ToastLinkProps>(_ToastBarLink);
+const ToastBarLink = forwardRef<HTMLAnchorElement, ToastLinkProps>(_ToastBarLink);
 
 export default ToastBarLink;

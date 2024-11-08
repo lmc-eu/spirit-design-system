@@ -6,7 +6,7 @@ import { sizeExtendedPropsTest } from '../../../../tests/providerTests/dictionar
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { Icon } from '../../Icon';
-import { UNSTABLE_Avatar } from '../UNSTABLE_Avatar';
+import UNSTABLE_Avatar from '../UNSTABLE_Avatar';
 
 describe('UNSTABLE_Avatar', () => {
   classNamePrefixProviderTest(UNSTABLE_Avatar, 'UNSTABLE_Avatar');

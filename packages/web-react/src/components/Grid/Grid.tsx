@@ -13,7 +13,7 @@ const defaultProps: Partial<SpiritGridProps> = {
   elementType: 'div',
 };
 
-export const Grid = <T extends ElementType = 'div'>(props: SpiritGridProps<T>): JSX.Element => {
+const Grid = <T extends ElementType = 'div'>(props: SpiritGridProps<T>): JSX.Element => {
   const propsWithDefaults = { ...defaultProps, ...props };
 
   const { elementType: ElementTag = 'div', children, ...restProps } = propsWithDefaults;

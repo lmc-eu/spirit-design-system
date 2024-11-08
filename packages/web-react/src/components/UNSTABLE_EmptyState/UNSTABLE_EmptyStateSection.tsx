@@ -7,7 +7,7 @@ import { SpiritEmptyStateProps } from '../../types/emptyState';
 import { Stack } from '../Stack';
 import { useEmptyStateStyleProps } from './useEmptyStateStyleProps';
 
-export const UNSTABLE_EmptyStateSection = (props: SpiritEmptyStateProps): ReactElement => {
+const UNSTABLE_EmptyStateSection = (props: SpiritEmptyStateProps): ReactElement => {
   const { children, ...restProps } = props;
   const { classProps, props: modifiedProps } = useEmptyStateStyleProps(restProps);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);

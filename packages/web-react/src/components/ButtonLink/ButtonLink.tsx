@@ -49,6 +49,6 @@ const _ButtonLink = <T extends ElementType = 'a', C = void, S = void>(
   );
 };
 
-export const ButtonLink = forwardRef<HTMLAnchorElement, SpiritButtonLinkProps<ElementType>>(_ButtonLink);
+const ButtonLink = forwardRef<HTMLAnchorElement, SpiritButtonLinkProps<ElementType>>(_ButtonLink);
 
 export default ButtonLink;

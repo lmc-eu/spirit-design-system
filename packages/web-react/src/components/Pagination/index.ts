@@ -6,7 +6,6 @@ export { default as PaginationItem } from './PaginationItem';
 export { default as PaginationLink } from './PaginationLink';
 export { default as PaginationLinkNext } from './PaginationLinkNext';
 export { default as PaginationLinkPrevious } from './PaginationLinkPrevious';
-export * from './UncontrolledPagination';
 export { default as UncontrolledPagination } from './UncontrolledPagination';
 export * from './constants';
 export * from './usePaginationStyleProps';
