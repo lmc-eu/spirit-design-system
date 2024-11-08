@@ -6,7 +6,7 @@ import { useStyleProps } from '../../hooks';
 import { SpiritPaginationItemProps } from '../../types';
 import { usePaginationStyleProps } from './usePaginationStyleProps';
 
-export const PaginationItem = (props: SpiritPaginationItemProps) => {
+const PaginationItem = (props: SpiritPaginationItemProps) => {
   const { children, ...restProps } = props;
 
   const { classProps } = usePaginationStyleProps();

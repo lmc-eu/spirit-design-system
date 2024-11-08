@@ -27,8 +27,6 @@ const _PaginationButtonLink = <E extends ElementType = 'a'>(
   );
 };
 
-export const PaginationButtonLink = forwardRef<HTMLAnchorElement, SpiritPaginationButtonLinkProps>(
-  _PaginationButtonLink,
-);
+const PaginationButtonLink = forwardRef<HTMLAnchorElement, SpiritPaginationButtonLinkProps>(_PaginationButtonLink);
 
 export default PaginationButtonLink;

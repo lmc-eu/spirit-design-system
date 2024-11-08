@@ -1,8 +1,8 @@
 import React from 'react';
 import { Button } from '../../Button';
-import { DropdownPopover } from '../DropdownPopover';
-import { DropdownTrigger } from '../DropdownTrigger';
-import { UncontrolledDropdown } from '../UncontrolledDropdown';
+import DropdownPopover from '../DropdownPopover';
+import DropdownTrigger from '../DropdownTrigger';
+import UncontrolledDropdown from '../UncontrolledDropdown';
 import { dropdownContent } from './constants';
 import DropdownContentFactory from './DropdownContentFactory';
 

@@ -5,7 +5,7 @@ import { SpiritTextFieldBasePasswordToggleProps } from '../../types';
 import { Icon } from '../Icon';
 import { useTextFieldBasePasswordToggleStyleProps } from './useTextFieldBasePasswordToggleStyleProps';
 
-export const TextFieldBasePasswordToggle = (props: SpiritTextFieldBasePasswordToggleProps): JSX.Element => {
+const TextFieldBasePasswordToggle = (props: SpiritTextFieldBasePasswordToggleProps): JSX.Element => {
   const { children, isPasswordShown, onToggleClick, isDisabled } = props;
   const { classProps } = useTextFieldBasePasswordToggleStyleProps();
 

@@ -27,6 +27,6 @@ const _TabLink = <E extends ElementType = 'a'>(props: SpiritTabLinkProps<E>, ref
   );
 };
 
-export const TabLink = forwardRef<HTMLAnchorElement, SpiritTabLinkProps<ElementType>>(_TabLink);
+const TabLink = forwardRef<HTMLAnchorElement, SpiritTabLinkProps<ElementType>>(_TabLink);
 
 export default TabLink;

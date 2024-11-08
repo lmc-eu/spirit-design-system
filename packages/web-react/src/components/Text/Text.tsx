@@ -12,7 +12,7 @@ const defaultProps: Partial<SpiritTextProps> = {
   size: 'medium',
 };
 
-export const Text = <T extends ElementType = 'p', S = void>(props: SpiritTextProps<T, S>): JSX.Element => {
+const Text = <T extends ElementType = 'p', S = void>(props: SpiritTextProps<T, S>): JSX.Element => {
   const propsWithDefaults = { ...defaultProps, ...props };
   const {
     elementType: ElementTag = defaultProps.elementType as ElementType,

@@ -7,7 +7,7 @@ import { SpiritDropdownProps } from '../../types';
 import { DropdownProvider } from './DropdownContext';
 import { useDropdownStyleProps } from './useDropdownStyleProps';
 
-export const Dropdown = (props: SpiritDropdownProps) => {
+const Dropdown = (props: SpiritDropdownProps) => {
   const {
     children,
     enableAutoClose = true,

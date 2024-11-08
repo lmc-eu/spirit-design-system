@@ -10,7 +10,7 @@ const defaultProps: Partial<ValidationTextProps> = {
   registerAria: undefined,
 };
 
-export const ValidationText = <T extends ElementType = 'div'>(props: ValidationTextProps<T>) => {
+const ValidationText = <T extends ElementType = 'div'>(props: ValidationTextProps<T>) => {
   const propsWithDefaults = { ...defaultProps, ...props };
   const {
     className,
