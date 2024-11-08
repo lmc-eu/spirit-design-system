@@ -41,6 +41,6 @@ const _Link = <E extends ElementType = 'a', T = void>(
   );
 };
 
-export const Link = forwardRef<HTMLAnchorElement, SpiritLinkProps<ElementType>>(_Link);
+const Link = forwardRef<HTMLAnchorElement, SpiritLinkProps<ElementType>>(_Link);
 
 export default Link;

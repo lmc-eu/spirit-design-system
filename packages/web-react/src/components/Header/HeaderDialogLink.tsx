@@ -28,8 +28,6 @@ const _HeaderDialogLink = <E extends ElementType = 'a'>(
   );
 };
 
-export const HeaderDialogLink = forwardRef<HTMLAnchorElement, SpiritDialogHeaderLinkProps<ElementType>>(
-  _HeaderDialogLink,
-);
+const HeaderDialogLink = forwardRef<HTMLAnchorElement, SpiritDialogHeaderLinkProps<ElementType>>(_HeaderDialogLink);
 
 export default HeaderDialogLink;

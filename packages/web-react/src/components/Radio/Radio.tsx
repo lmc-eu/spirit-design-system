@@ -54,6 +54,6 @@ const _Radio = (props: SpiritRadioProps, ref: ForwardedRef<HTMLInputElement>): J
   );
 };
 
-export const Radio = forwardRef<HTMLInputElement, SpiritRadioProps>(_Radio);
+const Radio = forwardRef<HTMLInputElement, SpiritRadioProps>(_Radio);
 
 export default Radio;

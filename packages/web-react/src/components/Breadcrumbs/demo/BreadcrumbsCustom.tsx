@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { Icon } from '../../Icon';
 import { Link } from '../../Link';
-import { Breadcrumbs } from '../Breadcrumbs';
+import Breadcrumbs from '../Breadcrumbs';
 
 const BreadcrumbsCustom = () => {
   const items = [

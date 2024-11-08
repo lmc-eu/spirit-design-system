@@ -6,7 +6,7 @@ import { useStyleProps } from '../../hooks';
 import { SpiritActionLayoutProps } from '../../types/actionLayout';
 import { useActionLayoutStyleProps } from './useActionLayoutStyleProps';
 
-export const UNSTABLE_ActionLayout = (props: SpiritActionLayoutProps): ReactElement => {
+const UNSTABLE_ActionLayout = (props: SpiritActionLayoutProps): ReactElement => {
   const { children, ...restProps } = props;
   const { classProps, props: modifiedProps } = useActionLayoutStyleProps(restProps);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);

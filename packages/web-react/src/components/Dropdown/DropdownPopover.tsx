@@ -10,7 +10,7 @@ import { useDropdownStyleProps } from './useDropdownStyleProps';
 
 interface DropdownPopoverProps extends ChildrenProps, StyleProps {}
 
-export const DropdownPopover = (props: DropdownPopoverProps) => {
+const DropdownPopover = (props: DropdownPopoverProps) => {
   const { children, ...rest } = props;
   const { id, isOpen, onToggle, fullWidthMode, placement } = useDropdownContext();
   const { classProps, props: modifiedProps } = useDropdownStyleProps({ isOpen, ...rest });

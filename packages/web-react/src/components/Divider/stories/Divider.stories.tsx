@@ -1,7 +1,7 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { Divider } from '../Divider';
+import Divider from '../Divider';
 import ReadMe from '../README.md';
 
 const meta: Meta<typeof Divider> = {

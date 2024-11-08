@@ -12,7 +12,7 @@ const defaultProps: Partial<SpiritBreadcrumbsProps> = {
   items: [],
 };
 
-export const Breadcrumbs = <T extends ElementType = 'nav'>(props: SpiritBreadcrumbsProps<T>): JSX.Element => {
+const Breadcrumbs = <T extends ElementType = 'nav'>(props: SpiritBreadcrumbsProps<T>): JSX.Element => {
   const propsWithDefaults = { ...defaultProps, ...props };
   const {
     children,

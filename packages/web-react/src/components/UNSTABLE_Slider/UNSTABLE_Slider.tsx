@@ -83,6 +83,6 @@ const _UnstableSlider = (props: SpiritSliderProps, ref: ForwardedRef<HTMLInputEl
   );
 };
 
-export const UNSTABLE_Slider = forwardRef<HTMLInputElement, SpiritSliderProps>(_UnstableSlider);
+const UNSTABLE_Slider = forwardRef<HTMLInputElement, SpiritSliderProps>(_UnstableSlider);
 
 export default UNSTABLE_Slider;

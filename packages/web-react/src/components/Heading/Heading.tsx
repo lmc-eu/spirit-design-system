@@ -11,7 +11,7 @@ const defaultProps: Partial<SpiritHeadingProps<ElementType, void, void>> = {
   size: 'medium',
 };
 
-export const Heading = <T extends ElementType, S = void, E = void>(props: SpiritHeadingProps<T, S, E>): JSX.Element => {
+const Heading = <T extends ElementType, S = void, E = void>(props: SpiritHeadingProps<T, S, E>): JSX.Element => {
   const propsWithDefaults = { ...defaultProps, ...props };
   const { elementType: ElementTag, children, ...restProps } = propsWithDefaults;
   const { classProps, props: modifiedProps } = useHeadingStyleProps({ ...restProps, elementType: ElementTag });
