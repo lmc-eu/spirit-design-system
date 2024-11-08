@@ -3,7 +3,7 @@ import DocsSection from '../../../../docs/DocsSections';
 import { ActionButtonColors, EmotionColors, Sizes } from '../../../constants';
 import { ButtonBaseProps } from '../../../types';
 import { Icon } from '../../Icon';
-import { Button } from '../Button';
+import Button from '../Button';
 
 const ButtonDemoFactory = ({ ...props }: ButtonBaseProps) => {
   const sizes = Object.values(Sizes);

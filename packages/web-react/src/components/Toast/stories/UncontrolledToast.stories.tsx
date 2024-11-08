@@ -6,8 +6,9 @@ import { ToastColorType, ToastLinkProps, UncontrolledToastProps } from '../../..
 import { Button } from '../../Button';
 import { DEFAULT_TOAST_AUTO_CLOSE_INTERVAL } from '../constants';
 import ReadMe from '../README.md';
+import { ToastItem, ToastProvider } from '../ToastContext';
+import UncontrolledToast from '../UncontrolledToast';
 import { useToast } from '../useToast';
-import { ToastItem, ToastProvider, UncontrolledToast } from '..';
 
 interface UncontrolledToastPlaygroundProps extends UncontrolledToastProps, ToastItem {}
 

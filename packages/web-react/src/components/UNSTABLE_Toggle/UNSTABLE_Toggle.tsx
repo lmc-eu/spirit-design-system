@@ -72,6 +72,6 @@ const _UNSTABLE_Toggle = (props: SpiritToggleProps, ref: ForwardedRef<HTMLInputE
   );
 };
 
-export const UNSTABLE_Toggle = forwardRef<HTMLInputElement, SpiritToggleProps>(_UNSTABLE_Toggle);
+const UNSTABLE_Toggle = forwardRef<HTMLInputElement, SpiritToggleProps>(_UNSTABLE_Toggle);
 
 export default UNSTABLE_Toggle;

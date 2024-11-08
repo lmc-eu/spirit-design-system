@@ -32,7 +32,7 @@ const _TextFieldBaseInput = (
   );
 };
 
-export const TextFieldBaseInput = forwardRef<HTMLInputElement | HTMLTextAreaElement, SpiritTextFieldBaseInputProps>(
+const TextFieldBaseInput = forwardRef<HTMLInputElement | HTMLTextAreaElement, SpiritTextFieldBaseInputProps>(
   _TextFieldBaseInput,
 );
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { UNSTABLE_Toggle } from '..';
+import UNSTABLE_Toggle from '../UNSTABLE_Toggle';
 
 const ToggleDefault = () => (
   <>

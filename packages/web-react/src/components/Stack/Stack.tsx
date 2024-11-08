@@ -14,7 +14,7 @@ const defaultProps: SpiritStackProps = {
   hasStartDivider: false,
 };
 
-export const Stack = <T extends ElementType = 'div'>(props: SpiritStackProps<T>): JSX.Element => {
+const Stack = <T extends ElementType = 'div'>(props: SpiritStackProps<T>): JSX.Element => {
   const propsWithDefaults = { ...defaultProps, ...props };
   const {
     elementType: ElementTag = defaultProps.elementType as ElementType,

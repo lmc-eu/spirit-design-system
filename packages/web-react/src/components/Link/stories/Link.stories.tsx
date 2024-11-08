@@ -2,8 +2,8 @@ import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { ActionLinkColors } from '../../../constants';
+import Link from '../Link';
 import ReadMe from '../README.md';
-import { Link } from '..';
 
 const meta: Meta<typeof Link> = {
   title: 'Components/Link',

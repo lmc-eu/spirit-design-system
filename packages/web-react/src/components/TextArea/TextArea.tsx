@@ -28,6 +28,6 @@ const _TextArea = (props: SpiritTextAreaProps, ref: ForwardedRef<HTMLTextAreaEle
   );
 };
 
-export const TextArea = forwardRef<HTMLTextAreaElement, SpiritTextAreaProps>(_TextArea);
+const TextArea = forwardRef<HTMLTextAreaElement, SpiritTextAreaProps>(_TextArea);
 
 export default TextArea;
