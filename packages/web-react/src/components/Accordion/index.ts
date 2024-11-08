@@ -1,12 +1,5 @@
 'use client';
 
-export * from './Accordion';
-export * from './AccordionItem';
-export * from './AccordionHeader';
-export * from './AccordionContent';
-export * from './AccordionContext';
-export * from './AccordionItemContext';
-export * from './UncontrolledAccordion';
 export * from './useAccordion';
 export * from './useAccordionAriaProps';
 export * from './useAccordionStyleProps';

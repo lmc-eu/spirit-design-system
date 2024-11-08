@@ -15,7 +15,7 @@ const defaultProps = {
   isGoBackOnly: false,
 };
 
-export const BreadcrumbsItem = (props: SpiritBreadcrumbsItemProps) => {
+const BreadcrumbsItem = (props: SpiritBreadcrumbsItemProps) => {
   const propsWithDefaults = { ...defaultProps, ...props };
   const { children, href, isCurrent, iconNameStart, iconNameEnd, ...restProps } = propsWithDefaults;
   const { classProps, props: otherProps } = useBreadcrumbsStyleProps({ ...restProps });

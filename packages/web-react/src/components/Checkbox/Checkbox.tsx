@@ -64,6 +64,6 @@ const _Checkbox = (props: SpiritCheckboxProps, ref: ForwardedRef<HTMLInputElemen
   );
 };
 
-export const Checkbox = forwardRef<HTMLInputElement, SpiritCheckboxProps>(_Checkbox);
+const Checkbox = forwardRef<HTMLInputElement, SpiritCheckboxProps>(_Checkbox);
 
 export default Checkbox;

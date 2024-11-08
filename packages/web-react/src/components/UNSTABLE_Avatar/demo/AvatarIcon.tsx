@@ -1,7 +1,7 @@
 import React from 'react';
 import { Icon } from '../../Icon';
 import { DEMO_SIZES } from '../constants';
-import { UNSTABLE_Avatar } from '../UNSTABLE_Avatar';
+import UNSTABLE_Avatar from '../UNSTABLE_Avatar';
 
 const AvatarIcon = () => (
   <>

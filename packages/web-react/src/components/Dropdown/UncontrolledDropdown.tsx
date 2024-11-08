@@ -8,7 +8,7 @@ import { DropdownProvider } from './DropdownContext';
 import { useDropdown } from './useDropdown';
 import { useDropdownStyleProps } from './useDropdownStyleProps';
 
-export const UncontrolledDropdown = (props: UncontrolledDropdownProps) => {
+const UncontrolledDropdown = (props: UncontrolledDropdownProps) => {
   const { children, enableAutoClose = true, fullWidthMode, id, onAutoClose, placement, ...rest } = props;
   const { classProps, props: modifiedProps } = useDropdownStyleProps(rest);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);

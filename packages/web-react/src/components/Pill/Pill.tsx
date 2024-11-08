@@ -11,7 +11,7 @@ const defaultProps: Partial<SpiritPillProps> = {
   color: 'selected',
 };
 
-export const Pill = <T extends ElementType = 'span', C = void>(props: SpiritPillProps<T, C>): JSX.Element => {
+const Pill = <T extends ElementType = 'span', C = void>(props: SpiritPillProps<T, C>): JSX.Element => {
   const propsWithDefaults = { ...defaultProps, ...props };
   const {
     elementType: ElementTag = defaultProps.elementType as ElementType,

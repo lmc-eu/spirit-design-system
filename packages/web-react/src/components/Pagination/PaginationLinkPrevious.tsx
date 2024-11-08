@@ -15,7 +15,7 @@ const _PaginationLinkPrevious = <E extends ElementType = 'a'>(
   ref: ForwardedRef<HTMLAnchorElement>,
 ) => <PaginationButtonLink direction="previous" accessibilityLabel={accessibilityLabel} ref={ref} {...restProps} />;
 
-export const PaginationLinkPrevious = forwardRef<HTMLAnchorElement, SpiritPaginationLinkPreviousNextProps>(
+const PaginationLinkPrevious = forwardRef<HTMLAnchorElement, SpiritPaginationLinkPreviousNextProps>(
   _PaginationLinkPrevious,
 );
 

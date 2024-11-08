@@ -6,7 +6,7 @@ import { useStyleProps } from '../../hooks';
 import { SpiritGridItemProps } from '../../types';
 import { useGridItemStyleProps } from './useGridItemStyleProps';
 
-export const GridItem = <T extends ElementType = 'div'>(props: SpiritGridItemProps<T>): JSX.Element => {
+const GridItem = <T extends ElementType = 'div'>(props: SpiritGridItemProps<T>): JSX.Element => {
   const { elementType: ElementTag = 'div', children, ...restProps } = props;
   const { classProps, styleProps: gridItemStyle, props: modifiedProps } = useGridItemStyleProps(restProps);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);

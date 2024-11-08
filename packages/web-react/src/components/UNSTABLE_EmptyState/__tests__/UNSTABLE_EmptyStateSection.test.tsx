@@ -4,7 +4,7 @@ import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
-import { UNSTABLE_EmptyStateSection } from '..';
+import UNSTABLE_EmptyStateSection from '../UNSTABLE_EmptyStateSection';
 
 describe('UNSTABLE_EmptyStateSection', () => {
   classNamePrefixProviderTest(UNSTABLE_EmptyStateSection, 'UNSTABLE_EmptyState__section');

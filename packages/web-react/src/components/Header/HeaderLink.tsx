@@ -28,6 +28,6 @@ const _HeaderLink = <E extends ElementType = 'a'>(
   );
 };
 
-export const HeaderLink = forwardRef<HTMLAnchorElement, SpiritHeaderLinkProps<ElementType>>(_HeaderLink);
+const HeaderLink = forwardRef<HTMLAnchorElement, SpiritHeaderLinkProps<ElementType>>(_HeaderLink);
 
 export default HeaderLink;

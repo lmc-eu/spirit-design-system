@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import DocsSection from '../../../../docs/DocsSections';
 import { EmotionColors, SizesExtended } from '../../../constants';
 import { Grid } from '../../Grid';
-import { Tag } from '../Tag';
+import Tag from '../Tag';
 
 const TagDefault = () => {
   const sizes = Object.values(SizesExtended);

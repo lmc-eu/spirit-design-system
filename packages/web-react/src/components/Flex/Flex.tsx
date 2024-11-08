@@ -15,7 +15,7 @@ const defaultProps: Partial<SpiritFlexProps> = {
   isWrapping: false,
 };
 
-export const Flex = <T extends ElementType = 'div'>(props: SpiritFlexProps<T>): JSX.Element => {
+const Flex = <T extends ElementType = 'div'>(props: SpiritFlexProps<T>): JSX.Element => {
   const propsWithDefaults = { ...defaultProps, ...props };
   const { elementType: ElementTag = 'div', children, ...restProps } = propsWithDefaults;
   const { classProps, props: modifiedProps, styleProps: flexStyle } = useFlexStyleProps(restProps);
