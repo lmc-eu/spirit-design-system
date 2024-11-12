@@ -14,7 +14,7 @@ $input-background-color-state-checked: tokens.$component-toggle-selected-state-d
 $input-background-color-state-checked-hover: tokens.$component-toggle-selected-state-hover;
 $input-background-color-state-disabled: tokens.$disabled-background;
 $input-border-radius: tokens.$radius-400;
-$input-focus-shadow: tokens.$focus;
+$input-focus-shadow: tokens.$focus-ring;
 
 $input-mark-size: 20px;
 $input-mark-spacing: tokens.$space-100;
