@@ -6,11 +6,11 @@ export interface HeadingStyles<T extends ElementType> {
   /** className props */
   classProps: string | null;
   /** props to be passed to the input element */
-  props: HeadingProps<T>;
+  props: Omit<HeadingProps<T>, 'elementType'>;
 }
 
 export function useHeadingStyleProps<T extends ElementType, S = void, E = void>(
-  props: SpiritHeadingProps<T, S, E>,
+  props: Omit<SpiritHeadingProps<T, S, E>, 'elementType'>,
 ): HeadingStyles<T> {
   const { size, emphasis, ...restProps } = props;
 
