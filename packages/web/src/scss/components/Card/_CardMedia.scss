@@ -1,0 +1,85 @@
+// 1. Expand any images or videos to fill the available space, not just direct descendants. This is for the scenario
+//    when the media is wrapped, for example in a link.
+// 2. Make sure rounded corners are applied to video player too.
+// 3. Do not let the media push the body content out of the horizontal card.
+// 4. We need the specific combination of classes, expanded CardMedia is designed to work only with boxed cards.
+
+@use '@tokens' as tokens;
+@use '../../tools/dictionaries';
+@use 'theme';
+
+.CardMedia {
+    --#{tokens.$css-variable-prefix}card-media-border-radius-top-left: #{theme.$border-radius};
+    --#{tokens.$css-variable-prefix}card-media-border-radius-top-right: #{theme.$border-radius};
+    --#{tokens.$css-variable-prefix}card-media-border-radius-bottom-left: #{theme.$border-radius};
+    --#{tokens.$css-variable-prefix}card-media-border-radius-bottom-right: #{theme.$border-radius};
+    --#{tokens.$css-variable-prefix}card-media-canvas-width: auto;
+    --#{tokens.$css-variable-prefix}card-media-canvas-height: auto;
+
+    grid-area: media;
+    overflow: hidden;
+    border-radius: var(--#{tokens.$css-variable-prefix}card-media-border-radius-top-left)
+        var(--#{tokens.$css-variable-prefix}card-media-border-radius-top-right)
+        var(--#{tokens.$css-variable-prefix}card-media-border-radius-bottom-right)
+        var(--#{tokens.$css-variable-prefix}card-media-border-radius-bottom-left);
+}
+
+.CardMedia__canvas {
+    width: var(--#{tokens.$css-variable-prefix}card-media-canvas-width);
+    max-width: 100%; // 3.
+    height: var(--#{tokens.$css-variable-prefix}card-media-canvas-height);
+}
+
+// 1.
+.CardMedia__canvas :where(img, svg, video) {
+    display: block; // 2.
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.Card--vertical > {
+    @include dictionaries.generate-sizes($class-name: 'CardMedia', $sizes: theme.$media-sizes-vertical);
+}
+
+:is(.Card--horizontal, .Card--horizontalReversed) > {
+    @include dictionaries.generate-sizes($class-name: 'CardMedia', $sizes: theme.$media-sizes-horizontal);
+}
+
+:is(.Card--horizontal, .Card--horizontalReversed) > .CardMedia {
+    --#{tokens.$css-variable-prefix}card-media-canvas-width: var(--spirit-card-media-size);
+
+    align-self: start;
+    min-width: 0; // 3.
+}
+
+:is(.Card--horizontal, .Card--horizontalReversed) > :is(.CardMedia--expanded, .CardMedia--filledHeight) {
+    --#{tokens.$css-variable-prefix}card-media-canvas-height: 100%;
+
+    align-self: stretch;
+}
+
+.Card--vertical > .CardMedia {
+    --#{tokens.$css-variable-prefix}card-media-canvas-height: var(--spirit-card-media-size);
+
+    &:not(:last-child) {
+        margin-bottom: theme.$gap-dense;
+    }
+}
+
+// stylelint-disable selector-max-class -- 4.
+.Card--vertical.Card--boxed > .CardMedia--expanded:not(:last-child) {
+    --#{tokens.$css-variable-prefix}card-media-border-radius-bottom-left: 0;
+    --#{tokens.$css-variable-prefix}card-media-border-radius-bottom-right: 0;
+}
+
+.Card--horizontal.Card--boxed > .CardMedia--expanded:not(:last-child) {
+    --#{tokens.$css-variable-prefix}card-media-border-radius-top-right: 0;
+    --#{tokens.$css-variable-prefix}card-media-border-radius-bottom-right: 0;
+}
+
+.Card--horizontalReversed.Card--boxed > .CardMedia--expanded:not(:last-child) {
+    --#{tokens.$css-variable-prefix}card-media-border-radius-top-left: 0;
+    --#{tokens.$css-variable-prefix}card-media-border-radius-bottom-left: 0;
+}
+// stylelint-enable

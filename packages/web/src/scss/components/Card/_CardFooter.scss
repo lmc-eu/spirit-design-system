@@ -1,0 +1,29 @@
+// 1. Restore interactions for individual actions.
+
+@use '../../tools/dictionaries';
+@use 'theme';
+
+.CardFooter {
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    grid-area: footer;
+    gap: theme.$footer-gap;
+    pointer-events: none;
+
+    &:not(:last-child) {
+        margin-bottom: theme.$gap;
+    }
+}
+
+// 1.
+.CardFooter :where(a:not(.CardLink), button) {
+    pointer-events: auto;
+}
+
+@include dictionaries.generate-alignments(
+    $class-name: 'CardFooter',
+    $dictionary-values: theme.$footer-alignment-dictionary,
+    $axis: 'x'
+);
