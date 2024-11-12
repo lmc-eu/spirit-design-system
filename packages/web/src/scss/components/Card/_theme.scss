@@ -1,0 +1,46 @@
+@use '@tokens' as tokens;
+@use '../../settings/dictionaries';
+@use '../../settings/transitions';
+
+$gap: tokens.$space-900;
+$gap-dense: tokens.$space-700;
+
+$padding: tokens.$space-900;
+
+$typography: tokens.$body-medium-regular;
+
+$border-width: tokens.$border-width-100;
+$border-style: solid;
+$border-color: tokens.$border-basic;
+$border-radius: tokens.$radius-300;
+
+$background-color: tokens.$background-primary;
+$color: tokens.$text-secondary;
+$box-shadow-hover: tokens.$shadow-100;
+
+$transition-duration: transitions.$duration-100;
+$transition-timing: transitions.$timing-eased-in-out;
+
+$media-border-radius: tokens.$radius-300;
+$media-sizes: (
+    small: (
+        ratio: 2,
+    ),
+    medium: (
+        ratio: 1.5,
+    ),
+    large: (
+        ratio: 1,
+    ),
+);
+
+$eyebrow-typography: tokens.$body-small-semibold;
+$eyebrow-color: tokens.$text-tertiary;
+$eyebrow-margin-bottom: tokens.$space-300;
+
+$heading-typography: tokens.$heading-small-semibold;
+$heading-color: tokens.$text-primary;
+$heading-margin-bottom: tokens.$space-500;
+
+$actions-alignment-dictionary: dictionaries.$alignments-x;
+$actions-gap: tokens.$space-700;

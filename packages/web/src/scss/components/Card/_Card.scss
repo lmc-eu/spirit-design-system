@@ -1,0 +1,63 @@
+// 1. Get ready for card link overlay.
+
+@use '../../tools/typography';
+@use 'theme';
+
+.Card {
+    --card-gap: #{theme.$gap};
+
+    @include typography.generate(theme.$typography);
+
+    position: relative; // 1.
+    display: grid;
+    color: theme.$color;
+}
+
+.Card--horizontal {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 1fr auto;
+    grid-template-areas:
+        'header body'
+        'header footer';
+}
+
+.Card--horizontalReversed {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr auto;
+    grid-template-areas:
+        'body header'
+        'footer header';
+}
+
+.Card--vertical {
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        'header'
+        'body'
+        'footer';
+}
+
+.Card--boxed {
+    --card-padding: #{theme.$padding};
+
+    border: theme.$border-width theme.$border-style theme.$border-color;
+    border-radius: theme.$border-radius;
+    background-color: theme.$background-color;
+
+    // TODO discuss interactions with designer
+    // @media (hover: hover) {
+    //     &:hover .CardLink {
+    //         text-decoration: underline;
+    //     }
+    // }
+
+    &:has(.CardLink) {
+        @media (hover: hover) {
+            transition: box-shadow theme.$transition-duration theme.$transition-timing;
+
+            &:hover {
+                box-shadow: theme.$box-shadow-hover;
+            }
+        }
+    }
+}

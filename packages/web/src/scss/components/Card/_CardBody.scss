@@ -1,0 +1,16 @@
+// 1. Make perex selectable.
+
+@use 'tools';
+
+.CardBody {
+    @include tools.card-content-element();
+    @include tools.add-spacing();
+
+    grid-area: body;
+}
+
+// 1.
+.CardBody > p {
+    position: relative;
+    z-index: 1;
+}

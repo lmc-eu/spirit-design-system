@@ -1,0 +1,5 @@
+@use '../../tools/links';
+
+.CardLink:first-of-type {
+    @include links.stretch();
+}
