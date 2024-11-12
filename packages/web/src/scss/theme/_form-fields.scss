@@ -12,7 +12,7 @@ $input-border-color-success: tokens.$form-field-success;
 $input-border-color-warning: tokens.$form-field-warning;
 $input-border-color-danger: tokens.$form-field-danger;
 $input-border-color-state-disabled: tokens.$disabled-border;
-$input-focus-shadow: tokens.$focus;
+$input-focus-shadow: tokens.$focus-ring;
 $label-color-state-default: tokens.$form-field-label;
 $label-color-state-disabled: tokens.$disabled-content;
 $label-required-typography: tokens.$body-small-regular;
@@ -42,7 +42,7 @@ $box-field-input-color-state-default: tokens.$form-field-filled-content;
 $box-field-input-border-width: tokens.$border-width-100;
 $box-field-input-border-style: solid;
 $box-field-input-border-color-focus: tokens.$border-focus;
-$box-field-input-focus-shadow: tokens.$focus;
+$box-field-input-focus-shadow: tokens.$focus-ring;
 
 $box-field-input-border-radius: tokens.$radius-300;
 $box-field-input-placeholder-color-state-default: tokens.$form-field-filled-placeholder;
