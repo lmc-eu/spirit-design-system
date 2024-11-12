@@ -1,2 +1,2 @@
-export * from './global';
+export * from './global-tokens';
 export * from './themes';

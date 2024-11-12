@@ -4,9 +4,9 @@ import * as themeLightOnBrand from './theme-light-on-brand';
 // The first theme is the default theme, as the left column in the Figma table.
 export const themes = {
   themeLightDefault: {
-    colors: themeLightDefault.colors,
+    tokens: themeLightDefault,
   },
   themeLightOnBrand: {
-    colors: themeLightOnBrand.colors,
+    tokens: themeLightOnBrand,
   },
 };

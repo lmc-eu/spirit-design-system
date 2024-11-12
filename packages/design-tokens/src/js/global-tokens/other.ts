@@ -15,7 +15,7 @@ export const gridSpacingTablet = '32px';
 
 export const gridColumns = '12';
 
-export const tokenPrefix = 'spirit-';
+export const cssVariablePrefix = 'spirit-';
 
 export const containers = {
   padding: {
