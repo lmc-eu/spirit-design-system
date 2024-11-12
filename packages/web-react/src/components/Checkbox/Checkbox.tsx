@@ -1,10 +1,11 @@
 'use client';
 
 import classNames from 'classnames';
-import React, { forwardRef, ForwardedRef } from 'react';
+import React, { ForwardedRef, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritCheckboxProps } from '../../types';
 import { HelperText, ValidationText, useAriaIds } from '../Field';
+import { useValidationTextRole } from '../Field/useValidationTextRole';
 import { useCheckboxStyleProps } from './useCheckboxStyleProps';
 
 /* We need an exception for components exported with forwardRef */
@@ -26,6 +27,10 @@ const _Checkbox = (props: SpiritCheckboxProps, ref: ForwardedRef<HTMLInputElemen
   } = modifiedProps;
   const { styleProps, props: otherProps } = useStyleProps(restProps);
   const [ids, register] = useAriaIds(ariaDescribedBy);
+  const validationTextRole = useValidationTextRole({
+    validationState,
+    validationText,
+  });
 
   return (
     <label {...styleProps} htmlFor={id} className={classNames(classProps.root, styleProps.className)}>
@@ -57,6 +62,7 @@ const _Checkbox = (props: SpiritCheckboxProps, ref: ForwardedRef<HTMLInputElemen
             id={`${id}__validationText`}
             validationText={validationText}
             registerAria={register}
+            role={validationTextRole}
           />
         )}
       </span>

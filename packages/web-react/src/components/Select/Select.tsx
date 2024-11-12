@@ -1,10 +1,11 @@
 'use client';
 
 import classNames from 'classnames';
-import React, { forwardRef, ForwardedRef } from 'react';
+import React, { ForwardedRef, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritSelectProps } from '../../types';
 import { HelperText, ValidationText, useAriaIds } from '../Field';
+import { useValidationTextRole } from '../Field/useValidationTextRole';
 import { Icon } from '../Icon';
 import { useSelectStyleProps } from './useSelectStyleProps';
 
@@ -28,8 +29,11 @@ const _Select = (props: SpiritSelectProps, ref: ForwardedRef<HTMLSelectElement>)
 
   const { classProps } = useSelectStyleProps({ isDisabled, isFluid, isRequired, isLabelHidden, validationState });
   const { styleProps, props: transferProps } = useStyleProps(restProps);
-
   const [ids, register] = useAriaIds(ariaDescribedBy);
+  const validationTextRole = useValidationTextRole({
+    validationState,
+    validationText,
+  });
 
   return (
     <div {...styleProps} className={classNames(classProps.root, styleProps.className)}>
@@ -64,6 +68,7 @@ const _Select = (props: SpiritSelectProps, ref: ForwardedRef<HTMLSelectElement>)
           id={`${id}__validationText`}
           validationText={validationText}
           registerAria={register}
+          role={validationTextRole}
         />
       )}
     </div>
