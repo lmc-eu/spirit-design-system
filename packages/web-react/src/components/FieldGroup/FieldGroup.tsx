@@ -5,6 +5,7 @@ import React from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritFieldGroupProps } from '../../types';
 import { HelperText, ValidationText, useAriaIds } from '../Field';
+import { useValidationTextRole } from '../Field/useValidationTextRole';
 import { VisuallyHidden } from '../VisuallyHidden';
 import { useFieldGroupStyleProps } from './useFieldGroupStyleProps';
 
@@ -26,8 +27,11 @@ const FieldGroup = (props: SpiritFieldGroupProps) => {
 
   const { classProps } = useFieldGroupStyleProps({ isFluid, isRequired, validationState });
   const { styleProps, props: transferProps } = useStyleProps(rest);
-
   const [ids, register] = useAriaIds(ariaDescribedBy);
+  const validationTextRole = useValidationTextRole({
+    validationState,
+    validationText,
+  });
 
   return (
     <fieldset
@@ -56,6 +60,7 @@ const FieldGroup = (props: SpiritFieldGroupProps) => {
           id={`${id}__helperText`}
           validationText={validationText}
           registerAria={register}
+          role={validationTextRole}
         />
       )}
     </fieldset>

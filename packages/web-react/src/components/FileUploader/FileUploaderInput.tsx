@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritFileUploaderInputProps } from '../../types';
 import { HelperText, ValidationText, useAriaIds } from '../Field';
+import { useValidationTextRole } from '../Field/useValidationTextRole';
 import { Icon } from '../Icon';
 import { DEFAULT_FILE_QUEUE_LIMIT, DEFAULT_FILE_SIZE_LIMIT } from './constants';
 import { useFileUploaderInput } from './useFileUploaderInput';
@@ -65,6 +66,10 @@ const FileUploaderInput = (props: SpiritFileUploaderInputProps) => {
   });
   const { styleProps, props: transferProps } = useStyleProps(restProps);
   const [ids, register] = useAriaIds(ariaDescribedBy);
+  const validationTextRole = useValidationTextRole({
+    validationState,
+    validationText,
+  });
 
   useEffect(() => {
     setIsDragAndDropSupported('draggable' in document.createElement('span'));
@@ -116,6 +121,7 @@ const FileUploaderInput = (props: SpiritFileUploaderInputProps) => {
           id={`${id}__validationText`}
           validationText={validationText}
           registerAria={register}
+          role={validationTextRole}
         />
       )}
     </div>

@@ -89,6 +89,7 @@ const meta: Meta<typeof Checkbox> = {
     validationState: undefined,
     validationText: 'Validation text',
     value: 'checkbox',
+    onChange: () => {},
   },
 };
 

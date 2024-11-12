@@ -17,10 +17,17 @@ Basic example usage:
 Advanced example:
 
 ```jsx
-<ValidationText className="Component__validationText" elementType="span" validationState="danger" />
+<ValidationText
+  className="Component__validationText"
+  elementType="span"
+  validationText="Danger validation text"
+  role="alert"
+/>
 ```
 
-## ValidationText
+## Role Attribute
+
+When displaying text dynamically, set [`role="alert"`][aria-alert-role] on the `ValidationText` component to improve accessibility. This will help screen readers notify users about content updates.
 
 ### API
 
@@ -28,4 +35,7 @@ Advanced example:
 | ---------------- | ------------------------ | ------- | -------- | ---------------------------------------------------------------------------------------------- |
 | `className`      | `string`                 | —       | ✓        | Wrapper custom class name                                                                      |
 | `elementType`    | [`span` \| `div`]        | `div`   | ✕        | Type of element used as main wrapper (applied only for single validation text, otherwise `ul`) |
-| `validationText` | [`string` \| `string[]`] | —       | ✓        | Validation text                                                                                |
+| `role`           | `string`                 | -       | ✕        | The role attribute that describes the role of an element                                       |
+| `validationText` | [`string` \| `string[]`] | —       | ✕        | Validation text, only visible if validationState is set                                        |
+
+[aria-alert-role]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role
