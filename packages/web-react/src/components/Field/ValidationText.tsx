@@ -8,16 +8,18 @@ const defaultProps: Partial<ValidationTextProps> = {
   elementType: 'div',
   id: undefined,
   registerAria: undefined,
+  role: undefined,
 };
 
 const ValidationText = <T extends ElementType = 'div'>(props: ValidationTextProps<T>) => {
   const propsWithDefaults = { ...defaultProps, ...props };
   const {
     className,
-    validationText,
     elementType: ElementTag = defaultProps.elementType as ElementType,
     id,
     registerAria,
+    role,
+    validationText,
   } = propsWithDefaults;
 
   useEffect(() => {
@@ -30,13 +32,15 @@ const ValidationText = <T extends ElementType = 'div'>(props: ValidationTextProp
 
   if (validationText) {
     return Array.isArray(validationText) ? (
-      <ul className={className} id={id}>
-        {validationText.map((item) => (
-          <li key={`validationText_${item}`}>{item}</li>
-        ))}
-      </ul>
+      <ElementTag className={className} id={id} role={role}>
+        <ul>
+          {validationText.map((item) => (
+            <li key={`validationText_${item}`}>{item}</li>
+          ))}
+        </ul>
+      </ElementTag>
     ) : (
-      <ElementTag className={className} id={id}>
+      <ElementTag className={className} id={id} role={role}>
         {validationText}
       </ElementTag>
     );

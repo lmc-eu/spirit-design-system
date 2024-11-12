@@ -5,6 +5,7 @@ import React, { ForwardedRef, forwardRef, useState } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritToggleProps } from '../../types';
 import { HelperText, useAriaIds, ValidationText } from '../Field';
+import { useValidationTextRole } from '../Field/useValidationTextRole';
 import { useToggleStyleProps } from './useToggleStyleProps';
 
 /* We need an exception for components exported with forwardRef */
@@ -25,11 +26,13 @@ const _UNSTABLE_Toggle = (props: SpiritToggleProps, ref: ForwardedRef<HTMLInputE
     validationText,
     ...restProps
   } = modifiedProps;
-
   const { styleProps, props: otherProps } = useStyleProps(restProps);
-
   const [ids, register] = useAriaIds(ariaDescribedBy);
   const [checked, setChecked] = useState(isChecked);
+  const validationTextRole = useValidationTextRole({
+    validationState,
+    validationText,
+  });
 
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(event.target.checked);
@@ -53,6 +56,7 @@ const _UNSTABLE_Toggle = (props: SpiritToggleProps, ref: ForwardedRef<HTMLInputE
             id={`${id}__validationText`}
             validationText={validationText}
             registerAria={register}
+            role={validationTextRole}
           />
         )}
       </span>
