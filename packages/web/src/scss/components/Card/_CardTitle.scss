@@ -1,0 +1,16 @@
+@use '../../tools/typography';
+@use 'theme';
+
+.CardTitle {
+    @include typography.generate(theme.$title-typography);
+
+    color: theme.$title-color;
+
+    &:not(:last-child) {
+        margin-bottom: theme.$title-margin-bottom;
+    }
+}
+
+.CardTitle--heading {
+    @include typography.generate(theme.$title-heading-typography);
+}

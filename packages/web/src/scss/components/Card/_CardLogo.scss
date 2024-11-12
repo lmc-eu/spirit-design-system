@@ -1,0 +1,25 @@
+@use 'theme';
+
+.CardLogo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: theme.$logo-border-width theme.$logo-border-style theme.$logo-border-color;
+    border-radius: theme.$logo-border-radius;
+    background-color: theme.$logo-background-color;
+}
+
+.Card--vertical > .CardLogo {
+    grid-area: media;
+    place-self: end;
+    margin-right: theme.$logo-offset-horizontal;
+}
+
+:is(.Card--horizontal, .Card--horizontalReversed) > .CardLogo {
+    grid-area: logo;
+    justify-self: start;
+
+    &:not(:last-child) {
+        margin-bottom: theme.$gap;
+    }
+}

@@ -1,0 +1,75 @@
+@use '@tokens' as tokens;
+@use '../../settings/dictionaries';
+@use '../../settings/transitions';
+
+$breakpoints: tokens.$breakpoints;
+
+$gap: tokens.$space-900;
+$gap-dense: tokens.$space-700;
+
+$padding: tokens.$space-700;
+$padding-tablet: tokens.$space-900;
+
+$typography: tokens.$body-medium-regular;
+
+$border-width: tokens.$border-width-100;
+$border-style: solid;
+$border-color: tokens.$border-basic;
+$border-radius: tokens.$radius-300;
+
+$background-color: tokens.$background-primary;
+$color: tokens.$text-secondary;
+$box-shadow-state-hover: tokens.$shadow-100;
+
+$transition-duration: transitions.$duration-100;
+$transition-timing: transitions.$timing-eased-in-out;
+
+$artwork-alignment-dictionary: dictionaries.$alignments-x;
+
+$media-sizes-vertical: (
+    auto: (
+        size: auto,
+    ),
+    small: (
+        size: 140px,
+    ),
+    medium: (
+        size: 216px,
+    ),
+    large: (
+        size: 280px,
+    ),
+);
+$media-sizes-horizontal: (
+    auto: (
+        size: auto,
+    ),
+    small: (
+        size: 120px,
+    ),
+    medium: (
+        size: 180px,
+    ),
+    large: (
+        size: 240px,
+    ),
+);
+
+$logo-offset-horizontal: tokens.$space-700;
+$logo-border-width: tokens.$border-width-100;
+$logo-border-style: solid;
+$logo-border-color: tokens.$border-basic;
+$logo-border-radius: tokens.$radius-200;
+$logo-background-color: tokens.$background-primary;
+
+$eyebrow-typography: tokens.$body-small-semibold;
+$eyebrow-color: tokens.$text-tertiary;
+$eyebrow-margin-bottom: tokens.$space-300;
+
+$title-typography: tokens.$body-large-regular;
+$title-heading-typography: tokens.$heading-xsmall-semibold;
+$title-color: tokens.$text-primary;
+$title-margin-bottom: tokens.$space-500;
+
+$footer-alignment-dictionary: dictionaries.$alignments-x;
+$footer-gap: tokens.$space-700;

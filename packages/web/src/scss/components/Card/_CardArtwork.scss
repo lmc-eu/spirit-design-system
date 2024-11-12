@@ -1,0 +1,17 @@
+@use '../../tools/dictionaries';
+@use 'theme';
+
+.CardArtwork {
+    display: grid;
+    grid-area: media;
+}
+
+@include dictionaries.generate-alignments(
+    $class-name: 'CardArtwork',
+    $dictionary-values: theme.$artwork-alignment-dictionary,
+    $axis: 'x'
+);
+
+.Card--vertical > .CardArtwork:not(:last-child) {
+    margin-bottom: theme.$gap;
+}
