@@ -1,3 +1,4 @@
+import { AriaRole } from 'react';
 import { ValidationStatesDictionaryType } from './dictionaries';
 
 export type ValidationState = ValidationStatesDictionaryType;
@@ -38,6 +39,8 @@ export interface HelperTextProps {
 }
 
 export interface ValidationTextProp {
+  /** The role for validation text element */
+  role?: AriaRole;
   /** The validation text to display. */
   validationText?: ValidationTextType;
 }

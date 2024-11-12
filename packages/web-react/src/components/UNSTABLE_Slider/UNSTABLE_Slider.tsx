@@ -5,6 +5,7 @@ import React, { CSSProperties, ChangeEvent, FormEvent, ForwardedRef, forwardRef 
 import { useStyleProps } from '../../hooks';
 import { SpiritSliderProps } from '../../types';
 import { HelperText, ValidationText, useAriaIds } from '../Field';
+import { useValidationTextRole } from '../Field/useValidationTextRole';
 import { SLIDER_DEFAULT_PROPS } from './constants';
 import { useSliderStyleProps } from './useSliderStyleProps';
 
@@ -34,6 +35,10 @@ const _UnstableSlider = (props: SpiritSliderProps, ref: ForwardedRef<HTMLInputEl
   const { classProps, props: modifiedProps } = useSliderStyleProps({ ...restProps, isDisabled, validationState });
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
   const [ids, register] = useAriaIds(ariaDescribedBy);
+  const validationTextRole = useValidationTextRole({
+    validationState,
+    validationText,
+  });
 
   const CSSVariable = '--slider-position';
 
@@ -77,6 +82,7 @@ const _UnstableSlider = (props: SpiritSliderProps, ref: ForwardedRef<HTMLInputEl
           id={`${id}__validationText`}
           registerAria={register}
           validationText={validationText}
+          role={validationTextRole}
         />
       )}
     </div>
