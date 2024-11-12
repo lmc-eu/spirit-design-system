@@ -11,7 +11,7 @@ export interface LinkStyles<E extends ElementType = 'p'> {
 }
 
 export function useLinkStyleProps<E extends ElementType = 'a', T = void>(props: SpiritLinkProps<E, T>): LinkStyles<E> {
-  const { color, isDisabled, underlined, ...restProps } = props;
+  const { color, hasVisitedStyleAllowed, isDisabled, underlined, ...restProps } = props;
 
   const linkClass = useClassNamePrefix('link');
   const linkColorClass = `${linkClass}-${color}`;
@@ -24,7 +24,7 @@ export function useLinkStyleProps<E extends ElementType = 'a', T = void>(props: 
     [linkDisabledClass]: isDisabled,
     [linkUnderlinedClass]: underlined === UNDERLINED_OPTIONS.ALWAYS,
     [linkNotUnderlinedClass]: underlined === UNDERLINED_OPTIONS.NEVER,
-    [linkVisitedStyleAllowedClass]: props.hasVisitedStyleAllowed,
+    [linkVisitedStyleAllowedClass]: hasVisitedStyleAllowed,
   });
 
   return {
