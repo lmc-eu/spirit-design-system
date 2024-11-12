@@ -1,0 +1,9 @@
+@use 'theme';
+
+.CardBody {
+    grid-area: body;
+
+    &:not(:last-child) {
+        margin-bottom: theme.$gap;
+    }
+}
