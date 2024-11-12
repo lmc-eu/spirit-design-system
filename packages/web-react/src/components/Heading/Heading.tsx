@@ -14,7 +14,7 @@ const defaultProps: Partial<SpiritHeadingProps<ElementType, void, void>> = {
 const Heading = <T extends ElementType, S = void, E = void>(props: SpiritHeadingProps<T, S, E>): JSX.Element => {
   const propsWithDefaults = { ...defaultProps, ...props };
   const { elementType: ElementTag, children, ...restProps } = propsWithDefaults;
-  const { classProps, props: modifiedProps } = useHeadingStyleProps({ ...restProps, elementType: ElementTag });
+  const { classProps, props: modifiedProps } = useHeadingStyleProps({ ...restProps });
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
 
   return (
