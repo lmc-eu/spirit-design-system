@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.0.0-alpha.3"></a>
+
+# [3.0.0-alpha.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.0.0-alpha.2...@lmc-eu/spirit-web-react@3.0.0-alpha.3) (2024-11-13)
+
+### BREAKING CHANGES
+
+- **web:** Replace spacing with spacing-x and spacing-y property in Flex [#DS-1427](https://github.com/lmc-eu/spirit-design-system/issues/DS-1427) ([824d76d](https://github.com/lmc-eu/spirit-design-system/commit/824d76d))
+
+### Bug Fixes
+
+- **web-react:** Unsupported export in client boundary [#DS-1549](https://github.com/lmc-eu/spirit-design-system/issues/DS-1549) ([c0e479a](https://github.com/lmc-eu/spirit-design-system/commit/c0e479a))
+- **web-react:** Unwanted Heading elementType prop on a DOM element [#DS-1553](https://github.com/lmc-eu/spirit-design-system/issues/DS-1553) ([c52dc2e](https://github.com/lmc-eu/spirit-design-system/commit/c52dc2e))
+- **web-react:** Unwanted Link hasVisitedStyleAllowed prop on a DOM element [#DS-1553](https://github.com/lmc-eu/spirit-design-system/issues/DS-1553) ([dee5aa4](https://github.com/lmc-eu/spirit-design-system/commit/dee5aa4))
+
+### Features
+
+- **web-react:** Add spacingX and spacingY to Flex [#DS-1427](https://github.com/lmc-eu/spirit-design-system/issues/DS-1427) ([580d805](https://github.com/lmc-eu/spirit-design-system/commit/580d805))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="3.0.0-alpha.2"></a>
 
 # [3.0.0-alpha.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.0.0-alpha.1...@lmc-eu/spirit-web-react@3.0.0-alpha.2) (2024-11-06)

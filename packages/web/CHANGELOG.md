@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.0.0-alpha.3"></a>
+
+# [3.0.0-alpha.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.0.0-alpha.2...@lmc-eu/spirit-web@3.0.0-alpha.3) (2024-11-13)
+
+### BREAKING CHANGES
+
+- **web:** Replace spacing with spacing-x and spacing-y property in Flex [#DS-1427](https://github.com/lmc-eu/spirit-design-system/issues/DS-1427) ([824d76d](https://github.com/lmc-eu/spirit-design-system/commit/824d76d))
+
+### Code Refactoring
+
+- **web:** Abstract spacing tools to generate any custom properties cascade [#DS-1546](https://github.com/lmc-eu/spirit-design-system/issues/DS-1546) ([b4ff1ad](https://github.com/lmc-eu/spirit-design-system/commit/b4ff1ad))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="3.0.0-alpha.2"></a>
 
 # [3.0.0-alpha.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.0.0-alpha.1...@lmc-eu/spirit-web@3.0.0-alpha.2) (2024-11-06)

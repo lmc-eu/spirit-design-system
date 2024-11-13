@@ -5244,7 +5244,7 @@ __metadata:
     "@lmc-eu/spirit-common": "npm:^0.3.8"
     "@lmc-eu/spirit-demo": "npm:^1.0.0-alpha.0"
     "@lmc-eu/spirit-design-tokens": "npm:^3.0.0-alpha.1"
-    "@lmc-eu/spirit-web": "npm:^3.0.0-alpha.1"
+    "@lmc-eu/spirit-web": "npm:^3.0.0-alpha.3"
     "@rollup/plugin-node-resolve": "npm:15.3.0"
     "@rollup/plugin-replace": "npm:6.0.1"
     "@rollup/plugin-terser": "npm:0.4.4"
@@ -5308,7 +5308,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@lmc-eu/spirit-web@npm:^3.0.0-alpha.1, @lmc-eu/spirit-web@workspace:^, @lmc-eu/spirit-web@workspace:packages/web":
+"@lmc-eu/spirit-web@npm:^3.0.0-alpha.3, @lmc-eu/spirit-web@workspace:^, @lmc-eu/spirit-web@workspace:packages/web":
   version: 0.0.0-use.local
   resolution: "@lmc-eu/spirit-web@workspace:packages/web"
   dependencies:
