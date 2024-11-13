@@ -66,7 +66,7 @@ you can use the `inputProps` prop.
 
 Supported attributes are:
 
-- `on*` (eg. `onclick`)
+- `on*` (eg. `onClick`)
 - `data-*`
 - `aria-*`
 - `id`
