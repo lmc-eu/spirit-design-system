@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.4](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.0.0-alpha.3...@lmc-eu/spirit-web-react@3.0.0-alpha.4) (2024-11-13)
+
+### Dependencies
+
+- Update all non-major dependencies
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="3.0.0-alpha.3"></a>
 
 # [3.0.0-alpha.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.0.0-alpha.2...@lmc-eu/spirit-web-react@3.0.0-alpha.3) (2024-11-13)
