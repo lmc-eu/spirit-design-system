@@ -1,33 +1,7 @@
 @use 'theme';
 
-@mixin card-content-element($direction: 'vertical') {
-    @if $direction == 'vertical' {
-        padding-inline: var(--card-padding);
-
-        &:first-child {
-            padding-top: var(--card-padding);
-        }
-
-        &:last-child {
-            padding-bottom: var(--card-padding);
-        }
-    }
-
-    // TODO other directions
-}
-
-@mixin add-spacing($direction: 'vertical', $spacing: theme.$gap) {
-    @if $direction == 'vertical' {
-        &:not(:last-child) {
-            margin-bottom: $spacing;
-        }
-    } @else if $direction == 'horizontal' {
-        &:not(:last-child) {
-            margin-inline-end: $spacing;
-        }
-    } @else {
-        &:not(:first-child) {
-            margin-inline-start: $spacing;
-        }
+@mixin add-spacing($spacing: theme.$gap) {
+    .Card--vertical > &:not(:last-child) {
+        margin-bottom: $spacing;
     }
 }

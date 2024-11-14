@@ -3,7 +3,6 @@
 @use 'tools';
 
 .CardBody {
-    @include tools.card-content-element();
     @include tools.add-spacing();
 
     grid-area: body;

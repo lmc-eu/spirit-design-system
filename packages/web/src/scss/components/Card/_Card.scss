@@ -1,32 +1,15 @@
 // 1. Get ready for card link overlay.
+// 2. If there is a capped CardMedia in a boxed vertical card, replace card padding with empty grid columns.
 
 @use '../../tools/typography';
 @use 'theme';
 
 .Card {
-    --card-gap: #{theme.$gap};
-
     @include typography.generate(theme.$typography);
 
     position: relative; // 1.
     display: grid;
     color: theme.$color;
-}
-
-.Card--horizontal {
-    grid-template-columns: 1fr auto;
-    grid-template-rows: 1fr auto;
-    grid-template-areas:
-        'header body'
-        'header footer';
-}
-
-.Card--horizontalReversed {
-    grid-template-columns: auto 1fr;
-    grid-template-rows: 1fr auto;
-    grid-template-areas:
-        'body header'
-        'footer header';
 }
 
 .Card--vertical {
@@ -38,18 +21,9 @@
 }
 
 .Card--boxed {
-    --card-padding: #{theme.$padding};
-
     border: theme.$border-width theme.$border-style theme.$border-color;
     border-radius: theme.$border-radius;
     background-color: theme.$background-color;
-
-    // TODO discuss interactions with designer
-    // @media (hover: hover) {
-    //     &:hover .CardLink {
-    //         text-decoration: underline;
-    //     }
-    // }
 
     &:has(.CardLink) {
         @media (hover: hover) {
@@ -59,5 +33,25 @@
                 box-shadow: theme.$box-shadow-hover;
             }
         }
+    }
+}
+
+.Card--vertical.Card--boxed {
+    &:not(:has(.CardMedia--cap)) {
+        padding: theme.$padding;
+    }
+
+    &:has(.CardMedia--cap) {
+        grid-template-columns: theme.$gap 1fr theme.$gap; // 2.
+        grid-template-rows: theme.$gap auto 1fr auto;
+        grid-template-areas:
+            'header header header'
+            'header header header'
+            '. body .'
+            '. footer .';
+    }
+
+    &:has(.CardMedia:not(:only-child)) {
+        padding-bottom: theme.$padding;
     }
 }

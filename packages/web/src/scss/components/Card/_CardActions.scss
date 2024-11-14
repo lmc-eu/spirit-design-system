@@ -5,7 +5,6 @@
 @use 'tools';
 
 .CardActions {
-    @include tools.card-content-element();
     @include tools.add-spacing();
 
     z-index: 1;

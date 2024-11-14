@@ -1,15 +1,18 @@
+// 1. We need the specific combination of classes, capped CardMedia is designed to work only with boxed vertical cards.
+
 @use '../../tools/dictionaries';
 @use 'theme';
 @use 'tools';
 
 .CardMedia {
+    --card-media-border-radius-top-left: #{theme.$border-radius};
+    --card-media-border-radius-top-right: #{theme.$border-radius};
+    --card-media-border-radius-bottom-left: #{theme.$border-radius};
+    --card-media-border-radius-bottom-right: #{theme.$border-radius};
+
     @include tools.add-spacing($spacing: theme.$gap-dense);
 
     grid-area: header;
-}
-
-.CardMedia:not(.CardMedia--cap) {
-    @include tools.card-content-element();
 }
 
 @include dictionaries.generate-sizes($class-name: 'CardMedia', $sizes: theme.$media-sizes);
@@ -17,7 +20,8 @@
 .CardMedia__canvas {
     aspect-ratio: var(--spirit-card-media-ratio);
     overflow: hidden;
-    border-radius: theme.$border-radius;
+    border-radius: var(--card-media-border-radius-top-left) var(--card-media-border-radius-top-right)
+        var(--card-media-border-radius-bottom-right) var(--card-media-border-radius-bottom-left);
 }
 
 .CardMedia__canvas > :is(img, picture > img, video) {
@@ -26,14 +30,8 @@
     object-fit: cover;
 }
 
-// stylelint-disable selector-max-class -- TODO reason
-// TODO rewrite to CSS variables?
-.Card--vertical.Card--boxed > .CardMedia--cap > .CardMedia__canvas {
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-}
-
-.Card--horizontal.Card--boxed > .CardMedia--cap > .CardMedia__canvas {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+// stylelint-disable selector-max-class -- 1.
+.Card--vertical.Card--boxed > .CardMedia--cap:not(:last-child) {
+    --card-media-border-radius-bottom-left: 0;
+    --card-media-border-radius-bottom-right: 0;
 }
