@@ -1,7 +1,7 @@
 @use 'theme';
 
-@mixin add-spacing($spacing: theme.$gap) {
-    .Card--vertical > &:not(:last-child) {
+@mixin add-bottom-spacing($spacing: theme.$gap) {
+    &:not(:last-child) {
         margin-bottom: $spacing;
     }
 }

@@ -1,15 +1,7 @@
 @use '../../tools/typography';
 @use 'theme';
 
-// TODO Separate subcomponents?
-.Card__eyebrow {
-    @include typography.generate(theme.$eyebrow-typography);
-
-    margin-bottom: theme.$eyebrow-margin-bottom;
-    color: theme.$eyebrow-color;
-}
-
-.Card__heading {
+.CardTitle {
     @include typography.generate(theme.$heading-typography);
 
     color: theme.$heading-color;

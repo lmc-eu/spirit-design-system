@@ -1,0 +1,9 @@
+@use '../../tools/typography';
+@use 'theme';
+
+.CardEyebrow {
+    @include typography.generate(theme.$eyebrow-typography);
+
+    margin-bottom: theme.$eyebrow-margin-bottom;
+    color: theme.$eyebrow-color;
+}

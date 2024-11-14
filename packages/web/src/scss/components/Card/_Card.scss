@@ -15,9 +15,9 @@
 .Card--vertical {
     grid-template-rows: auto 1fr auto;
     grid-template-areas:
-        'header'
+        'media'
         'body'
-        'footer';
+        'actions';
 }
 
 .Card--boxed {
@@ -34,21 +34,21 @@
             }
         }
     }
-}
 
-.Card--vertical.Card--boxed {
-    &:not(:has(.CardMedia--cap)) {
+    &:not(:has(.CardMedia--expanded)) {
         padding: theme.$padding;
     }
+}
 
-    &:has(.CardMedia--cap) {
+.Card--boxed.Card--vertical {
+    &:has(.CardMedia--expanded) {
         grid-template-columns: theme.$gap 1fr theme.$gap; // 2.
         grid-template-rows: theme.$gap auto 1fr auto;
         grid-template-areas:
-            'header header header'
-            'header header header'
+            'media media media'
+            'media media media'
             '. body .'
-            '. footer .';
+            '. actions .';
     }
 
     &:has(.CardMedia:not(:only-child)) {

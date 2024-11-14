@@ -24,13 +24,13 @@ $transition-timing: transitions.$timing-eased-in-out;
 $media-border-radius: tokens.$radius-300;
 $media-sizes: (
     small: (
-        ratio: 2,
+        size: 140px,
     ),
     medium: (
-        ratio: 1.5,
+        size: 216px,
     ),
     large: (
-        ratio: 1,
+        size: 280px,
     ),
 );
 

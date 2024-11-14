@@ -1,4 +1,4 @@
-// 1. We need the specific combination of classes, capped CardMedia is designed to work only with boxed vertical cards.
+// 1. We need the specific combination of classes, expanded CardMedia is designed to work only with boxed cards.
 
 @use '../../tools/dictionaries';
 @use 'theme';
@@ -9,16 +9,17 @@
     --card-media-border-radius-top-right: #{theme.$border-radius};
     --card-media-border-radius-bottom-left: #{theme.$border-radius};
     --card-media-border-radius-bottom-right: #{theme.$border-radius};
+    --card-media-canvas-width: auto;
+    --card-media-canvas-height: auto;
 
-    @include tools.add-spacing($spacing: theme.$gap-dense);
-
-    grid-area: header;
+    grid-area: media;
 }
 
 @include dictionaries.generate-sizes($class-name: 'CardMedia', $sizes: theme.$media-sizes);
 
 .CardMedia__canvas {
-    aspect-ratio: var(--spirit-card-media-ratio);
+    width: var(--card-media-canvas-width);
+    height: var(--card-media-canvas-height);
     overflow: hidden;
     border-radius: var(--card-media-border-radius-top-left) var(--card-media-border-radius-top-right)
         var(--card-media-border-radius-bottom-right) var(--card-media-border-radius-bottom-left);
@@ -30,8 +31,20 @@
     object-fit: cover;
 }
 
+.Card--vertical > .CardMedia {
+    --card-media-canvas-height: var(--spirit-card-media-size);
+
+    @include tools.add-bottom-spacing($spacing: theme.$gap-dense);
+}
+
+:is(.Card--horizontal, .Card--horizontalReversed) > .CardMedia {
+    --card-media-canvas-width: var(--spirit-card-media-size);
+    --card-media-canvas-height: 100%;
+}
+
 // stylelint-disable selector-max-class -- 1.
-.Card--vertical.Card--boxed > .CardMedia--cap:not(:last-child) {
+.Card--vertical.Card--boxed > .CardMedia--expanded:not(:last-child) {
     --card-media-border-radius-bottom-left: 0;
     --card-media-border-radius-bottom-right: 0;
 }
+// stylelint-enable
