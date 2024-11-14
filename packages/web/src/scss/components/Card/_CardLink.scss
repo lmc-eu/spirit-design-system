@@ -2,4 +2,6 @@
 
 .CardLink:first-of-type {
     @include links.stretch();
+
+    text-decoration: none;
 }

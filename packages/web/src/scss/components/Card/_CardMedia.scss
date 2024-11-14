@@ -47,4 +47,14 @@
     --card-media-border-radius-bottom-left: 0;
     --card-media-border-radius-bottom-right: 0;
 }
+
+.Card--horizontal.Card--boxed > .CardMedia--expanded:not(:last-child) {
+    --card-media-border-radius-top-right: 0;
+    --card-media-border-radius-bottom-right: 0;
+}
+
+.Card--horizontalReversed.Card--boxed > .CardMedia--expanded:not(:last-child) {
+    --card-media-border-radius-top-left: 0;
+    --card-media-border-radius-bottom-left: 0;
+}
 // stylelint-enable
