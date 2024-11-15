@@ -14,7 +14,11 @@ describe('HeaderLink', () => {
   restPropsTest((props) => <HeaderLink {...props} />, 'a');
 
   it('should render text children', () => {
-    const dom = render(<HeaderLink id="test">Hello World</HeaderLink>);
+    const dom = render(
+      <HeaderLink href="#" id="test">
+        Hello World
+      </HeaderLink>,
+    );
 
     const element = dom.container.querySelector('a') as HTMLElement;
     expect(element.textContent).toBe('Hello World');
@@ -22,7 +26,7 @@ describe('HeaderLink', () => {
 
   it('should render button element', () => {
     const dom = render(
-      <HeaderLink id="test" elementType="button">
+      <HeaderLink href="#" id="test" elementType="button">
         Hello World
       </HeaderLink>,
     );

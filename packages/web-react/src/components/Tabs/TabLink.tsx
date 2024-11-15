@@ -3,10 +3,10 @@
 import classNames from 'classnames';
 import React, { ElementType, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
-import { PolymorphicRef, SpiritTabLinkProps } from '../../types';
+import { PolymorphicForwardRef, PolymorphicRef, SpiritTabLinkProps } from '../../types';
 import { useTabsStyleProps } from './useTabsStyleProps';
 
-const defaultProps: SpiritTabLinkProps = {
+const defaultProps: Partial<SpiritTabLinkProps> = {
   itemProps: {},
 };
 
@@ -27,6 +27,6 @@ const _TabLink = <E extends ElementType = 'a'>(props: SpiritTabLinkProps<E>, ref
   );
 };
 
-const TabLink = forwardRef<HTMLAnchorElement, SpiritTabLinkProps<ElementType>>(_TabLink);
+const TabLink = (forwardRef as PolymorphicForwardRef)(_TabLink);
 
 export default TabLink;

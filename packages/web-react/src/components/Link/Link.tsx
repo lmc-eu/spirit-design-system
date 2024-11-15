@@ -3,10 +3,10 @@
 import classNames from 'classnames';
 import React, { ElementType, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
-import { PolymorphicRef, SpiritLinkProps } from '../../types';
+import { PolymorphicForwardRef, PolymorphicRef, SpiritLinkProps } from '../../types';
 import { useLinkStyleProps } from './useLinkStyleProps';
 
-const defaultProps: Partial<SpiritLinkProps> = {
+const defaultProps: Partial<SpiritLinkProps<ElementType>> = {
   elementType: 'a',
   color: 'primary',
   hasVisitedStyleAllowed: false,
@@ -41,6 +41,6 @@ const _Link = <E extends ElementType = 'a', T = void>(
   );
 };
 
-const Link = forwardRef<HTMLAnchorElement, SpiritLinkProps<ElementType>>(_Link);
+const Link = (forwardRef as PolymorphicForwardRef)(_Link);
 
 export default Link;

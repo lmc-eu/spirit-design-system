@@ -14,14 +14,14 @@ describe('PaginationLink', () => {
   restPropsTest(PaginationLink, 'a');
 
   it('should render text children', () => {
-    const dom = render(<PaginationLink accessibilityLabel="" pageNumber={100} />);
+    const dom = render(<PaginationLink href="#" accessibilityLabel="" pageNumber={100} />);
     const element = dom.container.querySelector('.Pagination__link') as HTMLElement;
 
     expect(element.textContent).toBe('100');
   });
 
   it('should render text children with accessibility label', () => {
-    const dom = render(<PaginationLink accessibilityLabel="Test label" pageNumber={100} />);
+    const dom = render(<PaginationLink href="#" accessibilityLabel="Test label" pageNumber={100} />);
     const element = dom.container.querySelector('.Pagination__link') as HTMLElement;
 
     expect(element.textContent).toBe('Test label100');

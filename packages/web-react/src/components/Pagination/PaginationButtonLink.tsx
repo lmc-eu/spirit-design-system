@@ -1,7 +1,7 @@
 'use client';
 
 import React, { ElementType, ForwardedRef, forwardRef } from 'react';
-import { SpiritPaginationButtonLinkProps } from '../../types';
+import { PolymorphicForwardRef, SpiritPaginationButtonLinkProps } from '../../types';
 import { ButtonLink } from '../Button';
 import { Icon } from '../Icon';
 import { VisuallyHidden } from '../VisuallyHidden';
@@ -20,13 +20,13 @@ const _PaginationButtonLink = <E extends ElementType = 'a'>(
   };
 
   return (
-    <ButtonLink color="secondary" isSymmetrical {...restProps} ref={ref}>
+    <ButtonLink href={restProps.href} color="secondary" isSymmetrical {...restProps} ref={ref}>
       <Icon name={iconType[direction]} />
       <VisuallyHidden>{accessibilityLabel}</VisuallyHidden>
     </ButtonLink>
   );
 };
 
-const PaginationButtonLink = forwardRef<HTMLAnchorElement, SpiritPaginationButtonLinkProps>(_PaginationButtonLink);
+const PaginationButtonLink = (forwardRef as PolymorphicForwardRef)(_PaginationButtonLink);
 
 export default PaginationButtonLink;

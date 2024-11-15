@@ -12,6 +12,10 @@ import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import ButtonLink from '../ButtonLink';
 
+const buttonLinkDefaultProps = {
+  href: '#',
+};
+
 describe('ButtonLink', () => {
   classNamePrefixProviderTest(ButtonLink, 'Button');
 
@@ -28,14 +32,14 @@ describe('ButtonLink', () => {
   restPropsTest(ButtonLink, 'a');
 
   it('should have default classname', () => {
-    const { container } = render(<ButtonLink />);
+    const { container } = render(<ButtonLink {...buttonLinkDefaultProps} />);
 
     const element = container.querySelector('a') as HTMLElement;
     expect(element).toHaveClass('Button--primary');
   });
 
   it('should have disabled classname', () => {
-    const { container } = render(<ButtonLink isDisabled />);
+    const { container } = render(<ButtonLink isDisabled {...buttonLinkDefaultProps} />);
 
     const element = container.querySelector('a') as HTMLElement;
     expect(element).toHaveClass('Button');
@@ -43,7 +47,7 @@ describe('ButtonLink', () => {
   });
 
   it('should have block classname', () => {
-    const { container } = render(<ButtonLink isBlock />);
+    const { container } = render(<ButtonLink isBlock {...buttonLinkDefaultProps} />);
 
     const element = container.querySelector('a') as HTMLElement;
     expect(element).toHaveClass('Button');
@@ -51,7 +55,7 @@ describe('ButtonLink', () => {
   });
 
   it('should have size classname', () => {
-    const { container } = render(<ButtonLink size="medium" />);
+    const { container } = render(<ButtonLink size="medium" {...buttonLinkDefaultProps} />);
 
     const element = container.querySelector('a') as HTMLElement;
     expect(element).toHaveClass('Button');
@@ -59,14 +63,14 @@ describe('ButtonLink', () => {
   });
 
   it('should render text children', () => {
-    const dom = render(<ButtonLink>Hello World</ButtonLink>);
+    const dom = render(<ButtonLink {...buttonLinkDefaultProps}>Hello World</ButtonLink>);
 
     const element = dom.container.querySelector('a') as HTMLElement;
     expect(element.textContent).toBe('Hello World');
   });
 
   it('should not have default type attribute', () => {
-    const { container } = render(<ButtonLink />);
+    const { container } = render(<ButtonLink {...buttonLinkDefaultProps} />);
 
     const element = container.querySelector('a') as HTMLElement;
     expect(element).not.toHaveAttribute('type');

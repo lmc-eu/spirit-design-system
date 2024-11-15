@@ -26,7 +26,7 @@ describe('useLinkStyleProps', () => {
   });
 
   it('should return link-allowed-visited class', () => {
-    const props = { color: 'primary', hasVisitedStyleAllowed: true } as SpiritLinkProps;
+    const props = { href: '#', color: 'primary', hasVisitedStyleAllowed: true } as SpiritLinkProps;
     const { result } = renderHook(() => useLinkStyleProps(props));
 
     expect(result.current.classProps).toContain('link-allow-visited-style');

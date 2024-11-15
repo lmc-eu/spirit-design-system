@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React, { ElementType, ForwardedRef, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
-import { ToastLinkProps } from '../../types';
+import { PolymorphicForwardRef, ToastLinkProps } from '../../types';
 import { useToastBarStyleProps } from './useToastBarStyleProps';
 
 const defaultProps: Partial<ToastLinkProps> = {
@@ -29,6 +29,6 @@ const _ToastBarLink = (props: ToastLinkProps, ref: ForwardedRef<HTMLAnchorElemen
   );
 };
 
-const ToastBarLink = forwardRef<HTMLAnchorElement, ToastLinkProps>(_ToastBarLink);
+const ToastBarLink = (forwardRef as PolymorphicForwardRef)(_ToastBarLink);
 
 export default ToastBarLink;

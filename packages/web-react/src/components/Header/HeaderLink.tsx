@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React, { ElementType, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
-import { PolymorphicRef, SpiritHeaderLinkProps } from '../../types';
+import { PolymorphicForwardRef, PolymorphicRef, SpiritHeaderLinkProps } from '../../types';
 import { useHeaderStyleProps } from './useHeaderStyleProps';
 
 /* We need an exception for components exported with forwardRef */
@@ -12,7 +12,7 @@ const _HeaderLink = <E extends ElementType = 'a'>(
   props: SpiritHeaderLinkProps<E>,
   ref: PolymorphicRef<E>,
 ): JSX.Element => {
-  const { elementType: ElementTag = 'a', children, isCurrent, ...restProps } = props;
+  const { elementType: ElementTag = 'a' as ElementType, children, isCurrent, ...restProps } = props;
   const { classProps } = useHeaderStyleProps({ isCurrentLink: isCurrent });
   const { styleProps, props: otherProps } = useStyleProps(restProps);
 
@@ -20,6 +20,7 @@ const _HeaderLink = <E extends ElementType = 'a'>(
     <ElementTag
       {...otherProps}
       className={classNames(classProps.headerLink, styleProps.className)}
+      href={restProps.href}
       style={styleProps.style}
       ref={ref}
     >
@@ -28,6 +29,6 @@ const _HeaderLink = <E extends ElementType = 'a'>(
   );
 };
 
-const HeaderLink = forwardRef<HTMLAnchorElement, SpiritHeaderLinkProps<ElementType>>(_HeaderLink);
+const HeaderLink = (forwardRef as PolymorphicForwardRef)(_HeaderLink);
 
 export default HeaderLink;

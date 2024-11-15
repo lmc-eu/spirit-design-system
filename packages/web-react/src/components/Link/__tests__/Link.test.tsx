@@ -23,8 +23,8 @@ describe('Link', () => {
       <Link
         href="/"
         color={color as ActionLinkColorsDictionaryType<string>}
-        underlined={underlined}
-        isDisabled={isDisabled}
+        underlined={underlined as string}
+        isDisabled={isDisabled as boolean}
       />,
     );
 

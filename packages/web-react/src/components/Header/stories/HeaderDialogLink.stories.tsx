@@ -68,21 +68,21 @@ const HeaderWithHooks = (args: HeaderDialogLinkProps) => {
         <HeaderDesktopActions aria-label="Main navigation">
           <HeaderNav>
             <HeaderNavItem>
-              <HeaderLink isCurrent aria-current="page">
+              <HeaderLink href="#" isCurrent aria-current="page">
                 Job offers
               </HeaderLink>
             </HeaderNavItem>
             <HeaderNavItem>
-              <HeaderLink>Part-time jobs</HeaderLink>
+              <HeaderLink href="#">Part-time jobs</HeaderLink>
             </HeaderNavItem>
             <HeaderNavItem>
-              <HeaderLink>Inspiration</HeaderLink>
+              <HeaderLink href="#">Inspiration</HeaderLink>
             </HeaderNavItem>
             <HeaderNavItem>
-              <HeaderLink>Replies</HeaderLink>
+              <HeaderLink href="#">Replies</HeaderLink>
             </HeaderNavItem>
             <HeaderNavItem>
-              <HeaderLink>Employers</HeaderLink>
+              <HeaderLink href="#">Employers</HeaderLink>
             </HeaderNavItem>
           </HeaderNav>
         </HeaderDesktopActions>
@@ -105,19 +105,19 @@ const HeaderWithHooks = (args: HeaderDialogLinkProps) => {
         <HeaderDialogActions color="primary" aria-label="Main navigation">
           <HeaderDialogNav>
             <HeaderDialogNavItem>
-              <HeaderDialogLink {...args} />
+              <HeaderDialogLink href="#" {...args} />
             </HeaderDialogNavItem>
             <HeaderDialogNavItem>
-              <HeaderDialogLink>Part-time jobs</HeaderDialogLink>
+              <HeaderDialogLink href="#">Part-time jobs</HeaderDialogLink>
             </HeaderDialogNavItem>
             <HeaderDialogNavItem>
-              <HeaderDialogLink>Inspiration</HeaderDialogLink>
+              <HeaderDialogLink href="#">Inspiration</HeaderDialogLink>
             </HeaderDialogNavItem>
             <HeaderDialogNavItem>
-              <HeaderDialogLink>Replies</HeaderDialogLink>
+              <HeaderDialogLink href="#">Replies</HeaderDialogLink>
             </HeaderDialogNavItem>
             <HeaderDialogNavItem>
-              <HeaderDialogLink>Employers</HeaderDialogLink>
+              <HeaderDialogLink href="#">Employers</HeaderDialogLink>
             </HeaderDialogNavItem>
           </HeaderDialogNav>
         </HeaderDialogActions>
@@ -127,16 +127,16 @@ const HeaderWithHooks = (args: HeaderDialogLinkProps) => {
               <HeaderDialogText UNSAFE_className="text-tertiary">Marian</HeaderDialogText>
             </HeaderDialogNavItem>
             <HeaderDialogNavItem>
-              <HeaderDialogLink>Dashboard</HeaderDialogLink>
+              <HeaderDialogLink href="#">Dashboard</HeaderDialogLink>
             </HeaderDialogNavItem>
             <HeaderDialogNavItem>
-              <HeaderDialogLink>Profile</HeaderDialogLink>
+              <HeaderDialogLink href="#">Profile</HeaderDialogLink>
             </HeaderDialogNavItem>
             <HeaderDialogNavItem>
-              <HeaderDialogLink>Favourites</HeaderDialogLink>
+              <HeaderDialogLink href="#">Favourites</HeaderDialogLink>
             </HeaderDialogNavItem>
             <HeaderDialogNavItem>
-              <HeaderDialogLink>Notifications</HeaderDialogLink>
+              <HeaderDialogLink href="#">Notifications</HeaderDialogLink>
             </HeaderDialogNavItem>
             <HeaderDialogNavItem>
               <HeaderDialogButton>Sign out</HeaderDialogButton>
@@ -154,16 +154,16 @@ const HeaderWithHooks = (args: HeaderDialogLinkProps) => {
         <HeaderDialogActions color="primary" aria-label="User menu">
           <HeaderDialogNav>
             <HeaderDialogNavItem>
-              <HeaderDialogLink>Dashboard</HeaderDialogLink>
+              <HeaderDialogLink href="#">Dashboard</HeaderDialogLink>
             </HeaderDialogNavItem>
             <HeaderDialogNavItem>
-              <HeaderDialogLink>Profile</HeaderDialogLink>
+              <HeaderDialogLink href="#">Profile</HeaderDialogLink>
             </HeaderDialogNavItem>
             <HeaderDialogNavItem>
-              <HeaderDialogLink>Favourites</HeaderDialogLink>
+              <HeaderDialogLink href="#">Favourites</HeaderDialogLink>
             </HeaderDialogNavItem>
             <HeaderDialogNavItem>
-              <HeaderDialogLink>Notifications</HeaderDialogLink>
+              <HeaderDialogLink href="#">Notifications</HeaderDialogLink>
             </HeaderDialogNavItem>
             <HeaderDialogNavItem>
               <HeaderDialogButton>Sign out</HeaderDialogButton>

@@ -1,7 +1,8 @@
 import { ElementType } from 'react';
-import { SpiritButtonProps } from './button';
+import { SpiritButtonLinkProps } from './button';
 import {
   ChildrenProps,
+  LinkHrefProps,
   SpiritElementProps,
   SpiritLItemElementProps,
   SpiritPolymorphicElementPropsWithRef,
@@ -31,18 +32,20 @@ export interface PaginationLinkProps<E extends ElementType = 'a'>
   pageNumber: number;
 }
 
-export type PaginationButtonLinkProps<E extends ElementType = 'a'> = SpiritButtonProps<E> &
+export type PaginationButtonLinkProps<E extends ElementType = 'a'> = SpiritButtonLinkProps<E> &
   AriaPaginationProps & {
     direction: PaginationLinkDirectionType;
   };
 
-export type PaginationLinkPreviousNextProps<E extends ElementType = 'a'> = SpiritButtonProps<E> & AriaPaginationProps;
+export type PaginationLinkPreviousNextProps<E extends ElementType = 'a'> = SpiritButtonLinkProps<E> &
+  AriaPaginationProps;
 
 export interface SpiritPaginationProps extends PaginationProps {}
 
 export interface SpiritPaginationItemProps extends PaginationItemProps {}
 
 export type SpiritPaginationLinkProps<E extends ElementType = 'a'> = PaginationLinkProps<E> &
+  LinkHrefProps<E> &
   SpiritPolymorphicElementPropsWithRef<E, PaginationLinkProps<E>>;
 
 export type SpiritPaginationButtonLinkProps<E extends ElementType = 'a'> = PaginationButtonLinkProps<E>;
@@ -53,6 +56,7 @@ export interface UncontrolledPaginationProps {
   accessibilityLabelNext?: string;
   accessibilityLabelPrevious?: string;
   defaultPage?: number;
+  href: string;
   visiblePages?: number;
   onChange?: (pageNumber: number) => void;
   totalPages: number;

@@ -17,14 +17,14 @@ const ButtonLinkDemoFactory = ({ ...props }: ButtonBaseProps) => {
         <DocsSection key={size} title={`Size ${size}`}>
           {colors.map((color) => (
             <div key={color}>
-              <ButtonLink size={size} color={color} elementType="a" {...props}>
+              <ButtonLink href="#" size={size} color={color} elementType="a" {...props}>
                 {`Button ${color}`}
               </ButtonLink>{' '}
-              <ButtonLink size={size} color={color} {...props}>
+              <ButtonLink href="#" size={size} color={color} {...props}>
                 <Icon name="link" marginRight="space-400" />
                 Menu
               </ButtonLink>{' '}
-              <ButtonLink size={size} color={color} isSymmetrical {...props}>
+              <ButtonLink href="#" size={size} color={color} isSymmetrical {...props}>
                 <Icon name="link" />
               </ButtonLink>
             </div>

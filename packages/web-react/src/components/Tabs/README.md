@@ -142,6 +142,7 @@ Tab list link
 | `children`    | `any`                        | —       | ✕        | Child component               |
 | `elementType` | `ElementType`                | `a`     | ✕        | Type of element               |
 | `itemProps`   | `StyleProps & HTMLLIElement` | —       | ✕        | Props for parent list element |
+| `href`        | `string`                     | —       | ✕        | TabLink's href attribute      |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

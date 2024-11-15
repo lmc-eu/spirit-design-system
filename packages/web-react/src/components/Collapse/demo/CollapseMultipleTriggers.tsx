@@ -21,7 +21,7 @@ const CollapseMultipleTriggers = () => {
       <Button onClick={toggleHandler} color="secondary">
         Secondary trigger
       </Button>{' '}
-      <ButtonLink onClick={toggleHandler} aria-expanded={isOpen} color="tertiary">
+      <ButtonLink href="#" onClick={toggleHandler} aria-expanded={isOpen} color="tertiary">
         Tertiary trigger
       </ButtonLink>
     </>
