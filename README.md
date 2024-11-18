@@ -155,6 +155,9 @@ Check your Symfony console or log to see if you are using any of the deprecated 
 
 ![Deprecations in Symfony's console](https://github.com/lmc-eu/spirit-design-system/blob/main/static/deprecations-symfony-console.png?raw=true)
 
+👉 [See a DEPRECATIONS file][all-deprecations] for a list of all deprecations.
+
+[all-deprecations]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/DEPRECATIONS.md
 [changelog]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/CHANGELOG.md
 [components-directory]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/src/Resources/components
 [contributing]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/CONTRIBUTING.md
