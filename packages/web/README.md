@@ -245,6 +245,8 @@ Check your browser console to see if you are using any of the deprecated functio
 
 ![Deprecations in the Browser's console][deprecations]
 
+👉 [See a DEPRECATIONS file][all-deprecations] for a list of all deprecations.
+
 ## Feature Flags
 
 👀 See [Feature Flags documentation][feature-flags-docs] for how to use them.
@@ -257,11 +259,13 @@ Check your browser console to see if you are using any of the deprecated functio
 
 See the [LICENSE][license] file for information.
 
+[all-deprecations]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/DEPRECATIONS.md
+[configuring-load-path]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#configuring-load-path
+[deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/static/deprecations-browser-console.png?raw=true
 [design-tokens-usage]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#basic-usage
 [design-tokens-load-path]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#in-sass
 [design-tokens-color-tokens]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/design-tokens/src/scss/themes/_color-tokens.scss
 [design-tokens-rebranding]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#rebranding-spirit
-[deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/static/deprecations-browser-console.png?raw=true
 [examples]: https://spirit-design-system.netlify.app/packages/web/
 [feature-flags-docs]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/contribution/feature-flags.md
 [license]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/LICENSE.md
