@@ -148,6 +148,8 @@ Check your browser console to see if you are using any of the deprecated functio
 
 ![Deprecations in the Browser's console](https://github.com/lmc-eu/spirit-design-system/blob/main/static/deprecations-browser-console.png?raw=true)
 
+👉 [See a DEPRECATIONS file][all-deprecations] for a list of all deprecations.
+
 ### Warnings in environments
 
 #### Production
@@ -184,6 +186,7 @@ afterEach(() => {
 
 See the [LICENSE](LICENSE.md) file for information.
 
+[all-deprecations]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/DEPRECATIONS.md
 [examples]: https://spirit-design-system-storybook.netlify.app
 [web-docs]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web#readme
 [web-pkg-rebrand]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web#rebranding
