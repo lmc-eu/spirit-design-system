@@ -4,6 +4,7 @@ export * from './Accordion';
 export * from './Alert';
 export * from './Breadcrumbs';
 export * from './Button';
+export * from './Card';
 export * from './Checkbox';
 export * from './Collapse';
 export * from './Container';

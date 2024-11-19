@@ -1,22 +1,28 @@
 import { render, waitFor } from '@testing-library/react';
 import React, { ComponentType } from 'react';
 import {
-  ActionButtonColorsDictionaryType,
   ActionButtonColors,
-  ActionColorsDictionaryType,
+  ActionButtonColorsDictionaryType,
   ActionColors,
-  ActionLinkColorsDictionaryType,
+  ActionColorsDictionaryType,
   ActionLinkColors,
-  EmotionColorsDictionaryType,
+  ActionLinkColorsDictionaryType,
+  AlignmentX,
+  AlignmentXDictionaryType,
+  AlignmentXExtended,
+  AlignmentXExtendedDictionaryType,
+  AlignmentYDictionaryType,
+  AlignmentYExtendedDictionaryType,
   EmotionColors,
+  EmotionColorsDictionaryType,
   SizeExtendedDictionaryType,
-  SizesExtended,
-  SizesDictionaryType,
   Sizes,
-  TextColorsDictionaryType,
+  SizesDictionaryType,
+  SizesExtended,
   TextColors,
-  ValidationStatesDictionaryType,
+  TextColorsDictionaryType,
   ValidationStates,
+  ValidationStatesDictionaryType,
 } from '../../src';
 import getElement from '../testUtils/getElement';
 
@@ -112,6 +118,54 @@ export const validationStatePropsTest = (Component: ComponentType<any>, prefix: 
     await waitFor(() => {
       const element = getElement(dom, testId);
       expect(element).toHaveClass(`${prefix}${state}`);
+    });
+  });
+};
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const alignmentXPropsTest = (Component: ComponentType<any>, prefix?: string, testId?: string) => {
+  it.each([Object.values(AlignmentX)])('should render alignmentX %s', async (alignment) => {
+    const dom = render(<Component alignmentX={alignment as AlignmentXDictionaryType<string>} />);
+
+    await waitFor(() => {
+      const element = getElement(dom, testId);
+      expect(element).toHaveClass(`${prefix}--alignmentX${alignment.charAt(0).toUpperCase() + alignment.slice(1)}`);
+    });
+  });
+};
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const alignmentXExtendedPropsTest = (Component: ComponentType<any>, prefix?: string, testId?: string) => {
+  it.each([Object.values(AlignmentXExtended)])('should render extended alignmentX %s', async (alignment) => {
+    const dom = render(<Component alignmentX={alignment as AlignmentXExtendedDictionaryType<string>} />);
+
+    await waitFor(() => {
+      const element = getElement(dom, testId);
+      expect(element).toHaveClass(`${prefix}--alignmentX${alignment.charAt(0).toUpperCase() + alignment.slice(1)}`);
+    });
+  });
+};
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const alignmentYPropsTest = (Component: ComponentType<any>, prefix?: string, testId?: string) => {
+  it.each([Object.values(AlignmentX)])('should render alignmentY %s', async (alignment) => {
+    const dom = render(<Component alignmentY={alignment as AlignmentYDictionaryType<string>} />);
+
+    await waitFor(() => {
+      const element = getElement(dom, testId);
+      expect(element).toHaveClass(`${prefix}--alignmentY${alignment.charAt(0).toUpperCase() + alignment.slice(1)}`);
+    });
+  });
+};
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const alignmentYExtendedPropsTest = (Component: ComponentType<any>, prefix?: string, testId?: string) => {
+  it.each([Object.values(AlignmentXExtended)])('should render extended alignmentY %s', async (alignment) => {
+    const dom = render(<Component alignmentY={alignment as AlignmentYExtendedDictionaryType<string>} />);
+
+    await waitFor(() => {
+      const element = getElement(dom, testId);
+      expect(element).toHaveClass(`${prefix}--alignmentY${alignment.charAt(0).toUpperCase() + alignment.slice(1)}`);
     });
   });
 };
