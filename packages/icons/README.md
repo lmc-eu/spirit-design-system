@@ -83,4 +83,23 @@ export const Icon = ({ name, , size }) => {
 };
 ```
 
+### Next.js with Pages Router
+
+If you are using Next.js with the Pages Router, it is necessary to add the following configuration to your Next.js configuration file
+to transpile the `@lmc-eu/spirit-web-react` package, ensuring the correct functionality of the icons:
+
+```javascript
+const nextConfig = {
+  transpilePackages: ['@lmc-eu/spirit-web-react'],
+  // other configurations...
+};
+
+export default nextConfig;
+```
+
+This configuration is not required if you are using the Next.js App Router.
+
+For more information, please see the [Next.js documentation][nextjs-transpilePackages].
+
 [`spirit-web`]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web
+[nextjs-transpilePackages]: https://nextjs.org/docs/pages/api-reference/next-config-js/transpilePackages
