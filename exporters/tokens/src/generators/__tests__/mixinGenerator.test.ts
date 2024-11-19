@@ -1,4 +1,4 @@
-import { Token, TokenGroup } from '@supernovaio/sdk-exporters';
+import { TokenGroup } from '@supernovaio/sdk-exporters';
 import { exampleGroups } from '../../../tests/fixtures/exampleGroups';
 import { examplePrefixToken } from '../../../tests/fixtures/examplePrefixToken';
 import { findTokenPrefix } from '../../helpers/findTokenPrefix';
@@ -6,7 +6,6 @@ import { generateMixinFromTokens } from '../mixinGenerator';
 import { exampleColorsTokens } from '../../../tests/fixtures/exampleColorTokens';
 import { SCSS_INDENTATION } from '../../constants';
 
-const mappedTokens: Map<string, Token> = new Map([]);
 const tokenGroups: Array<TokenGroup> = exampleGroups;
 
 describe('mixinGenerator', () => {
@@ -37,7 +36,6 @@ describe('mixinGenerator', () => {
 
       const styles = generateMixinFromTokens(
         Array.from(tokens.values()),
-        mappedTokens,
         tokenGroups,
         tokenPrefix,
         groupName,
@@ -45,7 +43,7 @@ describe('mixinGenerator', () => {
         false,
       );
 
-      expect(styles).toBe(`@mixin css-variables {\n${expectedStyles}\n}\n`);
+      expect(styles).toBe(`@mixin color-css-variables {\n${expectedStyles}\n}\n`);
     },
   );
 });
