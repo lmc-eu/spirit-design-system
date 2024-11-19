@@ -13,14 +13,16 @@
 
     @each $theme-name, $theme-token-types in $themes {
         $selector: if($is-default-theme, ':root, .#{$theme-name}', '.#{$theme-name}');
-        $sass-variables: map.get($theme-token-types, variables);
-        $css-variables: map.get($theme-token-types, mixins, css-variables);
+        $theme-variables: map.get($theme-token-types, variables);
+        $theme-mixins: map.get($theme-token-types, mixins);
 
         #{$selector} {
-            @include meta.apply($css-variables);
+            @each $theme-mixin-name, $theme-mixin in $theme-mixins {
+                @include meta.apply($theme-mixin);
+            }
 
             @if $add-background-image-urls {
-                @include generate-background-image-urls($themed-tokens: $sass-variables);
+                @include generate-background-image-urls($themed-tokens: $theme-variables);
             }
         }
 
