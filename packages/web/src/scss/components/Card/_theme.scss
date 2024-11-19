@@ -16,13 +16,16 @@ $border-radius: tokens.$radius-300;
 
 $background-color: tokens.$background-primary;
 $color: tokens.$text-secondary;
-$box-shadow-hover: tokens.$shadow-100;
+$box-shadow-state-hover: tokens.$shadow-100;
 
 $transition-duration: transitions.$duration-100;
 $transition-timing: transitions.$timing-eased-in-out;
 
 $media-border-radius: tokens.$radius-300;
 $media-sizes: (
+    auto: (
+        size: auto,
+    ),
     small: (
         size: 140px,
     ),
@@ -38,9 +41,10 @@ $eyebrow-typography: tokens.$body-small-semibold;
 $eyebrow-color: tokens.$text-tertiary;
 $eyebrow-margin-bottom: tokens.$space-300;
 
-$heading-typography: tokens.$heading-small-semibold;
-$heading-color: tokens.$text-primary;
-$heading-margin-bottom: tokens.$space-500;
+$title-typography: tokens.$body-large-regular;
+$title-heading-typography: tokens.$heading-small-semibold;
+$title-color: tokens.$text-primary;
+$title-margin-bottom: tokens.$space-500;
 
-$actions-alignment-dictionary: dictionaries.$alignments-x;
-$actions-gap: tokens.$space-700;
+$footer-alignment-dictionary: dictionaries.$alignments-x;
+$footer-gap: tokens.$space-700;

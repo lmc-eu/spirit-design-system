@@ -2,11 +2,15 @@
 @use 'theme';
 
 .CardTitle {
-    @include typography.generate(theme.$heading-typography);
+    @include typography.generate(theme.$title-typography);
 
-    color: theme.$heading-color;
+    color: theme.$title-color;
 
     &:not(:last-child) {
-        margin-bottom: theme.$heading-margin-bottom;
+        margin-bottom: theme.$title-margin-bottom;
     }
+}
+
+.CardTitle--heading {
+    @include typography.generate(theme.$title-heading-typography);
 }

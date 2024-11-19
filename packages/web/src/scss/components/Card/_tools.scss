@@ -1,7 +1,7 @@
 @use 'theme';
 
-@mixin add-bottom-spacing($spacing: theme.$gap) {
+@mixin add-bottom-margin($margin: theme.$gap) {
     &:not(:last-child) {
-        margin-bottom: $spacing;
+        margin-bottom: $margin;
     }
 }

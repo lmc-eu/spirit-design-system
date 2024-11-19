@@ -1,15 +1,15 @@
-// 1. Make card text selectable.
+// 1. Make card text selectable when there is a stretched CardLink.
 
 @use 'tools';
 
 .CardBody {
-    @include tools.add-bottom-spacing();
+    @include tools.add-bottom-margin();
 
     grid-area: body;
 }
 
 // 1.
-.CardBody p {
+.Card:has(.CardLink) > .CardBody p {
     position: relative;
     z-index: 1;
 }
