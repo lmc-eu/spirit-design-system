@@ -173,7 +173,7 @@ $text-primary: #f9f9f9 !default;
 $text-secondary: #d9d9d9 !default;
 $text-tertiary: #b2b2b2 !default;
 
-@mixin css-variables {
+@mixin color-css-variables {
     --spirit-color-background-backdrop: #{$background-backdrop};
     --spirit-color-background-interactive-state-active: #{$background-interactive-state-active};
     --spirit-color-background-interactive-state-default: #{$background-interactive-state-default};
