@@ -4,7 +4,6 @@ import { SCSS_INDENTATION } from '../constants';
 
 export const generateMixinFromTokens = (
   tokens: Token[],
-  mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
   tokenPrefix: string,
   group: string,
@@ -20,5 +19,5 @@ export const generateMixinFromTokens = (
     })
     .join('\n');
 
-  return `@mixin css-variables {\n${variables}\n}\n`;
+  return `@mixin color-css-variables {\n${variables}\n}\n`;
 };

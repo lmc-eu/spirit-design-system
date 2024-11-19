@@ -127,7 +127,6 @@ export const generateFileContent = (
       if (!hasJsOutput && hasMixin) {
         styledMixin += generateMixinFromTokens(
           filteredTokens,
-          mappedTokens,
           tokenGroups,
           tokenPrefix,
           group,
