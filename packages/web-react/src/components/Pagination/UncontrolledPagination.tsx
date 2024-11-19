@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { SpiritUncontrolledPaginationProps } from '../../types/pagination';
+import { ClickEvent, SpiritUncontrolledPaginationProps } from '../../types';
 import Pagination from './Pagination';
 import PaginationItem from './PaginationItem';
 import PaginationLink from './PaginationLink';
@@ -45,7 +45,7 @@ export const UncontrolledPagination = (props: SpiritUncontrolledPaginationProps)
             href="#"
             isCurrent={currentPage === pageNumber}
             pageNumber={pageNumber}
-            onClick={(event) => {
+            onClick={(event: ClickEvent) => {
               event.preventDefault();
               handlePageChange(pageNumber);
             }}
