@@ -3,6 +3,7 @@ export * from './alert';
 export * from './avatar';
 export * from './breadcrumbs';
 export * from './button';
+export * from './card';
 export * from './checkbox';
 export * from './collapse';
 export * from './divider';
