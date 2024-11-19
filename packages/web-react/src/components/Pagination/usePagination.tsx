@@ -3,7 +3,7 @@ import { UsePaginationProps } from '../../types/pagination';
 
 export const usePagination = ({ totalPages, onChange, defaultPage, visiblePages }: UsePaginationProps) => {
   const [currentPage, setCurrentPage] = useState(defaultPage <= 0 || defaultPage > totalPages ? 1 : (defaultPage ?? 1));
-  const [pages, setPagesArray] = useState([visiblePages] ?? [5]);
+  const [pages, setPagesArray] = useState([visiblePages]);
 
   useMemo(() => {
     const currentVisiblePages = visiblePages > totalPages ? totalPages : visiblePages;
