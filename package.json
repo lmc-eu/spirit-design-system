@@ -85,7 +85,7 @@
     "lint-staged": "15.2.10",
     "netlify-cli": "17.37.0",
     "npm-run-all2": "6.2.3",
-    "nx": "19.7.2",
+    "nx": "20.0.12",
     "postcss": "8.4.47",
     "prettier": "3.3.3",
     "prettier-config-spirit": "workspace:^",
