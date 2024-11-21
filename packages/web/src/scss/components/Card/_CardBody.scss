@@ -1,15 +1,9 @@
-// 1. Make card text selectable when there is a stretched CardLink.
-
-@use 'tools';
+@use 'theme';
 
 .CardBody {
-    @include tools.add-bottom-margin();
-
     grid-area: body;
-}
 
-// 1.
-.Card:has(.CardLink) > .CardBody p {
-    position: relative;
-    z-index: 1;
+    &:not(:last-child) {
+        margin-bottom: theme.$gap;
+    }
 }

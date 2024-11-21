@@ -82,8 +82,8 @@
           <!-- End user content -->
         </div>
         <footer class="CardFooter CardFooter--alignmentXLeft">
-          <a href="#" class="Button Button--medium Button--primary">Primary</a>
-          <a href="#" class="Button Button--medium Button--secondary">Secondary</a>
+          <button type="button" class="Button Button--medium Button--primary">Primary</button>
+          <button type="button" class="Button Button--medium Button--secondary">Secondary</button>
         </footer>
       </article>
 
@@ -93,13 +93,13 @@
 </section>
 
 <section class="UNSTABLE_Section">
-  <h2 class="docs-Heading">Card Grid</h2>
+  <h2 class="docs-Heading">Content Options</h2>
   <div class="docs-Stack docs-Stack--stretch">
 
     <div class="Grid Grid--cols-1 Grid--tablet--cols-2 Grid--desktop--cols-3">
 
       <article class="Card Card--vertical Card--boxed">
-        <div class="CardMedia CardMedia--medium CardMedia--expanded">
+        <div class="CardMedia CardMedia--auto">
           <div class="CardMedia__canvas">
             <!-- User content, no component classes -->
             <img
@@ -110,10 +110,10 @@
           </div>
         </div>
         <div class="CardBody">
-          <div class="CardEyebrow">Eyebrow title</div>
+          <div class="CardEyebrow">Content options</div>
           <h4 class="CardTitle CardTitle--heading">
             <a href="#" class="CardLink">
-              Card title
+              Image and text
             </a>
           </h4>
           <!-- User content, no component classes -->
@@ -127,7 +127,7 @@
       </article>
 
       <article class="Card Card--vertical Card--boxed">
-        <div class="CardMedia CardMedia--medium CardMedia--expanded">
+        <div class="CardMedia CardMedia--auto">
           <div class="CardMedia__canvas">
             <!-- User content, no component classes -->
             <img
@@ -137,15 +137,20 @@
             <!-- End user content -->
           </div>
         </div>
+        <div class="CardLogo">
+          <div class="PartnerLogo PartnerLogo--small PartnerLogo--safeArea">
+            {{> web/assets/jobBoardLogo }}
+          </div>
+        </div>
         <div class="CardBody">
-          <div class="CardEyebrow">Eyebrow title</div>
+          <div class="CardEyebrow">Content options</div>
           <h4 class="CardTitle CardTitle--heading">
             <a href="#" class="CardLink">
-              Card title
+              Image, logo and text
             </a>
           </h4>
           <!-- User content, no component classes -->
-          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean fermentum risus id tortor. Integer lacinia. Sed vel lectus.</p>
           <!-- End user content -->
         </div>
         <footer class="CardFooter CardFooter--alignmentXLeft">
@@ -155,7 +160,112 @@
       </article>
 
       <article class="Card Card--vertical Card--boxed">
-        <div class="CardMedia CardMedia--medium CardMedia--expanded">
+        <div class="CardMedia CardMedia--auto">
+          <div class="CardMedia__canvas">
+            <!-- User content, no component classes -->
+            <video
+              src="https://www.w3schools.com/html/mov_bbb.mp4"
+              controls
+              muted
+              playsinline
+            ></video>
+            <!-- End user content -->
+          </div>
+        </div>
+        <div class="CardBody">
+          <div class="CardEyebrow">Content options</div>
+          <h4 class="CardTitle CardTitle--heading">
+            <a href="#">
+              Video and text
+            </a>
+          </h4>
+          <!-- User content, no component classes -->
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean fermentum risus id tortor. Integer lacinia. Sed vel lectus.</p>
+          <!-- End user content -->
+        </div>
+        <footer class="CardFooter CardFooter--alignmentXLeft">
+          <a href="#" class="Button Button--medium Button--primary">Primary</a>
+          <a href="#" class="Button Button--medium Button--secondary">Secondary</a>
+        </footer>
+      </article>
+
+      <article class="Card Card--vertical Card--boxed">
+        <div class="CardArtwork CardArtwork--left">
+          <!-- User content, no component classes -->
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/assets/icons/svg/sprite.svg#file" />
+          </svg>
+          <!-- End user content -->
+        </div>
+        <div class="CardBody">
+          <div class="CardEyebrow">Content options</div>
+          <h4 class="CardTitle CardTitle--heading">
+            <a href="#" class="CardLink">
+              Artwork and text
+            </a>
+          </h4>
+          <!-- User content, no component classes -->
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean fermentum risus id tortor. Integer lacinia. Sed vel lectus.</p>
+          <!-- End user content -->
+        </div>
+        <footer class="CardFooter CardFooter--alignmentXLeft">
+          <a href="#" class="Button Button--medium Button--primary">Primary</a>
+          <a href="#" class="Button Button--medium Button--secondary">Secondary</a>
+        </footer>
+      </article>
+
+      <article class="Card Card--vertical Card--boxed">
+        <div class="CardBody">
+          <div class="CardEyebrow">Content options</div>
+          <h4 class="CardTitle CardTitle--heading">
+            <a href="#" class="CardLink">
+              Text
+            </a>
+          </h4>
+          <!-- User content, no component classes -->
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+          <ul class="pl-1000">
+            <li>Lorem ipsum dolor sit amet</li>
+            <li>Consectetuer adipiscing elit</li>
+            <li>Aenean fermentum risus id tortor</li>
+          </ul>
+          <!-- End user content -->
+        </div>
+        <footer class="CardFooter CardFooter--alignmentXLeft">
+          <a href="#" class="Button Button--medium Button--primary">Primary</a>
+          <a href="#" class="Button Button--medium Button--secondary">Secondary</a>
+        </footer>
+      </article>
+
+      <article class="Card Card--vertical Card--boxed">
+        <div class="CardBody">
+          <div class="CardEyebrow">Content options</div>
+          <h4 class="CardTitle CardTitle--heading">
+            Text only
+          </h4>
+          <!-- User content, no component classes -->
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+          <ul class="pl-1000">
+            <li>Lorem ipsum dolor sit amet</li>
+            <li>Consectetuer adipiscing elit</li>
+            <li>Aenean fermentum risus id tortor</li>
+          </ul>
+          <!-- End user content -->
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="UNSTABLE_Section">
+  <h2 class="docs-Heading">Logo</h2>
+  <div class="docs-Stack docs-Stack--stretch">
+
+    <div class="Grid Grid--cols-1 Grid--tablet--cols-2 Grid--desktop--cols-3">
+
+      <article class="Card Card--vertical">
+        <div class="CardMedia CardMedia--auto">
           <div class="CardMedia__canvas">
             <!-- User content, no component classes -->
             <img
@@ -165,15 +275,86 @@
             <!-- End user content -->
           </div>
         </div>
+        <div class="CardLogo">
+          <div class="PartnerLogo PartnerLogo--small PartnerLogo--safeArea">
+            {{> web/assets/jobBoardLogo }}
+          </div>
+        </div>
         <div class="CardBody">
-          <div class="CardEyebrow">Eyebrow title</div>
+          <div class="CardEyebrow">Logo</div>
           <h4 class="CardTitle CardTitle--heading">
             <a href="#" class="CardLink">
-              Card title
+              Basic card with media and logo
             </a>
           </h4>
           <!-- User content, no component classes -->
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean fermentum risus id tortor. Integer lacinia. Sed vel lectus. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean fermentum risus id tortor. Integer lacinia. Sed vel lectus.</p>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean fermentum risus id tortor. Integer lacinia. Sed vel lectus.</p>
+          <!-- End user content -->
+        </div>
+        <footer class="CardFooter CardFooter--alignmentXLeft">
+          <a href="#" class="Button Button--medium Button--primary">Primary</a>
+          <a href="#" class="Button Button--medium Button--secondary">Secondary</a>
+        </footer>
+      </article>
+
+      <article class="Card Card--vertical Card--boxed">
+        <div class="CardMedia CardMedia--auto">
+          <div class="CardMedia__canvas">
+            <!-- User content, no component classes -->
+            <img
+              src="https://images.unsplash.com/photo-1506260408121-e353d10b87c7?q=80&w=2728&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+            />
+            <!-- End user content -->
+          </div>
+        </div>
+        <div class="CardLogo">
+          <div class="PartnerLogo PartnerLogo--small PartnerLogo--safeArea">
+            {{> web/assets/jobBoardLogo }}
+          </div>
+        </div>
+        <div class="CardBody">
+          <div class="CardEyebrow">Logo</div>
+          <h4 class="CardTitle CardTitle--heading">
+            <a href="#" class="CardLink">
+              Boxed card with media and logo
+            </a>
+          </h4>
+          <!-- User content, no component classes -->
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean fermentum risus id tortor. Integer lacinia. Sed vel lectus.</p>
+          <!-- End user content -->
+        </div>
+        <footer class="CardFooter CardFooter--alignmentXLeft">
+          <a href="#" class="Button Button--medium Button--primary">Primary</a>
+          <a href="#" class="Button Button--medium Button--secondary">Secondary</a>
+        </footer>
+      </article>
+
+      <article class="Card Card--vertical Card--boxed">
+        <div class="CardMedia CardMedia--auto CardMedia--expanded">
+          <div class="CardMedia__canvas">
+            <!-- User content, no component classes -->
+            <img
+              src="https://images.unsplash.com/photo-1506260408121-e353d10b87c7?q=80&w=2728&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+            />
+            <!-- End user content -->
+          </div>
+        </div>
+        <div class="CardLogo">
+          <div class="PartnerLogo PartnerLogo--small PartnerLogo--safeArea">
+            {{> web/assets/jobBoardLogo }}
+          </div>
+        </div>
+        <div class="CardBody">
+          <div class="CardEyebrow">Logo</div>
+          <h4 class="CardTitle CardTitle--heading">
+            <a href="#" class="CardLink">
+              Boxed card with expanded media and logo
+            </a>
+          </h4>
+          <!-- User content, no component classes -->
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean fermentum risus id tortor. Integer lacinia. Sed vel lectus.</p>
           <!-- End user content -->
         </div>
         <footer class="CardFooter CardFooter--alignmentXLeft">
@@ -205,10 +386,10 @@
           </div>
         </div>
         <div class="CardBody">
-          <div class="CardEyebrow">Eyebrow title</div>
+          <div class="CardEyebrow">Horizontal card layout</div>
           <h4 class="CardTitle CardTitle--heading">
             <a href="#" class="CardLink">
-              Card title
+              Media and text
             </a>
           </h4>
           <!-- User content, no component classes -->
@@ -232,16 +413,63 @@
             <!-- End user content -->
           </div>
         </div>
+        <div class="CardLogo">
+          <div class="PartnerLogo PartnerLogo--small PartnerLogo--safeArea">
+            {{> web/assets/jobBoardLogo }}
+          </div>
+        </div>
         <div class="CardBody">
-          <div class="CardEyebrow">Eyebrow title</div>
+          <div class="CardEyebrow">Horizontal card layout</div>
           <h4 class="CardTitle CardTitle--heading">
             <a href="#" class="CardLink">
-              Card title
+              Media, logo and text
             </a>
           </h4>
           <!-- User content, no component classes -->
           <p>Lorem ipsum dolor sit amet.</p>
           <!-- End user content -->
+        </div>
+        <footer class="CardFooter CardFooter--alignmentXLeft">
+          <a href="#" class="Button Button--medium Button--primary">Primary</a>
+          <a href="#" class="Button Button--medium Button--secondary">Secondary</a>
+        </footer>
+      </article>
+
+      <article class="Card Card--horizontal Card--boxed">
+        <div class="CardArtwork CardArtwork--left">
+          <!-- User content, no component classes -->
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/assets/icons/svg/sprite.svg#file" />
+          </svg>
+          <!-- End user content -->
+        </div>
+        <div class="CardBody">
+          <div class="CardEyebrow">Horizontal card layout</div>
+          <h4 class="CardTitle CardTitle--heading">
+            Artwork and text
+          </h4>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+        </div>
+        <footer class="CardFooter CardFooter--alignmentXLeft">
+          <a href="#" class="Button Button--medium Button--primary">Primary</a>
+          <a href="#" class="Button Button--medium Button--secondary">Secondary</a>
+        </footer>
+      </article>
+
+      <article class="Card Card--horizontal Card--boxed">
+        <div class="CardArtwork CardArtwork--left">
+          <!-- User content, no component classes -->
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/assets/icons/svg/sprite.svg#file" />
+          </svg>
+          <!-- End user content -->
+        </div>
+        <div class="CardBody">
+          <div class="CardEyebrow">Horizontal card layout</div>
+          <h4 class="CardTitle CardTitle--heading">
+            Artwork and text
+          </h4>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
         </div>
         <footer class="CardFooter CardFooter--alignmentXLeft">
           <a href="#" class="Button Button--medium Button--primary">Primary</a>
@@ -272,10 +500,10 @@
           </div>
         </div>
         <div class="CardBody">
-          <div class="CardEyebrow">Eyebrow title</div>
+          <div class="CardEyebrow">Horizontal reversed card layout</div>
           <h4 class="CardTitle CardTitle--heading">
             <a href="#" class="CardLink">
-              Card title
+              Media and text
             </a>
           </h4>
           <!-- User content, no component classes -->
@@ -299,11 +527,16 @@
             <!-- End user content -->
           </div>
         </div>
+        <div class="CardLogo">
+          <div class="PartnerLogo PartnerLogo--small PartnerLogo--safeArea">
+            {{> web/assets/jobBoardLogo }}
+          </div>
+        </div>
         <div class="CardBody">
-          <div class="CardEyebrow">Eyebrow title</div>
+          <div class="CardEyebrow">Horizontal reversed card layout</div>
           <h4 class="CardTitle CardTitle--heading">
             <a href="#" class="CardLink">
-              Card title
+              Media, logo and text
             </a>
           </h4>
           <!-- User content, no component classes -->
@@ -316,81 +549,46 @@
         </footer>
       </article>
 
-    </div>
-
-  </div>
-</section>
-
-<section class="UNSTABLE_Section">
-  <h2 class="docs-Heading">Title Options</h2>
-  <div class="docs-Stack docs-Stack--stretch">
-
-    <div class="Grid Grid--cols-1 Grid--tablet--cols-2 Grid--desktop--cols-3">
-
-      <article class="Card Card--vertical">
-        <div class="CardMedia CardMedia--auto">
-          <div class="CardMedia__canvas">
-            <!-- User content, no component classes -->
-            <a href="#">
-              <img
-                src="https://images.unsplash.com/photo-1506260408121-e353d10b87c7?q=80&w=2728&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt=""
-              />
-            </a>
-            <!-- End user content -->
-          </div>
+      <article class="Card Card--horizontalReversed Card--boxed">
+        <div class="CardArtwork CardArtwork--left">
+          <!-- User content, no component classes -->
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/assets/icons/svg/sprite.svg#file" />
+          </svg>
+          <!-- End user content -->
         </div>
         <div class="CardBody">
-          <h4 class="CardTitle">
-            <a href="#" class="link-primary">
-              Body-style primary link
-            </a>
-          </h4>
-        </div>
-      </article>
-
-      <article class="Card Card--vertical">
-        <div class="CardMedia CardMedia--auto">
-          <div class="CardMedia__canvas">
-            <!-- User content, no component classes -->
-            <a href="#">
-              <img
-                src="https://images.unsplash.com/photo-1506260408121-e353d10b87c7?q=80&w=2728&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt=""
-              />
-            </a>
-            <!-- End user content -->
-          </div>
-        </div>
-        <div class="CardBody">
-          <h4 class="CardTitle">
-            <a href="#" class="link-secondary">
-              Body-style secondary link
-            </a>
-          </h4>
-        </div>
-      </article>
-
-      <article class="Card Card--vertical">
-        <div class="CardMedia CardMedia--auto">
-          <div class="CardMedia__canvas">
-            <!-- User content, no component classes -->
-            <a href="#">
-              <img
-                src="https://images.unsplash.com/photo-1506260408121-e353d10b87c7?q=80&w=2728&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt=""
-              />
-            </a>
-            <!-- End user content -->
-          </div>
-        </div>
-        <div class="CardBody">
+          <div class="CardEyebrow">Horizontal reversed card layout</div>
           <h4 class="CardTitle CardTitle--heading">
-            <a href="#">
-              Heading-style primary link
-            </a>
+            Artwork and text
           </h4>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
         </div>
+        <footer class="CardFooter CardFooter--alignmentXLeft">
+          <a href="#" class="Button Button--medium Button--primary">Primary</a>
+          <a href="#" class="Button Button--medium Button--secondary">Secondary</a>
+        </footer>
+      </article>
+
+      <article class="Card Card--horizontalReversed Card--boxed">
+        <div class="CardArtwork CardArtwork--left">
+          <!-- User content, no component classes -->
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/assets/icons/svg/sprite.svg#file" />
+          </svg>
+          <!-- End user content -->
+        </div>
+        <div class="CardBody">
+          <div class="CardEyebrow">Horizontal reversed card layout</div>
+          <h4 class="CardTitle CardTitle--heading">
+            Artwork and text
+          </h4>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+        </div>
+        <footer class="CardFooter CardFooter--alignmentXLeft">
+          <a href="#" class="Button Button--medium Button--primary">Primary</a>
+          <a href="#" class="Button Button--medium Button--secondary">Secondary</a>
+        </footer>
       </article>
 
     </div>
@@ -769,7 +967,6 @@
         </footer>
       </article>
 
-      <!-- TODO: Do we want to present the auto size in horizontal layout? The image is huge… -->
       <article class="Card Card--horizontal Card--boxed">
         <div class="CardMedia CardMedia--auto CardMedia--expanded">
           <div class="CardMedia__canvas">
@@ -797,6 +994,82 @@
           <a href="#" class="Button Button--medium Button--secondary">Secondary</a>
         </footer>
       </article>
+    </div>
+
+  </div>
+</section>
+
+<section class="UNSTABLE_Section">
+  <h2 class="docs-Heading">Title Options</h2>
+  <div class="docs-Stack docs-Stack--stretch">
+
+    <div class="Grid Grid--cols-1 Grid--tablet--cols-2 Grid--desktop--cols-3">
+
+      <article class="Card Card--vertical">
+        <div class="CardMedia CardMedia--auto">
+          <div class="CardMedia__canvas">
+            <!-- User content, no component classes -->
+            <a href="#">
+              <img
+                src="https://images.unsplash.com/photo-1506260408121-e353d10b87c7?q=80&w=2728&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt=""
+              />
+            </a>
+            <!-- End user content -->
+          </div>
+        </div>
+        <div class="CardBody">
+          <h4 class="CardTitle">
+            <a href="#" class="link-primary">
+              Body-style primary link
+            </a>
+          </h4>
+        </div>
+      </article>
+
+      <article class="Card Card--vertical">
+        <div class="CardMedia CardMedia--auto">
+          <div class="CardMedia__canvas">
+            <!-- User content, no component classes -->
+            <a href="#">
+              <img
+                src="https://images.unsplash.com/photo-1506260408121-e353d10b87c7?q=80&w=2728&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt=""
+              />
+            </a>
+            <!-- End user content -->
+          </div>
+        </div>
+        <div class="CardBody">
+          <h4 class="CardTitle">
+            <a href="#" class="link-secondary">
+              Body-style secondary link
+            </a>
+          </h4>
+        </div>
+      </article>
+
+      <article class="Card Card--vertical">
+        <div class="CardMedia CardMedia--auto">
+          <div class="CardMedia__canvas">
+            <!-- User content, no component classes -->
+            <a href="#">
+              <img
+                src="https://images.unsplash.com/photo-1506260408121-e353d10b87c7?q=80&w=2728&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt=""
+              />
+            </a>
+            <!-- End user content -->
+          </div>
+        </div>
+        <div class="CardBody">
+          <h4 class="CardTitle CardTitle--heading">
+            <a href="#">
+              Heading-style primary link
+            </a>
+          </h4>
+        </div>
+      </article>
 
     </div>
 
@@ -810,16 +1083,6 @@
     <div class="Grid Grid--cols-1 Grid--tablet--cols-2 Grid--desktop--cols-3">
 
       <article class="Card Card--vertical Card--boxed">
-        <div class="CardMedia CardMedia--auto">
-          <div class="CardMedia__canvas">
-            <!-- User content, no component classes -->
-            <img
-              src="https://images.unsplash.com/photo-1506260408121-e353d10b87c7?q=80&w=2728&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt=""
-            />
-            <!-- End user content -->
-          </div>
-        </div>
         <div class="CardBody">
           <div class="CardEyebrow">Footer alignment</div>
           <h4 class="CardTitle CardTitle--heading">
@@ -838,16 +1101,6 @@
       </article>
 
       <article class="Card Card--vertical Card--boxed">
-        <div class="CardMedia CardMedia--auto">
-          <div class="CardMedia__canvas">
-            <!-- User content, no component classes -->
-            <img
-              src="https://images.unsplash.com/photo-1506260408121-e353d10b87c7?q=80&w=2728&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt=""
-            />
-            <!-- End user content -->
-          </div>
-        </div>
         <div class="CardBody">
           <div class="CardEyebrow">Footer alignment</div>
           <h4 class="CardTitle CardTitle--heading">
@@ -866,16 +1119,6 @@
       </article>
 
       <article class="Card Card--vertical Card--boxed">
-        <div class="CardMedia CardMedia--auto">
-          <div class="CardMedia__canvas">
-            <!-- User content, no component classes -->
-            <img
-              src="https://images.unsplash.com/photo-1506260408121-e353d10b87c7?q=80&w=2728&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt=""
-            />
-            <!-- End user content -->
-          </div>
-        </div>
         <div class="CardBody">
           <div class="CardEyebrow">Footer alignment</div>
           <h4 class="CardTitle CardTitle--heading">
@@ -894,6 +1137,209 @@
       </article>
 
     </div>
+  </div>
+</section>
+
+<section class="UNSTABLE_Section">
+  <h2 class="docs-Heading">Footer Content</h2>
+  <div class="docs-Stack docs-Stack--stretch">
+
+    <div class="Grid Grid--cols-1 Grid--tablet--cols-2 Grid--desktop--cols-3">
+
+      <article class="Card Card--vertical Card--boxed">
+        <div class="CardBody">
+          <div class="CardEyebrow">Footer content</div>
+          <h4 class="CardTitle CardTitle--heading">
+            <a href="#" class="CardLink">
+              Links
+            </a>
+          </h4>
+          <!-- User content, no component classes -->
+          <p>Lorem ipsum dolor sit amet.</p>
+          <!-- End user content -->
+        </div>
+        <footer class="CardFooter CardFooter--alignmentXLeft">
+          <a href="#" class="link-primary">Primary</a>
+          <a href="#" class="link-secondary">Secondary</a>
+        </footer>
+      </article>
+
+      <article class="Card Card--vertical Card--boxed">
+        <div class="CardBody">
+          <div class="CardEyebrow">Footer content</div>
+          <h4 class="CardTitle CardTitle--heading">
+            <a href="#" class="CardLink">
+              Icon buttons
+            </a>
+          </h4>
+          <!-- User content, no component classes -->
+          <p>Lorem ipsum dolor sit amet.</p>
+          <!-- End user content -->
+        </div>
+        <footer class="CardFooter CardFooter--alignmentXLeft">
+          <button type="button" class="Button Button--plain Button--medium Button--symmetrical">
+            <span class="accessibility-hidden">Add</span>
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/assets/icons/svg/sprite.svg#add" />
+            </svg>
+          </button>
+          <button type="button" class="Button Button--plain Button--medium Button--symmetrical">
+            <span class="accessibility-hidden">Edit</span>
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/assets/icons/svg/sprite.svg#edit" />
+            </svg>
+          </button>
+          <button type="button" class="Button Button--plain Button--medium Button--symmetrical">
+            <span class="accessibility-hidden">Help</span>
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/assets/icons/svg/sprite.svg#help" />
+            </svg>
+          </button>
+        </footer>
+      </article>
+
+      <article class="Card Card--vertical Card--boxed">
+        <div class="CardBody">
+          <div class="CardEyebrow">Footer content</div>
+          <h4 class="CardTitle CardTitle--heading">
+            <a href="#" class="CardLink">
+              Custom footer
+            </a>
+          </h4>
+          <!-- User content, no component classes -->
+          <p>Lorem ipsum dolor sit amet.</p>
+          <!-- End user content -->
+        </div>
+        <footer class="CardFooter CardFooter--alignmentXLeft">
+          <a href="#jiri-barta" class="link-primary link-not-underlined">
+            <div class="Flex Flex--row Flex--noWrap Flex--alignmentXStretch Flex--alignmentYStretch">
+              <div class="UNSTABLE_Avatar UNSTABLE_Avatar--medium" aria-label="Profile of Jiří Bárta">
+                <img src="https://picsum.photos/id/823/162/162" alt="Jiří Bárta" aria-hidden="true" />
+              </div>
+              <div>
+                <div class="typography-body-small-semibold text-primary">Jiří Bárta</div>
+                <div class="typography-body-small-regular text-tertiary">Designer</div>
+              </div>
+            </div>
+          </a>
+        </footer>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="UNSTABLE_Section">
+  <h2 class="docs-Heading">Text Cards</h2>
+  <div class="docs-Stack docs-Stack--stretch">
+
+    <div class="Grid Grid--cols-2 Grid--tablet--cols-3 Grid--desktop--cols-4" style="--grid-spacing-y: var(--spirit-space-1000)">
+
+      <article class="Card Card--vertical">
+        <div class="CardBody">
+          <div class="CardEyebrow">Eyebrow title</div>
+          <h4 class="CardTitle CardTitle--heading">
+            Text card heading
+          </h4>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean fermentum risus id tortor. Integer lacinia. Sed vel lectus.</p>
+        </div>
+      </article>
+
+      <article class="Card Card--vertical">
+        <div class="CardBody">
+          <div class="CardEyebrow">Eyebrow title</div>
+          <h4 class="CardTitle CardTitle--heading">
+            Text card heading
+          </h4>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean fermentum risus id tortor. Integer lacinia. Sed vel lectus.</p>
+        </div>
+      </article>
+
+      <article class="Card Card--vertical">
+        <div class="CardBody">
+          <div class="CardEyebrow">Eyebrow title</div>
+          <h4 class="CardTitle CardTitle--heading">
+            Text card heading
+          </h4>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean fermentum risus id tortor. Integer lacinia. Sed vel lectus.</p>
+        </div>
+      </article>
+
+      <article class="Card Card--vertical">
+        <div class="CardBody">
+          <div class="CardEyebrow">Eyebrow title</div>
+          <h4 class="CardTitle CardTitle--heading">
+            Text card heading
+          </h4>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean fermentum risus id tortor. Integer lacinia. Sed vel lectus.</p>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="UNSTABLE_Section">
+  <h2 class="docs-Heading">Custom Cards</h2>
+  <div class="docs-Stack docs-Stack--stretch">
+
+    <div class="Grid Grid--cols-1 Grid--tablet--cols-2 Grid--desktop--cols-4">
+
+      <article class="Card Card--horizontalReversed Card--boxed">
+        <div class="CardArtwork">
+          <a href="#" class="CardLink">
+            <div class="PartnerLogo PartnerLogo--small">
+              {{> web/assets/jobBoardLogo }}
+            </div>
+          </a>
+        </div>
+        <div class="CardBody">
+          <span class="Tag Tag--neutral Tag--subtle Tag--small">Tag</span>
+        </div>
+      </article>
+
+      <article class="Card Card--horizontalReversed Card--boxed">
+        <div class="CardArtwork">
+          <a href="#" class="CardLink">
+            <div class="PartnerLogo PartnerLogo--small">
+              {{> web/assets/jobBoardLogo }}
+            </div>
+          </a>
+        </div>
+        <div class="CardBody">
+          <span class="Tag Tag--neutral Tag--subtle Tag--small">Tag</span>
+        </div>
+      </article>
+
+      <article class="Card Card--horizontalReversed Card--boxed">
+        <div class="CardArtwork">
+          <a href="#" class="CardLink">
+            <div class="PartnerLogo PartnerLogo--small">
+              {{> web/assets/jobBoardLogo }}
+            </div>
+          </a>
+        </div>
+        <div class="CardBody">
+          <span class="Tag Tag--neutral Tag--subtle Tag--small">Tag</span>
+        </div>
+      </article>
+
+      <article class="Card Card--horizontalReversed Card--boxed">
+        <div class="CardArtwork">
+          <a href="#" class="CardLink">
+            <div class="PartnerLogo PartnerLogo--small">
+              {{> web/assets/jobBoardLogo }}
+            </div>
+          </a>
+        </div>
+        <div class="CardBody">
+          <span class="Tag Tag--neutral Tag--subtle Tag--small">Tag</span>
+        </div>
+      </article>
+
+    </div>
+
   </div>
 </section>
 

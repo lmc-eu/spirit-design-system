@@ -21,8 +21,10 @@ $box-shadow-state-hover: tokens.$shadow-100;
 $transition-duration: transitions.$duration-100;
 $transition-timing: transitions.$timing-eased-in-out;
 
+$artwork-alignment-dictionary: dictionaries.$alignments-x;
+
 $media-border-radius: tokens.$radius-300;
-$media-sizes: (
+$media-sizes-vertical: (
     auto: (
         size: auto,
     ),
@@ -36,13 +38,34 @@ $media-sizes: (
         size: 280px,
     ),
 );
+$media-sizes-horizontal: (
+    auto: (
+        size: auto,
+    ),
+    small: (
+        size: 120px,
+    ),
+    medium: (
+        size: 180px,
+    ),
+    large: (
+        size: 240px,
+    ),
+);
+
+$logo-offset-horizontal: tokens.$space-700;
+$logo-border-width: tokens.$border-width-100;
+$logo-border-style: solid;
+$logo-border-color: tokens.$border-basic;
+$logo-border-radius: tokens.$radius-200;
+$logo-background-color: tokens.$background-primary;
 
 $eyebrow-typography: tokens.$body-small-semibold;
 $eyebrow-color: tokens.$text-tertiary;
 $eyebrow-margin-bottom: tokens.$space-300;
 
 $title-typography: tokens.$body-large-regular;
-$title-heading-typography: tokens.$heading-small-semibold;
+$title-heading-typography: tokens.$heading-xsmall-semibold;
 $title-color: tokens.$text-primary;
 $title-margin-bottom: tokens.$space-500;
 

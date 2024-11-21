@@ -2,11 +2,8 @@
 
 @use '../../tools/dictionaries';
 @use 'theme';
-@use 'tools';
 
 .CardFooter {
-    @include tools.add-bottom-margin();
-
     z-index: 1;
     display: flex;
     flex-direction: row;
@@ -14,6 +11,10 @@
     grid-area: footer;
     gap: theme.$footer-gap;
     pointer-events: none;
+
+    &:not(:last-child) {
+        margin-bottom: theme.$gap;
+    }
 }
 
 // 1.

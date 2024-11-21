@@ -1,7 +1,8 @@
 // 1. Get ready for card link overlay.
 // 2. If there is a expanded CardMedia in a boxed vertical card, replace card padding with empty grid columns/rows.
-// 3. Make sure links and buttons are clickable.
-// 4. Allow shrinking in grid layouts.
+// 3. Allow shrinking in grid layouts.
+// 4. Make sure links and buttons are clickable.
+// 5. Make text content selectable when there is a stretched CardLink.
 
 @use '../../tools/typography';
 @use 'theme';
@@ -11,12 +12,12 @@
 
     position: relative; // 1.
     display: grid;
-    min-width: 0; // 4.
+    min-width: 0; // 3.
     color: theme.$color;
 }
 
-// 3.
-.Card:has(.CardLink) :where(a:not(.CardLink), button) {
+// 4., 5.
+.Card:has(.CardLink) :where(a:not(.CardLink), button, p, ul, ol, dl) {
     position: relative;
     z-index: 1;
 }
@@ -31,21 +32,23 @@
 
 .Card--horizontal {
     grid-template-columns: auto 1fr;
-    grid-template-rows: 1fr auto;
+    grid-template-rows: auto 1fr auto;
     grid-template-areas:
+        'media logo'
         'media body'
         'media footer';
 }
 
 .Card--horizontalReversed {
     grid-template-columns: 1fr auto;
-    grid-template-rows: 1fr auto;
+    grid-template-rows: auto 1fr auto;
     grid-template-areas:
+        'logo media'
         'body media'
         'footer media';
 }
 
-:is(.Card--horizontal, .Card--horizontalReversed):has(.CardMedia:not(:only-child)) {
+:is(.Card--horizontal, .Card--horizontalReversed):has(.CardArtwork:not(:only-child), .CardMedia:not(:only-child)) {
     column-gap: theme.$gap;
 }
 
@@ -88,9 +91,10 @@
 .Card--boxed.Card--horizontal {
     &:has(.CardMedia--expanded) {
         grid-template-columns: auto 1fr;
-        grid-template-rows: theme.$gap 1fr auto theme.$gap; // 2.
+        grid-template-rows: theme.$gap auto 1fr auto theme.$gap; // 2.
         grid-template-areas:
             'media .'
+            'media logo'
             'media body'
             'media footer'
             'media .';
@@ -104,9 +108,10 @@
 .Card--boxed.Card--horizontalReversed {
     &:has(.CardMedia--expanded) {
         grid-template-columns: 1fr auto;
-        grid-template-rows: theme.$gap 1fr auto theme.$gap; // 2.
+        grid-template-rows: theme.$gap auto 1fr auto theme.$gap; // 2.
         grid-template-areas:
             '. media'
+            'logo media'
             'body media'
             'footer media'
             '. media';

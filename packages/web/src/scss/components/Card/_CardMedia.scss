@@ -1,9 +1,11 @@
-// 1. We need the specific combination of classes, expanded CardMedia is designed to work only with boxed cards.
+// 1. Expand any images or videos to fill the available space, not just direct descendants. This is for the scenario
+//    when the media is wrapped, for example in a link.
+// 2. Make sure rounded corners are applied to video player too.
+// 3. We need the specific combination of classes, expanded CardMedia is designed to work only with boxed cards.
 
 @use '@tokens' as tokens;
 @use '../../tools/dictionaries';
 @use 'theme';
-@use 'tools';
 
 .CardMedia {
     --#{tokens.$css-variable-prefix}card-media-border-radius-top-left: #{theme.$border-radius};
@@ -16,8 +18,6 @@
     grid-area: media;
 }
 
-@include dictionaries.generate-sizes($class-name: 'CardMedia', $sizes: theme.$media-sizes);
-
 .CardMedia__canvas {
     width: var(--#{tokens.$css-variable-prefix}card-media-canvas-width);
     height: var(--#{tokens.$css-variable-prefix}card-media-canvas-height);
@@ -28,16 +28,20 @@
         var(--#{tokens.$css-variable-prefix}card-media-border-radius-bottom-left);
 }
 
-.CardMedia__canvas :is(img, picture > img, video) {
+// 1.
+.CardMedia__canvas :where(img, video) {
+    display: block; // 2.
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.Card--vertical > .CardMedia {
-    --#{tokens.$css-variable-prefix}card-media-canvas-height: var(--spirit-card-media-size);
+.Card--vertical > {
+    @include dictionaries.generate-sizes($class-name: 'CardMedia', $sizes: theme.$media-sizes-vertical);
+}
 
-    @include tools.add-bottom-margin($margin: theme.$gap-dense);
+:is(.Card--horizontal, .Card--horizontalReversed) > {
+    @include dictionaries.generate-sizes($class-name: 'CardMedia', $sizes: theme.$media-sizes-horizontal);
 }
 
 :is(.Card--horizontal, .Card--horizontalReversed) > .CardMedia {
@@ -48,7 +52,15 @@
     --#{tokens.$css-variable-prefix}card-media-canvas-height: 100%;
 }
 
-// stylelint-disable selector-max-class -- 1.
+.Card--vertical > .CardMedia {
+    --#{tokens.$css-variable-prefix}card-media-canvas-height: var(--spirit-card-media-size);
+
+    &:not(:last-child) {
+        margin-bottom: theme.$gap-dense;
+    }
+}
+
+// stylelint-disable selector-max-class -- 3.
 .Card--vertical.Card--boxed > .CardMedia--expanded:not(:last-child) {
     --#{tokens.$css-variable-prefix}card-media-border-radius-bottom-left: 0;
     --#{tokens.$css-variable-prefix}card-media-border-radius-bottom-right: 0;
