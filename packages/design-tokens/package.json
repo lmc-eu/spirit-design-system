@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "npm-run-all2": "6.2.6",
-    "rimraf": "5.0.10",
+    "rimraf": "6.0.1",
     "shx": "0.3.4",
     "stylelint": "16.10.0",
     "stylelint-config-spirit": "workspace:^",
