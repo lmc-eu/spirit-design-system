@@ -28,9 +28,9 @@
     "usehooks-ts": "^3.1.0"
   },
   "devDependencies": {
-    "@babel/core": "7.25.8",
+    "@babel/core": "7.26.0",
     "@babel/preset-env": "7.25.8",
-    "@babel/preset-react": "7.25.7",
+    "@babel/preset-react": "7.25.9",
     "@babel/preset-typescript": "7.25.7",
     "@lmc-eu/eslint-config-base": "3.1.2",
     "@lmc-eu/eslint-config-jest": "3.0.5",
@@ -48,7 +48,7 @@
     "@testing-library/react": "16.0.1",
     "@testing-library/user-event": "14.5.2",
     "@types/babel__core": "7.20.5",
-    "@types/jest": "29.5.13",
+    "@types/jest": "29.5.14",
     "@types/node": "20.14.9",
     "@types/react": "18.3.3",
     "@types/react-dom": "18.3.0",
@@ -80,7 +80,7 @@
     "ts-loader": "9.5.1",
     "ts-node": "10.9.2",
     "typescript": "5.6.3",
-    "webpack": "5.95.0",
+    "webpack": "5.96.1",
     "webpack-cli": "5.1.4",
     "webpack-merge": "6.0.1"
   },

@@ -5,7 +5,7 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
-    "@babel/core": "7.25.8",
+    "@babel/core": "7.26.0",
     "@babel/preset-env": "7.25.8",
     "@csstools/normalize.css": "12.1.1",
     "@floating-ui/dom": "1.6.11",
@@ -16,7 +16,7 @@
     "@lmc-eu/spirit-design-tokens": "2.1.1",
     "@symfony/stimulus-bridge": "3.2.2",
     "@symfony/webpack-encore": "4.7.0",
-    "core-js": "3.38.1",
+    "core-js": "3.39.0",
     "regenerator-runtime": "0.14.1",
     "sass-loader": "14.2.1",
     "sass-embedded": "1.81.0",
@@ -24,7 +24,7 @@
     "typescript": "5.6.3",
     "webpack-cli": "5.1.4",
     "webpack-notifier": "1.15.0",
-    "webpack": "5.95.0"
+    "webpack": "5.96.1"
   },
   "scripts": {
     "dev-server": "encore dev-server",
