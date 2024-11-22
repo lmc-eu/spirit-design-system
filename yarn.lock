@@ -6651,66 +6651,66 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@omlet/cli-darwin-arm64@npm:1.11.0":
-  version: 1.11.0
-  resolution: "@omlet/cli-darwin-arm64@npm:1.11.0"
+"@omlet/cli-darwin-arm64@npm:1.12.0":
+  version: 1.12.0
+  resolution: "@omlet/cli-darwin-arm64@npm:1.12.0"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@omlet/cli-darwin-x64@npm:1.11.0":
-  version: 1.11.0
-  resolution: "@omlet/cli-darwin-x64@npm:1.11.0"
+"@omlet/cli-darwin-x64@npm:1.12.0":
+  version: 1.12.0
+  resolution: "@omlet/cli-darwin-x64@npm:1.12.0"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@omlet/cli-linux-arm64-gnu@npm:1.11.0":
-  version: 1.11.0
-  resolution: "@omlet/cli-linux-arm64-gnu@npm:1.11.0"
+"@omlet/cli-linux-arm64-gnu@npm:1.12.0":
+  version: 1.12.0
+  resolution: "@omlet/cli-linux-arm64-gnu@npm:1.12.0"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@omlet/cli-linux-arm64-musl@npm:1.11.0":
-  version: 1.11.0
-  resolution: "@omlet/cli-linux-arm64-musl@npm:1.11.0"
+"@omlet/cli-linux-arm64-musl@npm:1.12.0":
+  version: 1.12.0
+  resolution: "@omlet/cli-linux-arm64-musl@npm:1.12.0"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@omlet/cli-linux-x64-gnu@npm:1.11.0":
-  version: 1.11.0
-  resolution: "@omlet/cli-linux-x64-gnu@npm:1.11.0"
+"@omlet/cli-linux-x64-gnu@npm:1.12.0":
+  version: 1.12.0
+  resolution: "@omlet/cli-linux-x64-gnu@npm:1.12.0"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@omlet/cli-linux-x64-musl@npm:1.11.0":
-  version: 1.11.0
-  resolution: "@omlet/cli-linux-x64-musl@npm:1.11.0"
+"@omlet/cli-linux-x64-musl@npm:1.12.0":
+  version: 1.12.0
+  resolution: "@omlet/cli-linux-x64-musl@npm:1.12.0"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@omlet/cli-win32-x64-msvc@npm:1.11.0":
-  version: 1.11.0
-  resolution: "@omlet/cli-win32-x64-msvc@npm:1.11.0"
+"@omlet/cli-win32-x64-msvc@npm:1.12.0":
+  version: 1.12.0
+  resolution: "@omlet/cli-win32-x64-msvc@npm:1.12.0"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"@omlet/cli@npm:1.11.0":
-  version: 1.11.0
-  resolution: "@omlet/cli@npm:1.11.0"
+"@omlet/cli@npm:1.12.0":
+  version: 1.12.0
+  resolution: "@omlet/cli@npm:1.12.0"
   dependencies:
-    "@omlet/cli-darwin-arm64": "npm:1.11.0"
-    "@omlet/cli-darwin-x64": "npm:1.11.0"
-    "@omlet/cli-linux-arm64-gnu": "npm:1.11.0"
-    "@omlet/cli-linux-arm64-musl": "npm:1.11.0"
-    "@omlet/cli-linux-x64-gnu": "npm:1.11.0"
-    "@omlet/cli-linux-x64-musl": "npm:1.11.0"
-    "@omlet/cli-win32-x64-msvc": "npm:1.11.0"
+    "@omlet/cli-darwin-arm64": "npm:1.12.0"
+    "@omlet/cli-darwin-x64": "npm:1.12.0"
+    "@omlet/cli-linux-arm64-gnu": "npm:1.12.0"
+    "@omlet/cli-linux-arm64-musl": "npm:1.12.0"
+    "@omlet/cli-linux-x64-gnu": "npm:1.12.0"
+    "@omlet/cli-linux-x64-musl": "npm:1.12.0"
+    "@omlet/cli-win32-x64-msvc": "npm:1.12.0"
     "@sentry/node": "npm:^7.108.0"
     ajv: "npm:^8.13.0"
     ci-info: "npm:^4.0.0"
@@ -6763,7 +6763,7 @@ __metadata:
       optional: true
   bin:
     omlet: bin/omlet
-  checksum: 10/4a0cbc1e2b23b9c2ab53dffab5e967f38ba6fb7b8f9993a255db8aec14dd8a4576c50e0cd8a49813448287bf5a33145a42ee819b94f6c724b56bd1e9f8d12323
+  checksum: 10/c4d7be56ada8226b86fafddc82e14a2a0469dd4f5c577b5de17a9f72e4cadf8ce4b208b7e731ca0509a31405755f1e0333f0810612873f5345f45f8ad23e255a
   languageName: node
   linkType: hard
 
@@ -28404,7 +28404,7 @@ __metadata:
     "@lmc-eu/commitlint-config": "npm:2.0.3"
     "@lmc-eu/conventional-changelog-lmc-github": "npm:3.0.3"
     "@lmc-eu/eslint-config-react": "npm:2.0.5"
-    "@omlet/cli": "npm:1.11.0"
+    "@omlet/cli": "npm:1.12.0"
     "@playwright/test": "npm:1.49.0"
     "@rollup/plugin-babel": "npm:6.0.4"
     "@rollup/plugin-node-resolve": "npm:15.3.0"
