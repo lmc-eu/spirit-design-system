@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.7"></a>
+
+## [2.0.7](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@2.0.5...@lmc-eu/spirit-form-validations@2.0.7) (2024-11-22)
+
+### Chores
+
+- **form-validations:** Manual version bump ([d3eaa7e](https://github.com/lmc-eu/spirit-design-system/commit/d3eaa7e))
+
+### Dependencies
+
+- Update all non-major dependencies ([188c30d](https://github.com/lmc-eu/spirit-design-system/commit/188c30d))
+- Update all non-major dependencies ([da33775](https://github.com/lmc-eu/spirit-design-system/commit/da33775))
+- **web, web-react, web-twig:** Implement sass-embedded library ([07df504](https://github.com/lmc-eu/spirit-design-system/commit/07df504))
+
+**Note:** Version bump only for package @lmc-eu/spirit-form-validations
+
 <a name="2.0.5"></a>
 
 ## [2.0.5](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@2.0.4...@lmc-eu/spirit-form-validations@2.0.5) (2024-10-17)

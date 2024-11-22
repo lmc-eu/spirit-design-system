@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.1.3"></a>
+
+## [2.1.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@2.1.2...@lmc-eu/spirit-design-tokens@2.1.3) (2024-11-22)
+
+### Dependencies
+
+- Update all non-major dependencies ([188c30d](https://github.com/lmc-eu/spirit-design-system/commit/188c30d))
+- Update all non-major dependencies ([da33775](https://github.com/lmc-eu/spirit-design-system/commit/da33775))
+- **web, web-react, web-twig:** Implement sass-embedded library ([07df504](https://github.com/lmc-eu/spirit-design-system/commit/07df504))
+
+**Note:** Version bump only for package @lmc-eu/spirit-design-tokens
+
 <a name="2.1.2"></a>
 
 ## [2.1.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@2.1.1...@lmc-eu/spirit-design-tokens@2.1.2) (2024-10-17)

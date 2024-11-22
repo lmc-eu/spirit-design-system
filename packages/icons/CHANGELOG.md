@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.5"></a>
+
+## [2.0.5](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-icons@2.0.4...@lmc-eu/spirit-icons@2.0.5) (2024-11-22)
+
+### Dependencies
+
+- Update all non-major dependencies ([da33775](https://github.com/lmc-eu/spirit-design-system/commit/da33775))
+
+### Documentation
+
+- **icons:** Transpile icons [#DS-987](https://github.com/lmc-eu/spirit-design-system/issues/DS-987) ([92e1f80](https://github.com/lmc-eu/spirit-design-system/commit/92e1f80))
+
+**Note:** Version bump only for package @lmc-eu/spirit-icons
+
 <a name="2.0.4"></a>
 
 ## [2.0.4](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-icons@2.0.3...@lmc-eu/spirit-icons@2.0.4) (2024-10-17)

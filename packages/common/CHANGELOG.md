@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.3.8"></a>
+
+## [0.3.8](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-common@0.3.7...@lmc-eu/spirit-common@0.3.8) (2024-11-22)
+
+### Code Refactoring
+
+- **common:** Switch package to the ES module ([edf2ac6](https://github.com/lmc-eu/spirit-design-system/commit/edf2ac6)), closes [#DS-1506](https://github.com/lmc-eu/spirit-design-system/issues/DS-1506)
+
+### Dependencies
+
+- Update all non-major dependencies ([188c30d](https://github.com/lmc-eu/spirit-design-system/commit/188c30d))
+
+**Note:** Version bump only for package @lmc-eu/spirit-common
+
 <a name="0.3.7"></a>
 
 ## [0.3.7](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-common@0.3.6...@lmc-eu/spirit-common@0.3.7) (2024-10-17)

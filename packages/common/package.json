@@ -1,6 +1,6 @@
 {
   "name": "@lmc-eu/spirit-common",
-  "version": "0.3.7",
+  "version": "0.3.8",
   "description": "Common code and scripts for Spirit Design System",
   "license": "MIT",
   "private": true,

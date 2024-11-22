@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.7"></a>
+
+## [2.0.7](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-scss@2.0.6...@lmc-eu/spirit-exporters-scss@2.0.7) (2024-11-22)
+
+### Dependencies
+
+- Update @swc/core to 1.9.3 ([11d2829](https://github.com/lmc-eu/spirit-design-system/commit/11d2829))
+- Update all non-major dependencies ([188c30d](https://github.com/lmc-eu/spirit-design-system/commit/188c30d))
+- Update all non-major dependencies ([da33775](https://github.com/lmc-eu/spirit-design-system/commit/da33775))
+
+**Note:** Version bump only for package @lmc-eu/spirit-exporters-scss
+
 <a name="2.0.6"></a>
 
 ## [2.0.6](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-scss@2.0.5...@lmc-eu/spirit-exporters-scss@2.0.6) (2024-10-17)

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.1.0"></a>
+
+# [0.1.0](https://github.com/lmc-eu/spirit-design-system/compare/jest-config-spirit@0.0.5...jest-config-spirit@0.1.0) (2024-11-22)
+
+### Dependencies
+
+- Update @swc/core to 1.9.3 ([11d2829](https://github.com/lmc-eu/spirit-design-system/commit/11d2829))
+- Update all non-major dependencies ([188c30d](https://github.com/lmc-eu/spirit-design-system/commit/188c30d))
+
+### Features
+
+- **jest-config:** Mock TextEncoder and TextDecoder in DOM ([3c76287](https://github.com/lmc-eu/spirit-design-system/commit/3c76287))
+- **jest-config:** Omit barrel files from code coverage reports ([0cfe0cc](https://github.com/lmc-eu/spirit-design-system/commit/0cfe0cc))
+
+**Note:** Version bump only for package jest-config-spirit
+
 <a name="0.0.5"></a>
 
 ## [0.0.5](https://github.com/lmc-eu/spirit-design-system/compare/jest-config-spirit@0.0.4...jest-config-spirit@0.0.5) (2024-10-17)

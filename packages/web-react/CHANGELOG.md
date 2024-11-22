@@ -3,6 +3,42 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.5.2"></a>
+
+## [2.5.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@2.5.1...@lmc-eu/spirit-web-react@2.5.2) (2024-11-22)
+
+### Bug Fixes
+
+- **web-react:** Failing type in PaginationLink [#DS-1586](https://github.com/lmc-eu/spirit-design-system/issues/DS-1586) ([bca92a5](https://github.com/lmc-eu/spirit-design-system/commit/bca92a5))
+- **web-react:** FileUploaderInput className [#DS-1508](https://github.com/lmc-eu/spirit-design-system/issues/DS-1508) ([d6b6aa8](https://github.com/lmc-eu/spirit-design-system/commit/d6b6aa8))
+- **web-react:** Fix e2e test for FileUploader ([a127a3a](https://github.com/lmc-eu/spirit-design-system/commit/a127a3a))
+
+### Code Refactoring
+
+- **web-react:** Remove forgotten deprecation message ([a0d5d5e](https://github.com/lmc-eu/spirit-design-system/commit/a0d5d5e)), closes [#DS-1525](https://github.com/lmc-eu/spirit-design-system/issues/DS-1525)
+
+### Dependencies
+
+- Update @babel/preset-env to 7.26.0 ([139292c](https://github.com/lmc-eu/spirit-design-system/commit/139292c))
+- Update @babel/preset-typescript to 7.26.0 ([dc96867](https://github.com/lmc-eu/spirit-design-system/commit/dc96867))
+- Update @testing-library/jest-dom to 6.6.3 ([e1900c6](https://github.com/lmc-eu/spirit-design-system/commit/e1900c6))
+- Update all non-major dependencies ([188c30d](https://github.com/lmc-eu/spirit-design-system/commit/188c30d))
+- Update all non-major dependencies ([da33775](https://github.com/lmc-eu/spirit-design-system/commit/da33775))
+- Update ESLint plugins ([19eeb11](https://github.com/lmc-eu/spirit-design-system/commit/19eeb11))
+- Update react types ([ea0725c](https://github.com/lmc-eu/spirit-design-system/commit/ea0725c))
+- **web, web-react, web-twig:** Implement sass-embedded library ([07df504](https://github.com/lmc-eu/spirit-design-system/commit/07df504))
+
+### Documentation
+
+- **repo:** Fix typo in contribution guidelines ([efe71c9](https://github.com/lmc-eu/spirit-design-system/commit/efe71c9))
+- **web-react:** Fix typo in supported attributes in README.md ([5d02a33](https://github.com/lmc-eu/spirit-design-system/commit/5d02a33))
+
+### Tests
+
+- **web-react:** Omit demo file from code coverage report ([655f8fc](https://github.com/lmc-eu/spirit-design-system/commit/655f8fc))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="2.5.1"></a>
 
 ## [2.5.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@2.5.0...@lmc-eu/spirit-web-react@2.5.1) (2024-10-17)

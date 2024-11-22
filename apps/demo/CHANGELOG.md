@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.0.9"></a>
+
+## [0.0.9](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo-app@0.0.8...@lmc-eu/spirit-demo-app@0.0.9) (2024-11-22)
+
+### Chores
+
+- Disable SASS deprecation warnings [#DS-1514](https://github.com/lmc-eu/spirit-design-system/issues/DS-1514) ([d691cc5](https://github.com/lmc-eu/spirit-design-system/commit/d691cc5))
+
+### Code Refactoring
+
+- **demo:** Use server settings directly from the common package ([c980fa0](https://github.com/lmc-eu/spirit-design-system/commit/c980fa0))
+
+### Dependencies
+
+- Update all non-major dependencies ([188c30d](https://github.com/lmc-eu/spirit-design-system/commit/188c30d))
+- Update all non-major dependencies ([da33775](https://github.com/lmc-eu/spirit-design-system/commit/da33775))
+- **web, web-react, web-twig:** Implement sass-embedded library ([07df504](https://github.com/lmc-eu/spirit-design-system/commit/07df504))
+
+**Note:** Version bump only for package @lmc-eu/spirit-demo-app
+
 <a name="0.0.8"></a>
 
 ## [0.0.8](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo-app@0.0.7...@lmc-eu/spirit-demo-app@0.0.8) (2024-10-17)

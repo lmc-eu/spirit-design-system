@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.2.3"></a>
+
+## [0.2.3](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-example-next-with-pages-router@0.2.2...@almacareer/spirit-example-next-with-pages-router@0.2.3) (2024-11-22)
+
+### Dependencies
+
+- **examples:** Update Next.js libs to 14.2.18 ([b2f9b11](https://github.com/lmc-eu/spirit-design-system/commit/b2f9b11))
+- Update @babel/preset-typescript to 7.26.0 ([dc96867](https://github.com/lmc-eu/spirit-design-system/commit/dc96867))
+- Update all non-major dependencies ([188c30d](https://github.com/lmc-eu/spirit-design-system/commit/188c30d))
+- Update react types ([ea0725c](https://github.com/lmc-eu/spirit-design-system/commit/ea0725c))
+
+**Note:** Version bump only for package @almacareer/spirit-example-next-with-pages-router
+
 <a name="0.2.2"></a>
 
 ## [0.2.2](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-example-next-with-pages-router@0.2.1...@almacareer/spirit-example-next-with-pages-router@0.2.2) (2024-10-17)

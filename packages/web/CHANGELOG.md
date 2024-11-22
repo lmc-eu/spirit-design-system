@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.5.2"></a>
+
+## [2.5.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@2.5.1...@lmc-eu/spirit-web@2.5.2) (2024-11-22)
+
+### Dependencies
+
+- Update all non-major dependencies ([188c30d](https://github.com/lmc-eu/spirit-design-system/commit/188c30d))
+- Update all non-major dependencies ([da33775](https://github.com/lmc-eu/spirit-design-system/commit/da33775))
+- **web, web-react, web-twig:** Implement sass-embedded library ([07df504](https://github.com/lmc-eu/spirit-design-system/commit/07df504))
+
+### Documentation
+
+- **repo:** Fix typo in contribution guidelines ([efe71c9](https://github.com/lmc-eu/spirit-design-system/commit/efe71c9))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="2.5.1"></a>
 
 ## [2.5.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@2.5.0...@lmc-eu/spirit-web@2.5.1) (2024-10-17)

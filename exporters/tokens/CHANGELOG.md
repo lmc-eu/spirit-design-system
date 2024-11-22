@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.1.0"></a>
+
+# [2.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-tokens-exporter@2.0.0...@almacareer/spirit-tokens-exporter@2.1.0) (2024-11-22)
+
+### Bug Fixes
+
+- **exporter-tokens:** Pass all tokens to the `computeTokensByApplyingThemes` so references work ([1abf05c](https://github.com/lmc-eu/spirit-design-system/commit/1abf05c))
+- **exporter-tokens:** Use css-variable-prefix token instead of token-prefix ([a4d33bd](https://github.com/lmc-eu/spirit-design-system/commit/a4d33bd))
+
+### Dependencies
+
+- Update @swc/core to 1.9.3 ([11d2829](https://github.com/lmc-eu/spirit-design-system/commit/11d2829))
+- Update all non-major dependencies ([188c30d](https://github.com/lmc-eu/spirit-design-system/commit/188c30d))
+- Update all non-major dependencies ([da33775](https://github.com/lmc-eu/spirit-design-system/commit/da33775))
+
+### Documentation
+
+- **exporter-tokens:** Document Themes naming rules [#DS-1497](https://github.com/lmc-eu/spirit-design-system/issues/DS-1497) ([ebc0414](https://github.com/lmc-eu/spirit-design-system/commit/ebc0414))
+
+### Features
+
+- **exporter-tokens:** Add `color` prefix to css-variables mixin ([d0c3e8e](https://github.com/lmc-eu/spirit-design-system/commit/d0c3e8e))
+- **exporter-tokens:** Add mixin css-variables to theme colors [#DS-1542](https://github.com/lmc-eu/spirit-design-system/issues/DS-1542) ([6b79489](https://github.com/lmc-eu/spirit-design-system/commit/6b79489))
+- **exporter-tokens:** Export only Theme tokens collection ([3f224f1](https://github.com/lmc-eu/spirit-design-system/commit/3f224f1)), closes [#DS-1543](https://github.com/lmc-eu/spirit-design-system/issues/DS-1543)
+- **exporter-tokens:** Use variable prefix from tokens ([569036e](https://github.com/lmc-eu/spirit-design-system/commit/569036e))
+
+**Note:** Version bump only for package @almacareer/spirit-tokens-exporter
+
 <a name="2.0.0"></a>
 
 # 2.0.0 (2024-10-17)
