@@ -100,7 +100,7 @@ jobs:
 
       - name: Notify Slack when failure
         id: Slack
-        uses: slackapi/slack-github-action@v1.27.0
+        uses: slackapi/slack-github-action@v1.27.1
         if: failure()
         with:
           channel-id: ${{ secrets.SLACK_CHANNEL_ID }} # Slack channel-id of #spirit-design-system-notifications_en

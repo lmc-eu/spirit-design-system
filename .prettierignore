@@ -82,3 +82,9 @@ exporters/tokens/generated/**/*.cjs
 
 # exporter proprietary files
 *.pr
+
+# Docker
+Dockerfile
+
+# Node version
+.nvmrc

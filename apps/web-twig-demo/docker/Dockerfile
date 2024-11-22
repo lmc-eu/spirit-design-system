@@ -1,4 +1,4 @@
-#syntax=docker/dockerfile:1.10
+#syntax=docker/dockerfile:1.11
 
 # The different stages of this Dockerfile are meant to be built into separate images
 # https://docs.docker.com/develop/develop-images/multistage-build/#stop-at-a-specific-build-stage
@@ -10,7 +10,7 @@ FROM composer/composer:2-bin AS composer
 FROM mlocati/php-extension-installer:latest AS php_extension_installer
 
 # Prod image
-FROM php:8.3-fpm AS app_php
+FROM php:8.4-fpm AS app_php
 
 # Allow to use development versions of Symfony
 ARG STABILITY="stable"
@@ -111,7 +111,7 @@ RUN set -eux; \
 RUN rm -f .env.local.php
 
 # Caddy image
-FROM caddy:2.8 AS app_caddy
+FROM caddy:2.9 AS app_caddy
 
 WORKDIR /srv/spirit-web-twig-demo
 
