@@ -65,7 +65,7 @@
     "@lmc-eu/commitlint-config": "2.0.3",
     "@lmc-eu/conventional-changelog-lmc-github": "3.0.3",
     "@lmc-eu/eslint-config-react": "2.0.5",
-    "@omlet/cli": "1.11.0",
+    "@omlet/cli": "1.12.0",
     "@playwright/test": "1.49.0",
     "@rollup/plugin-babel": "6.0.4",
     "@rollup/plugin-node-resolve": "15.3.0",
