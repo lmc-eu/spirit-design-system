@@ -31,7 +31,7 @@
     "@babel/core": "7.26.0",
     "@babel/preset-env": "7.25.8",
     "@babel/preset-react": "7.25.9",
-    "@babel/preset-typescript": "7.25.7",
+    "@babel/preset-typescript": "7.26.0",
     "@lmc-eu/eslint-config-base": "3.1.2",
     "@lmc-eu/eslint-config-jest": "3.0.5",
     "@lmc-eu/eslint-config-react": "2.0.5",
