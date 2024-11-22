@@ -83,7 +83,7 @@
     "is-ci": "3.0.1",
     "lerna": "8.1.8",
     "lint-staged": "15.2.10",
-    "netlify-cli": "17.37.0",
+    "netlify-cli": "17.37.2",
     "npm-run-all2": "6.2.6",
     "nx": "19.7.2",
     "postcss": "8.4.49",
