@@ -14,7 +14,8 @@
 
 .PartnerLogo > img,
 .PartnerLogo > svg {
-    width: fit-content;
+    width: auto;
+    max-width: 100%;
     height: var(--#{tokens.$css-variable-prefix}partner-logo-image-height);
 }
 
