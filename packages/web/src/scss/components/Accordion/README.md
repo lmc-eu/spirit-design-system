@@ -7,14 +7,14 @@ Depending on your needs, one or more Accordion items can be open at a time.
 
 Building blocks:
 
-- Accordion
-  - Accordion item (one or – typically – more)
-    - Accordion item header
-      - Accordion item header slot (optional)
-    - Collapse
+- [Accordion](#accordion-1)
+  - [Accordion Item](#accordion-item) (one or – typically – more)
+    - [Accordion Item Header](#accordion-item-header)
+      - Accordion Item Header slot (optional)
+    - [Collapse](#collapse-and-accordion-content)
       - Accordion content
 
-### Accordion Component
+### Accordion
 
 Common wrapper for all items:
 
@@ -172,7 +172,7 @@ When you put it all together:
 <!-- Accordion: end -->
 ```
 
-### Open Inly One Item at a Time
+### Open Only One Item at a Time
 
 Link individual **Collapse items** to their **Accordion parent** via
 `data-spirit-parent` attribute to allow just a single item being open at a time.
