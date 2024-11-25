@@ -42,7 +42,7 @@ predefined grid areas. This way, we can avoid unnecessary elements and keep the 
 the specified order of its subcomponents. Since the Card uses the CSS grid layout with predefined grid areas, using the
 `gap` property would lead to redundant spacing when dropping in just some of the subcomponents.
 
-⚠️ **Arranging the subcomponents in a different order will break the spacing of the subcomponents. It may also have
+⚠️ **Arranging the subcomponents in a different order will break the spacing of the subcomponents and may also have
 negative impact on accessibility of the Card.**
 
 ### Card Layout
@@ -66,8 +66,8 @@ Card can be displayed in a vertical, horizontal, or reversed horizontal layout.
 </article>
 ```
 
-👉 Keep in mind that the Card subcomponents must be arranged in the order [specified above](#card), no matter the
-layout.
+👉 Keep in mind that, no matter the layout, the Card subcomponents must be arranged in the order
+[specified above](#card).
 
 ### Boxed Cards
 
@@ -161,12 +161,38 @@ CardBody content out of the Card. In such cases, the media will be cropped to fi
 
 ### Expanding the Media
 
-To expand the media to the full width or height of the Card, use the `CardMedia--expanded` modifier.
+To expand the media to the full width or height of a boxed Card, use the `CardMedia--expanded` modifier. This option is
+available for both vertical and horizontal (including reversed horizontal) Card layouts.
+
+```html
+<article class="Card Card--vertical">
+  <div class="CardMedia CardMedia--auto CardMedia--expanded">
+    <!-- … -->
+  </div>
+  <div class="CardBody">
+    <!-- … -->
+  </div>
+</article>
+```
 
 Additionally, there is a `CardMedia--filledHeight` modifier that expands the media to match the height of the CardBody
-content. This option is only available in the horizontal Card layout.
+content. This option works with both boxed and non-boxed Card, but is only available in the horizontal Card layout.
 
-Both options work with all media sizes.
+```html
+<article class="Card Card--horizontal">
+  <div class="CardMedia CardMedia--auto CardMedia--filledHeight">
+    <!-- … -->
+  </div>
+  <div class="CardBody">
+    <!-- … -->
+  </div>
+</article>
+```
+
+ℹ️ Both options work with all media sizes.
+
+🎉 Fun fact: The `.CardMedia--expanded` and `.CardMedia--filledHeight` modifiers produce the same result for non-boxed
+horizontal (and reversed horizontal) Cards. But in all other contexts, the two modifiers behave differently.
 
 ## CardLogo
 
@@ -241,7 +267,7 @@ following CSS modifiers:
 - `CardFooter--alignmentXCenter`
 - `CardFooter--alignmentXRight`
 
-### Full Example
+## Full Example
 
 When you put it all together:
 
@@ -269,6 +295,25 @@ When you put it all together:
     <a href="#" class="Button Button--medium Button--secondary">Secondary</a>
   </footer>
 </article>
+```
+
+## Card Grid
+
+In a typical use case, you will display multiple Cards in a [Grid][grid]. Depending on your situation, you may want to
+use the list semantics. And it will work!
+
+```html
+<ul class="Grid Grid--cols-1 Grid--tablet--cols-2 Grid--desktop--cols-3">
+  <li class="Card Card--vertical">
+    <!-- … -->
+  </li>
+  <li class="Card Card--vertical">
+    <!-- … -->
+  </li>
+  <li class="Card Card--vertical">
+    <!-- … -->
+  </li>
+</ul>
 ```
 
 ## Best Practices
@@ -330,8 +375,9 @@ link. For optimum accessibility, you should only provide this in form of a text 
 
 This way, the Card will only have a single accessible link which will be announced by screen readers.
 
-ℹ️ A big shout-out to [Ondřej Pohl][ondrej-pohl] for sharing these best practices!
+ℹ️ A big shout-out to [Ondřej Pohl][ondrej-pohl] for sharing many of these best practices!
 
+[grid]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Grid/README.md
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
 [dictionary-size]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#size
 [ondrej-pohl]: https://linkedin.com/in/ondrejpohl
