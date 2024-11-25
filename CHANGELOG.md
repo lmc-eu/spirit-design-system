@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.0.0-alpha.2"></a>
+
+# [4.0.0-alpha.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@4.0.0-alpha.1...@lmc-eu/spirit-web-twig@4.0.0-alpha.2) (2024-11-25)
+
+### Code Refactoring
+
+- **web-twig:** Wrap ValidationText list in div ([c5c083e](https://github.com/lmc-eu/spirit-design-system/commit/c5c083e))
+
+### Features
+
+- **web-twig:** Introduce Plain Button [#DS-1454](https://github.com/lmc-eu/spirit-design-system/issues/DS-1454) ([c08e8fa](https://github.com/lmc-eu/spirit-design-system/commit/c08e8fa))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="4.0.0-alpha.1"></a>
 
 # [4.0.0-alpha.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@4.0.0-alpha.0...@lmc-eu/spirit-web-twig@4.0.0-alpha.1) (2024-11-06)
