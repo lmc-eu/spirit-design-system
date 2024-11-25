@@ -1,6 +1,6 @@
 {
   "name": "@almacareer/spirit-example-next-with-app-router",
-  "version": "0.2.3-alpha.3",
+  "version": "0.2.3",
   "private": true,
   "scripts": {
     "dev": "next dev",

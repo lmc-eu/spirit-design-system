@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.2.0"></a>
+
+# [1.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@1.2.0-alpha.1...@lmc-eu/spirit-codemods@1.2.0) (2024-11-25)
+
+Miscellaneous changes
+
+**Note:** Version bump only for package @lmc-eu/spirit-codemods
+
 <a name="1.2.0-alpha.1"></a>
 
 # [1.2.0-alpha.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@1.2.0-alpha.0...@lmc-eu/spirit-codemods@1.2.0-alpha.1) (2024-11-06)

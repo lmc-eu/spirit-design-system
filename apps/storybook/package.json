@@ -1,6 +1,6 @@
 {
   "name": "@lmc-eu/spirit-storybook",
-  "version": "0.1.0-alpha.0",
+  "version": "0.1.0",
   "description": "Storybook of the Spirit Design System",
   "license": "MIT",
   "private": true,

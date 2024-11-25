@@ -3,7 +3,7 @@
   "description": "This is Symfony bundle with twig implementation of the Spirit Design System components and extends the twig implementation with an HTML-like syntax.",
   "license": "MIT",
   "type": "symfony-bundle",
-  "version": "4.0.0-alpha.2",
+  "version": "4.0.0",
   "authors": [
     {
       "name": "LMC, s.r.o."

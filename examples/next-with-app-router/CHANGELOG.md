@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.2.3"></a>
+
+## [0.2.3](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-example-next-with-app-router@0.2.3-alpha.2...@almacareer/spirit-example-next-with-app-router@0.2.3) (2024-11-25)
+
+### Bug Fixes
+
+- **examples:** Add mandatory elementType to examples ([021932c](https://github.com/lmc-eu/spirit-design-system/commit/021932c))
+
+### Chores
+
+- **release:** Publish ([2c09d62](https://github.com/lmc-eu/spirit-design-system/commit/2c09d62))
+
+**Note:** Version bump only for package @almacareer/spirit-example-next-with-app-router
+
 <a name="0.2.3-alpha.3"></a>
 
 ## [0.2.3-alpha.3](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-example-next-with-app-router@0.2.3-alpha.2...@almacareer/spirit-example-next-with-app-router@0.2.3-alpha.3) (2024-11-25)
