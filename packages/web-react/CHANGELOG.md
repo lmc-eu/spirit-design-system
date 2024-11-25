@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.0.0-alpha.5"></a>
+
+# [3.0.0-alpha.5](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.0.0-alpha.4...@lmc-eu/spirit-web-react@3.0.0-alpha.5) (2024-11-25)
+
+### Code Refactoring
+
+- **web-react:** Wrap ValidationText list in div and dynamical role ([51ecc21](https://github.com/lmc-eu/spirit-design-system/commit/51ecc21))
+
+### Features
+
+- **web-react:** Introduce Plain Button [#DS-1454](https://github.com/lmc-eu/spirit-design-system/issues/DS-1454) ([3ea4030](https://github.com/lmc-eu/spirit-design-system/commit/3ea4030))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 # [3.0.0-alpha.4](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.0.0-alpha.3...@lmc-eu/spirit-web-react@3.0.0-alpha.4) (2024-11-13)
 
 ### Dependencies

@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.0.0-alpha.5"></a>
+
+# [3.0.0-alpha.5](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.0.0-alpha.4...@lmc-eu/spirit-web@3.0.0-alpha.5) (2024-11-25)
+
+### BREAKING CHANGES
+
+- **web:** Wrap list with validation text ([d124c80](https://github.com/lmc-eu/spirit-design-system/commit/d124c80)), closes [#DS-1255](https://github.com/lmc-eu/spirit-design-system/issues/DS-1255)
+
+### Features
+
+- **web:** Introduce Plain Button [#DS-1454](https://github.com/lmc-eu/spirit-design-system/issues/DS-1454) ([48d9db9](https://github.com/lmc-eu/spirit-design-system/commit/48d9db9))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 # [3.0.0-alpha.4](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.0.0-alpha.3...@lmc-eu/spirit-web@3.0.0-alpha.4) (2024-11-13)
 
 ### Dependencies
