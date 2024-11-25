@@ -2,10 +2,13 @@
 @use '../../settings/dictionaries';
 @use '../../settings/transitions';
 
+$breakpoints: tokens.$breakpoints;
+
 $gap: tokens.$space-900;
 $gap-dense: tokens.$space-700;
 
-$padding: tokens.$space-900;
+$padding-mobile: tokens.$space-700;
+$padding-tablet: tokens.$space-900;
 
 $typography: tokens.$body-medium-regular;
 

@@ -4,16 +4,25 @@
 // 4. Make sure links and buttons are clickable.
 // 5. Make text content selectable when there is a stretched CardLink.
 
+@use '@tokens' as tokens;
+@use 'sass:map';
+@use '../../tools/breakpoint';
 @use '../../tools/typography';
 @use 'theme';
 
 .Card {
+    --#{tokens.$css-variable-prefix}card-padding: #{theme.$padding-mobile};
+
     @include typography.generate(theme.$typography);
 
     position: relative; // 1.
     display: grid;
     min-width: 0; // 3.
     color: theme.$color;
+
+    @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
+        --#{tokens.$css-variable-prefix}card-padding: #{theme.$padding-tablet};
+    }
 }
 
 // 4., 5.
@@ -68,14 +77,22 @@
     }
 
     &:not(:has(.CardMedia--expanded)) {
-        padding: theme.$padding;
+        padding: var(--#{tokens.$css-variable-prefix}card-padding);
     }
 }
 
 .Card--boxed.Card--vertical {
     &:has(.CardMedia--expanded) {
-        grid-template-columns: theme.$gap 1fr theme.$gap; // 2.
-        grid-template-rows: theme.$gap auto 1fr auto;
+        grid-template-columns:
+            var(--#{tokens.$css-variable-prefix}card-padding)
+            1fr
+            var(--#{tokens.$css-variable-prefix}card-padding); // 2.
+
+        grid-template-rows:
+            var(--#{tokens.$css-variable-prefix}card-padding)
+            auto
+            1fr
+            auto;
         grid-template-areas:
             'media media media'
             'media media media'
@@ -84,14 +101,20 @@
     }
 
     &:has(.CardMedia:not(:only-child)) {
-        padding-bottom: theme.$padding;
+        padding-bottom: var(--#{tokens.$css-variable-prefix}card-padding);
     }
 }
 
 .Card--boxed.Card--horizontal {
     &:has(.CardMedia--expanded) {
         grid-template-columns: auto 1fr;
-        grid-template-rows: theme.$gap auto 1fr auto theme.$gap; // 2.
+        grid-template-rows:
+            var(--#{tokens.$css-variable-prefix}card-padding)
+            auto
+            1fr
+            auto
+            var(--#{tokens.$css-variable-prefix}card-padding); // 2.
+
         grid-template-areas:
             'media .'
             'media logo'
@@ -101,14 +124,20 @@
     }
 
     &:has(.CardMedia:not(:only-child)) {
-        padding-right: theme.$padding;
+        padding-right: var(--#{tokens.$css-variable-prefix}card-padding);
     }
 }
 
 .Card--boxed.Card--horizontalReversed {
     &:has(.CardMedia--expanded) {
         grid-template-columns: 1fr auto;
-        grid-template-rows: theme.$gap auto 1fr auto theme.$gap; // 2.
+        grid-template-rows:
+            var(--#{tokens.$css-variable-prefix}card-padding)
+            auto
+            1fr
+            auto
+            var(--#{tokens.$css-variable-prefix}card-padding); // 2.
+
         grid-template-areas:
             '. media'
             'logo media'
@@ -118,6 +147,6 @@
     }
 
     &:has(.CardMedia:not(:only-child)) {
-        padding-left: theme.$padding;
+        padding-left: var(--#{tokens.$css-variable-prefix}card-padding);
     }
 }
