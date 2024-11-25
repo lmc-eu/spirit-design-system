@@ -56,7 +56,6 @@ export interface UncontrolledPaginationProps {
   accessibilityLabelNext?: string;
   accessibilityLabelPrevious?: string;
   defaultPage?: number;
-  href: string;
   visiblePages?: number;
   onChange?: (pageNumber: number) => void;
   totalPages: number;

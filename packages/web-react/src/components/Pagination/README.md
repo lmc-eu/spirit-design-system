@@ -172,7 +172,6 @@ and [escape hatches][readme-escape-hatches].
 | `accessibilityLabelNext`     | `string`                       | `Next`     | ✕        | Accessibility label of the next link                                |
 | `accessibilityLabelPrevious` | `string`                       | `Previous` | ✕        | Accessibility label of the previous link                            |
 | `defaultPage`                | `number`                       | `1`        | ✕        | The number of the page selected as current page at the first render |
-| `href`                       | `string`                       | —          | ✓        | Link URL                                                            |
 | `onChange`                   | `(pageNumber: number) => void` | -          | ✕        | On page change callback                                             |
 | `totalPages`                 | `number`                       | 0          | ✓        | Total count of pages                                                |
 | `visiblePages`               | `number`                       | `5`        | ✕        | Number of displayed pages                                           |
