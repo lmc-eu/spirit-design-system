@@ -5,10 +5,10 @@ Modal is a composition of several subcomponents:
 - [Modal](#modal-1)
   - [ModalDialog](#modaldialog)
     - [ModalHeader](#modalheader)
-    - [ModalBody](#modalfooter)
+    - [ModalBody](#modalbody)
     - [ModalFooter](#modalfooter)
 
-## Modal Component
+## Modal
 
 Modal establishes the top layer with a backdrop. Under the hood it uses the [`<dialog>` element][mdn-dialog] which
 provides several accessibility advantages.
@@ -39,7 +39,7 @@ Example:
 </dialog>
 ```
 
-## ModalDialog Component
+## ModalDialog
 
 ModalDialog is the actual dialog window, a place for the header, body, and footer of the dialog.
 
@@ -93,7 +93,7 @@ By default, the docked dialog on mobile screens shrinks to fit the height of its
 </article>
 ```
 
-## ModalHeader Component
+## ModalHeader
 
 ModalHeader contains the title of the dialog and the close button.
 
@@ -130,7 +130,7 @@ the `aria-label` attribute on the `<dialog>` element:
 </dialog>
 ```
 
-## ModalBody Component
+## ModalBody
 
 ModalBody holds the actual content of the Modal.
 
@@ -144,7 +144,7 @@ ModalBody holds the actual content of the Modal.
 </div>
 ```
 
-## ModalFooter Component
+## ModalFooter
 
 ModalFooter is the place for actions represented by the Button component. While there always must be a primary Button,
 secondary actions are optional.
