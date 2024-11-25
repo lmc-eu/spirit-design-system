@@ -4,16 +4,16 @@ Card is a compact container for organizing and displaying content about a single
 
 Card is a versatile composition of a few subcomponents:
 
-- [Card](#card)
-  - [CardArtwork](#card-artwork)
-  - [CardMedia](#card-media)
-  - [CardLogo](#card-logo)
-  - [CardBody](#card-body)
-    - [CardEyebrow](#card-eyebrow)
-    - [CardTitle](#card-title)
-  - [CardFooter](#card-footer)
+- [Card](#card-1)
+  - [CardArtwork](#cardartwork)
+  - [CardMedia](#cardmedia)
+  - [CardLogo](#cardlogo)
+  - [CardBody](#cardbody)
+    - [CardTitle](#cardtitle)
+    - [CardEyebrow](#cardeyebrow)
+  - [CardFooter](#cardfooter)
 
-Additionally, Card can be used with [CardLink](#card-link) to create a clickable card.
+Additionally, Card can be used with [CardLink](#making-the-whole-card-clickable) to create a clickable card.
 
 ## Card
 
@@ -29,10 +29,10 @@ Card is the main container of the composition.
 
 Regardless of the [layout](#card-layout), the Card subcomponents must be arranged in the following order:
 
-1. CardArtwork (optional) or CardMedia (optional) — first
-2. CardLogo (optional)
-3. CardBody
-4. CardFooter (optional) – last
+1. [CardArtwork](#cardartwork) (optional) or CardMedia (optional) — first
+2. [CardLogo](#cardlogo) (optional)
+3. [CardBody](#cardbody)
+4. [CardFooter](#cardfooter) (optional) – last
 
 ℹ️ Every `<div>` counts, especially on large pages. During the development of the Card component, we did our best to
 balance between flexibility and simplicity. To provide the best performance, we decided to use the CSS grid layout with
@@ -170,15 +170,76 @@ Both options work with all media sizes.
 
 ## CardLogo
 
-TODO
+CardLogo is an optional subcomponent that displays a logo. To achieve the best visual result, use the PartnerLogo
+subcomponent.
+
+```html
+<div class="CardLogo">
+  <div class="PartnerLogo PartnerLogo--medium PartnerLogo--safeArea">
+    <img src="…" alt="Product Name" />
+  </div>
+</div>
+```
 
 ## CardBody
 
-TODO
+CardBody is the main content area of the Card.
+
+```html
+<div class="CardBody">
+  <!-- … -->
+</div>
+```
+
+### CardTitle
+
+CardTitle displays the main title of the Card. It uses the `<h4>` heading element by default, but you can use any other
+heading level that fits your document outline.
+
+```html
+<h4 class="CardTitle">
+  <a href="#">Card Title</a>
+</h4>
+```
+
+To emphasize the CardTitle, you can use the `CardTitle--heading` modifier:
+
+```html
+<h4 class="CardTitle CardTitle--heading">
+  <a href="#">Card Title</a>
+</h4>
+```
+
+👉 See below how to extend the link in CardTitle to [make the whole card clickable](#making-the-whole-card-clickable).
+
+### CardEyebrow
+
+CardEyebrow is an optional subcomponent that accompanies the CardTitle.
+
+```html
+<div class="CardEyebrow">Content options</div>
+<h4 class="CardTitle">Card Title</h4>
+```
 
 ## CardFooter
 
-TODO
+Use CardFooter for actions or any other content at the bottom of the Card. When using Cards with CardFooter in a Grid,
+the CardFooters will automatically line up.
+
+```html
+<footer class="CardFooter">
+  <!-- … -->
+</footer>
+```
+
+### Footer Alignment
+
+The footer can be horizontally aligned to the start, center, or end of the Card. To align the footer, use one of the
+following CSS modifiers:
+
+- `CardFooter--alignmentXLeft`
+- `CardFooter--alignmentXCenter`
+- `CardFooter--alignmentXRight`
 
 ### Full Example
 
@@ -199,7 +260,7 @@ When you put it all together:
   <div class="CardBody">
     <div class="CardEyebrow">Content options</div>
     <h4 class="CardTitle CardTitle--heading">
-      <a href="#" class="CardLink"> Card Title </a>
+      <a href="#" class="CardLink">Card Title</a>
     </h4>
     <p>Card content</p>
   </div>
@@ -257,18 +318,13 @@ For article previews or similar use cases, you may want to display a limited amo
 link. For optimum accessibility, you should only provide this in form of a text node, not a button or a link:
 
 ```html
+<h4 class="CardTitle">
+  <a href="#" class="CardLink">Card title</a>
+</h4>
+<p><!-- … --></p>
 <!-- DON'T DO THIS -->
-<h4 class="CardTitle">
-  <a href="#" class="CardLink">Card title</a>
-</h4>
-<p><!-- … --></p>
 <a href="#" class="link-primary link-underlined">Read more</a>
-
-<!-- Correct -->
-<h4 class="CardTitle">
-  <a href="#" class="CardLink">Card title</a>
-</h4>
-<p><!-- … --></p>
+<!-- This is correct -->
 <div class="link-primary link-underlined">Read more</div>
 ```
 
