@@ -31,8 +31,9 @@ const UncontrolledPagination = (props: SpiritUncontrolledPaginationProps): JSX.E
     <Pagination {...rest}>
       {currentPage !== 1 && (
         <PaginationLinkPrevious
+          elementType="button"
           accessibilityLabel={accessibilityLabelPrevious}
-          onClick={(event) => {
+          onClick={(event: ClickEvent) => {
             event.preventDefault();
             handlePageChange(currentPage - 1);
           }}
@@ -42,7 +43,7 @@ const UncontrolledPagination = (props: SpiritUncontrolledPaginationProps): JSX.E
         <PaginationItem key={pageNumber}>
           <PaginationLink
             accessibilityLabel={`${accessibilityLabel} ${pageNumber}`}
-            href="#"
+            elementType="button"
             isCurrent={currentPage === pageNumber}
             pageNumber={pageNumber}
             onClick={(event: ClickEvent) => {
@@ -54,6 +55,7 @@ const UncontrolledPagination = (props: SpiritUncontrolledPaginationProps): JSX.E
       ))}
       {currentPage !== totalPages && (
         <PaginationLinkNext
+          elementType="button"
           accessibilityLabel={accessibilityLabelNext}
           onClick={(event) => {
             event.preventDefault();

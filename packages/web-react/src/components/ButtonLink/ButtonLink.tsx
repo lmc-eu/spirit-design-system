@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React, { ElementType, ForwardedRef, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
-import { SpiritButtonLinkProps } from '../../types';
+import { PolymorphicForwardRef, SpiritButtonLinkProps } from '../../types';
 import { Spinner } from '../Spinner';
 import { useButtonLinkAriaProps } from './useButtonLinkAriaProps';
 import { useButtonLinkStyleProps } from './useButtonLinkStyleProps';
@@ -49,6 +49,6 @@ const _ButtonLink = <T extends ElementType = 'a', C = void, S = void>(
   );
 };
 
-const ButtonLink = forwardRef<HTMLAnchorElement, SpiritButtonLinkProps<ElementType>>(_ButtonLink);
+const ButtonLink = (forwardRef as PolymorphicForwardRef)(_ButtonLink);
 
 export default ButtonLink;

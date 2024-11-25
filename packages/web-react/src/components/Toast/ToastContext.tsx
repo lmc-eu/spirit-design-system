@@ -24,7 +24,6 @@ export interface ToastItem {
     link?: JSX.Element | string;
   };
 }
-
 export interface ToastContextType extends ToastState {
   clear: () => void;
   hide: (id: string) => void;
@@ -81,6 +80,7 @@ type ActionType =
   | { type: 'clear'; payload: null }
   | { type: 'setQueue'; payload: { newQueue: ToastItem[] } };
 
+// Update the reducer in `packages/web-react/src/components/Toast/ToastContext.tsx`
 const reducer = (state: ToastState, action: ActionType): ToastState => {
   const { type, payload } = action;
   const { queue: currentQueue } = state;
@@ -97,7 +97,12 @@ const reducer = (state: ToastState, action: ActionType): ToastState => {
           iconName: payload.options?.iconName,
           id: payload.toastId,
           isDismissible: payload.options?.isDismissible || false,
-          linkProps: payload.options?.linkProps || {},
+          linkProps: {
+            href: payload.options?.linkProps.href || '',
+            elementType: payload.options?.linkProps.elementType || 'a',
+            target: payload.options?.linkProps.target,
+            title: payload.options?.linkProps.title,
+          },
           isOpen: true,
           content: {
             message: payload.content.message,

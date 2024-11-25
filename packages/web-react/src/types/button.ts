@@ -8,6 +8,7 @@ import {
   SpiritPolymorphicElementPropsWithRef,
   SizesDictionaryType,
   StyleProps,
+  LinkHrefProps,
 } from './shared';
 
 export type ButtonColor<C> = ActionButtonColorsDictionaryType | EmotionColorsDictionaryType | C;
@@ -57,4 +58,5 @@ export type SpiritButtonProps<E extends ElementType = 'button', C = void, S = vo
   SpiritPolymorphicElementPropsWithRef<E, ButtonProps<E, C, S>>;
 
 export type SpiritButtonLinkProps<E extends ElementType = 'a', C = void, S = void> = ButtonLinkProps<E, C, S> &
+  LinkHrefProps<E> &
   SpiritPolymorphicElementPropsWithRef<E, ButtonLinkProps<E, C, S>>;

@@ -59,6 +59,7 @@ const meta: Meta<typeof ButtonLink> = {
   args: {
     children: 'Click me',
     color: ActionButtonColors.PRIMARY,
+    href: '#',
     isBlock: false,
     isDisabled: false,
     isLoading: false,

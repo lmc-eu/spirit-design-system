@@ -2,6 +2,7 @@ import { ElementType } from 'react';
 import {
   ChildrenProps,
   ClickEvent,
+  LinkHrefProps,
   SpiritButtonElementProps,
   SpiritDialogElementProps,
   SpiritElementProps,
@@ -65,6 +66,7 @@ export type HeaderDialogLinkProps<E extends ElementType = 'a'> = {
 } & BaseHeaderDialogLinkProps;
 
 export type SpiritDialogHeaderLinkProps<E extends ElementType = 'a'> = HeaderDialogLinkProps<E> &
+  LinkHrefProps<E> &
   SpiritPolymorphicElementPropsWithRef<E, HeaderDialogLinkProps<E>>;
 
 export interface HeaderDialogNavProps extends SpiritUListElementProps, ChildrenProps {}
@@ -87,6 +89,7 @@ export type HeaderLinkProps<E extends ElementType = 'a'> = {
 } & HeaderLinkBaseProps;
 
 export type SpiritHeaderLinkProps<E extends ElementType = 'a'> = HeaderLinkProps<E> &
+  LinkHrefProps<E> &
   SpiritPolymorphicElementPropsWithRef<E, HeaderLinkProps<E>>;
 
 export interface HeaderMobileActionsProps extends SpiritElementProps, HeaderMobileActionsHandlingProps, ChildrenProps {

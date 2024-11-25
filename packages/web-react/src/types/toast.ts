@@ -5,6 +5,7 @@ import {
   AlignmentYDictionaryType,
   ChildrenProps,
   EmotionColorsDictionaryType,
+  LinkHrefProps,
   StyleProps,
 } from './shared';
 
@@ -41,11 +42,12 @@ export interface SpiritToastBarProps extends ToastBarProps, TransitionToastBarPr
   id: string;
 }
 
-export interface ToastLinkProps<E extends ElementType = 'a'> extends ToastBarHandlingProps, ToastBarProps {
-  elementType?: E;
-  href?: string;
-  target?: LinkTarget;
-}
+export type ToastLinkProps<E extends ElementType = 'a'> = ToastBarHandlingProps &
+  ToastBarProps &
+  LinkHrefProps<E> & {
+    elementType?: E;
+    target?: LinkTarget;
+  };
 
 export interface ToastCloseButtonProps extends ToastBarHandlingProps, SpiritToastBarProps {
   label?: string;

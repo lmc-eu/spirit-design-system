@@ -1,7 +1,7 @@
 'use client';
 
 import React, { ElementType, ForwardedRef, forwardRef } from 'react';
-import { SpiritPaginationLinkPreviousNextProps } from '../../types';
+import { PolymorphicForwardRef, SpiritPaginationLinkPreviousNextProps } from '../../types';
 import { PAGINATION_NEXT_LINK_DEFAULT_ACCESSIBILITY_LABEL } from './constants';
 import PaginationButtonLink from './PaginationButtonLink';
 
@@ -13,8 +13,16 @@ const _PaginationLinkNext = <E extends ElementType = 'a'>(
     ...restProps
   }: SpiritPaginationLinkPreviousNextProps<E>,
   ref: ForwardedRef<HTMLAnchorElement>,
-) => <PaginationButtonLink direction="next" accessibilityLabel={accessibilityLabel} ref={ref} {...restProps} />;
+) => (
+  <PaginationButtonLink
+    href={restProps.href}
+    direction="next"
+    accessibilityLabel={accessibilityLabel}
+    ref={ref}
+    {...restProps}
+  />
+);
 
-const PaginationLinkNext = forwardRef<HTMLAnchorElement, SpiritPaginationLinkPreviousNextProps>(_PaginationLinkNext);
+const PaginationLinkNext = (forwardRef as PolymorphicForwardRef)(_PaginationLinkNext);
 
 export default PaginationLinkNext;

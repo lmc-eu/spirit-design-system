@@ -138,31 +138,31 @@ const FooterDefault = () => {
           {/* Flex with social media links */}
           <Flex elementType="ul" alignmentX="center" alignmentY="center">
             <li>
-              <ButtonLink size="medium" color="tertiary" isSymmetrical>
+              <ButtonLink href="#" size="medium" color="tertiary" isSymmetrical>
                 <VisuallyHidden>Facebook</VisuallyHidden>
                 <Icon name="logo-facebook" />
               </ButtonLink>
             </li>
             <li>
-              <ButtonLink size="medium" color="tertiary" isSymmetrical>
+              <ButtonLink href="#" size="medium" color="tertiary" isSymmetrical>
                 <VisuallyHidden>X</VisuallyHidden>
                 <Icon name="logo-x" />
               </ButtonLink>
             </li>
             <li>
-              <ButtonLink size="medium" color="tertiary" isSymmetrical>
+              <ButtonLink href="#" size="medium" color="tertiary" isSymmetrical>
                 <VisuallyHidden>YouTube</VisuallyHidden>
                 <Icon name="logo-youtube" />
               </ButtonLink>
             </li>
             <li>
-              <ButtonLink size="medium" color="tertiary" isSymmetrical>
+              <ButtonLink href="#" size="medium" color="tertiary" isSymmetrical>
                 <VisuallyHidden>Google</VisuallyHidden>
                 <Icon name="logo-google" />
               </ButtonLink>
             </li>
             <li>
-              <ButtonLink size="medium" color="tertiary" isSymmetrical>
+              <ButtonLink href="#" size="medium" color="tertiary" isSymmetrical>
                 <VisuallyHidden>LinkedIn</VisuallyHidden>
                 <Icon name="logo-linkedin" />
               </ButtonLink>

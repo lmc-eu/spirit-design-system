@@ -10,6 +10,7 @@ export * from './element';
 export * from './events';
 export * from './inputs';
 export * from './item';
+export * from './links';
 export * from './positions';
 export * from './refs';
 export * from './rest';

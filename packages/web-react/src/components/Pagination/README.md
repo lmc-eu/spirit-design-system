@@ -133,6 +133,7 @@ This component extends the [Button][button] component with directional arrows an
 | -------------------- | ---------------------- | ------- | -------- | -------------------------------------------------------------------- |
 | `accessibilityLabel` | `string`               | `null`  | ✓        | Accessibility label of the link                                      |
 | `direction`          | [`previous` \| `next`] | `null`  | ✓        | The direction according to which the corresponding icon is displayed |
+| `href`               | `string`               | —       | ✓        | Link URL                                                             |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -157,6 +158,7 @@ This component extends the `PaginationButtonLink` component.
 | Name                 | Type     | Default | Required | Description                     |
 | -------------------- | -------- | ------- | -------- | ------------------------------- |
 | `accessibilityLabel` | `string` | `Next`  | ✕        | Accessibility label of the link |
+| `href`               | `string` | —       | ✓        | Link URL                        |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

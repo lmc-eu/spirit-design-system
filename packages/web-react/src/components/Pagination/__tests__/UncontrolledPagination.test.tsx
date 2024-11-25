@@ -11,7 +11,13 @@ describe('UncontrolledPagination', () => {
 
   it('renders pagination items with test page selected', () => {
     render(
-      <UncontrolledPagination accessibilityLabel="test page" totalPages={10} defaultPage={5} onChange={onPageChange} />,
+      <UncontrolledPagination
+        href="#"
+        accessibilityLabel="test page"
+        totalPages={10}
+        defaultPage={5}
+        onChange={onPageChange}
+      />,
     );
 
     const items = screen.getAllByRole('button');
@@ -23,7 +29,13 @@ describe('UncontrolledPagination', () => {
 
   it('renders disabled items for the first and last page', () => {
     const { container } = render(
-      <UncontrolledPagination accessibilityLabel="test page" totalPages={10} defaultPage={1} onChange={onPageChange} />,
+      <UncontrolledPagination
+        href="#"
+        accessibilityLabel="test page"
+        totalPages={10}
+        defaultPage={1}
+        onChange={onPageChange}
+      />,
     );
 
     const items = screen.getAllByRole('button');
@@ -38,7 +50,13 @@ describe('UncontrolledPagination', () => {
 
   it('calls the onPageChange function when an item is clicked', () => {
     render(
-      <UncontrolledPagination accessibilityLabel="test page" totalPages={10} defaultPage={5} onChange={onPageChange} />,
+      <UncontrolledPagination
+        href="#"
+        accessibilityLabel="test page"
+        totalPages={10}
+        defaultPage={5}
+        onChange={onPageChange}
+      />,
     );
 
     const items = screen.getAllByRole('button');

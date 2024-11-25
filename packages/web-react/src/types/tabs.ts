@@ -2,6 +2,7 @@ import { ElementType, HTMLProps } from 'react';
 import {
   ChildrenProps,
   ClickEvents,
+  LinkHrefProps,
   SpacingProp,
   SpiritPolymorphicElementPropsWithRef,
   StyleProps,
@@ -47,6 +48,7 @@ export type TabLinkProps<E extends ElementType = 'a'> = {
 } & TabLinkBaseProps;
 
 export type SpiritTabLinkProps<E extends ElementType = 'a'> = TabLinkProps<E> &
+  LinkHrefProps<E> &
   SpiritPolymorphicElementPropsWithRef<E, TabLinkProps<E>>;
 
 export type TabsToggler = (id: TabId) => void;

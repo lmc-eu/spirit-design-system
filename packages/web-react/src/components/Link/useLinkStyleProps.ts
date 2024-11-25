@@ -10,7 +10,9 @@ export interface LinkStyles<E extends ElementType = 'p'> {
   props: Partial<LinkProps<E>>;
 }
 
-export function useLinkStyleProps<E extends ElementType = 'a', T = void>(props: SpiritLinkProps<E, T>): LinkStyles<E> {
+export function useLinkStyleProps<E extends ElementType = 'a', T = void>(
+  props: Partial<SpiritLinkProps<E, T>>,
+): LinkStyles<E> {
   const { color, hasVisitedStyleAllowed, isDisabled, underlined, ...restProps } = props;
 
   const linkClass = useClassNamePrefix('link');

@@ -231,7 +231,7 @@ Usage example:
 | ------------- | --------------------------------- | ------- | -------- | ----------------------------- |
 | `children`    | `ReactNode`                       | —       | ✓        | Content of the ToastBarLink   |
 | `elementType` | `ElementType`                     | `a`     | ✕        | Type of element used as       |
-| `href`        | `string`                          | —       | ✕        | ToastBarLink's href attribute |
+| `href`        | `string`                          | —       | ✓        | ToastBarLink's href attribute |
 | `ref`         | `ForwardedRef<HTMLAnchorElement>` | —       | ✕        | Link element reference        |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].

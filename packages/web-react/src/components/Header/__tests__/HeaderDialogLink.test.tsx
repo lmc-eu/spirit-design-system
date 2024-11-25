@@ -17,7 +17,11 @@ describe('HeaderDialogLink', () => {
   restPropsTest((props) => <HeaderDialogLink {...props} />, 'a');
 
   it('should render text children', () => {
-    const dom = render(<HeaderDialogLink id="test">Hello World</HeaderDialogLink>);
+    const dom = render(
+      <HeaderDialogLink href="#" id="test">
+        Hello World
+      </HeaderDialogLink>,
+    );
 
     const element = dom.container.querySelector('a') as HTMLElement;
     expect(element.textContent).toBe('Hello World');
@@ -25,7 +29,7 @@ describe('HeaderDialogLink', () => {
 
   it('should render button element', () => {
     const dom = render(
-      <HeaderDialogLink id="test" elementType="button">
+      <HeaderDialogLink href="#" id="test" elementType="button">
         Hello World
       </HeaderDialogLink>,
     );

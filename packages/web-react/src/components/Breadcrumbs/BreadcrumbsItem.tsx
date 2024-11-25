@@ -9,6 +9,7 @@ import { Link } from '../Link';
 import { useBreadcrumbsStyleProps } from './useBreadcrumbsStyleProps';
 
 const defaultProps = {
+  href: '',
   iconNameEnd: 'chevron-right',
   iconNameStart: 'chevron-left',
   isCurrent: false,
