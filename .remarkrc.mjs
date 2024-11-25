@@ -12,6 +12,10 @@ export default {
     // @see: https://github.com/remarkjs/remark-lint/tree/main/packages/remark-lint-list-item-spacing
     ['remark-lint-list-item-spacing', false],
 
+    // Allow duplicate headings as it is completely valid to have headings of the same name in a document.
+    // @see: https://github.com/remarkjs/remark-lint/tree/main/packages/remark-lint-no-duplicate-headings
+    ['remark-lint-no-duplicate-headings', false],
+
     // @see: https://github.com/ilyatitovich/remark-lint-heading-capitalization
     [
       'remark-lint-heading-capitalization',

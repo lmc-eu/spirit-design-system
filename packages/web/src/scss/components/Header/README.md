@@ -9,16 +9,16 @@ The Header is a composition of several subcomponents:
 - [Header](#minimal-header)
   - [HeaderMobileActions](#mobile-only-actions)
   - [HeaderDesktopActions](#desktop-only-actions)
-    - [HeaderNav](#navigation)
-      - [HeaderNavItem](#navigation)
-        - [HeaderLink](#navigation)
+    - [HeaderNav](#header-navigation)
+      - [HeaderNavItem](#header-navigation)
+        - [HeaderLink](#header-navigation)
 - [HeaderDialog](#header-dialog)
   - [HeaderDialogCloseButton](#close-button)
   - [HeaderDialogActions](#primary-and-secondary-actions)
-    - [HeaderDialogNav](#navigation-1)
-      - [HeaderDialogNavItem](#navigation-1)
-        - [HeaderDialogLink](#navigation-1)
-        - [HeaderDialogText](#navigation-1)
+    - [HeaderDialogNav](#header-dialog-navigation)
+      - [HeaderDialogNavItem](#header-dialog-navigation)
+        - [HeaderDialogLink](#header-dialog-navigation)
+        - [HeaderDialogText](#header-dialog-navigation)
 
 ## JavaScript Plugin
 
@@ -170,11 +170,7 @@ control here.
 </nav>
 ```
 
-<!--lint disable no-duplicate-headings -->
-
-#### Desktop-Only Actions Navigation
-
-<!--lint enable no-duplicate-headings -->
+#### Header Navigation
 
 Navigation is designed to live in either of the action slots (just remember you
 should use the `<nav>` element with the appropriate `aria-label` for that slot,
@@ -286,11 +282,7 @@ necessary).
 </nav>
 ```
 
-<!--lint disable no-duplicate-headings -->
-
-#### Primary and Secondary Actions Navigation
-
-<!--lint enable no-duplicate-headings -->
+#### Header Dialog Navigation
 
 Navigation capabilities are very similar to those of Header. All principles
 apply here as well, with the only difference in class names starting with
