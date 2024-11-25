@@ -299,8 +299,23 @@ When you put it all together:
 
 ## Card Grid
 
-In a typical use case, you will display multiple Cards in a [Grid][grid]. Depending on your situation, you may want to
-use the list semantics. And it will work!
+In a typical use case, you will display multiple Cards in a [Grid][grid].
+
+```html
+<div class="Grid Grid--cols-1 Grid--tablet--cols-2 Grid--desktop--cols-3">
+  <article class="Card Card--vertical">
+    <!-- … -->
+  </article>
+  <article class="Card Card--vertical">
+    <!-- … -->
+  </article>
+  <article class="Card Card--vertical">
+    <!-- … -->
+  </article>
+</div>
+```
+
+Depending on your situation, you may want to use the list semantics. And it will work!
 
 ```html
 <ul class="Grid Grid--cols-1 Grid--tablet--cols-2 Grid--desktop--cols-3">
