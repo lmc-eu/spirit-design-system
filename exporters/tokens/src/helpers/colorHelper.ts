@@ -95,6 +95,6 @@ export const filterColorCollections = (tokens: Token[]) => {
       return false;
     }
 
-    return item.propertyValues?.Collection === themeTokenOption.id;
+    return item.propertyValues?.collection === themeTokenOption.id;
   });
 };

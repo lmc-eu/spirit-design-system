@@ -24,7 +24,7 @@ exampleCollectionTokens.set('colorCollectionRef1', {
       ],
     },
   ],
-  propertyValues: { Collection: 'theme-tokens-id' },
+  propertyValues: { collection: 'theme-tokens-id' },
 } as unknown as ColorToken);
 
 exampleCollectionTokens.set('colorCollectionRef2', {
@@ -113,7 +113,7 @@ export const expectedCollectionValue = [
         ],
       },
     ],
-    propertyValues: { Collection: 'theme-tokens-id' },
+    propertyValues: { collection: 'theme-tokens-id' },
     tokenType: 'Color',
   },
   {
