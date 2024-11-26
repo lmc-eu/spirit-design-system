@@ -90,13 +90,13 @@ export const generateFileContent = (
   let stylesObject: StylesObjectType = {};
   let styledMixin = '';
   const {
-    groupNames = [''],
-    hasParentPrefix = true,
-    sortByNumValue = false,
-    hasMixin = false,
-    hasStylesObject = true,
-    tokenTypes,
     excludeGroupNames = null,
+    groupNames = [''],
+    hasMixin = false,
+    hasParentPrefix = true,
+    hasStylesObject = true,
+    sortByNumValue = false,
+    tokenTypes,
   } = fileData;
 
   // Iterate over token types and groups to filter tokens
@@ -114,7 +114,6 @@ export const generateFileContent = (
           mappedTokens,
           tokenGroups,
           tokenPrefix,
-          group,
           hasMixin,
           hasParentPrefix,
           sortByNumValue,
@@ -129,7 +128,6 @@ export const generateFileContent = (
           filteredTokens,
           tokenGroups,
           tokenPrefix,
-          group,
           hasParentPrefix,
           sortByNumValue,
         );
@@ -138,10 +136,10 @@ export const generateFileContent = (
       // Generate css object and merge it with the existing one
       const groupStylesObject = generateStylesObjectFromTokens(
         filteredTokens,
-        mappedTokens,
         tokenGroups,
         hasParentPrefix,
         hasJsOutput,
+        sortByNumValue,
       );
       stylesObject = deepMergeObjects(stylesObject, groupStylesObject);
     });

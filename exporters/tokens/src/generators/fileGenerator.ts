@@ -162,7 +162,7 @@ export const generateOutputFilesByThemes = async (
   // Generate root themes file
   const rootThemesFileContent = generateThemesRootFile(themes);
   const rootTsThemesFileContent = generateThemesRootFile(themes, true);
-  const rootScssThemesFile = `@forward 'color-tokens';\n`;
+  const rootScssThemesFile = "@forward 'color-tokens';\n";
   const colorTokensFile = generateFiles(
     filteredColorCollections,
     mappedTokens,

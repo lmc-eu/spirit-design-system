@@ -52,7 +52,6 @@ export const nonThemedFilesData: FileData[] = [
   {
     fileName: 'typography',
     tokenTypes: [TokenType.typography],
-    hasParentPrefix: false,
   },
 ];
 

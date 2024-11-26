@@ -15,7 +15,6 @@ import {
   typographyGroupReducer,
 } from '../stylesObjectGenerator';
 
-const mappedTokens: Map<string, Token> = new Map([]);
 const tokenGroups: Array<TokenGroup> = exampleGroups;
 
 describe('stylesObjectGenerator', () => {
@@ -109,13 +108,7 @@ describe('stylesObjectGenerator', () => {
     ];
 
     it.each(dataProvider)('$description', ({ tokens, expectedStyles, hasJsOutput }) => {
-      const styles = generateStylesObjectFromTokens(
-        Array.from(tokens.values()),
-        mappedTokens,
-        tokenGroups,
-        true,
-        hasJsOutput,
-      );
+      const styles = generateStylesObjectFromTokens(Array.from(tokens.values()), tokenGroups, true, hasJsOutput, false);
 
       expect(styles).toStrictEqual(expectedStyles);
     });

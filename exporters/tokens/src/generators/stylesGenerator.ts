@@ -122,13 +122,12 @@ export const generateStylesFromTokens = (
   mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
   tokenPrefix: string,
-  group: string,
   hasMixin: boolean,
   hasParentPrefix: boolean,
   sortByNumValue: boolean,
   hasJsOutput: boolean = false,
 ): string => {
-  const sortedTokens = sortTokens(tokens, tokenGroups, hasParentPrefix, group, sortByNumValue);
+  const sortedTokens = sortTokens(tokens, tokenGroups, hasParentPrefix, sortByNumValue);
 
   const cssTokens = sortedTokens.map((token) => ({
     css: tokenToStyleByType(token, mappedTokens, tokenGroups, tokenPrefix, hasMixin, hasParentPrefix, hasJsOutput),

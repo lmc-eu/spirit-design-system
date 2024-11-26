@@ -45,7 +45,6 @@ export const sortTokens = (
   tokens: Token[],
   tokenGroups: Array<TokenGroup>,
   hasParentPrefix: boolean,
-  group: string,
   sortByNumValue: boolean,
 ) => {
   const sortedTokens = tokens.sort((a, b) => {
