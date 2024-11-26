@@ -71,4 +71,18 @@ describe('ButtonLink', () => {
     const element = container.querySelector('a') as HTMLElement;
     expect(element).not.toHaveAttribute('type');
   });
+
+  it('should pass rel attribute', () => {
+    const { container } = render(<ButtonLink rel="noopener" />);
+
+    const element = container.querySelector('a') as HTMLElement;
+    expect(element).toHaveAttribute('rel', 'noopener');
+  });
+
+  it('should pass target attribute', () => {
+    const { container } = render(<ButtonLink target="_blank" />);
+
+    const element = container.querySelector('a') as HTMLElement;
+    expect(element).toHaveAttribute('target', '_blank');
+  });
 });
