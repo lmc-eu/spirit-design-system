@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import {
@@ -28,47 +28,61 @@ describe('ButtonLink', () => {
   restPropsTest(ButtonLink, 'a');
 
   it('should have default classname', () => {
-    const { container } = render(<ButtonLink />);
+    render(<ButtonLink />);
 
-    const element = container.querySelector('a') as HTMLElement;
+    const element = screen.getByRole('button');
     expect(element).toHaveClass('Button--primary');
   });
 
   it('should have disabled classname', () => {
-    const { container } = render(<ButtonLink isDisabled />);
+    render(<ButtonLink isDisabled />);
 
-    const element = container.querySelector('a') as HTMLElement;
+    const element = screen.getByRole('button');
     expect(element).toHaveClass('Button');
     expect(element).toHaveClass('Button--disabled');
   });
 
   it('should have block classname', () => {
-    const { container } = render(<ButtonLink isBlock />);
+    render(<ButtonLink isBlock />);
 
-    const element = container.querySelector('a') as HTMLElement;
+    const element = screen.getByRole('button');
     expect(element).toHaveClass('Button');
     expect(element).toHaveClass('Button--block');
   });
 
   it('should have size classname', () => {
-    const { container } = render(<ButtonLink size="medium" />);
+    render(<ButtonLink size="medium" />);
 
-    const element = container.querySelector('a') as HTMLElement;
+    const element = screen.getByRole('button');
     expect(element).toHaveClass('Button');
     expect(element).toHaveClass('Button--medium');
   });
 
   it('should render text children', () => {
-    const dom = render(<ButtonLink>Hello World</ButtonLink>);
+    render(<ButtonLink>Hello World</ButtonLink>);
 
-    const element = dom.container.querySelector('a') as HTMLElement;
+    const element = screen.getByRole('button');
     expect(element.textContent).toBe('Hello World');
   });
 
   it('should not have default type attribute', () => {
-    const { container } = render(<ButtonLink />);
+    render(<ButtonLink />);
 
-    const element = container.querySelector('a') as HTMLElement;
+    const element = screen.getByRole('button');
     expect(element).not.toHaveAttribute('type');
+  });
+
+  it('should pass rel attribute', () => {
+    render(<ButtonLink rel="noopener" />);
+
+    const element = screen.getByRole('button');
+    expect(element).toHaveAttribute('rel', 'noopener');
+  });
+
+  it('should pass target attribute', () => {
+    render(<ButtonLink target="_blank" />);
+
+    const element = screen.getByRole('button');
+    expect(element).toHaveAttribute('target', '_blank');
   });
 });
