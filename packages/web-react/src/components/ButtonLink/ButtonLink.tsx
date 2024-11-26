@@ -31,7 +31,7 @@ const _ButtonLink = <T extends ElementType = 'a', C = void, S = void>(
     ...restProps
   } = propsWithDefaults;
 
-  const { buttonLinkProps } = useButtonLinkAriaProps(restProps);
+  const { buttonLinkProps } = useButtonLinkAriaProps(propsWithDefaults);
   const { classProps, props: modifiedProps } = useButtonLinkStyleProps(restProps);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
 
