@@ -1,6 +1,6 @@
 import { Token, TokenGroup, TokenType, TypographyToken } from '@supernovaio/sdk-exporters';
 import { formatTypographyName, getBreakpoint, getTokenAlias, normalizeFirstNamePart } from '../helpers/objectHelper';
-import { tokenVariableName, typographyValue } from '../helpers/tokenHelper';
+import { sortTokens, tokenVariableName, typographyValue } from '../helpers/tokenHelper';
 import { toCamelCase } from '../helpers/stringHelper';
 import { COLOR_JS_SUFFIX, COLOR_KEY, COLOR_SCSS_SUFFIX, TYPOGRAPHY_KEY } from '../constants';
 
@@ -115,12 +115,13 @@ export const createGlobalTypographyObject = (typographyKeys: Array<string>) => {
 // TODO: refactor this function to not use cssObject reference
 export const generateStylesObjectFromTokens = (
   tokens: Array<Token>,
-  mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
   hasParentPrefix: boolean,
   hasJsOutput: boolean,
+  sortByNumValue: boolean,
 ): StylesObjectType => {
-  const stylesObject = tokens.reduce((stylesObjectAccumulator, token) => {
+  const sortedTokens = sortTokens(tokens, tokenGroups, hasParentPrefix, sortByNumValue);
+  const stylesObject = sortedTokens.reduce((stylesObjectAccumulator, token) => {
     const currentObject = createStylesObjectStructureFromTokenNameParts(
       token,
       tokenGroups,

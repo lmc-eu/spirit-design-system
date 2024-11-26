@@ -12,7 +12,6 @@ describe('mixinGenerator', () => {
   const dataProvider = [
     {
       tokens: exampleColorsTokens,
-      groupName: '',
       hasParentPrefix: false,
       hasTokenPrefix: true,
       description: 'should generate mixin from tokens',
@@ -20,7 +19,6 @@ describe('mixinGenerator', () => {
     },
     {
       tokens: exampleColorsTokens,
-      groupName: '',
       hasParentPrefix: false,
       hasTokenPrefix: false,
       description: 'should generate mixin with parent prefix and no token prefix',
@@ -30,7 +28,7 @@ describe('mixinGenerator', () => {
 
   it.each(dataProvider)(
     'should correctly generate mixin for $description',
-    ({ tokens, expectedStyles, groupName, hasParentPrefix, hasTokenPrefix }) => {
+    ({ tokens, expectedStyles, hasParentPrefix, hasTokenPrefix }) => {
       const prefixTokens = Array.from(examplePrefixToken.values());
       const tokenPrefix = hasTokenPrefix ? findTokenPrefix(prefixTokens) : '';
 
@@ -38,7 +36,6 @@ describe('mixinGenerator', () => {
         Array.from(tokens.values()),
         tokenGroups,
         tokenPrefix,
-        groupName,
         hasParentPrefix,
         false,
       );

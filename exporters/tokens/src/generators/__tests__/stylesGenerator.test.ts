@@ -158,7 +158,6 @@ describe('stylesGenerator', () => {
     const dataProvider = [
       {
         tokens: exampleDimensionAndStringTokens,
-        groupName: 'Grid',
         hasJsOutput: false,
         hasMixin: false,
         hasParentPrefix: true,
@@ -168,7 +167,6 @@ describe('stylesGenerator', () => {
       },
       {
         tokens: exampleDimensionAndStringTokens,
-        groupName: 'Grid',
         hasJsOutput: true,
         hasMixin: false,
         hasParentPrefix: true,
@@ -178,7 +176,6 @@ describe('stylesGenerator', () => {
       },
       {
         tokens: exampleColorsTokens,
-        groupName: '',
         hasJsOutput: false,
         hasMixin: true,
         hasParentPrefix: false,
@@ -188,7 +185,6 @@ describe('stylesGenerator', () => {
       },
       {
         tokens: exampleColorsTokens,
-        groupName: '',
         hasJsOutput: false,
         hasMixin: false,
         hasParentPrefix: false,
@@ -198,7 +194,6 @@ describe('stylesGenerator', () => {
       },
       {
         tokens: exampleColorsTokens,
-        groupName: '',
         hasJsOutput: true,
         hasMixin: true,
         hasParentPrefix: false,
@@ -208,7 +203,6 @@ describe('stylesGenerator', () => {
       },
       {
         tokens: exampleShadowTokens,
-        groupName: '',
         hasJsOutput: false,
         hasMixin: false,
         hasParentPrefix: false,
@@ -218,7 +212,6 @@ describe('stylesGenerator', () => {
       },
       {
         tokens: exampleShadowTokens,
-        groupName: '',
         hasJsOutput: false,
         hasMixin: false,
         hasParentPrefix: false,
@@ -228,7 +221,6 @@ describe('stylesGenerator', () => {
       },
       {
         tokens: exampleGradientTokens,
-        groupName: '',
         hasJsOutput: false,
         hasMixin: false,
         hasParentPrefix: false,
@@ -239,7 +231,6 @@ describe('stylesGenerator', () => {
       },
       {
         tokens: exampleGradientTokens,
-        groupName: '',
         hasJsOutput: false,
         hasMixin: false,
         hasParentPrefix: false,
@@ -252,7 +243,7 @@ describe('stylesGenerator', () => {
 
     it.each(dataProvider)(
       '$description',
-      ({ tokens, groupName, hasJsOutput, hasMixin, hasParentPrefix, hasTokenPrefix, expectedStyles }) => {
+      ({ tokens, hasJsOutput, hasMixin, hasParentPrefix, hasTokenPrefix, expectedStyles }) => {
         const prefixTokens = Array.from(examplePrefixToken.values());
         const tokenPrefix = hasTokenPrefix ? findTokenPrefix(prefixTokens) : '';
         const styles = generateStylesFromTokens(
@@ -260,7 +251,6 @@ describe('stylesGenerator', () => {
           mappedTokens,
           tokenGroups,
           tokenPrefix,
-          groupName,
           hasMixin,
           hasParentPrefix,
           false,
