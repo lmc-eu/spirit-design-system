@@ -4,11 +4,17 @@
   {{> cover}}
 
   <main class="py-1000">
-    <div class="Container">
+
+    {{#unless isFullWidth}}
+      <div class="Container">
+    {{/unless}}
 
       {{> @partial-block}}
 
-    </div>
+    {{#unless isFullWidth}}
+      </div>
+    {{/unless}}
+
   </main>
 
   {{> footer}}
