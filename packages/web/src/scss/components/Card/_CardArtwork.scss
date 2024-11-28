@@ -2,6 +2,7 @@
 @use 'theme';
 
 .CardArtwork {
+    display: grid;
     grid-area: media;
 }
 

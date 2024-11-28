@@ -5,13 +5,12 @@
 // 5. Make text content selectable when there is a stretched CardLink.
 
 @use '@tokens' as tokens;
-@use 'sass:map';
 @use '../../tools/breakpoint';
 @use '../../tools/typography';
 @use 'theme';
 
 .Card {
-    --#{tokens.$css-variable-prefix}card-padding: #{theme.$padding-mobile};
+    --#{tokens.$css-variable-prefix}card-padding: #{theme.$padding};
 
     @include typography.generate(theme.$typography);
 
@@ -20,7 +19,7 @@
     min-width: 0; // 3.
     color: theme.$color;
 
-    @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
+    @include breakpoint.up(tokens.$breakpoint-tablet) {
         --#{tokens.$css-variable-prefix}card-padding: #{theme.$padding-tablet};
     }
 }

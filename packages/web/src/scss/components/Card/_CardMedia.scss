@@ -17,17 +17,17 @@
     --#{tokens.$css-variable-prefix}card-media-canvas-height: auto;
 
     grid-area: media;
+    overflow: hidden;
+    border-radius: var(--#{tokens.$css-variable-prefix}card-media-border-radius-top-left)
+        var(--#{tokens.$css-variable-prefix}card-media-border-radius-top-right)
+        var(--#{tokens.$css-variable-prefix}card-media-border-radius-bottom-right)
+        var(--#{tokens.$css-variable-prefix}card-media-border-radius-bottom-left);
 }
 
 .CardMedia__canvas {
     width: var(--#{tokens.$css-variable-prefix}card-media-canvas-width);
     max-width: 100%; // 3.
     height: var(--#{tokens.$css-variable-prefix}card-media-canvas-height);
-    overflow: hidden;
-    border-radius: var(--#{tokens.$css-variable-prefix}card-media-border-radius-top-left)
-        var(--#{tokens.$css-variable-prefix}card-media-border-radius-top-right)
-        var(--#{tokens.$css-variable-prefix}card-media-border-radius-bottom-right)
-        var(--#{tokens.$css-variable-prefix}card-media-border-radius-bottom-left);
 }
 
 // 1.

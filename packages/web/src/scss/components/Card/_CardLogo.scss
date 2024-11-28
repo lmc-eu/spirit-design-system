@@ -11,11 +11,11 @@
 
 .Card--vertical > .CardLogo {
     grid-area: media;
-    place-self: end end;
+    place-self: end;
     margin-right: theme.$logo-offset-horizontal;
 }
 
-:is(.Card--horizontal, .Card--horizontalReversed) .CardLogo {
+:is(.Card--horizontal, .Card--horizontalReversed) > .CardLogo {
     grid-area: logo;
     justify-self: start;
 

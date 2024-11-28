@@ -67,7 +67,7 @@ Card can be displayed in a vertical, horizontal, or reversed horizontal layout.
 ```
 
 👉 Keep in mind that, no matter the layout, the Card subcomponents must be arranged in the order
-[specified above](#card).
+[specified above](#card-1).
 
 ### Boxed Cards
 
@@ -84,22 +84,24 @@ Card can be displayed with a border and a box shadow on hover.
 CardArtwork is an optional subcomponent that displays a small image or icon.
 
 ```html
-<div class="CardArtwork CardArtwork--left">
+<div class="CardArtwork CardArtwork--alignmentXLeft">
   <svg width="24" height="24" aria-hidden="true">
     <use xlink:href="/assets/icons/svg/sprite.svg#file" />
   </svg>
 </div>
 ```
 
-### Artwork Alignment
+### Artwork Alignment (Horizontal Layouts Only)
 
 In the vertical Card layout, the artwork can be horizontally aligned to the start, center, or end of the Card.
 Available alignment options are derived from the [AlignmentX][dictionary-alignment] dictionary.
 To align the artwork, use one of the following CSS modifiers:
 
-- `CardArtwork--left`
-- `CardArtwork--center`
-- `CardArtwork--right`
+- `CardArtwork--alignmentXLeft`
+- `CardArtwork--alignmentXCenter`
+- `CardArtwork--alignmentXRight`
+
+These options are only available in horizontal and reversed horizontal layout.
 
 ## CardMedia
 
@@ -267,36 +269,6 @@ following CSS modifiers:
 - `CardFooter--alignmentXCenter`
 - `CardFooter--alignmentXRight`
 
-## Full Example
-
-When you put it all together:
-
-```html
-<article class="Card Card--vertical Card--boxed">
-  <div class="CardMedia CardMedia--auto">
-    <div class="CardMedia__canvas">
-      <img src="…" alt="" />
-    </div>
-  </div>
-  <div class="CardLogo">
-    <div class="PartnerLogo PartnerLogo--medium PartnerLogo--safeArea">
-      <img src="…" alt="Logo" />
-    </div>
-  </div>
-  <div class="CardBody">
-    <div class="CardEyebrow">Content options</div>
-    <h4 class="CardTitle CardTitle--heading">
-      <a href="#" class="CardLink">Card Title</a>
-    </h4>
-    <p>Card content</p>
-  </div>
-  <footer class="CardFooter CardFooter--alignmentXLeft">
-    <a href="#" class="Button Button--medium Button--primary">Primary</a>
-    <a href="#" class="Button Button--medium Button--secondary">Secondary</a>
-  </footer>
-</article>
-```
-
 ## Card Grid
 
 In a typical use case, you will display multiple Cards in a [Grid][grid].
@@ -375,22 +347,54 @@ confused by too many links in the Card.
 ### The “Read More” Use Case
 
 For article previews or similar use cases, you may want to display a limited amount of text content with a “Read More”
-link. For optimum accessibility, you should only provide this in form of a text node, not a button or a link:
+link. For optimum accessibility, you should only provide this in the form of a text node, not a button or a link:
 
 ```html
-<h4 class="CardTitle">
-  <a href="#" class="CardLink">Card title</a>
-</h4>
-<p><!-- … --></p>
-<!-- DON'T DO THIS -->
-<a href="#" class="link-primary link-underlined">Read more</a>
-<!-- This is correct -->
-<div class="link-primary link-underlined">Read more</div>
+<div class="CardBody">
+  <h4 class="CardTitle">
+    <a href="#" class="CardLink">Card title</a>
+  </h4>
+  <p><!-- … --></p>
+  <!-- DON'T DO THIS -->
+  <a href="#" class="link-primary link-underlined">Read more</a>
+  <!-- This is correct -->
+  <div class="link-primary link-underlined">Read more</div>
+</div>
 ```
 
 This way, the Card will only have a single accessible link which will be announced by screen readers.
 
 ℹ️ A big shout-out to [Ondřej Pohl][ondrej-pohl] for sharing many of these best practices!
+
+## Full Example
+
+When you put it all together:
+
+```html
+<article class="Card Card--vertical Card--boxed">
+  <div class="CardMedia CardMedia--auto">
+    <div class="CardMedia__canvas">
+      <img src="…" alt="" />
+    </div>
+  </div>
+  <div class="CardLogo">
+    <div class="PartnerLogo PartnerLogo--medium PartnerLogo--safeArea">
+      <img src="…" alt="Logo" />
+    </div>
+  </div>
+  <div class="CardBody">
+    <div class="CardEyebrow">Content options</div>
+    <h4 class="CardTitle CardTitle--heading">
+      <a href="#" class="CardLink">Card Title</a>
+    </h4>
+    <p>Card content</p>
+  </div>
+  <footer class="CardFooter CardFooter--alignmentXLeft">
+    <a href="#" class="Button Button--medium Button--primary">Primary</a>
+    <a href="#" class="Button Button--medium Button--secondary">Secondary</a>
+  </footer>
+</article>
+```
 
 [grid]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Grid/README.md
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
