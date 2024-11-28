@@ -47,12 +47,14 @@
         targetElement.classList.add(`theme-${theme}`);
       };
 
+      const allowedOriginPattern = /^https:\/\/([a-zA-Z0-9-]+\.)*supernova-docs\.io$/;
+
       // Hide elements with hide-from-visual-tests class in Supernova component preview via postMessage
       // The script to trigger postMessage with hide-from-visual-tests action is placed at:
       // https://app.supernova.io/8830-alma-spirit/10180-spirit/10368-shared-draft/9731-default/documentation/settings/customization/footer
       window.addEventListener('message', (event) => {
         // Check if the postMessage is from the Supernova.io domain
-        if (event.origin === 'https://app.supernova.io' && event.data.action === 'hide-from-visual-tests') {
+        if (allowedOriginPattern.test(event.origin) && event.data.action === 'hide-from-visual-tests') {
           const elements = document.querySelectorAll('.hide-from-visual-tests');
           elements.forEach(element => {
               element.style.cssText = event.data.style;
