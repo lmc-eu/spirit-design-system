@@ -25,7 +25,8 @@
 }
 
 // 4., 5.
-.Card:has(.CardLink) :where(a:not(.CardLink), button, p, ul, ol, dl) {
+.Card:has(.CardLink) :where(a:not(.CardLink), button),
+.Card:has(.CardLink):has(.CardBody--selectable) :where(p, ul, ol, dl) {
     position: relative;
     z-index: 1;
 }

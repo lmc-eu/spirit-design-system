@@ -49,11 +49,14 @@
 :is(.Card--horizontal, .Card--horizontalReversed) > .CardMedia {
     --#{tokens.$css-variable-prefix}card-media-canvas-width: var(--spirit-card-media-size);
 
+    align-self: start;
     min-width: 0; // 3.
 }
 
 :is(.Card--horizontal, .Card--horizontalReversed) > :is(.CardMedia--expanded, .CardMedia--filledHeight) {
     --#{tokens.$css-variable-prefix}card-media-canvas-height: 100%;
+
+    align-self: stretch;
 }
 
 .Card--vertical > .CardMedia {

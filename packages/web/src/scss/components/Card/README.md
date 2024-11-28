@@ -316,11 +316,22 @@ wrap your CardTitle text in the CardLink component:
 </h4>
 ```
 
-This establishes a clickable overlay over the whole Card, making it easier for users to interact with the Card.
+This establishes a [clickable overlay][hugo-giraudel-card] over the whole Card, making it easier for users to interact
+with the Card.
 
 ℹ️ Don't worry, any interactive elements inside the Card (like links or buttons) will still work as expected.
 
-ℹ️ The text content of CardBody remains selectable and copyable even when the whole Card is clickable.
+If you need the text content of your CardBody remains [selectable and copyable][heydon-pickering-card], you can use the
+`CardBody--selectable` modifier:
+
+```html
+<div class="CardBody CardBody--selectable">
+  <h4 class="CardTitle">
+    <a href="#" class="CardLink">Card title</a>
+  </h4>
+  <p>Selectable card content</p>
+</div>
+```
 
 ### Linking the Media
 
@@ -399,4 +410,6 @@ When you put it all together:
 [grid]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Grid/README.md
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
 [dictionary-size]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#size
-[ondrej-pohl]: https://linkedin.com/in/ondrejpohl
+[heydon-pickering-card]: https://inclusive-components.design/cards/
+[hugo-giraudel-card]: https://kittygiraudel.com/2022/04/02/accessible-cards/
+[ondrej-pohl]: https://youtu.be/SdlgZFKxs40?feature=shared&t=1010
