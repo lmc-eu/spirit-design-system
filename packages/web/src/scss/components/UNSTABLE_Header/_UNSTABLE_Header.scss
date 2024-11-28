@@ -1,0 +1,23 @@
+@use '../../tools/breakpoint';
+@use 'theme';
+
+.UNSTABLE_Header {
+    flex: none;
+    border-bottom: theme.$border-width theme.$border-style theme.$border-color;
+    background-color: theme.$background-color;
+
+    @include breakpoint.up(theme.$breakpoint-desktop) {
+        padding-inline: theme.$padding-x-desktop;
+    }
+}
+
+.UNSTABLE_Header__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: theme.$height;
+}
+
+.UNSTABLE_Header--simple .UNSTABLE_Header__container {
+    justify-content: space-around;
+}

@@ -1,0 +1,9 @@
+@use '@tokens' as tokens;
+
+$breakpoint-desktop: tokens.$breakpoint-desktop;
+$padding-x-desktop: tokens.$space-1600;
+$height: 72px;
+$border-width: tokens.$border-width-100;
+$border-style: solid;
+$border-color: tokens.$border-basic;
+$background-color: tokens.$component-header-background;
