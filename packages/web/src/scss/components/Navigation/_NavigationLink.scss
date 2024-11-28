@@ -1,0 +1,50 @@
+@use '../../tools/typography';
+@use 'theme';
+
+.NavigationLink {
+    @include typography.generate(theme.$link-typography);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-inline: theme.$link-spacing;
+    color: theme.$link-color-state-default;
+    border-top: theme.$link-border-bottom-width theme.$link-border-bottom-style transparent;
+    border-bottom: theme.$link-border-bottom-width theme.$link-border-bottom-style
+        theme.$link-border-bottom-color-style-state-default;
+    background-color: theme.$link-background-color-state-default;
+
+    @media (hover: hover) {
+        &:hover {
+            text-decoration: none;
+            color: theme.$link-color-state-hover;
+            background-color: theme.$link-background-color-state-hover;
+        }
+    }
+
+    &:active {
+        color: theme.$link-color-state-active;
+        background-color: theme.$link-background-color-state-active;
+    }
+}
+
+.NavigationLink--selected {
+    color: theme.$link-color-state-selected;
+    border-bottom-color: theme.$link-border-bottom-color-style-selected-state-default;
+    background-color: theme.$link-background-color-state-selected;
+
+    @media (hover: hover) {
+        &:hover {
+            border-bottom-color: theme.$link-border-bottom-color-style-selected-state-hover;
+        }
+    }
+
+    &:active {
+        border-bottom-color: theme.$link-border-bottom-color-style-selected-state-active;
+    }
+}
+
+.NavigationLink--disabled {
+    color: theme.$link-color-state-disabled;
+    pointer-events: none;
+}

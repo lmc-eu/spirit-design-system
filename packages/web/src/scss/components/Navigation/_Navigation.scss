@@ -1,0 +1,35 @@
+@use '../../tools/reset';
+@use 'theme';
+
+.Navigation,
+.Navigation > ul,
+.Navigation > ul > li {
+    display: flex;
+}
+
+.Navigation:not(.Navigation--main),
+.Navigation:not(.Navigation--main) > ul {
+    gap: theme.$gap;
+    align-content: center;
+}
+
+.Navigation > ul {
+    @include reset.list();
+}
+
+.Navigation--main {
+    align-self: stretch;
+    align-items: stretch;
+}
+
+.Navigation--start {
+    margin-inline-end: auto;
+
+    &:not(:first-child) {
+        margin-inline-start: theme.$start-spacing;
+    }
+}
+
+.Navigation--end {
+    margin-inline-start: auto;
+}
