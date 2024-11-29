@@ -1,4 +1,5 @@
 @use '../../tools/breakpoint';
+@use '../Container';
 @use 'theme';
 
 .UNSTABLE_Header {
@@ -12,10 +13,19 @@
 }
 
 .UNSTABLE_Header__container {
+    @extend .Container;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: theme.$height;
+}
+
+.UNSTABLE_Header--fluid .UNSTABLE_Header__container {
+    width: auto;
+    max-width: none;
+    padding-inline: 0;
+    margin-inline: 0;
 }
 
 .UNSTABLE_Header--simple .UNSTABLE_Header__container {
