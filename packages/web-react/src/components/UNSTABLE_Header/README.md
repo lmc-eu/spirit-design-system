@@ -20,7 +20,7 @@ import { UNSTABLE_Header } from '@lmc-eu/spirit-web-react';
 <UNSTABLE_Header>{/* Content go here */}</UNSTABLE_Header>;
 ```
 
-It also sets CSS variable for the Header height which can be used in other nested components.
+It also sets CSS variable for the Header height which can be used by nested components.
 
 ### API
 
@@ -35,9 +35,6 @@ and [escape hatches][readme-escape-hatches].
 ## UNSTABLE HeaderLogo
 
 The `UNSTABLE_HeaderLogo` component is a container for the logo.
-
-Without any modifier, Header is ready to contain necessary blocks in a classic
-left-to-right layout (in LTR documents).
 
 ```jsx
 import { UNSTABLE_HeaderLogo } from '@lmc-eu/spirit-web-react';
@@ -80,7 +77,7 @@ Use [`Container`][web-react-container] and [`Flex`][web-react-flex] components t
 </UNSTABLE_Header>
 ```
 
-This way you can modify the layout of the Header content easily and modify it how you need.
+This way you can easily modify the layout of the Header content.
 
 For example you can make the content centered by setting the `Flex` alignment properties to center.
 
@@ -94,7 +91,7 @@ For example you can make the content centered by setting the `Flex` alignment pr
 </UNSTABLE_Header>
 ```
 
-Or you can make modify gaps between the content by setting the `Flex` spacing property.
+Or you can modify the gaps between the content by setting the `Flex` `spacing` property.
 
 ```jsx
 <UNSTABLE_Header>
