@@ -40,18 +40,25 @@ Responsive usage for tablet
 Hide button when collapse
 
 ```html
-<button ... data-spirit-more>trigger</button> ...
+<button ... data-spirit-is-disposable>trigger</button> ...
 ```
 
 ## Trigger Attributes
 
-| Name                 | Type     | Default    | Required | Description                         |
-| -------------------- | -------- | ---------- | -------- | ----------------------------------- |
-| `data-spirit-toggle` | `string` | `collapse` | ✓        | Iterable selector                   |
-| `data-spirit-target` | `string` | —          | ✓        | Target selector                     |
-| `data-spirit-more`   | `bool`   | —          | ✕        | For hide on collapse as more button |
-| `aria-expanded`      | `string` | —          | ✕        | Aria expanded state (auto)          |
-| `aria-controls`      | `string` | —          | ✕        | Aria controls state (auto)          |
+| Name                        | Type     | Default    | Required | Description                                                                                                         |
+| --------------------------- | -------- | ---------- | -------- | ------------------------------------------------------------------------------------------------------------------- |
+| `aria-controls`             | `string` | —          | ✕        | Aria controls state (auto)                                                                                          |
+| `aria-expanded`             | `string` | —          | ✕        | Aria expanded state (auto)                                                                                          |
+| `data-spirit-is-disposable` | `bool`   | —          | ✕        | For hide on collapse as more trigger                                                                                |
+| `data-spirit-more`          | `bool`   | —          | ✕        | [**DEPRECATED**][readme-deprecations] in favor of `data-spirit-is-disposable`; For hide on collapse as more trigger |
+| `data-spirit-target`        | `string` | —          | ✓        | Target selector                                                                                                     |
+| `data-spirit-toggle`        | `string` | `collapse` | ✓        | Iterable selector                                                                                                   |
+
+### ⚠️ DEPRECATION NOTICE
+
+Data attribute `data-spirit-more` is deprecated and will be removed in the next major release. Use `data-spirit-is-disposable` attribute instead.
+
+[What are deprecations?][readme-deprecations]
 
 ## Wrapper Attributes
 
@@ -122,4 +129,5 @@ Please consult [main package README][web-readme] for how to include JavaScript p
 
 Or feel free to write controlling scripts yourself.
 
+[readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#deprecations
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
