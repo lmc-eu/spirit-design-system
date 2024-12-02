@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import { useStyleProps } from '../../hooks';
-import { SpiritHeaderProps } from '../../types/unstableHeader';
+import { SpiritHeaderProps } from '../../types';
 import { useHeaderStyleProps } from './useHeaderStyleProps';
 
 const defaultProps: Partial<SpiritHeaderProps> = {

@@ -1,6 +1,6 @@
-import { ChildrenProps, SpiritPolymorphicElementPropsWithRef, StyleProps, TransferProps } from './shared';
-import { LinkTarget } from './link';
 import { ElementType } from 'react';
+import { LinkTarget } from './link';
+import { ChildrenProps, SpiritPolymorphicElementPropsWithRef, StyleProps, TransferProps } from './shared';
 
 export type SpiritHeaderProps = {
   isFluid?: boolean;

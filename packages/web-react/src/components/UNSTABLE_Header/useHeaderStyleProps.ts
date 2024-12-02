@@ -1,5 +1,5 @@
 import { useClassNamePrefix } from '../../hooks';
-import { SpiritHeaderProps } from './UNSTABLE_Header';
+import { SpiritHeaderProps } from '../../types';
 
 export interface HeaderStyles<T> {
   classProps: {
