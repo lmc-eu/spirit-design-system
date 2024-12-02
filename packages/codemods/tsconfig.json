@@ -28,6 +28,6 @@
     "module": "es2020",
     "target": "es2020"
   },
-  "include": ["./", "./.eslintrc.js"],
+  "include": ["./src/**/*"],
   "exclude": ["./node_modules", "**/__testfixtures__/**"]
 }
