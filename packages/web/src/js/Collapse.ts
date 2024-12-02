@@ -21,7 +21,7 @@ const EVENT_SHOWN = `shown${EVENT_KEY}`;
 
 interface CollapseMeta {
   id: string | 'unknown';
-  hideOnCollapse: boolean;
+  isDisposable: boolean;
   parent: string | undefined;
   triggerParent: HTMLElement | null | undefined;
 }
@@ -42,7 +42,9 @@ class Collapse extends BaseComponent {
       : null;
     this.meta = {
       id: this.element.dataset.spiritTarget,
-      hideOnCollapse: !!(this.element.dataset.spiritMore || this.element.dataset.spiritMore === ''),
+      isDisposable:
+        !!(this.element.dataset.spiritIsDisposable || this.element.dataset.spiritIsDisposable === '') ||
+        !!(this.element.dataset.spiritMore || this.element.dataset.spiritMore === ''), // Deprecated - remove on next major release
       parent: this.target?.dataset.spiritParent,
       triggerParent: this.element && this.element.parentElement,
     };
@@ -117,7 +119,7 @@ class Collapse extends BaseComponent {
     const updateElement = (element: Element | HTMLElement) => {
       element.setAttribute(ATTRIBUTE_ARIA_CONTROLS, this.meta.id);
       element.setAttribute(ATTRIBUTE_ARIA_EXPANDED, String(open));
-      if (this.meta.hideOnCollapse && open) {
+      if (this.meta.isDisposable && open) {
         element.remove();
         this.appendNodeToParent();
         this.onDestroy();
