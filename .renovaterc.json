@@ -23,6 +23,66 @@
       "matchPackageNames": ["typescript"],
       "allowedVersions": "4.7.4",
       "matchPaths": ["+(package.json)"]
+    },
+    {
+      "groupName": "monorepo:supernovaio non-major",
+      "groupSlug": "monorepo-supernovaio-non-major",
+      "matchPackagePatterns": ["^@supernovaio"],
+      "matchUpdateTypes": ["minor", "patch"]
+    },
+    {
+      "groupName": "eslint plugins and configs non-major",
+      "groupSlug": "eslint-plugins-configs-non-major",
+      "matchPackagePatterns": ["^eslint"],
+      "matchUpdateTypes": ["minor", "patch"]
+    },
+    {
+      "groupName": "compile tools non-major",
+      "groupSlug": "compile-tools-non-major",
+      "matchPackagePatterns": ["^@babel", "^@swc"],
+      "matchUpdateTypes": ["minor", "patch"]
+    },
+    {
+      "groupName": "types non-major",
+      "groupSlug": "types-non-major",
+      "matchPackagePatterns": ["^@types"],
+      "matchUpdateTypes": ["minor", "patch"]
+    },
+    {
+      "groupName": "monorepo:react non-major",
+      "groupSlug": "monorepo-react-non-major",
+      "matchPackagePatterns": ["^react"],
+      "matchUpdateTypes": ["minor", "patch"]
+    },
+    {
+      "groupName": "lint tools non-major",
+      "groupSlug": "lint-tools-non-major",
+      "matchPackagePatterns": ["^prettier", "^lint-staged", "^husky"],
+      "matchUpdateTypes": ["minor", "patch"]
+    },
+    {
+      "groupName": "stylelint non-major",
+      "groupSlug": "stylelint-non-major",
+      "matchPackagePatterns": ["^stylelint"],
+      "matchUpdateTypes": ["minor", "patch"]
+    },
+    {
+      "groupName": "build tools non-major",
+      "groupSlug": "build-tools-non-major",
+      "matchPackagePatterns": ["^rollup", "^vite", "^webpack", "`^@rollup"],
+      "matchUpdateTypes": ["minor", "patch"]
+    },
+    {
+      "groupName": "monorepo tools non-major",
+      "groupSlug": "monorepo-tools-non-major",
+      "matchPackagePatterns": ["^lerna", "^nx"],
+      "matchUpdateTypes": ["minor", "patch"]
+    },
+    {
+      "groupName": "typescript non-major",
+      "groupSlug": "typescript-non-major",
+      "matchPackagePatterns": ["^typescript"],
+      "matchUpdateTypes": ["minor", "patch"]
     }
   ]
 }
