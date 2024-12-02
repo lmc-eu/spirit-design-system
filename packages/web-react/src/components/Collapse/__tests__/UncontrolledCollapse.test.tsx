@@ -4,6 +4,7 @@ import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
+import { Button } from '../../Button';
 import UncontrolledCollapse from '../UncontrolledCollapse';
 
 describe('UncontrolledCollapse', () => {
@@ -54,5 +55,32 @@ describe('UncontrolledCollapse', () => {
     const element = screen.getByRole('button').nextElementSibling as HTMLElement;
 
     expect(element).toHaveAttribute('id', 'example-id');
+  });
+});
+
+describe('UncontrolledCollapse with disposable trigger', () => {
+  const content = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, similique.';
+
+  it('should hide trigger after collapse open', () => {
+    render(
+      <div>
+        {content}
+        <UncontrolledCollapse
+          id="uncontrolled-collapse-id"
+          // Normally we want to display state change, not in this test, prop is passed anyway
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          renderTrigger={({ isOpen, ...rest }) => <Button {...rest}>… more</Button>}
+          isDisposable
+        >
+          {content}
+        </UncontrolledCollapse>
+      </div>,
+    );
+
+    const trigger = screen.getByRole('button') as HTMLElement;
+
+    fireEvent.click(trigger);
+
+    expect(trigger).not.toBeInTheDocument();
   });
 });

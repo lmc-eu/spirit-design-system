@@ -69,14 +69,14 @@ and [escape hatches][readme-escape-hatches].
 
 ## Trigger attributes
 
-| Name                        | Type     | Default    | Required | Description                                                                                                        |
-| --------------------------- | -------- | ---------- | -------- | ------------------------------------------------------------------------------------------------------------------ |
-| `aria-controls`             | `string` | —          | ✕        | Aria controls state (auto)                                                                                         |
-| `aria-expanded`             | `string` | —          | ✕        | Aria expanded state (auto)                                                                                         |
+| Name                        | Type     | Default    | Required | Description                                                                                                         |
+| --------------------------- | -------- | ---------- | -------- | ------------------------------------------------------------------------------------------------------------------- |
+| `aria-controls`             | `string` | —          | ✕        | Aria controls state (auto)                                                                                          |
+| `aria-expanded`             | `string` | —          | ✕        | Aria expanded state (auto)                                                                                          |
 | `data-spirit-is-disposable` | `bool`   | —          | ✕        | For hide on collapse as more trigger                                                                                |
 | `data-spirit-more`          | `bool`   | —          | ✕        | [**DEPRECATED**][readme-deprecations] in favor of `data-spirit-is-disposable`; For hide on collapse as more trigger |
-| `data-spirit-target`        | `string` | —          | ✓        | Target selector                                                                                                    |
-| `data-spirit-toggle`        | `string` | `collapse` | ✓        | Iterable selector                                                                                                  |
+| `data-spirit-target`        | `string` | —          | ✓        | Target selector                                                                                                     |
+| `data-spirit-toggle`        | `string` | `collapse` | ✓        | Iterable selector                                                                                                   |
 
 Other necessary attributes are toggled automatically, like `aria-controls` and `aria-expanded` when component is loaded
 or width of window is changed. There can be several triggers, the same rules apply to each.
