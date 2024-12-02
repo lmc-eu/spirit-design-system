@@ -42,4 +42,5 @@ export * from './textFieldBase';
 export * from './toast';
 export * from './toggle';
 export * from './tooltip';
+export * from './unstableHeader';
 export * from './visuallyHidden';
