@@ -32,7 +32,7 @@ Activate Collapse only on mobile screens:
 Hide Collapse trigger on collapse:
 
 ```twig
-<Button {# … #} data-spirit-more>Collapse trigger</Button> {# … #}
+<Button {# … #} data-spirit-is-disposable>Collapse trigger</Button> {# … #}
 ```
 
 Without lexer:
@@ -69,16 +69,23 @@ and [escape hatches][readme-escape-hatches].
 
 ## Trigger attributes
 
-| Name                 | Type     | Default    | Required | Description                         |
-| -------------------- | -------- | ---------- | -------- | ----------------------------------- |
-| `aria-controls`      | `string` | —          | ✕        | Aria controls state (auto)          |
-| `aria-expanded`      | `string` | —          | ✕        | Aria expanded state (auto)          |
-| `data-spirit-more`   | `bool`   | —          | ✕        | For hide on collapse as more button |
-| `data-spirit-target` | `string` | —          | ✓        | Target selector                     |
-| `data-spirit-toggle` | `string` | `collapse` | ✓        | Iterable selector                   |
+| Name                        | Type     | Default    | Required | Description                                                                                                        |
+| --------------------------- | -------- | ---------- | -------- | ------------------------------------------------------------------------------------------------------------------ |
+| `aria-controls`             | `string` | —          | ✕        | Aria controls state (auto)                                                                                         |
+| `aria-expanded`             | `string` | —          | ✕        | Aria expanded state (auto)                                                                                         |
+| `data-spirit-is-disposable` | `bool`   | —          | ✕        | For hide on collapse as more trigger                                                                                |
+| `data-spirit-more`          | `bool`   | —          | ✕        | [**DEPRECATED**][readme-deprecations] in favor of `data-spirit-is-disposable`; For hide on collapse as more trigger |
+| `data-spirit-target`        | `string` | —          | ✓        | Target selector                                                                                                    |
+| `data-spirit-toggle`        | `string` | `collapse` | ✓        | Iterable selector                                                                                                  |
 
 Other necessary attributes are toggled automatically, like `aria-controls` and `aria-expanded` when component is loaded
 or width of window is changed. There can be several triggers, the same rules apply to each.
+
+### ⚠️ DEPRECATION NOTICE
+
+Data attribute `data-spirit-more` is deprecated and will be removed in the next major release. Use `data-spirit-is-disposable` attribute instead.
+
+[What are deprecations?][readme-deprecations]
 
 ## JavaScript Plugin
 
@@ -96,7 +103,8 @@ Or, feel free to write the controlling script yourself.
 
 [collapse]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Collapse
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#additional-attributes
-[readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#style-props
+[readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#deprecations
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#escape-hatches
+[readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#style-props
 [web-js-api]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Collapse/README.md#javascript-plugin
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
