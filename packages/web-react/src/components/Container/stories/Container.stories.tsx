@@ -17,9 +17,16 @@ const meta: Meta<typeof Container> = {
     children: {
       control: 'object',
     },
+    isFluid: {
+      control: 'boolean',
+      table: {
+        defaultValue: { summary: 'false' },
+      },
+    },
   },
   args: {
     children: <DocsBox>Container</DocsBox>,
+    isFluid: false,
   },
 };
 

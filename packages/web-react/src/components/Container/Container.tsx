@@ -2,18 +2,22 @@
 
 import classNames from 'classnames';
 import React from 'react';
-import { useStyleProps } from '../../hooks/styleProps';
-import { useClassNamePrefix } from '../../hooks/useClassNamePrefix';
-import { ChildrenProps, StyleProps, TransferProps } from '../../types';
+import { useStyleProps } from '../../hooks';
+import { SpiritContainerProps } from '../../types';
+import { useContainerStyleProps } from './useContainerStyleProps';
 
-export interface ContainerProps extends ChildrenProps, StyleProps, TransferProps {}
+const defaultProps: SpiritContainerProps = {
+  isFluid: false,
+};
 
-const Container = ({ children, ...restProps }: ContainerProps): JSX.Element => {
-  const containerClass = useClassNamePrefix('Container');
-  const { styleProps, props: otherProps } = useStyleProps(restProps);
+const Container = (props: SpiritContainerProps): JSX.Element => {
+  const propsWithDefaults = { ...defaultProps, ...props };
+  const { children, ...restProps } = propsWithDefaults;
+  const { classProps, props: modifiedProps } = useContainerStyleProps(restProps);
+  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
 
   return (
-    <div {...otherProps} {...styleProps} className={classNames(containerClass, styleProps.className)}>
+    <div {...otherProps} {...styleProps} className={classNames(classProps, styleProps.className)}>
       {children}
     </div>
   );
