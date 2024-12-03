@@ -18,11 +18,21 @@ Without lexer:
 {% endembed %}
 ```
 
+## Fluid Container
+
+If you need a full-width container, you can use the `isFluid` prop.
+
+```twig
+<Container isFluid>Content</Container>
+```
+
 ## API
 
-There is no API for Container.
+| Name      | Type   | Default | Required | Description                 |
+| --------- | ------ | ------- | -------- | --------------------------- |
+| `isFluid` | `bool` | `false` | ✕        | If true, Container is fluid |
 
-The components accept [additional attributes][readme-additional-attributes].
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
