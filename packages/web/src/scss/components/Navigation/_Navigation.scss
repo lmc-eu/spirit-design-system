@@ -1,0 +1,23 @@
+@use '@tokens' as tokens;
+@use '../../tools/reset';
+@use 'theme';
+
+.Navigation,
+.Navigation > ul,
+.Navigation > ul > li {
+    display: flex;
+}
+
+.Navigation:has(.NavigationLink) {
+    height: var(--#{tokens.$css-variable-prefix}navigation-height, theme.$height);
+}
+
+.Navigation:not(:has(.NavigationLink)),
+.Navigation:not(:has(.NavigationLink)) > ul {
+    gap: theme.$spacing;
+    align-content: center;
+}
+
+.Navigation > ul {
+    @include reset.list();
+}
