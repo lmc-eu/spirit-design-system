@@ -3,9 +3,12 @@
 
 .Container {
     width: 100%;
-    max-width: theme.$container-max-width;
     padding-inline: var(--container-padding-inline);
     margin-inline: auto;
 
     @include tools.paddings(theme.$container-paddings, theme.$container-breakpoints);
+}
+
+.Container:not(.Container--fluid) {
+    max-width: theme.$container-max-width;
 }
