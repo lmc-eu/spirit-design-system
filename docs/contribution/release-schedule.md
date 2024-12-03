@@ -31,6 +31,10 @@ v4   |                                                                          
      +---------------------------------------------------------------------------------------------+
 ```
 
+## Next Major Release Plans
+
+👉 See [Releases in Jira Board][release-jira-board].
+
 ## Release Phases
 
 ### Prerelease
@@ -91,6 +95,7 @@ This document was heavily inspired by the work of the
 
 [carbon-release-schedule]: https://github.com/carbon-design-system/carbon/blob/main/docs/release-schedule.md
 [node-js-release-working-group]: https://github.com/nodejs/release
+[release-jira-board]: https://jira.almacareer.tech/projects/DS?selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased
 [release-schedule-static]: ../../static/release-schedule.svg
 [spirit-docs]: https://spirit.design
 [spirit-figma]: https://www.figma.com/design/w9Ca4hvkuYLshsrHu1bYwT/Spirit-UI-KIT?node-id=22776-26259&node-type=canvas&t=JIF1i6Yfp9rGUA35-0
