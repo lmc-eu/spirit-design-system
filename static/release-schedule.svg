@@ -1,23 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="500" class="container"><defs><style type="text/css"><![CDATA[ 
-:root { 
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="500" class="container"><defs><style type="text/css"><![CDATA[
+:root {
   --container: #fffff;
-  --unstable-fill: #ee538b;
-  --prerelease-fill: #6929c4;
-  --active-fill: #012749;
-  --maintenance-fill: #009d9a;
+  --unstable-fill: #ffbe00;
+  --prerelease-fill: #4dd7be;
+  --active-fill: #7652d8;
+  --maintenance-fill: #fd7e40;
   --text: #161616;
   --text-on-color: #ffffff;
   --text-inverse: #ffffff;
   --border: #e0e0e0;
 }
 
-@media (prefers-color-scheme: light) { 
-  :root { 
+@media (prefers-color-scheme: light) {
+  :root {
     --container: #fffff;
-    --unstable-fill: #ee538b;
-    --prerelease-fill: #6929c4;
-    --active-fill: #012749;
-    --maintenance-fill: #009d9a;
+    --unstable-fill: #ffbe00;
+    --prerelease-fill: #4dd7be;
+    --active-fill: #7652d8;
+    --maintenance-fill: #fd7e40;
     --text: #161616;
     --text-on-color: #ffffff;
     --text-inverse: #ffffff;
@@ -26,12 +26,12 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root { 
+  :root {
     --container: #161616;
-    --unstable-fill: #fff1f1;
-    --prerelease-fill: #d4bbff;
-    --active-fill: #4589ff;
-    --maintenance-fill: #08bdba;
+    --unstable-fill: #ffbe00;
+    --prerelease-fill: #4dd7be;
+    --active-fill: #7652d8;
+    --maintenance-fill: #fd7e40;
     --text: #f4f4f4;
     --text-on-color: #161616;
     --text-inverse: #161616;
@@ -62,7 +62,7 @@
   display: none;
 }
 .tick text {
-  font: 16px IBM Plex Sans;
+  font: 16px Inter;
   fill: var(--text);
 }
 .axis--y .tick text {
@@ -73,7 +73,7 @@
 }
 .label {
   fill: var(--text-on-color);
-  font: 20px IBM Plex Sans;
+  font: 20px Inter;
   text-anchor: start;
   dominant-baseline: middle;
   text-transform: capitalize;
