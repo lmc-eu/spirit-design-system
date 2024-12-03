@@ -1,5 +1,6 @@
 {# API #}
 {%- set props = props | default([]) -%}
+{%- set _container = props.container | default('all') -%}
 {%- set _hasStack = props.hasStack ?? true -%}
 {%- set _stackAlignment = props.stackAlignment | default('start') -%}
 {%- set _tag = props.tag | default(null) -%}
@@ -17,17 +18,23 @@
     {% block content %}{% endblock %}
 {% endset -%}
 
-<section
-    {{ mainProps(props) }}
-    {{ styleProp(_styleProps) }}
-    {{ classProp(_rootClassNames) }}
->
+{%- set _heading -%}
     <h2 class="{{ _headingClassName }}">
         {{ _title }}
         {% if _tag %}
             <Tag color="warning" isSubtle>{{ _tag }}</Tag>
         {% endif %}
     </h2>
+{%- endset -%}
+
+{%- set _content -%}
+    {% if _container == 'heading-only' %}
+        <Container>
+            {{- _heading -}}
+        </Container>
+    {% else %}
+        {{- _heading -}}
+    {% endif %}
     {% if _hasStack %}
         {%- embed '@spirit/DocsStack/DocsStack.twig' with { props: {
             stackAlignment: _stackAlignment,
@@ -38,5 +45,19 @@
         {%- endembed -%}
     {% else %}
         {{ _renderedContent }}
+    {% endif %}
+{%- endset -%}
+
+<section
+    {{ mainProps(props) }}
+    {{ styleProp(_styleProps) }}
+    {{ classProp(_rootClassNames) }}
+>
+    {% if _container == 'all' %}
+        <Container>
+            {{- _content -}}
+        </Container>
+    {% else %}
+        {{- _content -}}
     {% endif %}
 </section>

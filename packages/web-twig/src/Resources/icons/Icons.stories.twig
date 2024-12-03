@@ -6,20 +6,24 @@
 
     {% include 'partials/tabs.html.twig' %}
 
-    <Grid
-        elementType="ul"
-        cols="{{ { mobile: 2, tablet: 4, desktop: 6 } }}"
-        marginY="space-1000"
-        UNSAFE_className="text-center"
-    >
+    <Container>
 
-        {% for icon in icons %}
-            <li class="mb-600">
-                <Icon name={{ icon }} />
-                <Text marginTop="space-500" emphasis="bold">{{ icon }}</Text>
-            </li>
-        {% endfor %}
+        <Grid
+            elementType="ul"
+            cols="{{ { mobile: 2, tablet: 4, desktop: 6 } }}"
+            marginY="space-1000"
+            UNSAFE_className="text-center"
+        >
 
-    </Grid>
+            {% for icon in icons %}
+                <li class="mb-600">
+                    <Icon name={{ icon }} />
+                    <Text marginTop="space-500" emphasis="bold">{{ icon }}</Text>
+                </li>
+            {% endfor %}
+
+        </Grid>
+
+    </Container>
 
 {% endblock %}
