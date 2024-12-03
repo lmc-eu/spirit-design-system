@@ -17,6 +17,7 @@ export default {
         'design-tokens',
         'form-validations',
         'icons',
+        'lts-schedule',
         'web',
         'web-react',
         'web-twig',
