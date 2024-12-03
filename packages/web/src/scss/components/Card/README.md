@@ -69,6 +69,17 @@ Card can be displayed in a vertical, horizontal, or reversed horizontal layout.
 👉 Keep in mind that, no matter the layout, the Card subcomponents must be arranged in the order
 [specified above](#card-1).
 
+### Responsive Card Layout
+
+Card layout can be adjusted based on the breakpoint. To create a responsive layout, use the `tablet` and `desktop`
+infixes, e.g. `Card--tablet--horizontal` or `Card--desktop--vertical`.
+
+```html
+<article class="Card Card--vertical Card--tablet--horizontal Card--desktop--horizontalReversed">
+  <!-- … -->
+</article>
+```
+
 ### Boxed Cards
 
 Card can be displayed with a border and a box shadow on hover.
