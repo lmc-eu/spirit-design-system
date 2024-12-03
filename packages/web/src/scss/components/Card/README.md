@@ -91,7 +91,7 @@ CardArtwork is an optional subcomponent that displays a small image or icon.
 </div>
 ```
 
-### Artwork Alignment (Horizontal Layouts Only)
+### Artwork Alignment (Vertical Layout Only)
 
 In the vertical Card layout, the artwork can be horizontally aligned to the start, center, or end of the Card.
 Available alignment options are derived from the [AlignmentX][dictionary-alignment] dictionary.
@@ -101,7 +101,7 @@ To align the artwork, use one of the following CSS modifiers:
 - `CardArtwork--alignmentXCenter`
 - `CardArtwork--alignmentXRight`
 
-These options are only available in horizontal and reversed horizontal layout.
+ℹ️ These options are only available in the vertical card layout.
 
 ## CardMedia
 
