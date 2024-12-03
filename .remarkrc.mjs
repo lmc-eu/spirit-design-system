@@ -16,7 +16,7 @@ export default {
     [
       'remark-lint-heading-capitalization',
       {
-        lowerCaseWords: ['eu/spirit', '@lmc', 'spirit/node', 'spirit/jsdom', 'v1', 'v2', 'v3'],
+        lowerCaseWords: ['eu/spirit', '@lmc', 'spirit/node', 'spirit/jsdom', 'lts-schedule', 'v1', 'v2', 'v3'],
       },
     ],
   ],
