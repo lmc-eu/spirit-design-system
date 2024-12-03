@@ -5,15 +5,20 @@
 
 {% block content %}
 
-    <section class="UNSTABLE_Section">
-
-        <h2 class="docs-Heading">Text</h2>
+    <DocsSection title="Truncate">
 
         <div style="width: 400px">
             <p class="text-truncate">
                 This is a truncated single-line text.
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             </p>
+        </div>
+
+    </DocsSection>
+
+    <DocsSection title="Truncate multiline">
+
+        <div style="width: 400px">
             <p class="text-truncate-multiline">
                 This is a truncated multi-line text.
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
@@ -22,6 +27,6 @@
             </p>
         </div>
 
-    </section>
+    </DocsSection>
 
 {% endblock %}
