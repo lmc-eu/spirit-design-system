@@ -14,7 +14,7 @@ const ButtonLinkDemoFactory = ({ ...props }: ButtonBaseProps) => {
   return (
     <>
       {sizes.map((size) => (
-        <DocsSection key={size} title={`Size ${size}`}>
+        <DocsSection key={size} title={`Size ${size}`} container="none">
           {colors.map((color) => (
             <div key={color}>
               <ButtonLink size={size} color={color} elementType="a" {...props}>
