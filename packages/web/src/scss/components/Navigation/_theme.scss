@@ -1,0 +1,24 @@
+@use '@tokens' as tokens;
+
+$spacing: tokens.$space-700;
+$height: 50px;
+
+$link-typography: tokens.$body-small-semibold;
+$link-spacing: tokens.$space-600;
+$link-color-state-default: tokens.$component-header-item-state-default;
+$link-color-state-hover: tokens.$component-header-item-state-hover;
+$link-color-state-active: tokens.$component-header-item-state-active;
+$link-color-state-selected: tokens.$component-header-item-state-selected;
+$link-color-state-disabled: tokens.$disabled-content;
+$link-border-bottom-width: tokens.$border-width-200;
+$link-border-bottom-style: solid;
+$link-border-bottom-color-state-default: transparent;
+$link-border-bottom-color-state-hover: tokens.$component-header-stripe-state-unselected;
+$link-border-bottom-color-state-active: tokens.$component-header-stripe-state-unselected;
+$link-border-bottom-color-selected-state-default: tokens.$component-header-stripe-state-selected;
+$link-border-bottom-color-selected-state-hover: tokens.$component-header-stripe-state-selected;
+$link-border-bottom-color-selected-state-active: tokens.$component-header-stripe-state-selected;
+$link-background-color-state-default: tokens.$component-header-item-background-state-default;
+$link-background-color-state-hover: tokens.$component-header-item-background-state-hover;
+$link-background-color-state-active: tokens.$component-header-item-background-state-active;
+$link-background-color-state-selected: tokens.$component-header-item-background-state-selected;
