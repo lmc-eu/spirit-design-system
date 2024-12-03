@@ -2,7 +2,10 @@
 
 <section class="UNSTABLE_Section">
 
-  <h2 class="docs-Heading">Minimal Header</h2>
+  <div class="Container">
+    <h2 class="docs-Heading">Minimal Header</h2>
+  </div>
+
   <div class="docs-Stack docs-Stack--stretch">
 
     <header class="Header">
@@ -18,7 +21,10 @@
 
 <section class="UNSTABLE_Section">
 
-  <h2 class="docs-Heading">Header with Actions</h2>
+  <div class="Container">
+    <h2 class="docs-Heading">Header with Actions</h2>
+  </div>
+
   <div class="docs-Stack docs-Stack--stretch">
 
     <!-- Header: start -->
@@ -148,7 +154,10 @@
 
 <section class="UNSTABLE_Section">
 
-  <h2 class="docs-Heading">Header with Actions and Header Dialog</h2>
+  <div class="Container">
+    <h2 class="docs-Heading">Header with Actions and Header Dialog</h2>
+  </div>
+
   <div class="docs-Stack docs-Stack--stretch">
 
     <!-- Header: start -->
@@ -370,7 +379,10 @@
 
 <section class="UNSTABLE_Section">
 
-  <h2 class="docs-Heading">Simple Header</h2>
+  <div class="Container">
+    <h2 class="docs-Heading">Simple Header</h2>
+  </div>
+
   <div class="docs-Stack docs-Stack--stretch">
 
     <header class="Header Header--simple">
@@ -386,7 +398,10 @@
 
 <section class="UNSTABLE_Section">
 
-  <h2 class="docs-Heading">Simple Transparent Header</h2>
+  <div class="Container">
+    <h2 class="docs-Heading">Simple Transparent Header</h2>
+  </div>
+
   <div class="docs-Stack docs-Stack--stretch">
 
     <div style="display: flex; flex-direction: column; justify-content: space-between; height: 300px; color: white; background: linear-gradient(121.59deg, #073256 0%, #185C95 100%);">
@@ -407,30 +422,36 @@
 
 <section class="UNSTABLE_Section">
 
-  <h2 class="docs-Heading">Experimental RTL Support</h2>
-  <div class="docs-Stack docs-Stack--stretch">
+  <div class="Container">
 
-    <script>
-      const toggleRtl = () => {
-        const htmlElement = document.querySelector('html');
+    <h2 class="docs-Heading">Experimental RTL Support</h2>
 
-        if (htmlElement.hasAttribute('dir')) {
-          document.querySelector('html').removeAttribute('dir');
-          return;
+    <div class="docs-Stack docs-Stack--stretch">
+
+      <script>
+        const toggleRtl = () => {
+          const htmlElement = document.querySelector('html');
+
+          if (htmlElement.hasAttribute('dir')) {
+            document.querySelector('html').removeAttribute('dir');
+            return;
+          }
+
+          document.querySelector('html').setAttribute('dir', 'rtl');
         }
+      </script>
 
-        document.querySelector('html').setAttribute('dir', 'rtl');
-      }
-    </script>
-
-    <label for="rtl" class="Checkbox">
-      <input type="checkbox" id="rtl" class="Checkbox__input" onclick="toggleRtl()" />
-      <span class="Checkbox__text">
+      <label for="rtl" class="Checkbox">
+        <input type="checkbox" id="rtl" class="Checkbox__input" onclick="toggleRtl()" />
+        <span class="Checkbox__text">
         <span class="Checkbox__label">Switch writing mode to RTL</span>
       </span>
-    </label>
+      </label>
+
+    </div>
 
   </div>
+
 </section>
 
 {{/web/layout/default }}
