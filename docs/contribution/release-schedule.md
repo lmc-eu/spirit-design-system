@@ -20,6 +20,10 @@ major versions of the Spirit Design System.
 
 👉 See [Releases in Jira Board][release-jira-board] and [Quarterly Goals][quarterly-goals] in the Notion.
 
+## Next Major Release Plans
+
+👉 See [Releases in Jira Board][release-jira-board].
+
 ## Release Phases
 
 ### Prerelease
