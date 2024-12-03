@@ -219,6 +219,23 @@ CardBody is the main content area of the Card.
 </div>
 ```
 
+To make the CardBody selectable and copyable, use the `CardBody--selectable` modifier:
+
+```html
+<div class="CardBody CardBody--selectable">
+  <p><!-- … --></p>
+  <ul>
+    <!-- … -->
+  </ul>
+  <ol>
+    <!-- … -->
+  </ol>
+  <dl><!-- … --></dl>
+</div>
+```
+
+ℹ️ We are white-listing the selectable and copyable elements, so this option only affects lists and paragraphs.
+
 ### CardTitle
 
 CardTitle displays the main title of the Card. It uses the `<h4>` heading element by default, but you can use any other
