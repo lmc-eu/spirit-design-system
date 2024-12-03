@@ -14,7 +14,7 @@ const ButtonDemoFactory = ({ ...props }: ButtonBaseProps) => {
   return (
     <>
       {sizes.map((size) => (
-        <DocsSection key={size} title={`Size ${size}`}>
+        <DocsSection key={size} title={`Size ${size}`} container="none">
           {colors.map((color) => (
             <div key={color}>
               <Button size={size} color={color} elementType="a" {...props}>

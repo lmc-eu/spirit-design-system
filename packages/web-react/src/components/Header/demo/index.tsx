@@ -17,19 +17,19 @@ import HeaderWithActionsAndDialog from './HeaderWithActionsAndDialog';
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <IconsProvider value={icons}>
-      <DocsSection title="Minimal Header" stackAlignment="stretch">
+      <DocsSection title="Minimal Header" stackAlignment="stretch" container="heading-only">
         <HeaderMinimal />
       </DocsSection>
-      <DocsSection title="Header with Actions" stackAlignment="stretch">
+      <DocsSection title="Header with Actions" stackAlignment="stretch" container="heading-only">
         <HeaderWithActions />
       </DocsSection>
-      <DocsSection title="Header with Actions and Header Dialog" stackAlignment="stretch">
+      <DocsSection title="Header with Actions and Header Dialog" stackAlignment="stretch" container="heading-only">
         <HeaderWithActionsAndDialog />
       </DocsSection>
-      <DocsSection title="Simple Header" stackAlignment="stretch">
+      <DocsSection title="Simple Header" stackAlignment="stretch" container="heading-only">
         <HeaderSimple />
       </DocsSection>
-      <DocsSection title="Simple Transparent Header" stackAlignment="stretch">
+      <DocsSection title="Simple Transparent Header" stackAlignment="stretch" container="heading-only">
         <HeaderSimpleTransparent />
       </DocsSection>
       <DocsSection title="Experimental RTL Support" stackAlignment="stretch">

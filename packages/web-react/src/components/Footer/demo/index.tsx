@@ -13,10 +13,10 @@ import FooterNested from './FooterNested';
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <IconsProvider value={icons}>
-      <DocsSection title="Basic Usage" stackAlignment="stretch">
+      <DocsSection title="Basic Usage" stackAlignment="stretch" container="heading-only">
         <FooterDefault />
       </DocsSection>
-      <DocsSection title="Nested Link Blocks, Logo Only" stackAlignment="stretch">
+      <DocsSection title="Nested Link Blocks, Logo Only" stackAlignment="stretch" container="heading-only">
         <FooterNested />
       </DocsSection>
     </IconsProvider>

@@ -12,7 +12,7 @@ const TagDefault = () => {
   return (
     <Grid cols={{ mobile: 1, tablet: 3, desktop: 5 }}>
       {sizes.map((size) => (
-        <DocsSection key={size} title={`Size ${size}`}>
+        <DocsSection key={size} container="none" title={`Size ${size}`}>
           {colors.map((color) => (
             <Fragment key={`tag-${color}-${size}`}>
               <Tag color={color} size={size} isSubtle>
