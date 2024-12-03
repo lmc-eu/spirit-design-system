@@ -1,9 +1,10 @@
 import React, { ReactNode } from 'react';
-import { StyleProps, Tag, useStyleProps } from '../src';
+import { Container, StyleProps, Tag, useStyleProps } from '../src';
 import DocsStack from './DocsStack';
 
 interface DocsSectionProps extends StyleProps {
   children: ReactNode;
+  container?: 'none' | 'all' | 'heading-only';
   hasStack?: boolean;
   stackAlignment?: 'start' | 'center' | 'end' | 'stretch';
   tag?: string;
@@ -11,6 +12,7 @@ interface DocsSectionProps extends StyleProps {
 }
 
 const defaultProps: Partial<DocsSectionProps> = {
+  container: 'all',
   hasStack: true,
   stackAlignment: 'start',
   tag: '',
@@ -18,20 +20,30 @@ const defaultProps: Partial<DocsSectionProps> = {
 
 const DocsSection = (props: DocsSectionProps) => {
   const propsWithDefaults = { ...defaultProps, ...props };
-  const { children, hasStack = true, stackAlignment = 'start', title, tag, ...restProps } = propsWithDefaults;
+  const { children, container, hasStack, stackAlignment, title, tag, ...restProps } = propsWithDefaults;
   const { styleProps, props: transferProps } = useStyleProps(restProps);
+
+  const heading = (
+    <h2 className="docs-Heading">
+      {title}
+      {tag && (
+        <Tag color="warning" isSubtle>
+          {tag}
+        </Tag>
+      )}
+    </h2>
+  );
+
+  const content = (
+    <>
+      {container === 'heading-only' ? <Container>{heading}</Container> : heading}
+      {hasStack ? <DocsStack stackAlignment={stackAlignment}>{children}</DocsStack> : children}
+    </>
+  );
 
   return (
     <section {...styleProps} {...transferProps} className="UNSTABLE_Section">
-      <h2 className="docs-Heading">
-        {title}
-        {tag && (
-          <Tag color="warning" isSubtle>
-            {tag}
-          </Tag>
-        )}
-      </h2>
-      {hasStack ? <DocsStack stackAlignment={stackAlignment}>{children}</DocsStack> : children}
+      {container === 'all' ? <Container>{content}</Container> : content}
     </section>
   );
 };
