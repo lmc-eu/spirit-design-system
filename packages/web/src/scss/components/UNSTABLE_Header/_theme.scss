@@ -1,0 +1,7 @@
+@use '@tokens' as tokens;
+
+$height: 72px;
+$border-width: tokens.$border-width-100;
+$border-style: solid;
+$border-color: tokens.$border-basic;
+$background-color: tokens.$component-header-background;

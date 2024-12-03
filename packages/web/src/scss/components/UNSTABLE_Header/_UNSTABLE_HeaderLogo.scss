@@ -1,0 +1,8 @@
+@use '@tokens' as tokens;
+@use 'theme';
+
+.UNSTABLE_HeaderLogo {
+    display: flex;
+    align-items: center;
+    height: var(--#{tokens.$css-variable-prefix}header-height);
+}
