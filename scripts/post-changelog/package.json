@@ -1,0 +1,28 @@
+{
+  "name": "@lmc-eu/spirit-post-changelog",
+  "version": "1.0.0",
+  "description": "Post changelog to Slack of the Spirit Design System",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lmc-eu/spirit-design-system.git",
+    "directory": "scripts/post-changelog"
+  },
+  "license": "MIT",
+  "keywords": [
+    "post",
+    "changelog",
+    "slack"
+  ],
+  "scripts": {
+    "post-changelog": "yarn zx ./post-changelog.mjs"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "dotenv-safe": "^9.1.0",
+    "gitdiff-parser": "^0.3.1",
+    "simple-git": "^3.27.0",
+    "slackify-markdown": "^4.4.0",
+    "zx": "^8.3.0"
+  }
+}
