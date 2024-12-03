@@ -73,12 +73,14 @@
     "babel-loader": "9.2.1",
     "core-js": "3.39.0",
     "css-loader": "7.1.2",
+    "dotenv-safe": "^9.1.0",
     "eslint": "8.57.1",
     "eslint-plugin-jsx-a11y": "6.10.2",
     "eslint-plugin-prettier": "5.2.1",
     "eslint-plugin-react": "7.37.2",
     "eslint-plugin-react-hooks": "4.6.2",
     "eslint-plugin-storybook": "0.11.1",
+    "gitdiff-parser": "^0.3.1",
     "husky": "9.1.7",
     "is-ci": "3.0.1",
     "lerna": "8.1.8",
@@ -96,11 +98,14 @@
     "remark-frontmatter": "5.0.0",
     "remark-lint-heading-capitalization": "1.2.0",
     "sass-loader": "14.2.1",
+    "simple-git": "^3.27.0",
+    "slackify-markdown": "^4.4.0",
     "style-loader": "4.0.0",
     "typescript": "4.7.4",
     "vite-raw-plugin": "1.0.2",
     "webpack": "5.96.1",
-    "webpack-cli": "5.1.4"
+    "webpack-cli": "5.1.4",
+    "zx": "^8.2.4"
   },
   "resolutions": {
     "typescript": "4.7.4"
