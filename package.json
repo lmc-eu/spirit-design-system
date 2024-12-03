@@ -13,12 +13,13 @@
     "node": ">=18"
   },
   "workspaces": [
+    "apps/demo",
+    "apps/storybook",
     "configs/*",
-    "packages/*",
     "examples/*",
     "exporters/*",
-    "apps/demo",
-    "apps/storybook"
+    "packages/*",
+    "scripts/*"
   ],
   "scripts": {
     "start": "yarn packages:start --ignore '@almacareer/spirit-example*'",

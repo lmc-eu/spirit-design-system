@@ -1,0 +1,26 @@
+{
+  "name": "@lmc-eu/spirit-lts-schedule",
+  "version": "1.0.0",
+  "description": "Generate the Spirit Design System LTS schedule",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lmc-eu/spirit-design-system.git",
+    "directory": "scripts/lts-schedule"
+  },
+  "license": "MIT",
+  "keywords": [
+    "lts",
+    "lts schedule",
+    "schedule"
+  ],
+  "bin": {
+    "lts": "./bin/lts.js"
+  },
+  "dependencies": {
+    "bossy": "3.0.4",
+    "d3": "4.7.4",
+    "d3-node": "1.0.1",
+    "svg2png": "4.1.1"
+  }
+}

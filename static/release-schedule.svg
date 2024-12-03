@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 <svg xmlns="http://www.w3.org/2000/svg" width="1500" height="500" class="container"><defs><style type="text/css"><![CDATA[
 :root {
   --container: #fffff;
@@ -7,32 +5,12 @@
   --prerelease-fill: #4dd7be;
   --active-fill: #7652d8;
   --maintenance-fill: #fd7e40;
-=======
-<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="500" class="container"><defs><style type="text/css"><![CDATA[ 
-:root { 
-  --container: #fffff;
-  --unstable-fill: #ee538b;
-  --prerelease-fill: #6929c4;
-  --active-fill: #012749;
-  --maintenance-fill: #009d9a;
->>>>>>> 7774aadfb (Docs(repo): Introduce Spirit release schedule document)
-=======
-<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="500" class="container"><defs><style type="text/css"><![CDATA[
-:root {
-  --container: #fffff;
-  --unstable-fill: #ffbe00;
-  --prerelease-fill: #4dd7be;
-  --active-fill: #7652d8;
-  --maintenance-fill: #fd7e40;
->>>>>>> 4e5a8ad62 (fixup! Docs(repo): Introduce Spirit release schedule document)
   --text: #161616;
   --text-on-color: #ffffff;
   --text-inverse: #ffffff;
   --border: #e0e0e0;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 @media (prefers-color-scheme: light) {
   :root {
     --container: #fffff;
@@ -40,24 +18,6 @@
     --prerelease-fill: #4dd7be;
     --active-fill: #7652d8;
     --maintenance-fill: #fd7e40;
-=======
-@media (prefers-color-scheme: light) { 
-  :root { 
-    --container: #fffff;
-    --unstable-fill: #ee538b;
-    --prerelease-fill: #6929c4;
-    --active-fill: #012749;
-    --maintenance-fill: #009d9a;
->>>>>>> 7774aadfb (Docs(repo): Introduce Spirit release schedule document)
-=======
-@media (prefers-color-scheme: light) {
-  :root {
-    --container: #fffff;
-    --unstable-fill: #ffbe00;
-    --prerelease-fill: #4dd7be;
-    --active-fill: #7652d8;
-    --maintenance-fill: #fd7e40;
->>>>>>> 4e5a8ad62 (fixup! Docs(repo): Introduce Spirit release schedule document)
     --text: #161616;
     --text-on-color: #ffffff;
     --text-inverse: #ffffff;
@@ -66,37 +26,18 @@
 }
 
 @media (prefers-color-scheme: dark) {
-<<<<<<< HEAD
-<<<<<<< HEAD
   :root {
     --container: #161616;
     --unstable-fill: #ffbe00;
     --prerelease-fill: #4dd7be;
     --active-fill: #7652d8;
     --maintenance-fill: #fd7e40;
-=======
-  :root { 
-    --container: #161616;
-    --unstable-fill: #fff1f1;
-    --prerelease-fill: #d4bbff;
-    --active-fill: #4589ff;
-    --maintenance-fill: #08bdba;
->>>>>>> 7774aadfb (Docs(repo): Introduce Spirit release schedule document)
-=======
-  :root {
-    --container: #161616;
-    --unstable-fill: #ffbe00;
-    --prerelease-fill: #4dd7be;
-    --active-fill: #7652d8;
-    --maintenance-fill: #fd7e40;
->>>>>>> 4e5a8ad62 (fixup! Docs(repo): Introduce Spirit release schedule document)
     --text: #f4f4f4;
     --text-on-color: #161616;
     --text-inverse: #161616;
     --border: #393939;
   }
 }
-
 
 .container {
   background: var(--container);
@@ -120,15 +61,7 @@
   display: none;
 }
 .tick text {
-<<<<<<< HEAD
-<<<<<<< HEAD
   font: 16px Inter;
-=======
-  font: 16px IBM Plex Sans;
->>>>>>> 7774aadfb (Docs(repo): Introduce Spirit release schedule document)
-=======
-  font: 16px Inter;
->>>>>>> 4e5a8ad62 (fixup! Docs(repo): Introduce Spirit release schedule document)
   fill: var(--text);
 }
 .axis--y .tick text {
@@ -139,23 +72,8 @@
 }
 .label {
   fill: var(--text-on-color);
-<<<<<<< HEAD
-<<<<<<< HEAD
   font: 20px Inter;
   text-anchor: start;
   dominant-baseline: middle;
   text-transform: capitalize;
 } ]]></style></defs><g id="bar-container" transform="translate(110, 64)"><g class="axis axis--x" fill="none" font-size="10" font-family="sans-serif" text-anchor="middle"><g class="tick" opacity="1" transform="translate(138.4431216931217,0)"><line stroke="#89a19d" y2="404" x1="0.5" x2="0.5"></line><text fill="#000" y="0" x="0.5" dy="-10">Apr 2023</text></g><g class="tick" opacity="1" transform="translate(278.5542328042328,0)"><line stroke="#89a19d" y2="404" x1="0.5" x2="0.5" stroke-dasharray="2,2"></line><text fill="#000" y="0" x="0.5" dy="-10">Jul 2023</text></g><g class="tick" opacity="1" transform="translate(420.2050264550265,0)"><line stroke="#89a19d" y2="404" x1="0.5" x2="0.5"></line><text fill="#000" y="0" x="0.5" dy="-10">Oct 2023</text></g><g class="tick" opacity="1" transform="translate(561.9199735449736,0)"><line stroke="#89a19d" y2="404" x1="0.5" x2="0.5" stroke-dasharray="2,2"></line><text fill="#000" y="0" x="0.5" dy="-10">Jan 2024</text></g><g class="tick" opacity="1" transform="translate(701.9669312169311,0)"><line stroke="#89a19d" y2="404" x1="0.5" x2="0.5"></line><text fill="#000" y="0" x="0.5" dy="-10">Apr 2024</text></g><g class="tick" opacity="1" transform="translate(842.0780423280424,0)"><line stroke="#89a19d" y2="404" x1="0.5" x2="0.5" stroke-dasharray="2,2"></line><text fill="#000" y="0" x="0.5" dy="-10">Jul 2024</text></g><g class="tick" opacity="1" transform="translate(983.728835978836,0)"><line stroke="#89a19d" y2="404" x1="0.5" x2="0.5"></line><text fill="#000" y="0" x="0.5" dy="-10">Oct 2024</text></g><g class="tick" opacity="1" transform="translate(1125.4437830687832,0)"><line stroke="#89a19d" y2="404" x1="0.5" x2="0.5" stroke-dasharray="2,2"></line><text fill="#000" y="0" x="0.5" dy="-10">Jan 2025</text></g><g class="tick" opacity="1" transform="translate(1263.9510582010582,0)"><line stroke="#89a19d" y2="404" x1="0.5" x2="0.5"></line><text fill="#000" y="0" x="0.5" dy="-10">Apr 2025</text></g></g><g class="axis axis--y" fill="none" font-size="10" font-family="sans-serif" text-anchor="start"><g class="tick" opacity="1" transform="translate(0,49.54716981132074)"><line stroke="#e1e7e7" x2="1358" y1="0.5" y2="0.5"></line><text fill="#000" x="0" y="0.5" dy="0.32em" dx="-10">main</text></g><g class="tick" opacity="1" transform="translate(0,125.77358490566037)"><line stroke="#e1e7e7" x2="1358" y1="0.5" y2="0.5"></line><text fill="#000" x="0" y="0.5" dy="0.32em" dx="-10">Spirit 0</text></g><g class="tick" opacity="1" transform="translate(0,202)"><line stroke="#e1e7e7" x2="1358" y1="0.5" y2="0.5"></line><text fill="#000" x="0" y="0.5" dy="0.32em" dx="-10">Spirit 1</text></g><g class="tick" opacity="1" transform="translate(0,278.2264150943396)"><line stroke="#e1e7e7" x2="1358" y1="0.5" y2="0.5"></line><text fill="#000" x="0" y="0.5" dy="0.32em" dx="-10">Spirit 2</text></g><g class="tick" opacity="1" transform="translate(0,354.4528301886793)"><line stroke="#e1e7e7" x2="1358" y1="0.5" y2="0.5"></line><text fill="#000" x="0" y="0.5" dy="0.32em" dx="-10">Spirit 3</text></g><line y1="404" y2="404" x2="1358" stroke="#89a19d"></line></g><g><rect class="bar unstable" x="0" y="22.86792452830187" width="1358" height="53.35849056603774"></rect><rect class="bar-join unstable" x="-1" y="22.86792452830187" width="2" height="53.35849056603774" style="opacity: 0;"></rect><text class="label" x="15" y="51.54716981132074" style="opacity: 1;">unstable</text></g><g><rect class="bar active" x="0" y="99.0943396226415" width="991.5555555555555" height="53.35849056603774"></rect><rect class="bar-join active" x="-1" y="99.0943396226415" width="2" height="53.35849056603774" style="opacity: 0;"></rect><text class="label" x="15" y="127.77358490566037" style="opacity: 1;">active</text></g><g><rect class="bar maintenance" x="809.8730158730158" y="175.32075471698113" width="198.6190476190477" height="53.35849056603774"></rect><rect class="bar-join maintenance" x="808.8730158730158" y="175.32075471698113" width="2" height="53.35849056603774" style="opacity: 1;"></rect><text class="label" x="824.8730158730158" y="204" style="opacity: 1;">maintenance</text></g><g><rect class="bar active" x="309.4761904761905" y="175.32075471698113" width="500.3968253968253" height="53.35849056603774"></rect><rect class="bar-join active" x="308.4761904761905" y="175.32075471698113" width="2" height="53.35849056603774" style="opacity: 1;"></rect><text class="label" x="324.4761904761905" y="204" style="opacity: 1;">active</text></g><g><rect class="bar prerelease" x="309.4761904761905" y="175.32075471698113" width="0" height="53.35849056603774"></rect><rect class="bar-join prerelease" x="308.4761904761905" y="175.32075471698113" width="2" height="53.35849056603774" style="opacity: 0;"></rect><text class="label" x="324.4761904761905" y="204" style="opacity: 0;">prerelease</text></g><g><rect class="bar maintenance" x="1060.8412698412699" y="251.54716981132074" width="297.1587301587301" height="53.35849056603774"></rect><rect class="bar-join maintenance" x="1059.8412698412699" y="251.54716981132074" width="2" height="53.35849056603774" style="opacity: 1;"></rect><text class="label" x="1075.8412698412699" y="280.2264150943396" style="opacity: 1;">maintenance</text></g><g><rect class="bar active" x="809.8730158730158" y="251.54716981132074" width="250.9682539682541" height="53.35849056603774"></rect><rect class="bar-join active" x="808.8730158730158" y="251.54716981132074" width="2" height="53.35849056603774" style="opacity: 1;"></rect><text class="label" x="824.8730158730158" y="280.2264150943396" style="opacity: 1;">active</text></g><g><rect class="bar prerelease" x="809.8730158730158" y="251.54716981132074" width="0" height="53.35849056603774"></rect><rect class="bar-join prerelease" x="808.8730158730158" y="251.54716981132074" width="2" height="53.35849056603774" style="opacity: 0;"></rect><text class="label" x="824.8730158730158" y="280.2264150943396" style="opacity: 0;">prerelease</text></g><g><rect class="bar active" x="1068.5396825396824" y="327.7735849056604" width="289.4603174603176" height="53.35849056603774"></rect><rect class="bar-join active" x="1067.5396825396824" y="327.7735849056604" width="2" height="53.35849056603774" style="opacity: 1;"></rect><text class="label" x="1083.5396825396824" y="356.4528301886793" style="opacity: 1;">active</text></g><g><rect class="bar prerelease" x="1008.4920634920635" y="327.7735849056604" width="60.04761904761892" height="53.35849056603774"></rect><rect class="bar-join prerelease" x="1007.4920634920635" y="327.7735849056604" width="2" height="53.35849056603774" style="opacity: 0;"></rect><text class="label" x="1023.4920634920635" y="356.4528301886793" style="opacity: 0;">prerelease</text></g></g></svg>
-=======
-  font: 20px IBM Plex Sans;
-=======
-  font: 20px Inter;
->>>>>>> 4e5a8ad62 (fixup! Docs(repo): Introduce Spirit release schedule document)
-  text-anchor: start;
-  dominant-baseline: middle;
-  text-transform: capitalize;
-} ]]></style></defs><g id="bar-container" transform="translate(110, 64)"><g class="axis axis--x" fill="none" font-size="10" font-family="sans-serif" text-anchor="middle"><g class="tick" opacity="1" transform="translate(138.4431216931217,0)"><line stroke="#89a19d" y2="404" x1="0.5" x2="0.5"></line><text fill="#000" y="0" x="0.5" dy="-10">Apr 2023</text></g><g class="tick" opacity="1" transform="translate(278.5542328042328,0)"><line stroke="#89a19d" y2="404" x1="0.5" x2="0.5" stroke-dasharray="2,2"></line><text fill="#000" y="0" x="0.5" dy="-10">Jul 2023</text></g><g class="tick" opacity="1" transform="translate(420.2050264550265,0)"><line stroke="#89a19d" y2="404" x1="0.5" x2="0.5"></line><text fill="#000" y="0" x="0.5" dy="-10">Oct 2023</text></g><g class="tick" opacity="1" transform="translate(561.9199735449736,0)"><line stroke="#89a19d" y2="404" x1="0.5" x2="0.5" stroke-dasharray="2,2"></line><text fill="#000" y="0" x="0.5" dy="-10">Jan 2024</text></g><g class="tick" opacity="1" transform="translate(701.9669312169311,0)"><line stroke="#89a19d" y2="404" x1="0.5" x2="0.5"></line><text fill="#000" y="0" x="0.5" dy="-10">Apr 2024</text></g><g class="tick" opacity="1" transform="translate(842.0780423280424,0)"><line stroke="#89a19d" y2="404" x1="0.5" x2="0.5" stroke-dasharray="2,2"></line><text fill="#000" y="0" x="0.5" dy="-10">Jul 2024</text></g><g class="tick" opacity="1" transform="translate(983.728835978836,0)"><line stroke="#89a19d" y2="404" x1="0.5" x2="0.5"></line><text fill="#000" y="0" x="0.5" dy="-10">Oct 2024</text></g><g class="tick" opacity="1" transform="translate(1125.4437830687832,0)"><line stroke="#89a19d" y2="404" x1="0.5" x2="0.5" stroke-dasharray="2,2"></line><text fill="#000" y="0" x="0.5" dy="-10">Jan 2025</text></g><g class="tick" opacity="1" transform="translate(1263.9510582010582,0)"><line stroke="#89a19d" y2="404" x1="0.5" x2="0.5"></line><text fill="#000" y="0" x="0.5" dy="-10">Apr 2025</text></g></g><g class="axis axis--y" fill="none" font-size="10" font-family="sans-serif" text-anchor="start"><g class="tick" opacity="1" transform="translate(0,49.54716981132074)"><line stroke="#e1e7e7" x2="1358" y1="0.5" y2="0.5"></line><text fill="#000" x="0" y="0.5" dy="0.32em" dx="-10">main</text></g><g class="tick" opacity="1" transform="translate(0,125.77358490566037)"><line stroke="#e1e7e7" x2="1358" y1="0.5" y2="0.5"></line><text fill="#000" x="0" y="0.5" dy="0.32em" dx="-10">Spirit 0</text></g><g class="tick" opacity="1" transform="translate(0,202)"><line stroke="#e1e7e7" x2="1358" y1="0.5" y2="0.5"></line><text fill="#000" x="0" y="0.5" dy="0.32em" dx="-10">Spirit 1</text></g><g class="tick" opacity="1" transform="translate(0,278.2264150943396)"><line stroke="#e1e7e7" x2="1358" y1="0.5" y2="0.5"></line><text fill="#000" x="0" y="0.5" dy="0.32em" dx="-10">Spirit 2</text></g><g class="tick" opacity="1" transform="translate(0,354.4528301886793)"><line stroke="#e1e7e7" x2="1358" y1="0.5" y2="0.5"></line><text fill="#000" x="0" y="0.5" dy="0.32em" dx="-10">Spirit 3</text></g><line y1="404" y2="404" x2="1358" stroke="#89a19d"></line></g><g><rect class="bar unstable" x="0" y="22.86792452830187" width="1358" height="53.35849056603774"></rect><rect class="bar-join unstable" x="-1" y="22.86792452830187" width="2" height="53.35849056603774" style="opacity: 0;"></rect><text class="label" x="15" y="51.54716981132074" style="opacity: 1;">unstable</text></g><g><rect class="bar active" x="0" y="99.0943396226415" width="991.5555555555555" height="53.35849056603774"></rect><rect class="bar-join active" x="-1" y="99.0943396226415" width="2" height="53.35849056603774" style="opacity: 0;"></rect><text class="label" x="15" y="127.77358490566037" style="opacity: 1;">active</text></g><g><rect class="bar maintenance" x="809.8730158730158" y="175.32075471698113" width="198.6190476190477" height="53.35849056603774"></rect><rect class="bar-join maintenance" x="808.8730158730158" y="175.32075471698113" width="2" height="53.35849056603774" style="opacity: 1;"></rect><text class="label" x="824.8730158730158" y="204" style="opacity: 1;">maintenance</text></g><g><rect class="bar active" x="309.4761904761905" y="175.32075471698113" width="500.3968253968253" height="53.35849056603774"></rect><rect class="bar-join active" x="308.4761904761905" y="175.32075471698113" width="2" height="53.35849056603774" style="opacity: 1;"></rect><text class="label" x="324.4761904761905" y="204" style="opacity: 1;">active</text></g><g><rect class="bar prerelease" x="309.4761904761905" y="175.32075471698113" width="0" height="53.35849056603774"></rect><rect class="bar-join prerelease" x="308.4761904761905" y="175.32075471698113" width="2" height="53.35849056603774" style="opacity: 0;"></rect><text class="label" x="324.4761904761905" y="204" style="opacity: 0;">prerelease</text></g><g><rect class="bar maintenance" x="1060.8412698412699" y="251.54716981132074" width="297.1587301587301" height="53.35849056603774"></rect><rect class="bar-join maintenance" x="1059.8412698412699" y="251.54716981132074" width="2" height="53.35849056603774" style="opacity: 1;"></rect><text class="label" x="1075.8412698412699" y="280.2264150943396" style="opacity: 1;">maintenance</text></g><g><rect class="bar active" x="809.8730158730158" y="251.54716981132074" width="250.9682539682541" height="53.35849056603774"></rect><rect class="bar-join active" x="808.8730158730158" y="251.54716981132074" width="2" height="53.35849056603774" style="opacity: 1;"></rect><text class="label" x="824.8730158730158" y="280.2264150943396" style="opacity: 1;">active</text></g><g><rect class="bar prerelease" x="809.8730158730158" y="251.54716981132074" width="0" height="53.35849056603774"></rect><rect class="bar-join prerelease" x="808.8730158730158" y="251.54716981132074" width="2" height="53.35849056603774" style="opacity: 0;"></rect><text class="label" x="824.8730158730158" y="280.2264150943396" style="opacity: 0;">prerelease</text></g><g><rect class="bar active" x="1068.5396825396824" y="327.7735849056604" width="289.4603174603176" height="53.35849056603774"></rect><rect class="bar-join active" x="1067.5396825396824" y="327.7735849056604" width="2" height="53.35849056603774" style="opacity: 1;"></rect><text class="label" x="1083.5396825396824" y="356.4528301886793" style="opacity: 1;">active</text></g><g><rect class="bar prerelease" x="1008.4920634920635" y="327.7735849056604" width="60.04761904761892" height="53.35849056603774"></rect><rect class="bar-join prerelease" x="1007.4920634920635" y="327.7735849056604" width="2" height="53.35849056603774" style="opacity: 0;"></rect><text class="label" x="1023.4920634920635" y="356.4528301886793" style="opacity: 0;">prerelease</text></g></g></svg>
-<<<<<<< HEAD
->>>>>>> 7774aadfb (Docs(repo): Introduce Spirit release schedule document)
-=======
->>>>>>> 4e5a8ad62 (fixup! Docs(repo): Introduce Spirit release schedule document)

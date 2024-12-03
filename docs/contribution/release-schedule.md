@@ -92,8 +92,13 @@ repositories.
 This document was heavily inspired by the work of the
 [NodeJS Release Working Group][node-js-release-working-group] and [Carbon Design System Release Schedule][carbon-release-schedule].
 
+The schedule graph was generated using
+[our fork][spirit-lts-schedule] of
+[`nodejs/lts-schedule`][node-lts-schedule]
+
 [carbon-release-schedule]: https://github.com/carbon-design-system/carbon/blob/main/docs/release-schedule.md
 [node-js-release-working-group]: https://github.com/nodejs/release
+[node-lts-schedule]: https://github.com/nodejs/lts-schedule
 [release-jira-board]: https://jira.almacareer.tech/projects/DS?selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased
 [release-names-decision]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/decisions/007-release-names.md
 [release-schedule-static]: https://raw.githubusercontent.com/lmc-eu/spirit-design-system/refs/heads/main/static/release-schedule.svg
@@ -101,5 +106,6 @@ This document was heavily inspired by the work of the
 [spirit-figma]: https://www.figma.com/design/w9Ca4hvkuYLshsrHu1bYwT/Spirit-UI-KIT?node-id=22776-26259&node-type=canvas&t=JIF1i6Yfp9rGUA35-0
 [spirit-github-monorepo]: https://github.com/lmc-eu/spirit-design-system
 [spirit-jira-board]: https://jira.almacareer.tech/secure/RapidBoard.jspa?rapidView=366&projectKey=DS
+[spirit-lts-schedule]: https://github.com/lmc-eu/spirit-design-system/tree/main/scripts/lts-schedule
 [spirit-support-slack-channel]: https://almamedia.slack.com/archives/C068XPSDWQN
 [quarterly-goals]: https://www.notion.so/almacareer/Spirit-Design-System-Quarterly-Goals-878e92d5b74543039e513c0160fb9117
