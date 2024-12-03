@@ -3,7 +3,7 @@
 
         {% set title = 'Size ' ~ size %}
 
-        <DocsSection title={{ title }}>
+        <DocsSection container="none" title={{ title }}>
             {% for color in colors %}
                 <div>
                     <Button color={ color } size={ size } onclick="alert('Button clicked')">

@@ -6,16 +6,20 @@
 
   {% include 'partials/tabs.html.twig' %}
 
-  <Grid cols="{{ { mobile: 2, tablet: 3 } }}" elementType="ul">
+  <Container>
 
-    {% for helper in helpers %}
-      <li class="d-grid">
-        <a href="helpers/{{ helper }}/" class="docs-Card text-truncate">
-          {{ helper | replace({'-': ' '}) | title }}
-        </a>
-      </li>
-    {% endfor %}
+    <Grid cols="{{ { mobile: 2, tablet: 3 } }}" elementType="ul">
 
-  </Grid>
+      {% for helper in helpers %}
+        <li class="d-grid">
+          <a href="helpers/{{ helper }}/" class="docs-Card text-truncate">
+            {{ helper | replace({'-': ' '}) | title }}
+          </a>
+        </li>
+      {% endfor %}
+
+    </Grid>
+
+  </Container>
 
 {% endblock %}

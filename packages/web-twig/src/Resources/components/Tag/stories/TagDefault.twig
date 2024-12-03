@@ -4,7 +4,7 @@
 <Grid cols="{{ { mobile: 1, tablet: 3, desktop: 5 } }}">
     {% for size in sizes %}
         {% set title = 'Size ' ~ size %}
-        <DocsSection title={{ title }}>
+        <DocsSection container="none" title={{ title }}>
             {% for color in colors %}
                 <Tag color={ color } size={ size } isSubtle>Tag {{ color }}</Tag>
                 <Tag color={ color } size={ size }>Tag {{ color }}</Tag>

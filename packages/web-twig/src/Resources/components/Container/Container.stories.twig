@@ -5,12 +5,9 @@
 
 {% block content %}
 
-    <DocsSection title="Default" stackAlignment="stretch">
+    <DocsSection title="Default" stackAlignment="stretch" container="heading-only">
 
-        {# Use `.breakout-container` to make the example Container overlap with the Container in the page layout. #}
-        <div class="breakout-container">
-            {% include '@components/Container/stories/ContainerDefault.twig' %}
-        </div>
+        {% include '@components/Container/stories/ContainerDefault.twig' %}
 
     </DocsSection>
 
