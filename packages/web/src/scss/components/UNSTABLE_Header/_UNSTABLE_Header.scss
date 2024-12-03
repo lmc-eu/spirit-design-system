@@ -1,0 +1,13 @@
+@use '@tokens' as tokens;
+@use 'theme';
+
+.UNSTABLE_Header {
+    --#{tokens.$css-variable-prefix}header-height: #{theme.$height};
+    --#{tokens.$css-variable-prefix}navigation-height: var(--#{tokens.$css-variable-prefix}header-height);
+
+    flex: none;
+    box-sizing: content-box;
+    height: var(--#{tokens.$css-variable-prefix}header-height);
+    border-bottom: theme.$border-width theme.$border-style theme.$border-color;
+    background-color: theme.$background-color;
+}
