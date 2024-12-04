@@ -31,6 +31,7 @@ This project uses `dictionaries` to unify props between different components.
 | ----------------- | ---------------------------------------------------------------- | --------------- |
 | Action Color      | `primary`, `secondary`, `tertiary`, `inverted`                   | ActionColor     |
 | Action Link Color | `primary`, `secondary`, `inverted`                               | ActionLinkColor |
+| Background Color  | `primary`, `secondary`, `tertiary`                               | BackgroundColor |
 | Emotion Color     | `success`, `informative`, `warning`, `danger`                    | EmotionColor    |
 | Text Color        | `primary`, `secondary`, `primary-inverted`, `secondary-inverted` | TextColor       |
 

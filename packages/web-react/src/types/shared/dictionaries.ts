@@ -13,6 +13,7 @@ import {
   SizesExtended,
   TextColors,
   ValidationStates,
+  BackgroundColors,
 } from '../../constants';
 
 /* Alignment */
@@ -44,6 +45,11 @@ export type ActionButtonColorsDictionaryType<C = undefined> =
 export type ActionLinkColorsDictionaryKeys = keyof typeof ActionLinkColors;
 export type ActionLinkColorsDictionaryType<C = undefined> =
   | (typeof ActionLinkColors)[ActionLinkColorsDictionaryKeys]
+  | C;
+
+export type BackgroundColorsDictionaryKeys = keyof typeof BackgroundColors;
+export type BackgroundColorsDictionaryType<C = undefined> =
+  | (typeof BackgroundColors)[BackgroundColorsDictionaryKeys]
   | C;
 
 export type EmotionColorsDictionaryKeys = keyof typeof EmotionColors;
