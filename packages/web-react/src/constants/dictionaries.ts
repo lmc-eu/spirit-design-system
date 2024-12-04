@@ -44,6 +44,12 @@ export const ActionLinkColors = {
   TERTIARY: 'tertiary',
 } as const;
 
+export const BackgroundColors = {
+  PRIMARY: 'primary',
+  SECONDARY: 'secondary',
+  TERTIARY: 'tertiary',
+} as const;
+
 export const EmotionColors = {
   SUCCESS: 'success',
   INFORMATIVE: 'informative',
