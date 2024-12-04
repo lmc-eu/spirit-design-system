@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://github.com/lmc-eu/spirit-design-system/blob/main/static/spirit.svg?raw=true" width="422" height="300" alt="Spirit Design System" />
+<img src="https://github.com/lmc-eu/spirit-design-system/blob/main/static/spirit.svg?raw=true" width="400" height="230" alt="Spirit Design System" />
 
 ### Spirit Design System
 
