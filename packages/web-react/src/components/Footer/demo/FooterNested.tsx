@@ -13,7 +13,7 @@ import FooterLinkFactory from './FooterLinkFactory';
 
 const FooterNested = () => {
   return (
-    <Footer UNSAFE_className="bg-secondary pt-1400 pb-1200">
+    <Footer>
       <Container>
         {/* Grid with navigation links */}
         <Grid cols={{ mobile: 1, tablet: 2, desktop: 6 }} spacing="space-1000">
@@ -121,7 +121,7 @@ const FooterNested = () => {
             elementType="ul"
             direction={{ mobile: 'column', tablet: 'row' }}
             alignmentX={{ mobile: 'stretch', tablet: 'center' }}
-            spacing={{ mobile: 'space-600', tablet: 'space-900' }}
+            spacingX={{ mobile: 'space-600', tablet: 'space-900' }}
             isWrapping
           >
             <li>
