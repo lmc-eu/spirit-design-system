@@ -14,17 +14,18 @@ const meta: Meta<typeof NavigationItem> = {
     },
   },
   args: {
-    children: (
-      <NavigationLink href="/" isSelected>
-        Home
-      </NavigationLink>
-    ),
+    children: <NavigationLink href="/">Link</NavigationLink>,
   },
 };
 
 export default meta;
 type Story = StoryObj<typeof NavigationItem>;
 
-export const Playground: Story = {
+export const NavigationItemPlayground: Story = {
   name: 'NavigationItem',
+  render: (args) => (
+    <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+      <NavigationItem {...args} />
+    </ul>
+  ),
 };

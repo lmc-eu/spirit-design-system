@@ -14,16 +14,21 @@ const meta: Meta<typeof Navigation> = {
       page: () => <Markdown>{ReadMe}</Markdown>,
     },
   },
+  argTypes: {
+    children: {
+      control: 'object',
+    },
+  },
   args: {
     children: (
       <>
         <NavigationItem>
-          <NavigationLink href="/" isSelected>
+          <NavigationLink href="#" isSelected>
             Home
           </NavigationLink>
         </NavigationItem>
         <NavigationItem>
-          <NavigationLink href="/">Not Home</NavigationLink>
+          <NavigationLink href="#">Not Home</NavigationLink>
         </NavigationItem>
       </>
     ),
@@ -33,6 +38,6 @@ const meta: Meta<typeof Navigation> = {
 export default meta;
 type Story = StoryObj<typeof Navigation>;
 
-export const Playground: Story = {
+export const NavigationPlayground: Story = {
   name: 'Navigation',
 };

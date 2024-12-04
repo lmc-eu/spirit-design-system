@@ -27,7 +27,7 @@ const meta: Meta<typeof NavigationLink> = {
     },
   },
   args: {
-    children: 'Home',
+    children: 'Link',
     isDisabled: false,
     isSelected: false,
   },
