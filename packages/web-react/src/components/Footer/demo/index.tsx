@@ -8,6 +8,7 @@ import ReactDOM from 'react-dom/client';
 import DocsSection from '../../../../docs/DocsSections';
 import { IconsProvider } from '../../../context';
 import FooterDefault from './FooterDefault';
+import FooterMinimalistic from './FooterMinimalistic';
 import FooterNested from './FooterNested';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
@@ -18,6 +19,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       </DocsSection>
       <DocsSection title="Nested Link Blocks, Logo Only" stackAlignment="stretch" container="heading-only">
         <FooterNested />
+      </DocsSection>
+      <DocsSection title="Minimalistic" stackAlignment="stretch" container="heading-only">
+        <FooterMinimalistic />
       </DocsSection>
     </IconsProvider>
   </React.StrictMode>,

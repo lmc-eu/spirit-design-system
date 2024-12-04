@@ -187,7 +187,7 @@ const FooterDefault = () => {
             elementType="ul"
             direction={{ mobile: 'column', tablet: 'row' }}
             alignmentX={{ mobile: 'stretch', tablet: 'center' }}
-            spacing={{ mobile: 'space-600', tablet: 'space-900' }}
+            spacingX={{ mobile: 'space-600', tablet: 'space-900' }}
             isWrapping
           >
             <li>

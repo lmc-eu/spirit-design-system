@@ -16,7 +16,7 @@ The Footer supports several ready-to-use building blocks:
 This is how all supported building blocks of the Footer build up the complete composition:
 
 ```jsx
-<Footer UNSAFE_className="bg-secondary pt-1400 pb-1200">
+<Footer>
   <Container>
     {/* Grid with navigation links */}
     {/* Grid with product logo, social media links and language switch */}
@@ -137,7 +137,7 @@ This section is optional and consists of a [Flex][flex] layout with secondary li
 ## Full Example
 
 ```jsx
-<Footer UNSAFE_className="bg-secondary pt-1400 pb-1200">
+<Footer>
   <Container>
     {/* Grid with navigation links */}
     <Grid cols={{ mobile: 1, tablet: 2, desktop: 4 }} spacing="space-1000">
@@ -252,11 +252,27 @@ This section is optional and consists of a [Flex][flex] layout with secondary li
 </Footer>
 ```
 
+### API
+
+| Name              | Type                                                       | Default      | Required | Description                                     |
+| ----------------- | ---------------------------------------------------------- | ------------ | -------- | ----------------------------------------------- |
+| `backgroundColor` | [Background Color dictionary][dictionary-background-color] | `secondary`  | ✕        | Sets the background color of the footer         |
+| `paddingBottom`   | `SpaceToken`                                               | `space-1400` | ✕        | Defines the padding at the bottom of the footer |
+| `paddingTop`      | `SpaceToken`                                               | `space-1200` | ✕        | Defines the padding at the top of the footer    |
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
+
 [buttonlink]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/ButtonLink/README.md
+[dictionary-background-color]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#color
 [divider]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Divider/README.md
 [flex]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Flex/README.md
 [grid]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Grid/README.md
 [product-logo]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/ProductLogo/README.md
+[readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
+[readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
+[readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props
 [select]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Select/README.md
 [stack]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Stack/README.md
