@@ -1,19 +1,19 @@
 import { CSSProperties } from 'react';
 import { SpacingStyleProp } from '../../constants';
-import { BreakpointToken, SpaceToken } from './tokens';
+import { ExpandableBreakpointToken, ExpandableSpaceToken } from './tokens';
 
 export const STYLE_SPACING_AUTO = 'auto' as const;
 export type StyleSpacingAuto = typeof STYLE_SPACING_AUTO;
 
 export type SpacingProps = {
   [key in keyof typeof SpacingStyleProp]?:
-    | SpaceToken
+    | ExpandableSpaceToken
     | StyleSpacingAuto
-    | Partial<Record<BreakpointToken, SpaceToken | StyleSpacingAuto>>;
+    | Partial<Record<ExpandableBreakpointToken, ExpandableSpaceToken | StyleSpacingAuto>>;
 };
 
 export interface SpacingProp {
-  spacing?: SpaceToken | Partial<Record<BreakpointToken, SpaceToken>>;
+  spacing?: ExpandableSpaceToken | Partial<Record<ExpandableBreakpointToken, ExpandableSpaceToken>>;
 }
 
 export interface SpacingCSSProperties extends CSSProperties {
