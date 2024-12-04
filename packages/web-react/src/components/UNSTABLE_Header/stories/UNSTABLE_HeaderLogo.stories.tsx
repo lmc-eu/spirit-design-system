@@ -22,6 +22,6 @@ const meta: Meta<typeof UNSTABLE_HeaderLogo> = {
 export default meta;
 type Story = StoryObj<typeof UNSTABLE_HeaderLogo>;
 
-export const Playground: Story = {
+export const HeaderLogoPlayground: Story = {
   name: 'UNSTABLE_HeaderLogo',
 };

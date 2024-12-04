@@ -43,6 +43,6 @@ const meta: Meta<typeof UNSTABLE_Header> = {
 export default meta;
 type Story = StoryObj<typeof UNSTABLE_Header>;
 
-export const Playground: Story = {
+export const HeaderPlayground: Story = {
   name: 'UNSTABLE_Header',
 };
