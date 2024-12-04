@@ -42,6 +42,12 @@ packages/**/*.hbs
 # Ignore codemods test outputs, because we compare them with generated code which we cannot format
 packages/codemods/src/transforms/**/*.output.tsx
 
+# Ignore generated files by supernova
+packages/design-tokens/src/**/*
+
+# Ignore built files
+packages/design-tokens/scss/**/*
+
 # Yarn Modern
 # @see: https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
 .yarn/plugins
