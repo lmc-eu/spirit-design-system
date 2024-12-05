@@ -29,6 +29,7 @@ export default {
         'jest-config',
         'prettier-config',
         'stylelint-config',
+        'typescript-config',
         // Use when affecting CI process
         'ci',
         // Use for anything that does not directly affect packages, ie. updating repo-wide
