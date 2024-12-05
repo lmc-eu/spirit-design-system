@@ -51,7 +51,7 @@ You can use the `ProductLogo` component inside the `UNSTABLE_HeaderLogo` compone
 
 ```jsx
 <UNSTABLE_HeaderLogo href="#">
-  <ProductLogo>{/* Content go here */}</ProductLogo>
+  <ProductLogo>{/* Logo go here */}</ProductLogo>
 </UNSTABLE_HeaderLogo>
 ```
 
@@ -70,7 +70,7 @@ Use [`Container`][web-react-container] and [`Flex`][web-react-flex] components t
   <Container>
     <Flex alignmentX="left" alignmentY="center">
       <UNSTABLE_HeaderLogo href="#">
-        <ProductLogo>{/* Content go here */}</ProductLogo>
+        <ProductLogo>{/* Logo go here */}</ProductLogo>
       </UNSTABLE_HeaderLogo>
       {/* Navigation go here */}
       {/* Other Navgation go here */}
@@ -100,7 +100,7 @@ Or you can make modify gaps between the content by setting the `Flex` spacing pr
   <Container>
     <Flex alignmentX="left" alignmentY="center" spacing="space-500">
       <UNSTABLE_HeaderLogo href="#">
-        <ProductLogo>{/* Content go here */}</ProductLogo>
+        <ProductLogo>{/* Logo go here */}</ProductLogo>
       </UNSTABLE_HeaderLogo>
       {/* Navigation go here */}
       {/* Other Navgation go here */}
@@ -123,8 +123,55 @@ If you need the whole Header fluid you can do it by adding the `isFluid` prop to
 </UNSTABLE_Header>
 ```
 
+## With Navigation
+
+You can use the [`Navigation`][web-react-navigation] component inside the `UNSTABLE_Header` component.
+
+The `NavigationLink` components will inherit the `UNSTABLE_Header` height and set the navigation
+link height to the same value.
+
+Use the composition mentioned above to create the layout you need.
+
+```jsx
+<UNSTABLE_Header>
+  <Container>
+    <Flex alignmentX="left" alignmentY="center" spacing="space-1000">
+      <UNSTABLE_HeaderLogo href="/">
+        <ProductLogo>{/* Logo go here */}</ProductLogo>
+      </UNSTABLE_HeaderLogo>
+      <Navigation>
+        <NavigationItem>
+          <NavigationLink href="#">Link</NavigationLink>
+        </NavigationItem>
+        <NavigationItem>
+          <NavigationLink href="#" aria-current="page" isSelected>
+            Selected
+          </NavigationLink>
+        </NavigationItem>
+        <NavigationItem>
+          <NavigationLink href="#" isDisabled>
+            Disabled
+          </NavigationLink>
+        </NavigationItem>
+      </Navigation>
+      <Navigation marginLeft="auto">
+        <NavigationItem>
+          <Button color="secondary">Sign up</Button>
+        </NavigationItem>
+        <NavigationItem>
+          <Button elementType="a" href="#">
+            Post a job
+          </Button>
+        </NavigationItem>
+      </Navigation>
+    </Flex>
+  </Container>
+</UNSTABLE_Header>
+```
+
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props
 [web-react-container]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Container/README.md
 [web-react-flex]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Flex/README.md
+[web-react-navigation]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Navigation/README.md
