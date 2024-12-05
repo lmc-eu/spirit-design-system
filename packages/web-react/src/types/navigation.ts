@@ -1,8 +1,14 @@
-import { ElementType } from 'react';
+import { ElementType, ReactElement } from 'react';
+import { NavigationItem } from '../components';
 import { LinkTarget } from './link';
 import { ChildrenProps, SpiritPolymorphicElementPropsWithRef, StyleProps, TransferProps } from './shared';
 
-export interface SpiritNavigationProps extends ChildrenProps, StyleProps {}
+export interface SpiritNavigationProps extends Omit<ChildrenProps, 'children'>, StyleProps {
+  children:
+    | ReactElement<HTMLLIElement>
+    | ReactElement<typeof NavigationItem>
+    | Array<ReactElement<HTMLLIElement> | ReactElement<typeof NavigationItem>>;
+}
 
 export interface SpiritNavigationItemProps extends ChildrenProps, StyleProps {}
 

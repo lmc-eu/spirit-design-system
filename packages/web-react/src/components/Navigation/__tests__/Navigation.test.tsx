@@ -13,16 +13,23 @@ describe('Navigation', () => {
 
   restPropsTest(Navigation, 'nav');
 
-  it('should have default classname', () => {
-    render(<Navigation>Content</Navigation>);
+  beforeEach(() => {
+    render(
+      <Navigation>
+        <li>Content</li>
+      </Navigation>,
+    );
+  });
 
+  it('should have default classname', () => {
     expect(screen.getByRole('navigation')).toHaveClass('Navigation');
   });
 
   it('should render list and children', () => {
-    render(<Navigation>Content</Navigation>);
-
     expect(screen.getByRole('list')).toBeInTheDocument();
+  });
+
+  it('should render children', () => {
     expect(screen.getByText('Content')).toBeInTheDocument();
   });
 });
