@@ -1,16 +1,13 @@
 import { useClassNamePrefix } from '../../hooks';
-import { SpiritNavigationProps } from '../../types';
 
-export interface NavigationStyles<T> {
+export interface NavigationStyles {
   classProps: string;
-  props: T;
 }
 
-export const useNavigationStyleProps = (props: SpiritNavigationProps): NavigationStyles<SpiritNavigationProps> => {
+export const useNavigationStyleProps = () => {
   const navigationClass = useClassNamePrefix('Navigation');
 
   return {
     classProps: navigationClass,
-    props,
   };
 };

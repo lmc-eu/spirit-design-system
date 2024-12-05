@@ -23,9 +23,9 @@ it will apply a gap between them.
 
 ### API
 
-| Name       | Type                    | Default | Required | Description               |
-| ---------- | ----------------------- | ------- | -------- | ------------------------- |
-| `children` | `string` \| `ReactNode` | `null`  | ✓        | Content of the Navigation |
+| Name       | Type                                                                                | Default | Required | Description               |
+| ---------- | ----------------------------------------------------------------------------------- | ------- | -------- | ------------------------- |
+| `children` | `ReactElement<HTMLLIElement>`\|`ReactElement<NavigationItem>`\|Array of these types | `null`  | ✓        | Content of the Navigation |
 
 The components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
