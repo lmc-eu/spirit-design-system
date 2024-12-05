@@ -14,20 +14,20 @@ const HeaderDefault = () => {
     <UNSTABLE_Header>
       <Container>
         <Flex alignmentX="left" alignmentY="center" spacing="space-1000">
-          <UNSTABLE_HeaderLogo href="/">
+          <UNSTABLE_HeaderLogo href="#">
             <ProductLogo>{defaultSvgLogo}</ProductLogo>
           </UNSTABLE_HeaderLogo>
           <Navigation>
             <NavigationItem>
-              <NavigationLink href="/">Link</NavigationLink>
+              <NavigationLink href="#">Link</NavigationLink>
             </NavigationItem>
             <NavigationItem>
-              <NavigationLink href="/" isSelected>
+              <NavigationLink href="#" isSelected>
                 Selected
               </NavigationLink>
             </NavigationItem>
             <NavigationItem>
-              <NavigationLink href="/" isDisabled>
+              <NavigationLink href="#" isDisabled>
                 Disabled
               </NavigationLink>
             </NavigationItem>

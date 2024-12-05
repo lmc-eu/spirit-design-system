@@ -11,7 +11,7 @@ const HeaderDefault = () => {
     <UNSTABLE_Header>
       <Container>
         <Flex alignmentX="left" alignmentY="center">
-          <UNSTABLE_HeaderLogo href="/">
+          <UNSTABLE_HeaderLogo href="#">
             <ProductLogo>{defaultSvgLogo}</ProductLogo>
           </UNSTABLE_HeaderLogo>
         </Flex>

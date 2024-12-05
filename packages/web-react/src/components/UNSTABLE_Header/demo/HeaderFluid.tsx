@@ -11,7 +11,7 @@ const HeaderFluid = () => {
     <UNSTABLE_Header>
       <Container isFluid>
         <Flex alignmentX="left" alignmentY="center">
-          <UNSTABLE_HeaderLogo href="/">
+          <UNSTABLE_HeaderLogo href="#">
             <ProductLogo>{defaultSvgLogo}</ProductLogo>
           </UNSTABLE_HeaderLogo>
         </Flex>
