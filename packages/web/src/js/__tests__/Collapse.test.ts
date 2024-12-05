@@ -80,12 +80,31 @@ describe('Collapse', () => {
       EventHandler.trigger(target, 'transitionend');
       expect(target).toHaveClass(CLASS_NAME_OPEN);
     });
+
+    it('should hide more button after showing collapse', async () => {
+      fixtureEl.innerHTML = `
+        <a data-spirit-toggle="collapse" data-spirit-target="collapse-example-0" aria-expanded="false" data-spirit-is-disposable>… more</a>
+        <div id="collapse-example-0" class="Collapse">
+          <div class="Collapse__content">
+            more content
+          </div>
+        </div>
+      `;
+
+      const element = fixtureEl.querySelector('[data-spirit-toggle="collapse"]') as HTMLElement;
+      const collapse = new Collapse(element);
+
+      await collapse.show();
+
+      expect(element.getAttribute('aria-expanded')).toBe('true');
+      expect(element).not.toBeInTheDocument();
+    });
   });
 
   describe('hide', () => {
     it('should hide a collapse', async () => {
       fixtureEl.innerHTML = `
-        <button data-spirit-toggle="collapse" data-spirit-target="CollapseExample0" aria-expanded="true"></button>
+        <button data-spirit-toggle="collapse" data-spirit-target="collapse-example-0" aria-expanded="true"></button>
         <div id="collapse-example-0" class="Collapse">
           <div class="Collapse__content">
             test content

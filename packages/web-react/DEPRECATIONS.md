@@ -6,8 +6,17 @@ This document lists all deprecations that will be removed in the next major vers
 
 ## Deprecations
 
-Nothing here right now! 🎉
-
 👉 [What are deprecations?][readme-deprecations]
 
+### UncontrolledCollapse `isDisposable`
+
+The `hideOnCollapse` prop was removed, please use `isDisposable` instead.
+
+#### Migration Guide
+
+We are providing a [codemod][codemod-collapse] to assist with this change.
+
+- `<UncontrolledCollapse id="collapse" renderTrigger={…} hideOnCollapse … />` → `<UncontrolledCollapse id="collapse" renderTrigger={…} isDisposable … />`
+
+[codemod-collapse]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/codemods/src/transforms/v4/web-react/README.md#v4web-reactcollapse-isdisposable-prop--uncontrolledcollapse-hideoncollapse-to-isdisposable-prop-change
 [readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#deprecations

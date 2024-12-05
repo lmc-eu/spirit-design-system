@@ -28,7 +28,9 @@ export interface TransitionCollapseProps {
 export interface SpiritCollapseProps extends CollapseProps, TransitionCollapseProps {}
 
 export interface SpiritUncontrolledCollapseProps extends Omit<SpiritCollapseProps, 'isOpen'> {
-  isOpen?: boolean;
+  /** @deprecated "hideOnCollapse" property will be replaced in the next major version. Please use "isDisposable" instead. */
   hideOnCollapse?: boolean;
+  isDisposable?: boolean;
+  isOpen?: boolean;
   renderTrigger?: (render: CollapseRenderProps) => ReactNode;
 }
