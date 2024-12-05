@@ -1,36 +1,25 @@
 # Navigation
 
-The `Navigation` component provides a versatile and accessible way to build navigation menus.
+The `Navigation` component is a container for the navigation links of the application.
 
-The Navigation component consists of the following building blocks:
+It consists of a these parts:
 
 - [Navigation](#navigation)
-  - [NavigationItem](#navigationitem)
-  - [NavigationLink](#navigationlink)
+- [NavigationItem](#navigationitem)
+- [NavigationLink](#navigationlink)
 
 ## Navigation
 
-The `Navigation` component is a container for navigation items.
-
-### Usage
+The `Navigation` is a `nav` wrapper for navigation items.
 
 ```jsx
-import { Navigation, NavigationItem, NavigationLink } from '@lmc-eu/spirit-web-react';
+import { Navigation } from '@lmc-eu/spirit-web-react';
 
-<Navigation>
-  <NavigationItem>
-    <NavigationLink href="/" isSelected>
-      Home
-    </NavigationLink>
-  </NavigationItem>
-  <NavigationItem>
-    <NavigationLink href="/about">About Us</NavigationLink>
-  </NavigationItem>
-  <NavigationItem>
-    <NavigationLink href="/contact">Contact</NavigationLink>
-  </NavigationItem>
-</Navigation>;
+<Navigation>{/* Navigation items go here */}</Navigation>;
 ```
+
+It centers its children vertically and if the children are not `NavigationItem` components,
+it will apply a gap between them.
 
 ### API
 
@@ -42,20 +31,14 @@ The components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
-## NavigationItem
+## Navigation Item
 
-The `NavigationItem` component is a container for navigation links.
-
-### Usage
+The `NavigationItem` is a container for navigation links.
 
 ```jsx
-import { NavigationItem, NavigationLink } from '@lmc-eu/spirit-web-react';
+import { NavigationItem } from '@lmc-eu/spirit-web-react';
 
-<NavigationItem>
-  <NavigationLink href="/" isSelected>
-    Home
-  </NavigationLink>
-</NavigationItem>;
+<NavigationItem>{/* Navigation links go here */}</NavigationItem>;
 ```
 
 ### API
@@ -64,39 +47,27 @@ import { NavigationItem, NavigationLink } from '@lmc-eu/spirit-web-react';
 | ---------- | ----------------------- | ------- | -------- | ----------------------------- |
 | `children` | `string` \| `ReactNode` | `null`  | ✓        | Content of the NavigationItem |
 
-## NavigationLink
+## Navigation Link
 
-The `NavigationLink` component is a link in the navigation.
-
-### Usage
+The `NavigationLink` is component that is styled to be used as a navigation link.
 
 ```jsx
 import { NavigationLink } from '@lmc-eu/spirit-web-react';
 
-<NavigationLink href="/" isSelected>
-  Home
-</NavigationLink>;
+<NavigationLink href="#">Link</NavigationLink>;
 ```
 
-### Selected
-
-The `isSelected` prop is used to indicate that the link is selected.
+It can obtain `isSelected` or `isDisabled` states by adding the respective props.
 
 ```jsx
-<NavigationLink href="/" isSelected>
-  Home
-</NavigationLink>
+<NavigationLink href="#" aria-current="page" isSelected>Selected Link</NavigationLink>
+<NavigationLink href="#" isDisabled>Disabled Link</NavigationLink>
 ```
 
-### Disabled
+ℹ️ Don't forget to add the `aria-current="page"` attribute for correct accessible state if selected.
 
-The `isDisabled` prop is used to indicate that the link is disabled.
-
-```jsx
-<NavigationLink href="/" isDisabled>
-  Home
-</NavigationLink>
-```
+If the `NavigationLink` is inside a [`UNSTABLE_Header`][web-react-unstable-header] component, it will
+inherit the height of the `Header`.
 
 ### API
 
@@ -110,6 +81,42 @@ The `isDisabled` prop is used to indicate that the link is disabled.
 | `ref`         | `ForwardedRef<HTMLAnchorElement>` | —       | ✕        | Anchor element reference      |
 | `target`      | `string`                          | `null`  | ✕        | Link target                   |
 
+### Full Example
+
+With NavigationLink components:
+
+```jsx
+<Navigation>
+  <NavigationItem>
+    <NavigationLink href="#" isSelected>
+      Selected Link
+    </NavigationLink>
+  </NavigationItem>
+  <NavigationItem>
+    <NavigationLink href="#" isDisabled>
+      Disabled Link
+    </NavigationLink>
+  </NavigationItem>
+  <NavigationItem>
+    <NavigationLink href="#">Link</NavigationLink>
+  </NavigationItem>
+</Navigation>
+```
+
+With Buttons:
+
+```jsx
+<Navigation>
+  <NavigationItem>
+    <Button>Button</Button>
+  </NavigationItem>
+  <NavigationItem>
+    <Button color="secondary">Button</Button>
+  </NavigationItem>
+</Navigation>
+```
+
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props
+[web-react-unstable-header]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/UNSTABLE_Header/README.md
