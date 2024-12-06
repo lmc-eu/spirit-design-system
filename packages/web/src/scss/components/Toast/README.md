@@ -310,8 +310,6 @@ button:
 </div>
 ```
 
-👉 Please keep in mind that the Button color should match the ToastBar color.
-
 #### Full Example
 
 ```html
