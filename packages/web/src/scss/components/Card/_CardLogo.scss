@@ -1,25 +1,39 @@
+@use '@tokens' as tokens;
+@use '../../tools/breakpoint';
 @use 'theme';
 
 .CardLogo {
     display: inline-flex;
+    grid-area: var(--#{tokens.$css-variable-prefix}card-logo-grid-area);
+    place-self: var(--#{tokens.$css-variable-prefix}card-logo-place-self);
     align-items: center;
     justify-content: center;
+    margin-right: var(--#{tokens.$css-variable-prefix}card-logo-margin-right);
     border: theme.$logo-border-width theme.$logo-border-style theme.$logo-border-color;
     border-radius: theme.$logo-border-radius;
     background-color: theme.$logo-background-color;
-}
-
-.Card--vertical > .CardLogo {
-    grid-area: media;
-    place-self: end;
-    margin-right: theme.$logo-offset-horizontal;
-}
-
-:is(.Card--horizontal, .Card--horizontalReversed) > .CardLogo {
-    grid-area: logo;
-    justify-self: start;
 
     &:not(:last-child) {
-        margin-bottom: theme.$gap;
+        margin-bottom: var(--#{tokens.$css-variable-prefix}card-logo-margin-bottom);
+    }
+}
+
+@each $breakpoint-name, $breakpoint-value in theme.$breakpoints {
+    @include breakpoint.up($breakpoint-value) {
+        $infix: breakpoint.get-modifier(infix, $breakpoint-name, $breakpoint-value);
+
+        .Card--#{$infix}vertical > .CardLogo {
+            --#{tokens.$css-variable-prefix}card-logo-grid-area: media;
+            --#{tokens.$css-variable-prefix}card-logo-place-self: end;
+            --#{tokens.$css-variable-prefix}card-logo-margin-right: #{theme.$logo-offset-horizontal};
+            --#{tokens.$css-variable-prefix}card-logo-margin-bottom: 0;
+        }
+
+        :is(.Card--#{$infix}horizontal, .Card--#{$infix}horizontalReversed) > .CardLogo {
+            --#{tokens.$css-variable-prefix}card-logo-grid-area: logo;
+            --#{tokens.$css-variable-prefix}card-logo-place-self: start;
+            --#{tokens.$css-variable-prefix}card-logo-margin-right: 0;
+            --#{tokens.$css-variable-prefix}card-logo-margin-bottom: #{theme.$gap};
+        }
     }
 }

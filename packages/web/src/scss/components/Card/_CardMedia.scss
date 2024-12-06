@@ -2,26 +2,22 @@
 //    when the media is wrapped, for example in a link.
 // 2. Make sure rounded corners are applied to video player too.
 // 3. Do not let the media push the body content out of the horizontal card.
-// 4. We need the specific combination of classes, expanded CardMedia is designed to work only with boxed cards.
 
 @use '@tokens' as tokens;
+@use '../../tools/breakpoint';
 @use '../../tools/dictionaries';
 @use 'theme';
 
 .CardMedia {
-    --#{tokens.$css-variable-prefix}card-media-border-radius-top-left: #{theme.$border-radius};
-    --#{tokens.$css-variable-prefix}card-media-border-radius-top-right: #{theme.$border-radius};
-    --#{tokens.$css-variable-prefix}card-media-border-radius-bottom-left: #{theme.$border-radius};
-    --#{tokens.$css-variable-prefix}card-media-border-radius-bottom-right: #{theme.$border-radius};
-    --#{tokens.$css-variable-prefix}card-media-canvas-width: auto;
-    --#{tokens.$css-variable-prefix}card-media-canvas-height: auto;
-
     grid-area: media;
+    align-self: var(--#{tokens.$css-variable-prefix}card-media-align-self);
+    min-width: 0; // 3.
     overflow: hidden;
-    border-radius: var(--#{tokens.$css-variable-prefix}card-media-border-radius-top-left)
-        var(--#{tokens.$css-variable-prefix}card-media-border-radius-top-right)
-        var(--#{tokens.$css-variable-prefix}card-media-border-radius-bottom-right)
-        var(--#{tokens.$css-variable-prefix}card-media-border-radius-bottom-left);
+    border-radius: var(--#{tokens.$css-variable-prefix}card-media-border-radius-shorthand, #{theme.$border-radius});
+
+    &:not(:last-child) {
+        margin-bottom: var(--#{tokens.$css-variable-prefix}card-media-margin-bottom);
+    }
 }
 
 .CardMedia__canvas {
@@ -38,48 +34,50 @@
     object-fit: cover;
 }
 
-.Card--vertical > {
-    @include dictionaries.generate-sizes($class-name: 'CardMedia', $sizes: theme.$media-sizes-vertical);
-}
+@each $breakpoint-name, $breakpoint-value in theme.$breakpoints {
+    @include breakpoint.up($breakpoint-value) {
+        $infix: breakpoint.get-modifier(infix, $breakpoint-name, $breakpoint-value);
 
-:is(.Card--horizontal, .Card--horizontalReversed) > {
-    @include dictionaries.generate-sizes($class-name: 'CardMedia', $sizes: theme.$media-sizes-horizontal);
-}
+        .Card--#{$infix}vertical > {
+            @include dictionaries.generate-sizes($class-name: 'CardMedia', $sizes: theme.$media-sizes-vertical);
+        }
 
-:is(.Card--horizontal, .Card--horizontalReversed) > .CardMedia {
-    --#{tokens.$css-variable-prefix}card-media-canvas-width: var(--spirit-card-media-size);
+        :is(.Card--#{$infix}horizontal, .Card--#{$infix}horizontalReversed) > {
+            @include dictionaries.generate-sizes($class-name: 'CardMedia', $sizes: theme.$media-sizes-horizontal);
+        }
 
-    align-self: start;
-    min-width: 0; // 3.
-}
+        .Card--#{$infix}vertical > .CardMedia {
+            --#{tokens.$css-variable-prefix}card-media-canvas-width: auto;
+            --#{tokens.$css-variable-prefix}card-media-canvas-height: var(--spirit-card-media-size);
+            --#{tokens.$css-variable-prefix}card-media-align-self: initial;
+            --#{tokens.$css-variable-prefix}card-media-margin-bottom: #{theme.$gap-dense};
+        }
 
-:is(.Card--horizontal, .Card--horizontalReversed) > :is(.CardMedia--expanded, .CardMedia--filledHeight) {
-    --#{tokens.$css-variable-prefix}card-media-canvas-height: 100%;
+        :is(.Card--#{$infix}horizontal, .Card--#{$infix}horizontalReversed) > .CardMedia {
+            --#{tokens.$css-variable-prefix}card-media-canvas-width: var(--spirit-card-media-size);
+            --#{tokens.$css-variable-prefix}card-media-canvas-height: auto;
+            --#{tokens.$css-variable-prefix}card-media-align-self: start;
+            --#{tokens.$css-variable-prefix}card-media-margin-bottom: 0;
+        }
 
-    align-self: stretch;
-}
+        :is(.Card--#{$infix}horizontal, .Card--#{$infix}horizontalReversed)
+            > :is(.CardMedia--expanded, .CardMedia--filledHeight) {
+            --#{tokens.$css-variable-prefix}card-media-canvas-height: 100%;
+            --#{tokens.$css-variable-prefix}card-media-align-self: stretch;
+        }
 
-.Card--vertical > .CardMedia {
-    --#{tokens.$css-variable-prefix}card-media-canvas-height: var(--spirit-card-media-size);
+        .Card--boxed.Card--#{$infix}vertical > .CardMedia--expanded:not(:last-child) {
+            --#{tokens.$css-variable-prefix}card-media-border-radius-shorthand: #{theme.$border-radius} #{theme.$border-radius}
+                0 0;
+        }
 
-    &:not(:last-child) {
-        margin-bottom: theme.$gap-dense;
+        .Card--boxed.Card--#{$infix}horizontal > .CardMedia--expanded:not(:last-child) {
+            --#{tokens.$css-variable-prefix}card-media-border-radius-shorthand: #{theme.$border-radius} 0 0 #{theme.$border-radius};
+        }
+
+        .Card--boxed.Card--#{$infix}horizontalReversed > .CardMedia--expanded:not(:last-child) {
+            --#{tokens.$css-variable-prefix}card-media-border-radius-shorthand: 0 #{theme.$border-radius} #{theme.$border-radius}
+                0;
+        }
     }
 }
-
-// stylelint-disable selector-max-class -- 4.
-.Card--vertical.Card--boxed > .CardMedia--expanded:not(:last-child) {
-    --#{tokens.$css-variable-prefix}card-media-border-radius-bottom-left: 0;
-    --#{tokens.$css-variable-prefix}card-media-border-radius-bottom-right: 0;
-}
-
-.Card--horizontal.Card--boxed > .CardMedia--expanded:not(:last-child) {
-    --#{tokens.$css-variable-prefix}card-media-border-radius-top-right: 0;
-    --#{tokens.$css-variable-prefix}card-media-border-radius-bottom-right: 0;
-}
-
-.Card--horizontalReversed.Card--boxed > .CardMedia--expanded:not(:last-child) {
-    --#{tokens.$css-variable-prefix}card-media-border-radius-top-left: 0;
-    --#{tokens.$css-variable-prefix}card-media-border-radius-bottom-left: 0;
-}
-// stylelint-enable
