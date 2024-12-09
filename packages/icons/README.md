@@ -1,12 +1,15 @@
+<!-- @see: https://jira.almacareer.tech/browse/DS-1604 -->
+<!--lint ignore heading-capitalization-->
+
 # @lmc-eu/spirit-icons
 
 > Icons of Spirit Design System.
 
 ## Install
 
-🙋🏻‍♂️ **Hold on! Do you already use [`spirit-web`]?** Then you don't need to
+🙋🏻‍♂️ **Hold on! Do you already use [`spirit-web`][spirit-web]?** Then you don't need to
 install this package because `spirit-icons` is installed automatically
-as a dependency of [`spirit-web`].
+as a dependency of [`spirit-web`][spirit-web].
 
 If you want to use just `spirit-icons` alone in your project, run:
 
@@ -28,13 +31,13 @@ or themself.
 
 ## Usage
 
-### SVG files
+### SVG Files
 
 You can use SVG files directly from `@lmc-eu/spirit-icons/svg` directory by importing them or copying them to your app structure.
 
 ### React
 
-You can import SVG files directly from `@lmc-eu/spirit-icons/svg` directory in React components using a library like [React SVGR](https://react-svgr.com/).
+You can import SVG files directly from `@lmc-eu/spirit-icons/svg` directory in React components using a library like [React SVGR][react-svgr].
 
 Example configuration for Webpack:
 
@@ -64,7 +67,7 @@ import WarningIcon from '@lmc-eu/spirit-icons/react/WarningIcon';
 <WarningIcon />;
 ```
 
-### Icons paths
+### Icons Paths
 
 Alternatively you can use an `icons` object which consists of an icon name and SVG content. Thus you can fabricate your icon yourself.
 
@@ -99,7 +102,8 @@ export default nextConfig;
 
 This configuration is not required if you are using the Next.js App Router.
 
-For more information, please see the [Next.js documentation][nextjs-transpilePackages].
+For more information, please see the [Next.js documentation][nextjs-transpile-packages].
 
-[`spirit-web`]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web
-[nextjs-transpilePackages]: https://nextjs.org/docs/pages/api-reference/next-config-js/transpilePackages
+[spirit-web]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web
+[nextjs-transpile-packages]: https://nextjs.org/docs/pages/api-reference/next-config-js/transpilePackages
+[react-svgr]: https://react-svgr.com/
