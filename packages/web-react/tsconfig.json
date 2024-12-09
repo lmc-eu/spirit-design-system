@@ -1,31 +1,17 @@
 {
-  "compileOnSave": true,
+  "extends": "../../configs/typescript-config-spirit/dom",
   "compilerOptions": {
-    "baseUrl": ".",
-    "outDir": "./dist",
-    "sourceMap": true,
-    "declaration": true,
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "noEmit": true,
-    "strictNullChecks": true,
-    "strictPropertyInitialization": true,
-    "resolveJsonModule": true,
-    "noImplicitReturns": true,
-    "allowUnreachableCode": false,
-    "allowSyntheticDefaultImports": true,
-    "alwaysStrict": true,
+    // Specify what JSX code is generated.
+    // @see: https://www.typescriptlang.org/tsconfig/#jsx
     "jsx": "react",
-    "forceConsistentCasingInFileNames": true,
-    "noUnusedParameters": false,
-    "noUnusedLocals": true,
-    "strictFunctionTypes": true,
-    "noImplicitAny": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "lib": ["es2016", "dom", "dom.iterable"],
-    "types": ["jest", "node"]
+
+    // Specify what module code is generated.
+    // @see: https://www.typescriptlang.org/tsconfig/#module
+    "module": "nodenext",
+
+    // Specify how TypeScript looks up a file from a given module specifier.
+    // @see: https://www.typescriptlang.org/tsconfig/#moduleResolution
+    "moduleResolution": "nodenext"
   },
   "include": ["./src/**/*"],
   "exclude": ["./node_modules", "./dist/**/*"]

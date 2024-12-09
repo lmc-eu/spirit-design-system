@@ -1,32 +1,5 @@
 {
-  "compileOnSave": true,
-  "compilerOptions": {
-    "moduleResolution": "node",
-    "baseUrl": ".",
-    "sourceMap": true,
-    "declaration": true,
-    "noEmit": true,
-    "removeComments": true,
-    "noEmitOnError": true,
-    "forceConsistentCasingInFileNames": true,
-    "strictNullChecks": true,
-    "strictPropertyInitialization": true,
-    "strictFunctionTypes": true,
-    "resolveJsonModule": true,
-    "allowUnreachableCode": false,
-    "allowSyntheticDefaultImports": true,
-    "noImplicitThis": true,
-    "alwaysStrict": true,
-    "noImplicitReturns": true,
-    "noUnusedParameters": false,
-    "noUnusedLocals": true,
-    "noImplicitAny": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "typeRoots": ["../../node_modules/@types"],
-    "types": ["node", "jest"],
-    "module": "es2020"
-  },
+  "extends": "../../configs/typescript-config-spirit/base",
   "include": ["./", "./.eslintrc.js"],
   "exclude": ["./node_modules"]
 }
