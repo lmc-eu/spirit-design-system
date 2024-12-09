@@ -58,9 +58,7 @@ export const CardLinkPlayground: Story = {
     return (
       <Container>
         <Card>
-          <CardMedia isExpanded>
-            <img src={MEDIA_IMAGE} alt="" />
-          </CardMedia>
+          <CardMedia isExpanded>{MEDIA_IMAGE}</CardMedia>
           <CardLogo>
             <PartnerLogo size="medium" hasSafeArea>
               {LOGO}

@@ -60,9 +60,7 @@ export const CardTitlePlayground: Story = {
     return (
       <Container>
         <Card isBoxed>
-          <CardMedia isExpanded>
-            <img src={MEDIA_IMAGE} alt="" />
-          </CardMedia>
+          <CardMedia isExpanded>{MEDIA_IMAGE}</CardMedia>
           <CardLogo>
             <PartnerLogo size="medium" hasSafeArea>
               {LOGO}

@@ -18,7 +18,7 @@ const CardReversedHorizontalLayout = () => (
   <Grid cols={{ mobile: 1, tablet: 2 }}>
     <Card direction="horizontal-reversed" isBoxed>
       <CardMedia size="medium" isExpanded>
-        <img src={MEDIA_IMAGE} alt="" />
+        {MEDIA_IMAGE}
       </CardMedia>
       <CardBody>
         <CardEyebrow>Horizontal reversed card layout</CardEyebrow>
@@ -44,7 +44,7 @@ const CardReversedHorizontalLayout = () => (
 
     <Card direction="horizontal-reversed" isBoxed>
       <CardMedia size="medium" isExpanded>
-        <img src={MEDIA_IMAGE} alt="" />
+        {MEDIA_IMAGE}
       </CardMedia>
       <CardLogo>
         <PartnerLogo size="small" hasSafeArea>
