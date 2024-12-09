@@ -58,9 +58,7 @@ export const Playground: Story = {
   render: (args) => (
     <Container>
       <Card {...args}>
-        <CardMedia size="medium">
-          <img src={MEDIA_IMAGE} alt="" />
-        </CardMedia>
+        <CardMedia size="medium">{MEDIA_IMAGE}</CardMedia>
         <CardLogo>
           <PartnerLogo size="medium" hasSafeArea>
             {LOGO}

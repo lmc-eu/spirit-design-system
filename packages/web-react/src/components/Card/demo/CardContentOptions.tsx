@@ -17,9 +17,7 @@ import { LOGO, MEDIA_IMAGE } from './constants';
 const CardContentOptions = () => (
   <Grid cols={{ mobile: 1, tablet: 2, desktop: 3 }}>
     <Card isBoxed>
-      <CardMedia>
-        <img src={MEDIA_IMAGE} alt="" />
-      </CardMedia>
+      <CardMedia>{MEDIA_IMAGE}</CardMedia>
       <CardBody>
         <CardEyebrow>Content options</CardEyebrow>
         <CardTitle isHeading>
@@ -43,9 +41,7 @@ const CardContentOptions = () => (
     </Card>
 
     <Card isBoxed>
-      <CardMedia>
-        <img src={MEDIA_IMAGE} alt="" />
-      </CardMedia>
+      <CardMedia>{MEDIA_IMAGE}</CardMedia>
       <CardLogo>
         <PartnerLogo size="medium" hasSafeArea>
           {LOGO}
