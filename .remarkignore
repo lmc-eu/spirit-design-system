@@ -8,10 +8,7 @@ build
 
 # Temporary disabled packages
 # we will fix them incrementally
-demo
 docs
-examples
-exporters
 form-validations
 icons
 web-twig

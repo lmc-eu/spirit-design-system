@@ -1,4 +1,4 @@
-# Example Next.js application with pages router
+# Example Next.js Application with Pages Router
 
 This application is used to demonstrate the configuration of a Next.js application with an App router for use with the Spirit Design System.
 
