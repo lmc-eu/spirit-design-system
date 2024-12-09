@@ -1,3 +1,5 @@
+<!--lint disable heading-capitalization-->
+
 # @lmc-eu/spirit-demo
 
 > Scripts, Styles and Partials for showcase apps of Spirit Design System.

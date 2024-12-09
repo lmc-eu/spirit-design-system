@@ -1,8 +1,10 @@
+<!--lint disable heading-capitalization-->
+
 # jest-config-spirit
 
 > Jest configuration and preset for Spirit Design System
 
-## Getting started
+## Getting Started
 
 This preset is part of this monorepo only and thus it is accessible for every package.
 

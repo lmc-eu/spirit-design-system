@@ -1,3 +1,5 @@
+<!--lint disable heading-capitalization-->
+
 # @lmc-eu/spirit-design-tokens
 
 > Design tokens for Spirit Design System.
@@ -154,9 +156,11 @@ module: {
 
 </details>
 
-##### Using the sass-embedded Library
+<!--lint disable heading-capitalization-->
 
-If you're using `sass-embedded`, you can specify the API as `legacy`, `modern`, or `modern-compiler`. More information can be found in [sass documentation](sass-embedded).
+#### Using the sass-embedded Library
+
+If you're using `sass-embedded`, you can specify the API as `legacy`, `modern`, or `modern-compiler`. More information can be found in [sass documentation][sass-embedded].
 
 We recommend using the `modern-compiler` option.
 Please note that this change also requires updating `includePaths` to `loadPaths`.
@@ -299,6 +303,8 @@ With `@` prefix:
 
 <details>
 <summary>How do I derive design tokens for my own design system?</summary>
+
+<!--lint disable no-emphasis-as-heading-->
 
 **Creating a custom design system derived from Spirit? Great to hear that! 🎉**
 

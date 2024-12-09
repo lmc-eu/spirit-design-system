@@ -6,6 +6,8 @@ This document lists all deprecations that will be removed in the next major vers
 
 ## Deprecations
 
+<!--lint ignore heading-capitalization-->
+
 ### Collapse `data-spirit-is-disposable`
 
 The `data-spirit-more` attribute was removed, please use `data-spirit-is-disposable` instead.
