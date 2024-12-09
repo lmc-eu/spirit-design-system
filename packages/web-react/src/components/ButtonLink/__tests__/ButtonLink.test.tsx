@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
+import { useIconMock } from '../../../../tests/mocks/hooksMock';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import {
   actionButtonColorPropsTest,
@@ -11,6 +12,8 @@ import { loadingPropsTest } from '../../../../tests/providerTests/loadingPropsTe
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import ButtonLink from '../ButtonLink';
+
+jest.mock('../../../hooks', () => useIconMock);
 
 describe('ButtonLink', () => {
   classNamePrefixProviderTest(ButtonLink, 'Button');

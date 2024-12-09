@@ -1,10 +1,13 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
+import { useIconMock } from '../../../../tests/mocks/hooksMock';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { Button } from '../../Button';
 import DropdownTrigger from '../DropdownTrigger';
+
+jest.mock('../../../hooks', () => useIconMock);
 
 describe('DropdownTrigger', () => {
   stylePropsTest((props) => <DropdownTrigger elementType={Button} {...props} />);

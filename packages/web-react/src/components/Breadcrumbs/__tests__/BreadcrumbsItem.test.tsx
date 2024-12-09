@@ -1,10 +1,13 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
+import { useIconMock } from '../../../../tests/mocks/hooksMock';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import BreadcrumbsItem from '../BreadcrumbsItem';
+
+jest.mock('../../../hooks', () => useIconMock);
 
 describe('BreadcrumbsItem', () => {
   classNamePrefixProviderTest(BreadcrumbsItem, 'd-none');

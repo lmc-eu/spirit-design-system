@@ -1,8 +1,11 @@
 import { render } from '@testing-library/react';
 import React from 'react';
+import { useIconMock } from '../../../../tests/mocks/hooksMock';
 import { SpiritFileUploaderAttachmentProps } from '../../../types';
 import FileUploader from '../FileUploader';
 import FileUploaderList from '../FileUploaderList';
+
+jest.mock('../../../hooks', () => useIconMock);
 
 describe('FileUploaderList', () => {
   const props = {
