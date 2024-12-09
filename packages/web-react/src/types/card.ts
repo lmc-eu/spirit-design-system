@@ -42,7 +42,7 @@ export interface CardElementTypeProps<T extends ElementType = 'article'> {
 export type HorizontalReversedType = 'horizontal-reversed';
 
 export interface CardProps<T extends ElementType = 'article'> extends CardElementTypeProps<T> {
-  direction?: CardDirectionDictionaryType;
+  direction?: NonNullable<CardDirectionDictionaryType> | { [key: string]: NonNullable<CardDirectionDictionaryType> };
   isBoxed?: boolean;
 }
 

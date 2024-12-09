@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { useAlignmentClass, useClassNamePrefix } from '../../hooks';
 import { CardAlignmentXType, CardDirectionDictionaryType, CardSizesDictionaryType } from '../../types';
-import { kebabCaseToCamelCase } from '../../utils';
+import { generateStylePropsClassNames, kebabCaseToCamelCase } from '../../utils';
 
 export interface UseCardStyleProps {
   artworkAlignmentX?: CardAlignmentXType;
@@ -54,7 +54,9 @@ export function useCardStyleProps(props?: UseCardStyleProps): UseCardStylePropsR
   const titleClass = `${cardClass}Title`;
 
   const bodyIsSelectableClass = `${bodyClass}--selectable`;
-  const directionClass = direction ? `${cardClass}--${kebabCaseToCamelCase(direction)}` : '';
+
+  const directionClass = direction ? generateStylePropsClassNames(cardClass, kebabCaseToCamelCase(direction)) : '';
+
   const isBoxedClass = `${cardClass}--boxed`;
   const mediaCanvasClass = `${mediaClass}__canvas`;
   const mediaHasFilledHeightClass = `${mediaClass}--filledHeight`;
