@@ -57,6 +57,7 @@ makefile
 
 # Images
 *.png
+*.svg
 
 # Ignore File
 .*ignore
