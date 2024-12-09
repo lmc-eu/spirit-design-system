@@ -1,9 +1,15 @@
+@use '@tokens' as tokens;
+@use '../../tools/breakpoint';
 @use '../../tools/dictionaries';
 @use 'theme';
 
 .CardArtwork {
     display: grid;
     grid-area: media;
+
+    &:not(:last-child) {
+        margin-bottom: var(--#{tokens.$css-variable-prefix}card-artwork-margin-bottom);
+    }
 }
 
 @include dictionaries.generate-alignments(
@@ -12,6 +18,16 @@
     $axis: 'x'
 );
 
-.Card--vertical > .CardArtwork:not(:last-child) {
-    margin-bottom: theme.$gap;
+@each $breakpoint-name, $breakpoint-value in theme.$breakpoints {
+    @include breakpoint.up($breakpoint-value) {
+        $infix: breakpoint.get-modifier(infix, $breakpoint-name, $breakpoint-value);
+
+        .Card--#{$infix}vertical > .CardArtwork {
+            --#{tokens.$css-variable-prefix}card-artwork-margin-bottom: #{theme.$gap};
+        }
+
+        :is(.Card--#{$infix}horizontal, .Card--#{$infix}horizontalReversed) > .CardArtwork {
+            --#{tokens.$css-variable-prefix}card-artwork-margin-bottom: 0;
+        }
+    }
 }

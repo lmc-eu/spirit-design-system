@@ -1,67 +1,42 @@
 // 1. Get ready for card link overlay.
-// 2. If there is a expanded CardMedia in a boxed vertical card, replace card padding with empty grid columns/rows.
-// 3. Allow shrinking in grid layouts.
-// 4. Make sure links and buttons are clickable.
-// 5. Make text content selectable when there is a stretched CardLink.
+// 2. Allow shrinking in grid layouts.
+// 3. Make sure links and buttons are clickable.
+// 4. Make text content selectable when there is a stretched CardLink.
+// 5. Prepare card layouts for different breakpoints.
+//    a) Layouts are common for all breakpoints, so they are defined once in the theme file.
+//    b) Layout settings are applied to the grid via custom properties.
+//    c) If there is an expanded CardMedia in a boxed card, replace card padding with empty grid columns/rows.
+//    d) Padding is adjusted for different breakpoints.
 
+@use 'sass:map';
 @use '@tokens' as tokens;
 @use '../../tools/breakpoint';
 @use '../../tools/typography';
 @use 'theme';
 
 .Card {
-    --#{tokens.$css-variable-prefix}card-padding: #{theme.$padding};
-
     @include typography.generate(theme.$typography);
 
     position: relative; // 1.
     display: grid;
-    min-width: 0; // 3.
+    grid-template-columns: var(--#{tokens.$css-variable-prefix}card-columns); // 5.b
+    grid-template-rows: var(--#{tokens.$css-variable-prefix}card-rows); // 5.b
+    grid-template-areas: var(--#{tokens.$css-variable-prefix}card-areas); // 5.b
+    column-gap: var(--#{tokens.$css-variable-prefix}card-column-gap); // 5.b
+    min-width: 0; // 2.
     color: theme.$color;
-
-    @include breakpoint.up(tokens.$breakpoint-tablet) {
-        --#{tokens.$css-variable-prefix}card-padding: #{theme.$padding-tablet};
-    }
 }
 
-// 4., 5.
+// 3., 4.
 .Card:has(.CardLink) :where(a:not(.CardLink), button),
 .Card:has(.CardLink):has(.CardBody--selectable) :where(p, ul, ol, dl) {
     position: relative;
     z-index: 1;
 }
 
-.Card--vertical {
-    grid-template-rows: auto 1fr auto;
-    grid-template-areas:
-        'media'
-        'body'
-        'footer';
-}
-
-.Card--horizontal {
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto 1fr auto;
-    grid-template-areas:
-        'media logo'
-        'media body'
-        'media footer';
-}
-
-.Card--horizontalReversed {
-    grid-template-columns: 1fr auto;
-    grid-template-rows: auto 1fr auto;
-    grid-template-areas:
-        'logo media'
-        'body media'
-        'footer media';
-}
-
-:is(.Card--horizontal, .Card--horizontalReversed):has(.CardArtwork:not(:only-child), .CardMedia:not(:only-child)) {
-    column-gap: theme.$gap;
-}
-
 .Card--boxed {
+    --#{tokens.$css-variable-prefix}card-padding: #{theme.$padding}; // 5.d
+
     border: theme.$border-width theme.$border-style theme.$border-color;
     border-radius: theme.$border-radius;
     background-color: theme.$background-color;
@@ -76,77 +51,97 @@
         }
     }
 
+    &:has(.CardMedia--expanded) {
+        padding: var(--#{tokens.$css-variable-prefix}card-padding-shorthand); // 5.b
+    }
+
     &:not(:has(.CardMedia--expanded)) {
         padding: var(--#{tokens.$css-variable-prefix}card-padding);
     }
-}
 
-.Card--boxed.Card--vertical {
-    &:has(.CardMedia--expanded) {
-        grid-template-columns:
-            var(--#{tokens.$css-variable-prefix}card-padding)
-            1fr
-            var(--#{tokens.$css-variable-prefix}card-padding); // 2.
-
-        grid-template-rows:
-            var(--#{tokens.$css-variable-prefix}card-padding)
-            auto
-            1fr
-            auto;
-        grid-template-areas:
-            'media media media'
-            'media media media'
-            '. body .'
-            '. footer .';
-    }
-
-    &:has(.CardMedia:not(:only-child)) {
-        padding-bottom: var(--#{tokens.$css-variable-prefix}card-padding);
+    @include breakpoint.up(tokens.$breakpoint-tablet) {
+        --#{tokens.$css-variable-prefix}card-padding: #{theme.$padding-tablet}; // 5.d
     }
 }
 
-.Card--boxed.Card--horizontal {
-    &:has(.CardMedia--expanded) {
-        grid-template-columns: auto 1fr;
-        grid-template-rows:
-            var(--#{tokens.$css-variable-prefix}card-padding)
-            auto
-            1fr
-            auto
-            var(--#{tokens.$css-variable-prefix}card-padding); // 2.
+// 5.
+@each $breakpoint-name, $breakpoint-value in theme.$breakpoints {
+    $infix: breakpoint.get-modifier(infix, $breakpoint-name, $breakpoint-value);
 
-        grid-template-areas:
-            'media .'
-            'media logo'
-            'media body'
-            'media footer'
-            'media .';
-    }
+    @include breakpoint.up($breakpoint-value) {
+        .Card--#{$infix}vertical {
+            --#{tokens.$css-variable-prefix}card-columns: #{map.get(theme.$layouts, vertical, columns)};
+            --#{tokens.$css-variable-prefix}card-rows: #{map.get(theme.$layouts, vertical, rows)};
+            --#{tokens.$css-variable-prefix}card-areas: #{map.get(theme.$layouts, vertical, areas)};
+        }
 
-    &:has(.CardMedia:not(:only-child)) {
-        padding-right: var(--#{tokens.$css-variable-prefix}card-padding);
-    }
-}
+        .Card--#{$infix}horizontal {
+            --#{tokens.$css-variable-prefix}card-columns: #{map.get(theme.$layouts, horizontal, columns)};
+            --#{tokens.$css-variable-prefix}card-rows: #{map.get(theme.$layouts, horizontal, rows)};
+            --#{tokens.$css-variable-prefix}card-areas: #{map.get(theme.$layouts, horizontal, areas)};
+        }
 
-.Card--boxed.Card--horizontalReversed {
-    &:has(.CardMedia--expanded) {
-        grid-template-columns: 1fr auto;
-        grid-template-rows:
-            var(--#{tokens.$css-variable-prefix}card-padding)
-            auto
-            1fr
-            auto
-            var(--#{tokens.$css-variable-prefix}card-padding); // 2.
+        .Card--#{$infix}horizontalReversed {
+            --#{tokens.$css-variable-prefix}card-columns: #{map.get(theme.$layouts, horizontal-reversed, columns)};
+            --#{tokens.$css-variable-prefix}card-rows: #{map.get(theme.$layouts, horizontal-reversed, rows)};
+            --#{tokens.$css-variable-prefix}card-areas: #{map.get(theme.$layouts, horizontal-reversed, areas)};
+        }
 
-        grid-template-areas:
-            '. media'
-            'logo media'
-            'body media'
-            'footer media'
-            '. media';
-    }
+        .Card--#{$infix}vertical:has(.CardArtwork:not(:only-child), .CardMedia:not(:only-child)) {
+            --#{tokens.$css-variable-prefix}card-column-gap: 0;
+        }
 
-    &:has(.CardMedia:not(:only-child)) {
-        padding-left: var(--#{tokens.$css-variable-prefix}card-padding);
+        :is(.Card--#{$infix}horizontal, .Card--#{$infix}horizontalReversed):has(
+                .CardArtwork:not(:only-child),
+                .CardMedia:not(:only-child)
+            ) {
+            --#{tokens.$css-variable-prefix}card-column-gap: #{theme.$gap};
+        }
+
+        // 5.c
+        .Card--boxed.Card--#{$infix}vertical {
+            &:has(.CardMedia--expanded) {
+                --#{tokens.$css-variable-prefix}card-columns: #{map.get(theme.$layouts-boxed, vertical, columns)};
+                --#{tokens.$css-variable-prefix}card-rows: #{map.get(theme.$layouts-boxed, vertical, rows)};
+                --#{tokens.$css-variable-prefix}card-areas: #{map.get(theme.$layouts-boxed, vertical, areas)};
+            }
+
+            &:has(.CardMedia:not(:only-child)) {
+                --#{tokens.$css-variable-prefix}card-padding-shorthand: 0 0
+                    var(--#{tokens.$css-variable-prefix}card-padding);
+            }
+        }
+
+        // 5.c
+        .Card--boxed.Card--#{$infix}horizontal {
+            &:has(.CardMedia--expanded) {
+                --#{tokens.$css-variable-prefix}card-columns: #{map.get(theme.$layouts-boxed, horizontal, columns)};
+                --#{tokens.$css-variable-prefix}card-rows: #{map.get(theme.$layouts-boxed, horizontal, rows)};
+                --#{tokens.$css-variable-prefix}card-areas: #{map.get(theme.$layouts-boxed, horizontal, areas)};
+            }
+
+            &:has(.CardMedia:not(:only-child)) {
+                --#{tokens.$css-variable-prefix}card-padding-shorthand: 0
+                    var(--#{tokens.$css-variable-prefix}card-padding) 0 0;
+            }
+        }
+
+        // 5.c
+        .Card--boxed.Card--#{$infix}horizontalReversed {
+            &:has(.CardMedia--expanded) {
+                --#{tokens.$css-variable-prefix}card-columns: #{map.get(
+                        theme.$layouts-boxed,
+                        horizontal-reversed,
+                        columns
+                    )};
+                --#{tokens.$css-variable-prefix}card-rows: #{map.get(theme.$layouts-boxed, horizontal-reversed, rows)};
+                --#{tokens.$css-variable-prefix}card-areas: #{map.get(theme.$layouts-boxed, horizontal-reversed, areas)};
+            }
+
+            &:has(.CardMedia:not(:only-child)) {
+                --#{tokens.$css-variable-prefix}card-padding-shorthand: 0 0 0
+                    var(--#{tokens.$css-variable-prefix}card-padding);
+            }
+        }
     }
 }

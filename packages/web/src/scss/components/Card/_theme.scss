@@ -4,6 +4,44 @@
 
 $breakpoints: tokens.$breakpoints;
 
+$layouts: (
+    vertical: (
+        columns: 1fr,
+        rows: auto 1fr auto,
+        areas: "'media' 'body' 'footer'",
+    ),
+    horizontal: (
+        columns: auto 1fr,
+        rows: auto 1fr auto,
+        areas: "'media logo' 'media body' 'media footer'",
+    ),
+    horizontal-reversed: (
+        columns: 1fr auto,
+        rows: auto 1fr auto,
+        areas: "'logo media' 'body media' 'footer media'",
+    ),
+);
+
+$layouts-boxed: (
+    vertical: (
+        columns: var(--#{tokens.$css-variable-prefix}card-padding) 1fr var(--#{tokens.$css-variable-prefix}card-padding),
+        rows: var(--#{tokens.$css-variable-prefix}card-padding) auto 1fr auto,
+        areas: "'media media media' 'media media media' '. body .' '. footer .'",
+    ),
+    horizontal: (
+        columns: auto 1fr,
+        rows: var(--#{tokens.$css-variable-prefix}card-padding) auto 1fr auto
+            var(--#{tokens.$css-variable-prefix}card-padding),
+        areas: "'media .' 'media logo' 'media body' 'media footer' 'media .'",
+    ),
+    horizontal-reversed: (
+        columns: 1fr auto,
+        rows: var(--#{tokens.$css-variable-prefix}card-padding) auto 1fr auto
+            var(--#{tokens.$css-variable-prefix}card-padding),
+        areas: "'. media' 'logo media' 'body media' 'footer media' '. media'",
+    ),
+);
+
 $gap: tokens.$space-900;
 $gap-dense: tokens.$space-700;
 
