@@ -16,6 +16,7 @@ import CardHorizontalLayout from './CardHorizontalLayout';
 import CardLogoDemo from './CardLogo';
 import { CardMediaOptions } from './CardMediaOptions';
 import CardMediaSizes from './CardMediaSizes';
+import CardResponsiveCard from './CardResponsiveCard';
 import CardReversedHorizontalLayout from './CardReversedHorizontalLayout';
 import CardText from './CardText';
 import CardTitleOptions from './CardTitleOptions';
@@ -37,6 +38,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       </DocsSection>
       <DocsSection title="Reversed Horizontal Card Layout">
         <CardReversedHorizontalLayout />
+      </DocsSection>
+      <DocsSection title="Responsive Card Layout">
+        <CardResponsiveCard />
       </DocsSection>
       <DocsSection title="Media Options">
         <CardMediaOptions />

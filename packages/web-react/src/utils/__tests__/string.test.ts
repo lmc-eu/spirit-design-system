@@ -9,9 +9,10 @@ describe('string', () => {
       ['single', 'single'],
       ['', ''],
       ['kebab-case-test', 'kebabCaseTest'],
+      [{ test: 'foo-bar' }, { test: 'fooBar' }],
     ])('should convert kebab-case string "%s" to camelCase string "%s"', (input, expected) => {
       const result = kebabCaseToCamelCase(input);
-      expect(result).toBe(expected);
+      expect(result).toEqual(expected);
     });
   });
 });
