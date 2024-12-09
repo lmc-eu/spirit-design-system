@@ -15,9 +15,7 @@ import { LOGO, MEDIA_IMAGE } from './constants';
 const CardLogoDemo = () => (
   <Grid cols={{ mobile: 1, tablet: 2, desktop: 3 }}>
     <Card>
-      <CardMedia>
-        <img src={MEDIA_IMAGE} alt="" />
-      </CardMedia>
+      <CardMedia>{MEDIA_IMAGE}</CardMedia>
       <CardLogo>
         <PartnerLogo size="medium" hasSafeArea>
           {LOGO}
@@ -46,9 +44,7 @@ const CardLogoDemo = () => (
     </Card>
 
     <Card isBoxed>
-      <CardMedia>
-        <img src={MEDIA_IMAGE} alt="" />
-      </CardMedia>
+      <CardMedia>{MEDIA_IMAGE}</CardMedia>
       <CardLogo>
         <PartnerLogo size="medium" hasSafeArea>
           {LOGO}
@@ -77,9 +73,7 @@ const CardLogoDemo = () => (
     </Card>
 
     <Card isBoxed>
-      <CardMedia isExpanded>
-        <img src={MEDIA_IMAGE} alt="" />
-      </CardMedia>
+      <CardMedia isExpanded>{MEDIA_IMAGE}</CardMedia>
       <CardLogo>
         <PartnerLogo size="medium" hasSafeArea>
           {LOGO}

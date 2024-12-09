@@ -62,9 +62,7 @@ export const CardMediaPlayground: Story = {
   render: (args) => (
     <Container>
       <Card isBoxed marginBottom="space-1200">
-        <CardMedia {...args}>
-          <img src={MEDIA_IMAGE} alt="" />
-        </CardMedia>
+        <CardMedia {...args}>{MEDIA_IMAGE}</CardMedia>
         <CardLogo>
           <PartnerLogo size="medium" hasSafeArea>
             {LOGO}
@@ -90,9 +88,7 @@ export const CardMediaPlayground: Story = {
         </CardFooter>
       </Card>
       <Card direction="horizontal" isBoxed>
-        <CardMedia {...args}>
-          <img src={MEDIA_IMAGE} alt="" />
-        </CardMedia>
+        <CardMedia {...args}>{MEDIA_IMAGE}</CardMedia>
         <CardLogo>
           <PartnerLogo size="small" hasSafeArea>
             {LOGO}

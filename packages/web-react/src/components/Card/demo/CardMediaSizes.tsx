@@ -15,7 +15,7 @@ const CardMediaSizes = () => (
     <Grid cols={{ mobile: 1, tablet: 2, desktop: 3 }} marginBottom="space-1200">
       <Card isBoxed>
         <CardMedia size="small" isExpanded>
-          <img src={MEDIA_IMAGE} alt="" />
+          {MEDIA_IMAGE}
         </CardMedia>
         <CardBody>
           <CardEyebrow>Media size</CardEyebrow>
@@ -39,7 +39,7 @@ const CardMediaSizes = () => (
 
       <Card isBoxed>
         <CardMedia size="medium" isExpanded>
-          <img src={MEDIA_IMAGE} alt="" />
+          {MEDIA_IMAGE}
         </CardMedia>
         <CardBody>
           <CardEyebrow>Media size</CardEyebrow>
@@ -60,7 +60,7 @@ const CardMediaSizes = () => (
 
       <Card isBoxed>
         <CardMedia size="large" isExpanded>
-          <img src={MEDIA_IMAGE} alt="" />
+          {MEDIA_IMAGE}
         </CardMedia>
         <CardBody>
           <CardEyebrow>Media size</CardEyebrow>
@@ -81,7 +81,7 @@ const CardMediaSizes = () => (
 
       <Card isBoxed>
         <CardMedia size="auto" isExpanded>
-          <img src={MEDIA_IMAGE} alt="" />
+          {MEDIA_IMAGE}
         </CardMedia>
         <CardBody>
           <CardEyebrow>Media size</CardEyebrow>
@@ -104,7 +104,7 @@ const CardMediaSizes = () => (
     <Grid cols={1}>
       <Card direction="horizontal" isBoxed>
         <CardMedia size="small" isExpanded>
-          <img src={MEDIA_IMAGE} alt="" />
+          {MEDIA_IMAGE}
         </CardMedia>
         <CardBody>
           <CardEyebrow>Media size</CardEyebrow>
@@ -127,7 +127,7 @@ const CardMediaSizes = () => (
 
       <Card direction="horizontal" isBoxed>
         <CardMedia size="medium" isExpanded>
-          <img src={MEDIA_IMAGE} alt="" />
+          {MEDIA_IMAGE}
         </CardMedia>
         <CardBody>
           <CardEyebrow>Media size</CardEyebrow>
@@ -150,7 +150,7 @@ const CardMediaSizes = () => (
 
       <Card direction="horizontal" isBoxed>
         <CardMedia size="large" isExpanded>
-          <img src={MEDIA_IMAGE} alt="" />
+          {MEDIA_IMAGE}
         </CardMedia>
         <CardBody>
           <CardEyebrow>Media size</CardEyebrow>
@@ -173,7 +173,7 @@ const CardMediaSizes = () => (
 
       <Card direction="horizontal" isBoxed>
         <CardMedia size="auto" isExpanded>
-          <img src={MEDIA_IMAGE} alt="" />
+          {MEDIA_IMAGE}
         </CardMedia>
         <CardBody>
           <CardEyebrow>Media size</CardEyebrow>
