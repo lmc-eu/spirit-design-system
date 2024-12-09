@@ -2,13 +2,13 @@
 
 The Spirit Assets Exporter allows you to **export a list of images** in such a way that it can be immediately used in your production codebase. This specific exporter exports assets in generic fashion, as SVG format, without any additional formatting or generated support files.
 
-### Exporter Output
+## Exporter Output
 
 This exporter will render image assets defined inside one specific brand and will produce flat structure:
 
 ⚠️ We only output assets from `icons` directory.
 
-### Naming
+## Naming
 
 The names of icons will be constructed from the original name.
 
