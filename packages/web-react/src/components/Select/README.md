@@ -53,17 +53,10 @@ On top of the API options, the components accept [additional attributes][readme-
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
-## Icons Provider
+## Icons
 
-To display the icons correctly, the component needs to be wrapped with IconsProvider.
-
-```jsx
-import { IconsProvider } from 'packages/web-react/src/context';
-
-<IconsProvider>
-  <Select />
-</IconsProvider>;
-```
+This component uses the `Icon` component internally. To ensure correct rendering,
+please refer to the [Icon component documentation][web-react-icon-documentation] for setup instructions.
 
 ## Custom component
 
@@ -109,3 +102,4 @@ For detailed information see [Select][select] component or [Select][select-eleme
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props
 [select-element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select
 [select]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Select/README.md
+[web-react-icon-documentation]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Icon/README.md#-usage

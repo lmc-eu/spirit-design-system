@@ -579,6 +579,11 @@ const handleClose = () => setOpen(false);
 
 </details>
 
+## Icons
+
+This component uses the `Icon` component internally. To ensure correct rendering,
+please refer to the [Icon component documentation][web-react-icon-documentation] for setup instructions.
+
 [mdn-a-element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
 [mdn-api-html-element]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
 [mdn-button-element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
@@ -588,3 +593,4 @@ const handleClose = () => setOpen(false);
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props
+[web-react-icon-documentation]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Icon/README.md#-usage

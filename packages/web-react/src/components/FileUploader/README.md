@@ -502,6 +502,11 @@ and [escape hatches][readme-escape-hatches].
 
 For detailed information see [FileUploader][file-uploader] component.
 
+## Icons
+
+This component uses the `Icon` component internally. To ensure correct rendering,
+please refer to the [Icon component documentation][web-react-icon-documentation] for setup instructions.
+
 [button-element-docs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
 [div-element-docs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div
 [file-uploader]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/FileUploader/README.md
@@ -511,3 +516,4 @@ For detailed information see [FileUploader][file-uploader] component.
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props
+[web-react-icon-documentation]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Icon/README.md#-usage
