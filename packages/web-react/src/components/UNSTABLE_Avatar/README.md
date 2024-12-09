@@ -64,6 +64,8 @@ Add an Icon with correct size.
 
 ℹ️ Don't forget to add the `aria-label` attribute for accessible title.
 
+To ensure correct Icon rendering, please refer to the [Icon component documentation][web-react-icon-documentation] for setup instructions.
+
 ### Image
 
 Add an image, it will be resized to fit the avatar.
@@ -112,3 +114,4 @@ and [escape hatches][readme-escape-hatches].
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props
+[web-react-icon-documentation]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Icon/README.md#-usage

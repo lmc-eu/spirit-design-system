@@ -171,26 +171,19 @@ and [escape hatches][readme-escape-hatches].
 | `accessibilityLabelPrevious` | `string`                       | `Previous` | ✕        | Accessibility label of the previous link                            |
 | `defaultPage`                | `number`                       | `1`        | ✕        | The number of the page selected as current page at the first render |
 | `onChange`                   | `(pageNumber: number) => void` | -          | ✕        | On page change callback                                             |
-| `totalPages`                 | `number`                       | 0          | ✓        | Total count of pages                                                |
+| `totalPages`                 | `number`                       | `0`        | ✓        | Total count of pages                                                |
 | `visiblePages`               | `number`                       | `5`        | ✕        | Number of displayed pages                                           |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
-## Icons Provider
-
-To display the icons correctly, the component needs to be wrapped with IconsProvider.
-
-```jsx
-import { IconsProvider } from 'packages/web-react/src/context';
-
-<IconsProvider>
-  <Pagination>...</Pagination>
-</IconsProvider>;
-```
-
 For detailed information see [Pagination][pagination] component.
+
+## Icons
+
+This component uses the `Icon` component internally. To ensure correct rendering,
+please refer to the [Icon component documentation][web-react-icon-documentation] for setup instructions.
 
 [button]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Button/README.md
 [html-element]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
@@ -200,3 +193,4 @@ For detailed information see [Pagination][pagination] component.
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props
 [ul-element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul
+[web-react-icon-documentation]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Icon/README.md#-usage

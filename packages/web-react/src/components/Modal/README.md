@@ -423,6 +423,11 @@ const handleClose = () => setOpen(false);
 </Modal>
 ```
 
+## Icons
+
+This component uses the `Icon` component internally. To ensure correct rendering,
+please refer to the [Icon component documentation][web-react-icon-documentation] for setup instructions.
+
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
 [mdn-article]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article
 [mdn-dialog-form]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog#usage_notes
@@ -433,3 +438,4 @@ const handleClose = () => setOpen(false);
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props
 [scroll-view]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/ScrollView/README.md
+[web-react-icon-documentation]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Icon/README.md#-usage
