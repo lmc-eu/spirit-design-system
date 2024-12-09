@@ -5,6 +5,7 @@ export * from './breadcrumbs';
 export * from './button';
 export * from './checkbox';
 export * from './collapse';
+export * from './container';
 export * from './divider';
 export * from './dropdown';
 export * from './fieldGroup';
