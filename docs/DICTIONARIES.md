@@ -34,6 +34,13 @@ This project uses `dictionaries` to unify props between different components.
 | Emotion Color     | `success`, `informative`, `warning`, `danger`                    | EmotionColor    |
 | Text Color        | `primary`, `secondary`, `primary-inverted`, `secondary-inverted` | TextColor       |
 
+### Direction
+
+| Dictionary    | Values                   | Code name     |
+| ------------- | ------------------------ | ------------- |
+| Direction     | `horizontal`, `vertical` | Direction     |
+| DirectionAxis | `x`, `y`                 | DirectionAxis |
+
 ### Emphasis
 
 | Dictionary | Values                                  | Code name |
