@@ -260,7 +260,6 @@ Check your browser console to see if you are using any of the deprecated functio
 See the [LICENSE][license] file for information.
 
 [all-deprecations]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/DEPRECATIONS.md
-[configuring-load-path]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#configuring-load-path
 [deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/static/deprecations-browser-console.png?raw=true
 [design-tokens-usage]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#basic-usage
 [design-tokens-load-path]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#in-sass

@@ -8,11 +8,6 @@ build
 
 # Temporary disabled packages
 # we will fix them incrementally
-analytics
-codemods
-common
-configs
-design-tokens
 demo
 docs
 examples
