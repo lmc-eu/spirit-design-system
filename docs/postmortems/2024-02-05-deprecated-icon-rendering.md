@@ -46,7 +46,7 @@ This problem was detected multiple times by the developers and the support quest
 
 Also, the message appeared in the browser console and the server logs:
 
-```
+```bash
 Warning: Icon component is not supported in SSR without use of `html-react-parser`. Please install missing peer dependency.
 ```
 
@@ -88,7 +88,7 @@ issues and Pull Requests in the "Bug" column with the appropriate owners -->
 
 - Usage of the `warning` utility everywhere the deprecation is raised and the condition about the `production` environment ensures that the deprecation messages are raised only in the development environment.
 
-## Timeline (all times in CET/CEST)
+## Timeline (all Times in CET/CEST)
 
 2023-12-27
 
