@@ -9,9 +9,7 @@ import { MEDIA_IMAGE } from './constants';
 const CardTitleOptions = () => (
   <Grid cols={{ mobile: 1, tablet: 2, desktop: 3 }}>
     <Card>
-      <CardMedia>
-        <img src={MEDIA_IMAGE} alt="" />
-      </CardMedia>
+      <CardMedia>{MEDIA_IMAGE}</CardMedia>
       <CardBody>
         <CardTitle isHeading={false}>
           <a href="#" className="link-primary">
@@ -22,9 +20,7 @@ const CardTitleOptions = () => (
     </Card>
 
     <Card>
-      <CardMedia>
-        <img src={MEDIA_IMAGE} alt="" />
-      </CardMedia>
+      <CardMedia>{MEDIA_IMAGE}</CardMedia>
       <CardBody>
         <CardTitle isHeading={false}>
           <a href="#" className="link-secondary">
@@ -35,9 +31,7 @@ const CardTitleOptions = () => (
     </Card>
 
     <Card>
-      <CardMedia isExpanded>
-        <img src={MEDIA_IMAGE} alt="" />
-      </CardMedia>
+      <CardMedia isExpanded>{MEDIA_IMAGE}</CardMedia>
       <CardBody>
         <CardTitle>
           <a href="#">Heading-style primary link</a>

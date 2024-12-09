@@ -51,9 +51,7 @@ export const CardLogoPlayground: Story = {
     return (
       <Container>
         <Card isBoxed marginBottom="space-1200">
-          <CardMedia>
-            <img src={MEDIA_IMAGE} alt="" />
-          </CardMedia>
+          <CardMedia>{MEDIA_IMAGE}</CardMedia>
           <CardLogo {...args}>{children}</CardLogo>
           <CardBody>
             <CardEyebrow>Card eyebrow</CardEyebrow>

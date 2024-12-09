@@ -14,9 +14,7 @@ export const CardMediaOptions = () => (
   <Grid cols={{ mobile: 1, tablet: 2, desktop: 4 }} UNSAFE_style={{ gridAutoFlow: 'dense' }}>
     <GridItem UNSAFE_className="d-grid" rowEnd={{ desktop: 'span 2' }}>
       <Card isBoxed>
-        <CardMedia>
-          <img src={MEDIA_IMAGE} alt="" />
-        </CardMedia>
+        <CardMedia>{MEDIA_IMAGE}</CardMedia>
         <CardBody>
           <CardEyebrow>Media options</CardEyebrow>
           <CardTitle isHeading>
@@ -42,9 +40,7 @@ export const CardMediaOptions = () => (
 
     <GridItem UNSAFE_className="d-grid" rowEnd={{ desktop: 'span 2' }}>
       <Card isBoxed>
-        <CardMedia isExpanded>
-          <img src={MEDIA_IMAGE} alt="" />
-        </CardMedia>
+        <CardMedia isExpanded>{MEDIA_IMAGE}</CardMedia>
         <CardBody>
           <CardEyebrow>Media options</CardEyebrow>
           <CardTitle isHeading>
@@ -70,9 +66,7 @@ export const CardMediaOptions = () => (
 
     <GridItem UNSAFE_className="d-grid" columnEnd={{ tablet: 'span 2' }}>
       <Card direction="horizontal" isBoxed>
-        <CardMedia size="medium">
-          <img src={MEDIA_IMAGE} alt="" />
-        </CardMedia>
+        <CardMedia size="medium">{MEDIA_IMAGE}</CardMedia>
         <CardBody>
           <CardEyebrow>Media options</CardEyebrow>
           <CardTitle isHeading>
@@ -99,7 +93,7 @@ export const CardMediaOptions = () => (
     <GridItem UNSAFE_className="d-grid" columnEnd={{ tablet: 'span 2' }}>
       <Card direction="horizontal" isBoxed>
         <CardMedia size="medium" hasFilledHeight>
-          <img src={MEDIA_IMAGE} alt="" />
+          {MEDIA_IMAGE}
         </CardMedia>
         <CardBody>
           <CardEyebrow>Media options</CardEyebrow>
@@ -127,7 +121,7 @@ export const CardMediaOptions = () => (
     <GridItem UNSAFE_className="d-grid" columnEnd={{ tablet: 'span 2', desktop: 'span 4' }}>
       <Card direction="horizontal" isBoxed>
         <CardMedia size="medium" isExpanded>
-          <img src={MEDIA_IMAGE} alt="" />
+          {MEDIA_IMAGE}
         </CardMedia>
         <CardBody>
           <CardEyebrow>Media options</CardEyebrow>
