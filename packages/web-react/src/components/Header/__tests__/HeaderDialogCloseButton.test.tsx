@@ -6,6 +6,14 @@ import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import HeaderDialogCloseButton from '../HeaderDialogCloseButton';
 
+jest.mock('../../../hooks', () => {
+  return {
+    ...jest.requireActual('../../../hooks'),
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    useIcon: (name: string) => '',
+  };
+});
+
 describe('HeaderDialogCloseButton', () => {
   classNamePrefixProviderTest(HeaderDialogCloseButton, 'HeaderDialogCloseButton');
 

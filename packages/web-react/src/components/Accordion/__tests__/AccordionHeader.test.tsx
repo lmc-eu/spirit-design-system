@@ -7,6 +7,14 @@ import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import AccordionHeader from '../AccordionHeader';
 import AccordionItem from '../AccordionItem';
 
+jest.mock('../../../hooks', () => {
+  return {
+    ...jest.requireActual('../../../hooks'),
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    useIcon: (name: string) => '',
+  };
+});
+
 describe('AccordionHeader', () => {
   classNamePrefixProviderTest(AccordionHeader, 'Accordion__itemHeader');
 

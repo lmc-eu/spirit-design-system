@@ -4,6 +4,14 @@ import { SpiritFileUploaderAttachmentProps } from '../../../types';
 import FileUploader from '../FileUploader';
 import FileUploaderList from '../FileUploaderList';
 
+jest.mock('../../../hooks', () => {
+  return {
+    ...jest.requireActual('../../../hooks'),
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    useIcon: (name: string) => '',
+  };
+});
+
 describe('FileUploaderList', () => {
   const props = {
     label: 'File uploader',

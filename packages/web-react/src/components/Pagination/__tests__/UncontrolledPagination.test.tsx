@@ -5,6 +5,22 @@ import UncontrolledPagination from '../UncontrolledPagination';
 describe('UncontrolledPagination', () => {
   const onPageChange = jest.fn();
 
+  beforeAll(() => {
+    jest.spyOn(global.console, 'warn').mockImplementation((message: string) => {
+      if (
+        !message.includes(
+          'icon is missing from your assets or icon map provided by the IconsProvider. Please make sure you have provided all icons needed by used components.',
+        )
+      ) {
+        throw new Error(message);
+      }
+    });
+  });
+
+  afterAll(() => {
+    jest.restoreAllMocks();
+  });
+
   beforeEach(() => {
     onPageChange.mockClear();
   });

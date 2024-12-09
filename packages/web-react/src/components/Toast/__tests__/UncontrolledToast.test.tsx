@@ -5,6 +5,14 @@ import { ToastLinkProps } from '../../../types';
 import { ToastContext } from '../ToastContext';
 import UncontrolledToast from '../UncontrolledToast';
 
+jest.mock('../../../hooks', () => {
+  return {
+    ...jest.requireActual('../../../hooks'),
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    useIcon: (name: string) => '',
+  };
+});
+
 const defaultToast = {
   id: 'test-id',
   content: {

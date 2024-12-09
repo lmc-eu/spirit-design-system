@@ -6,6 +6,14 @@ import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { Button } from '../../Button';
 import DropdownTrigger from '../DropdownTrigger';
 
+jest.mock('../../../hooks', () => {
+  return {
+    ...jest.requireActual('../../../hooks'),
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    useIcon: (name: string) => '',
+  };
+});
+
 describe('DropdownTrigger', () => {
   stylePropsTest((props) => <DropdownTrigger elementType={Button} {...props} />);
 

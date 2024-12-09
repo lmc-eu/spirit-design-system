@@ -6,6 +6,14 @@ import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { SpiritItemProps } from '../../../types';
 import Item from '../Item';
 
+jest.mock('../../../hooks', () => {
+  return {
+    ...jest.requireActual('../../../hooks'),
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    useIcon: (name: string) => '',
+  };
+});
+
 describe('Item', () => {
   stylePropsTest(Item);
 

@@ -6,6 +6,14 @@ import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import BreadcrumbsItem from '../BreadcrumbsItem';
 
+jest.mock('../../../hooks', () => {
+  return {
+    ...jest.requireActual('../../../hooks'),
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    useIcon: (name: string) => '',
+  };
+});
+
 describe('BreadcrumbsItem', () => {
   classNamePrefixProviderTest(BreadcrumbsItem, 'd-none');
   classNamePrefixProviderTest(BreadcrumbsItem, 'd-tablet-flex');

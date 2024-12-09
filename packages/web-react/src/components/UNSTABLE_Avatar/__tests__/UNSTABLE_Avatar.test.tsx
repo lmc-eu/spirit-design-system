@@ -8,6 +8,14 @@ import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { Icon } from '../../Icon';
 import UNSTABLE_Avatar from '../UNSTABLE_Avatar';
 
+jest.mock('../../../hooks', () => {
+  return {
+    ...jest.requireActual('../../../hooks'),
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    useIcon: (name: string) => '',
+  };
+});
+
 describe('UNSTABLE_Avatar', () => {
   classNamePrefixProviderTest(UNSTABLE_Avatar, 'UNSTABLE_Avatar');
 

@@ -9,6 +9,14 @@ import AccordionHeader from '../AccordionHeader';
 import AccordionItem from '../AccordionItem';
 import UncontrolledAccordion from '../UncontrolledAccordion';
 
+jest.mock('../../../hooks', () => {
+  return {
+    ...jest.requireActual('../../../hooks'),
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    useIcon: (name: string) => '',
+  };
+});
+
 describe('UncontrolledAccordion', () => {
   classNamePrefixProviderTest(UncontrolledAccordion, 'Accordion');
 

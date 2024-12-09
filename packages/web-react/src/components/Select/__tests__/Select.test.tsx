@@ -9,6 +9,14 @@ import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { validationTextPropsTest } from '../../../../tests/providerTests/validationTextPropsTest';
 import Select from '../Select';
 
+jest.mock('../../../hooks', () => {
+  return {
+    ...jest.requireActual('../../../hooks'),
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    useIcon: (name: string) => '',
+  };
+});
+
 describe('Select', () => {
   classNamePrefixProviderTest(Select, 'Select');
 

@@ -7,6 +7,14 @@ import { validationTextPropsTest } from '../../../../tests/providerTests/validat
 import FileUploaderInput from '../FileUploaderInput';
 import '@testing-library/jest-dom';
 
+jest.mock('../../../hooks', () => {
+  return {
+    ...jest.requireActual('../../../hooks'),
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    useIcon: (name: string) => '',
+  };
+});
+
 describe('FileUploaderInput', () => {
   classNamePrefixProviderTest(FileUploaderInput, 'FileUploaderInput');
 

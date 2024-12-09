@@ -9,6 +9,14 @@ import { validationTextPropsTest } from '../../../../tests/providerTests/validat
 import { TextFieldType } from '../../../types';
 import TextField from '../TextField';
 
+jest.mock('../../../hooks', () => {
+  return {
+    ...jest.requireActual('../../../hooks'),
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    useIcon: (name: string) => '',
+  };
+});
+
 describe('TextField', () => {
   describe.each(['text', 'password', 'email'])('input type %s', (type) => {
     classNamePrefixProviderTest(TextField, 'TextField');
