@@ -1,17 +1,12 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
+import { useIconMock } from '../../../../tests/mocks/hooksMock';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import Icon from '../Icon';
 
-jest.mock('../../../hooks', () => {
-  return {
-    ...jest.requireActual('../../../hooks'),
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    useIcon: (name: string) => '',
-  };
-});
+jest.mock('../../../hooks', () => useIconMock);
 
 describe('Icon', () => {
   const AddIcon = (props: Record<string, unknown>) => <Icon {...props} name="add" data-testid="test-icon" />;

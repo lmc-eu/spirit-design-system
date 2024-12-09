@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
+import { useIconMock } from '../../../../tests/mocks/hooksMock';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { validationStatePropsTest } from '../../../../tests/providerTests/dictionaryPropsTest';
 import { requiredPropsTest } from '../../../../tests/providerTests/requiredPropsTest';
@@ -9,13 +10,7 @@ import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { validationTextPropsTest } from '../../../../tests/providerTests/validationTextPropsTest';
 import Select from '../Select';
 
-jest.mock('../../../hooks', () => {
-  return {
-    ...jest.requireActual('../../../hooks'),
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    useIcon: (name: string) => '',
-  };
-});
+jest.mock('../../../hooks', () => useIconMock);
 
 describe('Select', () => {
   classNamePrefixProviderTest(Select, 'Select');

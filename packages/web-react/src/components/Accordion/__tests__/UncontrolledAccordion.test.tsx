@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom';
 import { fireEvent, render } from '@testing-library/react';
 import React from 'react';
+import { useIconMock } from '../../../../tests/mocks/hooksMock';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
@@ -9,13 +10,7 @@ import AccordionHeader from '../AccordionHeader';
 import AccordionItem from '../AccordionItem';
 import UncontrolledAccordion from '../UncontrolledAccordion';
 
-jest.mock('../../../hooks', () => {
-  return {
-    ...jest.requireActual('../../../hooks'),
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    useIcon: (name: string) => '',
-  };
-});
+jest.mock('../../../hooks', () => useIconMock);
 
 describe('UncontrolledAccordion', () => {
   classNamePrefixProviderTest(UncontrolledAccordion, 'Accordion');

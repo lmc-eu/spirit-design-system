@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
+import { useIconMock } from '../../../../tests/mocks/hooksMock';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import {
   actionButtonColorPropsTest,
@@ -12,13 +13,7 @@ import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import ButtonLink from '../ButtonLink';
 
-jest.mock('../../../hooks', () => {
-  return {
-    ...jest.requireActual('../../../hooks'),
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    useIcon: (name: string) => '',
-  };
-});
+jest.mock('../../../hooks', () => useIconMock);
 
 describe('ButtonLink', () => {
   classNamePrefixProviderTest(ButtonLink, 'Button');

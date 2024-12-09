@@ -1,25 +1,12 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
+import { useIconMock } from '../../../../tests/mocks/hooksMock';
 import UncontrolledPagination from '../UncontrolledPagination';
+
+jest.mock('../../../hooks', () => useIconMock);
 
 describe('UncontrolledPagination', () => {
   const onPageChange = jest.fn();
-
-  beforeAll(() => {
-    jest.spyOn(global.console, 'warn').mockImplementation((message: string) => {
-      if (
-        !message.includes(
-          'icon is missing from your assets or icon map provided by the IconsProvider. Please make sure you have provided all icons needed by used components.',
-        )
-      ) {
-        throw new Error(message);
-      }
-    });
-  });
-
-  afterAll(() => {
-    jest.restoreAllMocks();
-  });
 
   beforeEach(() => {
     onPageChange.mockClear();

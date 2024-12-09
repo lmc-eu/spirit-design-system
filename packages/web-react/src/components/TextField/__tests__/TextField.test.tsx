@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
+import { useIconMock } from '../../../../tests/mocks/hooksMock';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { validationStatePropsTest } from '../../../../tests/providerTests/dictionaryPropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
@@ -9,13 +10,7 @@ import { validationTextPropsTest } from '../../../../tests/providerTests/validat
 import { TextFieldType } from '../../../types';
 import TextField from '../TextField';
 
-jest.mock('../../../hooks', () => {
-  return {
-    ...jest.requireActual('../../../hooks'),
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    useIcon: (name: string) => '',
-  };
-});
+jest.mock('../../../hooks', () => useIconMock);
 
 describe('TextField', () => {
   describe.each(['text', 'password', 'email'])('input type %s', (type) => {
