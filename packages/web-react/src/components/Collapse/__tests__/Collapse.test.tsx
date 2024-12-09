@@ -18,7 +18,7 @@ describe('Collapse', () => {
 
   it('should render text children', () => {
     render(
-      <Collapse id="collapse" isOpen data-testId="test">
+      <Collapse id="collapse" isOpen data-testid="test">
         Hello World
       </Collapse>,
     );
@@ -34,10 +34,10 @@ describe('Collapse', () => {
 
       return (
         <>
-          <Button type="button" data-testId="test-button" onClick={() => setIsOpen(!isOpen)}>
+          <Button type="button" data-testid="test-button" onClick={() => setIsOpen(!isOpen)}>
             Toggle Collapse
           </Button>
-          <Collapse id="collapse" isOpen={isOpen} data-testId="test">
+          <Collapse id="collapse" isOpen={isOpen} data-testid="test">
             Hello World
           </Collapse>
         </>
@@ -58,7 +58,7 @@ describe('Collapse', () => {
 
   it('should have correct html element', () => {
     render(
-      <Collapse id="collapse" elementType="section" isOpen data-testId="test">
+      <Collapse id="collapse" elementType="section" isOpen data-testid="test">
         Hello World
       </Collapse>,
     );
@@ -76,10 +76,10 @@ describe('Collapse', () => {
 
       return (
         <>
-          <Button type="button" data-testId="test-button" onClick={() => setIsOpen(!isOpen)}>
+          <Button type="button" data-testid="test-button" onClick={() => setIsOpen(!isOpen)}>
             Toggle Collapse
           </Button>
-          <Collapse id="collapse" isOpen={isOpen} transitionDuration={duration} data-testId="test">
+          <Collapse id="collapse" isOpen={isOpen} transitionDuration={duration} data-testid="test">
             Hello World
           </Collapse>
         </>
