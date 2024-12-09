@@ -1,3 +1,6 @@
+<!-- @see: https://jira.almacareer.tech/browse/DS-1604 -->
+<!--lint ignore heading-capitalization-->
+
 # @lmc-eu/spirit-demo
 
 > Scripts, Styles and Partials for showcase apps of Spirit Design System.
