@@ -1,11 +1,11 @@
 import classNames from 'classnames';
 import { useAlignmentClass, useClassNamePrefix } from '../../hooks';
-import { CardAlignmentXType, CardDirectionDictionaryType, CardSizesDictionaryType } from '../../types';
-import { kebabCaseToCamelCase } from '../../utils';
+import { CardAlignmentXType, CardDirectionType, CardSizesDictionaryType } from '../../types';
+import { generateStylePropsClassNames, stringOrObjectKebabCaseToCamelCase } from '../../utils';
 
 export interface UseCardStyleProps {
   artworkAlignmentX?: CardAlignmentXType;
-  direction?: CardDirectionDictionaryType;
+  direction?: CardDirectionType;
   footerAlignmentX?: CardAlignmentXType;
   hasFilledHeight?: boolean;
   isBoxed?: boolean;
@@ -54,7 +54,9 @@ export function useCardStyleProps(props?: UseCardStyleProps): UseCardStylePropsR
   const titleClass = `${cardClass}Title`;
 
   const bodyIsSelectableClass = `${bodyClass}--selectable`;
-  const directionClass = direction ? `${cardClass}--${kebabCaseToCamelCase(direction)}` : '';
+
+  const directionClass = generateStylePropsClassNames(cardClass, stringOrObjectKebabCaseToCamelCase(direction!));
+
   const isBoxedClass = `${cardClass}--boxed`;
   const mediaCanvasClass = `${mediaClass}__canvas`;
   const mediaHasFilledHeightClass = `${mediaClass}--filledHeight`;
@@ -75,7 +77,8 @@ export function useCardStyleProps(props?: UseCardStyleProps): UseCardStylePropsR
     [mediaIsExpandedClass]: isExpanded,
     [mediaHasFilledHeightClass]: hasFilledHeight,
   });
-  const rootClasses = classNames(cardClass, directionClass, {
+  const rootClasses = classNames(cardClass, {
+    [directionClass]: direction,
     [isBoxedClass]: isBoxed,
   });
   const titleClasses = classNames(titleClass, {
