@@ -1,8 +1,11 @@
+<!-- @see: https://jira.almacareer.tech/browse/DS-1604 -->
+<!--lint ignore heading-capitalization-->
+
 # jest-config-spirit
 
 > Jest configuration and preset for Spirit Design System
 
-## Getting started
+## Getting Started
 
 This preset is part of this monorepo only and thus it is accessible for every package.
 
@@ -14,9 +17,15 @@ yarn add jest-config-spirit
 
 ## ⚙️ Configurations
 
+<!-- @see: https://jira.almacareer.tech/browse/DS-1604 -->
+<!--lint ignore heading-capitalization-->
+
 ### `jest-preset-spirit/node`
 
 The default Jest configuration for Node.js projects.
+
+<!-- @see: https://jira.almacareer.tech/browse/DS-1604 -->
+<!--lint ignore heading-capitalization-->
 
 ### `jest-preset-spirit/jsdom`
 

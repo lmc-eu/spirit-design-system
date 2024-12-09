@@ -1,9 +1,7 @@
-<!-- @see: https://github.com/ilyatitovich/remark-lint-heading-capitalization/issues/13 -->
-<!--lint disable heading-capitalization -->
+<!-- @see: https://jira.almacareer.tech/browse/DS-1604 -->
+<!--lint ignore heading-capitalization -->
 
 # @lmc-eu/spirit-web
-
-<!--lint enable heading-capitalization -->
 
 > CSS implementation of Spirit Design System.
 
@@ -260,7 +258,6 @@ Check your browser console to see if you are using any of the deprecated functio
 See the [LICENSE][license] file for information.
 
 [all-deprecations]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/DEPRECATIONS.md
-[configuring-load-path]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#configuring-load-path
 [deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/static/deprecations-browser-console.png?raw=true
 [design-tokens-usage]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#basic-usage
 [design-tokens-load-path]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#in-sass
