@@ -1,11 +1,13 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
-import { validationStatePropsTest } from '../../../../tests/providerTests/dictionaryPropsTest';
-import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
-import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
-import { validationTextPropsTest } from '../../../../tests/providerTests/validationTextPropsTest';
+import {
+  classNamePrefixProviderTest,
+  validationStatePropsTest,
+  restPropsTest,
+  stylePropsTest,
+  validationTextPropsTest,
+} from '@local/tests';
 import FieldGroup from '../FieldGroup';
 
 describe('FieldGroup', () => {

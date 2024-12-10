@@ -1,12 +1,14 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
-import { validationStatePropsTest } from '../../../../tests/providerTests/dictionaryPropsTest';
-import { itemPropsTest } from '../../../../tests/providerTests/itemPropsTest';
-import { requiredPropsTest } from '../../../../tests/providerTests/requiredPropsTest';
-import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
-import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
+import {
+  classNamePrefixProviderTest,
+  validationStatePropsTest,
+  itemPropsTest,
+  requiredPropsTest,
+  restPropsTest,
+  stylePropsTest,
+} from '@local/tests';
 import Radio from '../Radio';
 
 describe('Radio', () => {
