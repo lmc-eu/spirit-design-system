@@ -2,7 +2,7 @@
 
 [Supernova][supernova-studio] tokens exporter made for Spirit Design System developed by [Alma Career (formerly LMC)][alma-career].
 
-## Token operations
+## Token Operations
 
 This exported does several operations with tokens:
 
@@ -26,7 +26,7 @@ Font Family Ebony has a different font weight mapping in Figma and in Adobe Font
 
 Tokens are sorted alphabetically by origin (Figma) name or by name (Supernova). Except Measures - sorted by name number and Other - sorted by value.
 
-## Outputs:
+## Outputs
 
 - \_borders.scss
 - \_colors.scss

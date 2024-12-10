@@ -15,9 +15,9 @@ Codemods adhere to a clear and organized naming convention, following the kebab 
 
 This naming convention ensures consistency and ease of understanding, facilitating seamless integration and maintenance of codemods within the project.
 
-### Example naming
+### Example Naming
 
-```
+```text
 <component-name>-<purpose-of-codemod>.ts
         |                 |
         |                 └─⫸ Codemod purpose
@@ -29,7 +29,7 @@ This naming convention ensures consistency and ease of understanding, facilitati
 
 The file structure below outlines a standard organization for codemods within the project:
 
-```
+```text
 ─── src
     └── transforms
         └── v2

@@ -4,6 +4,8 @@ export default {
   ...config,
   plugins: [
     ...config.plugins,
+    'remark-frontmatter',
+
     // Values should increment by one from the first item
     // @see: https://github.com/remarkjs/remark-lint/tree/main/packages/remark-lint-ordered-list-marker-value
     ['remark-lint-ordered-list-marker-value', 'ordered'],
@@ -16,7 +18,18 @@ export default {
     [
       'remark-lint-heading-capitalization',
       {
-        lowerCaseWords: ['eu/spirit', '@lmc', 'spirit/node', 'spirit/jsdom', 'v1', 'v2', 'v3'],
+        lowerCaseWords: [
+          'eu/spirit',
+          '@lmc',
+          'spirit/node',
+          'spirit/jsdom',
+          'analytics',
+          'codemods',
+          'common',
+          'v1',
+          'v2',
+          'v3',
+        ],
       },
     ],
   ],
