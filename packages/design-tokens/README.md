@@ -1,4 +1,4 @@
-<!-- https://jira.almacareer.tech/browse/DS-1604 -->
+<!-- @see: https://jira.almacareer.tech/browse/DS-1604 -->
 <!--lint ignore heading-capitalization-->
 
 # @lmc-eu/spirit-design-tokens

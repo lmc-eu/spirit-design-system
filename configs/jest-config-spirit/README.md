@@ -1,4 +1,4 @@
-<!-- https://jira.almacareer.tech/browse/DS-1604 -->
+<!-- @see: https://jira.almacareer.tech/browse/DS-1604 -->
 <!--lint ignore heading-capitalization-->
 
 # jest-config-spirit
@@ -17,14 +17,14 @@ yarn add jest-config-spirit
 
 ## ⚙️ Configurations
 
-<!-- https://jira.almacareer.tech/browse/DS-1604 -->
+<!-- @see: https://jira.almacareer.tech/browse/DS-1604 -->
 <!--lint ignore heading-capitalization-->
 
 ### `jest-preset-spirit/node`
 
 The default Jest configuration for Node.js projects.
 
-<!-- https://jira.almacareer.tech/browse/DS-1604 -->
+<!-- @see: https://jira.almacareer.tech/browse/DS-1604 -->
 <!--lint ignore heading-capitalization-->
 
 ### `jest-preset-spirit/jsdom`

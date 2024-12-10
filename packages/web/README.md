@@ -1,9 +1,7 @@
-<!-- @see: https://github.com/ilyatitovich/remark-lint-heading-capitalization/issues/13 -->
-<!--lint disable heading-capitalization -->
+<!-- @see: https://jira.almacareer.tech/browse/DS-1604 -->
+<!--lint ignore heading-capitalization -->
 
 # @lmc-eu/spirit-web
-
-<!--lint enable heading-capitalization -->
 
 > CSS implementation of Spirit Design System.
 
