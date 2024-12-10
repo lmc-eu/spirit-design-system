@@ -1,10 +1,7 @@
 import '@testing-library/jest-dom';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
-import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
-import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
-import { withTabsContext } from '../../../../tests/testUtils/withTabsContext';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, withTabsContext } from '@local/tests';
 import TabItem from '../TabItem';
 
 describe('TabItem', () => {

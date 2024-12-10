@@ -1,11 +1,13 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { useIconMock } from '../../../../tests/mocks/hooksMock';
-import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
-import { sizeExtendedPropsTest } from '../../../../tests/providerTests/dictionaryPropsTest';
-import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
-import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
+import {
+  useIconMock,
+  classNamePrefixProviderTest,
+  sizeExtendedPropsTest,
+  restPropsTest,
+  stylePropsTest,
+} from '@local/tests';
 import { Icon } from '../../Icon';
 import UNSTABLE_Avatar from '../UNSTABLE_Avatar';
 

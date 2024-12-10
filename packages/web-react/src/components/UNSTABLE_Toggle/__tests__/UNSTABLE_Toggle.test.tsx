@@ -1,11 +1,13 @@
 import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
-import { validationStatePropsTest } from '../../../../tests/providerTests/dictionaryPropsTest';
-import { requiredPropsTest } from '../../../../tests/providerTests/requiredPropsTest';
-import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
-import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
+import {
+  classNamePrefixProviderTest,
+  validationStatePropsTest,
+  requiredPropsTest,
+  restPropsTest,
+  stylePropsTest,
+} from '@local/tests';
 import UNSTABLE_Toggle from '../UNSTABLE_Toggle';
 
 describe('UNSTABLE_Toggle', () => {

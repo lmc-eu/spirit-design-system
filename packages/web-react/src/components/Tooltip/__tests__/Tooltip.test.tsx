@@ -1,8 +1,7 @@
 import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
-import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
-import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
+import { restPropsTest, stylePropsTest } from '@local/tests';
 import { Button } from '../../Button';
 import { Tooltip, TooltipPopover, TooltipTrigger } from '..';
 
