@@ -25,7 +25,11 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "lib": ["es2016", "dom", "dom.iterable"],
-    "types": ["jest", "node"]
+    "types": ["jest", "node"],
+    "paths": {
+      "@local/*": ["./*"],
+      "@local/tests/*": ["./tests/*"]
+    }
   },
   "include": ["./src/**/*"],
   "exclude": ["./node_modules", "./dist/**/*"]

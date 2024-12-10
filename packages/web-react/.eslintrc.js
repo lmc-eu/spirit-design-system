@@ -16,6 +16,7 @@ module.exports = {
 
   settings: {
     'import/resolver': {
+      typescript: {},
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.md'],
       },
@@ -24,6 +25,20 @@ module.exports = {
 
   plugins: ['promise', 'react', '@typescript-eslint', 'prettier', 'react-refresh'],
   rules: {
+    // Turn off unresolved imports because Typescript is already handling this
+    // @see: https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-unresolved.md#importno-unresolved
+    'import/no-unresolved': 'off',
+
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
+    ],
     // @see: https://github.com/ArnaudBarre/eslint-plugin-react-refresh
     'react-refresh/only-export-components': 'warn',
     // @TODO: add to typescript config
@@ -76,6 +91,11 @@ module.exports = {
           {
             pattern: '**',
             group: 'internal',
+          },
+          {
+            pattern: '@local/**',
+            group: 'parent',
+            position: 'before',
           },
           {
             pattern: '..',
