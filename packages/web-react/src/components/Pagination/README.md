@@ -171,7 +171,7 @@ and [escape hatches][readme-escape-hatches].
 | `accessibilityLabelPrevious` | `string`                       | `Previous` | ✕        | Accessibility label of the previous link                            |
 | `defaultPage`                | `number`                       | `1`        | ✕        | The number of the page selected as current page at the first render |
 | `onChange`                   | `(pageNumber: number) => void` | -          | ✕        | On page change callback                                             |
-| `totalPages`                 | `number`                       | 0          | ✓        | Total count of pages                                                |
+| `totalPages`                 | `number`                       | `0`        | ✓        | Total count of pages                                                |
 | `visiblePages`               | `number`                       | `5`        | ✕        | Number of displayed pages                                           |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
