@@ -1,16 +1,16 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { useIconMock } from '../../../../tests/mocks/hooksMock';
-import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import {
+  useIconMock,
+  classNamePrefixProviderTest,
   actionButtonColorPropsTest,
   emotionColorPropsTest,
   sizePropsTest,
-} from '../../../../tests/providerTests/dictionaryPropsTest';
-import { loadingPropsTest } from '../../../../tests/providerTests/loadingPropsTest';
-import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
-import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
+  loadingPropsTest,
+  restPropsTest,
+  stylePropsTest,
+} from '@local/tests';
 import Button from '../Button';
 
 jest.mock('../../../hooks', () => useIconMock);

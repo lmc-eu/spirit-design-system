@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import React from 'react';
-import { useIconMock } from '../../../../tests/mocks/hooksMock';
+import { useIconMock } from '@local/tests';
 import { SpiritFileUploaderAttachmentProps } from '../../../types';
 import FileUploader from '../FileUploader';
 import FileUploaderList from '../FileUploaderList';
