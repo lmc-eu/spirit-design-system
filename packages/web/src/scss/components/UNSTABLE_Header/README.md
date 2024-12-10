@@ -117,5 +117,62 @@ If you need the whole Header fluid you can do it by adding the `Container--fluid
 </header>
 ```
 
+## With Navigation
+
+You can use the [`Navigation`][web-navigation] component inside the `UNSTABLE_Header` component.
+
+The `NavigationLink` components will inherit the `UNSTABLE_Header` height and set the navigation
+link height to the same value.
+
+Use the composition mentioned above to create the layout you need.
+
+```html
+<header class="UNSTABLE_Header">
+  <div class="Container">
+    <div
+      class="Flex Flex--row Flex--noWrap Flex--alignmentXLeft Flex--alignmentYCenter"
+      style="--flex-spacing-x: var(--spirit-space-1000);"
+    >
+      <a href="#" aria-label="JobBoard homepage" class="UNSTABLE_HeaderLogo">
+        <div class="ProductLogo">{{> web/assets/jobBoardLogo }}</div>
+      </a>
+
+      <nav class="Navigation" aria-label="Main Navigation">
+        <ul>
+          <li>
+            <a href="#" class="NavigationLink">Link</a>
+          </li>
+          <li>
+            <a href="#" class="NavigationLink NavigationLink--selected" aria-current="page">Selected</a>
+          </li>
+          <li>
+            <a href="#" class="NavigationLink NavigationLink--disabled">Disabled</a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav class="Navigation ml-auto" aria-label="Secondary Navigation">
+        <ul>
+          <li>
+            <button class="Button Button--tertiary Button--medium Button--symmetrical">
+              <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="/assets/icons/svg/sprite.svg#search" />
+              </svg>
+            </button>
+          </li>
+          <li>
+            <a href="#" class="Button Button--secondary Button--medium">Sign up</a>
+          </li>
+          <li>
+            <a href="#" class="Button Button--primary Button--medium">Post a job</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+```
+
 [web-container]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Container/README.md
 [web-flex]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Flex/README.md
+[web-navigation]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Navigation/README.md
