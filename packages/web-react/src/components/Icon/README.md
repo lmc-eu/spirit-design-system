@@ -29,20 +29,17 @@ So it will not be automatically installed with `@lmc-eu/spirit-web-react`.
 To ensure the `Icon` component functions as expected, wrap your application or the component tree where Icon is used with the `IconsProvider`.
 You need to pass the icon set to the provider as its value.
 
-import { IconsProvider } from '@lmc-eu/spirit-web-react/components';
-import icons from '@lmc-eu/spirit-icons/icons';
-
 ```jsx
-import { Icon, IconsProvider } from '@lmc-eu/spirit-web-react/components';
+import { Icon, IconsProvider } from '@lmc-eu/spirit-web-react';
 import icons from '@lmc-eu/spirit-icons/icons';
 
-<IconsProvider value={icons}>{/* Your app or component with Icon */}</IconsProvider>;
+<IconsProvider value={icons}>{/* Your Icon, app or component where Icon is used */}</IconsProvider>;
 ```
 
 ### Example
 
 ```jsx
-import { Icon, IconsProvider } from '@lmc-eu/spirit-web-react/components';
+import { Icon, IconsProvider } from '@lmc-eu/spirit-web-react';
 import icons from '@lmc-eu/spirit-icons/icons';
 
 <IconsProvider value={icons}>
