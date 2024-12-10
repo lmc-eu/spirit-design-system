@@ -18,7 +18,7 @@ const CardHorizontalLayout = () => (
   <Grid cols={{ mobile: 1, tablet: 2 }}>
     <Card direction="horizontal" isBoxed>
       <CardMedia size="medium" isExpanded>
-        <img src={MEDIA_IMAGE} alt="" />
+        {MEDIA_IMAGE}
       </CardMedia>
       <CardBody>
         <CardEyebrow>Horizontal card layout</CardEyebrow>
@@ -44,7 +44,7 @@ const CardHorizontalLayout = () => (
 
     <Card direction="horizontal" isBoxed>
       <CardMedia size="medium" isExpanded>
-        <img src={MEDIA_IMAGE} alt="" />
+        {MEDIA_IMAGE}
       </CardMedia>
       <CardLogo>
         <PartnerLogo size="small" hasSafeArea>

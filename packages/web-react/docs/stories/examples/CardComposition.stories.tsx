@@ -366,7 +366,7 @@ export const CardComposition = (args: CardCompositionType) => {
         <Card key={index} elementType={cardElementType} {...restProps} isBoxed={isBoxed} direction={direction}>
           {showMedia && (
             <CardMedia isExpanded={isExpanded} size={size} hasFilledHeight={hasFilledHeight}>
-              <img src={image} alt="" />
+              {image}
             </CardMedia>
           )}
           {showArtwork && (
