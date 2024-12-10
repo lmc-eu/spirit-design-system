@@ -6,6 +6,7 @@ This document lists all deprecations that will be removed in the next major vers
 
 ## Deprecations
 
+<!-- https://jira.almacareer.tech/browse/DS-1604 -->
 <!--lint ignore heading-capitalization-->
 
 ### Collapse `data-spirit-is-disposable`

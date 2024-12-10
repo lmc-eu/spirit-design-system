@@ -1,4 +1,5 @@
-<!--lint disable heading-capitalization-->
+<!-- https://jira.almacareer.tech/browse/DS-1604 -->
+<!--lint ignore heading-capitalization-->
 
 # @lmc-eu/spirit-design-tokens
 
@@ -156,9 +157,10 @@ module: {
 
 </details>
 
-<!--lint disable heading-capitalization-->
+<!-- https://jira.almacareer.tech/browse/DS-1604 -->
+<!--lint ignore heading-capitalization-->
 
-#### Using the sass-embedded Library
+#### Using the `sass-embedded` Library
 
 If you're using `sass-embedded`, you can specify the API as `legacy`, `modern`, or `modern-compiler`. More information can be found in [sass documentation][sass-embedded].
 
@@ -304,7 +306,7 @@ With `@` prefix:
 <details>
 <summary>How do I derive design tokens for my own design system?</summary>
 
-<!--lint disable no-emphasis-as-heading-->
+<!--lint ignore no-emphasis-as-heading-->
 
 **Creating a custom design system derived from Spirit? Great to hear that! 🎉**
 
