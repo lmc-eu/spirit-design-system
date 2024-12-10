@@ -11,7 +11,14 @@
 
     // Specify how TypeScript looks up a file from a given module specifier.
     // @see: https://www.typescriptlang.org/tsconfig/#moduleResolution
-    "moduleResolution": "nodenext"
+    "moduleResolution": "nodenext",
+
+    "baseUrl": ".",
+
+    "paths": {
+      "@local/tests": ["./tests/index.ts"],
+      "@local/tests/*": ["./tests/*"]
+    }
   },
   "include": ["./src/**/*"],
   "exclude": ["./node_modules", "./dist/**/*"]
