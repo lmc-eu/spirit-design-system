@@ -1,9 +1,9 @@
 import { SpacingStyleProp } from '../constants';
 import {
   BREAKPOINT_MOBILE,
-  BreakpointToken,
+  ExpandableBreakpointToken,
+  ExpandableSpaceToken,
   STYLE_SPACING_AUTO,
-  SpaceToken,
   StyleProps,
   StyleSpacingAuto,
 } from '../types';
@@ -22,7 +22,7 @@ const normalizeSpacingValue = (value: string): string =>
 
 const processBreakpointProperties = (
   utilityName: string,
-  propValue: Partial<Record<BreakpointToken, SpaceToken | StyleSpacingAuto>>,
+  propValue: Partial<Record<ExpandableBreakpointToken, ExpandableSpaceToken | StyleSpacingAuto>>,
   prefix: string | null | undefined,
   accumulatedUtilities: string[] = [],
 ) =>
