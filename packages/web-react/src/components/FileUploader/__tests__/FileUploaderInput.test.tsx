@@ -1,10 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import { useIconMock } from '../../../../tests/mocks/hooksMock';
-import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
-import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
-import { validationTextPropsTest } from '../../../../tests/providerTests/validationTextPropsTest';
+import { useIconMock, classNamePrefixProviderTest, restPropsTest, validationTextPropsTest } from '@local/tests';
 import FileUploaderInput from '../FileUploaderInput';
 import '@testing-library/jest-dom';
 

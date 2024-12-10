@@ -1,8 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import '@testing-library/jest-dom';
-import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
-import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
+import { restPropsTest, stylePropsTest } from '@local/tests';
 import { BackgroundColors } from '../../../constants';
 import Footer from '../Footer';
 
