@@ -128,6 +128,16 @@ component itself using the [`cols` prop](#api) and might not need to set columns
 listing with 3 columns is easier to set using `cols="3"` on the `Grid` component than setting
 `columnStart` and `columnEnd` on each `GridItem`.
 
+### Grid Placement Props: `columnStart`, `columnEnd`, `rowStart`, `rowEnd`
+These props control the placement of grid items within a CSS Grid layout by specifying where the item starts and ends in rows and columns:
+
+- `columnStart`: Specifies the vertical grid line where the item begins.
+- `columnEnd`: Specifies the vertical grid line where the item ends. The item spans up to, but does not include, this grid line. For example, if columnEnd is "3", the item ends at the line before the third column.
+- `rowStart`: Specifies the horizontal grid line where the item begins.
+- `rowEnd`: Specifies the horizontal grid line where the item ends. The item spans up to, but does not include, this grid line. For example, if rowEnd is "4", the item ends at the line before the fourth row.
+
+These props align with their respective CSS Grid properties, providing precise control over grid item placement. Learn more in the [MDN CSS Grid][grid-mdn] documentation.
+
 Basic example usage:
 
 ```jsx
@@ -179,8 +189,9 @@ If you need more control over the styling of a component, you can use [style pro
 and [escape hatches][readme-escape-hatches].
 
 [alignment-dictionary]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
-[grid]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Grid/README.md
 [digitalocean-span]: https://www.digitalocean.com/community/tutorials/css-css-grid-layout-span-keyword
+[grid-mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout
+[grid]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Grid/README.md
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props
