@@ -178,18 +178,6 @@ On top of the API options, the components accept [additional attributes][readme-
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
-## Icons Provider
-
-To display the icons correctly, the component needs to be wrapped with IconsProvider.
-
-```jsx
-import { IconsProvider } from 'packages/web-react/src/context';
-
-<IconsProvider>
-  <Pagination>...</Pagination>
-</IconsProvider>;
-```
-
 For detailed information see [Pagination][pagination] component.
 
 ## Dependencies
