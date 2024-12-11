@@ -67,16 +67,22 @@ For a better understanding of the release names and used versions, we will stick
 
 ### Terminology
 
+<!--lint ignore no-emphasis-as-heading-->
+
 **Version**
 
 A _version_ refers to a specific state of a package in our design system.
 Each package has its own version number, which we update whenever we make changes to that package.
+
+<!--lint ignore no-emphasis-as-heading-->
 
 **Release**
 
 A _release_ refers to the process of publishing a new version of a package or the entire design system.
 When we make a release, we run tests, build the software, and then publish the new version so that you can use it.
 We provide release notes with each release that explain what changes were made.
+
+<!--lint ignore no-emphasis-as-heading-->
 
 **Distribution/Edition**
 

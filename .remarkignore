@@ -8,7 +8,6 @@ build
 
 # Temporary disabled packages
 # we will fix them incrementally
-docs
 form-validations
 # Codemods transforms directory
 transforms

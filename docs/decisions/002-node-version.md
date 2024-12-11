@@ -31,7 +31,3 @@ We'll need to update the Node.js version in the packages whenever the active LTS
 version changes.
 
 [node-releases]: https://nodejs.org/en/about/releases/
-
-```
-
-```

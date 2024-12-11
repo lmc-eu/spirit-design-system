@@ -1,3 +1,6 @@
+<!-- @see: https://jira.almacareer.tech/browse/DS-1604 -->
+<!--lint disable heading-capitalization-->
+
 # Migration Guide
 
 Introducing version 2 of the _spirit-web_ package.
@@ -319,7 +322,5 @@ Instead of using `.Tooltip--top` or `.Tooltip--topLeft`, use a data attribute li
 Please refer back to these instructions or reach out to our team if you encounter any issues during migration.
 
 [dictionary-placement]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#placement
-[readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#deprecations
-[readme-feature-flags]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#feature-flags
 [readme-tooltip]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Tooltip/README.md
 [floating-ui]: https://floating-ui.com
