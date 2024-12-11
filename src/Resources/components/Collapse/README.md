@@ -55,7 +55,7 @@ attributes to register trigger events.
 
 | Name          | Type     | Default | Required | Description                                                            |
 | ------------- | -------- | ------- | -------- | ---------------------------------------------------------------------- |
-| `breakpoint`  | `string` | `null`  | ✕        | Breakpoint level [mobile,tablet,desktop]                               |
+| `breakpoint`  | `string` | `null`  | ✕        | Breakpoint level \[`mobile,tablet,desktop`]                            |
 | `elementType` | `string` | `div`   | ✕        | Custom element type for wrapper and content                            |
 | `id`          | `string` | —       | ✓        | Collapse ID                                                            |
 | `isOpen`      | `bool`   | `false` | ✕        | If true, make the item open on page load                               |
@@ -67,7 +67,7 @@ On top of the API options, the components accept [additional attributes][readme-
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
-## Trigger attributes
+## Trigger Attributes
 
 | Name                        | Type     | Default    | Required | Description                                                                                                         |
 | --------------------------- | -------- | ---------- | -------- | ------------------------------------------------------------------------------------------------------------------- |

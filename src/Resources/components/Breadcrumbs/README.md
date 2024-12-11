@@ -137,7 +137,7 @@ On top of the API options, the components accept [additional attributes][readme-
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
-### Dealing with long titles
+### Dealing with Long Titles
 
 When you need to shorten the title of the BreadcrumbsItem the preferred way is to use platform native helpers.
 Twig has an implementation of text truncating using [`u` filter][twig-truncate].

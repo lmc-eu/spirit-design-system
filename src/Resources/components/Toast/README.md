@@ -133,11 +133,11 @@ items are dismissed.
 
 ### API
 
-| Name            | Type                                                        | Default  | Required | Description                                                       |
-| --------------- | ----------------------------------------------------------- | -------- | -------- | ----------------------------------------------------------------- |
-| `alignmentX`    | [[AlignmentX dictionary][dictionary-alignment] \| `object`] | `center` | ✕        | Horizontal alignment of the toast queue                           |
-| `alignmentY`    | [`top` \| `bottom` \| `object`]                             | `bottom` | ✕        | Vertical alignment of the toast queue                             |
-| `isCollapsible` | `bool`                                                      | `true`   | ✕        | If true, Toast queue collapses if there are more than 3 ToastBars |
+| Name            | Type                                                         | Default  | Required | Description                                                       |
+| --------------- | ------------------------------------------------------------ | -------- | -------- | ----------------------------------------------------------------- |
+| `alignmentX`    | \[[AlignmentX dictionary][dictionary-alignment] \| `object`] | `center` | ✕        | Horizontal alignment of the toast queue                           |
+| `alignmentY`    | \[`top` \| `bottom` \| `object`]                             | `bottom` | ✕        | Vertical alignment of the toast queue                             |
+| `isCollapsible` | `bool`                                                       | `true`   | ✕        | If true, Toast queue collapses if there are more than 3 ToastBars |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -280,16 +280,16 @@ To make the ToastBar dismissible, add the `isDismissible` prop along with a uniq
 
 ### API
 
-| Name            | Type                                                        | Default    | Required | Description                                                          |
-| --------------- | ----------------------------------------------------------- | ---------- | -------- | -------------------------------------------------------------------- |
-| `closeLabel`    | `string`                                                    | `Close`    | ✕        | Close label                                                          |
-| `color`         | [[Emotion Color dictionary][dictionary-color] \| `neutral`] | `neutral`  | ✕        | Color variant                                                        |
-| `hasIcon`       | `bool`                                                      | `false` \* | ✕        | If true, an icon is shown along the message                          |
-| `iconName`      | `string`                                                    | `info` \*  | ✕        | Name of a custom icon to be shown along the message                  |
-| `id`            | `string`                                                    | —          | ✕        | Optional ToastBar ID. Required when `isDismissible` is set to `true` |
-| `isDismissible` | `bool`                                                      | `false`    | ✕        | If true, ToastBar can be dismissed by user                           |
-| `isTemplate`    | `bool`                                                      | `false`    | ✕        | If true, ToastBar will be adjusted for rendering inside `<template>` |
-| `isOpen`        | `bool`                                                      | `true`     | ✕        | If true, ToastBar is visible                                         |
+| Name            | Type                                                         | Default    | Required | Description                                                          |
+| --------------- | ------------------------------------------------------------ | ---------- | -------- | -------------------------------------------------------------------- |
+| `closeLabel`    | `string`                                                     | `Close`    | ✕        | Close label                                                          |
+| `color`         | \[[Emotion Color dictionary][dictionary-color] \| `neutral`] | `neutral`  | ✕        | Color variant                                                        |
+| `hasIcon`       | `bool`                                                       | `false` \* | ✕        | If true, an icon is shown along the message                          |
+| `iconName`      | `string`                                                     | `info` \*  | ✕        | Name of a custom icon to be shown along the message                  |
+| `id`            | `string`                                                     | —          | ✕        | Optional ToastBar ID. Required when `isDismissible` is set to `true` |
+| `isDismissible` | `bool`                                                       | `false`    | ✕        | If true, ToastBar can be dismissed by user                           |
+| `isTemplate`    | `bool`                                                       | `false`    | ✕        | If true, ToastBar will be adjusted for rendering inside `<template>` |
+| `isOpen`        | `bool`                                                       | `true`     | ✕        | If true, ToastBar is visible                                         |
 
 (\*) For each emotion color, a default icon is defined.
 The icons come from the [Icon package][icon-package], or from your custom source of icons.

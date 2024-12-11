@@ -69,9 +69,9 @@ The Tabs itself consists of many components which cannot be used independently.
 
 ### TabList
 
-| Name      | Type                          | Default | Required | Description                                               |
-| --------- | ----------------------------- | ------- | -------- | --------------------------------------------------------- |
-| `spacing` | [`spacing token` \| `object`] | `null`  | ✕        | Apply [custom spacing](#custom-spacing) between tab items |
+| Name      | Type                           | Default | Required | Description                                               |
+| --------- | ------------------------------ | ------- | -------- | --------------------------------------------------------- |
+| `spacing` | \[`spacing token` \| `object`] | `null`  | ✕        | Apply [custom spacing](#custom-spacing) between tab items |
 
 ### TabItem
 

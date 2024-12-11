@@ -46,11 +46,11 @@ Or, feel free to write the controlling script yourself.
 
 ## API
 
-| Name                  | Type                               | Default    | Required | Description                        |
-| --------------------- | ---------------------------------- | ---------- | -------- | ---------------------------------- |
-| `direction`           | [`horizontal` \| `vertical`]       | `vertical` | ✕        | Direction of the scroll            |
-| `isScrollbarDisabled` | `bool`                             | `false`    | ✕        | If true, the Scrollbar is disabled |
-| `overflowDecorators`  | [`borders` \| `shadows` \| `both`] | `shadows`  | ✕        | Type of overflow decorators        |
+| Name                  | Type                                | Default    | Required | Description                        |
+| --------------------- | ----------------------------------- | ---------- | -------- | ---------------------------------- |
+| `direction`           | \[`horizontal` \| `vertical`]       | `vertical` | ✕        | Direction of the scroll            |
+| `isScrollbarDisabled` | `bool`                              | `false`    | ✕        | If true, the Scrollbar is disabled |
+| `overflowDecorators`  | \[`borders` \| `shadows` \| `both`] | `shadows`  | ✕        | Type of overflow decorators        |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

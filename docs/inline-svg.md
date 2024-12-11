@@ -1,4 +1,4 @@
-# How to use inline SVG in components
+# How to Use Inline SVG in Components
 
 In some cases, you might want use SVG icons in components. It is Possible.
 For these cases, we have prepared `SvgExtension` with function `inlineSvg`.

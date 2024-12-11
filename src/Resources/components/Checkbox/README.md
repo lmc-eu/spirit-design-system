@@ -53,9 +53,9 @@ Without lexer:
 | `name`                  | `string`                                       | `null`  | ✕        | Input name                                           |
 | `UNSAFE_helperText`     | `string`                                       | `null`  | ✕\*\*    | Unescaped custom helper text                         |
 | `UNSAFE_label`          | `string`                                       | —       | ✓\*      | Unescaped label text (allows HTML)                   |
-| `UNSAFE_validationText` | [`string` \| `string[]`]                       | `null`  | ✕\*\*    | Unescaped validation text                            |
+| `UNSAFE_validationText` | \[`string` \| `string[]`]                      | `null`  | ✕\*\*    | Unescaped validation text                            |
 | `validationState`       | [Validation dictionary][dictionary-validation] | `null`  | ✕        | Type of validation state.                            |
-| `validationText`        | [`string` \| `string[]`]                       | `null`  | ✕\*\*    | Validation text                                      |
+| `validationText`        | \[`string` \| `string[]`]                      | `null`  | ✕\*\*    | Validation text                                      |
 | `value`                 | `string`                                       | `null`  | ✕        | Input value                                          |
 
 (\*) Label is required. You can use the `label` for simple text or `UNSAFE_label` for HTML content.

@@ -1,11 +1,11 @@
-# How to extend components
+# How to Extend Components
 
 In some cases, you might want to extend the components with visual functionality. It is Possible.
 Each component has a customizable property `class`.
 
 ## Example
 
-For example, if we want to extend the [Button] component with size, we can do it in the project as follows:
+For example, if we want to extend the [Button][button] component with size, we can do it in the project as follows:
 
 **button.twig**
 

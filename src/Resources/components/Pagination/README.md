@@ -10,11 +10,11 @@ The Pagination is a composition of several subcomponents:
     - [PaginationLinkNext](#paginationlinknext--paginationlinkprevious)
     - [PaginationLinkPrevious](#paginationlinknext--paginationlinkprevious)
 
-Basic example usage:
+## Basic Usage
 
 ### Pagination
 
-#### Examples:
+#### Examples
 
 ```twig
 <Pagination aria-label="Page navigation">
@@ -32,7 +32,7 @@ and [escape hatches][readme-escape-hatches].
 
 ### PaginationItem
 
-#### Examples:
+#### Examples
 
 ```twig
 <PaginationItem>
@@ -58,7 +58,7 @@ and [escape hatches][readme-escape-hatches].
 
 👉 Make sure to add all the necessary attributes and children to make the component accessible.
 
-#### Examples:
+#### Examples
 
 ```twig
 <PaginationLink
@@ -110,7 +110,7 @@ and [escape hatches][readme-escape-hatches].
 
 👉 Make sure to add all the necessary attributes and children to make the component accessible.
 
-#### Examples:
+#### Examples
 
 ```twig
 <PaginationLinkPrevious href="#" />
