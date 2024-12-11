@@ -25,7 +25,7 @@ Please consult the [main README][web-readme] for how to include JavaScript plugi
 
 Or, feel free to write the controlling script yourself.
 
-## FileUploader Component
+## FileUploader
 
 This is the main wrapper for the whole composition. It provides proper spacing
 for its subcomponents:

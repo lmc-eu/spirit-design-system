@@ -12,6 +12,25 @@ export default {
     // @see: https://github.com/remarkjs/remark-lint/tree/main/packages/remark-lint-list-item-spacing
     ['remark-lint-list-item-spacing', false],
 
+    /**
+     * There are generic headings which can be repeated across sections.
+     * For example "API", "Options", "Theming".
+     * If we are describing a few subcomponents in the same document, that's the case.
+     * In Header, there were two "Navigation" headings for example.
+     *
+     * It turns out that IDEs and Git hosts handle the duplicate headings the same way,
+     *  that is, in case of conflict when generating HTML, they add a number suffix
+     *  to their ID (at least PhpStorm and GH do it).
+     *
+     * Tt's more a question of linking the headings than the duplication itself.
+     * The question is whether it's more comfortable and sustainable for us to link to headings like `#card-1`
+     *  (and, for a human reading the document, "Card" is what we want to see), or to be
+     *  more specific and future proof in cases like `#cardbody-api` instead of #api-4
+     */
+    // Allow duplicate headings as it is completely valid to have headings of the same name in a document.
+    // @see: https://github.com/remarkjs/remark-lint/tree/main/packages/remark-lint-no-duplicate-headings
+    ['remark-lint-no-duplicate-headings', false],
+
     // @see: https://github.com/ilyatitovich/remark-lint-heading-capitalization
     [
       'remark-lint-heading-capitalization',
