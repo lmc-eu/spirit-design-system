@@ -2,7 +2,7 @@
 
 This is React implementation of the [Button][button].
 
-### Basic example usage
+## Basic Example Usage
 
 ```jsx
 import { Button } from '@lmc-eu/spirit-web-react';
@@ -19,7 +19,7 @@ import { Button } from '@lmc-eu/spirit-web-react';
   <Button color="danger">Click me</Button>
 ```
 
-### Example usage with third-party component
+### Example Usage with Third-Party Component
 
 So if you use a third-party component, the Button will take on all of its proper attributes.
 

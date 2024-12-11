@@ -31,11 +31,11 @@ When displaying text dynamically, set [`role="alert"`][aria-alert-role] on the `
 
 ### API
 
-| Name             | Type                     | Default | Required | Description                                                                                    |
-| ---------------- | ------------------------ | ------- | -------- | ---------------------------------------------------------------------------------------------- |
-| `className`      | `string`                 | —       | ✓        | Wrapper custom class name                                                                      |
-| `elementType`    | [`span` \| `div`]        | `div`   | ✕        | Type of element used as main wrapper (applied only for single validation text, otherwise `ul`) |
-| `role`           | `string`                 | -       | ✕        | The role attribute that describes the role of an element                                       |
-| `validationText` | [`string` \| `string[]`] | —       | ✕        | Validation text, only visible if validationState is set                                        |
+| Name             | Type                      | Default | Required | Description                                                                                    |
+| ---------------- | ------------------------- | ------- | -------- | ---------------------------------------------------------------------------------------------- |
+| `className`      | `string`                  | —       | ✓        | Wrapper custom class name                                                                      |
+| `elementType`    | \[`span` \| `div`]        | `div`   | ✕        | Type of element used as main wrapper (applied only for single validation text, otherwise `ul`) |
+| `role`           | `string`                  | -       | ✕        | The role attribute that describes the role of an element                                       |
+| `validationText` | \[`string` \| `string[]`] | —       | ✕        | Validation text, only visible if validationState is set                                        |
 
 [aria-alert-role]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role

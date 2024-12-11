@@ -45,7 +45,7 @@ On top of the API options, the components accept [additional attributes][readme-
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
-## Custom component
+## Custom Component
 
 Text field classes are fabricated using `useRadioStyleProps` hook. You can use it to create your own custom Radio component.
 

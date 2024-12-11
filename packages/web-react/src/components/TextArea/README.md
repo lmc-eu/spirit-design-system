@@ -53,14 +53,14 @@ Example with Auto-Height Adjustment
 | `ref`                   | `ForwardedRef<HTMLTextAreaElement>`            | —       | ✕        | Textarea element reference                                           |
 | `rows`                  | `number`                                       | —       | ✕        | Number of visible rows                                               |
 | `validationState`       | [Validation dictionary][dictionary-validation] | —       | ✕        | Type of validation state                                             |
-| `validationText`        | [`string` \| `string[]`]                       | —       | ✕        | Validation text                                                      |
+| `validationText`        | \[`string` \| `string[]`]                      | —       | ✕        | Validation text                                                      |
 | `value`                 | `string`                                       | —       | ✕        | Textarea value                                                       |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
-## Custom component
+## Custom Component
 
 Text field classes are fabricated using `useTextAreaStyleProps` hook. You can use it to create your own custom TextArea component.
 

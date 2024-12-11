@@ -1,6 +1,6 @@
 # Pagination
 
-## Example with the current item in the first place
+## Example with the Current Item in the First Place
 
 ```jsx
 <Pagination>
@@ -17,7 +17,7 @@
 </Pagination>
 ```
 
-## Example with the current item in the middle
+## Example with the Current Item in the Middle
 
 ```jsx
 <Pagination>
@@ -41,7 +41,7 @@
 </Pagination>
 ```
 
-## Example with the current item in the last place
+## Example with the Current Item in the Last Place
 
 ```jsx
 <Pagination>
@@ -58,7 +58,7 @@
 </Pagination>
 ```
 
-## Example with the first current item, centered
+## Example with the First Current Item, Centered
 
 ```jsx
 <Pagination UNSAFE_className="text-center">
@@ -87,7 +87,7 @@
 />
 ```
 
-## Pagination props
+## Pagination Props
 
 | Name        | Type                      | Default | Required | Description                                        |
 | ----------- | ------------------------- | ------- | -------- | -------------------------------------------------- |
@@ -100,7 +100,7 @@ On top of the API options, the components accept [additional attributes][readme-
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
-## PaginationItem props
+## PaginationItem Props
 
 | Name       | Type        | Default | Required | Description         |
 | ---------- | ----------- | ------- | -------- | ------------------- |
@@ -112,7 +112,7 @@ On top of the API options, the components accept [additional attributes][readme-
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
-## PaginationLink props
+## PaginationLink Props
 
 | Name                 | Type          | Default | Required | Description                            |
 | -------------------- | ------------- | ------- | -------- | -------------------------------------- |
@@ -125,20 +125,20 @@ On top of the API options, the components accept [additional attributes][readme-
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
-## PaginationButtonLink props
+## PaginationButtonLink Props
 
 This component extends the [Button][button] component with directional arrows and a hidden label.
 
-| Name                 | Type                   | Default | Required | Description                                                          |
-| -------------------- | ---------------------- | ------- | -------- | -------------------------------------------------------------------- |
-| `accessibilityLabel` | `string`               | `null`  | ✓        | Accessibility label of the link                                      |
-| `direction`          | [`previous` \| `next`] | `null`  | ✓        | The direction according to which the corresponding icon is displayed |
+| Name                 | Type                    | Default | Required | Description                                                          |
+| -------------------- | ----------------------- | ------- | -------- | -------------------------------------------------------------------- |
+| `accessibilityLabel` | `string`                | `null`  | ✓        | Accessibility label of the link                                      |
+| `direction`          | \[`previous` \| `next`] | `null`  | ✓        | The direction according to which the corresponding icon is displayed |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
-## PaginationLinkPrevious props
+## PaginationLinkPrevious Props
 
 This component extends the `PaginationButtonLink` component.
 
@@ -150,7 +150,7 @@ On top of the API options, the components accept [additional attributes][readme-
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
-## PaginationLinkNext props
+## PaginationLinkNext Props
 
 This component extends the `PaginationButtonLink` component.
 
@@ -162,7 +162,7 @@ On top of the API options, the components accept [additional attributes][readme-
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
-## UncontrolledPagination props
+## UncontrolledPagination Props
 
 | Name                         | Type                           | Default    | Required | Description                                                         |
 | ---------------------------- | ------------------------------ | ---------- | -------- | ------------------------------------------------------------------- |

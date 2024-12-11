@@ -2,7 +2,7 @@
 
 Icons are graphical metaphors or symbols that can be used to complement existing experiences.
 
-## 🚀 Getting started
+## 🚀 Getting Started
 
 To use this component in your project you need to run the following command using [npm][npm]:
 

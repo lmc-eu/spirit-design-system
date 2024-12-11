@@ -48,8 +48,14 @@ export default {
           'v1',
           'v2',
           'v3',
+          'v4',
+          'vs',
         ],
       },
     ],
+
+    // Maximum length of the titles
+    // @see: https://github.com/remarkjs/remark-lint/tree/main/packages/remark-lint-maximum-heading-length
+    ['remark-lint-maximum-heading-length', 120],
   ],
 };

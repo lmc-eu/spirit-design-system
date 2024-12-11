@@ -37,7 +37,7 @@ Simply pass the breadcrumbs array as a prop:
 <Breadcrumbs items={items} goBackTitle="Custom back link translation" />
 ```
 
-### Custom usage
+### Custom Usage
 
 Use custom content for the ordered list as component's children instead of passing breadcrumb items array via props:
 
@@ -97,7 +97,7 @@ On top of the API options, the components accept [additional attributes][readme-
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
-### Dealing with long titles
+### Dealing with Long Titles
 
 When you need to shorten the title of the BreadcrumbsItem the preferred way is to use platform native helpers.
 There are multiple ways in JavaScript which will truncate a string for you like `.slice` or `.substring`, e.g. `str.slice(0, num) + '…'`.

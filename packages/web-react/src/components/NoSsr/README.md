@@ -2,6 +2,8 @@
 
 The NoSsr component disables rendering of any wrapped component by server prerender.
 
+## 🚀 Usage
+
 ```jsx
 import { NoSsr } from '@lmc-eu/spirit-web-react/components';
 ```

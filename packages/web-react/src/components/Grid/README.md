@@ -95,15 +95,15 @@ Responsive horizontal and vertical alignment:
 
 ## API
 
-| Name          | Type                                                                | Default   | Required | Description                                                                                                                             |
-| ------------- | ------------------------------------------------------------------- | --------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| `alignmentX`  | [[AlignmentXExtended dictionary][alignment-dictionary] \| `object`] | `stretch` | ✕        | Apply horizontal alignment of items, use object to set responsive values, e.g. `{ mobile: 'left', tablet: 'center', desktop: 'right' }` |
-| `alignmentY`  | [[AlignmentYExtended dictionary][alignment-dictionary] \| `object`] | `stretch` | ✕        | Apply vertical alignment of items, use object to set responsive values, e.g. `{ mobile: 'top', tablet: 'center', desktop: 'bottom' }`   |
-| `cols`        | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12` \| `object`]        | —         | ✕        | Number of columns to use, use object to set responsive values, e.g. `{ mobile: 1, tablet: 2, desktop: 3 }`                              |
-| `elementType` | HTML element                                                        | `div`     | ✕        | Element type to use for the Grid                                                                                                        |
-| `spacing`     | [`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]    | —         | ✕        | Apply [custom spacing](#custom-spacing) in both horizontal and vertical directions between items                                        |
-| `spacingX`    | [`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]    | —         | ✕        | Apply horizontal [custom spacing](#custom-spacing) between items                                                                        |
-| `spacingY`    | [`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]    | —         | ✕        | Apply vertical [custom spacing](#custom-spacing) between items                                                                          |
+| Name          | Type                                                                 | Default   | Required | Description                                                                                                                             |
+| ------------- | -------------------------------------------------------------------- | --------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `alignmentX`  | \[[AlignmentXExtended dictionary][alignment-dictionary] \| `object`] | `stretch` | ✕        | Apply horizontal alignment of items, use object to set responsive values, e.g. `{ mobile: 'left', tablet: 'center', desktop: 'right' }` |
+| `alignmentY`  | \[[AlignmentYExtended dictionary][alignment-dictionary] \| `object`] | `stretch` | ✕        | Apply vertical alignment of items, use object to set responsive values, e.g. `{ mobile: 'top', tablet: 'center', desktop: 'bottom' }`   |
+| `cols`        | \[`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12` \| `object`]        | —         | ✕        | Number of columns to use, use object to set responsive values, e.g. `{ mobile: 1, tablet: 2, desktop: 3 }`                              |
+| `elementType` | HTML element                                                         | `div`     | ✕        | Element type to use for the Grid                                                                                                        |
+| `spacing`     | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]    | —         | ✕        | Apply [custom spacing](#custom-spacing) in both horizontal and vertical directions between items                                        |
+| `spacingX`    | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]    | —         | ✕        | Apply horizontal [custom spacing](#custom-spacing) between items                                                                        |
+| `spacingY`    | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]    | —         | ✕        | Apply vertical [custom spacing](#custom-spacing) between items                                                                          |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -144,7 +144,7 @@ Basic example usage:
 </Grid>
 ```
 
-### Responsive example usage:
+### Responsive Example Usage
 
 Pass an object to props to set different values for different breakpoints. The values will
 be applied from mobile to desktop and if not set for a breakpoint, the value from the
@@ -166,13 +166,13 @@ previous breakpoint will be used.
 
 ### API
 
-| Name          | Type                                 | Default | Required | Description                        |
-| ------------- | ------------------------------------ | ------- | -------- | ---------------------------------- |
-| `elementType` | `string`                             | `div`   | ✕        | HTML tag to render                 |
-| `columnEnd`   | [`number` \| `span \d+` \| `object`] | `null`  | ✕        | Column where the item should end   |
-| `columnStart` | [`number` \| `span \d+` \| `object`] | `null`  | ✕        | Column where the item should start |
-| `rowEnd`      | [`number` \| `span \d+` \| `object`] | `null`  | ✕        | Row where the item should end      |
-| `rowStart`    | [`number` \| `span \d+` \| `object`] | `null`  | ✕        | Row where the item should start    |
+| Name          | Type                                  | Default | Required | Description                        |
+| ------------- | ------------------------------------- | ------- | -------- | ---------------------------------- |
+| `elementType` | `string`                              | `div`   | ✕        | HTML tag to render                 |
+| `columnEnd`   | \[`number` \| `span \d+` \| `object`] | `null`  | ✕        | Column where the item should end   |
+| `columnStart` | \[`number` \| `span \d+` \| `object`] | `null`  | ✕        | Column where the item should start |
+| `rowEnd`      | \[`number` \| `span \d+` \| `object`] | `null`  | ✕        | Row where the item should end      |
+| `rowStart`    | \[`number` \| `span \d+` \| `object`] | `null`  | ✕        | Row where the item should start    |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

@@ -83,24 +83,24 @@ Custom responsive spacing:
 
 #### API
 
-| Name                | Type                                                             | Default | Required | Description                                           |
-| ------------------- | ---------------------------------------------------------------- | ------- | -------- | ----------------------------------------------------- |
-| `selectedTab`       | [`string` \| `number`]                                           | —       | ✓        | Identification of the selected tab                    |
-| `toogle`            | `Function`                                                       | —       | ✓        | Toggle function which accept tab ID as input          |
-| `children`          | `any`                                                            | —       | ✕        | Child component                                       |
-| `onSelectionChange` | `(id: TabId) => void`                                            | —       | ✕        | When the state of the selected panel changes          |
-| `spacing`           | [`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`] | —       | ✕        | Apply [custom spacing](#custom-spacing) between items |
+| Name                | Type                                                              | Default | Required | Description                                           |
+| ------------------- | ----------------------------------------------------------------- | ------- | -------- | ----------------------------------------------------- |
+| `selectedTab`       | \[`string` \| `number`]                                           | —       | ✓        | Identification of the selected tab                    |
+| `toogle`            | `Function`                                                        | —       | ✓        | Toggle function which accept tab ID as input          |
+| `children`          | `any`                                                             | —       | ✕        | Child component                                       |
+| `onSelectionChange` | `(id: TabId) => void`                                             | —       | ✕        | When the state of the selected panel changes          |
+| `spacing`           | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`] | —       | ✕        | Apply [custom spacing](#custom-spacing) between items |
 
 ### UncontrolledTabs
 
 #### API
 
-| Name                 | Type                                                             | Default | Required | Description                                           |
-| -------------------- | ---------------------------------------------------------------- | ------- | -------- | ----------------------------------------------------- |
-| `defaultSelectedTab` | [`string` \| `number`]                                           | —       | ✓        | Identification of default selected tab                |
-| `children`           | `any`                                                            | —       | ✕        | Child component                                       |
-| `onSelectionChange`  | `(id: TabId) => void`                                            | —       | ✕        | When the state of the selected panel changes          |
-| `spacing`            | [`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`] | —       | ✕        | Apply [custom spacing](#custom-spacing) between items |
+| Name                 | Type                                                              | Default | Required | Description                                           |
+| -------------------- | ----------------------------------------------------------------- | ------- | -------- | ----------------------------------------------------- |
+| `defaultSelectedTab` | \[`string` \| `number`]                                           | —       | ✓        | Identification of default selected tab                |
+| `children`           | `any`                                                             | —       | ✕        | Child component                                       |
+| `onSelectionChange`  | `(id: TabId) => void`                                             | —       | ✕        | When the state of the selected panel changes          |
+| `spacing`            | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`] | —       | ✕        | Apply [custom spacing](#custom-spacing) between items |
 
 ### TabList
 
@@ -122,10 +122,10 @@ Tab list item
 
 #### API
 
-| Name         | Type                   | Default | Required | Description           |
-| ------------ | ---------------------- | ------- | -------- | --------------------- |
-| `forTabPane` | [`string` \| `number`] | —       | ✓        | Identification of tab |
-| `children`   | `any`                  | —       | ✕        | Child component       |
+| Name         | Type                    | Default | Required | Description           |
+| ------------ | ----------------------- | ------- | -------- | --------------------- |
+| `forTabPane` | \[`string` \| `number`] | —       | ✓        | Identification of tab |
+| `children`   | `any`                   | —       | ✕        | Child component       |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -167,10 +167,10 @@ Tab content item
 
 #### API
 
-| Name       | Type                   | Default | Required | Description           |
-| ---------- | ---------------------- | ------- | -------- | --------------------- |
-| `id`       | [`string` \| `number`] | —       | ✓        | Identification of tab |
-| `children` | `any`                  | —       | ✕        | Child component       |
+| Name       | Type                    | Default | Required | Description           |
+| ---------- | ----------------------- | ------- | -------- | --------------------- |
+| `id`       | \[`string` \| `number`] | —       | ✓        | Identification of tab |
+| `children` | `any`                   | —       | ✕        | Child component       |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

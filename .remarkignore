@@ -11,4 +11,5 @@ build
 docs
 form-validations
 web-twig
-web-react
+# Codemods transforms directory
+transforms

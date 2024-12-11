@@ -1,6 +1,6 @@
 # ButtonLink
 
-### Basic example usage
+## Basic Example Usage
 
 ```jsx
 import { ButtonLink } from '@lmc-eu/spirit-web-react';

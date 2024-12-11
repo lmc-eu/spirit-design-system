@@ -106,7 +106,7 @@ Validation states can be presented either by adding the `validationState` attrib
 | `label`           | `string`                                       | —       | ✓        | Label text                                                 |
 | `name`            | `string`                                       | `null`  | ✕        | Group name                                                 |
 | `validationState` | [Validation dictionary][dictionary-validation] | `null`  | ✕        | Type of validation state                                   |
-| `validationText`  | [`string` \| `string[]`]                       | `null`  | ✕        | Validation text                                            |
+| `validationText`  | \[`string` \| `string[]`]                      | `null`  | ✕        | Validation text                                            |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

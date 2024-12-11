@@ -2,6 +2,8 @@
 
 The VisuallyHidden component helps improve web accessibility by rendering its content in a way that it's hidden visually but still accessible to screen readers.
 
+## 🚀 Usage
+
 ```jsx
 import { VisuallyHidden } from '@lmc-eu/spirit-web-react/components';
 ```

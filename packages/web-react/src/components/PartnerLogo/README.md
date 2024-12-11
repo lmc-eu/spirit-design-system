@@ -26,7 +26,7 @@ The PartnerLogo component is available in [sizes][dictionary-size].
 </PartnerLogo>
 ```
 
-## Disabled safe area
+## Disabled Safe Area
 
 The PartnerLogo component can be displayed without the safe area (padding). Use `hasSafeArea` prop set to `false` to disable safe area around logo.
 
