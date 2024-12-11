@@ -2,6 +2,8 @@
 
 The VisuallyHidden component helps improve web accessibility by rendering its content in a way that it's hidden visually but still accessible to screen readers.
 
+## Basic Usage
+
 Basic example usage:
 
 ```twig

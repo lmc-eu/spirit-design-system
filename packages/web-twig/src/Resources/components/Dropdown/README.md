@@ -47,18 +47,18 @@ attributes to register trigger events.
 
 ### DropdownPopover
 
-| Name            | Type                                         | Default        | Required | Description                           |
-| --------------- | -------------------------------------------- | -------------- | -------- | ------------------------------------- |
-| `elementType`   | `string`                                     | `div`          | ✕        | HTML tag to render                    |
-| `fullWidthMode` | `string`                                     | —              | ✕        | Full-width mode [off,mobile-only,all] |
-| `id`            | `string`                                     | —              | ✓        | DropdownPopover ID                    |
-| `placement`     | [Placement Dictionary][dictionary-placement] | `bottom-start` | ✕        | Placement of the dropdown             |
+| Name            | Type                                         | Default        | Required | Description               |
+| --------------- | -------------------------------------------- | -------------- | -------- | ------------------------- |
+| `elementType`   | `string`                                     | `div`          | ✕        | HTML tag to render        |
+| `fullWidthMode` | \[`off,mobile-only,all`]`                    | —              | ✕        | Full-width mode           |
+| `id`            | `string`                                     | —              | ✓        | DropdownPopover ID        |
+| `placement`     | [Placement Dictionary][dictionary-placement] | `bottom-start` | ✕        | Placement of the dropdown |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
-### Trigger attributes
+### Trigger Attributes
 
 | Name                 | Type     | Default    | Required | Description                |
 | -------------------- | -------- | ---------- | -------- | -------------------------- |

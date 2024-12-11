@@ -113,9 +113,9 @@ When validated on server:
 | `name`                  | `string`                                       | `null`  | ✕        | Group name                                                 |
 | `UNSAFE_helperText`     | `string`                                       | `null`  | ✕\*\*    | Unescaped custom helper text (allows HTML)                 |
 | `UNSAFE_label`          | `string`                                       | `null`  | ✕\*      | Unescaped label text (allows HTML)                         |
-| `UNSAFE_validationText` | [`string` \| `string[]`]                       | `null`  | ✕\*\*    | Unescaped validation text (allows HTML)                    |
+| `UNSAFE_validationText` | \[`string` \| `string[]`]                      | `null`  | ✕\*\*    | Unescaped validation text (allows HTML)                    |
 | `validationState`       | [Validation dictionary][dictionary-validation] | `null`  | ✕        | Type of validation state                                   |
-| `validationText`        | [`string` \| `string[]`]                       | `null`  | ✕\*\*    | Validation text                                            |
+| `validationText`        | \[`string` \| `string[]`]                      | `null`  | ✕\*\*    | Validation text                                            |
 
 (\*) To keep the component accessible, a label is always required. You can use the `label` for simple text or `UNSAFE_label` for HTML content.
 (\*\*) Props with and without `UNSAFE_` prefix are mutually exclusive.

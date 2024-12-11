@@ -329,9 +329,9 @@ the optional secondary actions slot.
 
 #### API
 
-| Name    | Type                       | Default   | Required | Description               |
-| ------- | -------------------------- | --------- | -------- | ------------------------- |
-| `color` | [`primary` \| `secondary`] | `primary` | ✕        | Color of the actions slot |
+| Name    | Type                        | Default   | Required | Description               |
+| ------- | --------------------------- | --------- | -------- | ------------------------- |
+| `color` | \[`primary` \| `secondary`] | `primary` | ✕        | Color of the actions slot |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

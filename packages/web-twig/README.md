@@ -1,6 +1,6 @@
 # Spirit Web Twig Bundle
 
-This is a Symfony bundle with Twig implementation of [Spirit Design System] components, extended with JSX-like syntax.
+This is a Symfony bundle with Twig implementation of [Spirit Design System][spirit-design-system] components, extended with JSX-like syntax.
 
 ## Requirements
 
@@ -12,7 +12,7 @@ This is a Symfony bundle with Twig implementation of [Spirit Design System] comp
 
 See [CHANGELOG][changelog]
 
-## How to install
+## How to Install
 
 ### Step 1
 
@@ -71,7 +71,7 @@ This is considered a way how you can pass down HTML strings.
 <Checkbox UNSAFE_helperText="<strong>Help!</strong>" />
 ```
 
-# Spirit Components
+## Spirit Components
 
 For available components see the [components directory][components-directory].
 
@@ -163,6 +163,6 @@ Check your Symfony console or log to see if you are using any of the deprecated 
 [contributing]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/CONTRIBUTING.md
 [example-guide]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/docs/extendComponents.md
 [raw]: https://twig.symfony.com/doc/3.x/filters/raw.html
-[spirit design system]: https://github.com/lmc-eu/spirit-design-system
+[spirit-design-system]: https://github.com/lmc-eu/spirit-design-system
 [twigx-bundle]: https://github.com/lmc-eu/twigx-bundle/blob/main/README.md#usage
 [web-pkg-rebrand]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web#rebranding

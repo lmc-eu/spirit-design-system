@@ -64,9 +64,9 @@ Without lexer:
 | `rows`                  | `number`                                       | `null`  | ✕        | Number of visible rows                                                                                      |
 | `UNSAFE_helperText`     | `string`                                       | `null`  | ✕        | Unescaped custom helper text                                                                                |
 | `UNSAFE_label`          | `string`                                       | —       | ✓\*      | Unescaped label text                                                                                        |
-| `UNSAFE_validationText` | [`string` \| `string[]`]                       | `null`  | ✕        | Unescaped custom validation text                                                                            |
+| `UNSAFE_validationText` | \[`string` \| `string[]`]                      | `null`  | ✕        | Unescaped custom validation text                                                                            |
 | `validationState`       | [Validation dictionary][dictionary-validation] | `null`  | ✕        | Type of validation state.                                                                                   |
-| `validationText`        | [`string` \| `string[]`]                       | `null`  | ✕        | Validation text                                                                                             |
+| `validationText`        | \[`string` \| `string[]`]                      | `null`  | ✕        | Validation text                                                                                             |
 | `value`                 | `string`                                       | `null`  | ✕        | TextArea value                                                                                              |
 
 (\*) Label is required. You can use the `label` for simple text or `UNSAFE_label` for HTML content.
@@ -99,7 +99,6 @@ Then you need to add attribute `isAutoResizing` to the component.
 
 👉 Check the [component's docs in the web package][web-js-api] to see the full documentation and API of the plugin.
 
-[autocomplete-attr]: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete
 [autocomplete-attr]: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete
 [dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#additional-attributes
