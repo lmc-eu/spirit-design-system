@@ -1,6 +1,6 @@
 # Stack
 
-[Stack] is a component that allows you to compose elements vertically.
+[Stack][stack] is a component that allows you to compose elements vertically.
 
 Basic example usage:
 
@@ -79,14 +79,14 @@ Custom responsive spacing:
 
 ## API
 
-| Name                      | Type                          | Default | Required | Description                                           |
-| ------------------------- | ----------------------------- | ------- | -------- | ----------------------------------------------------- |
-| `elementType`             | `string`                      | `div`   | ✕        | Element type of the wrapper element                   |
-| `hasEndDivider`           | `bool`                        | `false` | ✕        | Render a divider after the last item                  |
-| `hasIntermediateDividers` | `bool`                        | `false` | ✕        | Render dividers between items                         |
-| `hasSpacing`              | `bool`                        | `false` | ✕        | Apply default spacing between items                   |
-| `hasStartDivider`         | `bool`                        | `false` | ✕        | Render a divider before the first item                |
-| `spacing`                 | [`spacing token` \| `object`] | `null`  | ✕        | Apply [custom spacing](#custom-spacing) between items |
+| Name                      | Type                           | Default | Required | Description                                           |
+| ------------------------- | ------------------------------ | ------- | -------- | ----------------------------------------------------- |
+| `elementType`             | `string`                       | `div`   | ✕        | Element type of the wrapper element                   |
+| `hasEndDivider`           | `bool`                         | `false` | ✕        | Render a divider after the last item                  |
+| `hasIntermediateDividers` | `bool`                         | `false` | ✕        | Render dividers between items                         |
+| `hasSpacing`              | `bool`                         | `false` | ✕        | Apply default spacing between items                   |
+| `hasStartDivider`         | `bool`                         | `false` | ✕        | Render a divider before the first item                |
+| `spacing`                 | \[`spacing token` \| `object`] | `null`  | ✕        | Apply [custom spacing](#custom-spacing) between items |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

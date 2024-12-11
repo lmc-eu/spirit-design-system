@@ -2,6 +2,8 @@
 
 FileUploader allows users to pick one or more files to upload.
 
+<!--lint ignore no-emphasis-as-heading-->
+
 **FileUploader itself actually does not upload anything to the server.**
 
 FileUploader is a composition of a few subcomponents:
@@ -122,7 +124,7 @@ the `maxUploadedFiles` attribute:
 <FileUploaderInput maxUploadedFiles={ 2 } />
 ```
 
-### Input Behavior When the Queue is Filled (JavaScript)
+### Input Behavior When the Queue Is Filled (JavaScript)
 
 You can set the input/drop zone to be hidden or disabled when the file queue limit is reached.
 When you set `queueLimitBehavior` together with the desired limit for the queue:
@@ -216,12 +218,12 @@ To mark the input as disabled, simply add the `isDisabled` attribute:
 | `multiple`              | `void`                                         | `null`                  | ✕        | If set, [multiple files can be selected][multiple-attr]               |
 | `name`                  | `string`                                       | `null`                  | ✕        | Input name                                                            |
 | `pickAFileText`         | `string`                                       | `Upload your file`      | ✕        | Text shown in the drop zone                                           |
-| `queueLimitBehavior`    | [`hide` \| `disable` \| `none`]                | `none`                  | ✕        | Input behavior when the file queue is filled                          |
+| `queueLimitBehavior`    | \[`hide` \| `disable` \| `none`]               | `none`                  | ✕        | Input behavior when the file queue is filled                          |
 | `UNSAFE_helperText`     | `string`                                       | `null`                  | ✕\*\*    | Unescaped custom helper text                                          |
 | `UNSAFE_label`          | `string`                                       | `null`                  | ✕\*      | Unescaped label text (allows HTML)                                    |
-| `UNSAFE_validationText` | [`string` \| `string[]`]                       | `null`                  | ✕\*\*    | Unescaped validation text                                             |
+| `UNSAFE_validationText` | \[`string` \| `string[]`]                      | `null`                  | ✕\*\*    | Unescaped validation text                                             |
 | `validationState`       | [Validation dictionary][dictionary-validation] | `null`                  | ✕        | Type of validation state                                              |
-| `validationText`        | [`string` \| `string[]`]                       | `null`                  | ✕\*\*    | Validation text                                                       |
+| `validationText`        | \[`string` \| `string[]`]                      | `null`                  | ✕\*\*    | Validation text                                                       |
 
 (\*) To keep the component accessible, a label is always required. You can use the `label` for simple text or `UNSAFE_label` for HTML content.
 (\*\*) Props with and without `UNSAFE_` prefix are mutually exclusive.
@@ -300,16 +302,16 @@ With image preview:
 
 ### API
 
-| Name                   | Type                   | Default  | Required | Description                                                                                        |
-| ---------------------- | ---------------------- | -------- | -------- | -------------------------------------------------------------------------------------------------- |
-| `editText`             | `string`               | `Edit`   | ✕        | Edit button text                                                                                   |
-| `fileName`             | `string`               | `null`   | ✕        | File name                                                                                          |
-| `generateImagePreview` | `bool`                 | `false`  | ✕        | If true and used in the attachment template, the JS plugin will try to show a preview of the image |
-| `iconName`             | `string`               | `file`   | ✕        | Icon shown along the file                                                                          |
-| `imagePreview`         | `string`               | `null`   | ✕        | URL or base64 of an image                                                                          |
-| `imageObjectFit`       | [`cover` \| `contain`] | `cover`  | ✕        | Defines FileUploaderAttachment image fit in container                                              |
-| `onEdit`               | `func`                 | `null`   | ✕        | Function to trigger on click on edit button                                                        |
-| `removeText`           | `string`               | `Remove` | ✕        | Remove button text                                                                                 |
+| Name                   | Type                    | Default  | Required | Description                                                                                        |
+| ---------------------- | ----------------------- | -------- | -------- | -------------------------------------------------------------------------------------------------- |
+| `editText`             | `string`                | `Edit`   | ✕        | Edit button text                                                                                   |
+| `fileName`             | `string`                | `null`   | ✕        | File name                                                                                          |
+| `generateImagePreview` | `bool`                  | `false`  | ✕        | If true and used in the attachment template, the JS plugin will try to show a preview of the image |
+| `iconName`             | `string`                | `file`   | ✕        | Icon shown along the file                                                                          |
+| `imagePreview`         | `string`                | `null`   | ✕        | URL or base64 of an image                                                                          |
+| `imageObjectFit`       | \[`cover` \| `contain`] | `cover`  | ✕        | Defines FileUploaderAttachment image fit in container                                              |
+| `onEdit`               | `func`                  | `null`   | ✕        | Function to trigger on click on edit button                                                        |
+| `removeText`           | `string`                | `Remove` | ✕        | Remove button text                                                                                 |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

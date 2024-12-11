@@ -38,9 +38,6 @@ The `UNSTABLE_EmptyStateSection` component is a container for the content of eac
 
 The component is based on the [Stack][stack] component and accepts all its properties. For more information, see the [Stack component API][stack-api].
 
-[stack]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/src/Resources/components/Stack/README.md
-[stack-api]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/src/Resources/components/Stack/README.md#api
-
 ## Full Example
 
 ```twig
@@ -64,3 +61,6 @@ The component is based on the [Stack][stack] component and accepts all its prope
 </UNSTABLE_EmptyState>
 
 ```
+
+[stack]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/src/Resources/components/Stack/README.md
+[stack-api]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/src/Resources/components/Stack/README.md#api

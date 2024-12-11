@@ -27,7 +27,7 @@ Without lexer:
 {% endembed %}
 ```
 
-## Default Icons according to Color Variant
+## Default Icons According to Color Variant
 
 | Color name    | Icon name     |
 | ------------- | ------------- |

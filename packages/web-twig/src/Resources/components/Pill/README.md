@@ -29,10 +29,10 @@ Without lexer:
 
 ## API
 
-| Name          | Type                                                                      | Default    | Required | Description        |
-| ------------- | ------------------------------------------------------------------------- | ---------- | -------- | ------------------ |
-| `color`       | [[Emotion Color dictionary][dictionary-color] \| `selected` \| `neutral`] | `selected` | ✕        | Color variant      |
-| `elementType` | `string`                                                                  | `span`     | ✕        | HTML tag to render |
+| Name          | Type                                                                       | Default    | Required | Description        |
+| ------------- | -------------------------------------------------------------------------- | ---------- | -------- | ------------------ |
+| `color`       | \[[Emotion Color dictionary][dictionary-color] \| `selected` \| `neutral`] | `selected` | ✕        | Color variant      |
+| `elementType` | `string`                                                                   | `span`     | ✕        | HTML tag to render |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

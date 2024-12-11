@@ -2,7 +2,7 @@
 
 This is Twig implementation of the [Accordion][accordion] component.
 
-## Default usage (Stay open)
+## Default Usage (Stay Open)
 
 ```twig
 <Accordion>
@@ -42,7 +42,7 @@ This is Twig implementation of the [Accordion][accordion] component.
 </Accordion>
 ```
 
-## Usage with initial open state (Stay open)
+## Usage with Initial Open State (Stay Open)
 
 ```twig
 <Accordion>
@@ -65,7 +65,7 @@ This is Twig implementation of the [Accordion][accordion] component.
 </Accordion>
 ```
 
-## Usage with only one open item at a time
+## Usage with Only One Open Item at a Time
 
 ```twig
 <Accordion id="accordion-example">
@@ -141,7 +141,7 @@ rendered result into the slot:
 </AccordionHeader>
 ```
 
-## Usage without lexer:
+## Usage Without Lexer
 
 ```twig
 {% embed "@spirit/accordion.twig" with { props: {

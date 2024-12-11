@@ -10,6 +10,5 @@ build
 # we will fix them incrementally
 docs
 form-validations
-web-twig
 # Codemods transforms directory
 transforms

@@ -108,23 +108,23 @@ By default, the docked dialog on mobile screens shrinks to fit the height of its
 
 ### API
 
-| Name                 | Type                          | Default   | Required | Description                                                                                                                |
-| -------------------- | ----------------------------- | --------- | -------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `accept-charset`     | `string`                      | `null`    | ✕        | `elementType="form"` only: Character encodings to use for form submission (intentionally in kebab-case)                    |
-| `action`             | `string`                      | `null`    | ✕        | `elementType="form"` only: URL to use for form submission                                                                  |
-| `autocomplete`       | `string`                      | `null`    | ✕        | `elementType="form"` only: [Automated assistance in filling][autocomplete-attr]                                            |
-| `elementType`        | `string`                      | `article` | ✕        | HTML tag to render                                                                                                         |
-| `enctype`            | `string`                      | `null`    | ✕        | `elementType="form"` only: Encoding to use for form submission                                                             |
-| `height`             | [`string` \| `object`]        | `null`    | ✕        | Preferred height of the modal. Accepts any valid CSS value, either as a string or an object with breakpoints as keys.      |
-| `isDockedOnMobile`   | `bool`                        | `false`   | ✕        | Dock the ModalDialog to the bottom of the screen on mobile                                                                 |
-| `isExpandedOnMobile` | `bool`                        | `false`   | ✕        | If the ModalDialog should expand on mobile. Overrides any height defined by `preferredHeightOnMobile`.                     |
-| `isScrollable`       | `bool`                        | `true`    | ✕        | If the ModalDialog should be scrollable. If set to `false`, the dialog will not scroll and will expand to fit the content. |
-| `maxHeight`          | [`string` \| `object`]        | `null`    | ✕        | Max height of the modal. Accepts any valid CSS value.                                                                      |
-| `method`             | [`get` \| `post` \| `dialog`] | `null`    | ✕        | `elementType="form"` only: HTTP method to use for form submission                                                          |
-| `name`               | `string`                      | `null`    | ✕        | `elementType="form"` only: Name of the form                                                                                |
-| `novalidate`         | `void`                        | `null`    | ✕        | `elementType="form"` only: [If the dialog should have validation disabled][novalidate-attr]                                |
-| `rel`                | `string`                      | `null`    | ✕        | `elementType="form"` only: Relationship between the current document and the linked resource                               |
-| `target`             | `string`                      | `null`    | ✕        | `elementType="form"` only: Browsing context for form submission                                                            |
+| Name                 | Type                           | Default   | Required | Description                                                                                                                |
+| -------------------- | ------------------------------ | --------- | -------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `accept-charset`     | `string`                       | `null`    | ✕        | `elementType="form"` only: Character encodings to use for form submission (intentionally in kebab-case)                    |
+| `action`             | `string`                       | `null`    | ✕        | `elementType="form"` only: URL to use for form submission                                                                  |
+| `autocomplete`       | `string`                       | `null`    | ✕        | `elementType="form"` only: [Automated assistance in filling][autocomplete-attr]                                            |
+| `elementType`        | `string`                       | `article` | ✕        | HTML tag to render                                                                                                         |
+| `enctype`            | `string`                       | `null`    | ✕        | `elementType="form"` only: Encoding to use for form submission                                                             |
+| `height`             | \[`string` \| `object`]        | `null`    | ✕        | Preferred height of the modal. Accepts any valid CSS value, either as a string or an object with breakpoints as keys.      |
+| `isDockedOnMobile`   | `bool`                         | `false`   | ✕        | Dock the ModalDialog to the bottom of the screen on mobile                                                                 |
+| `isExpandedOnMobile` | `bool`                         | `false`   | ✕        | If the ModalDialog should expand on mobile. Overrides any height defined by `preferredHeightOnMobile`.                     |
+| `isScrollable`       | `bool`                         | `true`    | ✕        | If the ModalDialog should be scrollable. If set to `false`, the dialog will not scroll and will expand to fit the content. |
+| `maxHeight`          | \[`string` \| `object`]        | `null`    | ✕        | Max height of the modal. Accepts any valid CSS value.                                                                      |
+| `method`             | \[`get` \| `post` \| `dialog`] | `null`    | ✕        | `elementType="form"` only: HTTP method to use for form submission                                                          |
+| `name`               | `string`                       | `null`    | ✕        | `elementType="form"` only: Name of the form                                                                                |
+| `novalidate`         | `void`                         | `null`    | ✕        | `elementType="form"` only: [If the dialog should have validation disabled][novalidate-attr]                                |
+| `rel`                | `string`                       | `null`    | ✕        | `elementType="form"` only: Relationship between the current document and the linked resource                               |
+| `target`             | `string`                       | `null`    | ✕        | `elementType="form"` only: Browsing context for form submission                                                            |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -440,7 +440,6 @@ Or, feel free to write the controlling script yourself.
 [novalidate-attr]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#novalidate
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#escape-hatches
-[readme-feature-flags]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#feature-flags
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#style-props
 [scroll-view]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/src/Resources/components/ScrollView/README.md
 [web-js-api]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Modal/README.md#javascript-plugin

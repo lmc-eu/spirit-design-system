@@ -2,7 +2,7 @@
 
 > Guide for contributors.
 
-## PHP support using Docker
+## PHP Support Using Docker
 
 PHP language is required to develop this package. In order to support other frontend developers which do not have installed PHP locally, there is a Docker image available to develop this package.
 
@@ -12,7 +12,7 @@ In a moment the app will be setup and ready on `https://localhost:4443`.
 
 Please consult [`Makefile`][makefile] for available commands and options to setup and run this project.
 
-## Components definition
+## Components Definition
 
 In order to maintain the uniformity of writing and functioning of components in HTML-like syntax, it is necessary to accept the following rules in the implementation.
 
@@ -20,7 +20,7 @@ In order to maintain the uniformity of writing and functioning of components in 
 
 This is an example of a typical file structure of a component:
 
-```
+```text
 ├── src
     └── Resources
         └── components
@@ -31,7 +31,7 @@ This is an example of a typical file structure of a component:
                 └── README.md — documentation of the component
 ```
 
-## Rules in components
+## Rules in Components
 
 1. Name of components must be camelCase with first letter small.
 2. New components must contain a property class so that they can be extended according to the [instructions](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/docs/extendComponents.md)
@@ -78,7 +78,7 @@ For example we used this prefix for props that can accept HTML string.
 <Checkbox UNSAFE_helperText="<strong>Help!</strong>" />
 ```
 
-### Example of component definition
+### Example of Component Definition
 
 ```twig
 {# This represent main component class and prepend class prefix #}
@@ -94,7 +94,7 @@ For example we used this prefix for props that can accept HTML string.
 </span>
 ```
 
-### Example of component usage
+### Example of Component Usage
 
 ```twig
 {% embed "@spirit/button.twig" with { props: {
@@ -106,7 +106,7 @@ For example we used this prefix for props that can accept HTML string.
 {% endembed %}
 ```
 
-## Components tests
+## Components Tests
 
 Components testing is done by snapshots tests. It is required to create snapshot test for each component. Please create a new component fixture file in `tests/components-fixtures/` folder and name it according to the component name.
 
@@ -124,7 +124,7 @@ When adding new functionality or removing an old one, please, check twice the ou
 
 Every component has its own suite of snapshot tests in the following directory architecture:
 
-```
+```text
 ├── src
     └── Resources
         └── components
@@ -140,7 +140,7 @@ Snapshots are generated based on prescription by the [command above](#components
 **Note:** Every component MUST contain the test that extends `tests/AbstractComponentSnapshotTest.php` which contains the current logic of the test itself.
 It is balanced between the DRY principle and how the PHPUnit works.
 
-## Release new version
+## Release New Version
 
 TODO: [Automate release process][automate-release-process].
 
@@ -152,7 +152,7 @@ As we are now using only `dev-main` version of this package, until we have stabl
 
 Packagist requires a single repository for a single package to be present to publish the package. In order to publish this package we are using READ-ONLY repository https://github.com/lmc-eu/spirit-web-twig-bundle where we are publishing the subtree of this monorepo.
 
-### Updating READ-ONLY repository
+### Updating READ-ONLY Repository
 
 Please use these commands to update the READ-ONLY repository.
 
