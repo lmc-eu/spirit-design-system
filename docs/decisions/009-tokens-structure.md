@@ -43,21 +43,21 @@ With Figma Variables, we unified the structure of our tokens in Figma and in the
 
 These are decisions related to the color tokens:
 
-1.  We decided to create a `component` group which contains tokens for unique components. This way, we can easily find the colors
-    that are used in a specific component and we know that these colors are not used anywhere else. And if they are, we
-    know it's an issue.
-2.  We decided to add the `-state-` infix to the interaction state tokens before the state name. This way, we know which tokens
-    are used for states and are related to each other.
-3.  We decided to have suffixes `-basic` and `-subtle` for tokens for components which need two different contrast levels.
-4.  We decided to have `form-field` group which contains tokens for form fields. This group has a subgroup `filled` for
-    tokens which are used for filled part of the form field. In the future, we can add more subgroups for different form field types.
-5.  We decided to have a `disabled` group which covers the disabled state and is used for all components that can be disabled.
-6.  We decided to have a `neutral` group which contains tokens for neutral colors.
-7.  We decided to have a `selected` group which contains tokens for selected items.
-8.  We decided to have a single-purpose groups for tokens that are used only in one place. For example, we have a `text`, `background`,
-    `link`, etc. groups.
-9.  We decided to create color tokens for gradients and shadows. These tokens are used in the `Gradients` and `Shadows` categories.
-    To support multiple shadow or gradients colors in one `Gradients` or `Shadows` token, we use `-color-01`, `-color-02`, etc. suffixes.
+1. We decided to create a `component` group which contains tokens for unique components. This way, we can easily find the colors
+   that are used in a specific component and we know that these colors are not used anywhere else. And if they are, we
+   know it's an issue.
+2. We decided to add the `-state-` infix to the interaction state tokens before the state name. This way, we know which tokens
+   are used for states and are related to each other.
+3. We decided to have suffixes `-basic` and `-subtle` for tokens for components which need two different contrast levels.
+4. We decided to have `form-field` group which contains tokens for form fields. This group has a subgroup `filled` for
+   tokens which are used for filled part of the form field. In the future, we can add more subgroups for different form field types.
+5. We decided to have a `disabled` group which covers the disabled state and is used for all components that can be disabled.
+6. We decided to have a `neutral` group which contains tokens for neutral colors.
+7. We decided to have a `selected` group which contains tokens for selected items.
+8. We decided to have a single-purpose groups for tokens that are used only in one place. For example, we have a `text`, `background`,
+   `link`, etc. groups.
+9. We decided to create color tokens for gradients and shadows. These tokens are used in the `Gradients` and `Shadows` categories.
+   To support multiple shadow or gradients colors in one `Gradients` or `Shadows` token, we use `-color-01`, `-color-02`, etc. suffixes.
 10. In `Shadows` tokens, we also have a `focus-ring` token which is used for focus rings.
 11. Based on our [Dictionaries](../DICTIONARIES.md), we structure our tokens in groups and subgroups. For example, `emotion` colors
     contains `success`, `warning`, `error` and `informative` subgroups or `button` colors contains `primary`, `secondary`, `tertiary`.

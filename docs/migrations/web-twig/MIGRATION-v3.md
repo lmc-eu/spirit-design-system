@@ -1,3 +1,6 @@
+<!-- @see: https://jira.almacareer.tech/browse/DS-1604 -->
+<!--lint disable heading-capitalization-->
+
 # Migration Guide
 
 Introducing version 3 of the _spirit-web-twig_ package.
@@ -447,9 +450,7 @@ Please refer back to this guide or reach out to our team if you encounter any is
 [migration-guide-web]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/migrations/web/MIGRATION-v2.md
 [alert-role-documentation]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role
 [dictionary-placement]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#placement
-[dropdown-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/src/Resources/components/Dropdown/README.md
 [mdn-anchor-target]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#target
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#additional-attributes
-[readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#deprecations
 [tooltip-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/src/Resources/components/Tooltip/README.md
 [floating-ui]: https://floating-ui.com

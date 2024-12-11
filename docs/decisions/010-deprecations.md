@@ -46,7 +46,7 @@ Migration to new versions will be easier with clear upgrade paths.
 Testing environments may need to handle warning suppression.
 Additional maintenance effort is required to keep deprecation documentation up to date.
 
-### Breaking Changes without Deprecation
+### Breaking Changes Without Deprecation
 
 When delivering a new Major version, deprecating some features may not be possible or there will be a very short period to adapt.
 In such cases, the breaking changes can be introduced without deprecation as a standard part of the major version upgrade.

@@ -1,8 +1,12 @@
 # Decisions
 
-## I've been around.
+<!--lint ignore no-heading-punctuation-->
 
-### And I've got opinions...
+## I've Been Around.
+
+<!--lint ignore no-heading-punctuation-->
+
+### And I've Got Opinions...
 
 ![][opinions-image]
 

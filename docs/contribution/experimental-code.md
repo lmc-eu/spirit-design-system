@@ -79,6 +79,9 @@ documented in each package's main README file in the section `Feature Flags`.
 
 All feature flags follow a prefix naming convention that indicates status.
 
+<!-- @see: https://jira.almacareer.tech/browse/DS-1604 -->
+<!--lint ignore heading-capitalization-->
+
 #### Flags Prefixed with `enable-*`
 
 - Contain new features that we'd like consuming projects to test
@@ -91,6 +94,9 @@ All feature flags follow a prefix naming convention that indicates status.
 
 If you use these flags, make sure to check our release notes where we'll outline
 any changes to them across our releases.
+
+<!-- @see: https://jira.almacareer.tech/browse/DS-1604 -->
+<!--lint ignore heading-capitalization-->
 
 #### Flags Prefixed with `enable-v#-*`
 
@@ -147,6 +153,8 @@ if it can be moved (most of the time the team will initiate this move).
 The issue should contain the following criteria that need to
 be met to move a component from experimental to stable:
 
+<!--lint disable no-undefined-references-->
+
 - [ ] All components are exported through main package export file and should not be `UNSTABLE_`
       prefixed
 - [ ] The component should be well documented according to the documentation
@@ -175,5 +183,6 @@ be met to move a component from experimental to stable:
     - [ ] Stories should mirror the intended usage of the component
   - [ ] The component has unit/integration/snapshot tests written using the project's unit testing library for testing the component API
   - [ ] The component has visual tests written using the project's End-to-End testing library for testing the component design
+  <!--lint enable no-undefined-references-->
 
 [docs-feature-flags]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/contribution/feature-flags.md

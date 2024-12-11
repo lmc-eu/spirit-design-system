@@ -1,3 +1,6 @@
+<!-- @see: https://jira.almacareer.tech/browse/DS-1604 -->
+<!--lint disable heading-capitalization-->
+
 # Migration Guide
 
 Introducing version 2 of the _spirit-web-react_ package.
@@ -548,6 +551,5 @@ Please refer back to these instructions or reach out to our team if you encounte
 [readme-codemods]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/codemods/README.md
 [dictionary-placement]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#placement
 [dropdown-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Dropdown/README.md
-[readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#deprecations
 [tooltip-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Tooltip/README.md
 [floating-ui]: https://floating-ui.com

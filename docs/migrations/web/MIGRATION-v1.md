@@ -1,3 +1,6 @@
+<!-- @see: https://jira.almacareer.tech/browse/DS-1604 -->
+<!--lint disable heading-capitalization-->
+
 # Migration Guide
 
 Introducing version 1 of the _spirit-web_ package
