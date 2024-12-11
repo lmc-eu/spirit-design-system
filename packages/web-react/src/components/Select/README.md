@@ -47,7 +47,7 @@ Advanced example usage:
 | `name`            | `string`                                       | —       | ✕        | Select name                     |
 | `ref`             | `ForwardedRef<HTMLSelectElement>`              | —       | ✕        | Select element reference        |
 | `validationState` | [Validation dictionary][dictionary-validation] | —       | ✕        | Type of validation state        |
-| `validationText`  | [`string` \| `string[]`]                       | —       | ✕        | Validation text                 |
+| `validationText`  | \[`string` \| `string[]`]                      | —       | ✕        | Validation text                 |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -58,7 +58,7 @@ and [escape hatches][readme-escape-hatches].
 This component uses the `Icon` component internally. To ensure correct rendering,
 please refer to the [Icon component documentation][web-react-icon-documentation] for setup instructions.
 
-## Custom component
+## Custom Component
 
 Select classes are fabricated using `useSelectStyleProps` hook. You can use it to create your own custom Select component.
 

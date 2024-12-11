@@ -1,3 +1,6 @@
+<!-- @see: https://jira.almacareer.tech/browse/DS-1604 -->
+<!--lint ignore heading-capitalization-->
+
 # @lmc-eu/spirit-web-react
 
 [![minified](https://badgen.net/bundlephobia/min/@lmc-eu/spirit-web-react)](https://bundlephobia.com/package/@lmc-eu/spirit-web-react)
@@ -41,7 +44,7 @@ Import React components in your app:
 import { Button } from '@lmc-eu/spirit-web-react/components/Button';
 ```
 
-### Prefixing CSS classes in components
+### Prefixing CSS Classes in Components
 
 If you want to prefix the component classes with your own namespace, you can use the `ClassNamePrefixProvider` context to provide a prefix to all components in your app.
 
@@ -124,7 +127,7 @@ are doing so at your own risk.
 
 Please consult additional styling with [web package documentation][web-pkg-rebrand].
 
-## Controlled vs Uncontrolled components
+## Controlled vs Uncontrolled Components
 
 - A [Controlled Component][react-controlled] is one that takes its current
   value through props and notifies changes through callbacks like onChange.
@@ -150,7 +153,7 @@ Check your browser console to see if you are using any of the deprecated functio
 
 👉 [See the DEPRECATIONS file][all-deprecations] for the list of all deprecations.
 
-### Warnings in environments
+### Warnings in Environments
 
 #### Production
 
@@ -180,7 +183,7 @@ afterEach(() => {
 
 ## Examples
 
-👀 See [examples] for a live demo.
+👀 See [examples][examples] for a live demo.
 
 ## License
 

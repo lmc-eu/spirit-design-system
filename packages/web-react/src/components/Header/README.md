@@ -344,10 +344,10 @@ the optional secondary actions slot.
 
 #### API
 
-| Name       | Type                       | Default   | Required | Description   |
-| ---------- | -------------------------- | --------- | -------- | ------------- |
-| `children` | `ReactNode`                | —         | ✕        | Children node |
-| `color`    | [`primary` \| `secondary`] | `primary` | ✕        | Color variant |
+| Name       | Type                        | Default   | Required | Description   |
+| ---------- | --------------------------- | --------- | -------- | ------------- |
+| `children` | `ReactNode`                 | —         | ✕        | Children node |
+| `color`    | \[`primary` \| `secondary`] | `primary` | ✕        | Color variant |
 
 The component implements the [`HTMLElement`][mdn-api-html-element] interface.
 

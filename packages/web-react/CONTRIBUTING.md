@@ -2,7 +2,7 @@
 
 > Guide for Spirit Web React contributors.
 
-## Adding new component
+## Adding New Component
 
 Do not forget to export and register new component in all necessary places.
 
@@ -13,7 +13,7 @@ Do not forget to export and register new component in all necessary places.
 
 This is an example of a typical file structure of a component:
 
-```
+```text
 ├── src
     └── components
         ├── index.ts — components root

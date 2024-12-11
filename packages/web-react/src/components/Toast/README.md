@@ -134,11 +134,11 @@ items are dismissed.
 
 ### API
 
-| Name            | Type                                                        | Default  | Required | Description                                                       |
-| --------------- | ----------------------------------------------------------- | -------- | -------- | ----------------------------------------------------------------- |
-| `alignmentX`    | [[AlignmentX dictionary][dictionary-alignment] \| `object`] | `center` | ✕        | Horizontal alignment of the toast queue                           |
-| `alignmentY`    | [`top` \| `bottom` \| `object`]                             | `bottom` | ✕        | Vertical alignment of the toast queue                             |
-| `isCollapsible` | `bool`                                                      | `true`   | ✕        | If true, Toast queue collapses if there are more than 3 ToastBars |
+| Name            | Type                                                         | Default  | Required | Description                                                       |
+| --------------- | ------------------------------------------------------------ | -------- | -------- | ----------------------------------------------------------------- |
+| `alignmentX`    | \[[AlignmentX dictionary][dictionary-alignment] \| `object`] | `center` | ✕        | Horizontal alignment of the toast queue                           |
+| `alignmentY`    | \[`top` \| `bottom` \| `object`]                             | `bottom` | ✕        | Vertical alignment of the toast queue                             |
+| `isCollapsible` | `bool`                                                       | `true`   | ✕        | If true, Toast queue collapses if there are more than 3 ToastBars |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -281,16 +281,16 @@ To make the ToastBar dismissible, add the `isDismissible` prop along with a `onC
 
 ### API
 
-| Name            | Type                                                        | Default    | Required | Description                                         |
-| --------------- | ----------------------------------------------------------- | ---------- | -------- | --------------------------------------------------- |
-| `closeLabel`    | `string`                                                    | `Close`    | ✕        | Close label                                         |
-| `color`         | [[Emotion Color dictionary][dictionary-color] \| `neutral`] | `neutral`  | ✕        | Color variant                                       |
-| `hasIcon`       | `bool`                                                      | `false` \* | ✕        | If true, an icon is shown along the message         |
-| `iconName`      | `string`                                                    | `info` \*  | ✕        | Name of a custom icon to be shown along the message |
-| `id`            | `string`                                                    | —          | ✓        | ToastBar ID                                         |
-| `isDismissible` | `bool`                                                      | `false`    | ✕        | If true, ToastBar can be dismissed by user          |
-| `isOpen`        | `bool`                                                      | `true`     | ✕        | If true, ToastBar is visible                        |
-| `onClose`       | `function`                                                  | —          | ✕        | Close button callback                               |
+| Name            | Type                                                         | Default    | Required | Description                                         |
+| --------------- | ------------------------------------------------------------ | ---------- | -------- | --------------------------------------------------- |
+| `closeLabel`    | `string`                                                     | `Close`    | ✕        | Close label                                         |
+| `color`         | \[[Emotion Color dictionary][dictionary-color] \| `neutral`] | `neutral`  | ✕        | Color variant                                       |
+| `hasIcon`       | `bool`                                                       | `false` \* | ✕        | If true, an icon is shown along the message         |
+| `iconName`      | `string`                                                     | `info` \*  | ✕        | Name of a custom icon to be shown along the message |
+| `id`            | `string`                                                     | —          | ✓        | ToastBar ID                                         |
+| `isDismissible` | `bool`                                                       | `false`    | ✕        | If true, ToastBar can be dismissed by user          |
+| `isOpen`        | `bool`                                                       | `true`     | ✕        | If true, ToastBar is visible                        |
+| `onClose`       | `function`                                                   | —          | ✕        | Close button callback                               |
 
 (\*) For each emotion color, a default icon is defined.
 The icons come from the [Icon package][icon-package], or from your custom source of icons.
@@ -325,7 +325,7 @@ const [isOpen, setIsOpen] = useState(false);
 import { ToastProvider, UncontrolledToast } from '@lmc-eu/spirit-web-react/components';
 ```
 
-### Minimal props
+### Minimal Props
 
 ```jsx
 const { show } = useToast(); // must be inside ToastProvider
@@ -339,7 +339,7 @@ const { show } = useToast(); // must be inside ToastProvider
 </ToastProvider>;
 ```
 
-### All possible props
+### All Possible Props
 
 ```jsx
 const { show } = useToast(); // must be inside ToastProvider
@@ -361,25 +361,31 @@ const { show } = useToast(); // must be inside ToastProvider
 </ToastProvider>;
 ```
 
-### useToast hook
+<!-- @see: https://jira.almacareer.tech/browse/DS-1604 -->
+<!--lint ignore heading-capitalization-->
+
+### useToast Hook
 
 Hook that provides information on `UncontrolledToast` and functions for opening and closing.
 What is uncontrolled component you can find [here][react-uncontrolled]
 
 This hook returns:
 
-| Name       | Type                                                        | Default   | Description                                         |
-| ---------- | ----------------------------------------------------------- | --------- | --------------------------------------------------- |
-| `clear`    | `() => void`                                                | () => {}  | Function that will clear toast queue                |
-| `color`    | [[Emotion Color dictionary][dictionary-color] \| `neutral`] | `neutral` | Color variant                                       |
-| `hide`     | `(toastId) => void`                                         | () => {}  | Function that will hide UncontrolledToast           |
-| `iconName` | `string`                                                    | —         | Name of a custom icon to be shown along the message |
-| `id`       | `string`                                                    | `''`      | ToastBar ID                                         |
-| `isOpen`   | `bool`                                                      | `false`   | Open state of UncontrolledToast                     |
-| `message`  | [`string` \| `ReactNode`]                                   | null      | Message inside UncontrolledToast                    |
-| `show`     | `(message, toastId, options?) => void`                      | () => {}  | Function that will show UncontrolledToast           |
+| Name       | Type                                                         | Default   | Description                                         |
+| ---------- | ------------------------------------------------------------ | --------- | --------------------------------------------------- |
+| `clear`    | `() => void`                                                 | () => {}  | Function that will clear toast queue                |
+| `color`    | \[[Emotion Color dictionary][dictionary-color] \| `neutral`] | `neutral` | Color variant                                       |
+| `hide`     | `(toastId) => void`                                          | () => {}  | Function that will hide UncontrolledToast           |
+| `iconName` | `string`                                                     | —         | Name of a custom icon to be shown along the message |
+| `id`       | `string`                                                     | `''`      | ToastBar ID                                         |
+| `isOpen`   | `bool`                                                       | `false`   | Open state of UncontrolledToast                     |
+| `message`  | \[`string` \| `ReactNode`]                                   | null      | Message inside UncontrolledToast                    |
+| `show`     | `(message, toastId, options?) => void`                       | () => {}  | Function that will show UncontrolledToast           |
 
-#### How to use `show` function:
+<!-- @see: https://jira.almacareer.tech/browse/DS-1604 -->
+<!--lint ignore heading-capitalization-->
+
+#### How to Use `show` Function
 
 This function has two required parameters: message and ID.
 All other options are not required and can be omitted entirely.
@@ -412,12 +418,12 @@ Read the section [Default Icons according to Color Variant](#default-icons-accor
 
 ### API
 
-| Name            | Type                                                        | Default  | Required | Description                                                       |
-| --------------- | ----------------------------------------------------------- | -------- | -------- | ----------------------------------------------------------------- |
-| `alignmentX`    | [[AlignmentX dictionary][dictionary-alignment] \| `object`] | `center` | ✕        | Horizontal alignment of the toast queue                           |
-| `alignmentY`    | [`top` \| `bottom` \| `object`]                             | `bottom` | ✕        | Vertical alignment of the toast queue                             |
-| `closeLabel`    | `string`                                                    | `Close`  | ✕        | Close label                                                       |
-| `isCollapsible` | `bool`                                                      | `true`   | ✕        | If true, Toast queue collapses if there are more than 3 ToastBars |
+| Name            | Type                                                         | Default  | Required | Description                                                       |
+| --------------- | ------------------------------------------------------------ | -------- | -------- | ----------------------------------------------------------------- |
+| `alignmentX`    | \[[AlignmentX dictionary][dictionary-alignment] \| `object`] | `center` | ✕        | Horizontal alignment of the toast queue                           |
+| `alignmentY`    | \[`top` \| `bottom` \| `object`]                             | `bottom` | ✕        | Vertical alignment of the toast queue                             |
+| `closeLabel`    | `string`                                                     | `Close`  | ✕        | Close label                                                       |
+| `isCollapsible` | `bool`                                                       | `true`   | ✕        | If true, Toast queue collapses if there are more than 3 ToastBars |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

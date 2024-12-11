@@ -174,7 +174,7 @@ If you need more control over the styling of a component, you can use [style pro
 and [escape hatches][readme-escape-hatches].
 
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
-[dictionary-direction]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#direction
+[direction-dictionary]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#direction
 [mdn-display-flex]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout
 [mdn-display-grid]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes

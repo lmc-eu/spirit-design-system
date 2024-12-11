@@ -72,7 +72,7 @@ On top of the API options, the components accept [additional attributes][readme-
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
-## Custom component
+## Custom Component
 
 Link classes are fabricated using `useLinkStyleProps` hook. You can use it to create your own custom Link component.
 
@@ -88,7 +88,7 @@ const CustomLink = (props: SpiritLinkProps): JSX.Element => {
 };
 ```
 
-## Custom polymorphic component
+## Custom Polymorphic Component
 
 If you are using `forwardRef`, use the `PolymorphicRef` type for the reference.
 

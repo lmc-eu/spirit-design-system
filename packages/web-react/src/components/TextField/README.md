@@ -44,31 +44,31 @@ TextField with password toggle (button to reveal the password):
 
 ## API
 
-| Name                | Type                                                                        | Default | Required | Description                                                             |
-| ------------------- | --------------------------------------------------------------------------- | ------- | -------- | ----------------------------------------------------------------------- |
-| `autoComplete`      | `string`                                                                    | —       | ✕        | [Automated assistance in filling][autocomplete-attr]                    |
-| `hasPasswordToggle` | `bool`                                                                      | —       | ✓        | If true, the `type` is set to `password` and a password toggle is shown |
-| `helperText`        | `string`                                                                    | —       | ✕        | Custom helper text                                                      |
-| `id`                | `string`                                                                    | —       | ✓        | Input and label identification                                          |
-| `inputWidth`        | `number`                                                                    | —       | ✕        | Input width                                                             |
-| `isDisabled`        | `bool`                                                                      | —       | ✕        | Whether is field disabled                                               |
-| `isLabelHidden`     | `bool`                                                                      | —       | ✕        | Whether is label hidden                                                 |
-| `isRequired`        | `bool`                                                                      | —       | ✕        | Whether is field required                                               |
-| `label`             | `string`                                                                    | —       | ✓        | Label text                                                              |
-| `name`              | `string`                                                                    | —       | ✕        | Input name                                                              |
-| `pattern`           | `string`                                                                    | —       | ✕        | Defines regular expressions for allowed value types                     |
-| `placeholder`       | `string`                                                                    | —       | ✕        | Input placeholder                                                       |
-| `ref`               | `ForwardedRef<HTMLInputElement>`                                            | —       | ✕        | Input element reference                                                 |
-| `type`              | [`email` \| `number` \| `password` \| `search` \| `tel` \| `text` \| `url`] | —       | ✕        | Input type                                                              |
-| `validationState`   | [Validation dictionary][dictionary-validation]                              | —       | ✕        | Type of validation state                                                |
-| `validationText`    | [`string` \| `string[]`]                                                    | —       | ✕        | Validation text                                                         |
-| `value`             | `string`                                                                    | —       | ✕        | Input value                                                             |
+| Name                | Type                                                                         | Default | Required | Description                                                             |
+| ------------------- | ---------------------------------------------------------------------------- | ------- | -------- | ----------------------------------------------------------------------- |
+| `autoComplete`      | `string`                                                                     | —       | ✕        | [Automated assistance in filling][autocomplete-attr]                    |
+| `hasPasswordToggle` | `bool`                                                                       | —       | ✓        | If true, the `type` is set to `password` and a password toggle is shown |
+| `helperText`        | `string`                                                                     | —       | ✕        | Custom helper text                                                      |
+| `id`                | `string`                                                                     | —       | ✓        | Input and label identification                                          |
+| `inputWidth`        | `number`                                                                     | —       | ✕        | Input width                                                             |
+| `isDisabled`        | `bool`                                                                       | —       | ✕        | Whether is field disabled                                               |
+| `isLabelHidden`     | `bool`                                                                       | —       | ✕        | Whether is label hidden                                                 |
+| `isRequired`        | `bool`                                                                       | —       | ✕        | Whether is field required                                               |
+| `label`             | `string`                                                                     | —       | ✓        | Label text                                                              |
+| `name`              | `string`                                                                     | —       | ✕        | Input name                                                              |
+| `pattern`           | `string`                                                                     | —       | ✕        | Defines regular expressions for allowed value types                     |
+| `placeholder`       | `string`                                                                     | —       | ✕        | Input placeholder                                                       |
+| `ref`               | `ForwardedRef<HTMLInputElement>`                                             | —       | ✕        | Input element reference                                                 |
+| `type`              | \[`email` \| `number` \| `password` \| `search` \| `tel` \| `text` \| `url`] | —       | ✕        | Input type                                                              |
+| `validationState`   | [Validation dictionary][dictionary-validation]                               | —       | ✕        | Type of validation state                                                |
+| `validationText`    | \[`string` \| `string[]`]                                                    | —       | ✕        | Validation text                                                         |
+| `value`             | `string`                                                                     | —       | ✕        | Input value                                                             |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
-## Custom component
+## Custom Component
 
 Text field classes are fabricated using `useTextFieldStyleProps` hook. You can use it to create your own custom TextField component.
 

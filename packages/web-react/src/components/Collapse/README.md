@@ -20,7 +20,7 @@ const [isOpen, toggle] = useState<boolean>(true);
 </Collapse>
 ```
 
-### With toggle from hook
+### With Toggle From Hook
 
 ```javascript
 import React, { useState} from 'react';
@@ -38,7 +38,7 @@ const { isOpen, toggle } = useCollapse(false);
 </Collapse>
 ```
 
-### With toggle handler from hook
+### With Toggle Handler From Hook
 
 ```javascript
 import React, { useState} from 'react';
@@ -76,13 +76,13 @@ const [isOpen, toggle] = useState<boolean>(true);
 
 ## API
 
-| Name                      | Type                                | Default | Required | Description                                 |
-| ------------------------- | ----------------------------------- | ------- | -------- | ------------------------------------------- |
-| `collapsibleToBreakpoint` | [`mobile` \| `tablet` \| `desktop`] | —       | ✕        | Handle for responsive breakpoint            |
-| `elementType`             | [`span` \| `div`]                   | `div`   | ✕        | Type of element used as wrapper and content |
-| `id`                      | `string`                            | —       | ✓        | Component id                                |
-| `isOpen`                  | `bool`                              | —       | ✕        | Is open on initialization                   |
-| `transitionDuration`      | `number`                            | `250`   | ✕        | Transition duration in miliseconds          |
+| Name                      | Type                                 | Default | Required | Description                                 |
+| ------------------------- | ------------------------------------ | ------- | -------- | ------------------------------------------- |
+| `collapsibleToBreakpoint` | \[`mobile` \| `tablet` \| `desktop`] | —       | ✕        | Handle for responsive breakpoint            |
+| `elementType`             | \[`span` \| `div`]                   | `div`   | ✕        | Type of element used as wrapper and content |
+| `id`                      | `string`                             | —       | ✓        | Component id                                |
+| `isOpen`                  | `bool`                               | —       | ✕        | Is open on initialization                   |
+| `transitionDuration`      | `number`                             | `250`   | ✕        | Transition duration in miliseconds          |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -129,8 +129,8 @@ import { Button, UncontrolledCollapse } from '@lmc-eu/spirit-web-react/component
 
 | Name                      | Type                                         | Default | Required | Description                                                                                              |
 | ------------------------- | -------------------------------------------- | ------- | -------- | -------------------------------------------------------------------------------------------------------- |
-| `collapsibleToBreakpoint` | [`mobile` \| `tablet` \| `desktop`]          | —       | ✕        | Handle for responsive breakpoint                                                                         |
-| `elementType`             | [`span` \| `div`]                            | `div`   | ✕        | Type of element used as wrapper and content                                                              |
+| `collapsibleToBreakpoint` | \[`mobile` \| `tablet` \| `desktop`]         | —       | ✕        | Handle for responsive breakpoint                                                                         |
+| `elementType`             | \[`span` \| `div`]                           | `div`   | ✕        | Type of element used as wrapper and content                                                              |
 | `hideOnCollapse`          | `bool`                                       | `false` | ✕        | [**DEPRECATED**][readme-deprecations] in favor of `isDisposable`; Hides button when content is displayed |
 | `id`                      | `string`                                     | —       | ✓        | Component id                                                                                             |
 | `isDisposable`            | `bool`                                       | `false` | ✕        | Hides trigger when content is displayed                                                                  |

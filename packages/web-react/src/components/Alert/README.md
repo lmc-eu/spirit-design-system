@@ -15,7 +15,7 @@ import { Alert } from '@lmc-eu/spirit-web-react/components';
 <Alert color="informative" isCentered>Hey! Pay attention!</Alert>
 ```
 
-## Default Icons according to Color Variant
+## Default Icons According to Color Variant
 
 | Color name    | Icon name     |
 | ------------- | ------------- |

@@ -65,12 +65,12 @@ Or both:
 
 ## ScrollView Props
 
-| Name                  | Type                               | Default    | Required | Description                        |
-| --------------------- | ---------------------------------- | ---------- | -------- | ---------------------------------- |
-| `children`            | `ReactNode`                        | —          | ✓        | ScrollView children's nodes        |
-| `direction`           | [`horizontal` \| `vertical`]       | `vertical` | ✕        | Direction of the wrapper           |
-| `isScrollbarDisabled` | `bool`                             | `false`    | ✕        | If true, the Scrollbar is disabled |
-| `overflowDecorators`  | [`borders` \| `shadows` \| `both`] | `shadows`  | ✕        | ScrollView overflow decorators     |
+| Name                  | Type                                | Default    | Required | Description                        |
+| --------------------- | ----------------------------------- | ---------- | -------- | ---------------------------------- |
+| `children`            | `ReactNode`                         | —          | ✓        | ScrollView children's nodes        |
+| `direction`           | \[`horizontal` \| `vertical`]       | `vertical` | ✕        | Direction of the wrapper           |
+| `isScrollbarDisabled` | `bool`                              | `false`    | ✕        | If true, the Scrollbar is disabled |
+| `overflowDecorators`  | \[`borders` \| `shadows` \| `both`] | `shadows`  | ✕        | ScrollView overflow decorators     |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

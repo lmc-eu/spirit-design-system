@@ -5,7 +5,9 @@
 
 Slider is a form control that allows users to select a value from a range of values.
 
-## Basic usage
+## UNSTABLE_Slider
+
+### Basic Usage
 
 The Slider component implements the HTML [range input][mdn-range] element.
 
@@ -22,7 +24,7 @@ const handleChange = (event) => {
 <UNSTABLE_Slider id="slider" label="Slider" value={value} onChange={handleChange} />;
 ```
 
-### Slider Steps and Value
+#### Slider Steps and Value
 
 You can specify the Slider steps and value range by setting the `min`, `max`, and `step` props.
 
@@ -39,29 +41,29 @@ const handleChange = (event) => {
 <UNSTABLE_Slider id="slider" label="Slider" min={3} max={12} value={value} onChange={handleChange} />;
 ```
 
-## Required
+### Required
 
 ℹ️ As per the [HTML specification][html-spec-range], the Slider component does not support the `required` state.
 
-## Hidden Label
+### Hidden Label
 
 ```jsx
 <UNSTABLE_Slider id="slider" label="Slider" value={value} onChange={handleChange} isLabelHidden />
 ```
 
-## Fluid Width
+### Fluid Width
 
 ```jsx
 <UNSTABLE_Slider id="slider" label="Slider" value={value} onChange={handleChange} isFluid />
 ```
 
-## Helper Text
+### Helper Text
 
 ```jsx
 <UNSTABLE_Slider id="slider" label="Slider" value={value} onChange={handleChange} helperText="Helper text" />
 ```
 
-## Validation States
+### Validation States
 
 Validation states implement the Validation state [dictionary][dictionary-validation].
 
@@ -92,13 +94,13 @@ Validation states implement the Validation state [dictionary][dictionary-validat
 />
 ```
 
-## Disabled State
+### Disabled State
 
 ```jsx
 <UNSTABLE_Slider id="slider-disabled" label="Slider" value={value} onChange={handleChange} isDisabled />
 ```
 
-### API
+#### API
 
 | Attribute         | Type                                           | Default | Required | Description                                               |
 | ----------------- | ---------------------------------------------- | ------- | -------- | --------------------------------------------------------- |
@@ -113,16 +115,16 @@ Validation states implement the Validation state [dictionary][dictionary-validat
 | `onChange`        | `() => void`                                   | -       | ✓        | On input change callback                                  |
 | `step`            | `number`                                       | 1       | ✕        | Sets the stepping interval                                |
 | `validationState` | [Validation dictionary][dictionary-validation] | -       | ✕        | Type of validation state                                  |
-| `validationText`  | [`string` \| `string[]`]                       | -       | ✕        | Validation text                                           |
+| `validationText`  | \[`string` \| `string[]`]                      | -       | ✕        | Validation text                                           |
 | `value`           | `number`                                       | -       | ✓        | Input value                                               |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
-# UNSTABLE UncontrolledSlider
+## UNSTABLE UncontrolledSlider
 
-## Basic usage
+### Basic Usage
 
 ```jsx
 import UNSTABLE_UncontrolledSlider from '../UNSTABLE_UncontrolledSlider';
@@ -130,7 +132,7 @@ import UNSTABLE_UncontrolledSlider from '../UNSTABLE_UncontrolledSlider';
 <UNSTABLE_UncontrolledSlider id="slider-uncontrolled" label="UncontrolledSlider" />;
 ```
 
-### API
+#### API
 
 | Attribute        | Type         | Default | Required | Description                                               |
 | ---------------- | ------------ | ------- | -------- | --------------------------------------------------------- |

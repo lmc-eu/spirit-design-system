@@ -17,10 +17,10 @@ import { Pill } from '@lmc-eu/spirit-web-react';
 
 ## API
 
-| Name       | Type                                                                      | Default    | Required | Description            |
-| ---------- | ------------------------------------------------------------------------- | ---------- | -------- | ---------------------- |
-| `children` | `ReactNode`                                                               | —          | ✓        | Content of the Pill    |
-| `color`    | [[Emotion Color dictionary][dictionary-color] \| `selected` \| `neutral`] | `selected` | ✕        | Color of the component |
+| Name       | Type                                                                       | Default    | Required | Description            |
+| ---------- | -------------------------------------------------------------------------- | ---------- | -------- | ---------------------- |
+| `children` | `ReactNode`                                                                | —          | ✓        | Content of the Pill    |
+| `color`    | \[[Emotion Color dictionary][dictionary-color] \| `selected` \| `neutral`] | `selected` | ✕        | Color of the component |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

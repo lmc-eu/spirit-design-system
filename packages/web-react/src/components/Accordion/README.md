@@ -2,7 +2,7 @@
 
 ## Usage
 
-### Default (Stay open)
+### Default (Stay Open)
 
 ```javascript
 import React, { useState } from 'react';
@@ -10,7 +10,7 @@ import { Accordion, AccordionItem, AccordionHeader, AccordionContent } from '@lm
 import { AccordionOpenStateType } from '@lmc-eu/spirit-web-react/types';
 ```
 
-```
+```typescript
 const [openState, setOpenState] = useState<AccordionOpenStateType>(undefined);
 ```
 
@@ -52,19 +52,19 @@ const toggle = (id) => {
 </Accordion>
 ```
 
-### Default with opened on init
+### Default with Opened on Init
 
-```
+```typescript
 const [openState, setOpenState] = useState<AccordionOpenStateType>(['accordion-item-example-1']);
 ```
 
-### Open only one at a time
+### Open Only One at a Time
 
-```
+```typescript
 const [openState, setOpenState] = useState<AccordionOpenStateType>('');
 ```
 
-### Uncontrolled Accordion (Stay open)
+### Uncontrolled Accordion (Stay Open)
 
 ```javascript
 import {
@@ -89,7 +89,7 @@ import { AccordionOpenStateType } from '@lmc-eu/spirit-web-react/types';
 </UncontrolledAccordion>
 ```
 
-### Uncontrolled Accordion with default open value (Stay open)
+### Uncontrolled Accordion with Default Open Value (Stay Open)
 
 ```javascript
 <UncontrolledAccordion defaultOpen={['accordion-item-example-1']} stayOpen>
@@ -104,7 +104,7 @@ import { AccordionOpenStateType } from '@lmc-eu/spirit-web-react/types';
 </UncontrolledAccordion>
 ```
 
-### Uncontrolled Accordion with open only one at a time
+### Uncontrolled Accordion with Open Only One at a Time
 
 ```javascript
 <UncontrolledAccordion>
@@ -119,7 +119,7 @@ import { AccordionOpenStateType } from '@lmc-eu/spirit-web-react/types';
 </UncontrolledAccordion>
 ```
 
-### Uncontrolled Accordion with open only one at a time and default open value
+### Uncontrolled Accordion with Open Only One at a Time and Default Open Value
 
 ```javascript
 <UncontrolledAccordion defaultOpen="accordion-item-example-1">
@@ -136,12 +136,12 @@ import { AccordionOpenStateType } from '@lmc-eu/spirit-web-react/types';
 
 ## Accordion Props
 
-| Name          | Type                              | Default   | Required | Description                                      |
-| ------------- | --------------------------------- | --------- | -------- | ------------------------------------------------ |
-| `children`    | `ReactNode`                       | —         | ✓        | Accordion children's nodes                       |
-| `elementType` | [`section` \| `article` \| `div`] | `section` | ✕        | Type of element used as wrapper                  |
-| `open`        | [`string` \| `string[]`]          | —         | ✕        | Open item or list of open items \*               |
-| `toggle`      | `(id: string) => void`            | —         | ✕        | A generic handler for a single **AccordionItem** |
+| Name          | Type                               | Default   | Required | Description                                      |
+| ------------- | ---------------------------------- | --------- | -------- | ------------------------------------------------ |
+| `children`    | `ReactNode`                        | —         | ✓        | Accordion children's nodes                       |
+| `elementType` | \[`section` \| `article` \| `div`] | `section` | ✕        | Type of element used as wrapper                  |
+| `open`        | \[`string` \| `string[]`]          | —         | ✕        | Open item or list of open items \*               |
+| `toggle`      | `(id: string) => void`             | —         | ✕        | A generic handler for a single **AccordionItem** |
 
 (\*) Depending on the type of default value, what is set as the default will affect whether one or more will be open at the same time.
 
@@ -151,12 +151,12 @@ and [escape hatches][readme-escape-hatches].
 
 ## Uncontrolled Accordion Props
 
-| Name          | Type                              | Default   | Required | Description                                    |
-| ------------- | --------------------------------- | --------- | -------- | ---------------------------------------------- |
-| `children`    | `ReactNode`                       | —         | ✓        | Accordion children's nodes                     |
-| `defaultOpen` | [`string` \| `string[]`]          | —         | ✕        | Default open item(s) \*                        |
-| `elementType` | [`section` \| `article` \| `div`] | `section` | ✕        | Type of element used as wrapper                |
-| `stayOpen`    | `bool`                            | —         | ✕        | Item stay open when another one is also opened |
+| Name          | Type                               | Default   | Required | Description                                    |
+| ------------- | ---------------------------------- | --------- | -------- | ---------------------------------------------- |
+| `children`    | `ReactNode`                        | —         | ✓        | Accordion children's nodes                     |
+| `defaultOpen` | \[`string` \| `string[]`]          | —         | ✕        | Default open item(s) \*                        |
+| `elementType` | \[`section` \| `article` \| `div`] | `section` | ✕        | Type of element used as wrapper                |
+| `stayOpen`    | `bool`                             | —         | ✕        | Item stay open when another one is also opened |
 
 (\*) If this attribute is an array, then the `stayOpen` parameter should also be set.
 
@@ -166,11 +166,11 @@ and [escape hatches][readme-escape-hatches].
 
 ## AccordionItem Props
 
-| Name          | Type                              | Default   | Required | Description                                     |
-| ------------- | --------------------------------- | --------- | -------- | ----------------------------------------------- |
-| `children`    | `ReactNode`                       | —         | ✓        | Item children node                              |
-| `elementType` | [`article` \| `section` \| `div`] | `article` | ✕        | Type of element used as wrapper for single item |
-| `id`          | `string`                          | —         | ✓        | Item id                                         |
+| Name          | Type                               | Default   | Required | Description                                     |
+| ------------- | ---------------------------------- | --------- | -------- | ----------------------------------------------- |
+| `children`    | `ReactNode`                        | —         | ✓        | Item children node                              |
+| `elementType` | \[`article` \| `section` \| `div`] | `article` | ✕        | Type of element used as wrapper for single item |
+| `id`          | `string`                           | —         | ✓        | Item id                                         |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

@@ -95,14 +95,14 @@ const onToggle = () => setIsOpen(!isOpen);
 
 ## API
 
-| Name          | Type                      | Default  | Required | Description                     |
-| ------------- | ------------------------- | -------- | -------- | ------------------------------- |
-| `elementType` | `ElementType`             | `button` | ✕        | Type of element used as wrapper |
-| `helperText`  | `string`                  | —        | ✕        | Custom helper text              |
-| `iconName`    | `string`                  | —        | ✕        | Icon used in item               |
-| `isDisabled`  | `bool`                    | `false`  | ✕        | Whether is the item disabled    |
-| `isSelected`  | `bool`                    | `false`  | ✕        | Whether is the item selected    |
-| `label`       | [`string` \| `ReactNode`] | -        | ✓        | Label of the item               |
+| Name          | Type                       | Default  | Required | Description                     |
+| ------------- | -------------------------- | -------- | -------- | ------------------------------- |
+| `elementType` | `ElementType`              | `button` | ✕        | Type of element used as wrapper |
+| `helperText`  | `string`                   | —        | ✕        | Custom helper text              |
+| `iconName`    | `string`                   | —        | ✕        | Icon used in item               |
+| `isDisabled`  | `bool`                     | `false`  | ✕        | Whether is the item disabled    |
+| `isSelected`  | `bool`                     | `false`  | ✕        | Whether is the item selected    |
+| `label`       | \[`string` \| `ReactNode`] | -        | ✓        | Label of the item               |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

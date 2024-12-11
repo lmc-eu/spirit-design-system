@@ -66,7 +66,7 @@ const { fileQueue, addToQueue, clearQueue, onDismiss } = useFileQueue();
 </FileUploader>;
 ```
 
-### List with image previews
+### List with Image Previews
 
 ```javascript
 <FileUploaderList
@@ -97,7 +97,7 @@ const { fileQueue, addToQueue, clearQueue, onDismiss } = useFileQueue();
 </FileUploader>
 ```
 
-### Input behavior when the queue is filled
+### Input Behavior When the Queue Is Filled
 
 FileUploaderInput will disappear or disable after reaching the limit for files in the queue.
 
@@ -298,7 +298,7 @@ const resetStateHandler = () => {
 </form>;
 ```
 
-### Passing additional metadata
+### Passing Additional Metadata
 
 When you need to send additional data along with the image you can do it with the `meta` argument on `addToQueue` and `updateQueue` callbacks.
 If any data in `meta` option will be present, the FileUploader adds an additional hidden input with JSON stringified data to the form.
@@ -326,7 +326,7 @@ const customUpdate = (_event: MouseEvent, file: File) => {
 // …
 ```
 
-#### Updating Image Preview with cropped image
+#### Updating Image Preview with Cropped Image
 
 When you are using FileUploader with some kind of image cropper you want to also update the image preview on FileUploaderAttachment when image changes.
 You can do this by passing a specific object in shape of coordinates (`{ x: number, y: number, cropWidth: number, cropHeight: number, originalWidth: number, originalHeight: number }`) to the `meta` argument.
@@ -385,9 +385,9 @@ and [escape hatches][readme-escape-hatches].
 | `maxUploadedFiles`   | `number`                             | 10       | ✕        | Maximum file upload queue size                                                                                                                                  |
 | `name`               | `string`                             | —        | ✓        | Field name, will be used for each attachment in the queue                                                                                                       |
 | `onError`            | `FileUploaderErrorCallbackType`      | —        | ✕        | Callback on error condition                                                                                                                                     |
-| `queueLimitBehavior` | [`hide` \| `disable` \| `none`]      | `none`   | ✕        | Input behavior when the file queue is filled                                                                                                                    |
+| `queueLimitBehavior` | \[`hide` \| `disable` \| `none`]     | `none`   | ✕        | Input behavior when the file queue is filled                                                                                                                    |
 | `validationState`    | `ValidationState`                    | —        | ✕        | Validation state                                                                                                                                                |
-| `validationText`     | [`string` \| `string[]`]             | —        | ✕        | Validation status text                                                                                                                                          |
+| `validationText`     | \[`string` \| `string[]`]            | —        | ✕        | Validation status text                                                                                                                                          |
 
 The rest of the properties are created from the default `<input>` element. [More about the element][input-element-docs]
 
@@ -424,7 +424,7 @@ and [escape hatches][readme-escape-hatches].
 | `hasImagePreview` | `bool`                               | false    | ✕        | Show image preview                                    |
 | `iconName`        | `string`                             | `file`   | ✕        | Icon shown along the file                             |
 | `id`              | `string`                             | —        | ✓        | FileUploaderAttachment id                             |
-| `imageObjectFit`  | [`cover` \| `contain`]               | `cover`  | ✕        | Defines FileUploaderAttachment image fit in container |
+| `imageObjectFit`  | \[`cover` \| `contain`]              | `cover`  | ✕        | Defines FileUploaderAttachment image fit in container |
 | `label`           | `string`                             | —        | ✓        | File name                                             |
 | `name`            | `string`                             | —        | ✓        | Input field name                                      |
 | `onDismiss`       | `(key: string) => FileQueueMapType`  | —        | ✓        | Callback to delete an item from the queue             |
@@ -492,9 +492,9 @@ via `inputProps` and `listProps`.
 | `maxUploadedFiles`    | `number`                                | 10       | ✕        | Maximum file upload queue size                      |
 | `onChange`            | `(fileQueue: FileQueueMapType) => void` | —        | ✕        | Callback on change in fileQueue                     |
 | `onInputError`        | `FileUploaderErrorCallbackType`         | —        | ✕        | Callback on error condition                         |
-| `queueLimitBehavior`  | [`hide` \| `disable` \| `none`]         | `none`   | ✕        | Input behavior when the file queue is filled        |
+| `queueLimitBehavior`  | \[`hide` \| `disable` \| `none`]        | `none`   | ✕        | Input behavior when the file queue is filled        |
 | `validationState`     | `ValidationState`                       | —        | ✕        | Validation state                                    |
-| `validationText`      | [`string` \| `string[]`]                | —        | ✕        | Validation status text                              |
+| `validationText`      | \[`string` \| `string[]`]               | —        | ✕        | Validation status text                              |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
