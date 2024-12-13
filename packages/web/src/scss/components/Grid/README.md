@@ -183,6 +183,37 @@ All nested Grid Items have their CSS variables firstly reset to the default valu
 This allows you to nest Grids with Grid Items and set their column values independently.
 Please note that every, even nested, Grid has 12 columns if not specified otherwise.
 
+### Grid Placement Props: `--grid-item-column-start`, `--grid-item-column-end`, `--grid-item-row-start`, `--grid-item-row-end`
+
+These props control the placement of grid items within a CSS Grid layout by specifying where the item starts and ends in rows and columns:
+
+- `--grid-item-column-start`: Specifies the vertical grid line where the item begins.
+- `--grid-item-column-end`: Specifies the vertical grid line where the item ends. The item spans up to, but does not include, this grid line. For example, if columnEnd is "3", the item ends at the line before the third column.
+- `--grid-item-row-start`: Specifies the horizontal grid line where the item begins.
+- `--grid-item-row-end`: Specifies the horizontal grid line where the item ends. The item spans up to, but does not include, this grid line. For example, if rowEnd is "4", the item ends at the line before the fourth row.
+
+#### Grid Placement Example
+
+```html
+<div
+  class="GridItem"
+  style="
+      --grid-item-column-start: 2;
+      --grid-item-column-end: 5; <!-- or --grid-item-column-end: span 3; -->
+      --grid-item-row-start: 1;
+      --grid-item-row-end: 3; <!-- or --grid-item-row-end: span 2; -->
+    "
+>
+  …
+</div>
+```
+
+<img src="https://raw.githubusercontent.com/lmc-eu/spirit-design-system/refs/heads/main/packages/web-react/src/components/Grid/static/GridExample.svg" alt="Grid example" width="400" />
+
+_The image is taken from the [CSS Grid Layout Guide][css-tricks-grid]._
+
+Learn more about grid placement in the [MDN CSS Grid][grid-mdn] documentation.
+
 Basic Grid Item example:
 
 ```html
@@ -309,3 +340,5 @@ variables.
 ```
 
 [alignment-dictionary]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
+[css-tricks-grid]: https://css-tricks.com/snippets/css/complete-guide-grid/
+[grid-mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout
