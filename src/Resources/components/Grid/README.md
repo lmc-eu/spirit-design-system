@@ -168,6 +168,34 @@ component itself using the [`cols` prop](#api) and might not need to set columns
 listing with 3 columns is easier to set using `cols="3"` on the `Grid` component than setting
 `columnStart` and `columnEnd` on each `GridItem`.
 
+### Grid Placement Props: `columnStart`, `columnEnd`, `rowStart`, `rowEnd`
+
+These props control the placement of grid items within a CSS Grid layout by specifying where the item starts and ends in rows and columns:
+
+- `columnStart`: Specifies the vertical grid line where the item begins.
+- `columnEnd`: Specifies the vertical grid line where the item ends. The item spans up to, but does not include, this grid line. For example, if columnEnd is "3", the item ends at the line before the third column.
+- `rowStart`: Specifies the horizontal grid line where the item begins.
+- `rowEnd`: Specifies the horizontal grid line where the item ends. The item spans up to, but does not include, this grid line. For example, if rowEnd is "4", the item ends at the line before the fourth row.
+
+#### Grid Placement Example
+
+```twig
+<GridItem
+  columnStart="2"
+  columnEnd="5" <!-- or columnEnd="span 3" -->
+  rowStart="1"
+  rowEnd="3" <!-- or rowEnd="span 2" -->
+>
+  …
+</GridItem>
+```
+
+<img src="https://raw.githubusercontent.com/lmc-eu/spirit-design-system/refs/heads/main/packages/web-react/src/components/Grid/static/GridExample.svg" alt="Grid example" width="400" />
+
+_The image is taken from the [CSS Grid Layout Guide][css-tricks-grid]._
+
+These props align with their respective CSS Grid properties, providing precise control over grid item placement. Learn more in the [MDN CSS Grid][grid-mdn] documentation.
+
 Basic example usage:
 
 ```twig
@@ -231,9 +259,11 @@ On top of the API options, the components accept [additional attributes][readme-
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
+[css-tricks-grid]: https://css-tricks.com/snippets/css/complete-guide-grid/
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
 [digitalocean-span]: https://www.digitalocean.com/community/tutorials/css-css-grid-layout-span-keyword
 [grid]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Grid
+[grid-mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#additional-attributes
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#style-props
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#escape-hatches
