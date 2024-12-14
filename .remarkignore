@@ -6,8 +6,5 @@ dist
 build
 .github
 
-# Codemods transforms directory
-transforms
-
 # Fix case of the files
 MIGRATION-*

@@ -1,4 +1,4 @@
-# Web-React v4 Codemods
+# `web-react` v4 Codemods
 
 This is a collection of codemods for updating Web-React v4 components.
 
@@ -6,7 +6,7 @@ You can find instructions on how to run these codemods in the main package [READ
 
 ## Included Scripts
 
-### `v4/web-react/collapse-isDisposable-prop` — UncontrolledCollapse `hideOnCollapse` to `isDisposable` prop change
+### `v4/web-react/collapse-isDisposable-prop` — UncontrolledCollapse `hideOnCollapse` to `isDisposable` Prop Change
 
 This codemod updates the `UncontrolledCollapse` component by replacing the `hideOnCollapse` prop with a new `isDisposable` prop.
 

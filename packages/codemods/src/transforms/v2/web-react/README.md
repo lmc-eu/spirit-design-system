@@ -1,4 +1,4 @@
-# Web-React v2 Codemods
+# `web-react` v2 Codemods
 
 This is a collection of codemods for updating Web-React v2 components.
 
@@ -6,7 +6,7 @@ You can find instructions on how to run these codemods in the main package [READ
 
 ## Included Scripts
 
-### `v2/web-react/dropdown-tooltip-flow-placement` — Dropdown & Tooltip Flow placements
+### `v2/web-react/dropdown-tooltip-flow-placement` — Dropdown & Tooltip Flow Placements
 
 This codemod updates the placement props in `Dropdown` and `Tooltip` components.
 It transforms removed non-flow-related placements to their flow-related counterparts.
@@ -102,7 +102,7 @@ npx @lmc-eu/spirit-codemods -p <path> -t v2/web-react/grid-gridspan
 + <GridItem columnStart={5} columnEnd="span 4" … />
 ```
 
-### `v2/web-react/header-headerdesktopactions-isatend` — HeaderDesktopActions isAtEnd Prop
+### `v2/web-react/header-headerdesktopactions-isatend` — HeaderDesktopActions `isAtEnd` Prop
 
 This codemod sets the `isAtEnd` prop instead of the removed `color="secondary"` prop.
 Also it removes the `color="primary"` prop from the `HeaderDesktopActions` component
@@ -143,7 +143,7 @@ npx @lmc-eu/spirit-codemods -p <path> -t v2/web-react/modal-custom-height
 + <ModalDialog height={{ mobile: "300px", tablet: "400px" }} maxHeight={{ tablet: "500px" }} … />
 ```
 
-### `v2/web-react/modal-isdockedonmobile-prop` — Modal isDockedOnMobile Prop
+### `v2/web-react/modal-isdockedonmobile-prop` — Modal `isDockedOnMobile` Prop
 
 This codemod adds the `isDockedOnMobile` prop to the `ModalDialog` component,
 if it is missing. The purpose of this is to maintain the same behaviour as
@@ -162,7 +162,7 @@ npx @lmc-eu/spirit-codemods -p <path> -t v2/web-react/modal-isdockedonmobile-pro
 + <ModalDialog isDockedOnMobile … />
 ```
 
-### `v2/web-react/modal-isscrollable-prop` — Modal isScrollable Prop
+### `v2/web-react/modal-isscrollable-prop` — Modal `isScrollable` Prop
 
 This codemod adds the `isScrollable` prop to the `ModalDialog` component,
 if it is missing. The purpose of this is to maintain the same behaviour as
