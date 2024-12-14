@@ -89,11 +89,11 @@ Card can be displayed with a border and a box shadow on hover.
 
 ### API
 
-| Name          | Type                                                                              | Default    | Required | Description                                                                                                                                                              |
-| ------------- | --------------------------------------------------------------------------------- | ---------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `direction`   | [[Direction dictionary][dictionary-direction], `horizontal-reversed` \| `object`] | `vertical` | ✕        | Direction of the content inside Card component, use object to set responsive values, e.g. `{ mobile: 'horizontal', tablet: 'vertical', desktop: 'horizontal-reversed' }` |
-| `elementType` | `ElementType`                                                                     | `article`  | ✕        | Type of element                                                                                                                                                          |
-| `isBoxed`     | `bool`                                                                            | `false`    | ✕        | Whether the Card have border                                                                                                                                             |
+| Name          | Type                                                                               | Default    | Required | Description                                                                                                                                                              |
+| ------------- | ---------------------------------------------------------------------------------- | ---------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `direction`   | \[[Direction dictionary][dictionary-direction], `horizontal-reversed` \| `object`] | `vertical` | ✕        | Direction of the content inside Card component, use object to set responsive values, e.g. `{ mobile: 'horizontal', tablet: 'vertical', desktop: 'horizontal-reversed' }` |
+| `elementType` | `ElementType`                                                                      | `article`  | ✕        | Type of element                                                                                                                                                          |
+| `isBoxed`     | `bool`                                                                             | `false`    | ✕        | Whether the Card have border                                                                                                                                             |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -220,11 +220,11 @@ horizontal (and reversed horizontal) Cards. But in all other contexts, the two p
 
 ### API
 
-| Name                   | Type                                         | Default | Required | Description                                 |
-| ---------------------- | -------------------------------------------- | ------- | -------- | ------------------------------------------- |
-| `hasFilledHeightClass` | `bool`                                       | `false` | ✕        | Whether the image fill the height of a Card |
-| `isExpanded`           | `bool`                                       | `false` | ✕        | Whether the media has space around          |
-| `size`                 | [[Size dictionary][dictionary-size], `auto`] | `auto`  | ✕        | Size of the image media                     |
+| Name                   | Type                                          | Default | Required | Description                                 |
+| ---------------------- | --------------------------------------------- | ------- | -------- | ------------------------------------------- |
+| `hasFilledHeightClass` | `bool`                                        | `false` | ✕        | Whether the image fill the height of a Card |
+| `isExpanded`           | `bool`                                        | `false` | ✕        | Whether the media has space around          |
+| `size`                 | \[[Size dictionary][dictionary-size], `auto`] | `auto`  | ✕        | Size of the image media                     |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

@@ -273,6 +273,5 @@ and [escape hatches][readme-escape-hatches].
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props
-[readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props
 [select]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Select/README.md
 [stack]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Stack/README.md
