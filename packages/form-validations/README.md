@@ -1,3 +1,5 @@
+<!--lint disable no-emphasis-as-heading-->
+
 # @lmc-eu/spirit-form-validations
 
 > Form validations for Web and Web-Twig packages of the Spirit Design System.
@@ -40,19 +42,19 @@ Now create a form:
 
 … and validate it:
 
-```
+```javascript
 window.onload = () => {
-    const form = document.getElementById("form1");
+  const form = document.getElementById('form1');
 
-    // create the FormValidations instance
-    const formValidations = new FormValidations(form);
+  // create the FormValidations instance
+  const formValidations = new FormValidations(form);
 
-    form.addEventListener('submit', function (event) {
-       event.preventDefault();
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
 
-       // check if the form is valid
-       const valid = formValidations.validate(); // returns true or false
-    });
+    // check if the form is valid
+    const valid = formValidations.validate(); // returns true or false
+  });
 };
 ```
 
@@ -87,7 +89,7 @@ const defaultConfig = {
 
 - **live** - A boolean value indicating whether FormValidations should validate as you type, default is `true`
 
-## Built-in validators
+## Built-in Validators
 
 | Name      | Usage                                                                                                 | Description                     |
 | --------- | ----------------------------------------------------------------------------------------------------- | ------------------------------- |
@@ -108,7 +110,7 @@ const defaultConfig = {
 FormValidations.addValidator(nameOrElem, handler, errorMessage, priority, halt);
 ```
 
-### Add a custom validator to a field
+### Add a Custom Validator to a Field
 
 ```javascript
 var formValidations = new FormValidations(document.getElementById('form1'));
@@ -130,7 +132,7 @@ FormValidations.addElementValidator(
 );
 ```
 
-### Add a global custom validator
+### Add a Global Custom Validator
 
 A validator to check if the input value is within a specified range.
 
@@ -157,7 +159,7 @@ Now you can assign it to your inputs like this
 <input type="text" class="form-control" data-spirit-my-range="10,30" />
 ```
 
-### Add custom error messages
+### Add Custom Error Messages
 
 ```html
 <input required data-spirit-required-message="My custom message" />
@@ -218,7 +220,7 @@ _Set the current locale globally_
 | `locale`   | —       | ✓        | The corresponding locale                                            |
 | `messages` | —       | ✓        | Object containing validator names as keys and error texts as values |
 
-### Custom validators
+### Custom Validators
 
 **FormValidations.addElementValidator(elem, fn, message, priority, halt)**
 
