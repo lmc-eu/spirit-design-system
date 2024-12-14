@@ -6,8 +6,8 @@ dist
 build
 .github
 
-# Temporary disabled packages
-# we will fix them incrementally
-form-validations
 # Codemods transforms directory
 transforms
+
+# Fix case of the files
+MIGRATION-*
