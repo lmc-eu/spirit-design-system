@@ -1,3 +1,6 @@
+<!-- @see: https://jira.almacareer.tech/browse/DS-1604 -->
+<!--lint disable heading-capitalization-->
+
 # Web-React v3 Codemods
 
 This is a collection of codemods for updating Web-React v3 components.
