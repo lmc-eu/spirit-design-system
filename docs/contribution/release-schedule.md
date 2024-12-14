@@ -68,7 +68,7 @@ To get support for a specific version, please refer to the [support Slack channe
 
 ## Release Names
 
-To get more information about the release names, please refer to the [Release Namse Decision][release-name-decision].
+To get more information about the release names, please refer to the [Release Names Decision][release-names-decision].
 
 ## Assets Managed Under This Release Schedule
 
