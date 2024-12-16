@@ -109,11 +109,13 @@ HTML input:
 The maximum size of the uploaded file that is validated by the JavaScript plugin can be adjusted.
 The default value is 10 MB.
 To increase the limit for example to 20 MB, add the `maxFileSize` attribute.
-The attribute value should be given in bytes:
+The attribute value is given in **bytes**:
 
 ```twig
-<FileUploaderInput maxFileSize={ 20000000 } />
+<FileUploaderInput maxFileSize={ 20971520 } />
 ```
+
+👉 [Learn how file sizes are calculated][learn-about-file-sizes]
 
 ### Maximum Number of Files in Queue (JavaScript)
 
@@ -202,28 +204,28 @@ To mark the input as disabled, simply add the `isDisabled` attribute:
 
 ### API
 
-| Name                    | Type                                           | Default                 | Required | Description                                                           |
-| ----------------------- | ---------------------------------------------- | ----------------------- | -------- | --------------------------------------------------------------------- |
-| `accept`                | `string`                                       | `null`                  | ✕        | Allowed file types                                                    |
-| `dragAndDropText`       | `string`                                       | `or drag and drop here` | ✕        | Text shown in the drop zone if drag-and-drop is enabled on the device |
-| `helperText`            | `string`                                       | `null`                  | ✕\*\*    | Custom helper text                                                    |
-| `iconName`              | `string`                                       | `upload`                | ✕        | Icon used in the drop zone                                            |
-| `id`                    | `string`                                       | —                       | ✓        | Input and label identification                                        |
-| `isDisabled`            | `bool`                                         | `false`                 | ✕        | If true, input is disabled                                            |
-| `isLabelHidden`         | `bool`                                         | `false`                 | ✕        | If true, label is hidden                                              |
-| `isRequired`            | `bool`                                         | `false`                 | ✕        | If true, input is marked as required                                  |
-| `label`                 | `string`                                       | `null`                  | ✕\*      | Label text                                                            |
-| `maxFileSize`           | `number`                                       | `1000000`               | ✕        | The maximum size of the uploaded file in bytes                        |
-| `maxUploadedFiles`      | `number`                                       | `10`                    | ✕        | Maximum file upload queue size                                        |
-| `multiple`              | `void`                                         | `null`                  | ✕        | If set, [multiple files can be selected][multiple-attr]               |
-| `name`                  | `string`                                       | `null`                  | ✕        | Input name                                                            |
-| `pickAFileText`         | `string`                                       | `Upload your file`      | ✕        | Text shown in the drop zone                                           |
-| `queueLimitBehavior`    | \[`hide` \| `disable` \| `none`]               | `none`                  | ✕        | Input behavior when the file queue is filled                          |
-| `UNSAFE_helperText`     | `string`                                       | `null`                  | ✕\*\*    | Unescaped custom helper text                                          |
-| `UNSAFE_label`          | `string`                                       | `null`                  | ✕\*      | Unescaped label text (allows HTML)                                    |
-| `UNSAFE_validationText` | \[`string` \| `string[]`]                      | `null`                  | ✕\*\*    | Unescaped validation text                                             |
-| `validationState`       | [Validation dictionary][dictionary-validation] | `null`                  | ✕        | Type of validation state                                              |
-| `validationText`        | \[`string` \| `string[]`]                      | `null`                  | ✕\*\*    | Validation text                                                       |
+| Name                    | Type                                           | Default                 | Required | Description                                                                                                        |
+| ----------------------- | ---------------------------------------------- | ----------------------- | -------- | ------------------------------------------------------------------------------------------------------------------ |
+| `accept`                | `string`                                       | `null`                  | ✕        | Allowed file types                                                                                                 |
+| `dragAndDropText`       | `string`                                       | `or drag and drop here` | ✕        | Text shown in the drop zone if drag-and-drop is enabled on the device                                              |
+| `helperText`            | `string`                                       | `null`                  | ✕\*\*    | Custom helper text                                                                                                 |
+| `iconName`              | `string`                                       | `upload`                | ✕        | Icon used in the drop zone                                                                                         |
+| `id`                    | `string`                                       | —                       | ✓        | Input and label identification                                                                                     |
+| `isDisabled`            | `bool`                                         | `false`                 | ✕        | If true, input is disabled                                                                                         |
+| `isLabelHidden`         | `bool`                                         | `false`                 | ✕        | If true, label is hidden                                                                                           |
+| `isRequired`            | `bool`                                         | `false`                 | ✕        | If true, input is marked as required                                                                               |
+| `label`                 | `string`                                       | `null`                  | ✕\*      | Label text                                                                                                         |
+| `maxFileSize`           | `number`                                       | `1000000`               | ✕        | The maximum size of the uploaded file in **bytes**. [Learn how file sizes are calculated][learn-about-file-sizes]. |
+| `maxUploadedFiles`      | `number`                                       | `10`                    | ✕        | Maximum file upload queue size                                                                                     |
+| `multiple`              | `void`                                         | `null`                  | ✕        | If set, [multiple files can be selected][multiple-attr]                                                            |
+| `name`                  | `string`                                       | `null`                  | ✕        | Input name                                                                                                         |
+| `pickAFileText`         | `string`                                       | `Upload your file`      | ✕        | Text shown in the drop zone                                                                                        |
+| `queueLimitBehavior`    | \[`hide` \| `disable` \| `none`]               | `none`                  | ✕        | Input behavior when the file queue is filled                                                                       |
+| `UNSAFE_helperText`     | `string`                                       | `null`                  | ✕\*\*    | Unescaped custom helper text                                                                                       |
+| `UNSAFE_label`          | `string`                                       | `null`                  | ✕\*      | Unescaped label text (allows HTML)                                                                                 |
+| `UNSAFE_validationText` | \[`string` \| `string[]`]                      | `null`                  | ✕\*\*    | Unescaped validation text                                                                                          |
+| `validationState`       | [Validation dictionary][dictionary-validation] | `null`                  | ✕        | Type of validation state                                                                                           |
+| `validationText`        | \[`string` \| `string[]`]                      | `null`                  | ✕\*\*    | Validation text                                                                                                    |
 
 (\*) To keep the component accessible, a label is always required. You can use the `label` for simple text or `UNSAFE_label` for HTML content.
 (\*\*) Props with and without `UNSAFE_` prefix are mutually exclusive.
@@ -337,6 +339,7 @@ This is how all subcomponents build up the complete FileUploader:
 ```
 
 [dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
+[learn-about-file-sizes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/FileUploader/README.md#understanding-file-size-in-bytes
 [mdn-accept]: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/accept
 [mdn-input-file]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file
 [mdn-multiple]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#multiple
