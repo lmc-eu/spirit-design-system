@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.1.0"></a>
+
+# [4.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@4.0.0...@lmc-eu/spirit-web-twig@4.1.0) (2024-12-16)
+
+### Code Refactoring
+
+- **web-react:** Collapse API prop changed ([9935692](https://github.com/lmc-eu/spirit-design-system/commit/9935692))
+- **web-twig:** Collapse API attribute changed ([f09a740](https://github.com/lmc-eu/spirit-design-system/commit/f09a740))
+
+### Documentation
+
+- Add missing migration links to packages ([9a96b53](https://github.com/lmc-eu/spirit-design-system/commit/9a96b53))
+- **web-twig:** Add link to list with all deprecations ([2c12a12](https://github.com/lmc-eu/spirit-design-system/commit/2c12a12)), closes [#DS-1215](https://github.com/lmc-eu/spirit-design-system/issues/DS-1215)
+- **web-twig:** Move Container into DocsSection using `container` enum prop ([c3ad4b2](https://github.com/lmc-eu/spirit-design-system/commit/c3ad4b2))
+
+### Features
+
+- **web-twig:** Introduce isFluid prop to Container ([8f86d61](https://github.com/lmc-eu/spirit-design-system/commit/8f86d61))
+
+### Styles
+
+- **web-twig:** Fix docs using markdown linter ([332d07c](https://github.com/lmc-eu/spirit-design-system/commit/332d07c)), closes [#DS-1100](https://github.com/lmc-eu/spirit-design-system/issues/DS-1100)
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="4.0.0"></a>
 
 # [4.0.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@4.0.0-alpha.2...@lmc-eu/spirit-web-twig@4.0.0) (2024-11-25)
