@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.3.0"></a>
+
+# [1.3.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@1.2.0...@lmc-eu/spirit-codemods@1.3.0) (2024-12-16)
+
+### Bug Fixes
+
+- **codemods:** Fix bug with extra parentheses ([9130a33](https://github.com/lmc-eu/spirit-design-system/commit/9130a33))
+
+### Features
+
+- **codemod:** Add `isDisposable` codemod for Collapse ([59296dc](https://github.com/lmc-eu/spirit-design-system/commit/59296dc)), closes [#832](https://github.com/lmc-eu/spirit-design-system/issues/832)
+
+### Styles
+
+- **common, codemods, analytics, design-tokens:** Fix docs by markdown linter ([f5941f7](https://github.com/lmc-eu/spirit-design-system/commit/f5941f7))
+
+**Note:** Version bump only for package @lmc-eu/spirit-codemods
+
 <a name="1.2.0"></a>
 
 # [1.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@1.2.0-alpha.1...@lmc-eu/spirit-codemods@1.2.0) (2024-11-25)

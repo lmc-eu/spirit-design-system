@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.2.4"></a>
+
+## [0.2.4](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-example-next-with-pages-router@0.2.3-alpha.2...@almacareer/spirit-example-next-with-pages-router@0.2.4) (2024-12-16)
+
+### Bug Fixes
+
+- **examples:** Add mandatory elementType to examples ([021932c](https://github.com/lmc-eu/spirit-design-system/commit/021932c))
+
+### Chores
+
+- **release:** Publish ([f3f9f73](https://github.com/lmc-eu/spirit-design-system/commit/f3f9f73))
+- **release:** Publish ([2c09d62](https://github.com/lmc-eu/spirit-design-system/commit/2c09d62))
+
+### Styles
+
+- **exporters, docs, examples:** Fix docs by markdown linter ([1915a9f](https://github.com/lmc-eu/spirit-design-system/commit/1915a9f)), closes [#DS-1100](https://github.com/lmc-eu/spirit-design-system/issues/DS-1100)
+
+**Note:** Version bump only for package @almacareer/spirit-example-next-with-pages-router
+
 <a name="0.2.3"></a>
 
 ## [0.2.3](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-example-next-with-pages-router@0.2.3-alpha.2...@almacareer/spirit-example-next-with-pages-router@0.2.3) (2024-11-25)

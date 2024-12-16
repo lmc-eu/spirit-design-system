@@ -3,6 +3,49 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.1.0"></a>
+
+# [3.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.0.0...@lmc-eu/spirit-web-react@3.1.0) (2024-12-16)
+
+### Bug Fixes
+
+- **web-react:** Add missing exports to components index ([039cee7](https://github.com/lmc-eu/spirit-design-system/commit/039cee7))
+- **web-react:** Pass aria props rel and target based on element type to the dom element ([3d55489](https://github.com/lmc-eu/spirit-design-system/commit/3d55489)), closes [#DS-1575](https://github.com/lmc-eu/spirit-design-system/issues/DS-1575)
+
+### Code Refactoring
+
+- **web-react:** Collapse API prop changed ([9935692](https://github.com/lmc-eu/spirit-design-system/commit/9935692))
+
+### Documentation
+
+- Add missing migration links to packages ([9a96b53](https://github.com/lmc-eu/spirit-design-system/commit/9a96b53))
+- **DICTIONARIES:** Add background color dictionary ([b12e17e](https://github.com/lmc-eu/spirit-design-system/commit/b12e17e))
+- **web-react:** Add IconsProvider documentation [#DS-815](https://github.com/lmc-eu/spirit-design-system/issues/DS-815) ([7deebaa](https://github.com/lmc-eu/spirit-design-system/commit/7deebaa))
+- **web-react:** Add link to list with all deprecations ([0065e51](https://github.com/lmc-eu/spirit-design-system/commit/0065e51)), closes [#DS-1215](https://github.com/lmc-eu/spirit-design-system/issues/DS-1215)
+- **web-react:** Move Container into DocsSection using `container` enum prop ([bddb842](https://github.com/lmc-eu/spirit-design-system/commit/bddb842))
+- **web:** Add link to list with all deprecations ([f3934c6](https://github.com/lmc-eu/spirit-design-system/commit/f3934c6)), closes [#DS-1215](https://github.com/lmc-eu/spirit-design-system/issues/DS-1215)
+
+### Features
+
+- **web-react:** Add minimalistic footer demo [#DS-1574](https://github.com/lmc-eu/spirit-design-system/issues/DS-1574) ([b58db79](https://github.com/lmc-eu/spirit-design-system/commit/b58db79))
+- **web-react:** Introduce Card component [#1535](https://github.com/lmc-eu/spirit-design-system/issues/1535) ([8aa4144](https://github.com/lmc-eu/spirit-design-system/commit/8aa4144))
+- **web-react:** Introduce isFluid prop to Container ([153db29](https://github.com/lmc-eu/spirit-design-system/commit/153db29))
+- **web-react:** Introduce responsive layouts of Card [#DS-1559](https://github.com/lmc-eu/spirit-design-system/issues/DS-1559) ([25cd11b](https://github.com/lmc-eu/spirit-design-system/commit/25cd11b))
+- **web-react:** Update Card images [#1535](https://github.com/lmc-eu/spirit-design-system/issues/1535) ([701e358](https://github.com/lmc-eu/spirit-design-system/commit/701e358))
+
+### Styles
+
+- **web-react:** Fix docs using makrdown linter ([c8da7c7](https://github.com/lmc-eu/spirit-design-system/commit/c8da7c7)), closes [#DS-1100](https://github.com/lmc-eu/spirit-design-system/issues/DS-1100)
+
+### Tests
+
+- **web-react:** Fix typo in `data-testid` causing an unsupported attribute on DOM ([5ebbb60](https://github.com/lmc-eu/spirit-design-system/commit/5ebbb60))
+- **web-react:** Mock usage of the `useIcon` hook ([ae79e54](https://github.com/lmc-eu/spirit-design-system/commit/ae79e54))
+- **web-react:** Refactor ButtonLink test using screen and roles ([0b690ae](https://github.com/lmc-eu/spirit-design-system/commit/0b690ae))
+- **web-react:** Set Jest to automatically clear all mocks ([9f99b21](https://github.com/lmc-eu/spirit-design-system/commit/9f99b21))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="3.0.0"></a>
 
 # [3.0.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.0.0-alpha.5...@lmc-eu/spirit-web-react@3.0.0) (2024-11-25)

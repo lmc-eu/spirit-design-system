@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.2.0"></a>
+
+# [2.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-tokens-exporter@2.1.0...@almacareer/spirit-tokens-exporter@2.2.0) (2024-12-16)
+
+### Bug Fixes
+
+- **exporter-tokens:** Use correct casing in collections filter ([031061a](https://github.com/lmc-eu/spirit-design-system/commit/031061a))
+
+### Features
+
+- **exporter-tokens:** Sort typography tokens and remove unused parameters ([44981ec](https://github.com/lmc-eu/spirit-design-system/commit/44981ec))
+- **web:** Add minimalistic footer demo [#DS-1574](https://github.com/lmc-eu/spirit-design-system/issues/DS-1574) ([e1751e2](https://github.com/lmc-eu/spirit-design-system/commit/e1751e2))
+
+### Styles
+
+- **exporters, docs, examples:** Fix docs by markdown linter ([1915a9f](https://github.com/lmc-eu/spirit-design-system/commit/1915a9f)), closes [#DS-1100](https://github.com/lmc-eu/spirit-design-system/issues/DS-1100)
+
+**Note:** Version bump only for package @almacareer/spirit-tokens-exporter
+
 <a name="2.1.0"></a>
 
 # [2.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-tokens-exporter@2.0.0...@almacareer/spirit-tokens-exporter@2.1.0) (2024-11-22)

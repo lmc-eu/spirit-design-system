@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.0"></a>
+
+# [1.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo-app@1.0.0...@lmc-eu/spirit-demo-app@1.1.0) (2024-12-16)
+
+### Chores
+
+- **demo:** Hide elements in Supernova component preview ([f496c5a](https://github.com/lmc-eu/spirit-design-system/commit/f496c5a))
+- **demo:** Hide elements in Supernova component preview - change allowed URLs [#DS-1577](https://github.com/lmc-eu/spirit-design-system/issues/DS-1577) ([cf62ead](https://github.com/lmc-eu/spirit-design-system/commit/cf62ead))
+- Introduce New Favicon ([da38dbe](https://github.com/lmc-eu/spirit-design-system/commit/da38dbe))
+
+### Documentation
+
+- **web-react:** Move Container into DocsSection using `container` enum prop ([bddb842](https://github.com/lmc-eu/spirit-design-system/commit/bddb842))
+- **web:** Move Container into Section in all components ([96e3bae](https://github.com/lmc-eu/spirit-design-system/commit/96e3bae))
+
+### Features
+
+- **web:** Introduce `Card` component [#DS-1397](https://github.com/lmc-eu/spirit-design-system/issues/DS-1397) ([ae879d0](https://github.com/lmc-eu/spirit-design-system/commit/ae879d0))
+
+**Note:** Version bump only for package @lmc-eu/spirit-demo-app
+
 <a name="1.0.0"></a>
 
 # [1.0.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo-app@1.0.0-alpha.1...@lmc-eu/spirit-demo-app@1.0.0) (2024-11-25)

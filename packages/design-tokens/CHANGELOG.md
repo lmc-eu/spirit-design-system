@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.0.1"></a>
+
+## [3.0.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@3.0.0...@lmc-eu/spirit-design-tokens@3.0.1) (2024-12-16)
+
+### Styles
+
+- **common, codemods, analytics, design-tokens:** Fix docs by markdown linter ([f5941f7](https://github.com/lmc-eu/spirit-design-system/commit/f5941f7))
+
+**Note:** Version bump only for package @lmc-eu/spirit-design-tokens
+
 <a name="3.0.0"></a>
 
 # [3.0.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@3.0.0-alpha.3...@lmc-eu/spirit-design-tokens@3.0.0) (2024-11-25)

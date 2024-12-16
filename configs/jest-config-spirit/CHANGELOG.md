@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.1.1"></a>
+
+## [0.1.1](https://github.com/lmc-eu/spirit-design-system/compare/jest-config-spirit@0.1.0...jest-config-spirit@0.1.1) (2024-12-16)
+
+### Styles
+
+- **common, codemods, analytics, design-tokens:** Fix docs by markdown linter ([f5941f7](https://github.com/lmc-eu/spirit-design-system/commit/f5941f7))
+
+**Note:** Version bump only for package jest-config-spirit
+
 <a name="0.1.0"></a>
 
 # [0.1.0](https://github.com/lmc-eu/spirit-design-system/compare/jest-config-spirit@0.0.5...jest-config-spirit@0.1.0) (2024-11-22)

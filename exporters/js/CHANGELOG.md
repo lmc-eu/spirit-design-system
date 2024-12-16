@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.8"></a>
+
+## [2.0.8](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-js@2.0.7...@lmc-eu/spirit-exporters-js@2.0.8) (2024-12-16)
+
+### Styles
+
+- **exporters, docs, examples:** Fix docs by markdown linter ([1915a9f](https://github.com/lmc-eu/spirit-design-system/commit/1915a9f)), closes [#DS-1100](https://github.com/lmc-eu/spirit-design-system/issues/DS-1100)
+
+**Note:** Version bump only for package @lmc-eu/spirit-exporters-js
+
 <a name="2.0.7"></a>
 
 ## [2.0.7](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-js@2.0.6...@lmc-eu/spirit-exporters-js@2.0.7) (2024-11-22)

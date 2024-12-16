@@ -3,6 +3,42 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.1.0"></a>
+
+# [3.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.0.0...@lmc-eu/spirit-web@3.1.0) (2024-12-16)
+
+### Bug Fixes
+
+- **web:** Prevent SVG inside `PartnerLogo` from overflowing [#DS-1560](https://github.com/lmc-eu/spirit-design-system/issues/DS-1560) ([0e32b8e](https://github.com/lmc-eu/spirit-design-system/commit/0e32b8e))
+
+### Chores
+
+- **web:** Allow duplicate headings in docs ([6cc4a43](https://github.com/lmc-eu/spirit-design-system/commit/6cc4a43))
+
+### Code Refactoring
+
+- **web:** Collapse API attribute changed ([7e87c6a](https://github.com/lmc-eu/spirit-design-system/commit/7e87c6a))
+
+### Documentation
+
+- Add missing migration links to packages ([9a96b53](https://github.com/lmc-eu/spirit-design-system/commit/9a96b53))
+- **web:** Add link to list with all deprecations ([f3934c6](https://github.com/lmc-eu/spirit-design-system/commit/f3934c6)), closes [#DS-1215](https://github.com/lmc-eu/spirit-design-system/issues/DS-1215)
+- **web:** Delete forgotten close button notice in the `Toast` README ([6535952](https://github.com/lmc-eu/spirit-design-system/commit/6535952))
+- **web:** Move Container into Section in all components ([96e3bae](https://github.com/lmc-eu/spirit-design-system/commit/96e3bae))
+
+### Features
+
+- **web:** Add minimalistic footer demo [#DS-1574](https://github.com/lmc-eu/spirit-design-system/issues/DS-1574) ([e1751e2](https://github.com/lmc-eu/spirit-design-system/commit/e1751e2))
+- **web:** Introduce `Card` component [#DS-1397](https://github.com/lmc-eu/spirit-design-system/issues/DS-1397) ([ae879d0](https://github.com/lmc-eu/spirit-design-system/commit/ae879d0))
+- **web:** Introduce Fluid Container ([5f4f321](https://github.com/lmc-eu/spirit-design-system/commit/5f4f321))
+- **web:** Introduce responsive layouts of `Card` [#DS-1559](https://github.com/lmc-eu/spirit-design-system/issues/DS-1559) ([2ec34e8](https://github.com/lmc-eu/spirit-design-system/commit/2ec34e8))
+
+### Styles
+
+- **common, codemods, analytics, design-tokens:** Fix docs by markdown linter ([f5941f7](https://github.com/lmc-eu/spirit-design-system/commit/f5941f7))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="3.0.0"></a>
 
 # [3.0.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.0.0-alpha.5...@lmc-eu/spirit-web@3.0.0) (2024-11-25)

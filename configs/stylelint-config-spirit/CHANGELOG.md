@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.1.6"></a>
+
+## [0.1.6](https://github.com/lmc-eu/spirit-design-system/compare/stylelint-config-spirit@0.1.5...stylelint-config-spirit@0.1.6) (2024-12-16)
+
+### Styles
+
+- **common, codemods, analytics, design-tokens:** Fix docs by markdown linter ([f5941f7](https://github.com/lmc-eu/spirit-design-system/commit/f5941f7))
+
+**Note:** Version bump only for package stylelint-config-spirit
+
 <a name="0.1.5"></a>
 
 ## [0.1.5](https://github.com/lmc-eu/spirit-design-system/compare/stylelint-config-spirit@0.1.4...stylelint-config-spirit@0.1.5) (2024-11-22)
