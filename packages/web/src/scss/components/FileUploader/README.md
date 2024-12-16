@@ -101,9 +101,11 @@ To pick more than one file, just add the [`multiple`][mdn-multiple] attribute to
 The maximum size of the uploaded file that is validated by the JavaScript plugin can be adjusted. The default value is
 10 MB. To increase the limit for example to 20 MB, add the `data-spirit-max-file-size` attribute:
 
+👉 [Learn how file sizes are calculated][learn-about-file-sizes]
+
 ```html
 <div class="FileUploader" data-spirit-toggle="fileUploader">
-  <div class="FileUploaderInput" data-spirit-element="wrapper" data-spirit-max-file-size="20000000">
+  <div class="FileUploaderInput" data-spirit-element="wrapper" data-spirit-max-file-size="20971520">
     <!-- ... -->
   </div>
   <!-- FileUploaderList -->
@@ -636,10 +638,11 @@ to the missing `name` attribute.
 
 Example: So if you set `name="attachments"` to the default input element, the attachments will then show `name="attachments[]"`.
 
-[web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
+[dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
+[learn-about-file-sizes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/FileUploader/README.md#understanding-file-size-in-bytes
+[mdn-accept]: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/accept
 [mdn-input-file]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file
 [mdn-multiple]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#multiple
-[mdn-accept]: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/accept
 [mdn-template]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template
-[dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
 [prefixed]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#prefixing-css-class-names
+[web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
