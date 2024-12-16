@@ -381,7 +381,7 @@ and [escape hatches][readme-escape-hatches].
 | `label`              | `string`                             | —        | ✕        | Field label                                                                                                                                                     |
 | `labelText`          | `string`                             | —        | ✕        | Label for input in Drop zone                                                                                                                                    |
 | `linkText`           | `string`                             | —        | ✕        | Link text in input in Drop zone                                                                                                                                 |
-| `maxFileSize`        | `number`                             | 1000000  | ✕        | The maximum size of the uploaded file in bytes                                                                                                                  |
+| `maxFileSize`        | `number`                             | 1000000  | ✕        | The maximum size of the uploaded file in **bytes**. [Learn how file sizes are calculated](#understanding-file-size-in-bytes).                                   |
 | `maxUploadedFiles`   | `number`                             | 10       | ✕        | Maximum file upload queue size                                                                                                                                  |
 | `name`               | `string`                             | —        | ✓        | Field name, will be used for each attachment in the queue                                                                                                       |
 | `onError`            | `FileUploaderErrorCallbackType`      | —        | ✕        | Callback on error condition                                                                                                                                     |
@@ -469,38 +469,97 @@ and a collection of props selected above for easier implementation. Other props 
 via `inputProps` and `listProps`.
 `UncontrolledFileUploaderBaseProps` extends `FileUploaderBaseProps`.
 
-| Name                  | Type                                    | Default  | Required | Description                                         |
-| --------------------- | --------------------------------------- | -------- | -------- | --------------------------------------------------- |
-| `attachmentComponent` | `string`                                | —        | ✓        | A component for rendering a single attachment       |
-| `helperText`          | `string`                                | —        | ✕        | Custom helper text                                  |
-| `iconName`            | `string`                                | `upload` | ✓        | Icon used in the UncontrolledFileUploader drop zone |
-| `id`                  | `string`                                | —        | ✓        | UncontrolledFileUploader id                         |
-| `inputId`             | `string`                                | —        | ✓        | FileUploaderInput id                                |
-| `inputLabel`          | `string`                                | —        | ✓        | FileUploaderInput label                             |
-| `inputName`           | `string`                                | —        | ✓        | FileUploaderInput name                              |
-| `inputProps`          | `Partial<FileUploaderInputBaseProps>`   | —        | ✕        | Rest of FileUploaderInput props                     |
-| `isDisabled`          | `bool`                                  | —        | ✕        | Whether is field disabled                           |
-| `isFluid`             | `bool`                                  | —        | ✕        | When the field is supposed to be fluid              |
-| `isLabelHidden`       | `bool`                                  | —        | ✕        | Whether is input label hidden                       |
-| `isMultiple`          | `bool`                                  | —        | ✕        | When multiple files can be selected at once         |
-| `isRequired`          | `bool`                                  | —        | ✕        | Whether is field marked as required                 |
-| `labelText`           | `string`                                | —        | ✕        | Label for input in Drop zone                        |
-| `linkText`            | `string`                                | —        | ✕        | Link text in input in Drop zone                     |
-| `listId`              | `string`                                | —        | ✓        | FileUploaderList id                                 |
-| `listProps`           | `Partial<FileUploaderListBaseProps>`    | —        | ✕        | Rest of FileUploaderList props                      |
-| `maxFileSize`         | `number`                                | 1000000  | ✕        | The maximum size of the uploaded file in bytes      |
-| `maxUploadedFiles`    | `number`                                | 10       | ✕        | Maximum file upload queue size                      |
-| `onChange`            | `(fileQueue: FileQueueMapType) => void` | —        | ✕        | Callback on change in fileQueue                     |
-| `onInputError`        | `FileUploaderErrorCallbackType`         | —        | ✕        | Callback on error condition                         |
-| `queueLimitBehavior`  | \[`hide` \| `disable` \| `none`]        | `none`   | ✕        | Input behavior when the file queue is filled        |
-| `validationState`     | `ValidationState`                       | —        | ✕        | Validation state                                    |
-| `validationText`      | \[`string` \| `string[]`]               | —        | ✕        | Validation status text                              |
+| Name                  | Type                                    | Default  | Required | Description                                                                                                                   |
+| --------------------- | --------------------------------------- | -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `attachmentComponent` | `string`                                | —        | ✓        | A component for rendering a single attachment                                                                                 |
+| `helperText`          | `string`                                | —        | ✕        | Custom helper text                                                                                                            |
+| `iconName`            | `string`                                | `upload` | ✓        | Icon used in the UncontrolledFileUploader drop zone                                                                           |
+| `id`                  | `string`                                | —        | ✓        | UncontrolledFileUploader id                                                                                                   |
+| `inputId`             | `string`                                | —        | ✓        | FileUploaderInput id                                                                                                          |
+| `inputLabel`          | `string`                                | —        | ✓        | FileUploaderInput label                                                                                                       |
+| `inputName`           | `string`                                | —        | ✓        | FileUploaderInput name                                                                                                        |
+| `inputProps`          | `Partial<FileUploaderInputBaseProps>`   | —        | ✕        | Rest of FileUploaderInput props                                                                                               |
+| `isDisabled`          | `bool`                                  | —        | ✕        | Whether is field disabled                                                                                                     |
+| `isFluid`             | `bool`                                  | —        | ✕        | When the field is supposed to be fluid                                                                                        |
+| `isLabelHidden`       | `bool`                                  | —        | ✕        | Whether is input label hidden                                                                                                 |
+| `isMultiple`          | `bool`                                  | —        | ✕        | When multiple files can be selected at once                                                                                   |
+| `isRequired`          | `bool`                                  | —        | ✕        | Whether is field marked as required                                                                                           |
+| `labelText`           | `string`                                | —        | ✕        | Label for input in Drop zone                                                                                                  |
+| `linkText`            | `string`                                | —        | ✕        | Link text in input in Drop zone                                                                                               |
+| `listId`              | `string`                                | —        | ✓        | FileUploaderList id                                                                                                           |
+| `listProps`           | `Partial<FileUploaderListBaseProps>`    | —        | ✕        | Rest of FileUploaderList props                                                                                                |
+| `maxFileSize`         | `number`                                | 1000000  | ✕        | The maximum size of the uploaded file in **bytes**. [Learn how file sizes are calculated](#understanding-file-size-in-bytes). |
+| `maxUploadedFiles`    | `number`                                | 10       | ✕        | Maximum file upload queue size                                                                                                |
+| `onChange`            | `(fileQueue: FileQueueMapType) => void` | —        | ✕        | Callback on change in fileQueue                                                                                               |
+| `onInputError`        | `FileUploaderErrorCallbackType`         | —        | ✕        | Callback on error condition                                                                                                   |
+| `queueLimitBehavior`  | \[`hide` \| `disable` \| `none`]        | `none`   | ✕        | Input behavior when the file queue is filled                                                                                  |
+| `validationState`     | `ValidationState`                       | —        | ✕        | Validation state                                                                                                              |
+| `validationText`      | \[`string` \| `string[]`]               | —        | ✕        | Validation status text                                                                                                        |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
 For detailed information see [FileUploader][file-uploader] component.
+
+### Understanding File Size in Bytes
+
+File size is measured in bytes, where larger units such as **kibibytes** (KiB) or **mebibytes** (MiB) are derived as follows:
+
+- 1 KiB (kibibyte) = 1,024 bytes
+- 1 MiB (mebibyte) = 1,024 KiB = 1,024 × 1,024 bytes = 1,048,576 bytes
+- 10 MiB (mebibytes) = 10 × 1,048,576 bytes = 10,485,760 bytes
+
+When setting the `maxFileSize` parameter, specify the maximum size of an uploaded file in bytes.
+
+For example:
+To limit files to 1 MiB, set `maxFileSize` to **1048576**.
+To limit files to 10 MiB, set `maxFileSize` to **10485760**.
+
+#### Kilo/Mega vs. Kibi/Mebi
+
+In computing, file sizes can be measured using two different standards.
+The **decimal** (base-10) and **binary** (base-2) systems.
+This can cause confusion when terms like `kilobyte` and `kibibyte` are used interchangeably.
+
+**Kilobyte** (kB): Based on the decimal system, 1 kilobyte equals 1,000 bytes.
+This is commonly used in contexts like hard drive capacities, where manufacturers use the decimal standard.
+
+**Kibibyte** (KiB): Based on the binary system, 1 kibibyte equals 1,024 bytes.
+This is often used in computer memory and file size calculations.
+
+The same distinction applies to larger units like **megabytes** (MB) and **mebibytes** (MiB):
+
+- 1 MB = 1,000,000 bytes (decimal)
+- 1 MiB = 1,048,576 bytes (binary)
+
+For precise calculations, especially when using parameters like `maxFileSize`,
+**it is recommended to use the binary standard** and specify values in bytes based on the binary system.
+
+For more details about binary prefixes and file size standards, check out [this Wikipedia article on binary prefixes][wiki-binary-prefixes].
+
+#### PHP & Next.js Configurations
+
+In some cases, you can set file sizes using shorthand notations. However, these values are still interpreted as binary sizes internally.
+
+For example, [in PHP][php-upload-max-filesize] you can use the shorthand `1M` for the `upload_max_filesize`, which corresponds to **1,048,576 bytes (1 MiB)**:
+
+```php
+upload_max_filesize=1M
+```
+
+Similarly, [in Next.js][next-js-body-size-limit], you can specify file size limits using a shorthand like `1mb`.
+This will also be interpreted as **1,048,576 bytes (1 MiB)**:
+
+```jsx
+module.exports = {
+  experimental: {
+    serverActions: {
+      bodySizeLimit: '1mb',
+    },
+  },
+};
+```
 
 ## Icons
 
@@ -513,7 +572,10 @@ please refer to the [Icon component documentation][web-react-icon-documentation]
 [input-element-docs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
 [list-element-docs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul
 [list-item-element-docs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li
+[next-js-body-size-limit]: https://nextjs.org/docs/app/api-reference/config/next-config-js/serverActions#bodysizelimit
+[php-upload-max-filesize]: https://www.php.net/manual/en/ini.core.php#ini.upload-max-filesize
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props
 [web-react-icon-documentation]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Icon/README.md#-usage
+[wiki-binary-prefixes]: https://en.wikipedia.org/wiki/Binary_prefix
