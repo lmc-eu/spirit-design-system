@@ -121,8 +121,7 @@ If you need the whole Header fluid you can do it by adding the `Container--fluid
 
 You can use the [`Navigation`][web-navigation] component inside the `UNSTABLE_Header` component.
 
-The `NavigationLink` components will inherit the `UNSTABLE_Header` height and set the navigation
-link height to the same value.
+The `UNSTABLE_Header` sets the height of the `Navigation` component to the same value as the `UNSTABLE_Header`.
 
 Use the composition mentioned above to create the layout you need.
 
@@ -140,13 +139,13 @@ Use the composition mentioned above to create the layout you need.
       <nav class="Navigation" aria-label="Main Navigation">
         <ul>
           <li>
-            <a href="#" class="NavigationLink">Link</a>
+            <a href="#" class="NavigationAction">Link</a>
           </li>
           <li>
-            <a href="#" class="NavigationLink NavigationLink--selected" aria-current="page">Selected</a>
+            <a href="#" class="NavigationAction NavigationAction--selected" aria-current="page">Selected</a>
           </li>
           <li>
-            <a href="#" class="NavigationLink NavigationLink--disabled">Disabled</a>
+            <a href="#" class="NavigationAction NavigationAction--disabled">Disabled</a>
           </li>
         </ul>
       </nav>
