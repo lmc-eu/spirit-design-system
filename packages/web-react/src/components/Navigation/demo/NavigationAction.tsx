@@ -1,23 +1,23 @@
 import React from 'react';
 import Navigation from '../Navigation';
+import NavigationAction from '../NavigationAction';
 import NavigationItem from '../NavigationItem';
-import NavigationLink from '../NavigationLink';
 
 const NavigationDefault = () => {
   return (
     <Navigation aria-label="Main Navigation">
       <NavigationItem>
-        <NavigationLink href="/">Link</NavigationLink>
+        <NavigationAction href="/">Link</NavigationAction>
       </NavigationItem>
       <NavigationItem>
-        <NavigationLink href="/" aria-current="page" isSelected>
+        <NavigationAction href="/" aria-current="page" isSelected>
           Selected
-        </NavigationLink>
+        </NavigationAction>
       </NavigationItem>
       <NavigationItem>
-        <NavigationLink href="/" isDisabled>
+        <NavigationAction href="/" isDisabled>
           Disabled
-        </NavigationLink>
+        </NavigationAction>
       </NavigationItem>
     </Navigation>
   );

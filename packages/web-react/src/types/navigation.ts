@@ -9,30 +9,30 @@ import {
   TransferProps,
 } from './shared';
 
-export interface NavigationLinkBaseProps extends ChildrenProps, StyleProps, AriaLabelingProps, TransferProps {
-  /** NavigationLink's href attribute */
+export interface NavigationActionBaseProps extends ChildrenProps, StyleProps, AriaLabelingProps, TransferProps {
+  /** NavigationAction's href attribute */
   href?: string;
-  /** Whether is the NavigationLink disabled */
+  /** Whether is the NavigationAction disabled */
   isDisabled?: boolean;
-  /** Whether is the NavigationLink selected */
+  /** Whether is the NavigationAction selected */
   isSelected?: boolean;
-  /** NavigationLink's target attribute */
+  /** NavigationAction's target attribute */
   target?: LinkTarget;
 }
 
-export type NavigationLinkProps<E extends ElementType> = {
+export type NavigationActionProps<E extends ElementType> = {
   /**
    * The HTML element or React element used to render the button, e.g. 'div', 'a', or `RouterLink`.
    *
    * @default 'a'
    */
   elementType?: E;
-} & NavigationLinkBaseProps;
+} & NavigationActionBaseProps;
 
 export interface SpiritNavigationItemProps extends ChildrenProps, StyleProps {}
 
-export type SpiritNavigationLinkProps<E extends ElementType = 'a'> = NavigationLinkProps<E> &
-  SpiritPolymorphicElementPropsWithRef<E, NavigationLinkProps<E>>;
+export type SpiritNavigationActionProps<E extends ElementType = 'a'> = NavigationActionProps<E> &
+  SpiritPolymorphicElementPropsWithRef<E, NavigationActionProps<E>>;
 
 export interface SpiritNavigationProps extends StyleProps, AriaLabelingProps {
   children:
