@@ -12,13 +12,13 @@ describe('CardLogo', () => {
   restPropsTest(CardLogo, '.CardLogo');
 
   it('should render logo card component and have default class name', () => {
-    render(<CardLogo data-testId="test" />);
+    render(<CardLogo data-testid="test" />);
 
     expect(screen.getByTestId('test')).toHaveClass('CardLogo');
   });
 
   it('should render text children', () => {
-    render(<CardLogo data-testId="test">Hello World</CardLogo>);
+    render(<CardLogo data-testid="test">Hello World</CardLogo>);
 
     expect(screen.getByTestId('test')).toHaveTextContent('Hello World');
   });
