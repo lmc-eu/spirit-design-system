@@ -8,12 +8,12 @@
     display: flex;
 }
 
-.Navigation:has(.NavigationLink) {
+.Navigation:has(.NavigationAction) {
     height: var(--#{tokens.$css-variable-prefix}navigation-height, theme.$height);
 }
 
-.Navigation:not(:has(.NavigationLink)),
-.Navigation:not(:has(.NavigationLink)) > ul {
+.Navigation:not(:has(.NavigationAction)),
+.Navigation:not(:has(.NavigationAction)) > ul {
     gap: theme.$spacing;
     align-items: center;
 }
