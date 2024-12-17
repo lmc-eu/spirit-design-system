@@ -2,7 +2,6 @@ import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
 import {
-  useIconMock,
   classNamePrefixProviderTest,
   validationStatePropsTest,
   requiredPropsTest,
@@ -12,7 +11,7 @@ import {
 } from '@local/tests';
 import Select from '../Select';
 
-jest.mock('../../../hooks', () => useIconMock);
+jest.mock('../../../hooks/useIcon');
 
 describe('Select', () => {
   classNamePrefixProviderTest(Select, 'Select');

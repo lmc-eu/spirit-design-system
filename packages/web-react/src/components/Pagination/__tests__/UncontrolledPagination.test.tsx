@@ -1,9 +1,8 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
-import { useIconMock } from '@local/tests';
 import UncontrolledPagination from '../UncontrolledPagination';
 
-jest.mock('../../../hooks', () => useIconMock);
+jest.mock('../../../hooks/useIcon');
 
 describe('UncontrolledPagination', () => {
   const onPageChange = jest.fn();
