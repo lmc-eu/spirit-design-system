@@ -2,7 +2,6 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import {
-  useIconMock,
   classNamePrefixProviderTest,
   actionButtonColorPropsTest,
   emotionColorPropsTest,
@@ -13,7 +12,7 @@ import {
 } from '@local/tests';
 import ButtonLink from '../ButtonLink';
 
-jest.mock('../../../hooks', () => useIconMock);
+jest.mock('../../../hooks/useIcon');
 
 describe('ButtonLink', () => {
   classNamePrefixProviderTest(ButtonLink, 'Button');
