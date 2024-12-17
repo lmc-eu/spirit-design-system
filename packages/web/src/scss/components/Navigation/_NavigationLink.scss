@@ -1,8 +1,13 @@
 // 1. We need to set the top border too, otherwise the content won't be aligned properly.
 
 @use '@tokens' as tokens;
+@use '../../tools/reset';
 @use '../../tools/typography';
 @use 'theme';
+
+.NavigationLink:where(button) {
+    @include reset.button();
+}
 
 .NavigationLink {
     @include typography.generate(theme.$link-typography);

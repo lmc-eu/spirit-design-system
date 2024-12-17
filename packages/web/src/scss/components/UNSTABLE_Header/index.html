@@ -95,6 +95,46 @@
               <li>
                 <a href="#" class="NavigationLink NavigationLink--selected" aria-current="page">Selected</a>
               </li>
+              <li class="Dropdown">
+                <button
+                  type="button"
+                  class="NavigationLink"
+                  data-spirit-toggle="dropdown"
+                  data-spirit-target="#dropdown-navigation"
+                  aria-expanded="false"
+                  aria-controls="dropdown-navigation"
+                  data-spirit-autoclose="true"
+                >
+                  <span class="Flex Flex--row Flex--noWrap Flex--alignmentXStretch Flex--alignmentYCenter" style="--flex-spacing-x: var(--spirit-space-500)">
+                      Dropdown
+                      <svg width="20" height="20" aria-hidden="true" class="accessibility-open">
+                        <use xlink:href="/assets/icons/svg/sprite.svg#chevron-up" />
+                      </svg>
+                      <svg width="20" height="20" aria-hidden="true" class="accessibility-closed">
+                        <use xlink:href="/assets/icons/svg/sprite.svg#chevron-down" />
+                      </svg>
+                    </span>
+                </button>
+                <div class="DropdownPopover" data-spirit-placement="bottom-end" id="dropdown-navigation">
+                  <ul class="list-unstyled">
+                    <li>
+                      <a href="https://www.example.com" class="Item">
+                        <span class="Item__label">My Account</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.example.com" class="Item">
+                        <span class="Item__label">Settings</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.example.com" class="Item">
+                        <span class="Item__label">Log Out</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
               <li>
                 <span class="NavigationLink NavigationLink--disabled">Disabled</span>
               </li>
@@ -109,6 +149,53 @@
                     <use xlink:href="/assets/icons/svg/sprite.svg#search" />
                   </svg>
                 </button>
+              </li>
+              <li>
+                <div class="Dropdown">
+                  <button
+                    type="button"
+                    class="button-unstyled"
+                    data-spirit-toggle="dropdown"
+                    data-spirit-target="#dropdown-avatar"
+                    aria-expanded="false"
+                    aria-controls="dropdown-avatar"
+                    data-spirit-autoclose="true"
+                  >
+                    <span class="Flex Flex--row Flex--noWrap Flex--alignmentXStretch Flex--alignmentYCenter" style="--flex-spacing-x: var(--spirit-space-500)">
+                      <span class="UNSTABLE_Avatar UNSTABLE_Avatar--medium UNSTABLE_Avatar--square" aria-label="Profile of Jiří Bárta">
+                        <svg width="20" height="20" aria-hidden="true">
+                          <use xlink:href="/assets/icons/svg/sprite.svg#profile" />
+                        </svg>
+                      </span>
+                      <span class="typography-body-small-semibold text-primary">My Account</span>
+                      <svg width="20" height="20" aria-hidden="true" class="accessibility-open">
+                        <use xlink:href="/assets/icons/svg/sprite.svg#chevron-up" />
+                      </svg>
+                      <svg width="20" height="20" aria-hidden="true" class="accessibility-closed">
+                        <use xlink:href="/assets/icons/svg/sprite.svg#chevron-down" />
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="DropdownPopover" data-spirit-placement="bottom-end" id="dropdown-avatar">
+                    <ul class="list-unstyled">
+                      <li>
+                        <a href="https://www.example.com" class="Item">
+                          <span class="Item__label">My Account</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="https://www.example.com" class="Item">
+                          <span class="Item__label">Settings</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="https://www.example.com" class="Item">
+                          <span class="Item__label">Log Out</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </li>
               <li>
                 <a href="#" class="Button Button--secondary Button--medium">Sign up</a>
