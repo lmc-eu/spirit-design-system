@@ -2,8 +2,8 @@ import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import Navigation from '../Navigation';
+import NavigationAction from '../NavigationAction';
 import NavigationItem from '../NavigationItem';
-import NavigationLink from '../NavigationLink';
 import ReadMe from '../README.md';
 
 const meta: Meta<typeof Navigation> = {
@@ -23,12 +23,12 @@ const meta: Meta<typeof Navigation> = {
     children: (
       <>
         <NavigationItem>
-          <NavigationLink href="#" aria-current="page" isSelected>
+          <NavigationAction href="#" aria-current="page" isSelected>
             Home
-          </NavigationLink>
+          </NavigationAction>
         </NavigationItem>
         <NavigationItem>
-          <NavigationLink href="#">Not Home</NavigationLink>
+          <NavigationAction href="#">Not Home</NavigationAction>
         </NavigationItem>
       </>
     ),

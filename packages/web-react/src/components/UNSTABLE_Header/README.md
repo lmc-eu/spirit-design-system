@@ -125,8 +125,8 @@ If you need the whole Header fluid you can do it by adding the `isFluid` prop to
 
 You can use the [`Navigation`][web-react-navigation] component inside the `UNSTABLE_Header` component.
 
-The `NavigationLink` components will inherit the `UNSTABLE_Header` height and set the navigation
-link height to the same value.
+The `NavigationAction` components will inherit the `UNSTABLE_Header` height and set the navigation
+action height to the same value.
 
 Use the composition mentioned above to create the layout you need.
 
@@ -139,17 +139,17 @@ Use the composition mentioned above to create the layout you need.
       </UNSTABLE_HeaderLogo>
       <Navigation>
         <NavigationItem>
-          <NavigationLink href="#">Link</NavigationLink>
+          <NavigationAction href="#">Link</NavigationAction>
         </NavigationItem>
         <NavigationItem>
-          <NavigationLink href="#" aria-current="page" isSelected>
+          <NavigationAction href="#" aria-current="page" isSelected>
             Selected
-          </NavigationLink>
+          </NavigationAction>
         </NavigationItem>
         <NavigationItem>
-          <NavigationLink href="#" isDisabled>
+          <NavigationAction href="#" isDisabled>
             Disabled
-          </NavigationLink>
+          </NavigationAction>
         </NavigationItem>
       </Navigation>
       <Navigation marginLeft="auto">

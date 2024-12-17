@@ -1,19 +1,19 @@
 import { renderHook } from '@testing-library/react';
-import { SpiritNavigationLinkProps } from '../../../types';
-import { useNavigationLinkProps } from '../useNavigationLinkProps';
+import { SpiritNavigationActionProps } from '../../../types';
+import { useNavigationActionProps } from '../useNavigationActionProps';
 
-describe('useNavigationLinkProps', () => {
+describe('useNavigationActionProps', () => {
   it('should return defaults props', () => {
-    const props: SpiritNavigationLinkProps = {
+    const props: SpiritNavigationActionProps = {
       href: '/',
       target: '_blank',
       isSelected: false,
       isDisabled: false,
     };
-    const { result } = renderHook(() => useNavigationLinkProps(props));
+    const { result } = renderHook(() => useNavigationActionProps(props));
 
     expect(result.current).toStrictEqual({
-      navigationLinkProps: {
+      navigationActionProps: {
         href: '/',
         rel: undefined,
         target: '_blank',
@@ -22,17 +22,17 @@ describe('useNavigationLinkProps', () => {
   });
 
   it('should return defaults if element is different from anchor', () => {
-    const props: SpiritNavigationLinkProps<'span'> = {
+    const props: SpiritNavigationActionProps<'span'> = {
       elementType: 'span',
       href: '/',
       target: '_blank',
       isSelected: false,
       isDisabled: false,
     };
-    const { result } = renderHook(() => useNavigationLinkProps(props as SpiritNavigationLinkProps));
+    const { result } = renderHook(() => useNavigationActionProps(props as SpiritNavigationActionProps));
 
     expect(result.current).toStrictEqual({
-      navigationLinkProps: {
+      navigationActionProps: {
         href: undefined,
         rel: undefined,
         target: undefined,
@@ -41,16 +41,16 @@ describe('useNavigationLinkProps', () => {
   });
 
   it('should return for isDisabled', () => {
-    const props: SpiritNavigationLinkProps = {
+    const props: SpiritNavigationActionProps = {
       href: '/',
       target: '_blank',
       isSelected: false,
       isDisabled: true,
     };
-    const { result } = renderHook(() => useNavigationLinkProps(props));
+    const { result } = renderHook(() => useNavigationActionProps(props));
 
     expect(result.current).toStrictEqual({
-      navigationLinkProps: {
+      navigationActionProps: {
         href: undefined,
         rel: undefined,
         target: undefined,
@@ -59,16 +59,16 @@ describe('useNavigationLinkProps', () => {
   });
 
   it('should return for isSelected', () => {
-    const props: SpiritNavigationLinkProps = {
+    const props: SpiritNavigationActionProps = {
       href: '/',
       target: '_blank',
       isSelected: true,
       isDisabled: false,
     };
-    const { result } = renderHook(() => useNavigationLinkProps(props));
+    const { result } = renderHook(() => useNavigationActionProps(props));
 
     expect(result.current).toStrictEqual({
-      navigationLinkProps: {
+      navigationActionProps: {
         href: '/',
         rel: undefined,
         target: '_blank',
@@ -77,17 +77,17 @@ describe('useNavigationLinkProps', () => {
   });
 
   it('should return for elementType', () => {
-    const props: SpiritNavigationLinkProps<'div'> = {
+    const props: SpiritNavigationActionProps<'div'> = {
       elementType: 'div',
       href: '/',
       target: '_blank',
       isSelected: false,
       isDisabled: false,
     };
-    const { result } = renderHook(() => useNavigationLinkProps(props as SpiritNavigationLinkProps));
+    const { result } = renderHook(() => useNavigationActionProps(props as SpiritNavigationActionProps));
 
     expect(result.current).toStrictEqual({
-      navigationLinkProps: {
+      navigationActionProps: {
         href: undefined,
         rel: undefined,
         target: undefined,

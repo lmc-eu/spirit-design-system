@@ -1,12 +1,12 @@
 # Navigation
 
-The `Navigation` component is a container for the navigation links of the application.
+The `Navigation` component is a container for the navigation actions of the application.
 
 It consists of a these parts:
 
 - [Navigation](#navigation)
-- [NavigationItem](#navigation-item)
-- [NavigationLink](#navigation-link)
+  - [NavigationItem](#navigation-item)
+    - [NavigationAction](#navigation-action)
 
 ## Navigation
 
@@ -18,10 +18,10 @@ import { Navigation } from '@lmc-eu/spirit-web-react';
 <Navigation aria-label="Main Navigation">{/* Navigation items go here */}</Navigation>;
 ```
 
-It centres its children vertically, and if the children do not include `NavigationLink` components,
+It centres its children vertically, and if the children do not include `NavigationAction` components,
 it will apply a gap between them.
 
-ℹ️ Don't forget to add the `aria-label` attribute to the `Navigation` component for correct accessible state.
+ℹ️ Don't forget to add the `aria-label` attribute to the `Navigation` component for correct accessible title.
 
 ### API
 
@@ -35,12 +35,12 @@ and [escape hatches][readme-escape-hatches].
 
 ## Navigation Item
 
-The `NavigationItem` is a container for navigation links.
+The `NavigationItem` is a container for navigation actions.
 
 ```jsx
 import { NavigationItem } from '@lmc-eu/spirit-web-react';
 
-<NavigationItem>{/* Navigation links go here */}</NavigationItem>;
+<NavigationItem>{/* Navigation actions go here */}</NavigationItem>;
 ```
 
 ### API
@@ -53,41 +53,41 @@ The components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
-## Navigation Link
+## Navigation Action
 
-The `NavigationLink` is component that is styled to be used as a navigation link.
+The `NavigationAction` is component that is styled to be used as a navigation action.
 
 ```jsx
-import { NavigationLink } from '@lmc-eu/spirit-web-react';
+import { NavigationAction } from '@lmc-eu/spirit-web-react';
 
-<NavigationLink href="#">Link</NavigationLink>;
+<NavigationAction href="#">Link</NavigationAction>;
 ```
 
 It can obtain `isSelected` or `isDisabled` states by adding the respective props.
 
 ```jsx
-<NavigationLink href="#" aria-current="page" isSelected>Selected Link</NavigationLink>
-<NavigationLink href="#" isDisabled>Disabled Link</NavigationLink>
+<NavigationAction href="#" aria-current="page" isSelected>Selected Link</NavigationAction>
+<NavigationAction href="#" isDisabled>Disabled Link</NavigationAction>
 ```
 
 ℹ️ Don't forget to add the `aria-current="page"` attribute for correct accessible state if selected.
 
-ℹ️ Please note that in the `isDisabled` state the `NavigationLink` will be an `span` tag.
+ℹ️ Please note that in the `isDisabled` state the `NavigationAction` will be a `span` tag.
 
-If the `NavigationLink` is inside a [`UNSTABLE_Header`][web-react-unstable-header] component, it will
+If the `NavigationAction` is inside a [`UNSTABLE_Header`][web-react-unstable-header] component, it will
 inherit the height of the `Header`.
 
 ### API
 
-| Name          | Type                              | Default | Required | Description                   |
-| ------------- | --------------------------------- | ------- | -------- | ----------------------------- |
-| `children`    | `string` \| `ReactNode`           | `null`  | ✓        | Content of the NavigationLink |
-| `elementType` | `ElementType`                     | `a`     | ✕        | Type of element used as       |
-| `href`        | `string`                          | -       | ✕        | URL of the link               |
-| `isDisabled`  | `boolean`                         | `false` | ✕        | Whether the link is disabled  |
-| `isSelected`  | `boolean`                         | `false` | ✕        | Whether the link is selected  |
-| `ref`         | `ForwardedRef<HTMLAnchorElement>` | —       | ✕        | Anchor element reference      |
-| `target`      | `string`                          | `null`  | ✕        | Link target                   |
+| Name          | Type                              | Default | Required | Description                     |
+| ------------- | --------------------------------- | ------- | -------- | ------------------------------- |
+| `children`    | `string` \| `ReactNode`           | `null`  | ✓        | Content of the NavigationAction |
+| `elementType` | `ElementType`                     | `a`     | ✕        | Type of element used as         |
+| `href`        | `string`                          | -       | ✕        | URL of the link                 |
+| `isDisabled`  | `boolean`                         | `false` | ✕        | Whether the action is disabled  |
+| `isSelected`  | `boolean`                         | `false` | ✕        | Whether the action is selected  |
+| `ref`         | `ForwardedRef<HTMLAnchorElement>` | —       | ✕        | Anchor element reference        |
+| `target`      | `string`                          | `null`  | ✕        | Link target                     |
 
 The components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -95,22 +95,22 @@ and [escape hatches][readme-escape-hatches].
 
 ### Full Example
 
-With NavigationLink components:
+With NavigationAction components:
 
 ```jsx
 <Navigation aria-label="Main Navigation">
   <NavigationItem>
-    <NavigationLink href="#" aria-current="page" isSelected>
+    <NavigationAction href="#" aria-current="page" isSelected>
       Selected Link
-    </NavigationLink>
+    </NavigationAction>
   </NavigationItem>
   <NavigationItem>
-    <NavigationLink href="#" isDisabled>
+    <NavigationAction href="#" isDisabled>
       Disabled Link
-    </NavigationLink>
+    </NavigationAction>
   </NavigationItem>
   <NavigationItem>
-    <NavigationLink href="#">Link</NavigationLink>
+    <NavigationAction href="#">Link</NavigationAction>
   </NavigationItem>
 </Navigation>
 ```

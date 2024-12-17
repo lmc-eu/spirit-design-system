@@ -1,12 +1,12 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import NavigationLink from '../NavigationLink';
+import NavigationAction from '../NavigationAction';
 import ReadMe from '../README.md';
 
-const meta: Meta<typeof NavigationLink> = {
+const meta: Meta<typeof NavigationAction> = {
   title: 'Components/Navigation',
-  component: NavigationLink,
+  component: NavigationAction,
   parameters: {
     docs: {
       page: () => <Markdown>{ReadMe}</Markdown>,
@@ -34,8 +34,8 @@ const meta: Meta<typeof NavigationLink> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof NavigationLink>;
+type Story = StoryObj<typeof NavigationAction>;
 
-export const NavigationLinkPlayground: Story = {
-  name: 'NavigationLink',
+export const NavigationActionPlayground: Story = {
+  name: 'NavigationAction',
 };
