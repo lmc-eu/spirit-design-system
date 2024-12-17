@@ -4,7 +4,7 @@ import { ButtonLink } from '../../ButtonLink';
 import { Container } from '../../Container';
 import { Flex } from '../../Flex';
 import { Icon } from '../../Icon';
-import { Navigation, NavigationItem, NavigationLink } from '../../Navigation';
+import { Navigation, NavigationAction, NavigationItem } from '../../Navigation';
 import { ProductLogo } from '../../ProductLogo';
 import { defaultSvgLogo } from '../../ProductLogo/demo/ProductLogoDefault';
 import UNSTABLE_Header from '../UNSTABLE_Header';
@@ -20,17 +20,17 @@ const HeaderDefault = () => {
           </UNSTABLE_HeaderLogo>
           <Navigation aria-label="Main Navigation">
             <NavigationItem>
-              <NavigationLink href="#">Link</NavigationLink>
+              <NavigationAction href="#">Link</NavigationAction>
             </NavigationItem>
             <NavigationItem>
-              <NavigationLink href="#" isSelected>
+              <NavigationAction href="#" isSelected>
                 Selected
-              </NavigationLink>
+              </NavigationAction>
             </NavigationItem>
             <NavigationItem>
-              <NavigationLink href="#" isDisabled>
+              <NavigationAction href="#" isDisabled>
                 Disabled
-              </NavigationLink>
+              </NavigationAction>
             </NavigationItem>
           </Navigation>
           <Navigation marginLeft="auto" aria-label="Secondary Navigation">
