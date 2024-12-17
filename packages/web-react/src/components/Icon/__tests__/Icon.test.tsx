@@ -1,10 +1,10 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { useIconMock, restPropsTest, stylePropsTest } from '@local/tests';
+import { restPropsTest, stylePropsTest } from '@local/tests';
 import Icon from '../Icon';
 
-jest.mock('../../../hooks', () => useIconMock);
+jest.mock('../../../hooks/useIcon');
 
 describe('Icon', () => {
   const AddIcon = (props: Record<string, unknown>) => <Icon {...props} name="add" data-testid="test-icon" />;

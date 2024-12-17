@@ -1,8 +1,8 @@
 import '@testing-library/jest-dom';
-import { useIconMock, classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
 import PaginationButtonLink from '../PaginationButtonLink';
 
-jest.mock('../../../hooks', () => useIconMock);
+jest.mock('../../../hooks/useIcon');
 
 describe('PaginationButtonLink', () => {
   classNamePrefixProviderTest(PaginationButtonLink, 'Button');

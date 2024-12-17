@@ -1,11 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import { useIconMock, classNamePrefixProviderTest, restPropsTest, validationTextPropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, validationTextPropsTest } from '@local/tests';
 import FileUploaderInput from '../FileUploaderInput';
 import '@testing-library/jest-dom';
 
-jest.mock('../../../hooks', () => useIconMock);
+jest.mock('../../../hooks/useIcon');
 
 describe('FileUploaderInput', () => {
   classNamePrefixProviderTest(FileUploaderInput, 'FileUploaderInput');
