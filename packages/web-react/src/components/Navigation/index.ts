@@ -1,8 +1,8 @@
 'use client';
 
 export { default as Navigation } from './Navigation';
+export { default as NavigationAction } from './NavigationAction';
 export { default as NavigationItem } from './NavigationItem';
-export { default as NavigationLink } from './NavigationLink';
 export * from './useNavigationStyleProps';
-export * from './useNavigationLinkProps';
-export * from './useNavigationLinkStyleProps';
+export * from './useNavigationActionProps';
+export * from './useNavigationActionStyleProps';
