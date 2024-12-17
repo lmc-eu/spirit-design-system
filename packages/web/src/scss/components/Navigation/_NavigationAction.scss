@@ -4,7 +4,7 @@
 @use '../../tools/typography';
 @use 'theme';
 
-.NavigationLink {
+.NavigationAction {
     @include typography.generate(theme.$link-typography);
 
     display: flex;
@@ -34,7 +34,7 @@
     }
 }
 
-.NavigationLink--selected {
+.NavigationAction--selected {
     color: theme.$link-color-state-selected;
     border-bottom-color: theme.$link-border-bottom-color-selected-state-default;
     background-color: theme.$link-background-color-state-selected;
@@ -50,7 +50,7 @@
     }
 }
 
-.NavigationLink--disabled {
+.NavigationAction--disabled {
     color: theme.$link-color-state-disabled;
     pointer-events: none;
 }
