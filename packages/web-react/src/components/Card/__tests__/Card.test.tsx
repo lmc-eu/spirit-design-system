@@ -18,7 +18,7 @@ describe('Card', () => {
   });
 
   it('should render custom element', () => {
-    render(<Card elementType="section" data-testId="test" />);
+    render(<Card elementType="section" data-testid="test" />);
 
     expect(screen.getByTestId('test')).toContainHTML('section');
   });

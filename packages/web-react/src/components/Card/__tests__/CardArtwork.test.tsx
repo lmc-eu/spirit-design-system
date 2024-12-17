@@ -14,13 +14,13 @@ describe('CardArtwork', () => {
   alignmentXPropsTest(CardArtwork, 'CardArtwork');
 
   it('should render artwork card component and have default class name', () => {
-    render(<CardArtwork data-testId="test" />);
+    render(<CardArtwork data-testid="test" />);
 
     expect(screen.getByTestId('test')).toHaveClass('CardArtwork');
   });
 
   it('should render text children', () => {
-    render(<CardArtwork data-testId="test">Hello World</CardArtwork>);
+    render(<CardArtwork data-testid="test">Hello World</CardArtwork>);
 
     expect(screen.getByTestId('test')).toHaveTextContent('Hello World');
   });
