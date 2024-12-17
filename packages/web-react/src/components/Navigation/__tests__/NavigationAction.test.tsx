@@ -4,45 +4,45 @@ import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
-import NavigationLink from '../NavigationLink';
+import NavigationAction from '../NavigationAction';
 
-describe('NavigationLink', () => {
-  classNamePrefixProviderTest(NavigationLink, 'NavigationLink');
+describe('NavigationAction', () => {
+  classNamePrefixProviderTest(NavigationAction, 'NavigationAction');
 
-  stylePropsTest(NavigationLink);
+  stylePropsTest(NavigationAction);
 
-  restPropsTest(NavigationLink, 'a');
+  restPropsTest(NavigationAction, 'a');
 
   it('should have default classname', () => {
-    render(<NavigationLink href="/">Content</NavigationLink>);
+    render(<NavigationAction href="/">Content</NavigationAction>);
 
-    expect(screen.getByRole('link')).toHaveClass('NavigationLink');
+    expect(screen.getByRole('link')).toHaveClass('NavigationAction');
   });
 
   it('should have selected classname', () => {
     render(
-      <NavigationLink href="/" isSelected>
+      <NavigationAction href="/" isSelected>
         Content
-      </NavigationLink>,
+      </NavigationAction>,
     );
 
-    expect(screen.getByRole('link')).toHaveClass('NavigationLink NavigationLink--selected');
+    expect(screen.getByRole('link')).toHaveClass('NavigationAction NavigationAction--selected');
   });
 
   it('should have disabled classname and correct elementType', () => {
     render(
-      <NavigationLink href="/" isDisabled>
+      <NavigationAction href="/" isDisabled>
         Content
-      </NavigationLink>,
+      </NavigationAction>,
     );
 
-    expect(screen.getByText('Content')).toHaveClass('NavigationLink NavigationLink--disabled');
+    expect(screen.getByText('Content')).toHaveClass('NavigationAction NavigationAction--disabled');
     expect(screen.getByText('Content')).toContainHTML('span');
     expect(screen.queryByRole('link')).not.toBeInTheDocument();
   });
 
   it('should render children', () => {
-    render(<NavigationLink href="/">Content</NavigationLink>);
+    render(<NavigationAction href="/">Content</NavigationAction>);
 
     expect(screen.getByText('Content')).toBeInTheDocument();
   });
