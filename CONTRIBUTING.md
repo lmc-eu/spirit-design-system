@@ -17,9 +17,9 @@ Here are some tips how to make your contributing efforts efficient and eventuall
 
 This project uses `makefile` for managing various chores, like dependency installation, testing, linting etc. Make sure you run `make` right after you clone the repository - it will set you up with everything needed to get started. Once you are done with that, have a look at what commands (targets) are available for you to run using `make` - `make install` etc.
 
-## [Decisions](https://github.com/lmc-eu/spirit-design-system/blob/main/docs/decisions/README.md)
+## Decisions
 
-The reasoning behind various decisions made for the Spirit Design System. A good historical record.
+The reasoning behind various [decisions][decisions] made for the Spirit Design System. A good historical record.
 
 ## Project Structure
 
@@ -278,8 +278,9 @@ PR can be merged only by the appropriate group of maintainers.
 [act-article]: https://www.freecodecamp.org/news/how-to-run-github-actions-locally/
 [conventional-commits]: https://www.conventionalcommits.org
 [commitlint-config]: https://github.com/lmc-eu/code-quality-tools/tree/main/packages/commitlint-config
-[dictionary]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md
+[decisions]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/decisions/README.md
 [developer-handbook]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/contribution/development.md
+[dictionary]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md
 [docker]: https://www.docker.com/
 [eslint]: https://eslint.org/
 [jest]: https://jestjs.io/
