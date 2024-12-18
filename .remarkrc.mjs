@@ -37,20 +37,9 @@ export default {
     [
       'remark-lint-heading-capitalization',
       {
-        lowerCaseWords: [
-          'eu/spirit',
-          '@lmc',
-          'spirit/node',
-          'spirit/jsdom',
-          'analytics',
-          'codemods',
-          'common',
-          'v1',
-          'v2',
-          'v3',
-          'v4',
-          'vs',
-        ],
+        lowerCaseWords: ['v1', 'v2', 'v3', 'v4', 'vs'],
+        exclude: ['`web`', '`web-react`'],
+        ignorePattern: ['^@lmc-eu/spirit-.*', '^spirit-.*', '`.*`'],
       },
     ],
 
