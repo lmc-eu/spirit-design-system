@@ -6,6 +6,7 @@ import {
   AlignmentXExtended,
   AlignmentY,
   AlignmentYExtended,
+  BorderColors,
   EmotionColors,
   Emphasis,
   Placements,
@@ -14,6 +15,9 @@ import {
   TextColors,
   ValidationStates,
   BackgroundColors,
+  BorderStyles,
+  BorderRadii,
+  BorderWidths,
 } from '../../constants';
 
 /* Alignment */
@@ -32,6 +36,19 @@ export type AlignmentYExtendedDictionaryKeys = keyof typeof AlignmentYExtended;
 export type AlignmentYExtendedDictionaryType<T = undefined> =
   | (typeof AlignmentYExtended)[AlignmentYExtendedDictionaryKeys]
   | T;
+
+/* Border Properties */
+export type BorderColorsDictionaryKeys = keyof typeof BorderColors;
+export type BorderColorsDictionaryType<C = undefined> = (typeof BorderColors)[BorderColorsDictionaryKeys] | C;
+
+export type BorderRadiiDictionaryKeys = keyof typeof BorderRadii;
+export type BorderRadiiDictionaryType<C = undefined> = (typeof BorderRadii)[BorderRadiiDictionaryKeys] | C;
+
+export type BorderStylesDictionaryKeys = keyof typeof BorderStyles;
+export type BorderStylesDictionaryType<C = undefined> = (typeof BorderStyles)[BorderStylesDictionaryKeys] | C;
+
+export type BorderWidthsDictionaryKeys = keyof typeof BorderWidths;
+export type BorderWidthsDictionaryType<C = undefined> = (typeof BorderWidths)[BorderWidthsDictionaryKeys] | C;
 
 /* Color */
 export type ActionColorsDictionaryKeys = keyof typeof ActionColors;
