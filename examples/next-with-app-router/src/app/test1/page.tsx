@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Heading, Text as SpiritText } from '@lmc-eu/spirit-web-react';
 import TestComponent from './components/TestComponent';
-import RandomComponent from './components/RandomComponent';
+import OutsideComponent from './components/OutsideComponent';
 
 const page = () => {
   return (
@@ -28,7 +28,7 @@ const page = () => {
           Spirit Text component with UNSAFE class and style
         </TestComponent>
 
-        <TestComponent elementType={RandomComponent} className="test" style={{ color: 'green' }}>
+        <TestComponent elementType={OutsideComponent} className="test" style={{ color: 'green' }}>
           Random component with class and style
         </TestComponent>
       </>
@@ -46,7 +46,7 @@ const page = () => {
         </TestComponent>
 
         {/* This will not be working - Random component doesn't know what UNSAFE style props are */}
-        <TestComponent elementType={RandomComponent} UNSAFE_className="test" UNSAFE_style={{ color: 'green' }}>
+        <TestComponent elementType={OutsideComponent} UNSAFE_className="test" UNSAFE_style={{ color: 'green' }}>
           Random component with UNSAFE class and style
         </TestComponent>
       </>

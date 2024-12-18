@@ -4,6 +4,7 @@ import React, { ElementType, ReactNode } from 'react';
 import { StyleProps, TransferProps } from '../../../../../../packages/web-react/src/types';
 // import { useStyleProps } from './originalStyleProps';
 import { useStyleProps } from './newStyleProps';
+import classNames from 'classnames';
 
 interface TestComponentProps extends StyleProps, TransferProps {
   elementType?: ElementType | string;

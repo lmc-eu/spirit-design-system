@@ -2,8 +2,8 @@
 
 import React from 'react';
 
-const RandomComponent = (props: any) => {
+const OutsideComponent = (props: any) => {
   return <p {...props}>{props.children}</p>;
 };
 
-export default RandomComponent;
+export default OutsideComponent;
