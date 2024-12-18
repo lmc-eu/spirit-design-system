@@ -1,7 +1,5 @@
-declare module '*.md' {
-  const content: string;
-  export default content;
-}
+/* eslint-disable @typescript-eslint/ban-types */
+import type { ExoticComponent, FC, StaticLifecycle } from 'react';
 
 interface Window {
   console: Console;
@@ -15,6 +13,28 @@ interface Window {
  *  Try `npm i --save-dev @types/prettier` if it exists or add a new declaration (.d.ts) file containing `declare module 'prettier';`
  * 5 import { BuiltInParserName } from 'prettier';
  */
-declare module 'prettier' {
-  export type BuiltInParserName = unknown;
+
+declare global {
+  module '*.md' {
+    const content: string;
+    export default content;
+  }
+
+  module 'prettier' {
+    export type BuiltInParserName = unknown;
+  }
+
+  namespace React {
+    interface NamedExoticComponent<P = {}> extends ExoticComponent<P> {
+      spiritComponent?: string;
+    }
+
+    interface FunctionComponent<P = {}> extends FC<P> {
+      spiritComponent?: string;
+    }
+
+    interface ComponentClass<P = {}, S = {}> extends StaticLifecycle<P, S> {
+      spiritComponent?: string;
+    }
+  }
 }

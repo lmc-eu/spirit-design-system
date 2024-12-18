@@ -8,8 +8,16 @@ import DropdownTrigger from '../DropdownTrigger';
 jest.mock('../../../hooks/useIcon');
 
 describe('DropdownTrigger', () => {
+  // pass style props to the default trigger
+  stylePropsTest((props) => <DropdownTrigger {...props} />);
+
+  // pass style props to the custom trigger
   stylePropsTest((props) => <DropdownTrigger elementType={Button} {...props} />);
 
+  // pass rest props to the default trigger
+  restPropsTest((props) => <DropdownTrigger {...props} />, 'button');
+
+  // pass rest props to the custom trigger
   restPropsTest((props) => <DropdownTrigger elementType={Button} {...props} />, 'button');
 
   it('should have Button elementType', () => {
