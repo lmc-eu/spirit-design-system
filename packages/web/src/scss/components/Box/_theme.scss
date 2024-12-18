@@ -1,0 +1,5 @@
+@use '@tokens' as tokens;
+@use '../../settings/dictionaries';
+@use '../../settings/transitions';
+
+$breakpoints: tokens.$breakpoints;

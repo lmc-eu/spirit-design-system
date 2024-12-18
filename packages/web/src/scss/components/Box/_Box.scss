@@ -1,0 +1,15 @@
+@use 'sass:map';
+@use '@tokens' as tokens;
+@use '../../tools/breakpoint';
+@use '../../tools/typography';
+@use 'theme';
+
+.Card {
+    position: relative; // 1.
+    display: grid;
+    grid-template-columns: var(--#{tokens.$css-variable-prefix}card-columns); // 5.b
+    grid-template-rows: var(--#{tokens.$css-variable-prefix}card-rows); // 5.b
+    grid-template-areas: var(--#{tokens.$css-variable-prefix}card-areas); // 5.b
+    column-gap: var(--#{tokens.$css-variable-prefix}card-column-gap); // 5.b
+    min-width: 0; // 2.
+}
