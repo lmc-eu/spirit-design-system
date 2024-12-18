@@ -1,4 +1,4 @@
-import { ElementType } from 'react';
+import { ElementType, JSXElementConstructor } from 'react';
 import {
   BackgroundColorsDictionaryType,
   ChildrenProps,
@@ -17,9 +17,18 @@ export interface BoxBaseProps extends ChildrenProps, StyleProps {
   /** The border width of the box. */
   borderWidth?: string;
   /** Padding of the box. */
+  padding?: SpaceToken;
+  /** Horizontal padding of the box. */
+  paddingX?: SpaceToken;
+  /** Vertical padding of the box. */
+  paddingY?: SpaceToken;
+  /** Padding top of the box. */
   paddingTop?: SpaceToken;
+  /** Padding bottom of the box. */
   paddingBottom?: SpaceToken;
+  /** Padding left of the box. */
   paddingLeft?: SpaceToken;
+  /** Padding right of the box. */
   paddingRight?: SpaceToken;
 }
 
@@ -29,7 +38,7 @@ export type BoxProps<E extends ElementType> = {
    *
    * @default 'button'
    */
-  elementType?: E;
+  elementType?: E | JSXElementConstructor<unknown>;
 } & BoxBaseProps;
 
 export type SpiritBoxProps<E extends ElementType = 'div'> = BoxProps<E> &

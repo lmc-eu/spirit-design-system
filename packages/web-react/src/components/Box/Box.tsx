@@ -13,11 +13,19 @@ const defaultProps: Partial<SpiritBoxProps> = {
 const Box = <T extends ElementType = 'div'>(props: SpiritBoxProps<T>) => {
   const propsWithDefaults = { ...defaultProps, ...props };
   const { elementType: ElementTag = 'div', children, ...restProps } = propsWithDefaults;
-  const { classProps } = useBoxStyleProps(restProps);
-  const { styleProps, props: otherProps } = useStyleProps(restProps);
+
+  const { classProps, props: modifiedProps, styleProps: boxStyle } = useBoxStyleProps(restProps);
+  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+
+  const boxStyleProps = {
+    style: {
+      ...styleProps.style,
+      ...boxStyle,
+    },
+  };
 
   return (
-    <ElementTag {...otherProps} className={classNames(classProps, styleProps.className)} style={styleProps.style}>
+    <ElementTag {...otherProps} {...boxStyleProps} className={classNames(classProps, styleProps.className)}>
       {children}
     </ElementTag>
   );
