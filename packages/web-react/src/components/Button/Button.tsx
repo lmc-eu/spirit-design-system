@@ -34,7 +34,7 @@ const _Button = <T extends ElementType = 'button', C = void, S = void>(
 
   const { buttonProps } = useButtonAriaProps(restProps);
   const { classProps, props: modifiedProps } = useButtonStyleProps(restProps);
-  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+  const { styleProps, props: otherProps } = useStyleProps({ ElementTag, ...modifiedProps });
 
   return (
     <ElementTag
@@ -51,5 +51,7 @@ const _Button = <T extends ElementType = 'button', C = void, S = void>(
 };
 
 const Button = forwardRef<HTMLButtonElement, SpiritButtonProps<ElementType>>(_Button);
+
+Button.spiritComponent = 'Button';
 
 export default Button;
