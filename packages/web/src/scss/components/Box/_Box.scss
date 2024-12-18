@@ -1,15 +1,26 @@
 @use 'sass:map';
 @use '@tokens' as tokens;
 @use '../../tools/breakpoint';
-@use '../../tools/typography';
+@use '../../tools/dictionaries';
+@use '../../tools/reset';
+@use '../../tools/responsive-properties';
 @use 'theme';
 
-.Card {
-    position: relative; // 1.
-    display: grid;
-    grid-template-columns: var(--#{tokens.$css-variable-prefix}card-columns); // 5.b
-    grid-template-rows: var(--#{tokens.$css-variable-prefix}card-rows); // 5.b
-    grid-template-areas: var(--#{tokens.$css-variable-prefix}card-areas); // 5.b
-    column-gap: var(--#{tokens.$css-variable-prefix}card-column-gap); // 5.b
-    min-width: 0; // 2.
+.Box {
+    padding-inline: var(--box-spacing-x-internal);
+    padding-block: var(--box-spacing-y-internal);
+
+    @include reset.list();
+    @include responsive-properties.create-cascade(
+        $property: 'padding-inline',
+        $input-custom-property-base-name: 'box-spacing-x',
+        $breakpoints: theme.$breakpoints,
+        $fallback-value: theme.$default-spacing
+    );
+    @include responsive-properties.create-cascade(
+        $property: 'padding-block',
+        $input-custom-property-base-name: 'box-spacing-y',
+        $breakpoints: theme.$breakpoints,
+        $fallback-value: theme.$default-spacing
+    );
 }

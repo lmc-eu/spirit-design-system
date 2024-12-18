@@ -3,3 +3,5 @@
 @use '../../settings/transitions';
 
 $breakpoints: tokens.$breakpoints;
+
+$default-spacing: tokens.$space-0;
