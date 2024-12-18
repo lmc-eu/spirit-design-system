@@ -50,6 +50,33 @@ export const BackgroundColors = {
   TERTIARY: 'tertiary',
 } as const;
 
+export const BorderColors = {
+  BASIC: 'basic',
+  FOCUS: 'focus',
+} as const;
+
+export const BorderRadii = {
+  0: '0',
+  100: '100',
+  200: '200',
+  300: '300',
+  400: '400',
+  500: '500',
+  FULL: 'full',
+} as const;
+
+export const BorderStyles = {
+  SOLID: 'solid',
+  DOTTED: 'dotted',
+  DASHED: 'dashed',
+} as const;
+
+export const BorderWidths = {
+  0: '0',
+  100: '100',
+  200: '200',
+} as const;
+
 export const EmotionColors = {
   SUCCESS: 'success',
   INFORMATIVE: 'informative',
