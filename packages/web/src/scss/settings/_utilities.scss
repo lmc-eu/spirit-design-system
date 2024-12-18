@@ -2,6 +2,51 @@
 @use '@tokens' as tokens;
 
 $utilities: (
+    'background-color': (
+        responsive: false,
+        property: background-color,
+        class: bg,
+        values: (
+            primary: tokens.$background-primary,
+            secondary: tokens.$background-secondary,
+            tertiary: tokens.$background-tertiary,
+        ),
+    ),
+    'border-color': (
+        responsive: false,
+        property: border-color,
+        class: border,
+        values: (
+            basic: tokens.$border-basic,
+            focus: tokens.$border-focus,
+        ),
+    ),
+    'border-radius': (
+        responsive: false,
+        property: border-radius,
+        class: rounded,
+        values: tokens.$radii,
+    ),
+    'border-style': (
+        responsive: false,
+        property: border-style,
+        class: border,
+        values: (
+            solid: solid,
+            dashed: dashed,
+            dotted: dotted,
+        ),
+    ),
+    'border-width': (
+        responsive: false,
+        property: border-width,
+        class: border,
+        values: (
+            0: tokens.$border-width-0,
+            100: tokens.$border-width-100,
+            200: tokens.$border-width-200,
+        ),
+    ),
     'display': (
         responsive: true,
         property: display,
@@ -88,6 +133,12 @@ $utilities: (
                 )
             ),
     ),
+    'padding': (
+        responsive: true,
+        property: padding,
+        class: p,
+        values: tokens.$spaces,
+    ),
     'padding-top': (
         responsive: true,
         property: padding-top,
@@ -139,21 +190,5 @@ $utilities: (
             secondary: tokens.$text-secondary,
             tertiary: tokens.$text-tertiary,
         ),
-    ),
-    'background-color': (
-        responsive: false,
-        property: background-color,
-        class: bg,
-        values: (
-            primary: tokens.$background-primary,
-            secondary: tokens.$background-secondary,
-            tertiary: tokens.$background-tertiary,
-        ),
-    ),
-    'border-radius': (
-        responsive: false,
-        property: border-radius,
-        class: rounded,
-        values: tokens.$radii,
     ),
 );
