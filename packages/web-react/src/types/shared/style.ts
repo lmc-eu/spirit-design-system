@@ -1,4 +1,4 @@
-import { CSSProperties } from 'react';
+import { CSSProperties, ElementType } from 'react';
 import { SpacingStyleProp } from '../../constants';
 import { BreakpointToken, SpaceToken } from './tokens';
 
@@ -20,7 +20,10 @@ export interface SpacingCSSProperties extends CSSProperties {
   [index: `--${string}`]: string | undefined | number;
 }
 
+type ElementTagType = string | ElementType;
+
 export interface StyleProps extends SpacingProps {
+  ElementTag?: ElementTagType;
   // For backward compatibility!
   /** Sets the CSS [className](https://developer.mozilla.org/en-US/docs/Web/API/Element/className) for the element. Only use as a **last resort**. Use style props instead. */
   UNSAFE_className?: string;

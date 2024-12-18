@@ -1,5 +1,6 @@
 import { Placement, Strategy } from '@floating-ui/react';
-import { ChildrenProps, ClickEvent, StyleProps } from './shared';
+import { ElementType, ReactNode } from 'react';
+import { ChildrenProps, ClickEvent, StyleProps, TransferProps } from './shared';
 
 export const TOOLTIP_TRIGGER = {
   CLICK: 'click',
@@ -10,6 +11,11 @@ export const TOOLTIP_TRIGGER = {
 } as const;
 
 export type TooltipTriggerType = 'click' | 'hover' | 'manual';
+
+export interface TooltipTriggerProps extends StyleProps, TransferProps {
+  elementType?: ElementType | string;
+  children?: string | ReactNode | ((props: { isOpen: boolean }) => ReactNode);
+}
 
 export interface UncontrolledTooltipProps extends BaseTooltipProps {}
 
