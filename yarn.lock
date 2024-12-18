@@ -25755,13 +25755,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"remark-lint-heading-capitalization@npm:1.2.0":
+"remark-lint-heading-capitalization@https://github.com/literat/remark-lint-heading-capitalization.git":
   version: 1.2.0
-  resolution: "remark-lint-heading-capitalization@npm:1.2.0"
+  resolution: "remark-lint-heading-capitalization@https://github.com/literat/remark-lint-heading-capitalization.git#commit=a040dd376a609daf5d193536d553b19af59c1487"
   dependencies:
     unified-lint-rule: "npm:^2.1.2"
     unist-util-visit: "npm:^5.0.0"
-  checksum: 10/092bfb4076514e24df5c4bfe1a3be15463782b8b58200beee49804fe6c8d93b6a4d063d89b90a18c1b3eed28897ca89713111850f9dbacafa84b9bb31da38266
+  checksum: 10/e8d9b0734cade299381bcc7e46102bde912f569d8d18c1e344e9dd9be653a0c8342f8588935de6db48d0d37dcc1d48e5fbd2809ece840539545cd1493a2e498a
   languageName: node
   linkType: hard
 
@@ -27949,7 +27949,7 @@ __metadata:
     react-dom: "npm:18.3.1"
     remark-cli: "npm:12.0.1"
     remark-frontmatter: "npm:5.0.0"
-    remark-lint-heading-capitalization: "npm:1.2.0"
+    remark-lint-heading-capitalization: "https://github.com/literat/remark-lint-heading-capitalization.git"
     sass-loader: "npm:14.2.1"
     style-loader: "npm:4.0.0"
     typescript: "npm:4.7.4"
