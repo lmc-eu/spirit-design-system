@@ -1,13 +1,10 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { useIconMock } from '../../../../tests/mocks/hooksMock';
-import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
-import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
-import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
 import ModalHeader from '../ModalHeader';
 
-jest.mock('../../../hooks', () => useIconMock);
+jest.mock('../../../hooks/useIcon');
 
 describe('ModalHeader', () => {
   classNamePrefixProviderTest(ModalHeader, 'ModalHeader');

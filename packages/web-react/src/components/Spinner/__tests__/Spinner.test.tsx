@@ -1,14 +1,10 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { useIconMock } from '../../../../tests/mocks/hooksMock';
-import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
-import { textColorPropsTest } from '../../../../tests/providerTests/dictionaryPropsTest';
-import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
-import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
+import { classNamePrefixProviderTest, textColorPropsTest, restPropsTest, stylePropsTest } from '@local/tests';
 import Spinner from '../Spinner';
 
-jest.mock('../../../hooks', () => useIconMock);
+jest.mock('../../../hooks/useIcon');
 
 describe('Spinner', () => {
   classNamePrefixProviderTest(Spinner, 'animation-spin-clockwise');

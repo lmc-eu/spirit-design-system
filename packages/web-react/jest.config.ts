@@ -13,6 +13,13 @@ const config = {
   // Automatically clear mock calls, instances, contexts and results before every test.
   // https://jestjs.io/docs/configuration#clearmocks-boolean
   clearMocks: true,
+
+  // A map from regular expressions to module names or to arrays of module names
+  // https://jestjs.io/docs/configuration#modulenamemapper-objectstring-string--arraystring
+  moduleNameMapper: {
+    '^@local/(.*)': '<rootDir>/$1',
+    '^@local/tests/(.*)': '<rootDir>/tests/$1',
+  },
 };
 
 export default config;

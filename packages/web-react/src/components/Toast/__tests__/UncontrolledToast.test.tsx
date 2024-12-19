@@ -1,12 +1,11 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { useIconMock } from '../../../../tests/mocks/hooksMock';
 import { ToastLinkProps } from '../../../types';
 import { ToastContext } from '../ToastContext';
 import UncontrolledToast from '../UncontrolledToast';
 
-jest.mock('../../../hooks', () => useIconMock);
+jest.mock('../../../hooks/useIcon');
 
 const defaultToast = {
   id: 'test-id',

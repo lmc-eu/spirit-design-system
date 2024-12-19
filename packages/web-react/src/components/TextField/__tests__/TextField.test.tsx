@@ -1,16 +1,17 @@
 import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
-import { useIconMock } from '../../../../tests/mocks/hooksMock';
-import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
-import { validationStatePropsTest } from '../../../../tests/providerTests/dictionaryPropsTest';
-import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
-import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
-import { validationTextPropsTest } from '../../../../tests/providerTests/validationTextPropsTest';
+import {
+  classNamePrefixProviderTest,
+  validationStatePropsTest,
+  restPropsTest,
+  stylePropsTest,
+  validationTextPropsTest,
+} from '@local/tests';
 import { TextFieldType } from '../../../types';
 import TextField from '../TextField';
 
-jest.mock('../../../hooks', () => useIconMock);
+jest.mock('../../../hooks/useIcon');
 
 describe('TextField', () => {
   describe.each(['text', 'password', 'email'])('input type %s', (type) => {
