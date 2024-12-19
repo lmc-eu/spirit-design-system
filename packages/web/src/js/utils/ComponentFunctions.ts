@@ -15,7 +15,7 @@ const onClickHandler = (
   event: Event,
   aim: Aim = 'target',
 ) => {
-  EventHandler.on(element, 'click', function handleClick() {
+  EventHandler.on(element, 'click', function handleClick(this: unknown) {
     const target = getTriggerOrTarget(getElement(this), aim);
     const instance = component.getOrCreateInstance(target);
 

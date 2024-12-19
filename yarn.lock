@@ -29910,6 +29910,14 @@ __metadata:
   languageName: node
   linkType: hard
 
+"typescript-config-spirit@workspace:configs/typescript-config-spirit":
+  version: 0.0.0-use.local
+  resolution: "typescript-config-spirit@workspace:configs/typescript-config-spirit"
+  dependencies:
+    typescript: "npm:5.5.4"
+  languageName: unknown
+  linkType: soft
+
 "typescript@npm:4.7.4":
   version: 4.7.4
   resolution: "typescript@npm:4.7.4"
