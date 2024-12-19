@@ -361,10 +361,7 @@ const { show } = useToast(); // must be inside ToastProvider
 </ToastProvider>;
 ```
 
-<!-- @see: https://jira.almacareer.tech/browse/DS-1604 -->
-<!--lint ignore heading-capitalization-->
-
-### useToast Hook
+### `useToast` Hook
 
 Hook that provides information on `UncontrolledToast` and functions for opening and closing.
 What is uncontrolled component you can find [here][react-uncontrolled]
@@ -381,9 +378,6 @@ This hook returns:
 | `isOpen`   | `bool`                                                       | `false`   | Open state of UncontrolledToast                     |
 | `message`  | \[`string` \| `ReactNode`]                                   | null      | Message inside UncontrolledToast                    |
 | `show`     | `(message, toastId, options?) => void`                       | () => {}  | Function that will show UncontrolledToast           |
-
-<!-- @see: https://jira.almacareer.tech/browse/DS-1604 -->
-<!--lint ignore heading-capitalization-->
 
 #### How to Use `show` Function
 

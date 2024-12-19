@@ -1,6 +1,3 @@
-<!-- @see: https://jira.almacareer.tech/browse/DS-1604 -->
-<!--lint ignore heading-capitalization-->
-
 # prettier-config-spirit
 
 > Prettier configuration and preset for Spirit Design System

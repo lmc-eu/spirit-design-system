@@ -1,6 +1,3 @@
-<!-- @see: https://jira.almacareer.tech/browse/DS-1604 -->
-<!--lint ignore heading-capitalization-->
-
 # @lmc-eu/spirit-design-tokens
 
 > Design tokens for Spirit Design System.
@@ -156,9 +153,6 @@ module: {
 ```
 
 </details>
-
-<!-- https://jira.almacareer.tech/browse/DS-1604 -->
-<!--lint ignore heading-capitalization-->
 
 #### Using the `sass-embedded` Library
 

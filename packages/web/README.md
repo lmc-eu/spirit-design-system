@@ -1,6 +1,3 @@
-<!-- @see: https://jira.almacareer.tech/browse/DS-1604 -->
-<!--lint ignore heading-capitalization -->
-
 # @lmc-eu/spirit-web
 
 > CSS implementation of Spirit Design System.
