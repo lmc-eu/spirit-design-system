@@ -1,10 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
-import { alignmentXPropsTest } from '../../../../tests/providerTests/dictionaryPropsTest';
-import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
-import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
+import { classNamePrefixProviderTest, alignmentXPropsTest, restPropsTest, stylePropsTest } from '@local/tests';
 import CardArtwork from '../CardArtwork';
 
 describe('CardArtwork', () => {
@@ -17,13 +14,13 @@ describe('CardArtwork', () => {
   alignmentXPropsTest(CardArtwork, 'CardArtwork');
 
   it('should render artwork card component and have default class name', () => {
-    render(<CardArtwork data-testId="test" />);
+    render(<CardArtwork data-testid="test" />);
 
     expect(screen.getByTestId('test')).toHaveClass('CardArtwork');
   });
 
   it('should render text children', () => {
-    render(<CardArtwork data-testId="test">Hello World</CardArtwork>);
+    render(<CardArtwork data-testid="test">Hello World</CardArtwork>);
 
     expect(screen.getByTestId('test')).toHaveTextContent('Hello World');
   });

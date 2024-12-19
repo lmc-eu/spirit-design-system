@@ -1,10 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
-import { sizePropsTest } from '../../../../tests/providerTests/dictionaryPropsTest';
-import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
-import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
+import { classNamePrefixProviderTest, sizePropsTest, restPropsTest, stylePropsTest } from '@local/tests';
 import CardMedia from '../CardMedia';
 
 describe('CardMedia', () => {
@@ -17,19 +14,19 @@ describe('CardMedia', () => {
   sizePropsTest(CardMedia);
 
   it('should render media card media component and have default class names', () => {
-    render(<CardMedia data-testId="test" />);
+    render(<CardMedia data-testid="test" />);
 
     expect(screen.getByTestId('test')).toHaveClass('CardMedia CardMedia--auto');
   });
 
   it('should render auto size', () => {
-    render(<CardMedia size="auto" data-testId="test" />);
+    render(<CardMedia size="auto" data-testid="test" />);
 
     expect(screen.getByTestId('test')).toHaveClass('CardMedia--auto');
   });
 
   it('should fill the height', () => {
-    render(<CardMedia hasFilledHeight data-testId="test" />);
+    render(<CardMedia hasFilledHeight data-testid="test" />);
 
     expect(screen.getByTestId('test')).toHaveClass('CardMedia--filledHeight');
   });
