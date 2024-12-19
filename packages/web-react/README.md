@@ -1,6 +1,3 @@
-<!-- @see: https://jira.almacareer.tech/browse/DS-1604 -->
-<!--lint ignore heading-capitalization-->
-
 # @lmc-eu/spirit-web-react
 
 [![minified](https://badgen.net/bundlephobia/min/@lmc-eu/spirit-web-react)](https://bundlephobia.com/package/@lmc-eu/spirit-web-react)

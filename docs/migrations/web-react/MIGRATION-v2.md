@@ -1,6 +1,3 @@
-<!-- @see: https://jira.almacareer.tech/browse/DS-1604 -->
-<!--lint disable heading-capitalization-->
-
 # Migration Guide
 
 Introducing version 2 of the _spirit-web-react_ package.

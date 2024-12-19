@@ -8,9 +8,6 @@ This document lists all deprecations that will be removed in the next major vers
 
 👉 [What are deprecations?][readme-deprecations]
 
-<!-- @see: https://jira.almacareer.tech/browse/DS-1604 -->
-<!--lint ignore heading-capitalization-->
-
 ### UncontrolledCollapse `isDisposable`
 
 The `hideOnCollapse` prop was removed, please use `isDisposable` instead.

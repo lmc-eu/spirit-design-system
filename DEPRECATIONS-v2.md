@@ -6,9 +6,6 @@ Introducing deprecations and feature flags to be removed in the version 2 lists.
 
 💁 Please follow these steps to safely upgrade your Design System to Spirit Design System v2 components.
 
-<!-- @see: https://github.com/ilyatitovich/remark-lint-heading-capitalization/issues/13 -->
-<!--lint disable heading-capitalization -->
-
 ## @lmc-eu/spirit-web v2
 
 - [Deprecations][web-deprecations-v2]
@@ -18,8 +15,6 @@ Introducing deprecations and feature flags to be removed in the version 2 lists.
 - [Deprecations][web-react-deprecations-v2]
 
 ## @lmc-eu/spirit-web-twig v2
-
-<!--lint enable heading-capitalization -->
 
 - _spirit-web-twig_ was released as version 2 already. See the [CHANGELOG][twig-changelog] for more details or refer to the [migration guide][twig-migration-v2].
 
