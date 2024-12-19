@@ -1,0 +1,42 @@
+import { ElementType, ReactElement } from 'react';
+import { NavigationItem } from '../components';
+import { LinkTarget } from './link';
+import {
+  AriaLabelingProps,
+  ChildrenProps,
+  SpiritPolymorphicElementPropsWithRef,
+  StyleProps,
+  TransferProps,
+} from './shared';
+
+export interface NavigationActionBaseProps extends ChildrenProps, StyleProps, AriaLabelingProps, TransferProps {
+  /** NavigationAction's href attribute */
+  href?: string;
+  /** Whether is the NavigationAction disabled */
+  isDisabled?: boolean;
+  /** Whether is the NavigationAction selected */
+  isSelected?: boolean;
+  /** NavigationAction's target attribute */
+  target?: LinkTarget;
+}
+
+export type NavigationActionProps<E extends ElementType> = {
+  /**
+   * The HTML element or React element used to render the button, e.g. 'div', 'a', or `RouterLink`.
+   *
+   * @default 'a'
+   */
+  elementType?: E;
+} & NavigationActionBaseProps;
+
+export interface SpiritNavigationItemProps extends ChildrenProps, StyleProps {}
+
+export type SpiritNavigationActionProps<E extends ElementType = 'a'> = NavigationActionProps<E> &
+  SpiritPolymorphicElementPropsWithRef<E, NavigationActionProps<E>>;
+
+export interface SpiritNavigationProps extends StyleProps, AriaLabelingProps {
+  children:
+    | ReactElement<HTMLLIElement>
+    | ReactElement<typeof NavigationItem>
+    | Array<ReactElement<HTMLLIElement> | ReactElement<typeof NavigationItem>>;
+}
