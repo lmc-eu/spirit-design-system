@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import { CSSProperties, ElementType } from 'react';
 import { BorderColors } from '../../constants';
 import { useClassNamePrefix } from '../../hooks';
-import { SpiritBoxProps } from '../../types';
+import { BreakpointToken, SpaceToken, SpiritBoxProps } from '../../types';
 
 interface BoxCSSProperties extends CSSProperties {
   [key: string]: string | undefined | number;
@@ -16,6 +16,25 @@ export interface UseBoxStyleProps<T> {
   /** Style props for the box element */
   styleProps: BoxCSSProperties;
 }
+
+export const generateResponsiveUtilityClasses = (
+  prefix: string,
+  propValue: SpaceToken | Partial<Record<BreakpointToken, SpaceToken>> | undefined,
+): string[] => {
+  if (propValue && typeof propValue === 'object') {
+    return Object.entries(propValue).map(([breakpoint, value]) => {
+      const classValue = value?.replace('space-', '');
+
+      return breakpoint === 'mobile' ? `${prefix}-${classValue}` : `${prefix}-${breakpoint}-${classValue}`;
+    });
+  }
+
+  if (propValue && typeof propValue !== 'object') {
+    return [`${prefix}-${propValue.replace('space-', '')}`];
+  }
+
+  return [];
+};
 
 export const useBoxStyleProps = (
   props: Partial<SpiritBoxProps<ElementType>>,
@@ -42,13 +61,6 @@ export const useBoxStyleProps = (
   let boxBorderColor = borderColor ? borderColor.replace('', 'border-') : '';
   let boxBorderRadius = '';
   const boxBorderWidth = borderWidth ? borderWidth.replace('', 'border-') : '';
-  const boxPadding = padding ? padding.replace('space-', 'p-') : '';
-  const boxPaddingBottom = paddingBottom ? paddingBottom.replace('space-', 'pb-') : '';
-  const boxPaddingLeft = paddingLeft ? paddingLeft.replace('space-', 'pl-') : '';
-  const boxPaddingRight = paddingRight ? paddingRight.replace('space-', 'pr-') : '';
-  const boxPaddingTop = paddingTop ? paddingTop.replace('space-', 'pt-') : '';
-  const boxPaddingX = paddingX ? paddingX.replace('space-', 'px-') : '';
-  const boxPaddingY = paddingY ? paddingY.replace('space-', 'py-') : '';
 
   if (borderWidth && parseInt(borderWidth, 10) > 0) {
     boxStyle.borderStyle = 'solid';
@@ -58,19 +70,24 @@ export const useBoxStyleProps = (
     }
   }
 
-  const boxClasses = classNames(boxClass, {
-    [boxBackgroundColor]: backgroundColor,
-    [boxBorderColor]: boxBorderColor,
-    [boxBorderRadius]: boxBorderRadius,
-    [boxBorderWidth]: borderWidth,
-    [boxPadding]: padding,
-    [boxPaddingBottom]: paddingBottom,
-    [boxPaddingLeft]: paddingLeft,
-    [boxPaddingRight]: paddingRight,
-    [boxPaddingTop]: paddingTop,
-    [boxPaddingX]: paddingX,
-    [boxPaddingY]: paddingY,
-  });
+  const paddingClasses = [
+    ...generateResponsiveUtilityClasses('p', padding),
+    ...generateResponsiveUtilityClasses('pb', paddingBottom),
+    ...generateResponsiveUtilityClasses('pl', paddingLeft),
+    ...generateResponsiveUtilityClasses('pr', paddingRight),
+    ...generateResponsiveUtilityClasses('pt', paddingTop),
+    ...generateResponsiveUtilityClasses('px', paddingX),
+    ...generateResponsiveUtilityClasses('py', paddingY),
+  ];
+
+  const boxClasses = classNames(
+    boxClass,
+    boxBackgroundColor,
+    boxBorderColor,
+    boxBorderRadius,
+    boxBorderWidth,
+    ...paddingClasses,
+  );
 
   return {
     classProps: boxClasses,

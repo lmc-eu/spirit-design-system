@@ -21,6 +21,9 @@ const BoxWithCustomPadding = () => (
     >
       With custom padding for each direction
     </Box>
+    <Box paddingLeft={{ mobile: 'space-600', tablet: 'space-800', desktop: 'space-1000' }} borderWidth="100">
+      With responsive padding
+    </Box>
   </>
 );
 
