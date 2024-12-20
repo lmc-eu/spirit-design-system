@@ -52,7 +52,7 @@ export const useBoxStyleProps = (
 
   if (borderWidth && parseInt(borderWidth, 10) > 0) {
     boxStyle.borderStyle = 'solid';
-    boxBorderRadius = borderRadius ? borderRadius.replace('radius-', 'rounded-') : '';
+    boxBorderRadius = borderRadius ? borderRadius.replace('', 'rounded-') : '';
     if (!borderColor) {
       boxBorderColor = `border-${BorderColors.BASIC}`;
     }
