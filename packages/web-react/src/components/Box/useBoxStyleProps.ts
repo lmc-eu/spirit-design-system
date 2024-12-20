@@ -1,7 +1,6 @@
 import classNames from 'classnames';
 import { CSSProperties, ElementType } from 'react';
 import { BorderColors } from '../../constants';
-import { useClassNamePrefix } from '../../hooks';
 import { BreakpointToken, SpaceToken, SpiritBoxProps } from '../../types';
 
 interface BoxCSSProperties extends CSSProperties {
@@ -53,8 +52,6 @@ export const useBoxStyleProps = (
     paddingY,
     ...restProps
   } = props || {};
-  const boxClass = useClassNamePrefix('Box');
-
   const boxStyle: BoxCSSProperties = {};
 
   const boxBackgroundColor = backgroundColor ? `bg-${backgroundColor}` : '';
@@ -80,14 +77,7 @@ export const useBoxStyleProps = (
     ...generateResponsiveUtilityClasses('py', paddingY),
   ];
 
-  const boxClasses = classNames(
-    boxClass,
-    boxBackgroundColor,
-    boxBorderColor,
-    boxBorderRadius,
-    boxBorderWidth,
-    ...paddingClasses,
-  );
+  const boxClasses = classNames(boxBackgroundColor, boxBorderColor, boxBorderRadius, boxBorderWidth, ...paddingClasses);
 
   return {
     classProps: boxClasses,
