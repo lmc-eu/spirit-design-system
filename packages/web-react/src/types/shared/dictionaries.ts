@@ -6,6 +6,7 @@ import {
   AlignmentXExtended,
   AlignmentY,
   AlignmentYExtended,
+  BorderColors,
   EmotionColors,
   Emphasis,
   Placements,
@@ -51,6 +52,9 @@ export type BackgroundColorsDictionaryKeys = keyof typeof BackgroundColors;
 export type BackgroundColorsDictionaryType<C = undefined> =
   | (typeof BackgroundColors)[BackgroundColorsDictionaryKeys]
   | C;
+
+export type BorderColorsDictionaryKeys = keyof typeof BorderColors;
+export type BorderColorsDictionaryType<C = undefined> = (typeof BorderColors)[BorderColorsDictionaryKeys] | C;
 
 export type EmotionColorsDictionaryKeys = keyof typeof EmotionColors;
 export type EmotionColorsDictionaryType<C = undefined> = (typeof EmotionColors)[EmotionColorsDictionaryKeys] | C;

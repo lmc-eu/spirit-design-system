@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { CSSProperties, ElementType } from 'react';
-import { DirectionAxis } from '../../constants';
-import { useClassNamePrefix, useSpacingStyle } from '../../hooks';
+import { BorderColors } from '../../constants';
+import { useClassNamePrefix } from '../../hooks';
 import { SpiritBoxProps } from '../../types';
 
 interface BoxCSSProperties extends CSSProperties {
@@ -26,35 +26,50 @@ export const useBoxStyleProps = (
     borderRadius,
     borderWidth,
     padding,
-    paddingX,
-    paddingY,
-    paddingTop,
     paddingBottom,
     paddingLeft,
     paddingRight,
+    paddingTop,
+    paddingX,
+    paddingY,
     ...restProps
   } = props || {};
   const boxClass = useClassNamePrefix('Box');
 
-  const boxStyle: BoxCSSProperties = {
-    ...useSpacingStyle(padding, 'box', DirectionAxis.X),
-    ...useSpacingStyle(padding, 'box', DirectionAxis.Y),
-    ...useSpacingStyle(paddingX, 'box', DirectionAxis.X),
-    ...useSpacingStyle(paddingY, 'box', DirectionAxis.Y),
-  };
+  const boxStyle: BoxCSSProperties = {};
 
   const boxBackgroundColor = backgroundColor ? `bg-${backgroundColor}` : '';
+  let boxBorderColor = borderColor ? borderColor.replace('', 'border-') : '';
+  let boxBorderRadius = '';
+  const boxBorderWidth = borderWidth ? borderWidth.replace('', 'border-') : '';
+  const boxPadding = padding ? padding.replace('space-', 'p-') : '';
   const boxPaddingBottom = paddingBottom ? paddingBottom.replace('space-', 'pb-') : '';
-  const boxPaddingTop = paddingTop ? paddingTop.replace('space-', 'pt-') : '';
   const boxPaddingLeft = paddingLeft ? paddingLeft.replace('space-', 'pl-') : '';
   const boxPaddingRight = paddingRight ? paddingRight.replace('space-', 'pr-') : '';
+  const boxPaddingTop = paddingTop ? paddingTop.replace('space-', 'pt-') : '';
+  const boxPaddingX = paddingX ? paddingX.replace('space-', 'px-') : '';
+  const boxPaddingY = paddingY ? paddingY.replace('space-', 'py-') : '';
+
+  if (borderWidth && parseInt(borderWidth, 10) > 0) {
+    boxStyle.borderStyle = 'solid';
+    boxBorderRadius = borderRadius ? borderRadius.replace('radius-', 'rounded-') : '';
+    if (!borderColor) {
+      boxBorderColor = `border-${BorderColors.BASIC}`;
+    }
+  }
 
   const boxClasses = classNames(boxClass, {
     [boxBackgroundColor]: backgroundColor,
+    [boxBorderColor]: boxBorderColor,
+    [boxBorderRadius]: boxBorderRadius,
+    [boxBorderWidth]: borderWidth,
+    [boxPadding]: padding,
     [boxPaddingBottom]: paddingBottom,
-    [boxPaddingTop]: paddingTop,
     [boxPaddingLeft]: paddingLeft,
     [boxPaddingRight]: paddingRight,
+    [boxPaddingTop]: paddingTop,
+    [boxPaddingX]: paddingX,
+    [boxPaddingY]: paddingY,
   });
 
   return {

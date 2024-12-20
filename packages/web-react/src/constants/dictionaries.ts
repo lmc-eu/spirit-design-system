@@ -50,6 +50,11 @@ export const BackgroundColors = {
   TERTIARY: 'tertiary',
 } as const;
 
+export const BorderColors = {
+  BASIC: 'basic',
+  FOCUS: 'focus',
+} as const;
+
 export const EmotionColors = {
   SUCCESS: 'success',
   INFORMATIVE: 'informative',

@@ -1,6 +1,7 @@
 import { ElementType, JSXElementConstructor } from 'react';
 import {
   BackgroundColorsDictionaryType,
+  BorderColorsDictionaryType,
   ChildrenProps,
   SpaceToken,
   SpiritPolymorphicElementPropsWithRef,
@@ -11,7 +12,7 @@ export interface BoxBaseProps extends ChildrenProps, StyleProps {
   /** The background color of the box. */
   backgroundColor?: BackgroundColorsDictionaryType;
   /** The border color of the box. */
-  borderColor?: string;
+  borderColor?: BorderColorsDictionaryType;
   /** The border radius of the box. */
   borderRadius?: string;
   /** The border width of the box. */

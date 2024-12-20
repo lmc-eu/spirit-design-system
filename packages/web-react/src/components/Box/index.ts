@@ -1,4 +1,4 @@
 'use client';
 
-export { default as Card } from './Box';
+export { default as Box } from './Box';
 export * from './useBoxStyleProps';
