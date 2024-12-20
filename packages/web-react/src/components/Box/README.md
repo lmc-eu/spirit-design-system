@@ -1,6 +1,6 @@
 # Box
 
-The Box component is a simple container that can be used to group other components together. It is a versatile component.
+The Box component is a simple container around content or other components.
 
 ```jsx
 <Box>{/* Content go here */}</Box>
