@@ -2,7 +2,7 @@
 
 > TypeScript configuration and utilities for Spirit Design System.
 
-## Getting started
+## Getting Started
 
 To install `typescript-config-spirit` in your project, you will need to run the
 following command using [Yarn][yarn]:

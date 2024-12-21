@@ -210,6 +210,8 @@ These props control the placement of grid items within a CSS Grid layout by spec
 
 <img src="https://raw.githubusercontent.com/lmc-eu/spirit-design-system/refs/heads/main/packages/web-react/src/components/Grid/static/GridExample.svg" alt="Grid example" width="400" />
 
+<!--lint ignore no-emphasis-as-heading-->
+
 _The image is taken from the [CSS Grid Layout Guide][css-tricks-grid]._
 
 Learn more about grid placement in the [MDN CSS Grid][grid-mdn] documentation.
