@@ -221,7 +221,9 @@
 </div>
 ```
 
-## Usage with [Item][item] Component
+## Usage with Item Component
+
+See the [Item][item] component for more information.
 
 ```html
 <div class="Dropdown">
