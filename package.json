@@ -40,7 +40,7 @@
     "types": "yarn packages:types",
     "lint": "npm-run-all --parallel es:lint lint:markdown packages:lint",
     "lint:fix": "npm-run-all --parallel es:lint:fix packages:lint:fix",
-    "lint:markdown": "remark ./ --quiet",
+    "lint:markdown": "remark ./ --quiet --frail",
     "lint:commit": "yarn commitlint --verbose --color --from $(git merge-base origin/main HEAD)",
     "packages:lint:fix": "lerna run lint:fix --parallel",
     "packages:lint": "lerna run lint --parallel --no-sort",
