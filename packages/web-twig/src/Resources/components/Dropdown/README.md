@@ -50,7 +50,7 @@ attributes to register trigger events.
 | Name            | Type                                         | Default        | Required | Description               |
 | --------------- | -------------------------------------------- | -------------- | -------- | ------------------------- |
 | `elementType`   | `string`                                     | `div`          | ✕        | HTML tag to render        |
-| `fullWidthMode` | \[`off,mobile-only,all`]`                    | —              | ✕        | Full-width mode           |
+| `fullWidthMode` | \[`off,mobile-only,all`]                     | —              | ✕        | Full-width mode           |
 | `id`            | `string`                                     | —              | ✓        | DropdownPopover ID        |
 | `placement`     | [Placement Dictionary][dictionary-placement] | `bottom-start` | ✕        | Placement of the dropdown |
 
