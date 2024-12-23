@@ -1,4 +1,4 @@
-import { SpacingStyleProp } from '../constants';
+import { SpacingStyleProp as DefaultSpacingStyleProp } from '../constants';
 import {
   BREAKPOINT_MOBILE,
   BreakpointToken,
@@ -37,7 +37,13 @@ const processBreakpointProperties = (
     return accumulatedBreakpointUtilities;
   }, accumulatedUtilities);
 
-export function useStyleUtilities(props: StyleProps, prefix: string | null | undefined = ''): StyleUtilitiesResult {
+export function useStyleUtilities(
+  props: StyleProps,
+  prefix: string | null | undefined = '',
+  additionalSpacingProps: Record<string, string> = {},
+): StyleUtilitiesResult {
+  const SpacingStyleProp = { ...DefaultSpacingStyleProp, ...additionalSpacingProps };
+
   const propEntries = Object.entries(props);
   const styleUtilities = propEntries.reduce((accumulatedUtilities: string[], [key, propValue]) => {
     if (Object.keys(SpacingStyleProp).includes(key)) {

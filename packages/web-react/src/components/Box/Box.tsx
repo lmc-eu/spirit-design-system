@@ -2,7 +2,7 @@
 
 import classNames from 'classnames';
 import React, { ElementType } from 'react';
-import { BorderStyles } from '../../constants';
+import { BorderStyles, PaddingStyleProps } from '../../constants';
 import { useStyleProps } from '../../hooks';
 import { SpiritBoxProps } from '../../types';
 import { useBoxStyleProps } from './useBoxStyleProps';
@@ -17,7 +17,7 @@ const Box = <T extends ElementType = 'div'>(props: SpiritBoxProps<T>) => {
   const { elementType: ElementTag = 'div', children, ...restProps } = propsWithDefaults;
 
   const { classProps, props: modifiedProps } = useBoxStyleProps(restProps);
-  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+  const { styleProps, props: otherProps } = useStyleProps(modifiedProps, PaddingStyleProps);
 
   return (
     <ElementTag {...otherProps} {...styleProps} className={classNames(classProps, styleProps.className)}>
