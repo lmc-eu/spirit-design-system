@@ -10,10 +10,13 @@ export type StylePropsResult = {
   props: HTMLAttributes<HTMLElement>;
 };
 
-export function useStyleProps<T extends StyleProps>(props: T): StylePropsResult {
+export function useStyleProps<T extends StyleProps>(
+  props: T,
+  additionalUtilities?: Record<string, string>,
+): StylePropsResult {
   const classNamePrefix = useContext(ClassNamePrefixContext);
   const { UNSAFE_className, UNSAFE_style, ...otherProps } = props;
-  const { styleUtilities, props: modifiedProps } = useStyleUtilities(otherProps, classNamePrefix);
+  const { styleUtilities, props: modifiedProps } = useStyleUtilities(otherProps, classNamePrefix, additionalUtilities);
 
   const style: CSSProperties = { ...UNSAFE_style };
 

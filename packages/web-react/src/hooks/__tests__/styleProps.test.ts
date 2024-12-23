@@ -131,4 +131,46 @@ describe('styleProps', () => {
       expect(result.current.styleProps).toEqual(expected);
     });
   });
+
+  it('should process style props with additional utilities', () => {
+    const mockProps = {
+      margin: 'space-100',
+      marginX: 'space-200',
+      marginY: 'space-400',
+      padding: 'space-500',
+      paddingX: 'space-600',
+      paddingY: 'space-700',
+    };
+    const additionalUtilities = {
+      padding: 'p',
+      paddingX: 'px',
+      paddingY: 'py',
+    };
+
+    const { result } = renderHook(() => useStyleProps(mockProps as StyleProps, additionalUtilities));
+
+    expect(result.current.styleProps).toEqual({
+      className: 'm-100 mx-200 my-400 p-500 px-600 py-700',
+      style: undefined,
+    });
+  });
+
+  it('should process style props with responsive additional utilities', () => {
+    const mockProps = {
+      margin: 'space-100',
+      marginX: 'space-200',
+      marginY: 'space-400',
+      padding: { mobile: 'space-500', tablet: 'space-600', desktop: 'space-700' },
+    };
+    const additionalUtilities = {
+      padding: 'p',
+    };
+
+    const { result } = renderHook(() => useStyleProps(mockProps as StyleProps, additionalUtilities));
+
+    expect(result.current.styleProps).toEqual({
+      className: 'm-100 mx-200 my-400 p-500 p-tablet-600 p-desktop-700',
+      style: undefined,
+    });
+  });
 });

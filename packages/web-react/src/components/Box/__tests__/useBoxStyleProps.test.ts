@@ -19,78 +19,6 @@ describe('useBoxStyleProps', () => {
     expect(result.current.classProps).toBe('bg-secondary');
   });
 
-  it('should return padding classProps', () => {
-    const props: SpiritBoxProps = {
-      padding: 'space-400',
-    };
-    const { result } = renderHook(() => useBoxStyleProps(props));
-
-    expect(result.current.classProps).toBe('p-400');
-  });
-
-  it('should return paddingX classProps', () => {
-    const props: SpiritBoxProps = {
-      paddingX: 'space-400',
-    };
-    const { result } = renderHook(() => useBoxStyleProps(props));
-
-    expect(result.current.classProps).toBe('px-400');
-  });
-
-  it('should return paddingY classProps', () => {
-    const props: SpiritBoxProps = {
-      paddingY: 'space-400',
-    };
-    const { result } = renderHook(() => useBoxStyleProps(props));
-
-    expect(result.current.classProps).toBe('py-400');
-  });
-
-  it('should return paddingTop classProps', () => {
-    const props: SpiritBoxProps = {
-      paddingTop: 'space-400',
-    };
-    const { result } = renderHook(() => useBoxStyleProps(props));
-
-    expect(result.current.classProps).toBe('pt-400');
-  });
-
-  it('should return paddingBottom classProps', () => {
-    const props: SpiritBoxProps = {
-      paddingBottom: 'space-400',
-    };
-    const { result } = renderHook(() => useBoxStyleProps(props));
-
-    expect(result.current.classProps).toBe('pb-400');
-  });
-
-  it('should return paddingLeft classProps', () => {
-    const props: SpiritBoxProps = {
-      paddingLeft: 'space-400',
-    };
-    const { result } = renderHook(() => useBoxStyleProps(props));
-
-    expect(result.current.classProps).toBe('pl-400');
-  });
-
-  it('should return paddingRight classProps', () => {
-    const props: SpiritBoxProps = {
-      paddingRight: 'space-400',
-    };
-    const { result } = renderHook(() => useBoxStyleProps(props));
-
-    expect(result.current.classProps).toBe('pr-400');
-  });
-
-  it('should return responsive padding classProps', () => {
-    const props: SpiritBoxProps = {
-      padding: { mobile: 'space-400', tablet: 'space-500', desktop: 'space-600' },
-    };
-    const { result } = renderHook(() => useBoxStyleProps(props));
-
-    expect(result.current.classProps).toBe('p-400 p-tablet-500 p-desktop-600');
-  });
-
   it('should return border radius classProps', () => {
     const props: SpiritBoxProps = {
       borderRadius: '200',
@@ -99,7 +27,7 @@ describe('useBoxStyleProps', () => {
     };
     const { result } = renderHook(() => useBoxStyleProps(props));
 
-    expect(result.current.classProps).toBe('border-basic rounded-200 border-100 border-solid');
+    expect(result.current.classProps).toBe('border-basic rounded-200 border-solid border-100');
   });
 
   it('should not return border radius classProps if border with is not set', () => {
@@ -119,7 +47,7 @@ describe('useBoxStyleProps', () => {
     };
     const { result } = renderHook(() => useBoxStyleProps(props));
 
-    expect(result.current.classProps).toBe('border-basic border-100 border-solid');
+    expect(result.current.classProps).toBe('border-basic border-solid border-100');
   });
 
   it('should return border style classProps', () => {
@@ -129,6 +57,6 @@ describe('useBoxStyleProps', () => {
     };
     const { result } = renderHook(() => useBoxStyleProps(props));
 
-    expect(result.current.classProps).toBe('border-basic border-100 border-dashed');
+    expect(result.current.classProps).toBe('border-basic border-dashed border-100');
   });
 });
