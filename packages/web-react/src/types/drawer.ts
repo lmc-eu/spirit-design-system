@@ -44,7 +44,7 @@ export interface DrawerBaseProps
   extends Omit<SpiritDialogElementProps, 'id'>,
     DrawerDialogHandlingProps,
     ChildrenProps {
-  alignment: AlignmentXDictionaryType;
+  alignment?: AlignmentXDictionaryType;
   id: string;
 }
 

@@ -4,28 +4,28 @@ import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
-import { SpiritModalProps } from '../../../types';
-import Modal from '../Modal';
+import { SpiritDrawerProps } from '../../../types';
+import Drawer from '../Drawer';
 
-describe('Modal', () => {
-  const ModalTest = (props: SpiritModalProps) => (
-    <Modal {...props} id="modal-example" isOpen={false} onClose={() => null}>
+describe('Drawer', () => {
+  const DrawerTest = (props: SpiritDrawerProps) => (
+    <Drawer {...props} id="drawer-example" isOpen={false} onClose={() => null}>
       <div>Test</div>
-    </Modal>
+    </Drawer>
   );
 
-  classNamePrefixProviderTest(ModalTest, 'Modal');
+  classNamePrefixProviderTest(DrawerTest, 'Drawer');
 
-  stylePropsTest(ModalTest);
+  stylePropsTest(DrawerTest);
 
-  restPropsTest(ModalTest, 'dialog');
+  restPropsTest(DrawerTest, 'dialog');
 
-  it('should not close modal dialog', () => {
+  it('should not close drawer dialog', () => {
     const mockedOnClose = jest.fn();
     render(
-      <Modal id="test" isOpen onClose={mockedOnClose} closeOnBackdropClick={false}>
+      <Drawer id="test" isOpen onClose={mockedOnClose} closeOnBackdropClick={false}>
         <div>Test</div>
-      </Modal>,
+      </Drawer>,
     );
 
     const dialog = screen.getByRole('dialog');
@@ -34,12 +34,12 @@ describe('Modal', () => {
     expect(mockedOnClose).not.toHaveBeenCalled();
   });
 
-  it('should close modal dialog', () => {
+  it('should close drawer dialog', () => {
     const mockedOnClose = jest.fn();
     render(
-      <Modal id="test" isOpen onClose={mockedOnClose} closeOnBackdropClick>
+      <Drawer id="test" isOpen onClose={mockedOnClose} closeOnBackdropClick>
         <div>Test</div>
-      </Modal>,
+      </Drawer>,
     );
 
     const dialog = screen.getByRole('dialog');
