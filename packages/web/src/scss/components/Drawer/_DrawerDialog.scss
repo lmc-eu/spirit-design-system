@@ -12,6 +12,8 @@
 .DrawerDialog {
     @include typography.generate(theme.$typography);
 
+    --drawer-translate-x: 0%;
+    --drawer-translate-y: 0%;
     --scroll-view-vertical-height: auto;
 
     display: flex;
@@ -26,12 +28,31 @@
     color: theme.$dialog-text-color;
     background-color: theme.$dialog-background-color;
     box-shadow: theme.$dialog-shadow;
-    transform: translateY(var(--drawer-translate-y)) scale(var(--drawer-scale));
+    transform: translateX(var(--drawer-translate-x)) translateY(var(--drawer-translate-y)) scale(var(--drawer-scale));
     transform-origin: var(--drawer-transform-origin);
     overscroll-behavior: contain;
 
     @media (prefers-reduced-motion: no-preference) {
         transition-property: width, height, max-height, border-radius, transform;
         transition-duration: inherit;
+        transition-timing-function: ease-in-out;
     }
+}
+
+.Drawer--left .DrawerDialog {
+    --drawer-translate-x: -100%;
+}
+
+.Drawer--right .DrawerDialog {
+    --drawer-translate-x: 100%;
+}
+
+.Drawer--center .DrawerDialog {
+    --drawer-translate-x: 0%;
+}
+
+.Drawer[open] .DrawerDialog {
+    --drawer-translate-x: 0%;
+    --drawer-translate-y: 0%;
+    --drawer-scale: 1;
 }

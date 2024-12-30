@@ -29,8 +29,7 @@
     overflow: hidden;
 }
 
-.Drawer--center,
-.Drawer:not(.Drawer--left, .Drawer--right) {
+.Drawer--center {
     justify-content: center;
 }
 
@@ -48,6 +47,6 @@
 
     visibility: visible;
     opacity: 1;
-    user-select: text; // 6.
+    user-select: text;
     pointer-events: auto;
 }
