@@ -1,0 +1,22 @@
+@use '@tokens' as tokens;
+@use '../../settings/transitions';
+
+$drawer-typography: tokens.$body-medium-semibold;
+
+// Transition
+$drawer-transition-duration: transitions.$duration-200;
+$drawer-transition-timing: transitions.$timing-eased-in-out;
+$drawer-backdrop-background-color: tokens.$background-backdrop;
+
+// DrawerPanel
+$drawer-panel-width: 288px;
+$drawer-panel-height: auto;
+$drawer-panel-max-height: none;
+$drawer-panel-text-color: tokens.$text-primary;
+$drawer-panel-background-color: tokens.$background-primary;
+$drawer-panel-shadow: tokens.$shadow-400;
+
+// DrawerCloseButton
+$drawer-close-button-size: tokens.$space-1200;
+$drawer-close-button-padding-x: tokens.$space-900;
+$drawer-close-button-padding-y: tokens.$space-700;
