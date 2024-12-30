@@ -1,0 +1,29 @@
+@use '@tokens' as tokens;
+@use 'theme';
+
+.DrawerPanel {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: var(--#{tokens.$css-variable-prefix}drawer-panel-width, #{theme.$drawer-panel-width});
+    height: theme.$drawer-panel-height;
+    max-height: theme.$drawer-panel-max-height;
+    color: theme.$drawer-panel-text-color;
+    background-color: theme.$drawer-panel-background-color;
+    box-shadow: theme.$drawer-panel-shadow;
+    transform: translateX(var(--#{tokens.$css-variable-prefix}drawer-translate-x));
+
+    @media (prefers-reduced-motion: no-preference) {
+        transition-property: transform;
+        transition-duration: theme.$drawer-transition-duration;
+        transition-timing-function: theme.$drawer-transition-timing;
+    }
+}
+
+.DrawerPanel__content {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
