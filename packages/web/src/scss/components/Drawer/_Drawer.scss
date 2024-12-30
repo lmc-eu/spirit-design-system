@@ -1,0 +1,53 @@
+@use 'theme';
+
+.Drawer {
+    --drawer-scale: #{theme.$transition-scale-ratio};
+
+    all: unset;
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    overflow-y: auto;
+    background: linear-gradient(#{theme.$backdrop-background-color}, #{theme.$backdrop-background-color});
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    overscroll-behavior: contain;
+
+    &::backdrop {
+        background-color: transparent;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        transition-property: visibility, opacity;
+        transition-duration: theme.$transition-duration;
+    }
+}
+
+.Drawer:has(.DrawerDialog--scrollable) {
+    overflow: hidden;
+}
+
+.Drawer--center,
+.Drawer:not(.Drawer--left, .Drawer--right) {
+    justify-content: center;
+}
+
+.Drawer--left {
+    justify-content: start;
+}
+
+.Drawer--right {
+    justify-content: end;
+}
+
+.Drawer[open] {
+    --drawer-scale: 1;
+    --drawer-translate-y: 0;
+
+    visibility: visible;
+    opacity: 1;
+    user-select: text; // 6.
+    pointer-events: auto;
+}

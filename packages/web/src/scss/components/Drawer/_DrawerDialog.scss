@@ -1,0 +1,37 @@
+// 1. Use ScrollView's backdoor to fix its height inside DrawerDialog in Safari.
+// 2. We need to set the box-sizing again because the parent element unsets styles using `all: unset`.
+// 3. Intentionally transition also the worse performing properties to smooth out the changes of viewport size around
+//    the tablet breakpoint. However, `top` and `bottom` are not transitioned when switching from and to `auto`.
+// 4. Override bottom padding of parent `.Drawer` in the docked variant.
+
+@use 'sass:map';
+@use '../../tools/breakpoint';
+@use '../../tools/typography';
+@use 'theme';
+
+.DrawerDialog {
+    @include typography.generate(theme.$typography);
+
+    --scroll-view-vertical-height: auto;
+
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: theme.$dialog-width;
+    max-width: calc(100% - #{theme.$padding-x});
+    height: theme.$dialog-height;
+    max-height: theme.$dialog-max-height;
+    overflow-x: var(--drawer-body-overflow-x, visible);
+    overflow-y: var(--drawer-body-overflow-y, visible);
+    color: theme.$dialog-text-color;
+    background-color: theme.$dialog-background-color;
+    box-shadow: theme.$dialog-shadow;
+    transform: translateY(var(--drawer-translate-y)) scale(var(--drawer-scale));
+    transform-origin: var(--drawer-transform-origin);
+    overscroll-behavior: contain;
+
+    @media (prefers-reduced-motion: no-preference) {
+        transition-property: width, height, max-height, border-radius, transform;
+        transition-duration: inherit;
+    }
+}
