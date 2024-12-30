@@ -7,7 +7,7 @@ import { Icon } from '../Icon';
 import { VisuallyHidden } from '../VisuallyHidden';
 import { useDrawerContext } from './DrawerContext';
 
-const DrawerCloseButton = ({ label = 'Close', ...restProps }) => {
+const DrawerCloseButton = ({ label = 'Close', ...restProps }: DrawerCloseButtonProps) => {
   const { id, isOpen, onClose } = useDrawerContext();
 
   return (
