@@ -1,5 +1,5 @@
 import { ElementType, CSSProperties } from 'react';
-import { DrawerDialogCSSHeight, ModalDialogCSSHeightBreakpoints, DrawerDialogProps } from '../../types';
+import { DrawerDialogCSSHeight, DrawerDialogProps, DrawerDialogCSSHeightBreakpoints } from '../../types';
 
 interface CustomizedHeightCSSProperties extends CSSProperties {
   [key: string]: string | undefined | number;
@@ -7,7 +7,7 @@ interface CustomizedHeightCSSProperties extends CSSProperties {
 
 const setCustomHeight = (
   baseVarName: string,
-  propValue: DrawerDialogCSSHeight | ModalDialogCSSHeightBreakpoints | undefined,
+  propValue: DrawerDialogCSSHeight | DrawerDialogCSSHeightBreakpoints | undefined,
 ): CustomizedHeightCSSProperties => {
   if (!propValue) return {};
 
@@ -15,7 +15,7 @@ const setCustomHeight = (
     return Object.keys(propValue).reduce((acc, key) => {
       const suffix = key === 'mobile' ? '' : `-${key}`;
       const propName = `--${baseVarName}${suffix}`;
-      acc[propName] = propValue[key as keyof ModalDialogCSSHeightBreakpoints]?.toString();
+      acc[propName] = propValue[key as keyof DrawerDialogCSSHeightBreakpoints]?.toString();
 
       return acc;
     }, {} as CustomizedHeightCSSProperties);

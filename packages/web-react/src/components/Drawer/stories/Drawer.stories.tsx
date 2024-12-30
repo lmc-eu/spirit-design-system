@@ -2,7 +2,7 @@ import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 import React from 'react';
-import { AlignmentY } from '../../../constants';
+import { AlignmentX } from '../../../constants';
 import Drawer from '../Drawer';
 import ReadMe from '../README.md';
 
@@ -16,8 +16,8 @@ const meta: Meta<typeof Drawer> = {
   },
   argTypes: {},
   args: {
-    alignmentY: AlignmentY.CENTER,
-    id: 'modal',
+    alignment: AlignmentX.CENTER,
+    id: 'drawer',
     isOpen: false,
     onClose: fn(),
     closeOnEscapeKeyDown: true,
@@ -27,3 +27,7 @@ const meta: Meta<typeof Drawer> = {
 
 export default meta;
 type Story = StoryObj<typeof Drawer>;
+
+export const Playground: Story = {
+  name: 'Drawer',
+};
