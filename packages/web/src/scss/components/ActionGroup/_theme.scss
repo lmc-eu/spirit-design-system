@@ -1,0 +1,6 @@
+@use '@tokens' as tokens;
+@use '../../settings/dictionaries';
+
+$alignment-x-dictionary: dictionaries.$alignments-x;
+$breakpoints: tokens.$breakpoints;
+$default-gap: tokens.$space-700;
