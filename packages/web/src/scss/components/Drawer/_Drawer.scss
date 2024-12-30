@@ -1,0 +1,49 @@
+@use '../../tools/typography';
+@use '@tokens' as tokens;
+@use 'theme';
+
+.Drawer {
+    @include typography.generate(theme.$drawer-typography);
+
+    --#{tokens.$css-variable-prefix}drawer-translate-x: 0%;
+
+    all: unset;
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    max-height: none;
+    border: none;
+    background-color: theme.$drawer-backdrop-background-color;
+    visibility: hidden;
+
+    &::backdrop {
+        background-color: transparent;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        transition-property: visibility, opacity;
+        transition-duration: theme.$drawer-transition-duration;
+    }
+}
+
+.Drawer--left {
+    --#{tokens.$css-variable-prefix}drawer-translate-x: -100%;
+
+    justify-content: start;
+}
+
+.Drawer--right {
+    --#{tokens.$css-variable-prefix}drawer-translate-x: 100%;
+
+    justify-content: end;
+}
+
+.Drawer[open] {
+    --#{tokens.$css-variable-prefix}drawer-translate-x: 0%;
+
+    visibility: visible;
+}
