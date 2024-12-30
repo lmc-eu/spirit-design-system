@@ -13,6 +13,7 @@ export * from './Collapse';
 export * from './Container';
 export * from './Dialog';
 export * from './Divider';
+export * from './Drawer';
 export * from './Dropdown';
 export * from './Field';
 export * from './FieldGroup';
