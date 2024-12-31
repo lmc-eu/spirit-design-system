@@ -2,7 +2,7 @@
 
 import classNames from 'classnames';
 import React from 'react';
-import { BackgroundColors } from '../../constants';
+import { BackgroundColors, PaddingStyleProps } from '../../constants';
 import { useStyleProps } from '../../hooks';
 import { SpiritFooterProps } from '../../types';
 import { PADDING_BOTTOM, PADDING_TOP } from './constants';
@@ -16,12 +16,15 @@ const defaultStyleProps: Partial<SpiritFooterProps> = {
 
 const Footer = (props: SpiritFooterProps) => {
   const propsWithDefaults = { ...defaultStyleProps, ...props };
-  const { children, backgroundColor, paddingBottom, paddingTop, ...restProps } = propsWithDefaults;
-  const { classProps } = useFooterStyleProps({ backgroundColor, paddingBottom, paddingTop });
-  const { styleProps, props: otherProps } = useStyleProps(restProps);
+  const { children, backgroundColor, ...restProps } = propsWithDefaults;
+  const { classProps } = useFooterStyleProps({ backgroundColor });
+  const { styleProps, props: otherProps } = useStyleProps(restProps, {
+    paddingBottom: PaddingStyleProps.paddingBottom,
+    paddingTop: PaddingStyleProps.paddingTop,
+  });
 
   return (
-    <footer {...styleProps} {...otherProps} className={classNames(classProps, styleProps.className)}>
+    <footer {...otherProps} {...styleProps} className={classNames(classProps, styleProps.className)}>
       {children}
     </footer>
   );
