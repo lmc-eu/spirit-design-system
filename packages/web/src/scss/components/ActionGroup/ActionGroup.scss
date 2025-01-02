@@ -1,0 +1,57 @@
+@use 'sass:map';
+@use 'theme' as theme;
+@use '../../tools/breakpoint';
+@use '../../tools/dictionaries';
+@use '../../tools/responsive-properties';
+
+.ActionGroup {
+    display: flex;
+    justify-content: start;
+
+    @include responsive-properties.create-cascade(
+        $property: 'column-gap',
+        $input-custom-property-base-name: 'flex-spacing-x',
+        $breakpoints: theme.$breakpoints,
+        $fallback-value: theme.$default-gap
+    );
+    @include responsive-properties.create-cascade(
+        $property: 'row-gap',
+        $input-custom-property-base-name: 'flex-spacing-y',
+        $breakpoints: theme.$breakpoints,
+        $fallback-value: theme.$default-gap
+    );
+}
+
+@each $breakpoint-name, $breakpoint-value in theme.$breakpoints {
+    $infix: breakpoint.get-modifier('infix', $breakpoint-name, $breakpoint-value);
+
+    @include breakpoint.up($breakpoint-value) {
+        .ActionGroup--#{$infix}row {
+            flex-direction: row;
+        }
+
+        .ActionGroup--#{$infix}rowReverse {
+            flex-direction: row-reverse;
+        }
+
+        .ActionGroup--#{$infix}column {
+            flex-direction: column;
+        }
+
+        .ActionGroup--#{$infix}columnReverse {
+            flex-direction: column-reverse;
+        }
+
+        .ActionGroup--#{$infix}column,
+        .ActionGroup--#{$infix}columnReverse {
+            width: 100%;
+        }
+
+        @include dictionaries.generate-alignments(
+            $class-name: 'ActionGroup',
+            $dictionary-values: theme.$alignment-x-dictionary,
+            $axis: 'x',
+            $infix: $infix
+        );
+    }
+}
