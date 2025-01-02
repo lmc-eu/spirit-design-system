@@ -6,7 +6,7 @@
 
 .ActionGroup {
     display: flex;
-    justify-content: left;
+    justify-content: start;
 
     @include responsive-properties.create-cascade(
         $property: 'column-gap',
