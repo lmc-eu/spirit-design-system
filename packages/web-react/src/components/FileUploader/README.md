@@ -516,7 +516,7 @@ For example:
 To limit files to 1 MiB, set `maxFileSize` to **1048576**.
 To limit files to 10 MiB, set `maxFileSize` to **10485760**.
 
-#### Kilo/Mega vs. Kibi/Mebi
+#### Kilo/Mega vs Kibi/Mebi
 
 In computing, file sizes can be measured using two different standards.
 The **decimal** (base-10) and **binary** (base-2) systems.
