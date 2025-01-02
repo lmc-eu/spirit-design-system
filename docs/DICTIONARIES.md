@@ -10,6 +10,7 @@ This project uses `dictionaries` to unify props between different components.
 ## List of Dictionaries
 
 - [Alignment](#alignment)
+- [Border Properities](#border-properties)
 - [Color](#color)
 - [Emphasis](#emphasis)
 - [Placement](#placement)
@@ -24,6 +25,15 @@ This project uses `dictionaries` to unify props between different components.
 | AlignmentXExtended | AlignmentX + `stretch`, `space-between` | AlignmentXExtended |
 | AlignmentY         | `top`, `center`, `bottom`               | AlignmentY         |
 | AlignmentYExtended | AlignmentY + `stretch`, `baseline`      | AlignmentYExtended |
+
+### Border Properties
+
+| Dictionary    | Values                                          | Code name    |
+| ------------- | ----------------------------------------------- | ------------ |
+| Border Color  | `basic`, `focus`                                | BorderColor  |
+| Border Radius | `0`, `100`, `200`, `300`, `400`, `500`, `full`, | BorderRadius |
+| Border Style  | `solid`, `'dotted'`, `'dashed'`                 | BorderStyle  |
+| Border Width  | `0`, `100`, `200`,                              | BorderWidth  |
 
 ### Color
 
