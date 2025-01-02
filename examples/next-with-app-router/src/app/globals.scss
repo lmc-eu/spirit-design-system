@@ -1,1 +1,13 @@
 @import '@lmc-eu/spirit-web/src/scss';
+
+.test {
+    font-weight: bold;
+
+    &::before {
+        content: '✅ ';
+    }
+}
+
+p:not(.test)::before {
+    content: '❌ ';
+}
