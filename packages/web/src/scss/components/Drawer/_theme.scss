@@ -15,11 +15,11 @@ $backdrop-background-color: tokens.$background-backdrop;
 $common-padding-x: tokens.$space-900;
 $common-padding-x-tablet: tokens.$space-1000;
 
-// ModalDialog
-$dialog-width: 375px;
-$dialog-height: auto;
-$dialog-max-height: none;
-$dialog-text-color: tokens.$text-primary;
-$dialog-border-radius: tokens.$radius-300;
-$dialog-background-color: tokens.$background-primary;
-$dialog-shadow: tokens.$shadow-300;
+// DrawerPanel
+$panel-width: 375px;
+$panel-height: auto;
+$panel-max-height: none;
+$panel-text-color: tokens.$text-primary;
+$panel-border-radius: tokens.$radius-300;
+$panel-background-color: tokens.$background-primary;
+$panel-shadow: tokens.$shadow-300;

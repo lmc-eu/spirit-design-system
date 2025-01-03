@@ -1,4 +1,4 @@
-// 1. Use ScrollView's backdoor to fix its height inside DrawerDialog in Safari.
+// 1. Use ScrollView's backdoor to fix its height inside DrawerPanel in Safari.
 // 2. We need to set the box-sizing again because the parent element unsets styles using `all: unset`.
 // 3. Intentionally transition also the worse performing properties to smooth out the changes of viewport size around
 //    the tablet breakpoint. However, `top` and `bottom` are not transitioned when switching from and to `auto`.
@@ -9,7 +9,7 @@
 @use '../../tools/typography';
 @use 'theme';
 
-.DrawerDialog {
+.DrawerPanel {
     @include typography.generate(theme.$typography);
 
     --drawer-translate-x: 0%;
@@ -19,15 +19,15 @@
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    width: theme.$dialog-width;
+    width: theme.$panel-width;
     max-width: calc(100% - #{theme.$padding-x});
-    height: theme.$dialog-height;
-    max-height: theme.$dialog-max-height;
+    height: theme.$panel-height;
+    max-height: theme.$panel-max-height;
     overflow-x: var(--drawer-body-overflow-x, visible);
     overflow-y: var(--drawer-body-overflow-y, visible);
-    color: theme.$dialog-text-color;
-    background-color: theme.$dialog-background-color;
-    box-shadow: theme.$dialog-shadow;
+    color: theme.$panel-text-color;
+    background-color: theme.$panel-background-color;
+    box-shadow: theme.$panel-shadow;
     transform: translateX(var(--drawer-translate-x)) translateY(var(--drawer-translate-y)) scale(var(--drawer-scale));
     transform-origin: var(--drawer-transform-origin);
     overscroll-behavior: contain;
@@ -39,19 +39,19 @@
     }
 }
 
-.Drawer--left .DrawerDialog {
+.Drawer--left .DrawerPanel {
     --drawer-translate-x: -100%;
 }
 
-.Drawer--right .DrawerDialog {
+.Drawer--right .DrawerPanel {
     --drawer-translate-x: 100%;
 }
 
-.Drawer--center .DrawerDialog {
+.Drawer--center .DrawerPanel {
     --drawer-translate-x: 0%;
 }
 
-.Drawer[open] .DrawerDialog {
+.Drawer[open] .DrawerPanel {
     --drawer-translate-x: 0%;
     --drawer-translate-y: 0%;
     --drawer-scale: 1;
