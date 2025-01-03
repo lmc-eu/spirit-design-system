@@ -8,42 +8,39 @@ import {
   StyleProps,
 } from './shared';
 
-export type DrawerDialogElementType = 'aside' | 'form';
+export type DrawerPanelElementType = 'aside' | 'form';
 
-export type DrawerDialogHandlingProps = {
+export type DrawerPanelHandlingProps = {
   isOpen: boolean;
   onClose: (event: ClickEvent) => void;
   closeOnBackdropClick?: boolean;
   closeOnEscapeKeyDown?: boolean;
 };
 
-export interface DrawerCloseButtonProps extends DrawerDialogHandlingProps {
+export interface DrawerCloseButtonProps extends DrawerPanelHandlingProps {
   id: string;
   label?: string;
 }
 
-export type DrawerDialogBaseProps<E extends ElementType = DrawerDialogElementType> = {
+export type DrawerPanelBaseProps<E extends ElementType = DrawerPanelElementType> = {
   elementType?: E;
 } & ChildrenProps &
   StyleProps;
 
-export type DrawerDialogCSSHeight = string;
-export type DrawerDialogCSSHeightBreakpoints = {
-  mobile?: DrawerDialogCSSHeight;
-  tablet?: DrawerDialogCSSHeight;
-  desktop?: DrawerDialogCSSHeight;
+export type DrawerPanelCSSHeight = string;
+export type DrawerPanelCSSHeightBreakpoints = {
+  mobile?: DrawerPanelCSSHeight;
+  tablet?: DrawerPanelCSSHeight;
+  desktop?: DrawerPanelCSSHeight;
 };
 
-export type DrawerDialogProps<E extends ElementType = DrawerDialogElementType> = {
-  height?: DrawerDialogCSSHeight | DrawerDialogCSSHeightBreakpoints;
-  maxHeight?: DrawerDialogCSSHeight | DrawerDialogCSSHeightBreakpoints;
-} & DrawerDialogBaseProps<E> &
-  OmittedExtendedUnsafeStyleProps<ComponentPropsWithRef<E>, keyof DrawerDialogBaseProps<E>>;
+export type DrawerPanelProps<E extends ElementType = DrawerPanelElementType> = {
+  height?: DrawerPanelCSSHeight | DrawerPanelCSSHeightBreakpoints;
+  maxHeight?: DrawerPanelCSSHeight | DrawerPanelCSSHeightBreakpoints;
+} & DrawerPanelBaseProps<E> &
+  OmittedExtendedUnsafeStyleProps<ComponentPropsWithRef<E>, keyof DrawerPanelBaseProps<E>>;
 
-export interface DrawerBaseProps
-  extends Omit<SpiritDialogElementProps, 'id'>,
-    DrawerDialogHandlingProps,
-    ChildrenProps {
+export interface DrawerBaseProps extends Omit<SpiritDialogElementProps, 'id'>, DrawerPanelHandlingProps, ChildrenProps {
   alignment?: AlignmentXDictionaryType;
   id: string;
 }

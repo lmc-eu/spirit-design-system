@@ -1,5 +1,5 @@
 import { ElementType, CSSProperties } from 'react';
-import { DrawerDialogCSSHeight, DrawerDialogProps, DrawerDialogCSSHeightBreakpoints } from '../../types';
+import { DrawerPanelCSSHeight, DrawerPanelProps, DrawerPanelCSSHeightBreakpoints } from '../../types';
 
 interface CustomizedHeightCSSProperties extends CSSProperties {
   [key: string]: string | undefined | number;
@@ -7,7 +7,7 @@ interface CustomizedHeightCSSProperties extends CSSProperties {
 
 const setCustomHeight = (
   baseVarName: string,
-  propValue: DrawerDialogCSSHeight | DrawerDialogCSSHeightBreakpoints | undefined,
+  propValue: DrawerPanelCSSHeight | DrawerPanelCSSHeightBreakpoints | undefined,
 ): CustomizedHeightCSSProperties => {
   if (!propValue) return {};
 
@@ -15,7 +15,7 @@ const setCustomHeight = (
     return Object.keys(propValue).reduce((acc, key) => {
       const suffix = key === 'mobile' ? '' : `-${key}`;
       const propName = `--${baseVarName}${suffix}`;
-      acc[propName] = propValue[key as keyof DrawerDialogCSSHeightBreakpoints]?.toString();
+      acc[propName] = propValue[key as keyof DrawerPanelCSSHeightBreakpoints]?.toString();
 
       return acc;
     }, {} as CustomizedHeightCSSProperties);
@@ -25,16 +25,16 @@ const setCustomHeight = (
   return { [propName]: propValue?.toString() } as CustomizedHeightCSSProperties;
 };
 
-export const useDrawerDialogStyleProps = <E extends ElementType>(props: DrawerDialogProps<E>) => {
+export const useDrawerPanelStyleProps = <E extends ElementType>(props: DrawerPanelProps<E>) => {
   const { height, maxHeight, ...otherProps } = props;
 
   const customizedHeightStyle = {
-    ...setCustomHeight('drawer-dialog-height', height),
-    ...setCustomHeight('drawer-dialog-max-height', maxHeight),
+    ...setCustomHeight('drawer-panel-height', height),
+    ...setCustomHeight('drawer-panel-max-height', maxHeight),
   };
 
   return {
-    drawerDialogStyleProps: customizedHeightStyle,
+    drawerPanelStyleProps: customizedHeightStyle,
     props: otherProps,
   };
 };

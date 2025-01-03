@@ -4,7 +4,7 @@ import { AlignmentX } from '../../../constants';
 import { AlignmentXDictionaryType } from '../../../types';
 import Drawer from '../Drawer';
 import DrawerCloseButton from '../DrawerCloseButton';
-import DrawerDialog from '../DrawerDialog';
+import DrawerPanel from '../DrawerPanel';
 
 const DrawerDefault = () => {
   const [isDrawerBasicOpen, setDrawerBasicOpen] = useState(false);
@@ -24,8 +24,8 @@ const DrawerDefault = () => {
       </Button>
 
       <Drawer alignment={drawerAlign} id="example-basic" isOpen={isDrawerBasicOpen} onClose={handleDrawerBasicClose}>
-        <DrawerDialog>
-          <DrawerCloseButton label="test" />
+        <DrawerPanel>
+          <DrawerCloseButton id="test" label="test" isOpen={isDrawerBasicOpen} onClose={() => console.log('closed')} />
           <div>
             <form className="mb-600">
               <div>Drawer alignment:</div>
@@ -61,7 +61,7 @@ const DrawerDefault = () => {
               />
             </form>
           </div>
-        </DrawerDialog>
+        </DrawerPanel>
       </Drawer>
     </>
   );

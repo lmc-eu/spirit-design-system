@@ -10,7 +10,7 @@ export interface DrawerStylesReturn {
   /** className props */
   classProps: {
     root: string;
-    dialog: string;
+    panel: string;
   };
 }
 
@@ -22,11 +22,11 @@ export function useDrawerStyleProps(props: Partial<DrawerStylesProps>): DrawerSt
     center: `${drawerClass}--center`,
     right: `${drawerClass}--right`,
   };
-  const drawerDialogClass = `${drawerClass}Dialog`;
+  const drawerPanelClass = `${drawerClass}Panel`;
 
   const classProps = {
     root: classNames(drawerClass, drawerAlignment && { [drawerAlignClasses[drawerAlignment]]: drawerAlignment }),
-    dialog: classNames(drawerDialogClass, {}),
+    panel: classNames(drawerPanelClass, {}),
   };
 
   return {

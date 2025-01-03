@@ -1,11 +1,11 @@
 'use client';
 
 import { createContext, useContext } from 'react';
-import { DrawerDialogHandlingProps } from '../../types';
+import { DrawerPanelHandlingProps } from '../../types';
 
 export type DrawerContextProps = {
   id: string;
-} & DrawerDialogHandlingProps;
+} & DrawerPanelHandlingProps;
 
 const defaultContext: DrawerContextProps = {
   id: '',

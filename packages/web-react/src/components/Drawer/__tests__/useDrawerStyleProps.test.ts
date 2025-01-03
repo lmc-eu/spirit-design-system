@@ -6,13 +6,13 @@ describe('useDrawerStyleProps', () => {
     const { result } = renderHook(() => useDrawerStyleProps({}));
 
     expect(result.current.classProps.root).toBe('Drawer');
-    expect(result.current.classProps.dialog).toBe('DrawerDialog');
+    expect(result.current.classProps.panel).toBe('DrawerPanel');
   });
 
   it('should return custom alignment', () => {
     const { result } = renderHook(() => useDrawerStyleProps({ drawerAlignment: 'left' }));
 
     expect(result.current.classProps.root).toBe('Drawer Drawer--left');
-    expect(result.current.classProps.dialog).toBe('DrawerDialog');
+    expect(result.current.classProps.panel).toBe('DrawerPanel');
   });
 });
