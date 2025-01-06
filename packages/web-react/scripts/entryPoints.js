@@ -11,6 +11,7 @@ const entryPoints = [
   { dirs: ['utils'] },
   { dirs: ['components'] },
   { dirs: ['components', 'Accordion'] },
+  { dirs: ['components', 'ActionGroup'] },
   { dirs: ['components', 'Alert'] },
   { dirs: ['components', 'Breadcrumbs'] },
   { dirs: ['components', 'Box'] },
