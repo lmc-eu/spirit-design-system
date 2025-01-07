@@ -1,13 +1,21 @@
-import { fs, path } from 'zx';
+import fs from 'fs';
+import { fs as zxFs, path } from 'zx';
 import * as twigScanner from '../twigScanner';
+
+jest.mock('zx', () => ({
+  fs: {
+    readdirSync: jest.fn(),
+    readFileSync: jest.fn(),
+    lstatSync: jest.fn(),
+  },
+  path: jest.requireActual('path'),
+}));
 
 describe('twigScanner', () => {
   describe('getComponentsFromDirectory', () => {
     it('should return an array of component names, capitalize first letter and remove `.twig` extension', () => {
-      const mockedReaddirSync = jest
-        .spyOn(fs, 'readdirSync')
-        // @ts-expect-error TS2322: Type 'string' is not assignable to type 'Dirent'.
-        .mockReturnValue(['component1.twig', 'component2.twig', 'component3.twig']);
+      const mockedReaddirSync = zxFs.readdirSync as jest.Mock;
+      mockedReaddirSync.mockReturnValue(['component1.twig', 'component2.twig', 'component3.twig']);
       const directoryPath = '/path/to/directory';
       const expectedComponents = ['Component1', 'Component2', 'Component3'];
 
@@ -29,7 +37,8 @@ describe('twigScanner', () => {
           paths:
             - "%kernel.project_dir%/../spirit-web-twig-bundle/static"
               `;
-      const mockedReadFileSync = jest.spyOn(fs, 'readFileSync').mockReturnValue(twigConfig);
+      const mockedReadFileSync = zxFs.readFileSync as jest.Mock;
+      mockedReadFileSync.mockReturnValue(twigConfig);
       const configFile = '/path/to/config/file';
       const expectedResult = [
         './app/Resources/views/*.twig',
@@ -91,7 +100,8 @@ describe('twigScanner', () => {
       const file = '';
       const localComponents: Array<string> = [];
       const baseComponents: Array<string> = [];
-      jest.spyOn(fs, 'readFileSync').mockReturnValue(file);
+      const mockedReadFileSync = zxFs.readFileSync as jest.Mock;
+      mockedReadFileSync.mockReturnValue(file);
 
       const result = twigScanner.searchFileForComponents(file, localComponents, baseComponents);
 
@@ -107,7 +117,8 @@ describe('twigScanner', () => {
     `;
       const localComponents = ['Button', 'Input', 'CustomComponent'];
       const baseComponents: Array<string> = [];
-      jest.spyOn(fs, 'readFileSync').mockReturnValue(fileContent);
+      const mockedReadFileSync = zxFs.readFileSync as jest.Mock;
+      mockedReadFileSync.mockReturnValue(fileContent);
 
       const result = twigScanner.searchFileForComponents(file, localComponents, baseComponents);
 
@@ -152,8 +163,10 @@ describe('twigScanner', () => {
 
       const lstatResult = { isDirectory: () => false } as fs.Stats;
       const dirContent: fs.Dirent[] = ['file1.twig', 'file2.twig'] as unknown as fs.Dirent[];
-      jest.spyOn(fs, 'readdirSync').mockReturnValue(dirContent);
-      jest.spyOn(fs, 'lstatSync').mockReturnValue(lstatResult);
+      const mockedReaddirSync = zxFs.readdirSync as jest.Mock;
+      mockedReaddirSync.mockReturnValue(dirContent);
+      const mockedLstatSync = zxFs.readdirSync as jest.Mock;
+      mockedLstatSync.mockReturnValue(lstatResult);
       jest.spyOn(path, 'extname').mockReturnValue('.twig');
       jest.spyOn(path, 'basename').mockReturnValue(dir);
       jest.spyOn(path, 'join').mockImplementation((directory, file) => `${directory}/${file}`);
@@ -170,15 +183,18 @@ describe('twigScanner', () => {
       const exclude: Array<string> = [];
 
       const lstatResult = { isDirectory: () => false } as fs.Stats;
-      jest.spyOn(fs, 'lstatSync').mockReturnValue(lstatResult);
+
+      const mockedLstatSync = zxFs.readdirSync as jest.Mock;
+      mockedLstatSync.mockReturnValue(lstatResult);
       jest.spyOn(path, 'extname').mockReturnValue('.twig');
       jest.spyOn(path, 'join').mockImplementation((directory, file) => `${directory}/${file}`);
-      jest.spyOn(fs, 'readdirSync').mockReturnValue([]);
+      const mockedReaddirSync = zxFs.readdirSync as jest.Mock;
+      mockedReaddirSync.mockReturnValue([]);
 
       const result = twigScanner.searchDirectoryForComponents(dir, localComponents, baseComponents, exclude);
 
       expect(result).toEqual({});
-      expect(fs.readdirSync).toHaveBeenCalledWith(dir);
+      expect(zxFs.readdirSync).toHaveBeenCalledWith(dir);
     });
 
     it('should recursively search the directory for .twig files and call searchFileForComponents', () => {
@@ -189,8 +205,10 @@ describe('twigScanner', () => {
       const lstatResult = { isDirectory: () => false } as fs.Stats;
       const dirContent: fs.Dirent[] = ['file1.twig', 'file2.twig'] as unknown as fs.Dirent[];
 
-      const mockedReaddirSync = jest.spyOn(fs, 'readdirSync').mockReturnValue(dirContent);
-      const lstatSync = jest.spyOn(fs, 'lstatSync').mockReturnValue(lstatResult);
+      const mockedReaddirSync = zxFs.readdirSync as jest.Mock;
+      mockedReaddirSync.mockReturnValue(dirContent);
+      const mockedLstatSync = zxFs.lstatSync as jest.Mock;
+      mockedLstatSync.mockReturnValue(lstatResult);
       const mockedExtname = jest.spyOn(path, 'extname').mockReturnValue('.twig');
       const mockedPathJoin = jest.spyOn(path, 'join').mockImplementation((directory, file) => `${directory}/${file}`);
 
@@ -226,7 +244,7 @@ describe('twigScanner', () => {
         ],
       });
       expect(mockedReaddirSync).toHaveBeenCalledWith(dir);
-      expect(lstatSync).toHaveBeenCalledTimes(2);
+      expect(mockedLstatSync).toHaveBeenCalledTimes(2);
       expect(mockedExtname).toHaveBeenCalledTimes(2);
       expect(mockedPathJoin).toHaveBeenCalledTimes(2);
     });
