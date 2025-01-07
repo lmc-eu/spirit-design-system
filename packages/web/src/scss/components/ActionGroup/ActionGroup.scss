@@ -42,11 +42,6 @@
             flex-direction: column-reverse;
         }
 
-        .ActionGroup--#{$infix}column,
-        .ActionGroup--#{$infix}columnReverse {
-            width: 100%;
-        }
-
         @include dictionaries.generate-alignments(
             $class-name: 'ActionGroup',
             $dictionary-values: theme.$alignment-x-dictionary,
