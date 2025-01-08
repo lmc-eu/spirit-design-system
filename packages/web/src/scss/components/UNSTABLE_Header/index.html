@@ -78,7 +78,7 @@
     <header class="UNSTABLE_Header">
       <div class="Container">
         <div
-          class="Flex Flex--row Flex--noWrap Flex--alignmentXLeft Flex--alignmentYCenter"
+          class="Flex Flex--row Flex--noWrap Flex--alignmentXLeft Flex--alignmentYStretch"
           style="--flex-spacing-x: var(--spirit-space-1000);"
         >
           <a href="#" aria-label="JobBoard homepage" class="UNSTABLE_HeaderLogo">
@@ -89,13 +89,53 @@
 
           <nav class="Navigation" aria-label="Main Navigation">
             <ul>
-              <li>
+              <li class="NavigationItem NavigationItem--alignmentYCenter">
                 <a href="#" class="NavigationAction">Link</a>
               </li>
-              <li>
+              <li class="NavigationItem NavigationItem--alignmentYCenter">
                 <a href="#" class="NavigationAction NavigationAction--selected" aria-current="page">Selected</a>
               </li>
-              <li>
+              <li class="NavigationItem NavigationItem--alignmentYCenter">
+                <div class="Dropdown Dropdown--alignmentXStretch Dropdown--alignmentYStretch">
+                  <button
+                    type="button"
+                    class="NavigationAction"
+                    data-spirit-toggle="dropdown"
+                    data-spirit-target="#dropdown-navigation"
+                    aria-expanded="false"
+                    aria-controls="dropdown-navigation"
+                    data-spirit-autoclose="true"
+                  >
+                    Dropdown
+                    <svg width="20" height="20" aria-hidden="true" class="accessibility-open">
+                      <use xlink:href="/assets/icons/svg/sprite.svg#chevron-up" />
+                    </svg>
+                    <svg width="20" height="20" aria-hidden="true" class="accessibility-closed">
+                      <use xlink:href="/assets/icons/svg/sprite.svg#chevron-down" />
+                    </svg>
+                  </button>
+                  <div class="DropdownPopover" data-spirit-placement="bottom-end" id="dropdown-navigation">
+                    <ul class="list-unstyled">
+                      <li>
+                        <a href="https://www.example.com" class="Item">
+                          <span class="Item__label">My Account</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="https://www.example.com" class="Item">
+                          <span class="Item__label">Settings</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="https://www.example.com" class="Item">
+                          <span class="Item__label">Log Out</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li class="NavigationItem NavigationItem--alignmentYCenter">
                 <span class="NavigationAction NavigationAction--disabled">Disabled</span>
               </li>
             </ul>
@@ -103,17 +143,64 @@
 
           <nav class="Navigation ml-auto" aria-label="Secondary Navigation">
             <ul>
-              <li>
+              <li class="NavigationItem NavigationItem--alignmentYCenter">
                 <button class="Button Button--tertiary Button--medium Button--symmetrical">
                   <svg width="24" height="24" aria-hidden="true">
                     <use xlink:href="/assets/icons/svg/sprite.svg#search" />
                   </svg>
                 </button>
               </li>
-              <li>
-                <a href="#" class="Button Button--secondary Button--medium">Sign up</a>
+              <li class="NavigationItem NavigationItem--alignmentYStretch">
+                <div class="Dropdown Dropdown--alignmentXStretch Dropdown--alignmentYStretch">
+                  <button
+                    type="button"
+                    class="button-unstyled"
+                    data-spirit-toggle="dropdown"
+                    data-spirit-target="#dropdown-avatar"
+                    aria-expanded="false"
+                    aria-controls="dropdown-avatar"
+                    data-spirit-autoclose="true"
+                  >
+                    <span class="Flex Flex--row Flex--noWrap Flex--alignmentXStretch Flex--alignmentYCenter" style="--flex-spacing-x: var(--spirit-space-500)">
+                      <span class="UNSTABLE_Avatar UNSTABLE_Avatar--medium UNSTABLE_Avatar--square" aria-label="Profile of Jiří Bárta">
+                        <svg width="20" height="20" aria-hidden="true">
+                          <use xlink:href="/assets/icons/svg/sprite.svg#profile" />
+                        </svg>
+                      </span>
+                      <span class="typography-body-small-semibold text-primary">My Account</span>
+                      <svg width="20" height="20" aria-hidden="true" class="accessibility-open">
+                        <use xlink:href="/assets/icons/svg/sprite.svg#chevron-up" />
+                      </svg>
+                      <svg width="20" height="20" aria-hidden="true" class="accessibility-closed">
+                        <use xlink:href="/assets/icons/svg/sprite.svg#chevron-down" />
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="DropdownPopover" data-spirit-placement="bottom-end" id="dropdown-avatar">
+                    <ul class="list-unstyled">
+                      <li>
+                        <a href="https://www.example.com" class="Item">
+                          <span class="Item__label">My Account</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="https://www.example.com" class="Item">
+                          <span class="Item__label">Settings</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="https://www.example.com" class="Item">
+                          <span class="Item__label">Log Out</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </li>
-              <li>
+              <li class="NavigationItem NavigationItem--alignmentYCenter">
+                <a href="#" class="Button Button--secondary Button--medium">Log out</a>
+              </li>
+              <li class="NavigationItem NavigationItem--alignmentYCenter">
                 <a href="#" class="Button Button--primary Button--medium">Post a job</a>
               </li>
             </ul>
