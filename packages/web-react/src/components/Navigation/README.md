@@ -43,11 +43,27 @@ import { NavigationItem } from '@lmc-eu/spirit-web-react';
 <NavigationItem>{/* Navigation actions go here */}</NavigationItem>;
 ```
 
+### Navigation Item Alignment
+
+Use `alignmentY` prop to center or stretch the content. If there is a `NavigationAction` inside, it overrides the prop and
+stretches its content vertically.
+
+```jsx
+import { NavigationAction, NavigationItem } from '@lmc-eu/spirit-web-react';
+
+<NavigationItem>{/* Vertically centered items */}</NavigationItem>;
+<NavigationItem alignmentY="stretch">{/* Vertically stretched items */}</NavigationItem>;
+<NavigationItem>
+  <NavigationAction>{/* Vertically stretched Action */}</NavigationAction>
+</NavigationItem>;
+```
+
 ### API
 
-| Name       | Type                    | Default | Required | Description                   |
-| ---------- | ----------------------- | ------- | -------- | ----------------------------- |
-| `children` | `string` \| `ReactNode` | `null`  | ✓        | Content of the NavigationItem |
+| Name         | Type                     | Default  | Required | Description                        |
+| ------------ | ------------------------ | -------- | -------- | ---------------------------------- |
+| `alignmentY` | \[`center` \| `stretch`] | `center` | ✕        | Vertical alignment of the children |
+| `children`   | `string` \| `ReactNode`  | `null`   | ✓        | Content of the NavigationItem      |
 
 The components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -123,7 +139,9 @@ With Buttons:
     <ButtonLink href="#">Button</ButtonLink>
   </NavigationItem>
   <NavigationItem>
-    <ButtonLink href="#" color="secondary">Button</Button>
+    <ButtonLink href="#" color="secondary">
+      Button
+    </ButtonLink>
   </NavigationItem>
 </Navigation>
 ```
