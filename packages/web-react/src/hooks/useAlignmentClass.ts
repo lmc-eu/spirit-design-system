@@ -1,7 +1,7 @@
 import { FlexAlignmentXType, FlexAlignmentYType } from '../types';
 import { generateStylePropsClassNames } from '../utils';
 
-type AlignmentPropertyType = FlexAlignmentXType | FlexAlignmentYType;
+export type AlignmentPropertyType = FlexAlignmentXType | FlexAlignmentYType;
 
 const DEFAULT_MOBILE_ALIGNMENT = 'stretch';
 
