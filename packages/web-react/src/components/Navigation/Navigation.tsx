@@ -13,7 +13,7 @@ const Navigation = (props: SpiritNavigationProps): JSX.Element => {
   const { styleProps, props: otherProps } = useStyleProps(restProps);
 
   return (
-    <nav {...otherProps} className={classNames(classProps, styleProps.className)} style={styleProps.style}>
+    <nav {...otherProps} className={classNames(classProps.root, styleProps.className)} style={styleProps.style}>
       <ul>{children}</ul>
     </nav>
   );
