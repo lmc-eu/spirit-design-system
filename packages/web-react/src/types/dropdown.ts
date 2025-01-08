@@ -1,5 +1,13 @@
 import { ComponentPropsWithRef, ElementType, LegacyRef, ReactNode } from 'react';
-import { Booleanish, ChildrenProps, ClickEvent, PlacementDictionaryType, StyleProps } from './shared';
+import {
+  AlignmentXExtendedDictionaryType,
+  AlignmentYExtendedDictionaryType,
+  Booleanish,
+  ChildrenProps,
+  ClickEvent,
+  PlacementDictionaryType,
+  StyleProps,
+} from './shared';
 
 export const DropdownFullWidthModes = {
   OFF: 'off',
@@ -18,11 +26,23 @@ export type DropdownTriggerRenderProps = {
   ref: LegacyRef<HTMLButtonElement & HTMLAnchorElement>;
 };
 
-export interface DropdownProps extends ChildrenProps, StyleProps {
+export type DropdownAlignmentXType =
+  | AlignmentXExtendedDictionaryType
+  | { [key: string]: AlignmentXExtendedDictionaryType };
+export type DropdownAlignmentYType =
+  | AlignmentYExtendedDictionaryType
+  | { [key: string]: AlignmentYExtendedDictionaryType };
+
+export interface DropdownAlignmentProps {
+  alignmentX?: DropdownAlignmentXType;
+  alignmentY?: DropdownAlignmentYType;
+}
+
+export interface DropdownProps extends DropdownAlignmentProps, ChildrenProps, StyleProps {
   id: string;
 }
 
-export interface DropdownStyleProps extends StyleProps {
+export interface DropdownStyleProps extends DropdownAlignmentProps, StyleProps {
   isOpen?: boolean;
 }
 

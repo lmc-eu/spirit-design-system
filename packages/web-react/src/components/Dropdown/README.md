@@ -52,19 +52,42 @@ import { UncontrolledDropdown, DropdownTrigger, DropdownPopover } from '@lmc-eu/
 
 ### Dropdown
 
-| Name              | Type                                               | Default        | Required | Description                                    |
-| ----------------- | -------------------------------------------------- | -------------- | -------- | ---------------------------------------------- |
-| `enableAutoClose` | `bool`                                             | `true`         | ✕        | Enables close on click outside of Dropdown     |
-| `fullWidthMode`   | [`DropdownFullWidthMode`][dropdown-fullwidth-mode] | `off`          | ✕        | Full-width mode                                |
-| `id`              | `string`                                           | —              | ✓        | Component id                                   |
-| `isOpen`          | `bool`                                             | `false`        | ✓        | Open state                                     |
-| `onAutoClose`     | `(event: Event) => void`                           | —              | ✕        | Callback on close on click outside of Dropdown |
-| `onToggle`        | `() => void`                                       | —              | ✓        | Function for toggle open state of dropdown     |
-| `placement`       | [Placement dictionary][dictionary-placement]       | `bottom-start` | ✕        | Alignment of the component                     |
+| Name              | Type                                                                  | Default        | Required | Description                                                                                                                               |
+| ----------------- | --------------------------------------------------------------------- | -------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `alignmentX`      | \[ [AlignmentXExtended dictionary][dictionary-alignment] \| `object`] | `null`         | ✕        | Apply vertical alignment to trigger, use object to set responsive values, e.g. `{ mobile: 'left', tablet: 'center', desktop: 'right' }`   |
+| `alignmentY`      | \[ [AlignmentYExtended dictionary][dictionary-alignment] \| `object`] | `null`         | ✕        | Apply horizontal alignment to trigger, use object to set responsive values, e.g. `{ mobile: 'top', tablet: 'center', desktop: 'bottom' }` |
+| `enableAutoClose` | `bool`                                                                | `true`         | ✕        | Enables close on click outside of Dropdown                                                                                                |
+| `fullWidthMode`   | [`DropdownFullWidthMode`][dropdown-fullwidth-mode]                    | `off`          | ✕        | Full-width mode                                                                                                                           |
+| `id`              | `string`                                                              | —              | ✓        | Component id                                                                                                                              |
+| `isOpen`          | `bool`                                                                | `false`        | ✓        | Open state                                                                                                                                |
+| `onAutoClose`     | `(event: Event) => void`                                              | —              | ✕        | Callback on close on click outside of Dropdown                                                                                            |
+| `onToggle`        | `() => void`                                                          | —              | ✓        | Function for toggle open state of dropdown                                                                                                |
+| `placement`       | [Placement dictionary][dictionary-placement]                          | `bottom-start` | ✕        | Alignment of the component                                                                                                                |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
+
+#### Alignment
+
+Dropdown supports the extended [Alignment Dictionary][dictionary-alignment] for alignment on both axes. To use it, set the
+specific prop to the `Dropdown` component, e.g. `<Dropdown alignmentX="right" />` or `<Dropdown alignmentY="stretch" />`. Adding
+any of these props will make the element display as `flex`.
+
+We also support responsive alignment props. To use them, set the prop as an object,
+e.g. `<Dropdown alignmentX={{ mobile: 'right', tablet: 'left', desktop: 'center' }} />`.
+
+ℹ️ This controls only the alignment inside the wrapping `Dropdown` element. And even with alignment, the popover will still be positioned
+at edge of the `Dropdown` element and on the place defined by the placement attribute.
+
+```jsx
+<Dropdown alignmentX={{ mobile: 'right', tablet: 'left', desktop: 'center' }} alignmentY="center" id="#dropdown-alignment">
+  <DropdownTrigger elementType={Button}>Button as anchor</DropdownTrigger>
+  <DropdownPopover>
+    <!-- ... -->
+  </DropdownPopover>
+</Dropdown>
+```
 
 ### DropdownTrigger
 
@@ -89,18 +112,21 @@ and [escape hatches][readme-escape-hatches].
 
 ### UncontrolledDropdown
 
-| Name              | Type                                               | Default        | Required | Description                                    |
-| ----------------- | -------------------------------------------------- | -------------- | -------- | ---------------------------------------------- |
-| `enableAutoClose` | `bool`                                             | `true`         | ✕        | Enables close on click outside of Dropdown     |
-| `fullWidthMode`   | [`DropdownFullWidthMode`][dropdown-fullwidth-mode] | `off`          | ✕        | Full-width mode                                |
-| `id`              | `string`                                           | `<random>`     | ✕        | Component id                                   |
-| `onAutoClose`     | `(event: Event) => void`                           | —              | ✕        | Callback on close on click outside of Dropdown |
-| `placement`       | [Placement dictionary][dictionary-placement]       | `bottom-start` | ✕        | Alignment of the component                     |
+| Name              | Type                                                                  | Default        | Required | Description                                                                                                                               |
+| ----------------- | --------------------------------------------------------------------- | -------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `alignmentX`      | \[ [AlignmentXExtended dictionary][dictionary-alignment] \| `object`] | `null`         | ✕        | Apply vertical alignment to trigger, use object to set responsive values, e.g. `{ mobile: 'left', tablet: 'center', desktop: 'right' }`   |
+| `alignmentY`      | \[ [AlignmentYExtended dictionary][dictionary-alignment] \| `object`] | `null`         | ✕        | Apply horizontal alignment to trigger, use object to set responsive values, e.g. `{ mobile: 'top', tablet: 'center', desktop: 'bottom' }` |
+| `enableAutoClose` | `bool`                                                                | `true`         | ✕        | Enables close on click outside of Dropdown                                                                                                |
+| `fullWidthMode`   | [`DropdownFullWidthMode`][dropdown-fullwidth-mode]                    | `off`          | ✕        | Full-width mode                                                                                                                           |
+| `id`              | `string`                                                              | `<random>`     | ✕        | Component id                                                                                                                              |
+| `onAutoClose`     | `(event: Event) => void`                                              | —              | ✕        | Callback on close on click outside of Dropdown                                                                                            |
+| `placement`       | [Placement dictionary][dictionary-placement]                          | `bottom-start` | ✕        | Alignment of the component                                                                                                                |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
+[dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#alignment
 [dictionary-placement]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#placement
 [dropdown-fullwidth-mode]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/types/dropdown.ts#L19
 [item]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Item/README.md
