@@ -1,24 +1,29 @@
+// 1. We do not use the dictionary for this, because we want only two values: center and stretch.
+
 @use '@tokens' as tokens;
 
 $spacing: tokens.$space-700;
 $height: 50px;
 
-$link-typography: tokens.$body-small-semibold;
-$link-spacing: tokens.$space-600;
-$link-color-state-default: tokens.$component-header-item-state-default;
-$link-color-state-hover: tokens.$component-header-item-state-hover;
-$link-color-state-active: tokens.$component-header-item-state-active;
-$link-color-state-selected: tokens.$component-header-item-state-selected;
-$link-color-state-disabled: tokens.$disabled-content;
-$link-border-bottom-width: tokens.$border-width-200;
-$link-border-bottom-style: solid;
-$link-border-bottom-color-state-default: transparent;
-$link-border-bottom-color-state-hover: tokens.$component-header-stripe-state-unselected;
-$link-border-bottom-color-state-active: tokens.$component-header-stripe-state-unselected;
-$link-border-bottom-color-selected-state-default: tokens.$component-header-stripe-state-selected;
-$link-border-bottom-color-selected-state-hover: tokens.$component-header-stripe-state-selected;
-$link-border-bottom-color-selected-state-active: tokens.$component-header-stripe-state-selected;
-$link-background-color-state-default: tokens.$component-header-item-background-state-default;
-$link-background-color-state-hover: tokens.$component-header-item-background-state-hover;
-$link-background-color-state-active: tokens.$component-header-item-background-state-active;
-$link-background-color-state-selected: tokens.$component-header-item-background-state-selected;
+$action-typography: tokens.$body-small-semibold;
+$action-gap: tokens.$space-600;
+$action-spacing: tokens.$space-600;
+$action-color-state-default: tokens.$component-header-item-state-default;
+$action-color-state-hover: tokens.$component-header-item-state-hover;
+$action-color-state-active: tokens.$component-header-item-state-active;
+$action-color-state-selected: tokens.$component-header-item-state-selected;
+$action-color-state-disabled: tokens.$disabled-content;
+$action-border-bottom-width: tokens.$border-width-200;
+$action-border-bottom-style: solid;
+$action-border-bottom-color-state-default: transparent;
+$action-border-bottom-color-state-hover: tokens.$component-header-stripe-state-unselected;
+$action-border-bottom-color-state-active: tokens.$component-header-stripe-state-unselected;
+$action-border-bottom-color-selected-state-default: tokens.$component-header-stripe-state-selected;
+$action-border-bottom-color-selected-state-hover: tokens.$component-header-stripe-state-selected;
+$action-border-bottom-color-selected-state-active: tokens.$component-header-stripe-state-selected;
+$action-background-color-state-default: tokens.$component-header-item-background-state-default;
+$action-background-color-state-hover: tokens.$component-header-item-background-state-hover;
+$action-background-color-state-active: tokens.$component-header-item-background-state-active;
+$action-background-color-state-selected: tokens.$component-header-item-background-state-selected;
+
+$item-alignment-dictionary: center, stretch; // 1.
