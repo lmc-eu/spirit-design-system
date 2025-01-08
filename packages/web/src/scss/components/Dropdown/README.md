@@ -254,6 +254,38 @@ See the [Item][item] component for more information.
 DropdownPopover implements the [Placement Dictionary][dictionary-placement] for placement. The dictionary values are used as
 a value of data attribute `data-spirit-placement`, e.g. `data-spirit-placement="top"`, `data-spirit-placement="right-end"`, etc.
 
+## Alignment
+
+Dropdown supports the extended [Alignment Dictionary][dictionary-alignment] for alignment on both axes. To use it, add the
+specific class to the `.Dropdown` element, e.g. `.Dropdown--alignmentXRight` or `.Dropdown--alignmentYStretch`. Adding
+any of these classes will make the element display as `flex`.
+
+We also support responsive infixes for alignment classes. To use them, add the infix to the class name, e.g. `.Dropdown--tablet--alignmentXRight`.
+
+ℹ️ This controls only the alignment inside the wrapping `.Dropdown` element. And even with alignment, the popover will still be positioned
+at edge of the `.Dropdown` element and on the place defined by the placement attribute.
+
+```html
+<div class="Dropdown Dropdown--alignmentXRight Dropdown--desktop--alignmentXCenter">
+  <button
+    data-spirit-toggle="dropdown"
+    data-spirit-target="#dropdown-alignment"
+    aria-expanded="false"
+    aria-controls="dropdown-alignment"
+    <!-- ... -->
+  >
+    Trigger button aligned to the right and centered on desktop
+  </button>
+  <div
+    class="DropdownPopover"
+    data-spirit-placement="bottom-start"
+    id="dropdown-alignment"
+  >
+      <!-- ... -->
+  </div>
+</div>
+```
+
 ## JavaScript
 
 There are two options here. Use the trigger element as an anchor or wrap the menu together with the trigger into a `.Dropdown` class.
@@ -311,5 +343,6 @@ myDropdownEl.addEventListener('hidden.dropdown', () => {
 dropdown.hide();
 ```
 
+[dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#alignment
 [dictionary-placement]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#placement
 [item]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Item/README.md
