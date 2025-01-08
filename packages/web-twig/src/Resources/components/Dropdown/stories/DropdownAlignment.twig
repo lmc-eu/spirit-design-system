@@ -1,0 +1,21 @@
+<Grid cols="2">
+    <Dropdown
+        alignmentX="{{ { mobile: 'right', tablet: 'left', desktop: 'center' } }}"
+        alignmentY="center"
+    >
+        <Button
+            data-spirit-toggle="dropdown"
+            data-spirit-target="#dropdown-alignment"
+        >
+            Button as anchor
+        </Button>
+        <DropdownPopover id="dropdown-alignment" placement="bottom">
+            <Item elementType="a" href="#" label="Action" />
+            <Item elementType="a" href="#" label="Another action" />
+            <Item elementType="a" href="#" label="Something else here" />
+        </DropdownPopover>
+    </Dropdown>
+    <div class="px-800 py-1300 bg-tertiary text-center">
+        This is a big unrelated box to demonstrate the Dropdown Trigger alignment
+    </div>
+</Grid>
