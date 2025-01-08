@@ -3,8 +3,7 @@
 @use 'theme';
 
 .Navigation,
-.Navigation > ul,
-.Navigation > ul > li {
+.Navigation > ul {
     display: flex;
 }
 
@@ -15,7 +14,6 @@
 .Navigation:not(:has(.NavigationAction)),
 .Navigation:not(:has(.NavigationAction)) > ul {
     gap: theme.$spacing;
-    align-items: center;
 }
 
 .Navigation > ul {
