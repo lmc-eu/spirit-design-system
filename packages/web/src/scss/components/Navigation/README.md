@@ -5,6 +5,7 @@ The `Navigation` component is a container for the navigation actions of the appl
 It consists of these parts:
 
 - [Navigation](#navigation)
+  - [NavigationItem](#navigation-item)
   - [NavigationAction](#navigation-action)
 
 ## Navigation
@@ -28,6 +29,34 @@ it will insert a gap between them.
 `nav` element directly.
 
 ℹ️ Don't forget to add the `aria-label` attribute to the `Navigation` component for correct accessible title.
+
+## Navigation Item
+
+The `NavigationItem` is a container for a navigation action or any other action.
+
+```html
+<li class="NavigationItem">
+  <!-- action -->
+</li>
+```
+
+### Navigation Item Alignment
+
+Use alignment classes to center or stretch the content. If there is a NavigationAction inside, it overrides the class and
+stretches its content vertically.
+
+```html
+<li class="NavigationItem NavigationItem--alignmentYCenter">
+  <a href="#">Vertically centered link</a>
+</li>
+<li class="NavigationItem NavigationItem--alignmentYStretch">
+  <a href="#">Stretched link</a>
+</li>
+<li class="NavigationItem NavigationItem--alignmentYCenter">
+  <a href="#" class="NavigationAction">Stretched NavigationAction</a>
+  <!-- This will be stretched -->
+</li>
+```
 
 ## Navigation Action
 
@@ -58,13 +87,13 @@ With NavigationAction components:
 ```html
 <nav class="Navigation" aria-label="Main Navigation">
   <ul>
-    <li>
+    <li class="NavigationItem NavigationItem--alignmentYCenter">
       <a class="NavigationAction NavigationAction--selected" href="#" aria-current="page">Selected Link</a>
     </li>
-    <li>
+    <li class="NavigationItem NavigationItem--alignmentYCenter">
       <span class="NavigationAction NavigationAction--disabled">Disabled Link</span>
     </li>
-    <li>
+    <li class="NavigationItem NavigationItem--alignmentYCenter">
       <a class="NavigationAction" href="#">Link</a>
     </li>
   </ul>
@@ -76,10 +105,10 @@ With Buttons:
 ```html
 <nav class="Navigation" aria-label="Secondary Navigation">
   <ul>
-    <li>
+    <li class="NavigationItem NavigationItem--alignmentYCenter">
       <a href="#" class="Button Button--medium Button--primary">Button</a>
     </li>
-    <li>
+    <li class="NavigationItem NavigationItem--alignmentYCenter">
       <a href="#" class="Button Button--medium Button--secondary">Button</a>
     </li>
   </ul>

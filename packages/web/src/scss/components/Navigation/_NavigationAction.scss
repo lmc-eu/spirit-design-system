@@ -1,56 +1,62 @@
 // 1. We need to set the top border too, otherwise the content won't be aligned properly.
 
 @use '@tokens' as tokens;
+@use '../../tools/reset';
 @use '../../tools/typography';
 @use 'theme';
 
+.NavigationAction:where(button) {
+    @include reset.button();
+}
+
 .NavigationAction {
-    @include typography.generate(theme.$link-typography);
+    @include typography.generate(theme.$action-typography);
 
     display: flex;
+    gap: theme.$action-gap;
     align-items: center;
     justify-content: center;
-    padding-inline: theme.$link-spacing;
-    color: theme.$link-color-state-default;
-    border-top: theme.$link-border-bottom-width theme.$link-border-bottom-style transparent; // 1.
-    border-bottom: theme.$link-border-bottom-width theme.$link-border-bottom-style
-        theme.$link-border-bottom-color-state-default;
-    background-color: theme.$link-background-color-state-default;
+    padding-inline: theme.$action-spacing;
+    color: theme.$action-color-state-default;
+    border-top: theme.$action-border-bottom-width theme.$action-border-bottom-style transparent; // 1.
+    border-bottom: theme.$action-border-bottom-width theme.$action-border-bottom-style
+        theme.$action-border-bottom-color-state-default;
+    background-color: theme.$action-background-color-state-default;
 
     @media (hover: hover) {
         &:hover {
             text-decoration: none;
-            color: theme.$link-color-state-hover;
-            border-bottom-color: theme.$link-border-bottom-color-state-hover;
-            background-color: theme.$link-background-color-state-hover;
+            color: theme.$action-color-state-hover;
+            border-bottom-color: theme.$action-border-bottom-color-state-hover;
+            background-color: theme.$action-background-color-state-hover;
         }
     }
 
     &:active {
         text-decoration: none;
-        color: theme.$link-color-state-active;
-        border-bottom-color: theme.$link-border-bottom-color-state-active;
-        background-color: theme.$link-background-color-state-active;
+        color: theme.$action-color-state-active;
+        border-bottom-color: theme.$action-border-bottom-color-state-active;
+        background-color: theme.$action-background-color-state-active;
     }
 }
 
 .NavigationAction--selected {
-    color: theme.$link-color-state-selected;
-    border-bottom-color: theme.$link-border-bottom-color-selected-state-default;
-    background-color: theme.$link-background-color-state-selected;
+    color: theme.$action-color-state-selected;
+    border-bottom-color: theme.$action-border-bottom-color-selected-state-default;
+    background-color: theme.$action-background-color-state-selected;
 
     @media (hover: hover) {
         &:hover {
-            border-bottom-color: theme.$link-border-bottom-color-selected-state-hover;
+            border-bottom-color: theme.$action-border-bottom-color-selected-state-hover;
         }
     }
 
     &:active {
-        border-bottom-color: theme.$link-border-bottom-color-selected-state-active;
+        border-bottom-color: theme.$action-border-bottom-color-selected-state-active;
     }
 }
 
 .NavigationAction--disabled {
-    color: theme.$link-color-state-disabled;
+    color: theme.$action-color-state-disabled;
     pointer-events: none;
 }
