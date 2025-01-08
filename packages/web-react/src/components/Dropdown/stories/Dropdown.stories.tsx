@@ -2,7 +2,7 @@ import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
 import { Button, Icon, Text } from '../..';
-import { Placements } from '../../../constants';
+import { AlignmentXExtended, AlignmentYExtended, Placements } from '../../../constants';
 import { DropdownFullWidthModes, SpiritDropdownProps } from '../../../types';
 import ReadMe from '../README.md';
 import { Dropdown, DropdownTrigger, DropdownPopover } from '..';
@@ -17,6 +17,20 @@ const meta: Meta<typeof Dropdown> = {
     layout: 'centered',
   },
   argTypes: {
+    alignmentX: {
+      control: 'select',
+      options: [undefined, ...Object.values(AlignmentXExtended)],
+      table: {
+        defaultValue: { summary: undefined },
+      },
+    },
+    alignmentY: {
+      control: 'select',
+      options: [undefined, ...Object.values(AlignmentYExtended)],
+      table: {
+        defaultValue: { summary: undefined },
+      },
+    },
     children: {
       control: 'object',
     },
@@ -45,6 +59,8 @@ const meta: Meta<typeof Dropdown> = {
     },
   },
   args: {
+    alignmentX: undefined,
+    alignmentY: undefined,
     children: (
       <>
         <a href="#info" className="d-flex mb-400">
