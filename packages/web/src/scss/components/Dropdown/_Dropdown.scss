@@ -1,5 +1,31 @@
+@use '../../tools/breakpoint';
+@use '../../tools/dictionaries';
 @use '../../tools/placement';
+@use 'theme';
 
 .Dropdown {
     @include placement.parent();
+}
+
+@each $breakpoint-name, $breakpoint-value in theme.$breakpoints {
+    $infix: breakpoint.get-modifier('infix', $breakpoint-name, $breakpoint-value);
+
+    @include breakpoint.up($breakpoint-value) {
+        .Dropdown[class*='Dropdown--#{$infix}alignment'] {
+            display: flex;
+        }
+
+        @include dictionaries.generate-alignments(
+            $class-name: 'Dropdown',
+            $dictionary-values: theme.$alignment-x-dictionary,
+            $axis: 'x',
+            $infix: $infix
+        );
+        @include dictionaries.generate-alignments(
+            $class-name: 'Dropdown',
+            $dictionary-values: theme.$alignment-y-dictionary,
+            $axis: 'y',
+            $infix: $infix
+        );
+    }
 }
