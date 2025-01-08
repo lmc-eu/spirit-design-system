@@ -5,7 +5,7 @@ import React, { ElementType, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
 import { PolymorphicRef, SpiritNavigationActionProps } from '../../types';
 import { useNavigationActionProps } from './useNavigationActionProps';
-import { useNavigationActionStyleProps } from './useNavigationActionStyleProps';
+import { useNavigationStyleProps } from './useNavigationStyleProps';
 
 const defaultProps: Partial<SpiritNavigationActionProps> = {
   elementType: 'a',
@@ -22,7 +22,7 @@ const _NavigationAction = <E extends ElementType = 'a'>(
   const ElementTag = propsWithDefaults.isDisabled ? 'span' : elementType;
 
   const { navigationActionProps } = useNavigationActionProps(propsWithDefaults);
-  const { classProps, props: modifiedProps } = useNavigationActionStyleProps(restProps);
+  const { classProps, props: modifiedProps } = useNavigationStyleProps(restProps);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
 
   return (
@@ -30,7 +30,7 @@ const _NavigationAction = <E extends ElementType = 'a'>(
       {...otherProps}
       {...styleProps}
       {...navigationActionProps}
-      className={classNames(classProps, styleProps.className)}
+      className={classNames(classProps.action, styleProps.className)}
       ref={ref}
     >
       {children}

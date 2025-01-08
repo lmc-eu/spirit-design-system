@@ -2,6 +2,7 @@ import { ElementType, ReactElement } from 'react';
 import { NavigationItem } from '../components';
 import { LinkTarget } from './link';
 import {
+  AlignmentYExtendedDictionaryType,
   AriaLabelingProps,
   ChildrenProps,
   SpiritPolymorphicElementPropsWithRef,
@@ -29,7 +30,11 @@ export type NavigationActionProps<E extends ElementType> = {
   elementType?: E;
 } & NavigationActionBaseProps;
 
-export interface SpiritNavigationItemProps extends ChildrenProps, StyleProps {}
+export type SpiritNavigationItemAlignmentYType = Omit<AlignmentYExtendedDictionaryType, 'top' | 'bottom' | 'baseline'>;
+
+export interface SpiritNavigationItemProps extends ChildrenProps, StyleProps {
+  alignmentY?: SpiritNavigationItemAlignmentYType;
+}
 
 export type SpiritNavigationActionProps<E extends ElementType = 'a'> = NavigationActionProps<E> &
   SpiritPolymorphicElementPropsWithRef<E, NavigationActionProps<E>>;
