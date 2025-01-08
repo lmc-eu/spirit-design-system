@@ -7,6 +7,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import DocsSection from '../../../../docs/DocsSections';
 import { IconsProvider } from '../../../context';
+import DropdownAlignment from './DropdownAlignment';
 import DropdownDisabledAutoclose from './DropdownDisabledAutoclose';
 import DropdownFullwidthAll from './DropdownFullwidthAll';
 import DropdownFullwidthMobileOnly from './DropdownFullwidthMobileOnly';
@@ -19,6 +20,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <IconsProvider value={icons}>
       <DocsSection title="Placements" stackAlignment="stretch">
         <DropdownPlacements />
+      </DocsSection>
+      <DocsSection title="Alignment" stackAlignment="stretch">
+        <DropdownAlignment />
       </DocsSection>
       <DocsSection title="Various items">
         <DropdownVariousItems />
