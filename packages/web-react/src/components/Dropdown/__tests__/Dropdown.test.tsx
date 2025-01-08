@@ -2,6 +2,7 @@ import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
 import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { DropdownAlignmentXType, DropdownAlignmentYType } from '../../../types';
 import Dropdown from '../Dropdown';
 import DropdownPopover from '../DropdownPopover';
 import DropdownTrigger from '../DropdownTrigger';
@@ -54,7 +55,7 @@ describe('Dropdown', () => {
       </Dropdown>,
     );
 
-    const trigger = screen.getByRole('button');
+    const trigger = screen.getByRole('button') as HTMLElement;
 
     fireEvent.click(trigger);
 
@@ -71,5 +72,46 @@ describe('Dropdown', () => {
 
     expect(screen.getByRole('button')).not.toHaveAttribute('id', 'dropdown');
     expect(screen.getByTestId('test-popover')).toHaveAttribute('id', 'dropdown');
+  });
+
+  describe('Alignment tests', () => {
+    const alignmentTests: Array<[unknown, unknown, string]> = [
+      ['center', undefined, 'Dropdown Dropdown--alignmentXCenter'],
+      ['center', 'center', 'Dropdown Dropdown--alignmentXCenter Dropdown--alignmentYCenter'],
+      [
+        { tablet: 'center', desktop: 'right' },
+        undefined,
+        'Dropdown Dropdown--tablet--alignmentXCenter Dropdown--desktop--alignmentXRight',
+      ],
+      [
+        { mobile: 'left', tablet: 'center', desktop: 'right' },
+        undefined,
+        'Dropdown Dropdown--alignmentXLeft Dropdown--tablet--alignmentXCenter Dropdown--desktop--alignmentXRight',
+      ],
+      [
+        { mobile: 'left', tablet: 'center', desktop: 'right' },
+        { mobile: 'top', tablet: 'center', desktop: 'bottom' },
+        'Dropdown Dropdown--alignmentXLeft Dropdown--tablet--alignmentXCenter Dropdown--desktop--alignmentXRight Dropdown--alignmentYTop Dropdown--tablet--alignmentYCenter Dropdown--desktop--alignmentYBottom',
+      ],
+    ];
+
+    it.each(alignmentTests)(
+      'should render alignmentX=%o and alignmentY=%o',
+      (alignmentX, alignmentY, expectedClass) => {
+        render(
+          <Dropdown
+            alignmentX={alignmentX as DropdownAlignmentXType}
+            alignmentY={alignmentY as DropdownAlignmentYType}
+            data-testid="dropdown"
+            id="dropdown"
+            isOpen={false}
+            onToggle={() => {}}
+          />,
+        );
+
+        // If your component *always* applies the 'Dropdown' class, include it in the expectation:
+        expect(screen.getByTestId('dropdown')).toHaveClass(expectedClass);
+      },
+    );
   });
 });
