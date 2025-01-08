@@ -1,0 +1,17 @@
+@use '@tokens' as tokens;
+@use '../../tools/dictionaries';
+@use 'theme';
+
+.NavigationItem {
+    display: flex;
+}
+
+@include dictionaries.generate-alignments(
+    $class-name: 'NavigationItem',
+    $dictionary-values: theme.$item-alignment-dictionary,
+    $axis: 'y'
+);
+
+.NavigationItem:has(.NavigationAction) {
+    align-items: stretch;
+}
