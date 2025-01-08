@@ -1,5 +1,7 @@
 {# API #}
 {%- set props = props | default([]) -%}
+{%- set _alignmentX = props.alignmentX | default(null) -%}
+{%- set _alignmentY = props.alignmentY | default(null) -%}
 {%- set _elementType = props.elementType | default('div') -%}
 
 {# Class names #}
@@ -7,7 +9,32 @@
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
-{%- set _classNames = [ _rootClassName, _styleProps.className ] -%}
+
+{%- set _alignmentXClasses = [] -%}
+{%- if _alignmentX is iterable -%}
+    {%- for breakpoint, breakpointValue in _alignmentX -%}
+        {%- set infix = (breakpoint == 'mobile') ? '' : '--' ~ breakpoint -%}
+        {%- set breakpointValueCapitalized = breakpointValue[:1] | upper ~ breakpointValue[1:] -%}
+        {%- set _alignmentXClasses = _alignmentXClasses | merge([ _spiritClassPrefix ~ 'Dropdown' ~ infix ~ '--alignmentX' ~ breakpointValueCapitalized ]) -%}
+    {%- endfor -%}
+{%- elseif _alignmentX is not null -%}
+    {%- set _alignmentXCapitalized = _alignmentX[:1] | upper ~ _alignmentX[1:] -%}
+    {%- set _alignmentXClasses = [ _spiritClassPrefix ~ 'Dropdown--alignmentX' ~ _alignmentXCapitalized ] -%}
+{%- endif -%}
+
+{%- set _alignmentYClasses = [] -%}
+{%- if _alignmentY is iterable -%}
+    {%- for breakpoint, breakpointValue in _alignmentY -%}
+        {%- set infix = (breakpoint == 'mobile') ? '' : '--' ~ breakpoint -%}
+        {%- set breakpointValueCapitalized = breakpointValue[:1] | upper ~ breakpointValue[1:] -%}
+        {%- set _alignmentYClasses = _alignmentYClasses | merge([ _spiritClassPrefix ~ 'Dropdown' ~ infix ~ '--alignmentY' ~ breakpointValueCapitalized ]) -%}
+    {%- endfor -%}
+{%- elseif _alignmentY is not null -%}
+    {%- set _alignmentYCapitalized = _alignmentY[:1] | upper ~ _alignmentY[1:] -%}
+    {%- set _alignmentYClasses = [ _spiritClassPrefix ~ 'Dropdown--alignmentY' ~ _alignmentYCapitalized ] -%}
+{%- endif -%}
+
+{%- set _classNames = [ _rootClassName, _styleProps.className ] | merge(_alignmentXClasses, _alignmentYClasses) -%}
 
 <{{ _elementType }}
     {{ mainProps(props) }}
