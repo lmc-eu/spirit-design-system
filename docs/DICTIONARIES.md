@@ -19,21 +19,21 @@ This project uses `dictionaries` to unify props between different components.
 
 ### Alignment
 
-| Dictionary         | Values                                  | Code name          |
-| ------------------ | --------------------------------------- | ------------------ |
-| AlignmentX         | `left`, `center`, `right`               | AlignmentX         |
-| AlignmentXExtended | AlignmentX + `stretch`, `space-between` | AlignmentXExtended |
-| AlignmentY         | `top`, `center`, `bottom`               | AlignmentY         |
-| AlignmentYExtended | AlignmentY + `stretch`, `baseline`      | AlignmentYExtended |
+| Dictionary         | Values                                             | Code name          |
+| ------------------ | -------------------------------------------------- | ------------------ |
+| AlignmentX         | `left`, `center`, `right`                          | AlignmentX         |
+| AlignmentXExtended | AlignmentX Dictionary + `stretch`, `space-between` | AlignmentXExtended |
+| AlignmentY         | `top`, `center`, `bottom`                          | AlignmentY         |
+| AlignmentYExtended | AlignmentY Dictionary + `stretch`, `baseline`      | AlignmentYExtended |
 
 ### Border Properties
 
-| Dictionary    | Values                                          | Code name    |
-| ------------- | ----------------------------------------------- | ------------ |
-| Border Color  | `basic`, `focus`                                | BorderColor  |
-| Border Radius | `0`, `100`, `200`, `300`, `400`, `500`, `full`, | BorderRadius |
-| Border Style  | `solid`, `'dotted'`, `'dashed'`                 | BorderStyle  |
-| Border Width  | `0`, `100`, `200`,                              | BorderWidth  |
+| Dictionary    | Values                                         | Code name    |
+| ------------- | ---------------------------------------------- | ------------ |
+| Border Color  | `basic`, `focus`                               | BorderColor  |
+| Border Radius | `0`, `100`, `200`, `300`, `400`, `500`, `full` | BorderRadius |
+| Border Style  | `solid`, `'dotted'`, `'dashed'`                | BorderStyle  |
+| Border Width  | `0`, `100`, `200`,                             | BorderWidth  |
 
 ### Color
 
@@ -47,10 +47,11 @@ This project uses `dictionaries` to unify props between different components.
 
 ### Direction
 
-| Dictionary    | Values                   | Code name     |
-| ------------- | ------------------------ | ------------- |
-| Direction     | `horizontal`, `vertical` | Direction     |
-| DirectionAxis | `x`, `y`                 | DirectionAxis |
+| Dictionary        | Values                                      | Code name         |
+| ----------------- | ------------------------------------------- | ----------------- |
+| Direction         | `horizontal`, `vertical`                    | Direction         |
+| DirectionAxis     | `x`, `y`                                    | DirectionAxis     |
+| DirectionExtended | Direction Dictionary + `horizontal-reverse` | DirectionExtended |
 
 ### Emphasis
 

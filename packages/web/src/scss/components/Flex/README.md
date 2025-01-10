@@ -2,22 +2,37 @@
 
 Flex is a component that allows you to create a flexible one-dimensional layout.
 
+## ⚠️ DEPRECATION NOTICE
+
+CSS modifiers `Flex--row` and `Flex--column` are deprecated and will be removed in the next major release.
+Use `Flex--horizontal` and `Flex--vertical` CSS modifiers instead.
+
 ## Basic Usage
 
-Row layout:
+Horizontal layout:
 
 ```html
-<div class="Flex Flex--row Flex--noWrap Flex--alignmentXStretch Flex--alignmentYStretch">
+<div class="Flex Flex--horizontal Flex--noWrap Flex--alignmentXStretch Flex--alignmentYStretch">
   <div>Item 1</div>
   <div>Item 2</div>
   <div>Item 3</div>
 </div>
 ```
 
-Column layout:
+Horizontal reversed layout:
 
 ```html
-<div class="Flex Flex--column Flex--noWrap Flex--alignmentXStretch Flex--alignmentYStretch">
+<div class="Flex Flex--horizontalReversed Flex--noWrap Flex--alignmentXStretch Flex--alignmentYStretch">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+</div>
+```
+
+Vertical layout:
+
+```html
+<div class="Flex Flex--vertical Flex--noWrap Flex--alignmentXStretch Flex--alignmentYStretch">
   <div>Item 1</div>
   <div>Item 2</div>
   <div>Item 3</div>
@@ -27,7 +42,7 @@ Column layout:
 Usage with a list:
 
 ```html
-<ul class="Flex Flex--column Flex--noWrap Flex--alignmentXStretch Flex--alignmentYStretch">
+<ul class="Flex Flex--vertical Flex--noWrap Flex--alignmentXStretch Flex--alignmentYStretch">
   <li>Item 1</li>
   <li>Item 2</li>
   <li>Item 3</li>
@@ -40,10 +55,10 @@ alignment API consistency.
 
 ## Responsive Direction
 
-To create a responsive layout, use the `tablet` and `desktop` infixes, e.g. `Flex--tablet--row` or `Flex--desktop--column`.
+To create a responsive layout, use the `tablet` and `desktop` infixes, e.g. `Flex--tablet--horizontal` or `Flex--desktop--vertical`.
 
 ```html
-<div class="Flex Flex--column Flex--tablet--row Flex--noWrap Flex--alignmentXStretch Flex--alignmentYStretch">
+<div class="Flex Flex--vertical Flex--tablet--horizontal Flex--noWrap Flex--alignmentXStretch Flex--alignmentYStretch">
   <div>Item 1</div>
   <div>Item 2</div>
   <div>Item 3</div>
@@ -56,7 +71,7 @@ By default, Flex items will not wrap (the `Flex--noWrap` modifier). To enable wr
 `Flex--wrap` modifier class instead.
 
 ```html
-<div class="Flex Flex--row Flex--wrap Flex--alignmentXStretch Flex--alignmentYStretch">
+<div class="Flex Flex--horizontal Flex--wrap Flex--alignmentXStretch Flex--alignmentYStretch">
   <div>Item 1</div>
   <div>Item 2</div>
   <div>Item 3</div>
@@ -71,7 +86,7 @@ To create a responsive layout, use the `tablet` and `desktop` infixes, e.g. `Fle
 <div
   class="
     Flex
-    Flex--row
+    Flex--horizontal
     Flex--wrap
     Flex--tablet--noWrap
     Flex--desktop--wrap
@@ -114,7 +129,7 @@ center, or bottom. There is also an option to align the items to the baseline. T
 Example:
 
 ```html
-<div class="Flex Flex--row Flex--noWrap Flex--alignmentXRight Flex--alignmentYBaseline">
+<div class="Flex Flex--horizontal Flex--noWrap Flex--alignmentXRight Flex--alignmentYBaseline">
   <div>Item 1</div>
   <div>Item 2</div>
   <div>Item 3</div>
@@ -132,7 +147,7 @@ Example:
 <div
   class="
     Flex
-    Flex--row
+    Flex--horizontal
     Flex--noWrap
     Flex--alignmentXLeft
     Flex--alignmentYStretch
@@ -154,7 +169,7 @@ This will set the spacing to `var(--spirit-space-800)` for all breakpoints.
 
 ```html
 <div
-  class="Flex Flex--row Flex--noWrap Flex--alignmentXStretch Flex--alignmentYStretch"
+  class="Flex Flex--horizontal Flex--noWrap Flex--alignmentXStretch Flex--alignmentYStretch"
   style="--flex-spacing-x: var(--spirit-space-1200)"
 >
   <div>Item 1</div>
@@ -177,7 +192,7 @@ Custom spacing from tablet up:
 
 ```html
 <div
-  class="Flex Flex--row Flex--noWrap Flex--alignmentXStretch Flex--alignmentYStretch"
+  class="Flex Flex--horizontal Flex--noWrap Flex--alignmentXStretch Flex--alignmentYStretch"
   style="--flex-spacing-x-tablet: var(--spirit-space-1200)"
 >
   <div>Item 1</div>
@@ -190,7 +205,7 @@ Custom spacing for each breakpoint:
 
 ```html
 <div
-  class="Flex Flex--row Flex--noWrap Flex--alignmentXStretch Flex--alignmentYStretch"
+  class="Flex Flex--horizontal Flex--noWrap Flex--alignmentXStretch Flex--alignmentYStretch"
   style="--flex-spacing-x: var(--spirit-space-800); --flex-spacing-y: var(--spirit-space-1000); --flex-spacing-x-tablet: var(--spirit-space-1000); --flex-spacing-y-tablet: var(--spirit-space-1000); --flex-spacing-x-desktop: var(--spirit-space-1200); --flex-spacing-y-desktop: var(--spirit-space-1200)"
 >
   <div>Item 1</div>
