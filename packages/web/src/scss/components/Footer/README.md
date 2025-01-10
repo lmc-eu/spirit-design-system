@@ -93,7 +93,7 @@ Use the [Product Logo][product-logo] component to display the logo of your produ
 Use the secondary [Button][button] component to create social media links inside a [Flex][flex] container.
 
 ```html
-<ul class="Flex Flex--row Flex--wrap Flex--alignmentXCenter Flex--alignmentYCenter">
+<ul class="Flex Flex--horizontal Flex--wrap Flex--alignmentXCenter Flex--alignmentYCenter">
   <!-- Repeat the `<li>` block for each social media link. -->
   <li>
     <a href="https://www.example.com" class="Button Button--secondary Button--medium Button--symmetrical">
@@ -118,7 +118,7 @@ This section is optional and consists of a [Flex][flex] layout with secondary li
 ```html
 <nav aria-label="Secondary links">
   <ul
-    class="Flex Flex--column Flex--tablet--row Flex--wrap Flex--alignmentXStretch Flex--tablet--alignmentXCenter Flex--alignmentYStretch"
+    class="Flex Flex--vertical Flex--tablet--horizontal Flex--wrap Flex--alignmentXStretch Flex--tablet--alignmentXCenter Flex--alignmentYStretch"
     style="--flex-spacing: var(--spirit-space-600); --flex-spacing-tablet: var(--spirit-space-900)"
   >
     <!-- Repeat the `<li>` block for each secondary link. -->
@@ -175,7 +175,10 @@ This section is optional and consists of a [Flex][flex] layout with secondary li
         </a>
       </div>
       <!-- Flex with social media links -->
-      <ul class="Flex Flex--row Flex--wrap Flex--alignmentXCenter Flex--alignmentYCenter" aria-label="Social media">
+      <ul
+        class="Flex Flex--horizontal Flex--wrap Flex--alignmentXCenter Flex--alignmentYCenter"
+        aria-label="Social media"
+      >
         <li>
           <a href="https://www.example.com" class="Button Button--secondary Button--medium Button--symmetrical">
             <span class="accessibility-hidden">Facebook</span>
@@ -226,7 +229,7 @@ This section is optional and consists of a [Flex][flex] layout with secondary li
     <!-- Flex with secondary links -->
     <nav aria-label="Secondary links">
       <ul
-        class="Flex Flex--column Flex--tablet--row Flex--wrap Flex--alignmentXStretch Flex--tablet--alignmentXCenter Flex--alignmentYStretch"
+        class="Flex Flex--vertical Flex--tablet--horizontal Flex--wrap Flex--alignmentXStretch Flex--tablet--alignmentXCenter Flex--alignmentYStretch"
         style="--flex-spacing: var(--spirit-space-600); --flex-spacing-tablet: var(--spirit-space-900)"
       >
         <li>
