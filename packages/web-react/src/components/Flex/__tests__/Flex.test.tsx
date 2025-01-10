@@ -19,20 +19,20 @@ describe('Flex', () => {
 
     expect(screen.getByText(text)).toBeInTheDocument();
     expect(screen.getByTestId(testId)).toHaveClass(
-      'Flex Flex--noWrap Flex--row Flex--alignmentXStretch Flex--alignmentYStretch',
+      'Flex Flex--noWrap Flex--horizontal Flex--alignmentXStretch Flex--alignmentYStretch',
     );
   });
 
   it('should have direction class name', () => {
-    render(<Flex direction="column" data-testid={testId} />);
+    render(<Flex direction="vertical" data-testid={testId} />);
 
-    expect(screen.getByTestId(testId)).toHaveClass('Flex--column');
+    expect(screen.getByTestId(testId)).toHaveClass('Flex--vertical');
   });
 
   it('should have responsive direction class name', () => {
-    render(<Flex direction={{ mobile: 'row', tablet: 'column', desktop: 'column' }} data-testid={testId} />);
+    render(<Flex direction={{ mobile: 'horizontal', tablet: 'vertical', desktop: 'vertical' }} data-testid={testId} />);
 
-    expect(screen.getByTestId(testId)).toHaveClass('Flex--row Flex--tablet--column Flex--desktop--column');
+    expect(screen.getByTestId(testId)).toHaveClass('Flex--horizontal Flex--tablet--vertical Flex--desktop--vertical');
   });
 
   it('should have alignmentX class name', () => {

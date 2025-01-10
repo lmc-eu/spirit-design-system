@@ -13,13 +13,13 @@ describe('useFlexStyleProps', () => {
       },
       'Flex Flex--wrap Flex--tablet--noWrap Flex--desktop--wrap',
     ],
-    [{ direction: 'row' }, 'Flex Flex--noWrap Flex--row'],
-    [{ direction: 'column' }, 'Flex Flex--noWrap Flex--column'],
+    [{ direction: 'horizontal' }, 'Flex Flex--noWrap Flex--horizontal'],
+    [{ direction: 'vertical' }, 'Flex Flex--noWrap Flex--vertical'],
     [
       {
-        direction: { mobile: 'row', tablet: 'column', desktop: 'row' },
+        direction: { mobile: 'horizontal', tablet: 'vertical', desktop: 'horizontal' },
       },
-      'Flex Flex--noWrap Flex--row Flex--tablet--column Flex--desktop--row',
+      'Flex Flex--noWrap Flex--horizontal Flex--tablet--vertical Flex--desktop--horizontal',
     ],
     [{ alignmentX: 'left' }, 'Flex Flex--noWrap Flex--alignmentXLeft'],
     [

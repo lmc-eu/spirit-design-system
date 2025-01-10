@@ -2,7 +2,7 @@ import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import DocsBox from '../../../../docs/DocsBox';
-import { AlignmentXExtended, AlignmentYExtended } from '../../../constants';
+import { AlignmentXExtended, AlignmentYExtended, DirectionExtended } from '../../../constants';
 import ReadMe from '../README.md';
 import { Flex } from '..';
 
@@ -31,9 +31,9 @@ const meta: Meta<typeof Flex> = {
     },
     direction: {
       control: 'select',
-      options: ['row', 'column'],
+      options: [undefined, ...Object.values(DirectionExtended)],
       table: {
-        defaultValue: { summary: 'row' },
+        defaultValue: { summary: DirectionExtended.HORIZONTAL },
       },
     },
     elementType: {
@@ -61,7 +61,7 @@ const meta: Meta<typeof Flex> = {
   args: {
     alignmentX: undefined,
     alignmentY: undefined,
-    direction: 'row',
+    direction: DirectionExtended.HORIZONTAL,
     elementType: 'div',
     isWrapping: false,
     spacing: {

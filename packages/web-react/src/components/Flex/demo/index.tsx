@@ -1,25 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import DocsSection from '../../../../docs/DocsSections';
-import FlexColumnLayout from './FlexColumnLayout';
 import FlexCustomSpacing from './FlexCustomSpacing';
 import FlexHorizontalAlignment from './FlexHorizontalAlignment';
+import FlexHorizontalLayout from './FlexHorizontalLayout';
+import FlexHorizontalReverseLayout from './FlexHorizontalReverseLayout';
 import FlexResponsiveAlignment from './FlexResponsiveAlignment';
 import FlexResponsiveCustomHorizontalSpacing from './FlexResponsiveCustomHorizontalSpacing';
 import FlexResponsiveCustomVerticalSpacing from './FlexResponsiveCustomVerticalSpacing';
 import FlexResponsiveLayout from './FlexResponsiveLayout';
 import FlexResponsiveSpacing from './FlexResponsiveSpacing';
-import FlexRowLayout from './FlexRowLayout';
 import FlexVerticalAlignment from './FlexVerticalAlignment';
+import FlexVerticalLayout from './FlexVerticalLayout';
 import FlexWrapping from './FlexWrapping';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <DocsSection title="Row Layout">
-      <FlexRowLayout />
+    <DocsSection title="Horizontal Layout">
+      <FlexHorizontalLayout />
     </DocsSection>
-    <DocsSection title="Column Layout">
-      <FlexColumnLayout />
+    <DocsSection title="Horizontal Reverse Layout">
+      <FlexHorizontalReverseLayout />
+    </DocsSection>
+    <DocsSection title="Vertical Layout">
+      <FlexVerticalLayout />
     </DocsSection>
     <DocsSection title="Responsive Layout">
       <FlexResponsiveLayout />

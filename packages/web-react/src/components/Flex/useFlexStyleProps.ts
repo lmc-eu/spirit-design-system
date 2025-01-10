@@ -1,8 +1,15 @@
 import classNames from 'classnames';
 import { CSSProperties, ElementType } from 'react';
 import { DirectionAxis } from '../../constants';
-import { useAlignmentClass, useClassNamePrefix, useDirectionClass, useSpacingStyle, useWrapClass } from '../../hooks';
-import { SpiritFlexProps, FlexDirectionType, FlexAlignmentXType, FlexAlignmentYType } from '../../types';
+import {
+  useAlignmentClass,
+  useClassNamePrefix,
+  useDeprecationMessage,
+  useSpacingStyle,
+  useWrapClass,
+} from '../../hooks';
+import { FlexAlignmentXType, FlexAlignmentYType, SpacingProp, SpiritFlexProps } from '../../types';
+import { generateStylePropsClassNames, stringOrObjectKebabCaseToCamelCase } from '../../utils';
 
 interface FlexCSSProperties extends CSSProperties {
   [key: string]: string | undefined | number;
@@ -19,19 +26,31 @@ export interface FlexStyles<T> {
 
 export function useFlexStyleProps(props: SpiritFlexProps<ElementType>): FlexStyles<SpiritFlexProps<ElementType>> {
   const { alignmentX, alignmentY, direction, spacing, spacingX, spacingY, isWrapping, ...restProps } = props;
+
+  // @see https://jira.almacareer.tech/browse/DS-1629
+  useDeprecationMessage({
+    method: 'custom',
+    trigger: direction === 'row' || direction === 'column',
+    componentName: 'Flex',
+    customText:
+      'Direction values `row` and `column` are deprecated and will be removed in the next major release. Use `horizontal` and `vertical` values instead.',
+  });
+
   const flexClass = useClassNamePrefix('Flex');
 
   const flexStyle: FlexCSSProperties = {
-    ...useSpacingStyle(spacing, 'flex', DirectionAxis.X),
-    ...useSpacingStyle(spacing, 'flex', DirectionAxis.Y),
-    ...useSpacingStyle(spacingX, 'flex', DirectionAxis.X),
-    ...useSpacingStyle(spacingY, 'flex', DirectionAxis.Y),
+    ...useSpacingStyle(spacing as SpacingProp, 'flex', DirectionAxis.X),
+    ...useSpacingStyle(spacing as SpacingProp, 'flex', DirectionAxis.Y),
+    ...useSpacingStyle(spacingX as SpacingProp, 'flex', DirectionAxis.X),
+    ...useSpacingStyle(spacingY as SpacingProp, 'flex', DirectionAxis.Y),
   };
+
+  const directionClass = generateStylePropsClassNames(flexClass, stringOrObjectKebabCaseToCamelCase(direction!));
 
   const classes = classNames(flexClass, useWrapClass(flexClass, isWrapping), {
     [useAlignmentClass(flexClass, alignmentX as FlexAlignmentXType, 'alignmentX')]: alignmentX,
     [useAlignmentClass(flexClass, alignmentY as FlexAlignmentYType, 'alignmentY')]: alignmentY,
-    [useDirectionClass(flexClass, direction as FlexDirectionType)]: direction,
+    [directionClass]: direction,
   });
 
   return {
