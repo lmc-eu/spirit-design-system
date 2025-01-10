@@ -2,9 +2,15 @@
 
 Flex is a component that allows you to create a flexible one-dimensional layout.
 
+## ⚠️ DEPRECATION NOTICE
+
+Direction values `row` and `column` are deprecated and will be removed in the next major release. Use `horizontal` and `vertical` values instead.
+
+[What are deprecations?][readme-deprecations]
+
 ## Basic Usage
 
-Row layout:
+Horizontal layout:
 
 ```jsx
 <Flex>
@@ -14,10 +20,20 @@ Row layout:
 </Flex>
 ```
 
-Column layout:
+Horizontal reverse layout:
 
 ```jsx
-<Flex direction="column">
+<Flex direction="horizontal-reverse">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+</Flex>
+```
+
+Vertical layout:
+
+```jsx
+<Flex direction="vertical">
   <div>Item 1</div>
   <div>Item 2</div>
   <div>Item 3</div>
@@ -27,14 +43,14 @@ Column layout:
 Usage with a list:
 
 ```jsx
-<Flex elementType="ul" direction="column">
+<Flex elementType="ul" direction="vertical">
   <li>Item 1</li>
   <li>Item 2</li>
   <li>Item 3</li>
 </Flex>
 ```
 
-ℹ️ For the row layout, the Flex component uses the [`display: flex`][mdn-display-flex] CSS property. For the column
+ℹ️ For the horizontal layout, the Flex component uses the [`display: flex`][mdn-display-flex] CSS property. For the vertical
 layout, [`display: grid`][mdn-display-grid] is used because of technical advantages: better overflow control or
 alignment API consistency.
 
@@ -43,7 +59,7 @@ alignment API consistency.
 To create a responsive layout, pass an object as the value for the `direction` property, using breakpoint keys to specify different layouts for each screen size.
 
 ```jsx
-<Flex direction={{ mobile: 'column', tablet: 'row' }}>
+<Flex direction={{ mobile: 'vertical', tablet: 'horizontal' }}>
   <div>Item 1</div>
   <div>Item 2</div>
   <div>Item 3</div>
@@ -158,25 +174,26 @@ Custom vertical (y-axis) spacing:
 
 ## API
 
-| Name          | Type                                                                 | Default   | Required | Description                                                                                                                                |
-| ------------- | -------------------------------------------------------------------- | --------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `alignmentX`  | \[[AlignmentXExtended dictionary][dictionary-alignment] \| `object`] | `stretch` | ✕        | Apply horizontal alignment of items, use an object to set responsive values, e.g. `{ mobile: 'left', tablet: 'center', desktop: 'right' }` |
-| `alignmentY`  | \[[AlignmentYExtended dictionary][dictionary-alignment] \| `object`] | `stretch` | ✕        | Apply vertical alignment of items, use an object to set responsive values, e.g. `{ mobile: 'top', tablet: 'center', desktop: 'bottom' }`   |
-| `direction`   | \[[Direction dictionary][direction-dictionary] \| `object` ]         | `row`     | ✕        | Direction of the items, use an object to set responsive values, e.g. `{ mobile: 'row', tablet: 'row', desktop: 'column' }`                 |
-| `elementType` | HTML element                                                         | `div`     | ✕        | Element type to use for the Grid                                                                                                           |
-| `isWrapping`  | \[ `bool` \| `object` ]                                              | `false`   | ✕        | Whether items will wrap, use an object to set responsive values, e.g. `{ mobile: true, tablet: true, desktop: false }`                     |
-| `spacing`     | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]    | —         | ✕        | Apply [custom spacing](#custom-spacing) in both horizontal and vertical directions between items                                           |
-| `spacingX`    | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]    | —         | ✕        | Apply horizontal [custom spacing](#custom-spacing) between items                                                                           |
-| `spacingY`    | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]    | —         | ✕        | Apply vertical [custom spacing](#custom-spacing) between items                                                                             |
+| Name          | Type                                                                                      | Default      | Required | Description                                                                                                                                                                                                                |
+| ------------- | ----------------------------------------------------------------------------------------- | ------------ | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `alignmentX`  | \[[AlignmentXExtended dictionary][dictionary-alignment] \| `object`]                      | `stretch`    | ✕        | Apply horizontal alignment of items, use an object to set responsive values, e.g. `{ mobile: 'left', tablet: 'center', desktop: 'right' }`                                                                                 |
+| `alignmentY`  | \[[AlignmentYExtended dictionary][dictionary-alignment] \| `object`]                      | `stretch`    | ✕        | Apply vertical alignment of items, use an object to set responsive values, e.g. `{ mobile: 'top', tablet: 'center', desktop: 'bottom' }`                                                                                   |
+| `direction`   | \[[DirectionExtended dictionary][dictionary-direction] \| `row` \| `column` \| `object` ] | `horizontal` | ✕        | [**DEPRECATED**][readme-deprecations] Row and column will be removed in favor of `DirectionExtended`; Direction of the items, use an object to set responsive values, e.g. `{ mobile: 'horizontal', desktop: 'vertical' }` |
+| `elementType` | HTML element                                                                              | `div`        | ✕        | Element type to use for the Grid                                                                                                                                                                                           |
+| `isWrapping`  | \[ `bool` \| `object` ]                                                                   | `false`      | ✕        | Whether items will wrap, use an object to set responsive values, e.g. `{ mobile: true, tablet: true, desktop: false }`                                                                                                     |
+| `spacing`     | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]                         | —            | ✕        | Apply [custom spacing](#custom-spacing) in both horizontal and vertical directions between items                                                                                                                           |
+| `spacingX`    | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]                         | —            | ✕        | Apply horizontal [custom spacing](#custom-spacing) between items                                                                                                                                                           |
+| `spacingY`    | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]                         | —            | ✕        | Apply vertical [custom spacing](#custom-spacing) between items                                                                                                                                                             |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
-[direction-dictionary]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#direction
+[dictionary-direction]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#direction
 [mdn-display-flex]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout
 [mdn-display-grid]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
+[readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#deprecations
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props

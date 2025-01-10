@@ -4,6 +4,7 @@ import {
   AlignmentYExtendedDictionaryType,
   BreakpointToken,
   ChildrenProps,
+  DirectionExtendedDictionaryType,
   SpaceToken,
   StyleProps,
   TransferProps,
@@ -18,7 +19,11 @@ export interface FlexElementTypeProps<T extends ElementType = 'div'> {
   elementType?: T | JSXElementConstructor<unknown>;
 }
 
-export type FlexDirection = 'row' | 'column';
+/**
+ * @deprecated "row" and "column" values will be replaced in the next major version. Please use "horizontal" and "vertical" instead.
+ * @see https://jira.almacareer.tech/browse/DS-1629
+ */
+export type FlexDirection = DirectionExtendedDictionaryType | 'row' | 'column';
 export type FlexDirectionType = FlexDirection | { [key: string]: FlexDirection };
 export type FlexAlignmentXType =
   | NonNullable<AlignmentXExtendedDictionaryType>
