@@ -33,7 +33,10 @@
     @include test.it('should return correct physical placement') {
         @include test.assert() {
             @include test.output() {
-                --logical-to-physical-start-horizontal: #{placement.translate-logical-to-physical('start', 'horizontal')};
+                --logical-to-physical-start-horizontal: #{placement.translate-logical-to-physical(
+                        'start',
+                        'horizontal'
+                    )};
                 --logical-to-physical-start-vertical: #{placement.translate-logical-to-physical('start', 'vertical')};
             }
 

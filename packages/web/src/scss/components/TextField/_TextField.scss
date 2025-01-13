@@ -60,8 +60,8 @@ $_field-name: 'TextField';
     // 2.
     &[size] {
         width: calc(
-            var(--text-field-input-width) + 2 * #{form-fields-theme.$box-field-input-padding-x} + 2 * #{form-fields-theme.$box-field-input-border-width} +
-                var(--text-field-arrows-width, 0px)
+            var(--text-field-input-width) + 2 * #{form-fields-theme.$box-field-input-padding-x} + 2 *
+                #{form-fields-theme.$box-field-input-border-width} + var(--text-field-arrows-width, 0px)
         );
     }
 
