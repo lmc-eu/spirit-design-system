@@ -1,9 +1,9 @@
 import React from 'react';
+import { ActionGroup } from '../../ActionGroup';
 import { ButtonLink } from '../../Button';
 import { Heading } from '../../Heading';
 import { Link } from '../../Link';
 import { Text } from '../../Text';
-import { UNSTABLE_ActionLayout } from '../../UNSTABLE_ActionLayout';
 import UNSTABLE_EmptyState from '../UNSTABLE_EmptyState';
 import UNSTABLE_EmptyStateSection from '../UNSTABLE_EmptyStateSection';
 
@@ -40,14 +40,17 @@ const EmptyStateDefault = () => (
       </Text>
     </UNSTABLE_EmptyStateSection>
     <UNSTABLE_EmptyStateSection>
-      <UNSTABLE_ActionLayout>
+      <ActionGroup
+        alignmentX={{ mobile: 'stretch', tablet: 'center' }}
+        direction={{ mobile: 'vertical', tablet: 'horizontal-reversed' }}
+      >
         <ButtonLink color="primary" href="#">
           Action
         </ButtonLink>
         <ButtonLink color="secondary" href="#">
           Action
         </ButtonLink>
-      </UNSTABLE_ActionLayout>
+      </ActionGroup>
     </UNSTABLE_EmptyStateSection>
     <UNSTABLE_EmptyStateSection>
       <Link href="#">Link to something</Link>

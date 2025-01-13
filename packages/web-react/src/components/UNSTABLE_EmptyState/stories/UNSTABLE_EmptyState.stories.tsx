@@ -1,13 +1,13 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
+import { ActionGroup } from '../../ActionGroup';
 import { ButtonLink } from '../../Button';
 import { Heading } from '../../Heading';
 import { Link } from '../../Link';
 import { Text } from '../../Text';
-import { UNSTABLE_ActionLayout } from '../../UNSTABLE_ActionLayout';
 import ReadMe from '../README.md';
-import { UNSTABLE_EmptyStateSection, UNSTABLE_EmptyState } from '..';
+import { UNSTABLE_EmptyState, UNSTABLE_EmptyStateSection } from '..';
 
 const meta: Meta<typeof UNSTABLE_EmptyState> = {
   title: 'Experimental/UNSTABLE_EmptyState',
@@ -32,14 +32,14 @@ const meta: Meta<typeof UNSTABLE_EmptyState> = {
           </Text>
         </UNSTABLE_EmptyStateSection>
         <UNSTABLE_EmptyStateSection>
-          <UNSTABLE_ActionLayout>
+          <ActionGroup alignmentX={{ mobile: 'stretch', tablet: 'center' }}>
             <ButtonLink color="primary" href="#">
               Action
             </ButtonLink>
             <ButtonLink color="secondary" href="#">
               Action
             </ButtonLink>
-          </UNSTABLE_ActionLayout>
+          </ActionGroup>
         </UNSTABLE_EmptyStateSection>
         <UNSTABLE_EmptyStateSection>
           <Link href="/">Link to something</Link>

@@ -50,14 +50,14 @@ The component is based on the [Stack][stack] component and accepts all its prope
     <Text>Description</Text>
   </UNSTABLE_EmptyStateSection>
   <UNSTABLE_EmptyStateSection>
-    <UNSTABLE_ActionLayout>
+    <ActionGroup alignmentX={{ mobile: 'stretch', tablet: 'center' }}>
       <ButtonLink href="#" color="primary">
         Primary Action
       </ButtonLink>
       <ButtonLink href="#" color="secondary">
         Secondary Action
       </ButtonLink>
-    </UNSTABLE_ActionLayout>
+    </ActionGroup>
   </UNSTABLE_EmptyStateSection>
   <UNSTABLE_EmptyStateSection>
     <Link href="#">Link to something</Link>
