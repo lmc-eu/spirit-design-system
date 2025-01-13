@@ -73,8 +73,8 @@ __metadata:
   resolution: "@almacareer/spirit-tokens-exporter@workspace:exporters/tokens"
   dependencies:
     "@lmc-eu/eslint-config-typescript": "npm:2.1.4"
-    "@supernovaio/export-helpers": "npm:1.0.16"
-    "@supernovaio/sdk-exporters": "npm:2.0.23"
+    "@supernovaio/export-helpers": "npm:1.0.30"
+    "@supernovaio/sdk-exporters": "npm:2.0.31"
     "@swc/core": "npm:1.9.3"
     "@swc/jest": "npm:0.2.37"
     eslint: "npm:8.57.1"
@@ -7716,47 +7716,57 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@supernova-studio/client@npm:0.55.13":
-  version: 0.55.13
-  resolution: "@supernova-studio/client@npm:0.55.13"
+"@supernova-studio/client@npm:0.58.0":
+  version: 0.58.0
+  resolution: "@supernova-studio/client@npm:0.58.0"
   dependencies:
     prosemirror-model: "npm:1.22.3"
     typescript: "npm:5.0.4"
     y-prosemirror: "npm:1.2.2"
     yjs: "npm:13.6.19"
     zod: "npm:3.23.6"
-  checksum: 10/c9d5166061c55c4c1c388e73bd3c1cb218d377131ce4377f3607e2e5d6554afaca85dc0cb394779410ef262e1adcdfce586995dac1365a2e47d6e31b72e0babc
+  checksum: 10/eb4bb6cff574cc7282e07ac55791238ed480a6d693a64247ba1935d91cf734ed9531f2d5333a4dc9e4754fb94647f35bdd96b4f32672ba9184fb308cdacd7c4d
   languageName: node
   linkType: hard
 
-"@supernova-studio/model@npm:0.55.13":
-  version: 0.55.13
-  resolution: "@supernova-studio/model@npm:0.55.13"
+"@supernova-studio/model@npm:0.58.0":
+  version: 0.58.0
+  resolution: "@supernova-studio/model@npm:0.58.0"
   dependencies:
     "@sindresorhus/slugify": "npm:1.1.2"
     ip-cidr: "npm:3.1.0"
     zod: "npm:3.23.6"
-  checksum: 10/ca350ea53c74df0a07bf0bf9423b9d6bcf941292b4c7aa5b28ce13b34f0565ae8434079f70032807b050921e85fffac636ae42b211d3f8e37d0e7b6d16d60283
+  checksum: 10/dc4b32446810b501f32ac4e212984cc26e3850e54c943491d1dcf0b5137005aeea41d9427fea9dd3e25a86b744919a21c3b8b9cbdeef80b0738c7b237a101cd1
   languageName: node
   linkType: hard
 
-"@supernovaio/export-helpers@npm:1.0.16":
-  version: 1.0.16
-  resolution: "@supernovaio/export-helpers@npm:1.0.16"
+"@supernovaio/export-helpers@npm:1.0.30":
+  version: 1.0.30
+  resolution: "@supernovaio/export-helpers@npm:1.0.30"
   dependencies:
-    "@supernovaio/sdk-exporters": "npm:2.0.23"
+    "@supernovaio/sdk-exporters": "npm:2.0.30"
     change-case: "npm:4.1.2"
-  checksum: 10/ae00db49433843df3b85a7c1e67a0c4c741e3162c3e832eeac8a4d46101cc913a724152a3ad0849835e973e92daa82ac75d54d052fd48da8009327f15d30d851
+  checksum: 10/449a9155199b8acfea98247a7ec0eab8f8a13fb7cfbd9c88cbdd813c2895c1c3d412a3f1e8b0ac408a9c01a69a3cb2230aa5b404fc45069b8adad8c3ca210973
   languageName: node
   linkType: hard
 
-"@supernovaio/sdk-exporters@npm:2.0.23":
-  version: 2.0.23
-  resolution: "@supernovaio/sdk-exporters@npm:2.0.23"
+"@supernovaio/sdk-exporters@npm:2.0.30":
+  version: 2.0.30
+  resolution: "@supernovaio/sdk-exporters@npm:2.0.30"
   dependencies:
-    "@supernova-studio/client": "npm:0.55.13"
-    "@supernova-studio/model": "npm:0.55.13"
-  checksum: 10/dbf640a852fb3d26de0a8215f85ea5cc5081a4c1dd4810d11de6f57bdb73766fa5fb8d3afd1513d2718c50429a593c649bf220421a4fd31c89680ad8d1a69789
+    "@supernova-studio/client": "npm:0.58.0"
+    "@supernova-studio/model": "npm:0.58.0"
+  checksum: 10/ba4c65fbae23dec01f86f83139167f792d098a4da52bcb26f6c17638511efb5033c28090e7df5f2762e4d6df878fe3650ab936832951b89d9f140afa5285763f
+  languageName: node
+  linkType: hard
+
+"@supernovaio/sdk-exporters@npm:2.0.31":
+  version: 2.0.31
+  resolution: "@supernovaio/sdk-exporters@npm:2.0.31"
+  dependencies:
+    "@supernova-studio/client": "npm:0.58.0"
+    "@supernova-studio/model": "npm:0.58.0"
+  checksum: 10/6dc67d74ec62984d95b15bf1c4e9c8aa4da51868f7dd7a3fd94284f4c508cfb27dd10c791e13d234c9ff255b40645a02f027a9fbf0116f4be7e5a7fa55a262a1
   languageName: node
   linkType: hard
 
