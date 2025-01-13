@@ -67,17 +67,18 @@
         }
 
         .Card--boxed.Card--#{$infix}vertical > .CardMedia--expanded:not(:last-child) {
-            --#{tokens.$css-variable-prefix}card-media-border-radius-shorthand: #{theme.$border-radius} #{theme.$border-radius}
-                0 0;
+            --#{tokens.$css-variable-prefix}card-media-border-radius-shorthand: #{theme.$border-radius}
+                #{theme.$border-radius} 0 0;
         }
 
         .Card--boxed.Card--#{$infix}horizontal > .CardMedia--expanded:not(:last-child) {
-            --#{tokens.$css-variable-prefix}card-media-border-radius-shorthand: #{theme.$border-radius} 0 0 #{theme.$border-radius};
+            --#{tokens.$css-variable-prefix}card-media-border-radius-shorthand: #{theme.$border-radius} 0 0
+                #{theme.$border-radius};
         }
 
         .Card--boxed.Card--#{$infix}horizontalReversed > .CardMedia--expanded:not(:last-child) {
-            --#{tokens.$css-variable-prefix}card-media-border-radius-shorthand: 0 #{theme.$border-radius} #{theme.$border-radius}
-                0;
+            --#{tokens.$css-variable-prefix}card-media-border-radius-shorthand: 0 #{theme.$border-radius}
+                #{theme.$border-radius} 0;
         }
     }
 }
