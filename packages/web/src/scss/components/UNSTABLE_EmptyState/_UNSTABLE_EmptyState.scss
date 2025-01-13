@@ -3,9 +3,8 @@
 @use '../../tools/breakpoint';
 
 .UNSTABLE_EmptyState {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    justify-content: center;
     padding: theme.$root-padding;
     text-align: center;
 
@@ -15,9 +14,7 @@
 }
 
 .UNSTABLE_EmptyState__section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
     width: 100%;
     max-width: 400px;
 }
