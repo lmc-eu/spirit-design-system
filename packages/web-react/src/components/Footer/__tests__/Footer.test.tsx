@@ -1,11 +1,13 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import '@testing-library/jest-dom';
-import { restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
 import { BackgroundColors } from '../../../constants';
 import Footer from '../Footer';
 
 describe('Footer', () => {
+  classNamePrefixProviderTest(Footer, 'bg-secondary');
+
   stylePropsTest(Footer);
 
   restPropsTest(Footer, 'footer');

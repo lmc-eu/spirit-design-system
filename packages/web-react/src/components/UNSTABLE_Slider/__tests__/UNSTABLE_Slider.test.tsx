@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
 import UNSTABLE_Slider from '../UNSTABLE_Slider';
 
 describe('UNSTABLE_Slider', () => {
@@ -12,6 +12,8 @@ describe('UNSTABLE_Slider', () => {
     onChange: () => {},
     value: defaultValue,
   };
+
+  classNamePrefixProviderTest(UNSTABLE_Slider, 'UNSTABLE_Slider');
 
   stylePropsTest(
     (props) => <UNSTABLE_Slider id={defaultProps.id} {...props} data-testid="slider-test" />,

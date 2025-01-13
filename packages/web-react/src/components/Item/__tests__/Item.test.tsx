@@ -1,13 +1,15 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
 import { SpiritItemProps } from '../../../types';
 import Item from '../Item';
 
 jest.mock('../../../hooks/useIcon');
 
 describe('Item', () => {
+  classNamePrefixProviderTest(Item, 'Item');
+
   stylePropsTest(Item);
 
   restPropsTest((props: SpiritItemProps) => <Item {...props} />, 'button');

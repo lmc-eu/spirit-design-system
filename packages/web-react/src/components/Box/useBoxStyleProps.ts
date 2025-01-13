@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import { ElementType } from 'react';
 import { BorderColors } from '../../constants';
+import { useClassNamePrefix } from '../../hooks';
 import { SpiritBoxProps } from '../../types';
 
 export interface UseBoxStyleProps<T> {
@@ -14,17 +15,21 @@ export const useBoxStyleProps = (
   props: Partial<SpiritBoxProps<ElementType>>,
 ): UseBoxStyleProps<Partial<SpiritBoxProps<ElementType>>> => {
   const { backgroundColor, borderColor, borderRadius, borderStyle, borderWidth, ...restProps } = props || {};
-  const boxBackgroundColor = backgroundColor ? `bg-${backgroundColor}` : '';
-  let boxBorderColor = borderColor ? borderColor.replace('', 'border-') : '';
+  const boxBackgroundClassName = useClassNamePrefix(`bg-${backgroundColor}`);
+  const boxBorderClassName = useClassNamePrefix('border-');
+  const boxRadiusClassName = useClassNamePrefix('rounded-');
+
+  const boxBackgroundColor = backgroundColor ? boxBackgroundClassName : '';
+  let boxBorderColor = borderColor ? borderColor.replace('', boxBorderClassName) : '';
   let boxBorderRadius = '';
   let boxBorderStyle = '';
-  const boxBorderWidth = borderWidth ? borderWidth.replace('', 'border-') : '';
+  const boxBorderWidth = borderWidth ? borderWidth.replace('', boxBorderClassName) : '';
 
   if (borderWidth && parseInt(borderWidth, 10) > 0) {
-    boxBorderStyle = `border-${borderStyle}`;
-    boxBorderRadius = borderRadius ? borderRadius.replace('', 'rounded-') : '';
+    boxBorderStyle = `${boxBorderClassName}${borderStyle}`;
+    boxBorderRadius = borderRadius ? borderRadius.replace('', boxRadiusClassName) : '';
     if (!borderColor) {
-      boxBorderColor = `border-${BorderColors.BASIC}`;
+      boxBorderColor = `${boxBorderClassName}${BorderColors.BASIC}`;
     }
   }
 

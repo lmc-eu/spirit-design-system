@@ -1,4 +1,5 @@
 import { CSSProperties, ElementType } from 'react';
+import { useClassNamePrefix } from '../../hooks';
 import { SpiritTruncateProps } from '../../types/truncate';
 
 interface TruncateCSSProperties extends CSSProperties {
@@ -11,10 +12,10 @@ export interface TruncateStyles<T extends ElementType> {
   styleProps: TruncateCSSProperties;
 }
 
-export function useTruncateStyleProps<T extends ElementType>(props: SpiritTruncateProps<T>): TruncateStyles<T> {
+export const useTruncateStyleProps = <T extends ElementType>(props: SpiritTruncateProps<T>): TruncateStyles<T> => {
   const { lines, ...restProps } = props;
 
-  const TruncateMultilinesClass = 'text-truncate-multiline';
+  const TruncateMultilinesClass = useClassNamePrefix('text-truncate-multiline');
   const classProps = TruncateMultilinesClass;
 
   const truncateStyle: TruncateCSSProperties = {};
@@ -25,4 +26,4 @@ export function useTruncateStyleProps<T extends ElementType>(props: SpiritTrunca
     props: restProps,
     styleProps: truncateStyle,
   };
-}
+};

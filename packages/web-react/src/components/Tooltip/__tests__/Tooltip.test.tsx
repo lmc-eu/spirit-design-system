@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
-import { restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
 import { Button } from '../../Button';
 import { Tooltip, TooltipPopover, TooltipTrigger } from '..';
 
@@ -9,6 +9,8 @@ describe('Tooltip', () => {
   const id = 'tooltip-test';
   const triggerText = 'TooltipTrigger';
   const popoverText = 'TooltipPopover';
+
+  classNamePrefixProviderTest(Tooltip, 'Tooltip');
 
   stylePropsTest((props) => <Tooltip id={id} {...props} data-testid="tooltip-test" />, 'tooltip-test');
 
