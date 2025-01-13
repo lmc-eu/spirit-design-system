@@ -1,11 +1,13 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { requiredPropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, requiredPropsTest } from '@local/tests';
 import { TextFieldType } from '../../../types';
 import TextFieldBase from '../TextFieldBase';
 
 describe('TextFieldBase', () => {
+  classNamePrefixProviderTest(TextFieldBase, 'TextField');
+
   requiredPropsTest(TextFieldBase, 'textbox', 'id', 'textfieldbase');
 
   describe.each(['text', 'password', 'email'])('input type %s', (type) => {

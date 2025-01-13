@@ -1,7 +1,8 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { SpiritBoxProps } from '../../../types';
 import Box from '../Box';
 
 const dataProvider = [
@@ -73,7 +74,11 @@ const dataProvider = [
   },
 ];
 
+const BoxPrefixTestComponent = ({ children }: SpiritBoxProps) => <Box backgroundColor="primary">{children}</Box>;
+
 describe('Box', () => {
+  classNamePrefixProviderTest(BoxPrefixTestComponent, 'bg-primary');
+
   stylePropsTest(Box);
 
   restPropsTest(Box, 'div');

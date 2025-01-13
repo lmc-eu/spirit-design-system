@@ -2,7 +2,7 @@
 
 import classNames from 'classnames';
 import React, { ElementType } from 'react';
-import { useClassNamePrefix, useStyleProps } from '../../hooks';
+import { useStyleProps } from '../../hooks';
 import { SpiritTruncateProps } from '../../types/truncate';
 import { useTruncateStyleProps } from './useTruncateStyleProps';
 
@@ -25,11 +25,7 @@ const UNSTABLE_Truncate = <T extends ElementType = 'span'>(props: SpiritTruncate
   };
 
   return (
-    <ElementTag
-      {...otherProps}
-      {...truncateStyleProps}
-      className={classNames(useClassNamePrefix(classProps), styleProps.className)}
-    >
+    <ElementTag {...otherProps} {...truncateStyleProps} className={classNames(classProps, styleProps.className)}>
       {children}
     </ElementTag>
   );
