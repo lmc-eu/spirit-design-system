@@ -71,7 +71,7 @@
     "@rollup/plugin-node-resolve": "15.3.1",
     "@svgr/webpack": "8.1.0",
     "babel-loader": "9.2.1",
-    "core-js": "3.39.0",
+    "core-js": "3.40.0",
     "css-loader": "7.1.2",
     "eslint": "8.57.1",
     "eslint-plugin-jsx-a11y": "6.10.2",
