@@ -12,8 +12,7 @@
     @each $size, $token in $sizes {
         $height: get-height($token, $device);
         $size-map: (
-            #{$size}:
-                (
+            #{$size}: (
                     height: $height,
                 )
         );

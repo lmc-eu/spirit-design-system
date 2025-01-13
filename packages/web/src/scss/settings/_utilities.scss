@@ -65,8 +65,7 @@ $utilities: (
         responsive: true,
         property: margin-inline,
         class: mx,
-        values:
-            map.merge(
+        values: map.merge(
                 tokens.$spaces,
                 (
                     auto: auto,
@@ -77,8 +76,7 @@ $utilities: (
         responsive: true,
         property: margin-block,
         class: my,
-        values:
-            map.merge(
+        values: map.merge(
                 tokens.$spaces,
                 (
                     auto: auto,
@@ -89,8 +87,7 @@ $utilities: (
         responsive: true,
         property: margin-top,
         class: mt,
-        values:
-            map.merge(
+        values: map.merge(
                 tokens.$spaces,
                 (
                     auto: auto,
@@ -101,8 +98,7 @@ $utilities: (
         responsive: true,
         property: margin-right,
         class: mr,
-        values:
-            map.merge(
+        values: map.merge(
                 tokens.$spaces,
                 (
                     auto: auto,
@@ -113,8 +109,7 @@ $utilities: (
         responsive: true,
         property: margin-bottom,
         class: mb,
-        values:
-            map.merge(
+        values: map.merge(
                 tokens.$spaces,
                 (
                     auto: auto,
@@ -125,8 +120,7 @@ $utilities: (
         responsive: true,
         property: margin-left,
         class: ml,
-        values:
-            map.merge(
+        values: map.merge(
                 tokens.$spaces,
                 (
                     auto: auto,
