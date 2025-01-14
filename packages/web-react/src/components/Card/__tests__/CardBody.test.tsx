@@ -12,19 +12,19 @@ describe('CardBody', () => {
   restPropsTest(CardBody, '.CardBody');
 
   it('should render body card component and have default class name', () => {
-    render(<CardBody data-testId="test" />);
+    render(<CardBody data-testid="test" />);
 
     expect(screen.getByTestId('test')).toHaveClass('CardBody');
   });
 
   it('should have selectable class', () => {
-    render(<CardBody data-testId="test" isSelectable />);
+    render(<CardBody data-testid="test" isSelectable />);
 
     expect(screen.getByTestId('test')).toHaveClass('CardBody--selectable');
   });
 
   it('should render text children', () => {
-    render(<CardBody data-testId="test">Hello World</CardBody>);
+    render(<CardBody data-testid="test">Hello World</CardBody>);
 
     expect(screen.getByTestId('test')).toHaveTextContent('Hello World');
   });
