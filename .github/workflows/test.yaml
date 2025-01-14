@@ -47,6 +47,7 @@ jobs:
     timeout-minutes: 10
     env:
       HUSKY: 0
+      NX_VERBOSE_LOGGING: true
 
     steps:
       - name: Restore Repository from Cache
@@ -69,6 +70,7 @@ jobs:
     timeout-minutes: 10
     env:
       HUSKY: 0
+      NX_VERBOSE_LOGGING: true
 
     steps:
       - name: Restore Repository from Cache
@@ -122,6 +124,7 @@ jobs:
     timeout-minutes: 10
     env:
       HUSKY: 0
+      NX_VERBOSE_LOGGING: true
 
     steps:
       - name: Checkout
@@ -140,6 +143,7 @@ jobs:
     timeout-minutes: 10
     env:
       HUSKY: 0
+      NX_VERBOSE_LOGGING: true
 
     steps:
       - name: Restore Repository from Cache
@@ -153,7 +157,7 @@ jobs:
         uses: ./.github/actions/setup-node
 
       - name: Types Check
-        run: yarn types
+        run: yarn types --verbose > types.log 2>&1 || (cat types.log && exit 1)
 
   cleanup:
     name: 🧹 Cleanup
