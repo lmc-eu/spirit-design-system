@@ -23,33 +23,7 @@ export const AlignmentYExtended = {
   ...AlignmentY,
 } as const;
 
-/* Color */
-export const ActionColors = {
-  PRIMARY: 'primary',
-  SECONDARY: 'secondary',
-  TERTIARY: 'tertiary',
-  INVERTED: 'inverted',
-} as const;
-
-export const ActionButtonColors = {
-  PRIMARY: 'primary',
-  SECONDARY: 'secondary',
-  TERTIARY: 'tertiary',
-  PLAIN: 'plain',
-} as const;
-
-export const ActionLinkColors = {
-  PRIMARY: 'primary',
-  SECONDARY: 'secondary',
-  TERTIARY: 'tertiary',
-} as const;
-
-export const BackgroundColors = {
-  PRIMARY: 'primary',
-  SECONDARY: 'secondary',
-  TERTIARY: 'tertiary',
-} as const;
-
+/* Border Properties */
 export const BorderColors = {
   BASIC: 'basic',
   FOCUS: 'focus',
@@ -77,6 +51,20 @@ export const BorderWidths = {
   200: '200',
 } as const;
 
+/* Color */
+export const BackgroundColors = {
+  PRIMARY: 'primary',
+  SECONDARY: 'secondary',
+  TERTIARY: 'tertiary',
+} as const;
+
+export const ComponentButtonColors = {
+  PRIMARY: 'primary',
+  SECONDARY: 'secondary',
+  TERTIARY: 'tertiary',
+  PLAIN: 'plain',
+} as const;
+
 export const EmotionColors = {
   SUCCESS: 'success',
   INFORMATIVE: 'informative',
@@ -84,18 +72,24 @@ export const EmotionColors = {
   DANGER: 'danger',
 } as const;
 
-export const Emphasis = {
-  REGULAR: 'regular',
-  SEMIBOLD: 'semibold',
-  BOLD: 'bold',
-  ITALIC: 'italic',
+export const LinkColors = {
+  PRIMARY: 'primary',
+  SECONDARY: 'secondary',
+  TERTIARY: 'tertiary',
 } as const;
 
 export const TextColors = {
   PRIMARY: 'primary',
   SECONDARY: 'secondary',
-  PRIMARY_INVERTED: 'primary-inverted',
-  SECONDARY_INVERTED: 'secondary-inverted',
+  TERTIARY: 'tertiary',
+} as const;
+
+/* Emphasis */
+export const Emphasis = {
+  REGULAR: 'regular',
+  SEMIBOLD: 'semibold',
+  BOLD: 'bold',
+  ITALIC: 'italic',
 } as const;
 
 /* Size */

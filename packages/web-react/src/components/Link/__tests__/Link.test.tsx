@@ -2,7 +2,7 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { classNamePrefixProviderTest, actionLinkColorPropsTest, restPropsTest, stylePropsTest } from '@local/tests';
-import { ActionLinkColorsDictionaryType } from '../../../types';
+import { LinkColorsDictionaryType } from '../../../types';
 import Link from '../Link';
 import linkPropsDataProvider from './linkPropsDataProvider';
 
@@ -19,7 +19,7 @@ describe('Link', () => {
     render(
       <Link
         href="/"
-        color={color as ActionLinkColorsDictionaryType<string>}
+        color={color as LinkColorsDictionaryType<string>}
         underlined={underlined}
         isDisabled={isDisabled}
       />,

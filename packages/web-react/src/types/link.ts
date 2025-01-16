@@ -1,6 +1,6 @@
 import { ElementType } from 'react';
 import {
-  ActionLinkColorsDictionaryType,
+  LinkColorsDictionaryType,
   ChildrenProps,
   SpiritPolymorphicElementPropsWithRef,
   StyleProps,
@@ -23,7 +23,7 @@ export interface LinkBaseProps<C = void> extends ChildrenProps, StyleProps, Tran
   /** Link's target attribute */
   target?: LinkTarget;
   /** Color of the Link */
-  color?: ActionLinkColorsDictionaryType<C>;
+  color?: LinkColorsDictionaryType<C>;
   /** When is the Link underlined */
   underlined?: UnderlineOptions;
   /** Whether is the Link disabled */

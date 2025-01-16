@@ -1,14 +1,13 @@
 import {
-  ActionColors,
-  ActionButtonColors,
-  ActionLinkColors,
   AlignmentX,
   AlignmentXExtended,
   AlignmentY,
   AlignmentYExtended,
   BorderColors,
+  ComponentButtonColors,
   EmotionColors,
   Emphasis,
+  LinkColors,
   Placements,
   Sizes,
   SizesExtended,
@@ -51,36 +50,32 @@ export type BorderWidthsDictionaryKeys = keyof typeof BorderWidths;
 export type BorderWidthsDictionaryType<C = undefined> = (typeof BorderWidths)[BorderWidthsDictionaryKeys] | C;
 
 /* Color */
-export type ActionColorsDictionaryKeys = keyof typeof ActionColors;
-export type ActionColorsDictionaryType<C = undefined> = (typeof ActionColors)[ActionColorsDictionaryKeys] | C;
-
-export type ActionButtonColorsDictionaryKeys = keyof typeof ActionButtonColors;
-export type ActionButtonColorsDictionaryType<C = undefined> =
-  | (typeof ActionButtonColors)[ActionButtonColorsDictionaryKeys]
-  | C;
-
-export type ActionLinkColorsDictionaryKeys = keyof typeof ActionLinkColors;
-export type ActionLinkColorsDictionaryType<C = undefined> =
-  | (typeof ActionLinkColors)[ActionLinkColorsDictionaryKeys]
-  | C;
-
 export type BackgroundColorsDictionaryKeys = keyof typeof BackgroundColors;
 export type BackgroundColorsDictionaryType<C = undefined> =
   | (typeof BackgroundColors)[BackgroundColorsDictionaryKeys]
   | C;
 
+export type ComponentButtonColorsDictionaryKeys = keyof typeof ComponentButtonColors;
+export type ComponentButtonColorsDictionaryType<C = undefined> =
+  | (typeof ComponentButtonColors)[ComponentButtonColorsDictionaryKeys]
+  | C;
+
 export type EmotionColorsDictionaryKeys = keyof typeof EmotionColors;
 export type EmotionColorsDictionaryType<C = undefined> = (typeof EmotionColors)[EmotionColorsDictionaryKeys] | C;
 
+export type LinkColorsDictionaryKeys = keyof typeof LinkColors;
+export type LinkColorsDictionaryType<C = undefined> = (typeof LinkColors)[LinkColorsDictionaryKeys] | C;
+
+export type TextColorsDictionaryKeys = keyof typeof TextColors;
+export type TextColorsDictionaryType<C = undefined> = (typeof TextColors)[TextColorsDictionaryKeys] | C;
+
+/* Emphasis */
 export type EmphasisDictionaryKeys = keyof typeof Emphasis;
 export type EmphasisDictionaryType<C = undefined> = (typeof Emphasis)[EmphasisDictionaryKeys] | C;
 
 export interface EmphasisProps<E> {
   emphasis?: E;
 }
-
-export type TextColorsDictionaryKeys = keyof typeof TextColors;
-export type TextColorsDictionaryType<C = undefined> = (typeof TextColors)[TextColorsDictionaryKeys] | C;
 
 /* Placement */
 export type PlacementDictionaryKeys = keyof typeof Placements;
