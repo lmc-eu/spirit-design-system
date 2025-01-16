@@ -1,7 +1,7 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { ActionLinkColors } from '../../../constants';
+import { LinkColors } from '../../../constants';
 import Link from '../Link';
 import ReadMe from '../README.md';
 
@@ -19,9 +19,9 @@ const meta: Meta<typeof Link> = {
     },
     color: {
       control: 'select',
-      options: [...Object.values(ActionLinkColors)],
+      options: [...Object.values(LinkColors)],
       table: {
-        defaultValue: { summary: ActionLinkColors.PRIMARY },
+        defaultValue: { summary: LinkColors.PRIMARY },
       },
     },
     elementType: {
@@ -54,7 +54,7 @@ const meta: Meta<typeof Link> = {
   },
   args: {
     children: 'Link',
-    color: ActionLinkColors.PRIMARY,
+    color: LinkColors.PRIMARY,
     elementType: 'a',
     href: 'https://www.example.com',
     isDisabled: false,

@@ -1,6 +1,6 @@
 import { ElementType } from 'react';
 import {
-  ActionButtonColorsDictionaryType,
+  ComponentButtonColorsDictionaryType,
   AriaLabelingProps,
   ChildrenProps,
   ClickEvents,
@@ -10,7 +10,7 @@ import {
   StyleProps,
 } from './shared';
 
-export type ButtonColor<C> = ActionButtonColorsDictionaryType | EmotionColorsDictionaryType | C;
+export type ButtonColor<C> = ComponentButtonColorsDictionaryType | EmotionColorsDictionaryType | C;
 export type ButtonSize<S> = SizesDictionaryType | S;
 export type ButtonType = 'button' | 'submit' | 'reset';
 
