@@ -20,10 +20,10 @@ Horizontal layout:
 </Flex>
 ```
 
-Horizontal reverse layout:
+Horizontal reversed layout:
 
 ```jsx
-<Flex direction="horizontal-reverse">
+<Flex direction="horizontal-reversed">
   <div>Item 1</div>
   <div>Item 2</div>
   <div>Item 3</div>

@@ -5,7 +5,7 @@ export const Direction = {
 
 export const DirectionExtended = {
   ...Direction,
-  HORIZONTAL_REVERSE: 'horizontal-reverse',
+  HORIZONTAL_REVERSED: 'horizontal-reversed',
 } as const;
 
 export enum DirectionAxis {

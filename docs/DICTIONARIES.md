@@ -47,11 +47,11 @@ This project uses `dictionaries` to unify props between different components.
 
 ### Direction
 
-| Dictionary        | Values                                      | Code name         |
-| ----------------- | ------------------------------------------- | ----------------- |
-| Direction         | `horizontal`, `vertical`                    | Direction         |
-| DirectionAxis     | `x`, `y`                                    | DirectionAxis     |
-| DirectionExtended | Direction Dictionary + `horizontal-reverse` | DirectionExtended |
+| Dictionary        | Values                                       | Code name         |
+| ----------------- | -------------------------------------------- | ----------------- |
+| Direction         | `horizontal`, `vertical`                     | Direction         |
+| DirectionAxis     | `x`, `y`                                     | DirectionAxis     |
+| DirectionExtended | Direction Dictionary + `horizontal-reversed` | DirectionExtended |
 
 ### Emphasis
 
