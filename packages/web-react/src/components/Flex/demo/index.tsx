@@ -4,7 +4,7 @@ import DocsSection from '../../../../docs/DocsSections';
 import FlexCustomSpacing from './FlexCustomSpacing';
 import FlexHorizontalAlignment from './FlexHorizontalAlignment';
 import FlexHorizontalLayout from './FlexHorizontalLayout';
-import FlexHorizontalReverseLayout from './FlexHorizontalReverseLayout';
+import FlexHorizontalReversedLayout from './FlexHorizontalReversedLayout';
 import FlexResponsiveAlignment from './FlexResponsiveAlignment';
 import FlexResponsiveCustomHorizontalSpacing from './FlexResponsiveCustomHorizontalSpacing';
 import FlexResponsiveCustomVerticalSpacing from './FlexResponsiveCustomVerticalSpacing';
@@ -19,8 +19,8 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <DocsSection title="Horizontal Layout">
       <FlexHorizontalLayout />
     </DocsSection>
-    <DocsSection title="Horizontal Reverse Layout">
-      <FlexHorizontalReverseLayout />
+    <DocsSection title="Horizontal Reversed Layout">
+      <FlexHorizontalReversedLayout />
     </DocsSection>
     <DocsSection title="Vertical Layout">
       <FlexVerticalLayout />
