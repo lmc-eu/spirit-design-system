@@ -1,5 +1,4 @@
 import React from 'react';
-import DocsBox from '../../../../docs/DocsBox';
 import Spinner from '../Spinner';
 
 const SpinnerColors = () => (
@@ -10,13 +9,7 @@ const SpinnerColors = () => (
 
     <Spinner color="secondary" />
 
-    <DocsBox>
-      <Spinner color="primary-inverted" />
-    </DocsBox>
-
-    <DocsBox>
-      <Spinner color="secondary-inverted" />
-    </DocsBox>
+    <Spinner color="tertiary" />
   </>
 );
 
