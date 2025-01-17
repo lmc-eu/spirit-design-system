@@ -13,10 +13,7 @@ It is just a combination of the Icon component and the utility classes.
 <svg width="24" height="24" class="text-secondary animation-spin-clockwise">
   <use xlink:href="/icons/svg/sprite.svg#spinner" />
 </svg>
-<svg width="24" height="24" class="text-primary-inverted animation-spin-clockwise">
-  <use xlink:href="/icons/svg/sprite.svg#spinner" />
-</svg>
-<svg width="24" height="24" class="text-secondary-inverted animation-spin-clockwise">
+<svg width="24" height="24" class="text-tertiary animation-spin-clockwise">
   <use xlink:href="/icons/svg/sprite.svg#spinner" />
 </svg>
 ```
