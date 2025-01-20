@@ -1,44 +1,62 @@
 # Spirit Tokens Exporter
 
-[Supernova][supernova-studio] tokens exporter made for Spirit Design System developed by [Alma Career (formerly LMC)][alma-career].
+The Spirit Tokens Exporter is a custom exporter for the Spirit Design System, developed by [Alma Career (formerly LMC)][alma-career],
+to generate SCSS and JavaScript variables and maps for use in your projects.
+Built for seamless integration with [Supernova][supernova-studio], the exporter processes design tokens extracted from Figma through Supernova,
+transforming them into a structured set of reusable styles.
 
-## Token Operations
+The exporter performs the following operations to ensure an efficient and organized token structure:
 
-This exported does several operations with tokens:
+- generates a list of styles and structured styles objects from a list of tokens, supporting both CSS and JavaScript outputs,
+  with tailored handling for specific token types,
+- creates a hierarchical styles object by processing token name parts and categorizing tokens into typography or non-typography types,
+- processes typography tokens, organizing them into style objects by breakpoints and name structure,
+- processes non-typography tokens and organizes them into the styles object,
+- processes theme tokens, generating SCSS maps with color values and CSS variables for each theme,
+- generates a SCSS files with CSS values/variables and a JS files with values and styles objects.
 
-- All token groups except [Typography](#typography) are processed using a simple generate function.
-- The first step is sorting. Measures are sorted by number in the token name, Generic Tokens (Other) by value, and the rest by its name.
-- Next, each token is grouped and its value is prepared to print. Grouping is made using actual groups in Supernova and if these are not present, a common name prefix is used. Separate token values are printed as separate SCSS variables.
-- Groups are used for printing SCSS maps with references to separate tokens and pluralized names. Borders groups are skipped and colors have their group name suffixed. These maps are printed into SCSS.
-- Shadows are grouped if same name.
-- If Gradient names start with `gradients/gradient`, they are not used from Figma, but from Supernova
+## Exported Tokens
 
-### Typography
+The exporter generates two main types of token outputs: Global Tokens and Theme Tokens.
 
-As typography in Figma and Supernova are stored in named text style groups, these groups are used to generate SCSS maps with all the values from Supernova. They are grouped by breakpoints.
-⚠️ We do not generate `link` typography tokens (styles that include `-link` in their name).
+### Global Tokens
 
-#### Ebony Font Weight Exception
+Global tokens include all non-theme-related tokens from Supernova, grouped by type and exported as SCSS maps.
 
-Font Family Ebony has a different font weight mapping in Figma and in Adobe Fonts. To match these we set its own font weight numeric-name conversion.
+#### Outputs
 
-### Sorting
-
-Tokens are sorted alphabetically by origin (Figma) name or by name (Supernova). Except Measures - sorted by name number and Other - sorted by value.
-
-## Outputs
-
-- \_borders.scss
-- \_colors.scss
-- \_gradients.scss
-- \_measures.scss
-- \_other.scss
-- \_radii.scss
-- \_shadows.scss
-- \_typography.scss
+- \_borders.scss - Contains border width values
+- \_gradients.scss - Contains gradient values
+- \_other.scss - Contains values which do not fit into other categories
+- \_radii.scss - Contains border radius values
+- \_shadows.scss - Contains shadow values
+- \_spacing.scss - Contains spacing values
+- \_typography.scss - Contains typography values
 - index.scss
 
 The index file contains SCSS forwards of all other outputs.
+
+### Theme Tokens
+
+Theme tokens include all theme-specific tokens (currently limited to color tokens) from Supernova.
+The exporter creates a dedicated directory for each theme, containing SCSS maps and CSS variables grouped by color categories.
+
+#### Outputs
+
+- \_color-tokens.scss - Contains color css variables for each color and mapping to color groups
+- index.scss
+
+For each theme, the exporter generates the following files:
+
+- \\{theme_name}\\\_colors.scss - Contains color values and mapping to css variables
+- \\{theme_name}\\index.scss
+
+The index files contains SCSS forwards of all other outputs.
+
+## Sorting
+
+Tokens are sorted alphabetically by their origin name (Figma) or their Supernova name.
+Exceptions include Borders, Radii, Spacing, and Other tokens, which are sorted numerically by their value.
 
 ## Development
 
@@ -58,6 +76,30 @@ export of design tokens.
 - We recommend using a kebab-case naming format such as `theme-light-default` to ensure consistency and compatibility.
 
 Adhering to these guidelines helps maintain the integrity of the exported files, ensuring they operate smoothly and without errors.
+
+## Handling Invariant and Special Cases
+
+The exporter handles specific exceptions to the general logic of token processing to ensure consistency and correctness:
+
+### Special Cases
+
+- Gradient tokens: CSS variables are added for gradients, allowing for theme-based color customization and gradient angle adjustments. The original gradient values serve as fallbacks for these CSS variables.
+- Color tokens with multiple references – When processing color tokens containing multiple color references (e.g., gradients with multiple stops), the exporter automatically generates numbered CSS variables for each color.
+  These variables follow the pattern `--{tokenPrefix}color-{groupName}-{name}-color-XX`, where `XX` is an incremented counter for each color reference in the token. This ensures that all color components of a token remain
+  customizable while maintaining a clear and structured naming convention. Additionally, occurrences of `0px` are normalized to `0` for consistency.
+- Typography tokens with Underline – Typography tokens that include `-Underline` in their name are intentionally excluded from processing. This ensures that these tokens do not interfere with standard typography styling
+  and are not mistakenly included in style mappings.
+- `breakpoint-mobile` token: This token is assigned a fixed value of `0`, deviating from standard processing rules. This ensures compatibility with predefined requirements and reflects its role in responsive design settings.
+
+### Invariant Token Aliases
+
+Tokens with a numeric part or specific predefined names are adjusted to follow a consistent naming convention. Currently, the exporter manages the following invariant aliases:
+
+- `radius-full` is transformed into `full`. This logic ensures uniformity in token naming and usage across projects.
+
+The configuration for these invariant aliases is defined in the `src/config/invariantTokensAliasConfig.ts` file. This allows easy customization and extension if needed.
+
+These exceptions are carefully managed to prevent errors and provide a reliable token structure.
 
 [supernova-studio]: https://github.com/Supernova-Studio
 [alma-career]: https://github.com/lmc-eu
