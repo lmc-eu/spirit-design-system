@@ -8,6 +8,6 @@
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _classNames = [ _rootClassName, _styleProps.className ] -%}
 
-<li {{ mainProps(props) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames)}}>
+<li {{ mainProps(props) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames)}} role="presentation">
     {% block content %}{% endblock %}
 </li>
