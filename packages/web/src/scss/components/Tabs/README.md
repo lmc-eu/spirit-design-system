@@ -4,7 +4,7 @@ Example usage:
 
 ```html
 <ul class="Tabs" role="tablist">
-  <li class="Tabs__item">
+  <li class="Tabs__item" role="presentation">
     <button
       class="Tabs__link is-selected"
       role="tab"
@@ -17,7 +17,7 @@ Example usage:
       Item 1
     </button>
   </li>
-  <li class="Tabs__item">
+  <li class="Tabs__item" role="presentation">
     <button
       class="Tabs__link"
       role="tab"
@@ -30,10 +30,10 @@ Example usage:
       Item 2
     </button>
   </li>
-  <li class="Tabs__item">
+  <li class="Tabs__item" role="presentation">
     <a href="https://www.example.com" class="Tabs__link">Item Link</a>
   </li>
-  <li class="Tabs__item d-none d-desktop-block">
+  <li class="Tabs__item d-none d-desktop-block" role="presentation">
     <a href="https://www.example.com" class="Tabs__link">Item Link Only Desktop</a>
   </li>
 </ul>
@@ -47,7 +47,7 @@ Example usage:
 A tab item can be a link that follows a URL:
 
 ```html
-<li class="Tabs__item">
+<li class="Tabs__item" role="presentation">
   <a href="https://www.example.com" class="Tabs__link"> Link item </a>
 </li>
 ```
@@ -58,7 +58,7 @@ Individual tab items can take on properties that ensure their visibility from a
 certain breakpoint up, preferably using Spirit utility classes.
 
 ```html
-<li class="Tabs__item d-none d-desktop-block">
+<li class="Tabs__item d-none d-desktop-block" role="presentation">
   <button
     class="Tabs__link is-selected"
     role="tab"
