@@ -1,15 +1,24 @@
+@use '@tokens' as tokens;
 @use '../../tools/accessibility';
 
 .accessibility-hidden {
     @include accessibility.hide-text();
 }
 
-[aria-expanded='true'] .accessibility-open,
-[aria-expanded='false'] .accessibility-closed {
-    display: initial;
+[aria-expanded='true'] {
+    --#{tokens.$css-variable-prefix}accessibility-expanded-open-display: initial;
+    --#{tokens.$css-variable-prefix}accessibility-expanded-closed-display: none;
 }
 
-[aria-expanded='false'] .accessibility-open,
-[aria-expanded='true'] .accessibility-closed {
-    display: none;
+[aria-expanded='false'] {
+    --#{tokens.$css-variable-prefix}accessibility-expanded-open-display: none;
+    --#{tokens.$css-variable-prefix}accessibility-expanded-closed-display: initial;
+}
+
+[aria-expanded] .accessibility-open {
+    display: var(--#{tokens.$css-variable-prefix}accessibility-expanded-open-display);
+}
+
+[aria-expanded] .accessibility-closed {
+    display: var(--#{tokens.$css-variable-prefix}accessibility-expanded-closed-display);
 }
