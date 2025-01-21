@@ -4,12 +4,12 @@
 
   <div class="Container">
 
-    <h2 class="docs-Heading">Navigation</h2>
+    <h2 class="docs-Heading">Horizontal Navigation</h2>
 
     <div class="docs-Stack docs-Stack--stretch">
 
-      <div style="--spirit-header-height: 72px;">
-        <nav class="Navigation" aria-label="Main Navigation">
+      <div>
+        <nav class="Navigation Navigation--horizontal" aria-label="Main Navigation">
           <ul>
             <li class="NavigationItem NavigationItem--alignmentYCenter">
               Item
@@ -28,11 +28,35 @@
 
   <div class="Container">
 
-    <h2 class="docs-Heading">NavigationAction</h2>
+    <h2 class="docs-Heading">Vertical Navigation</h2>
 
     <div class="docs-Stack docs-Stack--stretch">
 
-      <nav class="Navigation" aria-label="Main Navigation">
+      <div>
+        <nav class="Navigation Navigation--vertical" aria-label="Vertical Navigation">
+          <ul>
+            <li class="NavigationItem NavigationItem--alignmentYCenter">
+              Item
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="UNSTABLE_Section">
+
+  <div class="Container">
+
+    <h2 class="docs-Heading">Horizontal Navigation with NavigationAction</h2>
+
+    <div class="docs-Stack docs-Stack--stretch">
+
+      <nav class="Navigation Navigation--horizontal" aria-label="Horizontal Navigation with NavigationAction">
         <ul>
           <li class="NavigationItem NavigationItem--alignmentYCenter">
             <a href="#" class="NavigationAction">Link</a>
@@ -56,11 +80,39 @@
 
   <div class="Container">
 
-    <h2 class="docs-Heading">Navigation with Buttons</h2>
+    <h2 class="docs-Heading">Vertical Navigation with NavigationAction</h2>
 
     <div class="docs-Stack docs-Stack--stretch">
 
-      <nav class="Navigation" aria-label="Navigation with Buttons">
+      <nav class="Navigation Navigation--vertical" aria-label="Vertical Navigation with NavigationAction">
+        <ul>
+          <li class="NavigationItem NavigationItem--alignmentYCenter">
+            <a href="#" class="NavigationAction">Link</a>
+          </li>
+          <li class="NavigationItem NavigationItem--alignmentYCenter">
+            <a href="#" class="NavigationAction NavigationAction--selected" aria-current="page">Selected</a>
+          </li>
+          <li class="NavigationItem NavigationItem--alignmentYCenter">
+            <span class="NavigationAction NavigationAction--disabled">Disabled</span>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="UNSTABLE_Section">
+
+  <div class="Container">
+
+    <h2 class="docs-Heading">Horizontal Navigation with Buttons</h2>
+
+    <div class="docs-Stack docs-Stack--stretch">
+
+      <nav class="Navigation Navigation--horizontal" aria-label="Horizontal Navigation with Buttons">
         <ul>
           <li class="NavigationItem NavigationItem--alignmentYCenter">
             <a href="#" class="Button Button--medium Button--primary">
@@ -71,6 +123,150 @@
             <a href="#" class="Button Button--medium Button--secondary">
               Button
             </a>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="UNSTABLE_Section">
+
+  <div class="Container">
+
+    <h2 class="docs-Heading">Vertical Navigation with Buttons</h2>
+
+    <div class="docs-Stack docs-Stack--stretch">
+
+      <nav class="Navigation Navigation--vertical" aria-label="Vertical Navigation with Buttons">
+        <ul>
+          <li class="NavigationItem NavigationItem--alignmentYCenter">
+            <a href="#" class="Button Button--medium Button--primary">
+              Button
+            </a>
+          </li>
+          <li class="NavigationItem NavigationItem--alignmentYCenter">
+            <a href="#" class="Button Button--medium Button--secondary">
+              Button
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="UNSTABLE_Section">
+
+  <div class="Container">
+
+    <h2 class="docs-Heading">Nested Horizontal Navigation with Dropdown</h2>
+
+    <div class="docs-Stack docs-Stack--stretch">
+
+      <nav class="Navigation Navigation--horizontal" aria-label="Nested Horizontal Navigation">
+        <ul>
+          <li class="NavigationItem NavigationItem--alignmentYCenter">
+            <a href="#" class="NavigationAction">Link</a>
+          </li>
+          <li class="NavigationItem NavigationItem--alignmentYCenter">
+            <div class="Dropdown Dropdown--alignmentXStretch Dropdown--alignmentYStretch">
+              <button
+                type="button"
+                class="NavigationAction"
+                data-spirit-toggle="dropdown"
+                data-spirit-target="#dropdown-navigation"
+                aria-expanded="false"
+                aria-controls="dropdown-navigation"
+                data-spirit-autoclose="true"
+              >
+                Dropdown
+                <svg width="20" height="20" aria-hidden="true" class="accessibility-open">
+                  <use xlink:href="/assets/icons/svg/sprite.svg#chevron-up" />
+                </svg>
+                <svg width="20" height="20" aria-hidden="true" class="accessibility-closed">
+                  <use xlink:href="/assets/icons/svg/sprite.svg#chevron-down" />
+                </svg>
+              </button>
+              <div class="DropdownPopover" data-spirit-placement="bottom-end" id="dropdown-navigation">
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="https://www.example.com" class="Item">
+                      <span class="Item__label">My Account</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.example.com" class="Item">
+                      <span class="Item__label">Settings</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.example.com" class="Item">
+                      <span class="Item__label">Log Out</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="UNSTABLE_Section">
+
+  <div class="Container">
+
+    <h2 class="docs-Heading">Nested Vertical Navigation with Collapse</h2>
+
+    <div class="docs-Stack docs-Stack--stretch">
+
+      <nav class="Navigation Navigation--vertical" aria-label="Nested Vertical Navigation">
+        <ul>
+          <li class="NavigationItem NavigationItem--alignmentYCenter">
+            <a href="#" class="NavigationAction">Link</a>
+          </li>
+          <li class="NavigationItem NavigationItem--alignmentYCenter">
+            <button
+              type="button"
+              aria-expanded="true"
+              data-spirit-toggle="collapse"
+              data-spirit-target="collapse-navigation"
+              class="NavigationAction"
+            >
+              Menu
+              <svg width="24" height="24" aria-hidden="true" class="accessibility-open">
+                <use xlink:href="/assets/icons/svg/sprite.svg#chevron-up" />
+              </svg>
+              <svg width="24" height="24" aria-hidden="true" class="accessibility-closed">
+                <use xlink:href="/assets/icons/svg/sprite.svg#chevron-down" />
+              </svg>
+            </button>
+            <div id="collapse-navigation" class="Collapse is-open">
+              <div class="Collapse__content">
+                <ul>
+                  <li class="NavigationItem NavigationItem--alignmentYCenter">
+                    <a href="#" class="NavigationAction">Nested Link</a>
+                  </li>
+                  <li class="NavigationItem NavigationItem--alignmentYCenter">
+                    <a href="#" class="NavigationAction NavigationAction--selected" aria-current="page">
+                      Nested Selected
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </li>
         </ul>
       </nav>

@@ -2,18 +2,27 @@
 @use '../../tools/reset';
 @use 'theme';
 
-.Navigation,
-.Navigation > ul {
+.Navigation--horizontal,
+.Navigation--horizontal > ul {
     display: flex;
 }
 
-.Navigation:has(.NavigationAction) {
-    height: var(--#{tokens.$css-variable-prefix}navigation-height, theme.$height);
+.Navigation--vertical,
+.Navigation--vertical > ul {
+    display: grid;
+}
+
+.Navigation--horizontal:has(.NavigationAction) {
+    height: var(--#{tokens.$css-variable-prefix}navigation-height, theme.$horizontal-height);
 }
 
 .Navigation:not(:has(.NavigationAction)),
 .Navigation:not(:has(.NavigationAction)) > ul {
     gap: theme.$spacing;
+}
+
+.Navigation--vertical:has(.NavigationAction) > ul {
+    gap: theme.$spacing-dense;
 }
 
 .Navigation > ul {
