@@ -12,8 +12,17 @@ It consists of these parts:
 
 The `Navigation` is a `nav` wrapper for lists of actions or other navigation components.
 
+The `Navigation` component can be horizontal or vertical.
+
 ```html
-<nav class="Navigation" aria-label="Main Navigation">
+<nav class="Navigation Navigation--horizontal" aria-label="Horizontal Main Navigation">
+  <ul>
+    <li>
+      <!-- action -->
+    </li>
+  </ul>
+</nav>
+<nav class="Navigation Navigation--vertical" aria-label="Vertical Main Navigation">
   <ul>
     <li>
       <!-- action -->
@@ -66,10 +75,12 @@ The `NavigationAction` is component that is styled to be used as a navigation ac
 <a class="NavigationAction" href="#">Link</a>
 ```
 
-It can obtain `selected` or `disabled` states by adding the respective classes.
+It can obtain `selected` or `disabled` states by adding the respective classes. The selected visual state
+is also turned on by the `aria-expanded` attribute.
 
 ```html
 <a class="NavigationAction NavigationAction--selected" href="#" aria-current="page">Selected Link</a>
+<button class="NavigationAction" type="button" aria-expanded="true">Expanded Aria Button</button>
 <span class="NavigationAction NavigationAction--disabled">Disabled Link</span>
 ```
 
@@ -85,7 +96,7 @@ inherit the height of the `Header`.
 With NavigationAction components:
 
 ```html
-<nav class="Navigation" aria-label="Main Navigation">
+<nav class="Navigation Navigation--horizontal" aria-label="Main Navigation">
   <ul>
     <li class="NavigationItem NavigationItem--alignmentYCenter">
       <a class="NavigationAction NavigationAction--selected" href="#" aria-current="page">Selected Link</a>
@@ -103,7 +114,7 @@ With NavigationAction components:
 With Buttons:
 
 ```html
-<nav class="Navigation" aria-label="Secondary Navigation">
+<nav class="Navigation Navigation--horizontal" aria-label="Secondary Navigation">
   <ul>
     <li class="NavigationItem NavigationItem--alignmentYCenter">
       <a href="#" class="Button Button--medium Button--primary">Button</a>

@@ -1,10 +1,7 @@
-@use '@tokens' as tokens;
+// 1. We don't want to add inline padding to nested NavigationItems
+
 @use '../../tools/dictionaries';
 @use 'theme';
-
-.NavigationItem {
-    display: flex;
-}
 
 @include dictionaries.generate-alignments(
     $class-name: 'NavigationItem',
@@ -14,4 +11,17 @@
 
 .NavigationItem:has(.NavigationAction) {
     align-items: stretch;
+}
+
+.Navigation--horizontal .NavigationItem {
+    display: flex;
+}
+
+.Navigation--vertical .NavigationItem {
+    display: grid;
+
+    // stylelint-disable-next-line selector-max-class, selector-max-specificity -- 1.
+    &:not(& .NavigationItem) {
+        padding-inline: theme.$spacing;
+    }
 }
