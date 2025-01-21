@@ -2,28 +2,40 @@
 
 @use '@tokens' as tokens;
 
+$spacing-dense: tokens.$space-400;
 $spacing: tokens.$space-700;
-$height: 50px;
 
-$action-typography: tokens.$body-small-semibold;
-$action-gap: tokens.$space-600;
-$action-spacing: tokens.$space-600;
+$horizontal-height: 50px;
+
+$item-alignment-dictionary: center, stretch; // 1.
+
+$horizontal-action-typography: tokens.$body-small-semibold;
+$vertical-action-typography: tokens.$body-medium-semibold;
+$vertical-action-typography-nested: tokens.$body-medium-regular;
+$action-gap: tokens.$space-700;
+$action-spacing-dense: tokens.$space-600;
+$action-spacing: tokens.$space-700;
+
 $action-color-state-default: tokens.$component-header-item-state-default;
 $action-color-state-hover: tokens.$component-header-item-state-hover;
 $action-color-state-active: tokens.$component-header-item-state-active;
 $action-color-state-selected: tokens.$component-header-item-state-selected;
 $action-color-state-disabled: tokens.$disabled-content;
-$action-border-bottom-width: tokens.$border-width-200;
-$action-border-bottom-style: solid;
-$action-border-bottom-color-state-default: transparent;
-$action-border-bottom-color-state-hover: tokens.$component-header-stripe-state-unselected;
-$action-border-bottom-color-state-active: tokens.$component-header-stripe-state-unselected;
-$action-border-bottom-color-selected-state-default: tokens.$component-header-stripe-state-selected;
-$action-border-bottom-color-selected-state-hover: tokens.$component-header-stripe-state-selected;
-$action-border-bottom-color-selected-state-active: tokens.$component-header-stripe-state-selected;
+
+$vertical-action-border-radius: tokens.$radius-200;
+
 $action-background-color-state-default: tokens.$component-header-item-background-state-default;
 $action-background-color-state-hover: tokens.$component-header-item-background-state-hover;
 $action-background-color-state-active: tokens.$component-header-item-background-state-active;
 $action-background-color-state-selected: tokens.$component-header-item-background-state-selected;
 
-$item-alignment-dictionary: center, stretch; // 1.
+$action-stripe-background-color-state-default: transparent;
+$action-stripe-background-color-selected-state-default: tokens.$component-header-stripe-state-selected;
+$action-stripe-background-color-selected-state-hover: tokens.$component-header-stripe-state-selected;
+$action-stripe-background-color-selected-state-active: tokens.$component-header-stripe-state-selected;
+
+$horizontal-action-stripe-background-color-state-hover: tokens.$component-header-stripe-state-unselected;
+$horizontal-action-stripe-background-color-state-active: tokens.$component-header-stripe-state-unselected;
+$horizontal-action-stripe-size: 2px;
+
+$vertical-action-stripe-size: 4px;
