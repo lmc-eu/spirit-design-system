@@ -1,6 +1,8 @@
-// 1. We need to set the top border too, otherwise the content won't be aligned properly.
+// 1. We want specific typography for nested items in the Navigation component.
+// 2. In the vertical Navigation component, the stripe is placed outside the NavigationAction element,
+//    so we need to disable pointer events on it.
+// 3. We want the selected and expanded states to override the hover and active states.
 
-@use '@tokens' as tokens;
 @use '../../tools/reset';
 @use '../../tools/typography';
 @use 'theme';
@@ -10,24 +12,23 @@
 }
 
 .NavigationAction {
-    @include typography.generate(theme.$action-typography);
-
+    position: relative;
     display: flex;
     gap: theme.$action-gap;
     align-items: center;
-    justify-content: center;
-    padding-inline: theme.$action-spacing;
     color: theme.$action-color-state-default;
-    border-top: theme.$action-border-bottom-width theme.$action-border-bottom-style transparent; // 1.
-    border-bottom: theme.$action-border-bottom-width theme.$action-border-bottom-style
-        theme.$action-border-bottom-color-state-default;
     background-color: theme.$action-background-color-state-default;
+
+    &::after {
+        content: '';
+        position: absolute;
+        background-color: theme.$action-stripe-background-color-state-default;
+    }
 
     @media (hover: hover) {
         &:hover {
             text-decoration: none;
             color: theme.$action-color-state-hover;
-            border-bottom-color: theme.$action-border-bottom-color-state-hover;
             background-color: theme.$action-background-color-state-hover;
         }
     }
@@ -35,24 +36,25 @@
     &:active {
         text-decoration: none;
         color: theme.$action-color-state-active;
-        border-bottom-color: theme.$action-border-bottom-color-state-active;
         background-color: theme.$action-background-color-state-active;
     }
 }
 
-.NavigationAction--selected {
+// stylelint-disable-next-line selector-max-compound-selectors, selector-max-specificity -- 1.
+.Navigation--vertical
+    > ul
+    ul
+    .NavigationAction:not(:is(.NavigationAction--selected, .NavigationAction[aria-expanded='true'])) {
+    @include typography.generate(theme.$vertical-action-typography-nested);
+}
+
+.NavigationAction--selected,
+.NavigationAction[aria-expanded='true'] {
     color: theme.$action-color-state-selected;
-    border-bottom-color: theme.$action-border-bottom-color-selected-state-default;
     background-color: theme.$action-background-color-state-selected;
 
-    @media (hover: hover) {
-        &:hover {
-            border-bottom-color: theme.$action-border-bottom-color-selected-state-hover;
-        }
-    }
-
-    &:active {
-        border-bottom-color: theme.$action-border-bottom-color-selected-state-active;
+    &::after {
+        background-color: theme.$action-stripe-background-color-selected-state-default;
     }
 }
 
@@ -60,3 +62,57 @@
     color: theme.$action-color-state-disabled;
     pointer-events: none;
 }
+
+.Navigation--horizontal .NavigationAction {
+    @include typography.generate(theme.$horizontal-action-typography);
+
+    justify-content: center;
+    padding-inline: theme.$action-spacing-dense;
+
+    &::after {
+        inset-inline: 0;
+        bottom: 0;
+        height: theme.$horizontal-action-stripe-size;
+    }
+}
+
+.Navigation--vertical .NavigationAction {
+    @include typography.generate(theme.$vertical-action-typography);
+
+    justify-content: space-between;
+    padding-inline: theme.$action-spacing;
+    padding-block: theme.$action-spacing-dense;
+    border-radius: theme.$vertical-action-border-radius;
+
+    &::after {
+        inset-block: 0;
+        left: calc(-1 * #{theme.$spacing});
+        width: theme.$vertical-action-stripe-size;
+        pointer-events: none; // 2.
+    }
+}
+
+@media (hover: hover) {
+    .Navigation--horizontal .NavigationAction:hover::after {
+        background-color: theme.$horizontal-action-stripe-background-color-state-hover;
+    }
+}
+
+.Navigation--horizontal .NavigationAction:active::after {
+    background-color: theme.$horizontal-action-stripe-background-color-state-active;
+}
+
+// stylelint-disable selector-max-specificity -- 3.
+.Navigation--horizontal .NavigationAction--selected,
+.Navigation--horizontal .NavigationAction[aria-expanded='true'] {
+    @media (hover: hover) {
+        &:hover::after {
+            background-color: theme.$action-stripe-background-color-selected-state-hover;
+        }
+    }
+
+    &:active::after {
+        background-color: theme.$action-stripe-background-color-selected-state-active;
+    }
+}
+// stylelint-enable selector-max-specificity
