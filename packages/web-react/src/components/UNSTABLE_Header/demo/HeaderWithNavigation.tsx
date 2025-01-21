@@ -1,5 +1,6 @@
-import React from 'react';
-import { SpiritNavigationActionProps } from '../../../types';
+import React, { ElementType, forwardRef } from 'react';
+import { SpiritNavigationActionProps } from 'src/types/navigation';
+import { PolymorphicRef } from '../../../types';
 import { Button } from '../../Button';
 import { ButtonLink } from '../../ButtonLink';
 import { Container } from '../../Container';
@@ -15,11 +16,17 @@ import { UNSTABLE_Avatar } from '../../UNSTABLE_Avatar';
 import UNSTABLE_Header from '../UNSTABLE_Header';
 import UNSTABLE_HeaderLogo from '../UNSTABLE_HeaderLogo';
 
-const NavigationActionAsDropdownTrigger = (props: SpiritNavigationActionProps) => (
-  <NavigationAction {...props} elementType="button" />
-);
-const AvatarButtonAsDropdownTrigger = (props: SpiritNavigationActionProps) => (
-  <button {...props} className="button-unstyled" type="button" />
+/* We need an exception for components exported with forwardRef */
+/* eslint no-underscore-dangle: ['error', { allow: ['_NavigationActionAsDropdownTrigger'] }] */
+const _NavigationActionAsDropdownTrigger = <E extends ElementType = 'a'>(
+  props: SpiritNavigationActionProps<E>,
+  ref: PolymorphicRef<E>,
+): JSX.Element => {
+  return <NavigationAction ref={ref} {...props} elementType="button" />;
+};
+
+const NavigationActionAsDropdownTrigger = forwardRef<HTMLButtonElement, SpiritNavigationActionProps<ElementType>>(
+  _NavigationActionAsDropdownTrigger,
 );
 
 const HeaderDefault = () => {
@@ -51,6 +58,7 @@ const HeaderDefault = () => {
                 onToggle={() => setIsNavigationActionDropdownOpen(!isNavigationActionDropdownOpen)}
                 placement="bottom-end"
               >
+                {/* Tohle je velka prcarna, ale asi to teda nejde jinak? */}
                 <DropdownTrigger elementType={NavigationActionAsDropdownTrigger as unknown as HTMLButtonElement}>
                   Dropdown
                   <Icon name="chevron-up" boxSize={20} UNSAFE_className="accessibility-open" />
@@ -92,7 +100,8 @@ const HeaderDefault = () => {
                 onToggle={() => setIsAvatarDropdownOpen(!isAvatarDropdownOpen)}
                 placement="bottom-end"
               >
-                <DropdownTrigger elementType={AvatarButtonAsDropdownTrigger as unknown as HTMLButtonElement}>
+                {/*Tohle vrati <button> s obema classes - class a UNSAFE_className, melo by to smazat UNSAFE.*/}
+                <DropdownTrigger elementType="button" UNSAFE_className="button-unstyled" type="button">
                   <Flex spacingX="space-500" alignmentX="stretch" alignmentY="center">
                     <UNSTABLE_Avatar isSquare aria-label="Profile of Jiří Bárta">
                       <Icon name="profile" boxSize={20} />
@@ -104,6 +113,7 @@ const HeaderDefault = () => {
                     <Icon name="chevron-down" boxSize={20} UNSAFE_className="accessibility-closed" />
                   </Flex>
                 </DropdownTrigger>
+
                 <DropdownPopover>
                   <ul className="list-unstyled">
                     <li>

@@ -14,15 +14,14 @@ const defaultProps = {
 
 const DropdownTrigger = <T extends ElementType = 'button'>(props: DropdownTriggerProps<T>) => {
   const propsWithDefaults = { ...defaultProps, ...props };
-  const { elementType = 'button', children, ...rest } = propsWithDefaults;
+  const { elementType: ElementTag = 'button', children, ...rest } = propsWithDefaults;
   const { id, isOpen, onToggle, fullWidthMode, triggerRef } = useDropdownContext();
-  const Component = elementType;
   const { classProps, props: modifiedProps } = useDropdownStyleProps({ isOpen, ...rest });
-  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+  const { styleProps, props: otherProps } = useStyleProps({ ElementTag, ...modifiedProps });
   const { triggerProps } = useDropdownAriaProps({ id, isOpen, toggleHandler: onToggle, fullWidthMode });
 
   return (
-    <Component
+    <ElementTag
       {...rest} // ⚠️ This is maybe a bug, when component is pass via `elementType` prop, the rest props are passed to the component
       {...otherProps}
       {...triggerProps}
@@ -32,8 +31,10 @@ const DropdownTrigger = <T extends ElementType = 'button'>(props: DropdownTrigge
       style={styleProps.style}
     >
       {typeof children === 'function' ? children({ isOpen }) : children}
-    </Component>
+    </ElementTag>
   );
 };
+
+DropdownTrigger.spiritComponent = 'DropdownTrigger';
 
 export default DropdownTrigger;
