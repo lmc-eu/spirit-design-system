@@ -25,7 +25,7 @@ const TabItem = ({ children, forTabPane, onClick, ...restProps }: TabItemProps):
   };
 
   return (
-    <li className={classProps.item}>
+    <li className={classProps.item} role="presentation">
       <button
         {...transferProps}
         {...styleProps}

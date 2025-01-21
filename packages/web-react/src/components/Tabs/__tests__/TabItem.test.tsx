@@ -11,6 +11,14 @@ describe('TabItem', () => {
 
   restPropsTest((props) => <TabItem forTabPane={0} {...props} />, 'button');
 
+  it('should render list item', () => {
+    render(<TabItem forTabPane={0} />);
+
+    const element = screen.getByRole('presentation');
+
+    expect(element).toHaveClass('Tabs__item');
+  });
+
   it('should render button tag when there is no href prop', () => {
     render(<TabItem forTabPane={0} />);
 
