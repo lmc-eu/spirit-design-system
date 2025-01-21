@@ -87,13 +87,129 @@
             </div>
           </a>
 
-          <nav class="Navigation" aria-label="Main Navigation">
+          <nav class="Navigation Navigation--horizontal d-none d-desktop-flex" aria-label="Main Navigation">
             <ul>
               <li class="NavigationItem NavigationItem--alignmentYCenter">
-                <a href="#" class="NavigationAction">Link</a>
+                <a href="#" class="NavigationAction NavigationAction--selected" aria-current="page">Job Offers</a>
               </li>
               <li class="NavigationItem NavigationItem--alignmentYCenter">
+                <a href="#" class="NavigationAction">Magazine</a>
+              </li>
+            </ul>
+          </nav>
+
+          <nav class="Navigation Navigation--horizontal ml-auto" aria-label="Secondary Navigation">
+            <ul>
+              <li class="NavigationItem NavigationItem--alignmentYCenter">
+                <button class="Button Button--tertiary Button--medium Button--symmetrical" type="button" aria-label="Search">
+                  <svg width="24" height="24" aria-hidden="true">
+                    <use xlink:href="/assets/icons/svg/sprite.svg#search" />
+                  </svg>
+                </button>
+              </li>
+              <li class="NavigationItem NavigationItem--alignmentYCenter d-none d-desktop-flex">
+                <a href="#" class="Button Button--secondary Button--medium">Log In</a>
+              </li>
+              <li class="NavigationItem NavigationItem--alignmentYCenter d-none d-desktop-flex">
+                <a href="#" class="Button Button--primary Button--medium">Post a Job</a>
+              </li>
+              <li class="NavigationItem NavigationItem--alignmentYCenter d-desktop-none">
+                <button
+                  class="Button Button--tertiary Button--medium Button--symmetrical"
+                  type="button"
+                  aria-label="Toggle Menu"
+                  data-spirit-toggle="offcanvas"
+                  data-spirit-target="#drawer-navigation"
+                  aria-controls="drawer-navigation"
+                  aria-expanded="false"
+                >
+                  <svg width="24" height="24" aria-hidden="true">
+                    <use xlink:href="/assets/icons/svg/sprite.svg#hamburger" />
+                  </svg>
+                </button>
+              </li>
+            </ul>
+          </nav>
+
+        </div>
+      </div>
+    </header>
+
+    <dialog id="drawer-navigation" class="Drawer Drawer--right" aria-label="Navigation">
+      <div class="DrawerPanel">
+        <div class="DrawerPanel__content">
+          <button
+            type="button"
+            aria-expanded="false"
+            class="Button Button--tertiary Button--medium Button--symmetrical DrawerCloseButton"
+            data-spirit-dismiss="offcanvas"
+            data-spirit-target="#drawer-navigation"
+            aria-controls="drawer-navigation"
+          >
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/assets/icons/svg/sprite.svg#close" />
+            </svg>
+            <span class="accessibility-hidden">Close</span>
+          </button>
+          <div class="Stack Stack--hasSpacing Stack--hasIntermediateDividers mt-900" style="--stack-spacing: var(--spirit-space-900)">
+
+            <nav class="Navigation Navigation--vertical" aria-label="Main Navigation">
+              <ul>
+                <li class="NavigationItem NavigationItem--alignmentYCenter">
+                  <a href="#" class="NavigationAction NavigationAction--selected" aria-current="page">Job Offers</a>
+                </li>
+                <li class="NavigationItem NavigationItem--alignmentYCenter">
+                  <a href="#" class="NavigationAction">Magazine</a>
+                </li>
+              </ul>
+            </nav>
+
+            <nav class="Navigation Navigation--vertical" aria-label="Secondary Navigation">
+              <ul>
+                <li class="NavigationItem NavigationItem--alignmentYCenter">
+                  <a href="#" class="Button Button--secondary Button--medium">Log in</a>
+                </li>
+                <li class="NavigationItem NavigationItem--alignmentYCenter">
+                  <a href="#" class="Button Button--primary Button--medium">Post a Job</a>
+                </li>
+              </ul>
+            </nav>
+
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+  </div>
+</section>
+
+<section class="UNSTABLE_Section">
+
+  <div class="Container">
+    <h2 class="docs-Heading">With Navigation and Nested Items</h2>
+  </div>
+
+  <div class="docs-Stack docs-Stack--stretch">
+
+    <header class="UNSTABLE_Header">
+      <div class="Container">
+        <div
+          class="Flex Flex--row Flex--noWrap Flex--alignmentXLeft Flex--alignmentYStretch"
+          style="--flex-spacing-x: var(--spirit-space-1000);"
+        >
+          <a href="#" aria-label="JobBoard homepage" class="UNSTABLE_HeaderLogo">
+            <div class="ProductLogo">
+              {{> web/assets/jobBoardLogo }}
+            </div>
+          </a>
+
+          <nav class="Navigation Navigation--horizontal d-none d-desktop-flex" aria-label="Main Navigation">
+            <ul>
+              <li class="NavigationItem NavigationItem--alignmentYCenter">
                 <a href="#" class="NavigationAction NavigationAction--selected" aria-current="page">Selected</a>
+              </li>
+              <li class="NavigationItem NavigationItem--alignmentYCenter">
+                <a href="#" class="NavigationAction">Link</a>
               </li>
               <li class="NavigationItem NavigationItem--alignmentYCenter">
                 <div class="Dropdown Dropdown--alignmentXStretch Dropdown--alignmentYStretch">
@@ -106,7 +222,7 @@
                     aria-controls="dropdown-navigation"
                     data-spirit-autoclose="true"
                   >
-                    Dropdown
+                    Menu
                     <svg width="20" height="20" aria-hidden="true" class="accessibility-open">
                       <use xlink:href="/assets/icons/svg/sprite.svg#chevron-up" />
                     </svg>
@@ -141,7 +257,7 @@
             </ul>
           </nav>
 
-          <nav class="Navigation ml-auto" aria-label="Secondary Navigation">
+          <nav class="Navigation Navigation--horizontal ml-auto" aria-label="Secondary Navigation">
             <ul>
               <li class="NavigationItem NavigationItem--alignmentYCenter">
                 <button class="Button Button--tertiary Button--medium Button--symmetrical">
@@ -150,7 +266,7 @@
                   </svg>
                 </button>
               </li>
-              <li class="NavigationItem NavigationItem--alignmentYStretch">
+              <li class="NavigationItem NavigationItem--alignmentYStretch d-none d-desktop-flex">
                 <div class="Dropdown Dropdown--alignmentXStretch Dropdown--alignmentYStretch">
                   <button
                     type="button"
@@ -167,7 +283,7 @@
                           <use xlink:href="/assets/icons/svg/sprite.svg#profile" />
                         </svg>
                       </span>
-                      <span class="typography-body-small-semibold text-primary">My Account</span>
+                      <span class="typography-body-small-semibold">My Account</span>
                       <svg width="20" height="20" aria-hidden="true" class="accessibility-open">
                         <use xlink:href="/assets/icons/svg/sprite.svg#chevron-up" />
                       </svg>
@@ -197,11 +313,26 @@
                   </div>
                 </div>
               </li>
-              <li class="NavigationItem NavigationItem--alignmentYCenter">
-                <a href="#" class="Button Button--secondary Button--medium">Log out</a>
+              <li class="NavigationItem NavigationItem--alignmentYCenter d-none d-desktop-flex">
+                <a href="#" class="Button Button--secondary Button--medium">Log Out</a>
               </li>
-              <li class="NavigationItem NavigationItem--alignmentYCenter">
-                <a href="#" class="Button Button--primary Button--medium">Post a job</a>
+              <li class="NavigationItem NavigationItem--alignmentYCenter d-none d-desktop-flex">
+                <a href="#" class="Button Button--primary Button--medium">Post a Job</a>
+              </li>
+              <li class="NavigationItem NavigationItem--alignmentYCenter d-desktop-none">
+                <button
+                  class="Button Button--tertiary Button--medium Button--symmetrical"
+                  type="button"
+                  aria-label="Toggle Menu"
+                  data-spirit-toggle="offcanvas"
+                  data-spirit-target="#drawer-navigation-expanded"
+                  aria-controls="drawer-navigation-expanded"
+                  aria-expanded="false"
+                >
+                  <svg width="24" height="24" aria-hidden="true">
+                    <use xlink:href="/assets/icons/svg/sprite.svg#hamburger" />
+                  </svg>
+                </button>
               </li>
             </ul>
           </nav>
@@ -209,6 +340,102 @@
         </div>
       </div>
     </header>
+
+    <dialog id="drawer-navigation-expanded" class="Drawer Drawer--right" aria-label="Navigation">
+      <div class="DrawerPanel">
+        <div class="DrawerPanel__content">
+          <button
+            type="button"
+            aria-expanded="false"
+            class="Button Button--tertiary Button--medium Button--symmetrical DrawerCloseButton"
+            data-spirit-dismiss="offcanvas"
+            data-spirit-target="#drawer-navigation-expanded"
+            aria-controls="drawer-navigation-expanded"
+          >
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/assets/icons/svg/sprite.svg#close" />
+            </svg>
+            <span class="accessibility-hidden">Close</span>
+          </button>
+          <div class="Stack Stack--hasSpacing Stack--hasIntermediateDividers mt-900" style="--stack-spacing: var(--spirit-space-900)">
+
+            <nav class="Navigation Navigation--vertical" aria-label="Profile">
+              <ul>
+                <li class="NavigationItem NavigationItem--alignmentYCenter">
+                  <a href="#" class="Flex Flex--row Flex--noWrap Flex--alignmentXStretch Flex--alignmentYCenter" style="--flex-spacing-x: var(--spirit-space-500)">
+                    <span class="UNSTABLE_Avatar UNSTABLE_Avatar--medium UNSTABLE_Avatar--square" aria-label="Profile of Jiří Bárta">
+                      <svg width="20" height="20" aria-hidden="true">
+                        <use xlink:href="/assets/icons/svg/sprite.svg#profile" />
+                      </svg>
+                    </span>
+                    <span class="typography-body-small-semibold text-primary">My Account</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+
+
+            <nav class="Navigation Navigation--vertical" aria-label="Main Navigation">
+              <ul>
+                <li class="NavigationItem NavigationItem--alignmentYCenter">
+                  <a href="#" class="NavigationAction NavigationAction--selected" aria-current="page">Selected</a>
+                </li>
+                <li class="NavigationItem NavigationItem--alignmentYCenter">
+                  <a href="#" class="NavigationAction">Link</a>
+                </li>
+                <li class="NavigationItem NavigationItem--alignmentYCenter">
+                  <button
+                    type="button"
+                    aria-expanded="false"
+                    data-spirit-toggle="collapse"
+                    data-spirit-target="collapse-navigation"
+                    class="NavigationAction"
+                  >
+                    Menu
+                    <svg width="24" height="24" aria-hidden="true" class="accessibility-open">
+                      <use xlink:href="/assets/icons/svg/sprite.svg#chevron-up" />
+                    </svg>
+                    <svg width="24" height="24" aria-hidden="true" class="accessibility-closed">
+                      <use xlink:href="/assets/icons/svg/sprite.svg#chevron-down" />
+                    </svg>
+                  </button>
+                  <div id="collapse-navigation" class="Collapse">
+                    <div class="Collapse__content">
+                      <ul>
+                        <li class="NavigationItem NavigationItem--alignmentYCenter">
+                          <a href="https://www.example.com" class="NavigationAction">My Account</a>
+                        </li>
+                        <li class="NavigationItem NavigationItem--alignmentYCenter">
+                          <a href="https://www.example.com" class="NavigationAction">Settings</a>
+                        </li>
+                        <li class="NavigationItem NavigationItem--alignmentYCenter">
+                          <a href="https://www.example.com" class="NavigationAction">Log Out</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="NavigationItem NavigationItem--alignmentYCenter">
+                  <span class="NavigationAction NavigationAction--disabled">Disabled</span>
+                </li>
+              </ul>
+            </nav>
+
+            <nav class="Navigation Navigation--vertical" aria-label="Secondary Navigation">
+              <ul>
+                <li class="NavigationItem NavigationItem--alignmentYCenter">
+                  <a href="#" class="Button Button--secondary Button--medium">Log Out</a>
+                </li>
+                <li class="NavigationItem NavigationItem--alignmentYCenter">
+                  <a href="#" class="Button Button--primary Button--medium">Post a Job</a>
+                </li>
+              </ul>
+            </nav>
+
+          </div>
+        </div>
+      </div>
+    </dialog>
 
   </div>
 </section>
