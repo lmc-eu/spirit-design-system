@@ -12,7 +12,7 @@
 {# Attributes #}
 {%- set _ariaControlsAttr = _targetPaneId ? 'aria-controls="' ~ _targetPaneId | escape('html_attr') ~ '"' : null -%}
 {%- set _dataTargetAttr = _targetPaneId ? 'data-spirit-target="#' ~ _targetPaneId | escape('html_attr') ~ '"' : null -%}
-{%- set _roleAttr = _href ? 'role="tab"' : null -%}
+{%- set _roleAttr = _href ? null : 'role="tab"'  -%}
 {%- set _typeAttr = _href ? null : 'type="button"' -%}
 
 {# Miscellaneous #}
