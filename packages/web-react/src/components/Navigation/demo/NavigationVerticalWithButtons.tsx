@@ -3,9 +3,9 @@ import { ButtonLink } from '../../ButtonLink';
 import Navigation from '../Navigation';
 import NavigationItem from '../NavigationItem';
 
-const NavigationDefault = () => {
+const NavigationVerticalWithButtons = () => {
   return (
-    <Navigation aria-label="Navigation with Buttons">
+    <Navigation aria-label="Navigation with Buttons" direction="vertical">
       <NavigationItem>
         <ButtonLink href="#">Button</ButtonLink>
       </NavigationItem>
@@ -17,4 +17,4 @@ const NavigationDefault = () => {
     </Navigation>
   );
 };
-export default NavigationDefault;
+export default NavigationVerticalWithButtons;
