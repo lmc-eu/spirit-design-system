@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { ChildrenProps, PasswordToggleAdornmentProp, RequiredProps, TextInputProps } from './shared';
 import { TextAreaProps } from './textArea';
 import { TextFieldProps } from './textField';
@@ -9,7 +10,9 @@ export interface TextFieldBaseMultiLineProps {
 
 export type TextFieldBaseProps = ChildrenProps & TextFieldBaseMultiLineProps & (TextFieldProps | TextAreaProps);
 
-export type SpiritTextFieldBaseProps = TextFieldBaseProps;
+export type SpiritTextFieldBaseProps = {
+  label: ReactNode;
+} & TextFieldBaseProps;
 
 export type TextFieldBaseInputProps = TextInputProps & TextFieldBaseMultiLineProps;
 

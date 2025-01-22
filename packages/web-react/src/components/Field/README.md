@@ -18,6 +18,7 @@ Advanced example:
 
 ```jsx
 <ValidationText
+  id="component__validationText"
   className="Component__validationText"
   elementType="span"
   validationText="Danger validation text"
@@ -31,11 +32,35 @@ When displaying text dynamically, set [`role="alert"`][aria-alert-role] on the `
 
 ### API
 
-| Name             | Type                      | Default | Required | Description                                                                                    |
-| ---------------- | ------------------------- | ------- | -------- | ---------------------------------------------------------------------------------------------- |
-| `className`      | `string`                  | —       | ✓        | Wrapper custom class name                                                                      |
-| `elementType`    | \[`span` \| `div`]        | `div`   | ✕        | Type of element used as main wrapper (applied only for single validation text, otherwise `ul`) |
-| `role`           | `string`                  | -       | ✕        | The role attribute that describes the role of an element                                       |
-| `validationText` | \[`string` \| `string[]`] | —       | ✕        | Validation text, only visible if validationState is set                                        |
+| Name             | Type                            | Default | Required | Description                                                                                    |
+| ---------------- | ------------------------------- | ------- | -------- | ---------------------------------------------------------------------------------------------- |
+| `className`      | `string`                        | —       | ✓        | Wrapper custom class name                                                                      |
+| `elementType`    | \[`span` \| `div`]              | `div`   | ✕        | Type of element used as main wrapper (applied only for single validation text, otherwise `ul`) |
+| `id`             | `string`                        | —       | ✕        | Component id                                                                                   |
+| `role`           | `string`                        | -       | ✕        | The role attribute that describes the role of an element                                       |
+| `validationText` | \[`ReactNode` \| `ReactNode[]`] | —       | ✕        | Validation text, only visible if validationState is set                                        |
+
+## HelperText
+
+The HelperText subcomponent displays helper texts for Field components like TextField, TextArea, Checkbox, FileUploader, etc.
+
+```jsx
+<HelperText className="Component__helperText" helperText="Helper text" />
+```
+
+Advanced example:
+
+```jsx
+<HelperText id="component__helperText" className="Component__helperText" elementType="span" helperText="Helper text" />
+```
+
+### API
+
+| Name          | Type                            | Default | Required | Description                                                                                    |
+| ------------- | ------------------------------- | ------- | -------- | ---------------------------------------------------------------------------------------------- |
+| `className`   | `string`                        | —       | ✓        | Wrapper custom class name                                                                      |
+| `elementType` | \[`span` \| `div`]              | `div`   | ✕        | Type of element used as main wrapper (applied only for single validation text, otherwise `ul`) |
+| `helperText`  | \[`ReactNode` \| `ReactNode[]`] | —       | ✕        | Validation text, only visible if validationState is                                            |
+| `id`          | `string`                        | —       | ✕        | Component id                                                                                   |
 
 [aria-alert-role]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role

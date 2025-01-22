@@ -58,11 +58,17 @@ export type SpiritTextAreaElementProps = Omit<
 export type SpiritUListElementProps = OverloadStyleProps<SpiritUListElementBaseProps>;
 export type SpiritFieldGroupElementProps = OverloadStyleProps<SpiritFieldGroupElementBaseProps>;
 
-export type SpiritInputElementPropsWithRef = Omit<SpiritInputElementProps & ComponentPropsWithRef<'input'>, 'id'>;
-export type SpiritSelectElementPropsWithRef = Omit<SpiritSelectElementProps & ComponentPropsWithRef<'select'>, 'id'>;
+export type SpiritInputElementPropsWithRef = Omit<
+  SpiritInputElementProps & ComponentPropsWithRef<'input'>,
+  'id' | 'label'
+>;
+export type SpiritSelectElementPropsWithRef = Omit<
+  SpiritSelectElementProps & ComponentPropsWithRef<'select'>,
+  'id' | 'label'
+>;
 export type SpiritTextAreaElementPropsWithRef = Omit<
   SpiritTextAreaElementProps & ComponentPropsWithRef<'textarea'>,
-  'id'
+  'id' | 'label'
 >;
 export type SpiritFieldGroupElementPropsWithRef = Omit<
   SpiritFieldGroupElementProps & ComponentPropsWithRef<'fieldset'>,

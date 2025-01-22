@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { LabelProps } from './label';
 import {
   HelperTextProps,
@@ -18,7 +19,7 @@ export interface FieldGroupProps
   isDisabled?: boolean;
   isFluid?: boolean;
   isLabelHidden?: boolean;
-  label: string | JSX.Element;
+  label: ReactNode;
   validationText?: ValidationTextType;
 }
 

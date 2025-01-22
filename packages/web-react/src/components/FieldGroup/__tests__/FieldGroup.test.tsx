@@ -59,51 +59,43 @@ describe('FieldGroup', () => {
   });
 
   it('should have className isRequired', () => {
-    const dom = render(
+    render(
       <FieldGroup id="example-field-group" label="Label" isRequired>
         {itemList}
       </FieldGroup>,
     );
 
-    const element = dom.container.querySelector('div') as HTMLElement;
-
-    expect(element).toHaveClass('FieldGroup__label--required');
+    expect(screen.getAllByText('Label')[1]).toHaveClass('FieldGroup__label--required');
   });
 
   it('should have className isDisabled', () => {
-    const dom = render(
+    render(
       <FieldGroup id="example-field-group" label="Label" isDisabled>
         {itemList}
       </FieldGroup>,
     );
 
-    const element = dom.container.querySelector('fieldset') as HTMLElement;
-
-    expect(element).toHaveAttribute('disabled');
+    expect(screen.getByRole('group')).toHaveAttribute('disabled');
   });
 
   it('should not have visible label', () => {
-    const dom = render(
+    render(
       <FieldGroup id="example-field-group" label="Label" isLabelHidden>
         {itemList}
       </FieldGroup>,
     );
 
-    const element = dom.container.querySelector('fieldset div') as HTMLElement;
-
-    expect(element).not.toHaveClass('FieldGroup__label');
+    expect(screen.getAllByText('Label')[1]).toBeUndefined();
   });
 
   it('should have className isFluid', () => {
-    const dom = render(
+    render(
       <FieldGroup id="example-field-group" label="Label" isFluid>
         {itemList}
       </FieldGroup>,
     );
 
-    const element = dom.container.querySelector('fieldset') as HTMLElement;
-
-    expect(element).toHaveClass('FieldGroup--fluid');
+    expect(screen.getByRole('group')).toHaveClass('FieldGroup--fluid');
   });
 
   it('should have helper text', () => {
@@ -126,8 +118,26 @@ describe('FieldGroup', () => {
       </FieldGroup>,
     );
 
-    const element = screen.getByText('helper text');
+    expect(screen.getByText('helper text')).toHaveAttribute('id', 'example-field-group__helperText');
+  });
 
-    expect(element).toHaveAttribute('id', 'example-field-group__helperText');
+  it('should render with html tags', () => {
+    render(
+      <FieldGroup
+        id="test"
+        label={
+          <>
+            Label <b>Text</b>
+          </>
+        }
+      >
+        {itemList}
+      </FieldGroup>,
+    );
+
+    const element = screen.getAllByText('Label')[1];
+
+    expect(element).toHaveTextContent('Label Text');
+    expect(element.innerHTML).toBe('Label <b>Text</b>');
   });
 });

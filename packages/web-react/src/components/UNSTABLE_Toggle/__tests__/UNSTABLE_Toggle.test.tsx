@@ -110,4 +110,22 @@ describe('UNSTABLE_Toggle', () => {
 
     expect(checkbox).toBeChecked();
   });
+
+  it('should render lavbel with html tags', () => {
+    render(
+      <UNSTABLE_Toggle
+        id="test-toggle"
+        label={
+          <>
+            Toggle <b>Label</b>
+          </>
+        }
+      />,
+    );
+
+    const element = screen.getByRole('checkbox').previousElementSibling?.firstChild as HTMLElement;
+
+    expect(element).toHaveTextContent('Toggle Label');
+    expect(element.innerHTML).toBe('Toggle <b>Label</b>');
+  });
 });

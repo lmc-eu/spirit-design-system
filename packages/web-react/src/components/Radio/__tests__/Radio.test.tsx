@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import React from 'react';
 import {
   classNamePrefixProviderTest,
@@ -25,30 +25,44 @@ describe('Radio', () => {
   requiredPropsTest(Radio, 'radio', 'id', 'example-id');
 
   it('should have label classname', () => {
-    const dom = render(<Radio id="radio" label="label" />);
+    render(<Radio id="radio" label="label" />);
 
-    const element = dom.container.querySelector('label > span > span:first-child') as HTMLElement;
-    expect(element).toHaveClass('Radio__label');
+    expect(screen.getByRole('radio').nextElementSibling?.firstChild).toHaveClass('Radio__label');
   });
 
   it('should have hidden classname', () => {
-    const dom = render(<Radio id="radio" label="hidden label" isLabelHidden />);
+    render(<Radio id="radio" label="hidden label" isLabelHidden />);
 
-    const element = dom.container.querySelector('label > span > span:first-child') as HTMLElement;
-    expect(element).toHaveClass('Radio__label--hidden');
+    expect(screen.getByRole('radio').nextElementSibling?.firstChild).toHaveClass('Radio__label--hidden');
   });
 
   it('should have input classname', () => {
-    const dom = render(<Radio id="radio" label="label" />);
+    render(<Radio id="radio" label="label" />);
 
-    const element = dom.container.querySelector('input') as HTMLElement;
-    expect(element).toHaveClass('Radio__input');
+    expect(screen.getByRole('radio')).toHaveClass('Radio__input');
   });
 
   it('should have helper text', () => {
-    const dom = render(<Radio id="radio" label="Label" helperText="text" />);
+    render(<Radio id="radio" label="Label" helperText="text" />);
 
-    const element = dom.container.querySelector('.Radio__helperText') as HTMLElement;
-    expect(element.textContent).toBe('text');
+    expect(screen.getByRole('radio').nextElementSibling?.lastChild).toHaveTextContent('text');
+  });
+
+  it('should render label with html tags', () => {
+    render(
+      <Radio
+        id="radio"
+        label={
+          <>
+            Radio <b>Label</b>
+          </>
+        }
+      />,
+    );
+
+    const element = screen.getByRole('radio').nextElementSibling?.firstChild as HTMLElement;
+
+    expect(element).toHaveTextContent('Radio Label');
+    expect(element.innerHTML).toBe('Radio <b>Label</b>');
   });
 });
