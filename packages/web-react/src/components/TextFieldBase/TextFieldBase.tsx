@@ -17,7 +17,6 @@ const TextFieldBaseInputWithPasswordToggle = forwardRef(
 /* We need an exception for components exported with forwardRef */
 /* eslint no-underscore-dangle: ['error', { allow: ['_TextFieldBase'] }] */
 const _TextFieldBase = (props: SpiritTextFieldBaseProps, ref: ForwardedRef<HTMLInputElement | HTMLTextAreaElement>) => {
-  const { classProps, props: modifiedProps } = useTextFieldBaseStyleProps(props);
   const {
     'aria-describedby': ariaDescribedBy = '',
     helperText,
@@ -26,8 +25,9 @@ const _TextFieldBase = (props: SpiritTextFieldBaseProps, ref: ForwardedRef<HTMLI
     validationState,
     validationText,
     ...restProps
-  } = modifiedProps;
-  const { styleProps, props: otherProps } = useStyleProps(restProps);
+  } = props;
+  const { classProps, props: modifiedProps } = useTextFieldBaseStyleProps({ id, label, validationState, ...restProps });
+  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
   const [ids, register] = useAriaIds(ariaDescribedBy);
   const validationTextRole = useValidationTextRole({
     validationState,

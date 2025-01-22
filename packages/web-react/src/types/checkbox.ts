@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { LabelProps } from './label';
 import {
   ChildrenProps,
@@ -27,7 +28,7 @@ export interface CheckboxProps
   /** Whether the checkbox is checked */
   isChecked?: boolean;
   /** Text of control label */
-  label: string;
+  label: ReactNode;
 }
 
 export interface SpiritCheckboxProps extends CheckboxProps {}

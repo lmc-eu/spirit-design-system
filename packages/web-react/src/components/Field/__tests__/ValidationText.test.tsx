@@ -14,6 +14,7 @@ describe('ValidationText', () => {
     renderValidationText({ validationText: 'validation text' });
 
     const element = screen.getByText('validation text');
+
     expect(element).toHaveClass('ValidationText__validationText');
     expect(element).not.toHaveAttribute('role', A11Y_ALERT_ROLE);
   });
@@ -51,6 +52,24 @@ describe('ValidationText', () => {
     expect(screen.getByRole('list').parentElement).toContainHTML('span');
   });
 
+  it('should render with html tags', () => {
+    render(
+      <ValidationText
+        id="test"
+        validationText={
+          <>
+            validation <b>text</b>
+          </>
+        }
+      />,
+    );
+
+    const element = document.querySelector('#test') as HTMLElement;
+
+    expect(element).toHaveTextContent('validation text');
+    expect(element.innerHTML).toBe('validation <b>text</b>');
+  });
+
   describe('when rendering multiple validation texts', () => {
     beforeEach(() => {
       renderValidationText({ validationText: ['validation text', 'another validation text'] });
@@ -62,6 +81,7 @@ describe('ValidationText', () => {
 
     it('should render correct validation texts for list items', () => {
       const listItems = screen.getAllByRole('listitem');
+
       expect(listItems[0]).toHaveTextContent('validation text');
       expect(listItems[1]).toHaveTextContent('another validation text');
     });

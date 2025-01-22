@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import React from 'react';
 import {
   classNamePrefixProviderTest,
@@ -25,60 +25,70 @@ describe('TextArea', () => {
   requiredPropsTest(TextArea, 'textbox', 'id', 'example-id');
 
   it('should have label classname', () => {
-    const dom = render(<TextArea id="textarea" label="Label" />);
+    render(<TextArea id="textarea" label="Label" />);
 
-    const element = dom.container.querySelector('label') as HTMLElement;
-    expect(element).toHaveClass('TextArea__label');
+    expect(screen.getByText('Label')).toHaveClass('TextArea__label');
   });
 
   it('should have hidden classname', () => {
-    const dom = render(<TextArea id="textarea" label="Label" isLabelHidden />);
+    render(<TextArea id="textarea" label="Label" isLabelHidden />);
 
-    const element = dom.container.querySelector('label') as HTMLElement;
-    expect(element).toHaveClass('TextArea__label--hidden');
+    expect(screen.getByText('Label')).toHaveClass('TextArea__label--hidden');
   });
 
   it('should have required classname', () => {
-    const dom = render(<TextArea id="textarea" label="Label" isRequired />);
+    render(<TextArea id="textarea" label="Label" isRequired />);
 
-    const element = dom.container.querySelector('label') as HTMLElement;
-    expect(element).toHaveClass('TextArea__label--required');
+    expect(screen.getByText('Label')).toHaveClass('TextArea__label--required');
   });
 
   it('should have input classname', () => {
-    const dom = render(<TextArea id="textarea" label="Label" />);
+    render(<TextArea id="textarea" label="Label" />);
 
-    const element = dom.container.querySelector('textarea') as HTMLElement;
-    expect(element).toHaveClass('TextArea__input');
+    expect(screen.getByRole('textbox')).toHaveClass('TextArea__input');
   });
 
   it('should have helper text', () => {
-    const dom = render(<TextArea id="textarea" label="Label" helperText="helper text" />);
+    render(<TextArea id="textarea" label="Label" helperText="helper text" />);
 
-    const element = dom.container.querySelector('.TextArea__helperText') as HTMLElement;
-    expect(element.textContent).toBe('helper text');
+    expect(screen.getByRole('textbox').nextElementSibling).toHaveTextContent('helper text');
   });
 
   it('should have fluid classname', () => {
-    const dom = render(<TextArea id="textarea" label="Label" isFluid />);
+    render(<TextArea id="textarea" label="Label" isFluid />);
 
-    const element = dom.container.querySelector('div') as HTMLElement;
-    expect(element).toHaveClass('TextArea--fluid');
+    expect(screen.getByRole('textbox').parentElement).toHaveClass('TextArea--fluid');
   });
 
   describe('autoresizing', () => {
     it('should adjust height when mounted and autoresizing is enabled', () => {
-      const dom = render(<TextArea id="textarea" label="Label" isFluid isAutoResizing />);
+      render(<TextArea id="textarea" label="Label" isFluid isAutoResizing />);
 
-      const element = dom.container.querySelector('textarea') as HTMLElement;
-      expect(element.style.height).toBe('2px');
+      expect(screen.getByRole('textbox').style.height).toBe('2px');
     });
 
     it('should not adjust height when mounted and autoresizing is not used', () => {
-      const dom = render(<TextArea id="textarea" label="Label" isFluid />);
+      render(<TextArea id="textarea" label="Label" isFluid />);
 
-      const element = dom.container.querySelector('textarea') as HTMLElement;
-      expect(element.style.height).toBe('');
+      expect(screen.getByRole('textbox').style.height).toBe('');
     });
+  });
+
+  it('should render label with html tags', () => {
+    render(
+      <TextArea
+        id="textarea"
+        label={
+          <>
+            TextArea <b>Label</b>
+          </>
+        }
+      />,
+    );
+
+    const element = screen.getByRole('textbox').parentElement?.firstChild as HTMLElement;
+
+    expect(element).toHaveTextContent('TextArea Label');
+    expect(element.innerHTML).toBe('TextArea <b>Label</b>');
   });
 });

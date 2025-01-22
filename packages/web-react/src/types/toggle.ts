@@ -1,4 +1,4 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent, ReactNode } from 'react';
 import { LabelProps } from './label';
 import {
   ChildrenProps,
@@ -27,7 +27,7 @@ export interface ToggleProps
   isDisabled?: boolean;
   isFluid?: boolean;
   isLabelHidden?: boolean;
-  label: string;
+  label: ReactNode;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
   validationText?: ValidationTextType;
 }

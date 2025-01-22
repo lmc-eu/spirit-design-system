@@ -68,6 +68,26 @@ describe('TextField', () => {
 
       expect(screen.getByLabelText('Label').parentElement).toHaveClass('TextField--fluid');
     });
+
+    it('should render label with html tags', () => {
+      render(
+        <TextField
+          id="textfield"
+          data-testid="test"
+          label={
+            <>
+              TextField <b>Label</b>
+            </>
+          }
+          type={type as TextFieldType}
+        />,
+      );
+
+      const element = screen.getByTestId('test').previousElementSibling as HTMLElement;
+
+      expect(element).toHaveTextContent('TextField Label');
+      expect(element.innerHTML).toBe('TextField <b>Label</b>');
+    });
   });
 
   describe('hasPasswordToggle', () => {

@@ -46,14 +46,14 @@ Example with Auto-Height Adjustment
 | `isDisabled`            | `bool`                                         | —       | ✕        | Whether is field disabled                                            |
 | `isLabelHidden`         | `bool`                                         | —       | ✕        | Whether is label hidden                                              |
 | `isRequired`            | `bool`                                         | —       | ✕        | Whether is field required                                            |
-| `label`                 | `string`                                       | —       | ✕        | Label text                                                           |
+| `label`                 | `ReactNode`                                    | —       | ✕        | Label text                                                           |
 | `maxLength`             | `number`                                       | —       | ✕        | Maximum number of characters                                         |
 | `name`                  | `string`                                       | —       | ✕        | Textarea name                                                        |
 | `placeholder`           | `string`                                       | —       | ✕        | Textarea placeholder                                                 |
 | `ref`                   | `ForwardedRef<HTMLTextAreaElement>`            | —       | ✕        | Textarea element reference                                           |
 | `rows`                  | `number`                                       | —       | ✕        | Number of visible rows                                               |
 | `validationState`       | [Validation dictionary][dictionary-validation] | —       | ✕        | Type of validation state                                             |
-| `validationText`        | \[`string` \| `string[]`]                      | —       | ✕        | Validation text                                                      |
+| `validationText`        | \[`ReactNode` \| `ReactNode[]`]                | —       | ✕        | Validation text                                                      |
 | `value`                 | `string`                                       | —       | ✕        | Textarea value                                                       |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].

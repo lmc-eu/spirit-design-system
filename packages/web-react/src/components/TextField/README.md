@@ -54,14 +54,14 @@ TextField with password toggle (button to reveal the password):
 | `isDisabled`        | `bool`                                                                       | —       | ✕        | Whether is field disabled                                               |
 | `isLabelHidden`     | `bool`                                                                       | —       | ✕        | Whether is label hidden                                                 |
 | `isRequired`        | `bool`                                                                       | —       | ✕        | Whether is field required                                               |
-| `label`             | `string`                                                                     | —       | ✓        | Label text                                                              |
+| `label`             | `ReactNode`                                                                  | —       | ✓        | Label text                                                              |
 | `name`              | `string`                                                                     | —       | ✕        | Input name                                                              |
 | `pattern`           | `string`                                                                     | —       | ✕        | Defines regular expressions for allowed value types                     |
 | `placeholder`       | `string`                                                                     | —       | ✕        | Input placeholder                                                       |
 | `ref`               | `ForwardedRef<HTMLInputElement>`                                             | —       | ✕        | Input element reference                                                 |
 | `type`              | \[`email` \| `number` \| `password` \| `search` \| `tel` \| `text` \| `url`] | —       | ✕        | Input type                                                              |
 | `validationState`   | [Validation dictionary][dictionary-validation]                               | —       | ✕        | Type of validation state                                                |
-| `validationText`    | \[`string` \| `string[]`]                                                    | —       | ✕        | Validation text                                                         |
+| `validationText`    | \[`ReactNode` \| `ReactNode[]`]                                              | —       | ✕        | Validation text                                                         |
 | `value`             | `string`                                                                     | —       | ✕        | Input value                                                             |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].

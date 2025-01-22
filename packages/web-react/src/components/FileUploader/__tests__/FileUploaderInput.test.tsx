@@ -29,4 +29,24 @@ describe('FileUploaderInput', () => {
 
     expect(container).not.toContain('has-drag-and-drop');
   });
+
+  it('should render label with html tags', () => {
+    render(
+      <FileUploaderInput
+        id="test-uploader"
+        name="test-uploader"
+        label={
+          <>
+            Upload <b>File</b>
+          </>
+        }
+        data-testid="test"
+      />,
+    );
+
+    const element = screen.getAllByTestId('test')[0].firstChild as HTMLElement;
+
+    expect(element).toHaveTextContent('Upload File');
+    expect(element.innerHTML).toBe('Upload <b>File</b>');
+  });
 });
