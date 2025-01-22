@@ -1,12 +1,14 @@
 import { renderHook } from '@testing-library/react';
+import { Direction } from '../../../constants';
 import { SpiritNavigationActionProps } from '../../../types';
 import { useNavigationStyleProps } from '../useNavigationStyleProps';
 
 describe('useNavigationStyleProps', () => {
   it('should return defaults', () => {
-    const { result } = renderHook(() => useNavigationStyleProps());
+    const props: SpiritNavigationActionProps = {};
+    const { result } = renderHook(() => useNavigationStyleProps(props));
 
-    expect(result.current.classProps.root).toBe('Navigation');
+    expect(result.current.classProps.root).toBe('Navigation Navigation--horizontal');
     expect(result.current.classProps.action).toBe('NavigationAction');
     expect(result.current.classProps.item).toBe('NavigationItem NavigationItem--alignmentYCenter');
   });
@@ -30,5 +32,12 @@ describe('useNavigationStyleProps', () => {
     const { result } = renderHook(() => useNavigationStyleProps(props));
 
     expect(result.current.classProps.item).toBe('NavigationItem NavigationItem--alignmentYStretch');
+  });
+
+  it('should return if navigation is vertical', () => {
+    const props = { direction: Direction.VERTICAL };
+    const { result } = renderHook(() => useNavigationStyleProps(props));
+
+    expect(result.current.classProps.root).toBe('Navigation Navigation--vertical');
   });
 });

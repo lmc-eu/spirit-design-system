@@ -2,7 +2,23 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { Direction } from '../../../constants';
 import Navigation from '../Navigation';
+
+const dataProvider = [
+  {
+    direction: Direction.HORIZONTAL,
+    directionClassName: 'Navigation--horizontal',
+  },
+  {
+    direction: Direction.VERTICAL,
+    directionClassName: 'Navigation--vertical',
+  },
+  {
+    direction: undefined,
+    directionClassName: 'Navigation--horizontal',
+  },
+];
 
 describe('Navigation', () => {
   classNamePrefixProviderTest(Navigation, 'Navigation');
@@ -11,23 +27,28 @@ describe('Navigation', () => {
 
   restPropsTest(Navigation, 'nav');
 
-  beforeEach(() => {
-    render(
-      <Navigation>
-        <li>Content</li>
-      </Navigation>,
-    );
-  });
+  describe.each(dataProvider)('when direction is $direction', ({ direction, directionClassName }) => {
+    beforeEach(() => {
+      render(
+        <Navigation direction={direction}>
+          <li>Content</li>
+        </Navigation>,
+      );
+    });
 
-  it('should have default classname', () => {
-    expect(screen.getByRole('navigation')).toHaveClass('Navigation');
-  });
+    it('should have default classname', () => {
+      const navigation = screen.getByRole('navigation');
 
-  it('should render list and children', () => {
-    expect(screen.getByRole('list')).toBeInTheDocument();
-  });
+      expect(navigation).toHaveClass('Navigation');
+      expect(navigation).toHaveClass(directionClassName);
+    });
 
-  it('should render children', () => {
-    expect(screen.getByText('Content')).toBeInTheDocument();
+    it('should render list and children', () => {
+      expect(screen.getByRole('list')).toBeInTheDocument();
+    });
+
+    it('should render children', () => {
+      expect(screen.getByText('Content')).toBeInTheDocument();
+    });
   });
 });

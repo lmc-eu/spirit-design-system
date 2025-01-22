@@ -3,9 +3,9 @@ import Navigation from '../Navigation';
 import NavigationAction from '../NavigationAction';
 import NavigationItem from '../NavigationItem';
 
-const NavigationDefault = () => {
+const NavigationVerticalWithAction = () => {
   return (
-    <Navigation aria-label="Main Navigation">
+    <Navigation aria-label="Main Navigation" direction="vertical">
       <NavigationItem>
         <NavigationAction href="/">Link</NavigationAction>
       </NavigationItem>
@@ -22,4 +22,4 @@ const NavigationDefault = () => {
     </Navigation>
   );
 };
-export default NavigationDefault;
+export default NavigationVerticalWithAction;
