@@ -1,6 +1,7 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
+import { Direction } from '../../../constants';
 import Navigation from '../Navigation';
 import NavigationAction from '../NavigationAction';
 import NavigationItem from '../NavigationItem';
@@ -18,6 +19,13 @@ const meta: Meta<typeof Navigation> = {
     children: {
       control: 'object',
     },
+    direction: {
+      control: 'select',
+      options: [...Object.values(Direction)],
+      table: {
+        defaultValue: { summary: Direction.HORIZONTAL },
+      },
+    },
   },
   args: {
     children: (
@@ -32,6 +40,7 @@ const meta: Meta<typeof Navigation> = {
         </NavigationItem>
       </>
     ),
+    direction: Direction.HORIZONTAL,
   },
 };
 
