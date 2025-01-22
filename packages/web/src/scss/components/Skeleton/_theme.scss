@@ -1,0 +1,29 @@
+@use '@tokens' as tokens;
+@use 'tools';
+
+$margin-bottom: tokens.$space-400;
+$item-gradient: tokens.$gradient-skeleton;
+$breakpoints: tokens.$breakpoints;
+
+$typography-border-radius: tokens.$radius-300;
+$typography-default-height: tools.get-height(tokens.$body-medium-bold, mobile);
+
+$shape-border-color: tokens.$disabled-border;
+$shape-border-width: tokens.$border-width-100;
+$shape-default-border-radius: tokens.$radius-300;
+
+$sizes-body: (
+    xsmall: tokens.$body-xsmall-bold,
+    small: tokens.$body-small-bold,
+    medium: tokens.$body-medium-bold,
+    large: tokens.$body-large-bold,
+    xlarge: tokens.$body-xlarge-bold,
+);
+
+$sizes-heading: (
+    xsmall: tokens.$heading-xsmall-bold,
+    small: tokens.$heading-small-bold,
+    medium: tokens.$heading-medium-bold,
+    large: tokens.$heading-large-bold,
+    xlarge: tokens.$heading-xlarge-bold,
+);
