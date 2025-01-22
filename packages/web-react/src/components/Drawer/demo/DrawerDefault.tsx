@@ -66,7 +66,6 @@ const DrawerDefault = () => {
               label="Drawer content"
               name="content"
               id="drawer-content"
-              helperText="Can contain HTML."
               value={content}
               onChange={(e) => setContent(e.currentTarget.value)}
             />

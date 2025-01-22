@@ -5,6 +5,7 @@ import {
   AlignmentYExtendedDictionaryType,
   AriaLabelingProps,
   ChildrenProps,
+  DirectionDictionaryType,
   SpiritPolymorphicElementPropsWithRef,
   StyleProps,
   TransferProps,
@@ -44,4 +45,5 @@ export interface SpiritNavigationProps extends StyleProps, AriaLabelingProps {
     | ReactElement<HTMLLIElement>
     | ReactElement<typeof NavigationItem>
     | Array<ReactElement<HTMLLIElement> | ReactElement<typeof NavigationItem>>;
+  direction?: DirectionDictionaryType;
 }
