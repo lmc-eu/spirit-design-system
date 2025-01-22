@@ -1,0 +1,36 @@
+@use 'sass:map';
+@use '@tokens' as tokens;
+@use '../../tools/string' as spirit-string;
+
+@function get-height($token, $device) {
+    @return map.get($token, $device, font-size) * map.get($token, $device, line-height);
+}
+
+@function generate-text-sizes($sizes, $device) {
+    $result: ();
+
+    @each $size, $token in $sizes {
+        $height: get-height($token, $device);
+        $size-map: (
+            #{$size}:
+                (
+                    height: $height,
+                )
+        );
+        $result: map.merge($result, $size-map);
+    }
+
+    @return $result;
+}
+
+@mixin generate-item-sizes($class-name, $sizes) {
+    @each $size, $variables in $sizes {
+        &.#{$class-name}--#{$size} {
+            $component-infix: spirit-string.convert-pascal-case-to-kebab-case($class-name);
+
+            @each $variable-key, $variable-value in $variables {
+                --#{tokens.$css-variable-prefix}#{$component-infix}-#{$variable-key}: #{$variable-value};
+            }
+        }
+    }
+}
