@@ -1,16 +1,18 @@
 import classNames from 'classnames';
-import { AlignmentYExtended } from '../../constants';
+import { AlignmentYExtended, Direction } from '../../constants';
 import { AlignmentPropertyType, useAlignmentClass, useClassNamePrefix } from '../../hooks';
 import {
+  DirectionDictionaryType,
   SpiritNavigationActionProps,
   SpiritNavigationItemAlignmentYType,
   SpiritNavigationItemProps,
 } from '../../types';
 
 export interface UseNavigationStyleProps {
+  alignmentY?: SpiritNavigationItemAlignmentYType;
+  direction?: DirectionDictionaryType;
   isDisabled?: boolean;
   isSelected?: boolean;
-  alignmentY?: SpiritNavigationItemAlignmentYType;
 }
 
 export interface UseNavigationStyleReturn {
@@ -26,12 +28,14 @@ export const useNavigationStyleProps = ({
   isDisabled = false,
   isSelected = false,
   alignmentY = AlignmentYExtended.CENTER,
+  direction = Direction.HORIZONTAL,
   ...restProps
-}: UseNavigationStyleProps = {}): UseNavigationStyleReturn => {
+}: UseNavigationStyleProps): UseNavigationStyleReturn => {
   const navigationClass = useClassNamePrefix('Navigation');
-  const navigationActionClass = useClassNamePrefix('NavigationAction');
-  const navigationItemClass = useClassNamePrefix('NavigationItem');
+  const navigationActionClass = `${navigationClass}Action`;
+  const navigationItemClass = `${navigationClass}Item`;
 
+  const navigationDirectionClass = `${navigationClass}--${direction}`;
   const navigationActionDisabledClass = `${navigationActionClass}--disabled`;
   const navigationActionSelectedClass = `${navigationActionClass}--selected`;
 
@@ -40,7 +44,7 @@ export const useNavigationStyleProps = ({
   });
 
   const classProps = {
-    root: navigationClass,
+    root: classNames(navigationClass, navigationDirectionClass),
     action: classNames(navigationActionClass, {
       [navigationActionDisabledClass]: isDisabled,
       [navigationActionSelectedClass]: isSelected,
