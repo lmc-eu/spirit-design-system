@@ -13,6 +13,7 @@ import CardEyebrow from '../CardEyebrow';
 import CardFooter from '../CardFooter';
 import CardLink from '../CardLink';
 import CardTitle from '../CardTitle';
+import { AVATAR } from './constants';
 
 const CardFooterContent = () => {
   return (
@@ -75,12 +76,7 @@ const CardFooterContent = () => {
         </CardBody>
         <CardFooter>
           <Flex>
-            <UNSTABLE_Avatar size="large">
-              <img
-                src="https://media.licdn.com/dms/image/v2/C4D03AQG7vmijKairYA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1620064696692?e=1737590400&v=beta&t=r0jUkDJnh8reIhDzUaMsofW__vgNhLlydEiK8K5RMYU"
-                alt=""
-              />
-            </UNSTABLE_Avatar>
+            <UNSTABLE_Avatar size="large">{AVATAR}</UNSTABLE_Avatar>
             <div>
               <Text elementType="div" size="small" color="primary" emphasis="semibold">
                 Jiří Bárta
