@@ -20,7 +20,7 @@ on:
 jobs:
   prepare-icons:
     name: 📱 Preparing Icons
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
 
     steps:
       - uses: actions/checkout@v4
@@ -40,7 +40,7 @@ jobs:
 
   unit-tests:
     needs: [prepare-icons]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
 
     strategy:
       matrix:
@@ -93,7 +93,7 @@ jobs:
   finalize-tests:
     name: 🏁 Finalizing Tests
     needs: [unit-tests]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     steps:
       - name: Notify Coveralls
         uses: coverallsapp/github-action@master
@@ -106,7 +106,7 @@ jobs:
 
   codestyle:
     name: '📐 Analyzing Code Style and Types'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     steps:
       - uses: actions/checkout@v4
 
