@@ -17,7 +17,7 @@ env:
 jobs:
   has-label:
     name: 🏷️ Analyzing Labels
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     outputs:
       e2e: ${{ steps.has-label.outputs.labeled-run-visual-tests }}
     steps:
@@ -36,7 +36,7 @@ jobs:
     name: 🖥️ End-to-End Testing
     needs: has-label
     if: ${{ needs.has-label.outputs.e2e || (github.ref == 'refs/heads/main') }}
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-24.04-arm
     timeout-minutes: 60
 
     steps:

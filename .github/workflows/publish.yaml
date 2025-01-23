@@ -8,7 +8,7 @@ on:
 jobs:
   has-tags:
     name: 🏷️ Analyze Tags
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-24.04-arm
 
     outputs:
       has-tag: ${{ steps.check-tag-exists.outputs.has-tag }}
@@ -37,7 +37,7 @@ jobs:
     name: 📦 Publish Packages
     needs: has-tags
     if: ${{ needs.has-tags.outputs.has-tag == 'true' }}
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-24.04-arm
 
     steps:
       - name: Clone repository

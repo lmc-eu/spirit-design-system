@@ -18,7 +18,7 @@ env:
 jobs:
   install-build:
     name: 🧶 Install Deps and 🏗️ Build Design Tokens
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-24.04-arm
     timeout-minutes: 10
     env:
       HUSKY: 0
@@ -43,7 +43,7 @@ jobs:
   lint:
     name: 📐 Code Linting
     needs: [install-build]
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-24.04-arm
     timeout-minutes: 10
     env:
       HUSKY: 0
@@ -65,7 +65,7 @@ jobs:
   unit-tests:
     name: 🧪 Unit Testing
     needs: [install-build]
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-24.04-arm
     timeout-minutes: 10
     env:
       HUSKY: 0
@@ -118,7 +118,7 @@ jobs:
 
   format:
     name: 💅 Code Formatting
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-24.04-arm
     timeout-minutes: 10
     env:
       HUSKY: 0
@@ -136,7 +136,7 @@ jobs:
   types:
     name: 📘 Type Checking
     needs: [install-build]
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-24.04-arm
     timeout-minutes: 10
     env:
       HUSKY: 0
@@ -158,7 +158,7 @@ jobs:
   cleanup:
     name: 🧹 Cleanup
     needs: [lint, unit-tests, types]
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-24.04-arm
     timeout-minutes: 10
     # Ensure this job runs regardless of previous job outcomes
     if: always()
