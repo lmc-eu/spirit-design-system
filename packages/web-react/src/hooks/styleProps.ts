@@ -22,7 +22,7 @@ export function useStyleProps<T extends StyleProps>(
   additionalUtilities?: Record<string, string>,
 ): StylePropsResult {
   const classNamePrefix = useContext(ClassNamePrefixContext);
-  const { UNSAFE_className, UNSAFE_style, ElementTag, ...otherProps } = props;
+  const { UNSAFE_className, UNSAFE_style, ElementTag, customClassName, ...otherProps } = props;
   const { styleUtilities, props: modifiedProps } = useStyleUtilities(otherProps, classNamePrefix, additionalUtilities);
 
   const style: CSSProperties = { ...UNSAFE_style };
@@ -58,7 +58,7 @@ export function useStyleProps<T extends StyleProps>(
 
     const styleProps = {
       style: Object.keys(style).length > 0 ? style : undefined,
-      className: classNames(UNSAFE_className, ...styleUtilities) || undefined,
+      className: classNames(UNSAFE_className, customClassName, ...styleUtilities) || undefined,
     };
 
     return {
@@ -70,7 +70,7 @@ export function useStyleProps<T extends StyleProps>(
   return {
     styleProps: {
       ...(UNSAFE_style !== undefined && { UNSAFE_style }),
-      ...(UNSAFE_className !== undefined && { UNSAFE_className }),
+      ...(UNSAFE_className !== undefined && { UNSAFE_className: classNames(UNSAFE_className, customClassName) }),
     },
     props: modifiedProps as HTMLAttributes<HTMLElement>,
   };
