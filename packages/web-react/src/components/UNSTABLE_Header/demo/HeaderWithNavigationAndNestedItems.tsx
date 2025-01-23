@@ -8,12 +8,14 @@ import { Stack } from '../../Stack';
 import UNSTABLE_Header from '../UNSTABLE_Header';
 import UNSTABLE_HeaderLogo from '../UNSTABLE_HeaderLogo';
 import {
-  MainNavigation,
+  MainHorizontalNavigation,
+  MainVerticalNavigation,
+  ProfileNavigation,
   SecondaryHorizontalNavigation,
   SecondaryVerticalNavigation,
-} from './HeaderWithNavigation/index';
+} from './HeaderWithNavigationAndNestedItems/index';
 
-const HeaderWithNavigation = () => {
+const HeaderWithNavigationAndNestedItems = () => {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
 
   return (
@@ -24,7 +26,7 @@ const HeaderWithNavigation = () => {
             <UNSTABLE_HeaderLogo href="#">
               <ProductLogo>{defaultSvgLogo}</ProductLogo>
             </UNSTABLE_HeaderLogo>
-            <MainNavigation />
+            <MainHorizontalNavigation />
             <SecondaryHorizontalNavigation handleOpenDrawer={() => setDrawerOpen(true)} />
           </Flex>
         </Container>
@@ -34,7 +36,8 @@ const HeaderWithNavigation = () => {
         <DrawerPanel>
           <DrawerCloseButton />
           <Stack hasIntermediateDividers hasSpacing UNSAFE_className="mt-900" spacing="space-900">
-            <MainNavigation direction="vertical" />
+            <ProfileNavigation />
+            <MainVerticalNavigation />
             <SecondaryVerticalNavigation />
           </Stack>
         </DrawerPanel>
@@ -42,5 +45,4 @@ const HeaderWithNavigation = () => {
     </>
   );
 };
-
-export default HeaderWithNavigation;
+export default HeaderWithNavigationAndNestedItems;
