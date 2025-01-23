@@ -11,7 +11,7 @@ on:
 jobs:
   markdown-link-check:
     name: 🔗 Checking Markdown Links
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     steps:
       - uses: actions/checkout@v4
       - uses: gaurav-nelson/github-action-markdown-link-check@v1
@@ -22,7 +22,7 @@ jobs:
 
   markdown-lint:
     name: 📝 Linting Markdown
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     timeout-minutes: 10
     env:
       HUSKY: 0
