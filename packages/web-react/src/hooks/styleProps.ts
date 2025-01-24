@@ -58,7 +58,7 @@ export function useStyleProps<T extends StyleProps>(
 
     const styleProps = {
       style: Object.keys(style).length > 0 ? style : undefined,
-      className: classNames(UNSAFE_className, customClassName, ...styleUtilities) || undefined,
+      className: classNames(UNSAFE_className, ...styleUtilities, customClassName) || undefined,
     };
 
     return {
@@ -70,7 +70,9 @@ export function useStyleProps<T extends StyleProps>(
   return {
     styleProps: {
       ...(UNSAFE_style !== undefined && { UNSAFE_style }),
-      ...(UNSAFE_className !== undefined && { UNSAFE_className: classNames(UNSAFE_className, customClassName) }),
+      ...((UNSAFE_className !== undefined || styleUtilities !== undefined) && {
+        UNSAFE_className: classNames(UNSAFE_className, ...styleUtilities, customClassName),
+      }),
     },
     props: modifiedProps as HTMLAttributes<HTMLElement>,
   };
