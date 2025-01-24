@@ -26,7 +26,7 @@
     "symfony/framework-bundle": "^6.4",
     "symfony/runtime": "^6.4",
     "symfony/twig-bundle": "^6.4",
-    "symfony/webpack-encore-bundle": "^1.16",
+    "symfony/webpack-encore-bundle": "^2.2",
     "symfony/yaml": "^6.4"
   },
   "config": {
