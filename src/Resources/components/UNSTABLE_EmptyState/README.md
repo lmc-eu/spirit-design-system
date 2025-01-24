@@ -50,10 +50,10 @@ The component is based on the [Stack][stack] component and accepts all its prope
     <Text>Description</Text>
   </UNSTABLE_EmptyStateSection>
   <UNSTABLE_EmptyStateSection>
-    <UNSTABLE_ActionLayout>
+    <div class="Flex Flex--noWrap Flex--alignmentXStretch Flex--tablet--alignmentXCenter Flex--alignmentYStretch Flex--vertical Flex--tablet--horizontalReversed">
       <ButtonLink href="#" color="primary">Primary Action</ButtonLink>
       <ButtonLink href="#" color="secondary">Secondary Action</ButtonLink>
-    </UNSTABLE_ActionLayout>
+    </div>
   </UNSTABLE_EmptyStateSection>
   <UNSTABLE_EmptyStateSection>
     <Link href="#">Link to something</Link>
