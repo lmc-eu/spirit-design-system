@@ -12,6 +12,7 @@ import RadioDisabled from './RadioDisabled';
 import RadioHelperText from './RadioHelperText';
 import RadioHiddenLabel from './RadioHiddenLabel';
 import RadioItem from './RadioItem';
+import RadioLongLabelText from './RadioLongLabelText';
 import RadioValidation from './RadioValidation';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
@@ -19,6 +20,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <IconsProvider value={icons}>
       <DocsSection title="Default">
         <RadioDefault />
+      </DocsSection>
+      <DocsSection title="With Long Label Text">
+        <RadioLongLabelText />
       </DocsSection>
       <DocsSection title="Hidden Label">
         <RadioHiddenLabel />
