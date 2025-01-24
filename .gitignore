@@ -48,3 +48,6 @@ nx-cloud.env
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# Dotenv
+.env*
