@@ -22,3 +22,13 @@ ActionLayout component is a container component that is used to position action 
   <a href="#" role="button" class="Button Button--secondary Button--medium">Secondary Action</a>
 </div>
 ```
+
+### ⚠️ DEPRECATION NOTICE
+
+The component will be deleted in the next version.
+Use [Flex][flex-component] component instead.
+
+[What are deprecations?][readme-deprecations]
+
+[flex-component]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Flex/README.md
+[readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#deprecations
