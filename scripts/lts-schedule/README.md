@@ -12,7 +12,7 @@ node bin/lts.js -s 2021-07-01 -e 2027-06-01 -h output.html -g output.svg -p outp
 
 ### Options
 
-- `-d`, `--data` - The path of the input JSON file. The JSON file should be the same format as the [one in Node's LTS repo][node-lts-repo]. If this option is not provided, `lts` uses its own bundled JSON file.
+- `-d`, `--data` - The path of the input JSON file. The JSON file should be the same format as the [one in Node's LTS repository][node-lts-repo]. If this option is not provided, `lts` uses its own bundled JSON file.
 - `-s`, `--start` - The start date of the graph. Internally, this option is passed to `new Date()`. Optional. Defaults to the current date.
 - `-e`, `--end` - The end date of the graph. Internally, this option is passed to `new Date()`. Optional. Defaults to one year from the current date.
 - `-h`, `--html` - The location to write the HTML output file. Optional.
