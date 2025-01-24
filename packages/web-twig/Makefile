@@ -20,7 +20,7 @@ CONT_MAKE	= $(PHP_CONT_PHP) make
 
 # Misc
 .DEFAULT_GOAL		= help
-.PHONY					= help build up prestart start down logs sh bash cert composer vendor make phpunit test analyze icons-build
+.PHONY					= help build up prestart start down logs sh bash cert composer install make phpunit test analyze icons-build
 
 ## —— 🐳 The Spirit Web Twig Bundle Makefile 🐳  ———————————————————————————————
 help: ## Outputs this help screen
@@ -51,7 +51,7 @@ prestart: ## Preparation before start
 		$(MAKE) icons-build; \
 	fi
 
-start: prestart up vendor encore ## Start the containers
+start: prestart up install encore ## Start the containers
 
 stop: down ## Stop the docker hub (alias for `down`)
 
