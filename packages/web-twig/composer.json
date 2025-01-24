@@ -21,7 +21,7 @@
     "twig/twig": "^2.12.5 || ^3.0.0"
   },
   "require-dev": {
-    "ergebnis/composer-normalize": "^2.42",
+    "ergebnis/composer-normalize": "^2.45",
     "lmc/coding-standard": "^4.1",
     "mockery/mockery": "^1.5",
     "phpstan/extension-installer": "^1.1",
