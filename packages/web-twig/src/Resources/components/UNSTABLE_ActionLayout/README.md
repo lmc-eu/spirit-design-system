@@ -22,3 +22,13 @@ ActionLayout component is a container component that is used to position action 
   <ButtonLink href="#" color="secondary">Secondary Action</ButtonLink>
 </UNSTABLE_ActionLayout>
 ```
+
+### ⚠️ DEPRECATION NOTICE
+
+The component will be deleted in the next major version.
+Use [Flex][flex-component] CSS classes instead.
+
+[What are deprecations?][readme-deprecations]
+
+[flex-component]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Flex/README.md
+[readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#deprecations
