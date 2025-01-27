@@ -30,6 +30,7 @@ export * from './scrollView';
 export * from './select';
 export * from './shared';
 export * from './slider';
+export * from './skeleton';
 export * from './spinner';
 export * from './stack';
 export * from './tabs';
