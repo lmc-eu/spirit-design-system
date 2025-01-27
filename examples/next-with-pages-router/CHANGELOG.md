@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.2.5"></a>
+
+## [0.2.5](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-example-next-with-pages-router@0.2.4...@almacareer/spirit-example-next-with-pages-router@0.2.5) (2025-01-27)
+
+### Dependencies
+
+- Update all non-major dependencies ([7a024bf](https://github.com/lmc-eu/spirit-design-system/commit/7a024bf))
+- Update all non-major dependencies ([b59c923](https://github.com/lmc-eu/spirit-design-system/commit/b59c923))
+- Update eslint plugins and configs non-major ([44be370](https://github.com/lmc-eu/spirit-design-system/commit/44be370))
+
+**Note:** Version bump only for package @almacareer/spirit-example-next-with-pages-router
+
 <a name="0.2.4"></a>
 
 ## [0.2.4](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-example-next-with-pages-router@0.2.3-alpha.2...@almacareer/spirit-example-next-with-pages-router@0.2.4) (2024-12-16)

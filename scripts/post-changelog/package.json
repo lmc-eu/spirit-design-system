@@ -1,6 +1,6 @@
 {
   "name": "@lmc-eu/spirit-post-changelog",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Post changelog to Slack of the Spirit Design System",
   "type": "module",
   "private": true,

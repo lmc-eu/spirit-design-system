@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.4.0"></a>
+
+# [1.4.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@1.3.0...@lmc-eu/spirit-codemods@1.4.0) (2025-01-27)
+
+### Code Refactoring
+
+- **repo:** Use sharable typescript-config-spirit in tsconfig files ([b53a603](https://github.com/lmc-eu/spirit-design-system/commit/b53a603))
+
+### Dependencies
+
+- Update dependency zx to v8 ([8417d97](https://github.com/lmc-eu/spirit-design-system/commit/8417d97))
+
+### Features
+
+- **codemod:** Add codemod for Flex direction values ([6324fa1](https://github.com/lmc-eu/spirit-design-system/commit/6324fa1))
+
+### Styles
+
+- **codemods:** Disable markdown heading capitalization for transforms ([91110e2](https://github.com/lmc-eu/spirit-design-system/commit/91110e2)), closes [#DS-1100](https://github.com/lmc-eu/spirit-design-system/issues/DS-1100)
+
+**Note:** Version bump only for package @lmc-eu/spirit-codemods
+
 <a name="1.3.0"></a>
 
 # [1.3.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@1.2.0...@lmc-eu/spirit-codemods@1.3.0) (2024-12-16)

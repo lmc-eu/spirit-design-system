@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.3.9"></a>
+
+## [0.3.9](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-common@0.3.8...@lmc-eu/spirit-common@0.3.9) (2025-01-27)
+
+### Code Refactoring
+
+- **repo:** Use sharable typescript-config-spirit in tsconfig files ([b53a603](https://github.com/lmc-eu/spirit-design-system/commit/b53a603))
+
+**Note:** Version bump only for package @lmc-eu/spirit-common
+
 <a name="0.3.8"></a>
 
 ## [0.3.8](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-common@0.3.7...@lmc-eu/spirit-common@0.3.8) (2024-11-22)

@@ -1,6 +1,6 @@
 {
   "name": "@lmc-eu/spirit-demo",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Showcase tooling for demo of Spirit Design System",
   "license": "MIT",
   "publishConfig": {
