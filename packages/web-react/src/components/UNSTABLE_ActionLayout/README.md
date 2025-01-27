@@ -29,7 +29,7 @@ ActionLayout component is a container component that is used to position action 
 
 ### ⚠️ DEPRECATION NOTICE
 
-The component will be deleted in the next major version.
+The component will be deleted in the next version.
 Use [ActionGroup][action-group-component] component instead.
 
 [What are deprecations?][readme-deprecations]

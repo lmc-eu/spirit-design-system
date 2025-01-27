@@ -2,7 +2,7 @@
 @use 'theme' as theme;
 @use '../../tools/breakpoint';
 
-// @deprecated Will be removed in the next major version.
+// @deprecated Will be removed in the next version.
 .UNSTABLE_ActionLayout {
     display: flex;
     flex-direction: column;
