@@ -1,7 +1,7 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { CardDirection } from '../../../types';
+import { DirectionExtended } from '../../../constants';
 import { ButtonLink } from '../../ButtonLink';
 import { Container } from '../../Container';
 import { PartnerLogo } from '../../PartnerLogo';
@@ -27,9 +27,9 @@ const meta: Meta<typeof Card> = {
     direction: {
       control: 'select',
       description: 'Direction of the card.',
-      options: [...Object.values(CardDirection)],
+      options: [...Object.values(DirectionExtended)],
       table: {
-        defaultValue: { summary: CardDirection.VERTICAL },
+        defaultValue: { summary: DirectionExtended.VERTICAL },
       },
     },
     elementType: {
@@ -44,7 +44,7 @@ const meta: Meta<typeof Card> = {
     },
   },
   args: {
-    direction: CardDirection.VERTICAL,
+    direction: DirectionExtended.VERTICAL,
     elementType: 'article',
     isBoxed: false,
   },

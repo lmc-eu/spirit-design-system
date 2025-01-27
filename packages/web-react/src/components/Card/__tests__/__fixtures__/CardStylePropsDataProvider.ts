@@ -1,5 +1,5 @@
-import { AlignmentX } from '../../../../constants';
-import { AlignmentXDictionaryType, CardDirection, CardSizes } from '../../../../types';
+import { AlignmentX, DirectionExtended } from '../../../../constants';
+import { AlignmentXDictionaryType, CardSizes } from '../../../../types';
 import { toPascalCase } from '../../../../utils';
 import { UseCardStyleProps, UseCardStylePropsReturn } from '../../useCardStyleProps';
 
@@ -53,17 +53,17 @@ const sizeDataProvider = Object.values(CardSizes).map((size) => ({
 export const textPropsDataProvider: TextPropsDataProviderType[] = [
   // Direction-specific classes
   {
-    props: { direction: CardDirection.VERTICAL },
+    props: { direction: DirectionExtended.VERTICAL },
     description: 'return correct classProps for direction vertical',
     expected: { classProps: generateExpectedClassProps({ root: 'Card Card--vertical' }) },
   },
   {
-    props: { direction: CardDirection.HORIZONTAL },
+    props: { direction: DirectionExtended.HORIZONTAL },
     description: 'return correct classProps for direction horizontal',
     expected: { classProps: generateExpectedClassProps({ root: 'Card Card--horizontal' }) },
   },
   {
-    props: { direction: CardDirection.HORIZONTAL_REVERSED },
+    props: { direction: DirectionExtended.HORIZONTAL_REVERSED },
     description: 'return correct classProps for direction horizontal reversed',
     expected: { classProps: generateExpectedClassProps({ root: 'Card Card--horizontalReversed' }) },
   },
@@ -136,7 +136,7 @@ export const textPropsDataProvider: TextPropsDataProviderType[] = [
   {
     props: {
       artworkAlignmentX: AlignmentX.LEFT,
-      direction: CardDirection.HORIZONTAL,
+      direction: DirectionExtended.HORIZONTAL,
       footerAlignmentX: AlignmentX.RIGHT,
       hasFilledHeight: true,
       isBoxed: true,

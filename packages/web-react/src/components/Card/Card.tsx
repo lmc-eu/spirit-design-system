@@ -2,13 +2,13 @@
 
 import classNames from 'classnames';
 import React, { ElementType } from 'react';
-import { Direction } from '../../constants';
+import { DirectionExtended } from '../../constants';
 import { useStyleProps } from '../../hooks';
 import { SpiritCardProps } from '../../types';
 import { useCardStyleProps } from './useCardStyleProps';
 
 const defaultProps: Partial<SpiritCardProps> = {
-  direction: Direction.VERTICAL,
+  direction: DirectionExtended.VERTICAL,
   elementType: 'article',
   isBoxed: false,
 };
