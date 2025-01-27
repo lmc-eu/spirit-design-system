@@ -74,7 +74,7 @@ __metadata:
   dependencies:
     "@lmc-eu/eslint-config-typescript": "npm:2.1.4"
     "@supernovaio/export-helpers": "npm:1.0.30"
-    "@supernovaio/sdk-exporters": "npm:2.0.31"
+    "@supernovaio/sdk-exporters": "npm:2.0.32"
     "@swc/core": "npm:1.10.9"
     "@swc/jest": "npm:0.2.37"
     eslint: "npm:8.57.1"
@@ -7912,13 +7912,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@supernovaio/sdk-exporters@npm:2.0.31":
-  version: 2.0.31
-  resolution: "@supernovaio/sdk-exporters@npm:2.0.31"
+"@supernovaio/sdk-exporters@npm:2.0.32":
+  version: 2.0.32
+  resolution: "@supernovaio/sdk-exporters@npm:2.0.32"
   dependencies:
     "@supernova-studio/client": "npm:0.58.0"
     "@supernova-studio/model": "npm:0.58.0"
-  checksum: 10/6dc67d74ec62984d95b15bf1c4e9c8aa4da51868f7dd7a3fd94284f4c508cfb27dd10c791e13d234c9ff255b40645a02f027a9fbf0116f4be7e5a7fa55a262a1
+  checksum: 10/5793b4e500186a46435b5100deffaf655ff48691f0efc92c63c89dbe2e705eb87c54432ea5005ff5086f34f81aee942258bcf4203f47c27d6a725b28cd5bd681
   languageName: node
   linkType: hard
 
