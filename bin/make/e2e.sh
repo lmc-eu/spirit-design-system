@@ -2,7 +2,12 @@
 
 set -o errexit
 
-PLAYWRIGHT_VERSION=1.49.1
+if ! command -v jq &> /dev/null; then
+  echo "jq could not be found, please install it."
+  exit 1
+else
+  PLAYWRIGHT_VERSION=$(jq -r '.devDependencies["@playwright/test"]' $(dirname "$0")/../../package.json)
+fi
 UBUNTU_VERSION=jammy
 
 E2E_FLAG=""
