@@ -34,6 +34,7 @@ See individual [packages](#packages) to learn how to get started.
 ### Prerequisites
 
 - [NodeJS][nodejs]
+- [Corepack][corepack]
 - [Yarn][yarn]
 - [Lerna][lerna]
 
@@ -41,6 +42,8 @@ See individual [packages](#packages) to learn how to get started.
 
 - `git clone ssh://git@github.com:lmc-eu/spirit-design-system.git`
 - `cd spirit-design-system`
+- `corepack enable`
+- `corepack install`
 - `yarn install`
 - `yarn start`
 
@@ -55,6 +58,7 @@ See the [LICENSE][license] file for information.
 [code-quality-checks-svg]: https://github.com/lmc-eu/spirit-design-system/actions/workflows/test.yaml/badge.svg?branch=main
 [coverage-status]: https://coveralls.io/github/lmc-eu/spirit-design-system?branch=main
 [coverage-status-svg]: https://coveralls.io/repos/github/lmc-eu/spirit-design-system/badge.svg?branch=main
+[corepack]: https://yarnpkg.com/corepack#installation
 [lerna]: https://lerna.js.org
 [lerna-svg]: https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg
 [license]: https://github.com/lmc-eu/spirit-design-system/blob/main/LICENSE.md
