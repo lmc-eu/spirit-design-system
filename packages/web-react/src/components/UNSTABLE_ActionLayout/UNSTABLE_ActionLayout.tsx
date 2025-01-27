@@ -12,12 +12,10 @@ const UNSTABLE_ActionLayout = (props: SpiritActionLayoutProps): ReactElement => 
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
 
   useDeprecationMessage({
-    method: 'component',
+    method: 'custom',
     trigger: true,
-    componentProps: {
-      delete: true,
-    },
     componentName: 'UNSTABLE_ActionLayout',
+    customText: 'The component will be deleted in the next version.',
   });
 
   return (
