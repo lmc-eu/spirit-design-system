@@ -17,8 +17,8 @@ import {
   UseCardStyleProps,
 } from '../../../src/components';
 import { LOGO, MEDIA_IMAGE } from '../../../src/components/Card/demo/constants';
-import { AlignmentX, Sizes } from '../../../src/constants';
-import { CardDirection, CardSizes, GridColumns, SizesDictionaryType } from '../../../src/types';
+import { AlignmentX, DirectionExtended, Sizes } from '../../../src/constants';
+import { CardSizes, GridColumns, SizesDictionaryType } from '../../../src/types';
 
 type CardCompositionType = {
   cardElementType: ElementType;
@@ -97,10 +97,10 @@ export default {
     direction: {
       control: 'select',
       description: 'Direction of the card.',
-      options: [...Object.values(CardDirection)],
+      options: [...Object.values(DirectionExtended)],
       table: {
         category: 'Card',
-        defaultValue: { summary: CardDirection.VERTICAL },
+        defaultValue: { summary: DirectionExtended.VERTICAL },
       },
     },
     eyebrowText: {
@@ -295,7 +295,7 @@ export default {
     cardLogoSize: Sizes.MEDIUM,
     contentText:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat. Morbi fringilla convallis sapien. Sed ac felis. Aliquam erat volutpat. Aliquam euismod. Aenean vel lectus. Nunc imperdiet justo nec dolor.',
-    direction: CardDirection.VERTICAL,
+    direction: DirectionExtended.VERTICAL,
     eyebrowText: 'Eyebrow title',
     footerAlignmentX: AlignmentX.LEFT,
     gridCols: 3,

@@ -1,8 +1,9 @@
 import { ElementType, JSXElementConstructor } from 'react';
-import { Direction, Sizes } from '../constants';
+import { Sizes } from '../constants';
 import {
   AlignmentXDictionaryType,
   ChildrenProps,
+  DirectionExtendedDictionaryType,
   SpiritPolymorphicElementPropsWithRef,
   StyleProps,
   TransferProps,
@@ -15,14 +16,6 @@ export const CardSizes = {
 
 export type CardSizesDictionaryKeys = keyof typeof CardSizes;
 export type CardSizesDictionaryType<T = undefined> = (typeof CardSizes)[CardSizesDictionaryKeys] | T;
-
-export const CardDirection = {
-  ...Direction,
-  HORIZONTAL_REVERSED: 'horizontal-reversed',
-};
-
-export type CardDirectionDictionaryKeys = keyof typeof CardDirection;
-export type CardDirectionDictionaryType = (typeof CardDirection)[CardDirectionDictionaryKeys];
 
 export type CardAlignmentXType =
   | NonNullable<AlignmentXDictionaryType>
@@ -38,11 +31,9 @@ export interface CardElementTypeProps<T extends ElementType = 'article'> {
 }
 
 // Card types
-// Extend direction props to include horizontal-reversed
-export type HorizontalReversedType = 'horizontal-reversed';
 export type CardDirectionType =
-  | NonNullable<CardDirectionDictionaryType>
-  | { [key: string]: NonNullable<CardDirectionDictionaryType> };
+  | NonNullable<DirectionExtendedDictionaryType>
+  | { [key: string]: NonNullable<DirectionExtendedDictionaryType> };
 
 export interface CardProps<T extends ElementType = 'article'> extends CardElementTypeProps<T> {
   direction?: CardDirectionType;
