@@ -21,7 +21,7 @@ For full functionality, you need to provide Spirit JavaScript, which will handle
 
 You will find the [full documentation](#javascript-plugin-api) of the plugin below on this page.
 
-Please consult the [main README][web-readme] for how to include JavaScript plugins.
+Please see the [main README][web-readme] for how to include JavaScript plugins.
 
 Or, feel free to write the controlling script yourself.
 
@@ -168,7 +168,7 @@ Microsoft Word documents:
 
 ### Required Input
 
-To mark the input as required, simply add the `FileUploaderInput__label--required` to the label:
+To mark the input as required, add the `FileUploaderInput__label--required` to the label:
 
 ```html
 <div class="FileUploaderInput" data-spirit-element="wrapper">
@@ -268,7 +268,7 @@ own way.**
 
 ##### Localization
 
-There are four types of validation errors that have their default validation text.
+Four types of validation errors have their default validation text.
 You can customize those validation texts using `data-spirit-message-*` that is passed to the components' root element.
 
 ```html
@@ -600,7 +600,7 @@ This is how all subcomponents build up the complete FileUploader:
 | Method                | Description                                                                                                                                         |
 | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `getInstance`         | _Static_ method which allows you to get the FileUploader instance associated with a DOM element.                                                    |
-| `getOrCreateInstance` | _Static_ method which allows you to get the FileUploader instance associated with a DOM element, or create a new one in case it wasn’t initialized. |
+| `getOrCreateInstance` | _Static_ method which allows you to get the FileUploader instance associated with a DOM element, or create a new one in case it wasn't initialized. |
 | `getFileQueue`        | Returns a list of files in the queue.                                                                                                               |
 | `addToQueue`          | Adds file to the queue.                                                                                                                             |
 | `updateQueue`         | Updates file in the queue.                                                                                                                          |

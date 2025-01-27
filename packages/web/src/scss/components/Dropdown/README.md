@@ -252,7 +252,7 @@ See the [Item][item] component for more information.
 ## Placement
 
 DropdownPopover implements the [Placement Dictionary][dictionary-placement] for placement. The dictionary values are used as
-a value of data attribute `data-spirit-placement`, e.g. `data-spirit-placement="top"`, `data-spirit-placement="right-end"`, etc.
+a value of data attribute `data-spirit-placement`, for example `data-spirit-placement="top"`, `data-spirit-placement="right-end"`, etc.
 
 ## JavaScript
 
@@ -277,13 +277,13 @@ There are two options here. Use the trigger element as an anchor or wrap the men
 
 ### Methods
 
-| Method                | Description                                                                                                                                                                                                                                    |
-| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `getInstance`         | _Static_ method which allows you to get the dropdown instance associated with a DOM. element                                                                                                                                                   |
-| `getOrCreateInstance` | _Static_ method which allows you to get the dropdown instance associated with a DOM element, or create a new one in case it wasn’t initialized.                                                                                                |
-| `hide`                | Hides an element’s dropdown. Returns to the caller before the dropdown has actually been hidden (i.e. before the `hidden.dropdown` event occurs). This is considered a “manual” triggering of the dropdown.                                    |
-| `show`                | Reveals an element’s dropdown. **Returns to the caller before the dropdown has actually been shown** (i.e. before the `shown.dropdown` event occurs). This is considered a “manual” triggering of the dropdown.                                |
-| `toggle`              | Toggles an element’s dropdown. **Returns to the caller before the dropdown has actually been shown or hidden** (i.e. before the `shown.dropdown` or `hidden.dropdown` event occurs). This is considered a “manual” triggering of the dropdown. |
+| Method                | Description                                                                                                                                                                                                                                       |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `getInstance`         | _Static_ method which allows you to get the dropdown instance associated with a DOM. element                                                                                                                                                      |
+| `getOrCreateInstance` | _Static_ method which allows you to get the dropdown instance associated with a DOM element, or create a new one in case it wasn't initialized.                                                                                                   |
+| `hide`                | Hides an element's dropdown. Returns to the caller before the dropdown has actually been hidden (that is before the `hidden.dropdown` event occurs). This is considered a “manual” triggering of the dropdown.                                    |
+| `show`                | Reveals an element's dropdown. **Returns to the caller before the dropdown has actually been shown** (that is before the `shown.dropdown` event occurs). This is considered a “manual” triggering of the dropdown.                                |
+| `toggle`              | Toggles an element's dropdown. **Returns to the caller before the dropdown has actually been shown or hidden** (that is before the `shown.dropdown` or `hidden.dropdown` event occurs). This is considered a “manual” triggering of the dropdown. |
 
 ```js
 const dropdown = Dropdown.getInstance('#example'); // Returns a dropdown instance

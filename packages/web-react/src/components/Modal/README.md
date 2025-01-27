@@ -154,7 +154,7 @@ and allows users to easily close it.
 ### Hidden Title
 
 Even in cases where you don't need the title to be visible you should provide an
-accessible name for the dialog, e.g. using the `aria-label` attribute on
+accessible name for the dialog, for example using the `aria-label` attribute on
 `<Modal>` component:
 
 ```jsx
@@ -270,7 +270,7 @@ and [escape hatches][readme-escape-hatches].
 
 ## Opening the Modal
 
-Use a hook to open your Modal, e.g.:
+Use a hook to open your Modal, for example:
 
 ```jsx
 const [isOpen, setOpen] = useState(false);
@@ -298,7 +298,7 @@ Scrolling inside ModalDialog can be turned on by adding the `isScrollable` prop:
 ### Scrolling with ScrollView
 
 To make content overflow more obvious to users, you can wrap the `ModalBody` content in a [ScrollView][scroll-view] that
-takes over the responsibility for scrolling and provides visual overflow decorators, e.g.:
+takes over the responsibility for scrolling and provides visual overflow decorators, for example:
 
 ```jsx
 <ModalDialog isScrollable>
@@ -321,7 +321,7 @@ The prop accepts any valid CSS length value, either as a string or an object wit
 The height property falls back to the previous breakpoint using the mobile-first approach. For example, if you set
 `height={{ tablet: '500px' }}` while not setting the `desktop` breakpoint, the value will be used for
 both tablet and desktop screens. The single non-object value will be used for all breakpoints.
-This is useful for Modals with dynamic content, e.g. a list of items that can be added or removed, or a multistep wizard.
+This is useful for Modals with dynamic content, for example a list of items that can be added or removed, or a multistep wizard.
 
 ```jsx
 <ModalDialog isScrollable height="500px">

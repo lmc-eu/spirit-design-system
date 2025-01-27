@@ -277,7 +277,7 @@ FileUploaderAttachment with image preview and edit button:
 While you may insert FileUploaderAttachment into your FileUploaderList, in typical use cases it will live inside a
 [`<template>`][mdn-template] tag in the parent FileUploader. The `<template>` tag must be inserted inside the main
 wrapper element that has the `data-spirit-toggle="fileUploader"` attribute. Our JavaScript FileUploader plugin will then pick
-up the template and apply it on any attachments the user wants to upload. In order to make the template work with image preview,
+up the template and apply it on any attachments the user wants to upload. To make the template work with image preview,
 add the `generateImagePreview` prop to the `FileUploaderAttachment` inside the `<template>`.
 
 ```twig

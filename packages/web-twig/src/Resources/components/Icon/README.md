@@ -25,7 +25,7 @@ Without lexer:
 
 ## Render as Symbol
 
-If you need to prerender the icon as a [symbol][mdn-symbol], you can use the `isSymbol` prop:
+To prerender the icon as a [symbol][mdn-symbol], you can use the `isSymbol` prop:
 
 ```twig
 <Icon name="warning" isSymbol />

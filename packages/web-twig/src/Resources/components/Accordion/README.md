@@ -186,7 +186,7 @@ The Accordion itself consists of several components which cannot be used indepen
 | Name          | Type     | Default   | Required | Description                                                                                       |
 | ------------- | -------- | --------- | -------- | ------------------------------------------------------------------------------------------------- |
 | `elementType` | `string` | `section` | ✕        | Custom element type                                                                               |
-| `id`          | `string` | `null`    | optional | It depends on whether the "Stay open" functionality is used. If so, the id field is not required. |
+| `id`          | `string` | `null`    | optional | It depends on whether the "Stay open" functionality is used. If so, the ID field is not required. |
 
 ### AccordionItem
 

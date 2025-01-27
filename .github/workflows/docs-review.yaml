@@ -36,3 +36,20 @@ jobs:
 
       - name: Check File Format
         run: yarn lint:markdown
+
+  text-lint:
+    name: 📋 Linting Text
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      HUSKY: 0
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node and Install Dependencies
+        uses: ./.github/actions/setup-install
+
+      - name: Check Documentation Content
+        run: yarn lint:text

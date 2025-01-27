@@ -353,7 +353,7 @@ const customUpdate = (_event: MouseEvent, file: File) => {
 | `errorMessages.errorMaxUploadedFiles` | `string`                                                             | —       | ✕        | Translation for the error message: Maximum number of uploaded files |
 | `fileQueue`                           | `FileQueueMapType`                                                   | —       | ✓        | Queue of items to upload                                            |
 | `findInQueue`                         | `(key: string) => FileQueueMapType`                                  | —       | ✓        | A callback to find a particular item in the queue                   |
-| `id`                                  | `string`                                                             | —       | ✓        | FileUploader id                                                     |
+| `id`                                  | `string`                                                             | —       | ✓        | FileUploader ID                                                     |
 | `isFluid`                             | `bool`                                                               | —       | ✕        | When the field is supposed to be fluid                              |
 | `onDismiss`                           | `(key: string) => FileQueueMapType`                                  | —       | ✓        | A callback to delete a particular item from the queue               |
 | `updateQueue`                         | `(key: string, file: File, meta?: FileMetadata) => FileQueueMapType` | —       | ✓        | A callback to update a particular item in the queue                 |
@@ -372,7 +372,7 @@ and [escape hatches][readme-escape-hatches].
 | `dropZoneRef`        | `MutableRefObject<HTMLDivElement>`   | —        | ✕        | Drop zone element reference                                                                                                                                     |
 | `helperText`         | `ReactNode`                          | —        | ✕        | Custom helper text                                                                                                                                              |
 | `iconName`           | `string`                             | `upload` | ✕        | Icon used in the drop zone                                                                                                                                      |
-| `id`                 | `string`                             | —        | ✓        | FileUploaderInput id                                                                                                                                            |
+| `id`                 | `string`                             | —        | ✓        | FileUploaderInput ID                                                                                                                                            |
 | `inputRef`           | `MutableRefObject<HTMLInputElement>` | —        | ✕        | Input element reference                                                                                                                                         |
 | `isDisabled`         | `bool`                               | —        | ✕        | Whether is field disabled                                                                                                                                       |
 | `isLabelHidden`      | `bool`                               | —        | ✕        | Whether is input label hidden                                                                                                                                   |
@@ -405,7 +405,7 @@ and [escape hatches][readme-escape-hatches].
 | --------------------- | -------- | ------- | -------- | --------------------------------------------- |
 | `attachmentComponent` | `string` | —       | ✓        | A component for rendering a single attachment |
 | `hasImagePreview`     | `bool`   | false   | ✕        | Show image preview in the list                |
-| `id`                  | `string` | —       | ✓        | FileUploaderList id                           |
+| `id`                  | `string` | —       | ✓        | FileUploaderList ID                           |
 | `inputName`           | `string` | —       | ✓        | The name of the input field                   |
 | `label`               | `string` | —       | ✕        | Label for the list                            |
 

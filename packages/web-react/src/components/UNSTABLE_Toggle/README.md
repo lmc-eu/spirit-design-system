@@ -18,7 +18,7 @@ import { UNSTABLE_Toggle } from '@lmc-eu/spirit-web-react/components';
 
 ## Indicators
 
-If you need to indicate the state of the toggle, you can add the `hasIndicators` prop. This will add a visual indicators to the toggle switch.
+To indicate the state of the toggle, you can add the `hasIndicators` prop. This will add a visual indicators to the toggle switch.
 
 ```jsx
 <UNSTABLE_Toggle id="toggle-indicators" label="Toggle Label" hasIndicators />

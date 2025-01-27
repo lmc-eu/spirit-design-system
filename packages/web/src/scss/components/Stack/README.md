@@ -122,7 +122,7 @@ Usage with combination of spacing and dividers:
 ## Custom Spacing
 
 Use CSS custom properties to define custom spacing between items in `Stack--hasSpacing`. Set the `--stack-spacing`
-property to one of spacing token values defined on the `:root` element, e.g. `--stack-spacing: var(--spirit-space-800)`.
+property to one of spacing token values defined on the `:root` element, for example `--stack-spacing: var(--spirit-space-800)`.
 This will set the spacing to `var(--spirit-space-800)` for all breakpoints.
 
 ```html
@@ -142,10 +142,10 @@ This will set the spacing to `var(--spirit-space-800)` for all breakpoints.
 ℹ️ We highly discourage you from using absolute values like `--stack-spacing: 1rem`. It will work, but you will lose
 the consistency between the spacing and the design tokens.
 
-If you need to set custom spacing from a specific breakpoint, use the `--stack-spacing-{breakpoint}` property,
-e.g. `--stack-spacing-tablet: var(--spirit-space-800)`. The breakpoint value must be one of the breakpoint tokens
+To set custom spacing from a specific breakpoint, use the `--stack-spacing-{breakpoint}` property,
+for example `--stack-spacing-tablet: var(--spirit-space-800)`. The breakpoint value must be one of the breakpoint tokens
 except for the `mobile` breakpoint you don't need the suffix at all. The spacing is set to all larger breakpoints
-automatically if you don't set them explicitly. E.g. if you set only `--stack-spacing-tablet: var(--spirit-space-800)`
+automatically if you don't set them explicitly. For example if you set only `--stack-spacing-tablet: var(--spirit-space-800)`
 the spacing will be set to `var(--spirit-space-800)` for `tablet` and `desktop` breakpoints while on the `mobile`
 breakpoint the default spacing will be used.
 

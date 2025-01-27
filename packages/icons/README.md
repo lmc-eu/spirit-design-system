@@ -8,7 +8,7 @@
 install this package because `spirit-icons` is installed automatically
 as a dependency of [`spirit-web`][spirit-web].
 
-If you want to use just `spirit-icons` alone in your project, run:
+To use just `spirit-icons` alone in your project, run:
 
 ```shell
 yarn add @lmc-eu/spirit-icons

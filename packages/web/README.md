@@ -158,7 +158,7 @@ We provide a version of Spirit Web as `ESM` (`spirit-web.esm.js` and `spirit-web
 #### Data Attributes
 
 Nearly all Spirit-Web plugins can be enabled and configured through HTML alone with data attributes (our preferred way of using JavaScript functionality).
-Be sure to only use one set of data attributes on a single element (e.g., you cannot trigger a tooltip and modal from the same button.).
+Be sure to only use one set of data attributes on a single element (for example, you cannot trigger a tooltip and modal from the same button.).
 
 ℹ️ For turning off this functionality just do not set the `data-spirit-toggle` attribute and use the Programmatic API.
 
@@ -169,7 +169,7 @@ Be sure to only use one set of data attributes on a single element (e.g., you ca
 
 #### Events
 
-Spirit-Web provides custom events for most plugins' unique actions.
+The spirit-web provides custom events for most plugins' unique actions.
 Generally, these come in an infinitive and past participle form - where the infinitive (ex. `show`) is triggered at the start of an event, and its past participle form (ex. `shown`) is triggered on the completion of an action.
 
 All infinitive events provide [`preventDefault()`](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault) functionality.
@@ -194,7 +194,7 @@ var myModalEl = document.getElementById('my-modal');
 var modal = new Modal(myModalEl); // initialized with defaults
 ```
 
-If you’d like to get a particular plugin instance, each plugin exposes a `getInstance` method.
+If you'd like to get a particular plugin instance, each plugin exposes a `getInstance` method.
 
 #### CSS Selectors in Constructors
 

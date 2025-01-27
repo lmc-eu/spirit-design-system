@@ -169,7 +169,7 @@ and [escape hatches][readme-escape-hatches].
 As the name suggests, desktop-only actions are intended to display on desktop screens only. They generally work as flex
 containers that define vertical alignment and spacing.
 
-If you need to align actions to the end of the Header, use the `isAtEnd` prop.
+To align actions to the end of the Header, use the `isAtEnd` prop.
 
 👉 It is critical to **make sure all your actions fit the Header on the
 desktop breakpoint**. Spirit intentionally does not provide any overflow

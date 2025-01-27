@@ -45,7 +45,7 @@ Without lexer:
 ## Custom Spacing
 
 You can use the `spacing` prop to apply custom spacing between tab items. The prop
-accepts either a spacing token (e.g. `space-100`) or an object with breakpoint keys and spacing token values.
+accepts either a spacing token (for example `space-100`) or an object with breakpoint keys and spacing token values.
 
 Custom spacing:
 

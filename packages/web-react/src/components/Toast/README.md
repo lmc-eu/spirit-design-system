@@ -78,7 +78,7 @@ Example:
 Positioning becomes trickier on mobile screens due to the presence of notches, rounded corners, and the virtual
 keyboard. The Toast component tries to find the best position to be visible using the following detection mechanisms:
 
-1. On **devices with rounded displays and/or notches** (e.g. iPhone X and newer), the Toast component is pushed inwards
+1. On **devices with rounded displays and/or notches** (for example iPhone X and newer), the Toast component is pushed inwards
    to avoid the rounded corners. The `viewport-fit="cover"` meta tag is required for this feature to work:
 
    ```html
@@ -130,7 +130,7 @@ set the `isCollapsible` prop to `false`.
 👉 Please note only the _visible_ ToastBar components are scrollable. Collapsed items are not accessible until visible
 items are dismissed.
 
-👉 For the sake of simplicity, the collapsible items limit cannot be configured at the moment.
+👉 For the sake of simplicity, the collapsible items limit cannot be configured now.
 
 ### API
 
@@ -259,7 +259,7 @@ import { ToastBarMessage } from '@lmc-eu/spirit-web-react/components';
 
 ### Opening the ToastBar
 
-Set `isOpen` prop to `true` to open a Toast **that is present in the DOM,** e.g.:
+Set `isOpen` prop to `true` to open a Toast **that is present in the DOM,** for example:
 
 ```jsx
 <ToastBar id="my-toast" isOpen>
