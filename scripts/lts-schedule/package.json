@@ -2,6 +2,7 @@
   "name": "@lmc-eu/spirit-lts-schedule",
   "version": "1.0.0",
   "description": "Generate the Spirit Design System LTS schedule",
+  "private": true,
   "main": "lib/index.js",
   "repository": {
     "type": "git",

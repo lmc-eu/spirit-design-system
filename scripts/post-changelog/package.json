@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Post changelog to Slack of the Spirit Design System",
   "type": "module",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/lmc-eu/spirit-design-system.git",
