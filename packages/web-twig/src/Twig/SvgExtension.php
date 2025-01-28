@@ -26,6 +26,7 @@ class SvgExtension extends AbstractExtension
     private const ATTR_WIDTH = 'width';
     private const SIMPLE_XML_ROOT_DECLARATION = "<?xml version=\"1.0\"?>\n";
     private const SVG_NAMESPACE = 'http://www.w3.org/2000/svg';
+    private const SVG_ID_PREFIX = 'svg_';
 
     /**
      * @var array<string,SimpleXMLElement|false>
@@ -84,7 +85,7 @@ class SvgExtension extends AbstractExtension
             }
         }
 
-        $iconId = md5($path . serialize($params));
+        $iconId = self::SVG_ID_PREFIX . md5($path . serialize($params));
 
         if (array_key_exists($iconId, $this->cacheReusableIconContent)) {
             return $this->cacheReusableIconContent[$iconId];
