@@ -679,6 +679,406 @@ export const headingXsmallItalic = {
   },
 };
 
+export const bodyXlargeLight = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '20px',
+    fontStyle: 'normal',
+    fontWeight: 300,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodyXlargeLightItalic = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '20px',
+    fontStyle: 'italic',
+    fontWeight: 300,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodyXlargeMedium = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '20px',
+    fontStyle: 'normal',
+    fontWeight: 500,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodyXlargeMediumItalic = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '20px',
+    fontStyle: 'italic',
+    fontWeight: 500,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodyXlargeSemiboldItalic = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '20px',
+    fontStyle: 'italic',
+    fontWeight: 600,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodyXlargeBoldItalic = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '20px',
+    fontStyle: 'italic',
+    fontWeight: 700,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodyXlargeExtrabold = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '20px',
+    fontStyle: 'normal',
+    fontWeight: 800,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodyXlargeExtraboldItalic = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '20px',
+    fontStyle: 'italic',
+    fontWeight: 800,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodyLargeLight = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '18px',
+    fontStyle: 'normal',
+    fontWeight: 300,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodyLargeLightItalic = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '18px',
+    fontStyle: 'italic',
+    fontWeight: 400,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodyLargeMedium = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '18px',
+    fontStyle: 'normal',
+    fontWeight: 500,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodyLargeMediumItalic = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '18px',
+    fontStyle: 'italic',
+    fontWeight: 500,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodyLargeSemiboldItalic = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '18px',
+    fontStyle: 'italic',
+    fontWeight: 600,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodyLargeBoldItalic = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '18px',
+    fontStyle: 'italic',
+    fontWeight: 700,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodyLargeExtrabold = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '18px',
+    fontStyle: 'normal',
+    fontWeight: 800,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodyLargeExtraboldItalic = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '18px',
+    fontStyle: 'italic',
+    fontWeight: 800,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodyMediumLight = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '16px',
+    fontStyle: 'normal',
+    fontWeight: 300,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodyMediumLightItalic = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '16px',
+    fontStyle: 'italic',
+    fontWeight: 300,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodyMediumMedium = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '16px',
+    fontStyle: 'normal',
+    fontWeight: 500,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodyMediumMediumItalic = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '16px',
+    fontStyle: 'italic',
+    fontWeight: 500,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodyMediumSemiboldItalic = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '16px',
+    fontStyle: 'italic',
+    fontWeight: 500,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodyMediumBoldItalic = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '16px',
+    fontStyle: 'italic',
+    fontWeight: 700,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodyMediumExtrabold = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '16px',
+    fontStyle: 'normal',
+    fontWeight: 800,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodyMediumExtraboldItalic = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '16px',
+    fontStyle: 'italic',
+    fontWeight: 800,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodySmallLight = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '14px',
+    fontStyle: 'normal',
+    fontWeight: 300,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodySmallLightItalic = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '14px',
+    fontStyle: 'italic',
+    fontWeight: 300,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodySmallMedium = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '14px',
+    fontStyle: 'normal',
+    fontWeight: 500,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodySmallMediumItalic = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '14px',
+    fontStyle: 'italic',
+    fontWeight: 500,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodySmallSemiboldItalic = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '14px',
+    fontStyle: 'italic',
+    fontWeight: 600,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodySmallBoldItalic = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '14px',
+    fontStyle: 'italic',
+    fontWeight: 700,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodySmallExtrabold = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '14px',
+    fontStyle: 'normal',
+    fontWeight: 800,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodySmallExtraboldItalic = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '14px',
+    fontStyle: 'italic',
+    fontWeight: 800,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodyXsmallLight = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '12px',
+    fontStyle: 'normal',
+    fontWeight: 300,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodyXsmallLightItalic = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '12px',
+    fontStyle: 'italic',
+    fontWeight: 400,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodyXsmallMedium = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '12px',
+    fontStyle: 'normal',
+    fontWeight: 500,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodyXsmallMediumItalic = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '12px',
+    fontStyle: 'italic',
+    fontWeight: 500,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodyXsmallSemiboldItalic = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '12px',
+    fontStyle: 'italic',
+    fontWeight: 600,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodyXsmallBoldItalic = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '12px',
+    fontStyle: 'italic',
+    fontWeight: 700,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodyXsmallExtrabold = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '12px',
+    fontStyle: 'normal',
+    fontWeight: 800,
+    lineHeight: 1.5,
+  },
+};
+
+export const bodyXsmallExtraboldItalic = {
+  mobile: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '12px',
+    fontStyle: 'italic',
+    fontWeight: 800,
+    lineHeight: 1.5,
+  },
+};
+
 export const styles = {
   headingXlargeBold,
   bodyMediumRegular,
@@ -720,4 +1120,44 @@ export const styles = {
   headingSmallItalic,
   headingXsmallRegular,
   headingXsmallItalic,
+  bodyXlargeLight,
+  bodyXlargeLightItalic,
+  bodyXlargeMedium,
+  bodyXlargeMediumItalic,
+  bodyXlargeSemiboldItalic,
+  bodyXlargeBoldItalic,
+  bodyXlargeExtrabold,
+  bodyXlargeExtraboldItalic,
+  bodyLargeLight,
+  bodyLargeLightItalic,
+  bodyLargeMedium,
+  bodyLargeMediumItalic,
+  bodyLargeSemiboldItalic,
+  bodyLargeBoldItalic,
+  bodyLargeExtrabold,
+  bodyLargeExtraboldItalic,
+  bodyMediumLight,
+  bodyMediumLightItalic,
+  bodyMediumMedium,
+  bodyMediumMediumItalic,
+  bodyMediumSemiboldItalic,
+  bodyMediumBoldItalic,
+  bodyMediumExtrabold,
+  bodyMediumExtraboldItalic,
+  bodySmallLight,
+  bodySmallLightItalic,
+  bodySmallMedium,
+  bodySmallMediumItalic,
+  bodySmallSemiboldItalic,
+  bodySmallBoldItalic,
+  bodySmallExtrabold,
+  bodySmallExtraboldItalic,
+  bodyXsmallLight,
+  bodyXsmallLightItalic,
+  bodyXsmallMedium,
+  bodyXsmallMediumItalic,
+  bodyXsmallSemiboldItalic,
+  bodyXsmallBoldItalic,
+  bodyXsmallExtrabold,
+  bodyXsmallExtraboldItalic,
 };
