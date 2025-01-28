@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.1.2"></a>
+
+## [0.1.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-storybook@0.1.1...@lmc-eu/spirit-storybook@0.1.2) (2025-01-27)
+
+### Chores
+
+- **demo:** Switch from `react-docgen-typescript` to `react-docgen` ([48dcace](https://github.com/lmc-eu/spirit-design-system/commit/48dcace)), closes [#issuecomment-2590263364](https://github.com/lmc-eu/spirit-design-system/issues/issuecomment-2590263364)
+
+### Dependencies
+
+- Update all non-major dependencies ([b59c923](https://github.com/lmc-eu/spirit-design-system/commit/b59c923))
+- Update monorepo:storybook to v8.4.7 ([ae81b9f](https://github.com/lmc-eu/spirit-design-system/commit/ae81b9f))
+
+**Note:** Version bump only for package @lmc-eu/spirit-storybook
+
 <a name="0.1.1"></a>
 
 ## [0.1.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-storybook@0.1.0...@lmc-eu/spirit-storybook@0.1.1) (2024-12-16)

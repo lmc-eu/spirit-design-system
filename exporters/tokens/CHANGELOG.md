@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.2.1"></a>
+
+## [2.2.1](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-tokens-exporter@2.2.0...@almacareer/spirit-tokens-exporter@2.2.1) (2025-01-27)
+
+### Chores
+
+- **exporter-tokens:** Rebuild exporter after dependency updates ([28e9b55](https://github.com/lmc-eu/spirit-design-system/commit/28e9b55))
+
+### Code Refactoring
+
+- **repo:** Use sharable typescript-config-spirit in tsconfig files ([b53a603](https://github.com/lmc-eu/spirit-design-system/commit/b53a603))
+
+### Dependencies
+
+- Update monorepo:supernovaio non-major ([509a539](https://github.com/lmc-eu/spirit-design-system/commit/509a539))
+
+**Note:** Version bump only for package @almacareer/spirit-tokens-exporter
+
 <a name="2.2.0"></a>
 
 # [2.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-tokens-exporter@2.1.0...@almacareer/spirit-tokens-exporter@2.2.0) (2024-12-16)

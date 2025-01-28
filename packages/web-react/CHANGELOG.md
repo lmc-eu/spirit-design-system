@@ -3,6 +3,68 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.2.0"></a>
+
+# [3.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.1.0...@lmc-eu/spirit-web-react@3.2.0) (2025-01-27)
+
+### Bug Fixes
+
+- **web-react:** Add missing presentation role to TabItem [#DS-1653](https://github.com/lmc-eu/spirit-design-system/issues/DS-1653) ([66a901b](https://github.com/lmc-eu/spirit-design-system/commit/66a901b))
+- **web-react:** Add SVG Avatar to CardFooter demo ([2a06cfb](https://github.com/lmc-eu/spirit-design-system/commit/2a06cfb))
+- **web-react:** Fix inverted colors in Spinner demo [#DS-1545](https://github.com/lmc-eu/spirit-design-system/issues/DS-1545) ([253eb03](https://github.com/lmc-eu/spirit-design-system/commit/253eb03))
+- **web-react:** Radio button with multiple line label [#DS-1664](https://github.com/lmc-eu/spirit-design-system/issues/DS-1664) ([6d074dc](https://github.com/lmc-eu/spirit-design-system/commit/6d074dc))
+- **web, web-react, e2e:** Flex reverse dictionary changes ([fd239fd](https://github.com/lmc-eu/spirit-design-system/commit/fd239fd))
+
+### Chores
+
+- **web-react:** Icon and web package are optional peer dependencies ([557f3e5](https://github.com/lmc-eu/spirit-design-system/commit/557f3e5))
+- **web-react:** Introduce `@local/tests` path alias for tests ([4ccc57c](https://github.com/lmc-eu/spirit-design-system/commit/4ccc57c)), closes [#DS-1612](https://github.com/lmc-eu/spirit-design-system/issues/DS-1612)
+
+### Code Refactoring
+
+- **repo:** Use sharable typescript-config-spirit in tsconfig files ([b53a603](https://github.com/lmc-eu/spirit-design-system/commit/b53a603))
+- **web-react:** Clean up color dictionary [#DS-545](https://github.com/lmc-eu/spirit-design-system/issues/DS-545) ([f3062d3](https://github.com/lmc-eu/spirit-design-system/commit/f3062d3))
+- **web-react:** Use `@local/tests` path alias in tests ([0dd74e1](https://github.com/lmc-eu/spirit-design-system/commit/0dd74e1)), closes [#DS-1612](https://github.com/lmc-eu/spirit-design-system/issues/DS-1612)
+- **web-react:** Use `@local/tests` path alias in tests ([3a80fe1](https://github.com/lmc-eu/spirit-design-system/commit/3a80fe1)), closes [#DS-1612](https://github.com/lmc-eu/spirit-design-system/issues/DS-1612)
+- **web, web-react, web-twig:** `UNSTABLE_EmptyState` use `ActionGroup` component ([e25b290](https://github.com/lmc-eu/spirit-design-system/commit/e25b290))
+
+### Dependencies
+
+- Pin dependency eslint-import-resolver-typescript to 3.7.0 ([9f6e5f1](https://github.com/lmc-eu/spirit-design-system/commit/9f6e5f1))
+- Update all non-major dependencies ([7a024bf](https://github.com/lmc-eu/spirit-design-system/commit/7a024bf))
+- Update all non-major dependencies ([b59c923](https://github.com/lmc-eu/spirit-design-system/commit/b59c923))
+- Update eslint plugins and configs non-major ([44be370](https://github.com/lmc-eu/spirit-design-system/commit/44be370))
+
+### Documentation
+
+- **web-react:** Add Info about file size calculation in FileUploader [#DS-993](https://github.com/lmc-eu/spirit-design-system/issues/DS-993) ([9e5fd5d](https://github.com/lmc-eu/spirit-design-system/commit/9e5fd5d))
+- **web-react:** Add more info about GridItem attributes [#DS-1032](https://github.com/lmc-eu/spirit-design-system/issues/DS-1032) ([b1e6a5e](https://github.com/lmc-eu/spirit-design-system/commit/b1e6a5e))
+
+### Features
+
+- **web-react:** Add prefixed utility class [#DS-1618](https://github.com/lmc-eu/spirit-design-system/issues/DS-1618) ([d4ded97](https://github.com/lmc-eu/spirit-design-system/commit/d4ded97))
+- **web-react:** Additional parameter for styleProps and Box refactor ([8fafcb0](https://github.com/lmc-eu/spirit-design-system/commit/8fafcb0))
+- **web-react:** Extend Flex direction by reverse value ([1645a6b](https://github.com/lmc-eu/spirit-design-system/commit/1645a6b))
+- **web-react:** Introduce `ActionGroup` component [#DS-1621](https://github.com/lmc-eu/spirit-design-system/issues/DS-1621) ([88284f1](https://github.com/lmc-eu/spirit-design-system/commit/88284f1))
+- **web-react:** Introduce Box component [#DS-1595](https://github.com/lmc-eu/spirit-design-system/issues/DS-1595) ([f8fcd01](https://github.com/lmc-eu/spirit-design-system/commit/f8fcd01))
+- **web-react:** ReactNode type for labels [#DS-1632](https://github.com/lmc-eu/spirit-design-system/issues/DS-1632) ([ce0a9dc](https://github.com/lmc-eu/spirit-design-system/commit/ce0a9dc))
+- **web-react:** Refactor Footer to set padding via style props [#DS-1580](https://github.com/lmc-eu/spirit-design-system/issues/DS-1580) ([eaa561a](https://github.com/lmc-eu/spirit-design-system/commit/eaa561a))
+
+### Styles
+
+- **repo:** Get rid of all heading capitalization ignore comments in docs ([e2c358b](https://github.com/lmc-eu/spirit-design-system/commit/e2c358b))
+- **repo:** Set up markdown linting base on new version and apply it ([e4e4c4b](https://github.com/lmc-eu/spirit-design-system/commit/e4e4c4b)), closes [#1828](https://github.com/lmc-eu/spirit-design-system/issues/1828)
+- **web-react:** Fix documentation links for Card and Footer ([8bdcfe9](https://github.com/lmc-eu/spirit-design-system/commit/8bdcfe9))
+
+### Tests
+
+- **web-react:** Fix typo in `data-testid` attribute ([464a902](https://github.com/lmc-eu/spirit-design-system/commit/464a902))
+- **web-react:** Fix typo in data-testid attribute ([d47dfea](https://github.com/lmc-eu/spirit-design-system/commit/d47dfea))
+- **web-react:** Introduce barell files for tests and test providers ([2ef6eb9](https://github.com/lmc-eu/spirit-design-system/commit/2ef6eb9)), closes [#DS-1611](https://github.com/lmc-eu/spirit-design-system/issues/DS-1611)
+- **web-react:** Use Jest's automock functionality to share useIcon mock between tests ([d806ea0](https://github.com/lmc-eu/spirit-design-system/commit/d806ea0))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="3.1.0"></a>
 
 # [3.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.0.0...@lmc-eu/spirit-web-react@3.1.0) (2024-12-16)

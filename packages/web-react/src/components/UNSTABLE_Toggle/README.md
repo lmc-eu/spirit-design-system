@@ -84,19 +84,19 @@ You can add `isDisabled` prop to disable Toggle.
 | Name              | Type                                           | Default | Required | Description                                          |
 | ----------------- | ---------------------------------------------- | ------- | -------- | ---------------------------------------------------- |
 | `autoComplete`    | `string`                                       | -       | ✕        | [Automated assistance in filling][autocomplete-attr] |
-| `hasIndicators`   | boolean                                        | `false` | ✕        | Whether has visual indicators                        |
-| `helperText`      | string                                         | -       | ✕        | Helper text                                          |
-| `id`              | string                                         | -       | ✓        | Input and label identification                       |
-| `isChecked`       | boolean                                        | `false` | ✕        | Whether is toggle checked                            |
-| `isDisabled`      | boolean                                        | `false` | ✕        | Whether is toggle disabled                           |
-| `isFluid`         | boolean                                        | `false` | ✕        | Whether is toggle fluid                              |
-| `isLabelHidden`   | boolean                                        | `false` | ✕        | Whether is label hidden                              |
-| `label`           | string                                         | -       | ✓        | Label text                                           |
-| `name`            | string                                         | -       | ✕        | Input name                                           |
+| `hasIndicators`   | `boolean`                                      | `false` | ✕        | Whether has visual indicators                        |
+| `helperText`      | `string`                                       | -       | ✕        | Helper text                                          |
+| `id`              | `string`                                       | -       | ✓        | Input and label identification                       |
+| `isChecked`       | `boolean`                                      | `false` | ✕        | Whether is toggle checked                            |
+| `isDisabled`      | `boolean`                                      | `false` | ✕        | Whether is toggle disabled                           |
+| `isFluid`         | `boolean`                                      | `false` | ✕        | Whether is toggle fluid                              |
+| `isLabelHidden`   | `boolean`                                      | `false` | ✕        | Whether is label hidden                              |
+| `label`           | `ReactNode`                                    | -       | ✓        | Label text                                           |
+| `name`            | `string`                                       | -       | ✕        | Input name                                           |
 | `onChange`        | (event: ChangeEvent<HTMLInputElement>) => void | -       | ✕        | Change event handler                                 |
 | `ref`             | `ForwardedRef<HTMLInputElement>`               | -       | ✕        | Input element reference                              |
 | `validationState` | [Validation dictionary][dictionary-validation] | -       | ✕        | Type of validation state                             |
-| `validationText`  | `string` \| `string[]`                         | -       | ✕        | Validation text                                      |
+| `validationText`  | \[`ReactNode` \| `ReactNode[]`]                | -       | ✕        | Validation text                                      |
 
 The components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

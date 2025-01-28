@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.2.0"></a>
+
+# [1.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo-app@1.1.0...@lmc-eu/spirit-demo-app@1.2.0) (2025-01-27)
+
+### Bug Fixes
+
+- **web:** Add SVG Avatar to CardFooter demo ([bbb3eec](https://github.com/lmc-eu/spirit-design-system/commit/bbb3eec))
+
+### Dependencies
+
+- Update all non-major dependencies ([b59c923](https://github.com/lmc-eu/spirit-design-system/commit/b59c923))
+
+### Features
+
+- **web:** Extend Flex direction by reverse value ([8731ef1](https://github.com/lmc-eu/spirit-design-system/commit/8731ef1))
+
+**Note:** Version bump only for package @lmc-eu/spirit-demo-app
+
 <a name="1.1.0"></a>
 
 # [1.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo-app@1.0.0...@lmc-eu/spirit-demo-app@1.1.0) (2024-12-16)

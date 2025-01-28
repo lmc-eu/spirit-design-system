@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.1.7"></a>
+
+## [0.1.7](https://github.com/lmc-eu/spirit-design-system/compare/stylelint-config-spirit@0.1.6...stylelint-config-spirit@0.1.7) (2025-01-27)
+
+### Styles
+
+- **repo:** Get rid of all heading capitalization ignore comments in docs ([e2c358b](https://github.com/lmc-eu/spirit-design-system/commit/e2c358b))
+
+**Note:** Version bump only for package stylelint-config-spirit
+
 <a name="0.1.6"></a>
 
 ## [0.1.6](https://github.com/lmc-eu/spirit-design-system/compare/stylelint-config-spirit@0.1.5...stylelint-config-spirit@0.1.6) (2024-12-16)

@@ -109,13 +109,13 @@ Validation states implement the Validation state [dictionary][dictionary-validat
 | `isDisabled`      | `bool`                                         | `false` | ✕        | Whether is the input disabled                             |
 | `isFluid`         | `bool`                                         | `false` | ✕        | Whether the element spans to the full width of its parent |
 | `isLabelHidden`   | `bool`                                         | `false` | ✕        | Whether the label is hidden                               |
-| `label`           | `string`                                       | -       | ✓        | Label text                                                |
+| `label`           | `ReactNode`                                    | -       | ✓        | Label text                                                |
 | `max`             | `number`                                       | 100     | ✕        | Max value of slider input                                 |
 | `min`             | `number`                                       | 0       | ✕        | Min value of slider input                                 |
 | `onChange`        | `() => void`                                   | -       | ✓        | On input change callback                                  |
 | `step`            | `number`                                       | 1       | ✕        | Sets the stepping interval                                |
 | `validationState` | [Validation dictionary][dictionary-validation] | -       | ✕        | Type of validation state                                  |
-| `validationText`  | \[`string` \| `string[]`]                      | -       | ✕        | Validation text                                           |
+| `validationText`  | \[`ReactNode` \| `ReactNode[]`]                | -       | ✕        | Validation text                                           |
 | `value`           | `number`                                       | -       | ✓        | Input value                                               |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
@@ -134,20 +134,20 @@ import UNSTABLE_UncontrolledSlider from '../UNSTABLE_UncontrolledSlider';
 
 #### API
 
-| Attribute        | Type         | Default | Required | Description                                               |
-| ---------------- | ------------ | ------- | -------- | --------------------------------------------------------- |
-| `helperText`     | `string`     | -       | ✕        | Custom helper text                                        |
-| `id`             | `string`     | -       | ✓        | Input and label identification                            |
-| `isDisabled`     | `bool`       | `false` | ✕        | Whether is the input disabled                             |
-| `isFluid`        | `bool`       | `false` | ✕        | Whether the element spans to the full width of its parent |
-| `isLabelHidden`  | `bool`       | `false` | ✕        | Whether the label is hidden                               |
-| `label`          | `string`     | -       | ✓        | Label text                                                |
-| `max`            | `number`     | 100     | ✕        | Max value of slider input                                 |
-| `min`            | `number`     | 0       | ✕        | Min value of slider input                                 |
-| `onChange`       | `() => void` | -       | ✕        | On input change callback                                  |
-| `step`           | `number`     | 1       | ✕        | Sets the stepping interval                                |
-| `validationText` | `string`     | -       | ✕        | Validation text                                           |
-| `value`          | `number`     | 0       | ✕        | Input value                                               |
+| Attribute        | Type                            | Default | Required | Description                                               |
+| ---------------- | ------------------------------- | ------- | -------- | --------------------------------------------------------- |
+| `helperText`     | `string`                        | -       | ✕        | Custom helper text                                        |
+| `id`             | `string`                        | -       | ✓        | Input and label identification                            |
+| `isDisabled`     | `bool`                          | `false` | ✕        | Whether is the input disabled                             |
+| `isFluid`        | `bool`                          | `false` | ✕        | Whether the element spans to the full width of its parent |
+| `isLabelHidden`  | `bool`                          | `false` | ✕        | Whether the label is hidden                               |
+| `label`          | `ReactNode`                     | -       | ✓        | Label text                                                |
+| `max`            | `number`                        | 100     | ✕        | Max value of slider input                                 |
+| `min`            | `number`                        | 0       | ✕        | Min value of slider input                                 |
+| `onChange`       | `() => void`                    | -       | ✕        | On input change callback                                  |
+| `step`           | `number`                        | 1       | ✕        | Sets the stepping interval                                |
+| `validationText` | \[`ReactNode` \| `ReactNode[]`] | -       | ✕        | Validation text                                           |
+| `value`          | `number`                        | 0       | ✕        | Input value                                               |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

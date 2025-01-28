@@ -30,18 +30,18 @@ Advanced example usage:
 | Name              | Type                                           | Default | Required | Description                                          |
 | ----------------- | ---------------------------------------------- | ------- | -------- | ---------------------------------------------------- |
 | `autoComplete`    | `string`                                       | -       | ✕        | [Automated assistance in filling][autocomplete-attr] |
-| `helperText`      | `string`                                       | —       | ✕        | Custom helper text                                   |
+| `helperText`      | `ReactNode`                                    | —       | ✕        | Custom helper text                                   |
 | `id`              | `string`                                       | -       | ✓        | Input and label identification                       |
 | `isDisabled`      | `boolean`                                      | -       | ✕        | Whether is field disabled                            |
 | `isChecked`       | `boolean`                                      | -       | ✕        | Whether is field checked                             |
 | `isItem`          | `boolean`                                      | -       | ✕        | To render in [Item][item] mode                       |
 | `isLabelHidden`   | `boolean`                                      | -       | ✕        | Whether is label hidden                              |
 | `isRequired`      | `boolean`                                      | -       | ✕        | Whether is field required                            |
-| `label`           | `string`                                       | -       | ✕        | Label text                                           |
+| `label`           | `ReactNode`                                    | -       | ✕        | Label text                                           |
 | `name`            | `string`                                       | -       | ✕        | Input name                                           |
 | `ref`             | `ForwardedRef<HTMLInputElement>`               | -       | ✕        | Input element reference                              |
 | `validationState` | [Validation dictionary][dictionary-validation] | -       | ✕        | Type of validation state.                            |
-| `validationText`  | `string`, `string[]`                           | -       | ✕        | Validation text                                      |
+| `validationText`  | \[`ReactNode` \| `ReactNode[]`]                | -       | ✕        | Validation text                                      |
 | `value`           | `string`                                       | -       | ✕        | Input value                                          |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].

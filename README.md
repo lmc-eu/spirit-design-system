@@ -34,27 +34,38 @@ See individual [packages](#packages) to learn how to get started.
 ### Prerequisites
 
 - [NodeJS][nodejs]
+- [Corepack][corepack]
 - [Yarn][yarn]
 - [Lerna][lerna]
 
-### Start Development
+### 🚀 Start Development
 
 - `git clone ssh://git@github.com:lmc-eu/spirit-design-system.git`
 - `cd spirit-design-system`
+- `corepack enable`
+- `corepack install`
 - `yarn install`
 - `yarn start`
 
 See [`package.json`][package.json] for all available tasks.
 
-## License
+## 🙌 Contributing
+
+We're always looking for contributors to help us fix bugs, build new features,
+or help us improve the project documentation. If you're interested, definitely
+check out our [Contributing Guide][contributing]! 👀
+
+## 📝 License
 
 See the [LICENSE][license] file for information.
 
 [alma-career]: https://github.com/lmc-eu
 [code-quality-checks]: https://github.com/lmc-eu/spirit-design-system/actions
 [code-quality-checks-svg]: https://github.com/lmc-eu/spirit-design-system/actions/workflows/test.yaml/badge.svg?branch=main
+[contributing]: https://github.com/lmc-eu/spirit-design-system/blob/main/CONTRIBUTING.md
 [coverage-status]: https://coveralls.io/github/lmc-eu/spirit-design-system?branch=main
 [coverage-status-svg]: https://coveralls.io/repos/github/lmc-eu/spirit-design-system/badge.svg?branch=main
+[corepack]: https://yarnpkg.com/corepack#installation
 [lerna]: https://lerna.js.org
 [lerna-svg]: https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg
 [license]: https://github.com/lmc-eu/spirit-design-system/blob/main/LICENSE.md

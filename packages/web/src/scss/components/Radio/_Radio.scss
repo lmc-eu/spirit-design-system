@@ -16,6 +16,7 @@ $_field-name: 'Radio';
     @include form-fields-tools.inline-field-input();
 
     display: grid;
+    flex-shrink: 0;
     width: theme.$input-size;
     height: theme.$input-size;
     margin: theme.$input-margin;

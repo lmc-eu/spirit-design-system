@@ -73,7 +73,7 @@ export interface AttachmentImagePreviewProps {
 }
 
 export interface FileUploaderInputBaseProps
-  extends Omit<SpiritInputElementProps, 'onError'>,
+  extends Omit<SpiritInputElementProps, 'onError' | 'label'>,
     FileUploaderIntermediateProps,
     FileUploaderTextProps,
     Validation {
@@ -81,7 +81,7 @@ export interface FileUploaderInputBaseProps
   id: string;
   inputRef?: MutableRefObject<HTMLInputElement>;
   isDisabled?: boolean;
-  label?: string;
+  label?: ReactNode;
   name: string;
   onError?: FileUploaderErrorCallbackType;
 }

@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import {
   SpiritInputElementPropsWithRef,
   StyleProps,
@@ -19,7 +20,7 @@ export interface SliderProps
     StyleProps {
   isFluid?: boolean;
   isSelected?: boolean;
-  label: string;
+  label: ReactNode;
   max?: number;
   min?: number;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;

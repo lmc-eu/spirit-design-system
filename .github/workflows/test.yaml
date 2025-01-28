@@ -89,7 +89,7 @@ jobs:
       - name: Publish Web Package Code Coverage
         # When Nx hits its cloud cache, there is no generated coverage to sent, e.g. do not let this crash
         if: ${{ hashFiles('./packages/web/.coverage/lcov.info') != '' }}
-        uses: coverallsapp/github-action@v2.3.4
+        uses: coverallsapp/github-action@v2.3.6
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           file: ./packages/web/.coverage/lcov.info
@@ -99,7 +99,7 @@ jobs:
       - name: Publish Web-React Package Code Coverage
         # When Nx hits its cloud cache, there is no generated coverage to sent, e.g. do not let this crash
         if: ${{ hashFiles('./packages/web-react/.coverage/lcov.info') != '' }}
-        uses: coverallsapp/github-action@v2.3.4
+        uses: coverallsapp/github-action@v2.3.6
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           file: ./packages/web-react/.coverage/lcov.info
@@ -109,7 +109,7 @@ jobs:
       - name: Publish Analytics Package Code Coverage
         # When Nx hits its cloud cache, there is no generated coverage to sent, e.g. do not let this crash
         if: ${{ hashFiles('./packages/analytics/.coverage/lcov.info') != '' }}
-        uses: coverallsapp/github-action@v2.3.4
+        uses: coverallsapp/github-action@v2.3.6
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           file: ./packages/analytics/.coverage/lcov.info

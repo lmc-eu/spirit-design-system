@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.9"></a>
+
+## [2.0.9](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@2.0.8...@lmc-eu/spirit-form-validations@2.0.9) (2025-01-27)
+
+### Code Refactoring
+
+- **repo:** Use sharable typescript-config-spirit in tsconfig files ([b53a603](https://github.com/lmc-eu/spirit-design-system/commit/b53a603))
+
+### Dependencies
+
+- Update all non-major dependencies ([b59c923](https://github.com/lmc-eu/spirit-design-system/commit/b59c923))
+
+### Styles
+
+- **form-validations:** Fix documentation by markdown linter ([b0d6c6e](https://github.com/lmc-eu/spirit-design-system/commit/b0d6c6e))
+
+**Note:** Version bump only for package @lmc-eu/spirit-form-validations
+
 <a name="2.0.8"></a>
 
 ## [2.0.8](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@2.0.6...@lmc-eu/spirit-form-validations@2.0.8) (2024-11-25)

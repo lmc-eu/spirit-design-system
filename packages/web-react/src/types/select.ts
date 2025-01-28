@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { LabelProps } from './label';
 import {
   HelperTextProps,
@@ -13,6 +14,7 @@ export interface SelectProps extends SelectElementBaseProps, LabelProps, HelperT
   isDisabled?: boolean;
   isFluid?: boolean;
   isLabelHidden?: boolean;
+  label: ReactNode;
   validationText?: ValidationTextType;
 }
 

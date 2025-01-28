@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.1.1"></a>
+
+## [4.1.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@4.1.0...@lmc-eu/spirit-web-twig@4.1.1) (2025-01-27)
+
+### Bug Fixes
+
+- **web-react:** Add missing presentation role to TabItem and set correct TabLink role [#DS-1653](https://github.com/lmc-eu/spirit-design-system/issues/DS-1653) ([9f5f7d1](https://github.com/lmc-eu/spirit-design-system/commit/9f5f7d1))
+- **web-twig:** Fix inverted colors in Spinner demo [#DS-1545](https://github.com/lmc-eu/spirit-design-system/issues/DS-1545) ([380af52](https://github.com/lmc-eu/spirit-design-system/commit/380af52))
+- **web-twig:** Radio button with multiple line label [#DS-1664](https://github.com/lmc-eu/spirit-design-system/issues/DS-1664) ([be0c466](https://github.com/lmc-eu/spirit-design-system/commit/be0c466))
+
+### Code Refactoring
+
+- **web, web-react, web-twig:** `UNSTABLE_EmptyState` use `ActionGroup` component ([e25b290](https://github.com/lmc-eu/spirit-design-system/commit/e25b290))
+
+### Documentation
+
+- **web-twig:** Add Info about file size calculation in FileUploader [#DS-993](https://github.com/lmc-eu/spirit-design-system/issues/DS-993) ([035a612](https://github.com/lmc-eu/spirit-design-system/commit/035a612))
+- **web-twig:** Add more info about GridItem attributes [#DS-1032](https://github.com/lmc-eu/spirit-design-system/issues/DS-1032) ([1676c2d](https://github.com/lmc-eu/spirit-design-system/commit/1676c2d))
+
+### Styles
+
+- **repo:** Get rid of all heading capitalization ignore comments in docs ([e2c358b](https://github.com/lmc-eu/spirit-design-system/commit/e2c358b))
+- **repo:** Set up markdown linting base on new version and apply it ([e4e4c4b](https://github.com/lmc-eu/spirit-design-system/commit/e4e4c4b)), closes [#1828](https://github.com/lmc-eu/spirit-design-system/issues/1828)
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="4.1.0"></a>
 
 # [4.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@4.0.0...@lmc-eu/spirit-web-twig@4.1.0) (2024-12-16)

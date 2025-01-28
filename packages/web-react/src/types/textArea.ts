@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { LabelProps } from './label';
 import {
   ChildrenProps,
@@ -22,10 +23,12 @@ export interface TextAreaProps
     TextInputProps,
     RequiredProps,
     Validation {
-  /** Whether is field auto resizing which adjusts its height while typing */
-  isAutoResizing?: boolean;
   /** Maximum field height with automatic height control */
   autoResizingMaxHeight?: number;
+  /** Whether is field auto resizing which adjusts its height while typing */
+  isAutoResizing?: boolean;
+  /** Label for the textarea, which provides context or description for the field */
+  label: ReactNode;
 }
 
 export interface SpiritTextAreaProps extends TextAreaProps {}

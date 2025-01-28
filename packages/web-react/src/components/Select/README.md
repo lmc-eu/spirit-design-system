@@ -43,11 +43,11 @@ Advanced example usage:
 | `isFluid`         | `bool`                                         | —       | ✕        | Whether is field is fluid       |
 | `isLabelHidden`   | `bool`                                         | —       | ✕        | Whether is label hidden         |
 | `isRequired`      | `bool`                                         | —       | ✕        | Whether is field required       |
-| `label`           | `string`                                       | —       | ✕        | Label text                      |
+| `label`           | `ReactNode`                                    | —       | ✕        | Label text                      |
 | `name`            | `string`                                       | —       | ✕        | Select name                     |
 | `ref`             | `ForwardedRef<HTMLSelectElement>`              | —       | ✕        | Select element reference        |
 | `validationState` | [Validation dictionary][dictionary-validation] | —       | ✕        | Type of validation state        |
-| `validationText`  | \[`string` \| `string[]`]                      | —       | ✕        | Validation text                 |
+| `validationText`  | \[`ReactNode` \| `ReactNode[]`]                | —       | ✕        | Validation text                 |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

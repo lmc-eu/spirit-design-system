@@ -1,7 +1,7 @@
 {
   "name": "stylelint-config-spirit",
   "description": "Stylelint configuration for Spirit Design System",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "license": "MIT",
   "private": true,
   "keywords": [
@@ -28,8 +28,8 @@
   "dependencies": {
     "@almacareer/stylelint-config": "9.0.1",
     "prettier": "3.3.3",
-    "stylelint": "16.10.0",
+    "stylelint": "16.14.1",
     "stylelint-order": "6.0.4",
-    "stylelint-prettier": "5.0.2"
+    "stylelint-prettier": "5.0.3"
   }
 }

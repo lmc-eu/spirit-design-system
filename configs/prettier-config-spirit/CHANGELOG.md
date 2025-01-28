@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.1.5"></a>
+
+## [0.1.5](https://github.com/lmc-eu/spirit-design-system/compare/prettier-config-spirit@0.1.4...prettier-config-spirit@0.1.5) (2025-01-27)
+
+### Styles
+
+- **repo:** Get rid of all heading capitalization ignore comments in docs ([e2c358b](https://github.com/lmc-eu/spirit-design-system/commit/e2c358b))
+
+**Note:** Version bump only for package prettier-config-spirit
+
 <a name="0.1.4"></a>
 
 ## [0.1.4](https://github.com/lmc-eu/spirit-design-system/compare/prettier-config-spirit@0.1.3...prettier-config-spirit@0.1.4) (2024-12-16)

@@ -50,4 +50,22 @@ describe('UNSTABLE_Slider', () => {
     expect(screen.getByTestId('test')).toHaveClass('UNSTABLE_Slider UNSTABLE_Slider--danger');
     expect(screen.getByText(validationText)).toBeInTheDocument();
   });
+
+  it('should render label with html tags', () => {
+    render(
+      <UNSTABLE_Slider
+        {...defaultProps}
+        label={
+          <>
+            Slider <b>Label</b>
+          </>
+        }
+      />,
+    );
+
+    const element = screen.getByRole('slider').previousElementSibling as HTMLElement;
+
+    expect(element).toHaveTextContent('Slider Label');
+    expect(element.innerHTML).toBe('Slider <b>Label</b>');
+  });
 });

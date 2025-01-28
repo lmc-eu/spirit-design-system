@@ -1,9 +1,9 @@
-import { AriaRole } from 'react';
+import { AriaRole, ReactNode } from 'react';
 import { ValidationStatesDictionaryType } from './dictionaries';
 
 export type ValidationState = ValidationStatesDictionaryType;
 
-export type ValidationTextType = string | string[];
+export type ValidationTextType = ReactNode | ReactNode[];
 
 export interface Validation {
   /** Whether the input should display its "valid" or "invalid" visual styling. */
@@ -35,7 +35,7 @@ export interface TextInputProps extends TextInputBase {
 
 export interface HelperTextProps {
   /** If I wanted some help text */
-  helperText?: string;
+  helperText?: ReactNode;
 }
 
 export interface ValidationTextProp {

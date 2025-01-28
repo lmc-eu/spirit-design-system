@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.7"></a>
+
+## [1.0.7](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-analytics@1.0.6...@lmc-eu/spirit-analytics@1.0.7) (2025-01-27)
+
+### Code Refactoring
+
+- **repo:** Use sharable typescript-config-spirit in tsconfig files ([b53a603](https://github.com/lmc-eu/spirit-design-system/commit/b53a603))
+
+### Dependencies
+
+- Update dependency zx to v8 ([8417d97](https://github.com/lmc-eu/spirit-design-system/commit/8417d97))
+
+### Tests
+
+- **analytics:** Fix mocking of the `zx` module ([591b1f5](https://github.com/lmc-eu/spirit-design-system/commit/591b1f5))
+
+**Note:** Version bump only for package @lmc-eu/spirit-analytics
+
 <a name="1.0.6"></a>
 
 ## [1.0.6](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-analytics@1.0.5...@lmc-eu/spirit-analytics@1.0.6) (2024-12-16)

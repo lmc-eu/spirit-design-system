@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { LabelProps } from './label';
 import {
   ChildrenProps,
@@ -31,5 +32,5 @@ export interface TextFieldProps
 }
 
 export interface SpiritTextFieldProps extends TextFieldProps {
-  label: string;
+  label: ReactNode;
 }

@@ -3,6 +3,46 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.2.0"></a>
+
+# [3.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.1.0...@lmc-eu/spirit-web@3.2.0) (2025-01-27)
+
+### Bug Fixes
+
+- **web, web-react, e2e:** Flex reverse dictionary changes ([fd239fd](https://github.com/lmc-eu/spirit-design-system/commit/fd239fd))
+- **web:** Add missing presentation role to Tabs Item [#DS-1653](https://github.com/lmc-eu/spirit-design-system/issues/DS-1653) ([f25d377](https://github.com/lmc-eu/spirit-design-system/commit/f25d377))
+- **web:** Add SVG Avatar to CardFooter demo ([bbb3eec](https://github.com/lmc-eu/spirit-design-system/commit/bbb3eec))
+- **web:** Fix inverted colors in Spinner demo [#DS-1545](https://github.com/lmc-eu/spirit-design-system/issues/DS-1545) ([ace49e9](https://github.com/lmc-eu/spirit-design-system/commit/ace49e9))
+- **web:** Radio button with multiple line label [#DS-1664](https://github.com/lmc-eu/spirit-design-system/issues/DS-1664) ([103693e](https://github.com/lmc-eu/spirit-design-system/commit/103693e))
+- **web:** Wrap `Card` demos in Containers ([4c3e3a3](https://github.com/lmc-eu/spirit-design-system/commit/4c3e3a3))
+
+### Code Refactoring
+
+- **repo:** Use sharable typescript-config-spirit in tsconfig files ([b53a603](https://github.com/lmc-eu/spirit-design-system/commit/b53a603))
+- **web, web-react, web-twig:** `UNSTABLE_EmptyState` use `ActionGroup` component ([e25b290](https://github.com/lmc-eu/spirit-design-system/commit/e25b290))
+- **web:** Refactor `EmptyState` CSS ([f591d3f](https://github.com/lmc-eu/spirit-design-system/commit/f591d3f))
+
+### Dependencies
+
+- Update all non-major dependencies ([b59c923](https://github.com/lmc-eu/spirit-design-system/commit/b59c923))
+
+### Documentation
+
+- **web:** Add Info about file size calculation in FileUploader [#DS-993](https://github.com/lmc-eu/spirit-design-system/issues/DS-993) ([a70de9d](https://github.com/lmc-eu/spirit-design-system/commit/a70de9d))
+- **web:** Add more info about GridItem attributes [#DS-1032](https://github.com/lmc-eu/spirit-design-system/issues/DS-1032) ([3c3143f](https://github.com/lmc-eu/spirit-design-system/commit/3c3143f))
+
+### Features
+
+- **web:** Extend Flex direction by reverse value ([8731ef1](https://github.com/lmc-eu/spirit-design-system/commit/8731ef1))
+- **web:** Introduce Box component [#DS-1595](https://github.com/lmc-eu/spirit-design-system/issues/DS-1595) ([e90e101](https://github.com/lmc-eu/spirit-design-system/commit/e90e101))
+
+### Styles
+
+- **repo:** Get rid of all heading capitalization ignore comments in docs ([e2c358b](https://github.com/lmc-eu/spirit-design-system/commit/e2c358b))
+- **repo:** Set up markdown linting base on new version and apply it ([e4e4c4b](https://github.com/lmc-eu/spirit-design-system/commit/e4e4c4b)), closes [#1828](https://github.com/lmc-eu/spirit-design-system/issues/1828)
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="3.1.0"></a>
 
 # [3.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.0.0...@lmc-eu/spirit-web@3.1.0) (2024-12-16)
