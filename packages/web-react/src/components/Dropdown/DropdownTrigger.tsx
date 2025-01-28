@@ -26,7 +26,6 @@ const DropdownTrigger = <T extends ElementType = 'button'>(props: DropdownTrigge
       {...rest} // ⚠️ This is maybe a bug, when component is pass via `elementType` prop, the rest props are passed to the component
       {...otherProps}
       {...triggerProps}
-      id={id}
       ref={triggerRef}
       className={classNames(classProps.trigger, styleProps.className)}
       style={styleProps.style}
