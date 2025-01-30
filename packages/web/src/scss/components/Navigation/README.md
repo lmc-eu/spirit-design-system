@@ -62,7 +62,7 @@ stretches its content vertically.
   <a href="#">Stretched link</a>
 </li>
 <li class="NavigationItem NavigationItem--alignmentYCenter">
-  <a href="#" class="NavigationAction">Stretched NavigationAction</a>
+  <a href="#" class="NavigationAction NavigationAction--box">Stretched NavigationAction</a>
   <!-- This will be stretched -->
 </li>
 ```
@@ -71,24 +71,29 @@ stretches its content vertically.
 
 The `NavigationAction` is component that is styled to be used as a navigation action.
 
+It has to be either `box` or `pill` variant.
+
 ```html
-<a class="NavigationAction" href="#">Link</a>
+<a class="NavigationAction NavigationAction--box" href="#">Link</a>
+<a class="NavigationAction NavigationAction--pill" href="#">Link</a>
 ```
 
 It can obtain `selected` or `disabled` states by adding the respective classes. The selected visual state
 is also turned on by the `aria-expanded` attribute.
 
 ```html
-<a class="NavigationAction NavigationAction--selected" href="#" aria-current="page">Selected Link</a>
-<button class="NavigationAction" type="button" aria-expanded="true">Expanded Aria Button</button>
-<span class="NavigationAction NavigationAction--disabled">Disabled Link</span>
+<a class="NavigationAction NavigationAction--box NavigationAction--selected" href="#" aria-current="page"
+  >Selected Link</a
+>
+<button class="NavigationAction NavigationAction--box" type="button" aria-expanded="true">Expanded Aria Button</button>
+<span class="NavigationAction NavigationAction--box NavigationAction--disabled">Disabled Link</span>
 ```
 
 ℹ️ Don't forget to add the `aria-current="page"` attribute for correct accessible state if selected.
 
 ℹ️ Please note that in the `disabled` state the `NavigationAction` should not be an `a` tag.
 
-If the `NavigationAction` is inside a [`UNSTABLE_Header`][web-unstable-header] component, it will
+If the `box` variant of `NavigationAction` is inside a [`UNSTABLE_Header`][web-unstable-header] component, it will
 inherit the height of the `Header`.
 
 ### Full Example
@@ -99,13 +104,15 @@ With NavigationAction components:
 <nav class="Navigation Navigation--horizontal" aria-label="Main Navigation">
   <ul>
     <li class="NavigationItem NavigationItem--alignmentYCenter">
-      <a class="NavigationAction NavigationAction--selected" href="#" aria-current="page">Selected Link</a>
+      <a class="NavigationAction NavigationAction--box NavigationAction--selected" href="#" aria-current="page"
+        >Selected Link</a
+      >
     </li>
     <li class="NavigationItem NavigationItem--alignmentYCenter">
-      <span class="NavigationAction NavigationAction--disabled">Disabled Link</span>
+      <span class="NavigationAction NavigationAction--box NavigationAction--disabled">Disabled Link</span>
     </li>
     <li class="NavigationItem NavigationItem--alignmentYCenter">
-      <a class="NavigationAction" href="#">Link</a>
+      <a class="NavigationAction NavigationAction--box" href="#">Link</a>
     </li>
   </ul>
 </nav>
