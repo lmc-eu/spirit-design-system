@@ -52,20 +52,20 @@
 
   <div class="Container">
 
-    <h2 class="docs-Heading">Horizontal Navigation with NavigationAction</h2>
+    <h2 class="docs-Heading">Horizontal Navigation with Box NavigationAction</h2>
 
     <div class="docs-Stack docs-Stack--stretch">
 
       <nav class="Navigation Navigation--horizontal" aria-label="Horizontal Navigation with NavigationAction">
         <ul>
           <li class="NavigationItem NavigationItem--alignmentYCenter">
-            <a href="#" class="NavigationAction">Link</a>
+            <a href="#" class="NavigationAction NavigationAction--box">Link</a>
           </li>
           <li class="NavigationItem NavigationItem--alignmentYCenter">
-            <a href="#" class="NavigationAction NavigationAction--selected" aria-current="page">Selected</a>
+            <a href="#" class="NavigationAction NavigationAction--box NavigationAction--selected" aria-current="page">Selected</a>
           </li>
           <li class="NavigationItem NavigationItem--alignmentYCenter">
-            <span class="NavigationAction NavigationAction--disabled">Disabled</span>
+            <span class="NavigationAction NavigationAction--box NavigationAction--disabled">Disabled</span>
           </li>
         </ul>
       </nav>
@@ -80,20 +80,20 @@
 
   <div class="Container">
 
-    <h2 class="docs-Heading">Vertical Navigation with NavigationAction</h2>
+    <h2 class="docs-Heading">Vertical Navigation with Box NavigationAction</h2>
 
     <div class="docs-Stack docs-Stack--stretch">
 
       <nav class="Navigation Navigation--vertical" aria-label="Vertical Navigation with NavigationAction">
         <ul>
           <li class="NavigationItem NavigationItem--alignmentYCenter">
-            <a href="#" class="NavigationAction">Link</a>
+            <a href="#" class="NavigationAction NavigationAction--box">Link</a>
           </li>
           <li class="NavigationItem NavigationItem--alignmentYCenter">
-            <a href="#" class="NavigationAction NavigationAction--selected" aria-current="page">Selected</a>
+            <a href="#" class="NavigationAction NavigationAction--box NavigationAction--selected" aria-current="page">Selected</a>
           </li>
           <li class="NavigationItem NavigationItem--alignmentYCenter">
-            <span class="NavigationAction NavigationAction--disabled">Disabled</span>
+            <span class="NavigationAction NavigationAction--box NavigationAction--disabled">Disabled</span>
           </li>
         </ul>
       </nav>
@@ -166,20 +166,20 @@
 
   <div class="Container">
 
-    <h2 class="docs-Heading">Nested Horizontal Navigation with Dropdown</h2>
+    <h2 class="docs-Heading">Nested Horizontal Box Navigation with Dropdown</h2>
 
     <div class="docs-Stack docs-Stack--stretch">
 
       <nav class="Navigation Navigation--horizontal" aria-label="Nested Horizontal Navigation">
         <ul>
           <li class="NavigationItem NavigationItem--alignmentYCenter">
-            <a href="#" class="NavigationAction">Link</a>
+            <a href="#" class="NavigationAction NavigationAction--box">Link</a>
           </li>
           <li class="NavigationItem NavigationItem--alignmentYCenter">
             <div class="Dropdown Dropdown--alignmentXStretch Dropdown--alignmentYStretch">
               <button
                 type="button"
-                class="NavigationAction"
+                class="NavigationAction NavigationAction--box"
                 data-spirit-toggle="dropdown"
                 data-spirit-target="#dropdown-navigation"
                 aria-expanded="false"
@@ -228,14 +228,14 @@
 
   <div class="Container">
 
-    <h2 class="docs-Heading">Nested Vertical Navigation with Collapse</h2>
+    <h2 class="docs-Heading">Nested Vertical Box Navigation with Collapse</h2>
 
     <div class="docs-Stack docs-Stack--stretch">
 
       <nav class="Navigation Navigation--vertical" aria-label="Nested Vertical Navigation">
         <ul>
           <li class="NavigationItem NavigationItem--alignmentYCenter">
-            <a href="#" class="NavigationAction">Link</a>
+            <a href="#" class="NavigationAction NavigationAction--box">Link</a>
           </li>
           <li class="NavigationItem NavigationItem--alignmentYCenter">
             <button
@@ -243,7 +243,7 @@
               aria-expanded="true"
               data-spirit-toggle="collapse"
               data-spirit-target="collapse-navigation"
-              class="NavigationAction"
+              class="NavigationAction NavigationAction--box"
             >
               Menu
               <svg width="24" height="24" aria-hidden="true" class="accessibility-open">
@@ -257,16 +257,75 @@
               <div class="Collapse__content">
                 <ul>
                   <li class="NavigationItem NavigationItem--alignmentYCenter">
-                    <a href="#" class="NavigationAction">Nested Link</a>
+                    <a href="#" class="NavigationAction NavigationAction--box">Nested Link</a>
                   </li>
                   <li class="NavigationItem NavigationItem--alignmentYCenter">
-                    <a href="#" class="NavigationAction NavigationAction--selected" aria-current="page">
+                    <a href="#" class="NavigationAction NavigationAction--box NavigationAction--selected" aria-current="page">
                       Nested Selected
                     </a>
                   </li>
                 </ul>
               </div>
             </div>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="UNSTABLE_Section">
+
+  <div class="Container">
+
+    <h2 class="docs-Heading">Horizontal Navigation with Pill NavigationAction</h2>
+
+    <div class="docs-Stack docs-Stack--stretch">
+
+      <nav class="Navigation Navigation--horizontal" aria-label="Horizontal Navigation with Pill NavigationAction">
+        <ul>
+          <li class="NavigationItem NavigationItem--alignmentYCenter">
+            <a href="#" class="NavigationAction NavigationAction--pill">Link</a>
+          </li>
+          <li class="NavigationItem NavigationItem--alignmentYCenter">
+            <a href="#" class="NavigationAction NavigationAction--pill">Link</a>
+          </li>
+          <li class="NavigationItem NavigationItem--alignmentYCenter">
+            <a href="#" class="NavigationAction NavigationAction--pill NavigationAction--selected" aria-current="page">Selected</a>
+          </li>
+          <li class="NavigationItem NavigationItem--alignmentYCenter">
+            <span class="NavigationAction NavigationAction--pill NavigationAction--disabled">Disabled</span>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="UNSTABLE_Section">
+
+  <div class="Container">
+
+    <h2 class="docs-Heading">Vertical Navigation with Pill NavigationAction</h2>
+
+    <div class="docs-Stack docs-Stack--stretch">
+
+      <nav class="Navigation Navigation--vertical" aria-label="Vertical Navigation with Pill NavigationAction">
+        <ul>
+          <li class="NavigationItem NavigationItem--alignmentYCenter">
+            <a href="#" class="NavigationAction NavigationAction--pill">Link</a>
+          </li>
+          <li class="NavigationItem NavigationItem--alignmentYCenter">
+            <a href="#" class="NavigationAction NavigationAction--pill NavigationAction--selected" aria-current="page">Selected</a>
+          </li>
+          <li class="NavigationItem NavigationItem--alignmentYCenter">
+            <span class="NavigationAction NavigationAction--pill NavigationAction--disabled">Disabled</span>
           </li>
         </ul>
       </nav>

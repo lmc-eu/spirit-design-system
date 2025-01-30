@@ -18,11 +18,16 @@
 
 .Navigation:not(:has(.NavigationAction)),
 .Navigation:not(:has(.NavigationAction)) > ul {
-    gap: theme.$spacing;
+    gap: theme.$gap;
+}
+
+.Navigation:not(:has(.NavigationAction--pill)),
+.Navigation:has(.NavigationAction--pill) > ul {
+    gap: theme.$gap-pills;
 }
 
 .Navigation--vertical:has(.NavigationAction) > ul {
-    gap: theme.$spacing-dense;
+    gap: theme.$vertical-gap;
 }
 
 .Navigation > ul {

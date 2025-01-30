@@ -9,7 +9,7 @@
     $axis: 'y'
 );
 
-.NavigationItem:has(.NavigationAction) {
+.NavigationItem:has(.NavigationAction--box) {
     align-items: stretch;
 }
 
@@ -22,6 +22,6 @@
 
     // stylelint-disable-next-line selector-max-class, selector-max-specificity -- 1.
     &:not(& .NavigationItem) {
-        padding-inline: theme.$spacing;
+        padding-inline: theme.$vertical-item-padding-x;
     }
 }

@@ -90,10 +90,10 @@
           <nav class="Navigation Navigation--horizontal d-none d-desktop-flex" aria-label="Main Navigation">
             <ul>
               <li class="NavigationItem NavigationItem--alignmentYCenter">
-                <a href="#" class="NavigationAction NavigationAction--selected" aria-current="page">Job Offers</a>
+                <a href="#" class="NavigationAction NavigationAction--box NavigationAction--selected" aria-current="page">Job Offers</a>
               </li>
               <li class="NavigationItem NavigationItem--alignmentYCenter">
-                <a href="#" class="NavigationAction">Magazine</a>
+                <a href="#" class="NavigationAction NavigationAction--box">Magazine</a>
               </li>
             </ul>
           </nav>
@@ -156,10 +156,129 @@
             <nav class="Navigation Navigation--vertical" aria-label="Main Navigation">
               <ul>
                 <li class="NavigationItem NavigationItem--alignmentYCenter">
-                  <a href="#" class="NavigationAction NavigationAction--selected" aria-current="page">Job Offers</a>
+                  <a href="#" class="NavigationAction NavigationAction--box NavigationAction--selected" aria-current="page">Job Offers</a>
                 </li>
                 <li class="NavigationItem NavigationItem--alignmentYCenter">
-                  <a href="#" class="NavigationAction">Magazine</a>
+                  <a href="#" class="NavigationAction NavigationAction--box">Magazine</a>
+                </li>
+              </ul>
+            </nav>
+
+            <nav class="Navigation Navigation--vertical" aria-label="Secondary Navigation">
+              <ul>
+                <li class="NavigationItem NavigationItem--alignmentYCenter">
+                  <a href="#" class="Button Button--secondary Button--medium">Log in</a>
+                </li>
+                <li class="NavigationItem NavigationItem--alignmentYCenter">
+                  <a href="#" class="Button Button--primary Button--medium">Post a Job</a>
+                </li>
+              </ul>
+            </nav>
+
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+  </div>
+</section>
+
+<section class="UNSTABLE_Section">
+
+  <div class="Container">
+    <h2 class="docs-Heading">With Pill Navigation</h2>
+  </div>
+
+  <div class="docs-Stack docs-Stack--stretch">
+
+    <header class="UNSTABLE_Header">
+      <div class="Container">
+        <div
+          class="Flex Flex--row Flex--noWrap Flex--alignmentXLeft Flex--alignmentYStretch"
+          style="--flex-spacing-x: var(--spirit-space-1000);"
+        >
+          <a href="#" aria-label="JobBoard homepage" class="UNSTABLE_HeaderLogo">
+            <div class="ProductLogo">
+              {{> web/assets/jobBoardLogo }}
+            </div>
+          </a>
+
+          <nav class="Navigation Navigation--horizontal d-none d-desktop-flex" aria-label="Main Navigation">
+            <ul>
+              <li class="NavigationItem NavigationItem--alignmentYCenter">
+                <a href="#" class="NavigationAction NavigationAction--pill NavigationAction--selected" aria-current="page">Job Offers</a>
+              </li>
+              <li class="NavigationItem NavigationItem--alignmentYCenter">
+                <a href="#" class="NavigationAction NavigationAction--pill">Magazine</a>
+              </li>
+              <li class="NavigationItem NavigationItem--alignmentYCenter">
+                <a href="#" class="NavigationAction NavigationAction--pill">Contact</a>
+              </li>
+            </ul>
+          </nav>
+
+          <nav class="Navigation Navigation--horizontal ml-auto" aria-label="Secondary Navigation">
+            <ul>
+              <li class="NavigationItem NavigationItem--alignmentYCenter">
+                <button class="Button Button--tertiary Button--medium Button--symmetrical" type="button" aria-label="Search">
+                  <svg width="24" height="24" aria-hidden="true">
+                    <use xlink:href="/assets/icons/svg/sprite.svg#search" />
+                  </svg>
+                </button>
+              </li>
+              <li class="NavigationItem NavigationItem--alignmentYCenter d-none d-desktop-flex">
+                <a href="#" class="Button Button--secondary Button--medium">Log In</a>
+              </li>
+              <li class="NavigationItem NavigationItem--alignmentYCenter d-none d-desktop-flex">
+                <a href="#" class="Button Button--primary Button--medium">Post a Job</a>
+              </li>
+              <li class="NavigationItem NavigationItem--alignmentYCenter d-desktop-none">
+                <button
+                  class="Button Button--tertiary Button--medium Button--symmetrical"
+                  type="button"
+                  aria-label="Toggle Menu"
+                  data-spirit-toggle="offcanvas"
+                  data-spirit-target="#drawer-navigation"
+                  aria-controls="drawer-navigation"
+                  aria-expanded="false"
+                >
+                  <svg width="24" height="24" aria-hidden="true">
+                    <use xlink:href="/assets/icons/svg/sprite.svg#hamburger" />
+                  </svg>
+                </button>
+              </li>
+            </ul>
+          </nav>
+
+        </div>
+      </div>
+    </header>
+
+    <dialog id="drawer-navigation" class="Drawer Drawer--right" aria-label="Navigation">
+      <div class="DrawerPanel">
+        <div class="DrawerPanel__content">
+          <button
+            type="button"
+            aria-expanded="false"
+            class="Button Button--tertiary Button--medium Button--symmetrical DrawerCloseButton"
+            data-spirit-dismiss="offcanvas"
+            data-spirit-target="#drawer-navigation"
+            aria-controls="drawer-navigation"
+          >
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/assets/icons/svg/sprite.svg#close" />
+            </svg>
+            <span class="accessibility-hidden">Close</span>
+          </button>
+          <div class="Stack Stack--hasSpacing Stack--hasIntermediateDividers mt-900" style="--stack-spacing: var(--spirit-space-900)">
+
+            <nav class="Navigation Navigation--vertical" aria-label="Main Navigation">
+              <ul>
+                <li class="NavigationItem NavigationItem--alignmentYCenter">
+                  <a href="#" class="NavigationAction NavigationAction--box NavigationAction--selected" aria-current="page">Job Offers</a>
+                </li>
+                <li class="NavigationItem NavigationItem--alignmentYCenter">
+                  <a href="#" class="NavigationAction NavigationAction--box">Magazine</a>
                 </li>
               </ul>
             </nav>
@@ -206,16 +325,16 @@
           <nav class="Navigation Navigation--horizontal d-none d-desktop-flex" aria-label="Main Navigation">
             <ul>
               <li class="NavigationItem NavigationItem--alignmentYCenter">
-                <a href="#" class="NavigationAction NavigationAction--selected" aria-current="page">Selected</a>
+                <a href="#" class="NavigationAction NavigationAction--box NavigationAction--selected" aria-current="page">Selected</a>
               </li>
               <li class="NavigationItem NavigationItem--alignmentYCenter">
-                <a href="#" class="NavigationAction">Link</a>
+                <a href="#" class="NavigationAction NavigationAction--box">Link</a>
               </li>
               <li class="NavigationItem NavigationItem--alignmentYCenter">
                 <div class="Dropdown Dropdown--alignmentXStretch Dropdown--alignmentYStretch">
                   <button
                     type="button"
-                    class="NavigationAction"
+                    class="NavigationAction NavigationAction--box"
                     data-spirit-toggle="dropdown"
                     data-spirit-target="#dropdown-navigation"
                     aria-expanded="false"
@@ -252,7 +371,7 @@
                 </div>
               </li>
               <li class="NavigationItem NavigationItem--alignmentYCenter">
-                <span class="NavigationAction NavigationAction--disabled">Disabled</span>
+                <span class="NavigationAction NavigationAction--box NavigationAction--disabled">Disabled</span>
               </li>
             </ul>
           </nav>
@@ -378,10 +497,10 @@
             <nav class="Navigation Navigation--vertical" aria-label="Main Navigation">
               <ul>
                 <li class="NavigationItem NavigationItem--alignmentYCenter">
-                  <a href="#" class="NavigationAction NavigationAction--selected" aria-current="page">Selected</a>
+                  <a href="#" class="NavigationAction NavigationAction--box NavigationAction--selected" aria-current="page">Selected</a>
                 </li>
                 <li class="NavigationItem NavigationItem--alignmentYCenter">
-                  <a href="#" class="NavigationAction">Link</a>
+                  <a href="#" class="NavigationAction NavigationAction--box">Link</a>
                 </li>
                 <li class="NavigationItem NavigationItem--alignmentYCenter">
                   <button
@@ -389,7 +508,7 @@
                     aria-expanded="false"
                     data-spirit-toggle="collapse"
                     data-spirit-target="collapse-navigation"
-                    class="NavigationAction"
+                    class="NavigationAction NavigationAction--box"
                   >
                     Menu
                     <svg width="24" height="24" aria-hidden="true" class="accessibility-open">
@@ -403,20 +522,20 @@
                     <div class="Collapse__content">
                       <ul>
                         <li class="NavigationItem NavigationItem--alignmentYCenter">
-                          <a href="https://www.example.com" class="NavigationAction">My Account</a>
+                          <a href="https://www.example.com" class="NavigationAction NavigationAction--box">My Account</a>
                         </li>
                         <li class="NavigationItem NavigationItem--alignmentYCenter">
-                          <a href="https://www.example.com" class="NavigationAction">Settings</a>
+                          <a href="https://www.example.com" class="NavigationAction NavigationAction--box">Settings</a>
                         </li>
                         <li class="NavigationItem NavigationItem--alignmentYCenter">
-                          <a href="https://www.example.com" class="NavigationAction">Log Out</a>
+                          <a href="https://www.example.com" class="NavigationAction NavigationAction--box">Log Out</a>
                         </li>
                       </ul>
                     </div>
                   </div>
                 </li>
                 <li class="NavigationItem NavigationItem--alignmentYCenter">
-                  <span class="NavigationAction NavigationAction--disabled">Disabled</span>
+                  <span class="NavigationAction NavigationAction--box NavigationAction--disabled">Disabled</span>
                 </li>
               </ul>
             </nav>

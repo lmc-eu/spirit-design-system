@@ -19,12 +19,6 @@
     color: theme.$action-color-state-default;
     background-color: theme.$action-background-color-state-default;
 
-    &::after {
-        content: '';
-        position: absolute;
-        background-color: theme.$action-stripe-background-color-state-default;
-    }
-
     @media (hover: hover) {
         &:hover {
             text-decoration: none;
@@ -40,6 +34,17 @@
     }
 }
 
+.NavigationAction--pill {
+    padding-block: theme.$action-pill-padding-y;
+    border-radius: theme.$action-pill-border-radius;
+}
+
+.NavigationAction--box::after {
+    content: '';
+    position: absolute;
+    background-color: theme.$action-stripe-background-color-state-default;
+}
+
 // stylelint-disable-next-line selector-max-compound-selectors, selector-max-specificity -- 1.
 .Navigation--vertical
     > ul
@@ -52,10 +57,11 @@
 .NavigationAction[aria-expanded='true'] {
     color: theme.$action-color-state-selected;
     background-color: theme.$action-background-color-state-selected;
+}
 
-    &::after {
-        background-color: theme.$action-stripe-background-color-selected-state-default;
-    }
+.NavigationAction--selected.NavigationAction--box::after,
+.NavigationAction--box[aria-expanded='true']::after {
+    background-color: theme.$action-stripe-background-color-selected-state-default;
 }
 
 .NavigationAction--disabled {
@@ -67,44 +73,51 @@
     @include typography.generate(theme.$horizontal-action-typography);
 
     justify-content: center;
-    padding-inline: theme.$action-spacing-dense;
+    padding-inline: theme.$action-padding-x;
+}
 
-    &::after {
-        inset-inline: 0;
-        bottom: 0;
-        height: theme.$horizontal-action-stripe-size;
-    }
+.Navigation--horizontal .NavigationAction--box::after {
+    inset-inline: 0;
+    bottom: 0;
+    height: theme.$horizontal-action-stripe-size;
 }
 
 .Navigation--vertical .NavigationAction {
     @include typography.generate(theme.$vertical-action-typography);
 
     justify-content: space-between;
-    padding-inline: theme.$action-spacing;
-    padding-block: theme.$action-spacing-dense;
-    border-radius: theme.$vertical-action-border-radius;
+    padding-block: theme.$vertical-action-spacing-y;
 
     &::after {
         inset-block: 0;
-        left: calc(-1 * #{theme.$spacing});
+        left: calc(-1 * #{theme.$vertical-item-padding-x});
         width: theme.$vertical-action-stripe-size;
         pointer-events: none; // 2.
     }
 }
 
-@media (hover: hover) {
-    .Navigation--horizontal .NavigationAction:hover::after {
+.Navigation--vertical .NavigationAction--box {
+    padding-inline: theme.$vertical-action-box-padding-x;
+    border-radius: theme.$vertical-action-box-border-radius;
+}
+
+.Navigation--vertical .NavigationAction--pill {
+    padding-inline: theme.$vertical-action-pill-padding-x;
+}
+
+.Navigation--horizontal .NavigationAction--box:hover::after {
+    @media (hover: hover) {
         background-color: theme.$horizontal-action-stripe-background-color-state-hover;
     }
 }
 
-.Navigation--horizontal .NavigationAction:active::after {
+.Navigation--horizontal .NavigationAction--box:active::after {
     background-color: theme.$horizontal-action-stripe-background-color-state-active;
 }
 
-// stylelint-disable selector-max-specificity -- 3.
-.Navigation--horizontal .NavigationAction--selected,
-.Navigation--horizontal .NavigationAction[aria-expanded='true'] {
+// stylelint-disable selector-max-specificity, selector-max-class -- 3.
+.Navigation--horizontal .NavigationAction--box.NavigationAction--selected,
+.Navigation--horizontal .NavigationAction--box[aria-expanded='true'] {
     @media (hover: hover) {
         &:hover::after {
             background-color: theme.$action-stripe-background-color-selected-state-hover;
@@ -115,4 +128,4 @@
         background-color: theme.$action-stripe-background-color-selected-state-active;
     }
 }
-// stylelint-enable selector-max-specificity
+// stylelint-enable selector-max-specificity, selector-max-class
