@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.2.0"></a>
+
+# [4.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@4.1.1...@lmc-eu/spirit-web-twig@4.2.0) (2025-01-30)
+
+### Bug Fixes
+
+- **web-twig:** SVG id must have a valid ID attribute value ([cfa2e41](https://github.com/lmc-eu/spirit-design-system/commit/cfa2e41))
+
+### Chores
+
+- **web-twig:** Fix usage of the unexisting target `vendor` ([c87ae06](https://github.com/lmc-eu/spirit-design-system/commit/c87ae06))
+- **web-twig:** Upgrade ergebnis/composer-normalize from 2.42 to 2.45 ([a2fe1fc](https://github.com/lmc-eu/spirit-design-system/commit/a2fe1fc))
+
+### Features
+
+- **web, web-twig, web-react:** Deprecate UNSTABLE_ActionLayout ([eb4d82d](https://github.com/lmc-eu/spirit-design-system/commit/eb4d82d))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="4.1.1"></a>
 
 ## [4.1.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@4.1.0...@lmc-eu/spirit-web-twig@4.1.1) (2025-01-27)
