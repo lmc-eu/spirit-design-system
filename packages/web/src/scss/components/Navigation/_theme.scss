@@ -2,40 +2,46 @@
 
 @use '@tokens' as tokens;
 
-$spacing-dense: tokens.$space-400;
-$spacing: tokens.$space-700;
-
 $horizontal-height: 50px;
+$gap: tokens.$space-700;
+$gap-pills: tokens.$space-300;
+$vertical-gap: tokens.$space-400;
+
+$vertical-item-padding-x: tokens.$space-700;
 
 $item-alignment-dictionary: center, stretch; // 1.
 
-$horizontal-action-typography: tokens.$body-small-semibold;
-$vertical-action-typography: tokens.$body-medium-semibold;
-$vertical-action-typography-nested: tokens.$body-medium-regular;
-$action-gap: tokens.$space-700;
-$action-spacing-dense: tokens.$space-600;
-$action-spacing: tokens.$space-700;
-
-$action-color-state-default: tokens.$component-header-item-state-default;
-$action-color-state-hover: tokens.$component-header-item-state-hover;
-$action-color-state-active: tokens.$component-header-item-state-active;
-$action-color-state-selected: tokens.$component-header-item-state-selected;
-$action-color-state-disabled: tokens.$disabled-content;
-
-$vertical-action-border-radius: tokens.$radius-200;
-
+$action-background-color-state-active: tokens.$component-header-item-background-state-active;
 $action-background-color-state-default: tokens.$component-header-item-background-state-default;
 $action-background-color-state-hover: tokens.$component-header-item-background-state-hover;
-$action-background-color-state-active: tokens.$component-header-item-background-state-active;
 $action-background-color-state-selected: tokens.$component-header-item-background-state-selected;
 
-$action-stripe-background-color-state-default: transparent;
+$action-color-state-active: tokens.$component-header-item-state-active;
+$action-color-state-default: tokens.$component-header-item-state-default;
+$action-color-state-disabled: tokens.$disabled-content;
+$action-color-state-hover: tokens.$component-header-item-state-hover;
+$action-color-state-selected: tokens.$component-header-item-state-selected;
+
+$action-gap: tokens.$space-700;
+$action-padding-x: tokens.$space-700;
+
+$action-pill-border-radius: tokens.$radius-full;
+$action-pill-padding-y: tokens.$space-600;
+
+$action-stripe-background-color-selected-state-active: tokens.$component-header-stripe-state-selected;
 $action-stripe-background-color-selected-state-default: tokens.$component-header-stripe-state-selected;
 $action-stripe-background-color-selected-state-hover: tokens.$component-header-stripe-state-selected;
-$action-stripe-background-color-selected-state-active: tokens.$component-header-stripe-state-selected;
+$action-stripe-background-color-state-default: transparent;
 
-$horizontal-action-stripe-background-color-state-hover: tokens.$component-header-stripe-state-unselected;
 $horizontal-action-stripe-background-color-state-active: tokens.$component-header-stripe-state-unselected;
+$horizontal-action-stripe-background-color-state-hover: tokens.$component-header-stripe-state-unselected;
 $horizontal-action-stripe-size: 2px;
+$horizontal-action-typography: tokens.$body-small-semibold;
 
+$vertical-action-box-border-radius: tokens.$radius-200;
+$vertical-action-box-padding-x: tokens.$space-700;
+$vertical-action-pill-padding-x: tokens.$space-800;
+$vertical-action-spacing-y: tokens.$space-600;
 $vertical-action-stripe-size: 4px;
+$vertical-action-typography-nested: tokens.$body-medium-regular;
+$vertical-action-typography: tokens.$body-medium-semibold;
