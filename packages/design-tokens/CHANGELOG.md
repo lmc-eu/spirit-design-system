@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.0.3"></a>
+
+## [3.0.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@3.0.2...@lmc-eu/spirit-design-tokens@3.0.3) (2025-01-30)
+
+### Dependencies
+
+- Update stylelint non-major ([63261a7](https://github.com/lmc-eu/spirit-design-system/commit/63261a7))
+
+**Note:** Version bump only for package @lmc-eu/spirit-design-tokens
+
 <a name="3.0.2"></a>
 
 ## [3.0.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@3.0.1...@lmc-eu/spirit-design-tokens@3.0.2) (2025-01-27)

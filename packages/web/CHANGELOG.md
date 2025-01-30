@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.3.0"></a>
+
+# [3.3.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.2.0...@lmc-eu/spirit-web@3.3.0) (2025-01-30)
+
+### Dependencies
+
+- Update all non-major dependencies ([a6df4f7](https://github.com/lmc-eu/spirit-design-system/commit/a6df4f7))
+- Update stylelint non-major ([63261a7](https://github.com/lmc-eu/spirit-design-system/commit/63261a7))
+
+### Features
+
+- **web, web-twig, web-react:** Deprecate UNSTABLE_ActionLayout ([eb4d82d](https://github.com/lmc-eu/spirit-design-system/commit/eb4d82d))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="3.2.0"></a>
 
 # [3.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.1.0...@lmc-eu/spirit-web@3.2.0) (2025-01-27)

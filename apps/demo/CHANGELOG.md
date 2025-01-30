@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.2.1"></a>
+
+## [1.2.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo-app@1.2.0...@lmc-eu/spirit-demo-app@1.2.1) (2025-01-30)
+
+### Dependencies
+
+- Update all non-major dependencies ([a6df4f7](https://github.com/lmc-eu/spirit-design-system/commit/a6df4f7))
+
+**Note:** Version bump only for package @lmc-eu/spirit-demo-app
+
 <a name="1.2.0"></a>
 
 # [1.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo-app@1.1.0...@lmc-eu/spirit-demo-app@1.2.0) (2025-01-27)

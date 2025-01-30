@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.2.2"></a>
+
+## [2.2.2](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-tokens-exporter@2.2.1...@almacareer/spirit-tokens-exporter@2.2.2) (2025-01-30)
+
+### Dependencies
+
+- Update compile tools non-major ([c28c207](https://github.com/lmc-eu/spirit-design-system/commit/c28c207))
+- Update dependency @supernovaio/sdk-exporters to v2.0.32 ([2966f5a](https://github.com/lmc-eu/spirit-design-system/commit/2966f5a))
+- Update dependency @swc/core to v1.10.11 ([325fa04](https://github.com/lmc-eu/spirit-design-system/commit/325fa04))
+
+### Documentation
+
+- **exporter-tokens:** Update tokens exporter documentation [#DS-1544](https://github.com/lmc-eu/spirit-design-system/issues/DS-1544) ([7003ef5](https://github.com/lmc-eu/spirit-design-system/commit/7003ef5))
+
+**Note:** Version bump only for package @almacareer/spirit-tokens-exporter
+
 <a name="2.2.1"></a>
 
 ## [2.2.1](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-tokens-exporter@2.2.0...@almacareer/spirit-tokens-exporter@2.2.1) (2025-01-27)

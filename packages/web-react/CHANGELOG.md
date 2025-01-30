@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.3.0"></a>
+
+# [3.3.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.2.0...@lmc-eu/spirit-web-react@3.3.0) (2025-01-30)
+
+### Bug Fixes
+
+- **web-react:** ActionGroup and Box exports ([fd67e2a](https://github.com/lmc-eu/spirit-design-system/commit/fd67e2a))
+- **web-react:** Remove duplicated `id` on the `DropdownTrigger` component ([de515f4](https://github.com/lmc-eu/spirit-design-system/commit/de515f4)), closes [#1892](https://github.com/lmc-eu/spirit-design-system/issues/1892)
+
+### Code Refactoring
+
+- **web-react:** Card use DirectionExtended Dictionary ([068cb65](https://github.com/lmc-eu/spirit-design-system/commit/068cb65)), closes [#DS-1649](https://github.com/lmc-eu/spirit-design-system/issues/DS-1649)
+
+### Dependencies
+
+- Update all non-major dependencies ([a6df4f7](https://github.com/lmc-eu/spirit-design-system/commit/a6df4f7))
+- Update compile tools non-major ([c28c207](https://github.com/lmc-eu/spirit-design-system/commit/c28c207))
+- Update dependency eslint-plugin-prettier to v5.2.3 ([81732f2](https://github.com/lmc-eu/spirit-design-system/commit/81732f2))
+
+### Features
+
+- **web, web-twig, web-react:** Deprecate UNSTABLE_ActionLayout ([eb4d82d](https://github.com/lmc-eu/spirit-design-system/commit/eb4d82d))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="3.2.0"></a>
 
 # [3.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.1.0...@lmc-eu/spirit-web-react@3.2.0) (2025-01-27)

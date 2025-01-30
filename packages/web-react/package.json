@@ -1,6 +1,6 @@
 {
   "name": "@lmc-eu/spirit-web-react",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "description": "React implementation of Spirit Design System components",
   "license": "MIT",
   "engines": {
@@ -38,8 +38,8 @@
     "@lmc-eu/eslint-config-typescript": "2.1.4",
     "@lmc-eu/spirit-common": "^0.3.9",
     "@lmc-eu/spirit-demo": "^1.0.2",
-    "@lmc-eu/spirit-design-tokens": "^3.0.2",
-    "@lmc-eu/spirit-web": "^3.2.0",
+    "@lmc-eu/spirit-design-tokens": "^3.0.3",
+    "@lmc-eu/spirit-web": "^3.3.0",
     "@rollup/plugin-node-resolve": "15.3.1",
     "@rollup/plugin-replace": "6.0.2",
     "@rollup/plugin-terser": "0.4.4",
