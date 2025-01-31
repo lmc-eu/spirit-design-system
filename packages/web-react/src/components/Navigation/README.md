@@ -30,10 +30,10 @@ it will apply a gap between them.
 
 ### API
 
-| Name        | Type                                                                                    | Default      | Required | Description                   |
-| ----------- | --------------------------------------------------------------------------------------- | ------------ | -------- | ----------------------------- |
-| `children`  | `ReactElement<HTMLLIElement>` \| `ReactElement<NavigationItem>` \| Array of these types | `null`       | ✓        | Content of the Navigation     |
-| `direction` | [Direction dictionary][direction-dictionary]                                            | `horizontal` | ✕        | Orientation of the Navigation |
+| Name        | Type                                                                                       | Default      | Required | Description                   |
+| ----------- | ------------------------------------------------------------------------------------------ | ------------ | -------- | ----------------------------- |
+| `children`  | \[`ReactElement<HTMLLIElement>` \| `ReactElement<NavigationItem>` \| Array of these types] | `null`       | ✓        | Content of the Navigation     |
+| `direction` | [Direction dictionary][direction-dictionary]                                               | `horizontal` | ✕        | Orientation of the Navigation |
 
 The components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -66,10 +66,10 @@ import { NavigationAction, NavigationItem } from '@lmc-eu/spirit-web-react';
 
 ### API
 
-| Name         | Type                     | Default  | Required | Description                        |
-| ------------ | ------------------------ | -------- | -------- | ---------------------------------- |
-| `alignmentY` | \[`center` \| `stretch`] | `center` | ✕        | Vertical alignment of the children |
-| `children`   | `string` \| `ReactNode`  | `null`   | ✓        | Content of the NavigationItem      |
+| Name         | Type                       | Default  | Required | Description                        |
+| ------------ | -------------------------- | -------- | -------- | ---------------------------------- |
+| `alignmentY` | \[`center` \| `stretch`]   | `center` | ✕        | Vertical alignment of the children |
+| `children`   | \[`string` \| `ReactNode`] | `null`   | ✓        | Content of the NavigationItem      |
 
 The components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -79,10 +79,15 @@ and [escape hatches][readme-escape-hatches].
 
 The `NavigationAction` is component that is styled to be used as a navigation action.
 
+It has to be either `box` or `pill` variant. Default variant is `box`.
+
 ```jsx
 import { NavigationAction } from '@lmc-eu/spirit-web-react';
 
 <NavigationAction href="#">Link</NavigationAction>;
+<NavigationAction href="#" variant="pill">
+  Link
+</NavigationAction>;
 ```
 
 It can obtain `isSelected` or `isDisabled` states by adding the respective props.
@@ -103,13 +108,14 @@ inherit the height of the `Header`.
 
 | Name          | Type                              | Default | Required | Description                     |
 | ------------- | --------------------------------- | ------- | -------- | ------------------------------- |
-| `children`    | `string` \| `ReactNode`           | `null`  | ✓        | Content of the NavigationAction |
+| `children`    | \[`string` \| `ReactNode`]        | `null`  | ✓        | Content of the NavigationAction |
 | `elementType` | `ElementType`                     | `a`     | ✕        | Type of element used as         |
 | `href`        | `string`                          | -       | ✕        | URL of the link                 |
 | `isDisabled`  | `boolean`                         | `false` | ✕        | Whether the action is disabled  |
 | `isSelected`  | `boolean`                         | `false` | ✕        | Whether the action is selected  |
 | `ref`         | `ForwardedRef<HTMLAnchorElement>` | —       | ✕        | Anchor element reference        |
 | `target`      | `string`                          | `null`  | ✕        | Link target                     |
+| `variant`     | \[`box` \| `pill`]                | `box`   | ✕        | Variant of the NavigationAction |
 
 The components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

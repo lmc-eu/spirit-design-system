@@ -2,7 +2,9 @@ import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { AlignmentYExtended } from '../../../constants';
-import NavigationAction from '../NavigationAction';
+import { Box } from '../../Box';
+import { Text } from '../../Text';
+import Navigation from '../Navigation';
 import NavigationItem from '../NavigationItem';
 import ReadMe from '../README.md';
 
@@ -25,7 +27,13 @@ const meta: Meta<typeof NavigationItem> = {
   },
   args: {
     alignmentY: AlignmentYExtended.CENTER,
-    children: <NavigationAction href="/">Link</NavigationAction>,
+    children: (
+      <Box backgroundColor="secondary" padding="space-600">
+        <Text emphasis="bold" size="small">
+          Content
+        </Text>
+      </Box>
+    ),
   },
 };
 
@@ -35,8 +43,8 @@ type Story = StoryObj<typeof NavigationItem>;
 export const NavigationItemPlayground: Story = {
   name: 'NavigationItem',
   render: (args) => (
-    <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+    <Navigation UNSAFE_style={{ height: '100px' }}>
       <NavigationItem {...args} />
-    </ul>
+    </Navigation>
   ),
 };
