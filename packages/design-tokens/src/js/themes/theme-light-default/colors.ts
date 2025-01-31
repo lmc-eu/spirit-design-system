@@ -131,6 +131,10 @@ export const formFieldWarning = '#c26400';
 export const gradientBasicOverlayColor01 = '#fff';
 export const gradientBasicOverlayColor02 = '#fff0';
 
+export const gradientSkeletonColor01 = '#e5e5e5';
+export const gradientSkeletonColor02 = '#fff';
+export const gradientSkeletonColor03 = '#e5e5e5';
+
 export const linkPrimaryStateActive = '#3c2480';
 export const linkPrimaryStateDefault = '#6039cc';
 export const linkPrimaryStateHover = '#4e2ea6';
