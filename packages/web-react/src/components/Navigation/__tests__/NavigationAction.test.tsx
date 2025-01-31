@@ -14,7 +14,10 @@ describe('NavigationAction', () => {
   it('should have default classname', () => {
     render(<NavigationAction href="/">Content</NavigationAction>);
 
-    expect(screen.getByRole('link')).toHaveClass('NavigationAction');
+    const navigationAction = screen.getByRole('link');
+
+    expect(navigationAction).toHaveClass('NavigationAction');
+    expect(navigationAction).toHaveClass('NavigationAction--box');
   });
 
   it('should have selected classname', () => {
@@ -43,5 +46,18 @@ describe('NavigationAction', () => {
     render(<NavigationAction href="/">Content</NavigationAction>);
 
     expect(screen.getByText('Content')).toBeInTheDocument();
+  });
+
+  it('should have correct className for pill variant', () => {
+    render(
+      <NavigationAction href="/" variant="pill">
+        Content
+      </NavigationAction>,
+    );
+
+    const navigationAction = screen.getByRole('link');
+
+    expect(navigationAction).toHaveClass('NavigationAction');
+    expect(navigationAction).toHaveClass('NavigationAction--pill');
   });
 });

@@ -4,11 +4,13 @@ import classNames from 'classnames';
 import React, { ElementType, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
 import { PolymorphicRef, SpiritNavigationActionProps } from '../../types';
+import { NavigationActionVariants } from './constants';
 import { useNavigationActionProps } from './useNavigationActionProps';
 import { useNavigationStyleProps } from './useNavigationStyleProps';
 
 const defaultProps: Partial<SpiritNavigationActionProps> = {
   elementType: 'a',
+  variant: NavigationActionVariants.BOX,
 };
 
 /* We need an exception for components exported with forwardRef */

@@ -3,23 +3,25 @@ import Navigation from '../Navigation';
 import NavigationAction from '../NavigationAction';
 import NavigationItem from '../NavigationItem';
 
-const NavigationHorizontalWithAction = () => {
+const NavigationVerticalWithPillAction = () => {
   return (
-    <Navigation aria-label="Main Navigation">
+    <Navigation aria-label="Main Navigation" direction="vertical">
       <NavigationItem>
-        <NavigationAction href="/">Link</NavigationAction>
+        <NavigationAction href="/" variant="pill">
+          Link
+        </NavigationAction>
       </NavigationItem>
       <NavigationItem>
-        <NavigationAction href="/" aria-current="page" isSelected>
+        <NavigationAction href="/" variant="pill" aria-current="page" isSelected>
           Selected
         </NavigationAction>
       </NavigationItem>
       <NavigationItem>
-        <NavigationAction href="/" isDisabled>
+        <NavigationAction href="/" variant="pill" isDisabled>
           Disabled
         </NavigationAction>
       </NavigationItem>
     </Navigation>
   );
 };
-export default NavigationHorizontalWithAction;
+export default NavigationVerticalWithPillAction;
