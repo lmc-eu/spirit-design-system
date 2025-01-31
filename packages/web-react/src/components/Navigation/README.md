@@ -79,10 +79,15 @@ and [escape hatches][readme-escape-hatches].
 
 The `NavigationAction` is component that is styled to be used as a navigation action.
 
+It has to be either `box` or `pill` variant. Default variant is `box`.
+
 ```jsx
 import { NavigationAction } from '@lmc-eu/spirit-web-react';
 
 <NavigationAction href="#">Link</NavigationAction>;
+<NavigationAction href="#" variant="pill">
+  Link
+</NavigationAction>;
 ```
 
 It can obtain `isSelected` or `isDisabled` states by adding the respective props.
@@ -110,6 +115,7 @@ inherit the height of the `Header`.
 | `isSelected`  | `boolean`                         | `false` | ✕        | Whether the action is selected  |
 | `ref`         | `ForwardedRef<HTMLAnchorElement>` | —       | ✕        | Anchor element reference        |
 | `target`      | `string`                          | `null`  | ✕        | Link target                     |
+| `variant`     | `box` \| `pill`                   | `box`   | ✕        | Variant of the NavigationAction |
 
 The components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

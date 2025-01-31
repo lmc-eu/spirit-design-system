@@ -1,6 +1,7 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
+import { NavigationActionVariants } from '../constants';
 import NavigationAction from '../NavigationAction';
 import ReadMe from '../README.md';
 
@@ -25,11 +26,19 @@ const meta: Meta<typeof NavigationAction> = {
         defaultValue: { summary: 'false' },
       },
     },
+    variant: {
+      control: 'select',
+      options: [...Object.values(NavigationActionVariants)],
+      table: {
+        defaultValue: { summary: NavigationActionVariants.BOX },
+      },
+    },
   },
   args: {
     children: 'Link',
     isDisabled: false,
     isSelected: false,
+    variant: NavigationActionVariants.BOX,
   },
 };
 

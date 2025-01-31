@@ -3,7 +3,7 @@ import Navigation from '../Navigation';
 import NavigationAction from '../NavigationAction';
 import NavigationItem from '../NavigationItem';
 
-const NavigationVerticalWithAction = () => {
+const NavigationVerticalWithBoxAction = () => {
   return (
     <Navigation aria-label="Main Navigation" direction="vertical">
       <NavigationItem>
@@ -22,4 +22,4 @@ const NavigationVerticalWithAction = () => {
     </Navigation>
   );
 };
-export default NavigationVerticalWithAction;
+export default NavigationVerticalWithBoxAction;
