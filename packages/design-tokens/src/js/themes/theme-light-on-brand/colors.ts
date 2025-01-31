@@ -45,11 +45,11 @@ export const componentHeaderBackground = '#6039cc';
 export const componentHeaderItemBackgroundStateActive = '#1a1b1b26';
 export const componentHeaderItemBackgroundStateDefault = '#fff0';
 export const componentHeaderItemBackgroundStateHover = '#1a1b1b1a';
-export const componentHeaderItemBackgroundStateSelected = '#fff0';
+export const componentHeaderItemBackgroundStateSelected = '#4e2ea6';
 export const componentHeaderItemStateActive = '#e5e5e5';
 export const componentHeaderItemStateDefault = '#fff';
 export const componentHeaderItemStateHover = '#f2f2f2';
-export const componentHeaderItemStateSelected = '#ffbe00';
+export const componentHeaderItemStateSelected = '#fff';
 export const componentHeaderStripeStateSelected = '#fff';
 export const componentHeaderStripeStateUnselected = '#ffffff40';
 
