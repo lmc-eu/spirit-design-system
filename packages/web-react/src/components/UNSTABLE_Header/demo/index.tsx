@@ -12,6 +12,7 @@ import HeaderFluid from './HeaderFluid';
 import HeaderMinimal from './HeaderMinimal';
 import HeaderWithNavigation from './HeaderWithNavigation';
 import HeaderWithNavigationAndNestedItems from './HeaderWithNavigationAndNestedItems';
+import HeaderWithPillNavigation from './HeaderWithPillNavigation';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -27,6 +28,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       </DocsSection>
       <DocsSection title="With Navigation" stackAlignment="stretch" container="heading-only">
         <HeaderWithNavigation />
+      </DocsSection>
+      <DocsSection title="With Pill Navigation" stackAlignment="stretch" container="heading-only">
+        <HeaderWithPillNavigation />
       </DocsSection>
       <DocsSection title="With Navigation and Nested Items" stackAlignment="stretch" container="heading-only">
         <HeaderWithNavigationAndNestedItems />
