@@ -1,5 +1,6 @@
 import { ElementType, ReactElement } from 'react';
 import { NavigationItem } from '../components';
+import { NavigationActionVariants } from '../components/Navigation/constants';
 import { LinkTarget } from './link';
 import {
   AlignmentYExtendedDictionaryType,
@@ -11,6 +12,11 @@ import {
   TransferProps,
 } from './shared';
 
+export type NavigationActionVariantsKeys = keyof typeof NavigationActionVariants;
+export type NavigationActionVariantsType<T = undefined> =
+  | (typeof NavigationActionVariants)[NavigationActionVariantsKeys]
+  | T;
+
 export interface NavigationActionBaseProps extends ChildrenProps, StyleProps, AriaLabelingProps, TransferProps {
   /** NavigationAction's href attribute */
   href?: string;
@@ -20,6 +26,8 @@ export interface NavigationActionBaseProps extends ChildrenProps, StyleProps, Ar
   isSelected?: boolean;
   /** NavigationAction's target attribute */
   target?: LinkTarget;
+  /** NavigationAction's variant */
+  variant?: NavigationActionVariantsType;
 }
 
 export type NavigationActionProps<E extends ElementType> = {
