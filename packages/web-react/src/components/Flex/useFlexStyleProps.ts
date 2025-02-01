@@ -8,7 +8,7 @@ import {
   useSpacingStyle,
   useWrapClass,
 } from '../../hooks';
-import { FlexAlignmentXType, FlexAlignmentYType, SpacingProp, SpiritFlexProps } from '../../types';
+import { FlexAlignmentXType, FlexAlignmentYType, SpacingType, SpiritFlexProps } from '../../types';
 import { generateStylePropsClassNames, stringOrObjectKebabCaseToCamelCase } from '../../utils';
 
 interface FlexCSSProperties extends CSSProperties {
@@ -39,10 +39,10 @@ export function useFlexStyleProps(props: SpiritFlexProps<ElementType>): FlexStyl
   const flexClass = useClassNamePrefix('Flex');
 
   const flexStyle: FlexCSSProperties = {
-    ...useSpacingStyle(spacing as SpacingProp, 'flex', DirectionAxis.X),
-    ...useSpacingStyle(spacing as SpacingProp, 'flex', DirectionAxis.Y),
-    ...useSpacingStyle(spacingX as SpacingProp, 'flex', DirectionAxis.X),
-    ...useSpacingStyle(spacingY as SpacingProp, 'flex', DirectionAxis.Y),
+    ...useSpacingStyle(spacing as SpacingType, 'flex', DirectionAxis.X),
+    ...useSpacingStyle(spacing as SpacingType, 'flex', DirectionAxis.Y),
+    ...useSpacingStyle(spacingX as SpacingType, 'flex', DirectionAxis.X),
+    ...useSpacingStyle(spacingY as SpacingType, 'flex', DirectionAxis.Y),
   };
 
   const directionClass = generateStylePropsClassNames(flexClass, stringOrObjectKebabCaseToCamelCase(direction!));
