@@ -1,8 +1,8 @@
 import { DirectionAxis } from '../constants';
-import { SpacingProp, SpacingCSSProperties } from '../types';
+import { SpacingCSSProperties, SpacingType } from '../types';
 
 export function useSpacingStyle(
-  spacing: SpacingProp | undefined,
+  spacing: SpacingType | undefined,
   prefix: string,
   direction: undefined | (typeof DirectionAxis)[keyof typeof DirectionAxis] = undefined,
 ): SpacingCSSProperties {

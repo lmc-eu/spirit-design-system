@@ -12,8 +12,10 @@ export type SpacingProps = {
     | Partial<Record<BreakpointToken, SpaceToken | StyleSpacingAuto>>;
 };
 
+export type SpacingType = SpaceToken | Partial<Record<BreakpointToken, SpaceToken>>;
+
 export interface SpacingProp {
-  spacing?: SpaceToken | Partial<Record<BreakpointToken, SpaceToken>>;
+  spacing?: SpacingType;
 }
 
 export interface SpacingCSSProperties extends CSSProperties {
