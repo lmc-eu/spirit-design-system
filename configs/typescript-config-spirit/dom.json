@@ -15,6 +15,10 @@
 
     // If types is specified, only packages listed will be included in the global scope.
     // @see: https://www.typescriptlang.org/tsconfig/#types
-    "types": ["node", "jest", "@testing-library/jest-dom"]
+    "types": ["node", "jest", "@testing-library/jest-dom"],
+
+    // Specify multiple folders that act like './node_modules/@types'.
+    // @see: https://www.typescriptlang.org/tsconfig/#typeRoots
+    "typeRoots": ["../../node_modules/@types", "../../node_modules"]
   }
 }
