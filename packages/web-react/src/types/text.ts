@@ -1,4 +1,4 @@
-import { ElementType, JSXElementConstructor } from 'react';
+import { ElementType } from 'react';
 import {
   ChildrenProps,
   EmphasisDictionaryType,
@@ -17,7 +17,7 @@ export interface TextElementTypeProps<T extends ElementType = 'p'> {
    *
    * @default 'p'
    */
-  elementType?: T | JSXElementConstructor<unknown>;
+  elementType?: T;
 }
 
 export interface TextProps<T extends ElementType = 'p'>

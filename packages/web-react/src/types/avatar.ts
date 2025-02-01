@@ -1,4 +1,4 @@
-import { ElementType, JSXElementConstructor } from 'react';
+import { ElementType } from 'react';
 import { ChildrenProps, SizeExtendedDictionaryType, StyleProps, TransferProps } from './shared';
 
 export type AvatarSize<S> = SizeExtendedDictionaryType<S> | S;
@@ -9,7 +9,7 @@ export interface AriaAvatarElementTypeProps<E extends ElementType = 'div'> {
    *
    * @default 'div'
    */
-  elementType?: E | JSXElementConstructor<unknown>;
+  elementType?: E;
 }
 
 export interface AvatarProps extends ChildrenProps, StyleProps, TransferProps {}

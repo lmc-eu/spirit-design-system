@@ -1,4 +1,4 @@
-import { ElementType, JSXElementConstructor } from 'react';
+import { ElementType } from 'react';
 import {
   ChildrenProps,
   EmotionColorsDictionaryType,
@@ -15,7 +15,7 @@ export interface AriaPillElementTypeProps<T extends ElementType = 'span'> {
    *
    * @default 'span'
    */
-  elementType?: T | JSXElementConstructor<unknown>;
+  elementType?: T;
 }
 
 export interface PillProps extends ChildrenProps, StyleProps, TransferProps {}
