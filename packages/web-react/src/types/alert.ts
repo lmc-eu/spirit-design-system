@@ -1,4 +1,4 @@
-import { ElementType, JSXElementConstructor } from 'react';
+import { ElementType } from 'react';
 import { ChildrenProps, EmotionColorsDictionaryType, StyleProps, TransferProps } from './shared';
 
 export interface AriaAlertElementTypeProps<T extends ElementType = 'div'> {
@@ -7,7 +7,7 @@ export interface AriaAlertElementTypeProps<T extends ElementType = 'div'> {
    *
    * @default 'div'
    */
-  elementType?: T | JSXElementConstructor<unknown>;
+  elementType?: T;
 }
 
 export interface AlertProps extends ChildrenProps, StyleProps, TransferProps {}

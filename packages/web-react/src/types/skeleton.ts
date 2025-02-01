@@ -1,4 +1,4 @@
-import { ElementType, JSXElementConstructor } from 'react';
+import { ElementType } from 'react';
 import {
   BorderRadiiDictionaryType,
   BreakpointToken,
@@ -14,7 +14,7 @@ export interface AriaSkeletonElementTypeProps<T extends ElementType = 'div'> {
    *
    * @default 'div'
    */
-  elementType?: T | JSXElementConstructor<unknown>;
+  elementType?: T;
 }
 
 export type SkeletonSize<C> = SizeExtendedDictionaryType | C;

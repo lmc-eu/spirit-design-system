@@ -14,7 +14,7 @@ const defaultProps: Partial<SpiritAlertProps> = {
   elementType: 'div',
 };
 
-export const Alert = <T extends ElementType = 'div', E = void>(props: SpiritAlertProps<T, E>): JSX.Element => {
+export const Alert = <T extends ElementType = 'div', E = void>(props: SpiritAlertProps<T, E>) => {
   const propsWithDefaults = { ...defaultProps, ...props };
   const {
     elementType: ElementTag = defaultProps.elementType as ElementType,
