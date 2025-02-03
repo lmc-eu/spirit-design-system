@@ -3015,12 +3015,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/cli@npm:19.6.1":
-  version: 19.6.1
-  resolution: "@commitlint/cli@npm:19.6.1"
+"@commitlint/cli@npm:19.7.1":
+  version: 19.7.1
+  resolution: "@commitlint/cli@npm:19.7.1"
   dependencies:
     "@commitlint/format": "npm:^19.5.0"
-    "@commitlint/lint": "npm:^19.6.0"
+    "@commitlint/lint": "npm:^19.7.1"
     "@commitlint/load": "npm:^19.6.1"
     "@commitlint/read": "npm:^19.5.0"
     "@commitlint/types": "npm:^19.5.0"
@@ -3028,7 +3028,7 @@ __metadata:
     yargs: "npm:^17.0.0"
   bin:
     commitlint: cli.js
-  checksum: 10/b63b8a716d943419a0bb0542e752d380d62f2715266ae0bb53911f3fe749ae9c3bf0fd591abd87be6b863e522ca183c7bac6a82ef73255a5c5bbeceb620ecbb1
+  checksum: 10/d6bc2c2d036bb3e83cc24aeba17f8bff1dd8a16474f8857775ba8a483aa7a3bf41a9dfd6dadd5ee12b08f7d4d47746ab53cccd3ecfb20d0ebf2826c2f31a2e98
   languageName: node
   linkType: hard
 
@@ -3082,25 +3082,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/is-ignored@npm:^19.6.0":
-  version: 19.6.0
-  resolution: "@commitlint/is-ignored@npm:19.6.0"
+"@commitlint/is-ignored@npm:^19.7.1":
+  version: 19.7.1
+  resolution: "@commitlint/is-ignored@npm:19.7.1"
   dependencies:
     "@commitlint/types": "npm:^19.5.0"
     semver: "npm:^7.6.0"
-  checksum: 10/07b41573c9247522eb96af118be97ae015f5d0a141ecf5e3c0f67372b0fb7ba57c98adc462c722b7a7f0dd18ddcbacd92b42228e0e62370d3db110b0a35f6120
+  checksum: 10/489624ca405b4dc7c210db92a85d1860793fa534bb1460b913e4610eab1953fafc0d77f8a84dcdc7abcb79e8db7486799c4092063acbccafdc2772f6647215e5
   languageName: node
   linkType: hard
 
-"@commitlint/lint@npm:^19.6.0":
-  version: 19.6.0
-  resolution: "@commitlint/lint@npm:19.6.0"
+"@commitlint/lint@npm:^19.7.1":
+  version: 19.7.1
+  resolution: "@commitlint/lint@npm:19.7.1"
   dependencies:
-    "@commitlint/is-ignored": "npm:^19.6.0"
+    "@commitlint/is-ignored": "npm:^19.7.1"
     "@commitlint/parse": "npm:^19.5.0"
     "@commitlint/rules": "npm:^19.6.0"
     "@commitlint/types": "npm:^19.5.0"
-  checksum: 10/f50721d8b02cea8cda9e67a57fb2c03377ae94ab708d47395a4e86f6f327d11db9dc84a1ecbcc3fae086f1e100400356826497a69a9d0caee6859238b32260dc
+  checksum: 10/1feac1d2aa1ad3c7864af2563622c21bbedac342b02030c877f87f9d5eb8acc0e0d10b67105aece64f6b94dfe906ec6c7d1e72a27cdde197606b88c8a8c66a9a
   languageName: node
   linkType: hard
 
@@ -6524,66 +6524,66 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@omlet/cli-darwin-arm64@npm:1.13.0":
-  version: 1.13.0
-  resolution: "@omlet/cli-darwin-arm64@npm:1.13.0"
+"@omlet/cli-darwin-arm64@npm:1.13.1":
+  version: 1.13.1
+  resolution: "@omlet/cli-darwin-arm64@npm:1.13.1"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@omlet/cli-darwin-x64@npm:1.13.0":
-  version: 1.13.0
-  resolution: "@omlet/cli-darwin-x64@npm:1.13.0"
+"@omlet/cli-darwin-x64@npm:1.13.1":
+  version: 1.13.1
+  resolution: "@omlet/cli-darwin-x64@npm:1.13.1"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@omlet/cli-linux-arm64-gnu@npm:1.13.0":
-  version: 1.13.0
-  resolution: "@omlet/cli-linux-arm64-gnu@npm:1.13.0"
+"@omlet/cli-linux-arm64-gnu@npm:1.13.1":
+  version: 1.13.1
+  resolution: "@omlet/cli-linux-arm64-gnu@npm:1.13.1"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@omlet/cli-linux-arm64-musl@npm:1.13.0":
-  version: 1.13.0
-  resolution: "@omlet/cli-linux-arm64-musl@npm:1.13.0"
+"@omlet/cli-linux-arm64-musl@npm:1.13.1":
+  version: 1.13.1
+  resolution: "@omlet/cli-linux-arm64-musl@npm:1.13.1"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@omlet/cli-linux-x64-gnu@npm:1.13.0":
-  version: 1.13.0
-  resolution: "@omlet/cli-linux-x64-gnu@npm:1.13.0"
+"@omlet/cli-linux-x64-gnu@npm:1.13.1":
+  version: 1.13.1
+  resolution: "@omlet/cli-linux-x64-gnu@npm:1.13.1"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@omlet/cli-linux-x64-musl@npm:1.13.0":
-  version: 1.13.0
-  resolution: "@omlet/cli-linux-x64-musl@npm:1.13.0"
+"@omlet/cli-linux-x64-musl@npm:1.13.1":
+  version: 1.13.1
+  resolution: "@omlet/cli-linux-x64-musl@npm:1.13.1"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@omlet/cli-win32-x64-msvc@npm:1.13.0":
-  version: 1.13.0
-  resolution: "@omlet/cli-win32-x64-msvc@npm:1.13.0"
+"@omlet/cli-win32-x64-msvc@npm:1.13.1":
+  version: 1.13.1
+  resolution: "@omlet/cli-win32-x64-msvc@npm:1.13.1"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"@omlet/cli@npm:1.13.0":
-  version: 1.13.0
-  resolution: "@omlet/cli@npm:1.13.0"
+"@omlet/cli@npm:1.13.1":
+  version: 1.13.1
+  resolution: "@omlet/cli@npm:1.13.1"
   dependencies:
-    "@omlet/cli-darwin-arm64": "npm:1.13.0"
-    "@omlet/cli-darwin-x64": "npm:1.13.0"
-    "@omlet/cli-linux-arm64-gnu": "npm:1.13.0"
-    "@omlet/cli-linux-arm64-musl": "npm:1.13.0"
-    "@omlet/cli-linux-x64-gnu": "npm:1.13.0"
-    "@omlet/cli-linux-x64-musl": "npm:1.13.0"
-    "@omlet/cli-win32-x64-msvc": "npm:1.13.0"
+    "@omlet/cli-darwin-arm64": "npm:1.13.1"
+    "@omlet/cli-darwin-x64": "npm:1.13.1"
+    "@omlet/cli-linux-arm64-gnu": "npm:1.13.1"
+    "@omlet/cli-linux-arm64-musl": "npm:1.13.1"
+    "@omlet/cli-linux-x64-gnu": "npm:1.13.1"
+    "@omlet/cli-linux-x64-musl": "npm:1.13.1"
+    "@omlet/cli-win32-x64-msvc": "npm:1.13.1"
     "@sentry/node": "npm:^7.108.0"
     ajv: "npm:^8.13.0"
     ci-info: "npm:^4.0.0"
@@ -6636,7 +6636,7 @@ __metadata:
       optional: true
   bin:
     omlet: bin/omlet
-  checksum: 10/5f715a4c56080eb60ccf301d8b9b4811bb3328e6c0e10170ac64263bd704bb1832a903153c1e9d83401bf6d8f2c1c76bb890e0847890659d12328b5e4a62b628
+  checksum: 10/207a98e0f34ec8650da834fbc651cc5803bb3cfb14ab19a69af46192385524938aaf7c47b4f4f9f4f5dd50fe8104d4c06d6c490a7d0b84be83bfd9ed5469d7e9
   languageName: node
   linkType: hard
 
@@ -6806,14 +6806,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@playwright/test@npm:1.49.1":
-  version: 1.49.1
-  resolution: "@playwright/test@npm:1.49.1"
+"@playwright/test@npm:1.50.1":
+  version: 1.50.1
+  resolution: "@playwright/test@npm:1.50.1"
   dependencies:
-    playwright: "npm:1.49.1"
+    playwright: "npm:1.50.1"
   bin:
     playwright: cli.js
-  checksum: 10/bb0d5eda58ee0b5bbca732d2aa57782fadf420d101e08e16d5760179459c667907bd8d224ee3d6f43f3088378e377ef63d32ed605fec37605debf217c3efe8da
+  checksum: 10/0d8d2291d6554c492cb163b4d463e1e9cc6d3ae50680d790473f693f36a243c16c3620406849dd40115046c47a6ad5cc36a24511caec6d054dc1a1d9fffb4138
   languageName: node
   linkType: hard
 
@@ -26144,27 +26144,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"playwright-core@npm:1.49.1":
-  version: 1.49.1
-  resolution: "playwright-core@npm:1.49.1"
+"playwright-core@npm:1.50.1":
+  version: 1.50.1
+  resolution: "playwright-core@npm:1.50.1"
   bin:
     playwright-core: cli.js
-  checksum: 10/baa39a53024ec7744708410f2b952ac3aa2e1a6d311dabfa303523712848eba142fce5c20f1b2ed2a66fbd9a415d22ea8642b0f70423360aaebd4b41c47d364e
+  checksum: 10/9a310b8a66bf7fd926e620c1c8e27be29bdbdce91640e5f975b2fd4dc706d0307faec2bb0456cc8e7dedb1e71c0b5eb35c6a58acd5cedc7d8fd849a9067e637b
   languageName: node
   linkType: hard
 
-"playwright@npm:1.49.1":
-  version: 1.49.1
-  resolution: "playwright@npm:1.49.1"
+"playwright@npm:1.50.1":
+  version: 1.50.1
+  resolution: "playwright@npm:1.50.1"
   dependencies:
     fsevents: "npm:2.3.2"
-    playwright-core: "npm:1.49.1"
+    playwright-core: "npm:1.50.1"
   dependenciesMeta:
     fsevents:
       optional: true
   bin:
     playwright: cli.js
-  checksum: 10/49fb063f4a107b8090f66d2d351ebd51fbb66843a8f95a161fa0c0e0b5156515961e75cc10f4249f61b9d2af51f762dda505c62b096d8f61cd47d1ff73ab39d2
+  checksum: 10/a3687614ac3238a81cbe3018e4f4a2ae92c71f3f65110cc6087068c020f6134f0628308da33177b9b08102644706e835d4053f6890beeb4a935f433bc4ac107a
   languageName: node
   linkType: hard
 
@@ -30118,12 +30118,12 @@ __metadata:
     "@almacareer/remark-config": "npm:0.1.0"
     "@babel/core": "npm:7.26.7"
     "@babel/preset-react": "npm:7.26.3"
-    "@commitlint/cli": "npm:19.6.1"
+    "@commitlint/cli": "npm:19.7.1"
     "@lmc-eu/commitlint-config": "npm:2.0.3"
     "@lmc-eu/conventional-changelog-lmc-github": "npm:3.0.3"
     "@lmc-eu/eslint-config-react": "npm:2.0.5"
-    "@omlet/cli": "npm:1.13.0"
-    "@playwright/test": "npm:1.49.1"
+    "@omlet/cli": "npm:1.13.1"
+    "@playwright/test": "npm:1.50.1"
     "@rollup/plugin-babel": "npm:6.0.4"
     "@rollup/plugin-node-resolve": "npm:15.3.1"
     "@svgr/webpack": "npm:8.1.0"
