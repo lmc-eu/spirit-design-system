@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import React, { ForwardedRef, forwardRef, useState } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritToggleProps } from '../../types';
-import { HelperText, useAriaIds, ValidationText } from '../Field';
+import { HelperText, Label, useAriaIds, ValidationText } from '../Field';
 import { useValidationTextRole } from '../Field/useValidationTextRole';
 import { useToggleStyleProps } from './useToggleStyleProps';
 
@@ -40,9 +40,15 @@ const _UNSTABLE_Toggle = (props: SpiritToggleProps, ref: ForwardedRef<HTMLInputE
   };
 
   return (
-    <label {...styleProps} htmlFor={id} className={classNames(classProps.root, styleProps.className)}>
+    <Label
+      htmlFor={id}
+      UNSAFE_style={styleProps.style}
+      UNSAFE_className={classNames(classProps.root, styleProps.className)}
+    >
       <span className={classProps.text}>
-        <span className={classProps.label}>{label}</span>
+        <Label elementType="span" UNSAFE_className={classProps.label}>
+          {label}
+        </Label>
         <HelperText
           className={classProps.helperText}
           elementType="span"
@@ -72,7 +78,7 @@ const _UNSTABLE_Toggle = (props: SpiritToggleProps, ref: ForwardedRef<HTMLInputE
         onChange={handleOnChange}
         ref={ref}
       />
-    </label>
+    </Label>
   );
 };
 

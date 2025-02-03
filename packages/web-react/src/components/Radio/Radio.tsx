@@ -1,10 +1,10 @@
 'use client';
 
 import classNames from 'classnames';
-import React, { forwardRef, ForwardedRef } from 'react';
+import React, { ForwardedRef, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritRadioProps } from '../../types';
-import { HelperText, useAriaIds } from '../Field';
+import { HelperText, Label, useAriaIds } from '../Field';
 import { useRadioStyleProps } from './useRadioStyleProps';
 
 /* We need an exception for components exported with forwardRef */
@@ -27,7 +27,11 @@ const _Radio = (props: SpiritRadioProps, ref: ForwardedRef<HTMLInputElement>): J
   const [ids, register] = useAriaIds(ariaDescribedBy);
 
   return (
-    <label htmlFor={id} {...styleProps} className={classNames(classProps.root, styleProps.className)}>
+    <Label
+      htmlFor={id}
+      UNSAFE_style={styleProps.style}
+      UNSAFE_className={classNames(classProps.root, styleProps.className)}
+    >
       <input
         {...otherProps}
         aria-describedby={ids.join(' ')}
@@ -41,7 +45,9 @@ const _Radio = (props: SpiritRadioProps, ref: ForwardedRef<HTMLInputElement>): J
         ref={ref}
       />
       <span className={classProps.text}>
-        <span className={classProps.label}>{label}</span>
+        <Label elementType="span" UNSAFE_className={classProps.label}>
+          {label}
+        </Label>
         <HelperText
           className={classProps.helperText}
           elementType="span"
@@ -50,7 +56,7 @@ const _Radio = (props: SpiritRadioProps, ref: ForwardedRef<HTMLInputElement>): J
           helperText={helperText}
         />
       </span>
-    </label>
+    </Label>
   );
 };
 

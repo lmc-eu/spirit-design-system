@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import React, { CSSProperties, ChangeEvent, FormEvent, ForwardedRef, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritSliderProps } from '../../types';
-import { HelperText, ValidationText, useAriaIds } from '../Field';
+import { HelperText, Label, ValidationText, useAriaIds } from '../Field';
 import { useValidationTextRole } from '../Field/useValidationTextRole';
 import { SLIDER_DEFAULT_PROPS } from './constants';
 import { useSliderStyleProps } from './useSliderStyleProps';
@@ -53,9 +53,9 @@ const _UnstableSlider = (props: SpiritSliderProps, ref: ForwardedRef<HTMLInputEl
 
   return (
     <div {...styleProps} {...otherProps} className={classNames(classProps.root, styleProps.className)}>
-      <label htmlFor={id} className={classProps.label}>
+      <Label htmlFor={id} UNSAFE_className={classProps.label}>
         {label}
-      </label>
+      </Label>
       <input
         aria-describedby={ids.join(' ')}
         className={classProps.input}
