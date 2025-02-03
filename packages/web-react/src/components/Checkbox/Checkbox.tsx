@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import React, { ForwardedRef, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritCheckboxProps } from '../../types';
-import { HelperText, ValidationText, useAriaIds } from '../Field';
+import { HelperText, Label, ValidationText, useAriaIds } from '../Field';
 import { useValidationTextRole } from '../Field/useValidationTextRole';
 import { useCheckboxStyleProps } from './useCheckboxStyleProps';
 
@@ -33,7 +33,11 @@ const _Checkbox = (props: SpiritCheckboxProps, ref: ForwardedRef<HTMLInputElemen
   });
 
   return (
-    <label {...styleProps} htmlFor={id} className={classNames(classProps.root, styleProps.className)}>
+    <Label
+      htmlFor={id}
+      UNSAFE_style={styleProps.style}
+      UNSAFE_className={classNames(classProps.root, styleProps.className)}
+    >
       <input
         {...otherProps}
         aria-describedby={ids.join(' ')}
@@ -47,7 +51,9 @@ const _Checkbox = (props: SpiritCheckboxProps, ref: ForwardedRef<HTMLInputElemen
         ref={ref}
       />
       <span className={classProps.text}>
-        <span className={classProps.label}>{label}</span>
+        <Label elementType="span" UNSAFE_className={classProps.label}>
+          {label}
+        </Label>
         <HelperText
           className={classProps.helperText}
           elementType="span"
@@ -66,7 +72,7 @@ const _Checkbox = (props: SpiritCheckboxProps, ref: ForwardedRef<HTMLInputElemen
           />
         )}
       </span>
-    </label>
+    </Label>
   );
 };
 

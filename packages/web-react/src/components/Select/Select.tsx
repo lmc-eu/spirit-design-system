@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import React, { ForwardedRef, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritSelectProps } from '../../types';
-import { HelperText, ValidationText, useAriaIds } from '../Field';
+import { HelperText, Label, ValidationText, useAriaIds } from '../Field';
 import { useValidationTextRole } from '../Field/useValidationTextRole';
 import { Icon } from '../Icon';
 import { useSelectStyleProps } from './useSelectStyleProps';
@@ -37,9 +37,9 @@ const _Select = (props: SpiritSelectProps, ref: ForwardedRef<HTMLSelectElement>)
 
   return (
     <div {...styleProps} className={classNames(classProps.root, styleProps.className)}>
-      <label htmlFor={id} className={classProps.label}>
+      <Label htmlFor={id} UNSAFE_className={classProps.label}>
         {label}
-      </label>
+      </Label>
       <div className={classProps.container}>
         <select
           {...transferProps}

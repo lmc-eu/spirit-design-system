@@ -4,6 +4,7 @@ import {
   Checkbox,
   Grid,
   GridItem,
+  Label,
   Modal,
   ModalBody,
   ModalDialog,
@@ -237,17 +238,17 @@ const ModalScrollingLongContent = () => {
                     }
                   />
                   <Grid UNSAFE_style={{ columnGap: 'var(--spirit-space-600)' }}>
-                    <label
-                      className="GridItem"
+                    <Label
+                      UNSAFE_className="GridItem"
                       htmlFor={`custom-height-${breakpoint}`}
-                      style={{
+                      UNSAFE_style={{
                         ['--grid-item-column-start' as string]: 1,
                         ['--grid-item-column-end' as string]: 6,
                         ['--grid-item-column-end-tablet' as string]: 4,
                       }}
                     >
                       Height
-                    </label>
+                    </Label>
                     <GridItem
                       columnStart={{ mobile: 6, tablet: 4 }}
                       columnEnd={{ mobile: 13, tablet: 7 }}
@@ -274,17 +275,17 @@ const ModalScrollingLongContent = () => {
                     />
                   </Grid>
                   <Grid UNSAFE_style={{ columnGap: 'var(--spirit-space-600)' }}>
-                    <label
-                      className="GridItem"
+                    <Label
+                      UNSAFE_className="GridItem"
                       htmlFor={`custom-max-height-${breakpoint}`}
-                      style={{
+                      UNSAFE_style={{
                         ['--grid-item-column-start' as string]: 1,
                         ['--grid-item-column-end' as string]: 6,
                         ['--grid-item-column-end-tablet' as string]: 4,
                       }}
                     >
                       Max height
-                    </label>
+                    </Label>
                     <GridItem
                       columnStart={{ mobile: 6, tablet: 4 }}
                       columnEnd={{ mobile: 13, tablet: 7 }}

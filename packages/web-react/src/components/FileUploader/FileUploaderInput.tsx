@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import React, { useEffect, useState } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritFileUploaderInputProps } from '../../types';
-import { HelperText, ValidationText, useAriaIds } from '../Field';
+import { HelperText, Label, ValidationText, useAriaIds } from '../Field';
 import { useValidationTextRole } from '../Field/useValidationTextRole';
 import { Icon } from '../Icon';
 import { DEFAULT_FILE_QUEUE_LIMIT, DEFAULT_FILE_SIZE_LIMIT } from './constants';
@@ -85,9 +85,9 @@ const FileUploaderInput = (props: SpiritFileUploaderInputProps) => {
       onDrop={!isDisabled && isDragAndDropSupported ? onDrop : undefined}
       className={classNames(classProps.input.root, styleProps.className)}
     >
-      <label htmlFor={id} className={classProps.input.label}>
+      <Label htmlFor={id} UNSAFE_className={classProps.input.label}>
         {label}
-      </label>
+      </Label>
       <input
         aria-describedby={ids.join(' ')}
         type="file"
@@ -102,11 +102,11 @@ const FileUploaderInput = (props: SpiritFileUploaderInputProps) => {
       />
       <div ref={dropZoneRef} className={classProps.input.dropZone.root}>
         <Icon name={iconName} aria-hidden="true" />
-        <label htmlFor={id} className={classProps.input.dropZone.label}>
+        <Label htmlFor={id} UNSAFE_className={classProps.input.dropZone.label}>
           <span className={classProps.input.link}>{linkText}</span>
           &nbsp;
           <span className={classProps.input.dropLabel}>{labelText}</span>
-        </label>
+        </Label>
         <HelperText
           className={classProps.input.helper}
           id={`${id}__helperText`}
