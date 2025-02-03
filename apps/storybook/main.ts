@@ -7,7 +7,11 @@ import markdownRawPlugin from 'vite-raw-plugin';
 const config: StorybookConfig = {
   stories: ['../../packages/**/*.mdx', '../../packages/**/*.stories.@(ts|tsx)'],
 
-  addons: [getAbsolutePath('@storybook/addon-links'), getAbsolutePath('@storybook/addon-essentials')],
+  addons: [
+    getAbsolutePath('@storybook/addon-links'),
+    getAbsolutePath('@storybook/addon-essentials'),
+    getAbsolutePath('@storybook/addon-a11y'),
+  ],
 
   core: {
     disableTelemetry: true,
