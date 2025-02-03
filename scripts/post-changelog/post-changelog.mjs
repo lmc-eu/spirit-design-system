@@ -3,7 +3,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-console */
 import { fileURLToPath } from 'url';
-import dotenv from 'dotenv-safe';
+import { config as dotenvConfig } from 'dotenv-safe';
 import gitDiffParser from 'gitdiff-parser';
 import { simpleGit } from 'simple-git';
 import slackifyMarkdown from 'slackify-markdown';
@@ -175,7 +175,7 @@ async function postSlackNotification(changelog, packageName) {
  */
 async function configureWebhookURL() {
   try {
-    dotenv.config({
+    dotenvConfig({
       allowEmptyValues: true,
       example: '.env.example',
     });
