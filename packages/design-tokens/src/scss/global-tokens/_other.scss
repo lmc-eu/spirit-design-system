@@ -3,7 +3,7 @@ $container-padding-mobile: 16px !default;
 $container-padding-tablet: 32px !default;
 $container-padding-desktop: 32px !default;
 
-$container-x-small-max-width: 480px !default;
+$container-xsmall-max-width: 480px !default;
 
 $container-small-max-width: 640px !default;
 
@@ -13,7 +13,7 @@ $container-large-max-width: 1024px !default;
 
 $container-max-width: 1280px !default;
 
-$container-x-large-max-width: 1280px !default;
+$container-xlarge-max-width: 1280px !default;
 
 $breakpoint-mobile: 0 !default;
 $breakpoint-tablet: 768px !default;
@@ -33,8 +33,8 @@ $containers: (
         tablet: $container-padding-tablet,
         desktop: $container-padding-desktop,
     ),
-    x-small: (
-        max-width: $container-x-small-max-width,
+    xsmall: (
+        max-width: $container-xsmall-max-width,
     ),
     small: (
         max-width: $container-small-max-width,
@@ -46,8 +46,8 @@ $containers: (
         max-width: $container-large-max-width,
     ),
     max-width: $container-max-width,
-    x-large: (
-        max-width: $container-x-large-max-width,
+    xlarge: (
+        max-width: $container-xlarge-max-width,
     ),
 ) !default;
 

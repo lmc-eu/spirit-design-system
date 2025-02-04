@@ -3,7 +3,7 @@ export const containerPaddingMobile = '16px';
 export const containerPaddingTablet = '32px';
 export const containerPaddingDesktop = '32px';
 
-export const containerXSmallMaxWidth = '480px';
+export const containerXsmallMaxWidth = '480px';
 
 export const containerSmallMaxWidth = '640px';
 
@@ -13,7 +13,7 @@ export const containerLargeMaxWidth = '1024px';
 
 export const containerMaxWidth = '1280px';
 
-export const containerXLargeMaxWidth = '1280px';
+export const containerXlargeMaxWidth = '1280px';
 
 export const breakpointMobile = 0;
 export const breakpointTablet = '768px';
@@ -33,8 +33,8 @@ export const containers = {
     tablet: containerPaddingTablet,
     desktop: containerPaddingDesktop,
   },
-  xSmall: {
-    maxWidth: containerXSmallMaxWidth,
+  xsmall: {
+    maxWidth: containerXsmallMaxWidth,
   },
   small: {
     maxWidth: containerSmallMaxWidth,
@@ -46,8 +46,8 @@ export const containers = {
     maxWidth: containerLargeMaxWidth,
   },
   maxWidth: containerMaxWidth,
-  xLarge: {
-    maxWidth: containerXLargeMaxWidth,
+  xlarge: {
+    maxWidth: containerXlargeMaxWidth,
   },
 };
 
