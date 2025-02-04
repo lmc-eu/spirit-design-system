@@ -5,6 +5,3 @@ vendor
 dist
 build
 .github
-
-# Fix case of the files
-MIGRATION-*
