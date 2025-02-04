@@ -68,7 +68,7 @@
     "@lmc-eu/conventional-changelog-lmc-github": "3.0.3",
     "@lmc-eu/eslint-config-react": "2.0.5",
     "@omlet/cli": "1.13.1",
-    "@playwright/test": "1.50.1",
+    "@playwright/test": "1.49.1",
     "@rollup/plugin-babel": "6.0.4",
     "@rollup/plugin-node-resolve": "15.3.1",
     "@svgr/webpack": "8.1.0",
