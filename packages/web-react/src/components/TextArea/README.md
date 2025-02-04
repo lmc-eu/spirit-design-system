@@ -31,7 +31,7 @@ Advanced example usage:
 Example with Auto-Height Adjustment
 
 ```jsx
-<TextArea id="example" name="example" isAutoResizing autoResizingMaxHeight={500} />
+<TextArea id="example" label="Label" name="example" isAutoResizing autoResizingMaxHeight={500} />
 ```
 
 ## API
@@ -46,7 +46,7 @@ Example with Auto-Height Adjustment
 | `isDisabled`            | `bool`                                         | —       | ✕        | Whether is field disabled                                            |
 | `isLabelHidden`         | `bool`                                         | —       | ✕        | Whether is label hidden                                              |
 | `isRequired`            | `bool`                                         | —       | ✕        | Whether is field required                                            |
-| `label`                 | `ReactNode`                                    | —       | ✕        | Label text                                                           |
+| `label`                 | `ReactNode`                                    | —       | ✓        | Label text                                                           |
 | `maxLength`             | `number`                                       | —       | ✕        | Maximum number of characters                                         |
 | `name`                  | `string`                                       | —       | ✕        | Textarea name                                                        |
 | `placeholder`           | `string`                                       | —       | ✕        | Textarea placeholder                                                 |
