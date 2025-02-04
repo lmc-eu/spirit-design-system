@@ -60,7 +60,6 @@ export function useTextFieldBaseStyleProps(props: SpiritTextFieldBaseProps): Tex
     props: {
       ...restProps,
       isMultiline,
-      validationState,
     },
   };
 }
