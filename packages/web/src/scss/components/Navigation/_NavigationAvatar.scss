@@ -1,0 +1,47 @@
+// 1. We want specific typography for nested items in the Navigation component.
+// 2. In the vertical Navigation component, the stripe is placed outside the NavigationAvatar element,
+//    so we need to disable pointer events on it.
+// 3. We want the selected and expanded states to override the hover and active states.
+
+@use '../../tools/reset';
+@use '../../tools/typography';
+@use 'theme';
+
+.NavigationAvatar:where(button) {
+    @include reset.button();
+}
+
+.NavigationAvatar {
+    display: flex;
+    gap: theme.$avatar-gap;
+    align-items: center;
+    padding-inline-start: theme.$avatar-padding-start;
+    padding-inline-end: theme.$avatar-padding-end;
+    padding-block: theme.$avatar-padding-y;
+    color: theme.$avatar-color-state-default;
+    border-radius: theme.$avatar-border-radius;
+    background-color: theme.$avatar-background-color-state-default;
+
+    @media (hover: hover) {
+        &:hover {
+            text-decoration: none;
+            color: theme.$avatar-color-state-hover;
+            background-color: theme.$avatar-background-color-state-hover;
+        }
+    }
+
+    &:active {
+        text-decoration: none;
+        color: theme.$avatar-color-state-active;
+        background-color: theme.$avatar-background-color-state-active;
+    }
+}
+
+.NavigationAvatar--square {
+    border-radius: theme.$avatar-border-radius-square;
+}
+
+.NavigationAvatar[aria-expanded='true'] {
+    color: theme.$avatar-color-state-selected;
+    background-color: theme.$avatar-background-color-state-selected;
+}
