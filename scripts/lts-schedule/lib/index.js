@@ -308,9 +308,9 @@ function create(options) {
 
   if (typeof png === 'string') {
     // eslint-disable-next-line global-require, import/no-unresolved -- Load this lazily
-    const Svg2png = require('svg2png');
+    const Sharp = require('sharp');
 
-    Fs.writeFileSync(png, Svg2png.sync(Buffer.from(d3n.svgString())));
+    Sharp(Buffer.from(d3n.svgString())).png({ compressionLevel: 9 }).toFile(png);
   }
 }
 
