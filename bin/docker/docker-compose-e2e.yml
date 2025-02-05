@@ -1,0 +1,35 @@
+name: e2e-tests
+
+include:
+  - ./docker-compose-e2e.volumes.yml
+
+services:
+  e2e-tests:
+    init: true
+    image: mcr.microsoft.com/playwright:v${PLAYWRIGHT_VERSION}-${UBUNTU_VERSION}
+    ipc: host
+    extra_hosts:
+      # allows network calls between docker container and the host.
+      # See https://forums.docker.com/t/how-to-reach-localhost-on-host-from-docker-container/113321
+      - host.docker.internal:host-gateway
+    working_dir: /work/
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        corepack enable
+        corepack install
+        ${NPM_INSTALL_COMMAND:-yarn install}
+        yarn test:e2e ${PLAYWRIGHT_TEST_OPTIONS:-}
+
+    volumes:
+      - ${WORKING_DIRECTORY}:/work/
+      - npm-cache:/root/.yarn/cache
+      # exclude node_modules from the mounted /app dir.
+      # See https://www.howtogeek.com/devops/how-to-mount-a-docker-volume-while-excluding-a-subdirectory/
+      - node-modules:/work/node_modules
+    stop_grace_period: 0s
+    environment:
+      CI: ${CI:-false}
+      USE_DOCKER_HOST_WEBSERVER: ${USE_DOCKER_HOST_WEBSERVER:-false}
+      SNAPSHOT_DIR: ${SNAPSHOT_DIR}
