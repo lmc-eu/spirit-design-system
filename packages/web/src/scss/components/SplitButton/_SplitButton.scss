@@ -1,0 +1,34 @@
+// 1. Non-zero values work only when the default Button border radius is a bit smaller than its height. In other words, it doesn't work when Buttons use the full radius.
+
+@use 'sass:map';
+@use '@tokens' as tokens;
+@use 'theme';
+
+.SplitButton {
+    --#{tokens.$css-variable-prefix}split-button-gap: #{-1 * theme.$border-width};
+    --#{tokens.$css-variable-prefix}split-button-inner-border-radius: #{theme.$inner-border-radius}; // 1.
+
+    display: flex;
+}
+
+.SplitButton > :not(:first-child):is(a, button),
+.SplitButton > :not(:first-child) > :is(a, button) {
+    --#{tokens.$css-variable-prefix}button-border-start-start-radius: var(
+        --#{tokens.$css-variable-prefix}split-button-inner-border-radius
+    );
+    --#{tokens.$css-variable-prefix}button-border-end-start-radius: var(
+        --#{tokens.$css-variable-prefix}split-button-inner-border-radius
+    );
+
+    margin-inline-start: var(--#{tokens.$css-variable-prefix}split-button-gap);
+}
+
+.SplitButton > :not(:last-child):is(a, button),
+.SplitButton > :not(:last-child) > :is(a, button) {
+    --#{tokens.$css-variable-prefix}button-border-start-end-radius: var(
+        --#{tokens.$css-variable-prefix}split-button-inner-border-radius
+    );
+    --#{tokens.$css-variable-prefix}button-border-end-end-radius: var(
+        --#{tokens.$css-variable-prefix}split-button-inner-border-radius
+    );
+}

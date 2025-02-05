@@ -21,7 +21,13 @@
     border-width: theme.$border-width;
     border-style: theme.$border-style;
     border-color: var(--#{tokens.$css-variable-prefix}button-border-color);
-    border-radius: theme.$border-radius;
+    border-start-start-radius: var(
+        --#{tokens.$css-variable-prefix}button-border-start-start-radius,
+        theme.$border-radius
+    );
+    border-start-end-radius: var(--#{tokens.$css-variable-prefix}button-border-start-end-radius, theme.$border-radius);
+    border-end-start-radius: var(--#{tokens.$css-variable-prefix}button-border-end-start-radius, theme.$border-radius);
+    border-end-end-radius: var(--#{tokens.$css-variable-prefix}button-border-end-end-radius, theme.$border-radius);
     background-color: var(--#{tokens.$css-variable-prefix}button-background-color);
     user-select: none;
     cursor: cursors.$buttons;
@@ -71,15 +77,15 @@
 }
 
 .Button:is(:disabled, .is-disabled, .Button--disabled):not(.Button--loading) {
-    color: theme.$disabled-color;
-    border-color: theme.$disabled-border-color;
-    background-color: theme.$disabled-background-color;
+    --#{tokens.$css-variable-prefix}button-color: #{theme.$disabled-color};
+    --#{tokens.$css-variable-prefix}button-border-color: #{theme.$disabled-border-color};
+    --#{tokens.$css-variable-prefix}button-background-color: #{theme.$disabled-background-color};
 }
 
 // We need to override the default disabled styles for plain buttons, because we want them to be still plain.
 .Button--plain:is(:disabled, .is-disabled, .Button--disabled):not(.Button--loading) {
-    border-color: transparent;
-    background-color: transparent;
+    --#{tokens.$css-variable-prefix}button-border-color: transparent;
+    --#{tokens.$css-variable-prefix}button-background-color: transparent;
 }
 
 .Button.Button--loading {
