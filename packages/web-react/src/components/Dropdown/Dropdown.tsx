@@ -55,4 +55,6 @@ const Dropdown = (props: SpiritDropdownProps) => {
   );
 };
 
+Dropdown.spiritComponent = 'Dropdown';
+
 export default Dropdown;

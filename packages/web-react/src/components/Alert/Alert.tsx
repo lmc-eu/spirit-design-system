@@ -11,20 +11,13 @@ import { useAlertStyleProps } from './useAlertStyleProps';
 const defaultProps: Partial<SpiritAlertProps> = {
   color: 'success',
   isCentered: false,
-  elementType: 'div',
 };
 
 export const Alert = <T extends ElementType = 'div', E = void>(props: SpiritAlertProps<T, E>): JSX.Element => {
   const propsWithDefaults = { ...defaultProps, ...props };
-  const {
-    elementType: ElementTag = defaultProps.elementType as ElementType,
-    children,
-    color,
-    iconName,
-    ...restProps
-  } = propsWithDefaults;
+  const { elementType: ElementTag = 'div', children, color, iconName, ...restProps } = propsWithDefaults;
   const { classProps, props: modifiedProps } = useAlertStyleProps({ color, ...restProps });
-  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+  const { styleProps, props: otherProps } = useStyleProps({ ElementTag, ...modifiedProps });
   const alertIconName = useAlertIcon({ color, iconName, ...otherProps });
 
   return (
@@ -34,5 +27,7 @@ export const Alert = <T extends ElementType = 'div', E = void>(props: SpiritAler
     </ElementTag>
   );
 };
+
+Alert.spiritComponent = 'Alert';
 
 export default Alert;

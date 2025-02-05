@@ -28,7 +28,7 @@ const Flex = <T extends ElementType = 'div'>(props: SpiritFlexProps<T>): JSX.Ele
     ...restProps
   } = propsWithDefaults;
   const { classProps, props: modifiedProps, styleProps: flexStyle } = useFlexStyleProps({ direction, ...restProps });
-  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+  const { styleProps, props: otherProps } = useStyleProps({ ElementTag, ...modifiedProps });
 
   const flexStyleProps = {
     style: {
@@ -43,5 +43,7 @@ const Flex = <T extends ElementType = 'div'>(props: SpiritFlexProps<T>): JSX.Ele
     </ElementTag>
   );
 };
+
+Flex.spiritComponent = 'Flex';
 
 export default Flex;

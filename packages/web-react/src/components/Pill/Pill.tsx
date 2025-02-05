@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React, { ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
-import { SpiritPillProps, StyleProps } from '../../types';
+import { SpiritPillProps } from '../../types';
 import { usePillStyleProps } from './usePillStyleProps';
 
 const defaultProps: Partial<SpiritPillProps> = {
@@ -19,7 +19,7 @@ const Pill = <T extends ElementType = 'span', C = void>(props: SpiritPillProps<T
     ...restProps
   } = propsWithDefaults;
   const { classProps, props: modifiedProps } = usePillStyleProps(restProps);
-  const { styleProps, props: otherProps } = useStyleProps(modifiedProps as StyleProps);
+  const { styleProps, props: otherProps } = useStyleProps({ ElementTag, ...modifiedProps });
 
   return (
     <ElementTag {...otherProps} {...styleProps} className={classNames(classProps, styleProps.className)}>
@@ -27,5 +27,7 @@ const Pill = <T extends ElementType = 'span', C = void>(props: SpiritPillProps<T
     </ElementTag>
   );
 };
+
+Pill.spiritComponent = 'Pill';
 
 export default Pill;

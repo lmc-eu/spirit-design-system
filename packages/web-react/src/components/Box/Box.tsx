@@ -17,7 +17,7 @@ const Box = <T extends ElementType = 'div'>(props: SpiritBoxProps<T>) => {
   const { elementType: ElementTag = 'div', children, ...restProps } = propsWithDefaults;
 
   const { classProps, props: modifiedProps } = useBoxStyleProps(restProps);
-  const { styleProps, props: otherProps } = useStyleProps(modifiedProps, PaddingStyleProps);
+  const { styleProps, props: otherProps } = useStyleProps({ ElementTag, ...modifiedProps }, PaddingStyleProps);
 
   return (
     <ElementTag {...otherProps} {...styleProps} className={classNames(classProps, styleProps.className)}>
@@ -25,5 +25,7 @@ const Box = <T extends ElementType = 'div'>(props: SpiritBoxProps<T>) => {
     </ElementTag>
   );
 };
+
+Box.spiritComponent = 'Box';
 
 export default Box;

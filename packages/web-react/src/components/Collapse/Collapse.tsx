@@ -1,7 +1,7 @@
 'use client';
 
 import classNames from 'classnames';
-import React, { MutableRefObject, useRef } from 'react';
+import React, { ElementType, MutableRefObject, useRef } from 'react';
 import { Transition, TransitionStatus } from 'react-transition-group';
 import { useStyleProps } from '../../hooks';
 import { SpiritCollapseProps } from '../../types';
@@ -28,7 +28,7 @@ const defaultProps: Partial<SpiritCollapseProps> = {
 const Collapse = (props: SpiritCollapseProps) => {
   const propsWithDefaults = { ...defaultProps, ...props };
   const {
-    elementType: ElementTag = defaultProps.elementType as React.ElementType,
+    elementType: ElementTag = defaultProps.elementType as ElementType,
     children,
     transitionDuration = TRANSITION_DURATION,
     ...restProps
@@ -40,7 +40,7 @@ const Collapse = (props: SpiritCollapseProps) => {
 
   const { classProps } = useCollapseStyleProps(restProps.isOpen);
   const { ariaProps, props: otherProps } = useCollapseAriaProps(restProps);
-  const { styleProps, props: transferProps } = useStyleProps(otherProps);
+  const { styleProps, props: transferProps } = useStyleProps({ ElementTag, ...otherProps });
   const collapseStyleProps = {
     className: styleProps.className,
     ...{ style: { height: restProps.isOpen ? collapseHeight : 0, ...styleProps.style } },
@@ -67,5 +67,7 @@ const Collapse = (props: SpiritCollapseProps) => {
     </Transition>
   );
 };
+
+Collapse.spiritComponent = 'Collapse';
 
 export default Collapse;

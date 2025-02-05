@@ -17,4 +17,6 @@ const ModalBody = ({ children, ...restProps }: ModalBodyProps) => {
   );
 };
 
+ModalBody.spiritComponent = 'ModalBody';
+
 export default ModalBody;

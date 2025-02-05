@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React, { ElementType, ForwardedRef, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
-import { SpiritTagProps, StyleProps } from '../../types';
+import { SpiritTagProps } from '../../types';
 import { useTagStyleProps } from './useTagStyleProps';
 
 const defaultProps: Partial<SpiritTagProps> = {
@@ -26,7 +26,7 @@ const _Tag = <T extends ElementType = 'span', C = void, S = void>(
     ...restProps
   } = propsWithDefaults;
   const { classProps, props: modifiedProps } = useTagStyleProps(restProps);
-  const { styleProps, props: otherProps } = useStyleProps(modifiedProps as StyleProps);
+  const { styleProps, props: otherProps } = useStyleProps({ ElementTag, ...modifiedProps });
 
   return (
     <ElementTag {...otherProps} {...styleProps} className={classNames(classProps, styleProps.className)} ref={ref}>
@@ -36,5 +36,7 @@ const _Tag = <T extends ElementType = 'span', C = void, S = void>(
 };
 
 const Tag = forwardRef<HTMLSpanElement, SpiritTagProps<ElementType>>(_Tag);
+
+Tag.spiritComponent = 'Tag';
 
 export default Tag;

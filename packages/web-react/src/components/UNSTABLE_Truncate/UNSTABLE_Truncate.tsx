@@ -15,7 +15,7 @@ const UNSTABLE_Truncate = <T extends ElementType = 'span'>(props: SpiritTruncate
   const { children, elementType: ElementTag = 'span', ...restProps } = propsWithDefaults;
 
   const { classProps, props: modifiedProps, styleProps: truncateStyle } = useTruncateStyleProps(restProps);
-  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+  const { styleProps, props: otherProps } = useStyleProps({ ElementTag, modifiedProps });
 
   const truncateStyleProps = {
     style: {
@@ -30,5 +30,7 @@ const UNSTABLE_Truncate = <T extends ElementType = 'span'>(props: SpiritTruncate
     </ElementTag>
   );
 };
+
+UNSTABLE_Truncate.spiritComponent = 'UNSTABLE_Truncate';
 
 export default UNSTABLE_Truncate;

@@ -29,4 +29,6 @@ const AttachmentImagePreview = (props: AttachmentImagePreviewProps) => {
   );
 };
 
+AttachmentImagePreview.spiritComponent = 'AttachmentImagePreview';
+
 export default AttachmentImagePreview;

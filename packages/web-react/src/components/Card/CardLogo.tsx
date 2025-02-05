@@ -18,4 +18,6 @@ const CardLogo = (props: SpiritCardLogoProps) => {
   );
 };
 
+CardLogo.spiritComponent = 'CardLogo';
+
 export default CardLogo;

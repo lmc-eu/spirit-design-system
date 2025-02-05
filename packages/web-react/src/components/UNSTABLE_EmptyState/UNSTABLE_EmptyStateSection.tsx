@@ -23,4 +23,6 @@ const UNSTABLE_EmptyStateSection = (props: SpiritEmptyStateProps): ReactElement 
   );
 };
 
+UNSTABLE_EmptyStateSection.spiritComponent = 'UNSTABLE_EmptyStateSection';
+
 export default UNSTABLE_EmptyStateSection;

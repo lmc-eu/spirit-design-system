@@ -49,4 +49,6 @@ const FileUploaderList = (props: SpiritFileUploaderListProps) => {
   );
 };
 
+FileUploaderList.spiritComponent = 'FileUploaderList';
+
 export default FileUploaderList;

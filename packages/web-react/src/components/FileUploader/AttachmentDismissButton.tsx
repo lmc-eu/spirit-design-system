@@ -27,4 +27,6 @@ const AttachmentDismissButton = (props: SpiritAttachmentDismissButtonProps) => {
   );
 };
 
+AttachmentDismissButton.spiritComponent = 'AttachmentDismissButton';
+
 export default AttachmentDismissButton;

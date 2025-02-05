@@ -18,7 +18,7 @@ const Grid = <T extends ElementType = 'div'>(props: SpiritGridProps<T>): JSX.Ele
 
   const { elementType: ElementTag = 'div', children, ...restProps } = propsWithDefaults;
   const { classProps, props: modifiedProps, styleProps: gridStyle } = useGridStyleProps(restProps);
-  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+  const { styleProps, props: otherProps } = useStyleProps({ ElementTag, ...modifiedProps });
 
   const gridStyleProps = {
     style: {
@@ -33,5 +33,7 @@ const Grid = <T extends ElementType = 'div'>(props: SpiritGridProps<T>): JSX.Ele
     </ElementTag>
   );
 };
+
+Grid.spiritComponent = 'Grid';
 
 export default Grid;

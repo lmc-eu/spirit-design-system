@@ -22,7 +22,7 @@ const ModalDialog = <E extends ElementType = ModalDialogElementType>(
 
   const { classProps } = useModalStyleProps({ isDockedOnMobile, isExpandedOnMobile, isScrollable });
   const { modalDialogStyleProps, props: otherStyleProps } = useModalDialogStyleProps(restProps);
-  const { styleProps, props: otherProps } = useStyleProps(otherStyleProps);
+  const { styleProps, props: otherProps } = useStyleProps({ ElementTag, ...otherStyleProps });
 
   const combinedStyleProps = { ...styleProps.style, ...modalDialogStyleProps };
 
@@ -37,5 +37,7 @@ const ModalDialog = <E extends ElementType = ModalDialogElementType>(
     </ElementTag>
   );
 };
+
+ModalDialog.spiritComponent = 'ModalDialog';
 
 export default forwardRef(ModalDialog);

@@ -26,4 +26,6 @@ const TooltipCloseButton = ({ label = 'Close', onClick, ...restProps }: TooltipC
   );
 };
 
+TooltipCloseButton.spiritComponent = 'TooltipCloseButton';
+
 export default TooltipCloseButton;

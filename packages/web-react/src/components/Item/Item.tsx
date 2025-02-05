@@ -19,7 +19,7 @@ const Item = <T extends ElementType = 'button'>(props: SpiritItemProps<T>): JSX.
     ...restProps
   } = props;
   const { classProps, props: modifiedProps } = useItemStyleProps({ isSelected, isDisabled, ...restProps });
-  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+  const { styleProps, props: otherProps } = useStyleProps({ ElementTag, ...modifiedProps });
 
   return (
     <ElementTag
@@ -44,5 +44,7 @@ const Item = <T extends ElementType = 'button'>(props: SpiritItemProps<T>): JSX.
     </ElementTag>
   );
 };
+
+Item.spiritComponent = 'Item';
 
 export default Item;

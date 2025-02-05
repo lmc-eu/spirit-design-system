@@ -22,4 +22,6 @@ const HeaderDialogActions = (props: HeaderDialogActionsProps) => {
   );
 };
 
+HeaderDialogActions.spiritComponent = 'HeaderDialogActions';
+
 export default HeaderDialogActions;

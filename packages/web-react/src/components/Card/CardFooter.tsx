@@ -24,4 +24,6 @@ const CardFooter = (props: SpiritCardFooterProps) => {
   );
 };
 
+CardFooter.spiritComponent = 'CardFooter';
+
 export default CardFooter;

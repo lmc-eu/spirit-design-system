@@ -15,7 +15,7 @@ const Heading = <T extends ElementType, S = void, E = void>(props: SpiritHeading
   const propsWithDefaults = { ...defaultProps, ...props };
   const { elementType: ElementTag, children, ...restProps } = propsWithDefaults;
   const { classProps, props: modifiedProps } = useHeadingStyleProps({ ...restProps });
-  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+  const { styleProps, props: otherProps } = useStyleProps({ ElementTag, ...modifiedProps });
 
   return (
     <ElementTag {...otherProps} {...styleProps} className={classNames(classProps, styleProps.className)}>
@@ -23,5 +23,7 @@ const Heading = <T extends ElementType, S = void, E = void>(props: SpiritHeading
     </ElementTag>
   );
 };
+
+Heading.spiritComponent = 'Heading';
 
 export default Heading;

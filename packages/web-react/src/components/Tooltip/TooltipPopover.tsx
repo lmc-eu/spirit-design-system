@@ -110,4 +110,6 @@ const TooltipPopover = (props: TooltipPopoverProps) => {
   );
 };
 
+TooltipPopover.spiritComponent = 'TooltipPopover';
+
 export default TooltipPopover;

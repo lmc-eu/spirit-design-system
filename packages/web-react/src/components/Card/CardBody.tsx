@@ -23,4 +23,6 @@ const CardBody = (props: SpiritCardBodyProps) => {
   );
 };
 
+CardBody.spiritComponent = 'CardBody';
+
 export default CardBody;

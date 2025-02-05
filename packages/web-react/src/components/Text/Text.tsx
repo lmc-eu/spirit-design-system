@@ -20,7 +20,7 @@ const Text = <T extends ElementType = 'p', S = void>(props: SpiritTextProps<T, S
     ...restProps
   } = propsWithDefaults;
   const { classProps, props: modifiedProps } = useTextStyleProps(restProps);
-  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+  const { styleProps, props: otherProps } = useStyleProps({ ElementTag, ...modifiedProps });
 
   return (
     <ElementTag {...otherProps} {...styleProps} className={classNames(classProps, styleProps.className)}>
@@ -28,5 +28,7 @@ const Text = <T extends ElementType = 'p', S = void>(props: SpiritTextProps<T, S
     </ElementTag>
   );
 };
+
+Text.spiritComponent = 'Text';
 
 export default Text;

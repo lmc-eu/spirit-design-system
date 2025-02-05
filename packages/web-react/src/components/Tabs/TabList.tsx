@@ -30,4 +30,6 @@ const TabList = ({ children, ...restProps }: TabListProps): ReactElement => {
   );
 };
 
+TabList.spiritComponent = 'TabList';
+
 export default TabList;

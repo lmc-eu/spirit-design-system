@@ -42,4 +42,7 @@ const _Icon = (props: IconProps, ref: ForwardedRef<SVGSVGElement>) => {
 };
 
 const Icon = forwardRef<SVGSVGElement, IconProps>(_Icon);
+
+Icon.spiritComponent = 'Icon';
+
 export default Icon;

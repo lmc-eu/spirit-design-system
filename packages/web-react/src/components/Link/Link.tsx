@@ -26,7 +26,7 @@ const _Link = <E extends ElementType = 'a', T = void>(
     ...restProps
   } = propsWithDefaults;
   const { classProps, props: modifiedProps } = useLinkStyleProps(restProps);
-  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+  const { styleProps, props: otherProps } = useStyleProps({ ElementTag, ...modifiedProps });
 
   return (
     <ElementTag
@@ -42,5 +42,7 @@ const _Link = <E extends ElementType = 'a', T = void>(
 };
 
 const Link = forwardRef<HTMLAnchorElement, SpiritLinkProps<ElementType>>(_Link);
+
+Link.spiritComponent = 'Link';
 
 export default Link;

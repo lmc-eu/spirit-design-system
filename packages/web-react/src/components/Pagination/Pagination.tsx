@@ -22,4 +22,6 @@ const Pagination = (props: SpiritPaginationProps) => {
   );
 };
 
+Pagination.spiritComponent = 'Pagination';
+
 export default Pagination;

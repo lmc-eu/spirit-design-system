@@ -11,7 +11,7 @@ const Accordion = (props: AccordionProps) => {
   const { children, elementType: ElementTag = 'section', open, toggle, ...restProps } = props;
 
   const { classProps } = useAccordionStyleProps();
-  const { styleProps, props: transferProps } = useStyleProps(restProps);
+  const { styleProps, props: transferProps } = useStyleProps({ ElementTag, ...restProps });
 
   const contextValue = {
     open,
@@ -24,5 +24,7 @@ const Accordion = (props: AccordionProps) => {
     </ElementTag>
   );
 };
+
+Accordion.spiritComponent = 'Accordion';
 
 export default Accordion;

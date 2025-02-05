@@ -19,4 +19,6 @@ const HeaderDialogText = (props: HeaderDialogTextProps) => {
   );
 };
 
+HeaderDialogText.spiritComponent = 'HeaderDialogText';
+
 export default HeaderDialogText;

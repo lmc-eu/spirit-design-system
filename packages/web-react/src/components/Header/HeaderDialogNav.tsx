@@ -19,4 +19,6 @@ const HeaderDialogNav = (props: HeaderDialogNavProps) => {
   );
 };
 
+HeaderDialogNav.spiritComponent = 'HeaderDialogNav';
+
 export default HeaderDialogNav;

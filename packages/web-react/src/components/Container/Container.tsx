@@ -23,4 +23,6 @@ const Container = (props: SpiritContainerProps): JSX.Element => {
   );
 };
 
+Container.spiritComponent = 'Container';
+
 export default Container;

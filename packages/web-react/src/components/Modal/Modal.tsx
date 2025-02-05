@@ -39,4 +39,6 @@ const Modal = (props: SpiritModalProps) => {
   );
 };
 
+Modal.spiritComponent = 'Modal';
+
 export default Modal;

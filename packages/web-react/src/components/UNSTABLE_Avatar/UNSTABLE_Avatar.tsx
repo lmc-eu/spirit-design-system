@@ -26,7 +26,7 @@ const _Avatar = <T extends ElementType = 'div', S = void>(
     ...restProps
   } = propsWithDefaults;
   const { classProps, props: modifiedProps } = useAvatarStyleProps(restProps);
-  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+  const { styleProps, props: otherProps } = useStyleProps({ ElementTag, ...modifiedProps });
 
   return (
     <ElementTag {...otherProps} {...styleProps} ref={ref} className={classNames(classProps, styleProps.className)}>
@@ -36,5 +36,7 @@ const _Avatar = <T extends ElementType = 'div', S = void>(
 };
 
 const UNSTABLE_Avatar = forwardRef<HTMLDivElement, SpiritAvatarProps<ElementType>>(_Avatar);
+
+UNSTABLE_Avatar.spiritComponent = 'Avatar';
 
 export default UNSTABLE_Avatar;

@@ -68,4 +68,6 @@ const ToastBar = (props: SpiritToastBarProps) => {
   );
 };
 
+ToastBar.spiritComponent = 'ToastBar';
+
 export default ToastBar;

@@ -19,4 +19,6 @@ const HeaderDialogNavItem = (props: HeaderDialogNavItemProps) => {
   );
 };
 
+HeaderDialogNavItem.spiritComponent = 'HeaderDialogNavItem';
+
 export default HeaderDialogNavItem;

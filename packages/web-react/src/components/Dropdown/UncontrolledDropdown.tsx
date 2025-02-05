@@ -32,4 +32,6 @@ const UncontrolledDropdown = (props: UncontrolledDropdownProps) => {
   );
 };
 
+UncontrolledDropdown.spiritComponent = 'UncontrolledDropdown';
+
 export default UncontrolledDropdown;

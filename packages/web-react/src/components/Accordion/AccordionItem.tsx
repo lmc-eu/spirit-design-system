@@ -11,7 +11,7 @@ const AccordionItem = (props: AccordionItemProps) => {
   const { children, elementType: ElementTag = 'article', id, ...restProps } = props;
 
   const { classProps } = useAccordionStyleProps();
-  const { styleProps, props: transferProps } = useStyleProps(restProps);
+  const { styleProps, props: transferProps } = useStyleProps({ ElementTag, ...restProps });
 
   const contextValue = { id };
 
@@ -26,5 +26,7 @@ const AccordionItem = (props: AccordionItemProps) => {
     </ElementTag>
   );
 };
+
+AccordionItem.spiritComponent = 'AccordionItem';
 
 export default AccordionItem;

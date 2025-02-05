@@ -11,4 +11,6 @@ const Tabs = ({ children, defaultSelectedTab, onSelectionChange, spacing }: Unco
   return <TabsProvider value={{ selectedId, selectTab, onSelectionChange, spacing }}>{children}</TabsProvider>;
 };
 
+Tabs.spiritComponent = 'Tabs';
+
 export default Tabs;
