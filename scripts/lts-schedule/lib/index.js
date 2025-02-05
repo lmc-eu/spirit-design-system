@@ -1,4 +1,4 @@
-/* eslint-disable no-shadow */
+/* eslint-disable no-shadow, no-console */
 const Fs = require('fs');
 // eslint-disable-next-line import/no-unresolved
 const D3 = require('d3');
@@ -308,9 +308,17 @@ function create(options) {
 
   if (typeof png === 'string') {
     // eslint-disable-next-line global-require, import/no-unresolved -- Load this lazily
-    const Svg2png = require('svg2png');
+    const Sharp = require('sharp');
 
-    Fs.writeFileSync(png, Svg2png.sync(Buffer.from(d3n.svgString())));
+    Sharp(Buffer.from(d3n.svgString()))
+      .png({ compressionLevel: 9 })
+      .toFile(png)
+      .then(() => {
+        console.log(`PNG file created at ${png}`);
+      })
+      .catch((err) => {
+        console.error(`Error creating PNG file at ${png}:`, err);
+      });
   }
 }
 
