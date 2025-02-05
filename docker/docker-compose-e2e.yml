@@ -1,0 +1,9 @@
+services:
+  e2e:
+    image: mcr.microsoft.com/playwright:v${PLAYWRIGHT_VERSION}-jammy
+    working_dir: /work/
+    volumes:
+      - ${PWD}:/work/
+    ipc: host
+    network_mode: host
+    entrypoint: sh -c "corepack install && corepack enable && yarn test:e2e${E2E_FLAG}"
