@@ -1,6 +1,8 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 set -o errexit
+
+project_root=$(cd $(dirname "${BASH_SOURCE}")/../..; pwd)
 
 if ! command -v jq &> /dev/null; then
   echo "jq could not be found, please install it."
@@ -8,7 +10,7 @@ if ! command -v jq &> /dev/null; then
 else
   PLAYWRIGHT_VERSION=$(jq -r '.devDependencies["@playwright/test"]' "$(dirname "$0")/../../package.json")
 fi
-UBUNTU_VERSION=jammy
+UBUNTU_VERSION=noble
 
 E2E_FLAG=""
 DOCKER_ARGS="--network=host"
@@ -24,7 +26,7 @@ while [[ $# -gt 0 ]]; do
             # For UI mode on Docker for Mac, we cannot use host networking.
             DOCKER_ARGS=""
             # Map the UI port (9323) from container to host.
-            PORT_ARGS="-p 9323:9323"
+            UI_PORT=9323
             ;;
         --report)
             E2E_FLAG=":report"
@@ -42,7 +44,10 @@ if [ "$E2E_FLAG" = ":ui" ]; then
   echo "Open http://localhost:9323 in your browser."
 fi
 
-docker run --rm $DOCKER_ARGS --ipc=host $PORT_ARGS \
-  -v "$(pwd)":/work/ -w /work/ -it \
-  mcr.microsoft.com/playwright:v$PLAYWRIGHT_VERSION-$UBUNTU_VERSION \
-  sh -c "corepack install && corepack enable && yarn test:e2e$E2E_FLAG"
+export PLAYWRIGHT_VERSION
+export UBUNTU_VERSION
+export E2E_FLAG
+export XVFB
+export UI_PORT
+
+docker compose --file "${project_root}/bin/docker/docker-compose.e2e.yml" run --rm e2e
