@@ -79,10 +79,10 @@ test-e2e: ## Run End-to-End tests
 	./bin/make/e2e.sh
 
 test-e2e-update: ## Update snapshots for End-to-End tests
-	./bin/make/e2e.sh --update
+	./bin/make/e2e.sh --testOptions "--update-snapshots"
 
 test-e2e-report: ## Open report for End-to-End tests
-	./bin/make/e2e.sh --report
+	./bin/make/e2e.sh --testOptions "--report"
 
 test-e2e-ui: ## Open UI for End-to-End tests
 	./bin/make/e2e.sh --ui
