@@ -7,6 +7,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import DocsSection from '../../../../docs/DocsSections';
 import { IconsProvider } from '../../../context';
+import NavigationAvatarDemo from './NavigationAvatarDemo';
 import NavigationHorizontal from './NavigationHorizontal';
 import NavigationHorizontalWithBoxAction from './NavigationHorizontalWithBoxAction';
 import NavigationHorizontalWithButtons from './NavigationHorizontalWithButtons';
@@ -50,6 +51,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       </DocsSection>
       <DocsSection title="Vertical Navigation with Pill NavigationAction" stackAlignment="stretch">
         <NavigationVerticalWithPillAction />
+      </DocsSection>
+      <DocsSection title="NavigationAvatar" stackAlignment="stretch">
+        <NavigationAvatarDemo />
       </DocsSection>
     </IconsProvider>
   </React.StrictMode>,
