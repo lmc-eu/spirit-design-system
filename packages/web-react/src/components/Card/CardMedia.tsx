@@ -25,4 +25,6 @@ const CardMedia = (props: SpiritCardMediaProps) => {
   );
 };
 
+CardMedia.spiritComponent = 'CardMedia';
+
 export default CardMedia;

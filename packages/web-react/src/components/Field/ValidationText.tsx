@@ -1,6 +1,7 @@
 'use client';
 
 import React, { ElementType, useEffect } from 'react';
+import { mergeStyleProps } from '../../utils';
 import { ValidationTextProps } from './types';
 
 const defaultProps: Partial<ValidationTextProps> = {
@@ -14,13 +15,14 @@ const defaultProps: Partial<ValidationTextProps> = {
 const ValidationText = <T extends ElementType = 'div'>(props: ValidationTextProps<T>) => {
   const propsWithDefaults = { ...defaultProps, ...props };
   const {
-    className,
     elementType: ElementTag = defaultProps.elementType as ElementType,
     id,
     registerAria,
     role,
     validationText,
+    ...restProps
   } = propsWithDefaults;
+  const mergedStyleProps = mergeStyleProps(ElementTag, { restProps });
 
   useEffect(() => {
     registerAria?.({ add: id });
@@ -32,7 +34,7 @@ const ValidationText = <T extends ElementType = 'div'>(props: ValidationTextProp
 
   if (validationText) {
     return Array.isArray(validationText) ? (
-      <ElementTag className={className} id={id} role={role}>
+      <ElementTag {...restProps} {...mergedStyleProps} id={id} role={role}>
         <ul>
           {validationText.map((item) => (
             <li key={`validationText_${item}`}>{item}</li>
@@ -40,7 +42,7 @@ const ValidationText = <T extends ElementType = 'div'>(props: ValidationTextProp
         </ul>
       </ElementTag>
     ) : (
-      <ElementTag className={className} id={id} role={role}>
+      <ElementTag {...restProps} {...mergedStyleProps} id={id} role={role}>
         {validationText}
       </ElementTag>
     );
@@ -48,5 +50,7 @@ const ValidationText = <T extends ElementType = 'div'>(props: ValidationTextProp
 
   return null;
 };
+
+ValidationText.spiritComponent = 'ValidationText';
 
 export default ValidationText;

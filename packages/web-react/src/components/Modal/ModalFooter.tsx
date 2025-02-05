@@ -21,4 +21,6 @@ const ModalFooter = (props: ModalFooterProps) => {
   );
 };
 
+ModalFooter.spiritComponent = 'ModalFooter';
+
 export default ModalFooter;

@@ -38,4 +38,6 @@ const HeaderMobileActions = (props: HeaderMobileActionsProps) => {
   );
 };
 
+HeaderMobileActions.spiritComponent = 'HeaderMobileActions';
+
 export default HeaderMobileActions;

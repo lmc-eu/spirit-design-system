@@ -33,4 +33,6 @@ const ToastCloseButton = (props: ToastCloseButtonProps) => {
   return null;
 };
 
+ToastCloseButton.spiritComponent = 'ToastCloseButton';
+
 export default ToastCloseButton;

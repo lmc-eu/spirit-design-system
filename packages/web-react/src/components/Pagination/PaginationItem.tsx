@@ -19,4 +19,6 @@ const PaginationItem = (props: SpiritPaginationItemProps) => {
   );
 };
 
+PaginationItem.spiritComponent = 'PaginationItem';
+
 export default PaginationItem;

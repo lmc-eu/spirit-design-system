@@ -1,9 +1,9 @@
 'use client';
 
-import classNames from 'classnames';
 import React, { ElementType, forwardRef, ReactElement } from 'react';
 import { useStyleProps } from '../../hooks';
 import { PolymorphicRef, SpiritHeaderLogoProps } from '../../types';
+import { mergeStyleProps } from '../../utils';
 import { useUnstableHeaderStyleProps } from './useUnstableHeaderStyleProps';
 
 const defaultProps: Partial<SpiritHeaderLogoProps> = {
@@ -24,20 +24,17 @@ const _HeaderLogo = <E extends ElementType = 'a'>(
   } = propsWithDefaults;
   const { classProps, props: modifiedProps } = useUnstableHeaderStyleProps(restProps);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+  const mergedStyleProps = mergeStyleProps(ElementTag, { classProps: classProps.logo, styleProps, otherProps });
 
   return (
-    <ElementTag
-      {...otherProps}
-      {...styleProps}
-      href={restProps.href}
-      className={classNames(classProps.logo, styleProps.className)}
-      ref={ref}
-    >
+    <ElementTag {...otherProps} {...mergedStyleProps} href={restProps.href} ref={ref}>
       {children}
     </ElementTag>
   );
 };
 
 const UNSTABLE_HeaderLogo = forwardRef<HTMLAnchorElement, SpiritHeaderLogoProps<ElementType>>(_HeaderLogo);
+
+UNSTABLE_HeaderLogo.spiritComponent = 'UNSTABLE_HeaderLogo';
 
 export default UNSTABLE_HeaderLogo;

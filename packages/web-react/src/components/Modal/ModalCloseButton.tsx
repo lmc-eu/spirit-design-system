@@ -13,4 +13,6 @@ const ModalCloseButton = ({ label = 'Close', onClose, id, isOpen, ...restProps }
   </Button>
 );
 
+ModalCloseButton.spiritComponent = 'ModalCloseButton';
+
 export default ModalCloseButton;

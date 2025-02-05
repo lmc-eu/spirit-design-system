@@ -1,9 +1,9 @@
 'use client';
 
-import classNames from 'classnames';
 import React from 'react';
 import { useStyleProps } from '../../hooks';
 import { AccordionProps } from '../../types';
+import { mergeStyleProps } from '../../utils';
 import { AccordionProvider } from './AccordionContext';
 import { useAccordionStyleProps } from './useAccordionStyleProps';
 
@@ -12,6 +12,7 @@ const Accordion = (props: AccordionProps) => {
 
   const { classProps } = useAccordionStyleProps();
   const { styleProps, props: transferProps } = useStyleProps(restProps);
+  const mergedStyleProps = mergeStyleProps(ElementTag, { classProps: classProps.root, styleProps });
 
   const contextValue = {
     open,
@@ -19,10 +20,12 @@ const Accordion = (props: AccordionProps) => {
   };
 
   return (
-    <ElementTag {...transferProps} {...styleProps} className={classNames(classProps.root, styleProps.className)}>
+    <ElementTag {...transferProps} {...styleProps} {...mergedStyleProps}>
       <AccordionProvider value={contextValue}>{children}</AccordionProvider>
     </ElementTag>
   );
 };
+
+Accordion.spiritComponent = 'Accordion';
 
 export default Accordion;

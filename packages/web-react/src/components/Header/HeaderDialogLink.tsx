@@ -1,9 +1,9 @@
 'use client';
 
-import classNames from 'classnames';
 import React, { ElementType, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
 import { PolymorphicRef, SpiritDialogHeaderLinkProps } from '../../types';
+import { mergeStyleProps } from '../../utils';
 import { useHeaderStyleProps } from './useHeaderStyleProps';
 
 /* We need an exception for components exported with forwardRef */
@@ -15,19 +15,21 @@ const _HeaderDialogLink = <E extends ElementType = 'a'>(
   const { elementType: ElementTag = 'a', children, isCurrent, ...restProps } = props;
   const { classProps } = useHeaderStyleProps({ isCurrentLink: isCurrent });
   const { styleProps, props: otherProps } = useStyleProps(restProps);
+  const mergedStyleProps = mergeStyleProps(ElementTag, {
+    classProps: classProps.headerDialogLink,
+    styleProps,
+    otherProps,
+  });
 
   return (
-    <ElementTag
-      {...otherProps}
-      className={classNames(classProps.headerDialogLink, styleProps.className)}
-      style={styleProps.style}
-      ref={ref}
-    >
+    <ElementTag {...otherProps} {...mergedStyleProps} ref={ref}>
       {children}
     </ElementTag>
   );
 };
 
 const HeaderDialogLink = forwardRef<HTMLAnchorElement, SpiritDialogHeaderLinkProps<ElementType>>(_HeaderDialogLink);
+
+HeaderDialogLink.spiritComponent = 'HeaderDialogLink';
 
 export default HeaderDialogLink;

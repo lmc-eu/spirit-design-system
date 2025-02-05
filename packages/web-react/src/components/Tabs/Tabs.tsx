@@ -8,4 +8,6 @@ const Tabs = ({ children, selectedTab, toggle: selectTab, onSelectionChange, spa
   <TabsProvider value={{ selectedId: selectedTab, selectTab, onSelectionChange, spacing }}>{children}</TabsProvider>
 );
 
+Tabs.spiritComponent = 'Tabs';
+
 export default Tabs;

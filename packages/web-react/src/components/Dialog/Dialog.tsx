@@ -59,4 +59,6 @@ const Dialog = (props: DialogProps, ref: ForwardedRef<HTMLDialogElement | null>)
   );
 };
 
+Dialog.spiritComponent = 'Dialog';
+
 export default forwardRef(Dialog);

@@ -88,4 +88,6 @@ const FileUploaderAttachment = (props: SpiritFileUploaderAttachmentProps) => {
   );
 };
 
+FileUploaderAttachment.spiritComponent = 'FileUploaderAttachment';
+
 export default FileUploaderAttachment;

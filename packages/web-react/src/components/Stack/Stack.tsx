@@ -1,9 +1,9 @@
 'use client';
 
-import classNames from 'classnames';
 import React, { ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritStackProps } from '../../types';
+import { mergeStyleProps } from '../../utils';
 import { useStackStyleProps } from './useStackStyleProps';
 
 const defaultProps: SpiritStackProps = {
@@ -22,20 +22,16 @@ const Stack = <T extends ElementType = 'div'>(props: SpiritStackProps<T>): JSX.E
     ...restProps
   } = propsWithDefaults;
   const { classProps, props: modifiedProps, styleProps: stackStyle } = useStackStyleProps(restProps);
-  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
-
-  const stackStyleProps = {
-    style: {
-      ...styleProps.style,
-      ...stackStyle,
-    },
-  };
+  const { styleProps, props: otherProps } = useStyleProps({ ElementTag, ...modifiedProps });
+  const mergedStyleProps = mergeStyleProps(ElementTag, { classProps, stackStyle, styleProps, otherProps });
 
   return (
-    <ElementTag {...otherProps} {...stackStyleProps} className={classNames(classProps, styleProps.className)}>
+    <ElementTag {...otherProps} {...mergedStyleProps}>
       {children}
     </ElementTag>
   );
 };
+
+Stack.spiritComponent = 'Stack';
 
 export default Stack;

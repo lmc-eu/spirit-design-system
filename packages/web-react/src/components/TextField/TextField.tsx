@@ -12,4 +12,6 @@ const _TextField = (props: SpiritTextFieldProps, ref: ForwardedRef<HTMLInputElem
 
 const TextField = forwardRef<HTMLInputElement, SpiritTextFieldProps>(_TextField);
 
+TextField.spiritComponent = 'TextField';
+
 export default TextField;

@@ -18,4 +18,6 @@ const CardEyebrow = (props: SpiritCardEyebrowProps) => {
   );
 };
 
+CardEyebrow.spiritComponent = 'CardEyebrow';
+
 export default CardEyebrow;

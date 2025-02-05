@@ -56,4 +56,6 @@ const FileUploader = (props: SpiritFileUploaderProps) => {
   );
 };
 
+FileUploader.spiritComponent = 'FileUploader';
+
 export default FileUploader;

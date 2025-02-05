@@ -23,4 +23,6 @@ const ActionGroup = (props: SpiritActionGroupProps): ReactElement => {
   return <Flex {...propsWithDefaults}>{children}</Flex>;
 };
 
+ActionGroup.spiritComponent = 'ActionGroup';
+
 export default ActionGroup;

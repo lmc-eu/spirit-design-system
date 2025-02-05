@@ -23,4 +23,6 @@ const UNSTABLE_EmptyState = (props: SpiritEmptyStateProps): ReactElement => {
   );
 };
 
+UNSTABLE_EmptyState.spiritComponent = 'UNSTABLE_EmptyState';
+
 export default UNSTABLE_EmptyState;

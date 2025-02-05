@@ -26,4 +26,6 @@ const PartnerLogo = (props: SpiritPartnerLogoProps) => {
   );
 };
 
+PartnerLogo.spiritComponent = 'PartnerLogo';
+
 export default PartnerLogo;

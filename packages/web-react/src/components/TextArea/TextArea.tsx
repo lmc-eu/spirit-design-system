@@ -30,4 +30,6 @@ const _TextArea = (props: SpiritTextAreaProps, ref: ForwardedRef<HTMLTextAreaEle
 
 const TextArea = forwardRef<HTMLTextAreaElement, SpiritTextAreaProps>(_TextArea);
 
+TextArea.spiritComponent = 'TextArea';
+
 export default TextArea;

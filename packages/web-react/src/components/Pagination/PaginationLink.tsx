@@ -1,9 +1,9 @@
 'use client';
 
-import classNames from 'classnames';
 import React, { ElementType, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
 import { PolymorphicRef, SpiritPaginationLinkProps } from '../../types';
+import { mergeStyleProps } from '../../utils';
 import { VisuallyHidden } from '../VisuallyHidden';
 import { usePaginationStyleProps } from './usePaginationStyleProps';
 
@@ -13,15 +13,11 @@ const _PaginationLink = <E extends ElementType = 'a'>(props: SpiritPaginationLin
   const { elementType: ElementTag = 'a', accessibilityLabel, isCurrent, pageNumber, ...restProps } = props;
 
   const { classProps } = usePaginationStyleProps({ isCurrent });
-  const { styleProps, props: transferProps } = useStyleProps(restProps);
+  const { styleProps, props: otherProps } = useStyleProps(restProps);
+  const mergedStyleProps = mergeStyleProps(ElementTag, { classProps: classProps.link, styleProps, otherProps });
 
   return (
-    <ElementTag
-      ref={ref}
-      {...transferProps}
-      {...styleProps}
-      className={classNames(classProps.link, styleProps.className)}
-    >
+    <ElementTag {...otherProps} {...mergedStyleProps} ref={ref}>
       <VisuallyHidden>{accessibilityLabel}</VisuallyHidden>
       <span aria-hidden="true">{pageNumber}</span>
     </ElementTag>
@@ -29,5 +25,7 @@ const _PaginationLink = <E extends ElementType = 'a'>(props: SpiritPaginationLin
 };
 
 const PaginationLink = forwardRef<HTMLAnchorElement, SpiritPaginationLinkProps>(_PaginationLink);
+
+PaginationLink.spiritComponent = 'PaginationLink';
 
 export default PaginationLink;

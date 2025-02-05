@@ -1,10 +1,10 @@
 'use client';
 
-import classNames from 'classnames';
 import React, { ElementType, ForwardedRef, forwardRef } from 'react';
 import { SizesExtended } from '../../constants';
 import { useStyleProps } from '../../hooks';
 import { SpiritAvatarProps } from '../../types';
+import { mergeStyleProps } from '../../utils';
 import { useAvatarStyleProps } from './useAvatarStyleProps';
 
 const defaultProps: Partial<SpiritAvatarProps> = {
@@ -20,16 +20,13 @@ const _Avatar = <T extends ElementType = 'div', S = void>(
   ref: ForwardedRef<HTMLDivElement>,
 ) => {
   const propsWithDefaults = { ...defaultProps, ...props };
-  const {
-    elementType: ElementTag = defaultProps.elementType as ElementType,
-    children,
-    ...restProps
-  } = propsWithDefaults;
+  const { elementType: ElementTag = 'div', children, ...restProps } = propsWithDefaults;
   const { classProps, props: modifiedProps } = useAvatarStyleProps(restProps);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+  const mergedStyleProps = mergeStyleProps(ElementTag, { classProps, styleProps });
 
   return (
-    <ElementTag {...otherProps} {...styleProps} ref={ref} className={classNames(classProps, styleProps.className)}>
+    <ElementTag {...otherProps} {...mergedStyleProps} ref={ref}>
       {children}
     </ElementTag>
   );

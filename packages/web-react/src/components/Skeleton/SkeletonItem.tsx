@@ -10,4 +10,6 @@ const SkeletonItem = (): ReactElement => {
   return <div className={classNames(classProps.item)} aria-hidden="true" />;
 };
 
+SkeletonItem.spiritComponent = 'SkeletonItem';
+
 export default SkeletonItem;

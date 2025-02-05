@@ -1,9 +1,9 @@
 'use client';
 
-import classNames from 'classnames';
 import React, { ElementType, ForwardedRef, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritButtonLinkProps } from '../../types';
+import { mergeStyleProps } from '../../utils';
 import { Spinner } from '../Spinner';
 import { useButtonLinkAriaProps } from './useButtonLinkAriaProps';
 import { useButtonLinkStyleProps } from './useButtonLinkStyleProps';
@@ -34,15 +34,10 @@ const _ButtonLink = <T extends ElementType = 'a', C = void, S = void>(
   const { buttonLinkProps } = useButtonLinkAriaProps(propsWithDefaults);
   const { classProps, props: modifiedProps } = useButtonLinkStyleProps(restProps);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+  const mergedStyleProps = mergeStyleProps(ElementTag, { classProps, styleProps, otherProps });
 
   return (
-    <ElementTag
-      {...otherProps}
-      {...buttonLinkProps}
-      ref={ref}
-      className={classNames(classProps, styleProps.className)}
-      style={styleProps.style}
-    >
+    <ElementTag {...otherProps} {...buttonLinkProps} {...mergedStyleProps} ref={ref}>
       {children}
       {restProps.isLoading && <Spinner />}
     </ElementTag>
@@ -50,5 +45,7 @@ const _ButtonLink = <T extends ElementType = 'a', C = void, S = void>(
 };
 
 const ButtonLink = forwardRef<HTMLAnchorElement, SpiritButtonLinkProps<ElementType>>(_ButtonLink);
+
+ButtonLink.spiritComponent = 'ButtonLink';
 
 export default ButtonLink;

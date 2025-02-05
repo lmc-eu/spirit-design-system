@@ -19,4 +19,6 @@ const UNSTABLE_Header = (props: SpiritHeaderProps): ReactElement => {
   );
 };
 
+UNSTABLE_Header.spiritComponent = 'UNSTABLE_Header';
+
 export default UNSTABLE_Header;

@@ -46,4 +46,6 @@ const ScrollView = (props: SpiritScrollViewProps) => {
   );
 };
 
+ScrollView.spiritComponent = 'ScrollView';
+
 export default ScrollView;

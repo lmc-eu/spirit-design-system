@@ -20,4 +20,6 @@ const HeaderButton = (props: HeaderButtonProps) => {
   );
 };
 
+HeaderButton.spiritComponent = 'HeaderButton';
+
 export default HeaderButton;

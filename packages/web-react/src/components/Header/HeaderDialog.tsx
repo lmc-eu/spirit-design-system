@@ -36,4 +36,6 @@ const HeaderDialog = (props: HeaderDialogProps) => {
   );
 };
 
+HeaderDialog.spiritComponent = 'HeaderDialog';
+
 export default HeaderDialog;

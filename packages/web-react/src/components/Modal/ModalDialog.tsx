@@ -1,9 +1,9 @@
 'use client';
 
-import classNames from 'classnames';
-import React, { ElementType, ForwardedRef, forwardRef, HTMLAttributes } from 'react';
+import React, { ElementType, ForwardedRef, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
 import { ModalDialogElementType, ModalDialogProps } from '../../types';
+import { mergeStyleProps } from '../../utils';
 import { useModalDialogStyleProps } from './useModalDialogStyleProps';
 import { useModalStyleProps } from './useModalStyleProps';
 
@@ -21,21 +21,22 @@ const ModalDialog = <E extends ElementType = ModalDialogElementType>(
   } = props;
 
   const { classProps } = useModalStyleProps({ isDockedOnMobile, isExpandedOnMobile, isScrollable });
-  const { modalDialogStyleProps, props: otherStyleProps } = useModalDialogStyleProps(restProps);
-  const { styleProps, props: otherProps } = useStyleProps(otherStyleProps);
-
-  const combinedStyleProps = { ...styleProps.style, ...modalDialogStyleProps };
+  const { modalDialogStyleProps, props: modifiedProps } = useModalDialogStyleProps(restProps);
+  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+  const mergedStyleProps = mergeStyleProps(ElementTag, {
+    classProps: classProps.dialog,
+    modalDialogStyleProps,
+    styleProps,
+    otherProps,
+  });
 
   return (
-    <ElementTag
-      ref={ref}
-      {...(otherProps as HTMLAttributes<HTMLElement>)}
-      style={{ ...(combinedStyleProps as HTMLAttributes<HTMLElement>) }}
-      className={classNames(classProps.dialog, styleProps.className)}
-    >
+    <ElementTag {...otherProps} {...mergedStyleProps} ref={ref}>
       {children}
     </ElementTag>
   );
 };
+
+ModalDialog.spiritComponent = 'ModalDialog';
 
 export default forwardRef(ModalDialog);

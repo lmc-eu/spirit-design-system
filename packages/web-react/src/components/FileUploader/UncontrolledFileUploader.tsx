@@ -83,4 +83,6 @@ const UncontrolledFileUploader = (props: SpiritUncontrolledFileUploaderProps) =>
   );
 };
 
+UncontrolledFileUploader.spiritComponent = 'UncontrolledFileUploader';
+
 export default UncontrolledFileUploader;

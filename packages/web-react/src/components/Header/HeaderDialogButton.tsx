@@ -20,4 +20,6 @@ const HeaderDialogButton = (props: HeaderDialogButtonProps) => {
   );
 };
 
+HeaderDialogButton.spiritComponent = 'HeaderDialogButton';
+
 export default HeaderDialogButton;

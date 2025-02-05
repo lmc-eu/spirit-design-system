@@ -39,4 +39,6 @@ const UncontrolledToast = (props: UncontrolledToastProps) => {
   );
 };
 
+UncontrolledToast.spiritComponent = 'UncontrolledToast';
+
 export default UncontrolledToast;

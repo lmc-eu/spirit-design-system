@@ -16,7 +16,7 @@ const _TabLink = <E extends ElementType = 'a'>(props: SpiritTabLinkProps<E>, ref
   const propsWithDefaults = { ...defaultProps, ...props };
   const { elementType: ElementTag = 'a', children, itemProps = {}, ...restProps } = propsWithDefaults;
   const { classProps } = useTabsStyleProps();
-  const { styleProps: itemStyleProps, props: itemTransferProps } = useStyleProps(itemProps);
+  const { styleProps: itemStyleProps, props: itemTransferProps } = useStyleProps({ ElementTag, ...itemProps });
 
   return (
     <li {...itemStyleProps} {...itemTransferProps} className={classNames(classProps.item, itemStyleProps.className)}>
@@ -28,5 +28,7 @@ const _TabLink = <E extends ElementType = 'a'>(props: SpiritTabLinkProps<E>, ref
 };
 
 const TabLink = forwardRef<HTMLAnchorElement, SpiritTabLinkProps<ElementType>>(_TabLink);
+
+TabLink.spiritComponent = 'TabLink';
 
 export default TabLink;

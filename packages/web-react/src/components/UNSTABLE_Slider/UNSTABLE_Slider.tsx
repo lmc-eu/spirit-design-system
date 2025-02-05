@@ -61,7 +61,6 @@ const _UnstableSlider = (props: SpiritSliderProps, ref: ForwardedRef<HTMLInputEl
         className={classProps.input}
         id={id}
         onInput={handleInput}
-        ref={ref}
         style={{ [CSSVariable]: `${getSliderPosition(value)}` } as CSSProperties}
         type="range"
         min={min}
@@ -69,6 +68,7 @@ const _UnstableSlider = (props: SpiritSliderProps, ref: ForwardedRef<HTMLInputEl
         step={step}
         value={value}
         disabled={isDisabled}
+        ref={ref}
       />
       <HelperText
         className={classProps.helperText}
@@ -90,5 +90,7 @@ const _UnstableSlider = (props: SpiritSliderProps, ref: ForwardedRef<HTMLInputEl
 };
 
 const UNSTABLE_Slider = forwardRef<HTMLInputElement, SpiritSliderProps>(_UnstableSlider);
+
+UNSTABLE_Slider.spiritComponent = 'UNSTABLE_Slider';
 
 export default UNSTABLE_Slider;

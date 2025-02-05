@@ -26,4 +26,6 @@ const TabPane = ({ children, id, ...restProps }: TabPaneProps): JSX.Element | nu
   ) : null;
 };
 
+TabPane.spiritComponent = 'TabPane';
+
 export default TabPane;

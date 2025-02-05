@@ -1,9 +1,9 @@
 'use client';
 
-import classNames from 'classnames';
 import React, { ElementType, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
 import { PolymorphicRef, SpiritCardLinkProps, SpiritLinkProps } from '../../types';
+import { mergeStyleProps } from '../../utils';
 import { useCardStyleProps } from './useCardStyleProps';
 
 const defaultProps: Partial<SpiritCardLinkProps> = {
@@ -21,20 +21,17 @@ const _CardLink = <E extends ElementType = 'a'>(props: SpiritCardLinkProps<E>, r
   } = propsWithDefaults;
   const { classProps } = useCardStyleProps();
   const { styleProps, props: otherProps } = useStyleProps(restProps);
+  const mergedStyleProps = mergeStyleProps(ElementTag, { classProps: classProps.link, styleProps, otherProps });
 
   return (
-    <ElementTag
-      {...otherProps}
-      {...styleProps}
-      href={restProps.href}
-      className={classNames(classProps.link, styleProps.className)}
-      ref={ref}
-    >
+    <ElementTag {...otherProps} {...styleProps} {...mergedStyleProps} href={restProps.href} ref={ref}>
       {children}
     </ElementTag>
   );
 };
 
 const CardLink = forwardRef<HTMLAnchorElement, SpiritLinkProps<ElementType>>(_CardLink);
+
+CardLink.spiritComponent = 'CardLink';
 
 export default CardLink;

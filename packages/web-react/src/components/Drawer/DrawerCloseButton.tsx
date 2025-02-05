@@ -35,4 +35,6 @@ const DrawerCloseButton = (props: DrawerCloseButtonProps) => {
   );
 };
 
+DrawerCloseButton.spiritComponent = 'DrawerCloseButton';
+
 export default DrawerCloseButton;

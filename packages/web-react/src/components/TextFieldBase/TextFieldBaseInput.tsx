@@ -24,10 +24,10 @@ const _TextFieldBaseInput = (
       className={classProps.input}
       disabled={isDisabled}
       id={id}
-      ref={ref as RefObject<HTMLInputElement & HTMLTextAreaElement>}
       required={isRequired}
       size={inputWidth}
       type={inputType}
+      ref={ref as RefObject<HTMLInputElement & HTMLTextAreaElement>}
     />
   );
 };
@@ -35,5 +35,7 @@ const _TextFieldBaseInput = (
 const TextFieldBaseInput = forwardRef<HTMLInputElement | HTMLTextAreaElement, SpiritTextFieldBaseInputProps>(
   _TextFieldBaseInput,
 );
+
+TextFieldBaseInput.spiritComponent = 'TextFieldBaseInput';
 
 export default TextFieldBaseInput;

@@ -16,4 +16,6 @@ const NoSsr = ({ children }: NoSsrProps): JSX.Element => {
   return isMounted ? children : null;
 };
 
+NoSsr.spiritComponent = 'NoSsr';
+
 export default NoSsr;

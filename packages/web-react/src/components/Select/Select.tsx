@@ -46,9 +46,9 @@ const _Select = (props: SpiritSelectProps, ref: ForwardedRef<HTMLSelectElement>)
           aria-describedby={ids.join(' ')}
           id={id}
           className={classProps.input}
-          ref={ref}
           disabled={isDisabled}
           required={isRequired}
+          ref={ref}
         >
           {children}
         </select>
@@ -76,5 +76,7 @@ const _Select = (props: SpiritSelectProps, ref: ForwardedRef<HTMLSelectElement>)
 };
 
 const Select = forwardRef<HTMLSelectElement, SpiritSelectProps>(_Select);
+
+Select.spiritComponent = 'Select';
 
 export default Select;

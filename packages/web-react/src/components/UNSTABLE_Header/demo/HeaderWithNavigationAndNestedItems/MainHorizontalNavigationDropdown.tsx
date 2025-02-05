@@ -10,9 +10,7 @@ import { NavigationAction } from '../../../Navigation';
 const _NavigationActionAsDropdownTrigger = <E extends ElementType = 'a'>(
   props: SpiritNavigationActionProps<E>,
   ref: PolymorphicRef<E>,
-): ReactElement => {
-  return <NavigationAction ref={ref} {...props} elementType="button" />;
-};
+): ReactElement => <NavigationAction {...props} elementType="button" ref={ref} />;
 
 const NavigationActionAsDropdownTrigger = forwardRef<HTMLButtonElement, SpiritNavigationActionProps<ElementType>>(
   _NavigationActionAsDropdownTrigger,

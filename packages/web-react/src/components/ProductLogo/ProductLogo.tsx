@@ -18,4 +18,6 @@ const ProductLogo = (props: SpiritProductLogoProps) => {
   );
 };
 
+ProductLogo.spiritComponent = 'ProductLogo';
+
 export default ProductLogo;

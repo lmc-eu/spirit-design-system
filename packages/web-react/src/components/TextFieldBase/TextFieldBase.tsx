@@ -39,7 +39,7 @@ const _TextFieldBase = (props: SpiritTextFieldBaseProps, ref: ForwardedRef<HTMLI
       <Label htmlFor={id} UNSAFE_className={classProps.label}>
         {label}
       </Label>
-      <TextFieldBaseInputWithPasswordToggle id={id} ref={ref} aria-describedby={ids.join(' ')} {...otherProps} />
+      <TextFieldBaseInputWithPasswordToggle {...otherProps} id={id} aria-describedby={ids.join(' ')} ref={ref} />
       <HelperText
         className={classProps.helperText}
         id={`${id}__helperText`}
@@ -61,5 +61,7 @@ const _TextFieldBase = (props: SpiritTextFieldBaseProps, ref: ForwardedRef<HTMLI
 };
 
 const TextFieldBase = forwardRef<HTMLInputElement | HTMLTextAreaElement, SpiritTextFieldBaseProps>(_TextFieldBase);
+
+TextFieldBase.spiritComponent = 'TextFieldBase';
 
 export default TextFieldBase;

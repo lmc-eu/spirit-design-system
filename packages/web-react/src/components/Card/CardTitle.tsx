@@ -1,9 +1,9 @@
 'use client';
 
-import classNames from 'classnames';
 import React, { ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritCardTitleProps } from '../../types';
+import { mergeStyleProps } from '../../utils';
 import { useCardStyleProps } from './useCardStyleProps';
 
 const defaultProps: Partial<SpiritCardTitleProps> = {
@@ -16,12 +16,15 @@ const CardTitle = <T extends ElementType = 'h4'>(props: SpiritCardTitleProps<T>)
   const { elementType: ElementTag = 'h4', children, isHeading, ...restProps } = propsWithDefaults;
   const { classProps } = useCardStyleProps({ isHeading });
   const { styleProps, props: otherProps } = useStyleProps(restProps);
+  const mergedStyleProps = mergeStyleProps(ElementTag, { classProps: classProps.title, styleProps, otherProps });
 
   return (
-    <ElementTag {...otherProps} className={classNames(classProps.title, styleProps.className)} style={styleProps.style}>
+    <ElementTag {...otherProps} {...mergedStyleProps}>
       {children}
     </ElementTag>
   );
 };
+
+CardTitle.spiritComponent = 'CardTitle';
 
 export default CardTitle;
