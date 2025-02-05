@@ -24,6 +24,7 @@ describe('useNavigationStyleProps', () => {
 
     expect(result.current.classProps.root).toBe('Navigation Navigation--horizontal');
     expect(result.current.classProps.action).toBe('NavigationAction NavigationAction--box');
+    expect(result.current.classProps.avatar).toBe('NavigationAvatar');
     expect(result.current.classProps.item).toBe('NavigationItem NavigationItem--alignmentYCenter');
   });
 
@@ -52,6 +53,13 @@ describe('useNavigationStyleProps', () => {
     const { result } = renderHook(() => useNavigationStyleProps(props));
 
     expect(result.current.classProps.action).toBe('NavigationAction NavigationAction--pill');
+  });
+
+  it('should return square class', () => {
+    const props = { isSquare: true };
+    const { result } = renderHook(() => useNavigationStyleProps(props));
+
+    expect(result.current.classProps.avatar).toBe('NavigationAvatar NavigationAvatar--square');
   });
 
   it('should return alignment class', () => {
