@@ -111,6 +111,16 @@
                 </button>
               </li>
               <li class="NavigationItem NavigationItem--alignmentYCenter d-none d-desktop-flex">
+                <a href="#" class="NavigationAvatar">
+                  <span class="Avatar Avatar--small" aria-label="Profile of Jiří Bárta">
+                    <svg width="20" height="20" aria-hidden="true">
+                      <use xlink:href="/assets/icons/svg/sprite.svg#profile"/>
+                    </svg>
+                  </span>
+                  <span class="typography-body-small-semibold">My Account</span>
+                </a>
+              </li>
+              <li class="NavigationItem NavigationItem--alignmentYCenter d-none d-desktop-flex">
                 <a href="#" class="Button Button--secondary Button--medium">Log In</a>
               </li>
               <li class="NavigationItem NavigationItem--alignmentYCenter d-none d-desktop-flex">
@@ -118,6 +128,7 @@
               </li>
               <li class="NavigationItem NavigationItem--alignmentYCenter d-desktop-none">
                 <button
+                  id="drawer-navigation-open-button"
                   class="Button Button--tertiary Button--medium Button--symmetrical"
                   type="button"
                   aria-label="Toggle Menu"
@@ -155,6 +166,21 @@
             <span class="accessibility-hidden">Close</span>
           </button>
           <div class="Stack Stack--hasSpacing Stack--hasIntermediateDividers mt-900" style="--stack-spacing: var(--spirit-space-900)">
+
+            <nav class="Navigation Navigation--vertical" aria-label="Profile">
+              <ul>
+                <li class="NavigationItem NavigationItem--alignmentYCenter">
+                  <a href="#" class="NavigationAvatar">
+                    <span class="Avatar Avatar--small" aria-label="Profile of Jiří Bárta">
+                      <svg width="20" height="20" aria-hidden="true">
+                        <use xlink:href="/assets/icons/svg/sprite.svg#profile" />
+                      </svg>
+                    </span>
+                    <span class="typography-body-small-semibold">My Account</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
 
             <nav class="Navigation Navigation--vertical" aria-label="Main Navigation">
               <ul>
@@ -233,6 +259,16 @@
                 </button>
               </li>
               <li class="NavigationItem NavigationItem--alignmentYCenter d-none d-desktop-flex">
+                <a href="#" class="NavigationAvatar">
+                  <span class="Avatar Avatar--small" aria-label="Profile of Jiří Bárta">
+                    <svg width="20" height="20" aria-hidden="true">
+                      <use xlink:href="/assets/icons/svg/sprite.svg#profile"/>
+                    </svg>
+                  </span>
+                  <span class="typography-body-small-semibold">My Account</span>
+                </a>
+              </li>
+              <li class="NavigationItem NavigationItem--alignmentYCenter d-none d-desktop-flex">
                 <a href="#" class="Button Button--secondary Button--medium">Log In</a>
               </li>
               <li class="NavigationItem NavigationItem--alignmentYCenter d-none d-desktop-flex">
@@ -240,12 +276,13 @@
               </li>
               <li class="NavigationItem NavigationItem--alignmentYCenter d-desktop-none">
                 <button
+                  id="drawer-navigation-pill-open-button"
                   class="Button Button--tertiary Button--medium Button--symmetrical"
                   type="button"
                   aria-label="Toggle Menu"
                   data-spirit-toggle="offcanvas"
-                  data-spirit-target="#drawer-navigation"
-                  aria-controls="drawer-navigation"
+                  data-spirit-target="#drawer-navigation-pill"
+                  aria-controls="drawer-navigation-pill"
                   aria-expanded="false"
                 >
                   <svg width="24" height="24" aria-hidden="true">
@@ -260,7 +297,7 @@
       </div>
     </header>
 
-    <dialog id="drawer-navigation" class="Drawer Drawer--right" aria-label="Navigation">
+    <dialog id="drawer-navigation-pill" class="Drawer Drawer--right" aria-label="Navigation">
       <div class="DrawerPanel">
         <div class="DrawerPanel__content">
           <button
@@ -268,8 +305,8 @@
             aria-expanded="false"
             class="Button Button--tertiary Button--medium Button--symmetrical DrawerCloseButton"
             data-spirit-dismiss="offcanvas"
-            data-spirit-target="#drawer-navigation"
-            aria-controls="drawer-navigation"
+            data-spirit-target="#drawer-navigation-pill"
+            aria-controls="drawer-navigation-pill"
           >
             <svg width="24" height="24" aria-hidden="true">
               <use xlink:href="/assets/icons/svg/sprite.svg#close" />
@@ -278,16 +315,31 @@
           </button>
           <div class="Stack Stack--hasSpacing Stack--hasIntermediateDividers mt-900" style="--stack-spacing: var(--spirit-space-900)">
 
+            <nav class="Navigation Navigation--vertical" aria-label="Profile">
+              <ul>
+                <li class="NavigationItem NavigationItem--alignmentYCenter">
+                  <a href="#" class="NavigationAvatar">
+                    <span class="Avatar Avatar--small" aria-label="Profile of Jiří Bárta">
+                      <svg width="20" height="20" aria-hidden="true">
+                        <use xlink:href="/assets/icons/svg/sprite.svg#profile" />
+                      </svg>
+                    </span>
+                    <span class="typography-body-small-semibold">My Account</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+
             <nav class="Navigation Navigation--vertical" aria-label="Main Navigation">
               <ul>
                 <li class="NavigationItem NavigationItem--alignmentYCenter">
-                  <a href="#" class="NavigationAction NavigationAction--box NavigationAction--selected" aria-current="page">Job Offers</a>
+                  <a href="#" class="NavigationAction NavigationAction--pill NavigationAction--selected" aria-current="page">Job Offers</a>
                 </li>
                 <li class="NavigationItem NavigationItem--alignmentYCenter">
-                  <a href="#" class="NavigationAction NavigationAction--box">Magazine</a>
+                  <a href="#" class="NavigationAction NavigationAction--pill">Magazine</a>
                 </li>
                 <li class="NavigationItem NavigationItem--alignmentYCenter">
-                  <a href="#" class="NavigationAction NavigationAction--box">Contact</a>
+                  <a href="#" class="NavigationAction NavigationAction--pill">Contact</a>
                 </li>
               </ul>
             </nav>
@@ -395,30 +447,28 @@
                 </button>
               </li>
               <li class="NavigationItem NavigationItem--alignmentYStretch d-none d-desktop-flex">
-                <div class="Dropdown Dropdown--alignmentXStretch Dropdown--alignmentYStretch">
+                <div class="Dropdown Dropdown--alignmentXCenter Dropdown--alignmentYCenter">
                   <button
                     type="button"
-                    class="button-unstyled"
+                    class="NavigationAvatar NavigationAvatar--square"
                     data-spirit-toggle="dropdown"
                     data-spirit-target="#dropdown-avatar"
                     aria-expanded="false"
                     aria-controls="dropdown-avatar"
                     data-spirit-autoclose="true"
                   >
-                    <span class="Flex Flex--row Flex--noWrap Flex--alignmentXStretch Flex--alignmentYCenter" style="--flex-spacing-x: var(--spirit-space-500)">
-                      <span class="Avatar Avatar--medium Avatar--square" aria-label="Profile of Jiří Bárta">
-                        <svg width="20" height="20" aria-hidden="true">
-                          <use xlink:href="/assets/icons/svg/sprite.svg#profile" />
-                        </svg>
-                      </span>
-                      <span class="typography-body-small-semibold">My Account</span>
-                      <svg width="20" height="20" aria-hidden="true" class="accessibility-open">
-                        <use xlink:href="/assets/icons/svg/sprite.svg#chevron-up" />
-                      </svg>
-                      <svg width="20" height="20" aria-hidden="true" class="accessibility-closed">
-                        <use xlink:href="/assets/icons/svg/sprite.svg#chevron-down" />
+                    <span class="Avatar Avatar--square Avatar--small" aria-label="Profile of Jiří Bárta">
+                      <svg width="20" height="20" aria-hidden="true">
+                        <use xlink:href="/assets/icons/svg/sprite.svg#profile" />
                       </svg>
                     </span>
+                    <span class="typography-body-small-semibold">My Account</span>
+                    <svg width="20" height="20" aria-hidden="true" class="accessibility-open">
+                      <use xlink:href="/assets/icons/svg/sprite.svg#chevron-up" />
+                    </svg>
+                    <svg width="20" height="20" aria-hidden="true" class="accessibility-closed">
+                      <use xlink:href="/assets/icons/svg/sprite.svg#chevron-down" />
+                    </svg>
                   </button>
                   <div class="DropdownPopover" data-spirit-placement="bottom-end" id="dropdown-avatar">
                     <ul class="list-unstyled">
@@ -449,6 +499,7 @@
               </li>
               <li class="NavigationItem NavigationItem--alignmentYCenter d-desktop-none">
                 <button
+                  id="drawer-navigation-expanded-open-button"
                   class="Button Button--tertiary Button--medium Button--symmetrical"
                   type="button"
                   aria-label="Toggle Menu"
@@ -490,18 +541,17 @@
             <nav class="Navigation Navigation--vertical" aria-label="Profile">
               <ul>
                 <li class="NavigationItem NavigationItem--alignmentYCenter">
-                  <a href="#" class="Flex Flex--row Flex--noWrap Flex--alignmentXStretch Flex--alignmentYCenter" style="--flex-spacing-x: var(--spirit-space-500)">
-                    <span class="Avatar Avatar--medium Avatar--square" aria-label="Profile of Jiří Bárta">
+                  <a href="#" class="NavigationAvatar NavigationAvatar--square">
+                    <span class="Avatar Avatar--small Avatar--square" aria-label="Profile of Jiří Bárta">
                       <svg width="20" height="20" aria-hidden="true">
                         <use xlink:href="/assets/icons/svg/sprite.svg#profile" />
                       </svg>
                     </span>
-                    <span class="typography-body-small-semibold text-primary">My Account</span>
+                    <span class="typography-body-small-semibold">My Account</span>
                   </a>
                 </li>
               </ul>
             </nav>
-
 
             <nav class="Navigation Navigation--vertical" aria-label="Main Navigation">
               <ul>

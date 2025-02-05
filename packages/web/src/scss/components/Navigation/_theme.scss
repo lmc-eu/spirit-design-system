@@ -45,3 +45,21 @@ $vertical-action-spacing-y: tokens.$space-600;
 $vertical-action-stripe-size: 4px;
 $vertical-action-typography-nested: tokens.$body-medium-regular;
 $vertical-action-typography: tokens.$body-medium-semibold;
+
+$avatar-gap: tokens.$space-500;
+$avatar-padding-y: tokens.$space-400;
+$avatar-padding-end: tokens.$space-600;
+$avatar-padding-start: tokens.$space-500;
+
+$avatar-color-state-default: tokens.$component-header-item-state-default;
+$avatar-color-state-hover: tokens.$component-header-item-state-hover;
+$avatar-color-state-active: tokens.$component-header-item-state-active;
+$avatar-color-state-selected: tokens.$component-header-item-state-selected;
+
+$avatar-border-radius: tokens.$radius-full;
+$avatar-border-radius-square: tokens.$radius-200;
+
+$avatar-background-color-state-default: tokens.$component-header-item-background-state-default;
+$avatar-background-color-state-hover: tokens.$component-header-item-background-state-hover;
+$avatar-background-color-state-active: tokens.$component-header-item-background-state-active;
+$avatar-background-color-state-selected: tokens.$component-header-item-background-state-selected;
