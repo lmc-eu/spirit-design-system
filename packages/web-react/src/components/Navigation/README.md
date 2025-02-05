@@ -7,6 +7,7 @@ It consists of a these parts:
 - [Navigation](#navigation)
   - [NavigationItem](#navigation-item)
     - [NavigationAction](#navigation-action)
+    - [NavigationAvatar](#navigation-avatar)
 
 ## Navigation
 
@@ -121,9 +122,50 @@ The components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
+## Navigation Avatar
+
+The `NavigationAvatar` is component that is styled to be used as a navigation action with an avatar.
+
+```jsx
+import { NavigationAvatar } from '@lmc-eu/spirit-web-react';
+
+<NavigationAvatar avatarContent={<Icon name="profile" boxSize={20} />} aria-label="Profile of Jiří Bárta">
+  <Text elementType="span" size="small" emphasis="semibold">
+    My Account
+  </Text>
+</NavigationAvatar>;
+```
+
+If you want the avatar to be square, don't forget to add the `isSquare` prop to the `NavigationAvatar` component.
+
+```jsx
+import { NavigationAvatar } from '@lmc-eu/spirit-web-react';
+
+<NavigationAvatar avatarContent={<Icon name="profile" boxSize={20} />} isSquare aria-label="Profile of Jiří Bárta">
+  <Text elementType="span" size="small" emphasis="semibold">
+    My Account
+  </Text>
+</NavigationAvatar>;
+```
+
+### API
+
+| Name            | Type                              | Default | Required | Description                                            |
+| --------------- | --------------------------------- | ------- | -------- | ------------------------------------------------------ |
+| `avatarContent` | \[`ReactElement` \| `ReactNode`]  | —       | ✓        | Content of the avatar, such as an image, icon, or text |
+| `children`      | \[`string` \| `ReactNode`]        | `null`  | ✕        | Content of the NavigationAvatar                        |
+| `elementType`   | `ElementType`                     | `a`     | ✕        | Type of element used as                                |
+| `href`          | `string`                          | -       | ✕        | URL of the NavigationAvatar link                       |
+| `ref`           | `ForwardedRef<HTMLAnchorElement>` | —       | ✕        | Anchor element reference                               |
+| `target`        | `string`                          | `null`  | ✕        | NavigationAvatar's link target                         |
+
+The components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
+
 ### Full Example
 
-With NavigationAction components:
+With NavigationAction/NavigationAvatar components:
 
 ```jsx
 <Navigation aria-label="Main Navigation">
@@ -139,6 +181,13 @@ With NavigationAction components:
   </NavigationItem>
   <NavigationItem>
     <NavigationAction href="#">Link</NavigationAction>
+  </NavigationItem>
+  <NavigationItem>
+    <NavigationAvatar avatarContent={<Icon name="profile" boxSize={20} />} aria-label="Profile of Jiří Bárta">
+      <Text elementType="span" size="small" emphasis="semibold">
+        My Account
+      </Text>
+    </NavigationAvatar>
   </NavigationItem>
 </Navigation>
 ```
