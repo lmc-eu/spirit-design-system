@@ -15,6 +15,7 @@ export interface UseNavigationStyleProps {
   direction?: DirectionDictionaryType;
   isDisabled?: boolean;
   isSelected?: boolean;
+  isSquare?: boolean;
   variant?: NavigationActionVariantsType;
 }
 
@@ -22,6 +23,7 @@ export interface UseNavigationStyleReturn {
   classProps: {
     root: string;
     action: string;
+    avatar: string;
     item: string;
   };
   props: SpiritNavigationItemProps | SpiritNavigationActionProps;
@@ -30,6 +32,7 @@ export interface UseNavigationStyleReturn {
 export const useNavigationStyleProps = ({
   isDisabled = false,
   isSelected = false,
+  isSquare = false,
   alignmentY = AlignmentYExtended.CENTER,
   direction = Direction.HORIZONTAL,
   variant = NavigationActionVariants.BOX,
@@ -37,12 +40,15 @@ export const useNavigationStyleProps = ({
 }: UseNavigationStyleProps): UseNavigationStyleReturn => {
   const navigationClass = useClassNamePrefix('Navigation');
   const navigationActionClass = `${navigationClass}Action`;
+  const navigationAvatarClass = `${navigationClass}Avatar`;
   const navigationItemClass = `${navigationClass}Item`;
 
   const navigationDirectionClass = `${navigationClass}--${direction}`;
   const navigationActionDisabledClass = `${navigationActionClass}--disabled`;
   const navigationActionSelectedClass = `${navigationActionClass}--selected`;
   const navigationActionVariantClass = `${navigationActionClass}--${variant}`;
+
+  const navigationAvatarSquareClass = `${navigationAvatarClass}--square`;
 
   const navigationItemClasses = classNames(navigationItemClass, {
     [useAlignmentClass(navigationItemClass, alignmentY as AlignmentPropertyType, 'alignmentY')]: alignmentY,
@@ -53,6 +59,9 @@ export const useNavigationStyleProps = ({
     action: classNames(navigationActionClass, navigationActionVariantClass, {
       [navigationActionDisabledClass]: isDisabled,
       [navigationActionSelectedClass]: isSelected,
+    }),
+    avatar: classNames(navigationAvatarClass, {
+      [navigationAvatarSquareClass]: isSquare,
     }),
     item: navigationItemClasses,
   };

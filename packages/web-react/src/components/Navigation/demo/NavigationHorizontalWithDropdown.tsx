@@ -1,4 +1,4 @@
-import React, { ElementType, forwardRef } from 'react';
+import React, { ElementType, forwardRef, ReactElement } from 'react';
 import { PolymorphicRef, SpiritNavigationActionProps } from '../../../types';
 import Dropdown from '../../Dropdown/Dropdown';
 import DropdownPopover from '../../Dropdown/DropdownPopover';
@@ -14,7 +14,7 @@ import NavigationItem from '../NavigationItem';
 const _NavigationActionAsDropdownTrigger = <E extends ElementType = 'a'>(
   props: SpiritNavigationActionProps<E>,
   ref: PolymorphicRef<E>,
-): JSX.Element => {
+): ReactElement => {
   return <NavigationAction ref={ref} {...props} elementType="button" />;
 };
 

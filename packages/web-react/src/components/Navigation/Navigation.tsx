@@ -1,7 +1,7 @@
 'use client';
 
 import classNames from 'classnames';
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { Direction } from '../../constants';
 import { useStyleProps } from '../../hooks';
 import { SpiritNavigationProps } from '../../types';
@@ -11,7 +11,7 @@ const defaultProps: Partial<SpiritNavigationProps> = {
   direction: Direction.HORIZONTAL,
 };
 
-const Navigation = (props: SpiritNavigationProps): JSX.Element => {
+const Navigation = (props: SpiritNavigationProps): ReactElement => {
   const propsWithDefaults = { ...defaultProps, ...props };
   const { children, ...restProps } = propsWithDefaults;
 

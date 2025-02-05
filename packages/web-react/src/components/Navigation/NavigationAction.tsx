@@ -1,7 +1,7 @@
 'use client';
 
 import classNames from 'classnames';
-import React, { ElementType, forwardRef } from 'react';
+import React, { ElementType, forwardRef, ReactElement } from 'react';
 import { useStyleProps } from '../../hooks';
 import { PolymorphicRef, SpiritNavigationActionProps } from '../../types';
 import { NavigationActionVariants } from './constants';
@@ -18,7 +18,7 @@ const defaultProps: Partial<SpiritNavigationActionProps> = {
 const _NavigationAction = <E extends ElementType = 'a'>(
   props: SpiritNavigationActionProps<E>,
   ref: PolymorphicRef<E>,
-): JSX.Element => {
+): ReactElement => {
   const propsWithDefaults = { ...defaultProps, ...props };
   const { elementType = defaultProps.elementType as ElementType, children, ...restProps } = propsWithDefaults;
   const ElementTag = propsWithDefaults.isDisabled ? 'span' : elementType;
