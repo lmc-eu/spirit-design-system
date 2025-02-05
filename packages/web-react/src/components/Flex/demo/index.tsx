@@ -19,7 +19,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <DocsSection title="Horizontal Layout">
       <FlexHorizontalLayout />
     </DocsSection>
-    <DocsSection title="Horizontal Reversed Layout">
+    {/* <DocsSection title="Horizontal Reversed Layout">
       <FlexHorizontalReversedLayout />
     </DocsSection>
     <DocsSection title="Vertical Layout">
@@ -51,6 +51,6 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     </DocsSection>
     <DocsSection title="Responsive Custom Vertical Spacing">
       <FlexResponsiveCustomVerticalSpacing />
-    </DocsSection>
+    </DocsSection> */}
   </React.StrictMode>,
 );

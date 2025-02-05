@@ -1,6 +1,5 @@
 'use client';
 
-import classNames from 'classnames';
 import React, { ElementType } from 'react';
 import { AlignmentXExtended, AlignmentYExtended, DirectionExtended } from '../../constants';
 import { useStyleProps } from '../../hooks';
@@ -28,17 +27,15 @@ const Flex = <T extends ElementType = 'div'>(props: SpiritFlexProps<T>): JSX.Ele
     ...restProps
   } = propsWithDefaults;
   const { classProps, props: modifiedProps, styleProps: flexStyle } = useFlexStyleProps({ direction, ...restProps });
-  const { styleProps, props: otherProps } = useStyleProps({ ElementTag, ...modifiedProps });
-
-  const flexStyleProps = {
-    style: {
-      ...styleProps.style,
-      ...flexStyle,
-    },
-  };
+  const { styleProps, props: otherProps } = useStyleProps({
+    ElementTag,
+    transferClassName: classProps,
+    transferStyle: flexStyle,
+    ...modifiedProps,
+  });
 
   return (
-    <ElementTag {...otherProps} {...flexStyleProps} className={classNames(classProps, styleProps.className)}>
+    <ElementTag {...otherProps} {...styleProps}>
       {children}
     </ElementTag>
   );
