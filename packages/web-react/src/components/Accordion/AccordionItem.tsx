@@ -1,9 +1,9 @@
 'use client';
 
-import classNames from 'classnames';
 import React from 'react';
 import { useStyleProps } from '../../hooks';
 import { AccordionItemProps } from '../../types';
+import { mergeStyleProps } from '../../utils';
 import { AccordionItemProvider } from './AccordionItemContext';
 import { useAccordionStyleProps } from './useAccordionStyleProps';
 
@@ -12,19 +12,17 @@ const AccordionItem = (props: AccordionItemProps) => {
 
   const { classProps } = useAccordionStyleProps();
   const { styleProps, props: transferProps } = useStyleProps(restProps);
+  const mergedStyleProps = mergeStyleProps(ElementTag, { classProps: classProps.item, styleProps });
 
   const contextValue = { id };
 
   return (
-    <ElementTag
-      {...transferProps}
-      {...styleProps}
-      id={id}
-      className={classNames(classProps.item, styleProps.className)}
-    >
+    <ElementTag {...transferProps} id={id} {...mergedStyleProps}>
       <AccordionItemProvider value={contextValue}>{children}</AccordionItemProvider>
     </ElementTag>
   );
 };
+
+AccordionItem.spiritComponent = 'AccordionItem';
 
 export default AccordionItem;

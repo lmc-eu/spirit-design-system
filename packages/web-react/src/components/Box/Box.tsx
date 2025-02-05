@@ -1,10 +1,10 @@
 'use client';
 
-import classNames from 'classnames';
 import React, { ElementType } from 'react';
 import { BorderStyles, PaddingStyleProps } from '../../constants';
 import { useStyleProps } from '../../hooks';
 import { SpiritBoxProps } from '../../types';
+import { mergeStyleProps } from '../../utils';
 import { useBoxStyleProps } from './useBoxStyleProps';
 
 const defaultProps: Partial<SpiritBoxProps> = {
@@ -18,12 +18,15 @@ const Box = <T extends ElementType = 'div'>(props: SpiritBoxProps<T>) => {
 
   const { classProps, props: modifiedProps } = useBoxStyleProps(restProps);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps, PaddingStyleProps);
+  const mergedStyleProps = mergeStyleProps(ElementTag, { classProps, styleProps });
 
   return (
-    <ElementTag {...otherProps} {...styleProps} className={classNames(classProps, styleProps.className)}>
+    <ElementTag {...otherProps} {...mergedStyleProps}>
       {children}
     </ElementTag>
   );
 };
+
+Box.spiritComponent = 'Box';
 
 export default Box;

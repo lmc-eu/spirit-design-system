@@ -14,4 +14,6 @@ const UNSTABLE_UncontrolledSlider = (props: UncontrolledSliderProps) => {
   return <UNSTABLE_Slider {...props} value={value} onChange={onChange} />;
 };
 
+UNSTABLE_UncontrolledSlider.spiritComponent = 'UNSTABLE_UncontrolledSlider';
+
 export default UNSTABLE_UncontrolledSlider;

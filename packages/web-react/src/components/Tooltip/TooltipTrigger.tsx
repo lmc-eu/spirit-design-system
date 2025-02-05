@@ -3,6 +3,7 @@
 import React from 'react';
 import { useStyleProps } from '../../hooks';
 import { TooltipTriggerProps } from '../../types';
+import { mergeStyleProps } from '../../utils';
 import { useTooltipContext } from './TooltipContext';
 
 const defaultProps: Partial<TooltipTriggerProps> = {
@@ -12,13 +13,13 @@ const defaultProps: Partial<TooltipTriggerProps> = {
 
 const TooltipTrigger = (props: TooltipTriggerProps) => {
   const propsWithDefaults = { ...defaultProps, ...props };
-  const { elementType: ElementTag = 'button', children, ...rest } = propsWithDefaults;
+  const { elementType: ElementTag = 'button', children, ...restProps } = propsWithDefaults;
   const { id, isOpen, triggerRef, getReferenceProps } = useTooltipContext();
-
-  const { styleProps: triggerStyleProps, props: transferProps } = useStyleProps({ ElementTag, ...rest });
+  const { styleProps: triggerStyleProps, props: transferProps } = useStyleProps(restProps);
+  const mergedStyleProps = mergeStyleProps(ElementTag, { triggerStyleProps, transferProps });
 
   return (
-    <ElementTag {...transferProps} {...triggerStyleProps} id={id} ref={triggerRef} {...getReferenceProps()}>
+    <ElementTag {...transferProps} {...mergedStyleProps} id={id} ref={triggerRef} {...getReferenceProps()}>
       {typeof children === 'function' ? children({ isOpen }) : children}
     </ElementTag>
   );

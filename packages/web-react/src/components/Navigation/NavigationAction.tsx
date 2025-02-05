@@ -1,9 +1,9 @@
 'use client';
 
-import classNames from 'classnames';
 import React, { ElementType, forwardRef, ReactElement } from 'react';
 import { useStyleProps } from '../../hooks';
 import { PolymorphicRef, SpiritNavigationActionProps } from '../../types';
+import { mergeStyleProps } from '../../utils';
 import { NavigationActionVariants } from './constants';
 import { useNavigationActionProps } from './useNavigationActionProps';
 import { useNavigationStyleProps } from './useNavigationStyleProps';
@@ -26,20 +26,17 @@ const _NavigationAction = <E extends ElementType = 'a'>(
   const { navigationActionProps } = useNavigationActionProps(propsWithDefaults);
   const { classProps, props: modifiedProps } = useNavigationStyleProps(restProps);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+  const mergedStyleProps = mergeStyleProps(ElementTag, { classProps: classProps.action, styleProps, otherProps });
 
   return (
-    <ElementTag
-      {...otherProps}
-      {...styleProps}
-      {...navigationActionProps}
-      className={classNames(classProps.action, styleProps.className)}
-      ref={ref}
-    >
+    <ElementTag {...otherProps} {...navigationActionProps} {...mergedStyleProps} ref={ref}>
       {children}
     </ElementTag>
   );
 };
 
 const NavigationAction = forwardRef<HTMLElement, SpiritNavigationActionProps<ElementType>>(_NavigationAction);
+
+NavigationAction.spiritComponent = 'NavigationAction';
 
 export default NavigationAction;

@@ -7,7 +7,7 @@ export interface PillStyles {
   /** className props */
   classProps: string;
   /** props to be passed to the element */
-  props: unknown;
+  props: Partial<SpiritPillProps>;
 }
 
 export function usePillStyleProps<T extends ElementType = 'span', C = void>(props: SpiritPillProps<T, C>): PillStyles {

@@ -30,4 +30,6 @@ const Footer = (props: SpiritFooterProps) => {
   );
 };
 
+Footer.spiritComponent = 'Footer';
+
 export default Footer;

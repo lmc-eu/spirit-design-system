@@ -13,4 +13,6 @@ const UncontrolledAccordion = (props: UncontrolledAccordionProps) => {
   return <Accordion open={open} toggle={toggle} {...restProps} />;
 };
 
+UncontrolledAccordion.spiritComponent = 'UncontrolledAccordion';
+
 export default UncontrolledAccordion;

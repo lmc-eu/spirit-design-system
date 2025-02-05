@@ -1,10 +1,10 @@
 'use client';
 
-import classNames from 'classnames';
 import React, { ElementType } from 'react';
 import { DirectionExtended } from '../../constants';
 import { useStyleProps } from '../../hooks';
 import { SpiritCardProps } from '../../types';
+import { mergeStyleProps } from '../../utils';
 import { useCardStyleProps } from './useCardStyleProps';
 
 const defaultProps: Partial<SpiritCardProps> = {
@@ -18,12 +18,15 @@ const Card = <T extends ElementType = 'article'>(props: SpiritCardProps<T>) => {
   const { elementType: ElementTag = 'article', direction, isBoxed, children, ...restProps } = propsWithDefaults;
   const { classProps } = useCardStyleProps({ direction, isBoxed });
   const { styleProps, props: otherProps } = useStyleProps(restProps);
+  const mergedStyleProps = mergeStyleProps(ElementTag, { classProps: classProps.root, styleProps, otherProps });
 
   return (
-    <ElementTag {...otherProps} className={classNames(classProps.root, styleProps.className)} style={styleProps.style}>
+    <ElementTag {...otherProps} {...mergedStyleProps}>
       {children}
     </ElementTag>
   );
 };
+
+Card.spiritComponent = 'Card';
 
 export default Card;

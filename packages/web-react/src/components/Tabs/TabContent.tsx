@@ -14,4 +14,6 @@ const TabContent = ({ children, ...restProps }: TabContentProps): JSX.Element =>
   );
 };
 
+TabContent.spiritComponent = 'TabContent';
+
 export default TabContent;

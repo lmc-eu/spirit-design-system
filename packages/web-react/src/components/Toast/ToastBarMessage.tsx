@@ -20,4 +20,6 @@ const ToastBarMessage = (props: ChildrenProps) => {
   );
 };
 
+ToastBarMessage.spiritComponent = 'ToastBarMessage';
+
 export default ToastBarMessage;

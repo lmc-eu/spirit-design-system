@@ -16,4 +16,6 @@ const UncontrolledTooltip = (props: Omit<SpiritTooltipProps, 'onToggle'>) => {
   );
 };
 
+UncontrolledTooltip.spiritComponent = 'UncontrolledTooltip';
+
 export default UncontrolledTooltip;

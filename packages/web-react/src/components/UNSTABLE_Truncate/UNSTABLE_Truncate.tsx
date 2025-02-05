@@ -31,4 +31,6 @@ const UNSTABLE_Truncate = <T extends ElementType = 'span'>(props: SpiritTruncate
   );
 };
 
+UNSTABLE_Truncate.spiritComponent = 'UNSTABLE_Truncate';
+
 export default UNSTABLE_Truncate;

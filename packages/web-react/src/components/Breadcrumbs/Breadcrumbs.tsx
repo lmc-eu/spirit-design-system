@@ -1,9 +1,9 @@
 'use client';
 
-import classNames from 'classnames';
 import React, { ElementType, Fragment } from 'react';
-import { useStyleProps } from '../../hooks/styleProps';
+import { useStyleProps } from '../../hooks';
 import { SpiritBreadcrumbsProps } from '../../types';
+import { mergeStyleProps } from '../../utils';
 import BreadcrumbsItem from './BreadcrumbsItem';
 import { useBreadcrumbsStyleProps } from './useBreadcrumbsStyleProps';
 
@@ -14,27 +14,17 @@ const defaultProps: Partial<SpiritBreadcrumbsProps> = {
 
 const Breadcrumbs = <T extends ElementType = 'nav'>(props: SpiritBreadcrumbsProps<T>): JSX.Element => {
   const propsWithDefaults = { ...defaultProps, ...props };
-  const {
-    children,
-    elementType: ElementTag = defaultProps.elementType as ElementType,
-    goBackTitle,
-    items,
-    ...restProps
-  } = propsWithDefaults;
+  const { children, elementType: ElementTag = 'nav', goBackTitle, items, ...restProps } = propsWithDefaults;
   const { classProps, props: modifiedProps } = useBreadcrumbsStyleProps({ ...restProps });
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+  const mergedStyleProps = mergeStyleProps(ElementTag, { classProps: classProps.root, styleProps });
 
   const isLast = (index: number, itemsCount: number) => {
     return index === itemsCount - 1;
   };
 
   return (
-    <ElementTag
-      {...otherProps}
-      {...styleProps}
-      className={classNames(classProps.root, styleProps.className)}
-      aria-label="Breadcrumb"
-    >
+    <ElementTag {...otherProps} {...mergedStyleProps} aria-label="Breadcrumb">
       <ol>
         {children ||
           items?.map((item, index) => (
@@ -53,5 +43,7 @@ const Breadcrumbs = <T extends ElementType = 'nav'>(props: SpiritBreadcrumbsProp
     </ElementTag>
   );
 };
+
+Breadcrumbs.spiritComponent = 'Breadcrumbs';
 
 export default Breadcrumbs;

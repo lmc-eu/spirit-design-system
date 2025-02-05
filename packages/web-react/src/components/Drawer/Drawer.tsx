@@ -38,4 +38,6 @@ const Drawer = (props: SpiritDrawerProps) => {
   );
 };
 
+Drawer.spiritComponent = 'Drawer';
+
 export default Drawer;

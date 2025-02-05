@@ -24,4 +24,6 @@ const CardArtwork = (props: SpiritCardArtworkProps) => {
   );
 };
 
+CardArtwork.spiritComponent = 'CardArtwork';
+
 export default CardArtwork;

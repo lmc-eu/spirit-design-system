@@ -1,10 +1,10 @@
 'use client';
 
-import classNames from 'classnames';
 import React, { ElementType, ForwardedRef, forwardRef } from 'react';
 import { usePropsContext } from '../../context';
 import { useStyleProps } from '../../hooks';
 import { SpiritButtonProps } from '../../types';
+import { mergeStyleProps } from '../../utils';
 import { Spinner } from '../Spinner';
 import { useButtonAriaProps } from './useButtonAriaProps';
 import { useButtonStyleProps } from './useButtonStyleProps';
@@ -36,16 +36,11 @@ const _Button = <T extends ElementType = 'button', C = void, S = void>(
 
   const { buttonProps } = useButtonAriaProps(restProps);
   const { classProps, props: modifiedProps } = useButtonStyleProps(restProps);
-  const { styleProps, props: otherProps } = useStyleProps({ ElementTag, ...modifiedProps });
+  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+  const mergedStyleProps = mergeStyleProps(ElementTag, { classProps, styleProps, otherProps });
 
   return (
-    <ElementTag
-      {...otherProps}
-      {...buttonProps}
-      ref={ref}
-      className={classNames(classProps, styleProps.className)}
-      style={styleProps.style}
-    >
+    <ElementTag {...otherProps} {...buttonProps} ref={ref} {...mergedStyleProps}>
       {children}
       {restProps.isLoading && <Spinner />}
     </ElementTag>

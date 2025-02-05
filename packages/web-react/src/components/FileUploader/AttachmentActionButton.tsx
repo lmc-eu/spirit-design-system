@@ -27,4 +27,6 @@ const AttachmentActionButton = (props: SpiritAttachmentActionButtonProps) => {
   );
 };
 
+AttachmentActionButton.spiritComponent = 'AttachmentActionButton';
+
 export default AttachmentActionButton;

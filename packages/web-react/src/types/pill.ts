@@ -1,5 +1,11 @@
 import { ElementType, JSXElementConstructor } from 'react';
-import { ChildrenProps, EmotionColorsDictionaryType, TransferProps } from './shared';
+import {
+  ChildrenProps,
+  EmotionColorsDictionaryType,
+  SpiritPolymorphicElementPropsWithRef,
+  StyleProps,
+  TransferProps,
+} from './shared';
 
 export type PillColor<C> = EmotionColorsDictionaryType | 'selected' | 'neutral' | C;
 
@@ -12,10 +18,11 @@ export interface AriaPillElementTypeProps<T extends ElementType = 'span'> {
   elementType?: T | JSXElementConstructor<unknown>;
 }
 
-export interface SpiritPillProps<T extends ElementType = 'span', C = void>
-  extends AriaPillElementTypeProps<T>,
-    ChildrenProps,
-    TransferProps {
-  /** The color of the pill. */
-  color?: PillColor<C>;
-}
+export interface PillProps extends ChildrenProps, StyleProps, TransferProps {}
+
+export type SpiritPillProps<T extends ElementType = 'span', C = void> = AriaPillElementTypeProps<T> &
+  SpiritPolymorphicElementPropsWithRef<T, PillProps> &
+  PillProps & {
+    /** The color of the pill. */
+    color?: PillColor<C>;
+  };

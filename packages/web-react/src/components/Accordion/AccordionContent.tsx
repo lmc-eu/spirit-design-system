@@ -26,4 +26,6 @@ const AccordionContent = ({ children, ...restProps }: AccordionContentProps) => 
   );
 };
 
+AccordionContent.spiritComponent = 'AccordionContent';
+
 export default AccordionContent;

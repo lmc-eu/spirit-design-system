@@ -41,4 +41,6 @@ const BreadcrumbsItem = (props: SpiritBreadcrumbsItemProps) => {
   );
 };
 
+BreadcrumbsItem.spiritComponent = 'BreadcrumbsItem';
+
 export default BreadcrumbsItem;

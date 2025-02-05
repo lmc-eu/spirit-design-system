@@ -1,10 +1,10 @@
 'use client';
 
-import classNames from 'classnames';
 import React, { ElementType, forwardRef, ReactElement } from 'react';
 import { Sizes } from '../../constants';
 import { useStyleProps } from '../../hooks';
 import { PolymorphicRef, SpiritNavigationAvatarProps } from '../../types';
+import { mergeStyleProps } from '../../utils';
 import { Avatar } from '../Avatar';
 import { useNavigationStyleProps } from './useNavigationStyleProps';
 
@@ -30,15 +30,10 @@ const _NavigationAvatar = <E extends ElementType = 'a'>(
 
   const { classProps, props: modifiedProps } = useNavigationStyleProps({ isSquare, ...restProps });
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+  const mergedStyleProps = mergeStyleProps(ElementTag, { classProps: classProps.avatar, styleProps, otherProps });
 
   return (
-    <ElementTag
-      {...otherProps}
-      {...styleProps}
-      href={restProps.href}
-      className={classNames(classProps.avatar, styleProps.className)}
-      ref={ref}
-    >
+    <ElementTag {...otherProps} {...mergedStyleProps} href={restProps.href} ref={ref}>
       <Avatar size={Sizes.SMALL} isSquare={isSquare}>
         {avatarContent}
       </Avatar>
@@ -48,5 +43,7 @@ const _NavigationAvatar = <E extends ElementType = 'a'>(
 };
 
 const NavigationAvatar = forwardRef<HTMLElement, SpiritNavigationAvatarProps<ElementType>>(_NavigationAvatar);
+
+NavigationAvatar.spiritComponent = 'NavigationAvatar';
 
 export default NavigationAvatar;

@@ -25,4 +25,6 @@ const Navigation = (props: SpiritNavigationProps): ReactElement => {
   );
 };
 
+Navigation.spiritComponent = 'Navigation';
+
 export default Navigation;

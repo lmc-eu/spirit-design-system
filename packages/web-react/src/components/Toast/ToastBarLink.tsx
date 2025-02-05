@@ -1,9 +1,9 @@
 'use client';
 
-import classNames from 'classnames';
 import React, { ElementType, ForwardedRef, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
 import { ToastLinkProps } from '../../types';
+import { mergeStyleProps } from '../../utils';
 import { useToastBarStyleProps } from './useToastBarStyleProps';
 
 const defaultProps: Partial<ToastLinkProps> = {
@@ -21,14 +21,17 @@ const _ToastBarLink = (props: ToastLinkProps, ref: ForwardedRef<HTMLAnchorElemen
   } = propsWithDefaults;
   const { classProps, props: modifiedProps } = useToastBarStyleProps({ ...restProps });
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+  const mergedStyleProps = mergeStyleProps(ElementTag, { classProps: classProps.link, styleProps, otherProps });
 
   return (
-    <ElementTag {...otherProps} {...styleProps} ref={ref} className={classNames(classProps.link, styleProps.className)}>
+    <ElementTag {...otherProps} {...mergedStyleProps} ref={ref}>
       {children as React.ReactNode}
     </ElementTag>
   );
 };
 
 const ToastBarLink = forwardRef<HTMLAnchorElement, ToastLinkProps>(_ToastBarLink);
+
+ToastBarLink.spiritComponent = 'ToastBarLink';
 
 export default ToastBarLink;

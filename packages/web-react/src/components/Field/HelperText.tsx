@@ -1,6 +1,7 @@
 'use client';
 
 import React, { ElementType, useEffect } from 'react';
+import { mergeStyleProps } from '../../utils';
 import { HelperTextProps } from './types';
 
 const defaultProps: Partial<HelperTextProps> = {
@@ -14,11 +15,12 @@ const HelperText = <T extends ElementType = 'div'>(props: HelperTextProps<T>) =>
   const propsWithDefaults = { ...defaultProps, ...props };
   const {
     helperText,
-    className,
     elementType: ElementTag = defaultProps.elementType as ElementType,
     id,
     registerAria,
+    ...restProps
   } = propsWithDefaults;
+  const mergedStyleProps = mergeStyleProps(ElementTag, { restProps });
 
   useEffect(() => {
     registerAria?.({ add: id });
@@ -30,7 +32,7 @@ const HelperText = <T extends ElementType = 'div'>(props: HelperTextProps<T>) =>
 
   if (helperText) {
     return (
-      <ElementTag className={className} id={id}>
+      <ElementTag {...restProps} {...mergedStyleProps} id={id}>
         {helperText}
       </ElementTag>
     );
@@ -38,5 +40,7 @@ const HelperText = <T extends ElementType = 'div'>(props: HelperTextProps<T>) =>
 
   return null;
 };
+
+HelperText.spiritComponent = 'HelperText';
 
 export default HelperText;

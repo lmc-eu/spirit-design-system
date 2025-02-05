@@ -11,9 +11,7 @@ import { DropdownPopoverContent } from '../HeaderWithNavigationAndNestedItems/Ma
 const _NavigationAvatarAsDropdownTrigger = <E extends ElementType = 'button'>(
   props: SpiritNavigationAvatarProps<E>,
   ref: PolymorphicRef<E>,
-): ReactElement => {
-  return <NavigationAvatar ref={ref} {...props} elementType="button" />;
-};
+): ReactElement => <NavigationAvatar {...props} elementType="button" ref={ref} />;
 
 const NavigationAvatarAsDropdownTrigger = forwardRef<HTMLButtonElement, SpiritNavigationAvatarProps<'button'>>(
   _NavigationAvatarAsDropdownTrigger,

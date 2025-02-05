@@ -15,7 +15,6 @@ const defaultProps: ModalHeaderProps = {
 const ModalHeader = (props: ModalHeaderProps) => {
   const propsWithDefaults = { ...defaultProps, ...props };
   const { children, closeLabel, hasCloseButton, ...restProps } = propsWithDefaults;
-
   const { classProps } = useModalStyleProps();
   const { styleProps, props: otherProps } = useStyleProps(restProps);
   const { id, isOpen, onClose } = useModalContext();
@@ -31,5 +30,7 @@ const ModalHeader = (props: ModalHeaderProps) => {
     </header>
   );
 };
+
+ModalHeader.spiritComponent = 'ModalHeader';
 
 export default ModalHeader;

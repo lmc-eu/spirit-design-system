@@ -13,4 +13,6 @@ const Divider = (props: SpiritDividerProps): JSX.Element => {
   return <hr {...otherProps} {...styleProps} className={classNames(classProps, styleProps.className)} />;
 };
 
+Divider.spiritComponent = 'Divider';
+
 export default Divider;

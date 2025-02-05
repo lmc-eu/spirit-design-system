@@ -3,6 +3,7 @@
 import React, { ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
 import { DropdownTriggerProps } from '../../types';
+import { mergeStyleProps } from '../../utils';
 import { useDropdownContext } from './DropdownContext';
 import { useDropdownAriaProps } from './useDropdownAriaProps';
 import { useDropdownStyleProps } from './useDropdownStyleProps';
@@ -16,15 +17,12 @@ const DropdownTrigger = <T extends ElementType = 'button'>(props: DropdownTrigge
   const { elementType: ElementTag = 'button', children, ...rest } = propsWithDefaults;
   const { id, isOpen, onToggle, fullWidthMode, triggerRef } = useDropdownContext();
   const { classProps, props: modifiedProps } = useDropdownStyleProps({ isOpen, ...rest });
-  const { styleProps: triggerStyleProps, props: transferProps } = useStyleProps({
-    ElementTag,
-    transferClassName: classProps.trigger,
-    ...modifiedProps,
-  });
+  const { styleProps: triggerStyleProps, props: transferProps } = useStyleProps(modifiedProps);
+  const mergedStyleProps = mergeStyleProps(ElementTag, { classProps: classProps.trigger, triggerStyleProps });
   const { triggerProps } = useDropdownAriaProps({ id, isOpen, toggleHandler: onToggle, fullWidthMode });
 
   return (
-    <ElementTag {...transferProps} {...triggerProps} {...triggerStyleProps} ref={triggerRef}>
+    <ElementTag {...transferProps} {...triggerProps} {...mergedStyleProps} ref={triggerRef}>
       {typeof children === 'function' ? children({ isOpen }) : children}
     </ElementTag>
   );

@@ -51,4 +51,6 @@ const UncontrolledCollapse = (props: SpiritUncontrolledCollapseProps) => {
   );
 };
 
+UncontrolledCollapse.spiritComponent = 'UncontrolledCollapse';
+
 export default UncontrolledCollapse;

@@ -1,9 +1,9 @@
 'use client';
 
-import classNames from 'classnames';
 import React, { ElementType, ForwardedRef, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
-import { SpiritTagProps, StyleProps } from '../../types';
+import { SpiritTagProps } from '../../types';
+import { mergeStyleProps } from '../../utils';
 import { useTagStyleProps } from './useTagStyleProps';
 
 const defaultProps: Partial<SpiritTagProps> = {
@@ -26,15 +26,18 @@ const _Tag = <T extends ElementType = 'span', C = void, S = void>(
     ...restProps
   } = propsWithDefaults;
   const { classProps, props: modifiedProps } = useTagStyleProps(restProps);
-  const { styleProps, props: otherProps } = useStyleProps(modifiedProps as StyleProps);
+  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+  const mergedStyleProps = mergeStyleProps(ElementTag, { classProps, styleProps, otherProps });
 
   return (
-    <ElementTag {...otherProps} {...styleProps} className={classNames(classProps, styleProps.className)} ref={ref}>
+    <ElementTag {...otherProps} {...mergedStyleProps} ref={ref}>
       {children}
     </ElementTag>
   );
 };
 
 const Tag = forwardRef<HTMLSpanElement, SpiritTagProps<ElementType>>(_Tag);
+
+Tag.spiritComponent = 'Tag';
 
 export default Tag;

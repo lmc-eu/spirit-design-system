@@ -65,4 +65,6 @@ const UncontrolledPagination = (props: SpiritUncontrolledPaginationProps): JSX.E
   );
 };
 
+UncontrolledPagination.spiritComponent = 'UncontrolledPagination';
+
 export default UncontrolledPagination;

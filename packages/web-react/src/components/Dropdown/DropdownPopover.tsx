@@ -29,4 +29,6 @@ const DropdownPopover = (props: DropdownPopoverProps) => {
   );
 };
 
+DropdownPopover.spiritComponent = 'DropdownPopover';
+
 export default DropdownPopover;

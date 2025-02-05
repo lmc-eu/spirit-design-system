@@ -43,4 +43,6 @@ const TabItem = ({ children, forTabPane, onClick, ...restProps }: TabItemProps):
   );
 };
 
+TabItem.spiritComponent = 'TabItem';
+
 export default TabItem;

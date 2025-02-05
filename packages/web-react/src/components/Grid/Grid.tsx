@@ -1,10 +1,10 @@
 'use client';
 
-import classNames from 'classnames';
 import React, { ElementType } from 'react';
 import { AlignmentXExtended, AlignmentYExtended } from '../../constants';
 import { useStyleProps } from '../../hooks';
 import { SpiritGridProps } from '../../types';
+import { mergeStyleProps } from '../../utils';
 import { useGridStyleProps } from './useGridStyleProps';
 
 const defaultProps: Partial<SpiritGridProps> = {
@@ -19,19 +19,15 @@ const Grid = <T extends ElementType = 'div'>(props: SpiritGridProps<T>): JSX.Ele
   const { elementType: ElementTag = 'div', children, ...restProps } = propsWithDefaults;
   const { classProps, props: modifiedProps, styleProps: gridStyle } = useGridStyleProps(restProps);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
-
-  const gridStyleProps = {
-    style: {
-      ...styleProps.style,
-      ...gridStyle,
-    },
-  };
+  const mergedStyleProps = mergeStyleProps(ElementTag, { classProps, styleProps, otherProps, gridStyle });
 
   return (
-    <ElementTag {...otherProps} {...gridStyleProps} className={classNames(classProps, styleProps.className)}>
+    <ElementTag {...otherProps} {...mergedStyleProps}>
       {children}
     </ElementTag>
   );
 };
+
+Grid.spiritComponent = 'Grid';
 
 export default Grid;

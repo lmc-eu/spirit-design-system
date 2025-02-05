@@ -43,4 +43,6 @@ function withPasswordToggle<T extends PasswordToggleAdornmentProp>(WrappedCompon
   return ComponentWithPasswordToggle;
 }
 
+withPasswordToggle.spiritComponent = 'withPasswordToggle';
+
 export default withPasswordToggle;

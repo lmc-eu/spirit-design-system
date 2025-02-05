@@ -115,4 +115,6 @@ const Tooltip = (props: SpiritTooltipProps) => {
   );
 };
 
+Tooltip.spiritComponent = 'Tooltip';
+
 export default Tooltip;

@@ -26,4 +26,6 @@ const HeaderDesktopActions = (props: HeaderDesktopActionsProps) => {
   );
 };
 
+HeaderDesktopActions.spiritComponent = 'HeaderDesktopActions';
+
 export default HeaderDesktopActions;

@@ -15,9 +15,7 @@ import NavigationItem from '../NavigationItem';
 const _NavigationAvatarAsDropdownTrigger = <E extends ElementType = 'a'>(
   props: SpiritNavigationActionProps<E>,
   ref: PolymorphicRef<E>,
-): ReactElement => {
-  return <NavigationAvatar ref={ref} {...props} elementType="button" />;
-};
+): ReactElement => <NavigationAvatar {...props} elementType="button" ref={ref} />;
 
 const NavigationAvatarAsDropdownTrigger = forwardRef<HTMLButtonElement, SpiritNavigationAvatarProps<ElementType>>(
   _NavigationAvatarAsDropdownTrigger,
