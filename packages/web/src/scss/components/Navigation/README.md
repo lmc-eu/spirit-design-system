@@ -96,6 +96,34 @@ is also turned on by the `aria-expanded` attribute.
 If the `box` variant of `NavigationAction` is inside a [`UNSTABLE_Header`][web-unstable-header] component, it will
 inherit the height of the `Header`.
 
+## Navigation Avatar
+
+The `NavigationAvatar` is component that is styled to be used as a navigation action with an avatar.
+
+```html
+<a href="#" class="NavigationAvatar">
+  <span class="Avatar Avatar--small" aria-label="Profile of Jiří Bárta">
+    <svg width="20" height="20" aria-hidden="true">
+      <use xlink:href="/assets/icons/svg/sprite.svg#profile" />
+    </svg>
+  </span>
+  <span class="typography-body-small-semibold">My Account</span>
+</a>
+```
+
+If you want the avatar to be square, don't forget to add the `NavigationAvatar--square` modifier to the `NavigationAvatar` component.
+
+```html
+<a href="#" class="NavigationAvatar NavigationAvatar--square">
+  <span class="Avatar Avatar--square Avatar--small" aria-label="Profile of Jiří Bárta">
+    <svg width="20" height="20" aria-hidden="true">
+      <use xlink:href="/assets/icons/svg/sprite.svg#profile" />
+    </svg>
+  </span>
+  <span class="typography-body-small-semibold">My Account</span>
+</a>
+```
+
 ### Full Example
 
 With NavigationAction components:
@@ -118,7 +146,7 @@ With NavigationAction components:
 </nav>
 ```
 
-With Buttons:
+With Buttons and NavigationAvatar:
 
 ```html
 <nav class="Navigation Navigation--horizontal" aria-label="Secondary Navigation">
@@ -128,6 +156,16 @@ With Buttons:
     </li>
     <li class="NavigationItem NavigationItem--alignmentYCenter">
       <a href="#" class="Button Button--medium Button--secondary">Button</a>
+    </li>
+    <li class="NavigationItem NavigationItem--alignmentYCenter">
+      <a href="#" class="NavigationAvatar">
+        <span class="Avatar Avatar--small" aria-label="Profile of Jiří Bárta">
+          <svg width="20" height="20" aria-hidden="true">
+            <use xlink:href="/assets/icons/svg/sprite.svg#profile" />
+          </svg>
+        </span>
+        <span class="typography-body-small-semibold">My Account</span>
+      </a>
     </li>
   </ul>
 </nav>
