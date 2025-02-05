@@ -6,4 +6,4 @@ services:
       - ${PWD}:/work/
     ipc: host
     network_mode: host
-    entrypoint: sh -c "corepack install && corepack enable && yarn test:e2e${E2E_FLAG}"
+    entrypoint: sh -c "corepack install && corepack enable && node --experimental-modules node_modules/.bin/playwright test${E2E_FLAG}"
