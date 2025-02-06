@@ -1,6 +1,8 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 set -o errexit
+
+project_root=$(cd $(dirname "${BASH_SOURCE}")/../..; pwd)
 
 if ! command -v jq &> /dev/null; then
   echo "jq could not be found, please install it."
@@ -35,4 +37,14 @@ while [[ $# -gt 0 ]]; do
     shift
 done
 
-docker run --rm --network=host --ipc=host  -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:v$PLAYWRIGHT_VERSION-$UBUNTU_VERSION $XVFB sh -c "corepack install && corepack enable && yarn test:e2e$E2E_FLAG"
+if [ "$(uname)" = "MINGW64_NT" ] || [ "$(uname)" = "MINGW32_NT" ]; then
+    # Convert Windows path to Unix path for Docker
+    WORK_DIR=$(cygpath -u "$(pwd)")
+else
+    WORK_DIR=$(pwd)
+fi
+
+export PLAYWRIGHT_VERSION
+export E2E_FLAG
+
+docker compose --file "${project_root}/docker/docker-compose-e2e.yml" run --rm e2e
