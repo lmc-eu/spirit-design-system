@@ -1,20 +1,7 @@
-let prettierConfig;
-
-(async () => {
-	prettierConfig = (await import('prettier-config-spirit')).prettierConfig;
-})();
+const eslintConfig = require('eslint-config-spirit');
 
 module.exports = {
-  root: true,
-
-  parserOptions: {
-    ecmaVersion: 'latest',
-  },
-
-  env: {
-    browser: true,
-    node: true,
-  },
+  ...eslintConfig,
 
   ignorePatterns: [
     'node_modules',
@@ -31,40 +18,4 @@ module.exports = {
     'exporters/tokens',
     'examples/*'
   ],
-
-  extends: ['@lmc-eu/eslint-config-react/base', '@lmc-eu/eslint-config-react/optional', 'prettier', 'plugin:prettier/recommended', 'plugin:storybook/recommended'],
-
-  plugins: ['prettier'],
-
-  rules: {
-    'prettier/prettier': [
-      'error',
-      {
-        ...prettierConfig,
-      },
-    ],
-    'import/order': [
-      'error',
-      {
-        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
-        pathGroups: [
-          {
-            pattern: '**',
-            group: 'internal',
-          },
-          {
-            pattern: '..',
-            group: 'parent',
-            position: 'after',
-          },
-        ],
-        pathGroupsExcludedImportTypes: ['builtin'],
-        alphabetize: {
-          order: 'asc',
-          caseInsensitive: true,
-        },
-        'newlines-between': 'never',
-      },
-    ],
-  },
 };
