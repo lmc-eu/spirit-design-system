@@ -1,7 +1,5 @@
-const eslintConfig = require('eslint-config-spirit');
-
 module.exports = {
-  ...eslintConfig,
+  extends: ['eslint-config-spirit'],
 
   ignorePatterns: [
     'node_modules',
