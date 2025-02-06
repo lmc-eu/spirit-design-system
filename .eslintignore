@@ -23,3 +23,6 @@ packages/**/umd/*
 
 # Ignore vendor directory in `packages/web-twig`
 vendor
+
+# Ignore the playwright-report directory
+playwright-report
