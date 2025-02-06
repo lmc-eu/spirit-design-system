@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['../../.eslintrc', '@lmc-eu/eslint-config-typescript', '@lmc-eu/eslint-config-jest'],
+  extends: ['eslint-config-spirit', '@lmc-eu/eslint-config-typescript'],
 
   parserOptions: {
     ecmaVersion: 'latest',
