@@ -61,6 +61,8 @@ module.exports = {
       },
     ],
 
+    'no-param-reassign': ['warn', { props: true }],
+
     /* start: allow UNSTABLE_ and UNSAFE_ prefix in component and prop names */
     // @see: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/decisions/006-experimental-code.md
 
