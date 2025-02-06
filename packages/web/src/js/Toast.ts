@@ -1,4 +1,5 @@
-import { CSSProperties } from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import * as CSS from 'csstype';
 import BaseComponent from './BaseComponent';
 import { warning } from './common/utilities';
 import {
@@ -106,7 +107,7 @@ class Toast extends BaseComponent {
       : false;
   }
 
-  getAwaitedTransitionPropertyName(): CSSProperties {
+  getAwaitedTransitionPropertyName(): CSS.Properties<string | number> {
     // @ts-expect-error -- TS7015: Element implicitly has an any type because index expression is not of type number.
     return parseInt(getComputedStyle(this.element)[PROPERTY_NAME_SLOWEST_TRANSITION.js], 10) > 0
       ? PROPERTY_NAME_SLOWEST_TRANSITION.css
