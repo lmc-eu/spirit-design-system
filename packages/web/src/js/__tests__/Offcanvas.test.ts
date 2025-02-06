@@ -124,9 +124,7 @@ describe('Offcanvas', () => {
         expectEnd();
       });
 
-      offCanvasEl.addEventListener('shown.offcanvas', () => {
-        return new Error('should not fire shown event');
-      });
+      offCanvasEl.addEventListener('shown.offcanvas', () => new Error('should not fire shown event'));
 
       await offCanvas.show(triggerEl);
     });
@@ -219,9 +217,7 @@ describe('Offcanvas', () => {
         expectEnd();
       });
 
-      offCanvasEl.addEventListener('hidden.offcanvas', () => {
-        return new Error('should not fire hidden event');
-      });
+      offCanvasEl.addEventListener('hidden.offcanvas', () => new Error('should not fire hidden event'));
 
       await offCanvas.hide();
     });

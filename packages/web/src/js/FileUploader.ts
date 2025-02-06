@@ -357,11 +357,8 @@ class FileUploader extends BaseComponent {
     }
   }
 
-  static isCoordsInMeta = (meta: FileMetadata) => {
-    return ['x', 'y', 'cropWidth', 'cropHeight', 'originalWidth', 'originalHeight'].every(
-      (coord) => meta[coord] != null,
-    );
-  };
+  static isCoordsInMeta = (meta: FileMetadata) =>
+    ['x', 'y', 'cropWidth', 'cropHeight', 'originalWidth', 'originalHeight'].every((coord) => meta[coord] != null);
 
   updateQueue(
     name: string,
