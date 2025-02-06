@@ -21,7 +21,9 @@
     "eslint": "^8.0.0"
   },
   "dependencies": {
+    "@babel/core": "7.26.7",
     "@babel/eslint-parser": "^7.19.1",
+    "@babel/preset-react": "7.26.3",
     "@lmc-eu/eslint-config-base": "^3.1.1",
     "@lmc-eu/eslint-config-react": "^2.0.4",
     "@lmc-eu/eslint-config-typescript": "^2.1.3",
@@ -44,9 +46,11 @@
     "eslint-plugin-storybook": "^0.8.0",
     "eslint-plugin-testing-library": "^6.0.1",
     "eslint-restricted-globals": "^0.2.0",
-    "prettier-config-spirit": "workspace:^"
+    "prettier": "^3.0.0",
+    "prettier-config-spirit": "workspace:^",
+    "typescript": "^5.7.3"
   },
   "devDependencies": {
-    "prettier": "^3.0.0"
+    "eslint": "8"
   }
 }
