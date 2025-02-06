@@ -125,7 +125,7 @@ describe('FormValidations', () => {
     });
   });
 
-  describe('input types', function () {
+  describe('input types', () => {
     beforeEach(() => {
       const fixture = `
         <div id="fixture">
@@ -267,7 +267,7 @@ describe('FormValidations', () => {
     });
   });
 
-  describe('Locale', function () {
+  describe('Locale', () => {
     beforeEach(() => {
       const fixture = `
         <div id="fixture">

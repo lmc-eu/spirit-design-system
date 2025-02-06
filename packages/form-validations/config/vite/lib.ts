@@ -8,9 +8,8 @@ export default defineConfig({
       entry: resolve(__dirname, '../../src/index.ts'),
       name: 'SpiritFormValidations',
       formats: ['es', 'cjs', 'umd'],
-      fileName: (format) => {
-        return `${format === 'es' ? 'esm' : format}/spirit-form-validations${format === 'umd' ? '.min' : ''}.js`;
-      },
+      fileName: (format) =>
+        `${format === 'es' ? 'esm' : format}/spirit-form-validations${format === 'umd' ? '.min' : ''}.js`,
     },
     outDir: resolve(__dirname, '../../dist/bundles'),
     rollupOptions: {
