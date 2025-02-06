@@ -1,0 +1,56 @@
+{
+  "name": "eslint-config-spirit",
+  "description": "ESlint configuration and preset for Spirit Design System",
+  "version": "0.0.0",
+  "private": true,
+  "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lmc-eu/spirit-design-system.git",
+    "directory": "configs/eslint-config-spirit"
+  },
+  "keywords": [
+    "eslint",
+    "config",
+    "spirit",
+    "alma",
+    "design",
+    "system"
+  ],
+  "peerDependencies": {
+    "eslint": "^8.0.0"
+  },
+  "dependencies": {
+    "@babel/core": "7.26.7",
+    "@babel/eslint-parser": "^7.19.1",
+    "@babel/preset-react": "7.26.3",
+    "@lmc-eu/eslint-config-base": "^3.1.1",
+    "@lmc-eu/eslint-config-react": "^2.0.4",
+    "@lmc-eu/eslint-config-typescript": "^2.1.3",
+    "@typescript-eslint/eslint-plugin": "^5.59.6",
+    "@typescript-eslint/parser": "^5.59.6",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jest": "^27.0.0",
+    "eslint-plugin-jest-dom": "^5.0.0",
+    "eslint-plugin-jsdoc": "^48.0.0",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-promise": "^6.2.0",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-ssr-friendly": "^1.3.0",
+    "eslint-plugin-standard": "^5.0.0",
+    "eslint-plugin-storybook": "^0.8.0",
+    "eslint-plugin-testing-library": "^6.0.1",
+    "eslint-restricted-globals": "^0.2.0",
+    "prettier": "^3.0.0",
+    "prettier-config-spirit": "workspace:^",
+    "typescript": "^5.7.3"
+  },
+  "devDependencies": {
+    "eslint": "8.57.1"
+  }
+}

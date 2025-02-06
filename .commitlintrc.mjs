@@ -26,6 +26,7 @@ export default {
         'exporter-assets',
         'exporter-tokens',
         // Use when committing changes/additions/removals to exact config
+        'eslint-config',
         'jest-config',
         'prettier-config',
         'stylelint-config',
