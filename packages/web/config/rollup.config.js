@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires -- refactor to ESM TypeScript */
 /* eslint-disable import/no-extraneous-dependencies */
 const path = require('path');
 const { babel } = require('@rollup/plugin-babel');
