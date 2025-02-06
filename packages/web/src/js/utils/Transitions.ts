@@ -1,4 +1,5 @@
-import { CSSProperties } from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import * as CSS from 'csstype';
 import EventHandler from '../dom/EventHandler';
 
 const triggerTransitionEnd = (element: HTMLElement) => {
@@ -31,7 +32,7 @@ const executeAfterTransition = (
   transitionElement: HTMLElement,
   callback: () => void,
   waitForTransition = true,
-  propertyName: CSSProperties | null = null,
+  propertyName: CSS.Properties<string | number> | null = null,
 ) => {
   if (!waitForTransition) {
     execute(callback);
