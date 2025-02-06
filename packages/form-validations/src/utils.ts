@@ -16,9 +16,8 @@ export const fillTemplate = (message: string, params: Params) =>
   // @ts-ignore No index signature with a parameter of type 'string' was found on type 'Params'.
   message.replace(/\${([^{}]*)}/g, (_: string, paramIndex: string) => params[paramIndex]);
 
-export const groupedElemCount = (input: FormValidationsElement) => {
-  return input.formValidations.self.form.querySelectorAll(`input[name="${input.getAttribute('name')}"]:checked`).length;
-};
+export const groupedElemCount = (input: FormValidationsElement) =>
+  input.formValidations.self.form.querySelectorAll(`input[name="${input.getAttribute('name')}"]:checked`).length;
 
 export const mergeConfig = (obj1: Record<string, unknown>, obj2: Record<string, unknown>) => {
   for (const attr in obj2) {
