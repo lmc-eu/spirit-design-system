@@ -14,7 +14,8 @@ export function getPathsFromYamlConfig(configFile: string) {
 
   // Get paths from TwigX config file
   // Input: twigXConfigLines (array)
-  // Output example: ['app/Resources/views/**/*.twig', 'vendor/lmc/spirit-web-twig-bundle/src/Resources/twig-components/**/*.twig']
+  // Output example:
+  //   ['app/Resources/views/**/*.twig', 'vendor/lmc/spirit-web-twig-bundle/src/Resources/twig-components/**/*.twig']
   return twigXConfigLines
     .filter((line: string) => line.trim().startsWith('-'))
     .map(
@@ -32,7 +33,8 @@ export function getPathsFromYamlConfig(configFile: string) {
 // Input: twigXPaths (array)
 // Output example: ['Card', 'Header', ...]
 export async function getLocalComponentsFromPaths(paths: Array<string>): Promise<Array<string>> {
-  // @ts-expect-error TS2559: Type '(error: unknown, files: string[]) => void' has no properties in common with type 'Options'.
+  // Type '(error: unknown, files: string[]) => void' has no properties in common with type 'Options'.
+  // @ts-expect-error -- TS2559
   return glob(paths, (error: unknown, files: Array<string>) => {
     if (!error) {
       return files.map(

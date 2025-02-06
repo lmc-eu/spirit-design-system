@@ -3,9 +3,7 @@ import { path } from 'zx';
 import { runner } from '../runner';
 import { RunnerConfig } from '../types';
 
-jest.mock('../scanners/twigScanner', () => {
-  return jest.fn(() => Promise.resolve({ test: 'test' }));
-});
+jest.mock('../scanners/twigScanner', () => jest.fn(() => Promise.resolve({ test: 'test' })));
 
 describe('runner', () => {
   jest.spyOn(path, 'resolve').mockImplementation((...args: string[]) => args.join('/'));

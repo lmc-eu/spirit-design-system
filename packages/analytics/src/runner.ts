@@ -44,6 +44,4 @@ const getTrackedData = async ({
   };
 };
 
-export const runner: Runner = (config, source, type) => {
-  return getTrackedData({ config, source, type });
-};
+export const runner: Runner = (config, source, type) => getTrackedData({ config, source, type });
