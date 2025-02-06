@@ -21,6 +21,7 @@ module.exports = {
     '@lmc-eu/eslint-config-react/optional',
     // '@lmc-eu/eslint-config-typescript',
     // '@lmc-eu/eslint-config-typescript/react',
+    '@lmc-eu/eslint-config-jest',
     'prettier',
     'plugin:prettier/recommended',
     'plugin:storybook/recommended',
