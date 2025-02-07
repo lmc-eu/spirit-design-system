@@ -1,11 +1,5 @@
-import { ElementType } from 'react';
-import {
-  ChildrenProps,
-  EmotionColorsDictionaryType,
-  SpiritPolymorphicElementPropsWithRef,
-  StyleProps,
-  TransferProps,
-} from './shared';
+import { ComponentPropsWithRef, ElementType } from 'react';
+import { ChildrenProps, EmotionColorsDictionaryType, StyleProps, TransferProps } from './shared';
 
 export type PillColor<C> = EmotionColorsDictionaryType | 'selected' | 'neutral' | C;
 
@@ -20,8 +14,12 @@ export interface AriaPillElementTypeProps<T extends ElementType = 'span'> {
 
 export interface PillProps extends ChildrenProps, StyleProps, TransferProps {}
 
-export type SpiritPillProps<T extends ElementType = 'span', C = void> = AriaPillElementTypeProps<T> &
-  SpiritPolymorphicElementPropsWithRef<T, PillProps> &
+export type SpiritPillProps<
+  T extends ElementType = 'span',
+  C = void,
+  E extends ElementType = T,
+> = AriaPillElementTypeProps<T> &
+  ComponentPropsWithRef<E> &
   PillProps & {
     /** The color of the pill. */
     color?: PillColor<C>;

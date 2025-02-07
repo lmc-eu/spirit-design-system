@@ -3,7 +3,6 @@ import {
   ChildrenProps,
   EmotionColorsDictionaryType,
   SizeExtendedDictionaryType,
-  SpiritPolymorphicElementPropsWithRef,
   StyleProps,
   TransferProps,
 } from './shared';
@@ -22,5 +21,4 @@ export interface TagProps<E extends ElementType = 'span', C = void, S = void>
   size?: TagSize<S>;
 }
 
-export type SpiritTagProps<T extends ElementType = 'span', C = void, S = void> = TagProps<T, C, S> &
-  SpiritPolymorphicElementPropsWithRef<T, TagProps<T, C, S>>;
+export type SpiritTagProps<T extends ElementType = 'span', C = void, S = void> = TagProps<T, C, S>;
