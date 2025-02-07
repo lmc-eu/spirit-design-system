@@ -1,5 +1,5 @@
 {
-  "extends": "../../configs/typescript-config-spirit/dom",
+  "extends": "../../configs/typescript-config-spirit/base",
   "include": ["./src/**/*"],
   "exclude": ["./node_modules", "./dist/**/*"]
 }

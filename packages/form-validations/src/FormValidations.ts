@@ -147,7 +147,7 @@ class FormValidations {
 
     if (typeof input !== 'boolean') {
       if (input instanceof HTMLElement) {
-        fields = [input.formValidations];
+        fields = [(input as FormValidationsElement).formValidations];
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore The left-hand side of an 'instanceof' expression must be of type 'any', an object type or a type parameter.
       } else if (input instanceof NodeList || input instanceof Array) {

@@ -4,7 +4,6 @@ import {
   AlignmentXDictionaryType,
   ChildrenProps,
   DirectionExtendedDictionaryType,
-  SpiritPolymorphicElementPropsWithRef,
   StyleProps,
   TransferProps,
 } from './shared';
@@ -104,4 +103,6 @@ export type CardLinkProps<E extends ElementType = 'a'> = {
 };
 
 export type SpiritCardLinkProps<E extends ElementType = 'a'> = CardLinkProps<E> &
-  SpiritPolymorphicElementPropsWithRef<E, CardLinkProps<E>>;
+  ChildrenProps & {
+    href: string;
+  };

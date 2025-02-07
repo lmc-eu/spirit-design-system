@@ -78,7 +78,7 @@ const ModalWithHooks = (args: SpiritModalProps) => {
         Open Modal
       </Button>
       <Modal {...args} isOpen={isOpen || isModalOpen} onClose={handleClose}>
-        <ModalDialog preferredHeightOnMobile="500px">
+        <ModalDialog height={{ mobile: '500px' }}>
           <ModalHeader>Modal Header</ModalHeader>
           <ModalBody>Body</ModalBody>
           <ModalFooter>

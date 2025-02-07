@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
 import { DirectionAxis } from '../../constants';
-import { SpacingProp } from '../../types';
+import { SpacingType } from '../../types';
 import { useSpacingStyle } from '../useSpacingStyle';
 
 describe('useSpacingStyles', () => {
@@ -11,7 +11,7 @@ describe('useSpacingStyles', () => {
       desktop: 'space-300',
     };
 
-    const { result } = renderHook(() => useSpacingStyle(mockProps as SpacingProp, 'test-prefix'));
+    const { result } = renderHook(() => useSpacingStyle(mockProps as SpacingType, 'test-prefix'));
 
     expect(result.current).toEqual({
       '--test-prefix-spacing': 'var(--spirit-space-100)',
@@ -23,7 +23,7 @@ describe('useSpacingStyles', () => {
   it('should process if spacing is a string', () => {
     const mockProps = 'space-100';
 
-    const { result } = renderHook(() => useSpacingStyle(mockProps as SpacingProp, 'test-prefix'));
+    const { result } = renderHook(() => useSpacingStyle(mockProps as SpacingType, 'test-prefix'));
 
     expect(result.current).toEqual({
       '--test-prefix-spacing': 'var(--spirit-space-100)',
@@ -37,7 +37,7 @@ describe('useSpacingStyles', () => {
       desktop: 'space-300',
     };
 
-    const { result } = renderHook(() => useSpacingStyle(mockProps as SpacingProp, 'test-prefix', DirectionAxis.X));
+    const { result } = renderHook(() => useSpacingStyle(mockProps as SpacingType, 'test-prefix', DirectionAxis.X));
 
     expect(result.current).toEqual({
       '--test-prefix-spacing-x': 'var(--spirit-space-100)',
@@ -49,7 +49,7 @@ describe('useSpacingStyles', () => {
   it('should process vertical direction with spacing if property spacing is a string', () => {
     const mockProps = 'space-100';
 
-    const { result } = renderHook(() => useSpacingStyle(mockProps as SpacingProp, 'test-prefix', DirectionAxis.Y));
+    const { result } = renderHook(() => useSpacingStyle(mockProps as SpacingType, 'test-prefix', DirectionAxis.Y));
 
     expect(result.current).toEqual({
       '--test-prefix-spacing-y': 'var(--spirit-space-100)',
@@ -59,7 +59,7 @@ describe('useSpacingStyles', () => {
   it('should process if spacing is undefined', () => {
     const mockProps = undefined;
 
-    const { result } = renderHook(() => useSpacingStyle(mockProps as SpacingProp | undefined, 'test-prefix'));
+    const { result } = renderHook(() => useSpacingStyle(mockProps as SpacingType | undefined, 'test-prefix'));
 
     expect(result.current).toEqual({});
   });

@@ -24,7 +24,7 @@ export type SpiritPolymorphicElementPropsWithoutRef<E extends ElementType, P> = 
  *
  * @see https://www.freecodecamp.org/news/build-strongly-typed-polymorphic-components-with-react-and-typescript/
  */
-export type PolymorphicRef<C extends React.ElementType> = React.ComponentPropsWithRef<C>['ref'];
+export type PolymorphicRef<C extends ElementType> = ComponentPropsWithRef<C>['ref'];
 
 export type SpiritElementBaseProps = SpiritDetailedHTMLProps<HTMLElement>;
 export type SpiritAnchorElementBaseProps = SpiritCombinedHTMLProps<HTMLButtonElement>;

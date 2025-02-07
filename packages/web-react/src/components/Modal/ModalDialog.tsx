@@ -1,13 +1,13 @@
 'use client';
 
 import classNames from 'classnames';
-import React, { ElementType, ForwardedRef, forwardRef, HTMLAttributes } from 'react';
+import React, { ElementType, ForwardedRef, forwardRef, HTMLAttributes, CSSProperties } from 'react';
 import { useStyleProps } from '../../hooks';
-import { ModalDialogElementType, ModalDialogProps } from '../../types';
+import { ModalDialogProps } from '../../types';
 import { useModalDialogStyleProps } from './useModalDialogStyleProps';
 import { useModalStyleProps } from './useModalStyleProps';
 
-const ModalDialog = <E extends ElementType = ModalDialogElementType>(
+const ModalDialog = <E extends ElementType = 'article'>(
   props: ModalDialogProps<E>,
   ref: ForwardedRef<HTMLDivElement>,
 ) => {
@@ -30,7 +30,7 @@ const ModalDialog = <E extends ElementType = ModalDialogElementType>(
     <ElementTag
       ref={ref}
       {...(otherProps as HTMLAttributes<HTMLElement>)}
-      style={{ ...(combinedStyleProps as HTMLAttributes<HTMLElement>) }}
+      style={{ ...(combinedStyleProps as CSSProperties) }}
       className={classNames(classProps.dialog, styleProps.className)}
     >
       {children}
