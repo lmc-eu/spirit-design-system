@@ -4,7 +4,7 @@ import { Button } from '../../../Button';
 import { ButtonLink } from '../../../ButtonLink';
 import { Icon } from '../../../Icon';
 import { Navigation, NavigationItem } from '../../../Navigation';
-import SecondaryHorizontalNavigationDropdown from './SecondaryHorizontalNavigationDropdown';
+import SecondaryHorizontalNavigationDropdown from '../HeaderWithNavigation/SecondaryHorizontalNavigationDropdown';
 
 interface SecondaryHorizontalNavigationProps {
   handleOpenDrawer: (event: ClickEvent) => void;
@@ -18,7 +18,7 @@ const SecondaryHorizontalNavigation: FunctionComponent<SecondaryHorizontalNaviga
       </Button>
     </NavigationItem>
     <NavigationItem alignmentY="stretch" UNSAFE_className="d-none d-desktop-flex">
-      <SecondaryHorizontalNavigationDropdown />
+      <SecondaryHorizontalNavigationDropdown id="dropdown-avatar" isSquare />
     </NavigationItem>
     <NavigationItem UNSAFE_className="d-none d-desktop-flex">
       <ButtonLink href="#" color="secondary">
@@ -30,9 +30,10 @@ const SecondaryHorizontalNavigation: FunctionComponent<SecondaryHorizontalNaviga
     </NavigationItem>
     <NavigationItem UNSAFE_className="d-desktop-none">
       <Button
+        id="drawer-navigation-expanded-open-button"
         color="tertiary"
         aria-label="Toggle Menu"
-        aria-controls="drawer-navigation"
+        aria-controls="drawer-navigation-expanded"
         aria-expanded="false"
         onClick={handleOpenDrawer}
         isSymmetrical
