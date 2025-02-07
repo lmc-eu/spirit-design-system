@@ -4,14 +4,11 @@ import {
   AlignmentYDictionaryType,
   ChildrenProps,
   ClickEvent,
-  OmittedExtendedUnsafeStyleProps,
   SpiritDialogElementProps,
   SpiritDivElementProps,
   SpiritElementProps,
   StyleProps,
 } from './shared';
-
-export type ModalDialogElementType = 'article' | 'form';
 
 export type ModalDialogHandlingProps = {
   isOpen: boolean;
@@ -25,7 +22,7 @@ export interface ModalCloseButtonProps extends ModalDialogHandlingProps {
   label?: string;
 }
 
-export type ModalDialogBaseProps<E extends ElementType = ModalDialogElementType> = {
+export type ModalDialogBaseProps<E extends ElementType = 'article'> = {
   elementType?: E;
   isDockedOnMobile?: boolean;
   isExpandedOnMobile?: boolean;
@@ -40,11 +37,11 @@ export type ModalDialogCSSHeightBreakpoints = {
   desktop?: ModalDialogCSSHeight;
 };
 
-export type ModalDialogProps<E extends ElementType = ModalDialogElementType> = {
+export type ModalDialogProps<E extends ElementType = 'article'> = {
   height?: ModalDialogCSSHeight | ModalDialogCSSHeightBreakpoints;
   maxHeight?: ModalDialogCSSHeight | ModalDialogCSSHeightBreakpoints;
 } & ModalDialogBaseProps<E> &
-  OmittedExtendedUnsafeStyleProps<ComponentPropsWithRef<E>, keyof ModalDialogBaseProps<E>>;
+  ComponentPropsWithRef<E>;
 
 export interface ModalBodyProps extends SpiritDivElementProps, ChildrenProps {}
 
