@@ -5160,6 +5160,7 @@ __metadata:
     react-scanner: "npm:^1.1.0"
     sade: "npm:^1.8.1"
     shx: "npm:0.3.4"
+    ts-node: "npm:^10.9.2"
     tsup: "npm:8.3.6"
     typescript: "npm:5.7.3"
     zx: "npm:^8.0.0"
@@ -5201,6 +5202,7 @@ __metadata:
     "@types/jest": "npm:29.5.14"
     "@types/node": "npm:20.16.11"
     jest: "npm:29.7.0"
+    ts-node: "npm:10.9.2"
   languageName: unknown
   linkType: soft
 
@@ -5475,7 +5477,7 @@ __metadata:
     shx: "npm:0.3.4"
     stylelint: "npm:16.14.1"
     stylelint-config-spirit: "workspace:^"
-    ts-node: "npm:^10.9.2"
+    ts-node: "npm:10.9.2"
     tslib: "npm:2.8.1"
     typescript: "npm:5.7.3"
   peerDependencies:

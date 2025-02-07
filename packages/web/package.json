@@ -83,7 +83,7 @@
     "shx": "0.3.4",
     "stylelint": "16.14.1",
     "stylelint-config-spirit": "workspace:^",
-    "ts-node": "^10.9.2",
+    "ts-node": "10.9.2",
     "tslib": "2.8.1",
     "typescript": "5.7.3"
   },
