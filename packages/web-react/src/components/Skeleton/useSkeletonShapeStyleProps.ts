@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { CSSProperties } from 'react';
+import { CSSProperties, ElementType } from 'react';
 import { useClassNamePrefix } from '../../hooks';
 import { SpiritSkeletonShapeProps } from '../../types';
 
@@ -35,7 +35,9 @@ const setCustomBorderRadius = (
   return style;
 };
 
-export const useSkeletonShapeStyleProps = (props: SpiritSkeletonShapeProps) => {
+export const useSkeletonShapeStyleProps = <T extends ElementType = 'div', E = void>(
+  props: SpiritSkeletonShapeProps<T, E>,
+) => {
   const { height, width, borderRadius, ...otherProps } = props;
 
   const skeletonClass = useClassNamePrefix('Skeleton');
