@@ -1,12 +1,12 @@
 'use client';
 
 import classNames from 'classnames';
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritHeaderProps } from '../../types';
 import { useUnstableHeaderStyleProps } from './useUnstableHeaderStyleProps';
 
-const UNSTABLE_Header = (props: SpiritHeaderProps): JSX.Element => {
+const UNSTABLE_Header = (props: SpiritHeaderProps): ReactElement => {
   const { children, ...restProps } = props;
 
   const { classProps, props: modifiedProps } = useUnstableHeaderStyleProps(restProps);

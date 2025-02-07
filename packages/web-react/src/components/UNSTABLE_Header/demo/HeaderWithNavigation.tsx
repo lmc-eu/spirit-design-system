@@ -9,6 +9,7 @@ import UNSTABLE_Header from '../UNSTABLE_Header';
 import UNSTABLE_HeaderLogo from '../UNSTABLE_HeaderLogo';
 import {
   MainNavigation,
+  ProfileNavigation,
   SecondaryHorizontalNavigation,
   SecondaryVerticalNavigation,
 } from './HeaderWithNavigation/index';
@@ -25,7 +26,7 @@ const HeaderWithNavigation = () => {
               <ProductLogo>{defaultSvgLogo}</ProductLogo>
             </UNSTABLE_HeaderLogo>
             <MainNavigation />
-            <SecondaryHorizontalNavigation handleOpenDrawer={() => setDrawerOpen(true)} />
+            <SecondaryHorizontalNavigation id="drawer-navigation" handleOpenDrawer={() => setDrawerOpen(true)} />
           </Flex>
         </Container>
       </UNSTABLE_Header>
@@ -33,7 +34,8 @@ const HeaderWithNavigation = () => {
       <Drawer id="drawer-navigation" isOpen={isDrawerOpen} onClose={() => setDrawerOpen(false)}>
         <DrawerPanel>
           <DrawerCloseButton />
-          <Stack hasIntermediateDividers hasSpacing UNSAFE_className="mt-900" spacing="space-900">
+          <Stack hasIntermediateDividers hasSpacing marginY="space-900" spacing="space-900">
+            <ProfileNavigation />
             <MainNavigation direction="vertical" />
             <SecondaryVerticalNavigation />
           </Stack>
