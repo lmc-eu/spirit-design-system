@@ -53,7 +53,7 @@ const ModalWithHooks = (args: ModalHeaderProps) => {
         Open Modal
       </Button>
       <Modal id="modal" isOpen={isOpen} onClose={handleClose}>
-        <ModalDialog preferredHeightOnMobile="500px">
+        <ModalDialog height={{ mobile: '500px' }}>
           <ModalHeader {...args}>{children}</ModalHeader>
           <ModalBody>Body</ModalBody>
           <ModalFooter>
