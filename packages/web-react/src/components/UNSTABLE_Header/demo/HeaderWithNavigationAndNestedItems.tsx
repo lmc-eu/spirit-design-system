@@ -7,10 +7,10 @@ import { defaultSvgLogo } from '../../ProductLogo/demo/ProductLogoDefault';
 import { Stack } from '../../Stack';
 import UNSTABLE_Header from '../UNSTABLE_Header';
 import UNSTABLE_HeaderLogo from '../UNSTABLE_HeaderLogo';
+import { ProfileNavigation } from './HeaderWithNavigation/index';
 import {
   MainHorizontalNavigation,
   MainVerticalNavigation,
-  ProfileNavigation,
   SecondaryHorizontalNavigation,
   SecondaryVerticalNavigation,
 } from './HeaderWithNavigationAndNestedItems/index';
@@ -32,11 +32,11 @@ const HeaderWithNavigationAndNestedItems = () => {
         </Container>
       </UNSTABLE_Header>
 
-      <Drawer id="drawer-navigation" isOpen={isDrawerOpen} onClose={() => setDrawerOpen(false)}>
+      <Drawer id="drawer-navigation-expanded" isOpen={isDrawerOpen} onClose={() => setDrawerOpen(false)}>
         <DrawerPanel>
           <DrawerCloseButton />
           <Stack hasIntermediateDividers hasSpacing UNSAFE_className="mt-900" spacing="space-900">
-            <ProfileNavigation />
+            <ProfileNavigation isSquare />
             <MainVerticalNavigation />
             <SecondaryVerticalNavigation />
           </Stack>

@@ -25,7 +25,7 @@ const HeaderWithNavigation = () => {
               <ProductLogo>{defaultSvgLogo}</ProductLogo>
             </UNSTABLE_HeaderLogo>
             <MainNavigation />
-            <SecondaryHorizontalNavigation handleOpenDrawer={() => setDrawerOpen(true)} />
+            <SecondaryHorizontalNavigation id="drawer-navigation" handleOpenDrawer={() => setDrawerOpen(true)} />
           </Flex>
         </Container>
       </UNSTABLE_Header>

@@ -10,6 +10,7 @@ import UNSTABLE_Header from '../UNSTABLE_Header';
 import UNSTABLE_HeaderLogo from '../UNSTABLE_HeaderLogo';
 import {
   MainNavigation,
+  ProfileNavigation,
   SecondaryHorizontalNavigation,
   SecondaryVerticalNavigation,
 } from './HeaderWithNavigation/index';
@@ -26,16 +27,21 @@ const HeaderWithPillNavigation = () => {
               <ProductLogo>{defaultSvgLogo}</ProductLogo>
             </UNSTABLE_HeaderLogo>
             <MainNavigation variant={NavigationActionVariants.PILL} />
-            <SecondaryHorizontalNavigation handleOpenDrawer={() => setDrawerOpen(true)} />
+            <SecondaryHorizontalNavigation
+              id="drawer-navigation-pill"
+              handleOpenDrawer={() => setDrawerOpen(true)}
+              hasAvatar
+            />
           </Flex>
         </Container>
       </UNSTABLE_Header>
 
-      <Drawer id="drawer-navigation" isOpen={isDrawerOpen} onClose={() => setDrawerOpen(false)}>
+      <Drawer id="drawer-navigation-pill" isOpen={isDrawerOpen} onClose={() => setDrawerOpen(false)}>
         <DrawerPanel>
           <DrawerCloseButton />
           <Stack hasIntermediateDividers hasSpacing UNSAFE_className="mt-900" spacing="space-900">
-            <MainNavigation direction="vertical" />
+            <ProfileNavigation />
+            <MainNavigation direction="vertical" variant={NavigationActionVariants.PILL} />
             <SecondaryVerticalNavigation />
           </Stack>
         </DrawerPanel>
