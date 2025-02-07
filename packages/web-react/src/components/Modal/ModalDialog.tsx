@@ -2,12 +2,12 @@
 
 import React, { ElementType, ForwardedRef, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
-import { ModalDialogElementType, ModalDialogProps } from '../../types';
+import { ModalDialogProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { useModalDialogStyleProps } from './useModalDialogStyleProps';
 import { useModalStyleProps } from './useModalStyleProps';
 
-const ModalDialog = <E extends ElementType = ModalDialogElementType>(
+const ModalDialog = <E extends ElementType = 'article'>(
   props: ModalDialogProps<E>,
   ref: ForwardedRef<HTMLDivElement>,
 ) => {
