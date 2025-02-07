@@ -1,11 +1,10 @@
-import { ElementType } from 'react';
+import { ComponentPropsWithRef, ElementType } from 'react';
 import {
   ComponentButtonColorsDictionaryType,
   AriaLabelingProps,
   ChildrenProps,
   ClickEvents,
   EmotionColorsDictionaryType,
-  SpiritPolymorphicElementPropsWithRef,
   SizesDictionaryType,
   StyleProps,
 } from './shared';
@@ -54,7 +53,7 @@ export type ButtonLinkProps<E extends ElementType, C = void, S = void> = {
 } & ButtonBaseProps<C, S>;
 
 export type SpiritButtonProps<E extends ElementType = 'button', C = void, S = void> = ButtonProps<E, C, S> &
-  SpiritPolymorphicElementPropsWithRef<E, ButtonProps<E, C, S>>;
+  ComponentPropsWithRef<E>;
 
 export type SpiritButtonLinkProps<E extends ElementType = 'a', C = void, S = void> = ButtonLinkProps<E, C, S> &
-  SpiritPolymorphicElementPropsWithRef<E, ButtonLinkProps<E, C, S>>;
+  ComponentPropsWithRef<E>;

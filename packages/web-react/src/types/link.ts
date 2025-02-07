@@ -1,11 +1,5 @@
 import { ElementType } from 'react';
-import {
-  LinkColorsDictionaryType,
-  ChildrenProps,
-  SpiritPolymorphicElementPropsWithRef,
-  StyleProps,
-  TransferProps,
-} from './shared';
+import { LinkColorsDictionaryType, ChildrenProps, StyleProps, TransferProps } from './shared';
 
 export const UNDERLINED_OPTIONS = {
   ALWAYS: 'always',
@@ -39,5 +33,4 @@ export type LinkProps<E extends ElementType = 'a', C = void> = {
   elementType?: E;
 } & LinkBaseProps<C>;
 
-export type SpiritLinkProps<E extends ElementType = 'a', C = void> = LinkProps<E, C> &
-  SpiritPolymorphicElementPropsWithRef<E, LinkProps<E, C>>;
+export type SpiritLinkProps<E extends ElementType = 'a', C = void> = LinkProps<E, C>;
