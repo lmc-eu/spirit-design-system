@@ -31,7 +31,7 @@ export const useButtonLinkAriaProps = (props: UseButtonLinkAriaProps): UseButton
   return {
     buttonLinkProps: {
       ...additionalProps,
-      onClick: (event) => handleClick(event, isDisabled, onClick),
+      onClick: (event) => handleClick(event as ClickEvent, isDisabled, onClick),
       'aria-label': ariaLabel || undefined,
     },
   };
