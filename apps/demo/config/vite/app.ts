@@ -21,6 +21,7 @@ export default defineConfig({
     hmr: {
       overlay: false,
     },
+    allowedHosts: ['localhost', 'host.docker.internal'],
     ...SERVERS.DEVELOPMENT.web,
   },
   resolve: {
