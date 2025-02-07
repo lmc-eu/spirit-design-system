@@ -83,7 +83,7 @@
     "eslint-plugin-storybook": "0.11.2",
     "husky": "9.1.7",
     "is-ci": "3.0.1",
-    "lerna": "8.1.8",
+    "lerna": "8.1.9",
     "lint-staged": "15.2.10",
     "netlify-cli": "17.38.1",
     "npm-run-all2": "6.2.6",
