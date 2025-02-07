@@ -12,7 +12,7 @@ const _PaginationButtonLink = <E extends ElementType = 'a'>(
   props: SpiritPaginationButtonLinkProps<E>,
   ref: ForwardedRef<HTMLAnchorElement>,
 ) => {
-  const { direction, accessibilityLabel, ...restProps } = props;
+  const { direction, accessibilityLabel, ...restProps } = props as unknown as SpiritPaginationButtonLinkProps;
 
   const iconType = {
     previous: 'chevron-left',
