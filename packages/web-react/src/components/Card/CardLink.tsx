@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React, { ElementType, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
-import { PolymorphicRef, SpiritCardLinkProps, SpiritLinkProps } from '../../types';
+import { PolymorphicRef, SpiritCardLinkProps } from '../../types';
 import { useCardStyleProps } from './useCardStyleProps';
 
 const defaultProps: Partial<SpiritCardLinkProps> = {
@@ -17,6 +17,7 @@ const _CardLink = <E extends ElementType = 'a'>(props: SpiritCardLinkProps<E>, r
   const {
     elementType: ElementTag = defaultProps.elementType as ElementType,
     children,
+    href,
     ...restProps
   } = propsWithDefaults;
   const { classProps } = useCardStyleProps();
@@ -26,7 +27,7 @@ const _CardLink = <E extends ElementType = 'a'>(props: SpiritCardLinkProps<E>, r
     <ElementTag
       {...otherProps}
       {...styleProps}
-      href={restProps.href}
+      href={href}
       className={classNames(classProps.link, styleProps.className)}
       ref={ref}
     >
@@ -35,6 +36,6 @@ const _CardLink = <E extends ElementType = 'a'>(props: SpiritCardLinkProps<E>, r
   );
 };
 
-const CardLink = forwardRef<HTMLAnchorElement, SpiritLinkProps<ElementType>>(_CardLink);
+const CardLink = forwardRef<HTMLAnchorElement, SpiritCardLinkProps<ElementType>>(_CardLink);
 
 export default CardLink;
