@@ -1,7 +1,7 @@
 'use client';
 
 import classNames from 'classnames';
-import React, { ElementType, forwardRef } from 'react';
+import React, { ElementType, forwardRef, ReactElement } from 'react';
 import { useStyleProps } from '../../hooks';
 import { PolymorphicRef, SpiritHeaderLogoProps } from '../../types';
 import { useUnstableHeaderStyleProps } from './useUnstableHeaderStyleProps';
@@ -15,7 +15,7 @@ const defaultProps: Partial<SpiritHeaderLogoProps> = {
 const _HeaderLogo = <E extends ElementType = 'a'>(
   props: SpiritHeaderLogoProps<E>,
   ref: PolymorphicRef<E>,
-): JSX.Element => {
+): ReactElement => {
   const propsWithDefaults = { ...defaultProps, ...props };
   const {
     elementType: ElementTag = defaultProps.elementType as ElementType,
