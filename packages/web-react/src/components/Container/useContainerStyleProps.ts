@@ -14,6 +14,7 @@ export function useContainerStyleProps(props: SpiritContainerProps): ContainerSt
 
   const containerClass = useClassNamePrefix('Container');
   const containerFluidClass = `${containerClass}--fluid`;
+
   const classProps = classNames(containerClass, {
     [containerFluidClass]: isFluid,
   });
