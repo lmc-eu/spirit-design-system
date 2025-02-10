@@ -75,7 +75,7 @@ __metadata:
   dependencies:
     "@lmc-eu/eslint-config-typescript": "npm:2.1.4"
     "@supernovaio/export-helpers": "npm:1.0.30"
-    "@supernovaio/sdk-exporters": "npm:2.0.32"
+    "@supernovaio/sdk-exporters": "npm:2.0.33"
     "@swc/core": "npm:1.10.15"
     "@swc/jest": "npm:0.2.37"
     eslint: "npm:8.57.1"
@@ -8096,6 +8096,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@supernova-studio/client@npm:0.58.14":
+  version: 0.58.14
+  resolution: "@supernova-studio/client@npm:0.58.14"
+  dependencies:
+    prosemirror-model: "npm:1.22.3"
+    typescript: "npm:5.0.4"
+    y-prosemirror: "npm:1.2.2"
+    yjs: "npm:13.6.19"
+    zod: "npm:3.23.6"
+  checksum: 10/1e725ce2fd98d159f9c64365398760f67e3e7de5fd2d2c62dd186a9a8158043d9b8a9f20b71f61291ace45ac1bd82683071b896c57325be5a41b8e6309de7d3d
+  languageName: node
+  linkType: hard
+
 "@supernova-studio/model@npm:0.58.0":
   version: 0.58.0
   resolution: "@supernova-studio/model@npm:0.58.0"
@@ -8104,6 +8117,17 @@ __metadata:
     ip-cidr: "npm:3.1.0"
     zod: "npm:3.23.6"
   checksum: 10/dc4b32446810b501f32ac4e212984cc26e3850e54c943491d1dcf0b5137005aeea41d9427fea9dd3e25a86b744919a21c3b8b9cbdeef80b0738c7b237a101cd1
+  languageName: node
+  linkType: hard
+
+"@supernova-studio/model@npm:0.58.14":
+  version: 0.58.14
+  resolution: "@supernova-studio/model@npm:0.58.14"
+  dependencies:
+    "@sindresorhus/slugify": "npm:1.1.2"
+    ip-cidr: "npm:3.1.0"
+    zod: "npm:3.23.6"
+  checksum: 10/21d7f55c469b6c76a4256aa4eb40f051e9aba8fc79b8d3ef41bc5ea626ecaaa6401554c0108cecddb4e1e667d41c0c3eccf2b93af324f234abbc76c61284b615
   languageName: node
   linkType: hard
 
@@ -8127,13 +8151,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@supernovaio/sdk-exporters@npm:2.0.32":
-  version: 2.0.32
-  resolution: "@supernovaio/sdk-exporters@npm:2.0.32"
+"@supernovaio/sdk-exporters@npm:2.0.33":
+  version: 2.0.33
+  resolution: "@supernovaio/sdk-exporters@npm:2.0.33"
   dependencies:
-    "@supernova-studio/client": "npm:0.58.0"
-    "@supernova-studio/model": "npm:0.58.0"
-  checksum: 10/5793b4e500186a46435b5100deffaf655ff48691f0efc92c63c89dbe2e705eb87c54432ea5005ff5086f34f81aee942258bcf4203f47c27d6a725b28cd5bd681
+    "@supernova-studio/client": "npm:0.58.14"
+    "@supernova-studio/model": "npm:0.58.14"
+  checksum: 10/362884b95086df27d4768bc5b6e3c4b4b9c496c4bad6b99e0490576a7c5ecf5e879c3753f4b360f08e6fc40a6978de5902c1ea360bb449d9b68b7723ef43027e
   languageName: node
   linkType: hard
 
