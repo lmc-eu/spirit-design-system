@@ -1,6 +1,14 @@
 @use 'sass:map';
 @use '@tokens' as tokens;
 
-$container-max-width: tokens.$container-max-width;
+$container-max-width: tokens.$container-xlarge-max-width;
 $container-paddings: map.get(tokens.$containers, padding);
 $container-breakpoints: tokens.$breakpoints;
+
+$container-sizes: (
+    xsmall: map.get(tokens.$containers, xsmall),
+    small: map.get(tokens.$containers, small),
+    medium: map.get(tokens.$containers, medium),
+    large: map.get(tokens.$containers, large),
+    xlarge: map.get(tokens.$containers, xlarge),
+);
