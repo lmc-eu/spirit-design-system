@@ -2,7 +2,7 @@
 @use '@tokens' as tokens;
 @use '../../tools/dictionaries';
 
-.UNSTABLE_Avatar {
+.Avatar {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -26,15 +26,15 @@
     }
 }
 
-.UNSTABLE_Avatar--square {
+.Avatar--square {
     border-radius: theme.$border-radius-square;
 }
 
-.UNSTABLE_Avatar > img {
+.Avatar > img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-@include dictionaries.generate-sizes('UNSTABLE_Avatar', theme.$sizes);
+@include dictionaries.generate-sizes('Avatar', theme.$sizes);
