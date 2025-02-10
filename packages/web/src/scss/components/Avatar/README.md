@@ -1,9 +1,6 @@
-# UNSTABLE Avatar
+# Avatar
 
-> ⚠️ This component is UNSTABLE. It may significantly change at any point in the future.
-> Please use it with caution.
-
-The `UNSTABLE_Avatar` component is used to represent a user or entity.
+The `Avatar` component is used to represent a user or entity.
 
 It can be a circle or a square (with rounded corners, using `radius-100` token) and
 can have different sizes.
@@ -11,21 +8,21 @@ can have different sizes.
 ## Example
 
 ```html
-<div class="UNSTABLE_Avatar UNSTABLE_Avatar--medium" aria-label="Profile of Jiří Bárta">
+<div class="Avatar Avatar--medium" aria-label="Profile of Jiří Bárta">
   <span aria-hidden="true">JB</span>
 </div>
 
-<a href="#" class="UNSTABLE_Avatar UNSTABLE_Avatar--xsmall" aria-label="Profile of Jiří Bárta">
+<a href="#" class="Avatar Avatar--xsmall" aria-label="Profile of Jiří Bárta">
   <img src="https://picsum.photos/id/823/162/162" alt="Jiří Bárta" aria-hidden="true" />
 </a>
 ```
 
 ## Square
 
-Add `UNSTABLE_Avatar--square` modifier to make the avatar a square.
+Add `Avatar--square` modifier to make the avatar a square.
 
 ```html
-<div class="UNSTABLE_Avatar UNSTABLE_Avatar--medium UNSTABLE_Avatar--square" aria-label="Profile of Jiří Bárta">
+<div class="Avatar Avatar--medium Avatar--square" aria-label="Profile of Jiří Bárta">
   <span aria-hidden="true">JB</span>
 </div>
 ```
@@ -33,36 +30,36 @@ Add `UNSTABLE_Avatar--square` modifier to make the avatar a square.
 ## Sizes
 
 The Avatar component is available in all [extended sizes][dictionary-size].
-Use the `UNSTABLE_Avatar--<size>` modifier class to change the size of the Avatar component.
+Use the `Avatar--<size>` modifier class to change the size of the Avatar component.
 
 ```html
-<div class="UNSTABLE_Avatar UNSTABLE_Avatar--xsmall" aria-label="Profile of Jiří Bárta">
+<div class="Avatar Avatar--xsmall" aria-label="Profile of Jiří Bárta">
   <span aria-hidden="true">JB</span>
 </div>
-<div class="UNSTABLE_Avatar UNSTABLE_Avatar--small" aria-label="Profile of Jiří Bárta">
+<div class="Avatar Avatar--small" aria-label="Profile of Jiří Bárta">
   <span aria-hidden="true">JB</span>
 </div>
-<div class="UNSTABLE_Avatar UNSTABLE_Avatar--medium" aria-label="Profile of Jiří Bárta">
+<div class="Avatar Avatar--medium" aria-label="Profile of Jiří Bárta">
   <span aria-hidden="true">JB</span>
 </div>
-<div class="UNSTABLE_Avatar UNSTABLE_Avatar--large" aria-label="Profile of Jiří Bárta">
+<div class="Avatar Avatar--large" aria-label="Profile of Jiří Bárta">
   <span aria-hidden="true">JB</span>
 </div>
-<div class="UNSTABLE_Avatar UNSTABLE_Avatar--xlarge" aria-label="Profile of Jiří Bárta">
+<div class="Avatar Avatar--xlarge" aria-label="Profile of Jiří Bárta">
   <span aria-hidden="true">JB</span>
 </div>
 ```
 
 ## Content
 
-The content of the `UNSTABLE_Avatar` component can be an image, an icon, or a text string.
+The content of the `Avatar` component can be an image, an icon, or a text string.
 
 ### Icon
 
 Add an icon with correct size.
 
 ```html
-<div class="UNSTABLE_Avatar UNSTABLE_Avatar--medium" aria-label="Profile of Jiří Bárta">
+<div class="Avatar Avatar--medium" aria-label="Profile of Jiří Bárta">
   <svg width="24" height="24" aria-hidden="true">
     <use xlink:href="/assets/icons/svg/sprite.svg#profile" />
   </svg>
@@ -76,7 +73,7 @@ Add an icon with correct size.
 Add an image, it will be resized to fit the avatar.
 
 ```html
-<div class="UNSTABLE_Avatar UNSTABLE_Avatar--medium" aria-label="Profile of Jiří Bárta">
+<div class="Avatar Avatar--medium" aria-label="Profile of Jiří Bárta">
   <img src="https://picsum.photos/id/823/162/162" alt="Jiří Bárta" aria-hidden="true" />
 </div>
 ```
@@ -87,12 +84,12 @@ attribute is set on the container.
 
 ### Text
 
-It is possible to use text as the content of the `UNSTABLE_Avatar` component.
+It is possible to use text as the content of the `Avatar` component.
 This is useful when you want to display the initials of a user. You need to
 take care of the text length and case. The rest is handled by the component.
 
 ```html
-<div class="UNSTABLE_Avatar UNSTABLE_Avatar--medium" aria-label="Profile of Jiří Bárta">
+<div class="Avatar Avatar--medium" aria-label="Profile of Jiří Bárta">
   <span aria-hidden="true">JB</span>
 </div>
 ```
