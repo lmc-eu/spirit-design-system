@@ -1,11 +1,11 @@
 import React from 'react';
+import { Avatar } from '../../Avatar';
 import { ButtonLink } from '../../ButtonLink';
 import { Flex } from '../../Flex';
 import { Grid } from '../../Grid';
 import { Icon } from '../../Icon';
 import { Link } from '../../Link';
 import { Text } from '../../Text';
-import { UNSTABLE_Avatar } from '../../UNSTABLE_Avatar';
 import { VisuallyHidden } from '../../VisuallyHidden';
 import Card from '../Card';
 import CardBody from '../CardBody';
@@ -76,7 +76,7 @@ const CardFooterContent = () => {
         </CardBody>
         <CardFooter>
           <Flex>
-            <UNSTABLE_Avatar size="large">{AVATAR}</UNSTABLE_Avatar>
+            <Avatar size="large">{AVATAR}</Avatar>
             <div>
               <Text elementType="div" size="small" color="primary" emphasis="semibold">
                 Jiří Bárta
