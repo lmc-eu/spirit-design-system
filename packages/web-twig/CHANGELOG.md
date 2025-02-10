@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.4.2"></a>
+
+## [3.4.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@3.4.1...@lmc-eu/spirit-web-twig@3.4.2) (2025-02-10)
+
+### Bug Fixes
+
+- **web-react:** Add missing presentation role to TabItem and set correct TabLink role [#DS-1653](https://github.com/lmc-eu/spirit-design-system/issues/DS-1653) ([dca5a7e](https://github.com/lmc-eu/spirit-design-system/commit/dca5a7e))
+- **web-twig:** SVG id must have a valid ID attribute value ([4401550](https://github.com/lmc-eu/spirit-design-system/commit/4401550))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="3.4.1"></a>
 
 ## [3.4.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@3.4.0...@lmc-eu/spirit-web-twig@3.4.1) (2024-10-14)

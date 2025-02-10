@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.5.3"></a>
+
+## [2.5.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@2.5.2...@lmc-eu/spirit-web-react@2.5.3) (2025-02-10)
+
+### Bug Fixes
+
+- **web-react:** Add missing presentation role to TabItem [#DS-1653](https://github.com/lmc-eu/spirit-design-system/issues/DS-1653) ([992b531](https://github.com/lmc-eu/spirit-design-system/commit/992b531))
+- **web-react:** Pass aria props rel and target based on element type to the dom element ([e9a82f5](https://github.com/lmc-eu/spirit-design-system/commit/e9a82f5)), closes [#DS-1575](https://github.com/lmc-eu/spirit-design-system/issues/DS-1575)
+- **web-react:** Remove duplicated `id` on the `DropdownTrigger` component ([802cae4](https://github.com/lmc-eu/spirit-design-system/commit/802cae4)), closes [#1892](https://github.com/lmc-eu/spirit-design-system/issues/1892)
+
+### Tests
+
+- **web-react:** Refactor ButtonLink test using screen and roles ([fb88d44](https://github.com/lmc-eu/spirit-design-system/commit/fb88d44))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="2.5.2"></a>
 
 ## [2.5.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@2.5.1...@lmc-eu/spirit-web-react@2.5.2) (2024-11-22)
