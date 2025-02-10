@@ -1,5 +1,6 @@
 @use 'true' as test;
-@use '../tokens';
+@use '@tokens' as tokens;
+@use '../tokens' as tokens-tools;
 
 $test-theme: (
     action: (
@@ -14,7 +15,7 @@ $test-theme: (
         @include test.assert() {
             @include test.output() {
                 :root {
-                    @include tokens.generate-css-variables($map: $test-theme, $prefix: 'test');
+                    @include tokens-tools.generate-css-variables($map: $test-theme, $prefix: 'test');
                 }
             }
 
@@ -24,5 +25,18 @@ $test-theme: (
                 }
             }
         }
+    }
+}
+
+@include test.describe('get-variable-if-exists function') {
+    @include test.it('should return the variable that exists in the tokens') {
+        @include test.assert-equal(
+            tokens-tools.get-variable-if-exists('container-small-max-width', tokens.$container-max-width),
+            tokens.$container-small-max-width
+        );
+    }
+
+    @include test.it('should return the fallback variable') {
+        @include test.assert-equal(tokens-tools.get-variable-if-exists('new-variable', '0px'), '0px');
     }
 }

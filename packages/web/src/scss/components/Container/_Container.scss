@@ -1,3 +1,5 @@
+@use '@tokens' as tokens;
+@use '../../tools/dictionaries';
 @use 'theme';
 @use 'tools';
 
@@ -9,6 +11,8 @@
     @include tools.paddings(theme.$container-paddings, theme.$container-breakpoints);
 }
 
+@include dictionaries.generate-sizes('Container', theme.$container-sizes);
+
 .Container:not(.Container--fluid) {
-    max-width: theme.$container-max-width;
+    max-width: var(--#{tokens.$css-variable-prefix}container-max-width, #{theme.$container-max-width});
 }

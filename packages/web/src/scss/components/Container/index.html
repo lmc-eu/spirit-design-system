@@ -1,43 +1,44 @@
 {{#> web/layout/default title="Container" parentPageName="Components" }}
 
+{{setVar "sizes" "xsmall" "small" "medium" "large" "xlarge" }}
+
 <section class="UNSTABLE_Section">
-
   <div class="Container">
-
     <h2 class="docs-Heading">Default</h2>
-
   </div>
-
   <div class="docs-Stack docs-Stack--stretch">
-
     <div class="Container">
       <div class="docs-Box">
         Container
       </div>
     </div>
-
   </div>
-
 </section>
 
 <section class="UNSTABLE_Section">
-
   <div class="Container">
-
     <h2 class="docs-Heading">Fluid</h2>
-
   </div>
-
   <div class="docs-Stack docs-Stack--stretch">
-
     <div class="Container Container--fluid">
       <div class="docs-Box">
         Container
       </div>
     </div>
-
   </div>
-
 </section>
+
+{{#each @root.sizes as |size|}}
+<section class="UNSTABLE_Section">
+  <div class="Container">
+    <h2 class="docs-Heading">Size {{size}}</h2>
+  </div>
+  <div class="docs-Stack docs-Stack--stretch">
+    <div class="Container Container--{{size}}">
+      <div class="docs-Box">Container of {{size}} size</div>
+    </div>
+  </div>
+</section>
+{{/each}}
 
 {{/web/layout/default }}
