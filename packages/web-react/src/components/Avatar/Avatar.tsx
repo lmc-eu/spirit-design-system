@@ -35,6 +35,6 @@ const _Avatar = <T extends ElementType = 'div', S = void>(
   );
 };
 
-const UNSTABLE_Avatar = forwardRef<HTMLDivElement, SpiritAvatarProps<ElementType>>(_Avatar);
+const Avatar = forwardRef<HTMLDivElement, SpiritAvatarProps<ElementType>>(_Avatar);
 
-export default UNSTABLE_Avatar;
+export default Avatar;

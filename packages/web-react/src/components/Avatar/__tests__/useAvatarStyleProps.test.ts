@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { SizesExtended } from '../../../constants/dictionaries';
+import { SizesExtended } from '../../../constants';
 import { useAvatarStyleProps } from '../useAvatarStyleProps';
 
 describe('useAvatarStyleProps', () => {
@@ -9,7 +9,7 @@ describe('useAvatarStyleProps', () => {
     const props = { ...defaultProps };
     const { result } = renderHook(() => useAvatarStyleProps(props));
 
-    expect(result.current.classProps).toBe('UNSTABLE_Avatar UNSTABLE_Avatar--medium');
+    expect(result.current.classProps).toBe('Avatar Avatar--medium');
   });
 
   it('should return square avatar', () => {
@@ -19,13 +19,13 @@ describe('useAvatarStyleProps', () => {
     };
     const { result } = renderHook(() => useAvatarStyleProps(props));
 
-    expect(result.current.classProps).toBe('UNSTABLE_Avatar UNSTABLE_Avatar--medium UNSTABLE_Avatar--square');
+    expect(result.current.classProps).toBe('Avatar Avatar--medium Avatar--square');
   });
 
   it.each(Object.values(SizesExtended))('should return %s size avatar', (size) => {
     const props = { size };
     const { result } = renderHook(() => useAvatarStyleProps(props));
 
-    expect(result.current.classProps).toBe(`UNSTABLE_Avatar UNSTABLE_Avatar--${size}`);
+    expect(result.current.classProps).toBe(`Avatar Avatar--${size}`);
   });
 });

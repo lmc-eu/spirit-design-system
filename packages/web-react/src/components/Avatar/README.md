@@ -1,16 +1,13 @@
-# UNSTABLE Avatar
+# Avatar
 
-> ⚠️ This component is UNSTABLE. It may significantly change at any point in the future.
-> Please use it with caution.
-
-The `UNSTABLE_Avatar` component is used to display a user's profile picture or initials.
+The `Avatar` component is used to display a user's profile picture or initials.
 
 ```jsx
-import { UNSTABLE_Avatar } from '@lmc-eu/spirit-web-react';
+import { Avatar } from '@lmc-eu/spirit-web-react';
 
-<UNSTABLE_Avatar aria-label="Profile of Jiří Bárta">
+<Avatar aria-label="Profile of Jiří Bárta">
   <span aria-hidden="true">JB</span>
-</UNSTABLE_Avatar>;
+</Avatar>;
 ```
 
 ## Square
@@ -18,9 +15,9 @@ import { UNSTABLE_Avatar } from '@lmc-eu/spirit-web-react';
 Add `isSquare` prop to make the avatar a square.
 
 ```jsx
-<UNSTABLE_Avatar isSquare aria-label="Profile of Jiří Bárta">
+<Avatar isSquare aria-label="Profile of Jiří Bárta">
   <span aria-hidden="true">JB</span>
-</UNSTABLE_Avatar>
+</Avatar>
 ```
 
 ## Sizes
@@ -28,38 +25,38 @@ Add `isSquare` prop to make the avatar a square.
 The Avatar component is available in all [extended sizes][dictionary-size].
 
 ```jsx
-<UNSTABLE_Avatar aria-label="Profile of Jiří Bárta" size="xsmall">
+<Avatar aria-label="Profile of Jiří Bárta" size="xsmall">
   <span aria-hidden="true">JB</span>
-</UNSTABLE_Avatar>
-<UNSTABLE_Avatar aria-label="Profile of Jiří Bárta" size="small">
+</Avatar>
+<Avatar aria-label="Profile of Jiří Bárta" size="small">
   <span aria-hidden="true">JB</span>
-</UNSTABLE_Avatar>
-<UNSTABLE_Avatar aria-label="Profile of Jiří Bárta" size="medium">
+</Avatar>
+<Avatar aria-label="Profile of Jiří Bárta" size="medium">
   <span aria-hidden="true">JB</span>
-</UNSTABLE_Avatar>
-<UNSTABLE_Avatar aria-label="Profile of Jiří Bárta" size="large">
+</Avatar>
+<Avatar aria-label="Profile of Jiří Bárta" size="large">
   <span aria-hidden="true">JB</span>
-</UNSTABLE_Avatar>
-<UNSTABLE_Avatar aria-label="Profile of Jiří Bárta" size="xlarge">
+</Avatar>
+<Avatar aria-label="Profile of Jiří Bárta" size="xlarge">
   <span aria-hidden="true">JB</span>
-</UNSTABLE_Avatar>
+</Avatar>
 ```
 
 ## Content
 
-The content of the `UNSTABLE_Avatar` component can be an image, an icon, or a text string.
+The content of the `Avatar` component can be an image, an icon, or a text string.
 
 ### Icon
 
 Add an Icon with correct size.
 
 ```jsx
-<UNSTABLE_Avatar size="xsmall" aria-label="Profile of Jiří Bárta">
+<Avatar size="xsmall" aria-label="Profile of Jiří Bárta">
   <Icon name="profile" boxSize="16" />
-</UNSTABLE_Avatar>
-<UNSTABLE_Avatar aria-label="Profile of Jiří Bárta">
+</Avatar>
+<Avatar aria-label="Profile of Jiří Bárta">
   <Icon name="profile" boxSize="24" />
-</UNSTABLE_Avatar>
+</Avatar>
 ```
 
 ℹ️ Don't forget to add the `aria-label` attribute for accessible title.
@@ -71,9 +68,9 @@ To ensure correct Icon rendering, please refer to the [Icon component documentat
 Add an image, it will be resized to fit the avatar.
 
 ```jsx
-<UNSTABLE_Avatar aria-label="Profile of Jiří Bárta">
+<Avatar aria-label="Profile of Jiří Bárta">
   <img src="https://picsum.photos/id/823/162/162" alt="Jiří Bárta" aria-hidden="true" />
-</UNSTABLE_Avatar>
+</Avatar>
 ```
 
 ℹ️ Don't forget to add the `aria-label` attribute for accessible title.
@@ -82,14 +79,14 @@ attribute is set on the container.
 
 ### Text
 
-It is possible to use text as the content of the `UNSTABLE_Avatar` component.
+It is possible to use text as the content of the `Avatar` component.
 This is useful when you want to display the initials of a user. You need to
 take care of the text length and case. The rest is handled by the component.
 
 ```jsx
-<UNSTABLE_Avatar aria-label="Profile of Jiří Bárta">
+<Avatar aria-label="Profile of Jiří Bárta">
   <span aria-hidden="true">JB</span>
-</UNSTABLE_Avatar>
+</Avatar>
 ```
 
 ℹ️ Don't forget to add the `aria-label` attribute for accessible title, especially when

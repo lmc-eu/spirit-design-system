@@ -4,11 +4,11 @@ import React from 'react';
 import { Sizes, SizesExtended } from '../../../constants';
 import { Icon } from '../../Icon';
 import ReadMe from '../README.md';
-import { UNSTABLE_Avatar } from '..';
+import { Avatar } from '..';
 
-const meta: Meta<typeof UNSTABLE_Avatar> = {
-  title: 'Experimental/UNSTABLE_Avatar',
-  component: UNSTABLE_Avatar,
+const meta: Meta<typeof Avatar> = {
+  title: 'Components/Avatar',
+  component: Avatar,
   parameters: {
     docs: {
       page: () => <Markdown>{ReadMe}</Markdown>,
@@ -51,8 +51,8 @@ const meta: Meta<typeof UNSTABLE_Avatar> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof UNSTABLE_Avatar>;
+type Story = StoryObj<typeof Avatar>;
 
 export const Playground: Story = {
-  name: 'UNSTABLE_Avatar',
+  name: 'Avatar',
 };

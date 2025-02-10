@@ -3,6 +3,7 @@
 export * from './Accordion';
 export * from './ActionGroup';
 export * from './Alert';
+export * from './Avatar';
 export * from './Box';
 export * from './Breadcrumbs';
 export * from './Button';
@@ -45,7 +46,6 @@ export * from './TextFieldBase';
 export * from './Toast';
 export * from './Tooltip';
 export * from './UNSTABLE_ActionLayout';
-export * from './UNSTABLE_Avatar';
 export * from './UNSTABLE_EmptyState';
 export * from './UNSTABLE_Slider';
 export * from './UNSTABLE_Toggle';

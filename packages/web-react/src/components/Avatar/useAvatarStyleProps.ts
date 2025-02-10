@@ -19,7 +19,7 @@ export function useAvatarStyleProps<E extends ElementType = ElementType, S = voi
 ): AvatarStyles<E, S> {
   const { isSquare, size, ...restProps } = props;
 
-  const avatarClass = useClassNamePrefix('UNSTABLE_Avatar');
+  const avatarClass = useClassNamePrefix('Avatar');
   const avatarSquareClass = `${avatarClass}--square`;
 
   const classProps = classNames(avatarClass, getAvatarSizeClassname(avatarClass, size as AvatarSize<S>), {
