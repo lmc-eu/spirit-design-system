@@ -41,7 +41,7 @@ __metadata:
     react: "npm:^18"
     react-dom: "npm:^18"
     sass: "npm:^1.83.0"
-    typescript: "npm:5.6.3"
+    typescript: "npm:5.7.3"
   languageName: unknown
   linkType: soft
 
@@ -65,7 +65,7 @@ __metadata:
     next: "npm:14.2.23"
     react: "npm:^18"
     react-dom: "npm:^18"
-    typescript: "npm:5.6.3"
+    typescript: "npm:5.7.3"
   languageName: unknown
   linkType: soft
 
@@ -83,7 +83,7 @@ __metadata:
     jest-config-spirit: "workspace:^"
     npm-run-all2: "npm:6.2.6"
     prettier-config-spirit: "workspace:^"
-    typescript: "npm:5.6.3"
+    typescript: "npm:5.7.3"
     vite: "npm:5.4.14"
   languageName: unknown
   linkType: soft
@@ -4882,7 +4882,7 @@ __metadata:
     sade: "npm:^1.8.1"
     shx: "npm:0.3.4"
     tsup: "npm:8.3.6"
-    typescript: "npm:5.6.3"
+    typescript: "npm:5.7.3"
     zx: "npm:^8.0.0"
   bin:
     spirit-analytics: ./bin/spirit-analytics.js
@@ -4908,7 +4908,7 @@ __metadata:
     sade: "npm:^1.8.1"
     shx: "npm:0.3.4"
     tsup: "npm:8.3.6"
-    typescript: "npm:5.6.3"
+    typescript: "npm:5.7.3"
     zx: "npm:^8.0.0"
   bin:
     spirit-codemods: ./bin/spirit-codemods.js
@@ -4939,7 +4939,7 @@ __metadata:
     sass-embedded: "npm:1.83.4"
     sass-true: "npm:8.1.0"
     shx: "npm:0.3.4"
-    typescript: "npm:5.6.3"
+    typescript: "npm:5.7.3"
     vite: "npm:5.4.14"
     vite-plugin-handlebars: "npm:2.0.0"
   languageName: unknown
@@ -4960,7 +4960,7 @@ __metadata:
     shx: "npm:0.3.4"
     stylelint: "npm:16.14.1"
     stylelint-config-spirit: "workspace:^"
-    typescript: "npm:5.6.3"
+    typescript: "npm:5.7.3"
     vite: "npm:5.4.14"
     vite-plugin-dts: "npm:4.5.0"
   languageName: unknown
@@ -4975,7 +4975,7 @@ __metadata:
     eslint: "npm:8.57.1"
     jest: "npm:29.7.0"
     npm-run-all2: "npm:6.2.6"
-    typescript: "npm:5.6.3"
+    typescript: "npm:5.7.3"
     vite: "npm:5.4.14"
   languageName: unknown
   linkType: soft
@@ -4989,7 +4989,7 @@ __metadata:
     eslint: "npm:8.57.1"
     jest: "npm:29.7.0"
     npm-run-all2: "npm:6.2.6"
-    typescript: "npm:5.6.3"
+    typescript: "npm:5.7.3"
     vite: "npm:5.4.14"
   languageName: unknown
   linkType: soft
@@ -5005,7 +5005,7 @@ __metadata:
     sass-embedded: "npm:1.83.4"
     shx: "npm:0.3.4"
     tslib: "npm:2.8.1"
-    typescript: "npm:5.6.3"
+    typescript: "npm:5.7.3"
     vite: "npm:5.4.14"
   languageName: unknown
   linkType: soft
@@ -5073,7 +5073,7 @@ __metadata:
     react: "npm:18.3.1"
     react-dom: "npm:18.3.1"
     storybook: "npm:8.5.3"
-    typescript: "npm:5.6.3"
+    typescript: "npm:5.7.3"
     vite: "npm:5.4.14"
   languageName: unknown
   linkType: soft
@@ -5139,7 +5139,7 @@ __metadata:
     terser-webpack-plugin: "npm:5.3.11"
     ts-loader: "npm:9.5.2"
     ts-node: "npm:10.9.2"
-    typescript: "npm:5.6.3"
+    typescript: "npm:5.7.3"
     usehooks-ts: "npm:^3.1.0"
     webpack: "npm:5.97.1"
     webpack-cli: "npm:5.1.4"
@@ -5194,7 +5194,7 @@ __metadata:
     stylelint: "npm:16.14.1"
     stylelint-config-spirit: "workspace:^"
     tslib: "npm:2.8.1"
-    typescript: "npm:5.6.3"
+    typescript: "npm:5.7.3"
   peerDependencies:
     sass-embedded: ">=1.57.0 < 2"
   peerDependenciesMeta:
@@ -32738,7 +32738,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "typescript-config-spirit@workspace:configs/typescript-config-spirit"
   dependencies:
-    typescript: "npm:5.5.4"
+    typescript: "npm:5.7.3"
   languageName: unknown
   linkType: soft
 
