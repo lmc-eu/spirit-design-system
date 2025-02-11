@@ -1,8 +1,8 @@
 import React from 'react';
+import DocsBox from '../../../../docs/DocsBox';
 import DocsSection from '../../../../docs/DocsSections';
 import { SizesExtended } from '../../../constants';
 import Container from '../Container';
-import DocsBox from '../../../../docs/DocsBox';
 
 const SkeletonHeadings = () => {
   const sizes = Object.values(SizesExtended);
