@@ -1,12 +1,12 @@
 {# API #}
 {%- set props = props | default([]) -%}
-{%- set _size = props.size | default('xlarge') -%}
+{%- set _size = props.size | default('') -%}
 {%- set _isFluid = props.isFluid | default(false) -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Container' -%}
 {%- set _rootFluidClassName = _isFluid ? _spiritClassPrefix ~ 'Container--fluid' : null -%}
-{%- set _rootSizeClassName = _spiritClassPrefix ~ 'Container--' ~ _size -%}
+{%- set _rootSizeClassName = _size ? _spiritClassPrefix ~ 'Container--' ~ _size : '' -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
