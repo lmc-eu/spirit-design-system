@@ -5,7 +5,7 @@ import Divider from '../Divider';
 import ReadMe from '../README.md';
 
 const meta: Meta<typeof Divider> = {
-  title: 'Experimental/Divider',
+  title: 'Components/Divider',
   component: Divider,
   parameters: {
     docs: {
