@@ -43,3 +43,24 @@ npx @lmc-eu/spirit-codemods -p <path> -t v4/web-react/flex-direction-values
 + <Flex direction="vertical" … />
 + <Flex direction={{ mobile: 'vertical', tablet: 'horizontal' }} … />
 ```
+
+### `v4/web-react/unstable-avatar-component-name` — UNSTABLE_Avatar to Avatar Component Name
+
+This codemod updates the `UNSTABLE_Avatar` component name to `Avatar`.
+Use this codemod if you were already using the `UNSTABLE_Avatar` component.
+
+#### Usage
+
+```sh
+npx @lmc-eu/spirit-codemods -p <path> -t v4/web-react/unstable-avatar-component-name
+```
+
+#### Example
+
+```diff
+- import { UNSTABLE_Avatar } from '@lmc-eu/spirit-web-react';
++ import { Avatar } from '@lmc-eu/spirit-web-react';
+…
+- <UNSTABLE_Avatar … />
++ <Avatar … />
+```
