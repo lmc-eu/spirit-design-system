@@ -1,14 +1,16 @@
 {# API #}
 {%- set props = props | default([]) -%}
 {%- set _isFluid = props.isFluid | default(false) -%}
+{%- set _size = props.size | default('xlarge') -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Container' -%}
 {%- set _rootFluidClassName = _isFluid ? _spiritClassPrefix ~ 'Container--fluid' : null -%}
+{%- set _rootSizeClassName = not _isFluid and _size ? _spiritClassPrefix ~ 'Container--' ~ _size : null -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
-{%- set _classNames = [ _rootClassName, _rootFluidClassName, _styleProps.className ] -%}
+{%- set _classNames = [ _rootClassName, _rootFluidClassName, _rootSizeClassName, _styleProps.className ] -%}
 
 <div {{ mainProps(props) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }}>
     {%- block content %}{% endblock -%}
