@@ -59,8 +59,7 @@
     background-color: theme.$action-background-color-state-selected;
 }
 
-.NavigationAction--selected.NavigationAction--box::after,
-.NavigationAction--box[aria-expanded='true']::after {
+.NavigationAction--selected.NavigationAction--box::after {
     background-color: theme.$action-stripe-background-color-selected-state-default;
 }
 
@@ -116,8 +115,7 @@
 }
 
 // stylelint-disable selector-max-specificity, selector-max-class -- 3.
-.Navigation--horizontal .NavigationAction--box.NavigationAction--selected,
-.Navigation--horizontal .NavigationAction--box[aria-expanded='true'] {
+.Navigation--horizontal .NavigationAction--box.NavigationAction--selected {
     @media (hover: hover) {
         &:hover::after {
             background-color: theme.$action-stripe-background-color-selected-state-hover;
