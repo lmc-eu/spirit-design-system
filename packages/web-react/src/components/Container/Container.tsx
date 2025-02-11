@@ -2,12 +2,14 @@
 
 import classNames from 'classnames';
 import React from 'react';
+import { SizesExtended } from '../../constants';
 import { useStyleProps } from '../../hooks';
 import { SpiritContainerProps } from '../../types';
 import { useContainerStyleProps } from './useContainerStyleProps';
 
 const defaultProps: SpiritContainerProps = {
   isFluid: false,
+  size: SizesExtended.XLARGE,
 };
 
 const Container = (props: SpiritContainerProps): JSX.Element => {
