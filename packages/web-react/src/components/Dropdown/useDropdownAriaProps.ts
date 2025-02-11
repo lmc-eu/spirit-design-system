@@ -43,7 +43,6 @@ export const useDropdownAriaProps = (props: UseDropdownAriaPropsProps): UseDropd
   const { fullWidthMode, id, isOpen, placement = Placements.BOTTOM_START, toggleHandler } = props;
 
   const triggerProps = {
-    id,
     [NAME_ARIA_EXPANDED]: isOpen,
     [NAME_ARIA_CONTROLS]: String(id),
     onClick: toggleHandler,

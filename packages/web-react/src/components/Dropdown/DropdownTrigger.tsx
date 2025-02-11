@@ -24,7 +24,7 @@ const DropdownTrigger = <T extends ElementType = 'button'>(props: DropdownTrigge
   const { triggerProps } = useDropdownAriaProps({ id, isOpen, toggleHandler: onToggle, fullWidthMode });
 
   return (
-    <ElementTag {...transferProps} {...triggerProps} {...triggerStyleProps} id={id} ref={triggerRef}>
+    <ElementTag {...transferProps} {...triggerProps} {...triggerStyleProps} ref={triggerRef}>
       {typeof children === 'function' ? children({ isOpen }) : children}
     </ElementTag>
   );
