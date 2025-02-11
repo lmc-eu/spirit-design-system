@@ -1,0 +1,10 @@
+{% set sizes = ['xsmall', 'small', 'medium', 'large', 'xlarge' ] %}
+
+{% for size in sizes %}
+    {% set title = 'Size ' ~ size %}
+    <DocsSection title={ title } stackAlignment="stretch" container="heading-only">
+        <Container size={ size }>
+            <DocsBox>Container of {{size}} size</DocsBox>
+        </Container>
+    </DocsSection>
+{% endfor %}
