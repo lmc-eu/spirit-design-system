@@ -20,4 +20,6 @@ const Header = (props: HeaderProps) => {
   );
 };
 
+Header.spiritComponent = 'Header';
+
 export default Header;

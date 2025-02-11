@@ -23,4 +23,6 @@ const Spinner = <C extends undefined = undefined>(props: SpiritSpinnerProps<C>):
   );
 };
 
+Spinner.spiritComponent = 'Spinner';
+
 export default Spinner;

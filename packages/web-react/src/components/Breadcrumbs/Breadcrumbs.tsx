@@ -22,7 +22,7 @@ const Breadcrumbs = <T extends ElementType = 'nav'>(props: SpiritBreadcrumbsProp
     ...restProps
   } = propsWithDefaults;
   const { classProps, props: modifiedProps } = useBreadcrumbsStyleProps({ ...restProps });
-  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+  const { styleProps, props: otherProps } = useStyleProps({ ElementTag, ...modifiedProps });
 
   const isLast = (index: number, itemsCount: number) => {
     return index === itemsCount - 1;
@@ -53,5 +53,7 @@ const Breadcrumbs = <T extends ElementType = 'nav'>(props: SpiritBreadcrumbsProp
     </ElementTag>
   );
 };
+
+Breadcrumbs.spiritComponent = 'Breadcrumbs';
 
 export default Breadcrumbs;

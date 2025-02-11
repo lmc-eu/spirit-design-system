@@ -22,7 +22,7 @@ export function useStyleProps<T extends StyleProps>(
   additionalUtilities?: Record<string, string>,
 ): StylePropsResult {
   const classNamePrefix = useContext(ClassNamePrefixContext);
-  const { UNSAFE_className, UNSAFE_style, ElementTag, transferClassName, ...otherProps } = props;
+  const { UNSAFE_className, UNSAFE_style, ElementTag, transferClassName, transferStyle, ...otherProps } = props;
   const { styleUtilities, props: modifiedProps } = useStyleUtilities(otherProps, classNamePrefix, additionalUtilities);
 
   const style: CSSProperties = { ...UNSAFE_style };
@@ -58,7 +58,7 @@ export function useStyleProps<T extends StyleProps>(
     }
 
     const styleProps = {
-      style: Object.keys(style).length > 0 ? style : undefined,
+      style: Object.keys(style).length > 0 ? { ...style, ...transferStyle } : undefined,
       className: classNames(UNSAFE_className, ...styleUtilities, transferClassName) || undefined,
     };
 
@@ -72,7 +72,7 @@ export function useStyleProps<T extends StyleProps>(
   // transferClassName: you can send internal component classes as 'transferClassName' prop to add them to the component className list
   return {
     styleProps: {
-      ...(UNSAFE_style !== undefined && { UNSAFE_style }),
+      ...(UNSAFE_style !== undefined && { UNSAFE_style: { ...UNSAFE_style, ...transferStyle } }),
       ...((UNSAFE_className !== undefined || styleUtilities !== undefined) && {
         UNSAFE_className: classNames(UNSAFE_className, ...styleUtilities, transferClassName),
       }),

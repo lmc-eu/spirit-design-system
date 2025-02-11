@@ -15,7 +15,7 @@ const CardTitle = <T extends ElementType = 'h4'>(props: SpiritCardTitleProps<T>)
   const propsWithDefaults = { ...defaultProps, ...props };
   const { elementType: ElementTag = 'h4', children, isHeading, ...restProps } = propsWithDefaults;
   const { classProps } = useCardStyleProps({ isHeading });
-  const { styleProps, props: otherProps } = useStyleProps(restProps);
+  const { styleProps, props: otherProps } = useStyleProps({ ElementTag, ...restProps });
 
   return (
     <ElementTag {...otherProps} className={classNames(classProps.title, styleProps.className)} style={styleProps.style}>
@@ -23,5 +23,7 @@ const CardTitle = <T extends ElementType = 'h4'>(props: SpiritCardTitleProps<T>)
     </ElementTag>
   );
 };
+
+CardTitle.spiritComponent = 'CardTitle';
 
 export default CardTitle;

@@ -67,4 +67,6 @@ const FieldGroup = (props: SpiritFieldGroupProps) => {
   );
 };
 
+FieldGroup.spiritComponent = 'FieldGroup';
+
 export default FieldGroup;

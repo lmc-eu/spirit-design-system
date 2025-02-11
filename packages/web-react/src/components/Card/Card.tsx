@@ -17,7 +17,7 @@ const Card = <T extends ElementType = 'article'>(props: SpiritCardProps<T>) => {
   const propsWithDefaults = { ...defaultProps, ...props };
   const { elementType: ElementTag = 'article', direction, isBoxed, children, ...restProps } = propsWithDefaults;
   const { classProps } = useCardStyleProps({ direction, isBoxed });
-  const { styleProps, props: otherProps } = useStyleProps(restProps);
+  const { styleProps, props: otherProps } = useStyleProps({ ElementTag, ...restProps });
 
   return (
     <ElementTag {...otherProps} className={classNames(classProps.root, styleProps.className)} style={styleProps.style}>
@@ -25,5 +25,7 @@ const Card = <T extends ElementType = 'article'>(props: SpiritCardProps<T>) => {
     </ElementTag>
   );
 };
+
+Card.spiritComponent = 'Card';
 
 export default Card;

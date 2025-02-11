@@ -49,4 +49,6 @@ const ValidationText = <T extends ElementType = 'div'>(props: ValidationTextProp
   return null;
 };
 
+ValidationText.spiritComponent = 'ValidationText';
+
 export default ValidationText;

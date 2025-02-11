@@ -20,7 +20,7 @@ const _ToastBarLink = (props: ToastLinkProps, ref: ForwardedRef<HTMLAnchorElemen
     ...restProps
   } = propsWithDefaults;
   const { classProps, props: modifiedProps } = useToastBarStyleProps({ ...restProps });
-  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+  const { styleProps, props: otherProps } = useStyleProps({ ElementTag, ...modifiedProps });
 
   return (
     <ElementTag {...otherProps} {...styleProps} ref={ref} className={classNames(classProps.link, styleProps.className)}>
@@ -30,5 +30,7 @@ const _ToastBarLink = (props: ToastLinkProps, ref: ForwardedRef<HTMLAnchorElemen
 };
 
 const ToastBarLink = forwardRef<HTMLAnchorElement, ToastLinkProps>(_ToastBarLink);
+
+ToastBarLink.spiritComponent = 'ToastBarLink';
 
 export default ToastBarLink;

@@ -39,4 +39,6 @@ const HelperText = <T extends ElementType = 'div'>(props: HelperTextProps<T>) =>
   return null;
 };
 
+HelperText.spiritComponent = 'HelperText';
+
 export default HelperText;

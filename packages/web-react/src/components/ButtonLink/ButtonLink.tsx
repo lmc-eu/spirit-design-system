@@ -33,7 +33,7 @@ const _ButtonLink = <T extends ElementType = 'a', C = void, S = void>(
 
   const { buttonLinkProps } = useButtonLinkAriaProps(propsWithDefaults);
   const { classProps, props: modifiedProps } = useButtonLinkStyleProps(restProps);
-  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+  const { styleProps, props: otherProps } = useStyleProps({ ElementTag, ...modifiedProps });
 
   return (
     <ElementTag
@@ -50,5 +50,7 @@ const _ButtonLink = <T extends ElementType = 'a', C = void, S = void>(
 };
 
 const ButtonLink = forwardRef<HTMLAnchorElement, SpiritButtonLinkProps<ElementType>>(_ButtonLink);
+
+ButtonLink.spiritComponent = 'ButtonLink';
 
 export default ButtonLink;

@@ -128,4 +128,6 @@ const FileUploaderInput = (props: SpiritFileUploaderInputProps) => {
   );
 };
 
+FileUploaderInput.spiritComponent = 'FileUploaderInput';
+
 export default FileUploaderInput;

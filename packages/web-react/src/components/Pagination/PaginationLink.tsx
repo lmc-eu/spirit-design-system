@@ -13,7 +13,7 @@ const _PaginationLink = <E extends ElementType = 'a'>(props: SpiritPaginationLin
   const { elementType: ElementTag = 'a', accessibilityLabel, isCurrent, pageNumber, ...restProps } = props;
 
   const { classProps } = usePaginationStyleProps({ isCurrent });
-  const { styleProps, props: transferProps } = useStyleProps(restProps);
+  const { styleProps, props: transferProps } = useStyleProps({ ElementTag, ...restProps });
 
   return (
     <ElementTag
@@ -29,5 +29,7 @@ const _PaginationLink = <E extends ElementType = 'a'>(props: SpiritPaginationLin
 };
 
 const PaginationLink = forwardRef<HTMLAnchorElement, SpiritPaginationLinkProps>(_PaginationLink);
+
+PaginationLink.spiritComponent = 'PaginationLink';
 
 export default PaginationLink;

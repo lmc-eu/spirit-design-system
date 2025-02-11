@@ -22,7 +22,7 @@ const Stack = <T extends ElementType = 'div'>(props: SpiritStackProps<T>): JSX.E
     ...restProps
   } = propsWithDefaults;
   const { classProps, props: modifiedProps, styleProps: stackStyle } = useStackStyleProps(restProps);
-  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+  const { styleProps, props: otherProps } = useStyleProps({ ElementTag, ...modifiedProps });
 
   const stackStyleProps = {
     style: {
@@ -37,5 +37,7 @@ const Stack = <T extends ElementType = 'div'>(props: SpiritStackProps<T>): JSX.E
     </ElementTag>
   );
 };
+
+Stack.spiritComponent = 'Stack';
 
 export default Stack;

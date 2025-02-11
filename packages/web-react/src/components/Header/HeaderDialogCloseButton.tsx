@@ -38,4 +38,6 @@ const HeaderDialogCloseButton = (props: HeaderDialogCloseButtonProps) => {
   );
 };
 
+HeaderDialogCloseButton.spiritComponent = 'HeaderDialogCloseButton';
+
 export default HeaderDialogCloseButton;

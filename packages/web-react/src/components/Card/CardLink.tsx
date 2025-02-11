@@ -20,7 +20,7 @@ const _CardLink = <E extends ElementType = 'a'>(props: SpiritCardLinkProps<E>, r
     ...restProps
   } = propsWithDefaults;
   const { classProps } = useCardStyleProps();
-  const { styleProps, props: otherProps } = useStyleProps(restProps);
+  const { styleProps, props: otherProps } = useStyleProps({ ElementTag, ...restProps });
 
   return (
     <ElementTag
@@ -36,5 +36,7 @@ const _CardLink = <E extends ElementType = 'a'>(props: SpiritCardLinkProps<E>, r
 };
 
 const CardLink = forwardRef<HTMLAnchorElement, SpiritLinkProps<ElementType>>(_CardLink);
+
+CardLink.spiritComponent = 'CardLink';
 
 export default CardLink;

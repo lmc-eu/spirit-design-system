@@ -19,4 +19,6 @@ const PaginationLinkPrevious = forwardRef<HTMLAnchorElement, SpiritPaginationLin
   _PaginationLinkPrevious,
 );
 
+PaginationLinkPrevious.spiritComponent = 'PaginationLinkPrevious';
+
 export default PaginationLinkPrevious;

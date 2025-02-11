@@ -15,4 +15,6 @@ const HeaderNav = (props: HeaderNavProps) => {
   );
 };
 
+HeaderNav.spiritComponent = 'HeaderNav';
+
 export default HeaderNav;

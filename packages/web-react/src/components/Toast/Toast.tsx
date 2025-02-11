@@ -26,4 +26,6 @@ const Toast = (props: SpiritToastProps) => {
   );
 };
 
+Toast.spiritComponent = 'Toast';
+
 export default Toast;

@@ -32,4 +32,6 @@ const ModalHeader = (props: ModalHeaderProps) => {
   );
 };
 
+ModalHeader.spiritComponent = 'ModalHeader';
+
 export default ModalHeader;

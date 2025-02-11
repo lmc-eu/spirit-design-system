@@ -17,4 +17,6 @@ const _PaginationLinkNext = <E extends ElementType = 'a'>(
 
 const PaginationLinkNext = forwardRef<HTMLAnchorElement, SpiritPaginationLinkPreviousNextProps>(_PaginationLinkNext);
 
+PaginationLinkNext.spiritComponent = 'PaginationLinkNext';
+
 export default PaginationLinkNext;

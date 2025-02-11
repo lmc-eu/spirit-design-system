@@ -45,4 +45,6 @@ const AccordionHeader = ({ children, slot, ...restProps }: AccordionHeaderProps)
   );
 };
 
+AccordionHeader.spiritComponent = 'AccordionHeader';
+
 export default AccordionHeader;

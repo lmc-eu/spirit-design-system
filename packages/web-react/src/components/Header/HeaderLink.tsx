@@ -14,7 +14,7 @@ const _HeaderLink = <E extends ElementType = 'a'>(
 ): JSX.Element => {
   const { elementType: ElementTag = 'a', children, isCurrent, ...restProps } = props;
   const { classProps } = useHeaderStyleProps({ isCurrentLink: isCurrent });
-  const { styleProps, props: otherProps } = useStyleProps(restProps);
+  const { styleProps, props: otherProps } = useStyleProps({ ElementTag, ...restProps });
 
   return (
     <ElementTag
@@ -29,5 +29,7 @@ const _HeaderLink = <E extends ElementType = 'a'>(
 };
 
 const HeaderLink = forwardRef<HTMLAnchorElement, SpiritHeaderLinkProps<ElementType>>(_HeaderLink);
+
+HeaderLink.spiritComponent = 'HeaderLink';
 
 export default HeaderLink;

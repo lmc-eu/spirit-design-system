@@ -25,4 +25,6 @@ const UNSTABLE_ActionLayout = (props: SpiritActionLayoutProps): ReactElement => 
   );
 };
 
+UNSTABLE_ActionLayout.spiritComponent = 'UNSTABLE_ActionLayout';
+
 export default UNSTABLE_ActionLayout;

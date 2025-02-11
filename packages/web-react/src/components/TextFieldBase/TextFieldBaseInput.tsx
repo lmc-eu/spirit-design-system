@@ -36,4 +36,6 @@ const TextFieldBaseInput = forwardRef<HTMLInputElement | HTMLTextAreaElement, Sp
   _TextFieldBaseInput,
 );
 
+TextFieldBaseInput.spiritComponent = 'TextFieldBaseInput';
+
 export default TextFieldBaseInput;

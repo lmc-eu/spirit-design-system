@@ -9,7 +9,7 @@ import { useVisuallyHiddenProps } from './useVisuallyHiddenProps';
 const VisuallyHidden = <T extends ElementType = 'span'>(props: SpiritVisuallyHiddenProps<T>): JSX.Element => {
   const { children, elementType: ElementTag = 'span', ...rest } = props;
   const { classProps, props: modifiedProps } = useVisuallyHiddenProps(rest);
-  const { styleProps, props: transferProps } = useStyleProps(modifiedProps);
+  const { styleProps, props: transferProps } = useStyleProps({ ElementTag, ...modifiedProps });
 
   return (
     <ElementTag {...transferProps} {...styleProps} className={classNames(classProps, styleProps.className)}>
@@ -17,5 +17,7 @@ const VisuallyHidden = <T extends ElementType = 'span'>(props: SpiritVisuallyHid
     </ElementTag>
   );
 };
+
+VisuallyHidden.spiritComponent = 'VisuallyHidden';
 
 export default VisuallyHidden;

@@ -77,4 +77,6 @@ const _Select = (props: SpiritSelectProps, ref: ForwardedRef<HTMLSelectElement>)
 
 const Select = forwardRef<HTMLSelectElement, SpiritSelectProps>(_Select);
 
+Select.spiritComponent = 'Select';
+
 export default Select;

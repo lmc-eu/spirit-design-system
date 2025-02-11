@@ -62,4 +62,6 @@ const _TextFieldBase = (props: SpiritTextFieldBaseProps, ref: ForwardedRef<HTMLI
 
 const TextFieldBase = forwardRef<HTMLInputElement | HTMLTextAreaElement, SpiritTextFieldBaseProps>(_TextFieldBase);
 
+TextFieldBase.spiritComponent = 'TextFieldBase';
+
 export default TextFieldBase;

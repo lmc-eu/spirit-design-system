@@ -29,4 +29,6 @@ const TextFieldBasePasswordToggle = (props: SpiritTextFieldBasePasswordTogglePro
   );
 };
 
+TextFieldBasePasswordToggle.spiritComponent = 'TextFieldBasePasswordToggle';
+
 export default TextFieldBasePasswordToggle;
