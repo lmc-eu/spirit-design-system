@@ -16,4 +16,11 @@ describe('useContainerStyleProps', () => {
 
     expect(result.current.classProps).toBe('Container Container--fluid');
   });
+
+  it.each([['xsmall'], ['small'], ['medium'], ['large'], ['xlarge']])('should return size class %s', (size) => {
+    const props = { size } as SpiritContainerProps;
+    const { result } = renderHook(() => useContainerStyleProps(props));
+
+    expect(result.current.classProps).toBe(`Container Container--${size}`);
+  });
 });

@@ -35,4 +35,14 @@ describe('Container', () => {
 
     expect(screen.getByTestId(testId)).toHaveClass('Container Container--fluid');
   });
+
+  it('should render custom size class when size is provided', () => {
+    render(
+      <Container data-testid={testId} size="xsmall">
+        {text}
+      </Container>,
+    );
+
+    expect(screen.getByTestId(testId)).toHaveClass('Container Container--xsmall');
+  });
 });
