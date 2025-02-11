@@ -3,7 +3,17 @@ export const containerPaddingMobile = '16px';
 export const containerPaddingTablet = '32px';
 export const containerPaddingDesktop = '32px';
 
+export const containerXsmallMaxWidth = '480px';
+
+export const containerSmallMaxWidth = '640px';
+
+export const containerMediumMaxWidth = '768px';
+
+export const containerLargeMaxWidth = '1024px';
+
 export const containerMaxWidth = '1280px';
+
+export const containerXlargeMaxWidth = '1280px';
 
 export const breakpointMobile = 0;
 export const breakpointTablet = '768px';
@@ -23,7 +33,22 @@ export const containers = {
     tablet: containerPaddingTablet,
     desktop: containerPaddingDesktop,
   },
+  xsmall: {
+    maxWidth: containerXsmallMaxWidth,
+  },
+  small: {
+    maxWidth: containerSmallMaxWidth,
+  },
+  medium: {
+    maxWidth: containerMediumMaxWidth,
+  },
+  large: {
+    maxWidth: containerLargeMaxWidth,
+  },
   maxWidth: containerMaxWidth,
+  xlarge: {
+    maxWidth: containerXlargeMaxWidth,
+  },
 };
 
 export const breakpoints = {
