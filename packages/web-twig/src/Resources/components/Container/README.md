@@ -22,13 +22,13 @@ Without lexer:
 
 If you need a full-width container, you can use the `isFluid` prop.
 
-## Sizes
-
-If you need different sizes of the container, you can use the `size` prop.
-
 ```twig
 <Container isFluid>Content</Container>
 ```
+
+## Sizes
+
+If you need different sizes of the container, you can use the `size` prop.
 
 ```twig
 <Container size="small">Content</Container>
