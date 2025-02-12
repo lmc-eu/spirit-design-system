@@ -2,6 +2,7 @@
 
 import classNames from 'classnames';
 import React, { ElementType, ForwardedRef, forwardRef } from 'react';
+import { usePropsContext } from '../../context';
 import { useStyleProps } from '../../hooks';
 import { SpiritButtonProps } from '../../types';
 import { Spinner } from '../Spinner';
@@ -25,7 +26,8 @@ const _Button = <T extends ElementType = 'button', C = void, S = void>(
   props: SpiritButtonProps<T, C, S>,
   ref: ForwardedRef<HTMLButtonElement>,
 ) => {
-  const propsWithDefaults = { ...defaultProps, ...props };
+  const propsWithContext = usePropsContext();
+  const propsWithDefaults = { ...defaultProps, ...props, ...propsWithContext };
   const {
     elementType: ElementTag = defaultProps.elementType as ElementType,
     children,
