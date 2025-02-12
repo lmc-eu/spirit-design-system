@@ -6,7 +6,7 @@
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Container' -%}
 {%- set _rootFluidClassName = _isFluid ? _spiritClassPrefix ~ 'Container--fluid' : null -%}
-{%- set _rootSizeClassName = _size ? _spiritClassPrefix ~ 'Container--' ~ _size : '' -%}
+{%- set _rootSizeClassName = _size ? _spiritClassPrefix ~ 'Container--' ~ _size : null -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
