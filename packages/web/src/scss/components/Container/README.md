@@ -1,18 +1,18 @@
 # Container
 
-Basic usage:
+## Basic Usage
 
 ```html
 <div class="Container">Content</div>
 ```
 
-Fluid container:
+## Fluid Container
 
 ```html
 <div class="Container Container--fluid">Content</div>
 ```
 
-Sizes
+## Sizes
 
 - `Container--xsmall`
 - `Container--small`
@@ -27,3 +27,11 @@ Sizes
 <div class="Container Container--large">Content</div>
 <div class="Container Container--xlarge">Content</div>
 ```
+
+⚠️ Make sure that you have properly set up `container-size-max-width` tokens in your project. Without it, the default size will be used.
+
+- `container-xsmall-max-width`
+- `container-small-max-width`
+- `container-medium-max-width`
+- `container-large-max-width`
+- `container-xlarge-max-width`
