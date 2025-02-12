@@ -18,11 +18,13 @@ describe('Container', () => {
 
   it('should render', () => {
     render(<Container data-testid={testId}>{text}</Container>);
+
     expect(screen.getByText(text)).toBeInTheDocument();
   });
 
   it('should render with correct class', () => {
     render(<Container data-testid={testId}>{text}</Container>);
+
     expect(screen.getByTestId(testId)).toHaveClass('Container');
   });
 
