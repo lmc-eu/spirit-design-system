@@ -1,4 +1,5 @@
 import { renderHook } from '@testing-library/react';
+import { SizesExtended } from '../../../constants';
 import { SpiritContainerProps } from '../../../types';
 import { useContainerStyleProps } from '../useContainerStyleProps';
 
@@ -17,7 +18,7 @@ describe('useContainerStyleProps', () => {
     expect(result.current.classProps).toBe('Container Container--fluid');
   });
 
-  it.each([['xsmall'], ['small'], ['medium'], ['large'], ['xlarge']])('should return size class %s', (size) => {
+  it.each([Object.values(SizesExtended)])('should return size class %s', (size) => {
     const props = { size } as SpiritContainerProps;
     const { result } = renderHook(() => useContainerStyleProps(props));
 

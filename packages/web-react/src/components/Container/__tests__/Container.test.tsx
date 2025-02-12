@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import '@testing-library/jest-dom';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, sizeExtendedPropsTest } from '@local/tests';
 import Container from '../Container';
 
 describe('Container', () => {
@@ -14,15 +14,15 @@ describe('Container', () => {
 
   restPropsTest(Container, 'div');
 
+  sizeExtendedPropsTest(Container);
+
   it('should render', () => {
     render(<Container data-testid={testId}>{text}</Container>);
-
     expect(screen.getByText(text)).toBeInTheDocument();
   });
 
   it('should render with correct class', () => {
     render(<Container data-testid={testId}>{text}</Container>);
-
     expect(screen.getByTestId(testId)).toHaveClass('Container');
   });
 
@@ -34,15 +34,5 @@ describe('Container', () => {
     );
 
     expect(screen.getByTestId(testId)).toHaveClass('Container Container--fluid');
-  });
-
-  it('should render custom size class when size is provided', () => {
-    render(
-      <Container data-testid={testId} size="xsmall">
-        {text}
-      </Container>,
-    );
-
-    expect(screen.getByTestId(testId)).toHaveClass('Container Container--xsmall');
   });
 });
