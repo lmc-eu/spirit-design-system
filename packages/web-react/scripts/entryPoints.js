@@ -48,6 +48,7 @@ const entryPoints = [
   { dirs: ['components', 'Select'] },
   { dirs: ['components', 'Skeleton'] },
   { dirs: ['components', 'Spinner'] },
+  { dirs: ['components', 'SplitButton'] },
   { dirs: ['components', 'Stack'] },
   { dirs: ['components', 'Tabs'] },
   { dirs: ['components', 'Tag'] },
