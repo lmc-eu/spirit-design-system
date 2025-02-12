@@ -36,6 +36,7 @@ export * from './ScrollView';
 export * from './Select';
 export * from './Skeleton';
 export * from './Spinner';
+export * from './SplitButton';
 export * from './Stack';
 export * from './Tabs';
 export * from './Tag';
