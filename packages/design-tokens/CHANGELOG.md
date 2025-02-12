@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.1.0"></a>
+
+# [3.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@3.0.3...@lmc-eu/spirit-design-tokens@3.1.0) (2025-02-12)
+
+### Dependencies
+
+- Update build tools non-major ([cc520b6](https://github.com/lmc-eu/spirit-design-system/commit/cc520b6))
+- Update dependency typescript to v5.7.3 ([31fa021](https://github.com/lmc-eu/spirit-design-system/commit/31fa021))
+
+### Features
+
+- **design-tokens:** Introduce Skeleton Gradient tokens ([a06b241](https://github.com/lmc-eu/spirit-design-system/commit/a06b241))
+- **design-tokens:** Update Skeleton gradient configuration ([79da142](https://github.com/lmc-eu/spirit-design-system/commit/79da142))
+
+**Note:** Version bump only for package @lmc-eu/spirit-design-tokens
+
 <a name="3.0.3"></a>
 
 ## [3.0.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@3.0.2...@lmc-eu/spirit-design-tokens@3.0.3) (2025-01-30)

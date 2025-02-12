@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.5.0"></a>
+
+# [1.5.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@1.4.1...@lmc-eu/spirit-codemods@1.5.0) (2025-02-12)
+
+### Dependencies
+
+- Update dependency typescript to v5.7.3 ([31fa021](https://github.com/lmc-eu/spirit-design-system/commit/31fa021))
+
+### Features
+
+- **codemods:** Stabilization of Avatar [#DS-1677](https://github.com/lmc-eu/spirit-design-system/issues/DS-1677) ([af116cf](https://github.com/lmc-eu/spirit-design-system/commit/af116cf))
+
+**Note:** Version bump only for package @lmc-eu/spirit-codemods
+
 <a name="1.4.1"></a>
 
 ## [1.4.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@1.4.0...@lmc-eu/spirit-codemods@1.4.1) (2025-01-30)

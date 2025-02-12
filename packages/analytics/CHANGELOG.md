@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.9"></a>
+
+## [1.0.9](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-analytics@1.0.8...@lmc-eu/spirit-analytics@1.0.9) (2025-02-12)
+
+### Dependencies
+
+- Update dependency typescript to v5.7.3 ([31fa021](https://github.com/lmc-eu/spirit-design-system/commit/31fa021))
+
+**Note:** Version bump only for package @lmc-eu/spirit-analytics
+
 <a name="1.0.8"></a>
 
 ## [1.0.8](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-analytics@1.0.7...@lmc-eu/spirit-analytics@1.0.8) (2025-01-30)

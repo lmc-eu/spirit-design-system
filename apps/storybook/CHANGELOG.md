@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.1.4"></a>
+
+## [0.1.4](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-storybook@0.1.3...@lmc-eu/spirit-storybook@0.1.4) (2025-02-12)
+
+### Chores
+
+- **repo:** Enable a11y addon in Storybook ([0038f20](https://github.com/lmc-eu/spirit-design-system/commit/0038f20))
+
+### Dependencies
+
+- Update build tools non-major ([cc520b6](https://github.com/lmc-eu/spirit-design-system/commit/cc520b6))
+- Update compile tools non-major ([06516c5](https://github.com/lmc-eu/spirit-design-system/commit/06516c5))
+- Update dependency typescript to v5.7.3 ([31fa021](https://github.com/lmc-eu/spirit-design-system/commit/31fa021))
+- Update monorepo:storybook to v8.5.3 ([a8c478c](https://github.com/lmc-eu/spirit-design-system/commit/a8c478c))
+
+**Note:** Version bump only for package @lmc-eu/spirit-storybook
+
 <a name="0.1.3"></a>
 
 ## [0.1.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-storybook@0.1.2...@lmc-eu/spirit-storybook@0.1.3) (2025-01-30)

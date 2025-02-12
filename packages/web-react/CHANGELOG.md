@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.4.0"></a>
+
+# [3.4.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.3.0...@lmc-eu/spirit-web-react@3.4.0) (2025-02-12)
+
+### Bug Fixes
+
+- **demo:** Move Divider from `Experimental` to `Components` in Storybook ([e34601b](https://github.com/lmc-eu/spirit-design-system/commit/e34601b))
+- **web-react:** Remove `validationState` from passed props of the TextFieldBase style hook ([fd14e81](https://github.com/lmc-eu/spirit-design-system/commit/fd14e81))
+- **web-react:** Remove duplicated id on the DropdownTrigger component ([1dcbe31](https://github.com/lmc-eu/spirit-design-system/commit/1dcbe31))
+
+### Dependencies
+
+- Update build tools non-major ([cc520b6](https://github.com/lmc-eu/spirit-design-system/commit/cc520b6))
+- Update compile tools non-major ([06516c5](https://github.com/lmc-eu/spirit-design-system/commit/06516c5))
+- Update dependency eslint-plugin-react-refresh to v0.4.19 ([2c715b1](https://github.com/lmc-eu/spirit-design-system/commit/2c715b1))
+- Update dependency rollup to v4.34.6 ([01bc1d4](https://github.com/lmc-eu/spirit-design-system/commit/01bc1d4))
+- Update dependency typescript to v5.7.3 ([31fa021](https://github.com/lmc-eu/spirit-design-system/commit/31fa021))
+
+### Documentation
+
+- **web-react:** Update TextArea documentation ([f11e769](https://github.com/lmc-eu/spirit-design-system/commit/f11e769))
+
+### Features
+
+- **web-react:** `UNSAFE_classname` in `elementTypes` components ([f418ef6](https://github.com/lmc-eu/spirit-design-system/commit/f418ef6))
+- **web-react:** Add Label component to form components ([dd9c119](https://github.com/lmc-eu/spirit-design-system/commit/dd9c119)), closes [#DS-1566](https://github.com/lmc-eu/spirit-design-system/issues/DS-1566)
+- **web-react:** Introduce Label component [#DS-1566](https://github.com/lmc-eu/spirit-design-system/issues/DS-1566) ([0ab9f2b](https://github.com/lmc-eu/spirit-design-system/commit/0ab9f2b))
+- **web-react:** Introduce Skeleton component [#DS-1625](https://github.com/lmc-eu/spirit-design-system/issues/DS-1625) ([5a56ec5](https://github.com/lmc-eu/spirit-design-system/commit/5a56ec5))
+- **web-react:** Stabilization of Avatar [#DS-1677](https://github.com/lmc-eu/spirit-design-system/issues/DS-1677) ([8e8a1da](https://github.com/lmc-eu/spirit-design-system/commit/8e8a1da))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="3.3.0"></a>
 
 # [3.3.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.2.0...@lmc-eu/spirit-web-react@3.3.0) (2025-01-30)

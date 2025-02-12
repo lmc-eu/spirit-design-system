@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.4.0"></a>
+
+# [3.4.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.3.0...@lmc-eu/spirit-web@3.4.0) (2025-02-12)
+
+### Dependencies
+
+- Update build tools non-major ([cc520b6](https://github.com/lmc-eu/spirit-design-system/commit/cc520b6))
+- Update dependency rollup to v4.34.6 ([01bc1d4](https://github.com/lmc-eu/spirit-design-system/commit/01bc1d4))
+- Update dependency typescript to v5.7.3 ([31fa021](https://github.com/lmc-eu/spirit-design-system/commit/31fa021))
+
+### Features
+
+- **web:** Introduce Skeleton component [#DS-1625](https://github.com/lmc-eu/spirit-design-system/issues/DS-1625) ([1cc7fb4](https://github.com/lmc-eu/spirit-design-system/commit/1cc7fb4))
+- **web:** Stabilization of Avatar [#DS-1677](https://github.com/lmc-eu/spirit-design-system/issues/DS-1677) ([8d16770](https://github.com/lmc-eu/spirit-design-system/commit/8d16770))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="3.3.0"></a>
 
 # [3.3.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.2.0...@lmc-eu/spirit-web@3.3.0) (2025-01-30)

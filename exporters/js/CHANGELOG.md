@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.11"></a>
+
+## [2.0.11](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-js@2.0.10...@lmc-eu/spirit-exporters-js@2.0.11) (2025-02-12)
+
+### Dependencies
+
+- Update build tools non-major ([cc520b6](https://github.com/lmc-eu/spirit-design-system/commit/cc520b6))
+- Update compile tools non-major ([06516c5](https://github.com/lmc-eu/spirit-design-system/commit/06516c5))
+- Update dependency @swc/core to v1.10.12 ([b06c4b2](https://github.com/lmc-eu/spirit-design-system/commit/b06c4b2))
+- Update dependency typescript to v5.7.3 ([31fa021](https://github.com/lmc-eu/spirit-design-system/commit/31fa021))
+
+**Note:** Version bump only for package @lmc-eu/spirit-exporters-js
+
 <a name="2.0.10"></a>
 
 ## [2.0.10](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-js@2.0.9...@lmc-eu/spirit-exporters-js@2.0.10) (2025-01-30)

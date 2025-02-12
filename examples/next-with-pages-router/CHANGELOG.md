@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.2.7"></a>
+
+## [0.2.7](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-example-next-with-pages-router@0.2.6...@almacareer/spirit-example-next-with-pages-router@0.2.7) (2025-02-12)
+
+### Dependencies
+
+- Update compile tools non-major ([06516c5](https://github.com/lmc-eu/spirit-design-system/commit/06516c5))
+- Update dependency typescript to v5.7.3 ([31fa021](https://github.com/lmc-eu/spirit-design-system/commit/31fa021))
+
+**Note:** Version bump only for package @almacareer/spirit-example-next-with-pages-router
+
 <a name="0.2.6"></a>
 
 ## [0.2.6](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-example-next-with-pages-router@0.2.5...@almacareer/spirit-example-next-with-pages-router@0.2.6) (2025-01-30)

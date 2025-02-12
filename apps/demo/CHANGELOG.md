@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.2.2"></a>
+
+## [1.2.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo-app@1.2.1...@lmc-eu/spirit-demo-app@1.2.2) (2025-02-12)
+
+### Chores
+
+- **demo:** Setup allowed hosts for demo app ([6bcafea](https://github.com/lmc-eu/spirit-design-system/commit/6bcafea))
+
+### Dependencies
+
+- Update build tools non-major ([cc520b6](https://github.com/lmc-eu/spirit-design-system/commit/cc520b6))
+- Update dependency rollup to v4.34.6 ([01bc1d4](https://github.com/lmc-eu/spirit-design-system/commit/01bc1d4))
+- Update dependency typescript to v5.7.3 ([31fa021](https://github.com/lmc-eu/spirit-design-system/commit/31fa021))
+
+**Note:** Version bump only for package @lmc-eu/spirit-demo-app
+
 <a name="1.2.1"></a>
 
 ## [1.2.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo-app@1.2.0...@lmc-eu/spirit-demo-app@1.2.1) (2025-01-30)

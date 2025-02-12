@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.1.1"></a>
+
+## [0.1.1](https://github.com/lmc-eu/spirit-design-system/compare/typescript-config-spirit@0.1.0...typescript-config-spirit@0.1.1) (2025-02-12)
+
+### Dependencies
+
+- Update dependency typescript to v5.7.3 ([31fa021](https://github.com/lmc-eu/spirit-design-system/commit/31fa021))
+
+**Note:** Version bump only for package typescript-config-spirit
+
 <a name="0.1.0"></a>
 
 # 0.1.0 (2025-01-27)

@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.1"></a>
+
+## [1.1.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-post-changelog@1.1.0...@lmc-eu/spirit-post-changelog@1.1.1) (2025-02-12)
+
+### Bug Fixes
+
+- **scripts:** Move env file to appropriate location ([93558b9](https://github.com/lmc-eu/spirit-design-system/commit/93558b9))
+
+**Note:** Version bump only for package @lmc-eu/spirit-post-changelog
+
 <a name="1.1.0"></a>
 
 # 1.1.0 (2025-01-27)

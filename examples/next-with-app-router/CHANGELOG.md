@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.3.0"></a>
+
+# [0.3.0](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-example-next-with-app-router@0.2.6...@almacareer/spirit-example-next-with-app-router@0.3.0) (2025-02-12)
+
+### Dependencies
+
+- Update dependency typescript to v5.7.3 ([31fa021](https://github.com/lmc-eu/spirit-design-system/commit/31fa021))
+
+### Features
+
+- **web-react:** `UNSAFE_classname` in `elementTypes` components ([f418ef6](https://github.com/lmc-eu/spirit-design-system/commit/f418ef6))
+
+**Note:** Version bump only for package @almacareer/spirit-example-next-with-app-router
+
 <a name="0.2.6"></a>
 
 ## [0.2.6](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-example-next-with-app-router@0.2.5...@almacareer/spirit-example-next-with-app-router@0.2.6) (2025-01-30)
