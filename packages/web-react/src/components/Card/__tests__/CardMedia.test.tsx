@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, sizePropsTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, sizePropsTest, restPropsTest, stylePropsTest } from '#local/tests';
 import CardMedia from '../CardMedia';
 
 describe('CardMedia', () => {

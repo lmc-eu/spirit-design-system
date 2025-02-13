@@ -8,7 +8,7 @@ import {
   requiredPropsTest,
   restPropsTest,
   stylePropsTest,
-} from '@local/tests';
+} from '#local/tests';
 import Radio from '../Radio';
 
 describe('Radio', () => {

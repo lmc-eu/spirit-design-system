@@ -8,7 +8,7 @@ import {
   restPropsTest,
   stylePropsTest,
   validationTextPropsTest,
-} from '@local/tests';
+} from '#local/tests';
 import TextArea from '../TextArea';
 
 describe('TextArea', () => {
