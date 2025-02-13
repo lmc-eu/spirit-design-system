@@ -80,6 +80,7 @@ jobs:
 
       # Publish code coverage after the code is public
       - name: Submit coverage to Coveralls
+        continue-on-error: true
         working-directory: ./packages/web-twig
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -96,6 +97,7 @@ jobs:
     steps:
       - name: Notify Coveralls
         uses: coverallsapp/github-action@master
+        continue-on-error: true
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel-finished: true
