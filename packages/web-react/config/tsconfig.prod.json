@@ -1,8 +1,9 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "module": "NodeNext",
+    "module": "es2020",
     "moduleResolution": "NodeNext",
+    "rootDir": "../src",
     "target": "es2015",
     "noEmit": false
   },
