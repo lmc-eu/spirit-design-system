@@ -5,6 +5,7 @@ import React, { ElementType, ForwardedRef, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritButtonProps } from '../../types';
 import { Spinner } from '../Spinner';
+import { useSplitButtonContext } from '../SplitButton/SplitButtonContext';
 import { useButtonAriaProps } from './useButtonAriaProps';
 import { useButtonStyleProps } from './useButtonStyleProps';
 
@@ -25,12 +26,18 @@ const _Button = <T extends ElementType = 'button', C = void, S = void>(
   props: SpiritButtonProps<T, C, S>,
   ref: ForwardedRef<HTMLButtonElement>,
 ) => {
+  const { color: contextColor, size: contextSize } = useSplitButtonContext();
   const propsWithDefaults = { ...defaultProps, ...props };
+  const propsWithContext = {
+    ...propsWithDefaults,
+    color: contextColor || propsWithDefaults.color,
+    size: contextSize || propsWithDefaults.size,
+  };
   const {
     elementType: ElementTag = defaultProps.elementType as ElementType,
     children,
     ...restProps
-  } = propsWithDefaults;
+  } = propsWithContext;
 
   const { buttonProps } = useButtonAriaProps(restProps);
   const { classProps, props: modifiedProps } = useButtonStyleProps(restProps);
