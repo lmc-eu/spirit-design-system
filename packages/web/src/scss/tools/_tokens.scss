@@ -1,4 +1,6 @@
 @use 'sass:meta';
+@use 'sass:map';
+@use '@tokens' as tokens;
 
 @mixin generate-css-variables($map, $prefix: '') {
     @each $key, $value in $map {
@@ -7,5 +9,15 @@
         } @else {
             --#{$prefix + '-' + $key}: #{$value};
         }
+    }
+}
+
+@function get-variable-if-exists($variable-name, $fallback-value) {
+    @if map.has-key(meta.module-variables(tokens), $variable-name) {
+        @return map.get(meta.module-variables(tokens), $variable-name);
+    } @else {
+        @debug 'Token not found: #{ $variable-name }';
+
+        @return $fallback-value;
     }
 }

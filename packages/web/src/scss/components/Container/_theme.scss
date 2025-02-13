@@ -1,15 +1,16 @@
 @use 'sass:map';
 @use '@tokens' as tokens;
+@use '../../tools/tokens' as helpers;
 @use 'tools';
 
-$container-max-width: tools.get-variable-if-exists('xlarge', true);
+$container-max-width: helpers.get-variable-if-exists('container-xlarge-max-width', tokens.$container-max-width);
 $container-paddings: map.get(tokens.$containers, padding);
 $container-breakpoints: tokens.$breakpoints;
 
 $container-sizes: (
-    xsmall: tools.get-variable-if-exists('xsmall'),
-    small: tools.get-variable-if-exists('small'),
-    medium: tools.get-variable-if-exists('medium'),
-    large: tools.get-variable-if-exists('large'),
-    xlarge: tools.get-variable-if-exists('xlarge'),
+    xsmall: tools.get-size('xsmall', $container-max-width),
+    small: tools.get-size('small', $container-max-width),
+    medium: tools.get-size('medium', $container-max-width),
+    large: tools.get-size('large', $container-max-width),
+    xlarge: tools.get-size('xlarge', $container-max-width),
 );

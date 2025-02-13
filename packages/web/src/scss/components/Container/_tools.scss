@@ -1,7 +1,6 @@
 @use 'sass:map';
-@use 'sass:meta';
-@use '@tokens' as tokens;
 @use '../../tools/breakpoint';
+@use '../../tools/tokens';
 
 @mixin paddings($paddings, $breakpoints) {
     @each $name, $breakpoint in $breakpoints {
@@ -11,22 +10,6 @@
     }
 }
 
-@function get-variable-if-exists($size, $static-value: false) {
-    $variable-name: 'container-' + $size + '-max-width';
-    $default-value: tokens.$container-max-width;
-    $attr-name: if($static-value, 'max-width', $size);
-
-    @if map.has-key(meta.module-variables(tokens), $variable-name) {
-        @return map.get(tokens.$containers, $attr-name);
-    } @else {
-        @debug 'Token not found: #{ $variable-name }';
-
-        @return if(
-            $static-value,
-            $default-value,
-            (
-                'max-width': $default-value,
-            )
-        );
-    }
+@function get-size($size, $default-size) {
+    @return ('max-width': tokens.get-variable-if-exists('container-#{$size}-max-width', $default-size));
 }

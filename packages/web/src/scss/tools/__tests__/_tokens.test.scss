@@ -1,5 +1,6 @@
 @use 'true' as test;
 @use '../tokens';
+@use '@tokens' as generated-tokens;
 
 $test-theme: (
     action: (
@@ -24,5 +25,18 @@ $test-theme: (
                 }
             }
         }
+    }
+}
+
+@include test.describe('get-variable-if-exists function') {
+    @include test.it('should return the variable that exists in the tokens') {
+        @include test.assert-equal(
+            tokens.get-variable-if-exists('container-max-width', generated-tokens.$container-max-width),
+            generated-tokens.$container-max-width
+        );
+    }
+
+    @include test.it('should return the default variable') {
+        @include test.assert-equal(tokens.get-variable-if-exists('new-variable-max-width', '0px'), '0px');
     }
 }
