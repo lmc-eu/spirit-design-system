@@ -487,6 +487,15 @@ And the complete Header Dialog:
 ✍️ Please do feel free to let us know should you believe this component lacks
 some important capabilities. Thank you! 🙏
 
+### ⚠️ DEPRECATION NOTICE
+
+The component will be deleted in the next version.
+Use [UNSTABLE_Header][unstable-header-component] component instead.
+
+[What are deprecations?][readme-deprecations]
+
+[readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#deprecations
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
 [mdn-dialog]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
 [offcanvas-docs]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Offcanvas/README.md
+[unstable-header-component]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/UNSTABLE_Header/README.md
