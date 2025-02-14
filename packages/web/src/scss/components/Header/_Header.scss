@@ -1,6 +1,7 @@
 @use '../../tools/typography';
 @use 'theme';
 
+// @deprecated Will be removed in the next major version.
 .Header {
     @include typography.generate(theme.$header-typography);
 
