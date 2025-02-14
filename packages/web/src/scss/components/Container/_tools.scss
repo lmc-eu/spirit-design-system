@@ -1,5 +1,6 @@
 @use 'sass:map';
 @use '../../tools/breakpoint';
+@use '../../tools/tokens' as tokens-tools;
 
 @mixin paddings($paddings, $breakpoints) {
     @each $name, $breakpoint in $breakpoints {
@@ -7,4 +8,8 @@
             --container-padding-inline: #{map.get($paddings, $name)};
         }
     }
+}
+
+@function get-size($size, $default-size) {
+    @return ('max-width': tokens-tools.get-variable-if-exists('container-#{$size}-max-width', $default-size));
 }
