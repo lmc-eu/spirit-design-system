@@ -18,7 +18,7 @@ const Header = (props: HeaderProps) => {
     trigger: true,
     componentName: 'Header',
     customText: `The component will be removed in the next version. Component is replaced by the current implementation of UNSTABLE_Header.
-      Please see the composition of the UNSTABLE_Header and Navigation components.`,
+    Please see the composition of the UNSTABLE_Header and Navigation components.`,
   });
 
   return (
