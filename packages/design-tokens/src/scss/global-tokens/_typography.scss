@@ -679,6 +679,406 @@ $heading-xsmall-italic: (
     ),
 ) !default;
 
+$body-xlarge-light: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 20px,
+        font-style: normal,
+        font-weight: 300,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-xlarge-light-italic: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 20px,
+        font-style: italic,
+        font-weight: 300,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-xlarge-medium: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 20px,
+        font-style: normal,
+        font-weight: 500,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-xlarge-medium-italic: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 20px,
+        font-style: italic,
+        font-weight: 500,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-xlarge-semibold-italic: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 20px,
+        font-style: italic,
+        font-weight: 600,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-xlarge-bold-italic: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 20px,
+        font-style: italic,
+        font-weight: 700,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-xlarge-extrabold: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 20px,
+        font-style: normal,
+        font-weight: 800,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-xlarge-extrabold-italic: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 20px,
+        font-style: italic,
+        font-weight: 800,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-large-light: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 18px,
+        font-style: normal,
+        font-weight: 300,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-large-light-italic: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 18px,
+        font-style: italic,
+        font-weight: 400,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-large-medium: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 18px,
+        font-style: normal,
+        font-weight: 500,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-large-medium-italic: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 18px,
+        font-style: italic,
+        font-weight: 500,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-large-semibold-italic: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 18px,
+        font-style: italic,
+        font-weight: 600,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-large-bold-italic: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 18px,
+        font-style: italic,
+        font-weight: 700,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-large-extrabold: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 18px,
+        font-style: normal,
+        font-weight: 800,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-large-extrabold-italic: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 18px,
+        font-style: italic,
+        font-weight: 800,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-medium-light: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 16px,
+        font-style: normal,
+        font-weight: 300,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-medium-light-italic: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 16px,
+        font-style: italic,
+        font-weight: 300,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-medium-medium: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 16px,
+        font-style: normal,
+        font-weight: 500,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-medium-medium-italic: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 16px,
+        font-style: italic,
+        font-weight: 500,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-medium-semibold-italic: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 16px,
+        font-style: italic,
+        font-weight: 500,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-medium-bold-italic: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 16px,
+        font-style: italic,
+        font-weight: 700,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-medium-extrabold: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 16px,
+        font-style: normal,
+        font-weight: 800,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-medium-extrabold-italic: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 16px,
+        font-style: italic,
+        font-weight: 800,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-small-light: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 14px,
+        font-style: normal,
+        font-weight: 300,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-small-light-italic: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 14px,
+        font-style: italic,
+        font-weight: 300,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-small-medium: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 14px,
+        font-style: normal,
+        font-weight: 500,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-small-medium-italic: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 14px,
+        font-style: italic,
+        font-weight: 500,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-small-semibold-italic: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 14px,
+        font-style: italic,
+        font-weight: 600,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-small-bold-italic: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 14px,
+        font-style: italic,
+        font-weight: 700,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-small-extrabold: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 14px,
+        font-style: normal,
+        font-weight: 800,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-small-extrabold-italic: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 14px,
+        font-style: italic,
+        font-weight: 800,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-xsmall-light: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 12px,
+        font-style: normal,
+        font-weight: 300,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-xsmall-light-italic: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 12px,
+        font-style: italic,
+        font-weight: 400,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-xsmall-medium: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 12px,
+        font-style: normal,
+        font-weight: 500,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-xsmall-medium-italic: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 12px,
+        font-style: italic,
+        font-weight: 500,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-xsmall-semibold-italic: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 12px,
+        font-style: italic,
+        font-weight: 600,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-xsmall-bold-italic: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 12px,
+        font-style: italic,
+        font-weight: 700,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-xsmall-extrabold: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 12px,
+        font-style: normal,
+        font-weight: 800,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-xsmall-extrabold-italic: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 12px,
+        font-style: italic,
+        font-weight: 800,
+        line-height: 1.5,
+    ),
+) !default;
+
 $styles: (
     heading-xlarge-bold: $heading-xlarge-bold,
     body-medium-regular: $body-medium-regular,
@@ -720,4 +1120,44 @@ $styles: (
     heading-small-italic: $heading-small-italic,
     heading-xsmall-regular: $heading-xsmall-regular,
     heading-xsmall-italic: $heading-xsmall-italic,
+    body-xlarge-light: $body-xlarge-light,
+    body-xlarge-light-italic: $body-xlarge-light-italic,
+    body-xlarge-medium: $body-xlarge-medium,
+    body-xlarge-medium-italic: $body-xlarge-medium-italic,
+    body-xlarge-semibold-italic: $body-xlarge-semibold-italic,
+    body-xlarge-bold-italic: $body-xlarge-bold-italic,
+    body-xlarge-extrabold: $body-xlarge-extrabold,
+    body-xlarge-extrabold-italic: $body-xlarge-extrabold-italic,
+    body-large-light: $body-large-light,
+    body-large-light-italic: $body-large-light-italic,
+    body-large-medium: $body-large-medium,
+    body-large-medium-italic: $body-large-medium-italic,
+    body-large-semibold-italic: $body-large-semibold-italic,
+    body-large-bold-italic: $body-large-bold-italic,
+    body-large-extrabold: $body-large-extrabold,
+    body-large-extrabold-italic: $body-large-extrabold-italic,
+    body-medium-light: $body-medium-light,
+    body-medium-light-italic: $body-medium-light-italic,
+    body-medium-medium: $body-medium-medium,
+    body-medium-medium-italic: $body-medium-medium-italic,
+    body-medium-semibold-italic: $body-medium-semibold-italic,
+    body-medium-bold-italic: $body-medium-bold-italic,
+    body-medium-extrabold: $body-medium-extrabold,
+    body-medium-extrabold-italic: $body-medium-extrabold-italic,
+    body-small-light: $body-small-light,
+    body-small-light-italic: $body-small-light-italic,
+    body-small-medium: $body-small-medium,
+    body-small-medium-italic: $body-small-medium-italic,
+    body-small-semibold-italic: $body-small-semibold-italic,
+    body-small-bold-italic: $body-small-bold-italic,
+    body-small-extrabold: $body-small-extrabold,
+    body-small-extrabold-italic: $body-small-extrabold-italic,
+    body-xsmall-light: $body-xsmall-light,
+    body-xsmall-light-italic: $body-xsmall-light-italic,
+    body-xsmall-medium: $body-xsmall-medium,
+    body-xsmall-medium-italic: $body-xsmall-medium-italic,
+    body-xsmall-semibold-italic: $body-xsmall-semibold-italic,
+    body-xsmall-bold-italic: $body-xsmall-bold-italic,
+    body-xsmall-extrabold: $body-xsmall-extrabold,
+    body-xsmall-extrabold-italic: $body-xsmall-extrabold-italic,
 ) !default;

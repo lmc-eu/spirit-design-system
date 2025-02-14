@@ -49,7 +49,7 @@ export const componentHeaderItemBackgroundStateSelected = '#4e2ea6';
 export const componentHeaderItemStateActive = '#e5e5e5';
 export const componentHeaderItemStateDefault = '#fff';
 export const componentHeaderItemStateHover = '#f2f2f2';
-export const componentHeaderItemStateSelected = '#ffbe00';
+export const componentHeaderItemStateSelected = '#fff';
 export const componentHeaderStripeStateSelected = '#fff';
 export const componentHeaderStripeStateUnselected = '#ffffff40';
 
