@@ -584,6 +584,13 @@ const handleClose = () => setOpen(false);
 This component uses the `Icon` component internally. To ensure correct rendering,
 please refer to the [Icon component documentation][web-react-icon-documentation] for setup instructions.
 
+### ⚠️ DEPRECATION NOTICE
+
+The component will be deleted in the next version.
+Use [UNSTABLE_Header][unstable-header-component] component instead.
+
+[What are deprecations?][readme-deprecations]
+
 [mdn-a-element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
 [mdn-api-html-element]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
 [mdn-button-element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
@@ -591,6 +598,8 @@ please refer to the [Icon component documentation][web-react-icon-documentation]
 [mdn-li-element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li
 [mdn-ul-element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
+[readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#deprecations
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props
+[unstable-header-component]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/UNSTABLE_Header/README.md
 [web-react-icon-documentation]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Icon/README.md#-usage

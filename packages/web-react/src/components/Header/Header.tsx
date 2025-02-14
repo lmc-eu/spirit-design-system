@@ -2,7 +2,7 @@
 
 import classNames from 'classnames';
 import React from 'react';
-import { useStyleProps } from '../../hooks';
+import { useDeprecationMessage, useStyleProps } from '../../hooks';
 import { HeaderProps } from '../../types';
 import { HEADER_COLOR_DEFAULT } from './constants';
 import { useHeaderStyleProps } from './useHeaderStyleProps';
@@ -12,6 +12,13 @@ const Header = (props: HeaderProps) => {
 
   const { classProps } = useHeaderStyleProps({ color, isSimple });
   const { styleProps, props: otherProps } = useStyleProps(restProps);
+
+  useDeprecationMessage({
+    method: 'custom',
+    trigger: true,
+    componentName: 'Header',
+    customText: 'The component will be deleted in the next version.',
+  });
 
   return (
     <header {...otherProps} className={classNames(classProps.root, styleProps.className)} style={styleProps.style}>
