@@ -21,7 +21,7 @@
   "dependencies": {
     "@supernovaio/export-helpers": "1.0.30",
     "@supernovaio/sdk-exporters": "2.0.33",
-    "vite": "5.4.14"
+    "vite": "6.1.0"
   },
   "devDependencies": {
     "@lmc-eu/eslint-config-typescript": "2.1.4",
