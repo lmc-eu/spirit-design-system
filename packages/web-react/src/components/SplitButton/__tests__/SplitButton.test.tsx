@@ -1,17 +1,30 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
-import { ButtonColor, ButtonSize } from '../../../types';
+import { classNamePrefixProviderTest, restPropsTest, sizePropsTest, stylePropsTest } from '@local/tests';
+import { ComponentButtonColors } from '../../../constants';
 import { Button } from '../../Button';
 import SplitButton from '../SplitButton';
 
 describe('Pill', () => {
+  const splitButtonColors = Object.values(ComponentButtonColors).filter(
+    (color) => color !== ComponentButtonColors.PLAIN,
+  );
+
   classNamePrefixProviderTest(SplitButton, 'SplitButton');
 
   stylePropsTest(SplitButton);
 
   restPropsTest(SplitButton, 'div');
+
+  sizePropsTest(
+    (props) => (
+      <SplitButton {...props}>
+        <Button data-testid="split-button-test-id">Button</Button>
+      </SplitButton>
+    ),
+    'split-button-test-id',
+  );
 
   it('should have default classname', () => {
     render(<SplitButton data-testid="test" />);
@@ -25,9 +38,9 @@ describe('Pill', () => {
     expect(screen.getByText('Content')).toBeInTheDocument();
   });
 
-  it.each(['primary', 'secondary', 'tertiary'])('should render color %s', (color) => {
+  it.each(splitButtonColors)('should render color %s on buttons', (color) => {
     render(
-      <SplitButton color={color as ButtonColor<void>}>
+      <SplitButton color={color}>
         <Button>Button</Button>
       </SplitButton>,
     );
@@ -35,19 +48,9 @@ describe('Pill', () => {
     expect(screen.getByText('Button')).toHaveClass(`Button--${color}`);
   });
 
-  it.each(['small', 'medium', 'large'])('should render size %s', (size) => {
-    render(
-      <SplitButton size={size as ButtonSize<void>}>
-        <Button>Button</Button>
-      </SplitButton>,
-    );
-
-    expect(screen.getByText('Button')).toHaveClass(`Button--${size}`);
-  });
-
-  it('should render color and size', () => {
-    const color = 'secondary' as ButtonColor<void>;
-    const size = 'small' as ButtonSize<void>;
+  it('should render color and size on buttons', () => {
+    const color = 'secondary';
+    const size = 'small';
 
     render(
       <SplitButton color={color} size={size}>
@@ -59,9 +62,9 @@ describe('Pill', () => {
     expect(screen.getByText('Button')).toHaveClass(`Button--${size}`);
   });
 
-  it('should render color and size even when set on button', () => {
-    const color = 'secondary' as ButtonColor<void>;
-    const size = 'small' as ButtonSize<void>;
+  it('should override color and size from SplitButton when Button has different values', () => {
+    const color = 'secondary';
+    const size = 'small';
 
     render(
       <SplitButton color={color} size={size}>

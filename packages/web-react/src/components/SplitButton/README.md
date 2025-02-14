@@ -106,10 +106,10 @@ const onDropdownToggle = () => setIsOpen(!isOpen);
 
 ## API
 
-| Name    | Type                                                                                                | Default   | Required | Description   |
-| ------- | --------------------------------------------------------------------------------------------------- | --------- | -------- | ------------- |
-| `color` | [Component Button Color dictionary][dictionary-color], [Emotion Color dictionary][dictionary-color] | `primary` | ✕        | Color variant |
-| `size`  | [Size dictionary][dictionary-size]                                                                  | `medium`  | ✕        | Size variant  |
+| Name    | Type                                       | Default   | Required | Description   |
+| ------- | ------------------------------------------ | --------- | -------- | ------------- |
+| `color` | \[`primary` \| `secondary` \| `tertiary` ] | `primary` | ✕        | Color variant |
+| `size`  | [Size dictionary][dictionary-size]         | `medium`  | ✕        | Size variant  |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
