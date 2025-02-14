@@ -10,12 +10,15 @@ export interface ContainerStyles {
 }
 
 export function useContainerStyleProps(props: SpiritContainerProps): ContainerStyles {
-  const { isFluid, ...modifiedProps } = props;
+  const { isFluid, size, ...modifiedProps } = props;
 
   const containerClass = useClassNamePrefix('Container');
   const containerFluidClass = `${containerClass}--fluid`;
+  const containerSizeClass = `${containerClass}--${size}`;
+
   const classProps = classNames(containerClass, {
     [containerFluidClass]: isFluid,
+    [containerSizeClass]: size,
   });
 
   return {
