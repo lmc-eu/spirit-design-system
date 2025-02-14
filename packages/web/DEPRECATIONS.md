@@ -23,6 +23,10 @@ The direction values `row` and `column` were removed, please use `horizontal` an
 - `<div class="Flex Flex--row" />` → `<div class="Flex Flex--horizontal" />`
 - `<div class="Flex Flex--column" />` → `<div class="Flex Flex--vertical" />`
 
+### Header
+
+The `Header` component was removed, please use `UNSTABLE_Header` component instead.
+
 👉 [What are deprecations?][readme-deprecations]
 
 [readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#deprecations
