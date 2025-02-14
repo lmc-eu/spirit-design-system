@@ -7,7 +7,7 @@ import {
   sizePropsTest,
   restPropsTest,
   stylePropsTest,
-} from '@local/tests';
+} from '#local/tests';
 import { EmphasisDictionaryType, SizesDictionaryType, SizeExtendedDictionaryType } from '../../../types';
 import Text from '../Text';
 import textPropsDataProvider from './textPropsDataProvider';

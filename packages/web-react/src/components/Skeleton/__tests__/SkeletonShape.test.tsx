@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, renderHook, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '#local/tests';
 import { SpiritSkeletonShapeProps } from '../../../types';
 import SkeletonShape from '../SkeletonShape';
 import { useSkeletonShapeStyleProps } from '../useSkeletonShapeStyleProps';

@@ -7,7 +7,7 @@ import {
   requiredPropsTest,
   restPropsTest,
   stylePropsTest,
-} from '@local/tests';
+} from '#local/tests';
 import UNSTABLE_Toggle from '../UNSTABLE_Toggle';
 
 describe('UNSTABLE_Toggle', () => {

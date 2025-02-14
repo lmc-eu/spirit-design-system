@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, stylePropsTest } from '#local/tests';
 import TabLink from '../TabLink';
 
 describe('TabLink', () => {

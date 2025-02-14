@@ -9,7 +9,7 @@ import {
   loadingPropsTest,
   restPropsTest,
   stylePropsTest,
-} from '@local/tests';
+} from '#local/tests';
 import Button from '../Button';
 
 jest.mock('../../../hooks/useIcon');
