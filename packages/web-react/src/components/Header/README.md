@@ -586,8 +586,11 @@ please refer to the [Icon component documentation][web-react-icon-documentation]
 
 ### ⚠️ DEPRECATION NOTICE
 
-The component will be deleted in the next version.
-Use [UNSTABLE_Header][unstable-header-component] component instead.
+The component will be removed in the next version. We will be replacing the current implementation of the `Header`
+and related subcomponents with the `UNSTABLE_Header` component (which will later be renamed to `Header`).
+The `UNSTABLE_Header` is designed for use in composition with `Navigation` and `Drawer` components.
+
+Please see [UNSTABLE_Header][unstable-header-component] component documentation.
 
 [What are deprecations?][readme-deprecations]
 
