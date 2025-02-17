@@ -1,5 +1,11 @@
 import { ButtonSize } from './button';
-import { ChildrenProps, ComponentButtonColorsDictionaryType, StyleProps, TransferProps } from './shared';
+import {
+  ChildrenProps,
+  ComponentButtonColorsDictionaryType,
+  PlacementDictionaryType,
+  StyleProps,
+  TransferProps,
+} from './shared';
 
 export interface SplitButtonProps extends TransferProps, StyleProps, ChildrenProps {}
 
@@ -9,3 +15,25 @@ export interface SpiritSplitButtonProps<C = void, S = void> extends SplitButtonP
   color?: SplitButtonColorType<C>;
   size?: ButtonSize<S>;
 }
+
+export type UncontrolledSplitButtonProps<C = void, S = void> = {
+  buttonLabel: string;
+  buttonOnClick: () => void;
+  dropdownTriggerIconName?: string;
+  dropdownTriggerLabel?: string;
+  dropdownPlacement?: PlacementDictionaryType;
+  id: string;
+  isButtonLabelHidden?: boolean;
+  isDisabled?: boolean;
+  isDropdownTriggerLabelHidden?: boolean;
+} & (
+  | {
+      isButtonLabelHidden?: true;
+      buttonIconName: string;
+    }
+  | {
+      isButtonLabelHidden?: false;
+      buttonIconName?: string;
+    }
+) &
+  SpiritSplitButtonProps<C, S>;
