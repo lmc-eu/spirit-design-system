@@ -46,7 +46,9 @@ This component is based on the [Stack][stack] component and accepts all its vari
     <p color="secondary" class="typography-body-medium-text-regular">Description</p>
   </div>
   <div class="Stack UNSTABLE_EmptyState__section">
-    <div class="UNSTABLE_ActionLayout">
+    <div
+      class="Flex Flex--noWrap Flex--alignmentXStretch Flex--tablet--alignmentXCenter Flex--alignmentYStretch Flex--vertical Flex--tablet--horizontalReversed"
+    >
       <a href="#" role="button" class="Button Button--primary Button--medium">Action</a>
       <a href="#" role="button" class="Button Button--secondary Button--medium">Action</a>
     </div>
