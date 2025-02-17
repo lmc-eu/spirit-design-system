@@ -35,11 +35,16 @@
 @mixin validation-text() {
     @include typography.generate(form-fields-theme.$validation-text-typography);
 
-    display: block;
+    display: flex;
+    column-gap: form-fields-theme.$validation-text-icon-gap;
     margin-top: form-fields-theme.$validation-text-margin-top;
 
     & > ul {
         @include reset.list();
+    }
+
+    & > svg {
+        flex-shrink: 0;
     }
 }
 

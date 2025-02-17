@@ -122,6 +122,9 @@ Validation states can be presented either by adding a CSS modifier class
 a JS interaction class when controlled by JavaScript (`has-success`,
 `has-warning`, `has-danger`). See Validation state [dictionary][dictionary-validation].
 
+- To render validation text as a list, use `<ul>` element inside of `<div>`.
+- To render validation text with an icon, add `<svg>` element inside of `<div>`.
+
 ```html
 <div class="UNSTABLE_Slider UNSTABLE_Slider--success">
   <label for="slider-success" class="UNSTABLE_Slider__label">Slider</label>
@@ -165,6 +168,25 @@ a JS interaction class when controlled by JavaScript (`has-success`,
       <li>First validation text</li>
       <li>Second validation text</li>
     </ul>
+  </div>
+</div>
+
+<div class="UNSTABLE_Slider UNSTABLE_Slider--warning">
+  <label for="slider-warning" class="UNSTABLE_Slider__label">Slider</label>
+  <input
+    class="UNSTABLE_Slider__input"
+    id="slider-warning"
+    aria-describedby="slider-warning-validation-text"
+    style="--slider-position: 30%"
+    type="range"
+    value="30"
+    oninput="this.style.setProperty('--slider-position', `${Math.round((100 * this.value) / 100)}%`);"
+  />
+  <div id="slider-warning-validation-text" class="UNSTABLE_Slider__validationText">
+    <svg width="20" height="20" aria-hidden="true">
+      <use xlink:href="/assets/icons/svg/sprite.svg#warning" />
+    </svg>
+    Validation text with icon
   </div>
 </div>
 ```

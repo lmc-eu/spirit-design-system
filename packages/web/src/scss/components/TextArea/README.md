@@ -97,12 +97,16 @@ Validation states can be presented either by adding a CSS modifier class
 a JS interaction class when controlled by JavaScript (`has-success`,
 `has-warning`, `has-danger`). See Validation state [dictionary][dictionary-validation].
 
+- To render validation text as a list, use `<ul>` element inside of `<div>`.
+- To render validation text with an icon, add `<svg>` element inside of `<div>`.
+
 ```html
 <div class="TextArea TextArea--danger">
   <label for="text-area-danger" class="TextArea__label">Label</label>
   <textarea id="text-area-danger" class="TextArea__input" name="danger" placeholder="Placeholder">Filled</textarea>
   <div class="TextArea__validationText">Danger validation text</div>
 </div>
+
 <div class="TextArea has-danger">
   <label for="text-area-danger-has-danger" class="TextArea__label">Label</label>
   <textarea id="text-area-danger-has-danger" class="TextArea__input" name="hasDanger" placeholder="Placeholder">
@@ -110,16 +114,25 @@ a JS interaction class when controlled by JavaScript (`has-success`,
   </textarea>
   <div class="TextArea__validationText">Danger validation text</div>
 </div>
-```
 
-To render validation text as a list, use `<ul>` element inside of `<div>`.
-
-```html
 <div class="TextArea__validationText">
   <ul>
     <li>First validation text</li>
     <li>Second validation text</li>
   </ul>
+</div>
+
+<div class="TextArea has-warning">
+  <label for="text-area-danger-has-warning" class="TextArea__label">Label</label>
+  <textarea id="text-area-danger-has-warning" class="TextArea__input" name="hasDanger" placeholder="Placeholder">
+    Filled
+  </textarea>
+  <div class="TextArea__validationText">
+    <svg width="20" height="20" aria-hidden="true">
+      <use xlink:href="/assets/icons/svg/sprite.svg#warning" />
+    </svg>
+    Validation text with icon
+  </div>
 </div>
 ```
 

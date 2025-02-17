@@ -253,6 +253,35 @@
         </div>
       </div>
 
+
+    {{setVar "states" "danger" "warning" "success" }}
+
+    {{#each @root.states as |state|}}
+    <div class="Select Select--{{state}}">
+      <label for="select-{{state}}-icon" class="Select__label">Label</label>
+      <div class="Select__inputContainer">
+        <select id="select-{{state}}-icon" name="danger" class="Select__input">
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+        </select>
+        <div class="Select__icon">
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/assets/icons/svg/sprite.svg#chevron-down" />
+          </svg>
+        </div>
+      </div>
+      <div class="Select__validationText Select__validationText--has-icon">
+        <svg width="20" height="20" aria-hidden="true">
+          {{#if (eq state "success")}}
+          <use xlink:href="/assets/icons/svg/sprite.svg#check-plain"/>
+          {{else}}
+          <use xlink:href="/assets/icons/svg/sprite.svg#{{state}}"/>
+          {{/if}}
+        </svg>
+        This is {{state}} validation text with icon. Long validation text to show how it wraps.
+      </div>
+    </div>
+    {{/each}}
     </div>
 
   </div>

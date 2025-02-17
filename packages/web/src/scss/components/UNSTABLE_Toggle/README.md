@@ -99,6 +99,9 @@ Validation states can be presented either by adding a CSS modifier class
 a JS interaction class when controlled by JavaScript (`has-success`,
 `has-warning`, `has-danger`). See Validation state [dictionary][dictionary-validation].
 
+- To render validation text as a list, use `<ul>` element inside of `<div>`.
+- To render validation text with an icon, add `<svg>` element inside of `<div>`.
+
 ```html
 <label for="toggle-success" class="UNSTABLE_Toggle UNSTABLE_Toggle--success">
   <span class="UNSTABLE_Toggle__text">
@@ -138,6 +141,26 @@ a JS interaction class when controlled by JavaScript (`has-success`,
     aria-describedby="toggle-danger-validation-text"
   />
 </div>
+
+<label for="toggle-warning" class="UNSTABLE_Toggle UNSTABLE_Toggle--warning">
+  <span class="UNSTABLE_Toggle__text">
+    <span class="UNSTABLE_Toggle__label">Toggle Label</span>
+    <span class="UNSTABLE_Toggle__validationText" id="toggle-warning-validation-text">
+      <svg width="20" height="20" aria-hidden="true">
+        <use xlink:href="/assets/icons/svg/sprite.svg#warning" />
+      </svg>
+      Validation text with icon
+    </span>
+  </span>
+  <input
+    type="checkbox"
+    id="toggle-warning"
+    class="UNSTABLE_Toggle__input"
+    name="default"
+    aria-describedby="toggle-warning-validation-text"
+    checked
+  />
+</label>
 ```
 
 ### JavaScript-Controlled Validation Text

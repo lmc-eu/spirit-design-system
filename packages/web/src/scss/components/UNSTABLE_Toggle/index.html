@@ -253,8 +253,29 @@
         <input type="checkbox" id="toggle-warning-helper-text" class="UNSTABLE_Toggle__input" name="default" aria-describedby="toggle-warning-helper-text-helper-text toggle-warning-helper-text-validation-text" checked />
       </label>
 
-    </div>
 
+
+    {{setVar "states" "danger" "warning" "success" }}
+    {{#each @root.states as |state|}}
+
+      <label for="toggle-{{state}}-validation-icon" class="UNSTABLE_Toggle UNSTABLE_Toggle--{{state}}">
+      <span class="UNSTABLE_Toggle__text">
+        <span class="UNSTABLE_Toggle__label">Toggle Label</span>
+        <span class="UNSTABLE_Toggle__validationText  UNSTABLE_Toggle__validationText--has-icon" id="toggle-{{state}}-validation-text-icon">
+          <svg width="20" height="20" aria-hidden="true">
+          {{#if (eq state "success")}}
+          <use xlink:href="/assets/icons/svg/sprite.svg#check-plain"/>
+          {{else}}
+          <use xlink:href="/assets/icons/svg/sprite.svg#{{state}}"/>
+          {{/if}}
+        </svg>
+          This is {{state}} validation text with icon. Long validation text to show how it wraps.
+        </span>
+      </span>
+        <input type="checkbox" id="toggle-{{state}}-validation-icon" class="UNSTABLE_Toggle__input" name="default" aria-describedby="toggle-{{state}}-validation-text-icon" checked />
+      </label>
+    {{/each}}
+    </div>
   </div>
 
 </section>

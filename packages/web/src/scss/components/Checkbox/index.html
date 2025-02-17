@@ -213,6 +213,27 @@
         </span>
       </label>
 
+      {{setVar "states" "danger" "warning" "success" }}
+      {{#each @root.states as |state|}}
+
+      <div class="Checkbox Checkbox--{{state}}">
+        <input type="checkbox" id="checkbox-{{state}}-validation-icon" class="Checkbox__input" name="danger" />
+        <div class="Checkbox__text">
+          <label for="checkbox-{{state}}-validation-icon" class="Checkbox__label">Checkbox Label</label>
+          <div class="Checkbox__validationText">
+            <svg width="20" height="20" aria-hidden="true">
+              {{#if (eq state "success")}}
+              <use xlink:href="/assets/icons/svg/sprite.svg#check-plain"/>
+              {{else}}
+              <use xlink:href="/assets/icons/svg/sprite.svg#{{state}}"/>
+              {{/if}}
+            </svg>
+            This is {{state}} validation text with icon.
+          </div>
+        </div>
+      </div>
+      {{/each}}
+
     </div>
 
   </div>

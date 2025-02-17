@@ -26,6 +26,9 @@
 
 See Validation state [dictionary][dictionary-validation].
 
+- To render validation text as a list, use `<ul>` element inside of `<div>`.
+- To render validation text with an icon, add `<svg>` element inside of `<div>`.
+
 ```html
 <label for="checkbox-warning" class="Checkbox Checkbox--warning">
   <input type="checkbox" id="checkbox-warning" class="Checkbox__input" name="warning" />
@@ -45,6 +48,19 @@ See Validation state [dictionary][dictionary-validation].
         <li>Second validation text</li>
       </ul>
     </div>
+  </span>
+</label>
+
+<label for="checkbox-warning" class="Checkbox Checkbox--warning">
+  <input type="checkbox" id="checkbox-warning" class="Checkbox__input" name="warning" />
+  <span class="Checkbox__text">
+    <span class="Checkbox__label">Checkbox Label</span>
+    <span class="Checkbox__validationText">
+      <svg width="20" height="20" aria-hidden="true">
+        <use xlink:href="/assets/icons/svg/sprite.svg#warning" />
+      </svg>
+      Warning validation text with icon
+    </span>
   </span>
 </label>
 ```
