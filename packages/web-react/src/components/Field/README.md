@@ -18,10 +18,12 @@ Advanced example:
 
 ```jsx
 <ValidationText
+  hasValidationIcon
   id="component__validationText"
   className="Component__validationText"
   elementType="span"
   validationText="Danger validation text"
+  validationState="danger"
   role="alert"
 />
 ```
@@ -32,13 +34,15 @@ When displaying text dynamically, set [`role="alert"`][aria-alert-role] on the `
 
 ### API
 
-| Name             | Type                            | Default | Required | Description                                                                                    |
-| ---------------- | ------------------------------- | ------- | -------- | ---------------------------------------------------------------------------------------------- |
-| `className`      | `string`                        | —       | ✓        | Wrapper custom class name                                                                      |
-| `elementType`    | \[`span` \| `div`]              | `div`   | ✕        | Type of element used as main wrapper (applied only for single validation text, otherwise `ul`) |
-| `id`             | `string`                        | —       | ✕        | Component id                                                                                   |
-| `role`           | `string`                        | -       | ✕        | The role attribute that describes the role of an element                                       |
-| `validationText` | \[`ReactNode` \| `ReactNode[]`] | —       | ✕        | Validation text, only visible if validationState is set                                        |
+| Name                | Type                                           | Default | Required | Description                                                                                    |
+| ------------------- | ---------------------------------------------- | ------- | -------- | ---------------------------------------------------------------------------------------------- |
+| `className`         | `string`                                       | -       | ✓        | Wrapper custom class name                                                                      |
+| `elementType`       | \[`span` \| `div`]                             | `div`   | ✕        | Type of element used as main wrapper (applied only for single validation text, otherwise `ul`) |
+| `hasValidationIcon` | `boolean`                                      | `false` | ✕        | Whether to show validation icon                                                                |
+| `id`                | `string`                                       | -       | ✕        | Component id                                                                                   |
+| `role`              | `string`                                       | -       | ✕        | The role attribute that describes the role of an element                                       |
+| `validationText`    | \[`ReactNode` \| `ReactNode[]`]                | -       | ✕        | Validation text, only visible if validationState is set                                        |
+| `validationState`   | [Validation dictionary][dictionary-validation] | -       | ✕        | Type of validation state.                                                                      |
 
 ## HelperText
 
@@ -95,6 +99,7 @@ If you need more control over the styling of a component, you can use [style pro
 and [escape hatches][readme-escape-hatches].
 
 [aria-alert-role]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role
+[dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props

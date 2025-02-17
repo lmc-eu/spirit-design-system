@@ -1,6 +1,12 @@
+// Because there is no `dist` directory during the CI run
+/* eslint-disable import/no-extraneous-dependencies, import/extensions, import/no-unresolved */
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment, import/extensions, import/no-unresolved
+// @ts-ignore: No declaration file -- @see https://jira.almacareer.tech/browse/DS-561
+import icons from '@lmc-eu/spirit-icons/icons';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import DocsSection from '../../../../docs/DocsSections';
+import { IconsProvider } from '../../../context';
 import FieldGroupDefault from './FieldGroupDefault';
 import FieldGroupDisabled from './FieldGroupDisabled';
 import FieldGroupFluid from './FieldGroupFluid';
@@ -28,9 +34,11 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <DocsSection title="Disabled">
       <FieldGroupDisabled />
     </DocsSection>
-    <DocsSection title="Validation State with Validation Text">
-      <FieldGroupValidationState />
-    </DocsSection>
+    <IconsProvider value={icons}>
+      <DocsSection title="Validation State with Validation Text">
+        <FieldGroupValidationState />
+      </DocsSection>
+    </IconsProvider>
     <DocsSection title="Fluid">
       <FieldGroupFluid />
     </DocsSection>

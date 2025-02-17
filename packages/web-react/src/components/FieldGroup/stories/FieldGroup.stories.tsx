@@ -91,6 +91,12 @@ const meta: Meta<typeof FieldGroup> = {
       description:
         'The validation text. Only visible if validationState is set. Use a string `"foo"` for single validation text or an array for multiple validation texts `["foo", "bar"]`.',
     },
+    hasValidationIcon: {
+      control: 'boolean',
+      table: {
+        defaultValue: { summary: 'false' },
+      },
+    },
   },
   args: {
     children: 'boxes',

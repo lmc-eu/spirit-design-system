@@ -22,6 +22,7 @@ export interface UseSelectStyleReturn {
 }
 
 export const useSelectStyleProps = ({
+  hasValidationIcon,
   isDisabled,
   isFluid,
   isLabelHidden,
@@ -39,6 +40,7 @@ export const useSelectStyleProps = ({
   const selectInputClass = `${selectRootClass}__input`;
   const selectIconClass = `${selectRootClass}__icon`;
   const selectValidationTextClass = `${selectRootClass}__validationText`;
+  const selectValidationIconTextClass = `${selectValidationTextClass}--hasIcon`;
   const selectHelperTextClass = `${selectRootClass}__helperText`;
 
   return {
@@ -55,7 +57,9 @@ export const useSelectStyleProps = ({
       container: selectContainerClass,
       input: selectInputClass,
       icon: selectIconClass,
-      validationText: selectValidationTextClass,
+      validationText: classNames(selectValidationTextClass, {
+        [selectValidationIconTextClass]: hasValidationIcon,
+      }),
       helperText: selectHelperTextClass,
     },
   };

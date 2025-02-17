@@ -18,6 +18,7 @@ export interface UseFieldGroupStyleReturn {
 }
 
 export const useFieldGroupStyleProps = ({
+  hasValidationIcon,
   isFluid,
   isRequired,
   validationState,
@@ -29,6 +30,7 @@ export const useFieldGroupStyleProps = ({
   const fieldGroupLabelRequiredClass = `${fieldGroupLabelClass}--required`;
   const fieldGroupFieldsClass = `${fieldGroupRootClass}__fields`;
   const fieldGroupValidationTextClass = `${fieldGroupRootClass}__validationText`;
+  const fieldGroupValidationIconTextClass = `${fieldGroupValidationTextClass}--hasIcon`;
   const fieldGroupHelperTextClass = `${fieldGroupRootClass}__helperText`;
 
   return {
@@ -41,7 +43,9 @@ export const useFieldGroupStyleProps = ({
         [fieldGroupLabelRequiredClass]: isRequired,
       }),
       fields: fieldGroupFieldsClass,
-      validationText: fieldGroupValidationTextClass,
+      validationText: classNames(fieldGroupValidationTextClass, {
+        [fieldGroupValidationIconTextClass]: hasValidationIcon,
+      }),
       helperText: fieldGroupHelperTextClass,
     },
   };

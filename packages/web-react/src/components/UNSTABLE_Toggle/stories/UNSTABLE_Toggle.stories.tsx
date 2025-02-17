@@ -21,6 +21,12 @@ const meta: Meta<typeof UNSTABLE_Toggle> = {
         defaultValue: { summary: undefined },
       },
     },
+    hasValidationIcon: {
+      control: 'boolean',
+      table: {
+        defaultValue: { summary: 'false' },
+      },
+    },
   },
   args: {
     hasIndicators: false,

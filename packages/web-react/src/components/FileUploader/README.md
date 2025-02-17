@@ -92,6 +92,10 @@ const { fileQueue, addToQueue, clearQueue, onDismiss } = useFileQueue();
   <FileUploaderList />
 </FileUploader>
 <FileUploader>
+  <FileUploaderInput hasValidationIcon isRequired validationState="success" validationText="Validation message" />
+  <FileUploaderList />
+</FileUploader>
+<FileUploader>
   <FileUploaderInput isRequired validationState="success" validationText={["Validation message", "Second validation message"]} />
   <FileUploaderList />
 </FileUploader>
@@ -370,6 +374,7 @@ and [escape hatches][readme-escape-hatches].
 | -------------------- | ------------------------------------ | -------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `accept`             | `string`                             | —        | ✕        | The accept attribute takes as its value a comma-separated list of one or more file types, or unique file type specifiers, describing which file types to allow. |
 | `dropZoneRef`        | `MutableRefObject<HTMLDivElement>`   | —        | ✕        | Drop zone element reference                                                                                                                                     |
+| `hasValidationIcon`  | `boolean`                            | `false`  | ✕        | Whether to show validation icon                                                                                                                                 |
 | `helperText`         | `ReactNode`                          | —        | ✕        | Custom helper text                                                                                                                                              |
 | `iconName`           | `string`                             | `upload` | ✕        | Icon used in the drop zone                                                                                                                                      |
 | `id`                 | `string`                             | —        | ✓        | FileUploaderInput id                                                                                                                                            |

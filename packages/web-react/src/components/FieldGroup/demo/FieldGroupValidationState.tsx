@@ -34,6 +34,17 @@ const FieldGroupValidationState = () => (
       <DocsBox>Item</DocsBox>
       <DocsBox>Item</DocsBox>
     </FieldGroup>
+    <FieldGroup
+      id="field-group-validation-warning-icon"
+      label="Label"
+      validationState="warning"
+      validationText="Validation text with icon"
+      hasValidationIcon
+    >
+      <DocsBox>Item</DocsBox>
+      <DocsBox>Item</DocsBox>
+      <DocsBox>Item</DocsBox>
+    </FieldGroup>
   </>
 );
 

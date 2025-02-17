@@ -28,6 +28,16 @@ const ToggleValidation = () => (
       name="default"
       isChecked
     />
+    <UNSTABLE_Toggle
+      id="toggle-warning-helper-icon-text"
+      label="Toggle Label"
+      helperText="Helper text"
+      validationText="Validation text with icon"
+      validationState="warning"
+      hasValidationIcon
+      name="default"
+      isChecked
+    />
   </>
 );
 

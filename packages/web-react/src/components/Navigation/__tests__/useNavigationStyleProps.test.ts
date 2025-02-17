@@ -29,7 +29,7 @@ describe('useNavigationStyleProps', () => {
   });
 
   it.each(navigationActionVariantDataProvider)(
-    `should return disabled class for $description`,
+    'should return disabled class for $description',
     ({ variant, className }) => {
       const props: SpiritNavigationActionProps = { isDisabled: true, variant };
       const { result } = renderHook(() => useNavigationStyleProps(props));

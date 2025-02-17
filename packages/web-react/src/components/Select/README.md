@@ -18,6 +18,7 @@ Advanced example usage:
 
 ```jsx
 <Select
+  hasValidationIcon
   id="select-advanced"
   name="selectAdvanced"
   validationState="danger"
@@ -34,20 +35,21 @@ Advanced example usage:
 
 ## API
 
-| Name              | Type                                           | Default | Required | Description                     |
-| ----------------- | ---------------------------------------------- | ------- | -------- | ------------------------------- |
-| `children`        | `ReactNode`                                    | `null`  | ✕        | Content of the Select           |
-| `helperText`      | `string`                                       | —       | ✕        | Custom helper text              |
-| `id`              | `string`                                       | —       | ✓        | Select and label identification |
-| `isDisabled`      | `bool`                                         | —       | ✕        | Whether is field disabled       |
-| `isFluid`         | `bool`                                         | —       | ✕        | Whether is field is fluid       |
-| `isLabelHidden`   | `bool`                                         | —       | ✕        | Whether is label hidden         |
-| `isRequired`      | `bool`                                         | —       | ✕        | Whether is field required       |
-| `label`           | `ReactNode`                                    | —       | ✕        | Label text                      |
-| `name`            | `string`                                       | —       | ✕        | Select name                     |
-| `ref`             | `ForwardedRef<HTMLSelectElement>`              | —       | ✕        | Select element reference        |
-| `validationState` | [Validation dictionary][dictionary-validation] | —       | ✕        | Type of validation state        |
-| `validationText`  | \[`ReactNode` \| `ReactNode[]`]                | —       | ✕        | Validation text                 |
+| Name                | Type                                           | Default | Required | Description                     |
+| ------------------- | ---------------------------------------------- | ------- | -------- | ------------------------------- |
+| `children`          | `ReactNode`                                    | `null`  | ✕        | Content of the Select           |
+| `hasValidationIcon` | `boolean`                                      | `false` | ✕        | Whether to show validation icon |
+| `helperText`        | `string`                                       | —       | ✕        | Custom helper text              |
+| `id`                | `string`                                       | —       | ✓        | Select and label identification |
+| `isDisabled`        | `bool`                                         | —       | ✕        | Whether is field disabled       |
+| `isFluid`           | `bool`                                         | —       | ✕        | Whether is field is fluid       |
+| `isLabelHidden`     | `bool`                                         | —       | ✕        | Whether is label hidden         |
+| `isRequired`        | `bool`                                         | —       | ✕        | Whether is field required       |
+| `label`             | `ReactNode`                                    | —       | ✕        | Label text                      |
+| `name`              | `string`                                       | —       | ✕        | Select name                     |
+| `ref`               | `ForwardedRef<HTMLSelectElement>`              | —       | ✕        | Select element reference        |
+| `validationState`   | [Validation dictionary][dictionary-validation] | —       | ✕        | Type of validation state        |
+| `validationText`    | \[`ReactNode` \| `ReactNode[]`]                | —       | ✕        | Validation text                 |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

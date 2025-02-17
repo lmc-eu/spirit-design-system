@@ -5,6 +5,7 @@ import { FileMetadata, FileUploaderQueueLimitBehaviorType, Validation } from '..
 import { FileUploaderCropCSS, IMAGE_DIMENSION } from './constants';
 
 export interface FileUploaderStyleProps extends Validation {
+  hasValidationIcon?: boolean;
   imageObjectFit?: 'contain' | 'cover';
   isDisabled?: boolean;
   isDisabledByQueueLimitBehavior?: boolean;
@@ -87,6 +88,7 @@ export const useFileUploaderStyleProps = (props?: FileUploaderStyleProps): FileU
   const fileUploaderInputLinkClass = `${fileUploaderInputClass}__link`;
   const fileUploaderInputLinkUtilityClasses = ['link-primary', 'link-underlined'];
   const fileUploaderInputValidationTextClass = `${fileUploaderInputClass}__validationText`;
+  const fileUploaderInputValidationIconTextClass = `${fileUploaderInputValidationTextClass}--hasIcon`;
   const fileUploaderListClass = `${fileUploaderClass}List`;
   const fileUploaderAttachmentClass = `${fileUploaderClass}Attachment`;
   const fileUploaderAttachmentNameClass = `${fileUploaderAttachmentClass}__name`;
@@ -152,7 +154,9 @@ export const useFileUploaderStyleProps = (props?: FileUploaderStyleProps): FileU
         dropLabel: fileUploaderInputDropLabelClass,
         helper: fileUploaderInputHelperClass,
         link: classNames(fileUploaderInputLinkClass, ...fileUploaderInputLinkUtilityClasses),
-        validationText: fileUploaderInputValidationTextClass,
+        validationText: classNames(fileUploaderInputValidationTextClass, {
+          [fileUploaderInputValidationIconTextClass]: props?.hasValidationIcon,
+        }),
         dropZone: {
           root: fileUploaderInputDropZoneClass,
           label: fileUploaderInputDropZoneLabelClass,

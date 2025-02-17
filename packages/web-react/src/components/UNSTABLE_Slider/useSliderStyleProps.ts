@@ -16,7 +16,7 @@ export interface SliderStyles {
 }
 
 export function useSliderStyleProps(props: UseSliderStyleProps): SliderStyles {
-  const { isDisabled, isFluid, isLabelHidden, validationState, ...restProps } = props;
+  const { hasValidationIcon, isDisabled, isFluid, isLabelHidden, validationState, ...restProps } = props;
 
   const sliderClass = useClassNamePrefix('UNSTABLE_Slider');
   const rootClass = classNames(sliderClass);
@@ -28,6 +28,7 @@ export function useSliderStyleProps(props: UseSliderStyleProps): SliderStyles {
   const inputClass = `${sliderClass}__input`;
   const helperTextClass = `${sliderClass}__helperText`;
   const validationTextClass = `${sliderClass}__validationText`;
+  const validationIconTextClass = `${validationTextClass}--hasIcon`;
 
   return {
     classProps: {
@@ -41,7 +42,9 @@ export function useSliderStyleProps(props: UseSliderStyleProps): SliderStyles {
       }),
       input: inputClass,
       helperText: helperTextClass,
-      validationText: validationTextClass,
+      validationText: classNames(validationTextClass, {
+        [validationIconTextClass]: hasValidationIcon,
+      }),
     },
     props: restProps,
   };

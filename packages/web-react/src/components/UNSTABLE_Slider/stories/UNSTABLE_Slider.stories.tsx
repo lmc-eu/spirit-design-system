@@ -95,6 +95,12 @@ const meta: Meta<typeof UNSTABLE_Slider> = {
         defaultValue: { summary: 'undefined' },
       },
     },
+    hasValidationIcon: {
+      control: 'boolean',
+      table: {
+        defaultValue: { summary: 'false' },
+      },
+    },
     value: {
       control: 'number',
       description: 'The value of the slider',

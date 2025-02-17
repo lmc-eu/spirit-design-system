@@ -1,11 +1,14 @@
 'use client';
 
 import React, { ElementType, useEffect } from 'react';
+import { Icon } from '../Icon';
 import { ValidationTextProps } from './types';
+import { useValidationIcon } from './useValidationIcon';
 
 const defaultProps: Partial<ValidationTextProps> = {
   className: undefined,
   elementType: 'div',
+  hasIcon: false,
   id: undefined,
   registerAria: undefined,
   role: undefined,
@@ -17,10 +20,13 @@ const ValidationText = <T extends ElementType = 'div'>(props: ValidationTextProp
     className,
     elementType: ElementTag = defaultProps.elementType as ElementType,
     id,
+    hasIcon,
     registerAria,
     role,
     validationText,
+    validationState,
   } = propsWithDefaults;
+  const validationIconName = useValidationIcon({ validationState });
 
   useEffect(() => {
     registerAria?.({ add: id });
@@ -30,23 +36,25 @@ const ValidationText = <T extends ElementType = 'div'>(props: ValidationTextProp
     };
   }, [id, registerAria]);
 
-  if (validationText) {
-    return Array.isArray(validationText) ? (
-      <ElementTag className={className} id={id} role={role}>
+  if (!validationText) return null;
+
+  return (
+    <ElementTag className={className} id={id} role={role}>
+      {hasIcon && <Icon name={validationIconName} boxSize="20" />}
+      {Array.isArray(validationText) ? (
         <ul>
           {validationText.map((item) => (
             <li key={`validationText_${item}`}>{item}</li>
           ))}
         </ul>
-      </ElementTag>
-    ) : (
-      <ElementTag className={className} id={id} role={role}>
-        {validationText}
-      </ElementTag>
-    );
-  }
-
-  return null;
+      ) : (
+        <>
+          {hasIcon && <ElementTag>{validationText}</ElementTag>}
+          {!hasIcon && validationText}
+        </>
+      )}
+    </ElementTag>
+  );
 };
 
 export default ValidationText;

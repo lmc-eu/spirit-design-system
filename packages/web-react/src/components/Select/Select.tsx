@@ -15,6 +15,7 @@ const _Select = (props: SpiritSelectProps, ref: ForwardedRef<HTMLSelectElement>)
   const {
     'aria-describedby': ariaDescribedBy = '',
     children,
+    hasValidationIcon,
     helperText,
     id,
     isDisabled,
@@ -26,8 +27,14 @@ const _Select = (props: SpiritSelectProps, ref: ForwardedRef<HTMLSelectElement>)
     validationText,
     ...restProps
   } = props;
-
-  const { classProps } = useSelectStyleProps({ isDisabled, isFluid, isRequired, isLabelHidden, validationState });
+  const { classProps } = useSelectStyleProps({
+    hasValidationIcon,
+    isDisabled,
+    isFluid,
+    isRequired,
+    isLabelHidden,
+    validationState,
+  });
   const { styleProps, props: transferProps } = useStyleProps(restProps);
   const [ids, register] = useAriaIds(ariaDescribedBy);
   const validationTextRole = useValidationTextRole({
@@ -65,8 +72,10 @@ const _Select = (props: SpiritSelectProps, ref: ForwardedRef<HTMLSelectElement>)
       {validationState && (
         <ValidationText
           className={classProps.validationText}
+          hasIcon={hasValidationIcon}
           id={`${id}__validationText`}
           validationText={validationText}
+          validationState={validationState}
           registerAria={register}
           role={validationTextRole}
         />

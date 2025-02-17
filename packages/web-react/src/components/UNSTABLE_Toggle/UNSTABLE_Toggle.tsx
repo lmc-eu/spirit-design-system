@@ -27,6 +27,7 @@ const _UNSTABLE_Toggle = (props: SpiritToggleProps, ref: ForwardedRef<HTMLInputE
     ...restProps
   } = modifiedProps;
   const { styleProps, props: otherProps } = useStyleProps(restProps);
+  const { hasValidationIcon } = props;
   const [ids, register] = useAriaIds(ariaDescribedBy);
   const [checked, setChecked] = useState(isChecked);
   const validationTextRole = useValidationTextRole({
@@ -59,8 +60,10 @@ const _UNSTABLE_Toggle = (props: SpiritToggleProps, ref: ForwardedRef<HTMLInputE
         {validationState && (
           <ValidationText
             className={classProps.validationText}
+            hasIcon={hasValidationIcon}
             id={`${id}__validationText`}
             validationText={validationText}
+            validationState={validationState}
             registerAria={register}
             role={validationTextRole}
           />

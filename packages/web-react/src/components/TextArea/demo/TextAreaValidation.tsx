@@ -43,6 +43,19 @@ const TextAreaValidation = () => (
       placeholder="Placeholder"
       value="Filled"
     />
+
+    <TextArea
+      id="textarea-danger-icon-helper"
+      isRequired
+      label="Label"
+      helperText="This is helper text"
+      validationText="Danger validation text with icon"
+      validationState="danger"
+      hasValidationIcon
+      name="textareaDangerHelper"
+      placeholder="Placeholder"
+      value="Filled"
+    />
   </>
 );
 
