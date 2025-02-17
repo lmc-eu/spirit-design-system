@@ -37,7 +37,7 @@
     "test:e2e": "PW_EXPERIMENTAL_TS_ESM=1 yarn playwright test",
     "test:e2e:update": "yarn test:e2e --update-snapshots",
     "test:e2e:report": "yarn test:e2e -- show-report",
-    "test:e2e:ui": "yarn e2e --ui",
+    "test:e2e:ui": "PWDEBUG=1 yarn test:e2e --ui",
     "types": "yarn packages:types",
     "lint": "npm-run-all --parallel es:lint lint:markdown packages:lint",
     "lint:fix": "npm-run-all --parallel es:lint:fix packages:lint:fix",

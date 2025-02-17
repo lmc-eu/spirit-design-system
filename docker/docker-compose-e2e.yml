@@ -1,6 +1,7 @@
 services:
   e2e:
-    image: mcr.microsoft.com/playwright:v${PLAYWRIGHT_VERSION}-jammy
+    init: true
+    image: mcr.microsoft.com/playwright:v1.49.1-noble
     working_dir: /work/
     volumes:
       - ${PWD}:/work/
@@ -8,4 +9,9 @@ services:
     network_mode: host
     environment:
       - NODE_OPTIONS="--experimental-modules"
-    entrypoint: sh -c "corepack install && corepack enable && yarn test:e2e${E2E_FLAG}"
+    command: >
+      bash -c "set -x &&
+      corepack enable && corepack install &&
+      echo 'Starting xvfb-run' &&
+      xvfb-run --auto-servernum --server-args='-screen 0 1920x1080x24' bash -c 'echo Xvfb started && PWDEBUG=1 yarn playwright test --ui-host=0.0.0.0 --debug' &&
+      echo 'Finished xvfb-run'"

@@ -46,5 +46,6 @@ fi
 
 export PLAYWRIGHT_VERSION
 export E2E_FLAG
+export XVFB
 
 docker compose --file "${project_root}/docker/docker-compose-e2e.yml" run --rm e2e
