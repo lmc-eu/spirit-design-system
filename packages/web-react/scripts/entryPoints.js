@@ -57,7 +57,6 @@ const entryPoints = [
   { dirs: ['components', 'TextFieldBase'] },
   { dirs: ['components', 'Toast'] },
   { dirs: ['components', 'Tooltip'] },
-  { dirs: ['components', 'UNSTABLE_ActionLayout'] },
   { dirs: ['components', 'UNSTABLE_EmptyState'] },
   { dirs: ['components', 'UNSTABLE_Header'] },
   { dirs: ['components', 'UNSTABLE_Slider'] },
