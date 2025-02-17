@@ -17,6 +17,7 @@ import TextFieldInputWidth from './TextFieldInputWidth';
 import TextFieldPasswordToggle from './TextFieldPasswordToggle';
 import TextFieldRequired from './TextFieldRequired';
 import TextFieldValidation from './TextFieldValidation';
+import TextFieldValidationWithIcon from './TextFieldValidationWithIcon';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -38,6 +39,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       </DocsSection>
       <DocsSection title="Validation State with Validation Text">
         <TextFieldValidation />
+      </DocsSection>
+      <DocsSection title="Validation Text with Icon">
+        <TextFieldValidationWithIcon />
       </DocsSection>
       <DocsSection title="Fluid">
         <TextFieldFluid />

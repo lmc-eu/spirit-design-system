@@ -12,6 +12,7 @@ const meta: Meta<typeof TextArea> = {
     docs: {
       page: () => <Markdown>{ReadMe}</Markdown>,
     },
+    controls: { exclude: ['hasValidationStateIcon'] },
   },
   argTypes: {
     autoComplete: {
@@ -86,6 +87,12 @@ const meta: Meta<typeof TextArea> = {
       description:
         'The validation text. Only visible if validationState is set. Use a string `"foo"` for single validation text or an array for multiple validation texts `["foo", "bar"]`.',
     },
+    hasValidationIcon: {
+      control: 'boolean',
+      table: {
+        defaultValue: { summary: 'false' },
+      },
+    },
     value: {
       control: 'text',
     },
@@ -93,6 +100,7 @@ const meta: Meta<typeof TextArea> = {
   args: {
     autoComplete: 'off',
     autoResizingMaxHeight: 400,
+    hasValidationIcon: false,
     helperText: 'Helper text',
     id: 'TextArea',
     isAutoResizing: false,

@@ -15,6 +15,7 @@ import SelectPlaceholder from './SelectPlaceholder';
 import SelectRequired from './SelectRequired';
 import SelectSimple from './SelectSimple';
 import SelectValidation from './SelectValidation';
+import SelectValidationWithIcon from './SelectValidationWithIcon';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -39,6 +40,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       </DocsSection>
       <DocsSection title="Validation State with Validation Text">
         <SelectValidation />
+      </DocsSection>
+      <DocsSection title="Validation Text with Icon">
+        <SelectValidationWithIcon />
       </DocsSection>
       <DocsSection title="Fluid">
         <SelectFluid />

@@ -12,6 +12,8 @@ export interface Validation {
    * Whether user input is required on the input before form submission.
    */
   isRequired?: boolean;
+  /** Whether the validation state icon should be displayed. */
+  hasValidationIcon?: boolean;
 }
 
 export interface TextInputBase {
@@ -43,6 +45,8 @@ export interface ValidationTextProp {
   role?: AriaRole;
   /** The validation text to display. */
   validationText?: ValidationTextType;
+  /** Whether the validation state icon should be displayed, and specify which type. */
+  hasValidationStateIcon?: ValidationState;
 }
 
 export interface RequiredProps {

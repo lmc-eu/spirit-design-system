@@ -7,6 +7,7 @@ export * from './useDeprecationMessage';
 export * from './useDirectionClass';
 export * from './useDragAndDrop';
 export * from './useIcon';
+export * from './useIconName';
 export * from './useIsomorphicLayoutEffect';
 export * from './useLastActiveFocus';
 export * from './useScrollControl';

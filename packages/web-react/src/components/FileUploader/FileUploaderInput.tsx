@@ -17,6 +17,7 @@ const FileUploaderInput = (props: SpiritFileUploaderInputProps) => {
     accept,
     'aria-describedby': ariaDescribedBy = '',
     dropZoneRef,
+    hasValidationIcon,
     helperText,
     iconName = 'upload',
     id,
@@ -54,6 +55,7 @@ const FileUploaderInput = (props: SpiritFileUploaderInputProps) => {
     queueLimitBehavior,
   });
   const { classProps } = useFileUploaderStyleProps({
+    hasValidationIcon,
     isDisabled,
     isDisabledByQueueLimitBehavior,
     isDragAndDropSupported,
@@ -118,6 +120,7 @@ const FileUploaderInput = (props: SpiritFileUploaderInputProps) => {
         <ValidationText
           className={classProps.input.validationText}
           elementType="span"
+          {...(hasValidationIcon && { hasValidationStateIcon: validationState })}
           id={`${id}__validationText`}
           validationText={validationText}
           registerAria={register}

@@ -14,6 +14,7 @@ Advanced example usage:
 
 ```jsx
 <TextArea
+  hasValidationIcon
   helperText="custom helper text"
   id="text-area-advanced"
   isRequired
@@ -40,6 +41,7 @@ Example with Auto-Height Adjustment
 | ----------------------- | ---------------------------------------------- | ------- | -------- | -------------------------------------------------------------------- |
 | `autoComplete`          | `string`                                       | -       | ✕        | [Automated assistance in filling][autocomplete-attr]                 |
 | `autoResizingMaxHeight` | `number`                                       | `400`   | ✕        | Maximum field height with automatic height control                   |
+| `hasValidationIcon`     | `bool`                                         | `false` | ✕        | Whether to show validation icon                                      |
 | `helperText`            | `string`                                       | —       | ✕        | Custom helper text                                                   |
 | `id`                    | `string`                                       | —       | ✓        | Textarea and label identification                                    |
 | `isAutoResizing`        | `bool`                                         | —       | ✕        | Whether is field auto resizing which adjusts its height while typing |
