@@ -254,9 +254,39 @@
       </label>
 
     </div>
-
   </div>
 
+</section>
+
+<section class="UNSTABLE_Section">
+  <div class="Container">
+    <h2 class="docs-Heading">Validation Text with Icon</h2>
+    <div class="docs-Stack docs-Stack--start">
+
+      {{setVar "states" "success" "warning" "danger" }}
+      {{#each @root.states as |state|}}
+
+      <label for="toggle-{{state}}-validation-icon" class="UNSTABLE_Toggle UNSTABLE_Toggle--{{state}}">
+        <span class="UNSTABLE_Toggle__text">
+          <span class="UNSTABLE_Toggle__label">Toggle Label</span>
+          <span class="UNSTABLE_Toggle__validationText" id="toggle-{{state}}-validation-textIcon">
+            <svg width="20" height="20" aria-hidden="true">
+            {{#if (eq state "success")}}
+            <use xlink:href="/assets/icons/svg/sprite.svg#check-plain" />
+            {{else}}
+            <use xlink:href="/assets/icons/svg/sprite.svg#{{state}}" />
+            {{/if}}
+          </svg>
+            <span>This is {{state}} validation text. Long validation text to show how it wraps.</span>
+          </span>
+        </span>
+        <input type="checkbox" id="toggle-{{state}}-validation-icon" class="UNSTABLE_Toggle__input" name="default" aria-describedby="toggle-{{state}}-validation-text-icon" checked />
+      </label>
+
+      {{/each}}
+
+    </div>
+  </div>
 </section>
 
 {{/web/layout/default }}
