@@ -12,7 +12,7 @@ const SkeletonHeadings = () => {
       {sizes.map((size) => (
         <DocsSection title={`Size ${size}`} stackAlignment="stretch" key={size} container="heading-only">
           <Container size={size}>
-            <DocsBox>Container--{size}</DocsBox>
+            <DocsBox>Container of {size}</DocsBox>
           </Container>
         </DocsSection>
       ))}
