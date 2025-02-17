@@ -41,6 +41,15 @@
     & > ul {
         @include reset.list();
     }
+
+    & > svg {
+        flex-shrink: 0;
+    }
+
+    &:has(> svg:first-child:not(:only-child)) {
+        display: flex;
+        column-gap: form-fields-theme.$validation-text-icon-gap;
+    }
 }
 
 @mixin validation-text-disabled() {
