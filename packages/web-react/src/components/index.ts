@@ -47,7 +47,6 @@ export * from './TextField';
 export * from './TextFieldBase';
 export * from './Toast';
 export * from './Tooltip';
-export * from './UNSTABLE_ActionLayout';
 export * from './UNSTABLE_Header';
 export * from './UNSTABLE_EmptyState';
 export * from './UNSTABLE_Slider';
