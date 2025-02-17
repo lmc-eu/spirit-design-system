@@ -19,6 +19,7 @@ const _UnstableSlider = (props: SpiritSliderProps, ref: ForwardedRef<HTMLInputEl
   const propsWithDefaults = { ...defaultProps, ...props };
   const {
     'aria-describedby': ariaDescribedBy,
+    hasValidationIcon,
     helperText,
     id,
     isDisabled,
@@ -32,7 +33,12 @@ const _UnstableSlider = (props: SpiritSliderProps, ref: ForwardedRef<HTMLInputEl
     ...restProps
   } = propsWithDefaults;
 
-  const { classProps, props: modifiedProps } = useSliderStyleProps({ ...restProps, isDisabled, validationState });
+  const { classProps, props: modifiedProps } = useSliderStyleProps({
+    ...restProps,
+    hasValidationIcon,
+    isDisabled,
+    validationState,
+  });
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
   const [ids, register] = useAriaIds(ariaDescribedBy);
   const validationTextRole = useValidationTextRole({
@@ -79,6 +85,7 @@ const _UnstableSlider = (props: SpiritSliderProps, ref: ForwardedRef<HTMLInputEl
       {validationState && (
         <ValidationText
           className={classProps.validationText}
+          {...(hasValidationIcon && { hasValidationStateIcon: validationState })}
           id={`${id}__validationText`}
           registerAria={register}
           validationText={validationText}

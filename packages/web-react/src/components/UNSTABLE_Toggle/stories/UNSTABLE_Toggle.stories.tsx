@@ -12,6 +12,7 @@ const meta: Meta<typeof UNSTABLE_Toggle> = {
     docs: {
       page: () => <Markdown>{ReadMe}</Markdown>,
     },
+    controls: { exclude: ['hasValidationStateIcon'] },
   },
   argTypes: {
     validationState: {
@@ -21,9 +22,16 @@ const meta: Meta<typeof UNSTABLE_Toggle> = {
         defaultValue: { summary: undefined },
       },
     },
+    hasValidationIcon: {
+      control: 'boolean',
+      table: {
+        defaultValue: { summary: 'false' },
+      },
+    },
   },
   args: {
     hasIndicators: false,
+    hasValidationIcon: false,
     helperText: '',
     id: 'toggle',
     isRequired: false,

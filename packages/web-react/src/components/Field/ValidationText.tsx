@@ -1,7 +1,9 @@
 'use client';
 
 import React, { ElementType, useEffect } from 'react';
+import { Icon } from '../Icon';
 import { ValidationTextProps } from './types';
+import { useValidationIcon } from './useValidationIcon';
 
 const defaultProps: Partial<ValidationTextProps> = {
   className: undefined,
@@ -17,10 +19,12 @@ const ValidationText = <T extends ElementType = 'div'>(props: ValidationTextProp
     className,
     elementType: ElementTag = defaultProps.elementType as ElementType,
     id,
+    hasValidationStateIcon,
     registerAria,
     role,
     validationText,
   } = propsWithDefaults;
+  const validationIconName = useValidationIcon({ hasValidationStateIcon });
 
   useEffect(() => {
     registerAria?.({ add: id });
@@ -30,23 +34,32 @@ const ValidationText = <T extends ElementType = 'div'>(props: ValidationTextProp
     };
   }, [id, registerAria]);
 
-  if (validationText) {
-    return Array.isArray(validationText) ? (
-      <ElementTag className={className} id={id} role={role}>
+  if (!validationText) {
+    return null;
+  }
+
+  const ValidationTextWrapper = ElementTag === 'div' ? 'div' : 'span';
+
+  const nonArrayValidationText = hasValidationStateIcon ? (
+    <ValidationTextWrapper>{validationText}</ValidationTextWrapper>
+  ) : (
+    validationText
+  );
+
+  return (
+    <ElementTag className={className} id={id} role={role}>
+      {hasValidationStateIcon && <Icon name={validationIconName} boxSize="20" />}
+      {Array.isArray(validationText) ? (
         <ul>
           {validationText.map((item) => (
             <li key={`validationText_${item}`}>{item}</li>
           ))}
         </ul>
-      </ElementTag>
-    ) : (
-      <ElementTag className={className} id={id} role={role}>
-        {validationText}
-      </ElementTag>
-    );
-  }
-
-  return null;
+      ) : (
+        nonArrayValidationText
+      )}
+    </ElementTag>
+  );
 };
 
 export default ValidationText;

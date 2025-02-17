@@ -19,6 +19,7 @@ const TextFieldBaseInputWithPasswordToggle = forwardRef(
 const _TextFieldBase = (props: SpiritTextFieldBaseProps, ref: ForwardedRef<HTMLInputElement | HTMLTextAreaElement>) => {
   const {
     'aria-describedby': ariaDescribedBy = '',
+    hasValidationIcon,
     helperText,
     id,
     label,
@@ -26,7 +27,13 @@ const _TextFieldBase = (props: SpiritTextFieldBaseProps, ref: ForwardedRef<HTMLI
     validationText,
     ...restProps
   } = props;
-  const { classProps, props: modifiedProps } = useTextFieldBaseStyleProps({ id, label, validationState, ...restProps });
+  const { classProps, props: modifiedProps } = useTextFieldBaseStyleProps({
+    hasValidationIcon,
+    id,
+    label,
+    validationState,
+    ...restProps,
+  });
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
   const [ids, register] = useAriaIds(ariaDescribedBy);
   const validationTextRole = useValidationTextRole({
@@ -50,6 +57,7 @@ const _TextFieldBase = (props: SpiritTextFieldBaseProps, ref: ForwardedRef<HTMLI
         <ValidationText
           className={classProps.validationText}
           elementType="span"
+          {...(hasValidationIcon && { hasValidationStateIcon: validationState })}
           id={`${id}__validationText`}
           validationText={validationText}
           registerAria={register}

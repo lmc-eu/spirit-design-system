@@ -18,6 +18,7 @@ import FileUploaderInputDisabled from './FileUploaderInputDisabled';
 import FileUploaderInputMultiple from './FileUploaderInputMultiple';
 import FileUploaderInputMultipleWithFileQueueBehaviorControl from './FileUploaderInputMultipleWithFileQueueBehaviorControl';
 import FileUploaderInputValidationStates from './FileUploaderInputValidationStates';
+import FileUploaderInputValidationWithIcon from './FileUploaderInputValidationWithIcon';
 import FileUploaderInputWithAttachment from './FileUploaderInputWithAttachment';
 import FileUploaderMetaData from './FileUploaderMetaData';
 import FileUploaderMultipleWithValidation from './FileUploaderMultipleWithValidation';
@@ -39,6 +40,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       </DocsSection>
       <DocsSection title="Input Validation States">
         <FileUploaderInputValidationStates />
+      </DocsSection>
+      <DocsSection title="Input Validation Text with Icon">
+        <FileUploaderInputValidationWithIcon />
       </DocsSection>
       <DocsSection title="Input Disabled">
         <FileUploaderInputDisabled />

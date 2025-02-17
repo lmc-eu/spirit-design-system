@@ -12,6 +12,7 @@ const meta: Meta<typeof Select> = {
     docs: {
       page: () => <Markdown>{ReadMe}</Markdown>,
     },
+    controls: { exclude: ['hasValidationStateIcon'] },
   },
   argTypes: {
     autoComplete: {
@@ -109,11 +110,18 @@ const meta: Meta<typeof Select> = {
       description:
         'The validation text. Only visible if validationState is set. Use a string `"foo"` for single validation text or an array for multiple validation texts `["foo", "bar"]`.',
     },
+    hasValidationIcon: {
+      control: 'boolean',
+      table: {
+        defaultValue: { summary: 'false' },
+      },
+    },
     value: {
       control: 'text',
     },
   },
   args: {
+    hasValidationIcon: false,
     autoComplete: 'off',
     children: 'placeholder & disabled',
     helperText: 'Helper text',

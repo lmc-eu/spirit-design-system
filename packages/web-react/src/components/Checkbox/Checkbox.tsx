@@ -25,6 +25,7 @@ const _Checkbox = (props: SpiritCheckboxProps, ref: ForwardedRef<HTMLInputElemen
     value,
     ...restProps
   } = modifiedProps;
+  const { hasValidationIcon } = props;
   const { styleProps, props: otherProps } = useStyleProps(restProps);
   const [ids, register] = useAriaIds(ariaDescribedBy);
   const validationTextRole = useValidationTextRole({
@@ -66,6 +67,7 @@ const _Checkbox = (props: SpiritCheckboxProps, ref: ForwardedRef<HTMLInputElemen
             className={classProps.validationText}
             elementType="span"
             id={`${id}__validationText`}
+            {...(hasValidationIcon && { hasValidationStateIcon: validationState })}
             validationText={validationText}
             registerAria={register}
             role={validationTextRole}

@@ -15,6 +15,7 @@ Advanced example usage:
 
 ```jsx
 <Checkbox
+  hasValidationIcon
   id="checkbox-advanced"
   isChecked
   isRequired
@@ -27,22 +28,23 @@ Advanced example usage:
 
 ## API
 
-| Name              | Type                                           | Default | Required | Description                                          |
-| ----------------- | ---------------------------------------------- | ------- | -------- | ---------------------------------------------------- |
-| `autoComplete`    | `string`                                       | -       | ✕        | [Automated assistance in filling][autocomplete-attr] |
-| `helperText`      | `ReactNode`                                    | —       | ✕        | Custom helper text                                   |
-| `id`              | `string`                                       | -       | ✓        | Input and label identification                       |
-| `isDisabled`      | `boolean`                                      | -       | ✕        | Whether is field disabled                            |
-| `isChecked`       | `boolean`                                      | -       | ✕        | Whether is field checked                             |
-| `isItem`          | `boolean`                                      | -       | ✕        | To render in [Item][item] mode                       |
-| `isLabelHidden`   | `boolean`                                      | -       | ✕        | Whether is label hidden                              |
-| `isRequired`      | `boolean`                                      | -       | ✕        | Whether is field required                            |
-| `label`           | `ReactNode`                                    | -       | ✕        | Label text                                           |
-| `name`            | `string`                                       | -       | ✕        | Input name                                           |
-| `ref`             | `ForwardedRef<HTMLInputElement>`               | -       | ✕        | Input element reference                              |
-| `validationState` | [Validation dictionary][dictionary-validation] | -       | ✕        | Type of validation state.                            |
-| `validationText`  | \[`ReactNode` \| `ReactNode[]`]                | -       | ✕        | Validation text                                      |
-| `value`           | `string`                                       | -       | ✕        | Input value                                          |
+| Name                | Type                                           | Default | Required | Description                                          |
+| ------------------- | ---------------------------------------------- | ------- | -------- | ---------------------------------------------------- |
+| `autoComplete`      | `string`                                       | -       | ✕        | [Automated assistance in filling][autocomplete-attr] |
+| `hasValidationIcon` | `boolean`                                      | `false` | ✕        | Whether to show validation icon                      |
+| `helperText`        | `ReactNode`                                    | —       | ✕        | Custom helper text                                   |
+| `id`                | `string`                                       | -       | ✓        | Input and label identification                       |
+| `isDisabled`        | `boolean`                                      | -       | ✕        | Whether is field disabled                            |
+| `isChecked`         | `boolean`                                      | -       | ✕        | Whether is field checked                             |
+| `isItem`            | `boolean`                                      | -       | ✕        | To render in [Item][item] mode                       |
+| `isLabelHidden`     | `boolean`                                      | -       | ✕        | Whether is label hidden                              |
+| `isRequired`        | `boolean`                                      | -       | ✕        | Whether is field required                            |
+| `label`             | `ReactNode`                                    | -       | ✕        | Label text                                           |
+| `name`              | `string`                                       | -       | ✕        | Input name                                           |
+| `ref`               | `ForwardedRef<HTMLInputElement>`               | -       | ✕        | Input element reference                              |
+| `validationState`   | [Validation dictionary][dictionary-validation] | -       | ✕        | Type of validation state.                            |
+| `validationText`    | \[`ReactNode` \| `ReactNode[]`]                | -       | ✕        | Validation text                                      |
+| `value`             | `string`                                       | -       | ✕        | Input value                                          |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
