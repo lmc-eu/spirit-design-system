@@ -115,6 +115,63 @@ On top of the API options, the components accept [additional attributes][readme-
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
+## Uncontrolled Split Button
+
+The Uncontrolled Split Button is a combination of the Button component and the Dropdown component.
+It is used when you want to have a button with additional actions in a dropdown menu.
+
+Simple variant:
+
+```jsx
+<UncontrolledSplitButton
+  id="uncontrolled-split-button-id"
+  buttonLabel="Button"
+  buttonOnClick={() => alert('Button clicked')}
+>
+  {/* Dropdown content */}
+</UncontrolledSplitButton>
+```
+
+Full example:
+
+```jsx
+<UncontrolledSplitButton
+  buttonIconName="check-plain"
+  buttonLabel="Button"
+  buttonOnClick={() => alert('Button clicked')}
+  color="secondary"
+  dropdownPlacement="bottom-start"
+  dropdownTriggerIconName="more"
+  dropdownTriggerLabel="More"
+  id="uncontrolled-split-button"
+  isDisabled={false}
+  size="large"
+>
+  {/* Dropdown content */}
+</UncontrolledSplitButton>
+```
+
+### API
+
+| Name                           | Type                                         | Default        | Required | Description                                              |
+| ------------------------------ | -------------------------------------------- | -------------- | -------- | -------------------------------------------------------- |
+| `buttonIconName`               | `string`                                     | -              | ✕ \*     | Name of the icon to be displayed in the Button           |
+| `buttonLabel`                  | `string`                                     | -              | ✓        | Label of the Button                                      |
+| `buttonOnClick`                | `function`                                   | -              | ✓        | Function to be called when the Button is clicked         |
+| `children`                     | `ReactNode`                                  | -              | ✓        | Dropdown content                                         |
+| `color`                        | \[`primary` \| `secondary` \| `tertiary` ]   | `primary`      | ✕        | Color variant                                            |
+| `dropdownPlacement`            | [Placement dictionary][dictionary-placement] | `bottom-end`   | ✕        | Placement of the Dropdown                                |
+| `dropdownTriggerIconName`      | `string`                                     | `chevron-down` | ✕        | Name of the icon to be displayed in the Dropdown Trigger |
+| `dropdownTriggerLabel`         | `string`                                     | -              | ✓        | Label of the Dropdown Trigger                            |
+| `id`                           | `string`                                     | -              | ✓        | Id of the Split Button and part of Dropdown id           |
+| `isButtonLabelHidden`          | `bool`                                       | `false`        | ✕ \*     | Whether is button label hidden                           |
+| `isDisabled`                   | `bool`                                       | `false`        | ✕        | Disables the Split Button                                |
+| `isDropdownTriggerLabelHidden` | `bool`                                       | `false`        | ✕        | Whether is dropdown trigger label hidden                 |
+| `size`                         | [Size dictionary][dictionary-size]           | `medium`       | ✕        | Size variant                                             |
+
+(\*) Conditionally required: either `buttonIconName` or `buttonLabel` must be visible. If you want only the Icon to be visible, use the `isButtonLabelHidden` prop to visually hide the `buttonLabel`, which is required for accessibility reasons.
+
+[dictionary-placement]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#placement
 [dictionary-size]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#size
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
 [readme-button]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Button/README.md
