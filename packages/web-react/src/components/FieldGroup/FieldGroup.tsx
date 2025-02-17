@@ -14,6 +14,7 @@ const FieldGroup = (props: SpiritFieldGroupProps) => {
     'aria-describedby': ariaDescribedBy = '',
     children,
     helperText,
+    hasValidationIcon,
     id,
     isDisabled,
     isFluid,
@@ -25,7 +26,7 @@ const FieldGroup = (props: SpiritFieldGroupProps) => {
     ...rest
   } = props;
 
-  const { classProps } = useFieldGroupStyleProps({ isFluid, isRequired, validationState });
+  const { classProps } = useFieldGroupStyleProps({ hasValidationIcon, isFluid, isRequired, validationState });
   const { styleProps, props: transferProps } = useStyleProps(rest);
   const [ids, register] = useAriaIds(ariaDescribedBy);
   const validationTextRole = useValidationTextRole({
@@ -57,6 +58,7 @@ const FieldGroup = (props: SpiritFieldGroupProps) => {
       {validationState && (
         <ValidationText
           className={classProps.validationText}
+          {...(hasValidationIcon && { hasValidationStateIcon: validationState })}
           id={`${id}__helperText`}
           validationText={validationText}
           registerAria={register}

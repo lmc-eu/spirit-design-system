@@ -16,6 +16,7 @@ import TextAreaHiddenLabel from './TextAreaHiddenLabel';
 import TextAreaInline from './TextAreaInline';
 import TextAreaRequired from './TextAreaRequired';
 import TextAreaValidation from './TextAreaValidation';
+import TextAreaValidationWithIcon from './TextAreaValidationWithIcon';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -37,6 +38,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       </DocsSection>
       <DocsSection title="Validation State with Validation Text">
         <TextAreaValidation />
+      </DocsSection>
+      <DocsSection title="Validation Text with Icon">
+        <TextAreaValidationWithIcon />
       </DocsSection>
       <DocsSection title="Fluid">
         <TextAreaFluid />

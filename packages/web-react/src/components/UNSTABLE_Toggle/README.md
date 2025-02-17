@@ -84,7 +84,7 @@ You can add `isDisabled` prop to disable Toggle.
 | Name              | Type                                           | Default | Required | Description                                          |
 | ----------------- | ---------------------------------------------- | ------- | -------- | ---------------------------------------------------- |
 | `autoComplete`    | `string`                                       | -       | ✕        | [Automated assistance in filling][autocomplete-attr] |
-| `hasIndicators`   | `boolean`                                      | `false` | ✕        | Whether has visual indicators                        |
+| `hasIndicators`   | `bool`                                         | `false` | ✕        | Whether has visual indicators                        |
 | `helperText`      | `string`                                       | -       | ✕        | Helper text                                          |
 | `id`              | `string`                                       | -       | ✓        | Input and label identification                       |
 | `isChecked`       | `boolean`                                      | `false` | ✕        | Whether is toggle checked                            |

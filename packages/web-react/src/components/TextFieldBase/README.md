@@ -12,6 +12,7 @@ Advanced example usage:
 
 ```jsx
 <TextFieldBase
+  hasValidationIcon
   helperText="custom helper text"
   id="text-field-base-advanced"
   isMultiline
@@ -45,6 +46,7 @@ TextFieldBase with password toggle (button to reveal the password):
 | ------------------- | ---------------------------------------------------------------------------- | ------- | -------- | ----------------------------------------------------------------------- |
 | `autoComplete`      | `string`                                                                     | —       | ✕        | [Automated assistance in filling][autocomplete-attr]                    |
 | `hasPasswordToggle` | `bool`                                                                       | —       | ✕        | If true, the `type` is set to `password` and a password toggle is shown |
+| `hasValidationIcon` | `bool`                                                                       | `false` | ✕        | Whether to show validation icon                                         |
 | `helperText`        | `string`                                                                     | —       | ✕        | Custom helper text                                                      |
 | `id`                | `string`                                                                     | —       | ✓        | Input and label identification                                          |
 | `isDisabled`        | `bool`                                                                       | —       | ✕        | Whether is field disabled                                               |

@@ -1,4 +1,4 @@
-import { render, waitFor } from '@testing-library/react';
+import { render, waitFor, screen } from '@testing-library/react';
 import React, { ComponentType } from 'react';
 import { TextFieldType } from '../../src';
 import { A11Y_ALERT_ROLE } from '../../src/components/Field/constants';
@@ -23,6 +23,24 @@ export const validationTextPropsTest = (
     await waitFor(() => {
       const element = dom.container.querySelector(selector) as HTMLElement;
       expect(element.textContent).toBe('text');
+    });
+  });
+
+  it('should have message with icon', async () => {
+    render(
+      <Component
+        id="component"
+        label="Label"
+        type={type as TextFieldType}
+        validationState="danger"
+        validationText="text"
+        hasValidationIcon
+      />,
+    );
+
+    await waitFor(() => {
+      const element = screen.getByText('text') as HTMLElement;
+      expect(element.previousElementSibling).toContainHTML('svg');
     });
   });
 

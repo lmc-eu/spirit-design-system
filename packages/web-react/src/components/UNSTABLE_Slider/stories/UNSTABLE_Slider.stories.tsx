@@ -14,6 +14,7 @@ const meta: Meta<typeof UNSTABLE_Slider> = {
     docs: {
       page: () => <Markdown>{ReadMe}</Markdown>,
     },
+    controls: { exclude: ['hasValidationStateIcon'] },
     layout: 'centered',
   },
   argTypes: {
@@ -95,6 +96,12 @@ const meta: Meta<typeof UNSTABLE_Slider> = {
         defaultValue: { summary: 'undefined' },
       },
     },
+    hasValidationIcon: {
+      control: 'boolean',
+      table: {
+        defaultValue: { summary: 'false' },
+      },
+    },
     value: {
       control: 'number',
       description: 'The value of the slider',
@@ -104,6 +111,7 @@ const meta: Meta<typeof UNSTABLE_Slider> = {
     },
   },
   args: {
+    hasValidationIcon: false,
     helperText: '',
     id: 'slider',
     isDisabled: false,
