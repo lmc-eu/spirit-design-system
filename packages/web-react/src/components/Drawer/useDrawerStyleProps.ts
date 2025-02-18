@@ -1,9 +1,9 @@
 import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks';
-import { DrawerAlignmentXType } from '../../types';
+import { DrawerAlignmentXType, DrawerPanelProps } from '../../types';
 import { DRAWER_ALIGNMENT_DEFAULT } from './constants';
 
-export interface UseDrawerStylesProps {
+export interface UseDrawerStylesProps extends DrawerPanelProps {
   drawerAlignmentX?: DrawerAlignmentXType;
 }
 
