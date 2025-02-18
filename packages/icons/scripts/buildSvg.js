@@ -2,8 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const { filterSvgFiles } = require('./shared');
 
-const svgSrcDir = path.resolve(__dirname, `../src/svg`);
-const svgDistDir = path.resolve(__dirname, `../dist/svg`);
+const svgSrcDir = path.resolve(__dirname, '../src/svg');
+const svgDistDir = path.resolve(__dirname, '../dist/svg');
 
 const normalizeSvgColors = (fileName, svgContent) =>
   fileName.endsWith('-colored.svg') ? svgContent : svgContent.replace(/fill="#\w+"/g, 'fill="currentColor"');
