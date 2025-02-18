@@ -445,6 +445,65 @@
         <!-- FileUploaderList: end -->
       </div>
       <!-- FileUploader: end -->
+
+      <!-- FileUploader: start -->
+      <div class="FileUploader" data-spirit-toggle="fileUploader">
+        <!-- FileUploaderAttachment template: start -->
+        <template data-spirit-snippet="item">
+          <li class="FileUploaderAttachment" data-spirit-populate-field="item">
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/assets/icons/svg/sprite.svg#file" />
+            </svg>
+            <span class="FileUploaderAttachment__name">
+              <span class="text-truncate" data-spirit-populate-field="name"></span>
+            </span>
+            <button type="button" class="FileUploaderAttachment__action" data-spirit-populate-field="button">
+              <span class="accessibility-hidden">Remove</span>
+              <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="/assets/icons/svg/sprite.svg#close" />
+              </svg>
+            </button>
+          </li>
+        </template>
+        <!-- FileUploaderAttachment template: end -->
+
+        <!-- FileUploaderInput: start -->
+        <div class="FileUploaderInput FileUploaderInput--warning" data-spirit-element="wrapper">
+          <label for="file-uploader-warning-icon" class="FileUploaderInput__label FileUploaderInput__label--required"
+          >Label</label
+          >
+          <input
+            type="file"
+            id="file-uploader-warning-icon"
+            name="attachment4"
+            class="FileUploaderInput__input"
+            data-spirit-element="input"
+          />
+          <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone">
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/assets/icons/svg/sprite.svg#upload" />
+            </svg>
+            <label for="file-uploader-warning-icon" class="FileUploaderInput__dropZoneLabel">
+              <span class="FileUploaderInput__link link-primary link-underlined">Upload your file</span>
+              <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
+            </label>
+            <div class="FileUploaderInput__helperText">Max file size is 10 MB</div>
+          </div>
+          <div class="FileUploaderInput__validationText FileUploaderInput__validationText--hasIcon">
+            <svg width="20" height="20" aria-hidden="true">
+              <use xlink:href="/assets/icons/svg/sprite.svg#warning"/>
+            </svg>
+            <span>Warning validation text with icon. Long validation text to show how it wraps.</span>
+          </div>
+        </div>
+        <!-- FileUploaderInput: end -->
+
+        <!-- FileUploaderList: start -->
+        <h3 id="attachments-file-upload-warning-icon" hidden>Attachments</h3>
+        <ul class="FileUploaderList" aria-labelledby="ttachments-file-upload-warning-icon" data-spirit-element="list"></ul>
+        <!-- FileUploaderList: end -->
+      </div>
+      <!-- FileUploader: end -->
     </div>
 
   </div>

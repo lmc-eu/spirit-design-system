@@ -76,6 +76,11 @@ $_field-name: 'FileUploaderInput';
     @include form-fields-tools.validation-text();
 }
 
+.FileUploaderInput__validationText--hasIcon,
+.FileUploaderInput > [data-spirit-element='validation_text'].FileUploaderInput__validationText--hasIcon {
+    @include form-fields-tools.validation-text-has-icon();
+}
+
 // stylelint-disable selector-max-class -- We need to target inner elements in a specific component state.
 .FileUploaderInput.has-drag-and-drop .FileUploaderInput__dropZone {
     border: theme.$input-drop-zone-draggable-border;
