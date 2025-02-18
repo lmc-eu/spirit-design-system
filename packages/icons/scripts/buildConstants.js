@@ -4,8 +4,8 @@ const path = require('path');
 const jsdom = require('jsdom');
 const { filterSvgFiles } = require('./shared');
 
-const svgSrcDir = path.resolve(__dirname, `../dist/svg`);
-const distFile = path.resolve(__dirname, `../dist/icons.js`);
+const svgSrcDir = path.resolve(__dirname, '../dist/svg');
+const distFile = path.resolve(__dirname, '../dist/icons.js');
 
 const buildContants = (srcDir, file) => {
   fs.readdir(srcDir, (err, files) => {
@@ -27,6 +27,7 @@ const buildContants = (srcDir, file) => {
 
       distContent += JSON.stringify(icons, null, 2);
       distContent += ';';
+      // eslint-disable-next-line quotes -- we need to use special chars in this string
       distContent += `\n\nexport default icons;`;
 
       fs.writeFileSync(file, distContent);

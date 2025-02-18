@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const svgDistDir = path.resolve(__dirname, `../dist/svg`);
-const tmpDistDir = path.resolve(__dirname, `../dist/.tmp-svg`);
+const svgDistDir = path.resolve(__dirname, '../dist/svg');
+const tmpDistDir = path.resolve(__dirname, '../dist/.tmp-svg');
 
 const toPascalCase = (string) =>
   string
