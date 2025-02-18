@@ -181,7 +181,7 @@ a JS interaction class when controlled by JavaScript (`has-success`,
 `has-warning`, `has-danger`). See Validation state [dictionary][dictionary-validation].
 
 - To render validation text as a list, use `<ul>` element inside of `<div>`.
-- To render validation text with an icon, add `<svg>` element inside of `<div>`.
+- To render validation text with an icon, add class `TextField__validationText--hasIcon` and `<svg>` element inside of `<div>`.
 
 ```html
 <div class="TextField TextField--success">

@@ -145,7 +145,7 @@ Validation states can be presented either by adding a CSS modifier class (`Field
 ```
 
 - To render validation text as a list, use `<ul>` element inside of `<div>`.
-- To render validation text with an icon, add `<svg>` element inside of `<div>`.
+- To render validation text with an icon, add class `FieldGroup__validationText--hasIcon` and `<svg>` element inside of `<div>`.
 
 ```html
 <div id="field-group-danger-validation-text" class="FieldGroup__validationText">
