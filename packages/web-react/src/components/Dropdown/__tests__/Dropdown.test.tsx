@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '#local/tests';
 import { DropdownAlignmentXType, DropdownAlignmentYType } from '../../../types';
 import Dropdown from '../Dropdown';
 import DropdownPopover from '../DropdownPopover';

@@ -7,7 +7,7 @@ import {
   restPropsTest,
   stylePropsTest,
   validationTextPropsTest,
-} from '@local/tests';
+} from '#local/tests';
 import { TextFieldType } from '../../../types';
 import TextField from '../TextField';
 

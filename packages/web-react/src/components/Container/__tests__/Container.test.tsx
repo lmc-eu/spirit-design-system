@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import '@testing-library/jest-dom';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '#local/tests';
 import Container from '../Container';
 
 describe('Container', () => {

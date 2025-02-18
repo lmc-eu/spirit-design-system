@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '#local/tests';
 import Accordion from '../Accordion';
 import AccordionContent from '../AccordionContent';
 import AccordionHeader from '../AccordionHeader';

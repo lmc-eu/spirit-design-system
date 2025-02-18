@@ -7,7 +7,7 @@ import {
   sizeExtendedPropsTest,
   restPropsTest,
   stylePropsTest,
-} from '@local/tests';
+} from '#local/tests';
 import Tag from '../Tag';
 
 describe('Tag', () => {

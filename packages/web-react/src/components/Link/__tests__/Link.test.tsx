@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, actionLinkColorPropsTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, actionLinkColorPropsTest, restPropsTest, stylePropsTest } from '#local/tests';
 import { LinkColorsDictionaryType } from '../../../types';
 import Link from '../Link';
 import linkPropsDataProvider from './linkPropsDataProvider';

@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { restPropsTest, stylePropsTest } from '@local/tests';
+import { restPropsTest, stylePropsTest } from '#local/tests';
 import UncontrolledTooltip from '../UncontrolledTooltip';
 
 describe('UncontrolledTooltip', () => {

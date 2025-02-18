@@ -7,7 +7,7 @@ import {
   sizePropsTest,
   restPropsTest,
   stylePropsTest,
-} from '@local/tests';
+} from '#local/tests';
 import { SizesDictionaryType, SizeExtendedDictionaryType, EmphasisDictionaryType } from '../../../types';
 import Heading from '../Heading';
 import headingSizeDataProvider from './headingSizeDataProvider';
