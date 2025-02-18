@@ -170,7 +170,7 @@ $_field-name: 'TextField';
 }
 
 .TextField__validationText--hasIcon,
-.TextField > [data-spirit-element='validation_text'].TextField__validationText--hasIcon {
+.TextField > [data-spirit-element='validation_text'].has-icon {
     @include form-fields-tools.validation-text-has-icon();
 }
 

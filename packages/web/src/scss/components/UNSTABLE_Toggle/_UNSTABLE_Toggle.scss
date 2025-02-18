@@ -136,7 +136,7 @@ $_field-name: 'UNSTABLE_Toggle';
 }
 
 .UNSTABLE_Toggle__validationText,
-.UNSTABLE_Toggle > .UNSTABLE_Toggle__text > [data-spirit-element='validation_text'] {
+.UNSTABLE_Toggle > [data-spirit-element='validation_text'].has-icon {
     @include form-fields-tools.validation-text();
 }
 

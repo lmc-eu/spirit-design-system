@@ -44,7 +44,7 @@ $_field-name: 'TextArea';
 }
 
 .TextArea__validationText--hasIcon,
-.TextArea > [data-spirit-element='validation_text'].TextArea__validationText--hasIcon {
+.TextArea > [data-spirit-element='validation_text'].has-icon {
     @include form-fields-tools.validation-text-has-icon();
 }
 

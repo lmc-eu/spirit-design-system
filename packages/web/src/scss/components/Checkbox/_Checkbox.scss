@@ -64,7 +64,7 @@ $_field-name: 'Checkbox';
 }
 
 .Checkbox__validationText--hasIcon,
-.Checkbox__text > .Checkbox__validationText--hasIcon {
+.Checkbox__text > [data-spirit-element='validation_text'].has-icon {
     @include form-fields-tools.validation-text-has-icon();
 }
 

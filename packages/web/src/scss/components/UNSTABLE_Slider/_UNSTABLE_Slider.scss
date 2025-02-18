@@ -131,7 +131,7 @@ $_field-name: 'UNSTABLE_Slider';
 }
 
 .UNSTABLE_Slider__validationText--hasIcon,
-.UNSTABLE_Slider > [data-spirit-element='validation_text'].UNSTABLE_Slider__validationText--hasIcon {
+.UNSTABLE_Slider > [data-spirit-element='validation_text'].has-icon {
     @include form-fields-tools.validation-text-has-icon();
 }
 

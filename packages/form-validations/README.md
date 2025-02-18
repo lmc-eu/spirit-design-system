@@ -168,6 +168,14 @@ Now you can assign it to your inputs like this
 Add an attribute like `data-spirit-<ValidatorName>-message` with the custom message as a value to show custom error messages.
 You can add custom messages like this for as many validators as you need. Here `ValidatorName` means `required`, `email`, `min`, `max` etc.
 
+To render validation text with an icon, set `validationTextClass` in `defaultConfig` to `has-icon`.
+
+```javascript
+const defaultConfig = {
+  validationTextClass: 'has-icon',
+};
+```
+
 ## API
 
 ### Initialization

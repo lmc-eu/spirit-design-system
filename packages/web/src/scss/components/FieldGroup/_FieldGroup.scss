@@ -36,7 +36,7 @@ $_field-name: 'FieldGroup';
 }
 
 .FieldGroup__validationText--hasIcon,
-.FieldGroup > [data-spirit-element='validation_text'].FieldGroup__validationText--hasIcon {
+.FieldGroup > [data-spirit-element='validation_text'].has-icon {
     @include form-fields-tools.validation-text-has-icon();
 }
 

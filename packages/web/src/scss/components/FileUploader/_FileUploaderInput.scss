@@ -77,7 +77,7 @@ $_field-name: 'FileUploaderInput';
 }
 
 .FileUploaderInput__validationText--hasIcon,
-.FileUploaderInput > [data-spirit-element='validation_text'].FileUploaderInput__validationText--hasIcon {
+.FileUploaderInput > [data-spirit-element='validation_text'].has-icon {
     @include form-fields-tools.validation-text-has-icon();
 }
 
