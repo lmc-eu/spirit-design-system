@@ -211,7 +211,7 @@
           value="30"
           oninput="this.style.setProperty('--slider-position', `${Math.round((100 * this.value) / 100)}%`);"
         />
-        <div id="slider-{{state}}-validation-icon" class="UNSTABLE_Slider__validationText UNSTABLE_Slider__validationText--has-icon">
+        <div id="slider-{{state}}-validation-icon" class="UNSTABLE_Slider__validationText UNSTABLE_Slider__validationText--hasIcon">
           <svg width="20" height="20" aria-hidden="true">
             {{#if (eq state "success")}}
             <use xlink:href="/assets/icons/svg/sprite.svg#check-plain"/>
@@ -219,7 +219,7 @@
             <use xlink:href="/assets/icons/svg/sprite.svg#{{state}}"/>
             {{/if}}
           </svg>
-          This is {{state}} validation text with icon. Long validation text to show how it wraps.
+          <span>This is {{state}} validation text with icon. Long validation text to show how it wraps.</span>
         </div>
       </div>
       {{/each}}

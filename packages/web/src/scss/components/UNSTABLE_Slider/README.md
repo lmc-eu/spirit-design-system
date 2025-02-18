@@ -182,11 +182,14 @@ a JS interaction class when controlled by JavaScript (`has-success`,
     value="30"
     oninput="this.style.setProperty('--slider-position', `${Math.round((100 * this.value) / 100)}%`);"
   />
-  <div id="slider-warning-validation-text" class="UNSTABLE_Slider__validationText">
+  <div
+    id="slider-warning-validation-text"
+    class="UNSTABLE_Slider__validationText UNSTABLE_Slider__validationText--hasIcon"
+  >
     <svg width="20" height="20" aria-hidden="true">
       <use xlink:href="/assets/icons/svg/sprite.svg#warning" />
     </svg>
-    Validation text with icon
+    <span>Validation text with icon</span>
   </div>
 </div>
 ```

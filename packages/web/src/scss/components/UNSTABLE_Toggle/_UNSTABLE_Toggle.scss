@@ -140,6 +140,11 @@ $_field-name: 'UNSTABLE_Toggle';
     @include form-fields-tools.validation-text();
 }
 
+.UNSTABLE_Toggle__validationText--hasIcon,
+.UNSTABLE_Toggle__text > .UNSTABLE_Toggle__validationText--hasIcon {
+    @include form-fields-tools.validation-text-has-icon();
+}
+
 .UNSTABLE_Toggle__helperText {
     @include form-fields-tools.helper-text();
 }

@@ -182,6 +182,32 @@
         </div>
       </fieldset>
 
+      {{setVar "states" "danger" "warning" "success" }}
+      {{#each @root.states as |state|}}
+
+      <fieldset class="FieldGroup FieldGroup--{{state}}" aria-describedby="field-group-{{state}}-validation-icon">
+        <legend class="accessibility-hidden">Label</legend>
+        <div class="FieldGroup__label" aria-hidden="true">Label</div>
+        <div class="FieldGroup__fields">
+          <!-- Custom items: start -->
+          <div class="docs-Box">Item</div>
+          <div class="docs-Box">Item</div>
+          <div class="docs-Box">Item</div>
+          <!-- Custom items: end -->
+        </div>
+        <div id="field-group-{{state}}-validation-icon" class="FieldGroup__validationText FieldGroup__validationText--hasIcon">
+          <svg width="20" height="20" aria-hidden="true">
+            {{#if (eq state "success")}}
+            <use xlink:href="/assets/icons/svg/sprite.svg#check-plain"/>
+            {{else}}
+            <use xlink:href="/assets/icons/svg/sprite.svg#{{state}}"/>
+            {{/if}}
+          </svg>
+          <span>This is {{state}} validation text with icon.</span>
+        </div>
+      </fieldset>
+      {{/each}}
+
     </div>
 
   </div>

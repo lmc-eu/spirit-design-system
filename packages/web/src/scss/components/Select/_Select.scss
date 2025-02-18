@@ -73,6 +73,11 @@ $_field-name: 'Select';
     @include form-fields-tools.validation-text();
 }
 
+.Select__validationText--hasIcon,
+.Select > [data-spirit-element='validation_text'].Select__validationText--hasIcon {
+    @include form-fields-tools.validation-text-has-icon();
+}
+
 .Select__helperText {
     @include form-fields-tools.helper-text();
 }

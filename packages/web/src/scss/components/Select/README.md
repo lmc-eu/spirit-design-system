@@ -217,11 +217,11 @@ a JS interaction class when controlled by JavaScript (`has-success`,
       </svg>
     </div>
   </div>
-  <div class="Select__validationText">
+  <div class="Select__validationText Select__validationText--hasIcon">
     <svg width="20" height="20" aria-hidden="true">
       <use xlink:href="/assets/icons/svg/sprite.svg#warning" />
     </svg>
-    Validation text with icon
+    <span>Validation text with icon</span>
   </div>
 </div>
 ```

@@ -145,11 +145,14 @@ a JS interaction class when controlled by JavaScript (`has-success`,
 <label for="toggle-warning" class="UNSTABLE_Toggle UNSTABLE_Toggle--warning">
   <span class="UNSTABLE_Toggle__text">
     <span class="UNSTABLE_Toggle__label">Toggle Label</span>
-    <span class="UNSTABLE_Toggle__validationText" id="toggle-warning-validation-text">
+    <span
+      class="UNSTABLE_Toggle__validationText UNSTABLE_Toggle__validationText--hasIcon"
+      id="toggle-warning-validation-text"
+    >
       <svg width="20" height="20" aria-hidden="true">
         <use xlink:href="/assets/icons/svg/sprite.svg#warning" />
       </svg>
-      Validation text with icon
+      <span>Validation text with icon</span>
     </span>
   </span>
   <input

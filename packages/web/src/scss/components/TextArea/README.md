@@ -127,11 +127,11 @@ a JS interaction class when controlled by JavaScript (`has-success`,
   <textarea id="text-area-danger-has-warning" class="TextArea__input" name="hasDanger" placeholder="Placeholder">
     Filled
   </textarea>
-  <div class="TextArea__validationText">
+  <div class="TextArea__validationText TextArea__validationText--hasIcon">
     <svg width="20" height="20" aria-hidden="true">
       <use xlink:href="/assets/icons/svg/sprite.svg#warning" />
     </svg>
-    Validation text with icon
+    <span>Validation text with icon</span>
   </div>
 </div>
 ```

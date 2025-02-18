@@ -35,6 +35,11 @@ $_field-name: 'FieldGroup';
     @include form-fields-tools.validation-text();
 }
 
+.FieldGroup__validationText--hasIcon,
+.FieldGroup > [data-spirit-element='validation_text'].FieldGroup__validationText--hasIcon {
+    @include form-fields-tools.validation-text-has-icon();
+}
+
 .FieldGroup__helperText {
     @include form-fields-tools.helper-text();
 }

@@ -63,6 +63,11 @@ $_field-name: 'Checkbox';
     @include form-fields-tools.validation-text();
 }
 
+.Checkbox__validationText--hasIcon,
+.Checkbox__text > .Checkbox__validationText--hasIcon {
+    @include form-fields-tools.validation-text-has-icon();
+}
+
 .Checkbox__helperText {
     @include form-fields-tools.helper-text();
 }

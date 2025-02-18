@@ -55,11 +55,11 @@ See Validation state [dictionary][dictionary-validation].
   <input type="checkbox" id="checkbox-warning" class="Checkbox__input" name="warning" />
   <span class="Checkbox__text">
     <span class="Checkbox__label">Checkbox Label</span>
-    <span class="Checkbox__validationText">
+    <span class="Checkbox__validationText Checkbox__validationText--hasIcon">
       <svg width="20" height="20" aria-hidden="true">
         <use xlink:href="/assets/icons/svg/sprite.svg#warning" />
       </svg>
-      Warning validation text with icon
+      <span>Warning validation text with icon</span>
     </span>
   </span>
 </label>
