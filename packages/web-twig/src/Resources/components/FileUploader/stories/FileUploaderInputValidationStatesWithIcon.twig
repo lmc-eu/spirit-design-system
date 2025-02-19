@@ -1,0 +1,26 @@
+{% set states = ['success', 'warning', 'danger'] %}
+
+{% for state in states %}
+
+    {% set text = "This is " ~ state ~ " validation text. Long validation text to show how it wraps." %}
+    {% set id = "file-uploader-" ~ state ~ "-icon-text" %}
+    {% set idList = "file-uploader-list" ~ state ~ "-icon-text" %}
+
+    <FileUploader data-spirit-toggle="fileUploader">
+        <template data-spirit-snippet="item">
+            <FileUploaderAttachment />
+        </template>
+        <FileUploaderInput
+            helperText="Max file size is 10 MB"
+            hasValidationIcon
+            id={id}
+            isRequired
+            label="Label"
+            name="example-validation-warning"
+            validationState={state}
+            validationText={text}
+        />
+        <FileUploaderList headingId={idList} />
+    </FileUploader>
+
+{% endfor %}

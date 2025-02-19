@@ -12,6 +12,7 @@ Advanced example usage:
 
 ```twig
 <TextArea
+  hasValidationIcon
   helperText="custom helper text"
   id="text-area-advanced"
   isRequired
@@ -49,6 +50,7 @@ Without lexer:
 | Name                    | Type                                           | Default | Required | Description                                                                                                 |
 | ----------------------- | ---------------------------------------------- | ------- | -------- | ----------------------------------------------------------------------------------------------------------- |
 | `autocomplete`          | `string`                                       | `null`  | ✕        | [Automated assistance in filling][autocomplete-attr]                                                        |
+| `hasValidationIcon`     | `boolean`                                      | `false` | ✕        | Whether to show validation icon                                                                             |
 | `helperText`            | `string`                                       | `null`  | ✕        | Custom helper text                                                                                          |
 | `id`                    | `string`                                       | —       | ✓        | TextArea and label identification                                                                           |
 | `inputProps`            | `string[]`                                     | `[]`    | ✕        | Pass additional attributes to the textarea element                                                          |

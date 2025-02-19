@@ -103,6 +103,7 @@ When validated on server:
 | Name                    | Type                                           | Default | Required | Description                                                |
 | ----------------------- | ---------------------------------------------- | ------- | -------- | ---------------------------------------------------------- |
 | `form`                  | `string`                                       | `null`  | ✕        | Parent form ID                                             |
+| `hasValidationIcon`     | `boolean`                                      | `false` | ✕        | Whether to show validation icon                            |
 | `helperText`            | `string`                                       | `null`  | ✕\*\*    | Custom helper text                                         |
 | `id`                    | `string`                                       | —       | ✓        | Group and label identification                             |
 | `isDisabled`            | `bool`                                         | `false` | ✕        | If true, the group is disabled                             |
