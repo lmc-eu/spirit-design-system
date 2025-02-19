@@ -1,0 +1,17 @@
+{% set states = ['success', 'warning', 'danger'] %}
+
+{% for state in states %}
+
+    {% set text = "This is " ~ state ~ " validation text." %}
+    {% set id = "checkbox-" ~ state ~ "-icon-text" %}
+
+    <Checkbox
+        hasValidationIcon
+        id={id}
+        label="Checkbox Label"
+        validationText={text}
+        name="checkboxWarningHelperText"
+        validationState={state}
+    />
+
+{% endfor %}

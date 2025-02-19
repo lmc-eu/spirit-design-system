@@ -21,12 +21,21 @@
     validationText="{{ ['Validation text 1', 'Validation text 2'] }}"
 />
 
+<!-- Render with validation icon -->
+<ValidationText
+    className="myClass"
+    hasValidationStateIcon="danger"
+    validationState="danger"
+    validationText="Validation text with icon"
+/>
+
 <!-- Render with all props -->
 <ValidationText
     className="myClass"
     elementType="span"
     id="validation-text-all-props"
+    hasValidationStateIcon="success"
     validationState="success"
     validationText="Validation text"
-    UNSAFE_validationText="<span>Unsafe validation text</span>"
+    UNSAFE_validationText="<strong>Unsafe</strong> validation text"
 />

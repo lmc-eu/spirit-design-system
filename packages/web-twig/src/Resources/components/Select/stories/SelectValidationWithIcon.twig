@@ -1,0 +1,18 @@
+{% set states = ['success', 'warning', 'danger'] %}
+
+{% for state in states %}
+    {% set text = "This is " ~ state ~ " validation text. Long validation text to show how it wraps." %}
+    {% set id = "select-" ~ state ~ "-validation-icon" %}
+
+    <Select
+        hasValidationIcon
+        id={id}
+        label="Label"
+        name="selectWarning"
+        validationState={state}
+        validationText={text}
+    >
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+    </Select>
+{% endfor %}

@@ -14,6 +14,7 @@ Default TextField:
 
 ```twig
 <TextField
+  hasValidationIcon
   helperText="custom helper text"
   id="text-field-advanced"
   isRequired
@@ -61,6 +62,7 @@ Without lexer:
 | Name                    | Type                                                                         | Default | Required | Description                                                             |
 | ----------------------- | ---------------------------------------------------------------------------- | ------- | -------- | ----------------------------------------------------------------------- |
 | `autocomplete`          | `string`                                                                     | `null`  | ✕        | [Automated assistance in filling][autocomplete-attr]                    |
+| `hasValidationIcon`     | `boolean`                                                                    | `false` | ✕        | Whether to show validation icon                                         |
 | `hasPasswordToggle`     | `bool`                                                                       | `false` | ✕        | If true, the `type` is set to `password` and a password toggle is shown |
 | `helperText`            | `string`                                                                     | `null`  | ✕        | Custom helper text                                                      |
 | `id`                    | `string`                                                                     | —       | ✓        | Input and label identification                                          |
