@@ -1,5 +1,6 @@
 {# API #}
 {%- set props = props | default([]) -%}
+{%- set _hasValidationIcon = props.hasValidationIcon | default(false) -%}
 {%- set _helperText = props.helperText | default(null) -%}
 {%- set _id = props.id -%}
 {%- set _inputProps = props.inputProps | default([]) -%}
@@ -135,6 +136,7 @@
     />
     <ValidationText
         className="{{ _validationTextClassName }}"
+        hasValidationStateIcon="{{ _hasValidationIcon ? _validationState : null }}"
         id="{{ _validationTextId }}"
         validationState="{{ _validationState }}"
         validationText="{{ _validationText }}"

@@ -1,6 +1,7 @@
 {# API #}
 {%- set props = props | default([]) -%}
 {%- set _helperText = props.helperText | default(null) -%}
+{%- set _hasValidationIcon = props.hasValidationIcon | default(false) -%}
 {%- set _id = props.id -%}
 {%- set _inputProps = props.inputProps | default([]) -%}
 {%- set _isChecked = props.isChecked | default(false) -%}
@@ -78,6 +79,7 @@
         <ValidationText
             className="{{ _validationTextClassName }}"
             elementType="span"
+            hasValidationStateIcon="{{ _hasValidationIcon ? _validationState : null }}"
             id="{{ _validationTextId }}"
             validationState="{{ _validationState }}"
             validationText="{{ _validationText }}"

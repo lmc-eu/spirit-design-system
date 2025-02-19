@@ -1,6 +1,7 @@
 {# API #}
 {%- set props = props | default([]) -%}
 {%- set _dragAndDropText = props.dragAndDropText | default('or drag and drop here') -%}
+{%- set _hasValidationIcon = props.hasValidationIcon | default(false) -%}
 {%- set _helperText = props.helperText | default(null) -%}
 {%- set _iconName = props.iconName | default('upload') -%}
 {%- set _id = props.id -%}
@@ -98,6 +99,7 @@
     </div>
     <ValidationText
         className="{{ _validationTextClassName }}"
+        hasValidationStateIcon="{{ _hasValidationIcon ? _validationState : null }}"
         id="{{ _validationTextId }}"
         validationState="{{ _validationState }}"
         validationText="{{ _validationText }}"
