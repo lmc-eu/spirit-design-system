@@ -26,6 +26,25 @@ Usage with `isRequired` attribute:
 </Select>
 ```
 
+Advanced example usage:
+
+```twig
+<Select
+  hasValidationIcon
+  id="select-required"
+  isRequired
+  helperText="Helper text"
+  label="Label"
+  name="selectRequired"
+  validationState="warning"
+  validationText="Validation text"
+>
+  <option value="" selected disabled>Placeholder</option>
+  <option value="1">Option 1</option>
+  <option value="2">Option 2</option>
+</Select>
+```
+
 Without lexer:
 
 ```twig
@@ -47,6 +66,7 @@ Without lexer:
 
 | Name                    | Type                                           | Default | Required | Description                                                |
 | ----------------------- | ---------------------------------------------- | ------- | -------- | ---------------------------------------------------------- |
+| `hasValidationIcon`     | `boolean`                                      | `false` | ✕        | Whether to show validation icon                            |
 | `helperText`            | `string`                                       | `null`  | ✕        | Custom helper text                                         |
 | `id`                    | `string`                                       | —       | ✓        | Select and label identification                            |
 | `inputProps`            | `string[]`                                     | `[]`    | ✕        | Pass additional attributes to the select element           |

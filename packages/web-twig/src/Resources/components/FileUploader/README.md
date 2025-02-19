@@ -183,6 +183,7 @@ When validated on server:
 
 ```twig
 <FileUploaderInput
+  hasValidationIcon
   id="example-validation-success"
   label="Label"
   validationState="success"
@@ -208,6 +209,7 @@ To mark the input as disabled, simply add the `isDisabled` attribute:
 | ----------------------- | ---------------------------------------------- | ----------------------- | -------- | ------------------------------------------------------------------------------------------------------------------ |
 | `accept`                | `string`                                       | `null`                  | ✕        | Allowed file types                                                                                                 |
 | `dragAndDropText`       | `string`                                       | `or drag and drop here` | ✕        | Text shown in the drop zone if drag-and-drop is enabled on the device                                              |
+| `hasValidationIcon`     | `boolean`                                      | `false`                 | ✕        | Whether to show validation icon                                                                                    |
 | `helperText`            | `string`                                       | `null`                  | ✕\*\*    | Custom helper text                                                                                                 |
 | `iconName`              | `string`                                       | `upload`                | ✕        | Icon used in the drop zone                                                                                         |
 | `id`                    | `string`                                       | —                       | ✓        | Input and label identification                                                                                     |

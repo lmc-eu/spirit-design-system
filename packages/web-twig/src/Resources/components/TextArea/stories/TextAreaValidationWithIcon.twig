@@ -1,0 +1,18 @@
+{% set states = ['success', 'warning', 'danger'] %}
+
+{% for state in states %}
+    {% set text = "This is " ~ state ~ " validation text. Long validation text to show how it wraps." %}
+    {% set id = "textarea-" ~ state ~ "-validation-icon" %}
+
+    <TextArea
+        hasValidationIcon
+        id={id}
+        isRequired
+        label="Label"
+        validationState={state}
+        validationText={text}
+        name="textareaDangerHelper"
+        placeholder="Placeholder"
+        value="Filled"
+    />
+{% endfor %}

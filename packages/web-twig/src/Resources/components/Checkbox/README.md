@@ -12,6 +12,7 @@ Advanced example usage:
 
 ```twig
 <Checkbox
+  hasValidationIcon
   id="checkbox-advanced"
   isChecked
   isRequired
@@ -41,6 +42,7 @@ Without lexer:
 | Name                    | Type                                           | Default | Required | Description                                          |
 | ----------------------- | ---------------------------------------------- | ------- | -------- | ---------------------------------------------------- |
 | `autocomplete`          | `string`                                       | `null`  | ✕        | [Automated assistance in filling][autocomplete-attr] |
+| `hasValidationIcon`     | `boolean`                                      | `false` | ✕        | Whether to show validation icon                      |
 | `helperText`            | `string`                                       | `null`  | ✕\*\*    | Custom helper text                                   |
 | `id`                    | `string`                                       | `null`  | ✕        | Input and label identification                       |
 | `inputProps`            | `string[]`                                     | `[]`    | ✕        | Pass additional attributes to the input element      |

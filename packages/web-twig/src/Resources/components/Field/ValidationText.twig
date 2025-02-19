@@ -2,6 +2,7 @@
 {%- set props = props | default([]) -%}
 {%- set _className = props.className -%}
 {%- set _elementType = props.elementType | default('div') -%}
+{%- set _hasValidationStateIcon = props.hasValidationStateIcon | default(false) -%}
 {%- set _id = props.id | default(null) -%}
 {%- set _unsafeValidationText = props.UNSAFE_validationText | default(null) -%}
 {%- set _validationState = props.validationState | default(null) -%}
@@ -10,33 +11,50 @@
 {# Attributes #}
 {%- set _idAttr = _id ? 'id="' ~ _id | escape('html_attr') ~ '"' : null -%}
 
-{% if _validationState and _validationText and not _unsafeValidationText %}
-    {%- if _validationText is iterable -%}
-        <{{ _elementType }} class="{{ _className }}" {{ _idAttr | raw }}>
+{# Miscellaneous #}
+{%- set _elementInnerWrapType = _elementType == 'div' ? 'div' : 'span' -%}
+{%- set _validationIconNames = {
+    success: 'check-plain',
+    warning: 'warning',
+    danger: 'danger',
+} %}
+{%- set _validationIconName = _validationIconNames[_hasValidationStateIcon] | default(null) -%}
+
+{% if _validationState and (_validationText or _unsafeValidationText) %}
+    <{{ _elementType }} class="{{ _className }}" {{ _idAttr | raw }}>
+
+    {% if _hasValidationStateIcon %}
+        <Icon name={_validationIconName} boxSize="20" />
+    {% endif %}
+
+    {% if _validationText and not _unsafeValidationText %}
+        {%- if _validationText is iterable -%}
             <ul>
                 {% for _validationTextItem in _validationText %}
                     <li>{{ _validationTextItem }}</li>
                 {% endfor %}
             </ul>
-        </{{ _elementType }}>
-    {% else %}
-        <{{ _elementType }} class="{{ _className }}" {{ _idAttr | raw }}>
+        {% elseif _hasValidationStateIcon %}
+            <{{ _elementInnerWrapType }}>{{ _validationText }}</{{ _elementInnerWrapType }}>
+        {% else %}
             {{ _validationText }}
-        </{{ _elementType }}>
-    {%- endif -%}
-{% endif %}
-{% if _validationState and _unsafeValidationText %}
-    {%- if _unsafeValidationText is iterable -%}
-        <{{ _elementType }} class="{{ _className }}" {{ _idAttr | raw }}>
+        {%- endif -%}
+    {% endif %}
+
+    {% if _unsafeValidationText %}
+        {%- if _unsafeValidationText is iterable -%}
             <ul>
                 {% for _validationTextItem in _unsafeValidationText %}
                     <li>{{ _validationTextItem | raw }}</li>
                 {% endfor %}
             </ul>
-        </{{ _elementType }}>
-    {% else %}
-        <{{ _elementType }} class="{{ _className }}" {{ _idAttr | raw }}>
+        {% elseif _hasValidationStateIcon %}
+            <{{ _elementInnerWrapType }}>{{ _unsafeValidationText | raw }}</{{ _elementInnerWrapType }}>
+        {% else %}
             {{ _unsafeValidationText | raw }}
-        </{{ _elementType }}>
-    {%- endif -%}
+        {%- endif -%}
+    {% endif %}
+
+    </{{ _elementType }}>
 {% endif %}
+
