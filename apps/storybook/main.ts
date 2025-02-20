@@ -22,6 +22,12 @@ const config: StorybookConfig = {
   async viteFinal(config) {
     // Merge custom configuration into the default config
     return mergeConfig(config, {
+      resolve: {
+        alias: {
+          '@lmc-eu/spirit-web-react': resolve(__dirname, '../../packages/web-react/src'),
+          '@lmc-eu/spirit-icons': resolve(__dirname, '../../packages/icons/dist'),
+        },
+      },
       plugins: [
         markdownRawPlugin({
           fileRegex: /\.md$/,
