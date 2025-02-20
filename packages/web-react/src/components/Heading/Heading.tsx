@@ -1,14 +1,15 @@
 'use client';
 
 import React, { ElementType } from 'react';
+import { Emphasis, SizesExtended } from '../../constants';
 import { useStyleProps } from '../../hooks';
 import { SpiritHeadingProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { useHeadingStyleProps } from './useHeadingStyleProps';
 
 const defaultProps: Partial<SpiritHeadingProps<ElementType, void, void>> = {
-  emphasis: 'bold',
-  size: 'medium',
+  emphasis: Emphasis.BOLD,
+  size: SizesExtended.MEDIUM,
 };
 
 const Heading = <T extends ElementType, S = void, E = void>(props: SpiritHeadingProps<T, S, E>): JSX.Element => {

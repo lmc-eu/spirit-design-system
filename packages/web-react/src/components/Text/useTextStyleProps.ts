@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { ElementType } from 'react';
 import { useClassNamePrefix } from '../../hooks';
 import { SpiritTextProps, TextProps } from '../../types';
@@ -10,10 +11,13 @@ export interface TextStyles<T extends ElementType = 'p'> {
 }
 
 export function useTextStyleProps<T extends ElementType = 'p', S = void>(props: SpiritTextProps<T, S>): TextStyles<T> {
-  const { size, emphasis, ...restProps } = props;
+  const { emphasis, size, textColor, ...restProps } = props;
 
   const textClass = useClassNamePrefix('typography-body');
-  const className = `${textClass}-${size}-${emphasis}`;
+  const textColorClass = useClassNamePrefix(textColor ? `text-${textColor}` : '');
+  const className = classNames(`${textClass}-${size}-${emphasis}`, {
+    [textColorClass]: !!textColor,
+  });
 
   return {
     classProps: className,

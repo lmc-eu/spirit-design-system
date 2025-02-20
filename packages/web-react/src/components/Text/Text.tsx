@@ -1,6 +1,7 @@
 'use client';
 
 import React, { ElementType } from 'react';
+import { Emphasis, SizesExtended } from '../../constants';
 import { useStyleProps } from '../../hooks';
 import { SpiritTextProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
@@ -8,8 +9,8 @@ import { useTextStyleProps } from './useTextStyleProps';
 
 const defaultProps: Partial<SpiritTextProps> = {
   elementType: 'p',
-  emphasis: 'regular',
-  size: 'medium',
+  emphasis: Emphasis.REGULAR,
+  size: SizesExtended.MEDIUM,
 };
 
 const Text = <T extends ElementType = 'p', S = void>(props: SpiritTextProps<T, S>): JSX.Element => {

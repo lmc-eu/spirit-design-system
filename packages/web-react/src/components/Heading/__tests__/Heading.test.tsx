@@ -7,6 +7,7 @@ import {
   sizePropsTest,
   restPropsTest,
   stylePropsTest,
+  textColorPropsTest,
 } from '@local/tests';
 import { SizesDictionaryType, SizeExtendedDictionaryType, EmphasisDictionaryType } from '../../../types';
 import Heading from '../Heading';
@@ -20,6 +21,11 @@ describe('Heading', () => {
   sizePropsTest((props) => <Heading elementType="h1" data-testid="heading-test-id" {...props} />, 'heading-test-id');
 
   sizeExtendedPropsTest(
+    (props) => <Heading elementType="h1" data-testid="heading-test-id" {...props} />,
+    'heading-test-id',
+  );
+
+  textColorPropsTest(
     (props) => <Heading elementType="h1" data-testid="heading-test-id" {...props} />,
     'heading-test-id',
   );
