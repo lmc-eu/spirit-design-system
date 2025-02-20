@@ -15,14 +15,12 @@
 
       <div class="TextField">
         <label for="text-field-filled" class="TextField__label">Label</label>
-        <input type="text" id="text-field-filled" class="TextField__input" name="filled" placeholder="Placeholder"
-               value="Filled"/>
+        <input type="text" id="text-field-filled" class="TextField__input" name="filled" placeholder="Placeholder" value="Filled"/>
       </div>
 
       <div class="TextField">
         <label for="text-field-password" class="TextField__label">Label</label>
-        <input type="password" id="text-field-password" class="TextField__input" name="password"
-               placeholder="Placeholder" value="Filled"/>
+        <input type="password" id="text-field-password" class="TextField__input" name="password" placeholder="Placeholder" value="Filled"/>
       </div>
 
     </div>
@@ -41,8 +39,7 @@
 
       <div class="TextField">
         <label for="text-field-required" class="TextField__label TextField__label--required">Label</label>
-        <input type="text" id="text-field-required" class="TextField__input" name="required" placeholder="Placeholder"
-               required/>
+        <input type="text" id="text-field-required" class="TextField__input" name="required" placeholder="Placeholder" required/>
       </div>
 
     </div>
@@ -61,8 +58,7 @@
 
       <div class="TextField">
         <label for="text-field-hidden-label" class="TextField__label TextField__label--hidden">Label</label>
-        <input type="text" id="text-field-hidden-label" class="TextField__input" name="hiddenLabel"
-               placeholder="Placeholder"/>
+        <input type="text" id="text-field-hidden-label" class="TextField__input" name="hiddenLabel" placeholder="Placeholder"/>
       </div>
 
     </div>
@@ -80,8 +76,7 @@
 
       <div class="TextField">
         <label for="text-field-helper-text" class="TextField__label">Label</label>
-        <input type="text" id="text-field-helper-text" class="TextField__input" name="helperText"
-               placeholder="Placeholder"/>
+        <input type="text" id="text-field-helper-text" class="TextField__input" name="helperText" placeholder="Placeholder"/>
         <div class="TextField__helperText">Helper text</div>
       </div>
 
@@ -101,8 +96,7 @@
 
       <div class="TextField TextField--disabled">
         <label for="text-field-disabled" class="TextField__label">Label</label>
-        <input type="text" id="text-field-disabled" class="TextField__input" name="disabled" placeholder="Placeholder"
-               disabled/>
+        <input type="text" id="text-field-disabled" class="TextField__input" name="disabled" placeholder="Placeholder" disabled/>
       </div>
 
       <div class="TextField TextField--disabled">
@@ -135,21 +129,18 @@
 
       <div class="TextField TextField--success">
         <label for="text-field-success" class="TextField__label">Label</label>
-        <input type="text" id="text-field-success" class="TextField__input" name="success" placeholder="Placeholder"
-               value="Filled"/>
+        <input type="text" id="text-field-success" class="TextField__input" name="success" placeholder="Placeholder" value="Filled"/>
       </div>
 
       <div class="TextField TextField--warning">
         <label for="text-field-warning" class="TextField__label">Label</label>
-        <input type="text" id="text-field-warning" class="TextField__input" name="warning" placeholder="Placeholder"
-               value="Filled"/>
+        <input type="text" id="text-field-warning" class="TextField__input" name="warning" placeholder="Placeholder" value="Filled"/>
         <div class="TextField__validationText">Validation text</div>
       </div>
 
       <div class="TextField TextField--danger">
         <label for="text-field-danger" class="TextField__label">Label</label>
-        <input type="text" id="text-field-danger" class="TextField__input" name="danger" placeholder="Placeholder"
-               value="Filled"/>
+        <input type="text" id="text-field-danger" class="TextField__input" name="danger" placeholder="Placeholder" value="Filled"/>
         <div class="TextField__validationText">
           <ul>
             <li>Validation text</li>
@@ -176,8 +167,7 @@
 
       <div class="TextField TextField--danger">
         <label for="text-field-danger-icon-list" class="TextField__label">Label</label>
-        <input type="text" id="text-field-danger-icon-list" class="TextField__input" name="danger" placeholder="Placeholder"
-               value="Filled"/>
+        <input type="text" id="text-field-danger-icon-list" class="TextField__input" name="danger" placeholder="Placeholder" value="Filled"/>
         <div class="TextField__validationText TextField__validationText--hasIcon">
           <svg width="20" height="20" aria-hidden="true">
             <use xlink:href="/assets/icons/svg/sprite.svg#danger"/>
@@ -207,9 +197,9 @@
         <div class="TextField__validationText TextField__validationText--hasIcon">
           <svg width="20" height="20" aria-hidden="true">
             {{#if (eq state "success")}}
-            <use xlink:href="/assets/icons/svg/sprite.svg#check-plain"/>
+            <use xlink:href="/assets/icons/svg/sprite.svg#check-plain" />
             {{else}}
-            <use xlink:href="/assets/icons/svg/sprite.svg#{{state}}"/>
+            <use xlink:href="/assets/icons/svg/sprite.svg#{{state}}" />
             {{/if}}
           </svg>
           <span>This is {{state}} validation text with icon. Long validation text to show how it wraps.</span>
@@ -232,8 +222,7 @@
 
       <div class="TextField TextField--fluid">
         <label for="text-field-fluid" class="TextField__label">Label</label>
-        <input type="text" id="text-field-fluid" class="TextField__input" name="fluid" placeholder="Placeholder"
-               value="Filled"/>
+        <input type="text" id="text-field-fluid" class="TextField__input" name="fluid" placeholder="Placeholder" value="Filled"/>
       </div>
 
     </div>
@@ -253,8 +242,7 @@
 
       <div class="TextField">
         <label for="text-field-size" class="TextField__label">4000 (in Roman numerals)</label>
-        <input type="text" size="4" id="text-field-size" class="TextField__input" name="size"
-               placeholder="Placeholder"/>
+        <input type="text" size="4" id="text-field-size" class="TextField__input" name="size" placeholder="Placeholder"/>
       </div>
 
     </div>
@@ -274,8 +262,7 @@
       <div style="display: flex; gap: 1rem; align-items: flex-start; max-width: 320px;">
         <div class="TextField">
           <label for="text-field-inline" class="TextField__label TextField__label--hidden">Hidden Label</label>
-          <input type="text" id="text-field-inline" class="TextField__input" name="inline" placeholder="Placeholder"
-                 value="Filled"/>
+          <input type="text" id="text-field-inline" class="TextField__input" name="inline" placeholder="Placeholder" value="Filled"/>
         </div>
         <button type="button" class="Button Button--primary Button--medium">Button</button>
       </div>
@@ -283,14 +270,12 @@
       <div style="display: flex; gap: 1rem; align-items: flex-start; max-width: 320px;">
         <div class="TextField">
           <label for="text-field-inline-first" class="TextField__label TextField__label--hidden">Hidden Label</label>
-          <input type="text" id="text-field-inline-first" class="TextField__input" name="inlineFirst"
-                 placeholder="Placeholder" value="Filled"/>
+          <input type="text" id="text-field-inline-first" class="TextField__input" name="inlineFirst" placeholder="Placeholder" value="Filled"/>
         </div>
         <div class="TextField TextField--danger">
           <label for="text-field-inline-password" class="TextField__label TextField__label--hidden">Hidden Label</label>
           <div class="TextField__passwordToggle">
-            <input type="password" id="text-field-inline-password" class="TextField__input" name="inlinePassword"
-                   value="1234"/>
+            <input type="password" id="text-field-inline-password" class="TextField__input" name="inlinePassword" value="1234"/>
             <button
               type="button"
               class="TextField__passwordToggle__button"
@@ -301,12 +286,12 @@
             >
             <span class="TextField__passwordToggle__icon TextField__passwordToggle__icon--hidden">
               <svg width="24" height="24" aria-hidden="true">
-                <use xlink:href="/assets/icons/svg/sprite.svg#visibility-on"/>
+                <use xlink:href="/assets/icons/svg/sprite.svg#visibility-on" />
               </svg>
             </span>
               <span class="TextField__passwordToggle__icon TextField__passwordToggle__icon--shown">
               <svg width="24" height="24" aria-hidden="true">
-                <use xlink:href="/assets/icons/svg/sprite.svg#visibility-off"/>
+                <use xlink:href="/assets/icons/svg/sprite.svg#visibility-off" />
               </svg>
             </span>
             </button>
@@ -350,12 +335,12 @@
           >
           <span class="TextField__passwordToggle__icon TextField__passwordToggle__icon--hidden">
             <svg width="24" height="24" aria-hidden="true">
-              <use xlink:href="/assets/icons/svg/sprite.svg#visibility-on"/>
+              <use xlink:href="/assets/icons/svg/sprite.svg#visibility-on" />
             </svg>
           </span>
             <span class="TextField__passwordToggle__icon TextField__passwordToggle__icon--shown">
             <svg width="24" height="24" aria-hidden="true">
-              <use xlink:href="/assets/icons/svg/sprite.svg#visibility-off"/>
+              <use xlink:href="/assets/icons/svg/sprite.svg#visibility-off" />
             </svg>
           </span>
           </button>
@@ -384,12 +369,12 @@
           >
           <span class="TextField__passwordToggle__icon TextField__passwordToggle__icon--hidden">
             <svg width="24" height="24" aria-hidden="true">
-              <use xlink:href="/assets/icons/svg/sprite.svg#visibility-on"/>
+              <use xlink:href="/assets/icons/svg/sprite.svg#visibility-on" />
             </svg>
           </span>
             <span class="TextField__passwordToggle__icon TextField__passwordToggle__icon--shown">
             <svg width="24" height="24" aria-hidden="true">
-              <use xlink:href="/assets/icons/svg/sprite.svg#visibility-off"/>
+              <use xlink:href="/assets/icons/svg/sprite.svg#visibility-off" />
             </svg>
           </span>
           </button>
