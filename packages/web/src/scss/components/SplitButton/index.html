@@ -3,14 +3,14 @@
 {{setVar "colors" "primary" "secondary" "tertiary" }}
 {{setVar "sizes" "small" "medium" "large" }}
 
-<section class="UNSTABLE_Section">
+<section class="py-900 py-tablet-1000">
   <div class="Container">
     <h2 class="docs-Heading">Default</h2>
     <div class="docs-Stack docs-Stack--start">
-      <div class="Grid Grid--alignmentXStretch Grid--alignmentYStretch Grid--cols-1 Grid--desktop--cols-3">
+      <div class="Grid Grid--alignmentXStretch Grid--alignmentYStretch Grid--cols-1 Grid--desktop--cols-3" style="--grid-spacing-y: var(--spirit-space-1100);">
         {{#each @root.colors as |color|}}
         {{#each @root.sizes as |size|}}
-        <section class="UNSTABLE_Section">
+        <section>
           <h3 class="docs-Heading">Size {{ size }}, color {{ color }}</h3>
           <div class="docs-Stack docs-Stack--start">
             <div class="SplitButton">
@@ -257,14 +257,14 @@
   </div>
 </section>
 
-<section class="UNSTABLE_Section">
+<section class="py-900 py-tablet-1000">
   <div class="Container">
     <h2 class="docs-Heading">Disabled</h2>
 
     <div class="docs-Stack docs-Stack--start">
-      <div class="Grid Grid--alignmentXStretch Grid--alignmentYStretch Grid--cols-1 Grid--desktop--cols-3">
+      <div class="Grid Grid--alignmentXStretch Grid--alignmentYStretch Grid--cols-1 Grid--desktop--cols-3" style="--grid-spacing-y: var(--spirit-space-1100);">
         {{#each @root.sizes as |size|}}
-        <section class="UNSTABLE_Section">
+        <section>
           <h2 class="docs-Heading">Size {{ size }}</h2>
           <div class="docs-Stack docs-Stack--start">
             <div class="SplitButton">
@@ -279,9 +279,9 @@
                   type="button"
                   class="Button Button--{{ size }} Button--primary"
                   data-spirit-toggle="dropdown"
-                  data-spirit-target="#dropdown-primary-1"
+                  data-spirit-target="#dropdown-disabled-{{ size }}-label-and-icon"
                   aria-expanded="false"
-                  aria-controls="dropdown-primary-1"
+                  aria-controls="dropdown-disabled-{{ size }}-label-and-icon"
                   data-spirit-autoclose="true"
                   disabled
                 >
@@ -290,7 +290,7 @@
                     <use xlink:href="/assets/icons/svg/sprite.svg#chevron-down" />
                   </svg>
                 </button>
-                <div class="DropdownPopover" data-spirit-placement="bottom-end" id="dropdown-primary-1">
+                <div class="DropdownPopover" data-spirit-placement="bottom-end" id="dropdown-disabled-{{ size }}-label-and-icon">
                   <a href="#" class="Item">
                     <span class="Item__icon Item__icon--start">
                       <svg width="24" height="24" aria-hidden="true">
@@ -332,9 +332,9 @@
                   type="button"
                   class="Button Button--{{ size }} Button--primary"
                   data-spirit-toggle="dropdown"
-                  data-spirit-target="#dropdown-primary-2"
+                  data-spirit-target="#dropdown-disabled-{{ size }}-more-buttons-and-icon"
                   aria-expanded="false"
-                  aria-controls="dropdown-primary-2"
+                  aria-controls="dropdown-disabled-{{ size }}-more-buttons-and-icon"
                   data-spirit-autoclose="true"
                   disabled
                 >
@@ -343,7 +343,7 @@
                     <use xlink:href="/assets/icons/svg/sprite.svg#chevron-down" />
                   </svg>
                 </button>
-                <div class="DropdownPopover" data-spirit-placement="bottom-end" id="dropdown-primary-2">
+                <div class="DropdownPopover" data-spirit-placement="bottom-end" id="dropdown-disabled-{{ size }}-more-buttons-and-icon">
                   <a href="#" class="Item">
                     <span class="Item__icon Item__icon--start">
                       <svg width="24" height="24" aria-hidden="true">
@@ -384,9 +384,9 @@
                   type="button"
                   class="Button Button--{{ size }} Button--primary"
                   data-spirit-toggle="dropdown"
-                  data-spirit-target="#dropdown-primary-3"
+                  data-spirit-target="#dropdown-disabled-{{ size }}-button-and-icon"
                   aria-expanded="false"
-                  aria-controls="dropdown-primary-3"
+                  aria-controls="dropdown-disabled-{{ size }}-button-and-icon"
                   data-spirit-autoclose="true"
                   disabled
                 >
@@ -395,7 +395,7 @@
                     <use xlink:href="/assets/icons/svg/sprite.svg#chevron-down" />
                   </svg>
                 </button>
-                <div class="DropdownPopover" data-spirit-placement="bottom-end" id="dropdown-primary-3">
+                <div class="DropdownPopover" data-spirit-placement="bottom-end" id="dropdown-disabled-{{ size }}-button-and-icon">
                   <a href="#" class="Item">
                     <span class="Item__icon Item__icon--start">
                       <svg width="24" height="24" aria-hidden="true">
@@ -451,8 +451,8 @@
                   type="button"
                   class="Button Button--{{ size }} Button--primary"
                   data-spirit-toggle="tooltip"
-                  data-spirit-target="#tooltip-button-primary-1"
-                  aria-labelledby="tooltip-button-primary-1"
+                  data-spirit-target="#tooltip-button-disabled-{{ size }}-left"
+                  aria-labelledby="tooltip-button-disabled-{{ size }}-left"
                   disabled
                 >
                   <svg width="24" height="24" aria-hidden="true">
@@ -460,7 +460,7 @@
                   </svg>
                 </button>
                 <div
-                  id="tooltip-button-primary-1"
+                  id="tooltip-button-disabled-{{ size }}-left"
                   class="TooltipPopover is-hidden"
                   data-spirit-placement="top"
                   data-spirit-flip-fallback-placements="bottom"
@@ -475,8 +475,8 @@
                   type="button"
                   class="Button Button--{{ size }} Button--primary"
                   data-spirit-toggle="tooltip"
-                  data-spirit-target="#tooltip-button-primary-2"
-                  aria-labelledby="tooltip-button-primary-2"
+                  data-spirit-target="#tooltip-button-disabled-{{ size }}-right"
+                  aria-labelledby="tooltip-button-disabled-{{ size }}-right"
                   disabled
                 >
                   <svg width="24" height="24" aria-hidden="true">
@@ -484,7 +484,7 @@
                   </svg>
                 </button>
                 <div
-                  id="tooltip-button-primary-2"
+                  id="tooltip-button-disabled-{{ size }}-right"
                   class="TooltipPopover is-hidden"
                   data-spirit-placement="top"
                   data-spirit-flip-fallback-placements="bottom"

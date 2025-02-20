@@ -2,14 +2,14 @@
 
 {{setVar "sizes" "xsmall" "small" "medium" "large" "xlarge" }}
 
-<section class="UNSTABLE_Section">
+<section class="py-900 py-tablet-1000">
   <div class="Container">
     <h2 class="docs-Heading">SkeletonText</h2>
     <div class="docs-Stack docs-Stack--stretch">
-      <div class="Grid Grid--cols-1 Grid--tablet--cols-2 Grid--desktop--cols-3">
+      <div class="Grid Grid--cols-1 Grid--tablet--cols-2 Grid--desktop--cols-3" style="--grid-spacing-y: var(--spirit-space-1100);">
 
         {{#each @root.sizes as |size|}}
-        <section class="UNSTABLE_Section">
+        <section>
           <h2 class="docs-Heading">Size {{size}}</h2>
           <div class="docs-Stack docs-Stack--stretch">
             <div class="Skeleton Skeleton--text Skeleton--{{size}}">
@@ -30,14 +30,14 @@
   </div>
 </section>
 
-<section class="UNSTABLE_Section">
+<section class="py-900 py-tablet-1000">
   <div class="Container">
     <h2 class="docs-Heading">SkeletonHeading</h2>
     <div class="docs-Stack docs-Stack--stretch">
-      <div class="Grid Grid--cols-1 Grid--tablet--cols-2 Grid--desktop--cols-3">
+      <div class="Grid Grid--cols-1 Grid--tablet--cols-2 Grid--desktop--cols-3" style="--grid-spacing-y: var(--spirit-space-1100);">
 
         {{#each @root.sizes as |size|}}
-        <section class="UNSTABLE_Section">
+        <section>
           <h2 class="docs-Heading">Size {{size}}</h2>
           <div class="docs-Stack docs-Stack--start">
             <div class="Skeleton Skeleton--heading Skeleton--{{size}}">
@@ -54,13 +54,13 @@
   </div>
 </section>
 
-<section class="UNSTABLE_Section">
+<section class="py-900 py-tablet-1000">
   <div class="Container">
     <h2 class="docs-Heading">SkeletonShape</h2>
     <div class="docs-Stack docs-Stack--stretch">
-      <div class="Grid Grid--cols-1 Grid--tablet--cols-2 Grid--desktop--cols-3">
+      <div class="Grid Grid--cols-1 Grid--tablet--cols-2 Grid--desktop--cols-3" style="--grid-spacing-y: var(--spirit-space-1100);">
 
-        <section class="UNSTABLE_Section">
+        <section>
           <h2 class="docs-Heading">Shape Square</h2>
           <div class="docs-Stack docs-Stack--stretch">
             <div
@@ -74,7 +74,7 @@
           </div>
         </section>
 
-        <section class="UNSTABLE_Section">
+        <section>
           <h2 class="docs-Heading">Shape Circle</h2>
           <div class="docs-Stack docs-Stack--stretch">
             <div
@@ -89,7 +89,7 @@
           </div>
         </section>
 
-        <section class="UNSTABLE_Section">
+        <section>
           <h2 class="docs-Heading">Shape Rectangular</h2>
           <div class="docs-Stack docs-Stack--stretch">
             <div
@@ -104,7 +104,7 @@
           </div>
         </section>
 
-        <section class="UNSTABLE_Section">
+        <section>
           <h2 class="docs-Heading">Shape Rectangular responsive radius</h2>
           <div class="docs-Stack docs-Stack--stretch">
             <div
@@ -125,11 +125,11 @@
   </div>
 </section>
 
-<section class="UNSTABLE_Section">
+<section class="py-900 py-tablet-1000">
   <div class="Container">
     <h2 class="docs-Heading">Combined Skeletons</h2>
     <div class="docs-Stack docs-Stack--stretch">
-      <div class="Grid Grid--cols-1 Grid--tablet--cols-2 Grid--desktop--cols-2" aria-busy="true" aria-live="polite">
+      <div class="Grid Grid--cols-1 Grid--tablet--cols-2 Grid--desktop--cols-2" aria-busy="true" aria-live="polite" style="--grid-spacing-y: var(--spirit-space-1100);">
         <div class="GridItem">
           <div class="Grid">
             <div class="GridItem">
