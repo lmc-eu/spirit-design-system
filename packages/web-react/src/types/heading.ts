@@ -6,6 +6,8 @@ import {
   SizeExtendedDictionaryType,
   SizeProps,
   StyleProps,
+  TextColorProps,
+  TextColorsDictionaryType,
   TransferProps,
 } from './shared';
 
@@ -22,7 +24,8 @@ export interface HeadingProps<T extends ElementType>
     StyleProps,
     TransferProps {}
 
-export interface SpiritHeadingProps<T extends ElementType, S = void, E = void>
+export interface SpiritHeadingProps<T extends ElementType, S = void, E = void, C = void>
   extends HeadingProps<T>,
     SizeProps<SizeExtendedDictionaryType<S>>,
-    EmphasisProps<EmphasisDictionaryType<E>> {}
+    EmphasisProps<EmphasisDictionaryType<E>>,
+    TextColorProps<TextColorsDictionaryType<C>> {}

@@ -1,7 +1,7 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { Emphasis, SizesExtended } from '../../../constants';
+import { Emphasis, SizesExtended, TextColors } from '../../../constants';
 import ReadMe from '../README.md';
 import { Heading } from '..';
 
@@ -24,7 +24,7 @@ const meta: Meta<typeof Heading> = {
       control: 'select',
       options: [...Object.values(Emphasis), undefined],
       table: {
-        defaultValue: { summary: undefined },
+        defaultValue: { summary: Emphasis.BOLD },
       },
     },
     size: {
@@ -34,12 +34,20 @@ const meta: Meta<typeof Heading> = {
         defaultValue: { summary: SizesExtended.MEDIUM },
       },
     },
+    textColor: {
+      control: 'select',
+      options: [...Object.values(TextColors), undefined],
+      table: {
+        defaultValue: { summary: undefined },
+      },
+    },
   },
   args: {
     children: 'Heading',
     elementType: 'h1',
-    emphasis: undefined,
+    emphasis: Emphasis.BOLD,
     size: SizesExtended.MEDIUM,
+    textColor: undefined,
   },
 };
 

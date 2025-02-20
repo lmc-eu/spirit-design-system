@@ -7,6 +7,7 @@ import {
   sizePropsTest,
   restPropsTest,
   stylePropsTest,
+  textColorPropsTest,
 } from '@local/tests';
 import { EmphasisDictionaryType, SizesDictionaryType, SizeExtendedDictionaryType } from '../../../types';
 import Text from '../Text';
@@ -20,6 +21,8 @@ describe('Text', () => {
   sizePropsTest(Text);
 
   sizeExtendedPropsTest(Text);
+
+  textColorPropsTest(Text);
 
   restPropsTest(Text, 'p');
 

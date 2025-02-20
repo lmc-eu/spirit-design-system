@@ -69,6 +69,10 @@ export type LinkColorsDictionaryType<C = undefined> = (typeof LinkColors)[LinkCo
 export type TextColorsDictionaryKeys = keyof typeof TextColors;
 export type TextColorsDictionaryType<C = undefined> = (typeof TextColors)[TextColorsDictionaryKeys] | C;
 
+export interface TextColorProps<C> {
+  textColor?: C;
+}
+
 /* Emphasis */
 export type EmphasisDictionaryKeys = keyof typeof Emphasis;
 export type EmphasisDictionaryType<C = undefined> = (typeof Emphasis)[EmphasisDictionaryKeys] | C;
