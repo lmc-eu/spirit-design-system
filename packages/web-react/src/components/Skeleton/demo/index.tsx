@@ -4,7 +4,7 @@
 // @ts-ignore: No declaration file -- @see https://jira.almacareer.tech/browse/DS-561
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import DocsSection from '../../../../docs/DocsSections';
+import DocsSection from '../../../../docs/DocsSection';
 import SkeletonCombined from './SkeletonCombined';
 import SkeletonHeadings from './SkeletonHeadings';
 import SkeletonShapes from './SkeletonShapes';

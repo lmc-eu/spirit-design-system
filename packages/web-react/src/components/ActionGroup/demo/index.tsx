@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import DocsSection from '../../../../docs/DocsSections';
+import DocsSection from '../../../../docs/DocsSection';
 import ActionLayoutCentered from './ActionLayoutCentered';
 import ActionLayoutDefault from './ActionLayoutDefault';
 import ActionLayoutReversedOnRight from './ActionLayoutReversedOnRight';

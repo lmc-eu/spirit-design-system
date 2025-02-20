@@ -45,6 +45,7 @@ const entryPoints = [
   { dirs: ['components', 'ProductLogo'] },
   { dirs: ['components', 'Radio'] },
   { dirs: ['components', 'ScrollView'] },
+  { dirs: ['components', 'Section'] },
   { dirs: ['components', 'Select'] },
   { dirs: ['components', 'Skeleton'] },
   { dirs: ['components', 'Spinner'] },

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import DocsSection from '../../../../docs/DocsSections';
+import DocsSection from '../../../../docs/DocsSection';
 import ProductLogoDefault from './ProductLogoDefault';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import DocsSection from '../../../../docs/DocsSections';
+import DocsSection from '../../../../docs/DocsSection';
 import BoxDefault from './BoxDefault';
 import BoxWithBackgroundColor from './BoxWithBackgroundColor';
 import BoxWithBorder from './BoxWithBorder';

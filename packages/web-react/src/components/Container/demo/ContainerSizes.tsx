@@ -1,6 +1,6 @@
 import React from 'react';
 import DocsBox from '../../../../docs/DocsBox';
-import DocsSection from '../../../../docs/DocsSections';
+import DocsSection from '../../../../docs/DocsSection';
 import { SizesExtended } from '../../../constants';
 import Container from '../Container';
 
