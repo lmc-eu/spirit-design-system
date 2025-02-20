@@ -1,0 +1,5 @@
+{% set textColors = [ 'primary', 'secondary', 'tertiary' ] %}
+
+{% for textColor in textColors %}
+    <Heading elementType="h2" textColor={{ textColor }}>Heading {{ textColor }}</Heading>
+{% endfor %}
