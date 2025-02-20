@@ -3,7 +3,7 @@
 {{setVar "colors" "primary" "secondary" "tertiary" "plain" "success" "informative" "warning" "danger" }}
 {{setVar "sizes" "small" "medium" "large" }}
 
-<section class="UNSTABLE_Section">
+<section class="py-900 py-tablet-1000">
 
   <div class="Container">
 
@@ -11,9 +11,9 @@
 
     <div class="docs-Stack docs-Stack--stretch">
 
-      <div class="Grid Grid--cols-1 Grid--desktop--cols-3">
+      <div class="Grid Grid--cols-1 Grid--desktop--cols-3" style="--grid-spacing-y: var(--spirit-space-1100);">
         {{#each @root.sizes as |size|}}
-        <section class="UNSTABLE_Section">
+        <section>
           <h2 class="docs-Heading">Size {{size}}</h2>
           <div class="docs-Stack docs-Stack--start">
             {{#each @root.colors as |color|}}
@@ -44,7 +44,7 @@
 
 </section>
 
-<section class="UNSTABLE_Section">
+<section class="py-900 py-tablet-1000">
 
   <div class="Container">
 
@@ -52,9 +52,9 @@
 
     <div class="docs-Stack docs-Stack--stretch">
 
-      <div class="Grid Grid--cols-1 Grid--tablet--cols-2 Grid--desktop--cols-3">
+      <div class="Grid Grid--cols-1 Grid--desktop--cols-3" style="--grid-spacing-y: var(--spirit-space-1100);">
         {{#each @root.sizes as |size|}}
-        <section class="UNSTABLE_Section">
+        <section>
           <h2 class="docs-Heading">Size {{size}}</h2>
           <div class="docs-Stack docs-Stack--start">
             {{#each @root.colors as |color|}}
@@ -85,7 +85,7 @@
 
 </section>
 
-<section class="UNSTABLE_Section">
+<section class="py-900 py-tablet-1000">
 
   <div class="Container">
 
@@ -93,9 +93,9 @@
 
     <div class="docs-Stack docs-Stack--stretch">
 
-      <div class="Grid Grid--cols-1 Grid--desktop--cols-3">
+      <div class="Grid Grid--cols-1 Grid--desktop--cols-3" style="--grid-spacing-y: var(--spirit-space-1100);">
         {{#each @root.sizes as |size|}}
-        <section class="UNSTABLE_Section">
+        <section>
           <h2 class="docs-Heading">Size {{size}}</h2>
           <div class="docs-Stack docs-Stack--start">
             {{#each @root.colors as |color|}}
