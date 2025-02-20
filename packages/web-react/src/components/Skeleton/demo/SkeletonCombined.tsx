@@ -4,7 +4,7 @@ import { SkeletonHeading, SkeletonText, SkeletonShape } from '../index';
 
 const SkeletonCombined = () => {
   return (
-    <Grid cols={{ mobile: 1, tablet: 2, desktop: 2 }} aria-busy="true" aria-live="polite">
+    <Grid cols={{ mobile: 1, tablet: 2, desktop: 2 }} spacingY="space-1100" aria-busy="true" aria-live="polite">
       <GridItem>
         <Grid>
           <GridItem>

@@ -1,5 +1,5 @@
 import React from 'react';
-import DocsSection from '../../../../docs/DocsSections';
+import DocsSection from '../../../../docs/DocsSection';
 import { ComponentButtonColors, EmotionColors, Sizes } from '../../../constants';
 import { ButtonBaseProps } from '../../../types';
 import { Icon } from '../../Icon';
@@ -14,7 +14,7 @@ const ButtonLinkDemoFactory = ({ ...props }: ButtonBaseProps) => {
   return (
     <>
       {sizes.map((size) => (
-        <DocsSection key={size} title={`Size ${size}`} container="none">
+        <DocsSection key={size} title={`Size ${size}`} container="none" hasPadding={false}>
           {colors.map((color) => (
             <div key={color}>
               <ButtonLink size={size} color={color} elementType="a" {...props}>

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import DocsSection from '../../../../docs/DocsSections';
+import DocsSection from '../../../../docs/DocsSection';
 import GridAlignment from './GridAlignment';
 import GridCustomSpacing from './GridCustomSpacing';
 import GridEqual from './GridEqual';

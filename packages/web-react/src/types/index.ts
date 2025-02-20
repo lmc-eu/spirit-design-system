@@ -29,6 +29,7 @@ export * from './pagination';
 export * from './pill';
 export * from './radio';
 export * from './scrollView';
+export * from './section';
 export * from './select';
 export * from './shared';
 export * from './skeleton';

@@ -5,7 +5,7 @@
 import icons from '@lmc-eu/spirit-icons/icons';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import DocsSection from '../../../../docs/DocsSections';
+import DocsSection from '../../../../docs/DocsSection';
 import { IconsProvider } from '../../../context';
 import HeaderDefault from './HeaderDefault';
 import HeaderFluid from './HeaderFluid';

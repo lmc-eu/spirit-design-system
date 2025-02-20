@@ -2,7 +2,7 @@
 /* eslint-disable import/no-extraneous-dependencies, import/extensions, import/no-unresolved */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import DocsSection from '../../../../docs/DocsSections';
+import DocsSection from '../../../../docs/DocsSection';
 import TagDefault from './TagDefault';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(

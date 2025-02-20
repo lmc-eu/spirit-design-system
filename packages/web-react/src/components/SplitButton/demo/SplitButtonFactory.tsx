@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import DocsSection from '../../../../docs/DocsSections';
+import DocsSection from '../../../../docs/DocsSection';
 import { Sizes } from '../../../constants';
 import { SplitButtonColorType } from '../../../types';
 import { Button } from '../../Button';
@@ -50,7 +50,7 @@ const SplitButtonDemoFactory = <C extends void>(props: {
   return (
     <>
       {sizes.map((size) => (
-        <DocsSection key={size} title={`Size ${size}${titleColor}`} container="none">
+        <DocsSection key={size} title={`Size ${size}${titleColor}`} container="none" hasPadding={false}>
           <SplitButton color={color} size={size} isDisabled={isDisabled}>
             <Button>
               <Icon name="check-plain" marginRight="space-400" />
