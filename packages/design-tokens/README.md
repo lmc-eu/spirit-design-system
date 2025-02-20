@@ -15,6 +15,7 @@
    1. [In Sass](#in-sass)
    2. [In JavaScript](#in-javascript)
 5. [Rebranding Spirit](#rebranding-spirit)
+   1. [Using Your Design Tokens with TypeScript](#using-your-design-tokens-with-typescript)
 6. [FAQ](#faq)
 7. [License](#license)
 
@@ -237,6 +238,96 @@ Your tokens should contain the same structure as the Spirit tokens. The simplest
 way to do this is to have the same structure in your Figma file and export it
 using Supernova. If that's not possible, you can copy our tokens and adjust their values
 to your needs. You can also add new tokens required by your design system.
+
+### Using Your Design Tokens with TypeScript
+
+If you want to use your own set of design tokens instead of the default ones provided by `@lmc-eu/spirit-design-tokens`,
+you need to adjust your project's TypeScript configuration and your build system settings to correctly resolve imports.
+
+Add the following paths to your `tsconfig.json`:
+
+```json
+{
+  "compilerOptions": {
+    "paths": {
+      "@lmc-eu/spirit-design-tokens": ["path-to-your-design-tokens-directory-or-package/js"],
+      "@lmc-eu/spirit-design-tokens/*": ["path-to-your-design-tokens-directory-or-package/*"]
+    }
+  }
+}
+```
+
+Then, adjust your build system settings to correctly resolve imports.
+You can see examples for different build systems below:
+
+<details>
+<summary>Webpack example</summary>
+Please modify your <code>webpack.config.js</code>:
+
+```javascript
+import path from 'path';
+
+export default config({
+  resolve: {
+    alias: {
+      '@lmc-eu/spirit-design-tokens': path.resolve(__dirname, 'path-to-your-design-tokens-directory-or-package'),
+    },
+  },
+});
+```
+
+</details>
+
+<details>
+<summary>Vite example</summary>
+Please modify <code>vite.config.ts</code>:
+
+```javascript
+import { defineConfig } from 'vite';
+import path from 'path';
+
+export default defineConfig({
+  resolve: {
+    alias: {
+      '@lmc-eu/spirit-design-tokens': path.resolve(__dirname, 'path-to-your-design-tokens-directory-or-package'),
+    },
+  },
+});
+```
+
+</details>
+
+<details>
+<summary>Next.js example</summary>
+Please modify <code>next.config.ts</code>:
+
+```javascript
+import type, { NextConfig } from "next";
+import path, {dirname} from "path";
+import { fileURLToPath } from "url";
+
+const pathDir = dirname(fileURLToPath(import.meta.url));
+
+const nextConfig: NextConfig = {
+  transpilePackages: ['@lmc-eu/spirit-web-react'],
+  reactStrictMode: true,
+  sassOptions: {
+    implementation: 'sass-embedded',
+    includePaths: [
+      path.join(pathDir, './node_modules'),
+      path.join(pathDir, 'path-to-your-design-tokens-directory-or-package/scss'),
+    ],
+  },
+  webpack: (config) => {
+    config.resolve.alias['@lmc-eu/spirit-design-tokens'] = path.resolve('path-to-your-design-tokens-directory-or-package');
+    return config;
+  },
+};
+
+export default nextConfig;
+```
+
+</details>
 
 ## FAQ
 
