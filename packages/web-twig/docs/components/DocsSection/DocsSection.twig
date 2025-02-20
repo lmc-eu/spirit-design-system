@@ -1,13 +1,14 @@
 {# API #}
 {%- set props = props | default([]) -%}
 {%- set _container = props.container | default('all') -%}
+{%- set _hasPadding = props.hasPadding ?? true -%}
 {%- set _hasStack = props.hasStack ?? true -%}
 {%- set _stackAlignment = props.stackAlignment | default('start') -%}
 {%- set _tag = props.tag | default(null) -%}
 {%- set _title = props.title -%}
 
 {# Class names #}
-{%- set _rootClassName = 'UNSTABLE_Section' -%}
+{%- set _rootClassName = _hasPadding ? 'py-900 py-tablet-1000' : null -%}
 {%- set _headingClassName = 'docs-Heading' -%}
 
 {# Miscellaneous #}

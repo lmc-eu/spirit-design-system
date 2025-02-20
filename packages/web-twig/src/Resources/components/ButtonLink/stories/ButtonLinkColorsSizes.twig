@@ -1,9 +1,9 @@
-<Grid cols="{{ { mobile: 1, desktop: 3 } }}">
+<Grid cols="{{ { mobile: 1, desktop: 3 } }}" spacingY="space-1100">
     {% for size in sizes %}
 
         {% set title = 'Size ' ~ size %}
 
-        <DocsSection container="none" title={{ title }}>
+        <DocsSection container="none" hasPadding={ false } title={{ title }}>
             {% for color in colors %}
                 <div>
                     <ButtonLink color={ color } size={ size } href="#">
