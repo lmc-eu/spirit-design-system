@@ -32,10 +32,19 @@ Use the `emphasis` prop to set the emphasis of the text.
 <Heading elementType="h1" emphasis="semibold">Semibold heading</Heading>
 ```
 
+## Text Color
+
+Use the `textColor` prop to set color of the text. When undefined, the text color
+is inherited from the parent element.
+
+```twig
+<Heading textColor="secondary">Secondary heading</Heading>
+```
+
 ## Full Example
 
 ```twig
-<Heading elementType="h1" size="large" emphasis="semibold">
+<Heading elementType="h1" size="large" emphasis="semibold" textColor="secondary">
   Heading
 </Heading>
 ```
@@ -47,6 +56,7 @@ Use the `emphasis` prop to set the emphasis of the text.
   elementType: 'h1',
   emphasis: 'semibold',
   size: 'medium'
+  textColor: 'secondary',
 }} %}
   {% block content %}
     Text content
@@ -61,12 +71,14 @@ Use the `emphasis` prop to set the emphasis of the text.
 | `elementType` | `string`                                    | -        | ✓        | HTML tag to render                                             |
 | `emphasis`    | [Emphasis dictionary][dictionary-emphasis]  | `bold`   | ✕        | Emphasis of the text                                           |
 | `size`        | [Size Extended dictionary][dictionary-size] | `medium` | ✕        | Size of the text                                               |
+| `textColor`   | [Text Color dictionary][dictionary-color]   | —        | ✕        | Color of the text                                              |
 | `translate`   | \[`yes` \| `no` \| `''`]                    | `null`   | ✕        | Set to `no` to disable machine translation of the text content |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
+[dictionary-color]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#color
 [dictionary-emphasis]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#emphasis
 [dictionary-size]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#size
 [heading]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/src/components/Heading

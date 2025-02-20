@@ -1,0 +1,5 @@
+{% set textColors = [ 'primary', 'secondary', 'tertiary' ] %}
+
+{% for textColor in textColors %}
+    <Text textColor={{ textColor }}>Text {{ textColor }}</Text>
+{% endfor %}
