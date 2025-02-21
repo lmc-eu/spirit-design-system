@@ -88,7 +88,10 @@ export const useFileUploaderStyleProps = (props?: FileUploaderStyleProps): FileU
   const fileUploaderInputLabelRequiredClass = `${fileUploaderInputClass}__label--required`;
   const fileUploaderInputLinkClass = `${fileUploaderInputClass}__link`;
   const fileUploaderInputLinkUtilityClasses = ['link-primary', 'link-underlined'];
-  const fileUploaderInputValidationTextClass = useValidationTextStyleProps(fileUploaderClass, props?.hasValidationIcon);
+  const fileUploaderInputValidationTextClass = useValidationTextStyleProps(
+    fileUploaderInputClass,
+    props?.hasValidationIcon,
+  );
   const fileUploaderListClass = `${fileUploaderClass}List`;
   const fileUploaderAttachmentClass = `${fileUploaderClass}Attachment`;
   const fileUploaderAttachmentNameClass = `${fileUploaderAttachmentClass}__name`;

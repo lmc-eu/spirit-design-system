@@ -41,7 +41,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <DocsSection title="Input Validation States">
         <FileUploaderInputValidationStates />
       </DocsSection>
-      <DocsSection title="Input Validation with Icon" tag="Visual demo only">
+      <DocsSection title="Input Validation Text with Icon" tag="Visual demo only">
         <FileUploaderInputValidationWithIcon />
       </DocsSection>
       <DocsSection title="Input Disabled">
