@@ -14,7 +14,7 @@ const CheckboxValidationWithIcon = () => {
           label="Checkbox Label"
           key={`checkbox-${state}-icon`}
           validationState={state}
-          validationText={`This is ${state} validation text with icon.`}
+          validationText={`This is ${state} validation text.`}
           hasValidationIcon
           onChange={() => {}}
         />
