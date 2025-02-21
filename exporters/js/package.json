@@ -1,6 +1,6 @@
 {
   "name": "@lmc-eu/spirit-exporters-js",
-  "version": "2.0.11",
+  "version": "2.0.12",
   "description": "Spirit JS Exporter for Supernova",
   "license": "MIT",
   "private": true,

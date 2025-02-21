@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.1.5"></a>
+
+## [0.1.5](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-storybook@0.1.4...@lmc-eu/spirit-storybook@0.1.5) (2025-02-21)
+
+### Dependencies
+
+- Update dependency vite to v6 ([3f88c3f](https://github.com/lmc-eu/spirit-design-system/commit/3f88c3f))
+- Update monorepo:storybook to v8.5.5 ([580a1af](https://github.com/lmc-eu/spirit-design-system/commit/580a1af))
+
+**Note:** Version bump only for package @lmc-eu/spirit-storybook
+
 <a name="0.1.4"></a>
 
 ## [0.1.4](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-storybook@0.1.3...@lmc-eu/spirit-storybook@0.1.4) (2025-02-12)

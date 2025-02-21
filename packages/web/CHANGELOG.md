@@ -3,6 +3,40 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.5.0"></a>
+
+# [3.5.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.4.0...@lmc-eu/spirit-web@3.5.0) (2025-02-21)
+
+### Bug Fixes
+
+- **web:** Rename `NavigationLink` component to `NavigationAction` ([1b6d363](https://github.com/lmc-eu/spirit-design-system/commit/1b6d363))
+
+### Documentation
+
+- **web:** Showcase Header with Navigation and Dropdown [#DS-1411](https://github.com/lmc-eu/spirit-design-system/issues/DS-1411) ([e6146d7](https://github.com/lmc-eu/spirit-design-system/commit/e6146d7))
+- **web:** Tidy up Drawer demo ([967fa83](https://github.com/lmc-eu/spirit-design-system/commit/967fa83))
+- **web:** Use correct Flex reversed class in Empty State ([4f4ea63](https://github.com/lmc-eu/spirit-design-system/commit/4f4ea63))
+
+### Features
+
+- **web:** Add more complex Header examples [#DS-1627](https://github.com/lmc-eu/spirit-design-system/issues/DS-1627) ([486f9aa](https://github.com/lmc-eu/spirit-design-system/commit/486f9aa))
+- **web:** Deprecate Header component [#DS-1598](https://github.com/lmc-eu/spirit-design-system/issues/DS-1598) ([ea6feb9](https://github.com/lmc-eu/spirit-design-system/commit/ea6feb9))
+- **web:** Introduce `alignment` to `Dropdown` component [#DS-1411](https://github.com/lmc-eu/spirit-design-system/issues/DS-1411) ([1425fb4](https://github.com/lmc-eu/spirit-design-system/commit/1425fb4))
+- **web:** Introduce `button-unstyled` helper ([96b6304](https://github.com/lmc-eu/spirit-design-system/commit/96b6304))
+- **web:** Introduce `NavigationItem` subcomponent [#DS-1411](https://github.com/lmc-eu/spirit-design-system/issues/DS-1411) ([575f6a4](https://github.com/lmc-eu/spirit-design-system/commit/575f6a4))
+- **web:** Introduce Drawer component [#DS-1580](https://github.com/lmc-eu/spirit-design-system/issues/DS-1580) ([45c7f55](https://github.com/lmc-eu/spirit-design-system/commit/45c7f55))
+- **web:** Introduce Navigation and NavigationLink components [#DS-1551](https://github.com/lmc-eu/spirit-design-system/issues/DS-1551) [#DS-1530](https://github.com/lmc-eu/spirit-design-system/issues/DS-1530) ([ae30052](https://github.com/lmc-eu/spirit-design-system/commit/ae30052))
+- **web:** Introduce NavigationAvatar subcomponent [#DS-1666](https://github.com/lmc-eu/spirit-design-system/issues/DS-1666) ([3bbb4da](https://github.com/lmc-eu/spirit-design-system/commit/3bbb4da))
+- **web:** Introduce SplitButton component [#DS-1605](https://github.com/lmc-eu/spirit-design-system/issues/DS-1605) ([0d890e4](https://github.com/lmc-eu/spirit-design-system/commit/0d890e4))
+- **web:** Introduce UNSTABLE Header component [#DS-1523](https://github.com/lmc-eu/spirit-design-system/issues/DS-1523) ([decfe02](https://github.com/lmc-eu/spirit-design-system/commit/decfe02))
+- **web:** Introduce variants to NavigationAction [#DS-1672](https://github.com/lmc-eu/spirit-design-system/issues/DS-1672) ([0306e9b](https://github.com/lmc-eu/spirit-design-system/commit/0306e9b))
+- **web:** Introduce Vertical Navigation [#DS-1627](https://github.com/lmc-eu/spirit-design-system/issues/DS-1627) ([6df1421](https://github.com/lmc-eu/spirit-design-system/commit/6df1421))
+- **web:** Refactor Accessibility expanded helpers to prevent wrong inheritance ([3ac6ad0](https://github.com/lmc-eu/spirit-design-system/commit/3ac6ad0))
+- **web:** Remove UNSTABLE_ActionLayout component [#DS-1562](https://github.com/lmc-eu/spirit-design-system/issues/DS-1562) ([2b8b259](https://github.com/lmc-eu/spirit-design-system/commit/2b8b259))
+- **web:** Update NavigationAction expanded style ([06ed98a](https://github.com/lmc-eu/spirit-design-system/commit/06ed98a))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="3.4.0"></a>
 
 # [3.4.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.3.0...@lmc-eu/spirit-web@3.4.0) (2025-02-12)

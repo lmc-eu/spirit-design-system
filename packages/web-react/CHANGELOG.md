@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.5.0"></a>
+
+# [3.5.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.4.0...@lmc-eu/spirit-web-react@3.5.0) (2025-02-21)
+
+### Bug Fixes
+
+- **web-react:** Rename `NavigationLink` component to `NavigationAction` ([732ca77](https://github.com/lmc-eu/spirit-design-system/commit/732ca77))
+
+### Code Refactoring
+
+- **web-react:** Add NavigationAvatar to UNSTABLE_Header demo [#DS-1666](https://github.com/lmc-eu/spirit-design-system/issues/DS-1666) ([b2fccc5](https://github.com/lmc-eu/spirit-design-system/commit/b2fccc5))
+
+### Documentation
+
+- **web-react:** Showcase Header with Navigation and Dropdown [#DS-1411](https://github.com/lmc-eu/spirit-design-system/issues/DS-1411) ([00c736c](https://github.com/lmc-eu/spirit-design-system/commit/00c736c))
+
+### Features
+
+- **web-react:** Add Drawer with Navigation to Header demo [#DS-1627](https://github.com/lmc-eu/spirit-design-system/issues/DS-1627) ([f047b94](https://github.com/lmc-eu/spirit-design-system/commit/f047b94))
+- **web-react:** Add Pill Navigation to UNSTABLE_Header demo [#DS-1672](https://github.com/lmc-eu/spirit-design-system/issues/DS-1672) ([ee7a22e](https://github.com/lmc-eu/spirit-design-system/commit/ee7a22e))
+- **web-react:** Deprecate Header component [#DS-1598](https://github.com/lmc-eu/spirit-design-system/issues/DS-1598) ([317a8b2](https://github.com/lmc-eu/spirit-design-system/commit/317a8b2))
+- **web-react:** Introduce `alignment` to `Dropdown` component [#DS-1411](https://github.com/lmc-eu/spirit-design-system/issues/DS-1411) ([7f76761](https://github.com/lmc-eu/spirit-design-system/commit/7f76761))
+- **web-react:** Introduce `NavigationItem` subcomponent [#DS-1411](https://github.com/lmc-eu/spirit-design-system/issues/DS-1411) ([e2fdb90](https://github.com/lmc-eu/spirit-design-system/commit/e2fdb90))
+- **web-react:** Introduce Drawer component [#DS-1580](https://github.com/lmc-eu/spirit-design-system/issues/DS-1580) ([d7ffab3](https://github.com/lmc-eu/spirit-design-system/commit/d7ffab3))
+- **web-react:** Introduce Navigation [#DS-1524](https://github.com/lmc-eu/spirit-design-system/issues/DS-1524) ([c42d1c7](https://github.com/lmc-eu/spirit-design-system/commit/c42d1c7))
+- **web-react:** Introduce NavigationAvatar subcomponent [#DS-1666](https://github.com/lmc-eu/spirit-design-system/issues/DS-1666) ([9cbd710](https://github.com/lmc-eu/spirit-design-system/commit/9cbd710))
+- **web-react:** Introduce UNSTABLE_Header [#DS-1524](https://github.com/lmc-eu/spirit-design-system/issues/DS-1524) ([effa1f5](https://github.com/lmc-eu/spirit-design-system/commit/effa1f5))
+- **web-react:** Introduce variants to NavigationAction [#DS-1672](https://github.com/lmc-eu/spirit-design-system/issues/DS-1672) ([401a7c5](https://github.com/lmc-eu/spirit-design-system/commit/401a7c5))
+- **web-react:** Introduce Vertical Navigation [#DS-1627](https://github.com/lmc-eu/spirit-design-system/issues/DS-1627) ([db240ab](https://github.com/lmc-eu/spirit-design-system/commit/db240ab))
+- **web-react:** Remove UNSTABLE_ActionLayout component [#DS-1562](https://github.com/lmc-eu/spirit-design-system/issues/DS-1562) ([bb519ea](https://github.com/lmc-eu/spirit-design-system/commit/bb519ea))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="3.4.0"></a>
 
 # [3.4.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.3.0...@lmc-eu/spirit-web-react@3.4.0) (2025-02-12)

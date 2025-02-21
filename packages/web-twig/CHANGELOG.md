@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.3.0"></a>
+
+# [4.3.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@4.2.0...@lmc-eu/spirit-web-twig@4.3.0) (2025-02-21)
+
+### Documentation
+
+- **web-twig:** Use correct Flex reversed class in Empty State ([4afe530](https://github.com/lmc-eu/spirit-design-system/commit/4afe530))
+
+### Features
+
+- **web-twig:** Introduce `alignment` to `Dropdown` component [#DS-1411](https://github.com/lmc-eu/spirit-design-system/issues/DS-1411) ([214abf5](https://github.com/lmc-eu/spirit-design-system/commit/214abf5))
+- **web-twig:** Remove UNSTABLE_ActionLayout component [#DS-1562](https://github.com/lmc-eu/spirit-design-system/issues/DS-1562) ([6b289d3](https://github.com/lmc-eu/spirit-design-system/commit/6b289d3))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="4.2.0"></a>
 
 # [4.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@4.1.1...@lmc-eu/spirit-web-twig@4.2.0) (2025-01-30)

@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.2.0"></a>
+
+# [3.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@3.1.0...@lmc-eu/spirit-design-tokens@3.2.0) (2025-02-21)
+
+### Dependencies
+
+- Update dependency vite to v6 ([3f88c3f](https://github.com/lmc-eu/spirit-design-system/commit/3f88c3f))
+
+### Features
+
+- **design-tokens:** Introduce Container size tokens [#DS-1674](https://github.com/lmc-eu/spirit-design-system/issues/DS-1674) ([e6e1553](https://github.com/lmc-eu/spirit-design-system/commit/e6e1553))
+- **design-tokens:** Update header item color token ([2a6637a](https://github.com/lmc-eu/spirit-design-system/commit/2a6637a))
+
+**Note:** Version bump only for package @lmc-eu/spirit-design-tokens
+
 <a name="3.1.0"></a>
 
 # [3.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@3.0.3...@lmc-eu/spirit-design-tokens@3.1.0) (2025-02-12)

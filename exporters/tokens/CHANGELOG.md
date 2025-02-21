@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.2.4"></a>
+
+## [2.2.4](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-tokens-exporter@2.2.3...@almacareer/spirit-tokens-exporter@2.2.4) (2025-02-21)
+
+### Chores
+
+- **exporter-tokens:** Rebuild exporter ([7ffaa27](https://github.com/lmc-eu/spirit-design-system/commit/7ffaa27))
+
+### Dependencies
+
+- Update dependency vite to v6 ([3f88c3f](https://github.com/lmc-eu/spirit-design-system/commit/3f88c3f))
+
+**Note:** Version bump only for package @almacareer/spirit-tokens-exporter
+
 <a name="2.2.3"></a>
 
 ## [2.2.3](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-tokens-exporter@2.2.2...@almacareer/spirit-tokens-exporter@2.2.3) (2025-02-12)
