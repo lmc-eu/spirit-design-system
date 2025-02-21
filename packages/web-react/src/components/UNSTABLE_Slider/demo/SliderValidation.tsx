@@ -55,7 +55,6 @@ const SliderValidation = () => {
         helperText="Helper text"
         validationState="danger"
         validationText="Validation text with icon"
-        hasValidationIcon
       />
     </>
   );

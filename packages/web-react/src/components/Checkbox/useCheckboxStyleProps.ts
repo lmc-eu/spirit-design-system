@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks';
+import { useValidationTextStyleProps } from '../../hooks/useValidationTextStyleProps';
 import { SpiritCheckboxProps, CheckboxProps } from '../../types';
 
 export interface CheckboxStyles {
@@ -29,8 +30,7 @@ export function useCheckboxStyleProps(props: SpiritCheckboxProps): CheckboxStyle
   const checkboxLabelRequiredClass = `${checkboxClass}__label--required`;
   const checkboxLabelHiddenClass = `${checkboxClass}__label--hidden`;
   const checkboxHelperTextClass = `${checkboxClass}__helperText`;
-  const checkboxValidationTextClass = `${checkboxClass}__validationText`;
-  const checkboxValidationIconTextClass = `${checkboxValidationTextClass}--hasIcon`;
+  const checkboxValidationTextClass = useValidationTextStyleProps(checkboxClass, hasValidationIcon);
   const checkboxValidationClass = `${checkboxClass}--${validationState}`;
 
   const rootStyles = classNames(checkboxClass, {
@@ -42,9 +42,6 @@ export function useCheckboxStyleProps(props: SpiritCheckboxProps): CheckboxStyle
     [checkboxLabelRequiredClass]: isRequired,
     [checkboxLabelHiddenClass]: isLabelHidden,
   });
-  const validationTextStyles = classNames(checkboxValidationTextClass, {
-    [checkboxValidationIconTextClass]: hasValidationIcon,
-  });
 
   return {
     classProps: {
@@ -53,7 +50,7 @@ export function useCheckboxStyleProps(props: SpiritCheckboxProps): CheckboxStyle
       label: labelStyles,
       input: checkboxInputClass,
       helperText: checkboxHelperTextClass,
-      validationText: validationTextStyles,
+      validationText: checkboxValidationTextClass,
     },
     props: {
       ...restProps,

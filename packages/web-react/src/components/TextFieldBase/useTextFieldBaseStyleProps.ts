@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks';
+import { useValidationTextStyleProps } from '../../hooks/useValidationTextStyleProps';
 import { SpiritTextFieldBaseProps, TextFieldBaseProps } from '../../types';
 
 export interface TextFieldBaseStyles {
@@ -30,8 +31,7 @@ export function useTextFieldBaseStyleProps(props: SpiritTextFieldBaseProps): Tex
   const TextFieldBaseLabelClass = `${TextFieldBaseClass}__label`;
   const TextFieldBaseLabelRequiredClass = `${TextFieldBaseClass}__label--required`;
   const TextFieldBaseLabelHiddenClass = `${TextFieldBaseClass}__label--hidden`;
-  const TextFieldBaseValidationTextClass = `${TextFieldBaseClass}__validationText`;
-  const TextFieldBaseValidationIconTextClass = `${TextFieldBaseValidationTextClass}--hasIcon`;
+  const TextFieldBaseValidationTextClass = useValidationTextStyleProps(TextFieldBaseClass, hasValidationIcon);
   const TextFieldBasePasswordToggleClass = `${TextFieldBaseClass}__passwordToggle`;
   const TextFieldBasePasswordToggleButtonClass = `${TextFieldBaseClass}__passwordToggle__button`;
   const TextFieldBasePasswordToggleIconClass = `${TextFieldBaseClass}__passwordToggle__icon`;
@@ -46,9 +46,6 @@ export function useTextFieldBaseStyleProps(props: SpiritTextFieldBaseProps): Tex
     [TextFieldBaseLabelRequiredClass]: isRequired,
     [TextFieldBaseLabelHiddenClass]: isLabelHidden,
   });
-  const validationTextStyles = classNames(TextFieldBaseValidationTextClass, {
-    [TextFieldBaseValidationIconTextClass]: hasValidationIcon,
-  });
 
   return {
     classProps: {
@@ -56,7 +53,7 @@ export function useTextFieldBaseStyleProps(props: SpiritTextFieldBaseProps): Tex
       label: labelStyles,
       input: TextFieldBaseInputClass,
       helperText: TextFieldBaseHelperTextClass,
-      validationText: validationTextStyles,
+      validationText: TextFieldBaseValidationTextClass,
       passwordToggle: TextFieldBasePasswordToggleClass,
       passwordToggleButton: TextFieldBasePasswordToggleButtonClass,
       passwordToggleIcon: TextFieldBasePasswordToggleIconClass,

@@ -1,9 +1,8 @@
-import { ElementType } from 'react';
 import { useIconName } from '../../hooks/useIconName';
 import { ValidationTextProps } from './types';
 
-export function useValidationIcon<T extends ElementType = 'div'>({ validationState }: ValidationTextProps<T>) {
-  const iconNameValue = useIconName(validationState as string, {
+export function useValidationIcon({ hasValidationStateIcon }: ValidationTextProps) {
+  const iconNameValue = useIconName(hasValidationStateIcon as string, {
     success: 'check-plain',
     warning: 'warning',
     danger: 'danger',

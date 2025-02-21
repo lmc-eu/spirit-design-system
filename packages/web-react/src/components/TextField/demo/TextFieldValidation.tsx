@@ -43,19 +43,6 @@ const TextFieldValidation = () => (
       placeholder="Placeholder"
       value="Filled"
     />
-
-    <TextField
-      id="textfield-danger-icon-helper"
-      isRequired
-      label="Label"
-      helperText="This is helper text"
-      validationText="Danger validation text with icon"
-      validationState="danger"
-      hasValidationIcon
-      name="textfieldDangerHelper"
-      placeholder="Placeholder"
-      value="Filled"
-    />
   </>
 );
 

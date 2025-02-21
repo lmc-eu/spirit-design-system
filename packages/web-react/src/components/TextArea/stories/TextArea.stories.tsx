@@ -99,6 +99,7 @@ const meta: Meta<typeof TextArea> = {
   args: {
     autoComplete: 'off',
     autoResizingMaxHeight: 400,
+    hasValidationIcon: false,
     helperText: 'Helper text',
     id: 'TextArea',
     isAutoResizing: false,

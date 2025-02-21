@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks';
+import { useValidationTextStyleProps } from '../../hooks/useValidationTextStyleProps';
 import { Validation } from '../../types';
 
 export interface UseFieldGroupStyleProps extends Validation {
@@ -29,8 +30,7 @@ export const useFieldGroupStyleProps = ({
   const fieldGroupLabelClass = `${fieldGroupRootClass}__label`;
   const fieldGroupLabelRequiredClass = `${fieldGroupLabelClass}--required`;
   const fieldGroupFieldsClass = `${fieldGroupRootClass}__fields`;
-  const fieldGroupValidationTextClass = `${fieldGroupRootClass}__validationText`;
-  const fieldGroupValidationIconTextClass = `${fieldGroupValidationTextClass}--hasIcon`;
+  const fieldGroupValidationTextClass = useValidationTextStyleProps(fieldGroupRootClass, hasValidationIcon);
   const fieldGroupHelperTextClass = `${fieldGroupRootClass}__helperText`;
 
   return {
@@ -43,9 +43,7 @@ export const useFieldGroupStyleProps = ({
         [fieldGroupLabelRequiredClass]: isRequired,
       }),
       fields: fieldGroupFieldsClass,
-      validationText: classNames(fieldGroupValidationTextClass, {
-        [fieldGroupValidationIconTextClass]: hasValidationIcon,
-      }),
+      validationText: fieldGroupValidationTextClass,
       helperText: fieldGroupHelperTextClass,
     },
   };

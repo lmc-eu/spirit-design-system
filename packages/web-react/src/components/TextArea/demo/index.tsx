@@ -38,6 +38,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <DocsSection title="Validation State with Validation Text">
         <TextAreaValidation />
       </DocsSection>
+      <DocsSection title="Validation Text with Icon">
+        <TextAreaValidation />
+      </DocsSection>
       <DocsSection title="Fluid">
         <TextAreaFluid />
       </DocsSection>

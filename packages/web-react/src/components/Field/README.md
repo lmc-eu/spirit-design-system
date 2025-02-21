@@ -34,15 +34,14 @@ When displaying text dynamically, set [`role="alert"`][aria-alert-role] on the `
 
 ### API
 
-| Name                | Type                                           | Default | Required | Description                                                                                    |
-| ------------------- | ---------------------------------------------- | ------- | -------- | ---------------------------------------------------------------------------------------------- |
-| `className`         | `string`                                       | -       | ✓        | Wrapper custom class name                                                                      |
-| `elementType`       | \[`span` \| `div`]                             | `div`   | ✕        | Type of element used as main wrapper (applied only for single validation text, otherwise `ul`) |
-| `hasValidationIcon` | `boolean`                                      | `false` | ✕        | Whether to show validation icon                                                                |
-| `id`                | `string`                                       | -       | ✕        | Component id                                                                                   |
-| `role`              | `string`                                       | -       | ✕        | The role attribute that describes the role of an element                                       |
-| `validationText`    | \[`ReactNode` \| `ReactNode[]`]                | -       | ✕        | Validation text, only visible if validationState is set                                        |
-| `validationState`   | [Validation dictionary][dictionary-validation] | -       | ✕        | Type of validation state.                                                                      |
+| Name                     | Type                                           | Default | Required | Description                                                                                    |
+| ------------------------ | ---------------------------------------------- | ------- | -------- | ---------------------------------------------------------------------------------------------- |
+| `className`              | `string`                                       | -       | ✓        | Wrapper custom class name                                                                      |
+| `elementType`            | \[`span` \| `div`]                             | `div`   | ✕        | Type of element used as main wrapper (applied only for single validation text, otherwise `ul`) |
+| `hasValidationStateIcon` | [Validation dictionary][dictionary-validation] | -       | ✕        | Whether to show validation icon                                                                |
+| `id`                     | `string`                                       | -       | ✕        | Component id                                                                                   |
+| `role`                   | `string`                                       | -       | ✕        | The role attribute that describes the role of an element                                       |
+| `validationText`         | \[`ReactNode` \| `ReactNode[]`]                | -       | ✕        | Validation text, only visible if validationState is set                                        |
 
 ## HelperText
 

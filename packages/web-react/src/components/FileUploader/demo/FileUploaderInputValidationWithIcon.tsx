@@ -1,0 +1,57 @@
+import React from 'react';
+import { ValidationStates } from '../../../constants';
+import { SpiritFileUploaderAttachmentProps } from '../../../types';
+import { FileUploader, FileUploaderAttachment, FileUploaderInput, FileUploaderList, useFileQueue } from '..';
+
+const FileUploaderInputValidationWithIcon = () => {
+  const { fileQueue, addToQueue, clearQueue, onDismiss, findInQueue, updateQueue } = useFileQueue();
+
+  const attachmentComponent = ({ id, ...props }: SpiritFileUploaderAttachmentProps) => (
+    <FileUploaderAttachment key={id} id={id} {...props} />
+  );
+
+  const states = Object.values(ValidationStates);
+
+  return (
+    <>
+      {/* ⚠️ VISUAL EXAMPLE ONLY, DO NOT COPY-PASTE */}
+      {states.map((state) => {
+        return (
+          <FileUploader
+            addToQueue={addToQueue}
+            clearQueue={clearQueue}
+            fileQueue={fileQueue}
+            findInQueue={findInQueue}
+            id={`file-uploader-${state}-validation-icon`}
+            onDismiss={onDismiss}
+            updateQueue={updateQueue}
+            key={`file-uploader-${state}-validation-icon`}
+          >
+            <FileUploaderInput
+              helperText="Max file size is 10 MB"
+              id={`file-uploader-${state}-validation-input-icon`}
+              label="Label"
+              labelText="or drag and drop here"
+              linkText="Upload your file"
+              name="attachmentsWarning"
+              /* eslint-disable-next-line no-console */
+              onError={(error) => console.error('My error log', error)}
+              validationText={`This is ${state} validation text with icon. Long validation text to show how it wraps.`}
+              validationState={state}
+              hasValidationIcon
+              isRequired
+            />
+            <FileUploaderList
+              attachmentComponent={attachmentComponent}
+              id={`file-uploader-${state}-validation-attachment-icon`}
+              inputName="attachmentsWarning"
+              label="Attachments"
+            />
+          </FileUploader>
+        );
+      })}
+    </>
+  );
+};
+
+export default FileUploaderInputValidationWithIcon;

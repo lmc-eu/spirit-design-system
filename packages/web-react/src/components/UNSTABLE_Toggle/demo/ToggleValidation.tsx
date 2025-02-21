@@ -34,7 +34,6 @@ const ToggleValidation = () => (
       helperText="Helper text"
       validationText="Validation text with icon"
       validationState="warning"
-      hasValidationIcon
       name="default"
       isChecked
     />

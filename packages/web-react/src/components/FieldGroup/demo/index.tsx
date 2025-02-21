@@ -16,6 +16,7 @@ import FieldGroupHelperText from './FieldGroupHelperText';
 import FieldGroupHiddenLabel from './FieldGroupHiddenLabel';
 import FieldGroupRequired from './FieldGroupRequired';
 import FieldGroupValidationState from './FieldGroupValidationState';
+import FieldGroupValidationWithIcon from './FieldGroupValidationWithIcon';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -37,6 +38,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <IconsProvider value={icons}>
       <DocsSection title="Validation State with Validation Text">
         <FieldGroupValidationState />
+      </DocsSection>
+      <DocsSection title="Validation Text with Icon">
+        <FieldGroupValidationWithIcon />
       </DocsSection>
     </IconsProvider>
     <DocsSection title="Fluid">

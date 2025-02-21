@@ -30,6 +30,7 @@ const meta: Meta<typeof UNSTABLE_Toggle> = {
   },
   args: {
     hasIndicators: false,
+    hasValidationIcon: false,
     helperText: '',
     id: 'toggle',
     isRequired: false,

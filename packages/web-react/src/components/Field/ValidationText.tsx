@@ -8,7 +8,6 @@ import { useValidationIcon } from './useValidationIcon';
 const defaultProps: Partial<ValidationTextProps> = {
   className: undefined,
   elementType: 'div',
-  hasIcon: false,
   id: undefined,
   registerAria: undefined,
   role: undefined,
@@ -20,13 +19,12 @@ const ValidationText = <T extends ElementType = 'div'>(props: ValidationTextProp
     className,
     elementType: ElementTag = defaultProps.elementType as ElementType,
     id,
-    hasIcon,
+    hasValidationStateIcon,
     registerAria,
     role,
     validationText,
-    validationState,
   } = propsWithDefaults;
-  const validationIconName = useValidationIcon({ validationState });
+  const validationIconName = useValidationIcon({ hasValidationStateIcon });
 
   useEffect(() => {
     registerAria?.({ add: id });
@@ -40,7 +38,7 @@ const ValidationText = <T extends ElementType = 'div'>(props: ValidationTextProp
 
   return (
     <ElementTag className={className} id={id} role={role}>
-      {hasIcon && <Icon name={validationIconName} boxSize="20" />}
+      {hasValidationStateIcon && <Icon name={validationIconName} boxSize="20" />}
       {Array.isArray(validationText) ? (
         <ul>
           {validationText.map((item) => (
@@ -49,8 +47,8 @@ const ValidationText = <T extends ElementType = 'div'>(props: ValidationTextProp
         </ul>
       ) : (
         <>
-          {hasIcon && <ElementTag>{validationText}</ElementTag>}
-          {!hasIcon && validationText}
+          {hasValidationStateIcon && <ElementTag>{validationText}</ElementTag>}
+          {!hasValidationStateIcon && validationText}
         </>
       )}
     </ElementTag>

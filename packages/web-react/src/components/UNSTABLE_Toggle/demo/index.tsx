@@ -15,6 +15,7 @@ import ToggleHiddenLabel from './ToggleHiddenLabel';
 import ToggleIndicators from './ToggleIndicators';
 import ToggleRequired from './ToggleRequired';
 import ToggleValidation from './ToggleValidation';
+import ToggleValidationWithIcon from './ToggleValidationWithIcon';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -42,6 +43,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <IconsProvider value={icons}>
       <DocsSection title="Validation State with Validation Text" stackAlignment="stretch">
         <ToggleValidation />
+      </DocsSection>
+      <DocsSection title="Validation Text with Icon" stackAlignment="stretch">
+        <ToggleValidationWithIcon />
       </DocsSection>
     </IconsProvider>
   </React.StrictMode>,

@@ -110,6 +110,7 @@ const meta: Meta<typeof UNSTABLE_Slider> = {
     },
   },
   args: {
+    hasValidationIcon: false,
     helperText: '',
     id: 'slider',
     isDisabled: false,

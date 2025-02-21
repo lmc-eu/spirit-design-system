@@ -125,37 +125,6 @@ const FileUploaderInputValidationStates = () => {
           label="Attachments"
         />
       </FileUploader>
-
-      <FileUploader
-        addToQueue={addToQueueWarning}
-        clearQueue={clearQueueWarning}
-        fileQueue={fileQueueWarning}
-        findInQueue={findInQueueWarning}
-        id="file-uploader-validation-states-warning-icon"
-        onDismiss={onDismissWarning}
-        updateQueue={updateQueueWarning}
-      >
-        <FileUploaderInput
-          helperText="Max file size is 10 MB"
-          id="file-uploader-validation-states-warning-input-icon"
-          label="Label"
-          labelText="or drag and drop here"
-          linkText="Upload your file"
-          name="attachmentsWarning"
-          /* eslint-disable-next-line no-console */
-          onError={(error) => console.error('My error log', error)}
-          validationText="Warning validation text with icon"
-          validationState="warning"
-          hasValidationIcon
-          isRequired
-        />
-        <FileUploaderList
-          attachmentComponent={attachmentComponent}
-          id="file-uploader-validation-states-warning-attachment-icon"
-          inputName="attachmentsWarning"
-          label="Attachments"
-        />
-      </FileUploader>
     </>
   );
 };

@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import { CSSProperties } from 'react';
 import { useClassNamePrefix } from '../../hooks';
+import { useValidationTextStyleProps } from '../../hooks/useValidationTextStyleProps';
 import { FileMetadata, FileUploaderQueueLimitBehaviorType, Validation } from '../../types';
 import { FileUploaderCropCSS, IMAGE_DIMENSION } from './constants';
 
@@ -87,8 +88,7 @@ export const useFileUploaderStyleProps = (props?: FileUploaderStyleProps): FileU
   const fileUploaderInputLabelRequiredClass = `${fileUploaderInputClass}__label--required`;
   const fileUploaderInputLinkClass = `${fileUploaderInputClass}__link`;
   const fileUploaderInputLinkUtilityClasses = ['link-primary', 'link-underlined'];
-  const fileUploaderInputValidationTextClass = `${fileUploaderInputClass}__validationText`;
-  const fileUploaderInputValidationIconTextClass = `${fileUploaderInputValidationTextClass}--hasIcon`;
+  const fileUploaderInputValidationTextClass = useValidationTextStyleProps(fileUploaderClass, props?.hasValidationIcon);
   const fileUploaderListClass = `${fileUploaderClass}List`;
   const fileUploaderAttachmentClass = `${fileUploaderClass}Attachment`;
   const fileUploaderAttachmentNameClass = `${fileUploaderAttachmentClass}__name`;
@@ -154,9 +154,7 @@ export const useFileUploaderStyleProps = (props?: FileUploaderStyleProps): FileU
         dropLabel: fileUploaderInputDropLabelClass,
         helper: fileUploaderInputHelperClass,
         link: classNames(fileUploaderInputLinkClass, ...fileUploaderInputLinkUtilityClasses),
-        validationText: classNames(fileUploaderInputValidationTextClass, {
-          [fileUploaderInputValidationIconTextClass]: props?.hasValidationIcon,
-        }),
+        validationText: fileUploaderInputValidationTextClass,
         dropZone: {
           root: fileUploaderInputDropZoneClass,
           label: fileUploaderInputDropZoneLabelClass,

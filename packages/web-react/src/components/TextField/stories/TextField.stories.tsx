@@ -97,6 +97,7 @@ const meta: Meta<typeof TextField> = {
   args: {
     autoComplete: 'off',
     hasPasswordToggle: false,
+    hasValidationIcon: false,
     helperText: 'Helper text',
     id: 'TextField',
     isDisabled: false,

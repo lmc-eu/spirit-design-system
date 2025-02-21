@@ -83,6 +83,7 @@ const meta: Meta<typeof Checkbox> = {
   },
   args: {
     autoComplete: 'off',
+    hasValidationIcon: false,
     helperText: 'Helper text',
     id: 'checkbox',
     isDisabled: false,

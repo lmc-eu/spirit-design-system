@@ -15,6 +15,7 @@ import CheckboxIndeterminate from './CheckboxIndeterminate';
 import CheckboxItem from './CheckboxItem';
 import CheckboxRequired from './CheckboxRequired';
 import CheckboxValidation from './CheckboxValidation';
+import CheckboxValidationWithIcon from './CheckboxValidationWithIcon';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -39,6 +40,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <IconsProvider value={icons}>
       <DocsSection title="Validation State with Validation Text">
         <CheckboxValidation />
+      </DocsSection>
+      <DocsSection title="Validation Text with Icon">
+        <CheckboxValidationWithIcon />
       </DocsSection>
     </IconsProvider>
     <DocsSection title="Item">

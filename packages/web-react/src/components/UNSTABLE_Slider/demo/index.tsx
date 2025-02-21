@@ -13,6 +13,7 @@ import SliderFluid from './SliderFluid';
 import SliderHelperText from './SliderHelperText';
 import SliderHiddenLabel from './SliderHiddenLabel';
 import SliderValidation from './SliderValidation';
+import SliderValidationWithIcon from './SliderValidationWithIcon';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -31,6 +32,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <IconsProvider value={icons}>
       <DocsSection title="Validation State with Validation Text" stackAlignment="stretch">
         <SliderValidation />
+      </DocsSection>
+      <DocsSection title="Validation Text with Icon" stackAlignment="stretch">
+        <SliderValidationWithIcon />
       </DocsSection>
     </IconsProvider>
     <DocsSection title="Fluid" stackAlignment="stretch">

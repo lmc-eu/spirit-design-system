@@ -36,16 +36,6 @@ const CheckboxValidation = () => (
       isChecked
       onChange={() => {}}
     />
-    <Checkbox
-      id="checkbox-warning-validation-icon"
-      name="checkboxWarning"
-      label="Checkbox Label"
-      validationState="warning"
-      validationText="Warning validation text with icon"
-      helperText="Helper text"
-      hasValidationIcon
-      onChange={() => {}}
-    />
   </>
 );
 

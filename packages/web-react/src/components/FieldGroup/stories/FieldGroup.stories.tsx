@@ -100,6 +100,7 @@ const meta: Meta<typeof FieldGroup> = {
   },
   args: {
     children: 'boxes',
+    hasValidationIcon: false,
     helperText: 'Helper text',
     id: 'field-group',
     isDisabled: false,

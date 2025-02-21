@@ -101,6 +101,7 @@ const meta: Meta<typeof FileUploaderInput> = {
     },
   },
   args: {
+    hasValidationIcon: false,
     helperText: 'Max file size is 10 MB',
     id: 'file-uploader-example-input',
     isDisabled: false,

@@ -120,6 +120,7 @@ const meta: Meta<typeof Select> = {
     },
   },
   args: {
+    hasValidationIcon: false,
     autoComplete: 'off',
     children: 'placeholder & disabled',
     helperText: 'Helper text',

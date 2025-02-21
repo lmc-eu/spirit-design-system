@@ -25,16 +25,6 @@ const SelectValidation = () => (
     >
       <ChildrenNode />
     </Select>
-    <Select
-      id="select-warning-icon"
-      label="Label"
-      validationText="Validation text with icon"
-      name="selectWarning"
-      validationState="warning"
-      hasValidationIcon
-    >
-      <ChildrenNode />
-    </Select>
   </>
 );
 

@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks';
+import { useValidationTextStyleProps } from '../../hooks/useValidationTextStyleProps';
 import { Validation } from '../../types';
 
 export interface UseSelectStyleProps extends Validation {
@@ -39,8 +40,7 @@ export const useSelectStyleProps = ({
   const selectContainerClass = `${selectRootClass}__inputContainer`;
   const selectInputClass = `${selectRootClass}__input`;
   const selectIconClass = `${selectRootClass}__icon`;
-  const selectValidationTextClass = `${selectRootClass}__validationText`;
-  const selectValidationIconTextClass = `${selectValidationTextClass}--hasIcon`;
+  const selectValidationTextClass = useValidationTextStyleProps(selectRootClass, hasValidationIcon);
   const selectHelperTextClass = `${selectRootClass}__helperText`;
 
   return {
@@ -57,9 +57,7 @@ export const useSelectStyleProps = ({
       container: selectContainerClass,
       input: selectInputClass,
       icon: selectIconClass,
-      validationText: classNames(selectValidationTextClass, {
-        [selectValidationIconTextClass]: hasValidationIcon,
-      }),
+      validationText: selectValidationTextClass,
       helperText: selectHelperTextClass,
     },
   };
