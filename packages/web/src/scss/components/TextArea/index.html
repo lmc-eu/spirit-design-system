@@ -143,21 +143,24 @@
         <div class="TextArea__validationText">Danger validation text</div>
       </div>
 
-      {{setVar "states" "danger" "warning" "success" }}
+    </div>
 
+  </div>
+
+</section>
+
+<section class="UNSTABLE_Section">
+  <div class="Container">
+    <h2 class="docs-Heading">Validation with icons</h2>
+    <div class="docs-Stack docs-Stack--start">
+
+      {{setVar "states" "danger" "warning" "success" }}
       {{#each @root.states as |state|}}
+
       <div class="TextArea TextArea--{{state}}">
-        <label for="text-area-{{state}}-with-icon"
-               class="TextArea__label TextArea__label--required">Label</label>
-        <input
-          type="text"
-          id="text-area-{{state}}-with-icon"
-          class="TextArea__input"
-          name="{{state}}WithHelperText"
-          placeholder="Placeholder"
-          value="Filled"
-          required
-        />
+        <label for="text-area-{{state}}-with-icon" class="TextArea__label TextArea__label--required">Label</label>
+        <textarea id="text-area-{{state}}-with-icon" class="TextArea__input" placeholder="Placeholder" name="dangerWithHelperText" required>Filled</textarea>
+
         <div class="TextArea__validationText TextArea__validationText--hasIcon">
           <svg width="20" height="20" aria-hidden="true">
             {{#if (eq state "success")}}
@@ -166,14 +169,14 @@
             <use xlink:href="/assets/icons/svg/sprite.svg#{{state}}"/>
             {{/if}}
           </svg>
-          <span>This is {{state}} validation text with icon. Long validation text to show how it wraps.</span>
+          <div>This is {{state}} validation text. Long validation text to show how it wraps.</div>
         </div>
       </div>
+
       {{/each}}
+
     </div>
-
   </div>
-
 </section>
 
 <section class="UNSTABLE_Section">

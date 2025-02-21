@@ -197,6 +197,17 @@
         </div>
       </div>
 
+    </div>
+
+  </div>
+
+</section>
+
+<section class="UNSTABLE_Section">
+  <div class="Container">
+    <h2 class="docs-Heading">Validation with icons</h2>
+    <div class="docs-Stack docs-Stack--start">
+
       {{setVar "states" "danger" "warning" "success" }}
       {{#each @root.states as |state|}}
 
@@ -205,13 +216,13 @@
         <input
           class="UNSTABLE_Slider__input"
           id="slider-{{state}}-with-validation-icon"
-          aria-describedby="slider-{{state}}-validation-icon"
+          aria-describedby="slider-{{state}}-validation-icon-text"
           style="--slider-position: 30%"
           type="range"
           value="30"
           oninput="this.style.setProperty('--slider-position', `${Math.round((100 * this.value) / 100)}%`);"
         />
-        <div id="slider-{{state}}-validation-icon" class="UNSTABLE_Slider__validationText UNSTABLE_Slider__validationText--hasIcon">
+        <div id="slider-{{state}}-validation-icon-text" class="UNSTABLE_Slider__validationText UNSTABLE_Slider__validationText--hasIcon">
           <svg width="20" height="20" aria-hidden="true">
             {{#if (eq state "success")}}
             <use xlink:href="/assets/icons/svg/sprite.svg#check-plain"/>
@@ -219,15 +230,14 @@
             <use xlink:href="/assets/icons/svg/sprite.svg#{{state}}"/>
             {{/if}}
           </svg>
-          <span>This is {{state}} validation text with icon. Long validation text to show how it wraps.</span>
+          <span>This is {{state}} validation text. Long validation text to show how it wraps.</span>
         </div>
       </div>
+
       {{/each}}
 
     </div>
-
   </div>
-
 </section>
 
 <section class="UNSTABLE_Section">

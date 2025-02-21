@@ -253,10 +253,18 @@
         <input type="checkbox" id="toggle-warning-helper-text" class="UNSTABLE_Toggle__input" name="default" aria-describedby="toggle-warning-helper-text-helper-text toggle-warning-helper-text-validation-text" checked />
       </label>
 
+    </div>
+  </div>
 
+</section>
 
-    {{setVar "states" "danger" "warning" "success" }}
-    {{#each @root.states as |state|}}
+<section class="UNSTABLE_Section">
+  <div class="Container">
+    <h2 class="docs-Heading">Validation with icons</h2>
+    <div class="docs-Stack docs-Stack--start">
+
+      {{setVar "states" "danger" "warning" "success" }}
+      {{#each @root.states as |state|}}
 
       <label for="toggle-{{state}}-validation-icon" class="UNSTABLE_Toggle UNSTABLE_Toggle--{{state}}">
       <span class="UNSTABLE_Toggle__text">
@@ -274,10 +282,11 @@
       </span>
         <input type="checkbox" id="toggle-{{state}}-validation-icon" class="UNSTABLE_Toggle__input" name="default" aria-describedby="toggle-{{state}}-validation-text-icon" checked />
       </label>
-    {{/each}}
+
+      {{/each}}
+
     </div>
   </div>
-
 </section>
 
 {{/web/layout/default }}

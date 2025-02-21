@@ -446,6 +446,20 @@
       </div>
       <!-- FileUploader: end -->
 
+    </div>
+
+  </div>
+
+</section>
+
+<section class="UNSTABLE_Section">
+  <div class="Container">
+    <h2 class="docs-Heading">Validation with icons</h2>
+    <div class="docs-Stack docs-Stack--start">
+
+      {{setVar "states" "danger" "warning" "success" }}
+      {{#each @root.states as |state|}}
+
       <!-- FileUploader: start -->
       <div class="FileUploader" data-spirit-toggle="fileUploader">
         <!-- FileUploaderAttachment template: start -->
@@ -468,13 +482,13 @@
         <!-- FileUploaderAttachment template: end -->
 
         <!-- FileUploaderInput: start -->
-        <div class="FileUploaderInput FileUploaderInput--warning" data-spirit-element="wrapper">
-          <label for="file-uploader-warning-icon" class="FileUploaderInput__label FileUploaderInput__label--required"
+        <div class="FileUploaderInput FileUploaderInput--{{state}}" data-spirit-element="wrapper">
+          <label for="file-uploader-{{state}}-validation-icon" class="FileUploaderInput__label FileUploaderInput__label--required"
           >Label</label
           >
           <input
             type="file"
-            id="file-uploader-warning-icon"
+            id="file-uploader-{{state}}-validation-icon"
             name="attachment4"
             class="FileUploaderInput__input"
             data-spirit-element="input"
@@ -483,7 +497,7 @@
             <svg width="24" height="24" aria-hidden="true">
               <use xlink:href="/assets/icons/svg/sprite.svg#upload" />
             </svg>
-            <label for="file-uploader-warning-icon" class="FileUploaderInput__dropZoneLabel">
+            <label for="file-uploader-{{state}}-validation-icon" class="FileUploaderInput__dropZoneLabel">
               <span class="FileUploaderInput__link link-primary link-underlined">Upload your file</span>
               <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
             </label>
@@ -493,21 +507,22 @@
             <svg width="20" height="20" aria-hidden="true">
               <use xlink:href="/assets/icons/svg/sprite.svg#warning"/>
             </svg>
-            <span>Warning validation text with icon. Long validation text to show how it wraps.</span>
+            <span>Warning validation text. Long validation text to show how it wraps.</span>
           </div>
         </div>
         <!-- FileUploaderInput: end -->
 
         <!-- FileUploaderList: start -->
-        <h3 id="attachments-file-upload-warning-icon" hidden>Attachments</h3>
-        <ul class="FileUploaderList" aria-labelledby="ttachments-file-upload-warning-icon" data-spirit-element="list"></ul>
+        <h3 id="attachments-file-upload-{{state}}-icon" hidden>Attachments</h3>
+        <ul class="FileUploaderList" aria-labelledby="attachments-file-upload-warning-icon" data-spirit-element="list"></ul>
         <!-- FileUploaderList: end -->
       </div>
       <!-- FileUploader: end -->
+
+      {{/each}}
+
     </div>
-
   </div>
-
 </section>
 
 <section class="UNSTABLE_Section">
