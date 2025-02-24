@@ -58,7 +58,7 @@ const FieldGroup = (props: SpiritFieldGroupProps) => {
       {validationState && (
         <ValidationText
           className={classProps.validationText}
-          hasValidationStateIcon={hasValidationIcon && validationState}
+          {...(hasValidationIcon && { hasValidationStateIcon: validationState })}
           id={`${id}__helperText`}
           validationText={validationText}
           registerAria={register}
