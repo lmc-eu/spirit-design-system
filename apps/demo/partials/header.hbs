@@ -1,87 +1,96 @@
-<header class="Header theme-light-on-brand {{#unless (eq page 'components')}}hide-from-visual-tests{{/unless}}">
-  <a href="/" aria-label="Spirit Development Preview">
-    {{> web/assets/spiritLogoInverted }}
-  </a>
-
-  <!-- HeaderMobileActions: start -->
-  <div class="HeaderMobileActions">
-    <button
-      type="button"
-      class="Button Button--secondary Button--medium Button--square"
-      data-spirit-toggle="offcanvas"
-      data-spirit-target="#off-canvas-navigation"
-      aria-controls="off-canvas-navigation"
-      aria-expanded="false"
+<header class="UNSTABLE_Header theme-light-on-brand {{#unless (eq page 'components')}}hide-from-visual-tests{{/unless}} border-0">
+  <div class="Container Container--fluid">
+    <div
+      class="Flex Flex--row Flex--noWrap Flex--alignmentXLeft Flex--alignmentYStretch"
+      style="--flex-spacing-x: var(--spirit-space-1000);"
     >
-      <svg width="24" height="24" aria-hidden="true">
-        <use xlink:href="/assets/icons/svg/sprite.svg#hamburger" />
-      </svg>
-      <span class="accessibility-hidden">Menu</span>
-    </button>
+      <a href="/" class="UNSTABLE_HeaderLogo" aria-label="Spirit Development Preview">
+        {{> web/assets/spiritLogoInverted }}
+      </a>
+
+      <!-- Desktop Main Navigation: start -->
+      <nav class="Navigation Navigation--horizontal d-none d-desktop-flex" aria-label="Main Navigation">
+        <ul>
+          <li class="NavigationItem NavigationItem--alignmentYCenter">
+            <a
+              href="/packages/web/"
+              class="NavigationAction NavigationAction--box  {{# if (eq package 'Web')}}NavigationAction--selected{{/if}}"
+              {{# if (eq package 'Web')}}aria-current="page"{{/if}}
+            >
+              Web
+            </a>
+          </li>
+          <li class="NavigationItem NavigationItem--alignmentYCenter">
+            <a
+              href="/packages/web-react/"
+              class="NavigationAction NavigationAction--box {{# if (eq package 'Web React')}}NavigationAction--selected{{/if}}"
+              {{# if (eq package 'Web React')}}aria-current="page"{{/if}}
+            >
+              Web React
+            </a>
+          </li>
+          {{!-- Hide link to the Twig implementation in production. Twig demo app only runs on localhost, we don't deploy it anywhere. --}}
+          {{!-- For the same reason, we don't include the link in the visual tests. --}}
+          {{#if @is_development}}
+          <li class="NavigationItem NavigationItem--alignmentYCenter hide-from-visual-tests">
+            <a
+              href="https://localhost:4443"
+              class="NavigationAction NavigationAction--box"
+            >
+              Web Twig
+            </a>
+          </li>
+          {{/if}}
+          <li class="NavigationItem NavigationItem--alignmentYCenter">
+            <a
+              href="/packages/form-validations/"
+              class="NavigationAction NavigationAction--box {{# if (eq package 'Form Validations')}}NavigationAction--selected{{/if}}"
+              {{# if (eq package 'Form Validations')}}aria-current="page"{{/if}}
+            >
+              Form Validations
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- Desktop Main Navigation: end -->
+
+      <!-- Desktop Secondary Navigation: start -->
+      <nav class="Navigation Navigation--horizontal ml-auto" aria-label="Secondary Navigation">
+        <ul>
+         <li class="NavigationItem NavigationItem--alignmentYCenter d-desktop-none">
+          <button
+            type="button"
+            class="Button Button--secondary Button--medium"
+            data-spirit-toggle="offcanvas"
+            data-spirit-target="#off-canvas-navigation"
+            aria-controls="off-canvas-navigation"
+            aria-expanded="false"
+          >
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/assets/icons/svg/sprite.svg#hamburger" />
+            </svg>
+            <span class="accessibility-hidden">Menu</span>
+          </button>
+         </li>
+         <li class="NavigationItem NavigationItem--alignmentYCenter d-none d-desktop-flex">
+           {{> themeSwitcher isLabelHidden=true id="select-theme"}}
+         </li>
+        </ul>
+      </nav>
+      <!-- Desktop Secondary Navigation: end -->
+    </div>
   </div>
-  <!-- HeaderMobileActions: end -->
-
-  <!-- HeaderDesktopActions: start -->
-  <nav class="HeaderDesktopActions" aria-label="Main navigation">
-    <!-- HeaderNav: start -->
-    <ul class="HeaderNav">
-      <li class="HeaderNavItem">
-        <a
-          href="/packages/web/"
-          class="HeaderLink {{# if (eq package 'Web')}}HeaderLink--current{{/if}}"
-          {{# if (eq package 'Web')}}aria-current="page"{{/if}}
-        >
-          Web
-        </a>
-      </li>
-      <li class="HeaderNavItem">
-        <a
-          href="/packages/web-react/"
-          class="HeaderLink {{# if (eq package 'Web React')}}HeaderLink--current{{/if}}"
-          {{# if (eq package 'Web React')}}aria-current="page"{{/if}}
-        >
-          Web React
-        </a>
-      </li>
-      {{!-- Hide link to the Twig implementation in production. Twig demo app only runs on localhost, we don't deploy it anywhere. --}}
-      {{!-- For the same reason, we don't include the link in the visual tests. --}}
-      {{#if @is_development}}
-        <li class="HeaderNavItem hide-from-visual-tests">
-          <a href="https://localhost:4443" class="HeaderLink">Web Twig</a>
-        </li>
-      {{/if}}
-      <li class="HeaderNavItem">
-        <a
-          href="/packages/form-validations/"
-          class="HeaderLink {{# if (eq package 'Form Validations')}}HeaderLink--current{{/if}}"
-          {{# if (eq package 'Form Validations')}}aria-current="page"{{/if}}
-        >
-          Form Validations
-        </a>
-      </li>
-    </ul>
-    <!-- HeaderNav: end -->
-  </nav>
-  <!-- HeaderDesktopActions: end -->
-
-  <!-- HeaderDesktopActions: start -->
-  <nav class="HeaderDesktopActions HeaderDesktopActions--end">
-
-    {{> themeSwitcher isLabelHidden=true}}
-
-  </nav>
-  <!-- HeaderDesktopActions: end -->
 </header>
 
-<!-- HeaderDialog: start -->
-<dialog id="off-canvas-navigation" class="HeaderDialog" aria-label="Menu">
-  <div class="HeaderDialog__panel">
-    <div class="HeaderDialog__content">
+<!-- Drawer: start -->
+<dialog id="off-canvas-navigation" class="Drawer Drawer--right" aria-label="Menu">
+  <div class="DrawerPanel">
+    <div class="DrawerPanel__content">
 
-      <!-- HeaderDialogCloseButton: start -->
+      <!-- DrawerCloseButton: start -->
       <button
         type="button"
-        class="HeaderDialogCloseButton"
+        class="Button Button--tertiary Button--medium Button--symmetrical DrawerCloseButton"
         data-spirit-dismiss="off-canvas-navigation"
         data-spirit-target="#off-canvas-navigation"
         aria-controls="off-canvas-navigation"
@@ -92,58 +101,43 @@
         </svg>
         <span class="accessibility-hidden">Close</span>
       </button>
-      <!-- HeaderDialogCloseButton: end -->
+      <!-- DrawerCloseButton: end -->
 
-      <!-- HeaderDialogActions: start -->
-      <nav class="HeaderDialogActions HeaderDialogActions--primary" aria-label="Main navigation">
-
-        <!-- HeaderDialogNav: start -->
-        <ul class="HeaderDialogNav">
-          <li class="HeaderDialogNavItem">
-            <a
-              href="/packages/web/"
-              class="HeaderDialogLink {{# if (eq package 'Web')}}HeaderDialogLink--current{{/if}}"
-              {{# if (eq package 'Web')}}aria-current="page"{{/if}}
-            >
-              Web
-            </a>
-          </li>
-          <li class="HeaderDialogNavItem">
-            <a
-              href="/packages/web-react/"
-              class="HeaderDialogLink {{# if (eq package 'Web React')}}HeaderDialogLink--current{{/if}}"
-              {{# if (eq package 'Web React')}}aria-current="page"{{/if}}
-            >
-              Web React
-            </a>
-          </li>
-          {{!-- Hide link to the Twig implementation in production. Twig demo app only runs on localhost, we don't deploy it anywhere. --}}
-          {{#if @is_development}}
-            <li class="HeaderDialogNavItem">
-              <a href="https://localhost:4443" class="HeaderDialogLink">Web Twig</a>
+      <div class="Stack Stack--hasSpacing my-900" style="--stack-spacing: var(--spirit-space-1200)">
+        <!-- Drawer Main Navigation: start -->
+        <nav class="Navigation Navigation--vertical" aria-label="Main Navigation">
+          <ul>
+            <li class="NavigationItem NavigationItem--alignmentYCenter">
+              <a href="/packages/web/" class="NavigationAction NavigationAction--box {{# if (eq package 'Web')}}NavigationAction--selected{{/if}}" {{# if (eq package 'Web')}}aria-current="page"{{/if}}>Web</a>
             </li>
-          {{/if}}
-          <li class="HeaderDialogNavItem">
-            <a
-              href="/packages/form-validations/"
-              class="HeaderDialogLink {{# if (eq package 'Form Validations')}}HeaderDialogLink--current{{/if}}"
-              {{# if (eq package 'Form Validations')}}aria-current="page"{{/if}}
-            >
-              Form Validations
-            </a>
-          </li>
-        </ul>
-        <!-- HeaderDialogNav: end -->
+            <li class="NavigationItem NavigationItem--alignmentYCenter">
+              <a href="/packages/web-react/" class="NavigationAction NavigationAction--box {{# if (eq package 'Web React')}}NavigationAction--selected{{/if}}" {{# if (eq package 'Web React')}}aria-current="page"{{/if}}>Web React</a>
+            </li>
+            {{!-- Hide link to the Twig implementation in production. Twig demo app only runs on localhost, we don't deploy it anywhere. --}}
+            {{#if @is_development}}
+            <li class="NavigationItem NavigationItem--alignmentYCenter">
+              <a href="https://localhost:4443" class="NavigationAction NavigationAction--box">Web Twig</a>
+            </li>
+            {{/if}}
+            <li class="NavigationItem NavigationItem--alignmentYCenter">
+              <a href="/packages/form-validations/" class="NavigationAction NavigationAction--box {{# if (eq package 'Form Validations')}}NavigationAction--selected{{/if}}" {{# if (eq package 'Form Validations')}}aria-current="page"{{/if}}>Form Validations</a>
+            </li>
+          </ul>
+        </nav>
+        <!-- Drawer Main Navigation: end -->
 
-      </nav>
-      <nav class="HeaderDialogActions HeaderDialogActions--secondary" aria-label="Secondary navigation">
-
-        {{> themeSwitcher isLabelHidden=false}}
-
-      </nav>
-      <!-- HeaderDialogActions: end -->
+        <!-- Drawer Secondary Navigation: start -->
+        <nav class="Navigation Navigation--vertical" aria-label="Secondary Navigation">
+          <ul>
+            <li class="NavigationItem NavigationItem--alignmentYCenter">
+              {{> themeSwitcher isLabelHidden=false id="theme-select-drawer"}}
+            </li>
+          </ul>
+        </nav>
+        <!-- Drawer Secondary Navigation: end -->
+      </div>
 
     </div>
   </div>
 </dialog>
-<!-- HeaderDialog: end -->
+<!-- Drawer: end -->
