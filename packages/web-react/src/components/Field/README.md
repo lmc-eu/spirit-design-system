@@ -18,12 +18,11 @@ Advanced example:
 
 ```jsx
 <ValidationText
-  hasValidationIcon
+  hasValidationStateIcon
   id="component__validationText"
-  className="Component__validationText"
+  className="Component__validationText Component__validationText--hasIcon"
   elementType="span"
   validationText="Danger validation text"
-  validationState="danger"
   role="alert"
 />
 ```

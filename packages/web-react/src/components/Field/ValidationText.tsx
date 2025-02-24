@@ -34,7 +34,16 @@ const ValidationText = <T extends ElementType = 'div'>(props: ValidationTextProp
     };
   }, [id, registerAria]);
 
-  if (!validationText) return null;
+  if (!validationText) {
+    return null;
+  }
+
+  const nonArrayValidationText =
+    React.isValidElement(validationText) && hasValidationStateIcon ? (
+      <ElementTag>{validationText}</ElementTag>
+    ) : (
+      validationText
+    );
 
   return (
     <ElementTag className={className} id={id} role={role}>
@@ -46,10 +55,7 @@ const ValidationText = <T extends ElementType = 'div'>(props: ValidationTextProp
           ))}
         </ul>
       ) : (
-        <>
-          {hasValidationStateIcon && <ElementTag>{validationText}</ElementTag>}
-          {!hasValidationStateIcon && validationText}
-        </>
+        nonArrayValidationText
       )}
     </ElementTag>
   );
