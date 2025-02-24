@@ -44,7 +44,7 @@ export interface ValidationTextProp {
   role?: AriaRole;
   /** The validation text to display. */
   validationText?: ValidationTextType;
-  hasValidationStateIcon?: ValidationState | boolean;
+  hasValidationStateIcon?: ValidationState;
 }
 
 export interface RequiredProps {

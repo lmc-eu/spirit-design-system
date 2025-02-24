@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks';
-import { useValidationTextStyleProps } from '../../hooks/useValidationTextStyleProps';
 import { SpiritCheckboxProps, CheckboxProps } from '../../types';
+import { useValidationTextStyleProps } from '../Field/useValidationTextStyleProps';
 
 export interface CheckboxStyles {
   /** className props */

@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks';
-import { useValidationTextStyleProps } from '../../hooks/useValidationTextStyleProps';
 import { Validation } from '../../types';
+import { useValidationTextStyleProps } from '../Field/useValidationTextStyleProps';
 
 export interface UseSelectStyleProps extends Validation {
   isDisabled?: boolean;

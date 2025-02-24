@@ -84,7 +84,6 @@ export interface FileUploaderInputBaseProps
   label?: ReactNode;
   name: string;
   onError?: FileUploaderErrorCallbackType;
-  hasValidationIcon?: boolean;
 }
 
 export interface FileUploaderListBaseProps extends SpiritUListElementProps {

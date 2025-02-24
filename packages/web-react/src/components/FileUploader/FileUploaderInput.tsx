@@ -120,7 +120,7 @@ const FileUploaderInput = (props: SpiritFileUploaderInputProps) => {
         <ValidationText
           className={classProps.input.validationText}
           elementType="span"
-          hasValidationStateIcon={hasValidationIcon && validationState}
+          hasValidationStateIcon={hasValidationIcon ? validationState : undefined}
           id={`${id}__validationText`}
           validationText={validationText}
           registerAria={register}

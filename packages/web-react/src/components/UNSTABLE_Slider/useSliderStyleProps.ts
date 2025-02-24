@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks';
-import { useValidationTextStyleProps } from '../../hooks/useValidationTextStyleProps';
 import { SpiritSliderProps } from '../../types';
+import { useValidationTextStyleProps } from '../Field/useValidationTextStyleProps';
 
 type UseSliderStyleProps = Omit<SpiritSliderProps, 'id' | 'value' | 'label'>;
 

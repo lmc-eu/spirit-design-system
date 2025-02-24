@@ -1,8 +1,8 @@
 import classNames from 'classnames';
 import { CSSProperties } from 'react';
 import { useClassNamePrefix } from '../../hooks';
-import { useValidationTextStyleProps } from '../../hooks/useValidationTextStyleProps';
 import { FileMetadata, FileUploaderQueueLimitBehaviorType, Validation } from '../../types';
+import { useValidationTextStyleProps } from '../Field/useValidationTextStyleProps';
 import { FileUploaderCropCSS, IMAGE_DIMENSION } from './constants';
 
 export interface FileUploaderStyleProps extends Validation {

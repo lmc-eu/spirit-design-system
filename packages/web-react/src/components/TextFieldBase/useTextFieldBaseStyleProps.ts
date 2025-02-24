@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks';
-import { useValidationTextStyleProps } from '../../hooks/useValidationTextStyleProps';
 import { SpiritTextFieldBaseProps, TextFieldBaseProps } from '../../types';
+import { useValidationTextStyleProps } from '../Field/useValidationTextStyleProps';
 
 export interface TextFieldBaseStyles {
   /** className props */
