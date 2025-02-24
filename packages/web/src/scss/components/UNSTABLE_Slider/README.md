@@ -189,7 +189,7 @@ a JS interaction class when controlled by JavaScript (`has-success`,
     <svg width="20" height="20" aria-hidden="true">
       <use xlink:href="/assets/icons/svg/sprite.svg#warning" />
     </svg>
-    <span>Validation text with icon</span>
+    <div>Validation text with icon</div>
   </div>
 </div>
 ```

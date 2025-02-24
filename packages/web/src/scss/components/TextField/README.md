@@ -237,11 +237,11 @@ a JS interaction class when controlled by JavaScript (`has-success`,
     placeholder="Placeholder"
     value="Filled"
   />
-  <div class="TextField__validationText">
+  <div class="TextField__validationText TextField__validationText--hasIcon">
     <svg width="20" height="20" aria-hidden="true">
       <use xlink:href="/assets/icons/svg/sprite.svg#warning" />
     </svg>
-    Validation text with icon
+    <div>Validation text with icon</div>
   </div>
 </div>
 ```

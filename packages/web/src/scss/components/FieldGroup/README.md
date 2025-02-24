@@ -159,7 +159,7 @@ Validation states can be presented either by adding a CSS modifier class (`Field
   <svg width="20" height="20" aria-hidden="true">
     <use xlink:href="/assets/icons/svg/sprite.svg#warning" />
   </svg>
-  <span>Warning validation text with icon</span>
+  <div>Warning validation text with icon</div>
 </div>
 ```
 

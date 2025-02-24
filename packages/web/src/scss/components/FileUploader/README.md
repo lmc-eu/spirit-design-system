@@ -232,7 +232,7 @@ When validated on server:
     <svg width="20" height="20" aria-hidden="true">
       <use xlink:href="/assets/icons/svg/sprite.svg#warning" />
     </svg>
-    <span>Warning validation text with icon</span>
+    <div>Warning validation text with icon</div>
   </div>
 </div>
 ```
