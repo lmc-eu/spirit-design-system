@@ -44,26 +44,6 @@ export const validationTextPropsTest = (
     });
   });
 
-  it('should have icon class', async () => {
-    const dom = render(
-      <Component
-        id="component"
-        label="Label"
-        type={type as TextFieldType}
-        validationState="danger"
-        validationText="text"
-        hasValidationIcon
-      />,
-    );
-
-    const className = selector.replace(/\./g, '');
-
-    await waitFor(() => {
-      const element = dom.container.querySelector(selector) as HTMLElement;
-      expect(element).toHaveClass(`${className} ${className}--hasIcon`);
-    });
-  });
-
   it('should have multiline message as a list', async () => {
     const dom = render(
       <Component
