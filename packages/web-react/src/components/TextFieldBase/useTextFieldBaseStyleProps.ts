@@ -1,7 +1,6 @@
 import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks';
 import { SpiritTextFieldBaseProps, TextFieldBaseProps } from '../../types';
-import { useValidationTextStyleProps } from '../Field/useValidationTextStyleProps';
 
 export interface TextFieldBaseStyles {
   /** className props */
@@ -20,7 +19,7 @@ export interface TextFieldBaseStyles {
 }
 
 export function useTextFieldBaseStyleProps(props: SpiritTextFieldBaseProps): TextFieldBaseStyles {
-  const { hasValidationIcon, isFluid, isMultiline, isLabelHidden, validationState, ...restProps } = props;
+  const { isFluid, isMultiline, isLabelHidden, validationState, ...restProps } = props;
   const { isDisabled, isRequired } = restProps;
 
   const TextFieldBaseClass = useClassNamePrefix(isMultiline ? 'TextArea' : 'TextField');
@@ -31,7 +30,7 @@ export function useTextFieldBaseStyleProps(props: SpiritTextFieldBaseProps): Tex
   const TextFieldBaseLabelClass = `${TextFieldBaseClass}__label`;
   const TextFieldBaseLabelRequiredClass = `${TextFieldBaseClass}__label--required`;
   const TextFieldBaseLabelHiddenClass = `${TextFieldBaseClass}__label--hidden`;
-  const TextFieldBaseValidationTextClass = useValidationTextStyleProps(TextFieldBaseClass, hasValidationIcon);
+  const TextFieldBaseValidationTextClass = `${TextFieldBaseClass}__validationText`;
   const TextFieldBasePasswordToggleClass = `${TextFieldBaseClass}__passwordToggle`;
   const TextFieldBasePasswordToggleButtonClass = `${TextFieldBaseClass}__passwordToggle__button`;
   const TextFieldBasePasswordToggleIconClass = `${TextFieldBaseClass}__passwordToggle__icon`;

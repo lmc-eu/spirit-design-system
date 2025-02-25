@@ -1,7 +1,6 @@
 import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks';
 import { Validation } from '../../types';
-import { useValidationTextStyleProps } from '../Field/useValidationTextStyleProps';
 
 export interface UseSelectStyleProps extends Validation {
   isDisabled?: boolean;
@@ -23,7 +22,6 @@ export interface UseSelectStyleReturn {
 }
 
 export const useSelectStyleProps = ({
-  hasValidationIcon,
   isDisabled,
   isFluid,
   isLabelHidden,
@@ -40,7 +38,7 @@ export const useSelectStyleProps = ({
   const selectContainerClass = `${selectRootClass}__inputContainer`;
   const selectInputClass = `${selectRootClass}__input`;
   const selectIconClass = `${selectRootClass}__icon`;
-  const selectValidationTextClass = useValidationTextStyleProps(selectRootClass, hasValidationIcon);
+  const selectValidationTextClass = `${selectRootClass}__validationText`;
   const selectHelperTextClass = `${selectRootClass}__helperText`;
 
   return {

@@ -1,7 +1,6 @@
 import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks';
 import { Validation } from '../../types';
-import { useValidationTextStyleProps } from '../Field/useValidationTextStyleProps';
 
 export interface UseFieldGroupStyleProps extends Validation {
   isFluid?: boolean;
@@ -19,7 +18,6 @@ export interface UseFieldGroupStyleReturn {
 }
 
 export const useFieldGroupStyleProps = ({
-  hasValidationIcon,
   isFluid,
   isRequired,
   validationState,
@@ -30,7 +28,7 @@ export const useFieldGroupStyleProps = ({
   const fieldGroupLabelClass = `${fieldGroupRootClass}__label`;
   const fieldGroupLabelRequiredClass = `${fieldGroupLabelClass}--required`;
   const fieldGroupFieldsClass = `${fieldGroupRootClass}__fields`;
-  const fieldGroupValidationTextClass = useValidationTextStyleProps(fieldGroupRootClass, hasValidationIcon);
+  const fieldGroupValidationTextClass = `${fieldGroupRootClass}__validationText`;
   const fieldGroupHelperTextClass = `${fieldGroupRootClass}__helperText`;
 
   return {

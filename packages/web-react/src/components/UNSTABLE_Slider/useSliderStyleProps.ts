@@ -1,7 +1,6 @@
 import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks';
 import { SpiritSliderProps } from '../../types';
-import { useValidationTextStyleProps } from '../Field/useValidationTextStyleProps';
 
 type UseSliderStyleProps = Omit<SpiritSliderProps, 'id' | 'value' | 'label'>;
 
@@ -17,7 +16,7 @@ export interface SliderStyles {
 }
 
 export function useSliderStyleProps(props: UseSliderStyleProps): SliderStyles {
-  const { hasValidationIcon, isDisabled, isFluid, isLabelHidden, validationState, ...restProps } = props;
+  const { isDisabled, isFluid, isLabelHidden, validationState, ...restProps } = props;
 
   const sliderClass = useClassNamePrefix('UNSTABLE_Slider');
   const rootClass = classNames(sliderClass);
@@ -28,7 +27,7 @@ export function useSliderStyleProps(props: UseSliderStyleProps): SliderStyles {
   const isLabelHiddenClass = `${sliderClass}__label--hidden`;
   const inputClass = `${sliderClass}__input`;
   const helperTextClass = `${sliderClass}__helperText`;
-  const validationTextClass = useValidationTextStyleProps(sliderClass, hasValidationIcon);
+  const validationTextClass = `${sliderClass}__validationText`;
 
   return {
     classProps: {

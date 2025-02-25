@@ -1,7 +1,6 @@
 import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks';
 import { SpiritToggleProps } from '../../types';
-import { useValidationTextStyleProps } from '../Field/useValidationTextStyleProps';
 
 export interface ToggleStyles<T> {
   classProps: {
@@ -17,7 +16,6 @@ export interface ToggleStyles<T> {
 
 export function useToggleStyleProps(props: SpiritToggleProps): ToggleStyles<SpiritToggleProps> {
   const {
-    hasValidationIcon = false,
     isRequired = false,
     isFluid = false,
     isDisabled = false,
@@ -38,8 +36,7 @@ export function useToggleStyleProps(props: SpiritToggleProps): ToggleStyles<Spir
   const toggleInputClass = `${toggleClass}__input`;
   const toggleInputIndicatorsClass = `${toggleInputClass}--indicators`;
   const toggleHelperTextClass = `${toggleClass}__helperText`;
-  const toggleValidationTextClass = useValidationTextStyleProps(toggleClass, hasValidationIcon);
-
+  const toggleValidationTextClass = `${toggleClass}__validationText`;
   const rootClass = classNames(toggleClass, {
     [toggleFluidClass]: isFluid,
     [toggleDisabledClass]: isDisabled,

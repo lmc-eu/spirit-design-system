@@ -2,11 +2,9 @@ import classNames from 'classnames';
 import { CSSProperties } from 'react';
 import { useClassNamePrefix } from '../../hooks';
 import { FileMetadata, FileUploaderQueueLimitBehaviorType, Validation } from '../../types';
-import { useValidationTextStyleProps } from '../Field/useValidationTextStyleProps';
 import { FileUploaderCropCSS, IMAGE_DIMENSION } from './constants';
 
 export interface FileUploaderStyleProps extends Validation {
-  hasValidationIcon?: boolean;
   imageObjectFit?: 'contain' | 'cover';
   isDisabled?: boolean;
   isDisabledByQueueLimitBehavior?: boolean;
@@ -88,10 +86,7 @@ export const useFileUploaderStyleProps = (props?: FileUploaderStyleProps): FileU
   const fileUploaderInputLabelRequiredClass = `${fileUploaderInputClass}__label--required`;
   const fileUploaderInputLinkClass = `${fileUploaderInputClass}__link`;
   const fileUploaderInputLinkUtilityClasses = ['link-primary', 'link-underlined'];
-  const fileUploaderInputValidationTextClass = useValidationTextStyleProps(
-    fileUploaderInputClass,
-    props?.hasValidationIcon,
-  );
+  const fileUploaderInputValidationTextClass = `${fileUploaderInputClass}__validationText`;
   const fileUploaderListClass = `${fileUploaderClass}List`;
   const fileUploaderAttachmentClass = `${fileUploaderClass}Attachment`;
   const fileUploaderAttachmentNameClass = `${fileUploaderAttachmentClass}__name`;

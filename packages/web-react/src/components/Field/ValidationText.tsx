@@ -38,12 +38,7 @@ const ValidationText = <T extends ElementType = 'div'>(props: ValidationTextProp
     return null;
   }
 
-  const nonArrayValidationText =
-    React.isValidElement(validationText) && hasValidationStateIcon ? (
-      <ElementTag>{validationText}</ElementTag>
-    ) : (
-      validationText
-    );
+  const nonArrayValidationText = hasValidationStateIcon ? <ElementTag>{validationText}</ElementTag> : validationText;
 
   return (
     <ElementTag className={className} id={id} role={role}>
