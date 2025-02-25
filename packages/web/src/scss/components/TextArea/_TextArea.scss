@@ -43,11 +43,6 @@ $_field-name: 'TextArea';
     @include form-fields-tools.validation-text();
 }
 
-.TextArea__validationText--hasIcon,
-.TextArea > [data-spirit-element='validation_text'].has-icon {
-    @include form-fields-tools.validation-text-has-icon();
-}
-
 .TextArea__helperText {
     @include form-fields-tools.helper-text();
 }

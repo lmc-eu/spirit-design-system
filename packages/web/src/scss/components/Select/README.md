@@ -149,7 +149,7 @@ a JS interaction class when controlled by JavaScript (`has-success`,
 `has-warning`, `has-danger`). See Validation state [dictionary][dictionary-validation].
 
 - To render validation text as a list, use `<ul>` element inside of `<div>`.
-- To render validation text with an icon, add class `Select__validationText--hasIcon` and `<svg>` element inside of `<div>`.
+- To render validation text with an icon, add `<svg>` icon inside of `<div>`.
 
 ```html
 <div class="Select Select--success">
@@ -217,7 +217,7 @@ a JS interaction class when controlled by JavaScript (`has-success`,
       </svg>
     </div>
   </div>
-  <div class="Select__validationText Select__validationText--hasIcon">
+  <div class="Select__validationText">
     <svg width="20" height="20" aria-hidden="true">
       <use xlink:href="/assets/icons/svg/sprite.svg#warning" />
     </svg>

@@ -169,11 +169,6 @@ $_field-name: 'TextField';
     @include form-fields-tools.validation-text();
 }
 
-.TextField__validationText--hasIcon,
-.TextField > [data-spirit-element='validation_text'].has-icon {
-    @include form-fields-tools.validation-text-has-icon();
-}
-
 .TextField__helperText {
     @include form-fields-tools.helper-text();
 }

@@ -165,20 +165,6 @@
         <div class="TextField__validationText">Danger validation text</div>
       </div>
 
-      <div class="TextField TextField--danger">
-        <label for="text-field-danger-icon-list" class="TextField__label">Label</label>
-        <input type="text" id="text-field-danger-icon-list" class="TextField__input" name="danger" placeholder="Placeholder" value="Filled" />
-        <div class="TextField__validationText TextField__validationText--hasIcon">
-          <svg width="20" height="20" aria-hidden="true">
-            <use xlink:href="/assets/icons/svg/sprite.svg#danger"/>
-          </svg>
-          <ul>
-            <li>Validation text</li>
-            <li>Second validation text</li>
-          </ul>
-        </div>
-      </div>
-
     </div>
 
   </div>
@@ -205,7 +191,7 @@
           value="Filled"
           required
         />
-        <div class="TextField__validationText TextField__validationText--hasIcon">
+        <div class="TextField__validationText">
           <svg width="20" height="20" aria-hidden="true">
             {{#if (eq state "success")}}
             <use xlink:href="/assets/icons/svg/sprite.svg#check-plain" />

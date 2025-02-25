@@ -41,14 +41,14 @@
     & > ul {
         @include reset.list();
     }
-}
-
-@mixin validation-text-has-icon() {
-    display: flex;
-    column-gap: form-fields-theme.$validation-text-icon-gap;
 
     & > svg {
         flex-shrink: 0;
+    }
+
+    &:has(> svg:first-child:not(:only-child)) {
+        display: flex;
+        column-gap: form-fields-theme.$validation-text-icon-gap;
     }
 }
 

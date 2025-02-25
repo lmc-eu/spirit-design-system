@@ -98,7 +98,7 @@ a JS interaction class when controlled by JavaScript (`has-success`,
 `has-warning`, `has-danger`). See Validation state [dictionary][dictionary-validation].
 
 - To render validation text as a list, use `<ul>` element inside of `<div>`.
-- To render validation text with an icon, add class `TextArea__validationText--hasIcon` and `<svg>` element inside of `<div>`.
+- To render validation text with an icon, add `<svg>` icon inside of `<div>`.
 
 ```html
 <div class="TextArea TextArea--danger">
@@ -127,7 +127,7 @@ a JS interaction class when controlled by JavaScript (`has-success`,
   <textarea id="text-area-danger-has-warning" class="TextArea__input" name="hasDanger" placeholder="Placeholder">
     Filled
   </textarea>
-  <div class="TextArea__validationText TextArea__validationText--hasIcon">
+  <div class="TextArea__validationText">
     <svg width="20" height="20" aria-hidden="true">
       <use xlink:href="/assets/icons/svg/sprite.svg#warning" />
     </svg>
