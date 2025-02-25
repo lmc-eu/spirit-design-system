@@ -5371,7 +5371,7 @@ __metadata:
     "@types/node": "npm:20.16.11"
     jest: "npm:29.7.0"
     ts-node: "npm:10.9.2"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:5.7.3"
   languageName: unknown
   linkType: soft
 
@@ -17022,7 +17022,7 @@ __metadata:
     eslint-restricted-globals: "npm:^0.2.0"
     prettier: "npm:^3.0.0"
     prettier-config-spirit: "workspace:^"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:5.7.3"
   peerDependencies:
     eslint: ^8.0.0
   languageName: unknown
@@ -33802,7 +33802,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:5.7.3, typescript@npm:>=3 < 6, typescript@npm:^5.0.0, typescript@npm:^5.4.4, typescript@npm:^5.7.3":
+"typescript@npm:5.7.3, typescript@npm:>=3 < 6, typescript@npm:^5.0.0, typescript@npm:^5.4.4":
   version: 5.7.3
   resolution: "typescript@npm:5.7.3"
   bin:
@@ -33842,7 +33842,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A5.7.3#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A>=3 < 6#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.0.0#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.4.4#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.7.3#optional!builtin<compat/typescript>":
+"typescript@patch:typescript@npm%3A5.7.3#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A>=3 < 6#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.0.0#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.4.4#optional!builtin<compat/typescript>":
   version: 5.7.3
   resolution: "typescript@patch:typescript@npm%3A5.7.3#optional!builtin<compat/typescript>::version=5.7.3&hash=5786d5"
   bin:
