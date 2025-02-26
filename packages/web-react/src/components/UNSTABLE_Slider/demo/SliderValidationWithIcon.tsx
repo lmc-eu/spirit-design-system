@@ -20,7 +20,7 @@ const SliderValidationWithIcon = () => {
           value={valueDanger}
           onChange={handleChangeDanger}
           validationState={state}
-          validationText={`This is ${state} validation text with icon. Long validation text to show how it wraps.`}
+          validationText={`This is ${state} validation text. Long validation text to show how it wraps.`}
           hasValidationIcon
           key={`select-${state}-validation-icon`}
         />

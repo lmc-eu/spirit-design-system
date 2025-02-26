@@ -12,7 +12,7 @@ const TextFieldValidationWithIcon = () => {
           id={`text-field-${state}-validation-icon`}
           isRequired
           label="Label"
-          validationText={`This is ${state} validation text with icon. Long validation text to show how it wraps.`}
+          validationText={`This is ${state} validation text. Long validation text to show how it wraps.`}
           validationState={state}
           hasValidationIcon
           name="textfieldDangerHelper"

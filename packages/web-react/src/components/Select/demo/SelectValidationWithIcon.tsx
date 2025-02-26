@@ -12,7 +12,7 @@ const SelectValidationWithIcon = () => {
         <Select
           id={`select-${state}-validation-icon`}
           label="Label"
-          validationText={`This is ${state} validation text with icon. Long validation text to show how it wraps.`}
+          validationText={`This is ${state} validation text. Long validation text to show how it wraps.`}
           name="selectWarning"
           validationState={state}
           hasValidationIcon

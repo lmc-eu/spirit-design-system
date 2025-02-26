@@ -11,7 +11,7 @@ const ToggleValidationWithIcon = () => {
         <UNSTABLE_Toggle
           id={`toggle-${state}-validation-icon`}
           label="Toggle Label"
-          validationText={`This is ${state} validation text with icon. Long validation text to show how it wraps.`}
+          validationText={`This is ${state} validation text. Long validation text to show how it wraps.`}
           validationState={state}
           hasValidationIcon
           name="default"

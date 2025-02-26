@@ -4,6 +4,7 @@ import { SpiritFileUploaderAttachmentProps } from '../../../types';
 import { FileUploader, FileUploaderAttachment, FileUploaderInput, FileUploaderList, useFileQueue } from '..';
 
 const FileUploaderInputValidationWithIcon = () => {
+  const { fileQueue, addToQueue, clearQueue, onDismiss, findInQueue, updateQueue } = useFileQueue();
   const attachmentComponent = ({ id, ...props }: SpiritFileUploaderAttachmentProps) => (
     <FileUploaderAttachment key={id} id={id} {...props} />
   );
@@ -13,8 +14,6 @@ const FileUploaderInputValidationWithIcon = () => {
   return (
     <>
       {states.map((state) => {
-        const { fileQueue, addToQueue, clearQueue, onDismiss, findInQueue, updateQueue } = useFileQueue();
-
         return (
           <FileUploader
             addToQueue={addToQueue}
@@ -35,7 +34,7 @@ const FileUploaderInputValidationWithIcon = () => {
               name="attachmentsWarning"
               /* eslint-disable-next-line no-console */
               onError={(error) => console.error('My error log', error)}
-              validationText={`This is ${state} validation text with icon. Long validation text to show how it wraps.`}
+              validationText={`This is ${state} validation text. Long validation text to show how it wraps.`}
               validationState={state}
               hasValidationIcon
               isRequired
