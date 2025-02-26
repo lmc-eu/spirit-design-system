@@ -54,7 +54,7 @@ const SliderValidation = () => {
         onChange={handleChangeDangerWithHelperText}
         helperText="Helper text"
         validationState="danger"
-        validationText="Validation text with icon"
+        validationText="Validation text"
       />
     </>
   );
