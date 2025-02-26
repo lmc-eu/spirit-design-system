@@ -38,10 +38,10 @@ const ValidationText = <T extends ElementType = 'div'>(props: ValidationTextProp
     return null;
   }
 
-  const ElementWrapText = ElementTag === 'div' ? 'div' : 'span';
+  const ValidationTextWrapper = ElementTag === 'div' ? 'div' : 'span';
 
   const nonArrayValidationText = hasValidationStateIcon ? (
-    <ElementWrapText>{validationText}</ElementWrapText>
+    <ValidationTextWrapper>{validationText}</ValidationTextWrapper>
   ) : (
     validationText
   );
