@@ -208,11 +208,15 @@
     <h2 class="docs-Heading">Validation Text with Icon</h2>
     <div class="docs-Stack docs-Stack--start">
 
-       {{setVar "states" "success" "warning" "danger" }}
+      {{setVar "states" "success" "warning" "danger" }}
       {{#each @root.states as |state|}}
 
       <div class="UNSTABLE_Slider UNSTABLE_Slider--{{state}}">
-        <label for="slider-{{state}}-with-validation-icon" class="UNSTABLE_Slider__label UNSTABLE_Slider__label--required">Slider</label>
+        <label for="slider-{{state}}-with-validation-icon"
+               class="UNSTABLE_Slider__label UNSTABLE_Slider__label--required"
+        >
+          Slider
+        </label>
         <input
           class="UNSTABLE_Slider__input"
           id="slider-{{state}}-with-validation-icon"

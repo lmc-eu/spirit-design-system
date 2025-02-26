@@ -27,7 +27,7 @@
 See Validation state [dictionary][dictionary-validation].
 
 - To render validation text as a list, use `<ul>` element inside of `<div>`.
-- To render validation text with an icon, add `<svg>` icon inside of `<span>`.
+- To render validation text with an icon, add `<svg>` icon inside of `.Checkbox__validationText`.
 
 ```html
 <label for="checkbox-warning" class="Checkbox Checkbox--warning">

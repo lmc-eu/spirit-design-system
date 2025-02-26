@@ -150,8 +150,12 @@
       </div>
 
       <div class="TextField TextField--danger">
-        <label for="text-field-danger-with-helper-text"
-               class="TextField__label TextField__label--required">Label</label>
+        <label
+          for="text-field-danger-with-helper-text"
+          class="TextField__label TextField__label--required"
+        >
+          Label
+        </label>
         <input
           type="text"
           id="text-field-danger-with-helper-text"
@@ -176,12 +180,16 @@
     <h2 class="docs-Heading">Validation Text with Icon</h2>
     <div class="docs-Stack docs-Stack--start">
 
-       {{setVar "states" "success" "warning" "danger" }}
+      {{setVar "states" "success" "warning" "danger" }}
       {{#each @root.states as |state|}}
 
       <div class="TextField TextField--{{state}}">
-        <label for="text-field-{{state}}-with-icon"
-               class="TextField__label TextField__label--required">Label</label>
+        <label
+          for="text-field-{{state}}-with-icon"
+          class="TextField__label TextField__label--required"
+        >
+          Label
+        </label>
         <input
           type="text"
           id="text-field-{{state}}-with-icon"
