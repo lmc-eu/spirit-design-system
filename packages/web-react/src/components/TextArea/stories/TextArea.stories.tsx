@@ -12,6 +12,7 @@ const meta: Meta<typeof TextArea> = {
     docs: {
       page: () => <Markdown>{ReadMe}</Markdown>,
     },
+    controls: { exclude: ['hasValidationStateIcon'] },
   },
   argTypes: {
     autoComplete: {

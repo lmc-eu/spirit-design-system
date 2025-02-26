@@ -14,6 +14,7 @@ const meta: Meta<typeof UNSTABLE_Slider> = {
     docs: {
       page: () => <Markdown>{ReadMe}</Markdown>,
     },
+    controls: { exclude: ['hasValidationStateIcon'] },
     layout: 'centered',
   },
   argTypes: {
