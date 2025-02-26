@@ -505,7 +505,11 @@
           </div>
           <div class="FileUploaderInput__validationText">
             <svg width="20" height="20" aria-hidden="true">
-              <use xlink:href="/assets/icons/svg/sprite.svg#warning" />
+              {{#if (eq state "success")}}
+              <use xlink:href="/assets/icons/svg/sprite.svg#check-plain" />
+              {{else}}
+              <use xlink:href="/assets/icons/svg/sprite.svg#{{state}}" />
+              {{/if}}
             </svg>
             <div>This is {{state}} validation text. Long validation text to show how it wraps.</div>
           </div>
