@@ -20,7 +20,7 @@ Advanced example:
 <ValidationText
   hasValidationStateIcon
   id="component__validationText"
-  className="Component__validationText Component__validationText--hasIcon"
+  className="Component__validationText"
   elementType="span"
   validationText="Danger validation text"
   role="alert"
