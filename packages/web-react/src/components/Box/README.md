@@ -3,7 +3,7 @@
 The Box component is a simple container around content or other components.
 
 ```jsx
-<Box>{/* Content go here */}</Box>
+<Box>{/* Content goes here */}</Box>
 ```
 
 ## Border
@@ -12,7 +12,7 @@ You can define border color, radius, style and width using the `borderColor`, `b
 
 ```jsx
 <Box borderColor="basic" borderRadius="200" borderWidth="100" borderStyle="dashed">
-  {/* Content go here */}
+  {/* Content goes here */}
 </Box>
 ```
 
@@ -23,14 +23,14 @@ The borderColor, borderRadius, and borderStyle props are applied only if borderW
 You can define padding using the `padding` prop.
 
 ```jsx
-<Box padding="space-200">{/* Content go here */}</Box>
+<Box padding="space-200">{/* Content goes here */}</Box>
 ```
 
 It is also possible to define padding for horizontal and vertical sides using the `paddingX` and `paddingY` props.
 
 ```jsx
 <Box paddingX="space-200" paddingY="space-300">
-  {/* Content go here */}
+  {/* Content goes here */}
 </Box>
 ```
 
@@ -38,14 +38,14 @@ You can also define padding for each side using the `paddingTop`, `paddingRight`
 
 ```jsx
 <Box paddingTop="space-200" paddingRight="space-300" paddingBottom="space-400" paddingLeft="space-500">
-  {/* Content go here */}
+  {/* Content goes here */}
 </Box>
 ```
 
 Responsive values can be set for each prop using an object:
 
 ```jsx
-<Box padding={{ mobile: 'space-200', tablet: 'space-300', desktop: 'space-400' }}>{/* Content go here */}</Box>
+<Box padding={{ mobile: 'space-200', tablet: 'space-300', desktop: 'space-400' }}>{/* Content goes here */}</Box>
 ```
 
 ## Background Color
@@ -53,7 +53,7 @@ Responsive values can be set for each prop using an object:
 You can define background color using the `backgroundColor` prop.
 
 ```jsx
-<Box backgroundColor="primary">{/* Content go here */}</Box>
+<Box backgroundColor="primary">{/* Content goes here */}</Box>
 ```
 
 ## API

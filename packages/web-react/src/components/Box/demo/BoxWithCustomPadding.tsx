@@ -3,9 +3,7 @@ import Box from '../Box';
 
 const BoxWithCustomPadding = () => (
   <>
-    <Box elementType="fieldset" marginBottom="space-500" borderWidth="0">
-      <legend>For demo purposes the box is bordered</legend>
-    </Box>
+    <p>For demo purposes, the boxes are bordered.</p>
     <Box padding="space-800" borderWidth="100">
       With custom padding
     </Box>

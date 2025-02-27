@@ -26,7 +26,6 @@ export const AlignmentYExtended = {
 /* Border Properties */
 export const BorderColors = {
   BASIC: 'basic',
-  FOCUS: 'focus',
 } as const;
 
 export const BorderRadii = {

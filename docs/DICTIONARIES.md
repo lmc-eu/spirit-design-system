@@ -30,10 +30,10 @@ This project uses `dictionaries` to unify props between different components.
 
 | Dictionary    | Values                                         | Code name    |
 | ------------- | ---------------------------------------------- | ------------ |
-| Border Color  | `basic`, `focus`                               | BorderColor  |
+| Border Color  | `basic`                                        | BorderColor  |
 | Border Radius | `0`, `100`, `200`, `300`, `400`, `500`, `full` | BorderRadius |
-| Border Style  | `solid`, `'dotted'`, `'dashed'`                | BorderStyle  |
-| Border Width  | `0`, `100`, `200`,                             | BorderWidth  |
+| Border Style  | `solid`, `dotted`, `dashed`                    | BorderStyle  |
+| Border Width  | `0`, `100`, `200`                              | BorderWidth  |
 
 ### Color
 
