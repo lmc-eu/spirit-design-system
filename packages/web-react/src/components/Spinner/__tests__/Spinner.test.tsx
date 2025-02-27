@@ -1,7 +1,9 @@
 import '@testing-library/jest-dom';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, textColorPropsTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { TextColors } from '../../../constants';
+import { TextColorsDictionaryType } from '../../../types';
 import Spinner from '../Spinner';
 
 jest.mock('../../../hooks/useIcon');
@@ -11,22 +13,25 @@ describe('Spinner', () => {
 
   stylePropsTest(Spinner);
 
-  textColorPropsTest(Spinner, 'text-');
-
   restPropsTest(Spinner, 'svg');
 
   it('should have correct classes', () => {
-    const dom = render(<Spinner />);
+    render(<Spinner data-testid="Spinner" />);
 
-    expect(dom.container.querySelector('svg') as SVGSVGElement).toHaveClass('animation-spin-clockwise');
+    expect(screen.getByTestId('Spinner')).toHaveClass('animation-spin-clockwise');
   });
 
   it('should have correct width and height', () => {
     const boxSize = 33;
-    const dom = render(<Spinner name="add" boxSize={boxSize} />);
+    render(<Spinner name="add" boxSize={boxSize} data-testid="Spinner" />);
 
-    const element = dom.container.querySelector('svg') as SVGSVGElement;
-    expect(element).toHaveAttribute('width', boxSize.toString());
-    expect(element).toHaveAttribute('height', boxSize.toString());
+    expect(screen.getByTestId('Spinner')).toHaveAttribute('width', boxSize.toString());
+    expect(screen.getByTestId('Spinner')).toHaveAttribute('height', boxSize.toString());
+  });
+
+  it.each([Object.values(TextColors)])('should render text color %s', async (color) => {
+    render(<Spinner color={color as TextColorsDictionaryType} data-testid="Spinner" />);
+
+    expect(screen.getByTestId('Spinner')).toHaveClass(`text-${color}`);
   });
 });
