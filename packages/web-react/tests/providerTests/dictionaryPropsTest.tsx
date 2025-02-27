@@ -85,13 +85,13 @@ export const emotionColorPropsTest = (Component: ComponentType<any>, prefix: str
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const textColorPropsTest = (Component: ComponentType<any>, prefix: string, testId?: string) => {
-  it.each([Object.values(TextColors)])('should render text color %s', async (color) => {
-    const dom = render(<Component color={color as TextColorsDictionaryType<string>} />);
+export const textColorPropsTest = (Component: ComponentType<any>, testId?: string) => {
+  it.each([Object.values(TextColors)])('should render text color %s', async (textColor) => {
+    const dom = render(<Component textColor={textColor as TextColorsDictionaryType<string>} />);
 
     await waitFor(() => {
       const element = getElement(dom, testId);
-      expect(element).toHaveClass(`${prefix}${color}`);
+      expect(element).toHaveClass(`text-${textColor}`);
     });
   });
 };
