@@ -77,14 +77,14 @@ const _UnstableSlider = (props: SpiritSliderProps, ref: ForwardedRef<HTMLInputEl
         ref={ref}
       />
       <HelperText
-        className={classProps.helperText}
+        UNSAFE_className={classProps.helperText}
         helperText={helperText}
         id={`${id}__helperText`}
         registerAria={register}
       />
       {validationState && (
         <ValidationText
-          className={classProps.validationText}
+          UNSAFE_className={classProps.validationText}
           {...(hasValidationIcon && { hasValidationStateIcon: validationState })}
           id={`${id}__validationText`}
           registerAria={register}

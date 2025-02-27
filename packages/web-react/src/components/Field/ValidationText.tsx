@@ -1,13 +1,13 @@
 'use client';
 
 import React, { ElementType, useEffect } from 'react';
+import { useStyleProps } from '../../hooks';
 import { mergeStyleProps } from '../../utils';
 import { Icon } from '../Icon';
 import { ValidationTextProps } from './types';
 import { useValidationIcon } from './useValidationIcon';
 
 const defaultProps: Partial<ValidationTextProps> = {
-  className: undefined,
   elementType: 'div',
   id: undefined,
   registerAria: undefined,
@@ -25,8 +25,9 @@ const ValidationText = <T extends ElementType = 'div'>(props: ValidationTextProp
     validationText,
     ...restProps
   } = propsWithDefaults;
-  const mergedStyleProps = mergeStyleProps(ElementTag, { restProps });
   const validationIconName = useValidationIcon({ hasValidationStateIcon });
+  const { styleProps, props: transferProps } = useStyleProps(restProps);
+  const mergedStyleProps = mergeStyleProps(ElementTag, { styleProps, transferProps });
 
   useEffect(() => {
     registerAria?.({ add: id });
@@ -49,7 +50,7 @@ const ValidationText = <T extends ElementType = 'div'>(props: ValidationTextProp
   );
 
   return (
-    <ElementTag {...restProps} {...mergedStyleProps} id={id} role={role}>
+    <ElementTag {...transferProps} {...mergedStyleProps} id={id} role={role}>
       {hasValidationStateIcon && <Icon name={validationIconName} boxSize="20" />}
       {Array.isArray(validationText) ? (
         <ul>

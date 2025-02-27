@@ -49,7 +49,7 @@ const _Radio = (props: SpiritRadioProps, ref: ForwardedRef<HTMLInputElement>): J
           {label}
         </Label>
         <HelperText
-          className={classProps.helperText}
+          UNSAFE_className={classProps.helperText}
           elementType="span"
           id={`${id}__helperText`}
           registerAria={register}
