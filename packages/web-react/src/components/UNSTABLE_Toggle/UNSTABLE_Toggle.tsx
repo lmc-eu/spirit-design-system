@@ -51,7 +51,7 @@ const _UNSTABLE_Toggle = (props: SpiritToggleProps, ref: ForwardedRef<HTMLInputE
           {label}
         </Label>
         <HelperText
-          className={classProps.helperText}
+          UNSAFE_className={classProps.helperText}
           elementType="span"
           id={`${id}__helperText`}
           registerAria={register}
@@ -59,7 +59,7 @@ const _UNSTABLE_Toggle = (props: SpiritToggleProps, ref: ForwardedRef<HTMLInputE
         />
         {validationState && (
           <ValidationText
-            className={classProps.validationText}
+            UNSAFE_className={classProps.validationText}
             {...(hasValidationIcon && { hasValidationStateIcon: validationState })}
             id={`${id}__validationText`}
             validationText={validationText}
