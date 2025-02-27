@@ -1,5 +1,5 @@
-import { ElementType, JSXElementConstructor, ReactNode } from 'react';
-import { ValidationTextProp } from '../../types';
+import { ElementType, ReactNode } from 'react';
+import { ChildrenProps, StyleProps, TransferProps, ValidationTextProp } from '../../types';
 import { RegisterType } from './useAriaIds';
 
 export interface FieldElementTypeProps<T extends ElementType = 'div'> {
@@ -8,17 +8,25 @@ export interface FieldElementTypeProps<T extends ElementType = 'div'> {
    *
    * @default 'div'
    */
-  elementType?: T | JSXElementConstructor<unknown>;
+  elementType?: T;
 }
 
 export interface FieldProps<T extends ElementType = 'div'> extends FieldElementTypeProps<T> {
-  className?: string;
   id?: string;
   registerAria?: RegisterType;
 }
 
-export interface HelperTextProps<T extends ElementType = 'div'> extends FieldProps<T> {
+export interface HelperTextProps<T extends ElementType = 'div'>
+  extends FieldProps<T>,
+    StyleProps,
+    ChildrenProps,
+    TransferProps {
   helperText: ReactNode;
 }
 
-export interface ValidationTextProps<T extends ElementType = 'div'> extends FieldProps<T>, ValidationTextProp {}
+export interface ValidationTextProps<T extends ElementType = 'div'>
+  extends FieldProps<T>,
+    ValidationTextProp,
+    StyleProps,
+    ChildrenProps,
+    TransferProps {}

@@ -48,14 +48,14 @@ const _TextFieldBase = (props: SpiritTextFieldBaseProps, ref: ForwardedRef<HTMLI
       </Label>
       <TextFieldBaseInputWithPasswordToggle {...otherProps} id={id} aria-describedby={ids.join(' ')} ref={ref} />
       <HelperText
-        className={classProps.helperText}
+        UNSAFE_className={classProps.helperText}
         id={`${id}__helperText`}
         registerAria={register}
         helperText={helperText}
       />
       {validationState && (
         <ValidationText
-          className={classProps.validationText}
+          UNSAFE_className={classProps.validationText}
           elementType="span"
           {...(hasValidationIcon && { hasValidationStateIcon: validationState })}
           id={`${id}__validationText`}

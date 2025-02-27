@@ -110,7 +110,7 @@ const FileUploaderInput = (props: SpiritFileUploaderInputProps) => {
           <span className={classProps.input.dropLabel}>{labelText}</span>
         </Label>
         <HelperText
-          className={classProps.input.helper}
+          UNSAFE_className={classProps.input.helper}
           id={`${id}__helperText`}
           registerAria={register}
           helperText={helperText}
@@ -118,7 +118,7 @@ const FileUploaderInput = (props: SpiritFileUploaderInputProps) => {
       </div>
       {validationState && (
         <ValidationText
-          className={classProps.input.validationText}
+          UNSAFE_className={classProps.input.validationText}
           elementType="span"
           {...(hasValidationIcon && { hasValidationStateIcon: validationState })}
           id={`${id}__validationText`}

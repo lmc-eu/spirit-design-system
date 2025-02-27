@@ -11,7 +11,7 @@ import { ValidationText } from '@lmc-eu/spirit-web-react/components';
 Basic example usage:
 
 ```jsx
-<ValidationText className="Component__validationText" validationText="Danger validation text" />
+<ValidationText UNSAFE_className="Component__validationText" validationText="Danger validation text" />
 ```
 
 Advanced example:
@@ -20,7 +20,7 @@ Advanced example:
 <ValidationText
   hasValidationStateIcon
   id="component__validationText"
-  className="Component__validationText"
+  UNSAFE_className="Component__validationText"
   elementType="span"
   validationText="Danger validation text"
   role="alert"
@@ -35,35 +35,46 @@ When displaying text dynamically, set [`role="alert"`][aria-alert-role] on the `
 
 | Name                     | Type                                           | Default | Required | Description                                                                                    |
 | ------------------------ | ---------------------------------------------- | ------- | -------- | ---------------------------------------------------------------------------------------------- |
-| `className`              | `string`                                       | -       | ✓        | Wrapper custom class name                                                                      |
 | `elementType`            | \[`span` \| `div`]                             | `div`   | ✕        | Type of element used as main wrapper (applied only for single validation text, otherwise `ul`) |
 | `hasValidationStateIcon` | [Validation dictionary][dictionary-validation] | -       | ✕        | Whether to show validation icon                                                                |
 | `id`                     | `string`                                       | -       | ✕        | Component id                                                                                   |
 | `role`                   | `string`                                       | -       | ✕        | The role attribute that describes the role of an element                                       |
 | `validationText`         | \[`ReactNode` \| `ReactNode[]`]                | -       | ✕        | Validation text                                                                                |
 
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
+
 ## HelperText
 
 The HelperText subcomponent displays helper texts for Field components like TextField, TextArea, Checkbox, FileUploader, etc.
 
 ```jsx
-<HelperText className="Component__helperText" helperText="Helper text" />
+<HelperText UNSAFE_className="Component__helperText" helperText="Helper text" />
 ```
 
 Advanced example:
 
 ```jsx
-<HelperText id="component__helperText" className="Component__helperText" elementType="span" helperText="Helper text" />
+<HelperText
+  id="component__helperText"
+  UNSAFE_className="Component__helperText"
+  elementType="span"
+  helperText="Helper text"
+/>
 ```
 
 ### API
 
 | Name          | Type                            | Default | Required | Description                                                                                    |
 | ------------- | ------------------------------- | ------- | -------- | ---------------------------------------------------------------------------------------------- |
-| `className`   | `string`                        | —       | ✓        | Wrapper custom class name                                                                      |
 | `elementType` | \[`span` \| `div`]              | `div`   | ✕        | Type of element used as main wrapper (applied only for single validation text, otherwise `ul`) |
 | `helperText`  | \[`ReactNode` \| `ReactNode[]`] | —       | ✕        | Validation text, only visible if validationState is                                            |
 | `id`          | `string`                        | —       | ✕        | Component id                                                                                   |
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## Label
 

@@ -36,7 +36,7 @@ const Item = <T extends ElementType = 'button'>(props: SpiritItemProps<T>): JSX.
         </span>
       )}
       <span className={classProps.label}>{label}</span>
-      <HelperText className={classProps.helperText} elementType="span" helperText={helperText} />
+      <HelperText UNSAFE_className={classProps.helperText} elementType="span" helperText={helperText} />
       {isSelected && (
         <span className={classNames(classProps.icon.root, classProps.icon.end)}>
           <Icon name="check-plain" />

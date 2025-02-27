@@ -5,9 +5,8 @@ import { A11Y_ALERT_ROLE } from '../constants';
 import { ValidationTextProps } from '../types';
 import ValidationText from '../ValidationText';
 
-const renderValidationText = <T extends ElementType = 'div'>(props: Partial<ValidationTextProps<T>>) => {
-  return render(<ValidationText className="ValidationText__validationText" {...props} />);
-};
+const renderValidationText = <T extends ElementType = 'div'>(props: Partial<ValidationTextProps<T>>) =>
+  render(<ValidationText UNSAFE_className="ValidationText__validationText" {...props} />);
 
 describe('ValidationText', () => {
   it('should render single validation text', () => {
@@ -96,7 +95,7 @@ describe('ValidationText', () => {
 
       rerender(
         <ValidationText
-          className="ValidationText__validationText"
+          UNSAFE_className="ValidationText__validationText"
           validationText={['updated validation text', 'new validation text']}
         />,
       );
