@@ -27,6 +27,6 @@ export function useTagStyleProps<T extends ElementType = 'span', C = void, S = v
 
   return {
     classProps,
-    props: modifiedProps,
+    props: modifiedProps as Partial<SpiritTagProps>,
   };
 }
