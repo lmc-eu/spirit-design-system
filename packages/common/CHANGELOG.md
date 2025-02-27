@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.3.10"></a>
+
+## [0.3.10](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-common@0.3.9...@lmc-eu/spirit-common@0.3.10) (2025-02-27)
+
+### Styles
+
+- **common:** Use sharable ESlint config ([e5207e2](https://github.com/lmc-eu/spirit-design-system/commit/e5207e2))
+
+**Note:** Version bump only for package @lmc-eu/spirit-common
+
 <a name="0.3.9"></a>
 
 ## [0.3.9](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-common@0.3.8...@lmc-eu/spirit-common@0.3.9) (2025-01-27)

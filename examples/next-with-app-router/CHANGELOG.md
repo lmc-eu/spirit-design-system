@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.4.0"></a>
+
+# [0.4.0](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-example-next-with-app-router@0.3.1...@almacareer/spirit-example-next-with-app-router@0.4.0) (2025-02-27)
+
+### Features
+
+- Add documentation for Nextjs [#DS-1557](https://github.com/lmc-eu/spirit-design-system/issues/DS-1557) ([feed1b1](https://github.com/lmc-eu/spirit-design-system/commit/feed1b1))
+
+**Note:** Version bump only for package @almacareer/spirit-example-next-with-app-router
+
 <a name="0.3.1"></a>
 
 ## [0.3.1](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-example-next-with-app-router@0.3.0...@almacareer/spirit-example-next-with-app-router@0.3.1) (2025-02-21)

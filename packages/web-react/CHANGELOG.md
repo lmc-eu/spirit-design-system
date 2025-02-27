@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.6.0"></a>
+
+# [3.6.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.5.0...@lmc-eu/spirit-web-react@3.6.0) (2025-02-27)
+
+### Bug Fixes
+
+- **web-react:** Remove `focus` from available border colors ([10e9b26](https://github.com/lmc-eu/spirit-design-system/commit/10e9b26))
+
+### Features
+
+- **web-react:** Add spiritComponent to all components ([bb25122](https://github.com/lmc-eu/spirit-design-system/commit/bb25122)), closes [#DS-1678](https://github.com/lmc-eu/spirit-design-system/issues/DS-1678)
+- **web-react:** Introduce Container Sizes [#DS-1674](https://github.com/lmc-eu/spirit-design-system/issues/DS-1674) ([442d08d](https://github.com/lmc-eu/spirit-design-system/commit/442d08d))
+- **web-react:** Introduce Section component and use it DocsSection [#DS-1641](https://github.com/lmc-eu/spirit-design-system/issues/DS-1641) ([68db9b5](https://github.com/lmc-eu/spirit-design-system/commit/68db9b5))
+- **web-react:** Introduce SplitButton component [#DS-1656](https://github.com/lmc-eu/spirit-design-system/issues/DS-1656) ([e25ea32](https://github.com/lmc-eu/spirit-design-system/commit/e25ea32))
+- **web-react:** Introduce textColor prop to Text & Heading [#DS-1690](https://github.com/lmc-eu/spirit-design-system/issues/DS-1690) ([ad47f4a](https://github.com/lmc-eu/spirit-design-system/commit/ad47f4a))
+- **web-react:** Introduce UncontrolledSplitButton component ([23b4a4f](https://github.com/lmc-eu/spirit-design-system/commit/23b4a4f)), closes [#DS-1671](https://github.com/lmc-eu/spirit-design-system/issues/DS-1671)
+- **web-react:** Introduce ValidationText has Icons [#DS-1676](https://github.com/lmc-eu/spirit-design-system/issues/DS-1676) ([739778c](https://github.com/lmc-eu/spirit-design-system/commit/739778c))
+- **web-react:** Types generated from custom tokens [#DS-1557](https://github.com/lmc-eu/spirit-design-system/issues/DS-1557) ([8304714](https://github.com/lmc-eu/spirit-design-system/commit/8304714))
+- **web:** Introduce Container Sizes [#DS-1674](https://github.com/lmc-eu/spirit-design-system/issues/DS-1674) ([380294e](https://github.com/lmc-eu/spirit-design-system/commit/380294e))
+
+### Styles
+
+- **web-react:** Use sharable ESlint config ([332f3ec](https://github.com/lmc-eu/spirit-design-system/commit/332f3ec))
+
+### Tests
+
+- **web-react:** Refactor Spinner color test ([e1335ea](https://github.com/lmc-eu/spirit-design-system/commit/e1335ea))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="3.5.0"></a>
 
 # [3.5.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.4.0...@lmc-eu/spirit-web-react@3.5.0) (2025-02-21)

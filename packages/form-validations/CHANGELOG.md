@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.13"></a>
+
+## [2.0.13](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@2.0.12...@lmc-eu/spirit-form-validations@2.0.13) (2025-02-27)
+
+### Documentation
+
+- **form-validations:** Use utility classes instead of UNSTABLE_Section [#DS-1641](https://github.com/lmc-eu/spirit-design-system/issues/DS-1641) ([ca1caf5](https://github.com/lmc-eu/spirit-design-system/commit/ca1caf5))
+
+### Styles
+
+- **form-validations:** Use sharable ESlint config ([3752419](https://github.com/lmc-eu/spirit-design-system/commit/3752419))
+
+**Note:** Version bump only for package @lmc-eu/spirit-form-validations
+
 <a name="2.0.12"></a>
 
 ## [2.0.12](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@2.0.11...@lmc-eu/spirit-form-validations@2.0.12) (2025-02-21)

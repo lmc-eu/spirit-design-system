@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.3.0"></a>
+
+# [3.3.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@3.2.0...@lmc-eu/spirit-design-tokens@3.3.0) (2025-02-27)
+
+### Features
+
+- **design-tokens:** Types generated from custom tokens [#DS-1557](https://github.com/lmc-eu/spirit-design-system/issues/DS-1557) ([a952f30](https://github.com/lmc-eu/spirit-design-system/commit/a952f30))
+
+### Styles
+
+- **design-tokens:** Use sharable ESlint config ([cae069b](https://github.com/lmc-eu/spirit-design-system/commit/cae069b))
+
+**Note:** Version bump only for package @lmc-eu/spirit-design-tokens
+
 <a name="3.2.0"></a>
 
 # [3.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@3.1.0...@lmc-eu/spirit-design-tokens@3.2.0) (2025-02-21)

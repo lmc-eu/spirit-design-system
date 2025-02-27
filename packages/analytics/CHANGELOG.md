@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.10"></a>
+
+## [1.0.10](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-analytics@1.0.9...@lmc-eu/spirit-analytics@1.0.10) (2025-02-27)
+
+### Styles
+
+- **analytics:** Use sharable ESlint config ([820c728](https://github.com/lmc-eu/spirit-design-system/commit/820c728))
+
+**Note:** Version bump only for package @lmc-eu/spirit-analytics
+
 <a name="1.0.9"></a>
 
 ## [1.0.9](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-analytics@1.0.8...@lmc-eu/spirit-analytics@1.0.9) (2025-02-12)

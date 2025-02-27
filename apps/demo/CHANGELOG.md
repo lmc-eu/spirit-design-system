@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.3.0"></a>
+
+# [1.3.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo-app@1.2.3...@lmc-eu/spirit-demo-app@1.3.0) (2025-02-27)
+
+### Documentation
+
+- **form-validations:** Use utility classes instead of UNSTABLE_Section [#DS-1641](https://github.com/lmc-eu/spirit-design-system/issues/DS-1641) ([ca1caf5](https://github.com/lmc-eu/spirit-design-system/commit/ca1caf5))
+
+### Features
+
+- Replace Header in demos [#DS-1687](https://github.com/lmc-eu/spirit-design-system/issues/DS-1687) ([e61f02c](https://github.com/lmc-eu/spirit-design-system/commit/e61f02c))
+- **web-react:** Introduce Section component and use it DocsSection [#DS-1641](https://github.com/lmc-eu/spirit-design-system/issues/DS-1641) ([68db9b5](https://github.com/lmc-eu/spirit-design-system/commit/68db9b5))
+- **web:** Introduce Section component and use it on all demos [#DS-1641](https://github.com/lmc-eu/spirit-design-system/issues/DS-1641) ([c3d9e2f](https://github.com/lmc-eu/spirit-design-system/commit/c3d9e2f))
+
+**Note:** Version bump only for package @lmc-eu/spirit-demo-app
+
 <a name="1.2.3"></a>
 
 ## [1.2.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo-app@1.2.2...@lmc-eu/spirit-demo-app@1.2.3) (2025-02-21)

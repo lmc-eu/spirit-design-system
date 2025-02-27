@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.5.1"></a>
+
+## [1.5.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@1.5.0...@lmc-eu/spirit-codemods@1.5.1) (2025-02-27)
+
+### Styles
+
+- **codemods:** Use sharable ESlint config ([aaf4093](https://github.com/lmc-eu/spirit-design-system/commit/aaf4093))
+
+**Note:** Version bump only for package @lmc-eu/spirit-codemods
+
 <a name="1.5.0"></a>
 
 # [1.5.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@1.4.1...@lmc-eu/spirit-codemods@1.5.0) (2025-02-12)

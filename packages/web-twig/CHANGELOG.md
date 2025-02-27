@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.4.0"></a>
+
+# [4.4.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@4.3.0...@lmc-eu/spirit-web-twig@4.4.0) (2025-02-27)
+
+### Documentation
+
+- **web-twig:** Update DocsSection and use utility classes instead of UNSTABLE_Section [#DS-1641](https://github.com/lmc-eu/spirit-design-system/issues/DS-1641) ([ce70c3f](https://github.com/lmc-eu/spirit-design-system/commit/ce70c3f))
+
+### Features
+
+- **web-twig:** Introduce Container Sizes [#DS-1674](https://github.com/lmc-eu/spirit-design-system/issues/DS-1674) ([96cd6d4](https://github.com/lmc-eu/spirit-design-system/commit/96cd6d4))
+- **web-twig:** Introduce textColor prop to Text & Heading [#DS-1690](https://github.com/lmc-eu/spirit-design-system/issues/DS-1690) ([35b8c54](https://github.com/lmc-eu/spirit-design-system/commit/35b8c54))
+- **web-twig:** Introduce ValidationText has Icons [#DS-1676](https://github.com/lmc-eu/spirit-design-system/issues/DS-1676) ([835a8f3](https://github.com/lmc-eu/spirit-design-system/commit/835a8f3))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="4.3.0"></a>
 
 # [4.3.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@4.2.0...@lmc-eu/spirit-web-twig@4.3.0) (2025-02-21)

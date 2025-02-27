@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.6.0"></a>
+
+# [3.6.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.5.0...@lmc-eu/spirit-web@3.6.0) (2025-02-27)
+
+### Bug Fixes
+
+- **web-react:** Remove `focus` from available border colors ([10e9b26](https://github.com/lmc-eu/spirit-design-system/commit/10e9b26))
+- **web:** Use correct order of padding and margin in utilities [#DS-1641](https://github.com/lmc-eu/spirit-design-system/issues/DS-1641) ([8a3253e](https://github.com/lmc-eu/spirit-design-system/commit/8a3253e))
+- **web:** Use CSS type instead of React CSS properties ([3093bc2](https://github.com/lmc-eu/spirit-design-system/commit/3093bc2))
+
+### Documentation
+
+- **web:** Update SplitButton demo to match react demo ([ccb623c](https://github.com/lmc-eu/spirit-design-system/commit/ccb623c))
+
+### Features
+
+- **web:** Introduce Container Sizes [#DS-1674](https://github.com/lmc-eu/spirit-design-system/issues/DS-1674) ([380294e](https://github.com/lmc-eu/spirit-design-system/commit/380294e))
+- **web:** Introduce Section component and use it on all demos [#DS-1641](https://github.com/lmc-eu/spirit-design-system/issues/DS-1641) ([c3d9e2f](https://github.com/lmc-eu/spirit-design-system/commit/c3d9e2f))
+- **web:** Introduce ValidationText has Icons [#DS-1676](https://github.com/lmc-eu/spirit-design-system/issues/DS-1676) ([4458f4a](https://github.com/lmc-eu/spirit-design-system/commit/4458f4a))
+
+### Styles
+
+- **web:** Use sharable ESlint config ([b892ed0](https://github.com/lmc-eu/spirit-design-system/commit/b892ed0))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="3.5.0"></a>
 
 # [3.5.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.4.0...@lmc-eu/spirit-web@3.5.0) (2025-02-21)
