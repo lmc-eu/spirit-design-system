@@ -20,6 +20,7 @@ export interface TextElementTypeProps<T extends ElementType = 'p'> {
    */
   elementType?: T;
 }
+
 export interface TextStyleProps {
   textAlignment?: TextAlignmentProps;
 }
