@@ -17,13 +17,13 @@ $_field-name: 'Radio';
 
     display: grid;
     flex-shrink: 0;
+    place-content: center;
     width: theme.$input-size;
     height: theme.$input-size;
     margin: theme.$input-margin;
     font: inherit;
     border-radius: theme.$input-border-radius;
     background-color: form-fields-theme.$input-background-color;
-    place-content: center;
 
     &:checked {
         border-color: form-fields-theme.$inline-field-input-border-color-checked;

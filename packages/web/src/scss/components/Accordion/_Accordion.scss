@@ -37,8 +37,8 @@
     &::before {
         content: '';
         position: absolute;
-        top: 0;
         inset-inline: theme.$accordion-header-padding-x;
+        top: 0;
         z-index: 1;
         border-bottom: theme.$accordion-divider-width theme.$accordion-divider-style theme.$accordion-divider-color;
     }
@@ -125,8 +125,8 @@
     &::after {
         content: '';
         position: absolute;
-        top: 100%;
         inset-inline: theme.$accordion-header-padding-x;
+        top: 100%;
         border-bottom: theme.$accordion-divider-width theme.$accordion-divider-style theme.$accordion-divider-color;
     }
 }
