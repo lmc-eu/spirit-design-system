@@ -123,7 +123,7 @@ export const formFieldFilledBorderStateSelected = '#7847ff';
 export const formFieldFilledContent = '#202020';
 export const formFieldFilledPlaceholder = '#666';
 
-export const formFieldHelperText = '#7f7f7f';
+export const formFieldHelperText = '#535353';
 export const formFieldLabel = '#202020';
 export const formFieldSuccess = '#327c3f';
 export const formFieldWarning = '#c26400';
@@ -159,7 +159,7 @@ export const neutralStateActive = '#535353';
 export const neutralStateDefault = '#202020';
 export const neutralStateHover = '#404040';
 
-export const selectedContentBasic = '#4e2ea6';
+export const selectedContentBasic = '#7847ff';
 export const selectedContentSubtle = '#fff';
 export const selectedStateActive = '#6039cc';
 export const selectedStateDefault = '#7847ff';
