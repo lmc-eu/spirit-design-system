@@ -56,7 +56,7 @@ const _Checkbox = (props: SpiritCheckboxProps, ref: ForwardedRef<HTMLInputElemen
           {label}
         </Label>
         <HelperText
-          className={classProps.helperText}
+          UNSAFE_className={classProps.helperText}
           elementType="span"
           id={`${id}__helperText`}
           registerAria={register}
@@ -64,7 +64,7 @@ const _Checkbox = (props: SpiritCheckboxProps, ref: ForwardedRef<HTMLInputElemen
         />
         {validationState && (
           <ValidationText
-            className={classProps.validationText}
+            UNSAFE_className={classProps.validationText}
             elementType="span"
             id={`${id}__validationText`}
             {...(hasValidationIcon && { hasValidationStateIcon: validationState })}

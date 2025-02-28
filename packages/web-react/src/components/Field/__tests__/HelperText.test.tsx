@@ -7,7 +7,7 @@ describe('HelperText', () => {
   const helperText = 'Helper Text';
 
   it('should render helper text', () => {
-    render(<HelperText className="HelperText__helperText" helperText={helperText} />);
+    render(<HelperText UNSAFE_className="HelperText__helperText" helperText={helperText} />);
 
     const element = screen.getByText(helperText);
 
@@ -26,7 +26,9 @@ describe('HelperText', () => {
     const helperTextId = 'test-helper-text-id';
     const helperTextClass = 'test__helperText';
 
-    render(<HelperText className={helperTextClass} id={helperTextId} helperText={helperText} data-testid="test" />);
+    render(
+      <HelperText UNSAFE_className={helperTextClass} id={helperTextId} helperText={helperText} data-testid="test" />,
+    );
 
     const element = screen.getByText(helperText);
 

@@ -3,9 +3,9 @@
 import React, { ElementType, useEffect } from 'react';
 import { mergeStyleProps } from '../../utils';
 import { HelperTextProps } from './types';
+import { useStyleProps } from '../../hooks';
 
 const defaultProps: Partial<HelperTextProps> = {
-  className: undefined,
   elementType: 'div',
   id: undefined,
   registerAria: undefined,
@@ -20,7 +20,8 @@ const HelperText = <T extends ElementType = 'div'>(props: HelperTextProps<T>) =>
     registerAria,
     ...restProps
   } = propsWithDefaults;
-  const mergedStyleProps = mergeStyleProps(ElementTag, { restProps });
+  const { styleProps, props: transferProps } = useStyleProps(restProps);
+  const mergedStyleProps = mergeStyleProps(ElementTag, { styleProps, transferProps });
 
   useEffect(() => {
     registerAria?.({ add: id });
@@ -32,7 +33,7 @@ const HelperText = <T extends ElementType = 'div'>(props: HelperTextProps<T>) =>
 
   if (helperText) {
     return (
-      <ElementTag {...restProps} {...mergedStyleProps} id={id}>
+      <ElementTag {...transferProps} {...mergedStyleProps} id={id}>
         {helperText}
       </ElementTag>
     );
