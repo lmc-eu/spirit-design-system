@@ -327,10 +327,12 @@
                     transform-origin: bottom left;
                 }
 
+                // stylelint-disable order/properties-order -- Disabling rule due to conditional rendering affecting property order
                 .Test[data-spirit-placement='top-start'] > .Test__arrow {
                     transform-origin: center;
                     rotate: z 180deg;
                 }
+                // stylelint-enable order/properties-order
             }
         }
     }

@@ -33,9 +33,9 @@
     &::before {
         content: '';
         position: fixed;
-        inset-block: 0;
         inset-inline-start: auto;
         inset-inline-end: theme.$header-dialog-width;
+        inset-block: 0;
         z-index: -2;
         width: 100vw;
         background-color: theme.$header-dialog-backdrop-background-color;
@@ -66,9 +66,9 @@
     $_shadow-offset: -2rem;
 
     position: absolute;
-    inset-block: 0;
     inset-inline-start: auto;
     inset-inline-end: 0;
+    inset-block: 0;
     display: grid;
     width: theme.$header-dialog-width;
     height: 100%;

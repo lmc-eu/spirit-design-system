@@ -4,16 +4,16 @@
 @use 'theme';
 
 .Tabs {
+    // stylelint-disable-next-line custom-property-no-missing-var-function
+    $property-name: --tabs-spacing;
+    $fallback: theme.$spacing-fallback;
+
     display: flex;
     flex: none;
     gap: var(--tabs-gap);
     align-items: center;
     justify-content: center;
     list-style: none;
-
-    // stylelint-disable-next-line custom-property-no-missing-var-function
-    $property-name: --tabs-spacing;
-    $fallback: theme.$spacing-fallback;
 
     @each $breakpoint-name, $breakpoint-value in theme.$breakpoints {
         @if $breakpoint-value > 0 {
@@ -71,10 +71,10 @@
     &::after {
         content: '';
         position: absolute;
+        inset-inline: 0;
         bottom: 0;
         height: 2px;
         border-radius: theme.$item-selected-underline-border-radius;
         background: currentcolor;
-        inset-inline: 0;
     }
 }
