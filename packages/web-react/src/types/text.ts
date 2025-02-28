@@ -6,6 +6,7 @@ import {
   SizeExtendedDictionaryType,
   SizeProps,
   StyleProps,
+  TextAlignmentProps,
   TextColorProps,
   TextColorsDictionaryType,
   TransferProps,
@@ -20,10 +21,15 @@ export interface TextElementTypeProps<T extends ElementType = 'p'> {
   elementType?: T;
 }
 
+export interface TextStyleProps {
+  textAlignment?: TextAlignmentProps;
+}
+
 export interface TextProps<T extends ElementType = 'p'>
   extends TextElementTypeProps<T>,
     ChildrenProps,
     StyleProps,
+    TextStyleProps,
     TransferProps {}
 
 export interface SpiritTextProps<T extends ElementType = 'p', S = void, E = void, C = void>
