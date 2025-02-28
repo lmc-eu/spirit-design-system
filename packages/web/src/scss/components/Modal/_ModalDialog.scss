@@ -10,9 +10,9 @@
 @use 'theme';
 
 .ModalDialog {
-    @include typography.generate(theme.$typography);
-
     --scroll-view-vertical-height: auto; // 1.
+
+    @include typography.generate(theme.$typography);
 
     display: flex;
     flex-direction: column;

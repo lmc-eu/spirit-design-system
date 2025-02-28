@@ -11,9 +11,9 @@
                 'font-size': 16px,
                 'font-style': italic,
                 'font-weight': 700,
+                'text-indent': 2em,
                 'text-transform': uppercase,
                 'text-decoration': underline,
-                'text-indent': 2em,
                 'line-height': 1.5,
                 'letter-spacing': 0.05em,
             ),
@@ -28,6 +28,7 @@
 
             @include test.expect() {
                 @media (width >= #{map.get(tokens.$breakpoints, 'tablet')}) {
+                    // stylelint-disable order/properties-order -- Disabling rule due to conditional rendering affecting property order
                     .typography-test {
                         font-style: italic;
                         font-weight: 700;
@@ -39,6 +40,7 @@
                         text-transform: uppercase;
                         text-indent: 2em;
                     }
+                    // stylelint-enable order/properties-order
                 }
             }
         }

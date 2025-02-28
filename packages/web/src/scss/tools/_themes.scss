@@ -15,6 +15,7 @@
         $selector: if($is-default-theme, ':root, .#{$theme-name}', '.#{$theme-name}');
         $theme-variables: map.get($theme-token-types, variables);
         $theme-mixins: map.get($theme-token-types, mixins);
+        $is-default-theme: false;
 
         #{$selector} {
             @each $theme-mixin-name, $theme-mixin in $theme-mixins {
@@ -30,8 +31,6 @@
         :where(#{$selector}) {
             color: tokens.$text-primary;
         }
-
-        $is-default-theme: false;
     }
 }
 
