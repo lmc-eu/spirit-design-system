@@ -3,19 +3,23 @@
 Icon component uses inlineSVG extension, so don't forget to add icons path in the configuration
 as seen in [inlineSVG docs][inlinesvg-docs].
 
-Basic example usage:
+## Basic Example Usage
 
 ```twig
 <Icon name="warning" />
 ```
 
-Advanced example usage:
+## Advanced Example Usage
 
 ```twig
-<Icon name="warning" title="This is warning!" boxSize="32" ariaHidden="false" />
+<Icon name="warning"
+ title="This is warning!"
+ boxSize="{{ { mobile: 20, tablet: 30, desktop: 40 } }}"
+ ariaHidden="false"
+ />
 ```
 
-Without lexer:
+## Without Lexer
 
 ```twig
 {% embed "@spirit/icon.twig" with { props: {
@@ -33,7 +37,7 @@ If you need to prerender the icon as a [symbol][mdn-symbol], you can use the `is
 
 The ID of the symbol will be the same as the `name` prop and the whole SVG element will be hidden.
 
-⚠️ Please note that SVG IDs are global and you might encounter ID conflicts if you use the same in
+⚠️ Please note that SVG IDs are global, and you might encounter ID conflicts if you use the same in
 `name` prop as an existing element on your site.
 
 👉 Even though the `svg` only includes the `symbol` element, the `svg` still takes some space in browser,
@@ -47,14 +51,14 @@ so you might want to hide it using either wrapping element with `hidden` attribu
 
 ## API
 
-| Name         | Type     | Default | Required | Description                                                                                                             |
-| ------------ | -------- | ------- | -------- | ----------------------------------------------------------------------------------------------------------------------- |
-| `ariaHidden` | `bool`   | `true`  | ✕        | If true, icon is hidden from a11y API                                                                                   |
-| `boxSize`    | `number` | `24`    | ✕        | Size of the icon                                                                                                        |
-| `isReusable` | `bool`   | `true`  | ✕        | Enables reusability of SVG icons                                                                                        |
-| `isSymbol`   | `bool`   | `false` | ✕        | If true, the element will be rendered as SVG symbol with the name assigned to the ID attribute, other props are skipped |
-| `name`       | `string` | —       | ✓        | Name of the icon, case sensitive                                                                                        |
-| `title`      | `string` | `null`  | ✕        | Optional title to display on hover                                                                                      |
+| Name         | Type                      | Default | Required | Description                                                                                                             |
+| ------------ | ------------------------- | ------- | -------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `ariaHidden` | `bool`                    | `true`  | ✕        | If true, icon is hidden from a11y API                                                                                   |
+| `boxSize`    | \[ `number` \| `object` ] | `24`    | ✕        | Size of the icon, use object to set responsive values, e.g. `{ mobile: 20, tablet: 30, desktop: 40 }`                   |
+| `isReusable` | `bool`                    | `true`  | ✕        | Enables reusability of SVG icons                                                                                        |
+| `isSymbol`   | `bool`                    | `false` | ✕        | If true, the element will be rendered as SVG symbol with the name assigned to the ID attribute, other props are skipped |
+| `name`       | `string`                  | —       | ✓        | Name of the icon, case sensitive                                                                                        |
+| `title`      | `string`                  | `null`  | ✕        | Optional title to display on hover                                                                                      |
 
 Get the list of `name` options in the [Icon package][icon-package] or your source of icons.
 
