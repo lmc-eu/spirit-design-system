@@ -27,6 +27,10 @@ The direction values `row` and `column` were removed, please use `horizontal` an
 
 The `Header` component was removed, please use `UNSTABLE_Header` component instead.
 
+### Skeleton
+
+The check for the existence of the `skeleton-gradient` token will be removed. Ensure that the skeleton-gradient token is properly set up in your project, as if you import all components, the project will not run without it.
+
 👉 [What are deprecations?][readme-deprecations]
 
 [readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#deprecations
