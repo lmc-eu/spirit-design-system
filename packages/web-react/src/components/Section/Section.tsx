@@ -1,7 +1,7 @@
 'use client';
 
 import React, { ElementType } from 'react';
-import { PaddingStyleProps } from '../../constants';
+import { PaddingStyleProps, TextStyleProps } from '../../constants';
 import { useStyleProps } from '../../hooks';
 import { SpiritSectionProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
@@ -32,6 +32,7 @@ const Section = <T extends ElementType = 'section'>(props: SpiritSectionProps<T>
     paddingTop: PaddingStyleProps.paddingTop,
     paddingBottom: PaddingStyleProps.paddingBottom,
     paddingY: PaddingStyleProps.paddingY,
+    textAlignment: TextStyleProps.textAlignment,
   });
   const mergedStyleProps = mergeStyleProps(ElementTag, { classProps, styleProps });
 

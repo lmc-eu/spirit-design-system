@@ -38,4 +38,16 @@ describe('Text', () => {
 
     expect(screen.getByText('Text')).toHaveClass(expectedClassName as string);
   });
+
+  it('should correctly render children', () => {
+    render(<Text>Text</Text>);
+
+    expect(screen.getByText('Text')).toBeInTheDocument();
+  });
+
+  it('should render additional style props', () => {
+    render(<Text textAlignment="center">Text</Text>);
+
+    expect(screen.getByText('Text')).toHaveClass('text-center');
+  });
 });

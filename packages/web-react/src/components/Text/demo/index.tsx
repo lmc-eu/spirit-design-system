@@ -5,6 +5,7 @@ import TextColor from './TextColor';
 import TextDefault from './TextDefault';
 import TextEmphasis from './TextEmphasis';
 import TextSizes from './TextSizes';
+import TextAlignment from './TextAlignment';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -19,6 +20,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     </DocsSection>
     <DocsSection title="Colors">
       <TextColor />
+    </DocsSection>
+    <DocsSection title="Alignment" stackAlignment="stretch">
+      <TextAlignment />
     </DocsSection>
   </React.StrictMode>,
 );

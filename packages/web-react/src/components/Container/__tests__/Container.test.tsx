@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import React from 'react';
 import '@testing-library/jest-dom';
 import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, sizeExtendedPropsTest } from '@local/tests';
+import { AlignmentX } from '../../../constants';
 import Container from '../Container';
 
 describe('Container', () => {
@@ -36,5 +37,15 @@ describe('Container', () => {
     );
 
     expect(screen.getByTestId(testId)).toHaveClass('Container Container--fluid');
+  });
+
+  it.each([Object.values(AlignmentX)])('should render with text alignment', (textAlignment) => {
+    render(
+      <Container textAlignment={textAlignment} data-testid={testId}>
+        Content
+      </Container>,
+    );
+
+    expect(screen.getByTestId(testId)).toHaveClass(`text-${textAlignment}`);
   });
 });

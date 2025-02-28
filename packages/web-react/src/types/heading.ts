@@ -6,6 +6,7 @@ import {
   SizeExtendedDictionaryType,
   SizeProps,
   StyleProps,
+  TextAlignmentProps,
   TextColorProps,
   TextColorsDictionaryType,
   TransferProps,
@@ -22,7 +23,12 @@ export interface HeadingProps<T extends ElementType>
   extends HeadingElementTypeProps<T>,
     ChildrenProps,
     StyleProps,
+    HeadingStyleProps,
     TransferProps {}
+
+export interface HeadingStyleProps {
+  textAlignment?: TextAlignmentProps;
+}
 
 export interface SpiritHeadingProps<T extends ElementType, S = void, E = void, C = void>
   extends HeadingProps<T>,

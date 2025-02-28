@@ -10,6 +10,7 @@ import { IconsProvider } from '../../../context';
 import FooterDefault from './FooterDefault';
 import FooterMinimalistic from './FooterMinimalistic';
 import FooterNested from './FooterNested';
+import FooterTextAlignment from './FooterTextAlignment';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -22,6 +23,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       </DocsSection>
       <DocsSection title="Minimalistic" stackAlignment="stretch" container="heading-only">
         <FooterMinimalistic />
+      </DocsSection>
+      <DocsSection title="Text Alignment" stackAlignment="stretch" container="heading-only">
+        <FooterTextAlignment />
       </DocsSection>
     </IconsProvider>
   </React.StrictMode>,

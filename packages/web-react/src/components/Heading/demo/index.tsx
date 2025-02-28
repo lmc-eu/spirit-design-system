@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import DocsSection from '../../../../docs/DocsSection';
-import HeadingTextColor from './HeadingTextColor';
+import HeadingAlignment from './HeadingAlignment';
 import HeadingDefault from './HeadingDefault';
 import HeadingEmphasis from './HeadingEmphasis';
 import HeadingSizes from './HeadingSizes';
+import HeadingTextColor from './HeadingTextColor';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -19,6 +20,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     </DocsSection>
     <DocsSection title="Colors">
       <HeadingTextColor />
+    </DocsSection>
+    <DocsSection title="Alignment" stackAlignment="stretch">
+      <HeadingAlignment />
     </DocsSection>
   </React.StrictMode>,
 );
