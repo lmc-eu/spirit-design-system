@@ -6,15 +6,11 @@ const setCustomDimension = (prefix: string, size: IconBoxSize): CSSProperties =>
   const style: CSSProperties = {};
 
   if (typeof size === 'object') {
-    const uniqueValues = Object.values(size).filter((value, index, self) => self.indexOf(value) === index);
+    Object.entries(size).forEach(([key, value]) => {
+      const breakpointSuffix = key === 'mobile' ? '' : `-${key}`;
 
-    if (uniqueValues.length > 1) {
-      Object.entries(size).forEach(([key, value]) => {
-        const breakpointSuffix = key === 'mobile' ? '' : `-${key}`;
-
-        (style as Record<string, string | undefined>)[`${prefix}${breakpointSuffix}`] = `${value?.toString()}px`;
-      });
-    }
+      (style as Record<string, string | undefined>)[`${prefix}${breakpointSuffix}`] = `${value?.toString()}px`;
+    });
   }
 
   return style;
