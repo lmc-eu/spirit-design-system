@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import '@testing-library/jest-dom';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, textAlignmentPropsTest } from '@local/tests';
 import { BackgroundColors } from '../../../constants';
 import Footer from '../Footer';
 
@@ -11,6 +11,8 @@ describe('Footer', () => {
   stylePropsTest(Footer);
 
   restPropsTest(Footer, 'footer');
+
+  textAlignmentPropsTest(Footer);
 
   it('should render text children', () => {
     render(<Footer>Hello World</Footer>);

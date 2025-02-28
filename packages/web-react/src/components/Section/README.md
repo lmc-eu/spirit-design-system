@@ -79,23 +79,40 @@ However, the `paddingY` prop will override the `size` prop.
 </Section>
 ```
 
+## Text Alignment
+
+You can set the text alignment of the Section using the `textAlignment` prop.
+
+```jsx
+<Section textAlignment="center">Centered content</Section>
+<Section textAlignment="right">Right-aligned content</Section>
+```
+
+You can define responsive values for the `textAlignment` prop using an object:
+
+```jsx
+<Section textAlignment={{ mobile: 'center', tablet: 'right', desktop: 'left' }}>Responsive text alignment</Section>
+```
+
 ## API
 
-| Name              | Type                                                              | Default   | Required | Description                     |
-| ----------------- | ----------------------------------------------------------------- | --------- | -------- | ------------------------------- |
-| `backgroundColor` | [Background Color dictionary][dictionary-color]                   | -         | ✕        | Background color of the Section |
-| `containerProps`  | `ContainerProps`                                                  | -         | ✕        | Props for the inner Container   |
-| `elementType`     | `ElementType`                                                     | `section` | ✕        | Type of element                 |
-| `hasContainer`    | `boolean`                                                         | `true`    | ✕        | Render inner Container          |
-| `paddingY`        | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`] | -         | ✕        | Vertical padding of the Section |
-| `paddingTop`      | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`] | -         | ✕        | Padding top of the Section      |
-| `paddingBottom`   | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`] | -         | ✕        | Padding bottom of the Section   |
-| `size`            | [Size Extended dictionary][dictionary-size]                       | -         | ✕        | Size of the Section             |
+| Name              | Type                                                                                                                    | Default   | Required | Description                     |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------- | --------- | -------- | ------------------------------- |
+| `backgroundColor` | [Background Color dictionary][dictionary-color]                                                                         | -         | ✕        | Background color of the Section |
+| `containerProps`  | `ContainerProps`                                                                                                        | -         | ✕        | Props for the inner Container   |
+| `elementType`     | `ElementType`                                                                                                           | `section` | ✕        | Type of element                 |
+| `hasContainer`    | `boolean`                                                                                                               | `true`    | ✕        | Render inner Container          |
+| `paddingY`        | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]                                                       | -         | ✕        | Vertical padding of the Section |
+| `paddingTop`      | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]                                                       | -         | ✕        | Padding top of the Section      |
+| `paddingBottom`   | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]                                                       | -         | ✕        | Padding bottom of the Section   |
+| `size`            | [Size Extended dictionary][dictionary-size]                                                                             | -         | ✕        | Size of the Section             |
+| `textAlignment`   | \[[Text Alignment dictionary][dictionary-alignment] \| `Partial<Record<BreakpointToken, TextAlignmentDictionaryType>>`] | -         | ✕        | Text alignment                  |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
+[dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#alignment
 [dictionary-color]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#color
 [dictionary-size]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#size
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes

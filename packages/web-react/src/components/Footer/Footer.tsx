@@ -2,7 +2,7 @@
 
 import classNames from 'classnames';
 import React from 'react';
-import { BackgroundColors, PaddingStyleProps } from '../../constants';
+import { BackgroundColors, PaddingStyleProps, TextStyleProps } from '../../constants';
 import { useStyleProps } from '../../hooks';
 import { SpiritFooterProps } from '../../types';
 import { PADDING_BOTTOM, PADDING_TOP } from './constants';
@@ -21,6 +21,7 @@ const Footer = (props: SpiritFooterProps) => {
   const { styleProps, props: otherProps } = useStyleProps(restProps, {
     paddingBottom: PaddingStyleProps.paddingBottom,
     paddingTop: PaddingStyleProps.paddingTop,
+    textAlignment: TextStyleProps.textAlignment,
   });
 
   return (

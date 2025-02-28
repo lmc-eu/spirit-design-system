@@ -17,3 +17,7 @@ export const PaddingStyleProps = {
   paddingX: 'px',
   paddingY: 'py',
 } as const;
+
+export const TextStyleProps = {
+  textAlignment: 'text',
+} as const;

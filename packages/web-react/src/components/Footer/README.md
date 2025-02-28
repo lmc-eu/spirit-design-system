@@ -12,6 +12,7 @@ The Footer supports several ready-to-use building blocks:
 - [Social Media Links](#social-media-links)
 - [Language Switch](#language-switch)
 - [Secondary Links](#secondary-links)
+- [Text Alignment](#text-alignment)
 
 This is how all supported building blocks of the Footer build up the complete composition:
 
@@ -134,6 +135,25 @@ This section is optional and consists of a [Flex][flex] layout with secondary li
 
 👉 Please mind the `aria-label` attribute on the `<nav>` element to provide an accessible label for the navigation.
 
+## Text Alignment
+
+You can set the text alignment of the Footer using the `textAlignment` prop.
+
+```jsx
+<Footer textAlignment="center">
+  {/* Footer content */}
+</Footer>
+<Footer textAlignment="right">
+  {/* Footer content */}
+</Footer>
+```
+
+You can also define responsive values for the `textAlignment` prop using an object:
+
+```jsx
+<Footer textAlignment={{ mobile: 'center', tablet: 'right', desktop: 'left' }}>{/* Footer content */}</Footer>
+```
+
 ## Full Example
 
 ```jsx
@@ -254,17 +274,19 @@ This section is optional and consists of a [Flex][flex] layout with secondary li
 
 ### API
 
-| Name              | Type                                                       | Default      | Required | Description                                     |
-| ----------------- | ---------------------------------------------------------- | ------------ | -------- | ----------------------------------------------- |
-| `backgroundColor` | [Background Color dictionary][dictionary-background-color] | `secondary`  | ✕        | Sets the background color of the footer         |
-| `paddingBottom`   | `SpaceToken`                                               | `space-1400` | ✕        | Defines the padding at the bottom of the footer |
-| `paddingTop`      | `SpaceToken`                                               | `space-1200` | ✕        | Defines the padding at the top of the footer    |
+| Name              | Type                                                                                                                    | Default      | Required | Description                                     |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------- | ------------ | -------- | ----------------------------------------------- |
+| `backgroundColor` | [Background Color dictionary][dictionary-background-color]                                                              | `secondary`  | ✕        | Sets the background color of the footer         |
+| `paddingBottom`   | `SpaceToken`                                                                                                            | `space-1400` | ✕        | Defines the padding at the bottom of the footer |
+| `paddingTop`      | `SpaceToken`                                                                                                            | `space-1200` | ✕        | Defines the padding at the top of the footer    |
+| `textAlignment`   | \[[Text Alignment dictionary][dictionary-alignment] \| `Partial<Record<BreakpointToken, TextAlignmentDictionaryType>>`] | -            | ✕        | Alignment of the text                           |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
 [buttonlink]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/ButtonLink/README.md
+[dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#alignment
 [dictionary-background-color]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#color
 [divider]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Divider/README.md
 [flex]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Flex/README.md

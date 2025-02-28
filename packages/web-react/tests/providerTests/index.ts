@@ -5,4 +5,5 @@ export * from './loadingPropsTest';
 export * from './requiredPropsTest';
 export * from './restPropsTest';
 export * from './stylePropsTest';
+export * from './textAlignmentPropsTest';
 export * from './validationTextPropsTest';

@@ -1,6 +1,7 @@
 import { renderHook } from '@testing-library/react';
 import { StyleProps } from '../../types';
 import { useStyleUtilities } from '../useStyleUtilities';
+import { TextAlignments, TextStyleProps } from '../../constants';
 
 describe('useStyleUtilities hook', () => {
   it('should process style utilities correctly', () => {
@@ -88,11 +89,13 @@ describe('useStyleUtilities hook', () => {
       padding: 'space-500',
       paddingX: 'space-600',
       paddingY: 'space-700',
+      textAlignment: TextAlignments.RIGHT,
     };
     const additionalSpacingProps = {
       padding: 'p',
       paddingX: 'px',
       paddingY: 'py',
+      textAlignment: TextStyleProps.textAlignment,
     };
 
     const { result } = renderHook(() =>
@@ -106,6 +109,7 @@ describe('useStyleUtilities hook', () => {
       'test-prefix-p-500',
       'test-prefix-px-600',
       'test-prefix-py-700',
+      'test-prefix-text-right',
     ]);
   });
 
@@ -117,11 +121,13 @@ describe('useStyleUtilities hook', () => {
       padding: { mobile: 'space-500', tablet: 'space-600', desktop: 'space-700' },
       paddingX: { mobile: 'space-600', tablet: 'space-700', desktop: 'space-800' },
       paddingY: { mobile: 'space-700', tablet: 'space-800', desktop: 'space-900' },
+      textAlignment: { mobile: TextAlignments.LEFT, tablet: TextAlignments.RIGHT, desktop: TextAlignments.RIGHT },
     };
     const additionalSpacingProps = {
       padding: 'p',
       paddingX: 'px',
       paddingY: 'py',
+      textAlignment: TextStyleProps.textAlignment,
     };
 
     const { result } = renderHook(() => useStyleUtilities(mockProps as StyleProps, '', additionalSpacingProps));
@@ -139,6 +145,9 @@ describe('useStyleUtilities hook', () => {
       'py-700',
       'py-tablet-800',
       'py-desktop-900',
+      'text-left',
+      'text-tablet-right',
+      'text-desktop-right',
     ]);
   });
 });
