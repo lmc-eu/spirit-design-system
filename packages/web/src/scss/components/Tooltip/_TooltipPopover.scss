@@ -13,11 +13,11 @@
 @use 'tools';
 
 .TooltipPopover {
+    --tooltip-max-width: #{theme.$max-width};
+
     @include placement.child();
     @include placement.child-controlled($prefix: 'tooltip', $offset: theme.$arrow-height);
     @include typography.generate(theme.$typography);
-
-    --tooltip-max-width: #{theme.$max-width};
 
     width: max-content;
     max-width: var(--tooltip-max-width);

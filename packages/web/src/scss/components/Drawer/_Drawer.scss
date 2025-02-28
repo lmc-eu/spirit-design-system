@@ -3,9 +3,9 @@
 @use 'theme';
 
 .Drawer {
-    @include typography.generate(theme.$drawer-typography);
-
     --#{tokens.$css-variable-prefix}drawer-translate-x: 0%;
+
+    @include typography.generate(theme.$drawer-typography);
 
     all: unset;
     position: fixed;
