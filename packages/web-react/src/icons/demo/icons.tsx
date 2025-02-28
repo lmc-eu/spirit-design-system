@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Grid, Text, Icon } from '../../components';
+import { Container, Grid, Icon, Text } from '../../components';
 import IconsContext, { IconsContextType } from '../../context/IconsContext';
 
 const Icons = () => {
@@ -11,21 +11,23 @@ const Icons = () => {
   }
 
   return (
-    <Grid
-      elementType="ul"
-      cols={{ mobile: 2, tablet: 4, desktop: 6 }}
-      marginY="space-1000"
-      UNSAFE_className="text-center list-unstyled"
-    >
-      {icons?.map((icon) => (
-        <li key={icon} className="mb-600">
-          <Icon name={icon} />
-          <Text marginTop="space-500" emphasis="bold">
-            {icon}
-          </Text>
-        </li>
-      ))}
-    </Grid>
+    <Container>
+      <Grid
+        elementType="ul"
+        cols={{ mobile: 2, tablet: 4, desktop: 6 }}
+        marginY="space-1300"
+        UNSAFE_className="text-center"
+      >
+        {icons?.map((icon) => (
+          <li key={icon} className="mb-700">
+            <Icon name={icon} />
+            <Text marginTop="space-600" emphasis="bold">
+              {icon}
+            </Text>
+          </li>
+        ))}
+      </Grid>
+    </Container>
   );
 };
 
