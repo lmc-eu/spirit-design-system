@@ -9,7 +9,7 @@ import { IconsProvider } from '../../../context';
 import { IconProps } from '../../../types';
 import Icon from '../Icon';
 
-// @ts-expect-error -- Element' has no properties in common with type
+// @ts-expect-error -- Element has no properties in common with type
 const Story: StoryObj<typeof Icon> = (args: IconProps) => (
   <IconsProvider value={icons}>
     <Icon {...args} />
