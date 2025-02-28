@@ -3,6 +3,7 @@
 @use 'tools';
 
 $margin-bottom: tokens.$space-400;
+
 // @deprecated We are deprecating the usage of the 'get-variable-if-exists' function.
 // In the next major version, we can be sure the required token will be present so no check will be needed.
 $item-gradient: tokens-tools.get-variable-if-exists('gradient-skeleton', '');
