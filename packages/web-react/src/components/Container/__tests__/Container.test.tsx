@@ -1,7 +1,13 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import '@testing-library/jest-dom';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, sizeExtendedPropsTest } from '@local/tests';
+import {
+  classNamePrefixProviderTest,
+  restPropsTest,
+  stylePropsTest,
+  sizeExtendedPropsTest,
+  textAlignmentPropsTest,
+} from '@local/tests';
 import Container from '../Container';
 
 describe('Container', () => {
@@ -15,6 +21,8 @@ describe('Container', () => {
   restPropsTest(Container, 'div');
 
   sizeExtendedPropsTest(Container);
+
+  textAlignmentPropsTest(Container);
 
   it('should render', () => {
     render(<Container data-testid={testId}>{text}</Container>);

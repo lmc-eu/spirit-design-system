@@ -1,7 +1,7 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { BackgroundColors } from '../../../constants';
+import { BackgroundColors, TextAlignments } from '../../../constants';
 import { Container } from '../../Container';
 import { PADDING_BOTTOM, PADDING_TOP } from '../constants';
 import Footer from '../Footer';
@@ -38,12 +38,20 @@ const meta: Meta<typeof Footer> = {
         defaultValue: { summary: 'space-1400' },
       },
     },
+    textAlignment: {
+      control: 'select',
+      options: [...Object.values(TextAlignments), undefined],
+      table: {
+        defaultValue: { summary: undefined },
+      },
+    },
   },
   args: {
     children: <Container>Footer content</Container>,
     backgroundColor: BackgroundColors.SECONDARY,
     paddingBottom: PADDING_BOTTOM,
     paddingTop: PADDING_TOP,
+    textAlignment: TextAlignments.LEFT,
   },
 };
 

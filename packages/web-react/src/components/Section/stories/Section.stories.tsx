@@ -1,7 +1,7 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { BackgroundColors, SizesExtended } from '../../../constants';
+import { BackgroundColors, SizesExtended, TextAlignments } from '../../../constants';
 import ReadMe from '../README.md';
 import { Section } from '..';
 
@@ -68,12 +68,20 @@ const meta: Meta<typeof Section> = {
         defaultValue: { summary: undefined },
       },
     },
+    textAlignment: {
+      control: 'select',
+      options: [...Object.values(TextAlignments), undefined],
+      table: {
+        defaultValue: { summary: undefined },
+      },
+    },
   },
   args: {
     backgroundColor: undefined,
     children: 'Section',
     hasContainer: true,
     size: undefined,
+    textAlignment: TextAlignments.LEFT,
   },
 };
 

@@ -7,6 +7,7 @@ import {
   sizePropsTest,
   restPropsTest,
   stylePropsTest,
+  textAlignmentPropsTest,
   textColorPropsTest,
 } from '@local/tests';
 import { EmphasisDictionaryType, SizesDictionaryType, SizeExtendedDictionaryType } from '../../../types';
@@ -21,6 +22,8 @@ describe('Text', () => {
   sizePropsTest(Text);
 
   sizeExtendedPropsTest(Text);
+
+  textAlignmentPropsTest(Text);
 
   textColorPropsTest(Text);
 
@@ -37,5 +40,11 @@ describe('Text', () => {
     );
 
     expect(screen.getByText('Text')).toHaveClass(expectedClassName as string);
+  });
+
+  it('should correctly render children', () => {
+    render(<Text>Text</Text>);
+
+    expect(screen.getByText('Text')).toBeInTheDocument();
   });
 });

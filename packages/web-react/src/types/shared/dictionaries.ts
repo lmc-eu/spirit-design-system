@@ -17,6 +17,7 @@ import {
   BorderStyles,
   BorderRadii,
   BorderWidths,
+  TextAlignments,
 } from '../../constants';
 
 /* Alignment */
@@ -35,6 +36,9 @@ export type AlignmentYExtendedDictionaryKeys = keyof typeof AlignmentYExtended;
 export type AlignmentYExtendedDictionaryType<T = undefined> =
   | (typeof AlignmentYExtended)[AlignmentYExtendedDictionaryKeys]
   | T;
+
+export type TextAlignmentDictionaryKeys = keyof typeof TextAlignments;
+export type TextAlignmentDictionaryType<T = undefined> = (typeof TextAlignments)[TextAlignmentDictionaryKeys] | T;
 
 /* Border Properties */
 export type BorderColorsDictionaryKeys = keyof typeof BorderColors;

@@ -1,5 +1,6 @@
 import { CSSProperties, ElementType } from 'react';
 import { SpacingStyleProp } from '../../constants';
+import { TextAlignmentDictionaryType } from './dictionaries';
 import { BreakpointToken, SpaceToken } from './tokens';
 
 export const STYLE_SPACING_AUTO = 'auto' as const;
@@ -31,6 +32,8 @@ export interface StyleProps extends SpacingProps {
   /** Sets inline [style](https://developer.mozilla.org/en-US/docs/Web/API/Element/style) for the element. Only use as a **last resort**. Use style props instead. */
   UNSAFE_style?: CSSProperties;
 }
+
+export type TextAlignmentType = TextAlignmentDictionaryType | Record<BreakpointToken, TextAlignmentDictionaryType>;
 
 export type UnsafeStyleProps = 'style' | 'className';
 

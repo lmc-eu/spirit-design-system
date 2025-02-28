@@ -1,7 +1,7 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { Emphasis, SizesExtended, TextColors } from '../../../constants';
+import { Emphasis, SizesExtended, TextAlignments, TextColors } from '../../../constants';
 import ReadMe from '../README.md';
 import { Text } from '..';
 
@@ -34,6 +34,13 @@ const meta: Meta<typeof Text> = {
         defaultValue: { summary: SizesExtended.MEDIUM },
       },
     },
+    textAlignment: {
+      control: 'select',
+      options: [...Object.values(TextAlignments), undefined],
+      table: {
+        defaultValue: { summary: undefined },
+      },
+    },
     textColor: {
       control: 'select',
       options: [...Object.values(TextColors), undefined],
@@ -47,6 +54,7 @@ const meta: Meta<typeof Text> = {
     elementType: 'p',
     emphasis: Emphasis.REGULAR,
     size: SizesExtended.MEDIUM,
+    textAlignment: TextAlignments.LEFT,
     textColor: undefined,
   },
 };

@@ -41,6 +41,21 @@ is inherited from the parent element.
 <Heading textColor="secondary">Secondary heading</Heading>
 ```
 
+## Text Alignment
+
+Use the `textAlignment` prop to set the alignment of the text.
+
+```jsx
+<Heading textAlignment="center">Centered heading</Heading>
+<Heading textAlignment="right">Right-aligned heading</Heading>
+```
+
+You can define responsive values for the `textAlignment` prop using an object:
+
+```jsx
+<Heading textAlignment={{ mobile: 'center', tablet: 'right', desktop: 'left' }}>Responsive text alignment</Heading>
+```
+
 ## Full Example
 
 ```jsx
@@ -51,12 +66,13 @@ is inherited from the parent element.
 
 ## API
 
-| Name          | Type                                        | Default  | Required | Description          |
-| ------------- | ------------------------------------------- | -------- | -------- | -------------------- |
-| `elementType` | `React.Element`                             | -        | ✓        | HTML tag             |
-| `emphasis`    | [Emphasis dictionary][dictionary-emphasis]  | `bold`   | ✕        | Emphasis of the text |
-| `size`        | [Size Extended dictionary][dictionary-size] | `medium` | ✕        | Size of the text     |
-| `textColor`   | [Text Color dictionary][dictionary-color]   | —        | ✕        | Color of the text    |
+| Name            | Type                                                                                                                    | Default  | Required | Description          |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------- | -------- | -------- | -------------------- |
+| `elementType`   | `React.Element`                                                                                                         | -        | ✓        | HTML tag             |
+| `emphasis`      | [Emphasis dictionary][dictionary-emphasis]                                                                              | `bold`   | ✕        | Emphasis of the text |
+| `size`          | [Size Extended dictionary][dictionary-size]                                                                             | `medium` | ✕        | Size of the text     |
+| `textAlignment` | \[[Text Alignment dictionary][dictionary-alignment] \| `Partial<Record<BreakpointToken, TextAlignmentDictionaryType>>`] | -        | ✕        | Text alignment       |
+| `textColor`     | [Text Color dictionary][dictionary-color]                                                                               | -        | ✕        | Color of the text    |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -78,6 +94,7 @@ const CustomText = (props: SpiritHeadingProps): JSX.Element => {
 };
 ```
 
+[dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#alignment
 [dictionary-color]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#color
 [dictionary-emphasis]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#emphasis
 [dictionary-size]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#size

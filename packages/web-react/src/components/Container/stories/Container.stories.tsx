@@ -2,7 +2,7 @@ import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import DocsBox from '../../../../docs/DocsBox';
-import { SizesExtended } from '../../../constants';
+import { SizesExtended, TextAlignments } from '../../../constants';
 import ReadMe from '../README.md';
 import { Container } from '..';
 
@@ -31,10 +31,18 @@ const meta: Meta<typeof Container> = {
         defaultValue: { summary: SizesExtended.XLARGE },
       },
     },
+    textAlignment: {
+      control: 'select',
+      options: [...Object.values(TextAlignments), undefined],
+      table: {
+        defaultValue: { summary: undefined },
+      },
+    },
   },
   args: {
     children: <DocsBox>Container</DocsBox>,
     isFluid: false,
+    textAlignment: TextAlignments.LEFT,
     size: SizesExtended.XLARGE,
   },
 };

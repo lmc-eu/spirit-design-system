@@ -8,6 +8,7 @@ import {
   SpaceToken,
   SpiritPolymorphicElementPropsWithRef,
   StyleProps,
+  TextAlignmentType,
 } from './shared';
 
 export interface SectionBaseProps<E extends ElementType> extends ChildrenProps, StyleProps {
@@ -34,6 +35,8 @@ export interface SectionProps<E extends ElementType, S = void> extends SectionBa
   paddingBottom?: SpaceToken | Partial<Record<BreakpointToken, SpaceToken>>;
   /** Size of the section. */
   size?: SizeExtendedDictionaryType | S;
+  /** Text alignment of the section */
+  textAlignment?: TextAlignmentType;
 }
 
 export type SpiritSectionProps<E extends ElementType = 'section', S = void> = SectionProps<E, S> &

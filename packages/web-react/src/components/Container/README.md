@@ -22,12 +22,28 @@ If you need different sizes of the container, you can use the `size` prop.
 <Container size="small">Content</Container>
 ```
 
+## Text Alignment
+
+You can set the text alignment of the container using the `textAlignment` prop.
+
+```jsx
+<Container textAlignment="center">Content</Container>
+<Container textAlignment="right">Content</Container>
+```
+
+You can define responsive values for the `textAlignment` prop using an object:
+
+```jsx
+<Container textAlignment={{ mobile: 'center', tablet: 'right', desktop: 'left' }}>Responsive text alignment</Container>
+```
+
 ## API
 
-| Name      | Type                                        | Default  | Required | Description                 |
-| --------- | ------------------------------------------- | -------- | -------- | --------------------------- |
-| `isFluid` | `bool`                                      | `false`  | ✕        | If true, Container is fluid |
-| `size`    | [Size Extended dictionary][dictionary-size] | `xlarge` | ✕        | Size variant                |
+| Name            | Type                                                                                                                    | Default  | Required | Description                 |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------- | -------- | -------- | --------------------------- |
+| `isFluid`       | `bool`                                                                                                                  | `false`  | ✕        | If true, Container is fluid |
+| `size`          | [Size Extended dictionary][dictionary-size]                                                                             | `xlarge` | ✕        | Size variant                |
+| `textAlignment` | \[[Text Alignment dictionary][dictionary-alignment] \| `Partial<Record<BreakpointToken, TextAlignmentDictionaryType>>`] | -        | ✕        | Text alignment              |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -35,6 +51,7 @@ and [escape hatches][readme-escape-hatches].
 
 For detailed information see [Container][web-container] component
 
+[dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#alignment
 [dictionary-size]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#size
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches

@@ -23,6 +23,12 @@ export const AlignmentYExtended = {
   ...AlignmentY,
 } as const;
 
+export const TextAlignments = {
+  LEFT: 'left',
+  CENTER: 'center',
+  RIGHT: 'right',
+} as const;
+
 /* Border Properties */
 export const BorderColors = {
   BASIC: 'basic',

@@ -20,54 +20,58 @@ const CLASS_SEPARATOR = '-';
 const normalizeSpacingValue = (value: string): string =>
   value === STYLE_SPACING_AUTO ? STYLE_SPACING_AUTO : value.replace(/[^0-9]/g, '');
 
+const isSpaceToken = (value: unknown): value is SpaceToken => typeof value === 'string' && value.startsWith('space-');
+
+const getUtilityValue = (value: string): string => (isSpaceToken(value) ? normalizeSpacingValue(value) : value);
+
 const processBreakpointProperties = (
   utilityName: string,
-  propValue: Partial<Record<BreakpointToken, SpaceToken | StyleSpacingAuto>>,
+  propValue: Partial<Record<BreakpointToken, string | SpaceToken | StyleSpacingAuto>>,
   prefix: string | null | undefined,
-  accumulatedUtilities: string[] = [],
-) =>
+): string[] =>
   Object.keys(propValue).reduce((accumulatedBreakpointUtilities: string[], breakpoint: string) => {
     const breakpointValue = propValue[breakpoint as keyof typeof propValue];
-    const utilityValue = normalizeSpacingValue(breakpointValue as string);
-    const infix = breakpoint === BREAKPOINT_MOBILE ? '' : `${CLASS_SEPARATOR}${breakpoint}`;
-    accumulatedBreakpointUtilities.push(
-      applyClassNamePrefix(prefix)(`${utilityName}${infix}${CLASS_SEPARATOR}${utilityValue}`),
-    );
+
+    if (typeof breakpointValue === 'string') {
+      const utilityValue = getUtilityValue(breakpointValue);
+      const infix = breakpoint === BREAKPOINT_MOBILE ? '' : `${CLASS_SEPARATOR}${breakpoint}`;
+      accumulatedBreakpointUtilities.push(
+        applyClassNamePrefix(prefix)(`${utilityName}${infix}${CLASS_SEPARATOR}${utilityValue}`),
+      );
+    }
 
     return accumulatedBreakpointUtilities;
-  }, accumulatedUtilities);
+  }, []);
 
-export function useStyleUtilities(
+const processProperties = (
+  utilityName: string,
+  propValue: string | Partial<Record<BreakpointToken, string | SpaceToken | StyleSpacingAuto>>,
+  prefix: string | null | undefined,
+): string[] =>
+  typeof propValue === 'string'
+    ? [applyClassNamePrefix(prefix)(`${utilityName}-${getUtilityValue(propValue)}`)]
+    : processBreakpointProperties(utilityName, propValue, prefix);
+
+export const useStyleUtilities = (
   props: StyleProps,
   prefix: string | null | undefined = '',
-  additionalSpacingProps: Record<string, string> = {},
-): StyleUtilitiesResult {
-  const SpacingStyleProp = { ...DefaultSpacingStyleProp, ...additionalSpacingProps };
+  additionalProps: Record<string, string> = {},
+): StyleUtilitiesResult => {
+  const styleProps = { ...DefaultSpacingStyleProp, ...additionalProps };
 
   const propEntries = Object.entries(props);
   const styleUtilities = propEntries.reduce((accumulatedUtilities: string[], [key, propValue]) => {
-    if (Object.keys(SpacingStyleProp).includes(key)) {
-      const utilityName = SpacingStyleProp[key as keyof typeof SpacingStyleProp];
+    if (Object.keys(styleProps).includes(key)) {
+      const utilityName = styleProps[key as keyof typeof styleProps];
 
-      if (typeof propValue === 'object' && propValue !== null) {
-        return [...accumulatedUtilities, ...processBreakpointProperties(utilityName, propValue, prefix)];
-      }
-
-      if (propValue) {
-        const utilityValue = normalizeSpacingValue(propValue as string);
-
-        return [
-          ...accumulatedUtilities,
-          applyClassNamePrefix(prefix)(`${utilityName}${CLASS_SEPARATOR}${utilityValue}`),
-        ];
-      }
+      return [...accumulatedUtilities, ...processProperties(utilityName, propValue, prefix)];
     }
 
     return accumulatedUtilities;
   }, []);
 
   const updatedProps = propEntries.reduce((accumulatedProps: StyleProps, [key, propValue]) => {
-    if (!Object.keys(SpacingStyleProp).includes(key)) {
+    if (!Object.keys(styleProps).includes(key)) {
       return { ...accumulatedProps, [key]: propValue };
     }
 
@@ -78,4 +82,4 @@ export function useStyleUtilities(
     styleUtilities,
     props: updatedProps,
   };
-}
+};
