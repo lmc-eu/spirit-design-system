@@ -68,3 +68,9 @@ Use CSS custom properties to define the width, height, and radius of the shape.
   style="--spirit-skeleton-shape-width: 100px; --spirit-skeleton-shape-height: 100px"
 ></div>
 ```
+
+⚠️ Make sure that you have properly set up the `skeleton-gradient` token in your project. Without it, Skeleton will not be available.
+
+### ⚠️ DEPRECATION NOTICE
+
+The check for the existence of the `skeleton-gradient` token is deprecated and will be removed in the next major release. Ensure that the `skeleton-gradient` token is properly set up in your project, as if you import all components, the project will not run without it.
