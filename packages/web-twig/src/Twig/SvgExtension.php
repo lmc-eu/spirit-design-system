@@ -190,7 +190,7 @@ class SvgExtension extends AbstractExtension
             $this->replaceAttribute($svg, self::ATTR_STYLE, $params[self::ATTR_STYLE]);
         }
 
-        if ($hasSize && is_string($params[self::ATTR_SIZE]) && trim($params[self::ATTR_SIZE]) !== '') {
+        if ($hasSize && is_string($params[self::ATTR_SIZE]) && mb_trim($params[self::ATTR_SIZE]) !== '') {
             $this->replaceAttribute($svg, 'width', $params[self::ATTR_SIZE]);
             $this->replaceAttribute($svg, 'height', $params[self::ATTR_SIZE]);
         }
@@ -198,14 +198,14 @@ class SvgExtension extends AbstractExtension
         if ($hasMainProps && is_array($params[self::ATTR_MAIN_PROPS])) {
             foreach ($params[self::ATTR_MAIN_PROPS] as $propName => $propValue) {
                 if (preg_match('/^(data|aria)-*/', $propName) > 0) {
-                    if (trim($propValue) !== '') {
+                    if (mb_trim($propValue) !== '') {
                         $this->replaceAttribute($svg, $propName, $propValue);
                     }
                 }
             }
         }
 
-        if ($hasTitle && is_string($params[self::ATTR_TITLE]) && trim($params[self::ATTR_TITLE]) !== '') {
+        if ($hasTitle && is_string($params[self::ATTR_TITLE]) && mb_trim($params[self::ATTR_TITLE]) !== '') {
             $svg->addChild(self::ATTR_TITLE, htmlspecialchars($params[self::ATTR_TITLE], ENT_QUOTES));
         }
     }
