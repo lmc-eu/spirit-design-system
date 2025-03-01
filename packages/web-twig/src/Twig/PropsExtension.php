@@ -183,7 +183,7 @@ class PropsExtension extends AbstractExtension
             }
         }
 
-        $styleProps['className'] = is_string($styleProps['className']) ? trim($styleProps['className']) : null;
+        $styleProps['className'] = is_string($styleProps['className']) ? mb_trim($styleProps['className']) : null;
 
         return $styleProps;
     }

@@ -81,7 +81,7 @@ final class ComponentTest extends TestCase
     private function removeWhitespace(string|array|null $html): ?string
     {
         $cleanedSpaceBetweenAttrs = $html ? preg_replace('/(^[\r\n]*|[\r\n]+)[\s\t]*[\r\n]+/', "\n", $html) : null;
-        $trimmedHtml = $cleanedSpaceBetweenAttrs && !is_array($cleanedSpaceBetweenAttrs) ? trim($cleanedSpaceBetweenAttrs) : null;
+        $trimmedHtml = $cleanedSpaceBetweenAttrs && !is_array($cleanedSpaceBetweenAttrs) ? mb_trim($cleanedSpaceBetweenAttrs) : null;
 
         return $trimmedHtml;
     }
