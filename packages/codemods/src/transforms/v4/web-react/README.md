@@ -85,3 +85,24 @@ npx @lmc-eu/spirit-codemods -p <path> -t v4/web-react/unstable-slider-component-
 - <UNSTABLE_Slider … />
 + <Slider … />
 ```
+
+### `v4/web-react/unstable-toggle-component-name` — UNSTABLE_Toggle to Toggle Component Name
+
+This codemod updates the `UNSTABLE_Toggle` component name to `Toggle`.
+Use this codemod if you were already using the `UNSTABLE_Toggle` component.
+
+#### Usage
+
+```sh
+npx @lmc-eu/spirit-codemods -p <path> -t v4/web-react/unstable-toggle-component-name
+```
+
+#### Example
+
+```diff
+- import { UNSTABLE_Toggle } from '@lmc-eu/spirit-web-react';
++ import { Toggle } from '@lmc-eu/spirit-web-react';
+…
+- <UNSTABLE_Toggle … />
++ <Toggle … />
+```
