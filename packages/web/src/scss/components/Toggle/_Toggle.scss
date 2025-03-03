@@ -4,9 +4,9 @@
 @use '../../tools/form-fields' as form-fields-tools;
 @use '../../tools/reset';
 
-$_field-name: 'UNSTABLE_Toggle';
+$_field-name: 'Toggle';
 
-.UNSTABLE_Toggle {
+.Toggle {
     display: flex;
     align-items: start;
     justify-content: space-between;
@@ -15,27 +15,27 @@ $_field-name: 'UNSTABLE_Toggle';
     cursor: cursors.$form-fields;
 }
 
-.UNSTABLE_Toggle--fluid {
+.Toggle--fluid {
     max-width: none;
 }
 
-.UNSTABLE_Toggle__text {
+.Toggle__text {
     margin-right: form-fields-theme.$inline-field-gap;
 }
 
-.UNSTABLE_Toggle__label {
+.Toggle__label {
     @include form-fields-tools.inline-field-label();
 }
 
-.UNSTABLE_Toggle__label--hidden {
+.Toggle__label--hidden {
     @include form-fields-tools.label-hidden();
 }
 
-.UNSTABLE_Toggle__label--required::after {
+.Toggle__label--required::after {
     @include form-fields-tools.label-required();
 }
 
-.UNSTABLE_Toggle__input {
+.Toggle__input {
     @include form-fields-tools.inline-field-input();
 
     display: grid;
@@ -121,41 +121,41 @@ $_field-name: 'UNSTABLE_Toggle';
     }
 }
 
-.UNSTABLE_Toggle__input--indicators::before,
-.UNSTABLE_Toggle__input--indicators::after {
+.Toggle__input--indicators::before,
+.Toggle__input--indicators::after {
     background-size: 100%;
     background-color: transparent;
 }
 
-.UNSTABLE_Toggle__input--indicators::before {
+.Toggle__input--indicators::before {
     background-image: theme.$input-mark-image;
 }
 
-.UNSTABLE_Toggle__input--indicators::after {
+.Toggle__input--indicators::after {
     background-image: theme.$input-mark-image-state-checked;
 }
 
-.UNSTABLE_Toggle__validationText,
-.UNSTABLE_Toggle > .UNSTABLE_Toggle__text > [data-spirit-element='validation_text'] {
+.Toggle__validationText,
+.Toggle > .Toggle__text > [data-spirit-element='validation_text'] {
     @include form-fields-tools.validation-text();
 }
 
-.UNSTABLE_Toggle__helperText {
+.Toggle__helperText {
     @include form-fields-tools.helper-text();
 }
 
 @include form-fields-tools.input-field-validation-states($_field-name);
 
-.UNSTABLE_Toggle:is(.UNSTABLE_Toggle--disabled, .is-disabled) {
+.Toggle:is(.Toggle--disabled, .is-disabled) {
     @include form-fields-tools.inline-field-root-disabled();
 }
 
-.UNSTABLE_Toggle:is(.UNSTABLE_Toggle--disabled, .is-disabled) .UNSTABLE_Toggle__label {
+.Toggle:is(.Toggle--disabled, .is-disabled) .Toggle__label {
     @include form-fields-tools.label-disabled();
 }
 
-.UNSTABLE_Toggle:is(.UNSTABLE_Toggle--disabled, .is-disabled) > .UNSTABLE_Toggle__input,
-.UNSTABLE_Toggle > .UNSTABLE_Toggle__input:disabled {
+.Toggle:is(.Toggle--disabled, .is-disabled) > .Toggle__input,
+.Toggle > .Toggle__input:disabled {
     @include form-fields-tools.input-disabled();
 
     border-color: theme.$input-border-color-state-disabled;
@@ -168,8 +168,8 @@ $_field-name: 'UNSTABLE_Toggle';
     }
 }
 
-.UNSTABLE_Toggle:is(.UNSTABLE_Toggle--disabled, .is-disabled) > .UNSTABLE_Toggle__input--indicators,
-.UNSTABLE_Toggle > .UNSTABLE_Toggle__input--indicators:disabled {
+.Toggle:is(.Toggle--disabled, .is-disabled) > .Toggle__input--indicators,
+.Toggle > .Toggle__input--indicators:disabled {
     &::before,
     &::after {
         background-color: transparent;
@@ -184,10 +184,10 @@ $_field-name: 'UNSTABLE_Toggle';
     }
 }
 
-.UNSTABLE_Toggle:is(.UNSTABLE_Toggle--disabled, .is-disabled) .UNSTABLE_Toggle__validationText {
+.Toggle:is(.Toggle--disabled, .is-disabled) .Toggle__validationText {
     @include form-fields-tools.validation-text-disabled();
 }
 
-.UNSTABLE_Toggle:is(.UNSTABLE_Toggle--disabled, .is-disabled) .UNSTABLE_Toggle__helperText {
+.Toggle:is(.Toggle--disabled, .is-disabled) .Toggle__helperText {
     @include form-fields-tools.helper-text-disabled();
 }
