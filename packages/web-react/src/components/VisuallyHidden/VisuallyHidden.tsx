@@ -9,7 +9,7 @@ import { useVisuallyHiddenProps } from './useVisuallyHiddenProps';
 const VisuallyHidden = <T extends ElementType = 'span'>(props: SpiritVisuallyHiddenProps<T>): JSX.Element => {
   const { children, elementType: ElementTag = 'span', ...rest } = props;
   const { classProps, props: modifiedProps } = useVisuallyHiddenProps(rest);
-  const { styleProps, props: otherProps } = useStyleProps({ ElementTag, ...modifiedProps });
+  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
   const mergedStyleProps = mergeStyleProps(ElementTag, { classProps, styleProps, otherProps });
 
   return (

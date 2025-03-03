@@ -22,7 +22,7 @@ const Stack = <T extends ElementType = 'div'>(props: SpiritStackProps<T>): JSX.E
     ...restProps
   } = propsWithDefaults;
   const { classProps, props: modifiedProps, styleProps: stackStyle } = useStackStyleProps(restProps);
-  const { styleProps, props: otherProps } = useStyleProps({ ElementTag, ...modifiedProps });
+  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
   const mergedStyleProps = mergeStyleProps(ElementTag, { classProps, stackStyle, styleProps, otherProps });
 
   return (

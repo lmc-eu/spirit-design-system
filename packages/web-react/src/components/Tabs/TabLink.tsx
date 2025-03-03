@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import React, { ElementType, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
 import { PolymorphicRef, SpiritTabLinkProps } from '../../types';
+import { mergeStyleProps } from '../../utils';
 import { useTabsStyleProps } from './useTabsStyleProps';
 
 const defaultProps: SpiritTabLinkProps = {
@@ -16,11 +17,12 @@ const _TabLink = <E extends ElementType = 'a'>(props: SpiritTabLinkProps<E>, ref
   const propsWithDefaults = { ...defaultProps, ...props };
   const { elementType: ElementTag = 'a', children, itemProps = {}, ...restProps } = propsWithDefaults;
   const { classProps } = useTabsStyleProps();
-  const { styleProps: itemStyleProps, props: itemTransferProps } = useStyleProps({ ElementTag, ...itemProps });
+  const { styleProps: itemStyleProps, props: itemTransferProps } = useStyleProps(itemProps);
+  const mergedStyleProps = mergeStyleProps(ElementTag, { classProps: classProps.link });
 
   return (
     <li {...itemStyleProps} {...itemTransferProps} className={classNames(classProps.item, itemStyleProps.className)}>
-      <ElementTag {...restProps} className={classProps.link} role="tab" ref={ref}>
+      <ElementTag {...restProps} {...mergedStyleProps} role="tab" ref={ref}>
         {children}
       </ElementTag>
     </li>
