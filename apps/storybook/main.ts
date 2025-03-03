@@ -42,6 +42,11 @@ const config: StorybookConfig = {
           },
         },
       },
+      resolve: {
+        alias: {
+          '@lmc-eu/spirit-design-tokens': resolve(__dirname, '../../node_modules/@lmc-eu/spirit-design-tokens/src/js'),
+        },
+      },
     });
   },
 
