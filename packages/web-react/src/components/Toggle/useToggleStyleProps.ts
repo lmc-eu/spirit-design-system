@@ -25,7 +25,7 @@ export function useToggleStyleProps(props: SpiritToggleProps): ToggleStyles<Spir
     ...restProps
   } = props;
 
-  const toggleClass = useClassNamePrefix('UNSTABLE_Toggle');
+  const toggleClass = useClassNamePrefix('Toggle');
   const toggleFluidClass = `${toggleClass}--fluid`;
   const toggleDisabledClass = `${toggleClass}--disabled`;
   const toggleTextClass = `${toggleClass}__text`;

@@ -9,12 +9,12 @@ describe('useToggleStyleProps', () => {
     const { result } = renderHook(() => useToggleStyleProps(props));
 
     expect(result.current.classProps).toEqual({
-      root: 'UNSTABLE_Toggle',
-      text: 'UNSTABLE_Toggle__text',
-      input: 'UNSTABLE_Toggle__input',
-      label: 'UNSTABLE_Toggle__label',
-      helperText: 'UNSTABLE_Toggle__helperText',
-      validationText: 'UNSTABLE_Toggle__validationText',
+      root: 'Toggle',
+      text: 'Toggle__text',
+      input: 'Toggle__input',
+      label: 'Toggle__label',
+      helperText: 'Toggle__helperText',
+      validationText: 'Toggle__validationText',
     });
   });
 
@@ -22,41 +22,41 @@ describe('useToggleStyleProps', () => {
     const props = { id: 'toggle', label: 'text', isLabelHidden: true } as SpiritToggleProps;
     const { result } = renderHook(() => useToggleStyleProps(props));
 
-    expect(result.current.classProps.label).toBe('UNSTABLE_Toggle__label UNSTABLE_Toggle__label--hidden');
+    expect(result.current.classProps.label).toBe('Toggle__label Toggle__label--hidden');
   });
 
   it('should return disabled', () => {
     const props = { id: 'toggle', label: 'text', isDisabled: true } as SpiritToggleProps;
     const { result } = renderHook(() => useToggleStyleProps(props));
 
-    expect(result.current.classProps.root).toBe('UNSTABLE_Toggle UNSTABLE_Toggle--disabled');
+    expect(result.current.classProps.root).toBe('Toggle Toggle--disabled');
   });
 
   it.each([Object.values(ValidationStates)])('should return field with %s', (state) => {
     const props = { validationState: state } as SpiritToggleProps;
     const { result } = renderHook(() => useToggleStyleProps(props));
 
-    expect(result.current.classProps.root).toBe(`UNSTABLE_Toggle UNSTABLE_Toggle--${state}`);
+    expect(result.current.classProps.root).toBe(`Toggle Toggle--${state}`);
   });
 
   it('should return fluid', () => {
     const props = { id: 'toggle', label: 'text', isFluid: true } as SpiritToggleProps;
     const { result } = renderHook(() => useToggleStyleProps(props));
 
-    expect(result.current.classProps.root).toBe('UNSTABLE_Toggle UNSTABLE_Toggle--fluid');
+    expect(result.current.classProps.root).toBe('Toggle Toggle--fluid');
   });
 
   it('should return required', () => {
     const props = { id: 'toggle', label: 'text', isRequired: true } as SpiritToggleProps;
     const { result } = renderHook(() => useToggleStyleProps(props));
 
-    expect(result.current.classProps.label).toBe('UNSTABLE_Toggle__label UNSTABLE_Toggle__label--required');
+    expect(result.current.classProps.label).toBe('Toggle__label Toggle__label--required');
   });
 
   it('should return input with indicators', () => {
     const props = { id: 'toggle', label: 'text', hasIndicators: true } as SpiritToggleProps;
     const { result } = renderHook(() => useToggleStyleProps(props));
 
-    expect(result.current.classProps.input).toBe('UNSTABLE_Toggle__input UNSTABLE_Toggle__input--indicators');
+    expect(result.current.classProps.input).toBe('Toggle__input Toggle__input--indicators');
   });
 });
