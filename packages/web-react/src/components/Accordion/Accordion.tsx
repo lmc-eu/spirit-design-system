@@ -20,7 +20,7 @@ const Accordion = (props: AccordionProps) => {
   };
 
   return (
-    <ElementTag {...transferProps} {...styleProps} {...mergedStyleProps}>
+    <ElementTag {...transferProps} {...mergedStyleProps}>
       <AccordionProvider value={contextValue}>{children}</AccordionProvider>
     </ElementTag>
   );
