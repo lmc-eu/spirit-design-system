@@ -1,24 +1,30 @@
 import React, { ChangeEvent, useState } from 'react';
 import { ValidationStates } from '../../../constants';
 import { DEMO_SLIDER_DEFAULT_VALUE } from '../constants';
-import UNSTABLE_Slider from '../UNSTABLE_Slider';
+import Slider from '../Slider';
 
 const SliderValidationWithIcon = () => {
   const states = Object.values(ValidationStates);
-  const [valueDanger, setValueDanger] = useState(DEMO_SLIDER_DEFAULT_VALUE);
 
-  const handleChangeDanger = (event: ChangeEvent<HTMLInputElement>) => {
-    setValueDanger(Number(event.target.value));
+  const [values, setValues] = useState<Record<string, number>>(
+    states.reduce((acc, state) => ({ ...acc, [state]: DEMO_SLIDER_DEFAULT_VALUE }), {}),
+  );
+
+  const handleChange = (state: string) => (event: ChangeEvent<HTMLInputElement>) => {
+    setValues((prev) => ({
+      ...prev,
+      [state]: Number(event.target.value),
+    }));
   };
 
   return (
     <>
       {states.map((state) => (
-        <UNSTABLE_Slider
+        <Slider
           id={`select-${state}-validation-icon`}
           label="Slider"
-          value={valueDanger}
-          onChange={handleChangeDanger}
+          value={values[state]}
+          onChange={handleChange(state)}
           validationState={state}
           validationText={`This is ${state} validation text. Long validation text to show how it wraps.`}
           hasValidationIcon
