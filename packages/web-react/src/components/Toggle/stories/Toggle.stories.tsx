@@ -3,11 +3,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { ValidationStates } from '../../../constants';
 import ReadMe from '../README.md';
-import UNSTABLE_Toggle from '../UNSTABLE_Toggle';
+import Toggle from '../Toggle';
 
-const meta: Meta<typeof UNSTABLE_Toggle> = {
-  title: 'Experimental/UNSTABLE_Toggle',
-  component: UNSTABLE_Toggle,
+const meta: Meta<typeof Toggle> = {
+  title: 'Components/Toggle',
+  component: Toggle,
   parameters: {
     docs: {
       page: () => <Markdown>{ReadMe}</Markdown>,
@@ -45,8 +45,8 @@ const meta: Meta<typeof UNSTABLE_Toggle> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof UNSTABLE_Toggle>;
+type Story = StoryObj<typeof Toggle>;
 
 export const Playground: Story = {
-  name: 'UNSTABLE_Toggle',
+  name: 'Toggle',
 };
