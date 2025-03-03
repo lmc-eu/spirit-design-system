@@ -59,10 +59,10 @@ const entryPoints = [
   { dirs: ['components', 'TextField'] },
   { dirs: ['components', 'TextFieldBase'] },
   { dirs: ['components', 'Toast'] },
+  { dirs: ['components', 'Toggle'] },
   { dirs: ['components', 'Tooltip'] },
   { dirs: ['components', 'UNSTABLE_EmptyState'] },
   { dirs: ['components', 'UNSTABLE_Header'] },
-  { dirs: ['components', 'UNSTABLE_Toggle'] },
   { dirs: ['components', 'UNSTABLE_Truncate'] },
   { dirs: ['components', 'VisuallyHidden'] },
 ];

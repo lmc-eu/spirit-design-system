@@ -9,12 +9,13 @@ import { useValidationTextRole } from '../Field/useValidationTextRole';
 import { useToggleStyleProps } from './useToggleStyleProps';
 
 /* We need an exception for components exported with forwardRef */
-/* eslint no-underscore-dangle: ['error', { allow: ['_UNSTABLE_Toggle'] }] */
+/* eslint no-underscore-dangle: ['error', { allow: ['_Toggle'] }] */
 /* eslint-disable-next-line camelcase */
-const _UNSTABLE_Toggle = (props: SpiritToggleProps, ref: ForwardedRef<HTMLInputElement>) => {
+const _Toggle = (props: SpiritToggleProps, ref: ForwardedRef<HTMLInputElement>) => {
   const { classProps, props: modifiedProps } = useToggleStyleProps(props);
   const {
     'aria-describedby': ariaDescribedBy = '',
+    hasValidationIcon,
     id,
     isDisabled,
     isChecked = false,
@@ -27,7 +28,6 @@ const _UNSTABLE_Toggle = (props: SpiritToggleProps, ref: ForwardedRef<HTMLInputE
     ...restProps
   } = modifiedProps;
   const { styleProps, props: otherProps } = useStyleProps(restProps);
-  const { hasValidationIcon } = props;
   const [ids, register] = useAriaIds(ariaDescribedBy);
   const [checked, setChecked] = useState(isChecked);
   const validationTextRole = useValidationTextRole({
@@ -84,8 +84,8 @@ const _UNSTABLE_Toggle = (props: SpiritToggleProps, ref: ForwardedRef<HTMLInputE
   );
 };
 
-const UNSTABLE_Toggle = forwardRef<HTMLInputElement, SpiritToggleProps>(_UNSTABLE_Toggle);
+const Toggle = forwardRef<HTMLInputElement, SpiritToggleProps>(_Toggle);
 
-UNSTABLE_Toggle.spiritComponent = 'UNSTABLE_Toggle';
+Toggle.spiritComponent = 'Toggle';
 
-export default UNSTABLE_Toggle;
+export default Toggle;
