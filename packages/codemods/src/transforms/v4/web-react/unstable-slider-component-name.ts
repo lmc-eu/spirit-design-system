@@ -6,7 +6,8 @@ const transform = (fileInfo: FileInfo, api: API) => {
   const j = api.jscodeshift;
   const root = j(fileInfo.source);
 
-  renameComponent(j, root, 'UNSTABLE_Avatar', 'Avatar');
+  renameComponent(j, root, 'UNSTABLE_Slider', 'Slider');
+  renameComponent(j, root, 'UNSTABLE_UncontrolledSlider', 'UncontrolledSlider');
 
   return removeParentheses(root.toSource({ quote: 'single' }));
 };
