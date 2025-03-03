@@ -64,3 +64,24 @@ npx @lmc-eu/spirit-codemods -p <path> -t v4/web-react/unstable-avatar-component-
 - <UNSTABLE_Avatar … />
 + <Avatar … />
 ```
+
+### `v4/web-react/unstable-slider-component-name` — UNSTABLE_Slider to Slider Component Name
+
+This codemod updates the `UNSTABLE_Slider` component name to `Slider`.
+Use this codemod if you were already using the `UNSTABLE_Slider` component.
+
+#### Usage
+
+```sh
+npx @lmc-eu/spirit-codemods -p <path> -t v4/web-react/unstable-slider-component-name
+```
+
+#### Example
+
+```diff
+- import { UNSTABLE_Slider } from '@lmc-eu/spirit-web-react';
++ import { Slider } from '@lmc-eu/spirit-web-react';
+…
+- <UNSTABLE_Slider … />
++ <Slider … />
+```
