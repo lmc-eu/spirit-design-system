@@ -1,4 +1,4 @@
-{{#> web/layout/default title="Slider" parentPageName="Components" isUnstable=true }}
+{{#> web/layout/default title="Slider" parentPageName="Components" }}
 
 <section class="py-900 py-tablet-1000">
 
@@ -8,10 +8,10 @@
 
     <div class="docs-Stack docs-Stack--stretch">
 
-      <div class="UNSTABLE_Slider">
-        <label for="slider-default" class="UNSTABLE_Slider__label">Slider</label>
+      <div class="Slider">
+        <label for="slider-default" class="Slider__label">Slider</label>
         <input
-          class="UNSTABLE_Slider__input"
+          class="Slider__input"
           id="slider-default"
           style="--slider-position: 30%"
           type="range"
@@ -20,10 +20,10 @@
         />
       </div>
 
-      <div class="UNSTABLE_Slider">
-        <label for="slider-steps" class="UNSTABLE_Slider__label">Custom steps</label>
+      <div class="Slider">
+        <label for="slider-steps" class="Slider__label">Custom steps</label>
         <input
-          class="UNSTABLE_Slider__input"
+          class="Slider__input"
           id="slider-steps"
           style="--slider-position: calc(100% * (9 - 3) / (12 - 3))"
           type="range"
@@ -48,10 +48,10 @@
 
     <div class="docs-Stack docs-Stack--stretch">
 
-      <div class="UNSTABLE_Slider">
-        <label for="slider-hidden-label" class="UNSTABLE_Slider__label UNSTABLE_Slider__label--hidden">Slider</label>
+      <div class="Slider">
+        <label for="slider-hidden-label" class="Slider__label Slider__label--hidden">Slider</label>
         <input
-          class="UNSTABLE_Slider__input"
+          class="Slider__input"
           id="slider-hidden-label"
           style="--slider-position: 30%"
           type="range"
@@ -74,10 +74,10 @@
 
     <div class="docs-Stack docs-Stack--stretch">
 
-      <div class="UNSTABLE_Slider">
-        <label for="slider-helper-text" class="UNSTABLE_Slider__label">Slider</label>
+      <div class="Slider">
+        <label for="slider-helper-text" class="Slider__label">Slider</label>
         <input
-          class="UNSTABLE_Slider__input"
+          class="Slider__input"
           id="slider-helper-text"
           aria-describedby="slider-helper-text-helper-text"
           style="--slider-position: 30%"
@@ -85,7 +85,7 @@
           value="30"
           oninput="this.style.setProperty('--slider-position', `${Math.round((100 * this.value) / 100)}%`);"
         />
-        <div id="slider-helper-text-helper-text" class="UNSTABLE_Slider__helperText">
+        <div id="slider-helper-text-helper-text" class="Slider__helperText">
           Helper text
         </div>
       </div>
@@ -104,10 +104,10 @@
 
     <div class="docs-Stack docs-Stack--start">
 
-      <div class="UNSTABLE_Slider UNSTABLE_Slider--disabled">
-        <label for="slider-disabled" class="UNSTABLE_Slider__label">Slider</label>
+      <div class="Slider Slider--disabled">
+        <label for="slider-disabled" class="Slider__label">Slider</label>
         <input
-          class="UNSTABLE_Slider__input"
+          class="Slider__input"
           id="slider-disabled"
           style="--slider-position: 30%"
           type="range"
@@ -131,10 +131,10 @@
 
     <div class="docs-Stack docs-Stack--stretch">
 
-      <div class="UNSTABLE_Slider UNSTABLE_Slider--success">
-        <label for="slider-success" class="UNSTABLE_Slider__label">Slider</label>
+      <div class="Slider Slider--success">
+        <label for="slider-success" class="Slider__label">Slider</label>
         <input
-          class="UNSTABLE_Slider__input"
+          class="Slider__input"
           id="slider-success"
           style="--slider-position: 30%"
           type="range"
@@ -143,10 +143,10 @@
         />
       </div>
 
-      <div class="UNSTABLE_Slider UNSTABLE_Slider--warning">
-        <label for="slider-warning" class="UNSTABLE_Slider__label">Slider</label>
+      <div class="Slider Slider--warning">
+        <label for="slider-warning" class="Slider__label">Slider</label>
         <input
-          class="UNSTABLE_Slider__input"
+          class="Slider__input"
           id="slider-warning"
           aria-describedby="slider-warning-validation-text"
           style="--slider-position: 30%"
@@ -154,15 +154,15 @@
           value="30"
           oninput="this.style.setProperty('--slider-position', `${Math.round((100 * this.value) / 100)}%`);"
         />
-        <div id="slider-warning-validation-text" class="UNSTABLE_Slider__validationText">
+        <div id="slider-warning-validation-text" class="Slider__validationText">
           Validation text
         </div>
       </div>
 
-      <div class="UNSTABLE_Slider UNSTABLE_Slider--danger">
-        <label for="slider-danger" class="UNSTABLE_Slider__label">Slider</label>
+      <div class="Slider Slider--danger">
+        <label for="slider-danger" class="Slider__label">Slider</label>
         <input
-          class="UNSTABLE_Slider__input"
+          class="Slider__input"
           id="slider-danger"
           aria-describedby="slider-danger-validation-text"
           style="--slider-position: 30%"
@@ -170,7 +170,7 @@
           value="30"
           oninput="this.style.setProperty('--slider-position', `${Math.round((100 * this.value) / 100)}%`);"
         />
-        <div id="slider-danger-validation-text" class="UNSTABLE_Slider__validationText">
+        <div id="slider-danger-validation-text" class="Slider__validationText">
           <ul>
             <li>First validation text</li>
             <li>Second validation text</li>
@@ -178,10 +178,10 @@
         </div>
       </div>
 
-      <div class="UNSTABLE_Slider UNSTABLE_Slider--danger">
-        <label for="slider-danger-with-helper-text" class="UNSTABLE_Slider__label UNSTABLE_Slider__label--required">Slider</label>
+      <div class="Slider Slider--danger">
+        <label for="slider-danger-with-helper-text" class="Slider__label Slider__label--required">Slider</label>
         <input
-          class="UNSTABLE_Slider__input"
+          class="Slider__input"
           id="slider-danger-with-helper-text"
           aria-describedby="slider-danger-with-helper-text-helper-text slider-danger-with-helper-text-validation-text"
           style="--slider-position: 30%"
@@ -189,10 +189,10 @@
           value="30"
           oninput="this.style.setProperty('--slider-position', `${Math.round((100 * this.value) / 100)}%`);"
         />
-        <div id="slider-danger-with-helper-text-helper-text" class="UNSTABLE_Slider__helperText">
+        <div id="slider-danger-with-helper-text-helper-text" class="Slider__helperText">
           Helper text
         </div>
-        <div id="slider-danger-with-helper-text-validation-text" class="UNSTABLE_Slider__validationText">
+        <div id="slider-danger-with-helper-text-validation-text" class="Slider__validationText">
           Validation text
         </div>
       </div>
@@ -211,14 +211,14 @@
       {{setVar "states" "success" "warning" "danger" }}
       {{#each @root.states as |state|}}
 
-      <div class="UNSTABLE_Slider UNSTABLE_Slider--{{state}}">
+      <div class="Slider Slider--{{state}}">
         <label for="slider-{{state}}-with-validation-icon"
-               class="UNSTABLE_Slider__label UNSTABLE_Slider__label--required"
+               class="Slider__label Slider__label--required"
         >
           Slider
         </label>
         <input
-          class="UNSTABLE_Slider__input"
+          class="Slider__input"
           id="slider-{{state}}-with-validation-icon"
           aria-describedby="slider-{{state}}-validation-icon-text"
           style="--slider-position: 30%"
@@ -226,7 +226,7 @@
           value="30"
           oninput="this.style.setProperty('--slider-position', `${Math.round((100 * this.value) / 100)}%`);"
         />
-        <div id="slider-{{state}}-validation-icon-text" class="UNSTABLE_Slider__validationText">
+        <div id="slider-{{state}}-validation-icon-text" class="Slider__validationText">
           <svg width="20" height="20" aria-hidden="true">
             {{#if (eq state "success")}}
             <use xlink:href="/assets/icons/svg/sprite.svg#check-plain"/>
@@ -252,10 +252,10 @@
 
     <div class="docs-Stack docs-Stack--stretch">
 
-      <div class="UNSTABLE_Slider UNSTABLE_Slider--fluid">
-        <label for="slider-fluid" class="UNSTABLE_Slider__label">Slider</label>
+      <div class="Slider Slider--fluid">
+        <label for="slider-fluid" class="Slider__label">Slider</label>
         <input
-          class="UNSTABLE_Slider__input"
+          class="Slider__input"
           id="slider-fluid"
           style="--slider-position: 30%"
           type="range"
