@@ -1,3 +1,4 @@
+import { cssVariablePrefix } from '@lmc-eu/spirit-design-tokens';
 import { DirectionAxis } from '../constants';
 import { SpacingCSSProperties, SpacingType } from '../types';
 
@@ -13,10 +14,11 @@ export function useSpacingStyle(
     Object.keys(spacing).forEach((key) => {
       const breakpointSuffix = key === 'mobile' ? '' : `-${key}`;
       (style as Record<string, string | undefined>)[`--${prefix}-spacing${directionSuffix}${breakpointSuffix}`] =
-        `var(--spirit-${spacing[key as keyof typeof spacing]?.toString()})`;
+        `var(--${cssVariablePrefix}${spacing[key as keyof typeof spacing]?.toString()})`;
     });
   } else if (spacing) {
-    (style as Record<string, string | undefined>)[`--${prefix}-spacing${directionSuffix}`] = `var(--spirit-${spacing})`;
+    (style as Record<string, string | undefined>)[`--${prefix}-spacing${directionSuffix}`] =
+      `var(--${cssVariablePrefix}${spacing})`;
   }
 
   return style;

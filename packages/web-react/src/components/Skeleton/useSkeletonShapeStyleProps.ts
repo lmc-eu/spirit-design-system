@@ -1,3 +1,4 @@
+import { cssVariablePrefix } from '@lmc-eu/spirit-design-tokens';
 import classNames from 'classnames';
 import { CSSProperties, ElementType } from 'react';
 import { useClassNamePrefix } from '../../hooks';
@@ -20,7 +21,7 @@ const setCustomBorderRadius = (
   radius: object | number | string | undefined,
 ): CustomizedCSSProperties => {
   const style: CustomizedCSSProperties = {};
-  const cssPrefix: string = '--spirit-radius-';
+  const cssPrefix: string = `--${cssVariablePrefix}radius-`;
 
   if (typeof radius === 'object' && radius !== null) {
     Object.keys(radius).forEach((key) => {
@@ -44,7 +45,7 @@ export const useSkeletonShapeStyleProps = <T extends ElementType = 'div', E = vo
   const skeletonItemClass = `${skeletonClass}--shape`;
 
   const classProps = classNames(skeletonClass, skeletonItemClass);
-  const stylePrefix: string = 'spirit-skeleton-shape';
+  const stylePrefix: string = `${cssVariablePrefix}skeleton-shape`;
 
   const customizedShapeStyle = {
     ...setCustomDimension(`${stylePrefix}-width`, width),
