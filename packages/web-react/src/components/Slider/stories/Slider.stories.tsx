@@ -5,11 +5,11 @@ import { ValidationStates } from '../../../constants';
 import { SpiritSliderProps } from '../../../types';
 import { DEMO_SLIDER_DEFAULT_VALUE, SLIDER_DEFAULT_PROPS } from '../constants';
 import ReadMe from '../README.md';
-import { UNSTABLE_Slider } from '..';
+import { Slider } from '..';
 
-const meta: Meta<typeof UNSTABLE_Slider> = {
-  title: 'Experimental/UNSTABLE_Slider',
-  component: UNSTABLE_Slider,
+const meta: Meta<typeof Slider> = {
+  title: 'Components/Slider',
+  component: Slider,
   parameters: {
     docs: {
       page: () => <Markdown>{ReadMe}</Markdown>,
@@ -138,11 +138,11 @@ const SliderWithHooks = (args: SpiritSliderProps) => {
     setValue(Number(event.target.value));
   };
 
-  return <UNSTABLE_Slider {...args} onChange={handleChange} value={value} />;
+  return <Slider {...args} onChange={handleChange} value={value} />;
 };
 
 export const SliderPlayground: Story = {
-  name: 'UNSTABLE_Slider',
+  name: 'Slider',
   render: (args) => (
     <div
       className="bg-cover d-flex"

@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useState } from 'react';
 import { DEMO_SLIDER_DEFAULT_VALUE } from '../constants';
-import UNSTABLE_Slider from '../UNSTABLE_Slider';
+import Slider from '../Slider';
 
 const SliderValidation = () => {
   const [valueSuccess, setValueSuccess] = useState(DEMO_SLIDER_DEFAULT_VALUE);
@@ -24,14 +24,14 @@ const SliderValidation = () => {
 
   return (
     <>
-      <UNSTABLE_Slider
+      <Slider
         id="slider-success"
         label="Slider"
         value={valueSuccess}
         onChange={handleChangeSuccess}
         validationState="success"
       />
-      <UNSTABLE_Slider
+      <Slider
         id="slider-warning"
         label="Slider"
         value={valueWarning}
@@ -39,7 +39,7 @@ const SliderValidation = () => {
         validationState="warning"
         validationText="Validation text"
       />
-      <UNSTABLE_Slider
+      <Slider
         id="slider-danger"
         label="Slider"
         value={valueDanger}
@@ -47,7 +47,7 @@ const SliderValidation = () => {
         validationState="danger"
         validationText={['First validation text', 'Second validation text']}
       />
-      <UNSTABLE_Slider
+      <Slider
         id="slider-danger-with-helper-text"
         label="Slider"
         value={valueDangerWithHelperText}

@@ -2,9 +2,9 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
-import UNSTABLE_Slider from '../UNSTABLE_Slider';
+import Slider from '../Slider';
 
-describe('UNSTABLE_Slider', () => {
+describe('Slider', () => {
   const defaultValue = 10;
   const defaultProps = {
     id: 'slider-test',
@@ -13,17 +13,14 @@ describe('UNSTABLE_Slider', () => {
     value: defaultValue,
   };
 
-  classNamePrefixProviderTest(UNSTABLE_Slider, 'UNSTABLE_Slider');
+  classNamePrefixProviderTest(Slider, 'Slider');
 
-  stylePropsTest(
-    (props) => <UNSTABLE_Slider id={defaultProps.id} {...props} data-testid="slider-test" />,
-    'slider-test',
-  );
+  stylePropsTest((props) => <Slider id={defaultProps.id} {...props} data-testid="slider-test" />, 'slider-test');
 
-  restPropsTest((props) => <UNSTABLE_Slider id={defaultProps.id} {...props} />, 'div');
+  restPropsTest((props) => <Slider id={defaultProps.id} {...props} />, 'div');
 
   it('should render slider', () => {
-    render(<UNSTABLE_Slider {...defaultProps} />);
+    render(<Slider {...defaultProps} />);
 
     const sliderElement = screen.getByRole('slider');
 
@@ -35,7 +32,7 @@ describe('UNSTABLE_Slider', () => {
   it('should render helper text', () => {
     const helperText = 'Helper text';
 
-    render(<UNSTABLE_Slider {...defaultProps} helperText={helperText} />);
+    render(<Slider {...defaultProps} helperText={helperText} />);
 
     expect(screen.getByText(helperText)).toBeInTheDocument();
   });
@@ -43,17 +40,15 @@ describe('UNSTABLE_Slider', () => {
   it('should render validation text', () => {
     const validationText = 'Validation text';
 
-    render(
-      <UNSTABLE_Slider {...defaultProps} validationText={validationText} validationState="danger" data-testid="test" />,
-    );
+    render(<Slider {...defaultProps} validationText={validationText} validationState="danger" data-testid="test" />);
 
-    expect(screen.getByTestId('test')).toHaveClass('UNSTABLE_Slider UNSTABLE_Slider--danger');
+    expect(screen.getByTestId('test')).toHaveClass('Slider Slider--danger');
     expect(screen.getByText(validationText)).toBeInTheDocument();
   });
 
   it('should render label with html tags', () => {
     render(
-      <UNSTABLE_Slider
+      <Slider
         {...defaultProps}
         label={
           <>

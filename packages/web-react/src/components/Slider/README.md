@@ -1,19 +1,14 @@
-# UNSTABLE Slider
-
-> ⚠️ This component is UNSTABLE. It may significantly change at any point in the future.
-> Please use it with caution.
+# Slider
 
 Slider is a form control that allows users to select a value from a range of values.
 
-## UNSTABLE_Slider
-
-### Basic Usage
+## Basic Usage
 
 The Slider component implements the HTML [range input][mdn-range] element.
 
 ```jsx
 import { useState } from 'react';
-import { UNSTABLE_Slider } from '@lmc-eu/spirit-web-react/components';
+import { Slider } from '@lmc-eu/spirit-web-react/components';
 
 const [value, setValue] = useState();
 
@@ -21,16 +16,16 @@ const handleChange = (event) => {
   setValue(Number(event.target.value));
 };
 
-<UNSTABLE_Slider id="slider" label="Slider" value={value} onChange={handleChange} />;
+<Slider id="slider" label="Slider" value={value} onChange={handleChange} />;
 ```
 
-#### Slider Steps and Value
+### Slider Steps and Value
 
 You can specify the Slider steps and value range by setting the `min`, `max`, and `step` props.
 
 ```jsx
 import { useState } from 'react';
-import { UNSTABLE_Slider } from '@lmc-eu/spirit-web-react/components';
+import { Slider } from '@lmc-eu/spirit-web-react/components';
 
 const [value, setValue] = useState();
 
@@ -38,37 +33,37 @@ const handleChange = (event) => {
   setValue(Number(event.target.value));
 };
 
-<UNSTABLE_Slider id="slider" label="Slider" min={3} max={12} value={value} onChange={handleChange} />;
+<Slider id="slider" label="Slider" min={3} max={12} value={value} onChange={handleChange} />;
 ```
 
-### Required
+## Required
 
 ℹ️ As per the [HTML specification][html-spec-range], the Slider component does not support the `required` state.
 
-### Hidden Label
+## Hidden Label
 
 ```jsx
-<UNSTABLE_Slider id="slider" label="Slider" value={value} onChange={handleChange} isLabelHidden />
+<Slider id="slider" label="Slider" value={value} onChange={handleChange} isLabelHidden />
 ```
 
-### Fluid Width
+## Fluid Width
 
 ```jsx
-<UNSTABLE_Slider id="slider" label="Slider" value={value} onChange={handleChange} isFluid />
+<Slider id="slider" label="Slider" value={value} onChange={handleChange} isFluid />
 ```
 
-### Helper Text
+## Helper Text
 
 ```jsx
-<UNSTABLE_Slider id="slider" label="Slider" value={value} onChange={handleChange} helperText="Helper text" />
+<Slider id="slider" label="Slider" value={value} onChange={handleChange} helperText="Helper text" />
 ```
 
-### Validation States
+## Validation States
 
 Validation states implement the Validation state [dictionary][dictionary-validation].
 
 ```jsx
-<UNSTABLE_Slider
+<Slider
   id="slider-success"
   label="Slider"
   value={value}
@@ -76,7 +71,7 @@ Validation states implement the Validation state [dictionary][dictionary-validat
   validationState="success"
   validationText="Validation text"
 />
-<UNSTABLE_Slider
+<Slider
   hasValidationIcon
   id="slider-warning"
   label="Slider"
@@ -85,7 +80,7 @@ Validation states implement the Validation state [dictionary][dictionary-validat
   validationState="warning"
   validationText="Validation text with icon"
 />
-<UNSTABLE_Slider
+<Slider
   id="slider-danger"
   label="Slider"
   value={value}
@@ -95,13 +90,13 @@ Validation states implement the Validation state [dictionary][dictionary-validat
 />
 ```
 
-### Disabled State
+## Disabled State
 
 ```jsx
-<UNSTABLE_Slider id="slider-disabled" label="Slider" value={value} onChange={handleChange} isDisabled />
+<Slider id="slider-disabled" label="Slider" value={value} onChange={handleChange} isDisabled />
 ```
 
-#### API
+## API
 
 | Attribute           | Type                                           | Default | Required | Description                                               |
 | ------------------- | ---------------------------------------------- | ------- | -------- | --------------------------------------------------------- |
@@ -124,17 +119,17 @@ On top of the API options, the components accept [additional attributes][readme-
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
-## UNSTABLE UncontrolledSlider
+## UncontrolledSlider
 
 ### Basic Usage
 
 ```jsx
-import UNSTABLE_UncontrolledSlider from '../UNSTABLE_UncontrolledSlider';
+import { UncontrolledSlider } from '@lmc-eu/spirit-web-react';
 
-<UNSTABLE_UncontrolledSlider id="slider-uncontrolled" label="UncontrolledSlider" />;
+<UncontrolledSlider id="slider-uncontrolled" label="UncontrolledSlider" />;
 ```
 
-#### API
+### API
 
 | Attribute           | Type                            | Default | Required | Description                                               |
 | ------------------- | ------------------------------- | ------- | -------- | --------------------------------------------------------- |
