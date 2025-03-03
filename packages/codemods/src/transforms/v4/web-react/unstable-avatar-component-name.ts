@@ -1,4 +1,5 @@
 import { API, FileInfo, JSXIdentifier, JSXOpeningElement, JSXClosingElement } from 'jscodeshift';
+import { removeParentheses } from '../../../helpers';
 
 const transform = (fileInfo: FileInfo, api: API) => {
   const j = api.jscodeshift;
@@ -59,7 +60,7 @@ const transform = (fileInfo: FileInfo, api: API) => {
     }
   }
 
-  return root.toSource();
+  return removeParentheses(root.toSource());
 };
 
 export default transform;
