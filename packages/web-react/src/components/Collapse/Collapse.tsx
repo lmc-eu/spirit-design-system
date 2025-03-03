@@ -1,10 +1,10 @@
 'use client';
 
-import classNames from 'classnames';
 import React, { ElementType, MutableRefObject, useRef } from 'react';
 import { Transition, TransitionStatus } from 'react-transition-group';
 import { useStyleProps } from '../../hooks';
 import { SpiritCollapseProps } from '../../types';
+import { mergeStyleProps } from '../../utils';
 import { useCollapseAriaProps } from './useCollapseAriaProps';
 import { useCollapseStyleProps } from './useCollapseStyleProps';
 import { useResizeHeight } from './useResizeHeight';
@@ -40,7 +40,7 @@ const Collapse = (props: SpiritCollapseProps) => {
 
   const { classProps } = useCollapseStyleProps(restProps.isOpen);
   const { ariaProps, props: otherProps } = useCollapseAriaProps(restProps);
-  const { styleProps, props: transferProps } = useStyleProps({ ElementTag, ...otherProps });
+  const { styleProps, props: transferProps } = useStyleProps(otherProps);
   const collapseStyleProps = {
     className: styleProps.className,
     ...{ style: { height: restProps.isOpen ? collapseHeight : 0, ...styleProps.style } },
@@ -51,12 +51,13 @@ const Collapse = (props: SpiritCollapseProps) => {
       {(transitionState: TransitionStatus) => (
         <ElementTag
           {...transferProps}
-          {...collapseStyleProps}
           {...ariaProps.root}
-          // Element implicitly has an 'any' type because expression of type 'TransitionStatus' can't be used to index type '{ entering: string; entered: string; exiting: string; exited: string; }'.
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-ignore
-          className={classNames(classProps.root, styleProps.className, transitioningStyles[transitionState])}
+          {...mergeStyleProps(ElementTag, {
+            classProps: classProps.root,
+            styleProps,
+            collapseStyleProps,
+            transitioningStyles: transitioningStyles[transitionState as keyof typeof transitioningStyles],
+          })}
           ref={rootElementRef}
         >
           <ElementTag ref={collapseElementRef} className={classProps.content}>
