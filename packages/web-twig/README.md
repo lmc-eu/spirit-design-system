@@ -52,6 +52,7 @@ spirit_web_twig:
   paths_alias: 'jobs-ui' # default is 'spirit'
   html_syntax_lexer: false # default is true
   spirit_css_class_prefix: 'jobs' # default is null
+  spirit_css_variable_prefix: 'jobs-' # default is 'spirit-'
   icons: # optional settings for svg assets
     paths:
       - '%kernel.project_dir%/assets/icons' # define paths for svg icons set
@@ -148,6 +149,15 @@ are doing so at your own risk.
 
 Please consult additional styling with [web package documentation][web-pkg-rebrand].
 
+### Class Prefix
+
+If you want to use a custom class prefix for Spirit components, you can set the `spirit_css_class_prefix` parameter in the configuration. This will prefix all Spirit component classes with the given value.
+Please note that you need to [configure the web package][prefixing-css-class-names] to use the same prefix.
+
+### CSS Variable Prefix
+
+Our components use CSS variables. We prefix these variables with the `css-variable-prefix` token. However, in Twig, we cannot read our tokens easily, so we provided a way to set the prefix in the configuration using `spirit_css_variable_prefix` parameter. The default of this parameter is `spirit-`, but if your `css-variable-prefix` token is different; you can set it here to match.
+
 ## Deprecations
 
 This package uses the deprecation warnings for props, functions and components that will be removed or replaced in the next major release.
@@ -162,6 +172,7 @@ Check your Symfony console or log to see if you are using any of the deprecated 
 [components-directory]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/src/Resources/components
 [contributing]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/CONTRIBUTING.md
 [example-guide]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/docs/extendComponents.md
+[prefixing-css-class-names]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#prefixing-css-class-names
 [raw]: https://twig.symfony.com/doc/3.x/filters/raw.html
 [spirit-design-system]: https://github.com/lmc-eu/spirit-design-system
 [twigx-bundle]: https://github.com/lmc-eu/twigx-bundle/blob/main/README.md#usage

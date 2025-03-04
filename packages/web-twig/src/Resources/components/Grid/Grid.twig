@@ -74,34 +74,34 @@
         {%- set suffix = (breakpoint == 'mobile') ? '' : '-' ~ breakpoint -%}
         {%- set _style =
             _style ~
-                '--grid-spacing-x' ~ suffix ~ ': var(--spirit-' ~ breakpointValue ~ ');
-                --grid-spacing-y' ~ suffix ~ ': var(--spirit-' ~ breakpointValue ~ ');'
+                '--grid-spacing-x' ~ suffix ~ ': var(--' ~ _spiritCSSVariablePrefix ~ breakpointValue ~ ');
+                --grid-spacing-y' ~ suffix ~ ': var(--' ~ _spiritCSSVariablePrefix ~ breakpointValue ~ ');'
         -%}
     {%- endfor -%}
 {%- elseif _spacing -%}
     {%- set _style =
         _style ~
-            '--grid-spacing-x: var(--spirit-' ~ _spacing ~ ');
-            --grid-spacing-y: var(--spirit-' ~ _spacing ~ ');'
+            '--grid-spacing-x: var(--' ~ _spiritCSSVariablePrefix ~ _spacing ~ ');
+            --grid-spacing-y: var(--' ~ _spiritCSSVariablePrefix ~ _spacing ~ ');'
     -%}
 {%- endif -%}
 
 {%- if _spacingX is iterable -%}
     {%- for breakpoint, breakpointValue in _spacingX -%}
         {%- set suffix = (breakpoint == 'mobile') ? '' : '-' ~ breakpoint -%}
-        {%- set _style = _style ~ '--grid-spacing-x' ~ suffix ~ ': var(--spirit-' ~ breakpointValue ~ ');' -%}
+        {%- set _style = _style ~ '--grid-spacing-x' ~ suffix ~ ': var(--' ~ _spiritCSSVariablePrefix ~ breakpointValue ~ ');' -%}
     {%- endfor -%}
 {%- elseif _spacingX -%}
-    {%- set _style = _style ~ '--grid-spacing-x: var(--spirit-' ~ _spacingX ~ ');' -%}
+    {%- set _style = _style ~ '--grid-spacing-x: var(--' ~ _spiritCSSVariablePrefix ~ _spacingX ~ ');' -%}
 {%- endif -%}
 
 {%- if _spacingY is iterable -%}
     {%- for breakpoint, breakpointValue in _spacingY -%}
         {%- set suffix = (breakpoint == 'mobile') ? '' : '-' ~ breakpoint -%}
-        {%- set _style = _style ~ '--grid-spacing-y' ~ suffix ~ ': var(--spirit-' ~ breakpointValue ~ ');' -%}
+        {%- set _style = _style ~ '--grid-spacing-y' ~ suffix ~ ': var(--' ~ _spiritCSSVariablePrefix ~ breakpointValue ~ ');' -%}
     {%- endfor -%}
 {%- elseif _spacingY -%}
-    {%- set _style = _style ~ '--grid-spacing-y: var(--spirit-' ~ _spacingY ~ ');' -%}
+    {%- set _style = _style ~ '--grid-spacing-y: var(--' ~ _spiritCSSVariablePrefix ~ _spacingY ~ ');' -%}
 {%- endif -%}
 
 {# Attributes #}
