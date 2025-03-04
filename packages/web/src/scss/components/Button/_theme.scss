@@ -6,7 +6,9 @@ $typography: tokens.$body-small-semibold;
 $typography-large: tokens.$body-medium-semibold;
 $border-width: tokens.$border-width-100;
 $border-style: solid;
-$border-radius: tokens.$radius-full;
+
+// check if tokens exists (using Katka's function from Container) and if not, set the default (radius-full)
+$border-radius: tokens.$component-button-border-radius;
 $breakpoints: tokens.$breakpoints;
 
 $disabled-color: tokens.$disabled-content;
