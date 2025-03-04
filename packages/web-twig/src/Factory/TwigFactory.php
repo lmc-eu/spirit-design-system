@@ -20,6 +20,7 @@ class TwigFactory
         private string $alias,
         private ?string $classPrefix,
         private bool $isEnabledLexer,
+        private ?string $cssVariablePrefix,
     ) {}
 
     public function create(): Environment
@@ -30,6 +31,7 @@ class TwigFactory
         $this->twig->setLoader($this->loader);
 
         $this->twig->addGlobal('_spiritClassPrefix', $this->classPrefix);
+        $this->twig->addGlobal('_spiritCSSVariablePrefix', $this->cssVariablePrefix);
 
         if ($this->isEnabledLexer) {
             $this->twig->setLexer(new ComponentLexer($this->twig, [], $this->alias));
