@@ -2,15 +2,26 @@
 {%- set props = props | default([]) -%}
 {%- set _isFluid = props.isFluid | default(false) -%}
 {%- set _size = props.size | default('xlarge') -%}
+{%- set _textAlignment = props.textAlignment | default(null) -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Container' -%}
 {%- set _rootFluidClassName = _isFluid ? _spiritClassPrefix ~ 'Container--fluid' : null -%}
 {%- set _rootSizeClassName = not _isFluid and _size ? _spiritClassPrefix ~ 'Container--' ~ _size : null -%}
+{%- set _rootTextAlignmentClassNames = [] -%}
+
+{%- if _textAlignment is iterable -%}
+    {%- for breakpoint, breakpointValue in _textAlignment -%}
+        {%- set infix = (breakpoint == 'mobile') ? '' : breakpoint ~ '-' -%}
+        {%- set _rootTextAlignmentClassNames = _rootTextAlignmentClassNames | merge([_spiritClassPrefix ~ 'text-' ~ infix ~ breakpointValue]) -%}
+    {%- endfor -%}
+{%- elseif _textAlignment -%}
+    {%- set _rootTextAlignmentClassNames = [_spiritClassPrefix ~ 'text-' ~ _textAlignment] -%}
+{%- endif -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
-{%- set _classNames = [ _rootClassName, _rootFluidClassName, _rootSizeClassName, _styleProps.className ] -%}
+{%- set _classNames = [ _rootClassName, _rootFluidClassName, _rootSizeClassName, _styleProps.className ] | merge(_rootTextAlignmentClassNames) -%}
 
 <div {{ mainProps(props) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }}>
     {%- block content %}{% endblock -%}
