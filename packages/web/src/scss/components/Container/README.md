@@ -37,3 +37,18 @@ The following design tokens are required for Container to work:
 - `container-medium-max-width`
 - `container-large-max-width`
 - `container-xlarge-max-width`
+
+## Text Alignment
+
+Use utility classes to align the text inside the `Container` component.
+
+```html
+<div class="Container text-center">Content with centered text</div>
+<div class="Container text-right">Content with right aligned text</div>
+```
+
+Responsive values can be defined using the `tablet` and `desktop` infixes.
+
+```html
+<div class="Container text-center text-tablet-right text-desktop-left">Content with responsive text alignment</div>
+```

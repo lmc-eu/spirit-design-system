@@ -26,3 +26,18 @@ We suggest these sizes for the section component.
 <section class="py-1200 py-tablet-1400">Large Size</section>
 <section class="py-1400 py-tablet-1600">XLarge Size</section>
 ```
+
+## Text Alignment
+
+Use utility classes to align the text inside the `Section` component.
+
+```html
+<section class="text-center">Centered Text</section>
+<section class="text-right">Right Aligned Text</section>
+```
+
+Responsive values can be defined using the `tablet` and `desktop` infixes.
+
+```html
+<section class="text-center text-tablet-right text-desktop-left">Responsive Text Alignment</section>
+```

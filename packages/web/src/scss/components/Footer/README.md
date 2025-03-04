@@ -131,6 +131,21 @@ This section is optional and consists of a [Flex][flex] layout with secondary li
 
 👉 Please mind the `aria-label` attribute on the `<nav>` element to provide an accessible label for the navigation.
 
+## Text Alignment
+
+You can use utility classes to align text inside the `Footer`.
+
+```html
+<footer class="text-center"><!-- Footer content --></footer>
+<footer class="text-right"><!-- Footer content --></footer>
+```
+
+Responsive values can be defined using the `tablet` and `desktop` infixes.
+
+```html
+<footer class="text-center text-tablet-right text-desktop-left"><!-- Footer content --></footer>
+```
+
 ## Full Example
 
 ```html

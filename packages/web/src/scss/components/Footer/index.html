@@ -1,5 +1,26 @@
 {{#> web/layout/default title="Footer" parentPageName="Components" }}
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const radios = document.querySelectorAll('input[name="text-alignment"]');
+    const footer = document.getElementById("footer-align-example");
+
+    radios.forEach(radio => {
+      radio.addEventListener("change", () => {
+        if (radio.checked) {
+          footer.classList.remove("text-center", "text-right");
+
+          if (radio.value === "center") {
+            footer.classList.add("text-center");
+          } else if (radio.value === "right") {
+            footer.classList.add("text-right");
+          }
+        }
+      });
+    });
+  });
+</script>
+
 <section class="py-900 py-tablet-1000">
 
   <div class="Container">
@@ -537,7 +558,7 @@
             <div class="Select Select--fluid">
               <label for="select-language" class="Select__label Select__label--hidden">Language</label>
               <div class="Select__inputContainer">
-                <select id="select-language" name="language" class="Select__input">
+                <select id="select-language-minimalistic" name="language" class="Select__input">
                   <option value="en">English</option>
                   <option value="cs">Čeština</option>
                 </select>
@@ -554,6 +575,124 @@
       </div>
     </footer>
 
+  </div>
+</section>
+
+<section class="py-900 py-tablet-1000">
+  <div class="Container Container--xlarge">
+    <h2 class="docs-Heading">Text Alignment</h2>
+  </div>
+
+  <div class="docs-Stack docs-Stack--stretch">
+    <div class="Container Container--xlarge">
+      <form class="mb-600">
+        <fieldset class="border-0">
+          <legend>Please choose text alignment:</legend>
+          <label class="Radio mr-600" for="footer-alignment-left">
+            <input name="text-alignment" autocomplete="off" type="radio" id="footer-alignment-left" class="Radio__input" value="left" checked>
+            <span class="Radio__text">
+              <span class="Radio__label">Left</span>
+            </span>
+          </label>
+          <label class="Radio mr-600" for="footer-alignment-center">
+            <input name="text-alignment" autocomplete="off" type="radio" id="footer-alignment-center" class="Radio__input" value="center">
+            <span class="Radio__text">
+              <span class="Radio__label">Center</span>
+            </span>
+          </label>
+          <label class="Radio" for="footer-alignment-right">
+            <input name="text-alignment" autocomplete="off" type="radio" id="footer-alignment-right" class="Radio__input" value="right">
+            <span class="Radio__text">
+              <span class="Radio__label">Right</span>
+            </span>
+          </label>
+        </fieldset>
+      </form>
+    </div>
+
+    <footer class="bg-secondary pb-1200 pt-1400" id="footer-align-example">
+      <div class="Container Container--xlarge">
+        <div class="Grid Grid--alignmentXStretch Grid--alignmentYStretch Grid--cols-1 Grid--tablet--cols-2 Grid--desktop--cols-6" style="--grid-spacing-x: var(--spirit-space-1000); --grid-spacing-y: var(--spirit-space-1000);">
+
+          <nav aria-labelledby="footer-navigation-text-alignment-section-1">
+            <h3 id="footer-navigation-text-alignment-section-1" class="typography-heading-xsmall-semibold mb-700">Section headline</h3>
+            <ul class="Stack Stack--hasSpacing" style="--stack-spacing: var(--spirit-space-600);">
+              <li>
+                <a href="https://www.example.com" class="link-primary">Link</a>
+              </li>
+              <li>
+                <a href="https://www.example.com" class="link-primary">Link</a>
+              </li>
+              <li><a href="https://www.example.com" class="link-primary">Link</a>
+              </li>
+            </ul>
+          </nav>
+
+          <nav aria-labelledby="footer-navigation-text-alignment-section-2">
+            <h3 id="footer-navigation-text-alignment-section-2" class="typography-heading-xsmall-semibold mb-700">Section headline</h3>
+            <ul class="Stack Stack--hasSpacing" style="--stack-spacing: var(--spirit-space-600);">
+              <li>
+                <a href="https://www.example.com" class="link-primary">Link</a>
+              </li>
+              <li>
+                <a href="https://www.example.com" class="link-primary">Link</a>
+              </li>
+              <li>
+                <a href="https://www.example.com" class="link-primary">Link</a>
+              </li>
+              <li>
+                <a href="https://www.example.com" class="link-primary">Link</a>
+              </li>
+            </ul>
+          </nav>
+
+          <nav aria-labelledby="footer-navigation-text-alignment-section-3">
+            <h3 id="footer-navigation-text-alignment-section-3" class="typography-heading-xsmall-semibold mb-700">
+              Section headline
+            </h3>
+            <ul class="Stack Stack--hasSpacing" style="--stack-spacing: var(--spirit-space-600);">
+              <li><a href="https://www.example.com" class="link-primary">Link</a></li>
+              <li><a href="https://www.example.com" class="link-primary">Link</a></li>
+              <li><a href="https://www.example.com" class="link-primary">Link</a></li>
+              <li><a href="https://www.example.com" class="link-primary">Link</a></li>
+              <li><a href="https://www.example.com" class="link-primary">Link</a></li>
+              <li><a href="https://www.example.com" class="link-primary">Link</a></li>
+            </ul>
+          </nav>
+          <nav aria-labelledby="footer-navigation-text-alignment-section-4">
+            <h3 id="footer-navigation-text-alignment-section-4" class="typography-heading-xsmall-semibold mb-700">
+              Section headline
+            </h3>
+            <ul class="Stack Stack--hasSpacing" style="--stack-spacing: var(--spirit-space-600);">
+              <li><a href="https://www.example.com" class="link-primary">Link</a></li>
+              <li><a href="https://www.example.com" class="link-primary">Link</a></li>
+              <li><a href="https://www.example.com" class="link-primary">Link</a></li>
+            </ul>
+          </nav>
+          <nav aria-labelledby="footer-navigation-text-alignment-section-5">
+            <h3 id="footer-navigation-text-alignment-section-5" class="typography-heading-xsmall-semibold mb-700">
+              Section headline
+            </h3>
+            <ul class="Stack Stack--hasSpacing" style="--stack-spacing: var(--spirit-space-600);">
+              <li><a href="https://www.example.com" class="link-primary">Link</a></li>
+              <li><a href="https://www.example.com" class="link-primary">Link</a></li>
+              <li><a href="https://www.example.com" class="link-primary">Link</a></li>
+            </ul>
+          </nav>
+          <nav aria-labelledby="footer-navigation-text-alignment-section-6">
+            <h3 id="footer-navigation-text-alignment-section-6" class="typography-heading-xsmall-semibold mb-700">
+              Section headline
+            </h3>
+            <ul class="Stack Stack--hasSpacing" style="--stack-spacing: var(--spirit-space-600);">
+              <li><a href="https://www.example.com" class="link-primary">Link</a></li>
+              <li><a href="https://www.example.com" class="link-primary">Link</a></li>
+              <li><a href="https://www.example.com" class="link-primary">Link</a></li>
+              <li><a href="https://www.example.com" class="link-primary">Link</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </footer>
   </div>
 </section>
 
