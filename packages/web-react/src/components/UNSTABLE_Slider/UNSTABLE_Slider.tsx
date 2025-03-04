@@ -35,7 +35,6 @@ const _UnstableSlider = (props: SpiritSliderProps, ref: ForwardedRef<HTMLInputEl
 
   const { classProps, props: modifiedProps } = useSliderStyleProps({
     ...restProps,
-    hasValidationIcon,
     isDisabled,
     validationState,
   });

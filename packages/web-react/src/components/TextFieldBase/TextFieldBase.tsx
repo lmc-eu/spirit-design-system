@@ -28,7 +28,6 @@ const _TextFieldBase = (props: SpiritTextFieldBaseProps, ref: ForwardedRef<HTMLI
     ...restProps
   } = props;
   const { classProps, props: modifiedProps } = useTextFieldBaseStyleProps({
-    hasValidationIcon,
     id,
     label,
     validationState,
