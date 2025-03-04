@@ -16,6 +16,7 @@ final class TwigFactoryTest extends TestCase
     {
         $defaultPaths = ['templates/'];
         $classPrefix = null;
+        $variablePrefix = 'spirit-';
         $pathAlias = 'ui-components';
         $isEnableLexer = true;
 
@@ -37,6 +38,10 @@ final class TwigFactoryTest extends TestCase
             ->once()
             ->with('_spiritClassPrefix', $classPrefix);
 
+        $twigEnvironmentMock->shouldReceive('addGlobal')
+            ->once()
+            ->with('_spiritCSSVariablePrefix', $variablePrefix);
+
         $twigEnvironmentMock->shouldReceive('getUnaryOperators')
             ->once()
             ->withNoArgs()
@@ -47,7 +52,7 @@ final class TwigFactoryTest extends TestCase
             ->withNoArgs()
             ->andReturn([]);
 
-        $twigFactory = new TwigFactory($twigEnvironmentMock, $twigFilesystemLoaderMock, $defaultPaths, $pathAlias, $classPrefix, $isEnableLexer);
+        $twigFactory = new TwigFactory($twigEnvironmentMock, $twigFilesystemLoaderMock, $defaultPaths, $pathAlias, $classPrefix, $isEnableLexer, $variablePrefix);
         $twigEnvironmentInstance = $twigFactory->create();
 
         $this->assertInstanceOf(Environment::class, $twigEnvironmentInstance);
@@ -58,6 +63,7 @@ final class TwigFactoryTest extends TestCase
         $expectedPaths = ['templates/', 'test/'];
         $pathAlias = 'ui-components';
         $classPrefix = 'jobs';
+        $variablePrefix = 'jobs-';
         $isEnableLexer = false;
 
         $twigFilesystemLoaderMock = Mockery::mock(FilesystemLoader::class);
@@ -76,6 +82,10 @@ final class TwigFactoryTest extends TestCase
             ->once()
             ->with('_spiritClassPrefix', $classPrefix);
 
+        $twigEnvironmentMock->shouldReceive('addGlobal')
+            ->once()
+            ->with('_spiritCSSVariablePrefix', $variablePrefix);
+
         $twigEnvironmentMock->shouldReceive('setLoader')
             ->once()
             ->with($twigFilesystemLoaderMock);
@@ -90,7 +100,7 @@ final class TwigFactoryTest extends TestCase
             ->withNoArgs()
             ->andReturn([]);
 
-        $twigFactory = new TwigFactory($twigEnvironmentMock, $twigFilesystemLoaderMock, $expectedPaths, $pathAlias, $classPrefix, $isEnableLexer);
+        $twigFactory = new TwigFactory($twigEnvironmentMock, $twigFilesystemLoaderMock, $expectedPaths, $pathAlias, $classPrefix, $isEnableLexer, $variablePrefix);
         $twigEnvironmentInstance = $twigFactory->create();
 
         $this->assertInstanceOf(Environment::class, $twigEnvironmentInstance);

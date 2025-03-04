@@ -36,6 +36,7 @@ class SpiritWebTwigExtensionTest extends TestCase
         $this->assertTrue($this->containerBuilder->hasParameter('spirit_web_twig.paths'));
         $this->assertTrue($this->containerBuilder->hasParameter('spirit_web_twig.paths_alias'));
         $this->assertTrue($this->containerBuilder->hasParameter('spirit_web_twig.spirit_css_class_prefix'));
+        $this->assertTrue($this->containerBuilder->hasParameter('spirit_web_twig.spirit_css_variable_prefix'));
         $this->assertTrue($this->containerBuilder->hasParameter('spirit_web_twig.html_syntax_lexer'));
     }
 
@@ -60,6 +61,32 @@ class SpiritWebTwigExtensionTest extends TestCase
             'custom value' => [
                 [
                     'spirit_css_class_prefix' => 'jobs',
+                ], 'jobs-',
+            ],
+        ];
+    }
+
+    /**
+     * @param array<string, string> $configuration
+     * @dataProvider spiritCssVariablePrefixParameterDataProvider
+     */
+    public function testShouldGetSpiritCssVariablePrefixParameter(array $configuration, ?string $expectedValue): void
+    {
+        $this->loadExtension([$configuration]);
+
+        $this->assertEquals($expectedValue, $this->containerBuilder->getParameter('spirit_web_twig.spirit_css_variable_prefix'));
+    }
+
+    /**
+     * @return array<string, mixed>
+     */
+    public function spiritCssVariablePrefixParameterDataProvider(): array
+    {
+        return [
+            'default value' => [[], SpiritWebTwigExtension::DEFAULT_CSS_VARIABLE_PREFIX],
+            'custom value' => [
+                [
+                    'spirit_css_variable_prefix' => 'jobs-',
                 ], 'jobs-',
             ],
         ];

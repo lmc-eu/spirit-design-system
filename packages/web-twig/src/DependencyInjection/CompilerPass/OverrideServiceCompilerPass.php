@@ -14,6 +14,7 @@ use Symfony\Component\DependencyInjection\Reference;
 class OverrideServiceCompilerPass implements CompilerPassInterface
 {
     public const GLOBAL_PREFIX_TWIG_VARIABLE = '_spiritClassPrefix';
+    public const GLOBAL_PREFIX_TWIG_CSS_VARIABLE = '_spiritCSSVariablePrefix';
 
     public function process(ContainerBuilder $container): void
     {
@@ -27,6 +28,7 @@ class OverrideServiceCompilerPass implements CompilerPassInterface
         $pathAlias = $container->getParameter(SpiritWebTwigExtension::PARAMETER_PATH_ALIAS);
         $isLexer = $container->getParameter(SpiritWebTwigExtension::PARAMETER_HTML_SYNTAX_LEXER);
         $classPrefix = $container->getParameter(SpiritWebTwigExtension::PARAMETER_SPIRIT_CSS_CLASS_PREFIX);
+        $variablePrefix = $container->getParameter(SpiritWebTwigExtension::PARAMETER_SPIRIT_CSS_VARIABLE_PREFIX);
         /** @var array<string> $iconsPaths */
         $iconsPaths = $container->getParameter(SpiritWebTwigExtension::PARAMETER_ICONS_PATHS);
         /** @var string $iconsPathAlias */
@@ -47,6 +49,7 @@ class OverrideServiceCompilerPass implements CompilerPassInterface
         }
 
         $twigDefinition->addMethodCall('addGlobal', [self::GLOBAL_PREFIX_TWIG_VARIABLE, $classPrefix]);
+        $twigDefinition->addMethodCall('addGlobal', [self::GLOBAL_PREFIX_TWIG_CSS_VARIABLE, $variablePrefix]);
 
         if ($isLexer) {
             $twigDefinition->addMethodCall('setLexer', [new Reference(ComponentLexer::class)]);

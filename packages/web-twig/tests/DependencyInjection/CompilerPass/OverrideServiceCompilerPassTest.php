@@ -39,6 +39,7 @@ class OverrideServiceCompilerPassTest extends TestCase
         $this->builder->setParameter('spirit_web_twig.paths_alias', 'test');
         $this->builder->setParameter('spirit_web_twig.html_syntax_lexer', false);
         $this->builder->setParameter('spirit_web_twig.spirit_css_class_prefix', null);
+        $this->builder->setParameter('spirit_web_twig.spirit_css_variable_prefix', SpiritWebTwigExtension::DEFAULT_CSS_VARIABLE_PREFIX);
         $this->builder->setParameter('spirit_web_twig.icons.paths', []);
         $this->builder->setParameter('spirit_web_twig.icons.alias', 'test-icons');
         $this->overrideService->process($this->builder);
@@ -85,6 +86,7 @@ class OverrideServiceCompilerPassTest extends TestCase
         $this->builder->setParameter('spirit_web_twig.paths_alias', 'test');
         $this->builder->setParameter('spirit_web_twig.html_syntax_lexer', $isLexer);
         $this->builder->setParameter('spirit_web_twig.spirit_css_class_prefix', null);
+        $this->builder->setParameter('spirit_web_twig.spirit_css_variable_prefix', SpiritWebTwigExtension::DEFAULT_CSS_VARIABLE_PREFIX);
         $this->builder->setParameter('spirit_web_twig.icons.paths', []);
         $this->builder->setParameter('spirit_web_twig.icons.alias', 'test-icons');
         $this->overrideService->process($this->builder);
@@ -108,8 +110,8 @@ class OverrideServiceCompilerPassTest extends TestCase
     public function extendTwigServiceDataProvider(): array
     {
         return [
-            'test should register global' => [false, 1],
-            'test should register lexer' => [true, 2],
+            'test should register global' => [false, 2],
+            'test should register lexer' => [true, 3],
         ];
     }
 }

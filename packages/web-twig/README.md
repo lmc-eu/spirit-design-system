@@ -52,6 +52,7 @@ spirit_web_twig:
   paths_alias: 'jobs-ui' # default is 'spirit'
   html_syntax_lexer: false # default is true
   spirit_css_class_prefix: 'jobs' # default is null
+  spirit_css_variable_prefix: 'jobs-' # default is 'spirit-'
   icons: # optional settings for svg assets
     paths:
       - '%kernel.project_dir%/assets/icons' # define paths for svg icons set
