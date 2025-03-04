@@ -4,14 +4,25 @@
 {%- set _emphasis = props.emphasis | default('bold') -%}
 {%- set _size = props.size | default('medium') -%}
 {%- set _textColor = props.textColor | default(null) -%}
+{%- set _textAlignment = props.textAlignment | default(null) -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'typography-heading-' ~ _size ~ '-' ~ _emphasis -%}
 {%- set _rootTextColorClassName = _textColor ? _spiritClassPrefix ~ 'text-' ~ _textColor : null -%}
+{%- set _rootTextAlignmentClassNames = [] -%}
+
+{%- if _textAlignment is iterable -%}
+    {%- for breakpoint, breakpointValue in _textAlignment -%}
+        {%- set infix = (breakpoint == 'mobile') ? '' : breakpoint ~ '-' -%}
+        {%- set _rootTextAlignmentClassNames = _rootTextAlignmentClassNames | merge([_spiritClassPrefix ~ 'text-' ~ infix ~ breakpointValue]) -%}
+    {%- endfor -%}
+{%- elseif _textAlignment -%}
+    {%- set _rootTextAlignmentClassNames = [_spiritClassPrefix ~ 'text-' ~ _textAlignment] -%}
+{%- endif -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
-{%- set _classNames = [ _rootClassName, _rootTextColorClassName, _styleProps.className ] -%}
+{%- set _classNames = [ _rootClassName, _rootTextColorClassName, _styleProps.className ] | merge(_rootTextAlignmentClassNames) -%}
 {%- set _allowedAttributes = [ 'translate' ] -%}
 
 <{{ _elementType }} {{ mainProps(props, _allowedAttributes) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }}>

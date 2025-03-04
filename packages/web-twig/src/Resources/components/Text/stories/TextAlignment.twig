@@ -1,0 +1,5 @@
+{% set textAlignment = [ 'left', 'center', 'right' ] %}
+
+{% for textAlignment in textAlignment %}
+    <Text textAlignment={{ textAlignment }}>Text {{ textAlignment }}</Text>
+{% endfor %}

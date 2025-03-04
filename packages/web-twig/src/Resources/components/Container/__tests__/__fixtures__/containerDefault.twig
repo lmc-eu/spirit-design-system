@@ -6,5 +6,10 @@
 <!-- Render with isFluid prop -->
 <Container isFluid>Content</Container>
 
+<!-- Render with textAlignment prop -->
+<Container textAlignment="center">Content</Container>
+<Container textAlignment="right">Content</Container>
+<Container textAlignment="{{ { mobile: 'left', tablet: 'center', desktop: 'right'} }}">Content</Container>
+
 <!-- Render with all props -->
 <Container isFluid size="small">Content</Container>
