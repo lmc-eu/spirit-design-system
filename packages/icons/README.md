@@ -24,7 +24,7 @@ npm install --save @lmc-eu/spirit-icons
 
 Icons with the suffix `-colored` come with predefined colors, so no additional coloring is needed.
 In contrast, icons without this suffix inherit the color from the `currentColor` CSS property of their parent element
-or themself.
+or themselves.
 
 ## Usage
 
@@ -71,15 +71,8 @@ Alternatively you can use an `icons` object which consists of an icon name and S
 ```jsx
 import icons from '@lmc-eu/spirit-icons/icons';
 
-export const Icon = ({ name, , size }) => {
-  return (
-    <svg
-      fill="currentColor"
-      width={size}
-      height={size}
-      dangerouslySetInnerHTML={{ __html: icons[name] }}
-    />
-  );
+export const Icon = ({ name, size }) => {
+  return <svg fill="currentColor" width={size} height={size} dangerouslySetInnerHTML={{ __html: icons[name] }} />;
 };
 ```
 
