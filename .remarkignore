@@ -4,6 +4,7 @@ example-changelog.md
 vendor
 dist
 build
+public
 .github
 
 # Fix case of the files
