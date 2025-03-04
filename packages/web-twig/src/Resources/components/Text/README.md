@@ -47,6 +47,15 @@ is inherited from the parent element.
 <Text textColor="secondary">Secondary text</Heading>
 ```
 
+## Text Alignment
+
+Use the `textAlignment` prop to set the text alignment.
+
+```twig
+<Text textAlignment="center">Centered text</Text>
+<Text textAlignment="right">Right aligned text</Text>
+```
+
 ## Full Example
 
 ```twig
@@ -71,18 +80,20 @@ is inherited from the parent element.
 
 ## API
 
-| Name          | Type                                        | Default   | Required | Description                                                    |
-| ------------- | ------------------------------------------- | --------- | -------- | -------------------------------------------------------------- |
-| `elementType` | `string`                                    | `p`       | ✕        | HTML tag to render                                             |
-| `emphasis`    | [Emphasis dictionary][dictionary-emphasis]  | `regular` | ✕        | Emphasis of the text                                           |
-| `size`        | [Size Extended dictionary][dictionary-size] | `medium`  | ✕        | Size of the text                                               |
-| `textColor`   | [Text Color dictionary][dictionary-color]   | —         | ✕        | Color of the text                                              |
-| `translate`   | \[`yes` \| `no` \| `''`]                    | `null`    | ✕        | Set to `no` to disable machine translation of the text content |
+| Name            | Type                                          | Default   | Required | Description                                                    |
+| --------------- | --------------------------------------------- | --------- | -------- | -------------------------------------------------------------- |
+| `elementType`   | `string`                                      | `p`       | ✕        | HTML tag to render                                             |
+| `emphasis`      | [Emphasis dictionary][dictionary-emphasis]    | `regular` | ✕        | Emphasis of the text                                           |
+| `size`          | [Size Extended dictionary][dictionary-size]   | `medium`  | ✕        | Size of the text                                               |
+| `textAlignment` | [AlignmentX dictionary][dictionary-alignment] | `left`    | ✕        | Text alignment                                                 |
+| `textColor`     | [Text Color dictionary][dictionary-color]     | —         | ✕        | Color of the text                                              |
+| `translate`     | \[`yes` \| `no` \| `''`]                      | `null`    | ✕        | Set to `no` to disable machine translation of the text content |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
+[dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#alignment
 [dictionary-color]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#color
 [dictionary-emphasis]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#emphasis
 [dictionary-size]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#size
