@@ -1,5 +1,5 @@
 import { CSSProperties } from 'react';
-import { cssVariablePrefix } from '@lmc-eu/spirit-design-tokens/src/js';
+import { cssVariablePrefix } from '@lmc-eu/spirit-design-tokens';
 import { IconBoxSize, IconProps } from '../../types';
 import { useClassNamePrefix } from '../../hooks';
 
