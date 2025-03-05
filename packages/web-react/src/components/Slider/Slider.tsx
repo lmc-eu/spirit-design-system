@@ -14,8 +14,8 @@ const defaultProps = {
 };
 
 /* We need an exception for components exported with forwardRef */
-/* eslint no-underscore-dangle: ['error', { allow: ['_UnstableSlider'] }] */
-const _UnstableSlider = (props: SpiritSliderProps, ref: ForwardedRef<HTMLInputElement>) => {
+/* eslint no-underscore-dangle: ['error', { allow: ['_Slider'] }] */
+const _Slider = (props: SpiritSliderProps, ref: ForwardedRef<HTMLInputElement>) => {
   const propsWithDefaults = { ...defaultProps, ...props };
   const {
     'aria-describedby': ariaDescribedBy,
@@ -95,8 +95,8 @@ const _UnstableSlider = (props: SpiritSliderProps, ref: ForwardedRef<HTMLInputEl
   );
 };
 
-const UNSTABLE_Slider = forwardRef<HTMLInputElement, SpiritSliderProps>(_UnstableSlider);
+const Slider = forwardRef<HTMLInputElement, SpiritSliderProps>(_Slider);
 
-UNSTABLE_Slider.spiritComponent = 'UNSTABLE_Slider';
+Slider.spiritComponent = 'Slider';
 
-export default UNSTABLE_Slider;
+export default Slider;

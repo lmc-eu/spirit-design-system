@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useState } from 'react';
 import { DEMO_SLIDER_DEFAULT_VALUE, DEMO_SLIDER_STEPS_VALUE } from '../constants';
-import UNSTABLE_Slider from '../UNSTABLE_Slider';
+import Slider from '../Slider';
 
 const SliderDefault = () => {
   const [defaultValue, setDefaultValue] = useState(DEMO_SLIDER_DEFAULT_VALUE);
@@ -16,15 +16,8 @@ const SliderDefault = () => {
 
   return (
     <>
-      <UNSTABLE_Slider id="slider-default" label="Slider" value={defaultValue} onChange={handleDefaultChange} />
-      <UNSTABLE_Slider
-        id="slider-steps"
-        label="Custom steps"
-        min={3}
-        max={12}
-        value={stepsValue}
-        onChange={handleStepsChange}
-      />
+      <Slider id="slider-default" label="Slider" value={defaultValue} onChange={handleDefaultChange} />
+      <Slider id="slider-steps" label="Custom steps" min={3} max={12} value={stepsValue} onChange={handleStepsChange} />
     </>
   );
 };

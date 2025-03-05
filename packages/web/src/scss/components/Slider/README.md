@@ -1,7 +1,4 @@
-# UNSTABLE Slider
-
-> ⚠️ This component is UNSTABLE. It may significantly change at any point in the future.
-> Please use it with caution.
+# Slider
 
 Slider is a form control that allows users to select a value from a range of values.
 
@@ -12,10 +9,10 @@ a lot of browser-specific styles and a bit of JavaScript to update the slider's 
 is required by Webkit-based browsers such as Chrome or Safari).
 
 ```html
-<div class="UNSTABLE_Slider">
-  <label for="slider-default" class="UNSTABLE_Slider__label">Slider</label>
+<div class="Slider">
+  <label for="slider-default" class="Slider__label">Slider</label>
   <input
-    class="UNSTABLE_Slider__input"
+    class="Slider__input"
     id="slider-default"
     style="--slider-position: 30%"
     type="range"
@@ -33,10 +30,10 @@ You can specify the Slider steps and value range by setting the `min`, `max`, an
 be updated when the slider value changes. See the [Slider Position](#slider-position) section for more details.
 
 ```html
-<div class="UNSTABLE_Slider">
-  <label for="slider-steps" class="UNSTABLE_Slider__label">Slider</label>
+<div class="Slider">
+  <label for="slider-steps" class="Slider__label">Slider</label>
   <input
-    class="UNSTABLE_Slider__input"
+    class="Slider__input"
     id="slider-steps"
     style="--slider-position: calc(100% * (9 - 3) / (12 - 3))"
     type="range"
@@ -68,10 +65,10 @@ position = 100 * (value - min) / (max - min)
 ## Hidden Label
 
 ```html
-<div class="UNSTABLE_Slider">
-  <label for="slider-hidden-label" class="UNSTABLE_Slider__label UNSTABLE_Slider__label--hidden">Slider</label>
+<div class="Slider">
+  <label for="slider-hidden-label" class="Slider__label Slider__label--hidden">Slider</label>
   <input
-    class="UNSTABLE_Slider__input"
+    class="Slider__input"
     id="slider-hidden-label"
     style="--slider-position: 30%"
     type="range"
@@ -84,10 +81,10 @@ position = 100 * (value - min) / (max - min)
 ## Fluid Width
 
 ```html
-<div class="UNSTABLE_Slider UNSTABLE_Slider--fluid">
-  <label for="slider-fluid" class="UNSTABLE_Slider__label">Slider</label>
+<div class="Slider Slider--fluid">
+  <label for="slider-fluid" class="Slider__label">Slider</label>
   <input
-    class="UNSTABLE_Slider__input"
+    class="Slider__input"
     id="slider-fluid"
     style="--slider-position: 30%"
     type="range"
@@ -100,10 +97,10 @@ position = 100 * (value - min) / (max - min)
 ## Helper Text
 
 ```html
-<div class="UNSTABLE_Slider">
-  <label for="slider-helper-text" class="UNSTABLE_Slider__label">Slider</label>
+<div class="Slider">
+  <label for="slider-helper-text" class="Slider__label">Slider</label>
   <input
-    class="UNSTABLE_Slider__input"
+    class="Slider__input"
     id="slider-helper-text"
     aria-describedby="slider-helper-text-helper-text"
     style="--slider-position: 30%"
@@ -111,25 +108,25 @@ position = 100 * (value - min) / (max - min)
     value="30"
     oninput="this.style.setProperty('--slider-position', `${Math.round((100 * this.value) / 100)}%`);"
   />
-  <div id="slider-helper-text-helper-text" class="UNSTABLE_Slider__helperText">Helper text</div>
+  <div id="slider-helper-text-helper-text" class="Slider__helperText">Helper text</div>
 </div>
 ```
 
 ## Validation States
 
 Validation states can be presented either by adding a CSS modifier class
-(`UNSTABLE_Slider--success`, `UNSTABLE_Slider--warning`, `UNSTABLE_Slider--danger`), or by adding
+(`Slider--success`, `Slider--warning`, `Slider--danger`), or by adding
 a JS interaction class when controlled by JavaScript (`has-success`,
 `has-warning`, `has-danger`). See Validation state [dictionary][dictionary-validation].
 
-- To render validation text as a list, use `<ul>` element inside of `.UNSTABLE_Slider__validationText`.
-- To render validation text with an icon, add `<svg>` icon inside of `.UNSTABLE_Slider__validationText`.
+- To render validation text as a list, use `<ul>` element inside of `.Slider__validationText`.
+- To render validation text with an icon, add `<svg>` icon inside of `.Slider__validationText`.
 
 ```html
-<div class="UNSTABLE_Slider UNSTABLE_Slider--success">
-  <label for="slider-success" class="UNSTABLE_Slider__label">Slider</label>
+<div class="Slider Slider--success">
+  <label for="slider-success" class="Slider__label">Slider</label>
   <input
-    class="UNSTABLE_Slider__input"
+    class="Slider__input"
     id="slider-success"
     style="--slider-position: 30%"
     type="range"
@@ -138,10 +135,10 @@ a JS interaction class when controlled by JavaScript (`has-success`,
   />
 </div>
 
-<div class="UNSTABLE_Slider UNSTABLE_Slider--warning">
-  <label for="slider-warning" class="UNSTABLE_Slider__label">Slider</label>
+<div class="Slider Slider--warning">
+  <label for="slider-warning" class="Slider__label">Slider</label>
   <input
-    class="UNSTABLE_Slider__input"
+    class="Slider__input"
     id="slider-warning"
     aria-describedby="slider-warning-validation-text"
     style="--slider-position: 30%"
@@ -149,13 +146,13 @@ a JS interaction class when controlled by JavaScript (`has-success`,
     value="30"
     oninput="this.style.setProperty('--slider-position', `${Math.round((100 * this.value) / 100)}%`);"
   />
-  <div id="slider-warning-validation-text" class="UNSTABLE_Slider__validationText">Validation text</div>
+  <div id="slider-warning-validation-text" class="Slider__validationText">Validation text</div>
 </div>
 
-<div class="UNSTABLE_Slider UNSTABLE_Slider--danger">
-  <label for="slider-danger" class="UNSTABLE_Slider__label">Slider</label>
+<div class="Slider Slider--danger">
+  <label for="slider-danger" class="Slider__label">Slider</label>
   <input
-    class="UNSTABLE_Slider__input"
+    class="Slider__input"
     id="slider-danger"
     aria-describedby="slider-danger-validation-text"
     style="--slider-position: 30%"
@@ -163,7 +160,7 @@ a JS interaction class when controlled by JavaScript (`has-success`,
     value="30"
     oninput="this.style.setProperty('--slider-position', `${Math.round((100 * this.value) / 100)}%`);"
   />
-  <div id="slider-danger-validation-text" class="UNSTABLE_Slider__validationText">
+  <div id="slider-danger-validation-text" class="Slider__validationText">
     <ul>
       <li>First validation text</li>
       <li>Second validation text</li>
@@ -171,10 +168,10 @@ a JS interaction class when controlled by JavaScript (`has-success`,
   </div>
 </div>
 
-<div class="UNSTABLE_Slider UNSTABLE_Slider--warning">
-  <label for="slider-warning" class="UNSTABLE_Slider__label">Slider</label>
+<div class="Slider Slider--warning">
+  <label for="slider-warning" class="Slider__label">Slider</label>
   <input
-    class="UNSTABLE_Slider__input"
+    class="Slider__input"
     id="slider-warning"
     aria-describedby="slider-warning-validation-text"
     style="--slider-position: 30%"
@@ -182,7 +179,7 @@ a JS interaction class when controlled by JavaScript (`has-success`,
     value="30"
     oninput="this.style.setProperty('--slider-position', `${Math.round((100 * this.value) / 100)}%`);"
   />
-  <div id="slider-warning-validation-text" class="UNSTABLE_Slider__validationText">
+  <div id="slider-warning-validation-text" class="Slider__validationText">
     <svg width="20" height="20" aria-hidden="true">
       <use xlink:href="/assets/icons/svg/sprite.svg#warning" />
     </svg>
@@ -203,10 +200,10 @@ attribute. This way your JS remains disconnected from CSS that may or may not be
 components mix CSS with JS by design and handle prefixes their own way.**
 
 ```html
-<div class="UNSTABLE_Slider UNSTABLE_Slider--danger">
-  <label for="slider-danger" class="UNSTABLE_Slider__label">Slider</label>
+<div class="Slider Slider--danger">
+  <label for="slider-danger" class="Slider__label">Slider</label>
   <input
-    class="UNSTABLE_Slider__input"
+    class="Slider__input"
     id="slider-danger"
     aria-describedby="slider-danger-validation-text"
     style="--slider-position: 30%"
@@ -221,14 +218,14 @@ components mix CSS with JS by design and handle prefixes their own way.**
 ## Disabled State
 
 On top of adding the `disabled` attribute to the input, disabled Slider needs to
-be marked by adding `UNSTABLE_Slider--disabled` modifier class, or with `is-disabled`
+be marked by adding `Slider--disabled` modifier class, or with `is-disabled`
 JS interaction class when controlled by JavaScript:
 
 ```html
-<div class="UNSTABLE_Slider UNSTABLE_Slider--disabled">
-  <label for="slider-disabled" class="UNSTABLE_Slider__label">Slider</label>
+<div class="Slider Slider--disabled">
+  <label for="slider-disabled" class="Slider__label">Slider</label>
   <input
-    class="UNSTABLE_Slider__input"
+    class="Slider__input"
     id="slider-disabled"
     style="--slider-position: 30%"
     type="range"

@@ -18,7 +18,7 @@ export interface SliderStyles {
 export function useSliderStyleProps(props: UseSliderStyleProps): SliderStyles {
   const { isDisabled, isFluid, isLabelHidden, validationState, ...restProps } = props;
 
-  const sliderClass = useClassNamePrefix('UNSTABLE_Slider');
+  const sliderClass = useClassNamePrefix('Slider');
   const rootClass = classNames(sliderClass);
   const isDisabledClass = `${sliderClass}--disabled`;
   const isFluidClass = `${sliderClass}--fluid`;

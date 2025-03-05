@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useState } from 'react';
 import { ValidationStates } from '../../../constants';
 import { DEMO_SLIDER_DEFAULT_VALUE } from '../constants';
-import UNSTABLE_Slider from '../UNSTABLE_Slider';
+import Slider from '../Slider';
 
 const SliderValidationWithIcon = () => {
   const states = Object.values(ValidationStates);
@@ -14,7 +14,7 @@ const SliderValidationWithIcon = () => {
   return (
     <>
       {states.map((state) => (
-        <UNSTABLE_Slider
+        <Slider
           id={`select-${state}-validation-icon`}
           label="Slider"
           value={valueDanger}
