@@ -10,7 +10,7 @@ permissions:
 jobs:
   process_pr_meta:
     name: Process PR meta
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-24.04-arm
     steps:
       - name: Assign to author
         uses: toshimaru/auto-author-assign@16f0022cf3d7970c106d8d1105f75a1165edb516 # v2.1.1
