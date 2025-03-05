@@ -2,8 +2,8 @@ import { renderHook } from '@testing-library/react';
 import { useIconStyleProps } from '../useIconStyleProps';
 import { IconProps } from '../../../types';
 
-describe('useIconBoxSize', () => {
-  it('should return default', () => {
+describe('useIconStyleProps', () => {
+  it('should return responsive sizes', () => {
     const props = { boxSize: { mobile: 20, tablet: 40, desktop: 60 }, name: 'add' } as IconProps;
     const { result } = renderHook(() => useIconStyleProps(props));
 
@@ -23,7 +23,7 @@ describe('useIconBoxSize', () => {
     });
   });
 
-  it('should return empty', () => {
+  it('should return empty when boxSize is a number', () => {
     const props = { boxSize: 20, name: 'add' } as IconProps;
     const { result } = renderHook(() => useIconStyleProps(props));
 
