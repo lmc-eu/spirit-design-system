@@ -1,3 +1,5 @@
+import type { SpiritElement } from '../types';
+
 const elementMap = new Map();
 
 export default {

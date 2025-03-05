@@ -4,6 +4,7 @@
 import BaseComponent from './BaseComponent';
 import { EventHandler, SelectorEngine } from './dom';
 import { SpiritConfig, debounce, enableToggleAutoloader } from './utils';
+import { SpiritElement } from './types';
 
 export const Alignment = {
   LEFT: 'left',

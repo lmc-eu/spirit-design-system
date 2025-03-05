@@ -3,6 +3,7 @@ import BaseComponent from './BaseComponent';
 import { warning } from './common/utilities';
 import EventHandler from './dom/EventHandler';
 import { ScrollControl, SpiritConfig, enableDismissTrigger, enableToggleTrigger } from './utils';
+import { SpiritElement } from './types';
 
 const NAME = 'offcanvas';
 const DATA_KEY = 'offcanvas';

@@ -1,5 +1,6 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-import * as CSS from 'csstype';
+// Problem with the Encore build
+// @ts-ignore-- TS2307: Cannot find module 'csstype' or its corresponding type declarations.
+import type * as CSS from 'csstype';
 import EventHandler from '../dom/EventHandler';
 
 const triggerTransitionEnd = (element: HTMLElement) => {
@@ -25,8 +26,11 @@ const getTransitionDurationFromElement = (element: HTMLElement) => {
   return (Number.parseFloat(transitionDuration) + Number.parseFloat(transitionDelay)) * 1000;
 };
 
-const execute = (possibleCallback: (...args: unknown[]) => void, args = [], defaultValue = possibleCallback) =>
-  typeof possibleCallback === 'function' ? possibleCallback(...args) : defaultValue;
+const execute = (
+  possibleCallback: (...args: unknown[]) => void,
+  args: unknown[] = [],
+  defaultValue = possibleCallback,
+) => (typeof possibleCallback === 'function' ? possibleCallback(...args) : defaultValue);
 
 const executeAfterTransition = (
   transitionElement: HTMLElement,

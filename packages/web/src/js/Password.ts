@@ -1,6 +1,7 @@
 import BaseComponent from './BaseComponent';
 import SelectorEngine from './dom/SelectorEngine';
 import { enableToggleTrigger, SpiritConfig } from './utils';
+import { SpiritElement } from './types';
 
 const NAME = 'password';
 const PASSWORD_ARIA_PRESSED = 'aria-pressed';

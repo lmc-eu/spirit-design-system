@@ -425,6 +425,7 @@ class FileUploader extends BaseComponent {
 
   onChange(event: Event & { target: HTMLInputElement }, meta?: FileMetadata) {
     const { target } = event;
+    // @ts-ignore -- TS2461: Type 'FileList' is not an array type.
     const filesArray = target.files ? [...target.files] : [];
 
     let counter = 0;

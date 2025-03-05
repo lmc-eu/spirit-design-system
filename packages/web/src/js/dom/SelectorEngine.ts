@@ -1,3 +1,5 @@
+import { SpiritElement } from '../types';
+
 const SelectorEngine = {
   findAll(selector?: string | null, element: SpiritElement = document.documentElement): HTMLElement[] {
     return [].concat(...Element.prototype.querySelectorAll.call(element, selector));

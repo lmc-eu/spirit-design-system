@@ -1,5 +1,6 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-import * as CSS from 'csstype';
+// Problem with the Encore build
+// @ts-ignore -- TS2307: Cannot find module 'csstype' or its corresponding type declarations.
+import type * as CSS from 'csstype';
 import BaseComponent from './BaseComponent';
 import { warning } from './common/utilities';
 import {
@@ -19,6 +20,7 @@ import {
 } from './constants';
 import { EventHandler, SelectorEngine } from './dom';
 import { enableDismissTrigger, enableToggleTrigger, executeAfterTransition, SpiritConfig } from './utils';
+import { SpiritElement } from './types';
 
 const NAME = 'toast';
 const DATA_KEY = `${NAME}`;
