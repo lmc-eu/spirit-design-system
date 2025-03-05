@@ -10,27 +10,24 @@
 
 ## Responsive Size
 
-Use CSS custom properties to define the `width` and `height` of the icon.
+Use CSS custom properties to define the `size` of the icon.
 
-- `--spirit-icon-width: number{px};`
-- `--spirit-icon-width-tablet: number{px}`
-- `--spirit-icon-width-desktop: number{px}`
-- `--spirit-icon-height: number{px};`
-- `--spirit-icon-height-tablet: number{px}`
-- `--spirit-icon-height-desktop: number{px}`
+- `--spirit-icon-size: number{px};`
+- `--spirit-icon-size-tablet: number{px}`
+- `--spirit-icon-size-desktop: number{px}`
+
+⚠️ To ensure responsive sizes work correctly, the icon must have the class `.Icon`.
 
 ```html
 <svg
+  class="Icon"
   width="24"
   height="24"
   style="
-      --spirit-icon-height: 20px;
-      --spirit-icon-height-tablet: 30px;
-      --spirit-icon-height-desktop: 40px;
-      --spirit-icon-width: 20px;
-      --spirit-icon-width-tablet: 30px;
-      --spirit-icon-width-desktop: 40px;
-      "
+    --spirit-icon-size: 20px;
+    --spirit-icon-size-tablet: 30px;
+    --spirit-icon-size-desktop: 40px;
+        "
 >
   <use xlink:href="/assets/icons/svg/sprite.svg#info" />
 </svg>
