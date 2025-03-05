@@ -1,13 +1,17 @@
 'use client';
 
 import React, { ForwardedRef, forwardRef } from 'react';
-import { useIcon, useStyleProps } from '../../hooks';
+import { DEFAULT_BOX_SIZE } from './constants';
 import { IconProps } from '../../types';
 import { htmlReactParser } from '../../utils/htmlReactParser';
+import { mergeStyleProps } from '../../utils';
+import { useIcon, useStyleProps } from '../../hooks';
+import { useIconBoxSize } from './useIconBoxSize';
+import { useIconStyleProps } from './useIconStyleProps';
 
 const defaultProps = {
   ariaHidden: true,
-  boxSize: 24,
+  boxSize: DEFAULT_BOX_SIZE,
 };
 
 /* We need an exception for components exported with forwardRef */
@@ -16,7 +20,14 @@ const _Icon = (props: IconProps, ref: ForwardedRef<SVGSVGElement>) => {
   const propsWithDefaults = { ...defaultProps, ...props };
   const { boxSize, name, title, ariaHidden, ...restProps } = propsWithDefaults;
   let icon = useIcon(name);
+  const iconSize = useIconBoxSize(boxSize);
   const { styleProps, props: otherProps } = useStyleProps(restProps);
+  const { classProps, iconStyleProps } = useIconStyleProps(propsWithDefaults);
+  const mergedStyleProps = mergeStyleProps('svg', {
+    classProps,
+    iconStyleProps,
+    styleProps,
+  });
 
   if (title) {
     icon = `<title>${title}</title>${icon}`;
@@ -28,12 +39,11 @@ const _Icon = (props: IconProps, ref: ForwardedRef<SVGSVGElement>) => {
     <svg
       viewBox="0 0 24 24"
       fill="none"
-      width={boxSize}
-      height={boxSize}
+      width={iconSize}
+      height={iconSize}
       aria-hidden={ariaHidden}
       {...otherProps}
-      {...styleProps}
-      className={styleProps.className}
+      {...mergedStyleProps}
       ref={ref}
     >
       {htmlReactParser(icon)}

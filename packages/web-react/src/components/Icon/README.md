@@ -48,13 +48,25 @@ import icons from '@lmc-eu/spirit-icons/icons';
 </IconsProvider>;
 ```
 
+### Full Example
+
+```jsx
+import { Icon, IconsProvider } from '@lmc-eu/spirit-web-react';
+import icons from '@lmc-eu/spirit-icons/icons';
+
+<IconsProvider value={icons}>
+  <Icon name="warning" boxSize={{ mobile: 20, tablet: 30, desktop: 40 }} title="Icon Title" />
+  Hey! Pay attention!
+</IconsProvider>;
+```
+
 ## 🧩 API
 
-| Name      | Type     | Default | Required | Description       |
-| --------- | -------- | ------- | -------- | ----------------- |
-| `boxSize` | `number` | 24      | ✕        | Size of the icon  |
-| `name`    | `string` | —       | ✓        | Name of the icon  |
-| `title`   | `string` | —       | ✕        | Title of the icon |
+| Name      | Type                      | Default | Required | Description                                                                                           |
+| --------- | ------------------------- | ------- | -------- | ----------------------------------------------------------------------------------------------------- |
+| `boxSize` | \[ `number` \| `object` ] | 24      | ✕        | Size of the icon, use object to set responsive values, e.g. `{ mobile: 20, tablet: 30, desktop: 40 }` |
+| `name`    | `string`                  | —       | ✓        | Name of the icon                                                                                      |
+| `title`   | `string`                  | —       | ✕        | Title of the icon                                                                                     |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

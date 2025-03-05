@@ -1,0 +1,16 @@
+{% extends 'layout/default.html.twig' %}
+
+{% block title %}Icon{% endblock %}
+{% block parentPageName %}Components{% endblock %}
+
+{% block content %}
+
+    <DocsSection title="Default">
+        {% include '@components/Icon/stories/IconDefault.twig' %}
+    </DocsSection>
+
+    <DocsSection title="Responsive Size">
+        {% include '@components/Icon/stories/IconResponsiveSize.twig' %}
+    </DocsSection>
+
+{% endblock %}
