@@ -2,7 +2,7 @@
 @use 'theme' as theme;
 @use '../../tools/breakpoint';
 
-.UNSTABLE_EmptyState {
+.EmptyState {
     display: grid;
     justify-content: center;
     padding: theme.$root-padding;
@@ -13,7 +13,7 @@
     }
 }
 
-.UNSTABLE_EmptyState__section {
+.EmptyState__section {
     display: grid;
     width: 100%;
     max-width: 400px;
