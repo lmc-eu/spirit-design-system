@@ -1,37 +1,34 @@
-# UNSTABLE EmptyState
-
-⚠️ This component is UNSTABLE. It may significantly change at any point in the future.
-Please use it with caution.
+# EmptyState
 
 EmptyState component should be included at the error pages or empty state pages as the carrier of an information and links to elsewhere.
 
 EmptyState component is a composition of the following components:
 
-- [UNSTABLE_EmptyState](#unstable-emptystate)
-  - [UNSTABLE_EmptyStateSection](#unstable-emptystatesection)
+- [EmptyState](#unstable-emptystate)
+  - [EmptyStateSection](#unstable-emptystatesection)
 
-## UNSTABLE EmptyState
+## EmptyState
 
-The `UNSTABLE_EmptyState` component is a main container responsible for positioning the [UNSTABLE_EmptyStateSection](#unstable-emptystatesection) components or content.
+The `EmptyState` component is a main container responsible for positioning the [EmptyStateSection](#unstable-emptystatesection) components or content.
 
 ```twig
-<UNSTABLE_EmptyState>
-  <!-- UNSTABLE_EmptyStateSection components or content go here -->
-</UNSTABLE_EmptyState>
+<EmptyState>
+  <!-- EmptyStateSection components or content go here -->
+</EmptyState>
 ```
 
 ### API
 
 This component is based on the [Stack][stack] component and accepts all its properties. For more information, see the [Stack component API][stack-api].
 
-## UNSTABLE EmptyStateSection
+## EmptyStateSection
 
-The `UNSTABLE_EmptyStateSection` component is a container for the content of each section.
+The `EmptyStateSection` component is a container for the content of each section.
 
 ```twig
-<UNSTABLE_EmptyStateSection>
+<EmptyStateSection>
   <!-- Content goes here -->
-</UNSTABLE_EmptyStateSection>
+</EmptyStateSection>
 ```
 
 ### API
@@ -41,24 +38,24 @@ The component is based on the [Stack][stack] component and accepts all its prope
 ## Full Example
 
 ```twig
-<UNSTABLE_EmptyState spacing="space-900">
-  <UNSTABLE_EmptyStateSection>
+<EmptyState spacing="space-900">
+  <EmptyStateSection>
     <Icon name="search" isSymbol />
-  </UNSTABLE_EmptyStateSection>
-  <UNSTABLE_EmptyStateSection>
+  </EmptyStateSection>
+  <EmptyStateSection>
     <Heading>Heading</Heading>
     <Text>Description</Text>
-  </UNSTABLE_EmptyStateSection>
-  <UNSTABLE_EmptyStateSection>
+  </EmptyStateSection>
+  <EmptyStateSection>
     <div class="Flex Flex--noWrap Flex--alignmentXStretch Flex--tablet--alignmentXCenter Flex--alignmentYStretch Flex--vertical Flex--tablet--horizontalReversed">
       <ButtonLink href="#" color="primary">Primary Action</ButtonLink>
       <ButtonLink href="#" color="secondary">Secondary Action</ButtonLink>
     </div>
-  </UNSTABLE_EmptyStateSection>
-  <UNSTABLE_EmptyStateSection>
+  </EmptyStateSection>
+  <EmptyStateSection>
     <Link href="#">Link to something</Link>
-  </UNSTABLE_EmptyStateSection>
-</UNSTABLE_EmptyState>
+  </EmptyStateSection>
+</EmptyState>
 
 ```
 
