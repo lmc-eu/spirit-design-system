@@ -1,4 +1,4 @@
-# UNSTABLE Toggle
+# Toggle
 
 Toggle is a form control that allows users to switch between two states.
 

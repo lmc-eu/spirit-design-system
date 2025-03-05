@@ -9,6 +9,7 @@ import { useValidationTextRole } from '../Field/useValidationTextRole';
 import { useToggleStyleProps } from './useToggleStyleProps';
 
 /* We need an exception for components exported with forwardRef */
+/* eslint no-underscore-dangle: ['error', { allow: ['_Toggle'] }] */
 /* eslint-disable-next-line camelcase */
 const _Toggle = (props: SpiritToggleProps, ref: ForwardedRef<HTMLInputElement>) => {
   const { classProps, props: modifiedProps } = useToggleStyleProps(props);
