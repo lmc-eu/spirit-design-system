@@ -1,6 +1,7 @@
 import { Toast } from '@lmc-eu/spirit-web/src/js/index.esm';
 
-const addDynamicToast = (event, containerId) => {
+const addDynamicToast = (event: Event, containerId: string) => {
+  // @ts-expect-error -- TS2339: Property 'closest' does not exist on type 'EventTarget'.
   const formElement = event.target.closest('form');
   const config = {
     autoCloseInterval: formElement.querySelector('#toast-auto-close-interval').value,
@@ -24,7 +25,7 @@ const addDynamicToast = (event, containerId) => {
   console.log('Created dynamic toast with config:', config);
 };
 
-export const clearQueue = (event, containerId) => {
+export const clearQueue = (event: Event, containerId: string) => {
   const container = document.getElementById(containerId);
   const children = container.querySelectorAll('.ToastBar');
 
