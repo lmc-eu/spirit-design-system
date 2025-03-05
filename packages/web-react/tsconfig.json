@@ -3,10 +3,6 @@
   "compilerOptions": {
     "rootDir": ".",
     "baseUrl": ".",
-    "paths": {
-      "@local/tests": ["./tests/index.ts"],
-      "@local/tests/*": ["./tests/*"]
-    },
 
     // Specify what JSX code is generated.
     // @see: https://www.typescriptlang.org/tsconfig/#jsx
