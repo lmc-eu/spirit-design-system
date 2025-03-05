@@ -64,3 +64,32 @@ npx @lmc-eu/spirit-codemods -p <path> -t v4/web-react/unstable-avatar-component-
 - <UNSTABLE_Avatar … />
 + <Avatar … />
 ```
+
+### `v4/web-react/unstable-emptystate-component-name` — UNSTABLE_EmptyState to EmptyState Component Name
+
+This codemod updates the `UNSTABLE_EmptyState` component name to `EmptyState` and `UNSTABLE_EmptyStateSection` subcomponent name to `EmptyStateSection`.
+Use this codemod if you were already using the `UNSTABLE_EmptyState` and `UNSTABLE_EmptyStateSection` component.
+
+#### Usage
+
+```sh
+npx @lmc-eu/spirit-codemods -p <path> -t v4/web-react/unstable-emptystate-component-name
+```
+
+#### Example
+
+```diff
+- import { UNSTABLE_EmptyState } from '@lmc-eu/spirit-web-react';
++ import { EmptyState } from '@lmc-eu/spirit-web-react';
+…
+- <UNSTABLE_EmptyState … />
++ <EmptyState … />
+```
+
+```diff
+- import { UNSTABLE_EmptyStateSection } from '@lmc-eu/spirit-web-react';
++ import { EmptyStateSection } from '@lmc-eu/spirit-web-react';
+…
+- <UNSTABLE_EmptyStateSection … />
++ <EmptyStateSection … />
+```
