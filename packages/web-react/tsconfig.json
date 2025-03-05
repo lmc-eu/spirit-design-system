@@ -10,7 +10,11 @@
 
     // Specify what module code is generated.
     // @see: https://www.typescriptlang.org/tsconfig/#module
-    "module": "ESNext"
+    "module": "nodenext",
+
+    // Specify how TypeScript looks up a file from a given module specifier.
+    // @see: https://www.typescriptlang.org/tsconfig/#moduleResolution
+    "moduleResolution": "nodenext"
   },
   "include": ["./src/**/*"],
   "exclude": ["./node_modules", "./dist/**/*"]
