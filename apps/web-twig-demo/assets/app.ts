@@ -16,7 +16,7 @@ const form = document.querySelector('#form-example') as HTMLFormElement;
 const uploader = document.querySelector('#example-composition');
 
 if (form && uploader) {
-  const fileUploader = FileUploader.createInstance(uploader) as FileUploader;
+  const fileUploader = FileUploader.createInstance(uploader, {}) as FileUploader;
 
   form.addEventListener('submit', (event) => {
     event.preventDefault();
