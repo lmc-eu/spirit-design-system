@@ -10,6 +10,7 @@ import {
 import EventHandler from './dom/EventHandler';
 import SelectorEngine from './dom/SelectorEngine';
 import { SpiritConfig, enableToggleAutoloader, executeAfterTransition } from './utils';
+import { SpiritElement } from './types';
 
 const NAME = 'collapse';
 const DATA_KEY = 'collapse';
@@ -75,7 +76,8 @@ class Collapse extends BaseComponent {
         return;
       }
 
-      for (const item of children) {
+      const childrenArray = Array.from(children);
+      for (const item of childrenArray) {
         const itemTrigger = SelectorEngine.findOne(`[${ATTRIBUTE_DATA_TOGGLE}="${NAME}"]`, item);
         const instance = Collapse.getInstance(itemTrigger);
 

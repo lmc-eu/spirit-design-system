@@ -1,3 +1,5 @@
+import { SpiritElement } from '../types';
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const isElement = (object: any): boolean => {
   if (!object || typeof object !== 'object') {

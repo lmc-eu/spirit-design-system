@@ -2,6 +2,7 @@ import BaseComponent from './BaseComponent';
 import EventHandler from './dom/EventHandler';
 import SelectorEngine from './dom/SelectorEngine';
 import { clickOutsideElement, enableToggleTrigger, SpiritConfig } from './utils';
+import { SpiritElement } from './types';
 
 interface DropdownStateProps {
   open: boolean;

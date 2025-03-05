@@ -2,6 +2,7 @@ import * as FloatingUI from '@floating-ui/dom';
 import BaseComponent from './BaseComponent';
 import { EventHandler, SelectorEngine } from './dom';
 import { SpiritConfig, clickOutsideElement, enableDismissTrigger, enableToggleAutoloader } from './utils';
+import { SpiritElement } from './types';
 
 const NAME = 'tooltip';
 const DATA_KEY = 'tooltip';
@@ -319,6 +320,7 @@ class Tooltip extends BaseComponent {
           hasSize,
           floatingArrow({ element: arrow, padding: arrowCornerOffset }), // arrow() should be placed at the end
         ],
+        // @ts-ignore -- TS2339: Property 'x' does not exist on type 'ComputePositionReturn'.
       }).then(({ x, y, middlewareData, placement }) => {
         Object.assign(tooltip.style, {
           top: `${y}px`,
@@ -327,6 +329,7 @@ class Tooltip extends BaseComponent {
 
         const side = placement.split('-')[0];
 
+        // @ts-ignore -- TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ top: string; right: string; bottom: string; left: string; }'.
         const staticSide = {
           top: 'bottom',
           right: 'left',
