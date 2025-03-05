@@ -7,23 +7,26 @@
 {%- set _name = props.name -%}
 {%- set _title = props.title | default(null) -%}
 
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ 'Icon' -%}
+
 {# Miscellaneous #}
-{%- set _iconSize = _boxSize is iterable ? _boxSize.mobile | default('24') : _boxSize -%}
-{%- set _mainProps = props | filter((value, prop) => prop is not same as('ariaHidden')) | merge({
-    'aria-hidden': _ariaHidden ? 'true' : 'false',
-}) -%}
 {%- set _styleProps = useStyleProps(props) -%}
-{%- set _symbolName = _isSymbol ? _name : '' -%}
+{%- set _classNames = [ _rootClassName, _styleProps.className ] | join (' ') -%}
+{%- set _iconSize = _boxSize is iterable ? _boxSize.mobile | default('24') : _boxSize -%}
 {%- set _iconStyleProps = '' -%}
 {%- if _boxSize is iterable -%}
     {%- for breakpoint, breakpointValue in _boxSize -%}
         {%- set suffix = (breakpoint == 'mobile') ? '' : '-' ~ breakpoint -%}
         {%- set _iconStyleProps =
             _iconStyleProps ~
-            '--spirit-icon-width' ~ suffix ~ ': ' ~ breakpointValue ~ 'px;' ~
-            '--spirit-icon-height' ~ suffix ~ ': ' ~ breakpointValue ~ 'px;' -%}
+            '--spirit-icon-size' ~ suffix ~ ': ' ~ breakpointValue ~ 'px;'  -%}
     {%- endfor -%}
 {%- endif -%}
+{%- set _mainProps = props | filter((value, prop) => prop is not same as('ariaHidden')) | merge({
+    'aria-hidden': _ariaHidden ? 'true' : 'false',
+}) -%}
 {%- set _mergedStyleProps =  _iconStyleProps ? _styleProps | merge({style : _iconStyleProps}) : _styleProps -%}
+{%- set _symbolName = _isSymbol ? _name : '' -%}
 
-{{ inlineSvg('@icons-assets/' ~ _name ~ '.svg', { class: _styleProps.className, style: _mergedStyleProps.style, size: _iconSize, title: _title, mainProps: _mainProps }, _isReusable, false, _symbolName) }}
+{{ inlineSvg('@icons-assets/' ~ _name ~ '.svg', { class: _classNames, style: _mergedStyleProps.style, size: _iconSize, title: _title, mainProps: _mainProps }, _isReusable, false, _symbolName) }}

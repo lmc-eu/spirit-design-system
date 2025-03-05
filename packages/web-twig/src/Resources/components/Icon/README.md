@@ -12,7 +12,7 @@ as seen in [inlineSVG docs][inlinesvg-docs].
 ## Advanced Example Usage
 
 ```twig
-<Icon name="warning" title="This is warning!" boxSize={{ { mobile: 20, tablet: 30, desktop: 40 } }} ariaHidden="false" />
+<Icon name="warning" title="This is warning!" boxSize="{{ { mobile: 20, tablet: 30, desktop: 40 } }}" ariaHidden="false" />
 ```
 
 ## Without Lexer
@@ -47,14 +47,14 @@ so you might want to hide it using either wrapping element with `hidden` attribu
 
 ## API
 
-| Name         | Type                                                   | Default | Required | Description                                                                                                             |
-| ------------ | ------------------------------------------------------ | ------- | -------- | ----------------------------------------------------------------------------------------------------------------------- |
-| `ariaHidden` | `bool`                                                 | `true`  | ✕        | If true, icon is hidden from a11y API                                                                                   |
-| `boxSize`    | `number` \| `Partial<Record<BreakpointToken, number>>` | `24`    | ✕        | Size of the icon, use object to set responsive values, e.g. `{ mobile: 20, tablet: 30, desktop: 40 }`                   |
-| `isReusable` | `bool`                                                 | `true`  | ✕        | Enables reusability of SVG icons                                                                                        |
-| `isSymbol`   | `bool`                                                 | `false` | ✕        | If true, the element will be rendered as SVG symbol with the name assigned to the ID attribute, other props are skipped |
-| `name`       | `string`                                               | —       | ✓        | Name of the icon, case sensitive                                                                                        |
-| `title`      | `string`                                               | `null`  | ✕        | Optional title to display on hover                                                                                      |
+| Name         | Type                      | Default | Required | Description                                                                                                             |
+| ------------ | ------------------------- | ------- | -------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `ariaHidden` | `bool`                    | `true`  | ✕        | If true, icon is hidden from a11y API                                                                                   |
+| `boxSize`    | \[ `number` \| `object` ] | `24`    | ✕        | Size of the icon, use object to set responsive values, e.g. `{ mobile: 20, tablet: 30, desktop: 40 }`                   |
+| `isReusable` | `bool`                    | `true`  | ✕        | Enables reusability of SVG icons                                                                                        |
+| `isSymbol`   | `bool`                    | `false` | ✕        | If true, the element will be rendered as SVG symbol with the name assigned to the ID attribute, other props are skipped |
+| `name`       | `string`                  | —       | ✓        | Name of the icon, case sensitive                                                                                        |
+| `title`      | `string`                  | `null`  | ✕        | Optional title to display on hover                                                                                      |
 
 Get the list of `name` options in the [Icon package][icon-package] or your source of icons.
 
