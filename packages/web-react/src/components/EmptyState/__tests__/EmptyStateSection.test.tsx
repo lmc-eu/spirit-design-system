@@ -2,21 +2,21 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
-import UNSTABLE_EmptyState from '../UNSTABLE_EmptyState';
+import EmptyStateSection from '../EmptyStateSection';
 
-describe('UNSTABLE_EmptyState', () => {
-  classNamePrefixProviderTest(UNSTABLE_EmptyState, 'UNSTABLE_EmptyState');
+describe('EmptyStateSection', () => {
+  classNamePrefixProviderTest(EmptyStateSection, 'EmptyState__section');
 
-  stylePropsTest(UNSTABLE_EmptyState);
+  stylePropsTest(EmptyStateSection);
 
-  restPropsTest(UNSTABLE_EmptyState, 'div');
+  restPropsTest(EmptyStateSection, 'div');
 
   beforeEach(() => {
-    render(<UNSTABLE_EmptyState>Content</UNSTABLE_EmptyState>);
+    render(<EmptyStateSection>Content</EmptyStateSection>);
   });
 
   it('should have default classname', () => {
-    expect(screen.getByText('Content')).toHaveClass('UNSTABLE_EmptyState');
+    expect(screen.getByText('Content')).toHaveClass('EmptyState__section');
   });
 
   it('should render children', () => {

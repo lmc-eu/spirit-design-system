@@ -6,7 +6,7 @@ describe('useEmptyStateStyleProps', () => {
     const props = {};
     const { result } = renderHook(() => useEmptyStateStyleProps(props));
 
-    expect(result.current.classProps.root).toBe('UNSTABLE_EmptyState');
-    expect(result.current.classProps.section).toBe('UNSTABLE_EmptyState__section');
+    expect(result.current.classProps.root).toBe('EmptyState');
+    expect(result.current.classProps.section).toBe('EmptyState__section');
   });
 });
