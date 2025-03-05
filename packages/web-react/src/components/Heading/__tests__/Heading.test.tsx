@@ -12,6 +12,7 @@ import {
 import { SizesDictionaryType, SizeExtendedDictionaryType, EmphasisDictionaryType } from '../../../types';
 import Heading from '../Heading';
 import headingSizeDataProvider from './headingSizeDataProvider';
+import { AlignmentX } from '../../../constants';
 
 describe('Heading', () => {
   classNamePrefixProviderTest(() => <Heading elementType="h1" />, 'typography-heading-medium-bold');
@@ -42,5 +43,15 @@ describe('Heading', () => {
     );
 
     expect(screen.getByRole('heading')).toHaveClass(expectedClassName as string);
+  });
+
+  it.each([Object.values(AlignmentX)])('should render additional style props', (alignment) => {
+    render(
+      <Heading elementType="h1" textAlignment={alignment}>
+        Text
+      </Heading>,
+    );
+
+    expect(screen.getByText('Text')).toHaveClass(`text-${alignment}`);
   });
 });

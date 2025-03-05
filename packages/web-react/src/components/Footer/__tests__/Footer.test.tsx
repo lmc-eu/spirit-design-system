@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import React from 'react';
 import '@testing-library/jest-dom';
 import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
-import { BackgroundColors } from '../../../constants';
+import { AlignmentX, BackgroundColors } from '../../../constants';
 import Footer from '../Footer';
 
 describe('Footer', () => {
@@ -32,5 +32,11 @@ describe('Footer', () => {
     );
 
     expect(screen.getByRole('contentinfo')).toHaveClass('pt-1000 pb-1100');
+  });
+
+  it.each([Object.values(AlignmentX)])('should render with text alignment', (textAlignment) => {
+    render(<Footer textAlignment={textAlignment}>Content</Footer>);
+
+    expect(screen.getByRole('contentinfo')).toHaveClass(`text-${textAlignment}`);
   });
 });

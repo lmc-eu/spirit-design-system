@@ -4,6 +4,7 @@ import React from 'react';
 import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
 import { SizeExtendedDictionaryType, SpiritSectionProps } from '../../../types';
 import Section from '../Section';
+import { AlignmentX } from '../../../constants';
 
 const sizePaddingClasses = {
   xsmall: 'py-900 py-tablet-1000',
@@ -117,5 +118,15 @@ describe('Section', () => {
 
     expect(screen.getByTestId('section')).not.toHaveClass(sizePaddingClasses[size]);
     expect(screen.getByTestId('section')).toHaveClass('py-200');
+  });
+
+  it.each([Object.values(AlignmentX)])('should render with text alignment', (textAlignment) => {
+    render(
+      <Section textAlignment={textAlignment} data-testid="section">
+        Content
+      </Section>,
+    );
+
+    expect(screen.getByTestId('section')).toHaveClass(`text-${textAlignment}`);
   });
 });

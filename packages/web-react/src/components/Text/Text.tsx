@@ -1,7 +1,7 @@
 'use client';
 
 import React, { ElementType } from 'react';
-import { Emphasis, SizesExtended } from '../../constants';
+import { Emphasis, SizesExtended, TextStyleProps } from '../../constants';
 import { useStyleProps } from '../../hooks';
 import { SpiritTextProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
@@ -17,7 +17,9 @@ const Text = <T extends ElementType = 'p', S = void>(props: SpiritTextProps<T, S
   const propsWithDefaults = { ...defaultProps, ...props };
   const { elementType: ElementTag = 'p', children, ...restProps } = propsWithDefaults;
   const { classProps, props: modifiedProps } = useTextStyleProps(restProps);
-  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+  const { styleProps, props: otherProps } = useStyleProps(modifiedProps, {
+    textAlignment: TextStyleProps.textAlignment,
+  });
   const mergedStyleProps = mergeStyleProps(ElementTag, { classProps, styleProps, otherProps });
 
   return (

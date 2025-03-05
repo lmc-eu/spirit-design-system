@@ -1,6 +1,7 @@
 import { renderHook } from '@testing-library/react';
 import { StyleProps } from '../../types';
 import { useStyleProps } from '../styleProps';
+import { AlignmentX } from '../../constants';
 
 describe('styleProps', () => {
   describe('#useStyleProps', () => {
@@ -140,17 +141,19 @@ describe('styleProps', () => {
       padding: 'space-500',
       paddingX: 'space-600',
       paddingY: 'space-700',
+      textAlignment: AlignmentX.CENTER,
     };
     const additionalUtilities = {
       padding: 'p',
       paddingX: 'px',
       paddingY: 'py',
+      textAlignment: 'text',
     };
 
     const { result } = renderHook(() => useStyleProps(mockProps as StyleProps, additionalUtilities));
 
     expect(result.current.styleProps).toEqual({
-      className: 'm-100 mx-200 my-400 p-500 px-600 py-700',
+      className: 'm-100 mx-200 my-400 p-500 px-600 py-700 text-center',
       style: undefined,
     });
   });
@@ -161,15 +164,17 @@ describe('styleProps', () => {
       marginX: 'space-200',
       marginY: 'space-400',
       padding: { mobile: 'space-500', tablet: 'space-600', desktop: 'space-700' },
+      textAlignment: { mobile: AlignmentX.LEFT, tablet: AlignmentX.CENTER, desktop: AlignmentX.RIGHT },
     };
     const additionalUtilities = {
       padding: 'p',
+      textAlignment: 'text',
     };
 
     const { result } = renderHook(() => useStyleProps(mockProps as StyleProps, additionalUtilities));
 
     expect(result.current.styleProps).toEqual({
-      className: 'm-100 mx-200 my-400 p-500 p-tablet-600 p-desktop-700',
+      className: 'm-100 mx-200 my-400 p-500 p-tablet-600 p-desktop-700 text-left text-tablet-center text-desktop-right',
       style: undefined,
     });
   });
