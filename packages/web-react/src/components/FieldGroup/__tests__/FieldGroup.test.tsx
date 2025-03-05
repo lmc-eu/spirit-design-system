@@ -7,7 +7,7 @@ import {
   restPropsTest,
   stylePropsTest,
   validationTextPropsTest,
-} from '@local/tests';
+} from '#local/tests';
 import FieldGroup from '../FieldGroup';
 
 describe('FieldGroup', () => {

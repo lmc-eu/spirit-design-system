@@ -8,7 +8,7 @@ import {
   restPropsTest,
   stylePropsTest,
   validationTextPropsTest,
-} from '@local/tests';
+} from '#local/tests';
 import Select from '../Select';
 
 jest.mock('../../../hooks/useIcon');

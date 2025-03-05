@@ -19,6 +19,10 @@
   "main": "./index.cjs",
   "module": "./index.js",
   "types": "./index.d.ts",
+  "imports": {
+    "#local/tests": "./tests/index.ts",
+    "#local/tests/*": "./tests/*"
+  },
   "dependencies": {
     "@floating-ui/react": "^0.27.0",
     "classnames": "^2.3.1",
