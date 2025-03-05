@@ -165,7 +165,7 @@ function create(options) {
     margin: marginInput,
   } = options;
   const data = parseInput(options.data, queryStart, queryEnd, excludeMaster, projectName);
-  const d3n = new D3Node({ svgStyles: styles, d3Module: D3 });
+  const d3n = new D3Node({ styles, d3Module: D3 });
   const margin = marginInput || { top: 64, right: 32, bottom: 32, left: 110 };
   const width = 1500 - margin.left - margin.right;
   const height = 500 - margin.top - margin.bottom;
