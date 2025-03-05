@@ -89,15 +89,15 @@ describe('stylesObjectGenerator', () => {
         tokens: exampleTypographyTokens,
         expectedStyles: {
           styles: {
-            headingXlargeBold: 'headingXlargeBold',
-            headingXlargeBoldUnderline: 'headingXlargeBoldUnderline',
+            headingXLargeBold: 'headingXLargeBold',
+            headingXLargeBoldUnderline: 'headingXLargeBoldUnderline',
             moveToTheEnd: 'true',
           },
-          headingXlargeBold: {
+          headingXLargeBold: {
             desktop:
               "{\nfontFamily: \"'Inter', sans-serif\",\nfontSize: '64px',\nfontStyle: 'normal',\nfontWeight: 700,\nlineHeight: 1.2,\n}",
           },
-          headingXlargeBoldUnderline: {
+          headingXLargeBoldUnderline: {
             desktop:
               "{\nfontFamily: \"'Inter', sans-serif\",\nfontSize: '64px',\nfontStyle: 'normal',\nfontWeight: 700,\nlineHeight: 1.2,\n}",
           },
@@ -169,7 +169,7 @@ describe('stylesObjectGenerator', () => {
       {
         token: exampleTypographyTokens.get('typographyRef1') as Token,
         expectedObject: {
-          headingXlargeBold: {
+          headingXLargeBold: {
             desktop:
               "{\nfontFamily: \"'Inter', sans-serif\",\nfontSize: '64px',\nfontStyle: 'normal',\nfontWeight: 700,\nlineHeight: 1.2,\n}",
             tablet:
@@ -178,7 +178,7 @@ describe('stylesObjectGenerator', () => {
         },
         description: 'should create object structure from typography token with js output',
         stylesObjectRef: {
-          headingXlargeBold: {
+          headingXLargeBold: {
             tablet:
               "{\nfontFamily: \"'Inter', sans-serif\",\nfontSize: '32px',\nfontStyle: 'normal',\nfontWeight: 500,\nlineHeight: 1,\n}",
           },
@@ -221,7 +221,7 @@ describe('stylesObjectGenerator', () => {
         tokenNameParts: ['heading', 'desktop', 'xLarge', 'bold'],
         expectedStyles: {
           exampleRef: 'exampleRef',
-          headingXlargeBold: {
+          headingXLargeBold: {
             desktop:
               "{\nfontFamily: \"'Inter', sans-serif\",\nfontSize: '64px',\nfontStyle: 'normal',\nfontWeight: 700,\nlineHeight: 1.2,\n}",
           },

@@ -9,4 +9,18 @@ export const toPlural = (name: string): string => {
   return specialCases[name] || (name.endsWith('s') ? name : `${name}s`);
 };
 
-export const toCamelCase = (name: string): string => NamingHelper.codeSafeVariableName(name, StringCase.camelCase);
+export const toCamelCase = (name: string): string => {
+  const safeName = NamingHelper.codeSafeVariableName(name, StringCase.camelCase);
+
+  /**
+   * Transform the next character after `X` to uppercase.
+   *
+   * Example:
+   * - `heading-xsmall` -> `headingXSmall`
+   * - `heading-xlarge` -> `headingXLarge`
+   */
+  return safeName.replace(
+    /(X+)([a-z])/g,
+    (_match, xs: string, next: string) => `${xs.toUpperCase()}${next.toUpperCase()}`,
+  );
+};
