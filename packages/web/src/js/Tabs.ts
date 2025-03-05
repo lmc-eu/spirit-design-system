@@ -2,6 +2,7 @@ import BaseComponent from './BaseComponent';
 import EventHandler from './dom/EventHandler';
 import SelectorEngine from './dom/SelectorEngine';
 import { SpiritConfig, enableToggleTrigger, getElementFromSelector } from './utils';
+import { SpiritElement } from './types';
 
 const NAME = 'tabs';
 const DATA_KEY = 'tabs';

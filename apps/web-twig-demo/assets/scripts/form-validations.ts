@@ -5,7 +5,9 @@ window.onload = () => {
   FormValidations.addValidator(
     'my-range',
     (value, param1, param2) => {
-      return parseInt(param1, 10) <= value && value <= parseInt(param2, 10);
+      const intValue = parseInt(value, 10);
+
+      return parseInt(param1, 10) <= intValue && intValue <= parseInt(param2, 10);
     },
     'The value (${0}) must be between ${1} and ${2}',
     5,
@@ -29,6 +31,7 @@ window.onload = () => {
   });
 
   FormValidations.addElementValidator(
+    // @ts-expect-error -- TS2345: Argument of type 'HTMLElement' is not assignable to parameter of type 'FormValidationsElement'.
     specificElement,
     (value, element) => {
       if (value.length && value[0] === value[0].toUpperCase()) {

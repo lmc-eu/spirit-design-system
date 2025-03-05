@@ -1,6 +1,7 @@
 import BaseComponent from './BaseComponent';
 import { EventHandler, SelectorEngine } from './dom';
 import { SpiritConfig, enableToggleAutoloader } from './utils';
+import { SpiritElement } from './types';
 
 const NAME = 'autoResize';
 const RESIZE_EVENT = 'resize';

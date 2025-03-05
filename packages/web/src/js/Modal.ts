@@ -1,9 +1,11 @@
+// @ts-nocheck
 import BaseComponent from './BaseComponent';
 import { warning } from './common/utilities';
 import { EVENT_KEY } from './constants';
 import EventHandler from './dom/EventHandler';
 import SelectorEngine from './dom/SelectorEngine';
 import { enableToggleTrigger, ScrollControl, SpiritConfig } from './utils';
+import { SpiritElement } from './types';
 
 // TODO: Remove `handleKeyDown` listener when Chrome fixes the bug,
 // right now Chrome is bugged and sends un-cancelable events, so closing modal based on
