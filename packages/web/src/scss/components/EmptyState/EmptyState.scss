@@ -1,0 +1,20 @@
+@use 'sass:map';
+@use 'theme' as theme;
+@use '../../tools/breakpoint';
+
+.EmptyState {
+    display: grid;
+    justify-content: center;
+    padding: theme.$root-padding;
+    text-align: center;
+
+    @include breakpoint.up(map.get(theme.$breakpoints, desktop)) {
+        padding: theme.$root-padding-desktop;
+    }
+}
+
+.EmptyState__section {
+    display: grid;
+    width: 100%;
+    max-width: 400px;
+}
