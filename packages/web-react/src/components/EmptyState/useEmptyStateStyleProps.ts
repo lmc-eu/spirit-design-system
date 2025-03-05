@@ -10,7 +10,7 @@ export interface EmptyStateStyles<T> {
 }
 
 export function useEmptyStateStyleProps(props: SpiritEmptyStateProps): EmptyStateStyles<SpiritEmptyStateProps> {
-  const emptyStateClass = useClassNamePrefix('UNSTABLE_EmptyState');
+  const emptyStateClass = useClassNamePrefix('EmptyState');
   const sectionClass = `${emptyStateClass}__section`;
 
   return {

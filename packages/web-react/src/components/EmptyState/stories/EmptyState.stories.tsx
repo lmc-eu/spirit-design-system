@@ -7,11 +7,11 @@ import { Heading } from '../../Heading';
 import { Link } from '../../Link';
 import { Text } from '../../Text';
 import ReadMe from '../README.md';
-import { UNSTABLE_EmptyState, UNSTABLE_EmptyStateSection } from '..';
+import { EmptyState, EmptyStateSection } from '..';
 
-const meta: Meta<typeof UNSTABLE_EmptyState> = {
-  title: 'Experimental/UNSTABLE_EmptyState',
-  component: UNSTABLE_EmptyState,
+const meta: Meta<typeof EmptyState> = {
+  title: 'Components/EmptyState',
+  component: EmptyState,
   parameters: {
     docs: {
       page: () => <Markdown>{ReadMe}</Markdown>,
@@ -22,7 +22,7 @@ const meta: Meta<typeof UNSTABLE_EmptyState> = {
     spacing: 'space-700',
     children: (
       <>
-        <UNSTABLE_EmptyStateSection spacing="space-500">
+        <EmptyStateSection spacing="space-500">
           <Heading elementType="h2" size="xsmall">
             Headline
           </Heading>
@@ -30,8 +30,8 @@ const meta: Meta<typeof UNSTABLE_EmptyState> = {
             In publishing and graphic design, lorem ipsum is common placeholder text used to demonstrate the graphic
             elements
           </Text>
-        </UNSTABLE_EmptyStateSection>
-        <UNSTABLE_EmptyStateSection>
+        </EmptyStateSection>
+        <EmptyStateSection>
           <ActionGroup alignmentX={{ mobile: 'stretch', tablet: 'center' }}>
             <ButtonLink color="primary" href="#">
               Action
@@ -40,18 +40,18 @@ const meta: Meta<typeof UNSTABLE_EmptyState> = {
               Action
             </ButtonLink>
           </ActionGroup>
-        </UNSTABLE_EmptyStateSection>
-        <UNSTABLE_EmptyStateSection>
+        </EmptyStateSection>
+        <EmptyStateSection>
           <Link href="/">Link to something</Link>
-        </UNSTABLE_EmptyStateSection>
+        </EmptyStateSection>
       </>
     ),
   },
 };
 
 export default meta;
-type Story = StoryObj<typeof UNSTABLE_EmptyState>;
+type Story = StoryObj<typeof EmptyState>;
 
 export const Playground: Story = {
-  name: 'UNSTABLE_EmptyState',
+  name: 'EmptyState',
 };
