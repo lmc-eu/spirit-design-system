@@ -7,7 +7,7 @@ import { SpiritEmptyStateProps } from '../../types/emptyState';
 import { Stack } from '../Stack';
 import { useEmptyStateStyleProps } from './useEmptyStateStyleProps';
 
-const UNSTABLE_EmptyState = (props: SpiritEmptyStateProps): ReactElement => {
+const EmptyState = (props: SpiritEmptyStateProps): ReactElement => {
   const { children, ...restProps } = props;
   const { classProps, props: modifiedProps } = useEmptyStateStyleProps(restProps);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
@@ -23,6 +23,6 @@ const UNSTABLE_EmptyState = (props: SpiritEmptyStateProps): ReactElement => {
   );
 };
 
-UNSTABLE_EmptyState.spiritComponent = 'UNSTABLE_EmptyState';
+EmptyState.spiritComponent = 'EmptyState';
 
-export default UNSTABLE_EmptyState;
+export default EmptyState;

@@ -4,12 +4,12 @@ import { ButtonLink } from '../../Button';
 import { Heading } from '../../Heading';
 import { Link } from '../../Link';
 import { Text } from '../../Text';
-import UNSTABLE_EmptyState from '../UNSTABLE_EmptyState';
-import UNSTABLE_EmptyStateSection from '../UNSTABLE_EmptyStateSection';
+import EmptyState from '../EmptyState';
+import EmptyStateSection from '../EmptyStateSection';
 
 const EmptyStateDefault = () => (
-  <UNSTABLE_EmptyState spacing="space-900">
-    <UNSTABLE_EmptyStateSection>
+  <EmptyState spacing="space-900">
+    <EmptyStateSection>
       <div className="docs-Placeholder" style={{ maxWidth: '400px' }}>
         <svg xmlns="http://www.w3.org/2000/svg" width="82" height="40" viewBox="0 0 82 40" fill="none">
           <rect x="1.5" y="0.5" width="79" height="39" stroke="#b9b9b9" strokeDasharray="4 4" />
@@ -29,8 +29,8 @@ const EmptyStateDefault = () => (
           </Text>
         </div>
       </div>
-    </UNSTABLE_EmptyStateSection>
-    <UNSTABLE_EmptyStateSection spacing="space-600">
+    </EmptyStateSection>
+    <EmptyStateSection spacing="space-600">
       <Heading elementType="h2" size="xsmall">
         Headline
       </Heading>
@@ -38,8 +38,8 @@ const EmptyStateDefault = () => (
         In publishing and graphic design, lorem ipsum is common placeholder text used to demonstrate the graphic
         elements
       </Text>
-    </UNSTABLE_EmptyStateSection>
-    <UNSTABLE_EmptyStateSection>
+    </EmptyStateSection>
+    <EmptyStateSection>
       <ActionGroup
         alignmentX={{ mobile: 'stretch', tablet: 'center' }}
         direction={{ mobile: 'vertical', tablet: 'horizontal-reversed' }}
@@ -51,11 +51,11 @@ const EmptyStateDefault = () => (
           Action
         </ButtonLink>
       </ActionGroup>
-    </UNSTABLE_EmptyStateSection>
-    <UNSTABLE_EmptyStateSection>
+    </EmptyStateSection>
+    <EmptyStateSection>
       <Link href="#">Link to something</Link>
-    </UNSTABLE_EmptyStateSection>
-  </UNSTABLE_EmptyState>
+    </EmptyStateSection>
+  </EmptyState>
 );
 
 export default EmptyStateDefault;
