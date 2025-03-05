@@ -23,6 +23,7 @@ class TwigHelper
         string $defaultAlias,
         ?string $prefix = null,
         array $extendedComponentsPath = [],
+        ?string $cssVariablePrefix = SpiritWebTwigExtension::DEFAULT_CSS_VARIABLE_PREFIX,
     ): Environment {
         $loader = new FilesystemLoader($defaultTemplatePath);
         $paths = array_merge(
@@ -58,6 +59,10 @@ class TwigHelper
 
         if ($prefix) {
             $twig->addGlobal(OverrideServiceCompilerPass::GLOBAL_PREFIX_TWIG_VARIABLE, $prefix);
+        }
+
+        if ($cssVariablePrefix) {
+            $twig->addGlobal(OverrideServiceCompilerPass::GLOBAL_PREFIX_TWIG_CSS_VARIABLE, $cssVariablePrefix);
         }
 
         $twig->setLoader($loader);

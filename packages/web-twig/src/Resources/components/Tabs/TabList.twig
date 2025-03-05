@@ -14,10 +14,10 @@
 {%- if _spacing is iterable -%}
     {%- for breakpoint, breakpointValue in _spacing -%}
         {%- set suffix = (breakpoint == 'mobile') ? '' : '-' ~ breakpoint -%}
-        {%- set _style = _style ~ '--tabs-spacing' ~ suffix ~ ': var(--spirit-' ~ breakpointValue ~ ');' -%}
+        {%- set _style = _style ~ '--tabs-spacing' ~ suffix ~ ': var(--' ~ _spiritCSSVariablePrefix ~ breakpointValue ~ ');' -%}
     {%- endfor -%}
 {%- elseif _spacing -%}
-    {%- set _style = _style ~ '--tabs-spacing: var(--spirit-' ~ _spacing ~ ');' -%}
+    {%- set _style = _style ~ '--tabs-spacing: var(--' ~ _spiritCSSVariablePrefix ~ _spacing ~ ');' -%}
 {%- endif -%}
 
 {# Attributes #}

@@ -17,6 +17,7 @@ class ConfigurationTest extends TestCase
                 paths:                []
                 paths_alias:          spirit
                 spirit_css_class_prefix: null
+                spirit_css_variable_prefix: spirit-
                 html_syntax_lexer:    true
                 icons:
                     paths:                []
