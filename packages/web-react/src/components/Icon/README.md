@@ -62,11 +62,11 @@ import icons from '@lmc-eu/spirit-icons/icons';
 
 ## 🧩 API
 
-| Name      | Type                                                   | Default | Required | Description                                                                                           |
-| --------- | ------------------------------------------------------ | ------- | -------- | ----------------------------------------------------------------------------------------------------- |
-| `boxSize` | `number` \| `Partial<Record<BreakpointToken, number>>` | 24      | ✕        | Size of the icon, use object to set responsive values, e.g. `{ mobile: 20, tablet: 30, desktop: 40 }` |
-| `name`    | `string`                                               | —       | ✓        | Name of the icon                                                                                      |
-| `title`   | `string`                                               | —       | ✕        | Title of the icon                                                                                     |
+| Name      | Type                      | Default | Required | Description                                                                                           |
+| --------- | ------------------------- | ------- | -------- | ----------------------------------------------------------------------------------------------------- |
+| `boxSize` | \[ `number` \| `object` ] | 24      | ✕        | Size of the icon, use object to set responsive values, e.g. `{ mobile: 20, tablet: 30, desktop: 40 }` |
+| `name`    | `string`                  | —       | ✓        | Name of the icon                                                                                      |
+| `title`   | `string`                  | —       | ✕        | Title of the icon                                                                                     |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

@@ -53,8 +53,7 @@ describe('Icon', () => {
     render(<Icon name="add" boxSize={boxSize} data-testid="test-icon" />);
 
     expect(screen.getByTestId('test-icon')).toHaveStyle({
-      '--spirit-icon-height-desktop': '60px',
-      '--spirit-icon-width-desktop': '60px',
+      '--spirit-icon-size-desktop': '60px',
     });
   });
 });

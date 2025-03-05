@@ -7,18 +7,17 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import DocsSection from '../../../../docs/DocsSection';
 import { IconsProvider } from '../../../context';
-import Icon from './Icon';
+import IconDefault from './IconDefault';
+import IconResponsive from './IconResponsive';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <IconsProvider value={icons}>
       <DocsSection title="Default">
-        {/* @ts-expect-error -- JSX element type 'Icon' does not have any construct or call signatures. */}
-        <Icon name="info" />
+        <IconDefault />
       </DocsSection>
       <DocsSection title="Responsive Size">
-        {/* @ts-expect-error -- JSX element type 'Icon' does not have any construct or call signatures. */}
-        <Icon name="info" boxSize={{ mobile: 20, tablet: 30, desktop: 40 }} />
+        <IconResponsive />
       </DocsSection>
     </IconsProvider>
   </React.StrictMode>,
