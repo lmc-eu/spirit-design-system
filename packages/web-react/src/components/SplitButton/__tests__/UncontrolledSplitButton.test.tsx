@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '#local/tests';
 import { ComponentButtonColors, Sizes } from '../../../constants';
 import { SplitButtonColorType } from '../../../types';
 import UncontrolledSplitButton from '../UncontrolledSplitButton';
