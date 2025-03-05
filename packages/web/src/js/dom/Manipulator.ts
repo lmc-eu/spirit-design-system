@@ -1,3 +1,5 @@
+import { SpiritElement } from '../types';
+
 function normalizeData(value: unknown) {
   if (value === 'true') {
     return true;

@@ -1,5 +1,6 @@
 import Manipulator from '../dom/Manipulator';
 import { isElement } from './Elements';
+import { SpiritElement } from '../types';
 
 export type SpiritConfig = { [kes: string]: unknown } | null;
 

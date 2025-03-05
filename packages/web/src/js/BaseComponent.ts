@@ -1,5 +1,6 @@
 import InstanceMap from './dom/InstanceMap';
 import { Config, SpiritConfig, getElement } from './utils';
+import { SpiritElement } from './types';
 
 interface IBaseComponent extends FunctionConstructor {
   INSTANCE_KEY: string;
