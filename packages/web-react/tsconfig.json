@@ -1,20 +1,16 @@
 {
   "extends": "../../configs/typescript-config-spirit/dom",
   "compilerOptions": {
+    "rootDir": ".",
+    "baseUrl": ".",
+
     // Specify what JSX code is generated.
     // @see: https://www.typescriptlang.org/tsconfig/#jsx
     "jsx": "react",
 
     // Specify what module code is generated.
     // @see: https://www.typescriptlang.org/tsconfig/#module
-    "module": "ESNext",
-
-    "baseUrl": ".",
-
-    "paths": {
-      "@local/tests": ["./tests/index.ts"],
-      "@local/tests/*": ["./tests/*"]
-    }
+    "module": "ESNext"
   },
   "include": ["./src/**/*"],
   "exclude": ["./node_modules", "./dist/**/*"]

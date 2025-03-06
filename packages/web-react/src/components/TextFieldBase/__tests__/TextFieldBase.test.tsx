@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, requiredPropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, requiredPropsTest } from '#local/tests';
 import { TextFieldType } from '../../../types';
 import TextFieldBase from '../TextFieldBase';
 

@@ -9,7 +9,7 @@ import {
   restPropsTest,
   stylePropsTest,
   validationTextPropsTest,
-} from '@local/tests';
+} from '#local/tests';
 import Checkbox from '../Checkbox';
 
 describe('Checkbox', () => {

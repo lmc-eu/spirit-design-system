@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '#local/tests';
 import PaginationLinkNext from '../PaginationLinkNext';
 
 jest.mock('../../../hooks/useIcon');
