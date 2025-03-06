@@ -1,11 +1,11 @@
-<header class="UNSTABLE_Header theme-light-on-brand {{#unless (eq page 'components')}}hide-from-visual-tests{{/unless}} border-0">
+<header class="UNSTABLE_Header theme-light-on-brand {{#unless (eq page 'components')}}hide-from-visual-tests{{/unless}}">
   <div class="Container Container--fluid">
     <div
       class="Flex Flex--row Flex--noWrap Flex--alignmentXLeft Flex--alignmentYStretch"
       style="--flex-spacing-x: var(--spirit-space-1000);"
     >
       <a href="/" class="UNSTABLE_HeaderLogo" aria-label="Spirit Development Preview">
-        {{> web/assets/spiritLogoInverted }}
+        {{> web/assets/spiritLogo }}
       </a>
 
       <!-- Desktop Main Navigation: start -->
@@ -14,7 +14,7 @@
           <li class="NavigationItem NavigationItem--alignmentYCenter">
             <a
               href="/packages/web/"
-              class="NavigationAction NavigationAction--box  {{# if (eq package 'Web')}}NavigationAction--selected{{/if}}"
+              class="NavigationAction NavigationAction--pill  {{# if (eq package 'Web')}}NavigationAction--selected{{/if}}"
               {{# if (eq package 'Web')}}aria-current="page"{{/if}}
             >
               Web
@@ -23,7 +23,7 @@
           <li class="NavigationItem NavigationItem--alignmentYCenter">
             <a
               href="/packages/web-react/"
-              class="NavigationAction NavigationAction--box {{# if (eq package 'Web React')}}NavigationAction--selected{{/if}}"
+              class="NavigationAction NavigationAction--pill {{# if (eq package 'Web React')}}NavigationAction--selected{{/if}}"
               {{# if (eq package 'Web React')}}aria-current="page"{{/if}}
             >
               Web React
@@ -35,7 +35,7 @@
           <li class="NavigationItem NavigationItem--alignmentYCenter hide-from-visual-tests">
             <a
               href="https://localhost:4443"
-              class="NavigationAction NavigationAction--box"
+              class="NavigationAction NavigationAction--pill"
             >
               Web Twig
             </a>
@@ -44,7 +44,7 @@
           <li class="NavigationItem NavigationItem--alignmentYCenter">
             <a
               href="/packages/form-validations/"
-              class="NavigationAction NavigationAction--box {{# if (eq package 'Form Validations')}}NavigationAction--selected{{/if}}"
+              class="NavigationAction NavigationAction--pill {{# if (eq package 'Form Validations')}}NavigationAction--selected{{/if}}"
               {{# if (eq package 'Form Validations')}}aria-current="page"{{/if}}
             >
               Form Validations
@@ -108,19 +108,19 @@
         <nav class="Navigation Navigation--vertical" aria-label="Main Navigation">
           <ul>
             <li class="NavigationItem NavigationItem--alignmentYCenter">
-              <a href="/packages/web/" class="NavigationAction NavigationAction--box {{# if (eq package 'Web')}}NavigationAction--selected{{/if}}" {{# if (eq package 'Web')}}aria-current="page"{{/if}}>Web</a>
+              <a href="/packages/web/" class="NavigationAction NavigationAction--pill {{# if (eq package 'Web')}}NavigationAction--selected{{/if}}" {{# if (eq package 'Web')}}aria-current="page"{{/if}}>Web</a>
             </li>
             <li class="NavigationItem NavigationItem--alignmentYCenter">
-              <a href="/packages/web-react/" class="NavigationAction NavigationAction--box {{# if (eq package 'Web React')}}NavigationAction--selected{{/if}}" {{# if (eq package 'Web React')}}aria-current="page"{{/if}}>Web React</a>
+              <a href="/packages/web-react/" class="NavigationAction NavigationAction--pill {{# if (eq package 'Web React')}}NavigationAction--selected{{/if}}" {{# if (eq package 'Web React')}}aria-current="page"{{/if}}>Web React</a>
             </li>
             {{!-- Hide link to the Twig implementation in production. Twig demo app only runs on localhost, we don't deploy it anywhere. --}}
             {{#if @is_development}}
             <li class="NavigationItem NavigationItem--alignmentYCenter">
-              <a href="https://localhost:4443" class="NavigationAction NavigationAction--box">Web Twig</a>
+              <a href="https://localhost:4443" class="NavigationAction NavigationAction--pill">Web Twig</a>
             </li>
             {{/if}}
             <li class="NavigationItem NavigationItem--alignmentYCenter">
-              <a href="/packages/form-validations/" class="NavigationAction NavigationAction--box {{# if (eq package 'Form Validations')}}NavigationAction--selected{{/if}}" {{# if (eq package 'Form Validations')}}aria-current="page"{{/if}}>Form Validations</a>
+              <a href="/packages/form-validations/" class="NavigationAction NavigationAction--pill {{# if (eq package 'Form Validations')}}NavigationAction--selected{{/if}}" {{# if (eq package 'Form Validations')}}aria-current="page"{{/if}}>Form Validations</a>
             </li>
           </ul>
         </nav>

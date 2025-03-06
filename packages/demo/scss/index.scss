@@ -11,6 +11,15 @@ body {
     grid-template-rows: auto auto 1fr auto;
 }
 
+:root,
+.theme-light-default {
+    --docs-color-logo-foreground: #7847ff;
+}
+
+.theme-light-on-brand {
+    --docs-color-logo-foreground: #fff;
+}
+
 .docs-Card {
     display: block;
     padding: var(--spirit-space-700);
@@ -106,4 +115,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: var(--spirit-space-500);
+}
+
+.docs-border-bottom-basic {
+    border-bottom: 1px solid var(--spirit-color-border-basic);
 }
