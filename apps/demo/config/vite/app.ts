@@ -26,6 +26,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
+      '@lmc-eu/spirit-design-tokens': join(pathRelativeToRepositoryRoot, 'packages/design-tokens/src/js'),
       '@lmc-eu/spirit-icons': join(pathRelativeToRepositoryRoot, 'packages/icons/dist'),
     },
   },
