@@ -6,15 +6,9 @@
 
 <!-- Render as different element type -->
 <Stack elementType="ul">
-    <li>
-        <div>List item 1</div>
-    </li>
-    <li>
-        <div>List item 1</div>
-    </li>
-    <li>
-        <div>List item 1</div>
-    </li>
+    <li>List item 1</li>
+    <li>List item 2</li>
+    <li>List item 3</li>
 </Stack>
 
 <!-- Render with spacing -->
@@ -49,13 +43,13 @@
     UNSAFE_className="custom-class-name"
     UNSAFE_style="color: red;"
 >
-    <li>
-        <div>List item 1</div>
-    </li>
-    <li>
-        <div>List item 1</div>
-    </li>
-    <li>
-        <div>List item 1</div>
-    </li>
+    <StackItem elementType="li">
+        List item 1
+    </StackItem>
+    <StackItem elementType="li">
+        List item 2
+    </StackItem>
+    <StackItem elementType="li">
+        List item 3
+    </StackItem>
 </Stack>
