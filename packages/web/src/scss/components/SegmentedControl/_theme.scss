@@ -1,0 +1,63 @@
+// 1. Width of the icon and padding.
+
+@use '@tokens' as tokens;
+@use '../../settings/cursors';
+@use '../../settings/dictionaries';
+@use '../../settings/transitions';
+
+$padding: calc(#{tokens.$space-400} - #{tokens.$border-width-100});
+$gap: tokens.$space-400;
+$border-width: tokens.$border-width-100;
+$border-radius: tokens.$radius-full;
+$transition-radio:
+    transform transitions.$duration-200 transitions.$timing-eased-in-out,
+    color transitions.$duration-100 transitions.$timing-eased-in-out,
+    background-color transitions.$duration-200 transitions.$timing-eased-in-out;
+$transition-checkbox:
+    color transitions.$duration-200 transitions.$timing-eased-in-out,
+    border-color transitions.$duration-200 transitions.$timing-eased-in-out,
+    background-color transitions.$duration-200 transitions.$timing-eased-in-out;
+$max-items: 5;
+$focus-ring: tokens.$focus-ring;
+$fill-variant-dictionary: dictionaries.$fill-variants;
+
+// Item
+$item-height: 40px;
+$item-padding-x: calc(#{tokens.$space-600} - #{tokens.$border-width-100});
+$item-padding-y: tokens.$space-700;
+$item-border-radius: tokens.$radius-full;
+$item-label-typography: tokens.$body-small-semibold;
+$item-gap: tokens.$space-400;
+$item-background-hover: tokens.$background-interactive-state-hover;
+$item-border-default: tokens.$border-width-100 solid transparent;
+$item-outline-width: tokens.$border-width-100;
+$item-disabled-cursor: cursors.$disabled;
+$item-disabled-color: tokens.$disabled-content;
+$item-min-width: ($item-padding-y * 2 + 20px); // 1.
+
+$fill-variant-config: (
+    outline: (
+        color: tokens.$text-primary,
+        background-color: tokens.$background-secondary,
+        border-color: tokens.$border-basic,
+    ),
+    fill: (
+        color: tokens.$text-secondary,
+        background-color: tokens.$background-primary,
+        border-color: tokens.$border-basic,
+    ),
+);
+
+$fill-variant-active-config: (
+    outline: (
+        color: tokens.$selected-content-basic,
+        background-color: tokens.$selected-content-subtle,
+        border-color: tokens.$border-interactive-state-selected,
+        box-shadow: tokens.$shadow-200,
+    ),
+    fill: (
+        color: tokens.$selected-content-subtle,
+        background-color: tokens.$selected-state-default,
+        border-color: tokens.$border-interactive-state-selected,
+    ),
+);
