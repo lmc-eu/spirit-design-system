@@ -69,17 +69,19 @@ Usage with spacing:
 
 ### Dividers Between Items
 
+👉 When using dividers, it is required to wrap the item's content with the `StackItem` class.
+
 Usage with middle dividers:
 
 ```html
 <ul class="Stack Stack--hasIntermediateDividers">
-  <li>
+  <li class="StackItem">
     <div>Block 1</div>
   </li>
-  <li>
+  <li class="StackItem">
     <div>Block 2</div>
   </li>
-  <li>
+  <li class="StackItem">
     <div>Block 3</div>
   </li>
 </ul>
@@ -89,13 +91,13 @@ Usage with inner and outer dividers:
 
 ```html
 <ul class="Stack Stack--hasIntermediateDividers Stack--hasStartDivider Stack--hasEndDivider">
-  <li>
+  <li class="StackItem">
     <div>Block 1</div>
   </li>
-  <li>
+  <li class="StackItem">
     <div>Block 2</div>
   </li>
-  <li>
+  <li class="StackItem">
     <div>Block 3</div>
   </li>
 </ul>
@@ -107,13 +109,13 @@ Usage with combination of spacing and dividers:
 
 ```html
 <ul class="Stack Stack--hasSpacing Stack--hasIntermediateDividers Stack--hasStartDivider Stack--hasEndDivider">
-  <li>
+  <li class="StackItem">
     <div>Block 1</div>
   </li>
-  <li>
+  <li class="StackItem">
     <div>Block 2</div>
   </li>
-  <li>
+  <li class="StackItem">
     <div>Block 3</div>
   </li>
 </ul>
@@ -191,13 +193,13 @@ Custom spacing works with dividers too.
   class="Stack Stack--hasSpacing Stack--hasIntermediateDividers Stack--hasStartDivider Stack--hasEndDivider"
   style="--stack-spacing: var(--spirit-space-800)"
 >
-  <li>
+  <li class="StackItem">
     <div>Block 1</div>
   </li>
-  <li>
+  <li class="StackItem">
     <div>Block 2</div>
   </li>
-  <li>
+  <li class="StackItem">
     <div>Block 3</div>
   </li>
 </ul>
