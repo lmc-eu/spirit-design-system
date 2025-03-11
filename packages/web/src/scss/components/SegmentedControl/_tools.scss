@@ -1,0 +1,15 @@
+@use '@tokens' as tokens;
+@use 'sass:map';
+@use 'theme';
+
+@mixin generate-item-transform($max-items) {
+    @for $i from 1 through $max-items {
+        [type='radio']:nth-last-of-type(#{$i + 1}):checked ~ .SegmentedControlItem__label:last-of-type,
+        .SegmentedControl
+            > :nth-last-of-type(#{$i + 1}):has([type='radio']:checked)
+            ~ :last-of-type
+            > .SegmentedControlItem__label {
+            --#{tokens.$css-variable-prefix}segmented-control-highlight-pos: #{$i};
+        }
+    }
+}
