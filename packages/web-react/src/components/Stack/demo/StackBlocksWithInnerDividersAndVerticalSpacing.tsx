@@ -1,13 +1,14 @@
 import React from 'react';
 import DocsBox from '../../../../docs/DocsBox';
 import Stack from '../Stack';
+import StackItem from '../StackItem';
 
 const StackBlocksWithInnerDividersAndVerticalSpacing = () => (
   <Stack elementType="ul" hasSpacing hasIntermediateDividers>
     {[1, 2, 3].map((i) => (
-      <li key={`stack-dividers-spacing-${i}`}>
+      <StackItem key={`stack-dividers-spacing-${i}`} elementType="li">
         <DocsBox>Block {i}</DocsBox>
-      </li>
+      </StackItem>
     ))}
   </Stack>
 );

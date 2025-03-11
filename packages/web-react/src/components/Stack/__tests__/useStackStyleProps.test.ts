@@ -21,9 +21,16 @@ describe('useStackStyleProps', () => {
       const props = { hasEndDivider, hasIntermediateDividers, hasSpacing, hasStartDivider } as SpiritStackProps;
       const { result } = renderHook(() => useStackStyleProps(props));
 
-      expect(result.current.classProps).toBe(expectedClasses);
+      expect(result.current.classProps.root).toBe(expectedClasses);
     },
   );
+
+  it('should return item classes', () => {
+    const props = {} as SpiritStackProps;
+    const { result } = renderHook(() => useStackStyleProps(props));
+
+    expect(result.current.classProps.item).toBe('StackItem');
+  });
 
   it.each([
     // spacing, expectedStyle

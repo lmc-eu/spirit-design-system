@@ -23,3 +23,17 @@ export type StackProps<E extends ElementType> = {
 
 export type SpiritStackProps<E extends ElementType = 'div'> = StackProps<E> &
   SpiritPolymorphicElementPropsWithoutRef<E, StackProps<E>>;
+
+export interface StackItemBaseProps extends ChildrenProps, StyleProps {}
+
+export type StackItemProps<E extends ElementType> = {
+  /**
+   * The HTML element or React element used to render the stack item, e.g. 'div'.
+   *
+   * @default 'div'
+   */
+  elementType?: E;
+} & StackItemBaseProps;
+
+export type SpiritStackItemProps<E extends ElementType = 'div'> = StackItemProps<E> &
+  SpiritPolymorphicElementPropsWithoutRef<E, StackItemProps<E>>;
