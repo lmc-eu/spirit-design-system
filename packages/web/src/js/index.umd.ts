@@ -9,6 +9,7 @@ import Modal from './Modal';
 import Offcanvas from './Offcanvas';
 import Password from './Password';
 import ScrollView from './ScrollView';
+import SegmentedControl from './SegmentedControl';
 import Tabs from './Tabs';
 import Toast from './Toast';
 import Tooltip from './Tooltip';
@@ -24,6 +25,7 @@ export default {
   Offcanvas,
   Password,
   ScrollView,
+  SegmentedControl,
   Tabs,
   Toast,
   Tooltip,
