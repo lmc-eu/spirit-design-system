@@ -25,6 +25,7 @@ This project uses `dictionaries` to unify props between different components.
 | AlignmentXExtended | AlignmentX Dictionary + `stretch`, `space-between` | AlignmentXExtended |
 | AlignmentY         | `top`, `center`, `bottom`                          | AlignmentY         |
 | AlignmentYExtended | AlignmentY Dictionary + `stretch`, `baseline`      | AlignmentYExtended |
+| TextAlignment      | `left`, `center`, `right`                          | TextAlignment      |
 
 ### Border Properties
 
