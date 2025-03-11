@@ -1,0 +1,43 @@
+@use '@tokens' as tokens;
+@use '../../settings/transitions' as transitions;
+
+$padding: calc(#{tokens.$space-400} - #{tokens.$border-width-100});
+$gap: tokens.$space-400;
+$border-default: tokens.$border-width-100 solid transparent;
+$border-radius: tokens.$radius-full;
+$transition:
+    transform transitions.$duration-200 transitions.$timing-eased-in-out,
+    color transitions.$duration-100 transitions.$timing-eased-in-out,
+    background-color transitions.$duration-200 transitions.$timing-eased-in-out;
+
+// Item
+$item-height: 40px;
+$item-padding-x: calc(#{tokens.$space-600} - #{tokens.$border-width-100});
+$item-padding-y: tokens.$space-700;
+$item-border-radius: tokens.$radius-full;
+$item-label-typography: tokens.$body-small-semibold;
+$item-gap: tokens.$space-400;
+$item-background-hover: tokens.$background-interactive-state-hover;
+$item-color: tokens.$selected-content-subtle;
+$item-color-disabled: tokens.$disabled-content;
+$item-border-width: tokens.$border-width-100;
+$item-border-default: $item-border-width solid transparent;
+
+$variant-outlined-config: (
+    color: $item-color,
+    background-color: tokens.$background-secondary,
+    border-color: tokens.$border-basic,
+    item-background-color-active: tokens.$selected-content-subtle,
+    item-color-active: tokens.$selected-content-basic,
+    item-border-color-active: tokens.$selected-content-basic,
+    item-box-shadow-active: tokens.$shadow-200,
+);
+
+$variant-filled-config: (
+    color: $item-color,
+    background-color: tokens.$background-primary,
+    border-color: tokens.$border-basic,
+    item-background-color-active: tokens.$selected-state-default,
+    item-color-active: tokens.$selected-content-subtle,
+    item-border-color-active: tokens.$selected-state-default,
+);

@@ -1,0 +1,92 @@
+@use '@tokens' as tokens;
+@use '../../tools/accessibility';
+@use '../../tools/typography';
+@use 'theme';
+@use 'tools';
+
+.SegmentedControl {
+    position: relative;
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    grid-auto-flow: column;
+    column-gap: theme.$gap;
+    align-items: center;
+    padding: theme.$padding;
+    margin-bottom: 0;
+    border: theme.$border-default;
+    border-radius: theme.$border-radius;
+
+    &:has(.SegmentedControl__input[type='radio']) {
+        overflow: hidden;
+        transition: theme.$transition;
+    }
+}
+
+.SegmentedControl--stretch {
+    justify-items: stretch;
+    width: 100%;
+}
+
+.SegmentedControl__item {
+    position: relative;
+    z-index: 2;
+    grid-row: 1;
+    transition: inherit;
+
+    &:has(.SegmentedControl__input[type='radio']) {
+        // stylelint-disable-next-line selector-max-specificity
+        &:first-of-type::before {
+            @include tools.generate-before-control();
+
+            transform: translateX(var(--#{tokens.$css-variable-prefix}segmented-control-highlight-x-pos, 0));
+            transition: inherit;
+        }
+    }
+
+    &:has(.SegmentedControl__input[type='checkbox']) {
+        &::before {
+            @include tools.generate-before-control();
+        }
+    }
+}
+
+@include tools.generate-segmented-control-variant('filled', theme.$variant-filled-config);
+@include tools.generate-segmented-control-variant('outlined', theme.$variant-outlined-config);
+
+.SegmentedControl__label {
+    @include typography.generate(theme.$item-label-typography);
+
+    z-index: 2;
+    display: flex;
+    column-gap: theme.$item-gap;
+    align-items: center;
+    justify-content: center;
+    height: theme.$item-height;
+    padding-inline: theme.$item-padding-y;
+    padding-block: theme.$item-padding-x;
+    border: theme.$item-border-default;
+    border-radius: theme.$item-border-radius;
+    user-select: none;
+    cursor: pointer;
+    transition: inherit;
+
+    @media (hover: hover) {
+        .SegmentedControl__input:not(:checked, :disabled) + &:hover {
+            background-color: theme.$item-background-hover;
+        }
+    }
+
+    // stylelint-disable-next-line selector-nested-pattern
+    .SegmentedControl__input:disabled + & {
+        cursor: not-allowed;
+    }
+}
+
+.SegmentedControl__label > svg {
+    flex-shrink: 0;
+}
+
+.SegmentedControl__input {
+    @include accessibility.hide-text();
+}

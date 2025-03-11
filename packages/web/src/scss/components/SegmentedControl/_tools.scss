@@ -1,0 +1,41 @@
+@use 'sass:map';
+@use 'theme';
+
+@mixin generate-segmented-control-variant($variant, $config) {
+    .SegmentedControl--#{$variant} {
+        border-color: map.get($config, 'border-color');
+        background-color: map.get($config, 'background-color');
+    }
+
+    .SegmentedControl--#{$variant} > .SegmentedControl__item {
+        &:has(.SegmentedControl__input[type='radio']),
+        &:has(.SegmentedControl__input[type='checkbox']:checked) {
+            &::before {
+                color: map.get($config, 'item-color-active');
+                border-color: map.get($config, 'item-border-color-active');
+                background-color: map.get($config, 'item-background-color-active');
+
+                @if map.has-key($config, 'item-box-shadow-active') {
+                    box-shadow: map.get($config, 'item-box-shadow-active');
+                }
+            }
+        }
+
+        &:has(.SegmentedControl__input:checked) {
+            color: map.get($config, 'item-color-active');
+        }
+
+        &:has(.SegmentedControl__input:disabled) {
+            color: theme.$item-color-disabled;
+        }
+    }
+}
+
+@mixin generate-before-control() {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    border: theme.$item-border-default;
+    border-radius: theme.$item-border-radius;
+    inset: 0;
+}

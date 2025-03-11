@@ -13,6 +13,7 @@ import Tabs from './Tabs';
 import Toast from './Toast';
 import Tooltip from './Tooltip';
 import * as utils from './utils';
+import SegmentedControl from './SegmentedControl';
 
 export default {
   AutoResize,
@@ -24,6 +25,7 @@ export default {
   Offcanvas,
   Password,
   ScrollView,
+  SegmentedControl,
   Tabs,
   Toast,
   Tooltip,
