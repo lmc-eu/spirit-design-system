@@ -1,0 +1,19 @@
+{# API #}
+{%- set props = props | default([]) -%}
+{%- set _elementType = props.elementType | default('div') -%}
+
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ 'StackItem' -%}
+
+{# Miscellaneous #}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _classNames = [ _rootClassName, _styleProps.className ] -%}
+
+
+<{{ _elementType }}
+    {{ mainProps(props) }}
+    {{ classProp(_classNames) }}
+    {{ styleProp(_styleProps) }}
+>
+    {%- block content %}{% endblock -%}
+</{{ _elementType }}>

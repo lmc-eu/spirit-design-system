@@ -92,6 +92,41 @@ On top of the API options, the components accept [additional attributes][readme-
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
+## Stack Item
+
+`StackItem` is required when using dividers between items.
+It is a wrapper component that should be used inside the `Stack` component.
+
+Basic example usage:
+
+```twig
+<Stack hasIntermediateDividers>
+  <StackItem>Stack Item 1</StackItem>
+  <StackItem>Stack Item 2</StackItem>
+  <StackItem>Stack Item 3</StackItem>
+</Stack>
+```
+
+Advanced example usage:
+
+```twig
+<Stack hasSpacing hasIntermediateDividers hasStartDivider hasEndDivider elementType="ul">
+  <StackItem elementType="li">Stack Item 1</StackItem>
+  <StackItem elementType="li">Stack Item 2</StackItem>
+  <StackItem elementType="li">Stack Item 3</StackItem>
+</Stack>
+```
+
+### API
+
+| Name          | Type     | Default | Required | Description                      |
+| ------------- | -------- | ------- | -------- | -------------------------------- |
+| `elementType` | `string` | `div`   | ✕        | Element type of the item element |
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
+
 [stack]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Stack
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#escape-hatches
