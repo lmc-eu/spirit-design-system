@@ -55,12 +55,47 @@ Custom responsive spacing:
 
 | Name                      | Type                                                              | Default | Required | Description                                           |
 | ------------------------- | ----------------------------------------------------------------- | ------- | -------- | ----------------------------------------------------- |
-| `elementType`             | `string`                                                          | `div`   | ✕        | Element type of the wrapper element                   |
+| `elementType`             | `ElementType`                                                     | `div`   | ✕        | Element type of the wrapper element                   |
 | `hasEndDivider`           | `bool`                                                            | `false` | ✕        | Render a divider after the last item                  |
 | `hasIntermediateDividers` | `bool`                                                            | `false` | ✕        | Render dividers between items                         |
 | `hasSpacing`              | `bool`                                                            | `false` | ✕        | Apply default spacing between items                   |
 | `hasStartDivider`         | `bool`                                                            | `false` | ✕        | Render a divider before the first item                |
 | `spacing`                 | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`] | —       | ✕        | Apply [custom spacing](#custom-spacing) between items |
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
+
+## Stack Item
+
+`StackItem` is required when using dividers between items.
+It is a wrapper component that should be used inside the `Stack` component.
+
+Basic example usage:
+
+```jsx
+<Stack hasIntermediateDividers>
+  <StackItem>Stack Item 1</StackItem>
+  <StackItem>Stack Item 2</StackItem>
+  <StackItem>Stack Item 3</StackItem>
+</Stack>
+```
+
+Advanced example usage:
+
+```jsx
+<Stack elementType="ul" hasSpacing hasIntermediateDividers hasStartDivider hasEndDivider>
+  <StackItem elementType="li">Stack Item 1</StackItem>
+  <StackItem elementType="li">Stack Item 2</StackItem>
+  <StackItem elementType="li">Stack Item 3</StackItem>
+</Stack>
+```
+
+### API
+
+| Name          | Type          | Default | Required | Description                      |
+| ------------- | ------------- | ------- | -------- | -------------------------------- |
+| `elementType` | `ElementType` | `div`   | ✕        | Element type of the item element |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

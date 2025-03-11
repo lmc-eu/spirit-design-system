@@ -7,7 +7,10 @@ interface StackCSSProperties extends SpacingCSSProperties {}
 
 export interface StackStyles {
   /** className props */
-  classProps: string;
+  classProps: {
+    root: string;
+    item: string;
+  };
   /** props to be passed to the element */
   props: SpiritStackProps;
   /** Style props for the element */
@@ -22,17 +25,20 @@ export function useStackStyleProps<T extends ElementType = 'div'>(props: SpiritS
   const StackMiddleDividersClass = `${StackClass}--hasIntermediateDividers`;
   const StackSpacingClass = `${StackClass}--hasSpacing`;
   const StackTopDividerClass = `${StackClass}--hasStartDivider`;
-  const classProps = classNames(StackClass, {
+  const rootProps = classNames(StackClass, {
     [StackBottomDividerClass]: hasEndDivider,
     [StackMiddleDividersClass]: hasIntermediateDividers,
     [StackSpacingClass]: hasSpacing || spacing,
     [StackTopDividerClass]: hasStartDivider,
   });
-
+  const itemProps = classNames(`${StackClass}Item`);
   const stackStyle = useSpacingStyle(spacing, 'stack');
 
   return {
-    classProps,
+    classProps: {
+      root: rootProps,
+      item: itemProps,
+    },
     props: restProps,
     styleProps: stackStyle,
   };

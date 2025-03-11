@@ -1,13 +1,14 @@
 import React from 'react';
 import DocsBox from '../../../../docs/DocsBox';
 import Stack from '../Stack';
+import StackItem from '../StackItem';
 
 const StackBlocksWithCustomSpacingAndDividers = () => (
   <Stack elementType="ul" hasStartDivider hasEndDivider hasIntermediateDividers spacing="space-800">
     {[1, 2, 3].map((i) => (
-      <li key={`stack-custom-spacing-dividers-${i}`}>
+      <StackItem key={`stack-custom-spacing-dividers-${i}`} elementType="li">
         <DocsBox>Block {i}</DocsBox>
-      </li>
+      </StackItem>
     ))}
   </Stack>
 );
