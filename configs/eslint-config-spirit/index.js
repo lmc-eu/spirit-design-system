@@ -69,7 +69,6 @@ module.exports = {
       },
     ],
 
-
     /**
      * Allow reassignment of params in properties
      *
