@@ -3,8 +3,8 @@
 import React, { ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritTruncateProps } from '../../types/truncate';
-import { useTruncateStyleProps } from './useTruncateStyleProps';
 import { mergeStyleProps } from '../../utils';
+import { useTruncateStyleProps } from './useTruncateStyleProps';
 
 const defaultProps = {
   elementType: 'span',

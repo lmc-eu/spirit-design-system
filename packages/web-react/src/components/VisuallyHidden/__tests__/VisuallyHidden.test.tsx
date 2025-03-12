@@ -1,6 +1,6 @@
+import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import '@testing-library/jest-dom';
 import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
 import VisuallyHidden from '../VisuallyHidden';
 
