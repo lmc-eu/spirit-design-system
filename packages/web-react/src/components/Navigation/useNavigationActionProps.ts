@@ -7,12 +7,12 @@ export type UseNavigationActionReturn = {
 };
 
 export const useNavigationActionProps = (props: UseNavigationActionProps): UseNavigationActionReturn => {
-  const { elementType = 'a', isDisabled, href, target, rel } = props;
+  const { isDisabled, href, target, rel } = props;
 
   const navigationActionProps: Partial<SpiritNavigationActionProps> = {
-    href: elementType === 'a' && !isDisabled ? href : undefined,
-    target: elementType === 'a' && !isDisabled ? target : undefined,
-    rel: elementType === 'a' ? rel : undefined,
+    href: isDisabled ? undefined : href,
+    target: isDisabled ? undefined : target,
+    rel: isDisabled ? undefined : rel,
   };
 
   return {
