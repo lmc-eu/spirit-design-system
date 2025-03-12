@@ -85,6 +85,54 @@ module.exports = {
     // we need this for meeting our component API conventions
     // @see: https://typescript-eslint.io/rules/no-empty-interface/
     '@typescript-eslint/no-empty-interface': ['error', { allowSingleExtends: true }],
+
+    /**
+     * Set sorting of imports
+     *
+     * @see { @link https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/order.md }
+     */
+    'import/order': [
+      'error',
+      {
+        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+        pathGroups: [
+          {
+            pattern: 'react',
+            group: 'external',
+            position: 'before',
+          },
+          {
+            pattern: '@testing-library/**',
+            group: 'external',
+            position: 'before',
+          },
+          {
+            pattern: '@local/**',
+            group: 'internal',
+            position: 'after',
+          },
+          {
+            pattern: '..',
+            group: 'parent',
+            position: 'after',
+          },
+          {
+            pattern: '**',
+            group: 'external',
+          },
+          {
+            pattern: '@**',
+            group: 'external',
+          },
+        ],
+        pathGroupsExcludedImportTypes: ['external'],
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
+        'newlines-between': 'never',
+      },
+    ],
   },
 
   overrides: [
