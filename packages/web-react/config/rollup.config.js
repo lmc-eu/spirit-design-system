@@ -1,4 +1,3 @@
-import path from 'path';
 import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 // ES lint is disabled because there is a conflict between 2 rules
@@ -6,6 +5,8 @@ import replace from '@rollup/plugin-replace';
 // 2) should be empty line after last import (required is not considered as import)
 // eslint-disable-next-line import/order
 import minify from '@rollup/plugin-terser';
+// eslint-disable-next-line import/order -- empty line between imports
+import path from 'path';
 
 const entryPoints = require('../scripts/entryPoints');
 
