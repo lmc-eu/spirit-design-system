@@ -2,7 +2,7 @@
 
 Icons are graphical metaphors or symbols that can be used to complement existing experiences.
 
-## 🚀 Getting Started
+## Getting Started
 
 To use this component in your project you need to run the following command using [npm][npm]:
 
@@ -16,7 +16,7 @@ If you prefer [Yarn][yarn], use the following command instead:
 yarn add @lmc-eu/spirit-icons
 ```
 
-### 📦 Dependencies
+### Dependencies
 
 `@lmc-eu/spirit-icons` is required as a **peer dependency** to keep package size as low as possible.
 So it will not be automatically installed with `@lmc-eu/spirit-web-react`.
@@ -24,7 +24,7 @@ So it will not be automatically installed with `@lmc-eu/spirit-web-react`.
 - [`@lmc-eu/spirit-icons`][icons-package] - Spirit Icons package
 - [`html-react-parser`][html-react-parser-package] - HTML to React parser (avoid usage of `dangerouslySetInnerHTML` on the server side)
 
-## 📝 Usage
+## Usage
 
 To ensure the `Icon` component functions as expected, wrap your application or the component tree where Icon is used with the `IconsProvider`.
 You need to pass the icon set to the provider as its value.
@@ -48,13 +48,25 @@ import icons from '@lmc-eu/spirit-icons/icons';
 </IconsProvider>;
 ```
 
-## 🧩 API
+### Full Example
 
-| Name      | Type     | Default | Required | Description       |
-| --------- | -------- | ------- | -------- | ----------------- |
-| `boxSize` | `number` | 24      | ✕        | Size of the icon  |
-| `name`    | `string` | —       | ✓        | Name of the icon  |
-| `title`   | `string` | —       | ✕        | Title of the icon |
+```jsx
+import { Icon, IconsProvider } from '@lmc-eu/spirit-web-react';
+import icons from '@lmc-eu/spirit-icons/icons';
+
+<IconsProvider value={icons}>
+  <Icon name="warning" boxSize={{ mobile: 20, tablet: 30, desktop: 40 }} title="Icon Title" />
+  Hey! Pay attention!
+</IconsProvider>;
+```
+
+## API
+
+| Name      | Type                                                        | Default | Required | Description                                                                                           |
+| --------- | ----------------------------------------------------------- | ------- | -------- | ----------------------------------------------------------------------------------------------------- |
+| `boxSize` | \[ `number` \| `Partial<Record<BreakpointToken, number>>` ] | 24      | ✕        | Size of the icon, use object to set responsive values, e.g. `{ mobile: 20, tablet: 30, desktop: 40 }` |
+| `name`    | `string`                                                    | —       | ✓        | Name of the icon                                                                                      |
+| `title`   | `string`                                                    | —       | ✕        | Title of the icon                                                                                     |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
