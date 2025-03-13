@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import React from 'react';
 import {
   classNamePrefixProviderTest,
-  actionButtonColorPropsTest,
+  componentButtonColorPropsTest,
   emotionColorPropsTest,
   sizePropsTest,
   loadingPropsTest,
@@ -17,7 +17,7 @@ jest.mock('../../../hooks/useIcon');
 describe('ButtonLink', () => {
   classNamePrefixProviderTest(ButtonLink, 'Button');
 
-  actionButtonColorPropsTest(ButtonLink, 'Button--');
+  componentButtonColorPropsTest(ButtonLink, 'Button--');
 
   emotionColorPropsTest(ButtonLink, 'Button--');
 

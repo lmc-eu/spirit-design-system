@@ -49,8 +49,8 @@ export const sizeExtendedPropsTest = (Component: ComponentType<any>, testId?: st
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const actionButtonColorPropsTest = (Component: ComponentType<any>, prefix: string, testId?: string) => {
-  it.each([Object.values(ComponentButtonColors)])('should render action color %s', async (color) => {
+export const componentButtonColorPropsTest = (Component: ComponentType<any>, prefix: string, testId?: string) => {
+  it.each([Object.values(ComponentButtonColors)])('should render component button color %s', async (color) => {
     const dom = render(<Component color={color as ComponentButtonColorsDictionaryType<string>} />);
 
     await waitFor(() => {
