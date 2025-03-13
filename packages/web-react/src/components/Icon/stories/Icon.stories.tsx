@@ -20,7 +20,7 @@ const meta: Meta<typeof Icon> = {
       },
     },
     boxSize: {
-      control: 'number',
+      control: 'object',
       table: {
         defaultValue: { summary: '24' },
       },
@@ -34,7 +34,7 @@ const meta: Meta<typeof Icon> = {
   },
   args: {
     ariaHidden: true,
-    boxSize: 24,
+    boxSize: { mobile: 24, tablet: 24, desktop: 24 },
     name: 'warning',
     title: 'Warning',
   },
