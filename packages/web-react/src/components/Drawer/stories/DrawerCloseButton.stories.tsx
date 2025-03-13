@@ -1,7 +1,7 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { AlignmentX } from '../../../constants';
+import { AlignmentX, ComponentButtonColors, EmotionColors } from '../../../constants';
 import { DRAWER_CLOSE_BUTTON_LABEL_DEFAULT } from '../constants';
 import Drawer from '../Drawer';
 import DrawerCloseButton from '../DrawerCloseButton';
@@ -17,6 +17,13 @@ const meta: Meta<typeof DrawerCloseButton> = {
     },
   },
   argTypes: {
+    color: {
+      control: 'select',
+      options: [...Object.values(ComponentButtonColors), ...Object.values(EmotionColors), undefined],
+      table: {
+        defaultValue: { summary: ComponentButtonColors.TERTIARY },
+      },
+    },
     label: {
       control: 'text',
       table: {
@@ -25,12 +32,13 @@ const meta: Meta<typeof DrawerCloseButton> = {
     },
   },
   args: {
+    color: ComponentButtonColors.TERTIARY,
     label: DRAWER_CLOSE_BUTTON_LABEL_DEFAULT,
   },
 };
 
 export default meta;
-type Story = StoryObj<typeof DrawerPanel>;
+type Story = StoryObj<typeof DrawerCloseButton>;
 
 export const DrawerCloseButtonPlayground: Story = {
   name: 'DrawerCloseButton',
@@ -44,7 +52,7 @@ export const DrawerCloseButtonPlayground: Story = {
       closeOnEscapeKeyDown={false}
     >
       <DrawerPanel>
-        <DrawerCloseButton label={args.label} />
+        <DrawerCloseButton {...args} />
         <div className="p-800">Drawer content</div>
       </DrawerPanel>
     </Drawer>

@@ -83,11 +83,18 @@ import { DrawerCloseButton } from '@lmc-eu/spirit-web-react';
 <DrawerCloseButton />;
 ```
 
+Use `color` prop to change the color variant of the button.
+
+```jsx
+<DrawerCloseButton color="secondary" />
+```
+
 ### API
 
-| Name    | Type     | Default | Required | Description                      |
-| ------- | -------- | ------- | -------- | -------------------------------- |
-| `label` | `string` | `Close` | ✕        | Label of the drawer close button |
+| Name    | Type                                                                                                     | Default    | Required | Description                      |
+| ------- | -------------------------------------------------------------------------------------------------------- | ---------- | -------- | -------------------------------- |
+| `color` | \[[Component Button Color dictionary][dictionary-color] \| [Emotion Color dictionary][dictionary-color]] | `tertiary` | ✕        | Color variant                    |
+| `label` | `string`                                                                                                 | `Close`    | ✕        | Label of the drawer close button |
 
 The component further inherits properties from the [`<button>`][mdn-button-element] element.
 
@@ -138,6 +145,7 @@ const handleClose = () => setIsOpen(false);
 </Drawer>
 ```
 
+[dictionary-color]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#color
 [mdn-button-element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
 [mdn-dialog-element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
