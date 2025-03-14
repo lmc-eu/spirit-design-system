@@ -19,6 +19,7 @@ const config = {
   moduleNameMapper: {
     '^@local/(.*)': '<rootDir>/$1',
     '^@local/tests/(.*)': '<rootDir>/tests/$1',
+    '^@lmc-eu/spirit-design-tokens': '<rootDir>/../design-tokens/src/js',
   },
 };
 
