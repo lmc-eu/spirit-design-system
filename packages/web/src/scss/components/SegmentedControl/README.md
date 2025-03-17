@@ -118,7 +118,7 @@ Segmented Control can be horizontally aligned to `stretch`.
 - Uses `checkboxes` instead of `radio` buttons to allow multiple selections.
 
 ```html
-<fieldset class="SegmentedControl SegmentedControl--outlined" data-spirit-toggle="segmentedControl">
+<fieldset class="SegmentedControl SegmentedControl--outlined">
   <legend class="accessibility-hidden">Label</legend>
 
   <div class="SegmentedControl__item">
