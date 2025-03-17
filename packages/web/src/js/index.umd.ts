@@ -9,11 +9,11 @@ import Modal from './Modal';
 import Offcanvas from './Offcanvas';
 import Password from './Password';
 import ScrollView from './ScrollView';
+import SegmentedControl from './SegmentedControl';
 import Tabs from './Tabs';
 import Toast from './Toast';
 import Tooltip from './Tooltip';
 import * as utils from './utils';
-import SegmentedControl from './SegmentedControl';
 
 export default {
   AutoResize,
@@ -24,8 +24,8 @@ export default {
   Modal,
   Offcanvas,
   Password,
-  ScrollView,
   SegmentedControl,
+  ScrollView,
   Tabs,
   Toast,
   Tooltip,
