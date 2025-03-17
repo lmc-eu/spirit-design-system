@@ -32,7 +32,7 @@ __metadata:
     "@lmc-eu/spirit-web": "workspace:^"
     "@lmc-eu/spirit-web-react": "workspace:^"
     "@next/eslint-plugin-next": "npm:14.2.24"
-    "@types/node": "npm:20.16.11"
+    "@types/node": "npm:20.17.24"
     "@types/react": "npm:18.3.12"
     "@types/react-dom": "npm:18.3.5"
     eslint: "npm:8.57.1"
@@ -58,7 +58,7 @@ __metadata:
     "@lmc-eu/spirit-web-react": "workspace:^"
     "@next/eslint-plugin-next": "npm:14.2.24"
     "@types/babel__core": "npm:7.20.5"
-    "@types/node": "npm:20.16.11"
+    "@types/node": "npm:20.17.24"
     "@types/react": "npm:18.3.12"
     "@types/react-dom": "npm:18.3.5"
     eslint: "npm:8.57.1"
@@ -5722,7 +5722,7 @@ __metadata:
     "@lmc-eu/eslint-config-jest": "npm:3.0.6"
     "@types/eslint": "npm:8.56.12"
     "@types/jest": "npm:29.5.14"
-    "@types/node": "npm:20.16.11"
+    "@types/node": "npm:20.17.24"
     "@typescript-eslint/eslint-plugin": "npm:6.21.0"
     "@typescript-eslint/parser": "npm:6.21.0"
     eslint: "npm:8.57.1"
@@ -5749,7 +5749,7 @@ __metadata:
     "@types/eslint": "npm:8.56.12"
     "@types/jest": "npm:29.5.14"
     "@types/jscodeshift": "npm:^0.12.0"
-    "@types/node": "npm:20.16.11"
+    "@types/node": "npm:20.17.24"
     "@typescript-eslint/eslint-plugin": "npm:6.21.0"
     "@typescript-eslint/parser": "npm:6.21.0"
     eslint: "npm:8.57.1"
@@ -5772,7 +5772,7 @@ __metadata:
   resolution: "@lmc-eu/spirit-common@workspace:packages/common"
   dependencies:
     "@types/jest": "npm:29.5.14"
-    "@types/node": "npm:20.16.11"
+    "@types/node": "npm:20.17.24"
     jest: "npm:29.7.0"
     ts-node: "npm:10.9.2"
     typescript: "npm:5.7.3"
@@ -5958,7 +5958,7 @@ __metadata:
     "@testing-library/user-event": "npm:14.6.1"
     "@types/babel__core": "npm:7.20.5"
     "@types/jest": "npm:29.5.14"
-    "@types/node": "npm:20.14.9"
+    "@types/node": "npm:20.17.24"
     "@types/react": "npm:18.3.3"
     "@types/react-dom": "npm:18.3.5"
     "@types/react-transition-group": "npm:4.4.12"
@@ -6035,7 +6035,7 @@ __metadata:
     "@testing-library/jest-dom": "npm:^6.6.3"
     "@types/eslint": "npm:9.6.1"
     "@types/jest": "npm:29.5.14"
-    "@types/node": "npm:^22.13.1"
+    "@types/node": "npm:20.17.24"
     autoprefixer: "npm:10.4.21"
     clean-css-cli: "npm:5.6.3"
     csstype: "npm:^3.1.3"
@@ -9981,21 +9981,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:20.14.9":
-  version: 20.14.9
-  resolution: "@types/node@npm:20.14.9"
-  dependencies:
-    undici-types: "npm:~5.26.4"
-  checksum: 10/f313b06c79be92f5d3541159ef813b9fc606941f951ecf826e940658c6d4952755ca2f06277b746326cef0697ed79a04676ecde053d32e1121b3352c8168d2e9
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:20.16.11":
-  version: 20.16.11
-  resolution: "@types/node@npm:20.16.11"
+"@types/node@npm:20.17.24":
+  version: 20.17.24
+  resolution: "@types/node@npm:20.17.24"
   dependencies:
     undici-types: "npm:~6.19.2"
-  checksum: 10/6d2f92b7b320c32ba0c2bc54d21651bd21690998a2e27f00d15019d4db3e0ec30fce85332efed5e37d4cda078ff93ea86ee3e92b76b7a25a9b92a52a039b60b2
+  checksum: 10/0c5fe294b003656b0f95ffce295c08e7ed3fa814ba9bf891e146dced90322d186e63837db9d9bb14d4f294fbe1a6fa1c89ced0b173380c8aaeb90de6c3eddb3b
   languageName: node
   linkType: hard
 
@@ -10014,15 +10005,6 @@ __metadata:
   dependencies:
     undici-types: "npm:~6.19.2"
   checksum: 10/39a8457149dc17cdea57afc90d4da53182fdb8b958d5bb065a15d123d81d4efa6b51a0de92428d05ead2e63ce07195586f71083401b99cdbcd04662344fbf7a1
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:^22.13.1":
-  version: 22.13.1
-  resolution: "@types/node@npm:22.13.1"
-  dependencies:
-    undici-types: "npm:~6.20.0"
-  checksum: 10/d8ba7068b0445643c0fa6e4917cdb7a90e8756a9daff8c8a332689cd5b2eaa01e4cd07de42e3cd7e6a6f465eeda803d5a1363d00b5ab3f6cea7950350a159497
   languageName: node
   linkType: hard
 
@@ -34068,13 +34050,6 @@ __metadata:
   version: 0.1.3
   resolution: "uncrypto@npm:0.1.3"
   checksum: 10/0020f74b0ce34723196d8982a73bb7f40cff455a41b8f88ae146b86885f4e66e41a1241fe80a887505c3bd2c7f07ed362b6ed041968370073c40a98496e6a737
-  languageName: node
-  linkType: hard
-
-"undici-types@npm:~5.26.4":
-  version: 5.26.5
-  resolution: "undici-types@npm:5.26.5"
-  checksum: 10/0097779d94bc0fd26f0418b3a05472410408877279141ded2bd449167be1aed7ea5b76f756562cb3586a07f251b90799bab22d9019ceba49c037c76445f7cddd
   languageName: node
   linkType: hard
 
