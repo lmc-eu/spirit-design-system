@@ -1,5 +1,5 @@
 import { RefObject, useState } from 'react';
-import { useResizeObserver } from 'usehooks-ts';
+import { useResizeObserver } from '../../hooks/useResizeObserver';
 
 type Size = {
   height: number | undefined;

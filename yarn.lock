@@ -3797,6 +3797,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@juggle/resize-observer@npm:3.4.0":
+  version: 3.4.0
+  resolution: "@juggle/resize-observer@npm:3.4.0"
+  checksum: 10/73d1d00ee9132fb6f0aea0531940a6b93603e935590bd450fc6285a328d906102eeeb95dea77b2edac0e779031a9708aa8c82502bd298ee4dd26e7dff48f397a
+  languageName: node
+  linkType: hard
+
 "@keyv/serialize@npm:^1.0.3":
   version: 1.0.3
   resolution: "@keyv/serialize@npm:1.0.3"
@@ -4226,6 +4233,7 @@ __metadata:
     "@babel/preset-react": "npm:7.26.3"
     "@babel/preset-typescript": "npm:7.26.0"
     "@floating-ui/react": "npm:^0.27.0"
+    "@juggle/resize-observer": "npm:3.4.0"
     "@lmc-eu/eslint-config-base": "npm:3.1.3"
     "@lmc-eu/eslint-config-jest": "npm:3.0.6"
     "@lmc-eu/eslint-config-react": "npm:2.0.6"
@@ -4280,7 +4288,6 @@ __metadata:
     ts-node: "npm:10.9.2"
     tsx: "npm:4.19.3"
     typescript: "npm:5.7.3"
-    usehooks-ts: "npm:^3.1.0"
     webpack: "npm:5.97.1"
     webpack-cli: "npm:5.1.4"
     webpack-merge: "npm:6.0.1"
@@ -4951,9 +4958,9 @@ __metadata:
   linkType: hard
 
 "@netlify/serverless-functions-api@npm:^1.31.1, @netlify/serverless-functions-api@npm:^1.35.0":
-  version: 1.35.0
-  resolution: "@netlify/serverless-functions-api@npm:1.35.0"
-  checksum: 10/f7dc5b031566312e5a2c62b4ef2f6c4ddb47b8dabfa1a94c53938d9e951b6efd1595dd8d0812974850c7b2a064369f49ed42ba9c059c4273a1443196e5933566
+  version: 1.35.1
+  resolution: "@netlify/serverless-functions-api@npm:1.35.1"
+  checksum: 10/61a473a7e1d5bc11f41a2e9544c63f0c869f88af1676c98761f9bd9c4d93f182a51ac5147854030de2f26abc58923180c025a882359aece0507cb0fee15b1df8
   languageName: node
   linkType: hard
 
@@ -31629,17 +31636,6 @@ __metadata:
   version: 8.0.2
   resolution: "urlpattern-polyfill@npm:8.0.2"
   checksum: 10/fd86b5c55473f3abbf9ed317b953c9cbb4fa6b3f75f681a1d982fe9c17bbc8d9bcf988f4cf3bda35e2e5875984086c97e177f97f076bb80dfa2beb85d1dd7b23
-  languageName: node
-  linkType: hard
-
-"usehooks-ts@npm:^3.1.0":
-  version: 3.1.1
-  resolution: "usehooks-ts@npm:3.1.1"
-  dependencies:
-    lodash.debounce: "npm:^4.0.8"
-  peerDependencies:
-    react: ^16.8.0  || ^17 || ^18 || ^19 || ^19.0.0-rc
-  checksum: 10/4f5d6beab003d76f90c6a9b8b0cd5b61f24528fa3dbbf1a6d9c0a509cb80914074af911a92dab0bc07873f14f714771306f5271e1e8f09b94add1722da37debb
   languageName: node
   linkType: hard
 
