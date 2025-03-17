@@ -50,7 +50,7 @@ Segmented controls allow users to select from a set of mutually exclusive option
 
 ## Variants
 
-### Design variants
+### Design Variants
 
 - `SegmentedControl--outlined` (default)
 - `SegmentedControl--filled`
@@ -65,7 +65,7 @@ Segmented controls allow users to select from a set of mutually exclusive option
 </fieldset>
 ```
 
-### Icon only variant
+### Icon Only Variant
 
 - Use this variant when there is limited space or when the icons are intuitive and easy to understand.
 - Keep in mind, that you must provide `SegmentedControl__label` with an `<span class="accessibility-hidden">Label</span>` or `aria-label` for accessibility reasons.
@@ -80,7 +80,7 @@ Segmented controls allow users to select from a set of mutually exclusive option
 </div>
 ```
 
-### Text only variant
+### Text Only Variant
 
 ```html
 <div class="SegmentedControl__item">
@@ -89,7 +89,7 @@ Segmented controls allow users to select from a set of mutually exclusive option
 </div>
 ```
 
-### Text and Icon variant
+### Text and Icon Variant
 
 ```html
 <div class="SegmentedControl__item">
@@ -101,7 +101,7 @@ Segmented controls allow users to select from a set of mutually exclusive option
 </div>
 ```
 
-## Horizontal alignment
+## Horizontal Alignment
 
 Segmented Control can be horizontally aligned to `stretch`.
 
@@ -157,7 +157,7 @@ Segmented Control can be horizontally aligned to `stretch`.
 </fieldset>
 ```
 
-## Disabled option
+## Disabled Option
 
 - Set the `disabled` attribute on the input to disable the Segmented Control item.
 
