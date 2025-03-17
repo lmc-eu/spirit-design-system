@@ -60,6 +60,9 @@ const initialSize: Size = {
   height: undefined,
 };
 
+// Helper to detect if running on the server
+const isSSR = typeof window === 'undefined';
+
 /**
  * Custom hook that observes the size of an element using the [`ResizeObserver API`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver).
  *
@@ -87,9 +90,16 @@ export function useResizeObserver<T extends HTMLElement = HTMLElement>(options: 
   onResize.current = options.onResize;
 
   useEffect(() => {
-    if (!ref.current) return;
-
-    if (typeof window === 'undefined' || !('ResizeObserver' in window)) return;
+    // Prevent execution on the server
+    if (isSSR) {
+      return;
+    }
+    if (!('ResizeObserver' in window)) {
+      return;
+    }
+    if (!ref.current) {
+      return;
+    }
 
     const observer = new ResizeObserver(([entry]) => {
       const boxProp =
