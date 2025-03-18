@@ -72,7 +72,7 @@ Segmented controls allow users to select from a set of mutually exclusive option
 
 ```html
 <div class="SegmentedControl__item">
-  <input type="radio" id="segmentedControl-label-1" name="segmented" value="value-1" class="SegmentedControl__input" />
+  <input type="radio" id="segmentedControl-label" name="segmented" value="value" class="SegmentedControl__input" />
   <svg width="20" height="20" aria-hidden="true">
     <use xlink:href="/assets/icons/svg/sprite.svg#file"></use>
   </svg>
@@ -84,7 +84,7 @@ Segmented controls allow users to select from a set of mutually exclusive option
 
 ```html
 <div class="SegmentedControl__item">
-  <input type="radio" id="segmentedControl-label-1" name="segmented" value="value-1" class="SegmentedControl__input" />
+  <input type="radio" id="segmentedControl-label" name="segmented" value="value" class="SegmentedControl__input" />
   <label for="segmentedControl-label-1" class="SegmentedControl__label">Label</label>
 </div>
 ```
@@ -93,7 +93,7 @@ Segmented controls allow users to select from a set of mutually exclusive option
 
 ```html
 <div class="SegmentedControl__item">
-  <input type="radio" id="segmentedControl-label-1" name="segmented" value="value-1" class="SegmentedControl__input" />
+  <input type="radio" id="segmentedControl-label" name="segmented" value="value" class="SegmentedControl__input" />
   <svg width="20" height="20" aria-hidden="true">
     <use xlink:href="/assets/icons/svg/sprite.svg#file"></use>
   </svg>
@@ -165,10 +165,11 @@ Segmented Control can be horizontally aligned to `stretch`.
 <div class="SegmentedControl__item">
   <input
     type="radio"
-    id="segmentedControl-label-1"
-    name="segmented-1"
-    value="value-1"
+    id="segmentedControl-label"
+    name="segmented"
+    value="value"
     class="SegmentedControl__input"
+    disabled
   />
   <label for="segmentedControl-label-1" class="SegmentedControl__label">Label</label>
 </div>
