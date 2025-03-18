@@ -19,14 +19,10 @@ class SegmentedControl extends BaseComponent {
     this.parent = this.element as HTMLElement;
     this.items = this.getChildren();
 
-    if (!this.parent) {
-      return;
-    }
-
     this.init();
   }
 
-  static get NAME() {
+  static get NAME(): string {
     return NAME;
   }
 
@@ -42,15 +38,19 @@ class SegmentedControl extends BaseComponent {
     return SelectorEngine.findAll(selector, this.parent);
   }
 
-  static setActivePosition(parent: HTMLElement, children: HTMLElement[]): void {
+  static getActivePosition(parent: HTMLElement, children: HTMLElement[]): number {
     const activeItem = SegmentedControl.getActiveItem(children);
     const parentPaddingLeft = parseFloat(getComputedStyle(parent).paddingLeft) || 0;
-    const offsetLeft = activeItem ? activeItem.offsetLeft - parentPaddingLeft : 0;
 
-    parent?.style.setProperty(`--${cssVariablePrefix}segmented-control-highlight-x-pos`, `${offsetLeft}px`);
+    return activeItem ? activeItem.offsetLeft - parentPaddingLeft : 0;
   }
 
-  onClick(): void {
+  static setActivePosition(parent: HTMLElement, children: HTMLElement[]): void {
+    const offsetLeft = SegmentedControl.getActivePosition(parent, children);
+    parent.style.setProperty(`--${cssVariablePrefix}segmented-control-highlight-x-pos`, `${offsetLeft}px`);
+  }
+
+  onChange(): void {
     SegmentedControl.setActivePosition(this.parent, this.items);
   }
 
@@ -65,13 +65,16 @@ class SegmentedControl extends BaseComponent {
   }
 
   addEventListeners(): void {
-    EventHandler.on(window, RESIZE_EVENT, this.onResize.bind(this));
+    this.onResize = this.onResize.bind(this);
+    this.onChange = this.onChange.bind(this);
+
+    EventHandler.on(window, RESIZE_EVENT, this.onResize);
 
     for (const item of this.items) {
       const input = SelectorEngine.findOne(SELECTOR_INPUT, item);
 
       if (input) {
-        EventHandler.on(input, CHANGE_EVENT, this.onClick.bind(this));
+        EventHandler.on(input, CHANGE_EVENT, this.onChange);
       }
     }
   }

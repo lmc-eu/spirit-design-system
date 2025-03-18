@@ -1,11 +1,10 @@
 import { cssVariablePrefix } from '@lmc-eu/spirit-design-tokens';
-import { fireEvent } from '@testing-library/dom';
 import { clearFixture, getFixture } from '../../../tests/helpers/fixture';
 import SegmentedControl from '../SegmentedControl';
 
 describe('SegmentedControl', () => {
   let fixtureEl: HTMLElement;
-  let fixtureControl: HTMLElement;
+  let fixtureControl: HTMLElement | null;
   let fixtureActiveItem: HTMLElement;
   let fixtureControlPaddingLeft: number;
 
@@ -59,18 +58,19 @@ describe('SegmentedControl', () => {
     });
 
     it('should update active position on change event', () => {
-      const input = fixtureEl.querySelector('.SegmentedControl__input') as HTMLElement;
+      const input = fixtureActiveItem.querySelector('.SegmentedControl__input') as HTMLElement;
 
       // On change event, simulate the offsetLeft change
       input.addEventListener('change', () => {
         Object.defineProperty(fixtureActiveItem, 'offsetLeft', { value: 105, configurable: true });
       });
 
-      // Trigger the change event
-      fireEvent.change(input);
+      const instance = new SegmentedControl(fixtureControl);
+
+      // Trigger the input change
+      instance.parent.querySelector('input')?.dispatchEvent(new Event('change'));
 
       const expectedOffsetLeft = fixtureActiveItem.offsetLeft - fixtureControlPaddingLeft;
-      const instance = new SegmentedControl(fixtureControl);
 
       expect(instance.parent.style.getPropertyValue(`--${cssVariablePrefix}segmented-control-highlight-x-pos`)).toBe(
         `${expectedOffsetLeft}px`,

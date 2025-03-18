@@ -6032,7 +6032,6 @@ __metadata:
     "@rollup/plugin-replace": "npm:6.0.2"
     "@rollup/plugin-terser": "npm:0.4.4"
     "@rollup/plugin-typescript": "npm:12.1.2"
-    "@testing-library/dom": "npm:10.4.0"
     "@testing-library/jest-dom": "npm:^6.6.3"
     "@types/eslint": "npm:9.6.1"
     "@types/jest": "npm:29.5.14"
