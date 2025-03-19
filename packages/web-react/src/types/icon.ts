@@ -1,9 +1,9 @@
-import React from 'react';
+import type { SVGAttributes } from 'react';
 import { BreakpointToken, ChildrenProps, StyleProps, TransferProps } from './shared';
 
 export type IconBoxSize = number | Partial<Record<BreakpointToken, number>>;
 
-export interface IconProps extends StyleProps, ChildrenProps, React.SVGAttributes<SVGElement>, TransferProps {
+export interface IconProps extends StyleProps, ChildrenProps, SVGAttributes<SVGElement>, TransferProps {
   /** Aria hidden */
   ariaHidden?: boolean;
   /** Size of the icon */
