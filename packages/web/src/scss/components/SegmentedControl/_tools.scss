@@ -24,7 +24,7 @@
         color: map.get($config, 'item-color-active');
     }
 
-    .SegmentedControl--#{$variant}.SegmentedControl__input:disabled + .SegmentedControl__label {
+    .SegmentedControl--#{$variant} .SegmentedControl__input:disabled + .SegmentedControl__label {
         color: theme.$item-color-disabled;
     }
 }
