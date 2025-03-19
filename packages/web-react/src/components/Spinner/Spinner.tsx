@@ -15,8 +15,8 @@ const Spinner = <C extends undefined = undefined>(props: SpiritSpinnerProps<C>):
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore: Incompatible HTMLElement and SVGSVGElement
     <Icon
-      name="spinner"
       {...otherProps}
+      name="spinner"
       UNSAFE_className={classNames(classProps, styleProps.className)}
       UNSAFE_style={styleProps.style}
     />
