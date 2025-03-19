@@ -7,13 +7,13 @@ Parses the latest changelog entry when new package version is release and posts 
 Dry run:
 
 ```shell
-yarn zx scripts/post-changelog.mjs --dry
+yarn post-changelog --dry
 ```
 
 Production run:
 
 ```shell
-yarn zx scripts/post-changelog.mjs
+yarn post-changelog
 ```
 
 ## Development & Testing

@@ -16,7 +16,8 @@
     "slack"
   ],
   "scripts": {
-    "post-changelog": "yarn zx ./post-changelog.mjs"
+    "post-changelog": "tsx ./post-changelog.ts",
+    "types": "tsc"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
@@ -24,6 +25,11 @@
     "gitdiff-parser": "^0.3.1",
     "simple-git": "^3.27.0",
     "slackify-markdown": "^4.4.0",
+    "tsx": "^4.19.3",
     "zx": "^8.3.0"
+  },
+  "devDependencies": {
+    "@types/dotenv-safe": "^8.1.6",
+    "typescript": "5.8.2"
   }
 }
