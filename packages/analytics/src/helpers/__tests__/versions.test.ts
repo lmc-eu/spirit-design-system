@@ -22,8 +22,6 @@ describe('versions', () => {
       globby.mockResolvedValue(['/path/to/yarn.lock']);
 
       // Mock the return value of fs.readFile
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-expect-error Property 'mockResolvedValue' does not exist on type
       fs.readFile.mockResolvedValue(`
         Some content before
         https://registry.yarnpkg.com/@lmc-eu/spirit-web-react/-/spirit-web-react-^1.2.0-beta.1.tgz
@@ -53,8 +51,6 @@ describe('versions', () => {
       globby.mockResolvedValue(['/path/to/package-lock.json']);
 
       // Mock the return value of fs.readFile (no matching version found)
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-expect-error Property 'mockResolvedValue' does not exist on type
       (fs.readFile as jest.Mock).mockResolvedValue(`
         Some content before
         https://registry.npmjs.org/@lmc-eu/spirit-web-react/-/spirit-web-react-1.0.0.tgz
