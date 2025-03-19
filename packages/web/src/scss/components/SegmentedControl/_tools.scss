@@ -3,6 +3,7 @@
 
 @mixin generate-segmented-control-variant($variant, $config) {
     .SegmentedControl--#{$variant} {
+        color: map.get($config, 'color');
         border-color: map.get($config, 'border-color');
         background-color: map.get($config, 'background-color');
     }
@@ -11,7 +12,6 @@
         &:has(.SegmentedControl__input[type='radio']),
         &:has(.SegmentedControl__input[type='checkbox']:checked) {
             &::before {
-                color: map.get($config, 'item-color-active');
                 border-color: map.get($config, 'item-border-color-active');
                 background-color: map.get($config, 'item-background-color-active');
 
