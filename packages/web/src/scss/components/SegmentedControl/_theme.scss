@@ -22,6 +22,7 @@ $item-color: tokens.$selected-content-subtle;
 $item-color-disabled: tokens.$disabled-content;
 $item-border-width: tokens.$border-width-100;
 $item-border-default: $item-border-width solid transparent;
+$item-outline-width: tokens.$border-width-100;
 
 $variant-outlined-config: (
     color: tokens.$text-primary,

@@ -39,3 +39,8 @@
     border-radius: theme.$item-border-radius;
     inset: 0;
 }
+
+@mixin outline() {
+    outline: Highlight auto theme.$item-outline-width;
+    outline: -webkit-focus-ring-color auto theme.$item-outline-width;
+}

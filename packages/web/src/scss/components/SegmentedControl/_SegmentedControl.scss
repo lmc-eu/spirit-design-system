@@ -88,4 +88,8 @@
 
 .SegmentedControl__input {
     @include accessibility.hide-text();
+
+    &:focus-visible + .SegmentedControl__label {
+        @include tools.outline();
+    }
 }
