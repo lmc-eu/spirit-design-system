@@ -29,7 +29,7 @@ function getTitle() {
  * @param {object} params.content - The content to send.
  * @param {string} params.webhookUrl - The webhook URL to send the content to.
  */
-async function sendToWebhook({ content, webhookUrl }) {
+async function sendToWebhook({ content, webhookUrl }: { content: object; webhookUrl: string }) {
   await fetch(webhookUrl, {
     method: 'POST',
     body: JSON.stringify(content),
@@ -55,7 +55,7 @@ async function sendToWebhook({ content, webhookUrl }) {
  *
  * @returns {string} The formatted changelog string.
  */
-function format(str, packageName, prefix = '@lmc-eu') {
+function format(str: string, packageName: string, prefix: string = '@lmc-eu') {
   const output = str
     .replace(
       /^(#+ )(.+)/,
@@ -79,19 +79,27 @@ function format(str, packageName, prefix = '@lmc-eu') {
   return output;
 }
 
+type ChangelogDiffFile = File & {
+  hunks: { changes: { isInsert: boolean; content: string }[] }[];
+};
+
 /**
  * Extracts the changelog content from the given diff files.
  *
- * @param {Array} files - The diff files to extract the changelog from.
+ * @param {Array<ChangelogDiffFile>} files - The diff files to extract the changelog from.
  * @returns {string} The extracted changelog content.
  */
-function getChangelogFromDiff(files) {
+function getChangelogFromDiff(files: ChangelogDiffFile[]) {
   // Only one file as we're only looking at the changelog
   const versionPattern = /<a name=".*"><\/a>/;
   const [changelogFile] = files;
   const changelog = changelogFile.hunks
-    .flatMap((hunk) => hunk.changes.filter(({ isInsert }) => isInsert).map(({ content }) => content))
-    .filter((line) => !versionPattern.test(line))
+    .flatMap((hunk: { changes: { isInsert: boolean; content: string }[] }) =>
+      hunk.changes
+        .filter(({ isInsert }: { isInsert: boolean }) => isInsert)
+        .map(({ content }: { content: string }) => content),
+    )
+    .filter((line: string) => !versionPattern.test(line))
     .join('\n')
     .trim();
 
@@ -105,7 +113,7 @@ function getChangelogFromDiff(files) {
  * @param {string} path - The path to get the diff for.
  * @returns {Promise<string>} The diff output.
  */
-function getDiff(tag, path) {
+function getDiff(tag: string, path: string): Promise<string> {
   return simpleGit().show([tag, path]);
 }
 
@@ -115,7 +123,7 @@ function getDiff(tag, path) {
  * @param {string} packageName - The name of the package.
  * @returns {string} The changelog path.
  */
-function changelogPath(packageName) {
+function changelogPath(packageName: string): string {
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = path.dirname(__filename);
 
@@ -130,7 +138,7 @@ function changelogPath(packageName) {
  *
  * @returns {Promise<void>}
  */
-async function postSlackNotification(changelog, packageName) {
+async function postSlackNotification(changelog: string, packageName: string): Promise<null | void> {
   try {
     $.verbose = false;
     const res = await sendToWebhook({
@@ -144,7 +152,7 @@ async function postSlackNotification(changelog, packageName) {
                 type: 'header',
                 text: {
                   type: 'plain_text',
-                  text: getTitle(packageName),
+                  text: getTitle(),
                   emoji: true,
                 },
               },
@@ -179,7 +187,7 @@ async function configureWebhookURL() {
       allowEmptyValues: true,
       example: '.env.example',
     });
-    SLACK_CHANGELOG_WEBHOOK_URL = process.env.SLACK_CHANGELOG_WEBHOOK_URL;
+    SLACK_CHANGELOG_WEBHOOK_URL = process.env.SLACK_CHANGELOG_WEBHOOK_URL as string;
   } catch (err) {
     if (/SLACK_CHANGELOG_WEBHOOK_URL/g.test(err.message)) {
       throw new Error('SLACK_CHANGELOG_WEBHOOK_URL is not set');
@@ -192,7 +200,7 @@ async function configureWebhookURL() {
  *
  * @param {string} npmPackage - The name of the npm package.
  */
-async function publishChangelog(npmPackage) {
+async function publishChangelog(npmPackage: string) {
   try {
     await simpleGit().fetch(['origin', 'main', '--tags']);
     const tags = await simpleGit().tags({ '--sort': '-taggerdate' });
@@ -206,7 +214,7 @@ async function publishChangelog(npmPackage) {
 
       return;
     }
-    const changelog = getChangelogFromDiff(files);
+    const changelog = getChangelogFromDiff(files as unknown as ChangelogDiffFile[]);
     const formattedChangelog = format(changelog, npmPackage);
     const slackifiedChangelog = slackifyMarkdown(formattedChangelog);
 

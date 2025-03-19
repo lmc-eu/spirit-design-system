@@ -4172,11 +4172,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@lmc-eu/spirit-post-changelog@workspace:scripts/post-changelog"
   dependencies:
+    "@types/dotenv-safe": "npm:^8.1.6"
     dotenv: "npm:^16.4.7"
     dotenv-safe: "npm:^9.1.0"
     gitdiff-parser: "npm:^0.3.1"
     simple-git: "npm:^3.27.0"
     slackify-markdown: "npm:^4.4.0"
+    tsx: "npm:^4.19.3"
+    typescript: "npm:5.8.2"
     zx: "npm:^8.3.0"
   languageName: unknown
   linkType: soft
@@ -7805,6 +7808,16 @@ __metadata:
   version: 0.0.9
   resolution: "@types/doctrine@npm:0.0.9"
   checksum: 10/64ef06e6eea2f4f9684d259fedbcb8bf21c954630b96ea2e04875ca42763552b0ba3b01b3dd27ec0f9ea6f8b3b0dba4965d31d5a925cd4c6225fd13a93ae9354
+  languageName: node
+  linkType: hard
+
+"@types/dotenv-safe@npm:^8.1.6":
+  version: 8.1.6
+  resolution: "@types/dotenv-safe@npm:8.1.6"
+  dependencies:
+    "@types/node": "npm:*"
+    dotenv: "npm:^8.2.0"
+  checksum: 10/fcc2995a3a06d54ecf6589c2ffac83a1e65a90e0dce0b1a116ae58e00feb895588bd1336cad529a221acb4ce6a44e963920f818d0dc84e1eb0e17a4111968623
   languageName: node
   linkType: hard
 
@@ -13871,6 +13884,13 @@ __metadata:
   version: 16.4.7
   resolution: "dotenv@npm:16.4.7"
   checksum: 10/f13bfe97db88f0df4ec505eeffb8925ec51f2d56a3d0b6d916964d8b4af494e6fb1633ba5d09089b552e77ab2a25de58d70259b2c5ed45ec148221835fc99a0c
+  languageName: node
+  linkType: hard
+
+"dotenv@npm:^8.2.0":
+  version: 8.6.0
+  resolution: "dotenv@npm:8.6.0"
+  checksum: 10/31d7b5c010cebb80046ba6853d703f9573369b00b15129536494f04b0af4ea0060ce8646e3af58b455af2f6f1237879dd261a5831656410ec92561ae1ea44508
   languageName: node
   linkType: hard
 
@@ -30612,7 +30632,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsx@npm:4.19.3":
+"tsx@npm:4.19.3, tsx@npm:^4.19.3":
   version: 4.19.3
   resolution: "tsx@npm:4.19.3"
   dependencies:
