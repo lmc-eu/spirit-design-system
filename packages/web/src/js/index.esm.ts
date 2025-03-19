@@ -11,7 +11,6 @@ export { default as SegmentedControl } from './SegmentedControl';
 export { default as Tabs } from './Tabs';
 export { default as Toast } from './Toast';
 export { default as Tooltip } from './Tooltip';
-
 export * from './constants';
 export * from './dom';
 export * from './utils';

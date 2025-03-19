@@ -24,20 +24,20 @@ $item-border-width: tokens.$border-width-100;
 $item-border-default: $item-border-width solid transparent;
 
 $variant-outlined-config: (
-    color: $item-color,
+    color: tokens.$text-primary,
     background-color: tokens.$background-secondary,
     border-color: tokens.$border-basic,
     item-background-color-active: tokens.$selected-content-subtle,
     item-color-active: tokens.$selected-content-basic,
-    item-border-color-active: tokens.$selected-content-basic,
+    item-border-color-active: tokens.$border-interactive-state-selected,
     item-box-shadow-active: tokens.$shadow-200,
 );
 
 $variant-filled-config: (
-    color: $item-color,
+    color: tokens.$text-secondary,
     background-color: tokens.$background-primary,
     border-color: tokens.$border-basic,
     item-background-color-active: tokens.$selected-state-default,
-    item-color-active: tokens.$selected-content-subtle,
     item-border-color-active: tokens.$selected-state-default,
+    item-color-active: tokens.$selected-content-subtle,
 );

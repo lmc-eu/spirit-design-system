@@ -1,6 +1,6 @@
 # Segmented Control
 
-Segmented controls allow users to select from a set of mutually exclusive options.
+Segmented Controls allows users to select from a set of mutually exclusive options.
 
 ## Basic Usage
 

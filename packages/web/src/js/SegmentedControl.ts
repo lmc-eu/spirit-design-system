@@ -1,14 +1,16 @@
 import { cssVariablePrefix } from '@lmc-eu/spirit-design-tokens';
 import BaseComponent from './BaseComponent';
+import { EventHandler } from './dom';
 import SelectorEngine from './dom/SelectorEngine';
 import { enableToggleAutoloader, SpiritConfig } from './utils';
-import { EventHandler } from './dom';
 
 const NAME = 'segmentedControl';
+const DATA_KEY = `${NAME}`;
+const EVENT_KEY = `.${DATA_KEY}`;
 const SELECTOR_ITEM = '.SegmentedControl__item';
 const SELECTOR_INPUT = '.SegmentedControl__input';
-const RESIZE_EVENT = 'resize';
-const CHANGE_EVENT = 'change';
+const EVENT_RESIZE = `resize${EVENT_KEY}`;
+const EVENT_CHANGE = `change${EVENT_KEY}`;
 
 class SegmentedControl extends BaseComponent {
   parent: HTMLElement;
@@ -24,6 +26,10 @@ class SegmentedControl extends BaseComponent {
 
   static get NAME(): string {
     return NAME;
+  }
+
+  static get DATA_KEY() {
+    return `${this.NAME}`;
   }
 
   static getActiveItem(children: HTMLElement[]): HTMLElement | undefined {
@@ -47,11 +53,13 @@ class SegmentedControl extends BaseComponent {
 
   static setActivePosition(parent: HTMLElement, children: HTMLElement[]): void {
     const offsetLeft = SegmentedControl.getActivePosition(parent, children);
+
     parent.style.setProperty(`--${cssVariablePrefix}segmented-control-highlight-x-pos`, `${offsetLeft}px`);
   }
 
   onChange(): void {
     SegmentedControl.setActivePosition(this.parent, this.items);
+    EventHandler.trigger(this.parent, EVENT_CHANGE);
   }
 
   onInit(): void {
@@ -62,19 +70,17 @@ class SegmentedControl extends BaseComponent {
     this.parent.style.transition = 'none';
     SegmentedControl.setActivePosition(this.parent, this.items);
     this.parent.style.transition = '';
+    EventHandler.trigger(this.parent, EVENT_RESIZE);
   }
 
   addEventListeners(): void {
-    this.onResize = this.onResize.bind(this);
-    this.onChange = this.onChange.bind(this);
-
-    EventHandler.on(window, RESIZE_EVENT, this.onResize);
+    EventHandler.on(window, 'resize', this.onResize.bind(this));
 
     for (const item of this.items) {
       const input = SelectorEngine.findOne(SELECTOR_INPUT, item);
 
       if (input) {
-        EventHandler.on(input, CHANGE_EVENT, this.onChange);
+        EventHandler.on(input, 'change', this.onChange.bind(this));
       }
     }
   }

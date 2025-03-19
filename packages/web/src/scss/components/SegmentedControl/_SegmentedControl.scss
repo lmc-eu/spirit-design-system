@@ -57,7 +57,6 @@
 .SegmentedControl__label {
     @include typography.generate(theme.$item-label-typography);
 
-    z-index: 2;
     display: flex;
     column-gap: theme.$item-gap;
     align-items: center;

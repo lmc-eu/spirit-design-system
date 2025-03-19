@@ -47,6 +47,12 @@ describe('SegmentedControl', () => {
     });
   });
 
+  describe('DATA_KEY', () => {
+    it('should return DATA_KEY', () => {
+      expect(SegmentedControl.DATA_KEY).toBe('segmentedControl');
+    });
+  });
+
   describe('constructor', () => {
     it('should set initial position on construction', () => {
       const expectedOffsetLeft = fixtureActiveItem.offsetLeft - fixtureControlPaddingLeft;
