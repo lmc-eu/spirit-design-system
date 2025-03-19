@@ -38,6 +38,6 @@ $variant-filled-config: (
     background-color: tokens.$background-primary,
     border-color: tokens.$border-basic,
     item-background-color-active: tokens.$selected-state-default,
-    item-border-color-active: tokens.$selected-state-default,
+    item-border-color-active: tokens.$border-interactive-state-selected,
     item-color-active: tokens.$selected-content-subtle,
 );
