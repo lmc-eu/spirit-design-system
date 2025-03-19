@@ -7,7 +7,7 @@ const calculateExpectedOffset = (
   fixtureControlPadding: number,
   fixtureActiveLabel: HTMLElement,
 ) => {
-  const parentWidth = fixtureControl?.clientWidth - fixtureControlPadding * 2 || 0;
+  const parentWidth = fixtureControl ? fixtureControl.clientWidth - fixtureControlPadding * 2 : 0;
   const expectedOffsetRight = parentWidth - (fixtureActiveLabel.offsetLeft + fixtureActiveLabel.offsetWidth);
 
   return -expectedOffsetRight - fixtureControlPadding;
