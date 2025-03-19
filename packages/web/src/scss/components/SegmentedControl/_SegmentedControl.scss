@@ -1,3 +1,6 @@
+// 1. JS version, it's used, when there is need for more items then $max-items
+// 2. In JS version, there is toggle of opacity because of transition effect on initialization (active item is not always the last one)
+
 @use '@tokens' as tokens;
 @use '../../tools/accessibility';
 @use '../../tools/typography';
@@ -17,9 +20,14 @@
     border: theme.$border-default;
     border-radius: theme.$border-radius;
 
-    &:has(.SegmentedControl__input[type='radio']) {
-        overflow: hidden;
-        transition: theme.$transition;
+    @media (prefers-reduced-motion: no-preference) {
+        &:has(.SegmentedControl__input[type='radio']) {
+            transition: theme.$transition;
+        }
+
+        &:has(.SegmentedControl__input[type='checkbox']) {
+            transition: theme.$transition-checkbox;
+        }
     }
 }
 
@@ -28,36 +36,13 @@
     width: 100%;
 }
 
-.SegmentedControl__item {
-    position: relative;
-    z-index: 2;
-    grid-row: 1;
-    transition: inherit;
-
-    &:has(.SegmentedControl__input[type='radio']) {
-        // stylelint-disable-next-line selector-max-specificity
-        &:first-of-type::before {
-            @include tools.generate-before-control();
-
-            transform: translateX(var(--#{tokens.$css-variable-prefix}segmented-control-highlight-x-pos, 0));
-            transition: inherit;
-        }
-    }
-
-    &:has(.SegmentedControl__input[type='checkbox']) {
-        &::before {
-            @include tools.generate-before-control();
-        }
-    }
-}
-
-@include tools.generate-segmented-control-variant('filled', theme.$variant-filled-config);
-@include tools.generate-segmented-control-variant('outlined', theme.$variant-outlined-config);
-
 .SegmentedControl__label {
     @include typography.generate(theme.$item-label-typography);
 
+    position: relative;
+    z-index: 2;
     display: flex;
+    grid-row: 1;
     column-gap: theme.$item-gap;
     align-items: center;
     justify-content: center;
@@ -76,9 +61,14 @@
         }
     }
 
-    // stylelint-disable-next-line selector-nested-pattern
-    .SegmentedControl__input:disabled + & {
-        cursor: not-allowed;
+    &::after {
+        @include tools.generate-before-control();
+
+        transition: inherit;
+    }
+
+    &:last-of-type {
+        z-index: 1;
     }
 }
 
@@ -92,4 +82,26 @@
     &:focus-visible + .SegmentedControl__label {
         @include tools.outline();
     }
+
+    &:disabled + .SegmentedControl__label {
+        cursor: not-allowed;
+    }
+}
+
+@include tools.generate-segmented-control-variant('filled', theme.$variant-filled-config);
+@include tools.generate-segmented-control-variant('outlined', theme.$variant-outlined-config);
+@include tools.generate-segmented-control-transform(theme.$max-items);
+
+// 1.
+// stylelint-disable-next-line selector-max-specificity
+[data-spirit-toggle] .SegmentedControl__input[type='radio'] + .SegmentedControl__label::after {
+    opacity: 0; // 2.
+    transform: translateX(var(--#{tokens.$css-variable-prefix}segmented-control-highlight-x-pos, 0));
+}
+
+// stylelint-disable-next-line selector-max-specificity,selector-max-class
+[data-spirit-toggle].is-initialized
+    .SegmentedControl__input[type='radio']
+    + .SegmentedControl__label:last-of-type::after {
+    opacity: 1; // 2.
 }

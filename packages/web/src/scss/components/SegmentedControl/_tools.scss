@@ -8,25 +8,32 @@
         background-color: map.get($config, 'background-color');
     }
 
-    .SegmentedControl--#{$variant} > .SegmentedControl__item {
-        &:has(.SegmentedControl__input[type='radio']),
-        &:has(.SegmentedControl__input[type='checkbox']:checked) {
-            &::before {
-                border-color: map.get($config, 'item-border-color-active');
-                background-color: map.get($config, 'item-background-color-active');
+    .SegmentedControl--#{$variant}
+        .SegmentedControl__input[type='radio']:last-of-type
+        + .SegmentedControl__label::after,
+    .SegmentedControl--#{$variant} .SegmentedControl__input[type='checkbox']:checked + .SegmentedControl__label::after {
+        border-color: map.get($config, 'item-border-color-active');
+        background-color: map.get($config, 'item-background-color-active');
 
-                @if map.has-key($config, 'item-box-shadow-active') {
-                    box-shadow: map.get($config, 'item-box-shadow-active');
-                }
-            }
+        @if map.has-key($config, 'item-box-shadow-active') {
+            box-shadow: map.get($config, 'item-box-shadow-active');
         }
+    }
 
-        &:has(.SegmentedControl__input:checked) {
-            color: map.get($config, 'item-color-active');
-        }
+    .SegmentedControl--#{$variant} .SegmentedControl__input:checked + .SegmentedControl__label {
+        color: map.get($config, 'item-color-active');
+    }
 
-        &:has(.SegmentedControl__input:disabled) {
-            color: theme.$item-color-disabled;
+    .SegmentedControl--#{$variant}.SegmentedControl__input:disabled + .SegmentedControl__label {
+        color: theme.$item-color-disabled;
+    }
+}
+
+@mixin generate-segmented-control-transform($max-items) {
+    @for $i from 1 through $max-items {
+        .SegmentedControl__input[type='radio']:nth-last-of-type(#{$i + 1}):checked
+            ~ .SegmentedControl__label:last-of-type::after {
+            transform: translateX(calc($i * -100% - #{$i * theme.$gap}));
         }
     }
 }
@@ -37,7 +44,8 @@
     z-index: -1;
     border: theme.$item-border-default;
     border-radius: theme.$item-border-radius;
-    inset: 0;
+    inset: -1 * theme.$item-border-width;
+    pointer-events: none;
 }
 
 @mixin outline() {

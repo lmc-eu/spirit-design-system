@@ -7,19 +7,20 @@ import { enableToggleAutoloader, SpiritConfig } from './utils';
 const NAME = 'segmentedControl';
 const DATA_KEY = `${NAME}`;
 const EVENT_KEY = `.${DATA_KEY}`;
-const SELECTOR_ITEM = '.SegmentedControl__item';
-const SELECTOR_INPUT = '.SegmentedControl__input';
+const SELECTOR_INPUT = '.SegmentedControl__input[type="radio"]';
+const CLASSNAME_INIT = 'is-initialized';
 const EVENT_RESIZE = `resize${EVENT_KEY}`;
 const EVENT_CHANGE = `change${EVENT_KEY}`;
+const TIMEOUT_INIT = 300;
 
 class SegmentedControl extends BaseComponent {
   parent: HTMLElement;
-  items: HTMLElement[];
+  inputs: HTMLElement[];
 
   constructor(element: SpiritElement, config?: SpiritConfig) {
     super(element, config);
     this.parent = this.element as HTMLElement;
-    this.items = this.getChildren();
+    this.inputs = this.getChildren();
 
     this.init();
   }
@@ -33,42 +34,48 @@ class SegmentedControl extends BaseComponent {
   }
 
   static getActiveItem(children: HTMLElement[]): HTMLElement | undefined {
-    return children.find((child) =>
-      Array.from(child.children).some(
-        (element): element is HTMLInputElement => element instanceof HTMLInputElement && element.checked,
-      ),
-    );
+    return children.find((child) => (child as HTMLInputElement).checked);
   }
 
-  getChildren(selector = SELECTOR_ITEM): HTMLElement[] {
+  getChildren(selector = SELECTOR_INPUT): HTMLElement[] {
     return SelectorEngine.findAll(selector, this.parent);
   }
 
   static getActivePosition(parent: HTMLElement, children: HTMLElement[]): number {
-    const activeItem = SegmentedControl.getActiveItem(children);
-    const parentPaddingLeft = parseFloat(getComputedStyle(parent).paddingLeft) || 0;
+    const activeInput = SegmentedControl.getActiveItem(children);
+    const activeLabel = activeInput?.nextElementSibling as HTMLElement;
 
-    return activeItem ? activeItem.offsetLeft - parentPaddingLeft : 0;
+    const parentPaddingLeft = parseFloat(getComputedStyle(parent).paddingLeft) || 0;
+    const parentPaddingRight = parseFloat(getComputedStyle(parent).paddingRight) || 0;
+    const parentWidth = parent.clientWidth - parentPaddingLeft - parentPaddingRight;
+    const offsetRight = parentWidth - (activeLabel.offsetLeft + activeLabel.offsetWidth);
+
+    return activeLabel ? -offsetRight - parentPaddingRight : 0;
   }
 
   static setActivePosition(parent: HTMLElement, children: HTMLElement[]): void {
-    const offsetLeft = SegmentedControl.getActivePosition(parent, children);
+    const offsetRight = SegmentedControl.getActivePosition(parent, children);
 
-    parent.style.setProperty(`--${cssVariablePrefix}segmented-control-highlight-x-pos`, `${offsetLeft}px`);
+    parent.style.setProperty(`--${cssVariablePrefix}segmented-control-highlight-x-pos`, `${offsetRight}px`);
   }
 
   onChange(): void {
-    SegmentedControl.setActivePosition(this.parent, this.items);
+    SegmentedControl.setActivePosition(this.parent, this.inputs);
     EventHandler.trigger(this.parent, EVENT_CHANGE);
   }
 
   onInit(): void {
-    SegmentedControl.setActivePosition(this.parent, this.items);
+    SegmentedControl.setActivePosition(this.parent, this.inputs);
+
+    // because of the transition
+    setTimeout(() => {
+      this.parent.classList.add(CLASSNAME_INIT);
+    }, TIMEOUT_INIT);
   }
 
   onResize(): void {
     this.parent.style.transition = 'none';
-    SegmentedControl.setActivePosition(this.parent, this.items);
+    SegmentedControl.setActivePosition(this.parent, this.inputs);
     this.parent.style.transition = '';
     EventHandler.trigger(this.parent, EVENT_RESIZE);
   }
@@ -76,9 +83,7 @@ class SegmentedControl extends BaseComponent {
   addEventListeners(): void {
     EventHandler.on(window, 'resize', this.onResize.bind(this));
 
-    for (const item of this.items) {
-      const input = SelectorEngine.findOne(SELECTOR_INPUT, item);
-
+    for (const input of this.inputs) {
       if (input) {
         EventHandler.on(input, 'change', this.onChange.bind(this));
       }

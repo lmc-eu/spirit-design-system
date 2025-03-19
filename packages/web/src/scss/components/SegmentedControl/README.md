@@ -4,47 +4,30 @@ Segmented Controls allows users to select from a set of mutually exclusive optio
 
 ## Basic Usage
 
-- Uses radio buttons to allow users to select one option from a set of options.
+- Uses `radio` buttons to allow users to select one option from a set of options.
+- By default, allows only **10** options, but can be extended by use [JS plugin](#javascript-plugin).
 
 👉 Keep in mind, that you must provide `SegmentedControl` with an `legend` or `aria-label` for accessibility reasons.
 
 ```html
-<fieldset class="SegmentedControl SegmentedControl--outlined" data-spirit-toggle="segmentedControl">
+<fieldset class="SegmentedControl SegmentedControl--outlined">
   <legend class="accessibility-hidden">Label</legend>
 
-  <div class="SegmentedControl__item">
-    <input
-      type="radio"
-      id="segmentedControl-label-1"
-      name="segmented"
-      value="value-1"
-      class="SegmentedControl__input"
-      checked
-    />
-    <label for="segmentedControl-label-1" class="SegmentedControl__label">Label</label>
-  </div>
+  <input
+    type="radio"
+    id="segmentedControl-label-1"
+    name="segmented"
+    value="value-1"
+    class="SegmentedControl__input"
+    checked
+  />
+  <label for="segmentedControl-label-1" class="SegmentedControl__label">Label</label>
 
-  <div class="SegmentedControl__item">
-    <input
-      type="radio"
-      id="segmentedControl-label-2"
-      name="segmented"
-      value="value-2"
-      class="SegmentedControl__input"
-    />
-    <label for="segmentedControl-label-2" class="SegmentedControl__label">Label</label>
-  </div>
+  <input type="radio" id="segmentedControl-label-2" name="segmented" value="value-2" class="SegmentedControl__input" />
+  <label for="segmentedControl-label-2" class="SegmentedControl__label">Label</label>
 
-  <div class="SegmentedControl__item">
-    <input
-      type="radio"
-      id="segmentedControl-label-3"
-      name="segmented"
-      value="value-3"
-      class="SegmentedControl__input"
-    />
-    <label for="segmentedControl-label-3" class="SegmentedControl__label">Label</label>
-  </div>
+  <input type="radio" id="segmentedControl-label-3" name="segmented" value="value-3" class="SegmentedControl__input" />
+  <label for="segmentedControl-label-3" class="SegmentedControl__label">Label</label>
 </fieldset>
 ```
 
@@ -56,11 +39,11 @@ Segmented Controls allows users to select from a set of mutually exclusive optio
 - `SegmentedControl--filled`
 
 ```html
-<fieldset class="SegmentedControl SegmentedControl--outlined" data-spirit-toggle="segmentedControl">
+<fieldset class="SegmentedControl SegmentedControl--outlined">
   <!-- Inputs and labels -->
 </fieldset>
 
-<fieldset class="SegmentedControl SegmentedControl--filled" data-spirit-toggle="segmentedControl">
+<fieldset class="SegmentedControl SegmentedControl--filled">
   <!-- Inputs and labels -->
 </fieldset>
 ```
@@ -71,34 +54,28 @@ Segmented Controls allows users to select from a set of mutually exclusive optio
 - Keep in mind, that you must provide `SegmentedControl__label` with an `<span class="accessibility-hidden">Label</span>` or `aria-label` for accessibility reasons.
 
 ```html
-<div class="SegmentedControl__item">
-  <input type="radio" id="segmentedControl-label" name="segmented" value="value" class="SegmentedControl__input" />
-  <svg width="20" height="20" aria-hidden="true">
-    <use xlink:href="/assets/icons/svg/sprite.svg#file"></use>
-  </svg>
-  <span class="accessibility-hidden">Label</span>
-</div>
+<input type="radio" id="segmentedControl-label" name="segmented" value="value" class="SegmentedControl__input" />
+<svg width="20" height="20" aria-hidden="true">
+  <use xlink:href="/assets/icons/svg/sprite.svg#file"></use>
+</svg>
+<span class="accessibility-hidden">Label</span>
 ```
 
 ### Text Only Variant
 
 ```html
-<div class="SegmentedControl__item">
-  <input type="radio" id="segmentedControl-label" name="segmented" value="value" class="SegmentedControl__input" />
-  <label for="segmentedControl-label-1" class="SegmentedControl__label">Label</label>
-</div>
+<input type="radio" id="segmentedControl-label" name="segmented" value="value" class="SegmentedControl__input" />
+<label for="segmentedControl-label-1" class="SegmentedControl__label">Label</label>
 ```
 
 ### Text and Icon Variant
 
 ```html
-<div class="SegmentedControl__item">
-  <input type="radio" id="segmentedControl-label" name="segmented" value="value" class="SegmentedControl__input" />
-  <svg width="20" height="20" aria-hidden="true">
-    <use xlink:href="/assets/icons/svg/sprite.svg#file"></use>
-  </svg>
-  <label for="segmentedControl-label-1" class="SegmentedControl__label">Label</label>
-</div>
+<input type="radio" id="segmentedControl-label" name="segmented" value="value" class="SegmentedControl__input" />
+<svg width="20" height="20" aria-hidden="true">
+  <use xlink:href="/assets/icons/svg/sprite.svg#file"></use>
+</svg>
+<label for="segmentedControl-label-1" class="SegmentedControl__label">Label</label>
 ```
 
 ## Horizontal Alignment
@@ -108,7 +85,7 @@ Segmented Control can be horizontally aligned to `stretch`.
 - `SegmentedControl--stretch`
 
 ```html
-<fieldset class="SegmentedControl SegmentedControl--stretch" data-spirit-toggle="segmentedControl">
+<fieldset class="SegmentedControl SegmentedControl--stretch">
   <!-- Inputs and labels -->
 </fieldset>
 ```
@@ -121,39 +98,33 @@ Segmented Control can be horizontally aligned to `stretch`.
 <fieldset class="SegmentedControl SegmentedControl--outlined">
   <legend class="accessibility-hidden">Label</legend>
 
-  <div class="SegmentedControl__item">
-    <input
-      type="checkbox"
-      id="segmentedControl-label-1"
-      name="segmented"
-      value="value-1"
-      class="SegmentedControl__input"
-      checked
-    />
-    <label for="segmentedControl-label-1" class="SegmentedControl__label">Label</label>
-  </div>
+  <input
+    type="checkbox"
+    id="segmentedControl-label-1"
+    name="segmented"
+    value="value-1"
+    class="SegmentedControl__input"
+    checked
+  />
+  <label for="segmentedControl-label-1" class="SegmentedControl__label">Label</label>
 
-  <div class="SegmentedControl__item">
-    <input
-      type="checkbox"
-      id="segmentedControl-label-2"
-      name="segmented"
-      value="value-2"
-      class="SegmentedControl__input"
-    />
-    <label for="segmentedControl-label-2" class="SegmentedControl__label">Label</label>
-  </div>
+  <input
+    type="checkbox"
+    id="segmentedControl-label-2"
+    name="segmented"
+    value="value-2"
+    class="SegmentedControl__input"
+  />
+  <label for="segmentedControl-label-2" class="SegmentedControl__label">Label</label>
 
-  <div class="SegmentedControl__item">
-    <input
-      type="checkbox"
-      id="segmentedControl-label-3"
-      name="segmented"
-      value="value-3"
-      class="SegmentedControl__input"
-    />
-    <label for="segmentedControl-label-3" class="SegmentedControl__label">Label</label>
-  </div>
+  <input
+    type="checkbox"
+    id="segmentedControl-label-3"
+    name="segmented"
+    value="value-3"
+    class="SegmentedControl__input"
+  />
+  <label for="segmentedControl-label-3" class="SegmentedControl__label">Label</label>
 </fieldset>
 ```
 
@@ -162,25 +133,31 @@ Segmented Control can be horizontally aligned to `stretch`.
 - Set the `disabled` attribute on the input to disable the Segmented Control item.
 
 ```html
-<div class="SegmentedControl__item">
-  <input
-    type="radio"
-    id="segmentedControl-label"
-    name="segmented"
-    value="value"
-    class="SegmentedControl__input"
-    disabled
-  />
-  <label for="segmentedControl-label-1" class="SegmentedControl__label">Label</label>
-</div>
+<input
+  type="radio"
+  id="segmentedControl-label"
+  name="segmented"
+  value="value"
+  class="SegmentedControl__input"
+  disabled
+/>
+<label for="segmentedControl-label-1" class="SegmentedControl__label">Label</label>
 ```
 
 ## JavaScript Plugin
 
-For full functionality, you need to provide Spirit JavaScript, which will handle animated selection in `radio` variant of the Segmented Control component:
+If you want to have more than **10** `radio` options, you can use the JavaScript plugin to handle the selection.
 
 ```html
 <script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
+```
+
+Set `data-spirit-toggle="segmentedControl"` attribute on the `fieldset` element.
+
+```html
+<fieldset class="SegmentedControl SegmentedControl--outlined" data-spirit-toggle="segmentedControl">
+  <!-- Inputs and labels -->
+</fieldset>
 ```
 
 Please consult the [main README][web-readme] for how to include JavaScript plugins.

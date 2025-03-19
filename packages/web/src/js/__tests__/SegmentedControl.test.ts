@@ -2,11 +2,22 @@ import { cssVariablePrefix } from '@lmc-eu/spirit-design-tokens';
 import { clearFixture, getFixture } from '../../../tests/helpers/fixture';
 import SegmentedControl from '../SegmentedControl';
 
+const calculateExpectedOffset = (
+  fixtureControl: HTMLElement,
+  fixtureControlPadding: number,
+  fixtureActiveLabel: HTMLElement,
+) => {
+  const parentWidth = fixtureControl?.clientWidth - fixtureControlPadding * 2 || 0;
+  const expectedOffsetRight = parentWidth - (fixtureActiveLabel.offsetLeft + fixtureActiveLabel.offsetWidth);
+
+  return -expectedOffsetRight - fixtureControlPadding;
+};
+
 describe('SegmentedControl', () => {
   let fixtureEl: HTMLElement;
-  let fixtureControl: HTMLElement | null;
-  let fixtureActiveItem: HTMLElement;
-  let fixtureControlPaddingLeft: number;
+  let fixtureControl: HTMLElement;
+  let fixtureActiveLabel: HTMLElement;
+  let fixtureControlPadding: number;
 
   beforeAll(() => {
     fixtureEl = getFixture();
@@ -23,22 +34,22 @@ describe('SegmentedControl', () => {
         ${[1, 2, 3]
           .map(
             (i) => `
-          <div class="SegmentedControl__item">
             <input type="radio" id="segmentedControl-label-filled-${i}" name="segmented-filled" value="value-${i}" class="SegmentedControl__input" ${i === 1 ? 'checked' : ''}>
             <label for="segmentedControl-label-filled-${i}" class="SegmentedControl__label">Label Title</label>
-          </div>
         `,
           )
           .join('')}
       </fieldset>`;
 
     fixtureControl = fixtureEl.querySelector('fieldset') as HTMLElement;
-    fixtureControl.style.paddingLeft = '5px';
-    fixtureControlPaddingLeft = parseFloat(getComputedStyle(fixtureControl).getPropertyValue('padding-left')) || 0;
-    fixtureActiveItem = fixtureControl.querySelector('.SegmentedControl__item') as HTMLElement;
+    fixtureControl.style.padding = '5px';
+    fixtureControlPadding = parseFloat(getComputedStyle(fixtureControl).getPropertyValue('padding')) || 0;
+    fixtureActiveLabel = fixtureControl.querySelector('.SegmentedControl__label:first-of-type') as HTMLElement;
 
-    // Manually set the initial offsetLeft to simulate the actual behavior
-    Object.defineProperty(fixtureActiveItem, 'offsetLeft', { value: 5, configurable: true });
+    // Manually set the initial offsetLeft and width to simulate the actual behavior
+    Object.defineProperty(fixtureControl, 'clientWidth', { value: 322, configurable: true });
+    Object.defineProperty(fixtureActiveLabel, 'offsetLeft', { value: 5, configurable: true });
+    Object.defineProperty(fixtureActiveLabel, 'offsetWidth', { value: 100, configurable: true });
   });
 
   describe('NAME', () => {
@@ -55,20 +66,21 @@ describe('SegmentedControl', () => {
 
   describe('constructor', () => {
     it('should set initial position on construction', () => {
-      const expectedOffsetLeft = fixtureActiveItem.offsetLeft - fixtureControlPaddingLeft;
+      const expectedOffset = calculateExpectedOffset(fixtureControl, fixtureControlPadding, fixtureActiveLabel);
+
       const instance = new SegmentedControl(fixtureControl);
 
       expect(instance.parent.style.getPropertyValue(`--${cssVariablePrefix}segmented-control-highlight-x-pos`)).toBe(
-        `${expectedOffsetLeft}px`,
+        `${expectedOffset}px`,
       );
     });
 
     it('should update active position on change event', () => {
-      const input = fixtureActiveItem.querySelector('.SegmentedControl__input') as HTMLElement;
+      const input = fixtureActiveLabel.nextElementSibling as HTMLElement;
 
       // On change event, simulate the offsetLeft change
-      input.addEventListener('change', () => {
-        Object.defineProperty(fixtureActiveItem, 'offsetLeft', { value: 105, configurable: true });
+      input?.addEventListener('change', () => {
+        Object.defineProperty(fixtureActiveLabel, 'offsetLeft', { value: 111, configurable: true });
       });
 
       const instance = new SegmentedControl(fixtureControl);
@@ -76,28 +88,42 @@ describe('SegmentedControl', () => {
       // Trigger the input change
       instance.parent.querySelector('input')?.dispatchEvent(new Event('change'));
 
-      const expectedOffsetLeft = fixtureActiveItem.offsetLeft - fixtureControlPaddingLeft;
+      const expectedOffset = calculateExpectedOffset(fixtureControl, fixtureControlPadding, fixtureActiveLabel);
 
       expect(instance.parent.style.getPropertyValue(`--${cssVariablePrefix}segmented-control-highlight-x-pos`)).toBe(
-        `${expectedOffsetLeft}px`,
+        `${expectedOffset}px`,
       );
     });
 
     it('should update active position on resize window', () => {
       // On change event, simulate the offsetLeft change
       window.addEventListener('resize', () => {
-        Object.defineProperty(fixtureActiveItem, 'offsetLeft', { value: 105, configurable: true });
+        Object.defineProperty(fixtureActiveLabel, 'offsetLeft', { value: 111, configurable: true });
       });
 
       // Trigger the window resize event
       window.dispatchEvent(new Event('resize'));
 
-      const expectedOffsetLeft = fixtureActiveItem.offsetLeft - fixtureControlPaddingLeft;
       const instance = new SegmentedControl(fixtureControl);
 
+      const expectedOffset = calculateExpectedOffset(fixtureControl, fixtureControlPadding, fixtureActiveLabel);
+
       expect(instance.parent.style.getPropertyValue(`--${cssVariablePrefix}segmented-control-highlight-x-pos`)).toBe(
-        `${expectedOffsetLeft}px`,
+        `${expectedOffset}px`,
       );
+    });
+
+    it('add initialized class after 300ms', () => {
+      jest.useFakeTimers();
+      const instance = new SegmentedControl(fixtureControl);
+
+      instance.onInit();
+
+      jest.advanceTimersByTime(300);
+
+      expect(instance.parent.classList.contains('is-initialized')).toBe(true);
+
+      jest.useRealTimers();
     });
   });
 });

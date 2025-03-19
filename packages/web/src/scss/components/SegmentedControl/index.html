@@ -15,24 +15,22 @@
           <h3 class="docs-Heading">{{ variant }}</h3>
           <div class="docs-Stack docs-Stack--start">
 
-            <fieldset class="SegmentedControl SegmentedControl--{{variant}}" data-spirit-toggle="segmentedControl">
+            <fieldset class="SegmentedControl SegmentedControl--{{variant}}">
               <legend class="accessibility-hidden">Label</legend>
 
               {{#each @root.items as |item|}}
 
-              <div class="SegmentedControl__item">
-                <input type="radio"
-                       id="segmentedControl-label-{{variant}}-{{item}}"
-                       name="segmented-{{variant}}-design"
-                       value="value-{{item}}"
-                       class="SegmentedControl__input"
-                       {{#if (eq item "1")}}checked{{/if}}
-                >
-                <label for="segmentedControl-label-{{variant}}-{{item}}"
-                       class="SegmentedControl__label"
-                >Label
-                </label>
-              </div>
+              <input type="radio"
+                     id="segmentedControl-label-{{variant}}-{{item}}"
+                     name="segmented-{{variant}}-design"
+                     value="value-{{item}}"
+                     class="SegmentedControl__input"
+                     {{#if (eq item "1")}}checked{{/if}}
+              >
+              <label for="segmentedControl-label-{{variant}}-{{item}}"
+                     class="SegmentedControl__label"
+              >Label
+              </label>
 
               {{/each}}
 
@@ -63,37 +61,35 @@
           <h3 class="docs-Heading">{{ variant }}</h3>
           <div class="docs-Stack docs-Stack--start">
 
-            <fieldset class="SegmentedControl SegmentedControl--outlined" data-spirit-toggle="segmentedControl">
+            <fieldset class="SegmentedControl SegmentedControl--outlined">
               <legend class="accessibility-hidden">Label</legend>
 
               {{#each @root.items as |item|}}
 
-              <div class="SegmentedControl__item">
-                <input type="radio"
-                       id="segmentedControl-icon-{{variant}}-{{item}}"
-                       name="segmented-icon-{{variant}}"
-                       value="value-{{item}}"
-                       class="SegmentedControl__input"
-                       {{#if (eq item "1")}}checked{{/if}}
-                >
-                <label for="segmentedControl-icon-{{variant}}-{{item}}"
-                       class="SegmentedControl__label"
-                >
-                  {{#if (eq variant "label-only")}}Label{{/if}}
-                  {{#if (eq variant "icon-only")}}
-                  <svg width="20" height="20" aria-hidden="true">
-                    <use xlink:href="/assets/icons/svg/sprite.svg#file"></use>
-                  </svg>
-                  <span class="accessibility-hidden">Label</span>
-                  {{/if}}
-                  {{#if (eq variant "label-icon")}}
-                  <svg width="20" height="20" aria-hidden="true">
-                    <use xlink:href="/assets/icons/svg/sprite.svg#file"></use>
-                  </svg>
-                  Label
-                  {{/if}}
-                </label>
-              </div>
+              <input type="radio"
+                     id="segmentedControl-icon-{{variant}}-{{item}}"
+                     name="segmented-icon-{{variant}}"
+                     value="value-{{item}}"
+                     class="SegmentedControl__input"
+                     {{#if (eq item "1")}}checked{{/if}}
+              >
+              <label for="segmentedControl-icon-{{variant}}-{{item}}"
+                     class="SegmentedControl__label"
+              >
+                {{#if (eq variant "label-only")}}Label{{/if}}
+                {{#if (eq variant "icon-only")}}
+                <svg width="20" height="20" aria-hidden="true">
+                  <use xlink:href="/assets/icons/svg/sprite.svg#file"></use>
+                </svg>
+                <span class="accessibility-hidden">Label</span>
+                {{/if}}
+                {{#if (eq variant "label-icon")}}
+                <svg width="20" height="20" aria-hidden="true">
+                  <use xlink:href="/assets/icons/svg/sprite.svg#file"></use>
+                </svg>
+                Label
+                {{/if}}
+              </label>
 
               {{/each}}
 
@@ -123,18 +119,16 @@
 
         {{#each @root.items as |item|}}
 
-        <div class="SegmentedControl__item">
-          <input type="checkbox"
-                 id="segmentedControl-multiple-{{variant}}-{{item}}"
-                 name="segmented-{{variant}}"
-                 value="value-{{item}}"
-                 class="SegmentedControl__input"
-                 {{#if (eq item "1")}}checked{{/if}}
-          >
-          <label for="segmentedControl-multiple-{{variant}}-{{item}}"
-                 class="SegmentedControl__label"
-          >Label</label>
-        </div>
+        <input type="checkbox"
+               id="segmentedControl-multiple-{{variant}}-{{item}}"
+               name="segmented-{{variant}}"
+               value="value-{{item}}"
+               class="SegmentedControl__input"
+               {{#if (eq item "1")}}checked{{/if}}
+        >
+        <label for="segmentedControl-multiple-{{variant}}-{{item}}"
+               class="SegmentedControl__label"
+        >Label</label>
 
         {{/each}}
 
@@ -153,25 +147,23 @@
 
       {{#each @root.variants as |variant|}}
 
-      <fieldset class="SegmentedControl SegmentedControl--{{variant}}" data-spirit-toggle="segmentedControl">
+      <fieldset class="SegmentedControl SegmentedControl--{{variant}}">
 
         <legend class="accessibility-hidden">Label</legend>
 
         {{#each @root.items as |item|}}
 
-        <div class="SegmentedControl__item">
-          <input type="radio"
-                 id="segmentedControl-disabled-{{variant}}-{{item}}"
-                 name="segmented-{{variant}}"
-                 value="value-{{item}}"
-                 class="SegmentedControl__input"
-                 {{#if (eq item "1")}}checked{{/if}}
-                 {{#if (eq item "3")}}disabled{{/if}}
-          >
-          <label for="segmentedControl-disabled-{{variant}}-{{item}}"
-                 class="SegmentedControl__label"
-          >Label</label>
-        </div>
+        <input type="radio"
+               id="segmentedControl-disabled-{{variant}}-{{item}}"
+               name="segmented-{{variant}}"
+               value="value-{{item}}"
+               class="SegmentedControl__input"
+               {{#if (eq item "1")}}checked{{/if}}
+        {{#if (eq item "3")}}disabled{{/if}}
+        >
+        <label for="segmentedControl-disabled-{{variant}}-{{item}}"
+               class="SegmentedControl__label"
+        >Label</label>
 
         {{/each}}
 
@@ -188,30 +180,64 @@
     <h2 class="docs-Heading">Stretch</h2>
     <div class="docs-Stack docs-Stack--start">
 
-      <fieldset class="SegmentedControl SegmentedControl--filled SegmentedControl--stretch" data-spirit-toggle="segmentedControl">
+      <fieldset class="SegmentedControl SegmentedControl--filled SegmentedControl--stretch">
         <legend class="accessibility-hidden">Label</legend>
 
-        {{setVar "items" "1" "2" "3" "4" }}
+        {{setVar "items" "1" "2" "3" "4" "5"}}
 
         {{#each @root.items as |item|}}
 
-        <div class="SegmentedControl__item">
-          <input type="radio"
-                 id="segmentedControl-label-stretch-{{item}}"
-                 name="segmented-stretch-filled"
-                 value="value-{{item}}"
-                 class="SegmentedControl__input"
-                 {{#if (eq item "1")}}checked{{/if}}
-          >
-          <label for="segmentedControl-label-stretch-{{item}}"
-                 class="SegmentedControl__label"
-          >
-            <svg width="20" height="20" aria-hidden="true">
-              <use xlink:href="/assets/icons/svg/sprite.svg#file"></use>
-            </svg>
-            Label
-          </label>
-        </div>
+        <input type="radio"
+               id="segmentedControl-label-stretch-{{item}}"
+               name="segmented-stretch-filled"
+               value="value-{{item}}"
+               class="SegmentedControl__input"
+               {{#if (eq item "1")}}checked{{/if}}
+        >
+        <label for="segmentedControl-label-stretch-{{item}}"
+               class="SegmentedControl__label"
+        >
+          <svg width="20" height="20" aria-hidden="true">
+            <use xlink:href="/assets/icons/svg/sprite.svg#file"></use>
+          </svg>
+          Label
+        </label>
+
+        {{/each}}
+
+      </fieldset>
+
+    </div>
+  </div>
+</section>
+
+<section class="py-900 py-tablet-1000">
+  <div class="Container">
+    <h2 class="docs-Heading">Variant with JS</h2>
+    <div class="docs-Stack docs-Stack--start">
+
+      <fieldset class="SegmentedControl SegmentedControl--filled" data-spirit-toggle="segmentedControl">
+        <legend class="accessibility-hidden">Label</legend>
+
+        {{setVar "items" "1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11"}}
+
+        {{#each @root.items as |item|}}
+
+        <input type="radio"
+               id="segmentedControl-label-js-{{item}}"
+               name="segmented-js-icon"
+               value="value-{{item}}"
+               class="SegmentedControl__input"
+               {{#if (eq item "1")}}checked{{/if}}
+        >
+        <label for="segmentedControl-label-js-{{item}}"
+               class="SegmentedControl__label"
+        >
+          <svg width="20" height="20" aria-hidden="true">
+            <use xlink:href="/assets/icons/svg/sprite.svg#file"></use>
+          </svg>
+          <span class="accessibility-hidden">Label</span>
+        </label>
 
         {{/each}}
 

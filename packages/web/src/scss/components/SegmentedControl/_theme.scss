@@ -9,6 +9,11 @@ $transition:
     transform transitions.$duration-200 transitions.$timing-eased-in-out,
     color transitions.$duration-100 transitions.$timing-eased-in-out,
     background-color transitions.$duration-200 transitions.$timing-eased-in-out;
+$transition-checkbox:
+    color transitions.$duration-200 transitions.$timing-eased-in-out,
+    border-color transitions.$duration-200 transitions.$timing-eased-in-out,
+    background-color transitions.$duration-200 transitions.$timing-eased-in-out;
+$max-items: 10;
 
 // Item
 $item-height: 40px;
