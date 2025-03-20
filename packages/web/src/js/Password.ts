@@ -4,7 +4,7 @@ import { enableToggleTrigger, SpiritConfig } from './utils';
 import { SpiritElement } from './types';
 
 const NAME = 'password';
-const PASSWORD_ARIA_PRESSED = 'aria-pressed';
+const PASSWORD_ARIA_CHECKED = 'aria-checked';
 const PASSWORD_ARIA_LABEL = 'aria-label';
 const PASSWORD_FIELD_ELEMENT = 'input';
 
@@ -22,7 +22,7 @@ class Password extends BaseComponent {
   }
 
   show(target: HTMLElement) {
-    target.setAttribute(PASSWORD_ARIA_PRESSED, 'true');
+    target.setAttribute(PASSWORD_ARIA_CHECKED, 'true');
     target.setAttribute(PASSWORD_ARIA_LABEL, 'Hide password');
     SelectorEngine.findOne(PASSWORD_FIELD_ELEMENT, target.parentElement)?.setAttribute('type', 'text');
 
@@ -30,7 +30,7 @@ class Password extends BaseComponent {
   }
 
   hide(target: HTMLElement) {
-    target.setAttribute(PASSWORD_ARIA_PRESSED, 'false');
+    target.setAttribute(PASSWORD_ARIA_CHECKED, 'false');
     target.setAttribute(PASSWORD_ARIA_LABEL, 'Show password');
     SelectorEngine.findOne(PASSWORD_FIELD_ELEMENT, target.parentElement)?.setAttribute('type', 'password');
 

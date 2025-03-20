@@ -134,13 +134,13 @@ $_field-name: 'TextField';
 }
 
 .TextField__passwordToggle__icon--hidden,
-.TextField__passwordToggle__button[aria-pressed='true'] > .TextField__passwordToggle__icon--shown {
+.TextField__passwordToggle__button[aria-checked='true'] > .TextField__passwordToggle__icon--shown {
     display: block;
 }
 
 // stylelint-disable-next-line no-descending-specificity -- 7.
 .TextField__passwordToggle__icon--shown,
-.TextField__passwordToggle__button[aria-pressed='true'] > .TextField__passwordToggle__icon--hidden {
+.TextField__passwordToggle__button[aria-checked='true'] > .TextField__passwordToggle__icon--hidden {
     display: none;
 }
 
