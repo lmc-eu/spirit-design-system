@@ -8,7 +8,7 @@ const defaultContext: TabsContextType = {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-empty-function
   selectTab: (id: TabId) => {},
   // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-empty-function
-  onSelectionChange: (id: TabId) => {},
+  onSelectionChange: (previousId, currentId) => {},
 };
 
 const TabsContext = createContext<TabsContextType>(defaultContext);

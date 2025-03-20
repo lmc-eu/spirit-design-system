@@ -12,6 +12,10 @@ export type TabId = string | number;
 
 export type TabListProps = ChildrenProps & TransferProps;
 
+export interface TabsOnSelectionChange {
+  onSelectionChange?: (previousId: TabId, currentId?: TabId) => void;
+}
+
 export interface TabItemProps extends ChildrenProps, TransferProps, ClickEvents {
   forTabPane: TabId;
 }
@@ -25,10 +29,9 @@ export interface SpiritTabsProps extends SpacingProp {
   forTabPane?: TabId;
 }
 
-export interface TabsProps extends ChildrenProps, SpacingProp, TransferProps {
+export interface TabsProps extends ChildrenProps, SpacingProp, TransferProps, TabsOnSelectionChange {
   selectedTab: TabId;
   toggle: TabsToggler;
-  onSelectionChange?: (tabId: TabId) => void;
 }
 
 export type TabLinkItemProps = StyleProps & HTMLProps<HTMLLIElement>;
@@ -51,10 +54,9 @@ export type SpiritTabLinkProps<E extends ElementType = 'a'> = TabLinkProps<E> &
 
 export type TabsToggler = (id: TabId) => void;
 
-export interface TabsContextType extends SpacingProp {
+export interface TabsContextType extends SpacingProp, TabsOnSelectionChange {
   selectedId: TabId;
   selectTab: TabsToggler;
-  onSelectionChange?: (id: TabId) => void;
 }
 
 export interface TabPaneProps extends ChildrenProps, TransferProps {
@@ -63,7 +65,6 @@ export interface TabPaneProps extends ChildrenProps, TransferProps {
 
 export type TabContentProps = ChildrenProps & TransferProps;
 
-export interface UncontrolledTabsProps extends ChildrenProps, SpacingProp, TransferProps {
+export interface UncontrolledTabsProps extends ChildrenProps, SpacingProp, TransferProps, TabsOnSelectionChange {
   defaultSelectedTab: TabId;
-  onSelectionChange?: (id: TabId) => void;
 }
