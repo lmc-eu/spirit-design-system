@@ -21,11 +21,11 @@
     border-radius: theme.$border-radius;
 
     @media (prefers-reduced-motion: no-preference) {
-        &:has(.SegmentedControl__input[type='radio']) {
+        &:has([type='radio']) {
             transition: theme.$transition;
         }
 
-        &:has(.SegmentedControl__input[type='checkbox']) {
+        &:has([type='checkbox']) {
             transition: theme.$transition-checkbox;
         }
     }
@@ -94,14 +94,12 @@
 
 // 1.
 // stylelint-disable-next-line selector-max-specificity
-[data-spirit-toggle] .SegmentedControl__input[type='radio'] + .SegmentedControl__label::after {
+[data-spirit-toggle] [type='radio'] + .SegmentedControl__label::after {
     opacity: 0; // 2.
     transform: translateX(var(--#{tokens.$css-variable-prefix}segmented-control-highlight-x-pos, 0));
 }
 
 // stylelint-disable-next-line selector-max-specificity,selector-max-class
-[data-spirit-toggle].is-initialized
-    .SegmentedControl__input[type='radio']
-    + .SegmentedControl__label:last-of-type::after {
+[data-spirit-toggle].is-initialized [type='radio'] + .SegmentedControl__label:last-of-type::after {
     opacity: 1; // 2.
 }

@@ -8,10 +8,8 @@
         background-color: map.get($config, 'background-color');
     }
 
-    .SegmentedControl--#{$variant}
-        .SegmentedControl__input[type='radio']:last-of-type
-        + .SegmentedControl__label::after,
-    .SegmentedControl--#{$variant} .SegmentedControl__input[type='checkbox']:checked + .SegmentedControl__label::after {
+    .SegmentedControl--#{$variant} [type='radio']:last-of-type + .SegmentedControl__label::after,
+    .SegmentedControl--#{$variant} [type='checkbox']:checked + .SegmentedControl__label::after {
         border-color: map.get($config, 'item-border-color-active');
         background-color: map.get($config, 'item-background-color-active');
 
@@ -20,19 +18,18 @@
         }
     }
 
-    .SegmentedControl--#{$variant} .SegmentedControl__input:checked + .SegmentedControl__label {
+    .SegmentedControl--#{$variant} :checked + .SegmentedControl__label {
         color: map.get($config, 'item-color-active');
     }
 
-    .SegmentedControl--#{$variant} .SegmentedControl__input:disabled + .SegmentedControl__label {
+    .SegmentedControl--#{$variant} :disabled + .SegmentedControl__label {
         color: theme.$item-color-disabled;
     }
 }
 
 @mixin generate-segmented-control-transform($max-items) {
     @for $i from 1 through $max-items {
-        .SegmentedControl__input[type='radio']:nth-last-of-type(#{$i + 1}):checked
-            ~ .SegmentedControl__label:last-of-type::after {
+        [type='radio']:nth-last-of-type(#{$i + 1}):checked ~ .SegmentedControl__label:last-of-type::after {
             transform: translateX(calc($i * -100% - #{$i * theme.$gap}));
         }
     }
