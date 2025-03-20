@@ -20,7 +20,7 @@ const TabItem = ({ children, forTabPane, onClick, ...restProps }: TabItemProps):
     }
 
     if (onSelectionChange) {
-      onSelectionChange(selectedId);
+      onSelectionChange(selectedId, forTabPane);
     }
   };
 

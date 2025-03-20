@@ -45,4 +45,17 @@ describe('TabItem', () => {
 
     await waitFor(() => expect(selectTabMock).toHaveBeenCalled());
   });
+
+  it('should return previousId and currentId when clicked', async () => {
+    const onSelectionChangeMock = jest.fn();
+    render(
+      withTabsContext(TabItem, { selectedId: 1, selectTab: () => {}, onSelectionChange: onSelectionChangeMock })({
+        forTabPane: 2,
+      }),
+    );
+
+    fireEvent.click(screen.getByRole('tab'));
+
+    await waitFor(() => expect(onSelectionChangeMock).toHaveBeenCalledWith(1, 2));
+  });
 });
