@@ -16,7 +16,7 @@ describe('Password', () => {
     it('should take care of element passed as a CSS selector', () => {
       fixtureEl.innerHTML = `
         <input type="password" />
-        <button aria-pressed="false" aria-label="Show password" data-spirit-toggle="password"></button>
+        <button aria-checked="false" aria-label="Show password" data-spirit-toggle="password"></button>
       `;
 
       const passwordEl = fixtureEl.querySelector('[data-spirit-toggle="password"]') as HTMLElement;
@@ -30,7 +30,7 @@ describe('Password', () => {
     it('should toggle a password', async () => {
       fixtureEl.innerHTML = `
         <input type="password" />
-        <button type="button" aria-pressed="false" aria-label="Show password" data-spirit-toggle="password"></button>
+        <button type="button" aria-checked="false" aria-label="Show password" data-spirit-toggle="password"></button>
       `;
 
       const showSpy = jest.spyOn(Password.prototype, 'show');
@@ -53,7 +53,7 @@ describe('Password', () => {
     it('should show a password', async () => {
       fixtureEl.innerHTML = `
         <input type="password" />
-        <button type="button" aria-pressed="false" aria-label="Show password" data-spirit-toggle="password"></button>
+        <button type="button" aria-checked="false" aria-label="Show password" data-spirit-toggle="password"></button>
       `;
 
       const passwordEl = fixtureEl.querySelector('[data-spirit-toggle="password"]') as HTMLElement;
@@ -61,7 +61,7 @@ describe('Password', () => {
 
       await password.show(passwordEl);
 
-      expect(passwordEl.getAttribute('aria-pressed')).toBe('true');
+      expect(passwordEl.getAttribute('aria-checked')).toBe('true');
       expect(passwordEl.getAttribute('aria-label')).toBe('Hide password');
       expect((fixtureEl.querySelector('input') as HTMLInputElement).getAttribute('type')).toBe('text');
     });
@@ -71,7 +71,7 @@ describe('Password', () => {
     it('should hide a password', async () => {
       fixtureEl.innerHTML = `
         <input type="password" />
-        <button type="button" aria-pressed="true" aria-label="Hide password" data-spirit-toggle="password"></button>
+        <button type="button" aria-checked="true" aria-label="Hide password" data-spirit-toggle="password"></button>
       `;
 
       const passwordEl = fixtureEl.querySelector('[data-spirit-toggle="password"]') as HTMLElement;
@@ -79,7 +79,7 @@ describe('Password', () => {
 
       await password.hide(passwordEl);
 
-      expect(passwordEl.getAttribute('aria-pressed')).toBe('false');
+      expect(passwordEl.getAttribute('aria-checked')).toBe('false');
       expect(passwordEl.getAttribute('aria-label')).toBe('Show password');
       expect((fixtureEl.querySelector('input') as HTMLInputElement).getAttribute('type')).toBe('password');
     });

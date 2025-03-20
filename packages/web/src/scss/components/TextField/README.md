@@ -124,7 +124,7 @@ modifier to fill the available space.
 ## JavaScript Plugin for Password Toggle
 
 TextField with `type="password"` can have a toggle button. When toggling don't
-forget to change not only the input type but also `aria-pressed` and
+forget to change not only the input type but also `aria-checked` and
 `aria-label`.
 
 To enable password toggle, first, you need to provide Spirit JavaScript,
@@ -154,7 +154,7 @@ Then you need to add data attribute `data-spirit-toggle="password"` to the input
       type="button"
       class="TextField__passwordToggle__button"
       role="switch"
-      aria-pressed="false"
+      aria-checked="false"
       aria-label="Show password"
       data-spirit-toggle="password"
     >
