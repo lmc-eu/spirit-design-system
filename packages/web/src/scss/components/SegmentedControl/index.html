@@ -213,7 +213,7 @@
 
 <section class="py-900 py-tablet-1000">
   <div class="Container">
-    <h2 class="docs-Heading">Variant with JS</h2>
+    <h2 class="docs-Heading">Variant with JS and Tooltip</h2>
     <div class="docs-Stack docs-Stack--start">
 
       <fieldset class="SegmentedControl SegmentedControl--filled" data-spirit-toggle="segmentedControl">
@@ -231,12 +231,31 @@
                {{#if (eq item "1")}}checked{{/if}}
         >
         <label for="segmentedControl-label-js-{{item}}"
-               class="SegmentedControl__label"
+               class="Tooltip SegmentedControl__label"
+               data-spirit-element="tooltip"
+               data-spirit-toggle="tooltip"
+               data-spirit-target="#tooltip-icon-{{item}}"
+               aria-labelledby="tooltip-icon-{{item}}"
         >
+          <span
+            id="tooltip-icon-{{item}}"
+            data-spirit-trigger="hover"
+            class="TooltipPopover is-hidden"
+            data-spirit-enable-flipping="true"
+            data-spirit-enable-shifting="true"
+            data-spirit-enable-sizing="true"
+            data-spirit-placement="bottom"
+            data-spirit-enable-flipping-cross-axis="true"
+            data-spirit-flip-fallback-placements="top"
+          >
+            Label
+            <span class="TooltipPopover__arrow" data-spirit-element="arrow"></span>
+          </span>
+
           <svg width="20" height="20" aria-hidden="true">
             <use xlink:href="/assets/icons/svg/sprite.svg#file"></use>
           </svg>
-          <span class="accessibility-hidden">Label</span>
+
         </label>
 
         {{/each}}
