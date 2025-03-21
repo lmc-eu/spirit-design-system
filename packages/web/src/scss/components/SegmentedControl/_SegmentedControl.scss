@@ -1,9 +1,5 @@
-// 1. JS version, it's used, when there is need for more items then $max-items
-// 2. In JS version, there is toggle of opacity because of transition effect on initialization (active item is not always the last one)
+// 1. When items > $max-items, the transition on item is the same as checkbox.
 
-@use '@tokens' as tokens;
-@use '../../tools/accessibility';
-@use '../../tools/typography';
 @use 'theme';
 @use 'tools';
 
@@ -22,84 +18,21 @@
 
     @media (prefers-reduced-motion: no-preference) {
         &:has([type='radio']) {
-            transition: theme.$transition;
+            transition: theme.$transition-radio;
         }
 
-        &:has([type='checkbox']) {
+        &:has([type='checkbox']),
+        &:has([type='radio']:nth-of-type(#{theme.$max-items + 1})):not([data-spirit-toggle]) {
+            // 1.
             transition: theme.$transition-checkbox;
         }
     }
 }
 
-.SegmentedControl--stretch {
+.SegmentedControl--fluid {
     justify-items: stretch;
     width: 100%;
 }
 
-.SegmentedControl__label {
-    @include typography.generate(theme.$item-label-typography);
-
-    position: relative;
-    z-index: 2;
-    display: flex;
-    grid-row: 1;
-    column-gap: theme.$item-gap;
-    align-items: center;
-    justify-content: center;
-    height: theme.$item-height;
-    padding-inline: theme.$item-padding-y;
-    padding-block: theme.$item-padding-x;
-    border: theme.$item-border-default;
-    border-radius: theme.$item-border-radius;
-    user-select: none;
-    cursor: pointer;
-    transition: inherit;
-
-    @media (hover: hover) {
-        .SegmentedControl__input:not(:checked, :disabled) + &:hover {
-            background-color: theme.$item-background-hover;
-        }
-    }
-
-    &::after {
-        @include tools.generate-before-control();
-
-        transition: inherit;
-    }
-
-    &:last-of-type {
-        z-index: 1;
-    }
-}
-
-.SegmentedControl__label > svg {
-    flex-shrink: 0;
-}
-
-.SegmentedControl__input {
-    @include accessibility.hide-text();
-
-    &:focus-visible + .SegmentedControl__label {
-        @include tools.outline();
-    }
-
-    &:disabled + .SegmentedControl__label {
-        cursor: not-allowed;
-    }
-}
-
 @include tools.generate-segmented-control-variant('filled', theme.$variant-filled-config);
 @include tools.generate-segmented-control-variant('outlined', theme.$variant-outlined-config);
-@include tools.generate-segmented-control-transform(theme.$max-items);
-
-// 1.
-// stylelint-disable-next-line selector-max-specificity
-[data-spirit-toggle] [type='radio'] + .SegmentedControl__label::after {
-    opacity: 0; // 2.
-    transform: translateX(var(--#{tokens.$css-variable-prefix}segmented-control-highlight-x-pos, 0));
-}
-
-// stylelint-disable-next-line selector-max-specificity,selector-max-class
-[data-spirit-toggle].is-initialized [type='radio'] + .SegmentedControl__label:last-of-type::after {
-    opacity: 1; // 2.
-}

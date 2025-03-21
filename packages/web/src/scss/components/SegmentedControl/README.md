@@ -1,11 +1,12 @@
 # Segmented Control
 
-Segmented Controls allows users to select from a set of mutually exclusive options.
+A Segmented Control is a linear set of two or more segments, each of which functions as a button.
 
 ## Basic Usage
 
-- Uses `radio` buttons to allow users to select one option from a set of options.
-- By default, allows only **10** options, but can be extended by use [JS plugin](#javascript-plugin).
+Uses `radio` buttons to allow users to select one option from a set of options.
+By default, allows only **5** animated options, but can be extended by use [JS plugin](#javascript-plugin).
+Labels should be short and descriptive and are truncated if they are too long.
 
 👉 Keep in mind, that you must provide `SegmentedControl` with an `legend` or `aria-label` for accessibility reasons.
 
@@ -15,19 +16,25 @@ Segmented Controls allows users to select from a set of mutually exclusive optio
 
   <input
     type="radio"
-    id="segmentedControl-label-1"
+    id="segmented-control-label-1"
     name="segmented"
     value="value-1"
     class="SegmentedControl__input"
     checked
   />
-  <label for="segmentedControl-label-1" class="SegmentedControl__label">Label</label>
+  <label for="segmented-control-label-1" class="SegmentedControl__label"
+    ><span class="text-truncate">Label</span></label
+  >
 
-  <input type="radio" id="segmentedControl-label-2" name="segmented" value="value-2" class="SegmentedControl__input" />
-  <label for="segmentedControl-label-2" class="SegmentedControl__label">Label</label>
+  <input type="radio" id="segmented-control-label-2" name="segmented" value="value-2" class="SegmentedControl__input" />
+  <label for="segmented-control-label-2" class="SegmentedControl__label"
+    ><span class="text-truncate">Label</span></label
+  >
 
-  <input type="radio" id="segmentedControl-label-3" name="segmented" value="value-3" class="SegmentedControl__input" />
-  <label for="segmentedControl-label-3" class="SegmentedControl__label">Label</label>
+  <input type="radio" id="segmented-control-label-3" name="segmented" value="value-3" class="SegmentedControl__input" />
+  <label for="segmented-control-label-3" class="SegmentedControl__label"
+    ><span class="text-truncate">Label</span></label
+  >
 </fieldset>
 ```
 
@@ -50,49 +57,54 @@ Segmented Controls allows users to select from a set of mutually exclusive optio
 
 ### Icon Only Variant
 
-- Use this variant when there is limited space or when the icons are intuitive and easy to understand.
-- Keep in mind, that you must provide `SegmentedControl__label` with an `<span class="accessibility-hidden">Label</span>` or `aria-label` for accessibility reasons.
+Use this variant when there is limited space or when the icons are intuitive and easy to understand.
+Keep in mind you must provide `SegmentedControl__label` with an `<span class="accessibility-hidden">Label</span>` or `aria-label` for accessibility reasons.
 
 ```html
-<input type="radio" id="segmentedControl-label" name="segmented" value="value" class="SegmentedControl__input" />
-<svg width="20" height="20" aria-hidden="true">
-  <use xlink:href="/assets/icons/svg/sprite.svg#file"></use>
-</svg>
-<span class="accessibility-hidden">Label</span>
+<input type="radio" id="segmented-control-label" name="segmented" value="value" class="SegmentedControl__input" />
+<label for="segmented-control-label" class="SegmentedControl__label">
+  <svg width="20" height="20" aria-hidden="true">
+    <use xlink:href="/assets/icons/svg/sprite.svg#file"></use>
+  </svg>
+  <span class="accessibility-hidden">Label</span>
+</label>
 ```
 
 ### Text Only Variant
 
 ```html
-<input type="radio" id="segmentedControl-label" name="segmented" value="value" class="SegmentedControl__input" />
-<label for="segmentedControl-label-1" class="SegmentedControl__label">Label</label>
+<input type="radio" id="segmented-control-label" name="segmented" value="value" class="SegmentedControl__input" />
+<label for="segmented-control-label" class="SegmentedControl__label"><span class="text-truncate">Label</span></label>
 ```
 
 ### Text and Icon Variant
 
 ```html
-<input type="radio" id="segmentedControl-label" name="segmented" value="value" class="SegmentedControl__input" />
-<svg width="20" height="20" aria-hidden="true">
-  <use xlink:href="/assets/icons/svg/sprite.svg#file"></use>
-</svg>
-<label for="segmentedControl-label-1" class="SegmentedControl__label">Label</label>
+<input type="radio" id="segmented-control-label" name="segmented" value="value" class="SegmentedControl__input" />
+<label for="segmented-control-label" class="SegmentedControl__label">
+  <svg width="20" height="20" aria-hidden="true">
+    <use xlink:href="/assets/icons/svg/sprite.svg#file"></use>
+  </svg>
+  <span class="text-truncate">Label</span>
+</label>
 ```
 
 ## Horizontal Alignment
 
-Segmented Control can be horizontally aligned to `stretch`.
+The `fluid` variant will make the Segmented Control fit to its parent width.
 
-- `SegmentedControl--stretch`
+- `SegmentedControl--fluid`
 
 ```html
-<fieldset class="SegmentedControl SegmentedControl--stretch">
+<fieldset class="SegmentedControl SegmentedControl--fluid">
   <!-- Inputs and labels -->
 </fieldset>
 ```
 
 ## Multiple Selection
 
-- Uses `checkboxes` instead of `radio` buttons to allow multiple selections.
+Uses `checkboxes` instead of `radio` buttons to allow multiple selections.
+There is no limit to the number of options, but it is recommended to use 2-5 options.
 
 ```html
 <fieldset class="SegmentedControl SegmentedControl--outlined">
@@ -100,31 +112,37 @@ Segmented Control can be horizontally aligned to `stretch`.
 
   <input
     type="checkbox"
-    id="segmentedControl-label-1"
+    id="segmented-control-label-1"
     name="segmented"
     value="value-1"
     class="SegmentedControl__input"
     checked
   />
-  <label for="segmentedControl-label-1" class="SegmentedControl__label">Label</label>
+  <label for="segmented-control-label-1" class="SegmentedControl__label"
+    ><span class="text-truncate">Label</span></label
+  >
 
   <input
     type="checkbox"
-    id="segmentedControl-label-2"
+    id="segmented-control-label-2"
     name="segmented"
     value="value-2"
     class="SegmentedControl__input"
   />
-  <label for="segmentedControl-label-2" class="SegmentedControl__label">Label</label>
+  <label for="segmented-control-label-2" class="SegmentedControl__label"
+    ><span class="text-truncate">Label</span></label
+  >
 
   <input
     type="checkbox"
-    id="segmentedControl-label-3"
+    id="segmented-control-label-3"
     name="segmented"
     value="value-3"
     class="SegmentedControl__input"
   />
-  <label for="segmentedControl-label-3" class="SegmentedControl__label">Label</label>
+  <label for="segmented-control-label-3" class="SegmentedControl__label"
+    ><span class="text-truncate">Label</span></label
+  >
 </fieldset>
 ```
 
@@ -135,18 +153,18 @@ Segmented Control can be horizontally aligned to `stretch`.
 ```html
 <input
   type="radio"
-  id="segmentedControl-label"
+  id="segmented-control-label"
   name="segmented"
   value="value"
   class="SegmentedControl__input"
   disabled
 />
-<label for="segmentedControl-label-1" class="SegmentedControl__label">Label</label>
+<label for="segmented-control-label" class="SegmentedControl__label"><span class="text-truncate">Label</span></label>
 ```
 
 ## JavaScript Plugin
 
-If you want to have more than **10** `radio` options, you can use the JavaScript plugin to handle the selection.
+If you want to have animated options on `radio` segment with more than **5** options, you can use the JavaScript plugin to handle the selection.
 
 ```html
 <script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>

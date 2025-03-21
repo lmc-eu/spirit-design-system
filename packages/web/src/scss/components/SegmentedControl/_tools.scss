@@ -7,9 +7,15 @@
         border-color: map.get($config, 'border-color');
         background-color: map.get($config, 'background-color');
     }
+}
 
+@mixin generate-segment-variant($variant, $config) {
+    // stylelint-disable-next-line selector-nested-pattern
     .SegmentedControl--#{$variant} [type='radio']:last-of-type + .SegmentedControl__label::after,
-    .SegmentedControl--#{$variant} [type='checkbox']:checked + .SegmentedControl__label::after {
+    .SegmentedControl--#{$variant} [type='checkbox']:checked + .SegmentedControl__label::after,
+    .SegmentedControl--#{$variant}:has([type='radio']:nth-of-type(#{theme.$max-items + 1}))
+        :checked
+        + .SegmentedControl__label::after {
         border-color: map.get($config, 'item-border-color-active');
         background-color: map.get($config, 'item-background-color-active');
 
@@ -23,29 +29,14 @@
     }
 
     .SegmentedControl--#{$variant} :disabled + .SegmentedControl__label {
-        color: theme.$item-color-disabled;
+        color: map.get($config, 'item-color-disabled');
     }
 }
 
-@mixin generate-segmented-control-transform($max-items) {
+@mixin generate-segment-transform($max-items) {
     @for $i from 1 through $max-items {
         [type='radio']:nth-last-of-type(#{$i + 1}):checked ~ .SegmentedControl__label:last-of-type::after {
             transform: translateX(calc($i * -100% - #{$i * theme.$gap}));
         }
     }
-}
-
-@mixin generate-before-control() {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    border: theme.$item-border-default;
-    border-radius: theme.$item-border-radius;
-    inset: -1 * theme.$item-border-width;
-    pointer-events: none;
-}
-
-@mixin outline() {
-    outline: Highlight auto theme.$item-outline-width;
-    outline: -webkit-focus-ring-color auto theme.$item-outline-width;
 }

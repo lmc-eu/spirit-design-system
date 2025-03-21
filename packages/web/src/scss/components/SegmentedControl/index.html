@@ -21,15 +21,16 @@
               {{#each @root.items as |item|}}
 
               <input type="radio"
-                     id="segmentedControl-label-{{variant}}-{{item}}"
-                     name="segmented-{{variant}}-design"
-                     value="value-{{item}}"
-                     class="SegmentedControl__input"
-                     {{#if (eq item "1")}}checked{{/if}}
+                id="segmented-control-label-{{variant}}-{{item}}"
+                name="segmented-{{variant}}-design"
+                value="value-{{item}}"
+                class="SegmentedControl__input"
+                {{#if (eq item "1")}}checked{{/if}}
               >
-              <label for="segmentedControl-label-{{variant}}-{{item}}"
-                     class="SegmentedControl__label"
-              >Label
+              <label for="segmented-control-label-{{variant}}-{{item}}"
+                class="SegmentedControl__label"
+              >
+                <span class="text-truncate">Label</span>
               </label>
 
               {{/each}}
@@ -67,16 +68,16 @@
               {{#each @root.items as |item|}}
 
               <input type="radio"
-                     id="segmentedControl-icon-{{variant}}-{{item}}"
-                     name="segmented-icon-{{variant}}"
-                     value="value-{{item}}"
-                     class="SegmentedControl__input"
-                     {{#if (eq item "1")}}checked{{/if}}
+                id="segmentedControl-icon-{{variant}}-{{item}}"
+                name="segmented-icon-{{variant}}"
+                value="value-{{item}}"
+                class="SegmentedControl__input"
+                {{#if (eq item "1")}}checked{{/if}}
               >
               <label for="segmentedControl-icon-{{variant}}-{{item}}"
-                     class="SegmentedControl__label"
+                class="SegmentedControl__label"
               >
-                {{#if (eq variant "label-only")}}Label{{/if}}
+                {{#if (eq variant "label-only")}}<span class="text-truncate">Label</span>{{/if}}
                 {{#if (eq variant "icon-only")}}
                 <svg width="20" height="20" aria-hidden="true">
                   <use xlink:href="/assets/icons/svg/sprite.svg#file"></use>
@@ -120,15 +121,17 @@
         {{#each @root.items as |item|}}
 
         <input type="checkbox"
-               id="segmentedControl-multiple-{{variant}}-{{item}}"
-               name="segmented-{{variant}}"
-               value="value-{{item}}"
-               class="SegmentedControl__input"
-               {{#if (eq item "1")}}checked{{/if}}
+          id="segmentedControl-multiple-{{variant}}-{{item}}"
+          name="segmented-{{variant}}"
+          value="value-{{item}}"
+          class="SegmentedControl__input"
+          {{#if (eq item "1")}}checked{{/if}}
         >
         <label for="segmentedControl-multiple-{{variant}}-{{item}}"
-               class="SegmentedControl__label"
-        >Label</label>
+          class="SegmentedControl__label"
+        >
+          <span class="text-truncate">Label</span>
+        </label>
 
         {{/each}}
 
@@ -154,16 +157,18 @@
         {{#each @root.items as |item|}}
 
         <input type="radio"
-               id="segmentedControl-disabled-{{variant}}-{{item}}"
-               name="segmented-{{variant}}"
-               value="value-{{item}}"
-               class="SegmentedControl__input"
-               {{#if (eq item "1")}}checked{{/if}}
-               {{#if (eq item "2")}}disabled{{/if}}
+          id="segmentedControl-disabled-{{variant}}-{{item}}"
+          name="segmented-{{variant}}"
+          value="value-{{item}}"
+          class="SegmentedControl__input"
+          {{#if (eq item "1")}}checked{{/if}}
+          {{#if (eq item "2")}}disabled{{/if}}
         >
         <label for="segmentedControl-disabled-{{variant}}-{{item}}"
-               class="SegmentedControl__label"
-        >Label</label>
+          class="SegmentedControl__label"
+        >
+          <span class="text-truncate">Label</span>
+        </label>
 
         {{/each}}
 
@@ -177,10 +182,10 @@
 
 <section class="py-900 py-tablet-1000">
   <div class="Container">
-    <h2 class="docs-Heading">Stretch</h2>
+    <h2 class="docs-Heading">Fluid</h2>
     <div class="docs-Stack docs-Stack--start">
 
-      <fieldset class="SegmentedControl SegmentedControl--filled SegmentedControl--stretch">
+      <fieldset class="SegmentedControl SegmentedControl--filled SegmentedControl--fluid">
         <legend class="accessibility-hidden">Label</legend>
 
         {{setVar "items" "1" "2" "3" "4" "5"}}
@@ -188,19 +193,19 @@
         {{#each @root.items as |item|}}
 
         <input type="radio"
-               id="segmentedControl-label-stretch-{{item}}"
-               name="segmented-stretch-filled"
-               value="value-{{item}}"
-               class="SegmentedControl__input"
-               {{#if (eq item "1")}}checked{{/if}}
+          id="segmented-control-label-stretch-{{item}}"
+          name="segmented-stretch-filled"
+          value="value-{{item}}"
+          class="SegmentedControl__input"
+          {{#if (eq item "1")}}checked{{/if}}
         >
-        <label for="segmentedControl-label-stretch-{{item}}"
-               class="SegmentedControl__label"
+        <label for="segmented-control-label-stretch-{{item}}"
+          class="SegmentedControl__label"
         >
           <svg width="20" height="20" aria-hidden="true">
             <use xlink:href="/assets/icons/svg/sprite.svg#file"></use>
           </svg>
-          Label
+          <span class="text-truncate">Label {{item }} {{#if (eq item "2")}} - this label will be truncated{{/if}}</span>
         </label>
 
         {{/each}}
@@ -224,37 +229,37 @@
         {{#each @root.items as |item|}}
 
         <input type="radio"
-               id="segmentedControl-label-js-{{item}}"
-               name="segmented-js-icon"
-               value="value-{{item}}"
-               class="SegmentedControl__input"
-               {{#if (eq item "1")}}checked{{/if}}
+          id="segmented-control-label-js-{{item}}"
+          name="segmented-js-icon"
+          value="value-{{item}}"
+          class="SegmentedControl__input"
+          {{#if (eq item "1")}}checked{{/if}}
         >
-        <label for="segmentedControl-label-js-{{item}}"
-               class="Tooltip SegmentedControl__label"
-               data-spirit-element="tooltip"
-               data-spirit-toggle="tooltip"
-               data-spirit-target="#tooltip-icon-{{item}}"
-               aria-labelledby="tooltip-icon-{{item}}"
+        <label for="segmented-control-label-js-{{item}}"
+          class="Tooltip SegmentedControl__label"
+          data-spirit-element="tooltip"
+          data-spirit-toggle="tooltip"
+          data-spirit-trigger="click, hover"
+          data-spirit-target="#tooltip-icon-{{item}}"
+          aria-labelledby="tooltip-icon-{{item}}"
         >
-          <span
-            id="tooltip-icon-{{item}}"
-            data-spirit-trigger="hover"
-            class="TooltipPopover is-hidden"
-            data-spirit-enable-flipping="true"
-            data-spirit-enable-shifting="true"
-            data-spirit-enable-sizing="true"
-            data-spirit-placement="bottom"
-            data-spirit-enable-flipping-cross-axis="true"
-            data-spirit-flip-fallback-placements="top"
-          >
-            Label
-            <span class="TooltipPopover__arrow" data-spirit-element="arrow"></span>
-          </span>
-
-          <svg width="20" height="20" aria-hidden="true">
+          <svg
+            width="20"
+            height=20>
             <use xlink:href="/assets/icons/svg/sprite.svg#file"></use>
           </svg>
+
+          <span
+            id="tooltip-icon-{{item}}"
+            class="TooltipPopover is-hidden"
+            data-spirit-placement="bottom"
+            data-spirit-flip="true"
+            data-spirit-flip-cross-axis="true"
+            data-spirit-flip-fallback-placements="top, bottom"
+          >
+              Label
+              <span class="TooltipPopover__arrow" data-spirit-element="arrow"></span>
+           </span>
 
         </label>
 

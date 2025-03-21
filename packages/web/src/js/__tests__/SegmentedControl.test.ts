@@ -29,13 +29,12 @@ describe('SegmentedControl', () => {
 
   beforeEach(() => {
     fixtureEl.innerHTML = `
-      <fieldset class="SegmentedControl SegmentedControl--filled" data-spirit-toggle="segmentedControl">
-        <legend class="accessibility-hidden">Label</legend>
+      <fieldset data-spirit-toggle="segmentedControl">
         ${[1, 2, 3]
           .map(
             (i) => `
-            <input type="radio" id="segmentedControl-label-filled-${i}" name="segmented-filled" value="value-${i}" class="SegmentedControl__input" ${i === 1 ? 'checked' : ''}>
-            <label for="segmentedControl-label-filled-${i}" class="SegmentedControl__label">Label Title</label>
+            <input type="radio" id="segmentedControl-label-filled-${i}" name="segmented-filled" value="value-${i}" ${i === 1 ? 'checked' : ''}>
+            <label for="segmentedControl-label-filled-${i}">Label Title</label>
         `,
           )
           .join('')}
@@ -44,7 +43,7 @@ describe('SegmentedControl', () => {
     fixtureControl = fixtureEl.querySelector('fieldset') as HTMLElement;
     fixtureControl.style.padding = '5px';
     fixtureControlPadding = parseFloat(getComputedStyle(fixtureControl).getPropertyValue('padding')) || 0;
-    fixtureActiveLabel = fixtureControl.querySelector('.SegmentedControl__label:first-of-type') as HTMLElement;
+    fixtureActiveLabel = fixtureControl.querySelector('label:first-of-type') as HTMLElement;
 
     // Manually set the initial offsetLeft and width to simulate the actual behavior
     Object.defineProperty(fixtureControl, 'clientWidth', { value: 322, configurable: true });
@@ -75,7 +74,7 @@ describe('SegmentedControl', () => {
       );
     });
 
-    it('should update active position on change event', () => {
+    it('should update active position on event change', () => {
       const input = fixtureActiveLabel.nextElementSibling as HTMLElement;
 
       // On change event, simulate the offsetLeft change
@@ -95,7 +94,7 @@ describe('SegmentedControl', () => {
       );
     });
 
-    it('should update active position on resize window', () => {
+    it('should update active position on window resize', () => {
       // On change event, simulate the offsetLeft change
       window.addEventListener('resize', () => {
         Object.defineProperty(fixtureActiveLabel, 'offsetLeft', { value: 111, configurable: true });
@@ -113,17 +112,15 @@ describe('SegmentedControl', () => {
       );
     });
 
-    it('add initialized class after 300ms', () => {
-      jest.useFakeTimers();
+    it('should add initialized class when transform transition ends', () => {
       const instance = new SegmentedControl(fixtureControl);
+      const event = new Event('transitionend');
+      Object.defineProperty(event, 'propertyName', { value: 'transform', configurable: true });
 
-      instance.onInit();
-
-      jest.advanceTimersByTime(300);
+      // @ts-ignore
+      instance.onTransitionEnd(event);
 
       expect(instance.parent.classList.contains('is-initialized')).toBe(true);
-
-      jest.useRealTimers();
     });
   });
 });

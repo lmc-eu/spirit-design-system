@@ -7,11 +7,11 @@ import { enableToggleAutoloader, SpiritConfig } from './utils';
 const NAME = 'segmentedControl';
 const DATA_KEY = `${NAME}`;
 const EVENT_KEY = `.${DATA_KEY}`;
-const SELECTOR_INPUT = '.SegmentedControl__input[type="radio"]';
-const CLASSNAME_INIT = 'is-initialized';
+const SELECTOR_INPUT = '[type="radio"]';
+const CLASS_NAME_INIT = 'is-initialized';
 const EVENT_RESIZE = `resize${EVENT_KEY}`;
 const EVENT_CHANGE = `change${EVENT_KEY}`;
-const TIMEOUT_INIT = 300;
+const PROPERTY_NAME_TRANSITION = 'transform';
 
 class SegmentedControl extends BaseComponent {
   parent: HTMLElement;
@@ -59,6 +59,12 @@ class SegmentedControl extends BaseComponent {
     parent.style.setProperty(`--${cssVariablePrefix}segmented-control-highlight-x-pos`, `${offsetRight}px`);
   }
 
+  onTransitionEnd(event: { propertyName: string }) {
+    if (event.propertyName === PROPERTY_NAME_TRANSITION) {
+      this.parent.classList.add(CLASS_NAME_INIT);
+    }
+  }
+
   onChange(): void {
     SegmentedControl.setActivePosition(this.parent, this.inputs);
     EventHandler.trigger(this.parent, EVENT_CHANGE);
@@ -66,11 +72,7 @@ class SegmentedControl extends BaseComponent {
 
   onInit(): void {
     SegmentedControl.setActivePosition(this.parent, this.inputs);
-
-    // because of the transition
-    setTimeout(() => {
-      this.parent.classList.add(CLASSNAME_INIT);
-    }, TIMEOUT_INIT);
+    EventHandler.on(this.parent, 'transitionend', this.onTransitionEnd.bind(this));
   }
 
   onResize(): void {
