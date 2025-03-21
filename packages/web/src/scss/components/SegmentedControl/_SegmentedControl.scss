@@ -1,0 +1,34 @@
+@use 'theme';
+@use 'tools';
+
+.SegmentedControl {
+    position: relative;
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    grid-auto-flow: column;
+    column-gap: theme.$gap;
+    align-items: center;
+    padding: theme.$padding;
+    margin-bottom: 0;
+    border: theme.$border-default;
+    border-radius: theme.$border-radius;
+
+    @media (prefers-reduced-motion: no-preference) {
+        &:has([type='radio']) {
+            transition: theme.$transition-radio;
+        }
+
+        &:has([type='checkbox']) {
+            transition: theme.$transition-checkbox;
+        }
+    }
+}
+
+.SegmentedControl--fluid {
+    justify-items: stretch;
+    width: 100%;
+}
+
+@include tools.generate-segmented-control-variant('filled', theme.$variant-filled-config);
+@include tools.generate-segmented-control-variant('outlined', theme.$variant-outlined-config);

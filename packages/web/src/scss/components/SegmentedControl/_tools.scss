@@ -1,0 +1,38 @@
+@use 'sass:map';
+@use 'theme';
+
+@mixin generate-segmented-control-variant($variant, $config) {
+    .SegmentedControl--#{$variant} {
+        color: map.get($config, 'color');
+        border-color: map.get($config, 'border-color');
+        background-color: map.get($config, 'background-color');
+    }
+}
+
+@mixin generate-segment-variant($variant, $config) {
+    .SegmentedControl--#{$variant} [type='radio']:last-of-type + .SegmentedControl__label::after,
+    .SegmentedControl--#{$variant} [type='checkbox']:checked + .SegmentedControl__label::after {
+        border-color: map.get($config, 'item-border-color-active');
+        background-color: map.get($config, 'item-background-color-active');
+
+        @if map.has-key($config, 'item-box-shadow-active') {
+            box-shadow: map.get($config, 'item-box-shadow-active');
+        }
+    }
+
+    .SegmentedControl--#{$variant} :checked + .SegmentedControl__label {
+        color: map.get($config, 'item-color-active');
+    }
+
+    .SegmentedControl--#{$variant} :disabled + .SegmentedControl__label {
+        color: map.get($config, 'item-color-disabled');
+    }
+}
+
+@mixin generate-segment-transform($max-items) {
+    @for $i from 1 through $max-items {
+        [type='radio']:nth-last-of-type(#{$i + 1}):checked ~ .SegmentedControl__label:last-of-type::after {
+            --#{theme.$item-position-variable}: #{$i};
+        }
+    }
+}
