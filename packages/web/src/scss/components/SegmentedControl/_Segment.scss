@@ -79,13 +79,15 @@
 
 // 1.
 .SegmentedControl[data-spirit-toggle]:has([type='radio']) {
-    // stylelint-disable-next-line  selector-max-specificity, selector-nested-pattern,
-    .SegmentedControl__label:last-of-type::after {
-        opacity: 0; // 2.
-    }
+    @media (prefers-reduced-motion: no-preference) {
+        // stylelint-disable-next-line  selector-max-specificity, selector-nested-pattern,
+        .SegmentedControl__label:last-of-type::after {
+            opacity: 0; // 2.
+        }
 
-    // stylelint-disable-next-line selector-max-specificity, selector-max-class
-    &.is-initialized .SegmentedControl__label:last-of-type::after {
-        opacity: 1; // 2.
+        // stylelint-disable-next-line selector-max-specificity, selector-max-class
+        &.is-initialized .SegmentedControl__label:last-of-type::after {
+            opacity: 1; // 2.
+        }
     }
 }

@@ -5,8 +5,7 @@ A Segmented Control is a linear set of two or more segments, each of which funct
 ## Basic Usage
 
 Uses `radio` buttons to allow users to select one option from a set of options.
-By default, allows only **5** animated options, but can be extended by use [JS plugin](#javascript-plugin).
-Labels should be short and descriptive and are truncated if they are too long.
+By default, allows only **5** options, but can be extended by use [JS plugin](#javascript-plugin).
 
 👉 Keep in mind, that you must provide `SegmentedControl` with an `legend` or `aria-label` for accessibility reasons.
 
@@ -71,6 +70,8 @@ Keep in mind you must provide `SegmentedControl__label` with an `<span class="ac
 ```
 
 ### Text Only Variant
+
+Labels should be short and descriptive and are truncated if they are too long.
 
 ```html
 <input type="radio" id="segmented-control-label" name="segmented" value="value" class="SegmentedControl__input" />
@@ -164,7 +165,7 @@ There is no limit to the number of options, but it is recommended to use 2-5 opt
 
 ## JavaScript Plugin
 
-If you want to have animated options on `radio` segment with more than **5** options, you can use the JavaScript plugin to handle the selection.
+If you want to have more than **5** `radio` options, you can use the JavaScript plugin to handle the selection.
 
 ```html
 <script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
