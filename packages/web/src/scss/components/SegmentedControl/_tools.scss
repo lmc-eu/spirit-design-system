@@ -13,7 +13,7 @@
     // stylelint-disable-next-line selector-nested-pattern
     .SegmentedControl--#{$variant} [type='radio']:last-of-type + .SegmentedControl__label::after,
     .SegmentedControl--#{$variant} [type='checkbox']:checked + .SegmentedControl__label::after,
-    .SegmentedControl--#{$variant}:has([type='radio']:nth-of-type(#{theme.$max-items + 1}))
+    .SegmentedControl--#{$variant}:not([data-spirit-toggle]):has([type='radio']:nth-of-type(#{theme.$max-items + 1}))
         :checked
         + .SegmentedControl__label::after {
         border-color: map.get($config, 'item-border-color-active');
@@ -36,7 +36,7 @@
 @mixin generate-segment-transform($max-items) {
     @for $i from 1 through $max-items {
         [type='radio']:nth-last-of-type(#{$i + 1}):checked ~ .SegmentedControl__label:last-of-type::after {
-            transform: translateX(calc($i * -100% - #{$i * theme.$gap}));
+            --#{theme.$item-position-variable}: #{$i};
         }
     }
 }

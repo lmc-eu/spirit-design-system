@@ -1,4 +1,4 @@
-// 1. When items > $max-items, the transition on item is the same as checkbox.
+// 1. When items > $max-items and no JS, the transition on radio is the same as checkbox.
 
 @use 'theme';
 @use 'tools';

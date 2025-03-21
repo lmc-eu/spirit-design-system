@@ -2,22 +2,9 @@ import { cssVariablePrefix } from '@lmc-eu/spirit-design-tokens';
 import { clearFixture, getFixture } from '../../../tests/helpers/fixture';
 import SegmentedControl from '../SegmentedControl';
 
-const calculateExpectedOffset = (
-  fixtureControl: HTMLElement,
-  fixtureControlPadding: number,
-  fixtureActiveLabel: HTMLElement,
-) => {
-  const parentWidth = fixtureControl ? fixtureControl.clientWidth - fixtureControlPadding * 2 : 0;
-  const expectedOffsetRight = parentWidth - (fixtureActiveLabel.offsetLeft + fixtureActiveLabel.offsetWidth);
-
-  return -expectedOffsetRight - fixtureControlPadding;
-};
-
 describe('SegmentedControl', () => {
   let fixtureEl: HTMLElement;
   let fixtureControl: HTMLElement;
-  let fixtureActiveLabel: HTMLElement;
-  let fixtureControlPadding: number;
 
   beforeAll(() => {
     fixtureEl = getFixture();
@@ -41,14 +28,6 @@ describe('SegmentedControl', () => {
       </fieldset>`;
 
     fixtureControl = fixtureEl.querySelector('fieldset') as HTMLElement;
-    fixtureControl.style.padding = '5px';
-    fixtureControlPadding = parseFloat(getComputedStyle(fixtureControl).getPropertyValue('padding')) || 0;
-    fixtureActiveLabel = fixtureControl.querySelector('label:first-of-type') as HTMLElement;
-
-    // Manually set the initial offsetLeft and width to simulate the actual behavior
-    Object.defineProperty(fixtureControl, 'clientWidth', { value: 322, configurable: true });
-    Object.defineProperty(fixtureActiveLabel, 'offsetLeft', { value: 5, configurable: true });
-    Object.defineProperty(fixtureActiveLabel, 'offsetWidth', { value: 100, configurable: true });
   });
 
   describe('NAME', () => {
@@ -65,51 +44,19 @@ describe('SegmentedControl', () => {
 
   describe('constructor', () => {
     it('should set initial position on construction', () => {
-      const expectedOffset = calculateExpectedOffset(fixtureControl, fixtureControlPadding, fixtureActiveLabel);
-
       const instance = new SegmentedControl(fixtureControl);
 
-      expect(instance.parent.style.getPropertyValue(`--${cssVariablePrefix}segmented-control-highlight-x-pos`)).toBe(
-        `${expectedOffset}px`,
-      );
+      expect(instance.parent.style.getPropertyValue(`--${cssVariablePrefix}segmented-control-highlight-pos`)).toBe('2');
     });
 
     it('should update active position on event change', () => {
-      const input = fixtureActiveLabel.nextElementSibling as HTMLElement;
-
-      // On change event, simulate the offsetLeft change
-      input?.addEventListener('change', () => {
-        Object.defineProperty(fixtureActiveLabel, 'offsetLeft', { value: 111, configurable: true });
-      });
-
       const instance = new SegmentedControl(fixtureControl);
+      const secondInput = instance.parent.querySelector('input:nth-child(3)') as HTMLElement;
 
-      // Trigger the input change
-      instance.parent.querySelector('input')?.dispatchEvent(new Event('change'));
+      secondInput.setAttribute('checked', 'checked');
+      secondInput.dispatchEvent(new Event('change'));
 
-      const expectedOffset = calculateExpectedOffset(fixtureControl, fixtureControlPadding, fixtureActiveLabel);
-
-      expect(instance.parent.style.getPropertyValue(`--${cssVariablePrefix}segmented-control-highlight-x-pos`)).toBe(
-        `${expectedOffset}px`,
-      );
-    });
-
-    it('should update active position on window resize', () => {
-      // On change event, simulate the offsetLeft change
-      window.addEventListener('resize', () => {
-        Object.defineProperty(fixtureActiveLabel, 'offsetLeft', { value: 111, configurable: true });
-      });
-
-      // Trigger the window resize event
-      window.dispatchEvent(new Event('resize'));
-
-      const instance = new SegmentedControl(fixtureControl);
-
-      const expectedOffset = calculateExpectedOffset(fixtureControl, fixtureControlPadding, fixtureActiveLabel);
-
-      expect(instance.parent.style.getPropertyValue(`--${cssVariablePrefix}segmented-control-highlight-x-pos`)).toBe(
-        `${expectedOffset}px`,
-      );
+      expect(instance.parent.style.getPropertyValue(`--${cssVariablePrefix}segmented-control-highlight-pos`)).toBe('1');
     });
 
     it('should add initialized class when transform transition ends', () => {

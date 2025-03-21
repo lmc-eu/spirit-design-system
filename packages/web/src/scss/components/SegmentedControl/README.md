@@ -118,9 +118,9 @@ There is no limit to the number of options, but it is recommended to use 2-5 opt
     class="SegmentedControl__input"
     checked
   />
-  <label for="segmented-control-label-1" class="SegmentedControl__label"
-    ><span class="text-truncate">Label</span></label
-  >
+  <label for="segmented-control-label-1" class="SegmentedControl__label">
+    <span class="text-truncate">Label</span>
+  </label>
 
   <input
     type="checkbox"
@@ -129,9 +129,9 @@ There is no limit to the number of options, but it is recommended to use 2-5 opt
     value="value-2"
     class="SegmentedControl__input"
   />
-  <label for="segmented-control-label-2" class="SegmentedControl__label"
-    ><span class="text-truncate">Label</span></label
-  >
+  <label for="segmented-control-label-2" class="SegmentedControl__label">
+    <span class="text-truncate">Label</span>
+  </label>
 
   <input
     type="checkbox"
@@ -140,9 +140,9 @@ There is no limit to the number of options, but it is recommended to use 2-5 opt
     value="value-3"
     class="SegmentedControl__input"
   />
-  <label for="segmented-control-label-3" class="SegmentedControl__label"
-    ><span class="text-truncate">Label</span></label
-  >
+  <label for="segmented-control-label-3" class="SegmentedControl__label">
+    <span class="text-truncate">Label</span>
+  </label>
 </fieldset>
 ```
 

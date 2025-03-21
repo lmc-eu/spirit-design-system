@@ -9,7 +9,6 @@ const DATA_KEY = `${NAME}`;
 const EVENT_KEY = `.${DATA_KEY}`;
 const SELECTOR_INPUT = '[type="radio"]';
 const CLASS_NAME_INIT = 'is-initialized';
-const EVENT_RESIZE = `resize${EVENT_KEY}`;
 const EVENT_CHANGE = `change${EVENT_KEY}`;
 const PROPERTY_NAME_TRANSITION = 'transform';
 
@@ -42,21 +41,15 @@ class SegmentedControl extends BaseComponent {
   }
 
   static getActivePosition(parent: HTMLElement, children: HTMLElement[]): number {
-    const activeInput = SegmentedControl.getActiveItem(children);
-    const activeLabel = activeInput?.nextElementSibling as HTMLElement;
+    const activeItem = SegmentedControl.getActiveItem(children);
 
-    const parentPaddingLeft = parseFloat(getComputedStyle(parent).paddingLeft) || 0;
-    const parentPaddingRight = parseFloat(getComputedStyle(parent).paddingRight) || 0;
-    const parentWidth = parent.clientWidth - parentPaddingLeft - parentPaddingRight;
-    const offsetRight = parentWidth - (activeLabel.offsetLeft + activeLabel.offsetWidth);
-
-    return activeLabel ? -offsetRight - parentPaddingRight : 0;
+    return activeItem ? children.length - children.indexOf(activeItem) - 1 : 0;
   }
 
   static setActivePosition(parent: HTMLElement, children: HTMLElement[]): void {
-    const offsetRight = SegmentedControl.getActivePosition(parent, children);
+    const position = SegmentedControl.getActivePosition(parent, children);
 
-    parent.style.setProperty(`--${cssVariablePrefix}segmented-control-highlight-x-pos`, `${offsetRight}px`);
+    parent.style.setProperty(`--${cssVariablePrefix}segmented-control-highlight-pos`, position.toString());
   }
 
   onTransitionEnd(event: { propertyName: string }) {
@@ -75,16 +68,7 @@ class SegmentedControl extends BaseComponent {
     EventHandler.on(this.parent, 'transitionend', this.onTransitionEnd.bind(this));
   }
 
-  onResize(): void {
-    this.parent.style.transition = 'none';
-    SegmentedControl.setActivePosition(this.parent, this.inputs);
-    this.parent.style.transition = '';
-    EventHandler.trigger(this.parent, EVENT_RESIZE);
-  }
-
   addEventListeners(): void {
-    EventHandler.on(window, 'resize', this.onResize.bind(this));
-
     for (const input of this.inputs) {
       if (input) {
         EventHandler.on(input, 'change', this.onChange.bind(this));

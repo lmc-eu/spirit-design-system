@@ -41,9 +41,15 @@
         z-index: -1;
         border: theme.$item-border-default;
         border-radius: theme.$item-border-radius;
-        inset: -1 * theme.$item-border-width;
+        transform: translateX(
+            calc(
+                var(--#{theme.$item-position-variable}, 0) *
+                    -100% - calc(var(--#{theme.$item-position-variable}, 0) * #{theme.$gap})
+            )
+        );
         pointer-events: none;
         transition: inherit;
+        inset: -1 * theme.$item-border-width;
     }
 
     &:last-of-type {
@@ -72,13 +78,13 @@
 @include tools.generate-segment-transform(theme.$max-items);
 
 // 1.
-// stylelint-disable-next-line selector-max-specificity, selector-nested-pattern
 .SegmentedControl[data-spirit-toggle]:has([type='radio']) {
+    // stylelint-disable-next-line  selector-max-specificity, selector-nested-pattern,
     .SegmentedControl__label:last-of-type::after {
         opacity: 0; // 2.
-        transform: translateX(var(--#{tokens.$css-variable-prefix}segmented-control-highlight-x-pos, 0));
     }
 
+    // stylelint-disable-next-line selector-max-specificity, selector-max-class
     &.is-initialized .SegmentedControl__label:last-of-type::after {
         opacity: 1; // 2.
     }
