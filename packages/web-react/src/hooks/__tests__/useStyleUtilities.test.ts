@@ -150,4 +150,27 @@ describe('useStyleUtilities hook', () => {
       'text-desktop-right',
     ]);
   });
+
+  it('should not process null, undefined and an empty string style utilities', () => {
+    const mockProps = {
+      margin: undefined,
+      paddingY: null,
+      paddingX: '',
+      marginX: {
+        mobile: null,
+        tablet: undefined,
+        desktop: 'space-300',
+      },
+    };
+
+    /**
+     * @ts-hint
+     * `undefined` and `null` are not valid values for StyleProps
+     * that is why we are casting it to unknown
+     */
+    const { result } = renderHook(() => useStyleUtilities(mockProps as unknown as StyleProps, ''));
+
+    expect(result.current.styleUtilities).toEqual(['mx-desktop-300']);
+    expect(result.current.props).toEqual({});
+  });
 });
