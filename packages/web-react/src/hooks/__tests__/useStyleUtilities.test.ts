@@ -163,11 +163,7 @@ describe('useStyleUtilities hook', () => {
       },
     };
 
-    /**
-     * @ts-hint
-     * `undefined` and `null` are not valid values for StyleProps
-     * that is why we are casting it to unknown
-     */
+    // Type casting to `unknown` - `undefined` and `null` are not valid values for StyleProps
     const { result } = renderHook(() => useStyleUtilities(mockProps as unknown as StyleProps, ''));
 
     expect(result.current.styleUtilities).toEqual(['mx-desktop-300']);
