@@ -30,7 +30,6 @@ const TooltipPopover = (props: TooltipPopoverProps) => {
   const { classProps, props: modifiedProps } = useTooltipStyleProps({
     isOpen,
     isDismissible,
-    placement,
     ...rest,
   });
   const { styleProps: contentStyleProps, props: contentOtherProps } = useStyleProps(modifiedProps);
