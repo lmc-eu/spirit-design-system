@@ -1,6 +1,9 @@
+// 1. Approximately cross-browser width of the arrows (aka up and down buttons) in the number input.
+
 @use '@tokens' as tokens;
 
-$input-number-arrows-width: 1.25rem;
+$breakpoint-tablet: tokens.$breakpoint-tablet;
+
+$input-number-arrows-width: 0.5rem; // 1.
 $input-password-toggle-padding: tokens.$space-500;
 $input-password-toggle-icon-size: tokens.$space-900;
-$input-size-characters: (2, 3, 4);
