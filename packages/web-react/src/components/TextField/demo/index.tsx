@@ -46,7 +46,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <DocsSection title="Fluid">
         <TextFieldFluid />
       </DocsSection>
-      <DocsSection title="Size">
+      <DocsSection title="Input Width">
         <TextFieldInputWidth />
       </DocsSection>
       <DocsSection title="Inline">

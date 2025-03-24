@@ -13,6 +13,7 @@ const _TextFieldBaseInput = (
 ) => {
   const { classProps, props: modifiedProps } = useTextFieldBaseInputStyleProps(props);
   const { id, isDisabled, isMultiline, isRequired, inputWidth, type, ...restProps } = modifiedProps;
+  // restProps.UNSAFE_style = { ...restProps.UNSAFE_style, '--text-field-input-width': inputWidth };
   const { props: otherProps } = useStyleProps(restProps);
 
   const ElementType: React.ElementType = isMultiline ? 'textarea' : 'input';
@@ -25,8 +26,8 @@ const _TextFieldBaseInput = (
       disabled={isDisabled}
       id={id}
       required={isRequired}
-      size={inputWidth}
       type={inputType}
+      style={{ '--text-field-input-width': !isMultiline && inputWidth ? inputWidth : undefined }} // Pass properly the input width
       ref={ref as RefObject<HTMLInputElement & HTMLTextAreaElement>}
     />
   );
