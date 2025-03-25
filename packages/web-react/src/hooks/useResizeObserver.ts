@@ -4,6 +4,7 @@
  * @see { @link https://usehooks-ts.com/react-hook/use-resize-observer }
  */
 import { useEffect, useRef, useState, type RefObject } from 'react';
+import { isSSR } from '../utils';
 import { useIsMounted } from './useIsMounted';
 
 /** @private */
@@ -59,9 +60,6 @@ const initialSize: Size = {
   width: undefined,
   height: undefined,
 };
-
-// Helper to detect if running on the server
-const isSSR = typeof window === 'undefined';
 
 /**
  * Custom hook that observes the size of an element using the [`ResizeObserver API`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver).
