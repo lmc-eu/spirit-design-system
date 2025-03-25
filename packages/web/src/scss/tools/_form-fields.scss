@@ -59,7 +59,6 @@
 @mixin inline-field-root() {
     display: inline-flex;
     margin-block: form-fields-theme.$inline-field-margin-y;
-    cursor: cursors.$form-fields;
 }
 
 @mixin inline-field-root-disabled() {
@@ -76,6 +75,13 @@
 
     display: inline-block;
     color: form-fields-theme.$label-color-state-default;
+    cursor: cursors.$form-fields;
+}
+
+@mixin inline-field-label-disabled() {
+    @include label-disabled();
+
+    cursor: cursors.$disabled;
 }
 
 @mixin box-field-label() {
@@ -264,4 +270,13 @@
 
 @mixin item-helper-text() {
     @include typography.generate(form-fields-theme.$item-helper-text-typography);
+}
+
+@mixin stretch($pseudo-element: before) {
+    &::#{$pseudo-element} {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+    }
 }
