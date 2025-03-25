@@ -34,14 +34,10 @@ const _Checkbox = (props: SpiritCheckboxProps, ref: ForwardedRef<HTMLInputElemen
   });
 
   return (
-    <Label
-      htmlFor={id}
-      UNSAFE_style={styleProps.style}
-      UNSAFE_className={classNames(classProps.root, styleProps.className)}
-    >
+    <div style={styleProps.style} className={classNames(classProps.root, styleProps.className)}>
       <input
         {...otherProps}
-        aria-describedby={ids.join(' ')}
+        {...(ids.length && { 'aria-describedby': ids.join(' ') })}
         type="checkbox"
         id={id}
         className={classProps.input}
@@ -51,13 +47,12 @@ const _Checkbox = (props: SpiritCheckboxProps, ref: ForwardedRef<HTMLInputElemen
         value={value}
         ref={ref}
       />
-      <span className={classProps.text}>
-        <Label elementType="span" UNSAFE_className={classProps.label}>
+      <div className={classProps.text}>
+        <Label UNSAFE_className={classProps.label} htmlFor={id}>
           {label}
         </Label>
         <HelperText
           UNSAFE_className={classProps.helperText}
-          elementType="span"
           id={`${id}__helperText`}
           registerAria={register}
           helperText={helperText}
@@ -65,7 +60,6 @@ const _Checkbox = (props: SpiritCheckboxProps, ref: ForwardedRef<HTMLInputElemen
         {validationState && (
           <ValidationText
             UNSAFE_className={classProps.validationText}
-            elementType="span"
             id={`${id}__validationText`}
             {...(hasValidationIcon && { hasValidationStateIcon: validationState })}
             validationText={validationText}
@@ -73,8 +67,8 @@ const _Checkbox = (props: SpiritCheckboxProps, ref: ForwardedRef<HTMLInputElemen
             role={validationTextRole}
           />
         )}
-      </span>
-    </Label>
+      </div>
+    </div>
   );
 };
 
