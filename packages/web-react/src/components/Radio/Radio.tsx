@@ -27,14 +27,10 @@ const _Radio = (props: SpiritRadioProps, ref: ForwardedRef<HTMLInputElement>): J
   const [ids, register] = useAriaIds(ariaDescribedBy);
 
   return (
-    <Label
-      htmlFor={id}
-      UNSAFE_style={styleProps.style}
-      UNSAFE_className={classNames(classProps.root, styleProps.className)}
-    >
+    <div style={styleProps.style} className={classNames(classProps.root, styleProps.className)}>
       <input
         {...otherProps}
-        aria-describedby={ids.join(' ')}
+        {...(ids.length && { 'aria-describedby': ids.join(' ') })}
         type="radio"
         id={id}
         className={classProps.input}
@@ -44,19 +40,18 @@ const _Radio = (props: SpiritRadioProps, ref: ForwardedRef<HTMLInputElement>): J
         value={value}
         ref={ref}
       />
-      <span className={classProps.text}>
-        <Label elementType="span" UNSAFE_className={classProps.label}>
+      <div className={classProps.text}>
+        <Label UNSAFE_className={classProps.label} htmlFor={id}>
           {label}
         </Label>
         <HelperText
           UNSAFE_className={classProps.helperText}
-          elementType="span"
           id={`${id}__helperText`}
           registerAria={register}
           helperText={helperText}
         />
-      </span>
-    </Label>
+      </div>
+    </div>
   );
 };
 
