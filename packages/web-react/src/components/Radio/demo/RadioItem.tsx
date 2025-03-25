@@ -1,26 +1,52 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Radio from '../Radio';
 
-const RadioItem = () => (
-  <>
-    <Radio id="radio-item-default" isItem label="Radio Label" name="item" />
+const RadioItem = () => {
+  const [selectedRadio, setSelectedRadio] = useState('radio-item-default-checked');
 
-    <Radio id="radio-item-default-checked" isChecked isItem label="Radio Label" name="item" />
+  return (
+    <>
+      <Radio
+        id="radio-item-default"
+        isItem
+        label="Radio Label"
+        name="item"
+        isChecked={selectedRadio === 'radio-item-default'}
+        onChange={() => setSelectedRadio('radio-item-default')}
+      />
 
-    <Radio helperText="Helper text" id="radio-item-helper-text" isItem label="Radio Label" name="item" />
+      <Radio
+        id="radio-item-default-checked"
+        isItem
+        label="Radio Label"
+        name="item"
+        isChecked={selectedRadio === 'radio-item-default-checked'}
+        onChange={() => setSelectedRadio('radio-item-default-checked')}
+      />
 
-    <Radio id="radio-item-disabled" isDisabled isItem label="Radio Label" name="itemDisabled" />
+      <Radio
+        helperText="Helper text"
+        id="radio-item-helper-text"
+        isItem
+        label="Radio Label"
+        name="item"
+        isChecked={selectedRadio === 'radio-item-helper-text'}
+        onChange={() => setSelectedRadio('radio-item-helper-text')}
+      />
 
-    <Radio
-      helperText="Helper text"
-      id="radio-item-disabled-helper-text"
-      isDisabled
-      isChecked
-      isItem
-      label="Radio Label"
-      name="itemDisabled"
-    />
-  </>
-);
+      <Radio id="radio-item-disabled" isDisabled isItem label="Radio Label" name="itemDisabled" />
+
+      <Radio
+        helperText="Helper text"
+        id="radio-item-disabled-helper-text"
+        isDisabled
+        isItem
+        label="Radio Label"
+        name="itemDisabled"
+        isChecked
+      />
+    </>
+  );
+};
 
 export default RadioItem;
