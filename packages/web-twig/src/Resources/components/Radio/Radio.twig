@@ -34,14 +34,16 @@
 {%- set _allowedInputAttributes = [ 'autocomplete' ] -%}
 
 {# Attributes #}
+{%- set _ariaLabelledByAttr = _id and _label ? 'aria-labelledby="' ~ _id ~ '-label"' : null -%}
 {%- set _ariaDescribedByAttr = _helperTextId ? 'aria-describedby="' ~ _helperTextId ~ '"' : null -%}
 {%- set _checkedAttr = _isChecked ? 'checked' : null -%}
 {%- set _disabledAttr = _isDisabled ? 'disabled' : null -%}
 {%- set _valueAttr = _value ? 'value=' ~ _value : null -%}
 {%- set _idAttr = _id ? 'id="' ~ _id | escape('html_attr') ~ '"' : null -%}
 {%- set _labelForAttr = _id ? 'for="' ~ _id | escape('html_attr') ~ '"' : null -%}
+{%- set _labelId = _id and _label ? 'id="' ~ _id | escape('html_attr') ~ '-label"' : null -%}
 
-<label {{ _labelForAttr | raw }} {{ mainProps(_mainPropsWithoutId) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }}>
+<div {{ mainProps(_mainPropsWithoutId) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }}>
     <input
         {{ inputProps(props, _allowedInputAttributes, _inputProps) }}
         type="radio"
@@ -51,22 +53,22 @@
         {{ _checkedAttr }}
         {{ _disabledAttr }}
         {{ _valueAttr }} {# Intentionally without `raw` to prevent XSS. #}
+        {{ _ariaLabelledByAttr | raw }}
         {{ _ariaDescribedByAttr | raw }}
     />
-    <span class="{{ _textClassName }}">
-        <span {{ classProp(_labelClassName) }}>
+    <div class="{{ _textClassName }}">
+        <label {{ classProp(_labelClassName) }} {{ _labelForAttr | raw }} {{ _labelId | raw }}>
             {%- if _unsafeLabel -%}
                 {{ _unsafeLabel | raw }}
             {%- else -%}
                 {{ _label }}
             {%- endif -%}
-        </span>
+        </label>
         <HelperText
             className="{{ _helperTextClassName }}"
-            elementType="span"
             helperText="{{ _helperText }}"
             id="{{ _helperTextId }}"
             UNSAFE_helperText="{{ _unsafeHelperText }}"
         />
-    </span>
-</label>
+    </div>
+</div>
