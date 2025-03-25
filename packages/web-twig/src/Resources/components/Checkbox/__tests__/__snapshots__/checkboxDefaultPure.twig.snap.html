@@ -5,6 +5,14 @@
     </title>
   </head>
   <body>
-    <label for="example" class="Checkbox Checkbox--danger"><input type="checkbox" id="example" class="Checkbox__input" name="example" required="" aria-describedby="example-validation-text"> <span class="Checkbox__text"><span class="Checkbox__label Checkbox__label--required">some label</span> <span class="Checkbox__validationText" id="example-validation-text">validation failed</span></span></label>
+    <div class="Checkbox Checkbox--danger">
+      <input type="checkbox" id="example" class="Checkbox__input" name="example" required="" aria-describedby="example-validation-text">
+      <div class="Checkbox__text">
+        <label class="Checkbox__label Checkbox__label--required" for="example">some label</label>
+        <div class="Checkbox__validationText" id="example-validation-text">
+          validation failed
+        </div>
+      </div>
+    </div>
   </body>
 </html>

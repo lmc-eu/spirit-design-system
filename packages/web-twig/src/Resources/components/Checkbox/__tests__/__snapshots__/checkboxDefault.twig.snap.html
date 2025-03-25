@@ -5,20 +5,66 @@
     </title>
   </head>
   <body>
-    <label for="" class="Checkbox"><input type="checkbox" id="" class="Checkbox__input"></label> 
+    <div class="Checkbox">
+      <input type="checkbox" id="" class="Checkbox__input">
+      <div class="Checkbox__text">
+      </div>
+    </div>
     <!-- Render with minimum props -->
-     <label for="example-id-min" class="Checkbox"><input type="checkbox" id="example-id-min" class="Checkbox__input">
-    <span class="Checkbox__text"><span class="Checkbox__label">Example label</span></span></label> 
+
+    <div class="Checkbox">
+      <input type="checkbox" id="example-id-min" class="Checkbox__input">
+      <div class="Checkbox__text">
+        <label class="Checkbox__label" for="example-id-min">Example label</label>
+      </div>
+    </div>
     <!-- Render checked -->
-     <label for="example-id-checked" class="Checkbox"><input type="checkbox" id="example-id-checked" class="Checkbox__input" checked> <span class="Checkbox__text"><span class="Checkbox__label">Example
-    label</span></span></label> <!-- Render with helper text -->
-     <label for="example-id-helper" class="Checkbox"><input type="checkbox" id="example-id-helper" class="Checkbox__input" aria-describedby="example-id-helper-helper-text"> <span class="Checkbox__text"><span class="Checkbox__label">Example label</span> <span class="Checkbox__helperText" id="example-id-helper-helper-text">Example helper text</span></span></label> <!-- Render with hidden label -->
-     <label for="example-id-hidden" class="Checkbox"><input type="checkbox" id="example-id-hidden" class="Checkbox__input"> <span class="Checkbox__text"><span class="Checkbox__label Checkbox__label--hidden">Example
-    label</span></span></label> <!-- Render with all props -->
-     <label for="example-id-all" class="Checkbox Checkbox--disabled Checkbox--item Checkbox--danger"><input data-validate="true" type="checkbox" id="example-id-all" class="Checkbox__input" checked disabled name="example-name" required="" value="" aria-describedby="example-id-all-helper-text example-id-all-validation-text"> <span class="Checkbox__text"><span class="Checkbox__label Checkbox__label--hidden Checkbox__label--required">UNSAFE
-    label</span> <span class="Checkbox__helperText" id="example-id-all-helper-text">UNSAFE helper text</span>
-    <span class="Checkbox__validationText" id="example-id-all-validation-text"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" id="svg_b9dd7d040cc17e885d046cf711e416db" class="Icon" aria-hidden="true">
-    <path d="M2.73004 21.0001H21.26C22.03 21.0001 22.51 20.1701 22.13 19.5001L12.86 3.50006C12.47 2.83006 11.51 2.83006 11.13 3.50006L1.86004 19.5001C1.48004 20.1701 1.96004 21.0001 2.73004 21.0001ZM13 18.0001H11V16.0001H13V18.0001ZM12 14.0001C11.45 14.0001 11 13.5501 11 13.0001V11.0001C11 10.4501 11.45 10.0001 12 10.0001C12.55 10.0001 13 10.4501 13 11.0001V13.0001C13 13.5501 12.55 14.0001 12 14.0001Z" fill="currentColor">
-    </path></svg> <span>Example validation text</span></span></span></label>
+
+    <div class="Checkbox">
+      <input type="checkbox" id="example-id-checked" class="Checkbox__input" checked>
+      <div class="Checkbox__text">
+        <label class="Checkbox__label" for="example-id-checked">Example label</label>
+      </div>
+    </div>
+    <!-- Render with helper text -->
+
+    <div class="Checkbox">
+      <input type="checkbox" id="example-id-helper" class="Checkbox__input" aria-describedby="example-id-helper-helper-text">
+      <div class="Checkbox__text">
+        <label class="Checkbox__label" for="example-id-helper">Example label</label>
+        <div class="Checkbox__helperText" id="example-id-helper-helper-text">
+          Example helper text
+        </div>
+      </div>
+    </div>
+    <!-- Render with hidden label -->
+
+    <div class="Checkbox">
+      <input type="checkbox" id="example-id-hidden" class="Checkbox__input">
+      <div class="Checkbox__text">
+        <label class="Checkbox__label Checkbox__label--hidden" for="example-id-hidden">Example label</label>
+      </div>
+    </div>
+    <!-- Render with all props -->
+
+    <div class="Checkbox Checkbox--disabled Checkbox--item Checkbox--danger">
+      <input data-validate="true" type="checkbox" id="example-id-all" class="Checkbox__input" checked disabled name="example-name" required="" value="" aria-describedby="example-id-all-validation-text example-id-all-helper-text">
+      <div class="Checkbox__text">
+        <label class="Checkbox__label Checkbox__label--hidden Checkbox__label--required" for="example-id-all">UNSAFE
+        label</label>
+        <div class="Checkbox__helperText" id="example-id-all-helper-text">
+          UNSAFE helper text
+        </div>
+
+        <div class="Checkbox__validationText" id="example-id-all-validation-text">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" id="svg_b9dd7d040cc17e885d046cf711e416db" class="Icon" aria-hidden="true">
+          <path d="M2.73004 21.0001H21.26C22.03 21.0001 22.51 20.1701 22.13 19.5001L12.86 3.50006C12.47 2.83006 11.51 2.83006 11.13 3.50006L1.86004 19.5001C1.48004 20.1701 1.96004 21.0001 2.73004 21.0001ZM13 18.0001H11V16.0001H13V18.0001ZM12 14.0001C11.45 14.0001 11 13.5501 11 13.0001V11.0001C11 10.4501 11.45 10.0001 12 10.0001C12.55 10.0001 13 10.4501 13 11.0001V13.0001C13 13.5501 12.55 14.0001 12 14.0001Z" fill="currentColor">
+          </path></svg>
+          <div>
+            Example validation text
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

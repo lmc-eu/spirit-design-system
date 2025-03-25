@@ -41,7 +41,7 @@
 {%- set _idAttr = _id ? 'id="' ~ _id | escape('html_attr') ~ '"' : null -%}
 {%- set _labelForAttr = _id ? 'for="' ~ _id | escape('html_attr') ~ '"' : null -%}
 
-<label {{ _labelForAttr | raw }} {{ mainProps(_mainPropsWithoutId) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }}>
+<div {{ mainProps(_mainPropsWithoutId) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }}>
     <input
         {{ inputProps(props, _allowedInputAttributes, _inputProps) }}
         type="radio"
@@ -53,20 +53,19 @@
         {{ _valueAttr }} {# Intentionally without `raw` to prevent XSS. #}
         {{ _ariaDescribedByAttr | raw }}
     />
-    <span class="{{ _textClassName }}">
-        <span {{ classProp(_labelClassName) }}>
+    <div class="{{ _textClassName }}">
+        <label {{ classProp(_labelClassName) }} {{ _labelForAttr | raw }}>
             {%- if _unsafeLabel -%}
                 {{ _unsafeLabel | raw }}
             {%- else -%}
                 {{ _label }}
             {%- endif -%}
-        </span>
+        </label>
         <HelperText
             className="{{ _helperTextClassName }}"
-            elementType="span"
             helperText="{{ _helperText }}"
             id="{{ _helperTextId }}"
             UNSAFE_helperText="{{ _unsafeHelperText }}"
         />
-    </span>
-</label>
+    </div>
+</div>
