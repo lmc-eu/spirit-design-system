@@ -6,5 +6,6 @@
  */
 /* eslint-disable no-restricted-imports */
 import { useEffect, useLayoutEffect } from 'react';
+import { isSSR } from '../utils';
 
-export const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
+export const useIsomorphicLayoutEffect = !isSSR ? useLayoutEffect : useEffect;
