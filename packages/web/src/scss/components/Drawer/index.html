@@ -75,41 +75,41 @@
       <form class="mb-600">
         <fieldset class="border-0">
           <legend>Drawer alignment:</legend>
-          <label for="drawer-alignment-left" class="Radio mr-600">
+          <div class="Radio mr-600">
             <input name="drawer-alignment" autocomplete="off" aria-describedby="drawer-alignment-left__helperText" type="radio" id="drawer-alignment-left" class="Radio__input" value="left">
-            <span class="Radio__text">
-              <span class="Radio__label">
+            <div class="Radio__text">
+              <label class="Radio__label" for="drawer-alignment-left">
                 Left
-              </span>
-            </span>
-          </label>
-          <label for="drawer-alignment-right" class="Radio">
+              </label>
+            </div>
+          </div>
+          <div class="Radio">
             <input name="drawer-alignment" autocomplete="off" aria-describedby="drawer-alignment-right__helperText" type="radio" id="drawer-alignment-right" class="Radio__input" value="right" checked="">
-            <span class="Radio__text">
-              <span class="Radio__label">
+            <div class="Radio__text">
+              <label class="Radio__label" for="drawer-alignment-right">
                 Right
-              </span>
-            </span>
-          </label>
+              </label>
+            </div>
+          </div>
         </fieldset>
         <fieldset class="border-0">
           <div class="Stack Stack--hasSpacing">
-            <label class="Checkbox" for="drawer-is-closable-on-backdrop-click">
+            <div class="Checkbox">
               <input name="is-closable-on-backdrop-click" aria-describedby="drawer-is-closable-on-backdrop-click__helperText" type="checkbox" id="drawer-is-closable-on-backdrop-click" class="Checkbox__input" value="" checked="">
-              <span class="Checkbox__text">
-                <span class="Checkbox__label">
+              <div class="Checkbox__text">
+                <label class="Checkbox__label" for="drawer-is-closable-on-backdrop-click">
                   Closable on Backdrop Click
-                </span>
-              </span>
-            </label>
-            <label class="Checkbox" for="drawer-is-closable-on-escape-key">
+                </label>
+              </div>
+            </div>
+            <div class="Checkbox">
               <input name="is-closable-on-escape-key" aria-describedby="drawer-is-closable-on-escape-key__helperText" type="checkbox" id="drawer-is-closable-on-escape-key" class="Checkbox__input" value="" checked="">
-              <span class="Checkbox__text">
-                <span class="Checkbox__label">
+              <div class="Checkbox__text">
+                <label class="Checkbox__label" for="drawer-is-closable-on-escape-key">
                   Closable on Escape Key Down
-                </span>
-              </span>
-            </label>
+                </label>
+              </div>
+            </div>
             <div class="TextArea">
               <label for="drawer-content" class="TextArea__label">Drawer content</label>
               <textarea name="content" class="TextArea__input" id="drawer-content">This is a Drawer content.</textarea>

@@ -1,4 +1,5 @@
 // 1. Force the color to be printed as-is, without any color adjustment.
+// 2. Put the input above the stretched label.
 
 @use 'sass:map';
 @use '../settings/cursors';
@@ -59,7 +60,6 @@
 @mixin inline-field-root() {
     display: inline-flex;
     margin-block: form-fields-theme.$inline-field-margin-y;
-    cursor: cursors.$form-fields;
 }
 
 @mixin inline-field-root-disabled() {
@@ -74,8 +74,15 @@
 @mixin inline-field-label() {
     @include typography.generate(form-fields-theme.$input-typography);
 
-    display: inline-block;
+    display: block;
     color: form-fields-theme.$label-color-state-default;
+    cursor: cursors.$form-fields;
+}
+
+@mixin inline-field-label-disabled() {
+    @include label-disabled();
+
+    cursor: cursors.$disabled;
 }
 
 @mixin box-field-label() {
@@ -87,6 +94,7 @@
 }
 
 @mixin inline-field-input() {
+    z-index: 1; // 2.
     appearance: none;
     border: form-fields-theme.$inline-field-input-border-width solid form-fields-theme.$input-border-color;
     background-color: form-fields-theme.$input-background-color;
@@ -264,4 +272,13 @@
 
 @mixin item-helper-text() {
     @include typography.generate(form-fields-theme.$item-helper-text-typography);
+}
+
+@mixin stretch($pseudo-element: before) {
+    &::#{$pseudo-element} {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+    }
 }

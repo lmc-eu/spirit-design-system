@@ -2,6 +2,7 @@
 //    and therefore bloating the CSS.
 // 2. We need to set the background-color of the non-disabled Checkbox input to initial color when it is hovered
 //    or active, because we need it contrasting with the background color.
+// 3. Make the text selectable and allow links to be clickable in the helper and validation texts.
 
 @use 'theme';
 @use '../../theme/form-fields' as form-fields-theme;
@@ -12,6 +13,8 @@ $_field-name: 'Checkbox';
 
 .Checkbox {
     @include form-fields-tools.inline-field-root();
+
+    position: relative;
 }
 
 .Checkbox__text {
@@ -20,6 +23,7 @@ $_field-name: 'Checkbox';
 
 .Checkbox__label {
     @include form-fields-tools.inline-field-label();
+    @include form-fields-tools.stretch();
 }
 
 .Checkbox__label--hidden {
@@ -67,10 +71,18 @@ $_field-name: 'Checkbox';
     @include form-fields-tools.helper-text();
 }
 
+.Checkbox__validationText,
+.Checkbox__helperText {
+    position: relative; // 3.
+    z-index: 1; // 3.
+}
+
 @include form-fields-tools.input-field-validation-states($_field-name);
 
 .Checkbox--item {
     @include form-fields-tools.item();
+
+    position: relative;
 }
 
 .Checkbox--item .Checkbox__label {
@@ -94,7 +106,7 @@ $_field-name: 'Checkbox';
 }
 
 :is(.Checkbox--disabled, .Checkbox.is-disabled) .Checkbox__label {
-    @include form-fields-tools.label-disabled();
+    @include form-fields-tools.inline-field-label-disabled();
 }
 
 :is(.Checkbox--disabled, .Checkbox.is-disabled) .Checkbox__validationText {

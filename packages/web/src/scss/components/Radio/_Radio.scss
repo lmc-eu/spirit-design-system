@@ -1,5 +1,6 @@
 // 1. We need to set the background-color of the non-disabled Radio input to initial color when it is hovered
 //    or active, because we need it contrasting with the background color.
+// 2. Make the text selectable and allow links to be clickable in the helper text.
 
 @use 'sass:map';
 @use '../../theme/form-fields' as form-fields-theme;
@@ -10,6 +11,8 @@ $_field-name: 'Radio';
 
 .Radio {
     @include form-fields-tools.inline-field-root();
+
+    position: relative;
 }
 
 .Radio__input {
@@ -49,6 +52,8 @@ $_field-name: 'Radio';
 .Radio__helperText {
     @include form-fields-tools.helper-text();
 
+    position: relative; // 2.
+    z-index: 1; // 2.
     margin-left: form-fields-theme.$inline-field-gap;
 }
 
@@ -56,6 +61,7 @@ $_field-name: 'Radio';
 
 .Radio__label {
     @include form-fields-tools.inline-field-label();
+    @include form-fields-tools.stretch();
 
     margin-left: form-fields-theme.$inline-field-gap;
 }
@@ -70,6 +76,8 @@ $_field-name: 'Radio';
 
 .Radio--item {
     @include form-fields-tools.item();
+
+    position: relative;
 }
 
 .Radio--item:is(.Radio--disabled, .Radio.is-disabled),
@@ -92,7 +100,7 @@ $_field-name: 'Radio';
 
 :is(.Radio--disabled, .Radio.is-disabled) .Radio__label,
 .Radio:has(.Radio__input:disabled) .Radio__label {
-    @include form-fields-tools.label-disabled();
+    @include form-fields-tools.inline-field-label-disabled();
 }
 
 :is(.Radio--disabled, .Radio.is-disabled) .Radio__helperText,

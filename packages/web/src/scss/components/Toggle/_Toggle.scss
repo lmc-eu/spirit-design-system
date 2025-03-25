@@ -7,12 +7,12 @@
 $_field-name: 'Toggle';
 
 .Toggle {
+    position: relative;
     display: flex;
     align-items: start;
     justify-content: space-between;
     max-width: theme.$max-width;
     margin-block: form-fields-theme.$inline-field-margin-y;
-    cursor: cursors.$form-fields;
 }
 
 .Toggle--fluid {
@@ -20,11 +20,13 @@ $_field-name: 'Toggle';
 }
 
 .Toggle__text {
+    flex: 1;
     margin-right: form-fields-theme.$inline-field-gap;
 }
 
 .Toggle__label {
     @include form-fields-tools.inline-field-label();
+    @include form-fields-tools.stretch();
 }
 
 .Toggle__label--hidden {
