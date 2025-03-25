@@ -87,21 +87,23 @@ Item as a link example:
 Radio as a Item:
 
 ```html
-<label for="radio-item" class="Radio Radio--item">
+<div class="Radio Radio--item">
   <input type="radio" id="radio-item" name="example" class="Radio__input" checked />
-  <span class="Radio__label">Item</span>
-</label>
+  <div class="Radio__text">
+    <label class="Radio__label" for="radio-item">Item</label>
+  </div>
+</div>
 ```
 
 Checkbox as a Item:
 
 ```html
-<label for="checkbox-item" class="Checkbox Checkbox--item">
+<div class="Checkbox Checkbox--item">
   <input type="checkbox" id="checkbox-item" class="Checkbox__input" />
-  <span class="Checkbox__text">
-    <span class="Checkbox__label">Item</span>
-  </span>
-</label>
+  <div class="Checkbox__text">
+    <label class="Checkbox__label" for="checkbox-item">Item</label>
+  </div>
+</div>
 ```
 
 Usage in [Dropdown][dropdown] component:

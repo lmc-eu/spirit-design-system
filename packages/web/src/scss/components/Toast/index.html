@@ -94,54 +94,54 @@
 
       <form>
         <fieldset onchange="setToastCollapsing(event, '#toast-example')" style="border: 0;">
-          <label for="toast-is-collapsible" class="Checkbox">
+          <div class="Checkbox">
             <input type="checkbox" id="toast-is-collapsible" class="Checkbox__input" name="is-collapsible"
                    autocomplete="off" checked/>
-            <span class="Checkbox__text">
-            <span class="Checkbox__label">Collapsible</span>
-          </span>
-          </label>
+            <div class="Checkbox__text">
+              <label class="Checkbox__label" for="toast-is-collapsible">Collapsible</label>
+            </div>
+          </div>
         </fieldset>
         <fieldset onchange="setToastAlignmentY(event, '#toast-example')" style="border: 0;">
           <legend>Vertical alignment:</legend>
-          <label for="toast-alignment-top" class="Radio mr-600">
+          <div class="Radio mr-600">
             <input type="radio" id="toast-alignment-top" name="toast-alignment-y" value="top" class="Radio__input"
-                   autocomplete="off"/>
-            <span class="Radio__text">
-            <span class="Radio__label">Top</span>
-          </span>
-          </label>
-          <label for="toast-alignment-bottom" class="Radio mr-600">
+                   autocomplete="off" />
+            <div class="Radio__text">
+              <label class="Radio__label" for="toast-alignment-top">Top</label>
+            </div>
+          </div>
+          <div class="Radio mr-600">
             <input type="radio" id="toast-alignment-bottom" name="toast-alignment-y" value="bottom" class="Radio__input"
                    autocomplete="off" checked/>
-            <span class="Radio__text">
-            <span class="Radio__label">Bottom</span>
-          </span>
-          </label>
+            <div class="Radio__text">
+              <label class="Radio__label" for="toast-alignment-bottom">Bottom</label>
+            </div>
+          </div>
         </fieldset>
         <fieldset onchange="setToastAlignmentX(event, '#toast-example')" style="border: 0;">
           <legend>Horizontal alignment:</legend>
-          <label for="toast-alignment-left" class="Radio mr-600">
+          <div class="Radio mr-600">
             <input type="radio" id="toast-alignment-left" name="toast-alignment-x" value="left" class="Radio__input"
-                   autocomplete="off"/>
-            <span class="Radio__text">
-            <span class="Radio__label">Left</span>
-          </span>
-          </label>
-          <label for="toast-alignment-center" class="Radio mr-600">
+                   autocomplete="off" />
+            <div class="Radio__text">
+              <label class="Radio__label" for="toast-alignment-left">Left</label>
+            </div>
+          </div>
+          <div class="Radio mr-600">
             <input type="radio" id="toast-alignment-center" name="toast-alignment-x" value="center" class="Radio__input"
                    autocomplete="off" checked/>
-            <span class="Radio__text">
-            <span class="Radio__label">Center</span>
-          </span>
-          </label>
-          <label for="toast-alignment-right" class="Radio mr-600">
+            <div class="Radio__text">
+              <label class="Radio__label" for="toast-alignment-center">Center</label>
+            </div>
+          </div>
+          <div class="Radio mr-600">
             <input type="radio" id="toast-alignment-right" name="toast-alignment-x" value="right" class="Radio__input"
-                   autocomplete="off"/>
-            <span class="Radio__text">
-            <span class="Radio__label">Right</span>
-          </span>
-          </label>
+                   autocomplete="off" />
+            <div class="Radio__text">
+              <label class="Radio__label" for="toast-alignment-right">Right</label>
+            </div>
+          </div>
         </fieldset>
       </form>
       <!-- Toast alignment demo: end -->
@@ -197,27 +197,27 @@
                 </div>
               </div>
             </div>
-            <label for="toast-has-icon" class="Checkbox">
+            <div class="Checkbox">
               <input type="checkbox" id="toast-has-icon" class="Checkbox__input" name="is-dismissible" autocomplete="off"
                      checked/>
-              <span class="Checkbox__text">
-              <span class="Checkbox__label">Has icon</span>
-            </span>
-            </label>
-            <label for="toast-is-dismissible" class="Checkbox">
+              <div class="Checkbox__text">
+                <label class="Checkbox__label" for="toast-has-icon">Has icon</label>
+              </div>
+            </div>
+            <div class="Checkbox">
               <input type="checkbox" id="toast-is-dismissible" class="Checkbox__input" name="is-dismissible"
                      autocomplete="off" checked/>
-              <span class="Checkbox__text">
-              <span class="Checkbox__label">Dismissible</span>
-            </span>
-            </label>
-            <label for="toast-enable-auto-close" class="Checkbox">
+              <div class="Checkbox__text">
+                <label class="Checkbox__label" for="toast-is-dismissible">Dismissible</label>
+              </div>
+            </div>
+            <div class="Checkbox">
               <input type="checkbox" id="toast-enable-auto-close" class="Checkbox__input" name="enable-auto-close"
                      autocomplete="off" checked/>
-              <span class="Checkbox__text">
-              <span class="Checkbox__label">Enable AutoClose</span>
-            </span>
-            </label>
+              <div class="Checkbox__text">
+                <label class="Checkbox__label" for="toast-enable-auto-close">Enable AutoClose</label>
+              </div>
+            </div>
             <div class="TextField">
               <label for="toast-auto-close-interval" class="TextField__label">AutoClose interval (ms)</label>
               <input type="number" min="0" max="60000" step="500" value="3000" id="toast-auto-close-interval"
@@ -229,13 +229,13 @@
                         autocomplete="off">This is a new toast message.</textarea>
               <div class="TextArea__helperText">Can contain HTML.</div>
             </div>
-            <label for="toast-enable-link" class="Checkbox">
+            <div class="Checkbox">
               <input type="checkbox" id="toast-enable-link" class="Checkbox__input" name="enable-link" autocomplete="off"
                      checked/>
-              <span class="Checkbox__text">
-              <span class="Checkbox__label">Add link</span>
-            </span>
-            </label>
+              <div class="Checkbox__text">
+                <label class="Checkbox__label" for="toast-enable-link">Add link</label>
+              </div>
+            </div>
             <div class="TextArea">
               <label for="toast-link" class="TextArea__label">Link</label>
               <textarea id="toast-link" class="TextArea__input" autocomplete="off">This is a toast link.</textarea>

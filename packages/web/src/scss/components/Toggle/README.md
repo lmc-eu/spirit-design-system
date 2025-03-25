@@ -8,12 +8,12 @@ The Toggle component implements the HTML [checkbox input][mdn-checkbox] element.
 the native input element and styles it to look like a toggle switch.
 
 ```html
-<label for="toggle-default" class="Toggle">
-  <span class="Toggle__text">
-    <span class="Toggle__label">Toggle Label</span>
+<div class="Toggle">
+  <div class="Toggle__text">
+    <label class="Toggle__label" for="toggle-default">Toggle Label</label>
   </span>
   <input type="checkbox" id="toggle-default" class="Toggle__input" name="default" />
-</label>
+</div>
 ```
 
 ## Indicators
@@ -22,12 +22,12 @@ If you need to indicate the state of the toggle, you can add the `Toggle__input-
 modifier class to the input. This will add a visual indicators to the toggle switch.
 
 ```html
-<label for="toggle-indicators" class="Toggle">
-  <span class="Toggle__text">
-    <span class="Toggle__label">Toggle Label</span>
-  </span>
+<div class="Toggle">
+  <div class="Toggle__text">
+    <label class="Toggle__label" for="toggle-indicators">Toggle Label</label>
+  </div>
   <input type="checkbox" id="toggle-indicators" class="Toggle__input Toggle__input--indicators" name="default" />
-</label>
+</div>
 ```
 
 ## Required
@@ -36,44 +36,44 @@ Add the `required` attribute to the input to mark it as required and add the
 `Toggle__label--required` modifier class to the label to indicate the state.
 
 ```html
-<label for="toggle-required" class="Toggle">
-  <span class="Toggle__text">
-    <span class="Toggle__label Toggle__label--required">Toggle Label</span>
-  </span>
+<div class="Toggle">
+  <div class="Toggle__text">
+    <label class="Toggle__label Toggle__label--required" for="toggle-required">Toggle Label</label>
+  </div>
   <input type="checkbox" id="toggle-required" class="Toggle__input" name="required" required />
-</label>
+</div>
 ```
 
 ## Hidden Label
 
 ```html
-<label for="toggle-hidden-label" class="Toggle">
-  <span class="Toggle__text">
-    <span class="Toggle__label Toggle__label--hidden">Toggle Label</span>
-  </span>
+<div class="Toggle">
+  <div class="Toggle__text">
+    <label class="Toggle__label Toggle__label--hidden" for="toggle-hidden-label">Toggle Label</label>
+  </div>
   <input type="checkbox" id="toggle-hidden-label" class="Toggle__input" name="hidden-label" />
-</label>
+</div>
 ```
 
 ## Fluid
 
 ```html
-<label for="toggle-fluid" class="Toggle Toggle--fluid">
-  <span class="Toggle__text">
-    <span class="Toggle__label">Toggle Label</span>
-  </span>
+<div class="Toggle Toggle--fluid">
+  <div class="Toggle__text">
+    <label class="Toggle__label" for="toggle-fluid">Toggle Label</label>
+  </div>
   <input type="checkbox" id="toggle-fluid" class="Toggle__input" name="fluid" />
-</label>
+</div>
 ```
 
 ## Helper Text
 
 ```html
-<label for="toggle-helper-text" class="Toggle">
-  <span class="Toggle__text">
-    <span class="Toggle__label">Toggle Label</span>
-    <span class="Toggle__helperText" id="toggle-helper-text-helper-text">Helper text</span>
-  </span>
+<div class="Toggle">
+  <div class="Toggle__text">
+    <label class="Toggle__label" for="toggle-helper-text">Toggle Label</label>
+    <div class="Toggle__helperText" id="toggle-helper-text-helper-text">Helper text</div>
+  </div>
   <input
     type="checkbox"
     id="toggle-helper-text"
@@ -81,7 +81,7 @@ Add the `required` attribute to the input to mark it as required and add the
     name="helper-text"
     aria-describedby="toggle-helper-text-helper-text"
   />
-</label>
+</div>
 ```
 
 ## Validation States
@@ -95,18 +95,18 @@ a JS interaction class when controlled by JavaScript (`has-success`,
 - To render validation text with an icon, add `<svg>` icon inside of `.Toggle__validationText`.
 
 ```html
-<label for="toggle-success" class="Toggle Toggle--success">
-  <span class="Toggle__text">
-    <span class="Toggle__label">Toggle Label</span>
-  </span>
+<div class="Toggle Toggle--success">
+  <div class="Toggle__text">
+    <label class="Toggle__label" for="toggle-success">Toggle Label</label>
+  </div>
   <input type="checkbox" id="toggle-success" class="Toggle__input" name="default" />
-</label>
+</div>
 
-<label for="toggle-warning" class="Toggle Toggle--warning">
-  <span class="Toggle__text">
-    <span class="Toggle__label">Toggle Label</span>
-    <span class="Toggle__validationText" id="toggle-warning-validation-text">Validation text</span>
-  </span>
+<div class="Toggle Toggle--warning">
+  <div class="Toggle__text">
+    <label class="Toggle__label" for="toggle-warning">Toggle Label</label>
+    <div class="Toggle__validationText" id="toggle-warning-validation-text">Validation text</div>
+  </div>
   <input
     type="checkbox"
     id="toggle-warning"
@@ -115,7 +115,7 @@ a JS interaction class when controlled by JavaScript (`has-success`,
     aria-describedby="toggle-warning-validation-text"
     checked
   />
-</label>
+</div>
 
 <div class="Toggle Toggle--danger">
   <div class="Toggle__text">
@@ -134,16 +134,16 @@ a JS interaction class when controlled by JavaScript (`has-success`,
   />
 </div>
 
-<label for="toggle-warning" class="Toggle Toggle--warning">
-  <span class="Toggle__text">
-    <span class="Toggle__label">Toggle Label</span>
-    <span class="Toggle__validationText" id="toggle-warning-validation-text">
+<div class="Toggle Toggle--warning">
+  <div class="Toggle__text">
+    <label class="Toggle__label" for="toggle-warning">Toggle Label</label>
+    <div class="Toggle__validationText" id="toggle-warning-validation-text">
       <svg width="20" height="20" aria-hidden="true">
         <use xlink:href="/assets/icons/svg/sprite.svg#warning" />
       </svg>
       <span>Validation text with icon</span>
-    </span>
-  </span>
+    </div>
+  </div>
   <input
     type="checkbox"
     id="toggle-warning"
@@ -152,7 +152,7 @@ a JS interaction class when controlled by JavaScript (`has-success`,
     aria-describedby="toggle-warning-validation-text"
     checked
   />
-</label>
+</div>
 ```
 
 ### JavaScript-Controlled Validation Text
@@ -167,13 +167,13 @@ attribute. This way your JS remains disconnected from CSS that may or may not be
 components mix CSS with JS by design and handle prefixes their own way.**
 
 ```html
-<label for="toggle-success" class="Toggle has-success">
-  <span class="Toggle__text">
-    <span class="Toggle__label">Toggle Label</span>
+<div class="Toggle has-success">
+  <div class="Toggle__text">
+    <label class="Toggle__label" for="toggle-success">Toggle Label</label>
     <div class="Toggle__validationText" id="toggle-success-validation-text" data-spirit-element="validation_text">
       Validation text
     </div>
-  </span>
+  </div>
   <input
     type="checkbox"
     id="toggle-success"
@@ -181,7 +181,7 @@ components mix CSS with JS by design and handle prefixes their own way.**
     name="default"
     aria-describedby="toggle-success-validation-text"
   />
-</label>
+</div>
 ```
 
 To render validation text as a list, use `<ul>` element inside of `<div>`.
@@ -202,12 +202,12 @@ be marked by adding `Toggle--disabled` modifier class, or with `is-disabled`
 JS interaction class when controlled by JavaScript:
 
 ```html
-<label for="toggle-disabled" class="Toggle Toggle--disabled">
-  <span class="Toggle__text">
-    <span class="Toggle__label">Toggle Label</span>
-  </span>
+<div class="Toggle Toggle--disabled">
+  <div class="Toggle__text">
+    <label class="Toggle__label" for="toggle-disabled">Toggle Label</label>
+  </div>
   <input type="checkbox" id="toggle-disabled" class="Toggle__input" name="default" disabled />
-</label>
+</div>
 ```
 
 [dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
