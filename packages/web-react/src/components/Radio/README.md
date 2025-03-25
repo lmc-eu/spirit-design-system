@@ -54,13 +54,13 @@ const CustomRadio = (props: SpiritRadioProps): JSX.Element => {
   const { classProps, props: modifiedProps } = useRadioStyleProps(props);
 
   return (
-    <label htmlFor={props.id} className={classProps.root}>
+    <div className={classProps.root}>
       <input {...modifiedProps} className={classProps.input} />
-      <span className={styleProps.text}>
-        <span className={styleProps.label}>{props.label}</span>
+      <div className={styleProps.text}>
+        <label className={styleProps.label} htmlFor={props.id}>{props.label}</label>
         <span className={styleProps.helperText}>{props.helperText}</span>
-      </span>
-    </label>
+      </div>
+    </div>
   );
 };
 ```

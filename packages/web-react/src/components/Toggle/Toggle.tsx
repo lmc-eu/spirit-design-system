@@ -41,18 +41,13 @@ const _Toggle = (props: SpiritToggleProps, ref: ForwardedRef<HTMLInputElement>) 
   };
 
   return (
-    <Label
-      htmlFor={id}
-      UNSAFE_style={styleProps.style}
-      UNSAFE_className={classNames(classProps.root, styleProps.className)}
-    >
-      <span className={classProps.text}>
-        <Label elementType="span" UNSAFE_className={classProps.label}>
+    <div style={styleProps.style} className={classNames(classProps.root, styleProps.className)}>
+      <div className={classProps.text}>
+        <Label UNSAFE_className={classProps.label} htmlFor={id} id={`${id}-label`}>
           {label}
         </Label>
         <HelperText
           UNSAFE_className={classProps.helperText}
-          elementType="span"
           id={`${id}__helperText`}
           registerAria={register}
           helperText={helperText}
@@ -67,10 +62,11 @@ const _Toggle = (props: SpiritToggleProps, ref: ForwardedRef<HTMLInputElement>) 
             role={validationTextRole}
           />
         )}
-      </span>
+      </div>
       <input
         {...otherProps}
-        aria-describedby={ids.join(' ')}
+        aria-labelledby={`${id}-label`}
+        {...(ids.length && { 'aria-describedby': ids.join(' ') })}
         type="checkbox"
         id={id}
         className={classProps.input}
@@ -80,7 +76,7 @@ const _Toggle = (props: SpiritToggleProps, ref: ForwardedRef<HTMLInputElement>) 
         onChange={handleOnChange}
         ref={ref}
       />
-    </Label>
+    </div>
   );
 };
 
