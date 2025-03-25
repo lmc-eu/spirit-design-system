@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { AlignmentYExtended, Direction } from '../../constants';
+import { AlignmentYExtended, Direction, ShapeVariant } from '../../constants';
 import { AlignmentPropertyType, useAlignmentClass, useClassNamePrefix } from '../../hooks';
 import {
   DirectionDictionaryType,
@@ -8,7 +8,6 @@ import {
   SpiritNavigationItemAlignmentYType,
   SpiritNavigationItemProps,
 } from '../../types';
-import { NavigationActionVariants } from './constants';
 
 export interface UseNavigationStyleProps {
   alignmentY?: SpiritNavigationItemAlignmentYType;
@@ -35,7 +34,7 @@ export const useNavigationStyleProps = ({
   isSquare = false,
   alignmentY = AlignmentYExtended.CENTER,
   direction = Direction.HORIZONTAL,
-  variant = NavigationActionVariants.BOX,
+  variant = ShapeVariant.BOX,
   ...restProps
 }: UseNavigationStyleProps): UseNavigationStyleReturn => {
   const navigationClass = useClassNamePrefix('Navigation');

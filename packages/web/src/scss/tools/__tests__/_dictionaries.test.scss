@@ -3,6 +3,24 @@
 @use '../../settings/links' as links-settings;
 @use '../dictionaries';
 
+// TODO - Fix the test for the following mixin:
+@include test.describe('validate dictionary value mixin') {
+    @include test.it('should throw an error if the value is not in the dictionary') {
+        @include test.assert() {
+            @include dictionaries.validate-dictionary-value(
+                $dictionary: (
+                    'value',
+                ),
+                $value: 'not-value'
+            );
+        }
+
+        @include test.expect() {
+            @error 'The value `not-value` is not defined in the dictionary provided. Available values are: value.';
+        }
+    }
+}
+
 @include test.describe('generate-alignments mixin') {
     @include test.it('should generate correct alignment classes based on a dictionary') {
         @include test.assert() {
@@ -333,6 +351,45 @@
                     rotate: z 180deg;
                 }
                 // stylelint-enable order/properties-order
+            }
+        }
+    }
+}
+
+@include test.describe('generate-shape-variants mixin') {
+    @include test.it('should generate correct shape variant classes based on a config') {
+        @include test.assert() {
+            @include test.output() {
+                @include dictionaries.generate-shape-variants(
+                    'TestShape',
+                    (box, pill),
+                    (
+                        box: (
+                            padding-x: 10px,
+                            padding-y: 20px,
+                            border-radius: 5px,
+                        ),
+                        pill: (
+                            padding-x: 30px,
+                            padding-y: 40px,
+                            border-radius: 15px,
+                        ),
+                    )
+                );
+            }
+
+            @include test.expect() {
+                .TestShape--box {
+                    --spirit-test-shape-padding-x: 10px;
+                    --spirit-test-shape-padding-y: 20px;
+                    --spirit-test-shape-border-radius: 5px;
+                }
+
+                .TestShape--pill {
+                    --spirit-test-shape-padding-x: 30px;
+                    --spirit-test-shape-padding-y: 40px;
+                    --spirit-test-shape-border-radius: 15px;
+                }
             }
         }
     }

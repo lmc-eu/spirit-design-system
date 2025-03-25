@@ -11,6 +11,16 @@
 @use './string' as spirit-string;
 @use './typography';
 
+// Mixin to validate presence of a given value in a dictionary
+// Parameters are:
+// * $dictionary: the dictionary to validate against
+// * $value: the value to validate
+@mixin validate-dictionary-value($dictionary, $value) {
+    @if not list.index($dictionary, $value) {
+        @error 'The value `#{$value}` is not defined in the dictionary provided. Available values are: #{$dictionary}.';
+    }
+}
+
 // Mixin to generate alignment classes based on a dictionary
 // Parameters are:
 // * $class-name: the name of the component class to generate
@@ -136,9 +146,31 @@
     }
 }
 
+// Mixin to generate shape variant classes based on a config
+// Parameters are:
+// * $class-name: the name of the component class to generate
+// * $dictionary-values: list of the dictionary values to generate
+// * $config: map of the properties to generate, their value is the suffix of the token variable
+@mixin generate-shape-variants($class-name, $dictionary-values, $config) {
+    @each $shape, $variables in $config {
+        @include validate-dictionary-value($dictionary-values, $shape);
+
+        .#{$class-name}--#{$shape} {
+            $component-infix: spirit-string.convert-pascal-case-to-kebab-case(
+                spirit-string.remove-prefix($class-name, 'UNSTABLE_')
+            );
+
+            @each $property-name, $property-value in $variables {
+                --#{tokens.$css-variable-prefix}#{$component-infix}-#{$property-name}: #{$property-value};
+            }
+        }
+    }
+}
+
 // Mixin to generate size classes based on a config
 // Parameters are:
 // * $class-name: the name of the component class to generate
+// * $dictionary-values: list of the dictionary values to generate
 // * $sizes: map of the size variables to generate
 @mixin generate-sizes($class-name, $sizes) {
     @each $size, $variables in $sizes {
