@@ -9,6 +9,30 @@ beforeAll(() => {
       return;
     }
     originalError.call(console, ...args);
+
+    const testName = expect.getState().currentTestName;
+
+    // Replace placeholders in the error message with the actual arguments values
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const replacePlaceholdersInErrorMessage = (message: string, messageArgs: any[]) => {
+      let count = 1;
+
+      return message.replace(/%s/g, () => {
+        // eslint-disable-next-line no-plusplus
+        return messageArgs[count++] || '%s';
+      });
+    };
+
+    // Format the error message
+    const formattedArgs = args.map((arg) => {
+      if (typeof arg === 'string') {
+        return replacePlaceholdersInErrorMessage(arg, args);
+      }
+
+      return arg;
+    });
+
+    throw new Error(`[${testName}] contains unexpected console.error. Error log details: \n${formattedArgs.join(' ')}`);
   };
 });
 
