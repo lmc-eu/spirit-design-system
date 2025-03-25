@@ -7,6 +7,7 @@
 @use '../../theme/form-fields' as form-fields-theme;
 @use '../../tools/form-fields' as form-fields-tools;
 @use '../../tools/svg';
+@use '../../settings/cursors';
 
 $_field-name: 'Checkbox';
 
@@ -71,10 +72,13 @@ $_field-name: 'Checkbox';
 
 .Checkbox--item {
     @include form-fields-tools.item();
+
+    position: relative;
 }
 
 .Checkbox--item .Checkbox__label {
     @include form-fields-tools.item-label();
+    @include form-fields-tools.stretch();
 }
 
 .Checkbox--item .Checkbox__validationText {
@@ -83,6 +87,12 @@ $_field-name: 'Checkbox';
 
 .Checkbox--item .Checkbox__helperText {
     @include form-fields-tools.item-helper-text();
+}
+
+.Checkbox--item .Checkbox__validationText,
+.Checkbox--item .Checkbox__helperText {
+    position: relative;
+    z-index: 1;
 }
 
 .Checkbox--item:is(.Checkbox--disabled, .Checkbox.is-disabled) {
@@ -94,7 +104,7 @@ $_field-name: 'Checkbox';
 }
 
 :is(.Checkbox--disabled, .Checkbox.is-disabled) .Checkbox__label {
-    @include form-fields-tools.label-disabled();
+    @include form-fields-tools.inline-field-label-disabled();
 }
 
 :is(.Checkbox--disabled, .Checkbox.is-disabled) .Checkbox__validationText {
