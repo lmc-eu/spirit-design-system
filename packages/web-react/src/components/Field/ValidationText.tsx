@@ -30,12 +30,12 @@ const ValidationText = <T extends ElementType = 'div'>(props: ValidationTextProp
   const mergedStyleProps = mergeStyleProps(ElementTag, { styleProps, transferProps });
 
   useEffect(() => {
-    registerAria?.({ add: id });
+    validationText && registerAria?.({ add: id });
 
     return () => {
       registerAria?.({ remove: id });
     };
-  }, [id, registerAria]);
+  }, [id, registerAria, validationText]);
 
   if (!validationText) {
     return null;
