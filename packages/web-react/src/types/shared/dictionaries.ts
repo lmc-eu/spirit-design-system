@@ -3,22 +3,38 @@ import {
   AlignmentXExtended,
   AlignmentY,
   AlignmentYExtended,
+  BackgroundColors,
   BorderColors,
+  BorderRadii,
+  BorderStyles,
+  BorderWidths,
   ComponentButtonColors,
   EmotionColors,
   Emphasis,
   LinkColors,
   Placements,
+  ShapeVariants,
   Sizes,
   SizesExtended,
+  TextAlignments,
   TextColors,
   ValidationStates,
-  BackgroundColors,
-  BorderStyles,
-  BorderRadii,
-  BorderWidths,
-  TextAlignments,
 } from '../../constants';
+
+/**
+ * Allow autocomplete for string literals.
+ *
+ * This is a Typescript quirk.
+ *
+ * @see { @link https://github.com/microsoft/TypeScript/issues/29729}
+ *
+ * When you want to allow any string, but still give suggestions for known string literals.
+ * This works because it prevents TypeScript from eagerly collapsing string | "literal" into just string.
+ * It behaves exactly the same way as string, but with autocomplete added.
+ * Someday, string | "literal" will just work.
+ */
+// eslint-disable-next-line @typescript-eslint/ban-types
+type AutocompleteStringLiteral = string & {};
 
 /* Alignment */
 export type AlignmentXDictionaryKeys = keyof typeof AlignmentX;
@@ -105,3 +121,7 @@ export type ValidationStatesDictionaryKeys = keyof typeof ValidationStates;
 export type ValidationStatesDictionaryType<T = undefined> =
   | (typeof ValidationStates)[ValidationStatesDictionaryKeys]
   | T;
+
+/* Variant */
+export type ShapeVariantDictionaryKeys = keyof typeof ShapeVariants;
+export type ShapeVariantDictionaryType = (typeof ShapeVariants)[ShapeVariantDictionaryKeys] | AutocompleteStringLiteral;

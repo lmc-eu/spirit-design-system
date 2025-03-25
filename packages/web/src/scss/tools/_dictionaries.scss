@@ -11,6 +11,18 @@
 @use './string' as spirit-string;
 @use './typography';
 
+// Function to validate presence of a given value in a dictionary
+// Parameters are:
+// * $dictionary: the dictionary to validate against
+// * $value: the value to validate
+@function validate-dictionary-value($dictionary, $value) {
+    @if not list.index($dictionary, $value) {
+        @error 'The value `#{$value}` is not defined in the dictionary provided. Available values are: #{$dictionary}.';
+    }
+
+    @return true;
+}
+
 // Mixin to generate alignment classes based on a dictionary
 // Parameters are:
 // * $class-name: the name of the component class to generate
@@ -136,9 +148,36 @@
     }
 }
 
+// Mixin to generate variant classes based on a config
+// Parameters are:
+// * $class-name: the name of the component class to generate
+// * $dictionary-values: list of the dictionary values to validate the $config keys against
+// * $config: map of the properties to generate, their value is the suffix of the token variable
+// * $custom-component-infix: custom component infix (for parent selector variant with child CSS variables)
+@mixin generate-variants($class-name, $dictionary-values, $config, $custom-component-infix: '') {
+    $component-infix: spirit-string.convert-pascal-case-to-kebab-case(
+        spirit-string.remove-prefix($class-name, 'UNSTABLE_')
+    );
+
+    @if $custom-component-infix != '' {
+        $custom-component-infix: '-' + spirit-string.convert-pascal-case-to-kebab-case($custom-component-infix);
+    }
+
+    @each $key, $variables in $config {
+        @if validate-dictionary-value($dictionary-values, $key) {
+            .#{$class-name}--#{$key} {
+                @each $property-name, $property-value in $variables {
+                    --#{tokens.$css-variable-prefix}#{$component-infix}#{$custom-component-infix}-#{$property-name}: #{$property-value};
+                }
+            }
+        }
+    }
+}
+
 // Mixin to generate size classes based on a config
 // Parameters are:
 // * $class-name: the name of the component class to generate
+// * $dictionary-values: list of the dictionary values to generate
 // * $sizes: map of the size variables to generate
 @mixin generate-sizes($class-name, $sizes) {
     @each $size, $variables in $sizes {
@@ -153,42 +192,6 @@
                 } @else {
                     --#{tokens.$css-variable-prefix}#{$component-infix}-#{$variable-key}: #{$variable-value};
                 }
-            }
-        }
-    }
-}
-
-// Mixin to validate presence of a given value in a dictionary
-// Parameters are:
-// * $dictionary: the dictionary to validate against
-// * $value: the value to validate
-@mixin validate-dictionary-value($dictionary, $value) {
-    @if not list.index($dictionary, $value) {
-        @error 'The value `#{$value}` is not defined in the dictionary provided. Available values are: #{$dictionary}.';
-    }
-}
-
-// Mixin to generate fill variant classes based on a config
-// Parameters are:
-// * $class-name: the name of the component class to generate
-// * $dictionary-values: list of the dictionary values to generate
-// * $config: map of the properties to generate, their value is the suffix of the token variable
-// * $custom-component-infix: custom component infix (for parent selector variant with child css variables)
-@mixin generate-fill-variants($class-name, $dictionary-values, $config, $custom-component-infix: '') {
-    @if $custom-component-infix != '' {
-        $custom-component-infix: '-' + spirit-string.convert-pascal-case-to-kebab-case($custom-component-infix);
-    }
-
-    $component-infix: spirit-string.convert-pascal-case-to-kebab-case(
-        spirit-string.remove-prefix($class-name, 'UNSTABLE_')
-    );
-
-    @each $fill, $variables in $config {
-        @include validate-dictionary-value($dictionary-values, $fill);
-
-        .#{$class-name}--#{$fill} {
-            @each $property-name, $property-value in $variables {
-                --#{tokens.$css-variable-prefix}#{$component-infix}#{$custom-component-infix}-#{$property-name}: #{$property-value};
             }
         }
     }

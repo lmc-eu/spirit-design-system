@@ -3,6 +3,8 @@
 //    so we need to disable pointer events on it.
 // 3. We want the selected and expanded states to override the hover and active states.
 
+@use '@tokens' as tokens;
+@use '../../tools/dictionaries';
 @use '../../tools/reset';
 @use '../../tools/typography';
 @use 'theme';
@@ -16,7 +18,10 @@
     display: flex;
     gap: theme.$action-gap;
     align-items: center;
+    padding: var(--#{tokens.$css-variable-prefix}navigation-action-padding-y)
+        var(--#{tokens.$css-variable-prefix}navigation-action-padding-x);
     color: theme.$action-color-state-default;
+    border-radius: var(--#{tokens.$css-variable-prefix}navigation-action-border-radius);
     background-color: theme.$action-background-color-state-default;
 
     @media (hover: hover) {
@@ -34,15 +39,26 @@
     }
 }
 
-.NavigationAction--pill {
-    padding-block: theme.$action-pill-padding-y;
-    border-radius: theme.$action-pill-border-radius;
-}
-
 .NavigationAction--box::after {
     content: '';
     position: absolute;
     background-color: theme.$action-stripe-background-color-state-default;
+}
+
+.Navigation--horizontal {
+    @include dictionaries.generate-variants(
+        $class-name: 'NavigationAction',
+        $dictionary-values: theme.$action-shape-variant-dictionary,
+        $config: theme.$horizontal-action-shape-variant-config
+    );
+}
+
+.Navigation--vertical {
+    @include dictionaries.generate-variants(
+        $class-name: 'NavigationAction',
+        $dictionary-values: theme.$action-shape-variant-dictionary,
+        $config: theme.$vertical-action-shape-variant-config
+    );
 }
 
 // stylelint-disable-next-line selector-max-compound-selectors, selector-max-specificity -- 1.
@@ -72,7 +88,6 @@
     @include typography.generate(theme.$horizontal-action-typography);
 
     justify-content: center;
-    padding-inline: theme.$action-padding-x;
 }
 
 .Navigation--horizontal .NavigationAction--box::after {
@@ -85,7 +100,6 @@
     @include typography.generate(theme.$vertical-action-typography);
 
     justify-content: space-between;
-    padding-block: theme.$vertical-action-spacing-y;
 
     &::after {
         inset-block: 0;
@@ -93,15 +107,6 @@
         width: theme.$vertical-action-stripe-size;
         pointer-events: none; // 2.
     }
-}
-
-.Navigation--vertical .NavigationAction--box {
-    padding-inline: theme.$vertical-action-box-padding-x;
-    border-radius: theme.$vertical-action-box-border-radius;
-}
-
-.Navigation--vertical .NavigationAction--pill {
-    padding-inline: theme.$vertical-action-pill-padding-x;
 }
 
 .Navigation--horizontal .NavigationAction--box:hover::after {

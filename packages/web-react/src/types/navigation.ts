@@ -1,21 +1,20 @@
 import { ElementType, ReactElement, ReactNode } from 'react';
 import { NavigationItem } from '../components';
-import { NavigationActionVariants } from '../components/Navigation/constants';
 import { LinkTarget } from './link';
 import {
   AlignmentYExtendedDictionaryType,
   AriaLabelingProps,
   ChildrenProps,
   DirectionDictionaryType,
+  ShapeVariantDictionaryType,
   SpiritPolymorphicElementPropsWithRef,
   StyleProps,
   TransferProps,
 } from './shared';
 
-export type NavigationActionVariantsKeys = keyof typeof NavigationActionVariants;
-export type NavigationActionVariantsType<T = undefined> =
-  | (typeof NavigationActionVariants)[NavigationActionVariantsKeys]
-  | T;
+type NonNullableShapeVariant = NonNullable<ShapeVariantDictionaryType>;
+
+export type NavigationActionVariantsType = NonNullableShapeVariant | Record<string, NonNullableShapeVariant>;
 
 export interface NavigationActionBaseProps extends ChildrenProps, StyleProps, AriaLabelingProps, TransferProps {
   /** NavigationAction's href attribute */
