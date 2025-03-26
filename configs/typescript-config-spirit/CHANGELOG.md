@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.1.2"></a>
+
+## [0.1.2](https://github.com/lmc-eu/spirit-design-system/compare/typescript-config-spirit@0.1.1...typescript-config-spirit@0.1.2) (2025-03-26)
+
+### Chores
+
+- **typescript-config:** Fix @testing-library/jest-dom types path ([87ffeac](https://github.com/lmc-eu/spirit-design-system/commit/87ffeac))
+
+**Note:** Version bump only for package typescript-config-spirit
+
 <a name="0.1.1"></a>
 
 ## [0.1.1](https://github.com/lmc-eu/spirit-design-system/compare/typescript-config-spirit@0.1.0...typescript-config-spirit@0.1.1) (2025-02-12)

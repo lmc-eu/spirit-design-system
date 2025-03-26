@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.1.9"></a>
+
+## [0.1.9](https://github.com/lmc-eu/spirit-design-system/compare/stylelint-config-spirit@0.1.8...stylelint-config-spirit@0.1.9) (2025-03-26)
+
+### Dependencies
+
+- Update lint tools non-major ([cebcd5b](https://github.com/lmc-eu/spirit-design-system/commit/cebcd5b))
+
+**Note:** Version bump only for package stylelint-config-spirit
+
 <a name="0.1.8"></a>
 
 ## [0.1.8](https://github.com/lmc-eu/spirit-design-system/compare/stylelint-config-spirit@0.1.7...stylelint-config-spirit@0.1.8) (2025-01-30)

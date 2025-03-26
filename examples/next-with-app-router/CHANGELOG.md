@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.4.1"></a>
+
+## [0.4.1](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-example-next-with-app-router@0.4.0...@almacareer/spirit-example-next-with-app-router@0.4.1) (2025-03-26)
+
+### Chores
+
+- **examples:** Migrate next config to TypeScript ([782b1fe](https://github.com/lmc-eu/spirit-design-system/commit/782b1fe))
+- **examples:** Update Next.js App router to the v15 and React to v19 ([59b7303](https://github.com/lmc-eu/spirit-design-system/commit/59b7303))
+
+### Code Refactoring
+
+- **examples:** Switch deprecated @import to @forward in styles ([e4c237b](https://github.com/lmc-eu/spirit-design-system/commit/e4c237b))
+
+### Dependencies
+
+- Update all non-major dependencies ([7f19a02](https://github.com/lmc-eu/spirit-design-system/commit/7f19a02))
+- Update dependency @types/react to v18.3.18 ([f9bbccc](https://github.com/lmc-eu/spirit-design-system/commit/f9bbccc))
+- Upgrade dependency @types/node to 20.17.24 ([ab95347](https://github.com/lmc-eu/spirit-design-system/commit/ab95347))
+- Upgrade dependency @types/react-dom to 18.3.5 ([968f720](https://github.com/lmc-eu/spirit-design-system/commit/968f720))
+
+**Note:** Version bump only for package @almacareer/spirit-example-next-with-app-router
+
 <a name="0.4.0"></a>
 
 # [0.4.0](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-example-next-with-app-router@0.3.1...@almacareer/spirit-example-next-with-app-router@0.4.0) (2025-02-27)

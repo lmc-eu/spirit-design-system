@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.9"></a>
+
+## [2.0.9](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-icons@2.0.8...@lmc-eu/spirit-icons@2.0.9) (2025-03-26)
+
+### Chores
+
+- **repo:** Ignore `public` directories by Remark to avoid linting of generated files ([dd2c5ed](https://github.com/lmc-eu/spirit-design-system/commit/dd2c5ed))
+
+**Note:** Version bump only for package @lmc-eu/spirit-icons
+
 <a name="2.0.8"></a>
 
 ## [2.0.8](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-icons@2.0.7...@lmc-eu/spirit-icons@2.0.8) (2025-02-27)

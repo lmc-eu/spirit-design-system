@@ -3,6 +3,82 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.7.0"></a>
+
+# [3.7.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.6.0...@lmc-eu/spirit-web-react@3.7.0) (2025-03-26)
+
+### Bug Fixes
+
+- **web-react:** Allow run useResizeObserver on the Edge Runtime ([3e4f60c](https://github.com/lmc-eu/spirit-design-system/commit/3e4f60c)), closes [#DS-1715](https://github.com/lmc-eu/spirit-design-system/issues/DS-1715)
+- **web-react:** Do not allow overriding of Icon name in the Spinner ([17c5e36](https://github.com/lmc-eu/spirit-design-system/commit/17c5e36))
+- **web-react:** Do not pass the `placement` prop to the DOM of the TooltipPopover [#DS-1790](https://github.com/lmc-eu/spirit-design-system/issues/DS-1790) ([70e5a66](https://github.com/lmc-eu/spirit-design-system/commit/70e5a66))
+- **web-react:** Do not process style props with `null` or `undefined` values ([7d4d8de](https://github.com/lmc-eu/spirit-design-system/commit/7d4d8de))
+- **web-react:** Fix hasValidationIcon prop on DOM element ([75c7e59](https://github.com/lmc-eu/spirit-design-system/commit/75c7e59))
+- **web-react:** Pass href to Next.js Link in NavigationAction [#DS-1714](https://github.com/lmc-eu/spirit-design-system/issues/DS-1714) ([d585ec7](https://github.com/lmc-eu/spirit-design-system/commit/d585ec7))
+- **web-react:** Remove forgotten elementType in useStyleProps hook ([48f5da0](https://github.com/lmc-eu/spirit-design-system/commit/48f5da0))
+
+### Chores
+
+- **repo:** Add missing deps required by Jest ([953b70e](https://github.com/lmc-eu/spirit-design-system/commit/953b70e))
+- **web-react): Partial revert of `Chore(web-react:** Building with TypeScript v5` ([3d19a95](https://github.com/lmc-eu/spirit-design-system/commit/3d19a95))
+- **web-react:** Building with TypeScript v5 ([55ad54c](https://github.com/lmc-eu/spirit-design-system/commit/55ad54c))
+
+### Code Refactoring
+
+- **web-react:** Adopt useResizeObserver form the usehooks-ts library ([dc97194](https://github.com/lmc-eu/spirit-design-system/commit/dc97194)), closes [#DS-1715](https://github.com/lmc-eu/spirit-design-system/issues/DS-1715)
+- **web-react:** Better intelissense for style utilities hook ([dd05f24](https://github.com/lmc-eu/spirit-design-system/commit/dd05f24))
+- **web-react:** Better typing of ModalDialog root element ([237d102](https://github.com/lmc-eu/spirit-design-system/commit/237d102))
+- **web-react:** Define SpacingType for spacing prop ([e618c09](https://github.com/lmc-eu/spirit-design-system/commit/e618c09))
+- **web-react:** Do not import types from global React namespace ([fee3052](https://github.com/lmc-eu/spirit-design-system/commit/fee3052))
+- **web-react:** Extend Drawer style props hook type ([5c68847](https://github.com/lmc-eu/spirit-design-system/commit/5c68847))
+- **web-react:** Fix element typing of the Tag component ([24515e2](https://github.com/lmc-eu/spirit-design-system/commit/24515e2))
+- **web-react:** Import SVGAttributtes type directly from the React package ([e849011](https://github.com/lmc-eu/spirit-design-system/commit/e849011))
+- **web-react:** Introduce `isSSR` utility and use it in hooks ([56a89f4](https://github.com/lmc-eu/spirit-design-system/commit/56a89f4))
+- **web-react:** Pass generics to the Skeleton Shape style props ([72b69db](https://github.com/lmc-eu/spirit-design-system/commit/72b69db))
+- **web-react:** Remove JSXElementConstructor from elementType ([593600c](https://github.com/lmc-eu/spirit-design-system/commit/593600c))
+- **web-react:** Specify types of direction indexes for PaginationButtonLink ([38135e4](https://github.com/lmc-eu/spirit-design-system/commit/38135e4))
+- **web-react:** Switch from `prefferedHeightOnMobile` to `heigh` in Modals ([5a4d85b](https://github.com/lmc-eu/spirit-design-system/commit/5a4d85b))
+- **web-react:** Switch from polymorphic types to React ComponentPropWithRef ([e04e41c](https://github.com/lmc-eu/spirit-design-system/commit/e04e41c))
+- **web-react:** Type onClick event as ClickEvent on Buttons ([f842a4a](https://github.com/lmc-eu/spirit-design-system/commit/f842a4a))
+- **web-react:** Use correct types in CardLink component ([831c83b](https://github.com/lmc-eu/spirit-design-system/commit/831c83b))
+- **web, web-react:** Display multiple combinations for the Box component demo ([816ec48](https://github.com/lmc-eu/spirit-design-system/commit/816ec48)), closes [#DS-1797](https://github.com/lmc-eu/spirit-design-system/issues/DS-1797)
+
+### Dependencies
+
+- Pin dependencies ([76493df](https://github.com/lmc-eu/spirit-design-system/commit/76493df))
+- Update all non-major dependencies ([7f19a02](https://github.com/lmc-eu/spirit-design-system/commit/7f19a02))
+- Update compile tools non-major ([ae28b11](https://github.com/lmc-eu/spirit-design-system/commit/ae28b11))
+- Update dependency @types/react to v18.3.18 ([f9bbccc](https://github.com/lmc-eu/spirit-design-system/commit/f9bbccc))
+- Update lint tools non-major ([cebcd5b](https://github.com/lmc-eu/spirit-design-system/commit/cebcd5b))
+- Upgrade dependency @types/node to 20.17.24 ([ab95347](https://github.com/lmc-eu/spirit-design-system/commit/ab95347))
+- Upgrade dependency @types/react-dom to 18.3.5 ([968f720](https://github.com/lmc-eu/spirit-design-system/commit/968f720))
+- **web-react:** Upgrade dependency @types/react-transition-group to 4.4.12 ([2a39281](https://github.com/lmc-eu/spirit-design-system/commit/2a39281))
+
+### Documentation
+
+- **web-react:** Unify Icons demo style ([63b35ef](https://github.com/lmc-eu/spirit-design-system/commit/63b35ef))
+
+### Features
+
+- **web-react:** Add CSS variable prefix from tokens ([9779d2c](https://github.com/lmc-eu/spirit-design-system/commit/9779d2c)), closes [#DS-1558](https://github.com/lmc-eu/spirit-design-system/issues/DS-1558)
+- **web-react:** Add currentId to `Tab` onSelectionChange callback ([d5c0f25](https://github.com/lmc-eu/spirit-design-system/commit/d5c0f25)), closes [#DS-1785](https://github.com/lmc-eu/spirit-design-system/issues/DS-1785)
+- **web-react:** Allow color prop in DrawerCloseButton [#DS-1755](https://github.com/lmc-eu/spirit-design-system/issues/DS-1755) ([3be0a2a](https://github.com/lmc-eu/spirit-design-system/commit/3be0a2a))
+- **web-react:** Box `borderRadius` can be used without `borderWidth` ([d6796f9](https://github.com/lmc-eu/spirit-design-system/commit/d6796f9)), closes [#DS-1797](https://github.com/lmc-eu/spirit-design-system/issues/DS-1797)
+- **web-react:** HelperText and ValidationText use UNSAFE_className ([0348d94](https://github.com/lmc-eu/spirit-design-system/commit/0348d94))
+- **web-react:** Introduce Icon has Responsive Size [#DS-1634](https://github.com/lmc-eu/spirit-design-system/issues/DS-1634) ([000f97c](https://github.com/lmc-eu/spirit-design-system/commit/000f97c))
+- **web-react:** Introduce StackItem component [#DS-1095](https://github.com/lmc-eu/spirit-design-system/issues/DS-1095) ([28c0de9](https://github.com/lmc-eu/spirit-design-system/commit/28c0de9))
+- **web-react:** Introduce styling prop textAlignment [#DS-1691](https://github.com/lmc-eu/spirit-design-system/issues/DS-1691) ([5cd1d32](https://github.com/lmc-eu/spirit-design-system/commit/5cd1d32))
+- **web-react:** Stabilization of Slider [#DS-1697](https://github.com/lmc-eu/spirit-design-system/issues/DS-1697) ([638091b](https://github.com/lmc-eu/spirit-design-system/commit/638091b))
+- **web-react:** Stabilization of the EmptyState component [#DS-1694](https://github.com/lmc-eu/spirit-design-system/issues/DS-1694) ([75077e3](https://github.com/lmc-eu/spirit-design-system/commit/75077e3))
+- **web-react:** Stabilization of Toggle [#DS-1696](https://github.com/lmc-eu/spirit-design-system/issues/DS-1696) ([3e2fba4](https://github.com/lmc-eu/spirit-design-system/commit/3e2fba4))
+
+### Styles
+
+- **web-react:** Fix import ordering according to the import groups ([3c4566d](https://github.com/lmc-eu/spirit-design-system/commit/3c4566d))
+- **web-react:** Revert back import/order rules ([bd8d881](https://github.com/lmc-eu/spirit-design-system/commit/bd8d881))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="3.6.0"></a>
 
 # [3.6.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.5.0...@lmc-eu/spirit-web-react@3.6.0) (2025-02-27)

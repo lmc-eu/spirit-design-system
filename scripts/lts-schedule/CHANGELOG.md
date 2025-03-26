@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.3"></a>
+
+## [1.1.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-lts-schedule@1.1.2...@lmc-eu/spirit-lts-schedule@1.1.3) (2025-03-26)
+
+### Code Refactoring
+
+- **scripts:** Use `sharp` instead of `svg2png` for creating the release schedule ([459e7f3](https://github.com/lmc-eu/spirit-design-system/commit/459e7f3))
+- **scripts:** Use `styles` instead of deprecated `svgStyles` of D3Node library ([90ee030](https://github.com/lmc-eu/spirit-design-system/commit/90ee030))
+
+**Note:** Version bump only for package @lmc-eu/spirit-lts-schedule
+
 <a name="1.1.2"></a>
 
 ## [1.1.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-lts-schedule@1.1.1...@lmc-eu/spirit-lts-schedule@1.1.2) (2025-02-27)

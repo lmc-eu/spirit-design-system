@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.5.0"></a>
+
+# [4.5.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@4.4.0...@lmc-eu/spirit-web-twig@4.5.0) (2025-03-26)
+
+### Bug Fixes
+
+- Password field button role switch has valid attribute aria-checked instead of aria-pressed ([a122f28](https://github.com/lmc-eu/spirit-design-system/commit/a122f28))
+- **web-twig:** Remove additional Container demo causing failing Twig e2e tests ([6da3cbb](https://github.com/lmc-eu/spirit-design-system/commit/6da3cbb))
+
+### Chores
+
+- **ci:** Build PHP codestyle checks on PHP 8.4 ([816b595](https://github.com/lmc-eu/spirit-design-system/commit/816b595))
+- **web-twig:** Replace lmc/coding-standard with almacareer/coding-standard ([0708a6d](https://github.com/lmc-eu/spirit-design-system/commit/0708a6d))
+
+### Features
+
+- **web-twig:** Add CSS variable prefix from configuration ([7a31238](https://github.com/lmc-eu/spirit-design-system/commit/7a31238)), closes [#DS-1558](https://github.com/lmc-eu/spirit-design-system/issues/DS-1558)
+- **web-twig:** Introduce Icon has Responsive Size [#DS-1634](https://github.com/lmc-eu/spirit-design-system/issues/DS-1634) ([a39f54c](https://github.com/lmc-eu/spirit-design-system/commit/a39f54c))
+- **web-twig:** Introduce StackItem component [#DS-1095](https://github.com/lmc-eu/spirit-design-system/issues/DS-1095) ([015a54d](https://github.com/lmc-eu/spirit-design-system/commit/015a54d))
+- **web-twig:** Introduce styling prop textAlignment [#DS-1691](https://github.com/lmc-eu/spirit-design-system/issues/DS-1691) ([eca2d84](https://github.com/lmc-eu/spirit-design-system/commit/eca2d84))
+- **web-twig:** Stabilization of the EmptyState component [#DS-1694](https://github.com/lmc-eu/spirit-design-system/issues/DS-1694) ([2a4ada0](https://github.com/lmc-eu/spirit-design-system/commit/2a4ada0))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="4.4.0"></a>
 
 # [4.4.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@4.3.0...@lmc-eu/spirit-web-twig@4.4.0) (2025-02-27)

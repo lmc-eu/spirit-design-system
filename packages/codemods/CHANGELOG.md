@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.6.0"></a>
+
+# [1.6.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@1.5.1...@lmc-eu/spirit-codemods@1.6.0) (2025-03-26)
+
+### Dependencies
+
+- Update all non-major dependencies ([7f19a02](https://github.com/lmc-eu/spirit-design-system/commit/7f19a02))
+- Upgrade dependency @types/node to 20.17.24 ([ab95347](https://github.com/lmc-eu/spirit-design-system/commit/ab95347))
+
+### Features
+
+- **codemods:** Stabilization of the EmptyState component [#DS-1694](https://github.com/lmc-eu/spirit-design-system/issues/DS-1694) ([97262c8](https://github.com/lmc-eu/spirit-design-system/commit/97262c8))
+- **codemods:** Stabilization of Toggle [#DS-1696](https://github.com/lmc-eu/spirit-design-system/issues/DS-1696) ([5bfeae7](https://github.com/lmc-eu/spirit-design-system/commit/5bfeae7))
+- **codemod:** Stabilization of Slider [#DS-1697](https://github.com/lmc-eu/spirit-design-system/issues/DS-1697) ([e249b07](https://github.com/lmc-eu/spirit-design-system/commit/e249b07))
+
+**Note:** Version bump only for package @lmc-eu/spirit-codemods
+
 <a name="1.5.1"></a>
 
 ## [1.5.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@1.5.0...@lmc-eu/spirit-codemods@1.5.1) (2025-02-27)

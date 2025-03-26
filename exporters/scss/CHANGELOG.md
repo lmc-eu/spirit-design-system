@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.13"></a>
+
+## [2.0.13](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-scss@2.0.12...@lmc-eu/spirit-exporters-scss@2.0.13) (2025-03-26)
+
+### Chores
+
+- **exporters:** Extend base tsconfig instead of dom ([111e8f7](https://github.com/lmc-eu/spirit-design-system/commit/111e8f7))
+
+### Dependencies
+
+- Update compile tools non-major ([ae28b11](https://github.com/lmc-eu/spirit-design-system/commit/ae28b11))
+
+**Note:** Version bump only for package @lmc-eu/spirit-exporters-scss
+
 <a name="2.0.12"></a>
 
 ## [2.0.12](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-scss@2.0.11...@lmc-eu/spirit-exporters-scss@2.0.12) (2025-02-21)

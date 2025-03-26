@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.3.1"></a>
+
+## [1.3.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo-app@1.3.0...@lmc-eu/spirit-demo-app@1.3.1) (2025-03-26)
+
+### Code Refactoring
+
+- **react-web:** Resolve module not found error for @lmc-eu/spirit-design-tokens in Demo ([d073462](https://github.com/lmc-eu/spirit-design-system/commit/d073462))
+
+### Dependencies
+
+- Update all non-major dependencies ([7f19a02](https://github.com/lmc-eu/spirit-design-system/commit/7f19a02))
+
+### Documentation
+
+- **repo:** Use lighter colors in demo header ([31309ca](https://github.com/lmc-eu/spirit-design-system/commit/31309ca))
+- **web-react:** Unify Icons demo style ([63b35ef](https://github.com/lmc-eu/spirit-design-system/commit/63b35ef))
+
+**Note:** Version bump only for package @lmc-eu/spirit-demo-app
+
 <a name="1.3.0"></a>
 
 # [1.3.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo-app@1.2.3...@lmc-eu/spirit-demo-app@1.3.0) (2025-02-27)

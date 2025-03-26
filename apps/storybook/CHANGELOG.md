@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.1.6"></a>
+
+## [0.1.6](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-storybook@0.1.5...@lmc-eu/spirit-storybook@0.1.6) (2025-03-26)
+
+### Code Refactoring
+
+- **demo:** Use path aliases for packages in Storybook ([5db356f](https://github.com/lmc-eu/spirit-design-system/commit/5db356f))
+
+### Dependencies
+
+- Update compile tools non-major ([ae28b11](https://github.com/lmc-eu/spirit-design-system/commit/ae28b11))
+
+**Note:** Version bump only for package @lmc-eu/spirit-storybook
+
 <a name="0.1.5"></a>
 
 ## [0.1.5](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-storybook@0.1.4...@lmc-eu/spirit-storybook@0.1.5) (2025-02-21)

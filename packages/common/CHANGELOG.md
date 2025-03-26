@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.3.11"></a>
+
+## [0.3.11](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-common@0.3.10...@lmc-eu/spirit-common@0.3.11) (2025-03-26)
+
+### Chores
+
+- **common:** Add missing typescript dependency ([8452fde](https://github.com/lmc-eu/spirit-design-system/commit/8452fde))
+- **repo:** Add missing deps required by Jest ([953b70e](https://github.com/lmc-eu/spirit-design-system/commit/953b70e))
+
+### Dependencies
+
+- Upgrade dependency @types/node to 20.17.24 ([ab95347](https://github.com/lmc-eu/spirit-design-system/commit/ab95347))
+
+**Note:** Version bump only for package @lmc-eu/spirit-common
+
 <a name="0.3.10"></a>
 
 ## [0.3.10](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-common@0.3.9...@lmc-eu/spirit-common@0.3.10) (2025-02-27)

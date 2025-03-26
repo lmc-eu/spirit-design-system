@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.2.10"></a>
+
+## [0.2.10](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-example-next-with-pages-router@0.2.9...@almacareer/spirit-example-next-with-pages-router@0.2.10) (2025-03-26)
+
+### Dependencies
+
+- Update all non-major dependencies ([7f19a02](https://github.com/lmc-eu/spirit-design-system/commit/7f19a02))
+- Update compile tools non-major ([ae28b11](https://github.com/lmc-eu/spirit-design-system/commit/ae28b11))
+- Update dependency @types/react to v18.3.18 ([f9bbccc](https://github.com/lmc-eu/spirit-design-system/commit/f9bbccc))
+- Upgrade dependency @types/node to 20.17.24 ([ab95347](https://github.com/lmc-eu/spirit-design-system/commit/ab95347))
+- Upgrade dependency @types/react-dom to 18.3.5 ([968f720](https://github.com/lmc-eu/spirit-design-system/commit/968f720))
+
+**Note:** Version bump only for package @almacareer/spirit-example-next-with-pages-router
+
 <a name="0.2.9"></a>
 
 ## [0.2.9](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-example-next-with-pages-router@0.2.8...@almacareer/spirit-example-next-with-pages-router@0.2.9) (2025-02-27)

@@ -3,6 +3,52 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.7.0"></a>
+
+# [3.7.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.6.0...@lmc-eu/spirit-web@3.7.0) (2025-03-26)
+
+### Bug Fixes
+
+- Password field button role switch has valid attribute aria-checked instead of aria-pressed ([a122f28](https://github.com/lmc-eu/spirit-design-system/commit/a122f28))
+- **web:** Prevent Skeleton SCSS from failing if tokens are not found [#DS-1692](https://github.com/lmc-eu/spirit-design-system/issues/DS-1692) ([7e1e829](https://github.com/lmc-eu/spirit-design-system/commit/7e1e829))
+- **web:** Type errors during Symfony Encore build ([ba6fea5](https://github.com/lmc-eu/spirit-design-system/commit/ba6fea5))
+
+### Chores
+
+- **repo:** Add missing deps required by Jest ([953b70e](https://github.com/lmc-eu/spirit-design-system/commit/953b70e))
+- **web:** Temporarily silence Sass warnings for mixed declarations ([502bd71](https://github.com/lmc-eu/spirit-design-system/commit/502bd71))
+- **web:** Use Jest setup file to extend matchers ([a72e8be](https://github.com/lmc-eu/spirit-design-system/commit/a72e8be))
+
+### Code Refactoring
+
+- **web, web-react:** Display multiple combinations for the Box component demo ([816ec48](https://github.com/lmc-eu/spirit-design-system/commit/816ec48)), closes [#DS-1797](https://github.com/lmc-eu/spirit-design-system/issues/DS-1797)
+- **web:** Get ready for upcoming upgrade of Stylelint config ([0c2aa70](https://github.com/lmc-eu/spirit-design-system/commit/0c2aa70))
+
+### Dependencies
+
+- Pin dependencies ([76493df](https://github.com/lmc-eu/spirit-design-system/commit/76493df))
+- Update all non-major dependencies ([7f19a02](https://github.com/lmc-eu/spirit-design-system/commit/7f19a02))
+- Upgrade dependency @types/node to 20.17.24 ([ab95347](https://github.com/lmc-eu/spirit-design-system/commit/ab95347))
+
+### Documentation
+
+- **web:** Introduce Box's border radius example ([5e4ae4a](https://github.com/lmc-eu/spirit-design-system/commit/5e4ae4a)), closes [#DS-1797](https://github.com/lmc-eu/spirit-design-system/issues/DS-1797)
+
+### Features
+
+- **web:** Introduce Icon has Responsive Size [#DS-1634](https://github.com/lmc-eu/spirit-design-system/issues/DS-1634) ([26205cf](https://github.com/lmc-eu/spirit-design-system/commit/26205cf))
+- **web:** Introduce StackItem component [#DS-1095](https://github.com/lmc-eu/spirit-design-system/issues/DS-1095) ([c032936](https://github.com/lmc-eu/spirit-design-system/commit/c032936))
+- **web:** Introduce styling prop textAlignment [#DS-1691](https://github.com/lmc-eu/spirit-design-system/issues/DS-1691) ([0af17f7](https://github.com/lmc-eu/spirit-design-system/commit/0af17f7))
+- **web:** Stabilization of Slider [#DS-1697](https://github.com/lmc-eu/spirit-design-system/issues/DS-1697) ([1010af8](https://github.com/lmc-eu/spirit-design-system/commit/1010af8))
+- **web:** Stabilization of the EmptyState component [#DS-1694](https://github.com/lmc-eu/spirit-design-system/issues/DS-1694) ([587333c](https://github.com/lmc-eu/spirit-design-system/commit/587333c))
+- **web:** Stabilization of Toggle [#DS-1696](https://github.com/lmc-eu/spirit-design-system/issues/DS-1696) ([e5f2643](https://github.com/lmc-eu/spirit-design-system/commit/e5f2643))
+
+### Styles
+
+- **web:** Reformat files after Prettier update ([a06e4ef](https://github.com/lmc-eu/spirit-design-system/commit/a06e4ef))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="3.6.0"></a>
 
 # [3.6.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.5.0...@lmc-eu/spirit-web@3.6.0) (2025-02-27)
