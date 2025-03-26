@@ -1,24 +1,8 @@
 import { render } from '@testing-library/react';
+import { htmlElementAttributes } from 'html-element-attributes';
 import React from 'react';
 
-const globalAttributes = [
-  'accesskey',
-  'class',
-  'contenteditable',
-  'dir',
-  'draggable',
-  'hidden',
-  'id',
-  'lang',
-  'spellcheck',
-  'style',
-  'tabindex',
-  'title',
-  'translate',
-  'role',
-  'slot',
-  'summary',
-];
+const globalAttributes = htmlElementAttributes['*'];
 
 const validateHTMLAttributes = (element: HTMLElement) => {
   const tagName = element.tagName.toLowerCase();
@@ -38,6 +22,7 @@ const validateHTMLForComponent = (container: HTMLElement) => {
   elements.forEach(validateHTMLAttributes);
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const validHtmlAttributesTest = (Component: React.ComponentType<any>, props: object = {}) => {
   test(`should render valid HTML`, () => {
     const { container } = render(<Component {...props} />);
