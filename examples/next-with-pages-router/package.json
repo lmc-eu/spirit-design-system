@@ -18,8 +18,8 @@
     "react-dom": "^18"
   },
   "devDependencies": {
-    "@babel/core": "7.26.8",
-    "@babel/preset-typescript": "7.26.0",
+    "@babel/core": "7.26.10",
+    "@babel/preset-typescript": "7.27.0",
     "@next/eslint-plugin-next": "14.2.24",
     "@types/babel__core": "7.20.5",
     "@types/node": "20.17.24",
