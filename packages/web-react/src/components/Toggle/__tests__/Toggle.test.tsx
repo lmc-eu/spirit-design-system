@@ -7,6 +7,7 @@ import {
   requiredPropsTest,
   restPropsTest,
   stylePropsTest,
+  validHtmlAttributesTest,
 } from '@local/tests';
 import Toggle from '../Toggle';
 
@@ -20,6 +21,8 @@ describe('Toggle', () => {
   validationStatePropsTest(Toggle, 'Toggle--');
 
   requiredPropsTest(Toggle, 'checkbox', 'id', 'example-id');
+
+  validHtmlAttributesTest(Toggle);
 
   it('should have correct className', () => {
     render(<Toggle id="test-toggle" label="Toggle Label" />);

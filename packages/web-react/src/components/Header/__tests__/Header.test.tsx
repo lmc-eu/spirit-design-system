@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
 import Header from '../Header';
 
 describe('Header', () => {
@@ -10,6 +10,8 @@ describe('Header', () => {
   stylePropsTest((props) => <Header {...props} data-testid="header-test" />, 'header-test');
 
   restPropsTest((props) => <Header {...props} />, 'header');
+
+  validHtmlAttributesTest(Header);
 
   it('should render text children', () => {
     const dom = render(<Header id="test">Hello World</Header>);

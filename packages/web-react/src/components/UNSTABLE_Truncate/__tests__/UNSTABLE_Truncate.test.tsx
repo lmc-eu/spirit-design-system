@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
 import UNSTABLE_Truncate from '../UNSTABLE_Truncate';
 
 describe('UNSTABLE_Truncate', () => {
@@ -10,6 +10,8 @@ describe('UNSTABLE_Truncate', () => {
   stylePropsTest(UNSTABLE_Truncate);
 
   restPropsTest(UNSTABLE_Truncate, 'span');
+
+  validHtmlAttributesTest(UNSTABLE_Truncate);
 
   it('should have default classname', () => {
     render(<UNSTABLE_Truncate>Text content</UNSTABLE_Truncate>);

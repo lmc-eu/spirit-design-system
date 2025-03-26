@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { restPropsTest, stylePropsTest } from '@local/tests';
+import { restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
 import { Button } from '../../Button';
 import DropdownTrigger from '../DropdownTrigger';
 
@@ -19,6 +19,8 @@ describe('DropdownTrigger', () => {
 
   // pass rest props to the custom trigger
   restPropsTest((props) => <DropdownTrigger elementType={Button} {...props} />, 'button');
+
+  validHtmlAttributesTest((props) => <DropdownTrigger {...props} />);
 
   it('should have Button elementType', () => {
     const dom = render(<DropdownTrigger elementType={Button}>Trigger</DropdownTrigger>);

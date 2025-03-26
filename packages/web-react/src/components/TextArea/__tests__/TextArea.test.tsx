@@ -8,6 +8,7 @@ import {
   restPropsTest,
   stylePropsTest,
   validationTextPropsTest,
+  validHtmlAttributesTest,
 } from '@local/tests';
 import TextArea from '../TextArea';
 
@@ -16,13 +17,15 @@ describe('TextArea', () => {
 
   stylePropsTest(TextArea);
 
+  requiredPropsTest(TextArea, 'textbox', 'id', 'example-id');
+
   restPropsTest(TextArea, 'textarea');
 
   validationStatePropsTest(TextArea, 'TextArea--');
 
   validationTextPropsTest(TextArea, '.TextArea__validationText');
 
-  requiredPropsTest(TextArea, 'textbox', 'id', 'example-id');
+  validHtmlAttributesTest(TextArea);
 
   it('should have label classname', () => {
     render(<TextArea id="textarea" label="Label" />);

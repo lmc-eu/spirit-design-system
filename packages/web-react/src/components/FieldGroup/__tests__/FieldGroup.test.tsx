@@ -7,6 +7,7 @@ import {
   restPropsTest,
   stylePropsTest,
   validationTextPropsTest,
+  validHtmlAttributesTest,
 } from '@local/tests';
 import FieldGroup from '../FieldGroup';
 
@@ -31,6 +32,8 @@ describe('FieldGroup', () => {
   );
 
   restPropsTest((props) => <FieldGroup {...props} label="Label" />, 'fieldset');
+
+  validHtmlAttributesTest(FieldGroup);
 
   it('should render items as children', () => {
     render(

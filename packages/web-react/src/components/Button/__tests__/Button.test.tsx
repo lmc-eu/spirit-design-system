@@ -9,6 +9,7 @@ import {
   loadingPropsTest,
   restPropsTest,
   stylePropsTest,
+  validHtmlAttributesTest,
 } from '@local/tests';
 import Button from '../Button';
 
@@ -28,6 +29,8 @@ describe('Button', () => {
   stylePropsTest(Button);
 
   restPropsTest(Button, 'button');
+
+  validHtmlAttributesTest(Button);
 
   it('should have default classname', () => {
     const dom = render(<Button />);

@@ -1,13 +1,15 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { restPropsTest, stylePropsTest } from '@local/tests';
+import { restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
 import ToastBarLink from '../ToastBarLink';
 
 describe('ToastBarLink', () => {
   stylePropsTest(ToastBarLink);
 
   restPropsTest(ToastBarLink, 'a');
+
+  validHtmlAttributesTest(ToastBarLink);
 
   beforeEach(() => {
     render(<ToastBarLink href="#example-href">Example action</ToastBarLink>);

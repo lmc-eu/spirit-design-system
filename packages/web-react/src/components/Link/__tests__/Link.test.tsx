@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, actionLinkColorPropsTest, restPropsTest, stylePropsTest } from '@local/tests';
+import {
+  classNamePrefixProviderTest,
+  actionLinkColorPropsTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import { LinkColorsDictionaryType } from '../../../types';
 import Link from '../Link';
 import linkPropsDataProvider from './linkPropsDataProvider';
@@ -14,6 +20,8 @@ describe('Link', () => {
   actionLinkColorPropsTest(Link, 'link-');
 
   restPropsTest(Link, 'a');
+
+  validHtmlAttributesTest(Link);
 
   it.each(linkPropsDataProvider)('should have class', (color, underlined, isDisabled, expectedClassName) => {
     render(

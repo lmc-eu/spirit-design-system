@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
 import DrawerPanel from '../DrawerPanel';
 
 describe('DrawerPanel', () => {
@@ -10,6 +10,8 @@ describe('DrawerPanel', () => {
   stylePropsTest(DrawerPanel);
 
   restPropsTest(DrawerPanel, 'div');
+
+  validHtmlAttributesTest(DrawerPanel);
 
   it('should render drawer panel content', () => {
     render(<DrawerPanel data-testid="test">Test content</DrawerPanel>);

@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, sizePropsTest, stylePropsTest } from '@local/tests';
+import {
+  classNamePrefixProviderTest,
+  restPropsTest,
+  sizePropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import { ComponentButtonColors } from '../../../constants';
 import { SplitButtonColorType } from '../../../types';
 import { Button } from '../../Button';
@@ -17,6 +23,8 @@ describe('SplitButton', () => {
   stylePropsTest(SplitButton);
 
   restPropsTest(SplitButton, 'div');
+
+  validHtmlAttributesTest(SplitButton);
 
   sizePropsTest(
     (props) => (

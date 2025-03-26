@@ -8,6 +8,7 @@ import {
   requiredPropsTest,
   restPropsTest,
   stylePropsTest,
+  validHtmlAttributesTest,
 } from '@local/tests';
 import Radio from '../Radio';
 
@@ -23,6 +24,8 @@ describe('Radio', () => {
   validationStatePropsTest(Radio, 'Radio--');
 
   requiredPropsTest(Radio, 'radio', 'id', 'example-id');
+
+  validHtmlAttributesTest(Radio);
 
   it('should have label classname', () => {
     render(<Radio id="radio" label="label" />);

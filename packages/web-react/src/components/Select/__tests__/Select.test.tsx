@@ -8,6 +8,7 @@ import {
   restPropsTest,
   stylePropsTest,
   validationTextPropsTest,
+  validHtmlAttributesTest,
 } from '@local/tests';
 import Select from '../Select';
 
@@ -25,6 +26,8 @@ describe('Select', () => {
   validationTextPropsTest(Select, '.Select__validationText');
 
   requiredPropsTest(Select, 'combobox', 'id', 'test-select');
+
+  validHtmlAttributesTest(Select);
 
   it('should have label classname', () => {
     render(

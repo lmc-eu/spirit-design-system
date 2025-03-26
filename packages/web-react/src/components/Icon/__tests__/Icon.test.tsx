@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { restPropsTest, stylePropsTest } from '@local/tests';
+import { restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
 import { toBeInDocumentProviderTest } from '@local/tests/providerTests/toBeInDocumentProviderTest';
 import { SpiritIconProps } from '../../../types';
 import Icon from '../Icon';
@@ -18,6 +18,8 @@ describe('Icon', () => {
   toBeInDocumentProviderTest(AddIcon, 'svg');
 
   toBeInDocumentProviderTest(AddIcon, 'title');
+
+  validHtmlAttributesTest(AddIcon);
 
   describe('default props', () => {
     beforeEach(() => {

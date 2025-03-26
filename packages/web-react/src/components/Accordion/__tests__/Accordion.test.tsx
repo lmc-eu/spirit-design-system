@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
 import Accordion from '../Accordion';
 
 describe('Accordion', () => {
@@ -14,6 +14,8 @@ describe('Accordion', () => {
   }, 'test-accordion');
 
   restPropsTest(Accordion, '.Accordion');
+
+  validHtmlAttributesTest(Accordion);
 
   it('should render text children', () => {
     const toggle = () => null;
