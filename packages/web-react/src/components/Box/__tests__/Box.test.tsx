@@ -105,16 +105,6 @@ describe('Box', () => {
     expect(screen.getByTestId('Box')).toHaveClass('rounded-200');
   });
 
-  it('should not render correct border radius class when border width is not set', () => {
-    render(
-      <Box borderRadius="200" data-testid="Box">
-        Content
-      </Box>,
-    );
-
-    expect(screen.getByTestId('Box')).not.toHaveClass('rounded-200');
-  });
-
   it('should render border style', () => {
     render(
       <Box borderStyle="dashed" borderWidth="100" data-testid="Box">

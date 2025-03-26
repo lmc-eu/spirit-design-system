@@ -10,6 +10,14 @@ describe('useBoxStyleProps', () => {
     expect(result.current.classProps).toBe('');
   });
 
+  // handle `|| {}` fallback branch
+  it('should return defaults with props `{}` fallback', () => {
+    const props = undefined;
+    const { result } = renderHook(() => useBoxStyleProps(props as unknown as SpiritBoxProps));
+
+    expect(result.current.classProps).toBe('');
+  });
+
   it('should return background classProps', () => {
     const props: SpiritBoxProps = {
       backgroundColor: 'secondary',
@@ -22,21 +30,10 @@ describe('useBoxStyleProps', () => {
   it('should return border radius classProps', () => {
     const props: SpiritBoxProps = {
       borderRadius: '200',
-      borderWidth: '100',
-      borderStyle: 'solid',
     };
     const { result } = renderHook(() => useBoxStyleProps(props));
 
-    expect(result.current.classProps).toBe('border-basic rounded-200 border-solid border-100');
-  });
-
-  it('should not return border radius classProps if border with is not set', () => {
-    const props: SpiritBoxProps = {
-      borderRadius: '200',
-    };
-    const { result } = renderHook(() => useBoxStyleProps(props));
-
-    expect(result.current.classProps).not.toBe('rounded-200');
+    expect(result.current.classProps).toBe('rounded-200');
   });
 
   it('should return border color classProps', () => {

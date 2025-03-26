@@ -21,13 +21,12 @@ export const useBoxStyleProps = (
 
   const boxBackgroundColor = backgroundColor ? boxBackgroundClassName : '';
   let boxBorderColor = borderColor ? borderColor.replace('', boxBorderClassName) : '';
-  let boxBorderRadius = '';
   let boxBorderStyle = '';
   const boxBorderWidth = borderWidth ? borderWidth.replace('', boxBorderClassName) : '';
+  const boxBorderRadius = borderRadius ? borderRadius.replace('', boxRadiusClassName) : '';
 
   if (borderWidth && parseInt(borderWidth, 10) > 0) {
     boxBorderStyle = `${boxBorderClassName}${borderStyle}`;
-    boxBorderRadius = borderRadius ? borderRadius.replace('', boxRadiusClassName) : '';
     if (!borderColor) {
       boxBorderColor = `${boxBorderClassName}${BorderColors.BASIC}`;
     }
