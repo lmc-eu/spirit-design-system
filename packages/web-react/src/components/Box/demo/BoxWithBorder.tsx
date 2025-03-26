@@ -5,19 +5,16 @@ const BoxWithBorder = () => (
   <>
     <p>For demo purposes, the boxes have custom padding.</p>
     <Box padding="space-800" borderWidth="100">
-      Without radius
+      With solid border style
     </Box>
-    <Box padding="space-800" borderWidth="100" borderRadius="300">
-      With custom radius
-    </Box>
-    <Box padding="space-800" borderWidth="100" borderRadius="full">
-      With full radius
-    </Box>
-    <Box padding="space-800" borderWidth="200" borderRadius="300">
-      With thicker border
+    <Box padding="space-800" borderWidth="100" borderStyle="dotted">
+      With dotted border style
     </Box>
     <Box padding="space-800" borderWidth="100" borderStyle="dashed">
       With dashed border style
+    </Box>
+    <Box padding="space-800" borderWidth="200">
+      With thicker border
     </Box>
   </>
 );

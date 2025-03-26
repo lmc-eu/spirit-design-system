@@ -2,6 +2,7 @@ import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import DocsSection from '../../../../docs/DocsSection';
 import BoxDefault from './BoxDefault';
+import BoxWithAll from './BoxWithAll';
 import BoxWithBackgroundColor from './BoxWithBackgroundColor';
 import BoxWithBorder from './BoxWithBorder';
 import BoxWithCustomPadding from './BoxWithCustomPadding';
@@ -23,6 +24,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     </DocsSection>
     <DocsSection title="With Radius">
       <BoxWithRadius />
+    </DocsSection>
+    <DocsSection title="With All">
+      <BoxWithAll />
     </DocsSection>
   </StrictMode>,
 );
