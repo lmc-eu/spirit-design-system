@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
 import { Button } from '../../Button';
 import UncontrolledCollapse from '../UncontrolledCollapse';
 
@@ -11,6 +11,8 @@ describe('UncontrolledCollapse', () => {
   stylePropsTest(UncontrolledCollapse);
 
   restPropsTest(UncontrolledCollapse, 'div');
+
+  validHtmlAttributesTest(UncontrolledCollapse);
 
   beforeEach(() => {
     render(

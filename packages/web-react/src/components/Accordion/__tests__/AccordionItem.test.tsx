@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
 import Accordion from '../Accordion';
 import AccordionContent from '../AccordionContent';
 import AccordionHeader from '../AccordionHeader';
@@ -20,6 +20,8 @@ describe('AccordionItem', () => {
   );
 
   restPropsTest(AccordionItem, '.Accordion__item');
+
+  validHtmlAttributesTest(AccordionItem);
 
   it('should render text children', () => {
     const dom = render(<AccordionItem id="accordion-item-example">Hello World</AccordionItem>);

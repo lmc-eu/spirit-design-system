@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { restPropsTest, stylePropsTest } from '@local/tests';
+import { restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
 import ActionGroup from '../ActionGroup';
 
 describe('ActionGroup', () => {
@@ -11,6 +11,8 @@ describe('ActionGroup', () => {
   stylePropsTest(ActionGroup);
 
   restPropsTest(ActionGroup, 'div');
+
+  validHtmlAttributesTest(ActionGroup);
 
   it('should render text children', () => {
     render(<ActionGroup data-testid={testId}>{text}</ActionGroup>);

@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, alignmentXPropsTest, restPropsTest, stylePropsTest } from '@local/tests';
+import {
+  classNamePrefixProviderTest,
+  alignmentXPropsTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import CardFooter from '../CardFooter';
 
 describe('CardFooter', () => {
@@ -12,6 +18,8 @@ describe('CardFooter', () => {
   restPropsTest(CardFooter, '.CardFooter');
 
   alignmentXPropsTest(CardFooter, 'CardFooter');
+
+  validHtmlAttributesTest(CardFooter);
 
   it('should render footer card component and have default class names', () => {
     render(<CardFooter />);

@@ -9,6 +9,7 @@ import {
   loadingPropsTest,
   restPropsTest,
   stylePropsTest,
+  validHtmlAttributesTest,
 } from '@local/tests';
 import ButtonLink from '../ButtonLink';
 
@@ -28,6 +29,8 @@ describe('ButtonLink', () => {
   stylePropsTest(ButtonLink);
 
   restPropsTest(ButtonLink, 'a');
+
+  validHtmlAttributesTest(ButtonLink);
 
   it('should have default classname', () => {
     render(<ButtonLink />);

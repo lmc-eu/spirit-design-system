@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
 import PaginationItem from '../PaginationItem';
 
 describe('PaginationItem', () => {
@@ -10,6 +10,8 @@ describe('PaginationItem', () => {
   stylePropsTest(PaginationItem);
 
   restPropsTest(PaginationItem, 'li');
+
+  validHtmlAttributesTest(PaginationItem);
 
   it('should render text children', () => {
     const dom = render(<PaginationItem>Hello World</PaginationItem>);

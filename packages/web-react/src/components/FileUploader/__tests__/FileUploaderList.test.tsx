@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react';
 import React from 'react';
+import { validHtmlAttributesTest } from '@local/tests';
 import { SpiritFileUploaderAttachmentProps } from '../../../types';
 import FileUploader from '../FileUploader';
 import FileUploaderList from '../FileUploaderList';
@@ -13,6 +14,8 @@ describe('FileUploaderList', () => {
     attachmentComponent: () => <div />,
     inputName: 'file-input',
   };
+
+  validHtmlAttributesTest(FileUploaderList, props);
 
   it('should render the component with the provided props', () => {
     const { getByText, getByRole } = render(<FileUploaderList {...props} />);

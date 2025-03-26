@@ -7,6 +7,7 @@ import {
   emotionColorPropsTest,
   restPropsTest,
   stylePropsTest,
+  validHtmlAttributesTest,
 } from '@local/tests';
 import DrawerCloseButton from '../DrawerCloseButton';
 
@@ -20,6 +21,8 @@ describe('DrawerCloseButton', () => {
   componentButtonColorPropsTest(DrawerCloseButton, 'Button--');
 
   emotionColorPropsTest(DrawerCloseButton, 'Button--');
+
+  validHtmlAttributesTest(DrawerCloseButton);
 
   it('should render drawer close button', () => {
     render(<DrawerCloseButton />);

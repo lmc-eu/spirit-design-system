@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
 import VisuallyHidden from '../VisuallyHidden';
 
 describe('Visually Hidden', () => {
@@ -10,6 +10,8 @@ describe('Visually Hidden', () => {
   stylePropsTest(VisuallyHidden);
 
   restPropsTest(VisuallyHidden, 'span');
+
+  validHtmlAttributesTest(VisuallyHidden);
 
   it('should render `Label`', () => {
     const dom = render(<VisuallyHidden>Label</VisuallyHidden>);

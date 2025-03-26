@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, sizeExtendedPropsTest, restPropsTest, stylePropsTest } from '@local/tests';
+import {
+  classNamePrefixProviderTest,
+  sizeExtendedPropsTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import { Icon } from '../../Icon';
 import Avatar from '../Avatar';
 
@@ -15,6 +21,8 @@ describe('Avatar', () => {
   stylePropsTest(Avatar);
 
   restPropsTest(Avatar, 'div');
+
+  validHtmlAttributesTest(Avatar);
 
   it('should have default classname', () => {
     render(<Avatar title="Jiří Bárta">JB</Avatar>);

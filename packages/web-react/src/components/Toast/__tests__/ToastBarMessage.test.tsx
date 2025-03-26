@@ -1,13 +1,15 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { restPropsTest, stylePropsTest } from '@local/tests';
+import { restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
 import ToastBarMessage from '../ToastBarMessage';
 
 describe('ToastBarMessage', () => {
   stylePropsTest(ToastBarMessage);
 
   restPropsTest(ToastBarMessage, 'div');
+
+  validHtmlAttributesTest(ToastBarMessage);
 
   beforeEach(() => {
     render(<ToastBarMessage>Example children</ToastBarMessage>);

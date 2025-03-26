@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
 import { TextColors } from '../../../constants';
 import { TextColorsDictionaryType } from '../../../types';
 import Spinner from '../Spinner';
@@ -14,6 +14,8 @@ describe('Spinner', () => {
   stylePropsTest(Spinner);
 
   restPropsTest(Spinner, 'svg');
+
+  validHtmlAttributesTest(Spinner);
 
   it('should have correct classes', () => {
     render(<Spinner data-testid="Spinner" />);

@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
 import HeaderDialog from '../HeaderDialog';
 
 describe('HeaderDialog', () => {
@@ -10,6 +10,8 @@ describe('HeaderDialog', () => {
   stylePropsTest((props) => <HeaderDialog {...props} data-testid="header-dialog-test" />, 'header-dialog-test');
 
   restPropsTest((props) => <HeaderDialog {...props} />, 'dialog');
+
+  validHtmlAttributesTest(HeaderDialog);
 
   it('should render text children', () => {
     const dom = render(

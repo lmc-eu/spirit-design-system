@@ -7,6 +7,7 @@ import {
   stylePropsTest,
   sizeExtendedPropsTest,
   textAlignmentPropsTest,
+  validHtmlAttributesTest,
 } from '@local/tests';
 import Container from '../Container';
 
@@ -23,6 +24,8 @@ describe('Container', () => {
   sizeExtendedPropsTest(Container);
 
   textAlignmentPropsTest(Container);
+
+  validHtmlAttributesTest(Container);
 
   it('should render', () => {
     render(<Container data-testid={testId}>{text}</Container>);

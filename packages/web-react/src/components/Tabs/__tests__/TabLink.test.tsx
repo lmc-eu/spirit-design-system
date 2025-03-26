@@ -1,13 +1,15 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
 import TabLink from '../TabLink';
 
 describe('TabLink', () => {
   stylePropsTest((props) => <TabLink href="#" itemProps={props} />);
 
   classNamePrefixProviderTest(TabLink, 'Tabs__item');
+
+  validHtmlAttributesTest(TabLink);
 
   it('should render anchor tag', () => {
     const dom = render(<TabLink href="https://www.example.com" />);

@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import React, { useState } from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
 import { Button } from '../../Button';
 import Collapse from '../Collapse';
 
@@ -13,6 +13,8 @@ describe('Collapse', () => {
   stylePropsTest(Collapse);
 
   restPropsTest(Collapse, 'div');
+
+  validHtmlAttributesTest(Collapse);
 
   it('should render text children', () => {
     render(

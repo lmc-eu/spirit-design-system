@@ -7,3 +7,4 @@ export * from './restPropsTest';
 export * from './stylePropsTest';
 export * from './textAlignmentPropsTest';
 export * from './validationTextPropsTest';
+export * from './validHtmlAttributesTest';

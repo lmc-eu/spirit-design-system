@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, textAlignmentPropsTest } from '@local/tests';
+import {
+  classNamePrefixProviderTest,
+  restPropsTest,
+  stylePropsTest,
+  textAlignmentPropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import { SizeExtendedDictionaryType, SpiritSectionProps } from '../../../types';
 import Section from '../Section';
 
@@ -25,6 +31,8 @@ describe('Section', () => {
   restPropsTest(Section, 'section');
 
   textAlignmentPropsTest(Section);
+
+  validHtmlAttributesTest(Section);
 
   it('should render children', () => {
     render(<Section>Content</Section>);

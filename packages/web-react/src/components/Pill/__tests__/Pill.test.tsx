@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, emotionColorPropsTest, restPropsTest, stylePropsTest } from '@local/tests';
+import {
+  classNamePrefixProviderTest,
+  emotionColorPropsTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import Pill from '../Pill';
 
 describe('Pill', () => {
@@ -12,6 +18,8 @@ describe('Pill', () => {
   stylePropsTest(Pill);
 
   restPropsTest(Pill, 'span');
+
+  validHtmlAttributesTest(Pill);
 
   it('should have default classname', () => {
     render(<Pill data-testid="pill" />);

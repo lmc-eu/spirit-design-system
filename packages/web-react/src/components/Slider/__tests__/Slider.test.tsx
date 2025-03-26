@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
 import Slider from '../Slider';
 
 describe('Slider', () => {
@@ -18,6 +18,8 @@ describe('Slider', () => {
   stylePropsTest((props) => <Slider id={defaultProps.id} {...props} data-testid="slider-test" />, 'slider-test');
 
   restPropsTest((props) => <Slider id={defaultProps.id} {...props} />, 'div');
+
+  validHtmlAttributesTest((props) => <Slider id={defaultProps.id} {...props} />);
 
   it('should render slider', () => {
     render(<Slider {...defaultProps} />);

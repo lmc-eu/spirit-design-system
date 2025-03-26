@@ -9,6 +9,7 @@ import {
   stylePropsTest,
   textAlignmentPropsTest,
   textColorPropsTest,
+  validHtmlAttributesTest,
 } from '@local/tests';
 import { EmphasisDictionaryType, SizesDictionaryType, SizeExtendedDictionaryType } from '../../../types';
 import Text from '../Text';
@@ -28,6 +29,8 @@ describe('Text', () => {
   textColorPropsTest(Text);
 
   restPropsTest(Text, 'p');
+
+  validHtmlAttributesTest(Text);
 
   it.each(textPropsDataProvider)('should have classname', (size, emphasis, expectedClassName) => {
     render(

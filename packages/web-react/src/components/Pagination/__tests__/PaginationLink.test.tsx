@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
 import PaginationLink from '../PaginationLink';
 
 describe('PaginationLink', () => {
@@ -10,6 +10,8 @@ describe('PaginationLink', () => {
   stylePropsTest(PaginationLink);
 
   restPropsTest(PaginationLink, 'a');
+
+  validHtmlAttributesTest(PaginationLink);
 
   it('should render text children', () => {
     const dom = render(<PaginationLink accessibilityLabel="" pageNumber={100} />);

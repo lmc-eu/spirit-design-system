@@ -7,6 +7,7 @@ import {
   restPropsTest,
   stylePropsTest,
   validationTextPropsTest,
+  validHtmlAttributesTest,
 } from '@local/tests';
 import { TextFieldType } from '../../../types';
 import TextField from '../TextField';
@@ -24,6 +25,8 @@ describe('TextField', () => {
     validationStatePropsTest(TextField, 'TextField--');
 
     validationTextPropsTest(TextField, '.TextField__validationText', type as TextFieldType);
+
+    validHtmlAttributesTest(TextField);
 
     it('should have label classname', () => {
       render(<TextField id="textfield" label="Label" type={type as TextFieldType} />);

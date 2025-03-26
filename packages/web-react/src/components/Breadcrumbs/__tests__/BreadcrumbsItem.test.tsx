@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
 import BreadcrumbsItem from '../BreadcrumbsItem';
 
 jest.mock('../../../hooks/useIcon');
@@ -13,6 +13,8 @@ describe('BreadcrumbsItem', () => {
   stylePropsTest(BreadcrumbsItem);
 
   restPropsTest(BreadcrumbsItem, 'li');
+
+  validHtmlAttributesTest(BreadcrumbsItem);
 
   describe('BreadcrumbsItem with go back title', () => {
     const BreadcrumbsItemGoBack = () => (
