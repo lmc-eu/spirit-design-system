@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import DocsSection from '../../../../docs/DocsSection';
 import BoxDefault from './BoxDefault';
 import BoxWithBackgroundColor from './BoxWithBackgroundColor';
 import BoxWithBorder from './BoxWithBorder';
 import BoxWithCustomPadding from './BoxWithCustomPadding';
+import BoxWithRadius from './BoxWithRadius';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
+  <StrictMode>
     <DocsSection title="Default">
       <BoxDefault />
     </DocsSection>
@@ -20,5 +21,8 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <DocsSection title="With Background Color">
       <BoxWithBackgroundColor />
     </DocsSection>
-  </React.StrictMode>,
+    <DocsSection title="With Radius">
+      <BoxWithRadius />
+    </DocsSection>
+  </StrictMode>,
 );
