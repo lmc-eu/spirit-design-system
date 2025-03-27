@@ -3,21 +3,22 @@ import {
   AlignmentXExtended,
   AlignmentY,
   AlignmentYExtended,
+  BackgroundColors,
   BorderColors,
+  BorderRadii,
+  BorderStyles,
+  BorderWidths,
   ComponentButtonColors,
   EmotionColors,
   Emphasis,
   LinkColors,
   Placements,
+  ShapeVariant,
   Sizes,
   SizesExtended,
+  TextAlignments,
   TextColors,
   ValidationStates,
-  BackgroundColors,
-  BorderStyles,
-  BorderRadii,
-  BorderWidths,
-  TextAlignments,
 } from '../../constants';
 
 /* Alignment */
@@ -105,3 +106,7 @@ export type ValidationStatesDictionaryKeys = keyof typeof ValidationStates;
 export type ValidationStatesDictionaryType<T = undefined> =
   | (typeof ValidationStates)[ValidationStatesDictionaryKeys]
   | T;
+
+/* Variant */
+export type ShapeVariantDictionaryKeys = keyof typeof ShapeVariant;
+export type ShapeVariantDictionaryType<T = undefined> = (typeof ShapeVariant)[ShapeVariantDictionaryKeys] | T;

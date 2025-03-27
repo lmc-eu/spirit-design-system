@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import { ShapeVariant } from '../../../constants';
 import { Container } from '../../Container';
 import { Drawer, DrawerCloseButton, DrawerPanel } from '../../Drawer';
 import { Flex } from '../../Flex';
-import { NavigationActionVariants } from '../../Navigation/constants';
 import { ProductLogo } from '../../ProductLogo';
 import { defaultSvgLogo } from '../../ProductLogo/demo/ProductLogoDefault';
 import { Stack } from '../../Stack';
@@ -26,7 +26,7 @@ const HeaderWithPillNavigation = () => {
             <UNSTABLE_HeaderLogo href="#">
               <ProductLogo>{defaultSvgLogo}</ProductLogo>
             </UNSTABLE_HeaderLogo>
-            <MainNavigation variant={NavigationActionVariants.PILL} />
+            <MainNavigation variant={ShapeVariant.PILL} />
             <SecondaryHorizontalNavigation id="drawer-navigation-pill" handleOpenDrawer={() => setDrawerOpen(true)} />
           </Flex>
         </Container>
@@ -37,7 +37,7 @@ const HeaderWithPillNavigation = () => {
           <DrawerCloseButton />
           <Stack hasIntermediateDividers hasSpacing marginY="space-900" spacing="space-900">
             <ProfileNavigation />
-            <MainNavigation direction="vertical" variant={NavigationActionVariants.PILL} />
+            <MainNavigation direction="vertical" variant={ShapeVariant.PILL} />
             <SecondaryVerticalNavigation />
           </Stack>
         </DrawerPanel>

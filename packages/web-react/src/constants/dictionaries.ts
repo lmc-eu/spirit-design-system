@@ -132,3 +132,9 @@ export const ValidationStates = {
   WARNING: 'warning',
   DANGER: 'danger',
 } as const;
+
+/* Variant */
+export const ShapeVariant = {
+  BOX: 'box',
+  PILL: 'pill',
+} as const;
