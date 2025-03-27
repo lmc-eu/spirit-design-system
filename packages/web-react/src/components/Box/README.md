@@ -16,6 +16,12 @@ You can define border color, radius, style and width using the `borderColor`, `b
 </Box>
 ```
 
+If you need set responsive border radius, you can use an object:
+
+```jsx
+<Box borderRadius={{ mobile: '200', tablet: '300', desktop: '400' }}>{/* Content goes here */}</Box>
+```
+
 The borderColor, borderRadius, and borderStyle props are applied only if borderWidth is greater than `0`.
 
 ## Padding
@@ -58,21 +64,21 @@ You can define background color using the `backgroundColor` prop.
 
 ## API
 
-| Name              | Type                                                              | Default | Required | Description                   |
-| ----------------- | ----------------------------------------------------------------- | ------- | -------- | ----------------------------- |
-| `backgroundColor` | [Background Color dictionary][dictionary-color]                   | -       | ✕        | Background color of the Box   |
-| `borderColor`     | [Border Color dictionary][dictionary-border-properities]          | -       | ✕        | Border color of the Box       |
-| `borderRadius`    | [Border Radius dictionary][dictionary-border-properities]         | -       | ✕        | Border radius of the Box      |
-| `borderStyle`     | [Border Style dictionary][dictionary-border-properities]          | `solid` | ✕        | Border style of the Box       |
-| `borderWidth`     | [Border Width dictionary][dictionary-border-properities]          | -       | ✕        | Border width of the Box       |
-| `elementType`     | `ElementType`                                                     | `div`   | ✕        | Type of element               |
-| `padding`         | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`] | -       | ✕        | Padding of the Box            |
-| `paddingX`        | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`] | -       | ✕        | Horizontal padding of the Box |
-| `paddingY`        | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`] | -       | ✕        | Vertical padding of the Box   |
-| `paddingTop`      | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`] | -       | ✕        | Padding top of the Box        |
-| `paddingRight`    | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`] | -       | ✕        | Padding right of the Box      |
-| `paddingBottom`   | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`] | -       | ✕        | Padding bottom of the Box     |
-| `paddingLeft`     | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`] | -       | ✕        | Padding left of the Box       |
+| Name              | Type                                                                                            | Default | Required | Description                   |
+| ----------------- | ----------------------------------------------------------------------------------------------- | ------- | -------- | ----------------------------- |
+| `backgroundColor` | [Background Color dictionary][dictionary-color]                                                 | -       | ✕        | Background color of the Box   |
+| `borderColor`     | [Border Color dictionary][dictionary-border-properities]                                        | -       | ✕        | Border color of the Box       |
+| `borderRadius`    | \[`BorderRadiiDictionaryType` \| `Partial<Record<BreakpointToken, BorderRadiiDictionaryType>>`] | -       | ✕        | Border radius of the Box      |
+| `borderStyle`     | [Border Style dictionary][dictionary-border-properities]                                        | `solid` | ✕        | Border style of the Box       |
+| `borderWidth`     | [Border Width dictionary][dictionary-border-properities]                                        | -       | ✕        | Border width of the Box       |
+| `elementType`     | `ElementType`                                                                                   | `div`   | ✕        | Type of element               |
+| `padding`         | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]                               | -       | ✕        | Padding of the Box            |
+| `paddingX`        | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]                               | -       | ✕        | Horizontal padding of the Box |
+| `paddingY`        | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]                               | -       | ✕        | Vertical padding of the Box   |
+| `paddingTop`      | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]                               | -       | ✕        | Padding top of the Box        |
+| `paddingRight`    | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]                               | -       | ✕        | Padding right of the Box      |
+| `paddingBottom`   | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]                               | -       | ✕        | Padding bottom of the Box     |
+| `paddingLeft`     | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]                               | -       | ✕        | Padding left of the Box       |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
