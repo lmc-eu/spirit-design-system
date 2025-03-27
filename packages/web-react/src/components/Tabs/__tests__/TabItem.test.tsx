@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, withTabsContext } from '@local/tests';
+import {
+  classNamePrefixProviderTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+  withTabsContext,
+} from '@local/tests';
 import TabItem from '../TabItem';
 
 describe('TabItem', () => {
@@ -10,6 +16,8 @@ describe('TabItem', () => {
   classNamePrefixProviderTest(() => <TabItem forTabPane={0} />, 'Tabs__item');
 
   restPropsTest((props) => <TabItem forTabPane={0} {...props} />, 'button');
+
+  validHtmlAttributesTest(TabItem, { forTabPane: 0 });
 
   it('should render list item', () => {
     render(<TabItem forTabPane={0} />);

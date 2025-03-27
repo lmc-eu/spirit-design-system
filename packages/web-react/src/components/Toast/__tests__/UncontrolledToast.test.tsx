@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
+import { validHtmlAttributesTest } from '@local/tests';
 import { ToastLinkProps } from '../../../types';
 import { ToastContext } from '../ToastContext';
 import UncontrolledToast from '../UncontrolledToast';
@@ -32,6 +33,8 @@ const defaultContextValue = {
 };
 
 describe('UncontrolledToast', () => {
+  validHtmlAttributesTest(UncontrolledToast);
+
   it('should not render', () => {
     const dom = render(
       <ToastContext.Provider value={defaultContextValue}>

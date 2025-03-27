@@ -9,6 +9,7 @@ import {
   stylePropsTest,
   textAlignmentPropsTest,
   textColorPropsTest,
+  validHtmlAttributesTest,
 } from '@local/tests';
 import { SizesDictionaryType, SizeExtendedDictionaryType, EmphasisDictionaryType } from '../../../types';
 import Heading from '../Heading';
@@ -37,6 +38,8 @@ describe('Heading', () => {
   );
 
   restPropsTest((props) => <Heading elementType="h1" {...props} />, 'h1');
+
+  validHtmlAttributesTest((props) => <Heading elementType="h1" {...props} />);
 
   it.each(headingSizeDataProvider)('should have classname', (size, emphasis, expectedClassName) => {
     render(

@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, withTabsContext } from '@local/tests';
+import {
+  classNamePrefixProviderTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+  withTabsContext,
+} from '@local/tests';
 import TabContent from '../TabContent';
 import { TabsContextType } from '../TabContext';
 import TabPane from '../TabPane';
@@ -28,6 +34,8 @@ describe('TabPane', () => {
     withTabsContext((props) => <TabPane {...props} id="test" />, { selectedId: 'test' } as TabsContextType),
     'div',
   );
+
+  validHtmlAttributesTest(TabPane);
 
   it('should not render tab pane if tab is not selected', () => {
     render(withTabsContext(TabPane, { selectedId: 'another-tab', selectTab: jest.fn() })({ id: 'test' }));

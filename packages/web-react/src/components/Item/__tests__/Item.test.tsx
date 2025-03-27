@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
 import { SpiritItemProps } from '../../../types';
 import Item from '../Item';
 
@@ -13,6 +13,8 @@ describe('Item', () => {
   stylePropsTest(Item);
 
   restPropsTest((props: SpiritItemProps) => <Item {...props} />, 'button');
+
+  validHtmlAttributesTest(Item);
 
   it('should render label', () => {
     const label = 'Item label';

@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
 import ModalFooter from '../ModalFooter';
 
 describe('ModalFooter', () => {
@@ -8,4 +8,6 @@ describe('ModalFooter', () => {
   stylePropsTest(ModalFooter);
 
   restPropsTest(ModalFooter, 'footer');
+
+  validHtmlAttributesTest(ModalFooter);
 });

@@ -2,9 +2,12 @@ import { render, screen } from '@testing-library/react';
 import React from 'react';
 import '@testing-library/jest-dom';
 import HelperText from '../HelperText';
+import { validHtmlAttributesTest } from '@local/tests';
 
 describe('HelperText', () => {
   const helperText = 'Helper Text';
+
+  validHtmlAttributesTest(HelperText);
 
   it('should render helper text', () => {
     render(<HelperText UNSAFE_className="HelperText__helperText" helperText={helperText} />);

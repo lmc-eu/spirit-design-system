@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
 import HeaderDialogCloseButton from '../HeaderDialogCloseButton';
 
 jest.mock('../../../hooks/useIcon');
@@ -15,6 +15,8 @@ describe('HeaderDialogCloseButton', () => {
   );
 
   restPropsTest((props) => <HeaderDialogCloseButton {...props} />, 'button');
+
+  validHtmlAttributesTest(HeaderDialogCloseButton);
 
   it('should render text label', () => {
     const dom = render(<HeaderDialogCloseButton id="test" label="Hello World" />);

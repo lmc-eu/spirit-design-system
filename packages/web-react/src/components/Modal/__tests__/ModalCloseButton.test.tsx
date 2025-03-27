@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
 import ModalCloseButton from '../ModalCloseButton';
 
 jest.mock('../../../hooks/useIcon');
@@ -12,6 +12,8 @@ describe('ModalCloseButton', () => {
   stylePropsTest(ModalCloseButton);
 
   restPropsTest(ModalCloseButton, 'button');
+
+  validHtmlAttributesTest(ModalCloseButton);
 
   it('should have icon', () => {
     render(<ModalCloseButton label="close" id="test" isOpen onClose={() => {}} />);

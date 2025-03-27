@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
 import { HEADER_MENU_TOGGLE_LABEL_DEFAULT } from '../constants';
 import HeaderMobileActions from '../HeaderMobileActions';
 
@@ -16,6 +16,8 @@ describe('HeaderMobileActions', () => {
   );
 
   restPropsTest((props) => <HeaderMobileActions {...props} />, 'div');
+
+  validHtmlAttributesTest(HeaderMobileActions);
 
   it('should render text children', () => {
     const dom = render(

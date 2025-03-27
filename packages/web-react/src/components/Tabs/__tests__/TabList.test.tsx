@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
 import TabList from '../TabList';
 import Tabs from '../Tabs';
 
@@ -9,6 +9,8 @@ describe('TabList', () => {
   stylePropsTest((props) => <TabList data-testid="tab-list-test-id" {...props} />, 'tab-list-test-id');
 
   classNamePrefixProviderTest(TabList, 'Tabs');
+
+  validHtmlAttributesTest(TabList);
 
   it('should render with custom spacing for each breakpoint', () => {
     render(
