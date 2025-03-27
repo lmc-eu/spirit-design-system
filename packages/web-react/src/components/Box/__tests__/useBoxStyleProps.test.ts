@@ -27,15 +27,6 @@ describe('useBoxStyleProps', () => {
     expect(result.current.classProps).toBe('bg-secondary');
   });
 
-  it('should return border radius classProps', () => {
-    const props: SpiritBoxProps = {
-      borderRadius: '200',
-    };
-    const { result } = renderHook(() => useBoxStyleProps(props));
-
-    expect(result.current.classProps).toBe('rounded-200');
-  });
-
   it('should return border color classProps', () => {
     const props: SpiritBoxProps = {
       borderColor: 'basic',

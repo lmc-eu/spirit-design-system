@@ -1,7 +1,7 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { BackgroundColors, BorderColors, BorderRadii, BorderStyles, BorderWidths } from '../../../constants';
+import { BackgroundColors, BorderColors, BorderStyles, BorderWidths } from '../../../constants';
 import Box from '../Box';
 import ReadMe from '../README.md';
 
@@ -88,13 +88,7 @@ const meta: Meta<typeof Box> = {
       },
     },
     borderRadius: {
-      control: 'select',
-      options: Object.values(BorderRadii),
-      table: {
-        type: {
-          summary: 'BorderRadiiDictionaryType',
-        },
-      },
+      control: 'object',
     },
     borderStyle: {
       control: 'select',
@@ -129,7 +123,11 @@ const meta: Meta<typeof Box> = {
     padding: undefined,
     borderWidth: undefined,
     borderStyle: 'solid',
-    borderRadius: undefined,
+    borderRadius: {
+      mobile: '100',
+      tablet: '200',
+      desktop: '400',
+    },
     borderColor: 'basic',
     backgroundColor: 'primary',
   },

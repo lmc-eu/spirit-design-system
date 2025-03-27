@@ -18,7 +18,7 @@ export interface BoxBaseProps extends ChildrenProps, StyleProps {
   /** The border color of the box. */
   borderColor?: BorderColorsDictionaryType;
   /** The border radius of the box. */
-  borderRadius?: BorderRadiiDictionaryType;
+  borderRadius?: BorderRadiiDictionaryType | Partial<Record<BreakpointToken, BorderRadiiDictionaryType>>;
   /** The border style of the box. */
   borderStyle?: BorderStylesDictionaryType;
   /** The border width of the box. */

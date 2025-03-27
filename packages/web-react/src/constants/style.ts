@@ -1,3 +1,7 @@
+export const BorderRadiusStyleProps = {
+  borderRadius: 'rounded',
+} as const;
+
 export const SpacingStyleProp = {
   margin: 'm',
   marginTop: 'mt',

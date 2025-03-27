@@ -14,16 +14,14 @@ export interface UseBoxStyleProps<T> {
 export const useBoxStyleProps = (
   props: Partial<SpiritBoxProps<ElementType>>,
 ): UseBoxStyleProps<Partial<SpiritBoxProps<ElementType>>> => {
-  const { backgroundColor, borderColor, borderRadius, borderStyle, borderWidth, ...restProps } = props || {};
+  const { backgroundColor, borderColor, borderStyle, borderWidth, ...restProps } = props || {};
   const boxBackgroundClassName = useClassNamePrefix(`bg-${backgroundColor}`);
   const boxBorderClassName = useClassNamePrefix('border-');
-  const boxRadiusClassName = useClassNamePrefix('rounded-');
 
   const boxBackgroundColor = backgroundColor ? boxBackgroundClassName : '';
   let boxBorderColor = borderColor ? borderColor.replace('', boxBorderClassName) : '';
   let boxBorderStyle = '';
   const boxBorderWidth = borderWidth ? borderWidth.replace('', boxBorderClassName) : '';
-  const boxBorderRadius = borderRadius ? borderRadius.replace('', boxRadiusClassName) : '';
 
   if (borderWidth && parseInt(borderWidth, 10) > 0) {
     boxBorderStyle = `${boxBorderClassName}${borderStyle}`;
@@ -32,7 +30,7 @@ export const useBoxStyleProps = (
     }
   }
 
-  const boxClasses = classNames(boxBackgroundColor, boxBorderColor, boxBorderRadius, boxBorderStyle, boxBorderWidth);
+  const boxClasses = classNames(boxBackgroundColor, boxBorderColor, boxBorderStyle, boxBorderWidth);
 
   return {
     classProps: boxClasses,
