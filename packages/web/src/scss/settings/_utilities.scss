@@ -22,7 +22,7 @@ $utilities: (
         ),
     ),
     'border-radius': (
-        responsive: false,
+        responsive: true,
         property: border-radius,
         class: rounded,
         values: tokens.$radii,
