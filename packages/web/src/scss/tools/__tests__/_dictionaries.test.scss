@@ -366,3 +366,72 @@
         }
     }
 }
+
+@include test.describe('generate-fill-variants mixin') {
+    @include test.it('should generate correct fill variant classes based on a config') {
+        @include test.assert() {
+            @include test.output() {
+                @include dictionaries.generate-fill-variants(
+                    'TestFill',
+                    (fill, outline),
+                    (
+                        fill: (
+                            margin-bottom: 0,
+                            border-radius: 5px,
+                        ),
+                        outline: (
+                            margin-bottom: 20px,
+                            border-radius: 15px,
+                        ),
+                    )
+                );
+            }
+
+            @include test.expect() {
+                .TestFill--fill {
+                    --spirit-test-fill-margin-bottom: 0;
+                    --spirit-test-fill-border-radius: 5px;
+                }
+
+                .TestFill--outline {
+                    --spirit-test-fill-margin-bottom: 20px;
+                    --spirit-test-fill-border-radius: 15px;
+                }
+            }
+        }
+    }
+
+    @include test.it('should generate custom infix fill variant classes based on a config') {
+        @include test.assert() {
+            @include test.output() {
+                @include dictionaries.generate-fill-variants(
+                    'TestFill',
+                    (fill, outline),
+                    (
+                        fill: (
+                            margin-bottom: 0,
+                            border-radius: 5px,
+                        ),
+                        outline: (
+                            margin-bottom: 20px,
+                            border-radius: 15px,
+                        ),
+                    ),
+                    'custom'
+                );
+            }
+
+            @include test.expect() {
+                .TestFill--fill {
+                    --spirit-test-fill-custom-margin-bottom: 0;
+                    --spirit-test-fill-custom-border-radius: 5px;
+                }
+
+                .TestFill--outline {
+                    --spirit-test-fill-custom-margin-bottom: 20px;
+                    --spirit-test-fill-custom-border-radius: 15px;
+                }
+            }
+        }
+    }
+}

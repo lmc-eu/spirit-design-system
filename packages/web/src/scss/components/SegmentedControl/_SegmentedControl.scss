@@ -1,0 +1,49 @@
+// 1. When a Tooltip is used, an additional wrapper is added around the label, so we need to pass the transition to the label.
+// 2. Because this is another component we can't use the specific class.
+
+@use '@tokens' as tokens;
+@use '../../tools/dictionaries';
+@use 'theme';
+@use 'tools';
+
+.SegmentedControl {
+    position: relative;
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    grid-auto-flow: column;
+    column-gap: theme.$gap;
+    align-items: center;
+    padding: theme.$padding;
+    margin-bottom: 0;
+    color: var(--#{tokens.$css-variable-prefix}segmented-control-color);
+    border: theme.$border-width solid var(--#{tokens.$css-variable-prefix}segmented-control-border-color);
+    border-radius: theme.$border-radius;
+    background-color: var(--#{tokens.$css-variable-prefix}segmented-control-background-color);
+
+    @media (prefers-reduced-motion: no-preference) {
+        &:has([type='radio']) {
+            transition: theme.$transition-radio;
+        }
+
+        &:has([type='checkbox']) {
+            transition: theme.$transition-checkbox;
+        }
+
+        // stylelint-disable-next-line selector-max-universal -- 2.
+        > * {
+            transition: inherit; // 1.
+        }
+    }
+}
+
+.SegmentedControl--fluid {
+    justify-items: stretch;
+    width: 100%;
+}
+
+@include dictionaries.generate-fill-variants(
+    $class-name: 'SegmentedControl',
+    $dictionary-values: theme.$fill-variant-dictionary,
+    $config: theme.$fill-variant-config
+);

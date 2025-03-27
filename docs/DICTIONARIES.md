@@ -78,3 +78,9 @@ This project uses `dictionaries` to unify props between different components.
 | Dictionary | Values                         | Code name  |
 | ---------- | ------------------------------ | ---------- |
 | Validation | `success`, `warning`, `danger` | Validation |
+
+### Variant
+
+| Dictionary   | Values            | Code name   |
+| ------------ | ----------------- | ----------- |
+| Fill Variant | `fill`, `outline` | FillVariant |
