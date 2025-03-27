@@ -56,17 +56,22 @@ Text field classes are fabricated using `useCheckboxStyleProps` hook. You can us
 
 ```jsx
 const CustomCheckbox = (props: SpiritCheckboxProps): JSX.Element => {
+  const { id } = props;
   const { classProps, props: modifiedProps } = useCheckboxStyleProps(props);
 
+  const labelId = `${id}-label`;
+  const helperTextId = `${id}-helper-text`;
+  const validationTextId = `${id}-validation-text`;
+
   return (
-    <label htmlFor={props.id} className={classProps.root}>
-      <input {...modifiedProps} className={classProps.input} />
-      <span className={styleProps.text}>
-        <span className={styleProps.label}>{props.label}</span>
-        <span className={styleProps.helperText}>{props.helperText}</span>
-        <span className={styleProps.validationText}>{props.validationText}</span>
-      </span>
-    </label>
+    <div className={classProps.root}>
+      <input {...modifiedProps} id={id} className={classProps.input} aria-labelledby={labelId} aria-describedby={`${validationTextId} ${helperTextId}`} />
+      <div className={styleProps.text}>
+        <label className={styleProps.label} htmlFor={props.id} id={labelId}>{props.label}</label>
+        <div className={styleProps.helperText} id={helperTextId}>{props.helperText}</div>
+        <div className={styleProps.validationText} id={validationTextId}>{props.validationText}</div>
+      </div>
+    </div>
   );
 };
 ```

@@ -24,12 +24,12 @@ const HelperText = <T extends ElementType = 'div'>(props: HelperTextProps<T>) =>
   const mergedStyleProps = mergeStyleProps(ElementTag, { styleProps, transferProps });
 
   useEffect(() => {
-    registerAria?.({ add: id });
+    helperText && registerAria?.({ add: id });
 
     return () => {
       registerAria?.({ remove: id });
     };
-  }, [id, registerAria]);
+  }, [id, registerAria, helperText]);
 
   if (helperText) {
     return (

@@ -8,19 +8,19 @@
 
     <div class="docs-Stack docs-Stack--start">
 
-      <label for="radio-default" class="Radio">
-        <input type="radio" id="radio-default" class="Radio__input" name="default" />
-        <span class="Radio__text">
-          <span class="Radio__label">Radio Label</span>
-        </span>
-      </label>
+      <div class="Radio">
+        <input type="radio" id="radio-default" class="Radio__input" name="default" aria-labelledby="radio-default-label" />
+        <div class="Radio__text">
+          <label class="Radio__label" for="radio-default" id="radio-default-label">Radio Label</label>
+        </div>
+      </div>
 
-      <label for="radio-default-checked" class="Radio">
-        <input type="radio" id="radio-default-checked" class="Radio__input" name="default" checked />
-        <span class="Radio__text">
-          <span class="Radio__label">Radio Label</span>
-        </span>
-      </label>
+      <div class="Radio">
+        <input type="radio" id="radio-default-checked" class="Radio__input" name="default" aria-labelledby="radio-default-checked-label" checked />
+        <div class="Radio__text">
+          <label class="Radio__label" for="radio-default-checked" id="radio-default-checked-label">Radio Label</label>
+        </div>
+      </div>
 
     </div>
 
@@ -36,17 +36,17 @@
 
     <div class="docs-Stack docs-Stack--start">
 
-      <label for="radio-default" class="Radio">
-        <input type="radio" id="radio-long-label" class="Radio__input" name="default" />
-        <span class="Radio__text">
-          <span class="Radio__label">
+      <div class="Radio">
+        <input type="radio" id="radio-long-label" class="Radio__input" name="long" aria-labelledby="radio-long-label-label" />
+        <div class="Radio__text">
+          <label class="Radio__label" for="radio-long-label" id="radio-long-label-label">
             This is an example of a very long label text for a radio button. It is specifically designed to test how well the layout handles
             text wrapping when the content becomes significantly longer. The purpose of this text is to confirm that the radio button's composition
             remains intact, visually aligned, and free from any unexpected breakage or misalignment. Ensuring proper spacing and alignment for
             multiline labels is essential for creating a consistent and user-friendly interface across different screen sizes and resolutions.
-          </span>
-        </span>
-      </label>
+          </label>
+        </div>
+      </div>
 
     </div>
 
@@ -62,12 +62,12 @@
 
     <div class="docs-Stack docs-Stack--start">
 
-      <label for="radio-hidden-label" class="Radio">
-        <input type="radio" id="radio-hidden-label" class="Radio__input" name="hiddenLabel" />
-        <span class="Radio__text">
-          <span class="Radio__label Radio__label--hidden">Radio Label</span>
-        </span>
-      </label>
+      <div class="Radio">
+        <input type="radio" id="radio-hidden-label" class="Radio__input" name="hiddenLabel" aria-labelledby="radio-hidden-label-label" />
+        <div class="Radio__text">
+          <label class="Radio__label Radio__label--hidden" for="radio-hidden-label" id="radio-hidden-label-label">Radio Label</label>
+        </div>
+      </div>
 
     </div>
 
@@ -83,13 +83,13 @@
 
     <div class="docs-Stack docs-Stack--start">
 
-      <label for="radio-helper-text" class="Radio">
-        <input type="radio" id="radio-helper-text" class="Radio__input" name="helperText" />
-        <span class="Radio__text">
-          <span class="Radio__label">Radio Label</span>
-          <span class="Radio__helperText">Helper text</span>
-        </span>
-      </label>
+      <div class="Radio">
+        <input type="radio" id="radio-helper-text" class="Radio__input" name="helperText" aria-labelledby="radio-helper-text-label" aria-describedby="radio-helper-text-helper-text" />
+        <div class="Radio__text">
+          <label class="Radio__label" for="radio-helper-text" id="radio-helper-text-label">Radio Label</label>
+          <div class="Radio__helperText" id="radio-helper-text-helper-text">Helper text</div>
+        </div>
+      </div>
 
     </div>
 
@@ -105,20 +105,20 @@
 
     <div class="docs-Stack docs-Stack--start">
 
-      <label for="radio-disabled" class="Radio Radio--disabled">
-        <input type="radio" id="radio-disabled" class="Radio__input" name="disabled" disabled />
-        <span class="Radio__text">
-          <span class="Radio__label">Radio Label</span>
-        </span>
-      </label>
+      <div class="Radio Radio--disabled">
+        <input type="radio" id="radio-disabled" class="Radio__input" name="disabled" aria-labelledby="radio-disabled-label" disabled />
+        <div class="Radio__text">
+          <label class="Radio__label" for="radio-disabled" id="radio-disabled-label">Radio Label</label>
+        </div>
+      </div>
 
-      <label for="radio-disabled-helper-text" class="Radio Radio--disabled">
-        <input type="radio" id="radio-disabled-helper-text" class="Radio__input" name="disabledHelperText" disabled checked />
-        <span class="Radio__text">
-          <span class="Radio__label">Radio Label</span>
-          <span class="Radio__helperText">Helper text</span>
-        </span>
-      </label>
+      <div class="Radio Radio--disabled">
+        <input type="radio" id="radio-disabled-helper-text" class="Radio__input" name="disabledHelperText" aria-labelledby="radio-disabled-helper-text-label" aria-describedby="radio-disabled-helper-text-helper-text" disabled checked />
+        <div class="Radio__text">
+          <label class="Radio__label" for="radio-disabled-helper-text" id="radio-disabled-helper-text-label">Radio Label</label>
+          <div class="Radio__helperText" id="radio-disabled-helper-text-helper-text">Helper text</div>
+        </div>
+      </div>
 
     </div>
 
@@ -134,34 +134,34 @@
 
     <div class="docs-Stack docs-Stack--start">
 
-      <label for="radio-success" class="Radio Radio--success">
-        <input type="radio" id="radio-success" class="Radio__input" name="validation" />
-        <span class="Radio__text">
-          <span class="Radio__label">Radio Label</span>
-        </span>
-      </label>
+      <div class="Radio Radio--success">
+        <input type="radio" id="radio-success" class="Radio__input" name="validation" aria-labelledby="radio-success-label" />
+        <div class="Radio__text">
+          <label class="Radio__label" for="radio-success" id="radio-success-label">Radio Label</label>
+        </div>
+      </div>
 
-      <label for="radio-warning" class="Radio Radio--warning">
-        <input type="radio" id="radio-warning" class="Radio__input" name="validation" />
-        <span class="Radio__text">
-          <span class="Radio__label">Radio Label</span>
-        </span>
-      </label>
+      <div class="Radio Radio--warning">
+        <input type="radio" id="radio-warning" class="Radio__input" name="validation" aria-labelledby="radio-warning-label" />
+        <div class="Radio__text">
+          <label class="Radio__label" for="radio-warning" id="radio-warning-label">Radio Label</label>
+        </div>
+      </div>
 
-      <label for="radio-danger" class="Radio Radio--danger">
-        <input type="radio" id="radio-danger" class="Radio__input" name="validation" />
-        <span class="Radio__text">
-          <span class="Radio__label">Radio Label</span>
-        </span>
-      </label>
+      <div class="Radio Radio--danger">
+        <input type="radio" id="radio-danger" class="Radio__input" name="validation" aria-labelledby="radio-danger-label" />
+        <div class="Radio__text">
+          <label class="Radio__label" for="radio-danger" id="radio-danger-label">Radio Label</label>
+        </div>
+      </div>
 
-      <label for="radio-warning-helper-text" class="Radio Radio--warning">
-        <input type="radio" id="radio-warning-helper-text" class="Radio__input" name="validation" checked />
-        <span class="Radio__text">
-          <span class="Radio__label">Radio Label</span>
-          <span class="Radio__helperText">Helper text</span>
-        </span>
-      </label>
+      <div class="Radio Radio--warning">
+        <input type="radio" id="radio-warning-helper-text" class="Radio__input" name="validation" aria-labelledby="radio-warning-helper-text-helper-text" checked />
+        <div class="Radio__text">
+          <label class="Radio__label" for="radio-warning-helper-text" id="radio-warning-helper-text-label">Radio Label</label>
+          <div class="Radio__helperText" id="radio-warning-helper-text-helper-text">Helper text</div>
+        </div>
+      </div>
 
     </div>
 
@@ -177,49 +177,51 @@
 
     <div class="docs-Stack docs-Stack--start">
 
-      <label for="radio-item-default" class="Radio Radio--item">
-        <input type="radio" id="radio-item-default" class="Radio__input" name="item" />
-        <span class="Radio__text">
-          <span class="Radio__label">Radio Label</span>
-        </span>
-      </label>
+      <div class="Radio Radio--item">
+        <input type="radio" id="radio-item-default" class="Radio__input" name="item" aria-labelledby="radio-item-default-label" />
+        <div class="Radio__text">
+          <label class="Radio__label" for="radio-item-default" id="radio-item-default-label">Radio Label</label>
+        </div>
+      </div>
 
-      <label for="radio-item-default-checked" class="Radio Radio--item">
-        <input type="radio" id="radio-item-default-checked" class="Radio__input" name="item" checked />
-        <span class="Radio__text">
-          <span class="Radio__label">Radio Label</span>
-        </span>
-      </label>
+      <div class="Radio Radio--item">
+        <input type="radio" id="radio-item-default-checked" class="Radio__input" name="item" aria-labelledby="radio-item-default-checked-label" checked />
+        <div class="Radio__text">
+          <label class="Radio__label" for="radio-item-default-checked" id="radio-item-default-checked-label">Radio Label</label>
+        </div>
+      </div>
 
-      <label for="radio-item-helper-text" class="Radio Radio--item">
-        <input type="radio" id="radio-item-helper-text" class="Radio__input" name="item" />
-        <span class="Radio__text">
-          <span class="Radio__label">Radio Label</span>
-          <span class="Radio__helperText">Helper text</span>
-        </span>
-      </label>
+      <div class="Radio Radio--item">
+        <input type="radio" id="radio-item-helper-text" class="Radio__input" name="item" aria-labelledby="radio-item-helper-text-label" aria-describedby="radio-item-helper-text-helper-text" />
+        <div class="Radio__text">
+          <label class="Radio__label" for="radio-item-helper-text" id="radio-item-helper-text-label">Radio Label</label>
+          <div class="Radio__helperText" id="radio-item-helper-text-helper-text">Helper text</div>
+        </div>
+      </div>
 
-      <label for="radio-item-disabled" class="Radio Radio--item Radio--disabled">
-        <input type="radio" id="radio-item-disabled" class="Radio__input" name="itemDisabled" disabled />
-          <span class="Radio__text">
-          <span class="Radio__label">Radio Label</span>
-        </span>
-      </label>
+      <div class="Radio Radio--item Radio--disabled">
+        <input type="radio" id="radio-item-disabled" class="Radio__input" name="itemDisabled" aria-labelledby="radio-item-disabled-label" disabled />
+        <div class="Radio__text">
+          <label class="Radio__label" for="radio-item-disabled" id="radio-item-disabled-label">Radio Label</label>
+        </div>
+      </div>
 
-      <label for="radio-item-disabled-helper-text" class="Radio Radio--item Radio--disabled">
+      <div class="Radio Radio--item Radio--disabled">
         <input
           type="radio"
           id="radio-item-disabled-helper-text"
           class="Radio__input"
           name="itemDisabled"
+          aria-labelledby="radio-item-disabled-helper-text-label"
+          aria-describedby="radio-item-disabled-helper-text-helper-text"
           disabled
           checked
         />
-        <span class="Radio__text">
-          <span class="Radio__label">Radio Label</span>
-          <span class="Radio__helperText">Helper text</span>
-        </span>
-      </label>
+        <div class="Radio__text">
+          <label class="Radio__label" for="radio-item-disabled-helper-text" id="radio-item-disabled-helper-text-label">Radio Label</label>
+          <div class="Radio__helperText" id="radio-item-disabled-helper-text-helper-text">Helper text</div>
+        </div>
+      </div>
 
     </div>
 

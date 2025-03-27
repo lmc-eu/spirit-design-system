@@ -2,7 +2,13 @@ import React from 'react';
 import Radio from '../Radio';
 
 const RadioHelperText = () => (
-  <Radio helperText="Helper text" id="radio-helper-text" label="Radio Label" name="radioHelperText" />
+  <Radio
+    helperText="Helper text"
+    id="radio-helper-text"
+    label="Radio Label"
+    name="radioHelperText"
+    onChange={() => {}}
+  />
 );
 
 export default RadioHelperText;

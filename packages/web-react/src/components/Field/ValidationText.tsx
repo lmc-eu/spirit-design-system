@@ -30,24 +30,18 @@ const ValidationText = <T extends ElementType = 'div'>(props: ValidationTextProp
   const mergedStyleProps = mergeStyleProps(ElementTag, { styleProps, transferProps });
 
   useEffect(() => {
-    registerAria?.({ add: id });
+    validationText && registerAria?.({ add: id });
 
     return () => {
       registerAria?.({ remove: id });
     };
-  }, [id, registerAria]);
+  }, [id, registerAria, validationText]);
 
   if (!validationText) {
     return null;
   }
 
-  const ValidationTextWrapper = ElementTag === 'div' ? 'div' : 'span';
-
-  const nonArrayValidationText = hasValidationStateIcon ? (
-    <ValidationTextWrapper>{validationText}</ValidationTextWrapper>
-  ) : (
-    validationText
-  );
+  const nonArrayValidationText = hasValidationStateIcon ? <div>{validationText}</div> : validationText;
 
   return (
     <ElementTag {...transferProps} {...mergedStyleProps} id={id} role={role}>

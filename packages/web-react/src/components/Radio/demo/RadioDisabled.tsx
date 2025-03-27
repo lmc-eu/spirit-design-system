@@ -3,7 +3,7 @@ import Radio from '../Radio';
 
 const RadioDisabled = () => (
   <>
-    <Radio id="radio-disabled" isDisabled label="Radio Label" name="radioDisabled" />
+    <Radio id="radio-disabled" isDisabled label="Radio Label" name="radioDisabled" onChange={() => {}} />
 
     <Radio
       helperText="Helper text"
@@ -12,6 +12,7 @@ const RadioDisabled = () => (
       isDisabled
       label="Radio Label"
       name="radioDisabledHelperText"
+      onChange={() => {}}
     />
   </>
 );

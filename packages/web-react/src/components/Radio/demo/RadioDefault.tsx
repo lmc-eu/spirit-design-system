@@ -3,9 +3,9 @@ import Radio from '../Radio';
 
 const RadioDefault = () => (
   <>
-    <Radio id="radio-default" label="Radio Label" name="radioDefault" />
+    <Radio id="radio-default" label="Radio Label" name="radioDefault" onChange={() => {}} />
 
-    <Radio id="radio-default-checked" isChecked label="Radio Label" name="radioDefault" />
+    <Radio id="radio-default-checked" defaultChecked label="Radio Label" name="radioDefault" onChange={() => {}} />
   </>
 );
 

@@ -131,24 +131,24 @@
             <!-- Footer alignment demo: end -->
             <!-- Modal features demo: start -->
             <form class="Stack Stack--hasSpacing">
-              <label for="modal-demo-docked" class="Checkbox">
+              <div class="Checkbox">
                 <input type="checkbox" id="modal-demo-docked" class="Checkbox__input" onchange="toggleDockOnMobile('#example-basic > .ModalDialog', '#modal-demo-expanded')" autocomplete="off" />
-                <span class="Checkbox__text">
-                <span class="Checkbox__label">Dock on mobile</span>
-              </span>
-              </label>
-              <label for="modal-demo-expanded" class="Checkbox Checkbox--disabled" id="modal-demo-expanded-label">
+                <div class="Checkbox__text">
+                  <label class="Checkbox__label" for="modal-demo-docked">Dock on mobile</label>
+                </div>
+              </div>
+              <div class="Checkbox Checkbox--disabled" id="modal-demo-expanded-label">
                 <input type="checkbox" id="modal-demo-expanded" class="Checkbox__input" onchange="toggleExpandOnMobile('#example-basic > .ModalDialog')" autocomplete="off" checked disabled />
-                <span class="Checkbox__text">
-                <span class="Checkbox__label">Expand on mobile (docked only)</span>
-              </span>
-              </label>
-              <label for="modal-demo-scrolling" class="Checkbox">
+                <div class="Checkbox__text">
+                  <label class="Checkbox__label" for="modal-demo-expanded">Expand on mobile (docked only)</label>
+                </div>
+              </div>
+              <div class="Checkbox">
                 <input type="checkbox" id="modal-demo-scrolling" class="Checkbox__input" onchange="toggleScrolling('#example-basic > .ModalDialog')" autocomplete="off" />
-                <span class="Checkbox__text">
-                <span class="Checkbox__label">Scrolling inside</span>
-              </span>
-              </label>
+                <div class="Checkbox__text">
+                  <label class="Checkbox__label" for="modal-demo-scrolling">Scrolling inside</label>
+                </div>
+              </div>
             </form>
             <!-- Modal features demo: end -->
             <!-- Content: end -->
@@ -783,7 +783,7 @@
             <form>
               <fieldset class="Stack Stack--hasSpacing mb-800" style="border: 0;">
                 <legend hidden>Mobile</legend>
-                <label for="custom-height-mobile-enabled" class="Checkbox">
+                <div class="Checkbox">
                   <input
                     type="checkbox"
                     id="custom-height-mobile-enabled"
@@ -792,10 +792,10 @@
                     checked
                     autocomplete="off"
                   />
-                  <span class="Checkbox__text">
-                  <span class="Checkbox__label">Mobile</span>
-                </span>
-                </label>
+                  <div class="Checkbox__text">
+                    <label class="Checkbox__label" for="custom-height-mobile-enabled">Mobile</label>
+                  </div>
+                </div>
                 <div class="Grid" style="column-gap: var(--spirit-space-600)">
                   <label for="custom-height-mobile" class="GridItem" style="--grid-item-column-start: 1; --grid-item-column-end: 6; --grid-item-column-end-tablet: 4;">
                     Height
@@ -839,7 +839,7 @@
               </fieldset>
               <fieldset class="Stack Stack--hasSpacing d-none d-tablet-grid mb-tablet-800" style="border: 0;">
                 <legend hidden>Tablet</legend>
-                <label for="custom-height-tablet-enabled" class="Checkbox">
+                <div class="Checkbox">
                   <input
                     type="checkbox"
                     id="custom-height-tablet-enabled"
@@ -848,10 +848,10 @@
                     checked
                     autocomplete="off"
                   />
-                  <span class="Checkbox__text">
-                  <span class="Checkbox__label">Tablet</span>
-                </span>
-                </label>
+                  <div class="Checkbox__text">
+                    <label class="Checkbox__label" for="custom-height-tablet-enabled">Tablet</label>
+                  </div>
+                </div>
                 <div class="Grid" style="column-gap: var(--spirit-space-600)">
                   <label for="custom-height-tablet" class="GridItem" style="--grid-item-column-start: 1; --grid-item-column-end: 6; --grid-item-column-end-tablet: 4;">
                     Height
@@ -895,7 +895,7 @@
               </fieldset>
               <fieldset class="Stack Stack--hasSpacing d-none d-desktop-grid" style="border: 0;">
                 <legend hidden>Desktop</legend>
-                <label for="custom-height-desktop-enabled" class="Checkbox">
+                <div class="Checkbox">
                   <input
                     type="checkbox"
                     id="custom-height-desktop-enabled"
@@ -904,10 +904,10 @@
                     checked
                     autocomplete="off"
                   />
-                  <span class="Checkbox__text">
-                  <span class="Checkbox__label">Desktop</span>
-                </span>
-                </label>
+                  <div class="Checkbox__text">
+                    <label class="Checkbox__label" for="custom-height-desktop-enabled">Desktop</label>
+                  </div>
+                </div>
                 <div class="Grid" style="column-gap: var(--spirit-space-600)">
                   <label for="custom-height-desktop" class="GridItem" style="--grid-item-column-start: 1; --grid-item-column-end: 6; --grid-item-column-end-tablet: 4;">
                     Height
