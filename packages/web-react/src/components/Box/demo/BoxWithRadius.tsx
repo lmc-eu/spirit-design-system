@@ -13,6 +13,13 @@ const BoxWithRadius = () => (
     <Box padding="space-800" backgroundColor="secondary" borderRadius="full">
       With full radius
     </Box>
+    <Box
+      padding="space-800"
+      backgroundColor="secondary"
+      borderRadius={{ mobile: '100', tablet: '200', desktop: '400' }}
+    >
+      With responsive radius
+    </Box>
   </>
 );
 

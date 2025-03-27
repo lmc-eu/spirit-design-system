@@ -115,6 +115,16 @@ describe('Box', () => {
     expect(screen.getByTestId('Box')).toHaveClass('rounded-200');
   });
 
+  it('should render with responsive border radius', () => {
+    render(
+      <Box borderRadius={{ mobile: '100', tablet: '200', desktop: '400' }} borderWidth="100" data-testid="Box">
+        Content
+      </Box>,
+    );
+
+    expect(screen.getByTestId('Box')).toHaveClass('rounded-100 rounded-tablet-200 rounded-desktop-400');
+  });
+
   it('should render border style', () => {
     render(
       <Box borderStyle="dashed" borderWidth="100" data-testid="Box">
