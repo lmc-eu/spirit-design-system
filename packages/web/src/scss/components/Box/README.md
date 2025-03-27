@@ -8,7 +8,8 @@ The Box component is a simple container around content or other components.
 
 ## Border
 
-You can define border width, color, style using the utility classes `border-<width>`, `border-<color>`, `border-<style>` and radius using utility class `rounded-<radius>`.
+You can define border width, color, style using the utility classes `border-<width>`, `border-<color>`, `border-<style>`
+and radius using utility class `rounded-<radius>`. Use `rounded-<breakpoint>-<radius>` classes if you need the radius responsive.
 
 ```html
 <div class="border-basic border-100 rounded-200 border-solid border-dashed">Without radius</div>
