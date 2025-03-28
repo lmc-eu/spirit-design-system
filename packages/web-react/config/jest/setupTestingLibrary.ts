@@ -13,13 +13,16 @@ beforeAll(() => {
     const testName = expect.getState().currentTestName;
 
     // Replace placeholders in the error message with the actual arguments values
+    // For example, the message "React does not recognize the '%s' prop on a DOM element" will be replaced with the actual attribute name
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const replacePlaceholdersInErrorMessage = (message: string, messageArgs: any[]) => {
       let count = 1;
 
       return message.replace(/%s/g, () => {
-        // eslint-disable-next-line no-plusplus
-        return messageArgs[count++] || '%s';
+        const result = messageArgs[count] || '%s';
+        count += 1;
+
+        return result;
       });
     };
 
