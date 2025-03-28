@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, emotionColorPropsTest, restPropsTest, stylePropsTest } from '@local/tests';
+import {
+  classNamePrefixProviderTest,
+  emotionColorPropsTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import Alert from '../Alert';
 
 jest.mock('../../../hooks/useIcon');
@@ -14,6 +20,8 @@ describe('Alert', () => {
   emotionColorPropsTest(Alert, 'Alert--');
 
   restPropsTest(Alert, 'div');
+
+  validHtmlAttributesTest(Alert);
 
   it('should have default classname', () => {
     const dom = render(<Alert />);

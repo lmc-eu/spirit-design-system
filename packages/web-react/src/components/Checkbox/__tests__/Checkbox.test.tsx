@@ -9,6 +9,7 @@ import {
   restPropsTest,
   stylePropsTest,
   validationTextPropsTest,
+  validHtmlAttributesTest,
 } from '@local/tests';
 import Checkbox from '../Checkbox';
 
@@ -26,6 +27,8 @@ describe('Checkbox', () => {
   validationTextPropsTest(Checkbox, '.Checkbox__validationText');
 
   requiredPropsTest(Checkbox, 'checkbox', 'id', 'test-checkbox');
+
+  validHtmlAttributesTest(Checkbox);
 
   it('should have text classname', () => {
     render(<Checkbox id="checkbox" label="Label" />);

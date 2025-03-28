@@ -7,6 +7,7 @@ import {
   sizeExtendedPropsTest,
   restPropsTest,
   stylePropsTest,
+  validHtmlAttributesTest,
 } from '@local/tests';
 import Tag from '../Tag';
 
@@ -20,6 +21,8 @@ describe('Tag', () => {
   stylePropsTest(Tag);
 
   restPropsTest(Tag, 'span');
+
+  validHtmlAttributesTest(Tag);
 
   it('should have neutral classname', () => {
     const dom = render(<Tag />);

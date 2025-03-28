@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
 import ScrollView from '../ScrollView';
 
 describe('ScrollView', () => {
@@ -9,4 +9,6 @@ describe('ScrollView', () => {
   stylePropsTest((props) => <ScrollView {...props} />);
 
   restPropsTest(ScrollView, 'div');
+
+  validHtmlAttributesTest(ScrollView);
 });

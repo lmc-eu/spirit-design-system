@@ -1,7 +1,12 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import { classNamePrefixProviderTest, restPropsTest, validationTextPropsTest } from '@local/tests';
+import {
+  classNamePrefixProviderTest,
+  restPropsTest,
+  validationTextPropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import FileUploaderInput from '../FileUploaderInput';
 import '@testing-library/jest-dom';
 
@@ -13,6 +18,8 @@ describe('FileUploaderInput', () => {
   restPropsTest(FileUploaderInput, 'div');
 
   validationTextPropsTest(FileUploaderInput, '.FileUploaderInput__validationText');
+
+  validHtmlAttributesTest(FileUploaderInput);
 
   it('should have drag-and-drop class in Client component', () => {
     render(<FileUploaderInput id="test-uploader" name="test-uploader" label="upload" data-testid="test" />);

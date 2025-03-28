@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
 import CardLink from '../CardLink';
 
 describe('CardLink', () => {
@@ -10,6 +10,8 @@ describe('CardLink', () => {
   stylePropsTest(CardLink);
 
   restPropsTest(CardLink, '.CardLink');
+
+  validHtmlAttributesTest(CardLink);
 
   it('should render link card component and have default class name', () => {
     render(<CardLink href="#" />);

@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { fireEvent, render } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
 import AccordionContent from '../AccordionContent';
 import AccordionHeader from '../AccordionHeader';
 import AccordionItem from '../AccordionItem';
@@ -20,6 +20,8 @@ describe('UncontrolledAccordion', () => {
   );
 
   restPropsTest(UncontrolledAccordion, '.Accordion');
+
+  validHtmlAttributesTest(UncontrolledAccordion);
 
   it('should render text children', () => {
     const dom = render(<UncontrolledAccordion>Hello World</UncontrolledAccordion>);

@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { restPropsTest, stylePropsTest } from '@local/tests';
+import { restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
 import { SpiritLabelProps } from '../../../types';
 import Label from '../Label';
 
@@ -9,6 +9,8 @@ describe('Label', () => {
   stylePropsTest(Label);
 
   restPropsTest((props: SpiritLabelProps) => <Label {...props} />, 'label');
+
+  validHtmlAttributesTest(Label);
 
   it('should render children', () => {
     const label = 'Label';

@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
 import Card from '../Card';
 
 describe('Card', () => {
@@ -10,6 +10,8 @@ describe('Card', () => {
   stylePropsTest(Card);
 
   restPropsTest(Card, 'article');
+
+  validHtmlAttributesTest(Card);
 
   it('should render card component and have default class names', () => {
     render(<Card />);

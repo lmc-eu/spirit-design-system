@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React, { ElementType } from 'react';
+import { validHtmlAttributesTest } from '@local/tests';
 import { A11Y_ALERT_ROLE } from '../constants';
 import { ValidationTextProps } from '../types';
 import ValidationText from '../ValidationText';
@@ -9,6 +10,8 @@ const renderValidationText = <T extends ElementType = 'div'>(props: Partial<Vali
   render(<ValidationText UNSAFE_className="ValidationText__validationText" {...props} />);
 
 describe('ValidationText', () => {
+  validHtmlAttributesTest(ValidationText);
+
   it('should render single validation text', () => {
     renderValidationText({ validationText: 'validation text' });
 
