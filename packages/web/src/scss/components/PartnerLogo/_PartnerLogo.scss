@@ -21,6 +21,21 @@
 
 @include dictionaries.generate-sizes($class-name: 'PartnerLogo', $sizes: theme.$sizes);
 
+.PartnerLogo--fluid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.PartnerLogo--fluid > img,
+.PartnerLogo--fluid > svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
 .PartnerLogo--safeArea {
     padding: var(--#{tokens.$css-variable-prefix}partner-logo-padding);
 }
