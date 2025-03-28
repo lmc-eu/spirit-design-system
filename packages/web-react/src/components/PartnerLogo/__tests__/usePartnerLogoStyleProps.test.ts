@@ -10,6 +10,13 @@ describe('usePartnerLogoStyleProps', () => {
     expect(result.current.classProps).toBe('PartnerLogo');
   });
 
+  it('should return correct classNames for isFluid prop', () => {
+    const props = { isFluid: true };
+    const { result } = renderHook(() => usePartnerLogoStyleProps(props));
+
+    expect(result.current.classProps).toBe('PartnerLogo PartnerLogo--fluid');
+  });
+
   describe('hasSafeArea prop', () => {
     const testCases = [
       { hasSafeArea: false, expectedClassName: 'PartnerLogo', description: 'should not' },

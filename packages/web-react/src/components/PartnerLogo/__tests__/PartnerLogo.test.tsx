@@ -37,4 +37,10 @@ describe('PartnerLogo', () => {
 
     expect(screen.getByText('Content')).not.toHaveClass('PartnerLogo--safeArea');
   });
+
+  it('should render correct className for isFluid prop', () => {
+    render(<PartnerLogo isFluid>Content</PartnerLogo>);
+
+    expect(screen.getByText('Content')).toHaveClass('PartnerLogo--fluid');
+  });
 });
