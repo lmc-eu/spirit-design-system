@@ -25,12 +25,25 @@ Use the `PartnerLogo--<size>` modifier class to change the size of the PartnerLo
 </div>
 ```
 
+ℹ️ You can also make the logo adjust to the size of the container in which it is placed. See [Fluid Size](#fluid-size) section for more details.
+
 ## Enable Safe Area
 
 The PartnerLogo component can be displayed with the safe area (padding). Use `PartnerLogo--safeArea` modifier to enable safe area around logo.
 
 ```html
 <div class="PartnerLogo PartnerLogo--medium PartnerLogo--safeArea">
+  <!-- Logo goes here -->
+</div>
+```
+
+### Fluid Size
+
+To adjust the `PartnerLogo` to the size of its container, use the `PartnerLogo--fluid` modifier. This allows the logo to scale while preserving its aspect ratio
+and ensures it remains vertically and horizontally aligned within the container.
+
+```html
+<div class="PartnerLogo PartnerLogo--fluid">
   <!-- Logo goes here -->
 </div>
 ```
