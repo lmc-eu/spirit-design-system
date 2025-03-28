@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import { htmlElementAttributes } from 'html-element-attributes';
-import React from 'react';
+import React, { ComponentType } from 'react';
 
 const globalAttributes = [...htmlElementAttributes['*'], 'role'];
 
@@ -15,9 +15,13 @@ const validateHTMLAttributes = (element: HTMLElement) => {
   const tagAttributes = htmlElementAttributes[tagName] || [];
   const validAttributes = [...globalAttributes, ...tagAttributes, ...(customTagAttributes[tagName] || [])];
 
-  Array.from(element.attributes).forEach((attr) => {
-    if (!validAttributes.includes(attr.name) && !attr.name.startsWith('data-') && !attr.name.startsWith('aria-')) {
-      throw new Error(`Invalid attribute '${attr.name}' on <${tagName}> element`);
+  Array.from(element.attributes).forEach((attribute) => {
+    if (
+      !validAttributes.includes(attribute.name) &&
+      !attribute.name.startsWith('data-') &&
+      !attribute.name.startsWith('aria-')
+    ) {
+      throw new Error(`Invalid attribute '${attribute.name}' on <${tagName}> element`);
     }
   });
 };
@@ -29,7 +33,7 @@ const validateHTMLForComponent = (container: HTMLElement) => {
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const validHtmlAttributesTest = (Component: React.ComponentType<any>, props: object = {}) => {
+export const validHtmlAttributesTest = (Component: ComponentType<any>, props: object = {}) => {
   const componentName = Component.displayName || Component.name || Component.spiritComponent || 'UnknownComponent';
 
   test(`should render valid HTML for ${componentName}`, () => {
