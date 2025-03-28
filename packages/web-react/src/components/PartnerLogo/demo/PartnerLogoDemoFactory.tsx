@@ -3,7 +3,7 @@ import { Sizes } from '../../../constants';
 import { SpiritPartnerLogoProps } from '../../../types/partnerLogo';
 import PartnerLogo from '../PartnerLogo';
 
-const logo = (
+export const logo = (
   <svg width="108" height="40" viewBox="0 0 108 40" fill="none" xmlns="http://www.w3.org/2000/svg">
     <title>Partner Logo</title>
     <g clipPath="url(#clip0_20364_10)">

@@ -17,12 +17,21 @@ const meta: Meta<typeof PartnerLogo> = {
     },
   },
   argTypes: {
+    hasSafeArea: {
+      control: 'boolean',
+      table: {
+        defaultValue: { summary: 'true' },
+      },
+    },
+    isFluid: {
+      control: 'boolean',
+      table: {
+        defaultValue: { summary: 'false' },
+      },
+    },
     size: {
       control: 'select',
       options: [...Object.values(Sizes)],
-    },
-    hasSafeArea: {
-      control: 'boolean',
     },
   },
   args: {
@@ -103,6 +112,7 @@ const meta: Meta<typeof PartnerLogo> = {
         </defs>
       </svg>
     ),
+    isFluid: false,
     size: 'medium',
   },
 };

@@ -8,8 +8,9 @@ import { SpiritPartnerLogoProps } from '../../types/partnerLogo';
 import { usePartnerLogoStyleProps } from './usePartnerLogoStyleProps';
 
 const defaultProps: Partial<SpiritPartnerLogoProps> = {
-  size: Sizes.MEDIUM,
   hasSafeArea: true,
+  isFluid: false,
+  size: Sizes.MEDIUM,
 };
 
 const PartnerLogo = (props: SpiritPartnerLogoProps) => {

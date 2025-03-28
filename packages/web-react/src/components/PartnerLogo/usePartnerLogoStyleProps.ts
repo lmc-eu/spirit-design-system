@@ -7,19 +7,22 @@ export interface PartnerLogoStyles<T> {
   props: T;
 }
 
-export function usePartnerLogoStyleProps(props: SpiritPartnerLogoProps): PartnerLogoStyles<SpiritPartnerLogoProps> {
-  const { size, hasSafeArea, ...restProps } = props;
+export const usePartnerLogoStyleProps = (props: SpiritPartnerLogoProps): PartnerLogoStyles<SpiritPartnerLogoProps> => {
+  const { hasSafeArea, isFluid, size, ...restProps } = props;
 
   const partnerLogoClass = useClassNamePrefix('PartnerLogo');
-  const partnerLogoSizeClass = `${partnerLogoClass}--${size}`;
+  const partnerLogoFluidClass = `${partnerLogoClass}--fluid`;
   const partnerLogoSafeAreaClass = `${partnerLogoClass}--safeArea`;
+  const partnerLogoSizeClass = `${partnerLogoClass}--${size}`;
+
   const classProps = classNames(partnerLogoClass, {
-    [partnerLogoSizeClass]: size,
+    [partnerLogoFluidClass]: isFluid,
     [partnerLogoSafeAreaClass]: hasSafeArea,
+    [partnerLogoSizeClass]: size,
   });
 
   return {
     classProps,
     props: restProps,
   };
-}
+};
