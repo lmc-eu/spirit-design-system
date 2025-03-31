@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  classNamePrefixProviderTest,
+  elementTypePropsTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import DrawerPanel from '../DrawerPanel';
 
 describe('DrawerPanel', () => {
@@ -13,16 +19,12 @@ describe('DrawerPanel', () => {
 
   validHtmlAttributesTest(DrawerPanel);
 
+  elementTypePropsTest(DrawerPanel);
+
   it('should render drawer panel content', () => {
     render(<DrawerPanel data-testid="test">Test content</DrawerPanel>);
 
     expect(screen.getByTestId('test')).toHaveTextContent('Test content');
-  });
-
-  it('should render custom element', () => {
-    render(<DrawerPanel elementType="section" data-testid="test" />);
-
-    expect(screen.getByTestId('test')).toContainHTML('section');
   });
 
   it('should render with correct class', () => {

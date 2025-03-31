@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  classNamePrefixProviderTest,
+  elementTypePropsTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import { Button } from '../../Button';
 import UncontrolledCollapse from '../UncontrolledCollapse';
 
@@ -13,6 +19,8 @@ describe('UncontrolledCollapse', () => {
   restPropsTest(UncontrolledCollapse, 'div');
 
   validHtmlAttributesTest(UncontrolledCollapse);
+
+  elementTypePropsTest(UncontrolledCollapse);
 
   beforeEach(() => {
     render(

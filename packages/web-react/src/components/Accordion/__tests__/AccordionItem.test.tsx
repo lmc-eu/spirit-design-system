@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  classNamePrefixProviderTest,
+  elementTypePropsTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import Accordion from '../Accordion';
 import AccordionContent from '../AccordionContent';
 import AccordionHeader from '../AccordionHeader';
@@ -11,6 +17,8 @@ jest.mock('../../../hooks/useIcon');
 
 describe('AccordionItem', () => {
   classNamePrefixProviderTest(AccordionItem, 'Accordion__item');
+
+  elementTypePropsTest(AccordionItem);
 
   stylePropsTest(
     (props: Record<string, unknown>) => (

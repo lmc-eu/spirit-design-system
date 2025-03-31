@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import React, { useState } from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  classNamePrefixProviderTest,
+  elementTypePropsTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import { Button } from '../../Button';
 import Collapse from '../Collapse';
 
@@ -15,6 +21,8 @@ describe('Collapse', () => {
   restPropsTest(Collapse, 'div');
 
   validHtmlAttributesTest(Collapse);
+
+  elementTypePropsTest(Collapse);
 
   it('should render text children', () => {
     render(
@@ -54,18 +62,6 @@ describe('Collapse', () => {
     fireEvent.click(toggleButton);
 
     expect(collapseElement).toHaveClass('is-open');
-  });
-
-  it('should have correct html element', () => {
-    render(
-      <Collapse id="collapse" elementType="section" isOpen data-testid="test">
-        Hello World
-      </Collapse>,
-    );
-
-    const element = screen.getByTestId('test');
-
-    expect(element.tagName).toBe('SECTION');
   });
 
   it('should respect transitionDuration prop', async () => {

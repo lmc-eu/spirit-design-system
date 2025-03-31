@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { fireEvent, render } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  classNamePrefixProviderTest,
+  elementTypePropsTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import AccordionContent from '../AccordionContent';
 import AccordionHeader from '../AccordionHeader';
 import AccordionItem from '../AccordionItem';
@@ -11,6 +17,8 @@ jest.mock('../../../hooks/useIcon');
 
 describe('UncontrolledAccordion', () => {
   classNamePrefixProviderTest(UncontrolledAccordion, 'Accordion');
+
+  elementTypePropsTest(UncontrolledAccordion);
 
   stylePropsTest(
     (props: Record<string, unknown>) => (

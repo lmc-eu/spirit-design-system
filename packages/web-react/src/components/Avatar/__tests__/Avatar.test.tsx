@@ -7,6 +7,7 @@ import {
   restPropsTest,
   stylePropsTest,
   validHtmlAttributesTest,
+  elementTypePropsTest,
 } from '@local/tests';
 import { Icon } from '../../Icon';
 import Avatar from '../Avatar';
@@ -24,21 +25,12 @@ describe('Avatar', () => {
 
   validHtmlAttributesTest(Avatar);
 
+  elementTypePropsTest(Avatar);
+
   it('should have default classname', () => {
     render(<Avatar title="Jiří Bárta">JB</Avatar>);
 
     expect(screen.getByTitle('Jiří Bárta')).toHaveClass('Avatar');
-  });
-
-  it('should have default classname with elementType', () => {
-    render(
-      <Avatar elementType="a" href="#" title="Jiří Bárta">
-        JB
-      </Avatar>,
-    );
-
-    expect(screen.getByTitle('Jiří Bárta')).toHaveClass('Avatar');
-    expect(screen.getByTitle('Jiří Bárta')).toHaveAttribute('href', '#');
   });
 
   it('should have square classname with isSquare', () => {
