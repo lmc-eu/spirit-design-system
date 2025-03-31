@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  classNamePrefixProviderTest,
+  elementTypePropsTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import EmptyStateSection from '../EmptyStateSection';
 
 describe('EmptyStateSection', () => {
@@ -12,6 +18,8 @@ describe('EmptyStateSection', () => {
   restPropsTest(EmptyStateSection, 'div');
 
   validHtmlAttributesTest(EmptyStateSection);
+
+  elementTypePropsTest(EmptyStateSection);
 
   beforeEach(() => {
     render(<EmptyStateSection>Content</EmptyStateSection>);

@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react';
 import React from 'react';
 import {
   classNamePrefixProviderTest,
+  elementTypePropsTest,
   restPropsTest,
   stylePropsTest,
   textAlignmentPropsTest,
@@ -33,6 +34,8 @@ describe('Section', () => {
   textAlignmentPropsTest(Section);
 
   validHtmlAttributesTest(Section);
+
+  elementTypePropsTest(Section);
 
   it('should render children', () => {
     render(<Section>Content</Section>);

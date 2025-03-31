@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { screen, render } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  classNamePrefixProviderTest,
+  elementTypePropsTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import SkeletonHeading from '../SkeletonHeading';
 
 describe('SkeletonHeading', () => {
@@ -12,6 +18,8 @@ describe('SkeletonHeading', () => {
   restPropsTest(SkeletonHeading, 'div');
 
   validHtmlAttributesTest(SkeletonHeading);
+
+  elementTypePropsTest(SkeletonHeading);
 
   beforeEach(() => {
     render(<SkeletonHeading data-testid="SkeletonHeading" />);

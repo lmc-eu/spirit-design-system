@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  classNamePrefixProviderTest,
+  elementTypePropsTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import { SpiritItemProps } from '../../../types';
 import Item from '../Item';
 
@@ -15,6 +21,8 @@ describe('Item', () => {
   restPropsTest((props: SpiritItemProps) => <Item {...props} />, 'button');
 
   validHtmlAttributesTest(Item);
+
+  elementTypePropsTest(Item);
 
   it('should render label', () => {
     const label = 'Item label';
@@ -54,12 +62,5 @@ describe('Item', () => {
 
     const element = dom.container.querySelector('.Item') as HTMLElement;
     expect(element).toHaveClass('Item--disabled');
-  });
-
-  it('should render as anchor', () => {
-    const dom = render(<Item label="Item label" elementType="a" />);
-
-    const element = dom.container.querySelector('a') as HTMLElement;
-    expect(element).toHaveClass('Item');
   });
 });

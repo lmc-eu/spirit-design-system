@@ -7,6 +7,7 @@ import {
   restPropsTest,
   stylePropsTest,
   validHtmlAttributesTest,
+  elementTypePropsTest,
 } from '@local/tests';
 import { LinkColorsDictionaryType } from '../../../types';
 import Link from '../Link';
@@ -22,6 +23,8 @@ describe('Link', () => {
   restPropsTest(Link, 'a');
 
   validHtmlAttributesTest(Link);
+
+  elementTypePropsTest(Link);
 
   it.each(linkPropsDataProvider)('should have class', (color, underlined, isDisabled, expectedClassName) => {
     render(

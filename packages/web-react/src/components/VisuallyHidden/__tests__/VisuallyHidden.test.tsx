@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  classNamePrefixProviderTest,
+  elementTypePropsTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import VisuallyHidden from '../VisuallyHidden';
 
 describe('Visually Hidden', () => {
@@ -13,18 +19,12 @@ describe('Visually Hidden', () => {
 
   validHtmlAttributesTest(VisuallyHidden);
 
+  elementTypePropsTest(VisuallyHidden, 'div');
+
   it('should render `Label`', () => {
     const dom = render(<VisuallyHidden>Label</VisuallyHidden>);
 
     const element = dom.container.querySelector('span') as HTMLElement;
-    expect(element.className).toBe('accessibility-hidden');
-    expect(element.textContent).toBe('Label');
-  });
-
-  it('should render `Label` in div element', () => {
-    const dom = render(<VisuallyHidden elementType="div">Label</VisuallyHidden>);
-
-    const element = dom.container.querySelector('div') as HTMLElement;
     expect(element.className).toBe('accessibility-hidden');
     expect(element.textContent).toBe('Label');
   });

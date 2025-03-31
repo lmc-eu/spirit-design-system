@@ -1,11 +1,19 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  classNamePrefixProviderTest,
+  elementTypePropsTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import Accordion from '../Accordion';
 
 describe('Accordion', () => {
   classNamePrefixProviderTest(Accordion, 'Accordion');
+
+  elementTypePropsTest(Accordion);
 
   stylePropsTest((props: Record<string, unknown>) => {
     const toggle = () => null;

@@ -3,6 +3,7 @@ import { render } from '@testing-library/react';
 import React from 'react';
 import {
   classNamePrefixProviderTest,
+  elementTypePropsTest,
   emotionColorPropsTest,
   restPropsTest,
   stylePropsTest,
@@ -22,6 +23,8 @@ describe('Alert', () => {
   restPropsTest(Alert, 'div');
 
   validHtmlAttributesTest(Alert);
+
+  elementTypePropsTest(Alert);
 
   it('should have default classname', () => {
     const dom = render(<Alert />);

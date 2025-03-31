@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import { elementTypePropsTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
 import ToastBarLink from '../ToastBarLink';
 
 describe('ToastBarLink', () => {
@@ -10,6 +10,8 @@ describe('ToastBarLink', () => {
   restPropsTest(ToastBarLink, 'a');
 
   validHtmlAttributesTest(ToastBarLink);
+
+  elementTypePropsTest(ToastBarLink);
 
   beforeEach(() => {
     render(<ToastBarLink href="#example-href">Example action</ToastBarLink>);

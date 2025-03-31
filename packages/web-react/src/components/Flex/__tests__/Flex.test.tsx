@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  classNamePrefixProviderTest,
+  elementTypePropsTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import Flex from '../Flex';
 
 describe('Flex', () => {
@@ -15,6 +21,8 @@ describe('Flex', () => {
   restPropsTest(Flex, 'div');
 
   validHtmlAttributesTest(Flex);
+
+  elementTypePropsTest(Flex);
 
   it('should render text children', () => {
     render(<Flex data-testid={testId}>{text}</Flex>);

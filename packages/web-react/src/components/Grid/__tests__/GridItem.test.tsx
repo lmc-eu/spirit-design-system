@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  classNamePrefixProviderTest,
+  elementTypePropsTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import GridItem from '../GridItem';
 
 describe('Grid', () => {
@@ -12,6 +18,7 @@ describe('Grid', () => {
   restPropsTest(GridItem, 'div');
 
   validHtmlAttributesTest(GridItem);
+  elementTypePropsTest(GridItem);
 
   it('should render text children', () => {
     const dom = render(<GridItem>Hello World</GridItem>);

@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  classNamePrefixProviderTest,
+  elementTypePropsTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import Stack from '../Stack';
 
 describe('Stack', () => {
@@ -12,6 +18,8 @@ describe('Stack', () => {
   restPropsTest(Stack, 'div');
 
   validHtmlAttributesTest(Stack);
+
+  elementTypePropsTest(Stack);
 
   it('should render text children', () => {
     const dom = render(<Stack>Hello World</Stack>);
@@ -32,13 +40,6 @@ describe('Stack', () => {
     expect(element.children).toHaveLength(2);
     expect(element.children[0].textContent).toBe('Child 1');
     expect(element.children[1].textContent).toBe('Child 2');
-  });
-
-  it('should render a ul element', () => {
-    const dom = render(<Stack elementType="ul" />);
-
-    const element = dom.container.querySelector('ul') as HTMLElement;
-    expect(element).toBeInTheDocument();
   });
 
   it('should render with spacing', () => {

@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  classNamePrefixProviderTest,
+  elementTypePropsTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import { Icon } from '../../Icon';
 import NavigationAvatar from '../NavigationAvatar';
 
@@ -15,6 +21,8 @@ describe('NavigationAvatar', () => {
   restPropsTest(NavigationAvatar, 'a');
 
   validHtmlAttributesTest(NavigationAvatar);
+
+  elementTypePropsTest(NavigationAvatar);
 
   describe('default props', () => {
     beforeEach(() => {

@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  classNamePrefixProviderTest,
+  elementTypePropsTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import HeaderLink from '../HeaderLink';
 
 describe('HeaderLink', () => {
@@ -13,21 +19,12 @@ describe('HeaderLink', () => {
 
   validHtmlAttributesTest(HeaderLink);
 
+  elementTypePropsTest(HeaderLink);
+
   it('should render text children', () => {
     const dom = render(<HeaderLink id="test">Hello World</HeaderLink>);
 
     const element = dom.container.querySelector('a') as HTMLElement;
-    expect(element.textContent).toBe('Hello World');
-  });
-
-  it('should render button element', () => {
-    const dom = render(
-      <HeaderLink id="test" elementType="button">
-        Hello World
-      </HeaderLink>,
-    );
-
-    const element = dom.container.querySelector('button') as HTMLElement;
     expect(element.textContent).toBe('Hello World');
   });
 });

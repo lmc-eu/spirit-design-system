@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  classNamePrefixProviderTest,
+  elementTypePropsTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import Breadcrumbs from '../Breadcrumbs';
 
 jest.mock('../../../hooks/useIcon');
@@ -14,6 +20,7 @@ describe('Breadcrumbs', () => {
   restPropsTest(Breadcrumbs, 'nav');
 
   validHtmlAttributesTest(Breadcrumbs);
+  elementTypePropsTest(Breadcrumbs);
 
   it('should render breadcrumbs with go back title', () => {
     const dom = render(

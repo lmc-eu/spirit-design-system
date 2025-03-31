@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react';
 import React from 'react';
 import {
   classNamePrefixProviderTest,
+  elementTypePropsTest,
   emotionColorPropsTest,
   restPropsTest,
   stylePropsTest,
@@ -20,6 +21,8 @@ describe('Pill', () => {
   restPropsTest(Pill, 'span');
 
   validHtmlAttributesTest(Pill);
+
+  elementTypePropsTest(Pill, 'div');
 
   it('should have default classname', () => {
     render(<Pill data-testid="pill" />);

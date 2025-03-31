@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  classNamePrefixProviderTest,
+  elementTypePropsTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import { SpiritBoxProps } from '../../../types';
 import Box from '../Box';
 
@@ -84,6 +90,8 @@ describe('Box', () => {
   restPropsTest(Box, 'div');
 
   validHtmlAttributesTest(Box);
+
+  elementTypePropsTest(Box);
 
   it('should render children', () => {
     render(<Box>Content</Box>);
