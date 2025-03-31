@@ -1,5 +1,6 @@
 export * from './classNamePrefixProviderTest';
 export * from './dictionaryPropsTest';
+export * from './elementTypePropsTest';
 export * from './itemPropsTest';
 export * from './loadingPropsTest';
 export * from './requiredPropsTest';
