@@ -6,9 +6,32 @@ on:
       - main
 
 jobs:
+  has-tags:
+    name: 🏷️ Analyze Tags
+    runs-on: ubuntu-24.04
+
+    outputs:
+      has-tag: ${{ steps.check-tag-exists.outputs.has-tag }}
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+        with:
+          # Even though this is set, shallow clones do not always retrieve all tags correctly
+          fetch-tags: true
+          # So we need to fetch full history, including all tags
+          fetch-depth: 0
+
+      - name: Check Tag On Commit
+        id: check-tag-exists
+        uses: ./.github/actions/analyze-tags
+
   publish:
     name: 🚀 Publish Supernova Documentation
+    needs: has-tags
+    if: ${{ needs.has-tags.outputs.has-tag == 'true' }}
     runs-on: ubuntu-24.04
+
     steps:
       - name: Clone repository
         uses: actions/checkout@v4

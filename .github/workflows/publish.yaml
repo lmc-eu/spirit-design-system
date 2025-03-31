@@ -22,16 +22,9 @@ jobs:
           # So we need to fetch full history, including all tags
           fetch-depth: 0
 
-      # ⚠️ This check works only if the tag is pushed alongside the commit
-      # Please, use `git push && git push --tags` or `git push --follow-tags` (works only for annonated tags)
       - name: Check Tag On Commit
         id: check-tag-exists
-        run: |
-          if [ -n "$(git tag --points-at HEAD)" ]; then
-            echo "has-tag=true" >> $GITHUB_OUTPUT
-          else
-            echo "has-tag=false" >> $GITHUB_OUTPUT
-          fi
+        uses: ./.github/actions/analyze-tags
 
   publish:
     name: 📦 Publish Packages
