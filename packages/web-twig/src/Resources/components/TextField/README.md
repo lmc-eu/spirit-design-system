@@ -57,6 +57,35 @@ Without lexer:
 }} %}
 ```
 
+## Input Width
+
+There are several ways to adjust the input width:
+
+### `inputWidth` Attribute
+
+The `inputWidth` attribute is supported on inputs of the following types: `email`, `number`
+`password`, `tel`, `text`, `url`.
+
+```twig
+<TextField
+  id="text-field-width-ch"
+  inputWidth="4"
+  label="Input width of 4 characters"
+  name="textFieldWidthCh"
+  placeholder="Placeholder"
+  type="text"
+/>
+```
+
+This option is generally recommended for inputs with a limited value length
+(e.g. numeric representation of day, month, year). `inputWidth` corresponds with the unit `ch` (character).
+If you need input with width for e.g. 4 characters, set `inputWidth={4}`.
+
+### Grid
+
+For other use cases (wider input or input with unknown value length), we
+recommend placing them inside the Grid component and set `isFluid` to `true` to fill the available space.
+
 ## API
 
 | Name                    | Type                                                                         | Default | Required | Description                                                             |
