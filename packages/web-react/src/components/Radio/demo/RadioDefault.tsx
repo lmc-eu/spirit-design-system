@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Radio from '../Radio';
 
 const RadioDefault = () => {
-  const [selectedRadio, setSelectedRadio] = useState('radio-default');
+  const [selectedRadio, setSelectedRadio] = useState('radio-default-checked');
 
   const handleChange = (id: string) => {
     setSelectedRadio(id);

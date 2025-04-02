@@ -8,15 +8,7 @@ const CheckboxIndeterminate = () => {
     checkboxRef.current && (checkboxRef.current.indeterminate = true);
   }, [checkboxRef]);
 
-  return (
-    <Checkbox
-      id="checkbox-indeterminate"
-      name="checkboxIndeterminate"
-      label="Checkbox Label"
-      ref={checkboxRef}
-      onChange={() => {}}
-    />
-  );
+  return <Checkbox id="checkbox-indeterminate" name="checkboxIndeterminate" label="Checkbox Label" ref={checkboxRef} />;
 };
 
 export default CheckboxIndeterminate;
