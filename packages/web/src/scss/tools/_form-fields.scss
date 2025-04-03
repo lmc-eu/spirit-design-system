@@ -59,7 +59,6 @@
 @mixin inline-field-root() {
     display: inline-flex;
     margin-block: form-fields-theme.$inline-field-margin-y;
-    cursor: cursors.$form-fields;
 }
 
 @mixin inline-field-root-disabled() {
@@ -74,8 +73,15 @@
 @mixin inline-field-label() {
     @include typography.generate(form-fields-theme.$input-typography);
 
-    display: inline-block;
+    display: block;
     color: form-fields-theme.$label-color-state-default;
+    cursor: cursors.$form-fields;
+}
+
+@mixin inline-field-label-disabled() {
+    @include label-disabled();
+
+    cursor: cursors.$disabled;
 }
 
 @mixin box-field-label() {
@@ -264,4 +270,19 @@
 
 @mixin item-helper-text() {
     @include typography.generate(form-fields-theme.$item-helper-text-typography);
+}
+
+@mixin stretch($pseudo-element: before, $expand: left) {
+    &::#{$pseudo-element} {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+
+        @if $expand == 'left' {
+            left: -#{form-fields-theme.$inline-field-margin-x};
+        } @else {
+            right: -#{form-fields-theme.$inline-field-margin-x};
+        }
+    }
 }

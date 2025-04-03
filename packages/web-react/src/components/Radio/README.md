@@ -51,16 +51,20 @@ Text field classes are fabricated using `useRadioStyleProps` hook. You can use i
 
 ```jsx
 const CustomRadio = (props: SpiritRadioProps): JSX.Element => {
+  const { id } = props;
   const { classProps, props: modifiedProps } = useRadioStyleProps(props);
 
+  const labelId = `${id}-label`;
+  const helperTextId = `${id}-helper-text`;
+
   return (
-    <label htmlFor={props.id} className={classProps.root}>
-      <input {...modifiedProps} className={classProps.input} />
-      <span className={styleProps.text}>
-        <span className={styleProps.label}>{props.label}</span>
-        <span className={styleProps.helperText}>{props.helperText}</span>
-      </span>
-    </label>
+    <div className={classProps.root}>
+      <input {...modifiedProps} id={id} className={classProps.input} aria-describedby={helperTextId} />
+      <div className={styleProps.text}>
+        <label className={styleProps.label} htmlFor={id}>{props.label}</label>
+        <div className={styleProps.helperText} id={helperTextId}>{props.helperText}</div>
+      </div>
+    </div>
   );
 };
 ```

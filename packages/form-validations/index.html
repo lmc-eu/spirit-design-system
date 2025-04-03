@@ -80,12 +80,12 @@
             <label for="phone" class="TextField__label">Phone</label>
             <input type="tel" id="phone" class="TextField__input" placeholder="+420 733 333 333" data-spirit-pattern="/^(?:\+\d{3}\s?)?(\d{3}\s?){3}$/" data-spirit-pattern-message="Invalid phone number" />
           </div>
-          <label for="checkbox-field-1" class="Checkbox" data-spirit-validate>
-            <input type="checkbox" id="checkbox-field-1" name="checkbox1" class="Checkbox__input" required />
-            <span class="Checkbox__text">
-              <span class="Checkbox__label Checkbox__label--required">I accept the terms and conditions (required)</span>
-            </span>
-          </label>
+          <div class="Checkbox" data-spirit-validate>
+            <input type="checkbox" id="checkbox-field" name="checkbox1" class="Checkbox__input" required />
+            <div class="Checkbox__text">
+              <label class="Checkbox__label Checkbox__label--required" for="checkbox-field">I accept the terms and conditions (required)</label>
+            </div>
+          </div>
           <div>
             <button type="submit" class="Button Button--primary Button--medium Button--block">Submit</button>
           </div>
@@ -249,12 +249,12 @@
             <label for="custom-errors-number" class="TextField__label TextField__label--required">Required TextField, <code>type="number"</code>, <code>min="100"</code></label>
             <input type="number" id="custom-errors-number" class="TextField__input" value="5" required min="100" data-spirit-min-message="Anything larger than 99" />
           </div>
-          <label for="custom-errors-checkbox" class="Checkbox" data-spirit-validate>
+          <div class="Checkbox" data-spirit-validate>
             <input type="checkbox" id="custom-errors-checkbox" name="custom-errors-checkbox" class="Checkbox__input" required data-spirit-required-message="You must accept the terms and conditions" />
-            <span class="Checkbox__text">
-              <span class="Checkbox__label Checkbox__label--required">I accept the terms and conditions</span>
-            </span>
-          </label>
+            <div class="Checkbox__text">
+              <label class="Checkbox__label Checkbox__label--required" for="custom-errors-checkbox">I accept the terms and conditions</label>
+            </div>
+          </div>
           <div>
             <button type="submit" class="Button Button--primary Button--medium Button--block">Submit</button>
           </div>

@@ -19,7 +19,6 @@ const CheckboxDisabled = () => {
         helperText="Helper text"
         isDisabled
         isRequired
-        onChange={() => {}}
       />
       <Checkbox
         id="checkbox-disabled-indeterminate"
@@ -27,7 +26,6 @@ const CheckboxDisabled = () => {
         label="Checkbox Label"
         isDisabled
         ref={checkboxRef}
-        onChange={() => {}}
       />
     </>
   );
