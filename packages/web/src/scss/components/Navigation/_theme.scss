@@ -1,6 +1,7 @@
 // 1. We do not use the dictionary for this, because we want only two values: center and stretch.
 
 @use '@tokens' as tokens;
+@use '../../settings/dictionaries';
 
 $horizontal-height: 50px;
 $gap: tokens.$space-700;
@@ -23,10 +24,8 @@ $action-color-state-hover: tokens.$component-header-item-state-hover;
 $action-color-state-selected: tokens.$component-header-item-state-selected;
 
 $action-gap: tokens.$space-700;
-$action-padding-x: tokens.$space-700;
 
-$action-pill-border-radius: tokens.$radius-full;
-$action-pill-padding-y: tokens.$space-600;
+$action-shape-variant-dictionary: dictionaries.$shape-variants;
 
 $action-stripe-background-color-selected-state-active: tokens.$component-header-stripe-state-selected;
 $action-stripe-background-color-selected-state-default: tokens.$component-header-stripe-state-selected;
@@ -37,14 +36,35 @@ $horizontal-action-stripe-background-color-state-active: tokens.$component-heade
 $horizontal-action-stripe-background-color-state-hover: tokens.$component-header-stripe-state-unselected;
 $horizontal-action-stripe-size: 2px;
 $horizontal-action-typography: tokens.$body-small-semibold;
+$horizontal-action-shape-variant-config: (
+    box: (
+        padding-x: tokens.$space-700,
+        padding-y: 0,
+        border-radius: 0,
+    ),
+    pill: (
+        padding-x: tokens.$space-700,
+        padding-y: tokens.$space-600,
+        border-radius: tokens.$radius-full,
+    ),
+);
 
-$vertical-action-box-border-radius: tokens.$radius-200;
-$vertical-action-box-padding-x: tokens.$space-700;
 $vertical-action-pill-padding-x: tokens.$space-800;
-$vertical-action-spacing-y: tokens.$space-600;
 $vertical-action-stripe-size: 4px;
 $vertical-action-typography-nested: tokens.$body-medium-regular;
 $vertical-action-typography: tokens.$body-medium-semibold;
+$vertical-action-shape-variant-config: (
+    box: (
+        padding-x: tokens.$space-700,
+        padding-y: tokens.$space-600,
+        border-radius: tokens.$radius-200,
+    ),
+    pill: (
+        padding-x: tokens.$space-800,
+        padding-y: tokens.$space-600,
+        border-radius: tokens.$radius-full,
+    ),
+);
 
 $avatar-gap: tokens.$space-500;
 $avatar-padding-y: tokens.$space-400;

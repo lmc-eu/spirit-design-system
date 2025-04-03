@@ -3,6 +3,19 @@
 @use '../../settings/links' as links-settings;
 @use '../dictionaries';
 
+@include test.describe('validate dictionary value mixin') {
+    @include test.it('should not throw an error if the value is in the dictionary') {
+        $test: dictionaries.validate-dictionary-value(
+            $dictionary: (
+                'value',
+            ),
+            $value: 'value',
+        );
+
+        @include test.assert-true($test);
+    }
+}
+
 @include test.describe('generate-alignments mixin') {
     @include test.it('should generate correct alignment classes based on a dictionary') {
         @include test.assert() {
@@ -338,40 +351,11 @@
     }
 }
 
-@include test.describe('generate-sizes mixin') {
-    @include test.it('should generate correct size classes based on a config') {
-        @include test.assert() {
-            @include test.output() {
-                @include dictionaries.generate-sizes(
-                    'TestSize',
-                    (
-                        large: (
-                            width: 100px,
-                            height: 200px,
-                            padding-y: 12px,
-                            padding-x: 16px,
-                        ),
-                    )
-                );
-            }
-
-            @include test.expect() {
-                .TestSize--large {
-                    --spirit-test-size-width: 100px;
-                    --spirit-test-size-height: 200px;
-                    --spirit-test-size-padding-y: 12px;
-                    --spirit-test-size-padding-x: 16px;
-                }
-            }
-        }
-    }
-}
-
-@include test.describe('generate-fill-variants mixin') {
+@include test.describe('generate-variants mixin') {
     @include test.it('should generate correct fill variant classes based on a config') {
         @include test.assert() {
             @include test.output() {
-                @include dictionaries.generate-fill-variants(
+                @include dictionaries.generate-variants(
                     'TestFill',
                     (fill, outline),
                     (
@@ -404,7 +388,7 @@
     @include test.it('should generate custom infix fill variant classes based on a config') {
         @include test.assert() {
             @include test.output() {
-                @include dictionaries.generate-fill-variants(
+                @include dictionaries.generate-variants(
                     'TestFill',
                     (fill, outline),
                     (
@@ -430,6 +414,35 @@
                 .TestFill--outline {
                     --spirit-test-fill-custom-margin-bottom: 20px;
                     --spirit-test-fill-custom-border-radius: 15px;
+                }
+            }
+        }
+    }
+}
+
+@include test.describe('generate-sizes mixin') {
+    @include test.it('should generate correct size classes based on a config') {
+        @include test.assert() {
+            @include test.output() {
+                @include dictionaries.generate-sizes(
+                    'TestSize',
+                    (
+                        large: (
+                            width: 100px,
+                            height: 200px,
+                            padding-y: 12px,
+                            padding-x: 16px,
+                        ),
+                    )
+                );
+            }
+
+            @include test.expect() {
+                .TestSize--large {
+                    --spirit-test-size-width: 100px;
+                    --spirit-test-size-height: 200px;
+                    --spirit-test-size-padding-y: 12px;
+                    --spirit-test-size-padding-x: 16px;
                 }
             }
         }

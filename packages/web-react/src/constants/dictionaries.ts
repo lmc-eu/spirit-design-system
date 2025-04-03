@@ -138,3 +138,8 @@ export const FillVariants = {
   FILL: 'fill',
   OUTLINE: 'outline',
 } as const;
+
+export const ShapeVariants = {
+  BOX: 'box',
+  PILL: 'pill',
+} as const;

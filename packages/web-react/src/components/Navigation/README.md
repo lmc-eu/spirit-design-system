@@ -34,7 +34,7 @@ it will apply a gap between them.
 | Name        | Type                                                                                       | Default      | Required | Description                   |
 | ----------- | ------------------------------------------------------------------------------------------ | ------------ | -------- | ----------------------------- |
 | `children`  | \[`ReactElement<HTMLLIElement>` \| `ReactElement<NavigationItem>` \| Array of these types] | `null`       | ✓        | Content of the Navigation     |
-| `direction` | [Direction dictionary][direction-dictionary]                                               | `horizontal` | ✕        | Orientation of the Navigation |
+| `direction` | [Direction dictionary][dictionary-direction]                                               | `horizontal` | ✕        | Orientation of the Navigation |
 
 The components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -107,16 +107,16 @@ inherit the height of the `Header`.
 
 ### API
 
-| Name          | Type                              | Default | Required | Description                     |
-| ------------- | --------------------------------- | ------- | -------- | ------------------------------- |
-| `children`    | \[`string` \| `ReactNode`]        | `null`  | ✓        | Content of the NavigationAction |
-| `elementType` | `ElementType`                     | `a`     | ✕        | Type of element used as         |
-| `href`        | `string`                          | -       | ✕        | URL of the link                 |
-| `isDisabled`  | `boolean`                         | `false` | ✕        | Whether the action is disabled  |
-| `isSelected`  | `boolean`                         | `false` | ✕        | Whether the action is selected  |
-| `ref`         | `ForwardedRef<HTMLAnchorElement>` | —       | ✕        | Anchor element reference        |
-| `target`      | `string`                          | `null`  | ✕        | Link target                     |
-| `variant`     | \[`box` \| `pill`]                | `box`   | ✕        | Variant of the NavigationAction |
+| Name          | Type                                           | Default | Required | Description                     |
+| ------------- | ---------------------------------------------- | ------- | -------- | ------------------------------- |
+| `children`    | \[`string` \| `ReactNode`]                     | `null`  | ✓        | Content of the NavigationAction |
+| `elementType` | `ElementType`                                  | `a`     | ✕        | Type of element used as         |
+| `href`        | `string`                                       | -       | ✕        | URL of the link                 |
+| `isDisabled`  | `bool`                                         | `false` | ✕        | Whether the action is disabled  |
+| `isSelected`  | `bool`                                         | `false` | ✕        | Whether the action is selected  |
+| `ref`         | `ForwardedRef<HTMLAnchorElement>`              | —       | ✕        | Anchor element reference        |
+| `target`      | `string`                                       | `null`  | ✕        | Link target                     |
+| `variant`     | [Shape Variant Dictionary][dictionary-variant] | `box`   | ✕        | Variant of the NavigationAction |
 
 The components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -207,7 +207,8 @@ With Buttons:
 </Navigation>
 ```
 
-[direction-dictionary]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#direction
+[dictionary-direction]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#direction
+[dictionary-variant]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#variant
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props

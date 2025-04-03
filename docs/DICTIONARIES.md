@@ -16,6 +16,7 @@ This project uses `dictionaries` to unify props between different components.
 - [Placement](#placement)
 - [Size](#size)
 - [Validation](#validation)
+- [Variant](#variant)
 
 ### Alignment
 
@@ -81,6 +82,7 @@ This project uses `dictionaries` to unify props between different components.
 
 ### Variant
 
-| Dictionary   | Values            | Code name   |
-| ------------ | ----------------- | ----------- |
-| Fill Variant | `fill`, `outline` | FillVariant |
+| Dictionary    | Values            | Code name    |
+| ------------- | ----------------- | ------------ |
+| Fill Variant  | `fill`, `outline` | FillVariant  |
+| Shape Variant | `box`, `pill`     | ShapeVariant |

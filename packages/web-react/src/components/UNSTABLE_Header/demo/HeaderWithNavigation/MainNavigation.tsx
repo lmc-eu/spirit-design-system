@@ -1,8 +1,7 @@
 import React from 'react';
-import { Direction } from '../../../../constants';
+import { Direction, ShapeVariants } from '../../../../constants';
 import { NavigationActionVariantsType, SpiritNavigationProps } from '../../../../types';
 import { Navigation, NavigationAction, NavigationItem } from '../../../Navigation';
-import { NavigationActionVariants } from '../../../Navigation/constants';
 
 interface MainNavigationProps extends Partial<SpiritNavigationProps> {
   variant?: NavigationActionVariantsType;
@@ -10,7 +9,7 @@ interface MainNavigationProps extends Partial<SpiritNavigationProps> {
 
 export const MainNavigation = ({
   direction = Direction.HORIZONTAL,
-  variant = NavigationActionVariants.BOX,
+  variant = ShapeVariants.BOX,
 }: Partial<MainNavigationProps>) => (
   <Navigation
     aria-label="Main Navigation"

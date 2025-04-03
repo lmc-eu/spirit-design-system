@@ -42,7 +42,7 @@
     width: 100%;
 }
 
-@include dictionaries.generate-fill-variants(
+@include dictionaries.generate-variants(
     $class-name: 'SegmentedControl',
     $dictionary-values: theme.$fill-variant-dictionary,
     $config: theme.$fill-variant-config
