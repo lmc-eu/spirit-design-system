@@ -4,10 +4,6 @@ import Radio from '../Radio';
 const RadioValidation = () => {
   const [selectedRadio, setSelectedRadio] = useState('radio-warning-helper-text');
 
-  const handleChange = (id: string) => {
-    setSelectedRadio(id);
-  };
-
   return (
     <>
       <Radio
@@ -16,7 +12,7 @@ const RadioValidation = () => {
         name="validation"
         validationState="success"
         isChecked={selectedRadio === 'radio-success'}
-        onChange={() => handleChange('radio-success')}
+        onChange={() => setSelectedRadio('radio-success')}
       />
 
       <Radio
@@ -25,7 +21,7 @@ const RadioValidation = () => {
         name="validation"
         validationState="warning"
         isChecked={selectedRadio === 'radio-warning'}
-        onChange={() => handleChange('radio-warning')}
+        onChange={() => setSelectedRadio('radio-warning')}
       />
 
       <Radio
@@ -34,7 +30,7 @@ const RadioValidation = () => {
         name="validation"
         validationState="danger"
         isChecked={selectedRadio === 'radio-danger'}
-        onChange={() => handleChange('radio-danger')}
+        onChange={() => setSelectedRadio('radio-danger')}
       />
 
       <Radio
@@ -44,7 +40,7 @@ const RadioValidation = () => {
         name="validation"
         validationState="warning"
         isChecked={selectedRadio === 'radio-warning-helper-text'}
-        onChange={() => handleChange('radio-warning-helper-text')}
+        onChange={() => setSelectedRadio('radio-warning-helper-text')}
       />
     </>
   );

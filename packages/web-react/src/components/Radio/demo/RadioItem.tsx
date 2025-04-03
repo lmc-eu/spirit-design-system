@@ -4,10 +4,6 @@ import Radio from '../Radio';
 const RadioItem = () => {
   const [selectedRadio, setSelectedRadio] = useState('radio-item-default-checked');
 
-  const handleChange = (id: string) => {
-    setSelectedRadio(id);
-  };
-
   return (
     <>
       <Radio
@@ -16,7 +12,7 @@ const RadioItem = () => {
         label="Radio Label"
         name="item"
         isChecked={selectedRadio === 'radio-item-default'}
-        onChange={() => handleChange('radio-item-default')}
+        onChange={() => setSelectedRadio('radio-item-default')}
       />
 
       <Radio
@@ -25,7 +21,7 @@ const RadioItem = () => {
         label="Radio Label"
         name="item"
         isChecked={selectedRadio === 'radio-item-default-checked'}
-        onChange={() => handleChange('radio-item-default-checked')}
+        onChange={() => setSelectedRadio('radio-item-default-checked')}
       />
 
       <Radio
@@ -35,7 +31,7 @@ const RadioItem = () => {
         label="Radio Label"
         name="item"
         isChecked={selectedRadio === 'radio-item-helper-text'}
-        onChange={() => handleChange('radio-item-helper-text')}
+        onChange={() => setSelectedRadio('radio-item-helper-text')}
       />
 
       <Radio id="radio-item-disabled" isDisabled isItem label="Radio Label" name="itemDisabled" />
