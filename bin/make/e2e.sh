@@ -12,8 +12,8 @@ else
 fi
 UBUNTU_VERSION=noble
 
+PWD="$(pwd)"
 E2E_FLAG=""
-DOCKER_ARGS="--network=host"
 PORT_ARGS=""
 
 while [[ $# -gt 0 ]]; do
@@ -23,8 +23,6 @@ while [[ $# -gt 0 ]]; do
             ;;
         --ui)
             E2E_FLAG=":ui"
-            # For UI mode on Docker for Mac, we cannot use host networking.
-            DOCKER_ARGS=""
             # Map the UI port (9323) from container to host.
             UI_PORT=9323
             ;;
@@ -39,9 +37,15 @@ while [[ $# -gt 0 ]]; do
     shift
 done
 
+# `docker compose run` does not honor the ports configuration in the docker-compose file.
+# Instead, it requires explicit port mappings via the --publish flag.
+# On the other hand, `docker compose up` will use the ports configuration in the docker-compose file.
+docker_compose_command="run --rm e2e"
+
 # If running in UI mode, print the URL users should visit.
 if [ "$E2E_FLAG" = ":ui" ]; then
   echo "Open http://localhost:9323 in your browser."
+  docker_compose_command="up --remove-orphans"
 fi
 
 export PLAYWRIGHT_VERSION
@@ -49,5 +53,6 @@ export UBUNTU_VERSION
 export E2E_FLAG
 export XVFB
 export UI_PORT
+export PWD
 
-docker compose --file "${project_root}/bin/docker/docker-compose.e2e.yml" run --rm e2e
+docker compose --file "${project_root}/bin/docker/docker-compose.e2e.yml" ${docker_compose_command}

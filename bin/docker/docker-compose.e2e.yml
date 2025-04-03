@@ -7,8 +7,9 @@ services:
       - ${PWD}:/work/
     ipc: host
     ports:
-      - ${UI_PORT:-43008}:${UI_PORT:-43008}
-    network_mode: host
+      - target: ${UI_PORT:-43008}
+        published: ${UI_PORT:-43008}
+        protocol: tcp
     command: >
       bash -c "set -x &&
       corepack enable && corepack install &&
