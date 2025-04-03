@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import Checkbox from '../Checkbox';
 
 const CheckboxDefault = () => {
-  const [isCheckedDefault, setIsCheckedDefault] = useState(false);
-  const [isCheckedDefaultChecked, setIsCheckedDefaultChecked] = useState(true);
+  const [isFirstCheckboxChecked, setFirstCheckboxChecked] = useState(false);
+  const [isSecondCheckboxChecked, setSecondCheckboxChecked] = useState(true);
 
   return (
     <>
@@ -11,15 +11,15 @@ const CheckboxDefault = () => {
         id="checkbox-default"
         name="checkboxDefault"
         label="Checkbox Label"
-        isChecked={isCheckedDefault}
-        onChange={() => setIsCheckedDefault(!isCheckedDefault)}
+        isChecked={isFirstCheckboxChecked}
+        onChange={() => setFirstCheckboxChecked(!isFirstCheckboxChecked)}
       />
       <Checkbox
         id="checkbox-default-checked"
         name="checkboxDefaultChecked"
         label="Checkbox Label"
-        isChecked={isCheckedDefaultChecked}
-        onChange={() => setIsCheckedDefaultChecked(!isCheckedDefaultChecked)}
+        isChecked={isSecondCheckboxChecked}
+        onChange={() => setSecondCheckboxChecked(!isSecondCheckboxChecked)}
       />
     </>
   );
