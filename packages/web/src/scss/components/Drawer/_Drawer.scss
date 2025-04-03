@@ -33,7 +33,7 @@
 .Drawer--left {
     --#{tokens.$css-variable-prefix}drawer-translate-x: -100%;
 
-    justify-content: start;
+    justify-content: flex-start;
 }
 
 .Drawer--right {

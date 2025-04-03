@@ -18,7 +18,7 @@
 
             @include test.expect() {
                 .Test--alignmentXLeft {
-                    justify-content: start;
+                    justify-content: flex-start;
                 }
             }
         }

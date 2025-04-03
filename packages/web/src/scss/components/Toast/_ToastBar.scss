@@ -50,7 +50,7 @@
     display: grid;
     grid-template-columns: 1fr auto;
     column-gap: theme.$bar-gap;
-    align-items: start;
+    align-items: flex-start;
 }
 
 .ToastBar__container:has(> svg:first-child) {

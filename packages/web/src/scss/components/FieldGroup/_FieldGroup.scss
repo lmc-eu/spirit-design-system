@@ -27,7 +27,7 @@ $_field-name: 'FieldGroup';
 }
 
 .FieldGroup:not(.FieldGroup--fluid) .FieldGroup__fields {
-    justify-content: start;
+    justify-content: flex-start;
 }
 
 .FieldGroup__validationText,
