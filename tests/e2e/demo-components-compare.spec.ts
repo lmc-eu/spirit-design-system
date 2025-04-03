@@ -22,11 +22,7 @@ const runComponentCompareTests = (testConfig: TestConfig) => {
     test.describe(`Demo ${formattedPackageName} Components`, () => {
       const componentDirs = readdirSync(`${packageDir}${srcDir}${componentsDir}`, { withFileTypes: true })
         .filter((item) => item.isDirectory())
-        .filter((item) =>
-          readdirSync(`${packageDir}${srcDir}${componentsDir}/${item.name}`).includes(
-            packageName !== 'web-twig' ? 'index.html' : `${item.name}.stories.twig`,
-          ),
-        )
+        .filter((item) => readdirSync(`${packageDir}${srcDir}${componentsDir}/${item.name}`).includes('index.html'))
         .filter((item) => !IGNORED_TESTS.includes(item.name))
         // there is a problem with url on case insensitive systems
         .map((item) => (process.env.NODE_ENV ? item.name.toLowerCase() : item.name));
@@ -35,7 +31,7 @@ const runComponentCompareTests = (testConfig: TestConfig) => {
         test(`test demo ${formattedPackageName} component ${component}`, async ({ page }) => {
           try {
             const url = getServerUrl(packageName);
-            await page.goto(`${url}${componentsDir}/${component}/${packageName === 'web-twig' ? '?HIDE_TOOLBAR' : ''}`);
+            await page.goto(`${url}${componentsDir}/${component}/`);
             await waitForPageLoad(page);
             await hideFromVisualTests(page);
             await takeScreenshot(page, `${component}`, { fullPage: true });
@@ -69,15 +65,5 @@ const testConfigs: TestConfig[] = [
     packageName: 'web-react',
   },
 ];
-
-// Disable web-twig tests for now on CI, because we don't have a way to run them in CI yet.
-if (!isTestingEnvironment()) {
-  testConfigs.push({
-    componentsDir: '/components',
-    packageDir: 'packages/web-twig',
-    packageName: 'web-twig',
-    srcDir: '/src/Resources',
-  });
-}
 
 testConfigs.forEach(runComponentCompareTests);
