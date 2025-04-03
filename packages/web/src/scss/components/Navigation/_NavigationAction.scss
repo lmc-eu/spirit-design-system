@@ -3,8 +3,9 @@
 //    so we need to disable pointer events on it.
 // 3. We want the selected and expanded states to override the hover and active states.
 
-@use '../../tools/reset';
+@use '@tokens' as tokens;
 @use '../../tools/dictionaries';
+@use '../../tools/reset';
 @use '../../tools/typography';
 @use 'theme';
 
@@ -17,9 +18,10 @@
     display: flex;
     gap: theme.$action-gap;
     align-items: center;
-    padding: var(--spirit-navigation-action-padding-y) var(--spirit-navigation-action-padding-x);
+    padding: var(--#{tokens.$css-variable-prefix}navigation-action-padding-y)
+        var(--#{tokens.$css-variable-prefix}navigation-action-padding-x);
     color: theme.$action-color-state-default;
-    border-radius: var(--spirit-navigation-action-border-radius);
+    border-radius: var(--#{tokens.$css-variable-prefix}navigation-action-border-radius);
     background-color: theme.$action-background-color-state-default;
 
     @media (hover: hover) {

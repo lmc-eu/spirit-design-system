@@ -112,8 +112,8 @@ inherit the height of the `Header`.
 | `children`    | \[`string` \| `ReactNode`]                     | `null`  | ✓        | Content of the NavigationAction |
 | `elementType` | `ElementType`                                  | `a`     | ✕        | Type of element used as         |
 | `href`        | `string`                                       | -       | ✕        | URL of the link                 |
-| `isDisabled`  | `boolean`                                      | `false` | ✕        | Whether the action is disabled  |
-| `isSelected`  | `boolean`                                      | `false` | ✕        | Whether the action is selected  |
+| `isDisabled`  | `bool`                                         | `false` | ✕        | Whether the action is disabled  |
+| `isSelected`  | `bool`                                         | `false` | ✕        | Whether the action is selected  |
 | `ref`         | `ForwardedRef<HTMLAnchorElement>`              | —       | ✕        | Anchor element reference        |
 | `target`      | `string`                                       | `null`  | ✕        | Link target                     |
 | `variant`     | [Shape Variant Dictionary][dictionary-variant] | `box`   | ✕        | Variant of the NavigationAction |
