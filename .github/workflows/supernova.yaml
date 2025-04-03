@@ -6,9 +6,24 @@ on:
       - main
 
 jobs:
+  has-tags:
+    name: 🏷️ Analyze Tags
+    runs-on: ubuntu-24.04
+
+    outputs:
+      has-tag: ${{ steps.check-tag-exists.outputs.has-tag }}
+
+    steps:
+      - name: Check Tag On Commit
+        id: check-tag-exists
+        uses: ./.github/actions/has-tags
+
   publish:
     name: 🚀 Publish Supernova Documentation
+    needs: has-tags
+    if: ${{ needs.has-tags.outputs.has-tag == 'true' }}
     runs-on: ubuntu-24.04
+
     steps:
       - name: Clone repository
         uses: actions/checkout@v4
