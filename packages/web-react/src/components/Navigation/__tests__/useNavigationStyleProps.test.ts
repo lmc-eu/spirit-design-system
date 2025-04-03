@@ -1,16 +1,16 @@
 import { renderHook } from '@testing-library/react';
-import { Direction, ShapeVariant } from '../../../constants';
+import { Direction, ShapeVariants } from '../../../constants';
 import { SpiritNavigationActionProps } from '../../../types';
 import { useNavigationStyleProps } from '../useNavigationStyleProps';
 
 const navigationActionVariantDataProvider = [
   {
-    variant: ShapeVariant.BOX,
+    variant: ShapeVariants.BOX,
     className: 'NavigationAction--box',
     description: 'box variant',
   },
   {
-    variant: ShapeVariant.PILL,
+    variant: ShapeVariants.PILL,
     className: 'NavigationAction--pill',
     description: 'pill variant',
   },
@@ -48,7 +48,7 @@ describe('useNavigationStyleProps', () => {
   );
 
   it('should return pill variant default class', () => {
-    const props = { variant: ShapeVariant.PILL };
+    const props = { variant: ShapeVariants.PILL };
     const { result } = renderHook(() => useNavigationStyleProps(props));
 
     expect(result.current.classProps.action).toBe('NavigationAction NavigationAction--pill');

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { ElementType, forwardRef, ReactElement } from 'react';
-import { ShapeVariant } from '../../constants';
+import { ShapeVariants } from '../../constants';
 import { useStyleProps } from '../../hooks';
 import { PolymorphicRef, SpiritNavigationActionProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
@@ -10,7 +10,7 @@ import { useNavigationStyleProps } from './useNavigationStyleProps';
 
 const defaultProps: Partial<SpiritNavigationActionProps> = {
   elementType: 'a',
-  variant: ShapeVariant.BOX,
+  variant: ShapeVariants.BOX,
 };
 
 /* We need an exception for components exported with forwardRef */

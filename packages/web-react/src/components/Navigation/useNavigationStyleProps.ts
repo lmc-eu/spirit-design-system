@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { AlignmentYExtended, Direction, ShapeVariant } from '../../constants';
+import { AlignmentYExtended, Direction, ShapeVariants } from '../../constants';
 import { AlignmentPropertyType, useAlignmentClass, useClassNamePrefix } from '../../hooks';
 import {
   DirectionDictionaryType,
@@ -34,7 +34,7 @@ export const useNavigationStyleProps = ({
   isSquare = false,
   alignmentY = AlignmentYExtended.CENTER,
   direction = Direction.HORIZONTAL,
-  variant = ShapeVariant.BOX,
+  variant = ShapeVariants.BOX,
   ...restProps
 }: UseNavigationStyleProps): UseNavigationStyleReturn => {
   const navigationClass = useClassNamePrefix('Navigation');

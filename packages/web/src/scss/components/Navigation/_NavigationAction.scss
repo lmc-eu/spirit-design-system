@@ -46,7 +46,7 @@
 }
 
 .Navigation--horizontal {
-    @include dictionaries.generate-shape-variants(
+    @include dictionaries.generate-variants(
         $class-name: 'NavigationAction',
         $dictionary-values: theme.$action-shape-variant-dictionary,
         $config: theme.$horizontal-action-shape-variant-config
@@ -54,7 +54,7 @@
 }
 
 .Navigation--vertical {
-    @include dictionaries.generate-shape-variants(
+    @include dictionaries.generate-variants(
         $class-name: 'NavigationAction',
         $dictionary-values: theme.$action-shape-variant-dictionary,
         $config: theme.$vertical-action-shape-variant-config
