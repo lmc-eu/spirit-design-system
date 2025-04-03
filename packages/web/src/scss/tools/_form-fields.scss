@@ -272,11 +272,17 @@
     @include typography.generate(form-fields-theme.$item-helper-text-typography);
 }
 
-@mixin stretch($pseudo-element: before) {
+@mixin stretch($pseudo-element: before, $expand: left) {
     &::#{$pseudo-element} {
         content: '';
         position: absolute;
         inset: 0;
         z-index: 0;
+
+        @if $expand == 'left' {
+            left: -#{form-fields-theme.$inline-field-margin-x};
+        } @else {
+            right: -#{form-fields-theme.$inline-field-margin-x};
+        }
     }
 }

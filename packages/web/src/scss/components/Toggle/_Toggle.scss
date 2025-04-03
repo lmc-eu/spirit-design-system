@@ -25,6 +25,7 @@ $_field-name: 'Toggle';
 
 .Toggle__label {
     @include form-fields-tools.inline-field-label();
+    @include form-fields-tools.stretch(before, right);
 
     position: relative;
 }

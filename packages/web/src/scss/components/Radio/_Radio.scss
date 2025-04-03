@@ -1,6 +1,6 @@
 // 1. We need to set the background-color of the non-disabled Radio input to initial color when it is hovered
 //    or active, because we need it contrasting with the background color.
-// 2. Make the text selectable
+// 2. Make the text selectable and allow links to be clickable in the helper text.
 
 @use 'sass:map';
 @use '../../theme/form-fields' as form-fields-theme;

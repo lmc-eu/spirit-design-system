@@ -2,7 +2,7 @@
 //    and therefore bloating the CSS.
 // 2. We need to set the background-color of the non-disabled Checkbox input to initial color when it is hovered
 //    or active, because we need it contrasting with the background color.
-// 3. Make the text selectable
+// 3. Make the text selectable and allow links to be clickable in the helper text.
 
 @use 'theme';
 @use '../../theme/form-fields' as form-fields-theme;
@@ -21,6 +21,9 @@ $_field-name: 'Checkbox';
 
 .Checkbox__label {
     @include form-fields-tools.inline-field-label();
+    @include form-fields-tools.stretch(before, left);
+
+    position: relative;
 }
 
 .Checkbox__label--hidden {
