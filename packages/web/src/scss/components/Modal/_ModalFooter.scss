@@ -32,7 +32,7 @@
 
 @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
     .ModalFooter--left {
-        justify-content: start;
+        justify-content: flex-start;
         text-align: left;
     }
 
