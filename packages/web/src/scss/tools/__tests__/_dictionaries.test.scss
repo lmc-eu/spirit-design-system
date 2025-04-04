@@ -18,7 +18,8 @@
 
             @include test.expect() {
                 .Test--alignmentXLeft {
-                    justify-content: flex-start;
+                    // stylelint-disable declaration-property-value-disallowed-list
+                    justify-content: start;
                 }
             }
         }
