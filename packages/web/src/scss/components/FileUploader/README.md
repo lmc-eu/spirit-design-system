@@ -114,8 +114,10 @@ The maximum size of the uploaded file that is validated by the JavaScript plugin
 
 ### Maximum Number of Files in Queue (JavaScript)
 
-Limit of the maximum number of uploaded files. The default value is 10, but any value can be set via
+Limit of the maximum number of uploaded files. The default value is `1`, but any value can be set via
 the `data-spirit-file-queue-limit` attribute:
+
+⚠️ When `data-spirit-file-queue-limit` > `1` the `multiple` attribute must be present on input.
 
 ```html
 <div class="FileUploader" data-spirit-toggle="fileUploader">

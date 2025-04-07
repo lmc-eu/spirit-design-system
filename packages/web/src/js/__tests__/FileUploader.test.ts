@@ -127,7 +127,7 @@ describe('FileUploader', () => {
       const fileUploaderEl = fixtureEl.querySelector('[data-spirit-toggle="fileUploader"]') as HTMLElement;
       const fileUploaderInstance = new FileUploader(fileUploaderEl);
       expect(fileUploaderInstance.fileSizeLimit).toBe(10000000); // Default file size limit
-      expect(fileUploaderInstance.fileQueueLimit).toBe(10); // Default file queue limit
+      expect(fileUploaderInstance.fileQueueLimit).toBe(1); // Default file queue limit
     });
   });
 

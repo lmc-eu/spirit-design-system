@@ -4,7 +4,7 @@
 
   <div class="Container">
 
-    <h2 class="docs-Heading">Input</h2>
+    <h2 class="docs-Heading">Input Single File</h2>
 
     <div class="docs-Stack docs-Stack--start">
       <!-- FileUploader: start -->
@@ -29,7 +29,11 @@
         <!-- FileUploaderAttachment template: end -->
 
         <!-- FileUploaderInput: start -->
-        <div class="FileUploaderInput" data-spirit-element="wrapper">
+        <div class="FileUploaderInput"
+          data-spirit-element="wrapper"
+          data-spirit-file-queue-limit="1"
+          data-spirit-queue-limit-behavior="disable"
+        >
           <label for="file-uploader" class="FileUploaderInput__label">Label</label>
           <input
             type="file"

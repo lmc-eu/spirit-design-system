@@ -26,7 +26,7 @@ const DATA_DISMISS_ATTRIBUTE = 'data-spirit-dismiss';
 const DATA_ELEMENT_VALIDATION_TEXT = 'validation_text';
 const SELECTOR_VALIDATION_TEXT = `[data-spirit-element="${DATA_ELEMENT_VALIDATION_TEXT}"]`;
 const DEFAULT_FILE_SIZE_LIMIT = 10000000; // = 10 MB
-const DEFAULT_FILE_QUEUE_LIMIT = 10;
+const DEFAULT_FILE_QUEUE_LIMIT = 1;
 const DEFAULT_ERROR_MESSAGES = {
   errorMaxFileSize: 'The file size limit has been exceeded',
   errorFileDuplicity: 'This file already exists in the queue',
