@@ -51,7 +51,7 @@ type UseResizeObserverOptions<T extends HTMLElement = HTMLElement> = {
   /**
    * The box model to use for the ResizeObserver.
    *
-   * @default 'content-box'
+   * @default 'border-box'
    */
   box?: 'border-box' | 'content-box' | 'device-pixel-content-box';
 };
@@ -73,14 +73,14 @@ const initialSize: Size = {
  * const myRef = useRef(null);
  * const { width = 0, height = 0 } = useResizeObserver({
  *   ref: myRef,
- *   box: 'content-box',
+ *   box: 'border-box',
  * });
  *
  * <div ref={myRef}>Hello, world!</div>
  * ```
  */
 export function useResizeObserver<T extends HTMLElement = HTMLElement>(options: UseResizeObserverOptions<T>): Size {
-  const { ref, box = 'content-box' } = options;
+  const { ref, box = 'border-box' } = options;
   const [{ width, height }, setSize] = useState<Size>(initialSize);
   const isMounted = useIsMounted();
   const previousSize = useRef<Size>({ ...initialSize });
