@@ -28,6 +28,7 @@ const FileUploaderMultipleWithValidation = () => {
         labelText="or drag and drop here"
         linkText="Upload your file(s)"
         name="attachments"
+        maxUploadedFiles={2}
         /* eslint-disable-next-line no-console */
         onError={(error) => console.error('My error log', error)}
       />

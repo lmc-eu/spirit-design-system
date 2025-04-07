@@ -22,13 +22,14 @@ const FileUploaderInputMultiple = () => {
       <FileUploaderInput
         helperText="Max size of each file is 10 MB"
         id="file-uploader-multiple-input"
+        isMultiple
         label="Label"
         labelText="or drag and drop here"
         linkText="Upload your file(s)"
         name="attachments"
+        maxUploadedFiles={2}
         /* eslint-disable-next-line no-console */
         onError={(error) => console.error('My error log', error)}
-        isMultiple
       />
       <FileUploaderList
         attachmentComponent={attachmentComponent}

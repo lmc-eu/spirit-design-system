@@ -48,14 +48,14 @@ const { fileQueue, addToQueue, clearQueue, onDismiss } = useFileQueue();
 >
   <FileUploaderInput
     id="file-uploader-example-input"
+    isMultiple
     name="attachments"
     label="Label"
     linkText="Upload your file(s)"
     labelText="or drag and drop here"
     helperText="Max file size is 10 MB"
     validationText="Validation message"
-    maxUploadedFiles={5}
-    isMultiple
+    maxUploadedFiles={3}
   />
   <FileUploaderList
     id="file-uploader-example-list"
@@ -108,6 +108,7 @@ FileUploaderInput will disappear or disable after reaching the limit for files i
 ```javascript
 <FileUploader>
   <FileUploaderInput
+    isMultiple
     isRequired
     validationState="success"
     validationText="Validation message"
@@ -279,15 +280,16 @@ const resetStateHandler = () => {
     inputId="fileUploaderUncontrolledInput"
     inputName="attachments"
     inputLabel="Input label"
+    isMultiple
     listId="file-uploader-uncontrolled-list"
     linkText="Upload your file(s)"
     labelText="or drag and drop here"
     helperText="Max file size is 10 MB"
+    maxUploadedFiles={2}
     onChange={changeHandler}
     onInputError={errorHandler}
     validationState={validationState}
     validationText={validationText}
-    isMultiple
   />
   <div style={{ paddingTop: '1rem' }}>
     <Button type="submit" color="primary" isDisabled={submitting || submitted}>
@@ -387,12 +389,14 @@ and [escape hatches][readme-escape-hatches].
 | `labelText`          | `string`                             | —        | ✕        | Label for input in Drop zone                                                                                                                                    |
 | `linkText`           | `string`                             | —        | ✕        | Link text in input in Drop zone                                                                                                                                 |
 | `maxFileSize`        | `number`                             | 1000000  | ✕        | The maximum size of the uploaded file in **bytes**. [Learn how file sizes are calculated](#understanding-file-size-in-bytes).                                   |
-| `maxUploadedFiles`   | `number`                             | 10       | ✕        | Maximum file upload queue size                                                                                                                                  |
+| `maxUploadedFiles`   | `number`                             | 1        | ✕        | Maximum file upload queue size                                                                                                                                  |
 | `name`               | `string`                             | —        | ✓        | Field name, will be used for each attachment in the queue                                                                                                       |
 | `onError`            | `FileUploaderErrorCallbackType`      | —        | ✕        | Callback on error condition                                                                                                                                     |
 | `queueLimitBehavior` | \[`hide` \| `disable` \| `none`]     | `none`   | ✕        | Input behavior when the file queue is filled                                                                                                                    |
 | `validationState`    | `ValidationState`                    | —        | ✕        | Validation state                                                                                                                                                |
 | `validationText`     | \[`ReactNode` \| `ReactNode[]`]      | —        | ✕        | Validation status text                                                                                                                                          |
+
+ℹ️ **Note:** When `maxUploadedFiles` is greater than 1, `isMultiple` must be `true`.
 
 The rest of the properties are created from the default `<input>` element. [More about the element][input-element-docs]
 
@@ -494,12 +498,14 @@ via `inputProps` and `listProps`.
 | `listId`              | `string`                                | —        | ✓        | FileUploaderList id                                                                                                           |
 | `listProps`           | `Partial<FileUploaderListBaseProps>`    | —        | ✕        | Rest of FileUploaderList props                                                                                                |
 | `maxFileSize`         | `number`                                | 1000000  | ✕        | The maximum size of the uploaded file in **bytes**. [Learn how file sizes are calculated](#understanding-file-size-in-bytes). |
-| `maxUploadedFiles`    | `number`                                | 10       | ✕        | Maximum file upload queue size                                                                                                |
+| `maxUploadedFiles`    | `number`                                | 1        | ✕        | Maximum file upload queue size                                                                                                |
 | `onChange`            | `(fileQueue: FileQueueMapType) => void` | —        | ✕        | Callback on change in fileQueue                                                                                               |
 | `onInputError`        | `FileUploaderErrorCallbackType`         | —        | ✕        | Callback on error condition                                                                                                   |
 | `queueLimitBehavior`  | \[`hide` \| `disable` \| `none`]        | `none`   | ✕        | Input behavior when the file queue is filled                                                                                  |
 | `validationState`     | `ValidationState`                       | —        | ✕        | Validation state                                                                                                              |
 | `validationText`      | \[`string` \| `string[]`]               | —        | ✕        | Validation status text                                                                                                        |
+
+ℹ️ **Note:** When `maxUploadedFiles` is greater than 1, `isMultiple` must be `true`.
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

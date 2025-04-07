@@ -11,9 +11,7 @@ const FileUploaderMetaData = () => {
   const [toggleMeta, setToggleMeta] = useState<boolean>(false);
   const { fileQueue, addToQueue, clearQueue, onDismiss, updateQueue, findInQueue } = useFileQueue();
 
-  const customOnDismiss = (key: string) => {
-    return onDismiss(key);
-  };
+  const customOnDismiss = (key: string) => onDismiss(key);
 
   const customAddToQueue = (key: string, file: File) => {
     if (file.type.includes('image')) {

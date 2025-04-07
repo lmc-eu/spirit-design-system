@@ -74,10 +74,8 @@ const FileUploaderWithHooks = (args: SpiritFileUploaderProps) => {
         labelText="or drag and drop here"
         helperText="Max file size is 10 MB"
         validationText="Validation message"
-        maxUploadedFiles={2}
         /* eslint-disable-next-line no-console */
         onError={(error) => console.error('My error log', error)}
-        isMultiple
       />
       <FileUploaderList
         id="file-uploader-example-list"

@@ -83,7 +83,7 @@ const meta: Meta<typeof UncontrolledFileUploader> = {
     maxUploadedFiles: {
       control: 'number',
       table: {
-        defaultValue: { summary: '10' },
+        defaultValue: { summary: '1' },
       },
     },
     queueLimitBehavior: {
@@ -118,7 +118,8 @@ const meta: Meta<typeof UncontrolledFileUploader> = {
     isDisabled: false,
     isFluid: false,
     isLabelHidden: false,
-    isMultiple: true,
+    isMultiple: false,
+    maxUploadedFiles: 1,
     isRequired: false,
   },
 };

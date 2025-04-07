@@ -1,5 +1,5 @@
 export const DEFAULT_FILE_SIZE_LIMIT = 10000000; // = 10 MB
-export const DEFAULT_FILE_QUEUE_LIMIT = 10;
+export const DEFAULT_FILE_QUEUE_LIMIT = 1;
 export const IMAGE_DIMENSION = 54; // px; @see: CSS class `.FileUploaderAttachment__image` in _FileUploaderAttachment.scss
 export const IMAGE_PREVIEW_BASE64_MAX_WIDTH = 500; // px
 
