@@ -10,7 +10,7 @@
 {%- set _isRequired = props.isRequired | default(false) -%}
 {%- set _label = props.label | default(null) -%}
 {%- set _maxFileSize = props.maxFileSize | default(null) -%}
-{%- set _maxUploadedFiles = props.maxUploadedFiles | default(null) -%}
+{%- set _maxUploadedFiles = props.maxUploadedFiles | default(1) -%}
 {%- set _name = props.name | default(null) -%}
 {%- set _pickAFileText = props.pickAFileText | default('Upload your file') -%}
 {%- set _queueLimitBehavior = props.queueLimitBehavior | default(null) -%}
