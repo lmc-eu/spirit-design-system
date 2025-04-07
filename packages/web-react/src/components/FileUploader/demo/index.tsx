@@ -26,7 +26,7 @@ import FileUploaderMultipleWithValidation from './FileUploaderMultipleWithValida
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <IconsProvider value={icons}>
-      <DocsSection title="Input">
+      <DocsSection title="Input Single File">
         <FileUploaderDefault />
       </DocsSection>
       <DocsSection title="Input Multiple">

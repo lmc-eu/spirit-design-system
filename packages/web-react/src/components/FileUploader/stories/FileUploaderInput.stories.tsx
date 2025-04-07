@@ -65,7 +65,7 @@ const meta: Meta<typeof FileUploaderInput> = {
     maxUploadedFiles: {
       control: 'number',
       table: {
-        defaultValue: { summary: '10' },
+        defaultValue: { summary: '1' },
       },
     },
     name: {
@@ -111,7 +111,7 @@ const meta: Meta<typeof FileUploaderInput> = {
     label: 'Label',
     labelText: 'or drag and drop here',
     linkText: 'Upload your file(s)',
-    maxUploadedFiles: 2,
+    maxUploadedFiles: 1,
     name: 'attachments',
     onError: undefined,
     validationState: undefined,

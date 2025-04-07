@@ -91,7 +91,7 @@ const FileUploaderInput = (props: SpiritFileUploaderInputProps) => {
         {label}
       </Label>
       <input
-        aria-describedby={ids.join(' ')}
+        {...(ids.length && { 'aria-describedby': ids.join(' ') })}
         type="file"
         accept={accept}
         id={id}

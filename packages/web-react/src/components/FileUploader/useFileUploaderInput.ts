@@ -36,6 +36,12 @@ export const useFileUploaderInput = (props: UseFileUploaderInputProps): UseFileU
     }
   };
 
+  const checkIsMultiple = () => {
+    if (maxUploadedFiles > 1 && !isMultiple) {
+      throw new Error('`isMultiple` props must be set when maxUploadedFiles is greater than `1`');
+    }
+  };
+
   const checkFileDuplicity = (file: File) => {
     if (isMultiple && fileQueue.has(getUpdatedFileName(file.name))) {
       throw new Error(`${file.name}: ${errorMessages?.errorFileDuplicity}`);
@@ -108,6 +114,7 @@ export const useFileUploaderInput = (props: UseFileUploaderInputProps): UseFileU
       checkAllowedFileSize(file);
       checkAllowedFileType(file);
       checkQueueSize();
+      checkIsMultiple();
       addToQueue(getUpdatedFileName(file.name), file);
     } catch (error) {
       if (onError) {
