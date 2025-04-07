@@ -32,6 +32,13 @@
     UNSAFE_validationText="<span>UNSAFE validation text</span>"
 />
 
+<!-- Render with multiple -->
+<FileUploaderInput
+    id="example-with-single-file-uploader"
+    maxUploadedFiles={ 2 }
+    multiple
+/>
+
 <!-- Render with all props -->
 <FileUploaderInput
     hasValidationIcon
@@ -43,6 +50,8 @@
     isLabelHidden
     isRequired
     label="Label"
+    maxUploadedFiles={ 2 }
+    multiple
     name="example-input"
     pickAFileText="Pick a file"
     UNSAFE_helperText="<span>UNSAFE helper text</span>"

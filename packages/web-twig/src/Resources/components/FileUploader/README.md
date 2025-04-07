@@ -96,6 +96,8 @@ If supported by the device, FileUploaderInput automatically turns on the drag-an
 To pick more than one file, just add the [`multiple`][mdn-multiple] attribute that will be transferred to the native
 HTML input:
 
+⚠️ **Note:** When `maxUploadedFiles` is greater than 1, `multiple` must be `true`.
+
 ```twig
 <FileUploaderInput
   id="example-input"
@@ -218,7 +220,7 @@ To mark the input as disabled, simply add the `isDisabled` attribute:
 | `isRequired`            | `bool`                                         | `false`                 | ✕        | If true, input is marked as required                                                                               |
 | `label`                 | `string`                                       | `null`                  | ✕\*      | Label text                                                                                                         |
 | `maxFileSize`           | `number`                                       | `1000000`               | ✕        | The maximum size of the uploaded file in **bytes**. [Learn how file sizes are calculated][learn-about-file-sizes]. |
-| `maxUploadedFiles`      | `number`                                       | `10`                    | ✕        | Maximum file upload queue size                                                                                     |
+| `maxUploadedFiles`      | `number`                                       | `1`                     | ✕        | Maximum file upload queue size                                                                                     |
 | `multiple`              | `void`                                         | `null`                  | ✕        | If set, [multiple files can be selected][multiple-attr]                                                            |
 | `name`                  | `string`                                       | `null`                  | ✕        | Input name                                                                                                         |
 | `pickAFileText`         | `string`                                       | `Upload your file`      | ✕        | Text shown in the drop zone                                                                                        |
