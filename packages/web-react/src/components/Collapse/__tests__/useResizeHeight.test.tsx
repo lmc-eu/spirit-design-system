@@ -15,8 +15,13 @@ const TestComponent = () => {
 };
 
 const resize = (height: number) => {
-  global.ResizeObserver = jest.fn().mockImplementation((cb) => {
-    cb([{ contentRect: { height } }]);
+  global.ResizeObserver = jest.fn().mockImplementation((callback) => {
+    callback([
+      {
+        borderBoxSize: [{ blockSize: height, inlineSize: 0 }],
+        contentRect: { height },
+      },
+    ]);
 
     return { observe: jest.fn(), disconnect: jest.fn(), unobserve: jest.fn() };
   });
