@@ -3,6 +3,7 @@
 // 3. Label has z-index 2, so it's always on top of the highlight, last one contains pseudo element with highlight, so checked label has z-index 3.
 // 4. Because of truncate on the text inside of label we need to set min-width, otherwise flex will overflow and all items will not have the same width.
 // 5. Due to the selector's specificity, it cannot be made less specific.
+// 6. Opacity is initially set to 0 to prevent visual shifting during initialization. JS sets the CSS variable value and applies the `is-transitioning` class on change to enable transitions.
 
 @use '@tokens' as tokens;
 @use '../../tools/accessibility';
@@ -99,15 +100,13 @@
 
 // 1.
 .SegmentedControl[data-spirit-toggle]:has([type='radio']) {
-    @media (prefers-reduced-motion: no-preference) {
-        // stylelint-disable-next-line  selector-max-specificity, selector-nested-pattern -- 5.
-        .SegmentedControlItem__label:last-of-type::after {
-            opacity: 0; // 2.
-        }
+    // stylelint-disable-next-line  selector-max-specificity -- 5.
+    &:not(.is-initialized) ::after {
+        opacity: 0; // 6.
+    }
 
-        // stylelint-disable-next-line selector-max-specificity, selector-max-class -- 5.
-        &.is-initialized .SegmentedControlItem__label:last-of-type::after {
-            opacity: 1; // 2.
-        }
+    // stylelint-disable-next-line  selector-max-specificity -- 5.
+    &:not(.is-transitioning) ::after {
+        transition: none; // 6.
     }
 }
