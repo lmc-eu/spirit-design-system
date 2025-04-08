@@ -1,5 +1,6 @@
 import { cssVariablePrefix } from '@lmc-eu/spirit-design-tokens';
 import { clearFixture, getFixture } from '../../../tests/helpers/fixture';
+import { CLASS_NAME_TRANSITIONING } from '../constants';
 import SegmentedControl from '../SegmentedControl';
 
 describe('SegmentedControl', () => {
@@ -59,13 +60,18 @@ describe('SegmentedControl', () => {
       expect(instance.parent.style.getPropertyValue(`--${cssVariablePrefix}segmented-control-highlight-pos`)).toBe('1');
     });
 
-    it('should add initialized class when transform transition ends', () => {
+    it('should add transition class on change', () => {
       const instance = new SegmentedControl(fixtureControl);
-      const event = new Event('transitionend');
-      Object.defineProperty(event, 'propertyName', { value: 'transform', configurable: true });
+      const secondInput = instance.parent.querySelector('input:nth-child(3)') as HTMLElement;
 
-      // @ts-ignore
-      instance.onTransitionEnd(event);
+      secondInput.setAttribute('checked', 'checked');
+      secondInput.dispatchEvent(new Event('change'));
+
+      expect(instance.parent.classList.contains(CLASS_NAME_TRANSITIONING)).toBe(true);
+    });
+
+    it('should add init class on initialization', () => {
+      const instance = new SegmentedControl(fixtureControl);
 
       expect(instance.parent.classList.contains('is-initialized')).toBe(true);
     });

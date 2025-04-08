@@ -2,6 +2,7 @@ import { cssVariablePrefix } from '@lmc-eu/spirit-design-tokens';
 import BaseComponent from './BaseComponent';
 import { EventHandler } from './dom';
 import SelectorEngine from './dom/SelectorEngine';
+import { CLASS_NAME_TRANSITIONING } from './constants';
 import { enableToggleAutoloader, SpiritConfig } from './utils';
 
 const NAME = 'segmentedControl';
@@ -10,7 +11,6 @@ const EVENT_KEY = `.${DATA_KEY}`;
 const SELECTOR_INPUT = '[type="radio"]';
 const CLASS_NAME_INIT = 'is-initialized';
 const EVENT_CHANGE = `change${EVENT_KEY}`;
-const PROPERTY_NAME_TRANSITION = 'transform';
 
 class SegmentedControl extends BaseComponent {
   parent: HTMLElement;
@@ -52,20 +52,15 @@ class SegmentedControl extends BaseComponent {
     parent.style.setProperty(`--${cssVariablePrefix}segmented-control-highlight-pos`, position.toString());
   }
 
-  onTransitionEnd(event: { propertyName: string }) {
-    if (event.propertyName === PROPERTY_NAME_TRANSITION) {
-      this.parent.classList.add(CLASS_NAME_INIT);
-    }
-  }
-
   onChange(): void {
     SegmentedControl.setActivePosition(this.parent, this.inputs);
+    this.parent.classList.add(CLASS_NAME_TRANSITIONING);
     EventHandler.trigger(this.parent, EVENT_CHANGE);
   }
 
   onInit(): void {
+    this.parent.classList.add(CLASS_NAME_INIT);
     SegmentedControl.setActivePosition(this.parent, this.inputs);
-    EventHandler.on(this.parent, 'transitionend', this.onTransitionEnd.bind(this));
   }
 
   addEventListeners(): void {
