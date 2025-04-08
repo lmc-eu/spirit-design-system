@@ -123,6 +123,41 @@ Create a file `src/app/globals.scss` and add the following import:
 @forward '@lmc-eu/spirit-web/scss';
 ```
 
+### PostCSS Configuration
+
+If you encounter the following warning:
+
+`autoprefixer: start value has mixed support, consider using flex-start instead`
+
+If you don't need to support older browsers (e.g. Internet Explorer 11), you can suppress this warning by customizing the PostCSS configuration.
+The following configuration disables support for the outdated 2009 flexbox specification, which helps prevent compatibility warnings related to legacy flexbox syntax.
+
+Create a `postcss.config.js` file in the root of your project with the following content:
+
+```js
+module.exports = {
+  plugins: {
+    autoprefixer: {
+      flexbox: 'no-2009',
+    },
+  },
+};
+```
+
+Alternatively, you can use a JSON configuration by creating a `postcss.config.json` file:
+
+```json
+{
+  "plugins": {
+    "autoprefixer": {
+      "flexbox": "no-2009"
+    }
+  }
+}
+```
+
+For more information see [Next.js PostCSS documentation][nextjs-postcss-documentation].
+
 ### Updating the Application Layout
 
 Open `src/app/layout.tsx` and modify it as follows:
@@ -166,5 +201,6 @@ For instructions, see [Running the Development Server](#running-the-development-
 
 Congratulation! The application will now be running at http://localhost:3000 and using the Spirit Design System.
 
+[nextjs-postcss-documentation]: https://nextjs.org/docs/pages/building-your-application/configuring/post-css
 [npm-error-enoworkspaces]: https://github.com/vercel/turborepo/issues/4183
 [rebranding-spirit]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/design-tokens/README.md#rebranding-spirit
