@@ -15,6 +15,9 @@ and radius using utility class `rounded-<radius>`. Use `rounded-<breakpoint>-<ra
 <div class="border-basic border-100 rounded-200 border-solid border-dashed">Without radius</div>
 ```
 
+⚠️ When you apply `border-<style>` without defining `border-<width>` or `border-<color>`, browsers automatically
+set `border-color: currentColor` and `border-width: medium`.
+
 ## Padding
 
 You can define padding using utility class `p-<padding>`.
