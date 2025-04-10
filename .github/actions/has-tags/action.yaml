@@ -1,20 +1,15 @@
 name: 'has tags'
 description: 'Has Tags'
+
+outputs:
+  has-tag:
+    description: 'Whether there is a tag on the commit'
+    value: ${{ steps.check-tag-exists.outputs.has-tag }}
+
 runs:
   using: 'composite'
 
-  outputs:
-    has-tag: ${{ steps.check-tag-exists.outputs.has-tag }}
-
   steps:
-    - name: Clone repository
-      uses: actions/checkout@v4
-      with:
-        # Even though this is set, shallow clones do not always retrieve all tags correctly
-        fetch-tags: true
-        # So we need to fetch full history, including all tags
-        fetch-depth: 0
-
     # ⚠️ This check works only if the tag is pushed alongside the commit
     # Please, use `git push && git push --tags` or `git push --follow-tags` (works only for annotated tags)
     - name: Check Tag On Commit
