@@ -11,22 +11,26 @@ Basic example usage:
 Advanced example usage:
 
 ```twig
-<ScrollView direction="horizontal" overflowDecorators="both" data-spirit-toggle="scrollView"
-  >ScrollView content</ScrollView
+<ScrollView
+  direction="horizontal"
+  overflowDecorators="both"
+  data-spirit-toggle="scrollView"
 >
+  ScrollView content
+</ScrollView>
 ```
 
 Without lexer:
 
 ```twig
 {% embed "@spirit/scrollView.twig" with { props: {
-    direction: 'horizontal',
-    overflowDecorators: 'both',
-    data-spirit-toggle: 'scrollView'
+  direction: 'horizontal',
+  overflowDecorators: 'both',
+  data-spirit-toggle: 'scrollView'
 }} %}
-    {% block content %}
-        ScrollView content
-    {% endblock %}
+  {% block content %}
+    ScrollView content
+  {% endblock %}
 {% endembed %}
 ```
 

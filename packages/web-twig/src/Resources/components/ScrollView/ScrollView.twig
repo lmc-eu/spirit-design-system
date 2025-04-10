@@ -26,7 +26,8 @@
     {{ classProp(_classNames) }}
     data-spirit-direction="{{ _direction }}"
 >
-    <div class="{{ _viewportClassName }}" data-spirit-element="viewport">
+    {# Tabindex is required for the scrollable area to be focusable and to allow keyboard navigation with arrow keys. #}
+    <div class="{{ _viewportClassName }}" data-spirit-element="viewport" tabindex="0">
         <div class="{{ _contentClassName }}" data-spirit-element="content">
 
             {%- block content %}{% endblock -%}
