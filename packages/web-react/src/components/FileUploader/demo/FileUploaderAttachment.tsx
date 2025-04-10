@@ -12,7 +12,7 @@ const FileUploaderAttachment = () => {
   // ⚠️ VISUAL EXAMPLE ONLY, DO NOT COPY-PASTE
   return (
     <div className="FileUploader">
-      <div className="FileUploaderList">
+      <ul className="FileUploaderList">
         <FileUploaderAttachmentComponent
           name="test"
           file={new File([''], 'Document.pdf', { type: 'image/png', lastModified: 123456789 })}
@@ -40,7 +40,7 @@ const FileUploaderAttachment = () => {
           onDismiss={onDismiss}
           imageObjectFit="contain"
         />
-      </div>
+      </ul>
     </div>
   );
 };
