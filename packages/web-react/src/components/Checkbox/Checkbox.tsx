@@ -2,7 +2,7 @@
 
 import classNames from 'classnames';
 import React, { ForwardedRef, forwardRef } from 'react';
-import { useStyleProps } from '../../hooks';
+import { useAriaDescribedBy, useStyleProps } from '../../hooks';
 import { SpiritCheckboxProps } from '../../types';
 import { HelperText, Label, ValidationText, useAriaIds } from '../Field';
 import { useValidationTextRole } from '../Field/useValidationTextRole';
@@ -28,6 +28,7 @@ const _Checkbox = (props: SpiritCheckboxProps, ref: ForwardedRef<HTMLInputElemen
   } = modifiedProps;
   const { styleProps, props: otherProps } = useStyleProps(restProps);
   const [ids, register] = useAriaIds(ariaDescribedBy);
+  const ariaDescribedByProp = useAriaDescribedBy(ids);
   const validationTextRole = useValidationTextRole({
     validationState,
     validationText,
@@ -37,7 +38,7 @@ const _Checkbox = (props: SpiritCheckboxProps, ref: ForwardedRef<HTMLInputElemen
     <div style={styleProps.style} className={classNames(classProps.root, styleProps.className)}>
       <input
         {...otherProps}
-        {...(ids.length && { 'aria-describedby': ids.join(' ') })}
+        {...ariaDescribedByProp}
         type="checkbox"
         id={id}
         className={classProps.input}

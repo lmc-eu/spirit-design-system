@@ -2,7 +2,7 @@
 
 import classNames from 'classnames';
 import React, { CSSProperties, ChangeEvent, FormEvent, ForwardedRef, forwardRef } from 'react';
-import { useStyleProps } from '../../hooks';
+import { useAriaDescribedBy, useStyleProps } from '../../hooks';
 import { SpiritSliderProps } from '../../types';
 import { HelperText, Label, ValidationText, useAriaIds } from '../Field';
 import { useValidationTextRole } from '../Field/useValidationTextRole';
@@ -40,6 +40,7 @@ const _Slider = (props: SpiritSliderProps, ref: ForwardedRef<HTMLInputElement>) 
   });
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
   const [ids, register] = useAriaIds(ariaDescribedBy);
+  const ariaDescribedByProp = useAriaDescribedBy(ids);
   const validationTextRole = useValidationTextRole({
     validationState,
     validationText,
@@ -62,7 +63,7 @@ const _Slider = (props: SpiritSliderProps, ref: ForwardedRef<HTMLInputElement>) 
         {label}
       </Label>
       <input
-        aria-describedby={ids.join(' ')}
+        {...ariaDescribedByProp}
         className={classProps.input}
         id={id}
         onInput={handleInput}

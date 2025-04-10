@@ -2,7 +2,7 @@
 
 import classNames from 'classnames';
 import React, { ForwardedRef, forwardRef } from 'react';
-import { useStyleProps } from '../../hooks';
+import { useAriaDescribedBy, useStyleProps } from '../../hooks';
 import { SpiritTextFieldBaseProps, TextFieldBasePasswordToggleProps } from '../../types';
 import { HelperText, Label, ValidationText, useAriaIds } from '../Field';
 import { useValidationTextRole } from '../Field/useValidationTextRole';
@@ -35,6 +35,7 @@ const _TextFieldBase = (props: SpiritTextFieldBaseProps, ref: ForwardedRef<HTMLI
   });
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
   const [ids, register] = useAriaIds(ariaDescribedBy);
+  const ariaDescribedByProp = useAriaDescribedBy(ids);
   const validationTextRole = useValidationTextRole({
     validationState,
     validationText,
@@ -45,7 +46,7 @@ const _TextFieldBase = (props: SpiritTextFieldBaseProps, ref: ForwardedRef<HTMLI
       <Label htmlFor={id} UNSAFE_className={classProps.label}>
         {label}
       </Label>
-      <TextFieldBaseInputWithPasswordToggle {...otherProps} id={id} aria-describedby={ids.join(' ')} ref={ref} />
+      <TextFieldBaseInputWithPasswordToggle {...otherProps} {...ariaDescribedByProp} id={id} ref={ref} />
       <HelperText
         UNSAFE_className={classProps.helperText}
         id={`${id}__helperText`}
