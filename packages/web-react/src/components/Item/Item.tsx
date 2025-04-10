@@ -24,12 +24,7 @@ const Item = <T extends ElementType = 'button'>(props: SpiritItemProps<T>): JSX.
   const mergedStyleProps = mergeStyleProps(ElementTag, { classProps: classProps.root, styleProps, otherProps });
 
   return (
-    <ElementTag
-      {...otherProps}
-      {...mergedStyleProps}
-      aria-selected={!!isSelected}
-      disabled={!!isDisabled && ElementTag === 'button'}
-    >
+    <ElementTag {...otherProps} {...mergedStyleProps} disabled={!!isDisabled && ElementTag === 'button'}>
       {iconName && (
         <span className={classNames(classProps.icon.root, classProps.icon.start)}>
           <Icon name={iconName} />
