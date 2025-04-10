@@ -3,6 +3,7 @@ import DocsSection from '../../../../docs/DocsSection';
 import { ComponentButtonColors, EmotionColors, Sizes } from '../../../constants';
 import { ButtonBaseProps } from '../../../types';
 import { Icon } from '../../Icon';
+import { VisuallyHidden } from '../../VisuallyHidden';
 import ButtonLink from '../ButtonLink';
 
 const ButtonLinkDemoFactory = ({ ...props }: ButtonBaseProps) => {
@@ -26,6 +27,7 @@ const ButtonLinkDemoFactory = ({ ...props }: ButtonBaseProps) => {
               </ButtonLink>{' '}
               <ButtonLink size={size} color={color} isSymmetrical {...props}>
                 <Icon name="link" />
+                <VisuallyHidden>Link</VisuallyHidden>
               </ButtonLink>
             </div>
           ))}

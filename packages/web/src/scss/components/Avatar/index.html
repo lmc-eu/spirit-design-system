@@ -53,7 +53,7 @@
         {{setVar "iconSize" "32"}}
         {{/if}}
 
-        <div class="Avatar Avatar--square Avatar--{{size}}" aria-label="Profile of Jiří Bárta">
+        <div class="Avatar Avatar--square Avatar--{{size}}">
           <svg width="{{@root.iconSize}}" height="{{@root.iconSize}}" aria-hidden="true">
             <use xlink:href="/assets/icons/svg/sprite.svg#profile" />
           </svg>
@@ -90,7 +90,7 @@
 
         {{#each @root.sizes as |size|}}
 
-        <div class="Avatar Avatar--square Avatar--{{size}}" aria-label="Profile of Jiří Bárta">
+        <div class="Avatar Avatar--square Avatar--{{size}}">
           <span aria-hidden="true">JB</span>
         </div>
 
@@ -125,7 +125,7 @@
 
         {{#each @root.sizes as |size|}}
 
-        <div class="Avatar Avatar--square Avatar--{{size}}" aria-label="Profile of Jiří Bárta">
+        <div class="Avatar Avatar--square Avatar--{{size}}">
           <img src="https://picsum.photos/id/823/162/162" alt="Jiří Bárta" aria-hidden="true" />
         </div>
 
