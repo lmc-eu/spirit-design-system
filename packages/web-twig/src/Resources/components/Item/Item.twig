@@ -23,7 +23,6 @@
 {%- set _labelClassName =  _spiritClassPrefix ~ 'Item__label' -%}
 
 {# Attributes #}
-{%- set _ariaSelectedAttr = 'aria-selected="' ~ (_isSelected ? 'true' : 'false') ~ '"' -%}
 {%- set _buttonDisabledAttr = (_elementType == 'button' and _isDisabled) ? 'disabled' : null -%}
 {%- set _hrefAttr = (_elementType == 'a' and _href) ? 'href=' ~ _href : null -%}
 {%- set _targetAttr = (_elementType == 'a' and _target) ? 'target=' ~ _target | escape('html_attr') : null -%}
@@ -42,7 +41,6 @@
   {{ _targetAttr }}
   {{ _typeAttr }}
   {{ _buttonDisabledAttr }}
-  {{ _ariaSelectedAttr | raw  }}
 >
   {% if _iconName %}
     <span class="{{ _startIconClassName }}">
