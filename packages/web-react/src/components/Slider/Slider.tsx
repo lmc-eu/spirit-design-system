@@ -62,7 +62,7 @@ const _Slider = (props: SpiritSliderProps, ref: ForwardedRef<HTMLInputElement>) 
         {label}
       </Label>
       <input
-        aria-describedby={ids.join(' ')}
+        {...(ids.length && { 'aria-describedby': ids.join(' ') })}
         className={classProps.input}
         id={id}
         onInput={handleInput}

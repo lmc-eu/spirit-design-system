@@ -45,7 +45,12 @@ const _TextFieldBase = (props: SpiritTextFieldBaseProps, ref: ForwardedRef<HTMLI
       <Label htmlFor={id} UNSAFE_className={classProps.label}>
         {label}
       </Label>
-      <TextFieldBaseInputWithPasswordToggle {...otherProps} id={id} aria-describedby={ids.join(' ')} ref={ref} />
+      <TextFieldBaseInputWithPasswordToggle
+        {...otherProps}
+        {...(ids.length && { 'aria-describedby': ids.join(' ') })}
+        id={id}
+        ref={ref}
+      />
       <HelperText
         UNSAFE_className={classProps.helperText}
         id={`${id}__helperText`}
