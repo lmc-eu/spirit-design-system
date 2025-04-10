@@ -26,6 +26,8 @@ const selectTab = useCallback((id) => {
 
 ## Tab with Links
 
+⚠️ Please note that mixing links with buttons in tab list is not recommended for accessibility reasons.
+
 ```jsx
 const [selectedId, setSelectedTab] = useState(1);
 

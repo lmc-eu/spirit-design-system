@@ -79,6 +79,8 @@ There is no API for TabItem.
 
 ### TabLink
 
+⚠️ Please note that mixing links with buttons in tab list is not recommended for accessibility reasons.
+
 | Name           | Type     | Default | Required | Description                  |
 | -------------- | -------- | ------- | -------- | ---------------------------- |
 | `href`         | `string` | `null`  | ✕        | URL target of a link         |
