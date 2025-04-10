@@ -1,0 +1,16 @@
+services:
+  e2e:
+    init: true
+    image: mcr.microsoft.com/playwright:v${PLAYWRIGHT_VERSION}-${UBUNTU_VERSION}
+    working_dir: /work/
+    volumes:
+      - ${PWD}:/work/
+    ipc: host
+    ports:
+      - target: ${UI_PORT:-43008}
+        published: ${UI_PORT:-43008}
+        protocol: tcp
+    command: >
+      bash -c "set -x &&
+      corepack enable && corepack install &&
+      yarn test:e2e${E2E_FLAG}"
