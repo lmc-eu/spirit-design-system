@@ -48,9 +48,11 @@ A tab item can be a link that follows a URL:
 
 ```html
 <li class="Tabs__item" role="presentation">
-  <a href="https://www.example.com" class="Tabs__link"> Link item </a>
+  <a href="https://www.example.com" class="Tabs__link">Link item</a>
 </li>
 ```
+
+⚠️ Please note that mixing links with buttons in tab list is not recommended for accessibility reasons.
 
 ## Responsive Visibility
 

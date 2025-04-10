@@ -21,8 +21,13 @@ const _TabLink = <E extends ElementType = 'a'>(props: SpiritTabLinkProps<E>, ref
   const mergedStyleProps = mergeStyleProps(ElementTag, { classProps: classProps.link });
 
   return (
-    <li {...itemStyleProps} {...itemTransferProps} className={classNames(classProps.item, itemStyleProps.className)}>
-      <ElementTag {...restProps} {...mergedStyleProps} role="tab" ref={ref}>
+    <li
+      {...itemStyleProps}
+      {...itemTransferProps}
+      className={classNames(classProps.item, itemStyleProps.className)}
+      role="presentation"
+    >
+      <ElementTag {...restProps} {...mergedStyleProps} ref={ref}>
         {children}
       </ElementTag>
     </li>
