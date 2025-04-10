@@ -2,7 +2,7 @@
 
 import classNames from 'classnames';
 import React, { useEffect, useState } from 'react';
-import { useStyleProps } from '../../hooks';
+import { useAriaDescribedBy, useStyleProps } from '../../hooks';
 import { SpiritFileUploaderInputProps } from '../../types';
 import { HelperText, Label, ValidationText, useAriaIds } from '../Field';
 import { useValidationTextRole } from '../Field/useValidationTextRole';
@@ -68,6 +68,7 @@ const FileUploaderInput = (props: SpiritFileUploaderInputProps) => {
   });
   const { styleProps, props: transferProps } = useStyleProps(restProps);
   const [ids, register] = useAriaIds(ariaDescribedBy);
+  const ariaDescribedByProp = useAriaDescribedBy(ids);
   const validationTextRole = useValidationTextRole({
     validationState,
     validationText,
@@ -91,7 +92,7 @@ const FileUploaderInput = (props: SpiritFileUploaderInputProps) => {
         {label}
       </Label>
       <input
-        {...(ids.length && { 'aria-describedby': ids.join(' ') })}
+        {...ariaDescribedByProp}
         type="file"
         accept={accept}
         id={id}

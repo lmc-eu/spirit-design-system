@@ -2,7 +2,7 @@
 
 import classNames from 'classnames';
 import React from 'react';
-import { useStyleProps } from '../../hooks';
+import { useAriaDescribedBy, useStyleProps } from '../../hooks';
 import { SpiritFieldGroupProps } from '../../types';
 import { HelperText, ValidationText, useAriaIds } from '../Field';
 import { useValidationTextRole } from '../Field/useValidationTextRole';
@@ -29,6 +29,7 @@ const FieldGroup = (props: SpiritFieldGroupProps) => {
   const { classProps } = useFieldGroupStyleProps({ hasValidationIcon, isFluid, isRequired, validationState });
   const { styleProps, props: transferProps } = useStyleProps(rest);
   const [ids, register] = useAriaIds(ariaDescribedBy);
+  const ariaDescribedByProp = useAriaDescribedBy(ids);
   const validationTextRole = useValidationTextRole({
     validationState,
     validationText,
@@ -38,7 +39,7 @@ const FieldGroup = (props: SpiritFieldGroupProps) => {
     <fieldset
       {...transferProps}
       {...styleProps}
-      aria-describedby={ids.join(' ')}
+      {...ariaDescribedByProp}
       className={classNames(classProps.root, styleProps.className)}
       disabled={isDisabled}
     >

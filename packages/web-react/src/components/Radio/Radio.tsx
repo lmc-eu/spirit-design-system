@@ -2,7 +2,7 @@
 
 import classNames from 'classnames';
 import React, { ForwardedRef, forwardRef } from 'react';
-import { useStyleProps } from '../../hooks';
+import { useAriaDescribedBy, useStyleProps } from '../../hooks';
 import { SpiritRadioProps } from '../../types';
 import { HelperText, Label, useAriaIds } from '../Field';
 import { useRadioStyleProps } from './useRadioStyleProps';
@@ -25,12 +25,13 @@ const _Radio = (props: SpiritRadioProps, ref: ForwardedRef<HTMLInputElement>): J
   const { styleProps, props: otherProps } = useStyleProps(restProps);
 
   const [ids, register] = useAriaIds(ariaDescribedBy);
+  const ariaDescribedByProp = useAriaDescribedBy(ids);
 
   return (
     <div style={styleProps.style} className={classNames(classProps.root, styleProps.className)}>
       <input
         {...otherProps}
-        {...(ids.length && { 'aria-describedby': ids.join(' ') })}
+        {...ariaDescribedByProp}
         type="radio"
         id={id}
         className={classProps.input}

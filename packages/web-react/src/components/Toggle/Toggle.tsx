@@ -2,7 +2,7 @@
 
 import classNames from 'classnames';
 import React, { ForwardedRef, forwardRef, useState } from 'react';
-import { useStyleProps } from '../../hooks';
+import { useAriaDescribedBy, useStyleProps } from '../../hooks';
 import { SpiritToggleProps } from '../../types';
 import { HelperText, Label, useAriaIds, ValidationText } from '../Field';
 import { useValidationTextRole } from '../Field/useValidationTextRole';
@@ -29,6 +29,7 @@ const _Toggle = (props: SpiritToggleProps, ref: ForwardedRef<HTMLInputElement>) 
   } = modifiedProps;
   const { styleProps, props: otherProps } = useStyleProps(restProps);
   const [ids, register] = useAriaIds(ariaDescribedBy);
+  const ariaDescribedByProp = useAriaDescribedBy(ids);
   const [checked, setChecked] = useState(isChecked);
   const validationTextRole = useValidationTextRole({
     validationState,
@@ -65,7 +66,7 @@ const _Toggle = (props: SpiritToggleProps, ref: ForwardedRef<HTMLInputElement>) 
       </div>
       <input
         {...otherProps}
-        {...(ids.length && { 'aria-describedby': ids.join(' ') })}
+        {...ariaDescribedByProp}
         type="checkbox"
         id={id}
         className={classProps.input}

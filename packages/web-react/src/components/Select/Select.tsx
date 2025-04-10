@@ -2,7 +2,7 @@
 
 import classNames from 'classnames';
 import React, { ForwardedRef, forwardRef } from 'react';
-import { useStyleProps } from '../../hooks';
+import { useAriaDescribedBy, useStyleProps } from '../../hooks';
 import { SpiritSelectProps } from '../../types';
 import { HelperText, Label, ValidationText, useAriaIds } from '../Field';
 import { useValidationTextRole } from '../Field/useValidationTextRole';
@@ -37,6 +37,7 @@ const _Select = (props: SpiritSelectProps, ref: ForwardedRef<HTMLSelectElement>)
   });
   const { styleProps, props: transferProps } = useStyleProps(restProps);
   const [ids, register] = useAriaIds(ariaDescribedBy);
+  const ariaDescribedByProp = useAriaDescribedBy(ids);
   const validationTextRole = useValidationTextRole({
     validationState,
     validationText,
@@ -50,7 +51,7 @@ const _Select = (props: SpiritSelectProps, ref: ForwardedRef<HTMLSelectElement>)
       <div className={classProps.container}>
         <select
           {...transferProps}
-          aria-describedby={ids.join(' ')}
+          {...ariaDescribedByProp}
           id={id}
           className={classProps.input}
           disabled={isDisabled}
