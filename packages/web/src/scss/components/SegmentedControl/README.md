@@ -69,7 +69,7 @@ By default, allows only **5** options, but can be extended by use [JS plugin](#j
 ### Icon Only Variant
 
 Use this variant when there is limited space or when the icons are intuitive and easy to understand.
-Consider using a Tooltip to provide additional context for the icons.
+Consider using a `Tooltip` to provide additional context for the icons.
 
 👉 Keep in mind you must provide `SegmentedControl__label` with an `<span class="accessibility-hidden">Label</span>` or `aria-label` for accessibility reasons.
 
@@ -81,6 +81,43 @@ Consider using a Tooltip to provide additional context for the icons.
   </svg>
   <span class="accessibility-hidden">Label</span>
 </label>
+```
+
+👉 And if you decide to use `Tooltip`, don't forget to add `aria-labelledby` attribute to the input.
+
+```html
+<div
+  class="Tooltip"
+  data-spirit-element="tooltip"
+  data-spirit-toggle="tooltip"
+  data-spirit-trigger="click"
+  data-spirit-target="#tooltip-label"
+>
+  <input
+    type="radio"
+    id="segmented-control-tooltip"
+    name="segmented-tooltip-icon"
+    value="value"
+    class="SegmentedControlItem__input"
+    aria-labelledby="tooltip-label"
+  />
+  <label for="segmented-control-tooltip" class="SegmentedControlItem__label">
+    <svg width="20" height="20" aria-hidden="true">
+      <use xlink:href="/assets/icons/svg/sprite.svg#file" />
+    </svg>
+    <span
+      id="tooltip-label"
+      class="TooltipPopover is-hidden"
+      data-spirit-placement="bottom"
+      data-spirit-flip="true"
+      data-spirit-flip-cross-axis="true"
+      data-spirit-flip-fallback-placements="top, bottom"
+    >
+      Label
+      <span class="TooltipPopover__arrow" data-spirit-element="arrow"></span>
+    </span>
+  </label>
+</div>
 ```
 
 ### Text Only Variant
