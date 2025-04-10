@@ -10,14 +10,15 @@
 {%- set _rootClassName = _spiritClassPrefix ~ 'Tabs__link' -%}
 
 {# Attributes #}
+{%- set _ariaSelected = _isSelected ? 'true' : 'false' -%}
 {%- set _ariaControlsAttr = _targetPaneId ? 'aria-controls="' ~ _targetPaneId | escape('html_attr') ~ '"' : null -%}
+{%- set _ariaSelectedAttr = _href ? null : 'aria-selected="' ~ _ariaSelected ~ '"' -%}
 {%- set _dataTargetAttr = _targetPaneId ? 'data-spirit-target="#' ~ _targetPaneId | escape('html_attr') ~ '"' : null -%}
 {%- set _roleAttr = _href ? null : 'role="tab"'  -%}
 {%- set _typeAttr = _href ? null : 'type="button"' -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
-{%- set _ariaSelected = _isSelected ? 'true' : 'false' -%}
 {%- set _classNames = [ _rootClassName, _isSelectedClassName, _styleProps.className ] -%}
 {%- set _elementType = _href ? 'a' : 'button' -%}
 {%- set _allowedAttributes = _href ? [ 'href' ] : [] -%}
@@ -26,8 +27,8 @@
     {{ mainProps(props, _allowedAttributes) }}
     {{ styleProp(_styleProps) }}
     {{ classProp(_classNames) }}
-    aria-selected="{{ _ariaSelected }}"
     {{ _ariaControlsAttr | raw }}
+    {{ _ariaSelectedAttr | raw }}
     {{ _dataTargetAttr | raw }}
     {{ _roleAttr | raw }}
     {{ _typeAttr | raw }}
