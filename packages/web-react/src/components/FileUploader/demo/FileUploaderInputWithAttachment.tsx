@@ -26,7 +26,7 @@ const FileUploaderInputWithAttachment = () => {
           /* eslint-disable-next-line no-console */
           onError={(error) => console.error('My error log', error)}
         />
-        <div className="FileUploaderList">
+        <ul className="FileUploaderList">
           <FileUploaderAttachment
             name="test"
             file={new File([''], 'My resume.docx', { type: '.docx', lastModified: 123456789 })}
@@ -34,7 +34,7 @@ const FileUploaderInputWithAttachment = () => {
             label="My resume.docx"
             onDismiss={onDismiss}
           />
-        </div>
+        </ul>
       </FileUploader>
 
       {/* ⚠️ VISUAL EXAMPLE ONLY, DO NOT COPY-PASTE */}
@@ -59,7 +59,7 @@ const FileUploaderInputWithAttachment = () => {
           validationText="Danger validation text"
           validationState="danger"
         />
-        <div className="FileUploaderList">
+        <ul className="FileUploaderList">
           <FileUploaderAttachment
             name="test"
             file={new File([''], 'My resume.docx', { type: '.docx', lastModified: 123456789 })}
@@ -74,7 +74,7 @@ const FileUploaderInputWithAttachment = () => {
             label="My resume with a name that is too long so it needs to be trimmed. You're not gonna see this part!.pdf"
             onDismiss={onDismiss}
           />
-        </div>
+        </ul>
       </FileUploader>
     </>
   );

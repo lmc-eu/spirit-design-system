@@ -26,7 +26,7 @@ const FileUploaderFluidWidth = () => {
         /* eslint-disable-next-line no-console */
         onError={(error) => console.error('My error log', error)}
       />
-      <div className="FileUploaderList">
+      <ul className="FileUploaderList">
         <FileUploaderAttachment
           name="test"
           file={new File([''], 'My resume.docx', { type: '.docx', lastModified: 123456789 })}
@@ -34,7 +34,7 @@ const FileUploaderFluidWidth = () => {
           label="My resume.docx"
           onDismiss={onDismiss}
         />
-      </div>
+      </ul>
     </FileUploader>
   );
 };
