@@ -55,8 +55,6 @@ jobs:
       - name: Bump version
         if: ${{ github.event.inputs.dryrun == 'false' }}
         env:
-          # must be of type Automation to create releases
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           make version
@@ -64,6 +62,8 @@ jobs:
 
       - name: Push version
         if: ${{ github.event.inputs.dryrun == 'false' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           if [ "${{ github.event.inputs.confirm }}" != "yes" ]; then
             echo "Version process aborted."
