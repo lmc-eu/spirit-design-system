@@ -1,0 +1,68 @@
+name: 🚀 Version
+run-name: Version, dry-run:${{ inputs.dryrun }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      dryrun:
+        description: 'Dry run'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  version:
+    name: 🏷️ Version
+    runs-on: ubuntu-24.04
+    permissions:
+      # create commits and releases
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node and Install Dependencies
+        uses: ./.github/actions/setup-install
+
+      - name: Setup git config
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "team_designsystem@almacareer.com"
+
+      - name: List affected packages
+        run: |
+          yarn packages:changed
+
+      - name: Build
+        run: |
+          make build
+
+      - name: Dry run
+        if: ${{ github.event.inputs.dryrun == 'true' }}
+        run: |
+          yarn lerna version --no-private --no-push --no-git-tag-version --yes
+          git diff
+
+      - name: Version
+        if: ${{ github.event.inputs.dryrun == 'false' }}
+        env:
+          # must be of type Automation to create releases
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          make version
+          git --no-pager show --stat --patch HEAD
+
+      - name: Confirm version push
+        if: ${{ github.event.inputs.dryrun == 'false' }}
+        run: |
+          echo "Please confirm to proceed with the version push (yes/no):"
+          read confirmation
+          if [ "$confirmation" != "yes" ]; then
+            echo "Version process aborted."
+            exit 1
+          else
+            echo "Proceeding with the version push..."
+            git push && git push --tags
+          fi
