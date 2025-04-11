@@ -21,7 +21,6 @@
 
   {% block header %}
     {% include 'partials/header.html.twig' with { themes } only %}
-    {% include 'partials/cover.html.twig' with { isUnstable, parentPageName, parentPageUrl, title } only %}
   {% endblock %}
 
   {# Pre-render page content due to TwigX limitations. #}
@@ -31,7 +30,9 @@
 
   <main>
 
-      {{ renderedContent }}
+    {% include 'partials/cover.html.twig' with { isUnstable, parentPageName, parentPageUrl, title } only %}
+
+    {{ renderedContent }}
 
   </main>
 
