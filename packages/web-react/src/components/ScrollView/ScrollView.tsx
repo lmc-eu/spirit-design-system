@@ -36,7 +36,12 @@ const ScrollView = (props: SpiritScrollViewProps) => {
 
   return (
     <div {...transferProps} {...styleProps} className={classNames(classProps.root, styleProps.className)}>
-      <div className={classProps.viewport} onScroll={onScroll} ref={viewportReference}>
+      {/* To make scrollable element keyboard accessible, we need to add tabindex to it. */}
+      {/* This is recommended solution, both by the eslint plugin and by WAI. */}
+      {/* https://www.w3.org/WAI/standards-guidelines/act/rules/0ssw9k/ */}
+      {/* https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/no-noninteractive-tabindex.md#case-shouldnt-i-add-a-tabindex-so-that-users-can-navigate-to-this-item */}
+      {/* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */}
+      <div className={classProps.viewport} onScroll={onScroll} ref={viewportReference} tabIndex={0}>
         <div className={classProps.content} ref={contentReference}>
           {children}
         </div>

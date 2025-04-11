@@ -142,6 +142,18 @@ To hide the scrollbar, add the `ScrollView--hideScrollbar` class to the containe
 </div>
 ```
 
+## Accessibility
+
+To make the ScrollView component accessible by keyboard, you need to add the `tabindex` attribute to the viewport element.
+
+```html
+<div class="ScrollView__viewport" data-spirit-element="viewport" tabindex="0">
+  <!-- … -->
+</div>
+```
+
+See [WAI Scrollable content guidelines][wai-scrollable-content] for more information.
+
 ## JavaScript Plugin API
 
 | Method                | Description                                                                                                                                       |
@@ -149,4 +161,5 @@ To hide the scrollbar, add the `ScrollView--hideScrollbar` class to the containe
 | `getInstance`         | _Static_ method which allows you to get the ScrollView instance associated with a DOM element.                                                    |
 | `getOrCreateInstance` | _Static_ method which allows you to get the ScrollView instance associated with a DOM element, or create a new one in case it wasn’t initialized. |
 
+[wai-scrollable-content]: https://www.w3.org/WAI/standards-guidelines/act/rules/0ssw9k/
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
