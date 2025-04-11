@@ -262,15 +262,33 @@ PR can be merged only by the appropriate group of maintainers.
 
 ### Steps to Create a New Package Version
 
-1. Merge all appropriate PRs you want to publish into the appropriate branch
-   - branches:
-     - `main` - for the latest stable version
+Merge all appropriate PRs you want to publish into the appropriate branch
+
+- branches:
+  - `main` - for the latest stable version
+
+#### Manually
+
+1. Run `make pristine` and `make install` to ensure that your local copy is clean and up to date
 2. Run the `make version` command to bump the version number in packages (a new version number is determined automatically based on commit history)
 3. Check that the version number is correct and everything looks good
-4. Push changes and tags to repository
-   4a. Run manually `git push && git push --tags` to push the changes to the remote
-   4b. or use `git push --follow-tags` to push the changes and tags at once (works only when tags are annotated).
-5. Publishing is done automatically by GitHub Actions (uses `build` script and `make publish` command)
+4. Run `make build` to build the packages
+5. Run `make publish` to publish the packages to npm (you will be prompted to enter your npm credentials or confirmation code)
+6. Push changes and tags to repository
+   6a. Run manually `git push && git push --tags` to push the changes to the remote
+   6b. or use `git push --follow-tags` to push the changes and tags at once (works only when tags are annotated).
+
+#### Automatically
+
+1. Go to repository **Actions** tab and select the `Version` workflow
+   1a. or go to the [workflow page directly][version-action]
+2. On the right top corner, click on the `Run workflow` button
+   2a. Select the branch you want to publish from (e.g. `main`)
+   2b. You can check the `Dry run` checkbox to run the workflow without publishing the packages
+   2c. Confirm version push by writting `yes` in the input field (otherwise the changes will not be pushed)
+   2d. Click on the `Run workflow` button
+3. Check that the version number is correct and everything looks good during the workflow run or try the dry run first
+4. Publishing is done automatically (event driven) by [`Publish` Action][publish-action] (uses `build` script and `make publish` command)
 
 > If you have further questions do not hesitate to open an issue and ask us! ❤️
 
@@ -289,4 +307,6 @@ PR can be merged only by the appropriate group of maintainers.
 [packages]: packages/
 [playwright]: https://playwright.dev/
 [prettier]: https://prettier.io/
+[publish-action]: https://github.com/lmc-eu/spirit-design-system/actions/workflows/publish.yaml
 [typescript]: https://www.typescriptlang.org/
+[version-action]: https://github.com/lmc-eu/spirit-design-system/actions/workflows/version.yaml
