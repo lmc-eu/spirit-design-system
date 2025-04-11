@@ -29,6 +29,9 @@ jobs:
         with:
           # fetch tags
           fetch-depth: 0
+          # the repository's remote URL is configured to use the PAT
+          # for subsequent Git operations (e.g., git push).
+          token: ${{ secrets.PAT_TOKEN }}
 
       - name: Setup Node and Install Dependencies
         uses: ./.github/actions/setup-install
@@ -62,8 +65,6 @@ jobs:
 
       - name: Push version
         if: ${{ github.event.inputs.dryrun == 'false' }}
-        env:
-          PAT: ${{ secrets.PAT_TOKEN }}
         run: |
           if [ "${{ github.event.inputs.confirm }}" != "yes" ]; then
             echo "Version process aborted."
