@@ -7,13 +7,21 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import DocsSection from '../../../../docs/DocsSection';
 import { IconsProvider } from '../../../context';
-import SegmentedControlDefault from './SegmentedControlDefault';
+import SegmentedControlContentVariants from './SegmentedControlContentVariants';
+import SegmentedControlDesignVariants from './SegmentedControlDesignVariants';
+import SegmentedControlMultipleSelection from './SegmentedControlMultipleSelection';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <IconsProvider value={icons}>
       <DocsSection title="Design Variants">
-        <SegmentedControlDefault />
+        <SegmentedControlDesignVariants />
+      </DocsSection>
+      <DocsSection title="Content Variants">
+        <SegmentedControlContentVariants />
+      </DocsSection>
+      <DocsSection title="Multiple Selection">
+        <SegmentedControlMultipleSelection />
       </DocsSection>
     </IconsProvider>
   </React.StrictMode>,

@@ -3,13 +3,15 @@
 import { createContext, useContext } from 'react';
 
 export type SegmentedControlContextProps = {
+  hasMultipleSelection?: boolean;
   name: string;
-  selectedValue?: string;
+  selectedValue?: string[];
   setSelectedValue?: (value: string) => void;
 };
 
 const defaultContext: SegmentedControlContextProps = {
   name: '',
+  selectedValue: [],
 };
 
 const SegmentedControlContext = createContext<SegmentedControlContextProps>(defaultContext);

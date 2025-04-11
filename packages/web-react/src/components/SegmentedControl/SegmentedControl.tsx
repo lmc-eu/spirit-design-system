@@ -2,6 +2,7 @@
 
 import classNames from 'classnames';
 import React from 'react';
+import { FillVariants } from '../../constants';
 import { useStyleProps } from '../../hooks';
 import { SpiritSegmentedControlProps } from '../../types/segmentedControl';
 import { VisuallyHidden } from '../VisuallyHidden';
@@ -9,14 +10,14 @@ import { SegmentedControlProvider } from './SegmentedControlContext';
 import { useSegmentedControlStyleProps } from './useSegmentedControlStyleProps';
 
 const defaultProps: Partial<SpiritSegmentedControlProps> = {
+  hasMultipleSelection: false,
   isFluid: false,
-  variant: 'outline',
-  id: '',
+  variant: FillVariants.OUTLINE,
 };
 
 const SegmentedControl = (props: SpiritSegmentedControlProps) => {
   const propsWithDefaults = { ...defaultProps, ...props };
-  const { children, id, label, name, ...restProps } = propsWithDefaults;
+  const { children, hasMultipleSelection, id, label, name, ...restProps } = propsWithDefaults;
   const { classProps, props: modifiedProps } = useSegmentedControlStyleProps(restProps);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
 
@@ -26,13 +27,27 @@ const SegmentedControl = (props: SpiritSegmentedControlProps) => {
     (child) => React.isValidElement(child) && 'props' in child && child.props.value,
   ) as React.ReactElement | undefined;
 
-  const [selectedValue, setSelectedValue] = React.useState(firstItem?.props.value);
+  const [selectedValue, setSelectedValue] = React.useState(() => {
+    if (hasMultipleSelection) {
+      return firstItem?.props.value ? [firstItem.props.value] : [];
+    }
+
+    return firstItem?.props.value || '';
+  });
+
+  const handleSetSelectedValue = (value: string) => {
+    if (hasMultipleSelection) {
+      setSelectedValue((prev: string[]) => (prev.includes(value) ? prev.filter((v) => v !== value) : [...prev, value]));
+    } else {
+      setSelectedValue(value);
+    }
+  };
 
   const contextValue = {
-    id,
+    hasMultipleSelection,
     name,
     selectedValue,
-    setSelectedValue,
+    setSelectedValue: handleSetSelectedValue,
   };
 
   return (

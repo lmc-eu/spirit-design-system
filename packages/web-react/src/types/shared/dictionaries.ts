@@ -11,6 +11,7 @@ import {
   ComponentButtonColors,
   EmotionColors,
   Emphasis,
+  FillVariants,
   LinkColors,
   Placements,
   ShapeVariants,
@@ -125,3 +126,6 @@ export type ValidationStatesDictionaryType<T = undefined> =
 /* Variant */
 export type ShapeVariantDictionaryKeys = keyof typeof ShapeVariants;
 export type ShapeVariantDictionaryType = (typeof ShapeVariants)[ShapeVariantDictionaryKeys] | AutocompleteStringLiteral;
+
+export type FillVariantDictionaryKeys = keyof typeof FillVariants;
+export type FillVariantDictionaryType = (typeof FillVariants)[FillVariantDictionaryKeys] | AutocompleteStringLiteral;

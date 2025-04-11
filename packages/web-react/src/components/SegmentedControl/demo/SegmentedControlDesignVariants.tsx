@@ -1,12 +1,13 @@
 import React from 'react';
 import DocsStack from '../../../../docs/DocsStack';
+import { FillVariants } from '../../../constants';
 import { Grid } from '../../Grid';
 import SegmentedControl from '../SegmentedControl';
 import SegmentedControlItem from '../SegmentedControlItem';
 
-const variants = ['outline', 'fill'];
+const variants = Object.values(FillVariants).reverse();
 
-const SegmentedControlDefault = () => {
+const SegmentedControlDesignVariants = () => {
   return (
     <Grid alignmentXStretch alignmentYStretch cols={{ desktop: 3, mobile: 1 }} spacingY="space-1100">
       {variants.map((variant) => (
@@ -31,4 +32,4 @@ const SegmentedControlDefault = () => {
   );
 };
 
-export default SegmentedControlDefault;
+export default SegmentedControlDesignVariants;

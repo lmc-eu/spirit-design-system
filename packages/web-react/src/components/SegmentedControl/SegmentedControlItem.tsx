@@ -8,23 +8,27 @@ import { useSegmentedControlContext } from './SegmentedControlContext';
 import { useSegmentedControlStyleProps } from './useSegmentedControlStyleProps';
 
 const SegmentedControlItem = (props: SpiritSegmentedControlItemProps) => {
-  const { name, selectedValue, setSelectedValue } = useSegmentedControlContext();
+  const { hasMultipleSelection, name, selectedValue, setSelectedValue } = useSegmentedControlContext();
   const { id, value, children, ...restProps } = props;
   const { classProps, props: modifiedProps } = useSegmentedControlStyleProps(restProps);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
 
+  const isChecked = hasMultipleSelection
+    ? Array.isArray(selectedValue) && selectedValue.includes(String(value))
+    : selectedValue === value;
+
   const handleChange = () => {
-    setSelectedValue?.(value);
+    setSelectedValue?.(String(value));
   };
 
   return (
     <>
       <input
-        type="radio"
+        type={hasMultipleSelection ? 'checkbox' : 'radio'}
         name={name}
         id={id}
         value={value}
-        checked={selectedValue === value}
+        checked={isChecked}
         onChange={handleChange}
         {...otherProps}
         {...styleProps}

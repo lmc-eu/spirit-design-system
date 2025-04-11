@@ -1,4 +1,4 @@
-import { ChildrenProps, SpiritInputElementProps, StyleProps, TransferProps } from './shared';
+import { ChildrenProps, FillVariantDictionaryType, SpiritInputElementProps, StyleProps, TransferProps } from './shared';
 
 export interface SegmentedControlProps extends ChildrenProps, StyleProps, TransferProps {}
 
@@ -7,8 +7,9 @@ export interface SegmentedControlItemProps extends StyleProps, SpiritInputElemen
 export interface SpiritSegmentedControlItemProps extends SegmentedControlItemProps {}
 
 export interface SpiritSegmentedControlProps extends SegmentedControlProps {
-  variant?: 'outline' | 'fill';
+  hasMultipleSelection?: boolean;
   isFluid?: boolean;
   label?: string;
   name: string;
+  variant?: FillVariantDictionaryType;
 }
