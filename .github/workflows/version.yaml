@@ -58,7 +58,7 @@ jobs:
       - name: Bump version
         if: ${{ github.event.inputs.dryrun == 'false' }}
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           make version
           git --no-pager show --stat --patch HEAD
