@@ -9,7 +9,7 @@ import { useSegmentedControlStyleProps } from './useSegmentedControlStyleProps';
 
 const SegmentedControlItem = (props: SpiritSegmentedControlItemProps) => {
   const { hasMultipleSelection, name, selectedValue, setSelectedValue } = useSegmentedControlContext();
-  const { id, value, children, ...restProps } = props;
+  const { id, isDisabled = false, value, children, ...restProps } = props;
   const { classProps, props: modifiedProps } = useSegmentedControlStyleProps(restProps);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
 
@@ -33,6 +33,7 @@ const SegmentedControlItem = (props: SpiritSegmentedControlItemProps) => {
         {...otherProps}
         {...styleProps}
         className={classNames(classProps.input, styleProps.className)}
+        disabled={isDisabled ? true : undefined}
       />
       <label htmlFor={id} {...styleProps} className={classNames(classProps.label, styleProps.className)}>
         {children}

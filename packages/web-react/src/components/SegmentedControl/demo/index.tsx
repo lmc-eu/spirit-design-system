@@ -10,6 +10,8 @@ import { IconsProvider } from '../../../context';
 import SegmentedControlContentVariants from './SegmentedControlContentVariants';
 import SegmentedControlDesignVariants from './SegmentedControlDesignVariants';
 import SegmentedControlMultipleSelection from './SegmentedControlMultipleSelection';
+import SegmentedControlWithDisableItem from './SegmentedControlWithDisableItem';
+import SegmentedControlFluid from './SegmentedControlFluid';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -22,6 +24,12 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       </DocsSection>
       <DocsSection title="Multiple Selection">
         <SegmentedControlMultipleSelection />
+      </DocsSection>
+      <DocsSection title="Variant with Disabled Item">
+        <SegmentedControlWithDisableItem />
+      </DocsSection>
+      <DocsSection title="Fluid">
+        <SegmentedControlFluid />
       </DocsSection>
     </IconsProvider>
   </React.StrictMode>,

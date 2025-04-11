@@ -2,7 +2,9 @@ import { ChildrenProps, FillVariantDictionaryType, SpiritInputElementProps, Styl
 
 export interface SegmentedControlProps extends ChildrenProps, StyleProps, TransferProps {}
 
-export interface SegmentedControlItemProps extends StyleProps, SpiritInputElementProps, ChildrenProps, TransferProps {}
+export interface SegmentedControlItemProps extends StyleProps, SpiritInputElementProps, ChildrenProps, TransferProps {
+  isDisabled?: boolean;
+}
 
 export interface SpiritSegmentedControlItemProps extends SegmentedControlItemProps {}
 
