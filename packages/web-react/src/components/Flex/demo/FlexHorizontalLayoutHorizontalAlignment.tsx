@@ -2,7 +2,7 @@ import React from 'react';
 import DocsBox from '../../../../docs/DocsBox';
 import Flex from '../Flex';
 
-const FlexHorizontalAlignment = () => (
+const FlexHorizontalLayoutHorizontalAlignment = () => (
   <>
     <Flex alignmentX="stretch">
       <DocsBox size="small">Item 1</DocsBox>
@@ -32,4 +32,4 @@ const FlexHorizontalAlignment = () => (
   </>
 );
 
-export default FlexHorizontalAlignment;
+export default FlexHorizontalLayoutHorizontalAlignment;

@@ -44,7 +44,7 @@
                         'stretch',
                     ),
                     $axis: 'x',
-                    $property: 'justify-items',
+                    $properties: 'justify-items',
                     $infix: 'tablet--'
                 );
             }
@@ -52,6 +52,51 @@
             @include test.expect() {
                 .Test--tablet--alignmentXStretch {
                     justify-items: stretch;
+                }
+            }
+        }
+
+        @include test.assert() {
+            @include test.output() {
+                @include dictionaries.generate-alignments(
+                    $class-name: 'Test',
+                    $dictionary-values: (
+                        'stretch',
+                    ),
+                    $axis: 'x',
+                    $properties: (
+                        'justify-content',
+                        'justify-items',
+                    )
+                );
+            }
+
+            @include test.expect() {
+                .Test--alignmentXStretch {
+                    justify-content: stretch;
+                    justify-items: stretch;
+                }
+            }
+        }
+
+        @include test.assert() {
+            @include test.output() {
+                @include dictionaries.generate-alignments(
+                    $class-name: 'Test',
+                    $dictionary-values: (
+                        'space-between',
+                    ),
+                    $axis: 'x',
+                    $properties: (
+                        'justify-content',
+                        'justify-items',
+                    )
+                );
+            }
+
+            @include test.expect() {
+                .Test--alignmentXSpaceBetween {
+                    justify-content: space-between;
                 }
             }
         }

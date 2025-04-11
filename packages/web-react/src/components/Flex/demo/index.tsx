@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import DocsSection from '../../../../docs/DocsSection';
 import FlexCustomSpacing from './FlexCustomSpacing';
-import FlexHorizontalAlignment from './FlexHorizontalAlignment';
 import FlexHorizontalLayout from './FlexHorizontalLayout';
+import FlexHorizontalLayoutHorizontalAlignment from './FlexHorizontalLayoutHorizontalAlignment';
 import FlexHorizontalReversedLayout from './FlexHorizontalReversedLayout';
 import FlexResponsiveAlignment from './FlexResponsiveAlignment';
 import FlexResponsiveCustomHorizontalSpacing from './FlexResponsiveCustomHorizontalSpacing';
@@ -12,6 +12,7 @@ import FlexResponsiveLayout from './FlexResponsiveLayout';
 import FlexResponsiveSpacing from './FlexResponsiveSpacing';
 import FlexVerticalAlignment from './FlexVerticalAlignment';
 import FlexVerticalLayout from './FlexVerticalLayout';
+import FlexVerticalLayoutHorizontalAlignment from './FlexVerticalLayoutHorizontalAlignment';
 import FlexWrapping from './FlexWrapping';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
@@ -31,8 +32,11 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <DocsSection title="Wrapping">
       <FlexWrapping />
     </DocsSection>
-    <DocsSection title="Horizontal Alignment" stackAlignment="stretch">
-      <FlexHorizontalAlignment />
+    <DocsSection title="Horizontal Layout and Horizontal Alignment" stackAlignment="stretch">
+      <FlexHorizontalLayoutHorizontalAlignment />
+    </DocsSection>
+    <DocsSection title="Vertical Layout and Horizontal Alignment" stackAlignment="stretch">
+      <FlexVerticalLayoutHorizontalAlignment />
     </DocsSection>
     <DocsSection title="Vertical Alignment">
       <FlexVerticalAlignment />

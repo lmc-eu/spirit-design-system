@@ -32,7 +32,7 @@
             $class-name: 'Grid',
             $dictionary-values: theme.$alignment-x-dictionary,
             $axis: 'x',
-            $property: 'justify-items',
+            $properties: 'justify-items',
             $infix: $infix
         );
         @include dictionaries.generate-alignments(

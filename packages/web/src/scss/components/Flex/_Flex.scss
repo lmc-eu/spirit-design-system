@@ -74,6 +74,10 @@
             $class-name: 'Flex',
             $dictionary-values: theme.$alignment-x-dictionary,
             $axis: 'x',
+            $properties: (
+                'justify-content',
+                'justify-items',
+            ),
             $infix: $infix
         );
         @include dictionaries.generate-alignments(

@@ -24,21 +24,41 @@
 }
 
 // Mixin to generate alignment classes based on a dictionary
+// Invalid property-value pairs are filtered out from the generated classes.
 // Parameters are:
 // * $class-name: the name of the component class to generate
 // * $dictionary-values: map of the dictionary values to generate
 // * $axis: the axis to generate, either 'x' or 'y'
-// * $property: the CSS property to apply the alignment to (for the x-axis only)
+// * $properties: one or more CSS properties to apply the alignment to
 // * $infix: the infix to add to the class name
-@mixin generate-alignments($class-name, $dictionary-values, $axis, $property: 'justify-content', $infix: '') {
-    $prefix: spirit-string.convert-pascal-case-to-kebab-case($class-name);
+@mixin generate-alignments($class-name, $dictionary-values, $axis, $properties: null, $infix: '') {
+    $axis-properties: (
+        'x': (
+            'justify-content',
+        ),
+        'y': (
+            'align-items',
+        ),
+    );
+    $invalid-property-value-map: (
+        'justify-items': 'space-between',
+    );
+
+    @if $properties {
+        $axis-properties: map.set($axis-properties, $axis, $properties);
+    }
 
     @each $alignment in $dictionary-values {
         .#{$class-name}--#{$infix}#{spirit-string.convert-kebab-case-to-camel-case(alignment-#{$axis}-#{$alignment})} {
-            @if $axis == 'x' {
-                #{$property}: string.unquote(alignment.translate-physical-to-logical($alignment));
-            } @else {
-                align-items: string.unquote(alignment.translate-physical-to-logical($alignment));
+            @each $property in map.get($axis-properties, $axis) {
+                @if not(
+                    map.has-key($invalid-property-value-map, $property) and
+                        map.get($invalid-property-value-map, $property) ==
+                        $alignment
+                )
+                {
+                    #{$property}: string.unquote(alignment.translate-physical-to-logical($alignment));
+                }
             }
         }
     }
