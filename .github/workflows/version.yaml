@@ -21,6 +21,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # fetch tags
+          fetch-depth: 0
 
       - name: Setup Node and Install Dependencies
         uses: ./.github/actions/setup-install
