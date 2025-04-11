@@ -290,6 +290,24 @@ Merge all appropriate PRs you want to publish into the appropriate branch
 3. Check that the version number is correct and everything looks good during the workflow run or try the dry run first
 4. Publishing is done automatically (event driven) by [`Publish` Action][publish-action] (uses `build` script and `make publish` command)
 
+### Release Notes
+
+Fill in a [template in Slack Canvases][release-notes-template] for the Spirit Release Notes.
+
+Use the relevant messages from the `#spirit-design-system-notifications_en` Slack
+channel that are sent to this channel after the automated publish is done.
+
+1. On the left panel of the Slack App there are Canvases. Click to them.
+2. On the right top corner, there should be a green "+ New" button. Click on it.
+3. Use option "Start from a Template"
+4. Find "Spirit Design System Release Notes"
+5. And then click "Use template"
+6. And you should be ready to prepare a new release notes.
+
+Then share the link to the release notes in the `#spirit-design-system-team_cs_en` Slack channel to get reviews and feedback.
+
+After the release notes are ready, you can publish them to the `#spirit-design-system-announcements_cs_en` Slack channel.
+
 > If you have further questions do not hesitate to open an issue and ask us! ❤️
 
 [act]: https://github.com/nektos/act
@@ -308,5 +326,6 @@ Merge all appropriate PRs you want to publish into the appropriate branch
 [playwright]: https://playwright.dev/
 [prettier]: https://prettier.io/
 [publish-action]: https://github.com/lmc-eu/spirit-design-system/actions/workflows/publish.yaml
+[release-notes-template]: https://almamedia.slack.com/docs/T0325RBAD/F08D6U6EAKH
 [typescript]: https://www.typescriptlang.org/
 [version-action]: https://github.com/lmc-eu/spirit-design-system/actions/workflows/version.yaml
