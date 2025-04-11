@@ -31,6 +31,7 @@ jobs:
           fetch-depth: 0
           # the repository's remote URL is configured to use the PAT
           # for subsequent Git operations (e.g., git push).
+          # https://github.com/settings/personal-access-tokens
           token: ${{ secrets.PAT_TOKEN }}
 
       - name: Setup Node and Install Dependencies
@@ -58,7 +59,7 @@ jobs:
       - name: Bump version
         if: ${{ github.event.inputs.dryrun == 'false' }}
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           make version
           git --no-pager show --stat --patch HEAD
