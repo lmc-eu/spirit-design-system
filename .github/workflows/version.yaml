@@ -44,7 +44,7 @@ jobs:
       - name: Dry run
         if: ${{ github.event.inputs.dryrun == 'true' }}
         run: |
-          yarn lerna version --no-private --no-push --no-git-tag-version --yes
+          yarn lerna version --no-push --no-git-tag-version --yes
           git diff
 
       - name: Version
