@@ -50,7 +50,7 @@ const _Select = (props: SpiritSelectProps, ref: ForwardedRef<HTMLSelectElement>)
       <div className={classProps.container}>
         <select
           {...transferProps}
-          aria-describedby={ids.join(' ')}
+          {...(ids.length && { 'aria-describedby': ids.join(' ') })}
           id={id}
           className={classProps.input}
           disabled={isDisabled}

@@ -38,7 +38,7 @@ const FieldGroup = (props: SpiritFieldGroupProps) => {
     <fieldset
       {...transferProps}
       {...styleProps}
-      aria-describedby={ids.join(' ')}
+      {...(ids.length && { 'aria-describedby': ids.join(' ') })}
       className={classNames(classProps.root, styleProps.className)}
       disabled={isDisabled}
     >

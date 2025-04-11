@@ -29,7 +29,7 @@ const HelperText = <T extends ElementType = 'div'>(props: HelperTextProps<T>) =>
     return () => {
       registerAria?.({ remove: id });
     };
-  }, [id, registerAria, helperText]);
+  }, [helperText, id, registerAria]);
 
   if (helperText) {
     return (
