@@ -9,6 +9,11 @@ on:
         required: false
         default: false
         type: boolean
+      confirm:
+        description: 'Confirm version push (yes/no)'
+        required: false
+        default: 'no'
+        type: string
 
 jobs:
   version:
@@ -47,7 +52,7 @@ jobs:
           yarn lerna version --no-push --no-git-tag-version --yes
           git diff
 
-      - name: Version
+      - name: Bump version
         if: ${{ github.event.inputs.dryrun == 'false' }}
         env:
           # must be of type Automation to create releases
@@ -57,12 +62,10 @@ jobs:
           make version
           git --no-pager show --stat --patch HEAD
 
-      - name: Confirm version push
+      - name: Push version
         if: ${{ github.event.inputs.dryrun == 'false' }}
         run: |
-          echo "Please confirm to proceed with the version push (yes/no):"
-          read confirmation
-          if [ "$confirmation" != "yes" ]; then
+          if [ "${{ github.event.inputs.confirm }}" != "yes" ]; then
             echo "Version process aborted."
             exit 1
           else
