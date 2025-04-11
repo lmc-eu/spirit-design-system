@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.8.0"></a>
+
+# [3.8.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.7.0...@lmc-eu/spirit-web@3.8.0) (2025-04-11)
+
+### Bug Fixes
+
+- **web:** Default of isMultiple when maxUploadedFiles > 1 [#DS-1693](https://github.com/lmc-eu/spirit-design-system/issues/DS-1693) ([3ec9a87](https://github.com/lmc-eu/spirit-design-system/commit/3ec9a87))
+- **web:** SegmentedControl isn't initialised occasionally ([bc74c6a](https://github.com/lmc-eu/spirit-design-system/commit/bc74c6a))
+
+### Code Refactoring
+
+- **web, web-react:** Introduce Shape Variant dictionary and use it for `NavigationAction` ([20a21b5](https://github.com/lmc-eu/spirit-design-system/commit/20a21b5))
+- **web:** Remove label wrap from Checkbox, Radio, and Toggle ([a7b7c9d](https://github.com/lmc-eu/spirit-design-system/commit/a7b7c9d)), closes [#DS-1703](https://github.com/lmc-eu/spirit-design-system/issues/DS-1703)
+
+### Documentation
+
+- **web:** Warn when `border-style` is set without border color and width [#DS-1799](https://github.com/lmc-eu/spirit-design-system/issues/DS-1799) ([6eeddf0](https://github.com/lmc-eu/spirit-design-system/commit/6eeddf0))
+
+### Features
+
+- **web, web-react:** Introduce Fill Variant dictionary [#DS-1606](https://github.com/lmc-eu/spirit-design-system/issues/DS-1606) ([9f5e6b5](https://github.com/lmc-eu/spirit-design-system/commit/9f5e6b5))
+- **web:** Introduce isFluid prop for PartnerLogo [#DS-1767](https://github.com/lmc-eu/spirit-design-system/issues/DS-1767) ([4c1309a](https://github.com/lmc-eu/spirit-design-system/commit/4c1309a))
+- **web:** Introduce responsive border radius for Box component [#DS-1798](https://github.com/lmc-eu/spirit-design-system/issues/DS-1798) ([59113a6](https://github.com/lmc-eu/spirit-design-system/commit/59113a6))
+- **web:** Introduce responsive utility classes for border radius [#DS-1798](https://github.com/lmc-eu/spirit-design-system/issues/DS-1798) ([6af205e](https://github.com/lmc-eu/spirit-design-system/commit/6af205e))
+- **web:** Introduce Segmented Control [#DS-1606](https://github.com/lmc-eu/spirit-design-system/issues/DS-1606) ([b5169bd](https://github.com/lmc-eu/spirit-design-system/commit/b5169bd))
+
+### Styles
+
+- **web:** Change indentation of SegmentedControl demo to spaces ([60d000b](https://github.com/lmc-eu/spirit-design-system/commit/60d000b))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="3.7.0"></a>
 
 # [3.7.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.6.0...@lmc-eu/spirit-web@3.7.0) (2025-03-26)

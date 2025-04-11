@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.4.2"></a>
+
+## [0.4.2](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-example-next-with-app-router@0.4.1...@almacareer/spirit-example-next-with-app-router@0.4.2) (2025-04-11)
+
+### Bug Fixes
+
+- **examples:** Add postcss configuration to suppress flexbox warning [#DS-1778](https://github.com/lmc-eu/spirit-design-system/issues/DS-1778) ([89a6ed2](https://github.com/lmc-eu/spirit-design-system/commit/89a6ed2))
+
+**Note:** Version bump only for package @almacareer/spirit-example-next-with-app-router
+
 <a name="0.4.1"></a>
 
 ## [0.4.1](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-example-next-with-app-router@0.4.0...@almacareer/spirit-example-next-with-app-router@0.4.1) (2025-03-26)

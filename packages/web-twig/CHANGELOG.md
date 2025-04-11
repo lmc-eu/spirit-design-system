@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.5.1"></a>
+
+## [4.5.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@4.5.0...@lmc-eu/spirit-web-twig@4.5.1) (2025-04-11)
+
+### Bug Fixes
+
+- **web-twig:** Default of isMultiple when maxUploadedFiles > 1 [#DS-1693](https://github.com/lmc-eu/spirit-design-system/issues/DS-1693) ([eac396b](https://github.com/lmc-eu/spirit-design-system/commit/eac396b))
+
+### Code Refactoring
+
+- **web-twig:** Remove label wrap from Checkbox, and Radio ([8f502f3](https://github.com/lmc-eu/spirit-design-system/commit/8f502f3)), closes [#DS-1703](https://github.com/lmc-eu/spirit-design-system/issues/DS-1703)
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="4.5.0"></a>
 
 # [4.5.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@4.4.0...@lmc-eu/spirit-web-twig@4.5.0) (2025-03-26)

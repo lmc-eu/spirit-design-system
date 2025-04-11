@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.8.0"></a>
+
+# [3.8.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.7.0...@lmc-eu/spirit-web-react@3.8.0) (2025-04-11)
+
+### Bug Fixes
+
+- **web-react:** Default of isMultiple when maxUploadedFiles > 1 [#DS-1693](https://github.com/lmc-eu/spirit-design-system/issues/DS-1693) ([3a78406](https://github.com/lmc-eu/spirit-design-system/commit/3a78406))
+- **web-react:** Fix Checkbox demo ([bd49895](https://github.com/lmc-eu/spirit-design-system/commit/bd49895))
+- **web-react:** Fix Radio demo ([3769416](https://github.com/lmc-eu/spirit-design-system/commit/3769416))
+- **web-react:** Fixed '\aria-labelledby' for Checkbox, Radio, and Toggle ([6e99531](https://github.com/lmc-eu/spirit-design-system/commit/6e99531))
+
+### Code Refactoring
+
+- **web-react:** Remove label wrap from Checkbox, Radio, and Toggle ([7257d98](https://github.com/lmc-eu/spirit-design-system/commit/7257d98)), closes [#DS-1703](https://github.com/lmc-eu/spirit-design-system/issues/DS-1703)
+- **web-react:** Use border-box as default in the resize hook [#DS-1794](https://github.com/lmc-eu/spirit-design-system/issues/DS-1794) ([3f7610f](https://github.com/lmc-eu/spirit-design-system/commit/3f7610f))
+- **web, web-react:** Introduce Shape Variant dictionary and use it for `NavigationAction` ([20a21b5](https://github.com/lmc-eu/spirit-design-system/commit/20a21b5))
+
+### Features
+
+- **web-react:** Add test for valid html attributes [#DS-1711](https://github.com/lmc-eu/spirit-design-system/issues/DS-1711) ([5be09bd](https://github.com/lmc-eu/spirit-design-system/commit/5be09bd))
+- **web-react:** Add test to catch unexpected console errors [#DS-1711](https://github.com/lmc-eu/spirit-design-system/issues/DS-1711) ([da579bf](https://github.com/lmc-eu/spirit-design-system/commit/da579bf))
+- **web-react:** Introduce isFluid prop for PartnerLogo [#DS-1767](https://github.com/lmc-eu/spirit-design-system/issues/DS-1767) ([7614621](https://github.com/lmc-eu/spirit-design-system/commit/7614621))
+- **web-react:** Introduce responsive border radius for Box component [#DS-1798](https://github.com/lmc-eu/spirit-design-system/issues/DS-1798) ([3bd74b9](https://github.com/lmc-eu/spirit-design-system/commit/3bd74b9))
+- **web, web-react:** Introduce Fill Variant dictionary [#DS-1606](https://github.com/lmc-eu/spirit-design-system/issues/DS-1606) ([9f5e6b5](https://github.com/lmc-eu/spirit-design-system/commit/9f5e6b5))
+
+### Tests
+
+- **web-react:** Add elementType provider test to all components with elementType prop ([ee5b6bd](https://github.com/lmc-eu/spirit-design-system/commit/ee5b6bd))
+- **web-react:** Introduce elementType provider test ([fbf4a59](https://github.com/lmc-eu/spirit-design-system/commit/fbf4a59))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="3.7.0"></a>
 
 # [3.7.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.6.0...@lmc-eu/spirit-web-react@3.7.0) (2025-03-26)

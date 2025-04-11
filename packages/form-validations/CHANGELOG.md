@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.15"></a>
+
+## [2.0.15](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@2.0.14...@lmc-eu/spirit-form-validations@2.0.15) (2025-04-11)
+
+### Code Refactoring
+
+- **form-validations:** Remove label wrap from Checkbox ([8525bcf](https://github.com/lmc-eu/spirit-design-system/commit/8525bcf))
+
+**Note:** Version bump only for package @lmc-eu/spirit-form-validations
+
 <a name="2.0.14"></a>
 
 ## [2.0.14](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@2.0.13...@lmc-eu/spirit-form-validations@2.0.14) (2025-03-26)

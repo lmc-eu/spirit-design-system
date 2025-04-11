@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.2"></a>
+
+## [1.1.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-post-changelog@1.1.1...@lmc-eu/spirit-post-changelog@1.1.2) (2025-04-11)
+
+### Code Refactoring
+
+- **scripts:** Migrate post-changelog script to TypeScript ([5e29115](https://github.com/lmc-eu/spirit-design-system/commit/5e29115))
+
+**Note:** Version bump only for package @lmc-eu/spirit-post-changelog
+
 <a name="1.1.1"></a>
 
 ## [1.1.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-post-changelog@1.1.0...@lmc-eu/spirit-post-changelog@1.1.1) (2025-02-12)
