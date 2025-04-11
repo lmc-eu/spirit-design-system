@@ -31,8 +31,6 @@
 // * $property: the CSS property to apply the alignment to (for the x-axis only)
 // * $infix: the infix to add to the class name
 @mixin generate-alignments($class-name, $dictionary-values, $axis, $property: 'justify-content', $infix: '') {
-    $prefix: spirit-string.convert-pascal-case-to-kebab-case($class-name);
-
     @each $alignment in $dictionary-values {
         .#{$class-name}--#{$infix}#{spirit-string.convert-kebab-case-to-camel-case(alignment-#{$axis}-#{$alignment})} {
             @if $axis == 'x' {

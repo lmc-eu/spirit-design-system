@@ -82,5 +82,14 @@
             $axis: 'y',
             $infix: $infix
         );
+
+        // TODO fix all breakpoints with responsive alignment .Flex--vertical.Flex--tablet--alignmentXCenter
+        @include dictionaries.generate-alignments(
+            $class-name: 'Flex--#{$infix}vertical.Flex',
+            $dictionary-values: theme.$alignment-x-dictionary,
+            $axis: 'x',
+            $property: 'justify-items',
+            $infix: $infix
+        );
     }
 }
