@@ -285,7 +285,7 @@ Merge all appropriate PRs you want to publish into the appropriate branch
 2. On the right top corner, click on the `Run workflow` button
    2a. Select the branch you want to publish from (e.g. `main`)
    2b. You can check the `Dry run` checkbox to run the workflow without publishing the packages
-   2c. Confirm version push by writting `yes` in the input field (otherwise the changes will not be pushed)
+   2c. Confirm version push by writing `yes` in the input field (otherwise the changes will not be pushed)
    2d. Click on the `Run workflow` button
 3. Check that the version number is correct and everything looks good during the workflow run or try the dry run first
 4. Publishing is done automatically (event driven) by [`Publish` Action][publish-action] (uses `build` script and `make publish` command)
@@ -297,7 +297,7 @@ Fill in a [template in Slack Canvases][release-notes-template] for the Spirit Re
 Use the relevant messages from the `#spirit-design-system-notifications_en` Slack
 channel that are sent to this channel after the automated publish is done.
 
-1. On the left panel of the Slack App there are Canvases. Click to them.
+1. On the left panel of the Slack App there are Canvases. Click on them.
 2. On the right top corner, there should be a green "+ New" button. Click on it.
 3. Use option "Start from a Template"
 4. Find "Spirit Design System Release Notes"
