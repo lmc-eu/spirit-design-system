@@ -63,7 +63,7 @@ jobs:
       - name: Push version
         if: ${{ github.event.inputs.dryrun == 'false' }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PAT: ${{ secrets.PAT_TOKEN }}
         run: |
           if [ "${{ github.event.inputs.confirm }}" != "yes" ]; then
             echo "Version process aborted."
