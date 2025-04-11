@@ -12,7 +12,7 @@ import SegmentedControlDefault from './SegmentedControlDefault';
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <IconsProvider value={icons}>
-      <DocsSection title="SegmentedControl">
+      <DocsSection title="Design Variants">
         <SegmentedControlDefault />
       </DocsSection>
     </IconsProvider>
