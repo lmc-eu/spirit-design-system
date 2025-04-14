@@ -5,5 +5,85 @@
     "default": false,
     "title": "Generate Original Data Files",
     "description": "When enabled, the original data files will be generated in the output directory"
+  },
+  {
+    "key": "searchFont1",
+    "type": "string",
+    "default": "",
+    "title": "Search",
+    "description": "Specify the font name to search for in the fontFamily attribute. More in README.md https://github.com/lmc-eu/spirit-design-system/tree/main/exporters/tokens#font-family-replacement",
+    "category": "1. Replace font"
+  },
+  {
+    "key": "replaceFont1",
+    "type": "string",
+    "default": "",
+    "title": "Replace",
+    "description": "Specify the font name that will replace the searched font in the fontFamily attribute.",
+    "category": "1. Replace font"
+  },
+  {
+    "key": "searchFont2",
+    "type": "string",
+    "default": "",
+    "title": "Search",
+    "description": "Specify the font name to search for in the fontFamily attribute. More in README.md https://github.com/lmc-eu/spirit-design-system/tree/main/exporters/tokens#font-family-replacement",
+    "category": "2. Replace font"
+  },
+  {
+    "key": "replaceFont2",
+    "type": "string",
+    "default": "",
+    "title": "Replace",
+    "description": "Specify the font name that will replace the searched font in the fontFamily attribute.",
+    "category": "2. Replace font"
+  },
+  {
+    "key": "searchFont3",
+    "type": "string",
+    "default": "",
+    "title": "Search",
+    "description": "Specify the font name to search for in the fontFamily attribute. More in README.md https://github.com/lmc-eu/spirit-design-system/tree/main/exporters/tokens#font-family-replacement",
+    "category": "3. Replace font"
+  },
+  {
+    "key": "replaceFont3",
+    "type": "string",
+    "default": "",
+    "title": "Replace",
+    "description": "Specify the font name that will replace the searched font in the fontFamily attribute.",
+    "category": "3. Replace font"
+  },
+  {
+    "key": "searchFont4",
+    "type": "string",
+    "default": "",
+    "title": "Search",
+    "description": "Specify the font name to search for in the fontFamily attribute. More in README.md https://github.com/lmc-eu/spirit-design-system/tree/main/exporters/tokens#font-family-replacement",
+    "category": "4. Replace font"
+  },
+  {
+    "key": "replaceFont4",
+    "type": "string",
+    "default": "",
+    "title": "Replace",
+    "description": "Specify the font name that will replace the searched font in the fontFamily attribute.",
+    "category": "4. Replace font"
+  },
+  {
+    "key": "searchFont5",
+    "type": "string",
+    "default": "",
+    "title": "Search",
+    "description": "Specify the font name to search for in the fontFamily attribute. More in README.md https://github.com/lmc-eu/spirit-design-system/tree/main/exporters/tokens#font-family-replacement",
+    "category": "5. Replace font"
+  },
+  {
+    "key": "replaceFont5",
+    "type": "string",
+    "default": "",
+    "title": "Replace",
+    "description": "Specify the font name that will replace the searched font in the fontFamily attribute.",
+    "category": "5. Replace font"
   }
 ]

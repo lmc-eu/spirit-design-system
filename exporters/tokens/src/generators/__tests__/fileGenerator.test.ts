@@ -4,6 +4,7 @@ import path from 'path';
 import { exampleDimensionAndStringTokens } from '../../../tests/fixtures/exampleDimensionAndStringTokens';
 import { exampleGroups } from '../../../tests/fixtures/exampleGroups';
 import { nonThemedFilesData } from '../../config/fileConfig';
+import { sampleConfigurationDefault } from '../../../tests/fixtures/sampleConfiguration';
 import {
   generateBarrelFile,
   generateFiles,
@@ -71,6 +72,10 @@ const mockedThemeRootFileContent =
   'variables: meta.module-variables(theme-light-inverted),\n' +
   'mixins: meta.module-mixins(theme-light-inverted),\n' +
   '),';
+
+jest.mock('../../../config', () => ({
+  exportConfiguration: sampleConfigurationDefault,
+}));
 
 describe('fileGenerator', () => {
   describe('generateOutputFilesByThemes', () => {

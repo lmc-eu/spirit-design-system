@@ -10,3 +10,4 @@ export const THEMES_DIRECTORY = 'themes';
 export const TOKEN_COLLECTION_NAME = 'Theme tokens';
 export const TOKEN_PROPERTY_NAME = 'Collection';
 export const TYPOGRAPHY_KEY = 'styles';
+export const TYPOGRAPHY_SUBSTITUTE_FONT = 'sans-serif';

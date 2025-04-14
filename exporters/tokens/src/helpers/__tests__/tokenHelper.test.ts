@@ -2,6 +2,7 @@ import { Token, TokenGroup, TypographyToken } from '@supernovaio/sdk-exporters';
 import { exampleDimensionAndStringTokens } from '../../../tests/fixtures/exampleDimensionAndStringTokens';
 import { exampleGroups } from '../../../tests/fixtures/exampleGroups';
 import { exampleTypographyTokens, expectedTypographyValue } from '../../../tests/fixtures/exampleTypographyTokens';
+import { sampleConfigurationDefault } from '../../../tests/fixtures/sampleConfiguration';
 import {
   addAngleVarToGradient,
   addEmptyLineBetweenTokenGroups,
@@ -10,6 +11,10 @@ import {
   tokenVariableName,
   typographyValue,
 } from '../tokenHelper';
+
+jest.mock('../../../config', () => ({
+  exportConfiguration: sampleConfigurationDefault,
+}));
 
 const dataProvider = [
   {

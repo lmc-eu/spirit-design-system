@@ -13,11 +13,15 @@ import { exampleGradientTokens } from '../../../tests/fixtures/exampleGradientTo
 import { exampleGroups } from '../../../tests/fixtures/exampleGroups';
 import { examplePrefixToken } from '../../../tests/fixtures/examplePrefixToken';
 import { exampleShadowTokens } from '../../../tests/fixtures/exampleShadowTokens';
+import { sampleConfigurationDefault } from '../../../tests/fixtures/sampleConfiguration';
 import { findTokenPrefix } from '../../helpers/findTokenPrefix';
 import { generateStylesFromTokens, tokenToStyleByType } from '../stylesGenerator';
 
 const mappedTokens: Map<string, Token> = new Map([]);
 const tokenGroups: Array<TokenGroup> = exampleGroups;
+jest.mock('../../../config', () => ({
+  exportConfiguration: sampleConfigurationDefault,
+}));
 
 describe('stylesGenerator', () => {
   describe('tokenToStyleByType', () => {

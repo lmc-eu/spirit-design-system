@@ -3,6 +3,7 @@ import { exampleColorsTokens } from '../../../tests/fixtures/exampleColorTokens'
 import { exampleDimensionAndStringTokens } from '../../../tests/fixtures/exampleDimensionAndStringTokens';
 import { exampleGroups } from '../../../tests/fixtures/exampleGroups';
 import { exampleTypographyTokens } from '../../../tests/fixtures/exampleTypographyTokens';
+import { sampleConfigurationDefault } from '../../../tests/fixtures/sampleConfiguration';
 import {
   colorGroupsReducer,
   createGlobalColorsObject,
@@ -16,6 +17,9 @@ import {
 } from '../stylesObjectGenerator';
 
 const tokenGroups: Array<TokenGroup> = exampleGroups;
+jest.mock('../../../config', () => ({
+  exportConfiguration: sampleConfigurationDefault,
+}));
 
 describe('stylesObjectGenerator', () => {
   describe('generateStylesObjectFromTokens', () => {

@@ -101,5 +101,39 @@ The configuration for these invariant aliases is defined in the `src/config/inva
 
 These exceptions are carefully managed to prevent errors and provide a reliable token structure.
 
+### Font Family Replacement
+
+The `fontFamily` in Typography can be replaced using Supernova pipeline fields defined in `config.json` and their corresponding types in `config.ts`.
+This allows replacement for up to **5** font families.
+
+#### Replacement Logic
+
+- `searchFont1` is replaced by `replaceFont1`. If `replaceFont1` is empty, the default value from Figma is used.
+
+#### Examples
+
+1. **Rename a font to include a dash**:
+
+   | Original Value             | Search         | Replace        | Result                     |
+   | -------------------------- | -------------- | -------------- | -------------------------- |
+   | `'Comic Sans', sans-serif` | `'Comic Sans'` | `'Comic-Sans'` | `'Comic-Sans', sans-serif` |
+
+2. **Add fallbacks**:
+
+   | Original Value             | Search       | Replace            | Result                           |
+   | -------------------------- | ------------ | ------------------ | -------------------------------- |
+   | `'Comic Sans', sans-serif` | `sans-serif` | `Wingdings, serif` | `'Comic Sans', Wingdings, serif` |
+
+3. **Change fallback for one font or replace the entire font stack**:
+
+   | Original Value             | Search                     | Replace            | Result             |
+   | -------------------------- | -------------------------- | ------------------ | ------------------ |
+   | `'Comic Sans', sans-serif` | `'Comic Sans', sans-serif` | `Wingdings, Arial` | `Wingdings, Arial` |
+
+#### Notes
+
+- Multiword font names **must** be wrapped in **single quotes** to ensure proper parsing and handling of spaces.
+- **Double quotes** will be removed.
+
 [supernova-studio]: https://github.com/Supernova-Studio
 [alma-career]: https://github.com/lmc-eu
