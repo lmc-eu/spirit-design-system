@@ -1,4 +1,5 @@
 import { TokenGroup } from '@supernovaio/sdk-exporters';
+import { exampleConfigurationDefault } from '../../../tests/fixtures/exampleConfiguration';
 import { exampleGroups } from '../../../tests/fixtures/exampleGroups';
 import { examplePrefixToken } from '../../../tests/fixtures/examplePrefixToken';
 import { findTokenPrefix } from '../../helpers/findTokenPrefix';
@@ -7,6 +8,11 @@ import { exampleColorsTokens } from '../../../tests/fixtures/exampleColorTokens'
 import { SCSS_INDENTATION } from '../../constants';
 
 const tokenGroups: Array<TokenGroup> = exampleGroups;
+
+// Mock the module where exportConfiguration is defined
+jest.mock('../../index', () => ({
+  exportConfiguration: exampleConfigurationDefault,
+}));
 
 describe('mixinGenerator', () => {
   const dataProvider = [

@@ -10,6 +10,8 @@ import {
   TokenType,
   TypographyTokenValue,
 } from '@supernovaio/sdk-exporters';
+import { TYPOGRAPHY_SUBSTITUTE_FONT } from '../constants';
+import { exportConfiguration } from '..'; // Import the configuration
 import { toCamelCase } from './stringHelper';
 
 export const tokenVariableName = (token: Token, tokenGroups: Array<TokenGroup>, hasParentPrefix: boolean): string => {
@@ -174,13 +176,61 @@ const passObjectKeyValueToCallback = <Shape>(object: Shape, callback: KeyValueTe
   });
 };
 
+/**
+ * Replaces font family names in a given font string with configured replacements.
+ *
+ * This function takes a font family string and replaces occurrences of specific font names
+ * with their corresponding replacements as defined in the `exportConfiguration` object.
+ * If no replacements are found, the original font family string is returned with a fallback font appended.
+ *
+ * @param {string} fontFamily - The original font family string to process.
+ * @returns {string} - The processed font family string with replacements applied.
+ */
+const replaceFontName = (fontFamily: string): string => {
+  // Data defined in exporter pipeline
+  const replacements = [
+    {
+      search: exportConfiguration.searchFont1,
+      replace: exportConfiguration.replaceFont1,
+    },
+    {
+      search: exportConfiguration.searchFont2,
+      replace: exportConfiguration.replaceFont2,
+    },
+    {
+      search: exportConfiguration.searchFont3,
+      replace: exportConfiguration.replaceFont3,
+    },
+    {
+      search: exportConfiguration.searchFont4,
+      replace: exportConfiguration.replaceFont4,
+    },
+    {
+      search: exportConfiguration.searchFont5,
+      replace: exportConfiguration.replaceFont5,
+    },
+  ];
+
+  let fontName = `'${fontFamily}', ${TYPOGRAPHY_SUBSTITUTE_FONT}`;
+
+  for (const { search, replace } of replacements) {
+    if (search && replace) {
+      fontName = fontName.replace(new RegExp(search.trim(), 'g'), replace.trim());
+    }
+  }
+
+  return fontName;
+};
+
 export const typographyValue = (
   { fontFamily, fontSize, fontWeight, lineHeight }: TypographyTokenValue,
   isItalic: boolean,
   hasJsOutput: boolean,
-): string => {
+) => {
+  const fontName = replaceFontName(fontFamily.text);
+
   const typographyObject: TypographyShape = {
-    fontFamily: `'${fontFamily.text}', sans-serif`,
+    fontFamily: `${fontName}`,
     fontSize: `'${fontSize.measure}${fontSize.unit === 'Pixels' ? 'px' : fontSize.unit}'`,
     fontStyle: `'${isItalic ? 'italic' : 'normal'}'`,
     fontWeight: fontWeight.text,

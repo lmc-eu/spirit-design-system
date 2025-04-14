@@ -101,5 +101,12 @@ The configuration for these invariant aliases is defined in the `src/config/inva
 
 These exceptions are carefully managed to prevent errors and provide a reliable token structure.
 
+### Font Family Replacement
+
+In Typography `fontFamily` can be replaced using Supernova pipeline fields defined in `config.json` and their corresponding types in `config.ts`.
+This allows replacement for `5` font families.
+
+E.g. `searchFont1` is replaced by `replaceFont1` - if empty, default value from figma is used
+
 [supernova-studio]: https://github.com/Supernova-Studio
 [alma-career]: https://github.com/lmc-eu

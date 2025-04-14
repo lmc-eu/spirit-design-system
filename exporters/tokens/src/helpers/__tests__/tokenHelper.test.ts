@@ -1,4 +1,5 @@
 import { Token, TokenGroup, TypographyToken } from '@supernovaio/sdk-exporters';
+import { exampleConfigurationDefault } from '../../../tests/fixtures/exampleConfiguration';
 import { exampleDimensionAndStringTokens } from '../../../tests/fixtures/exampleDimensionAndStringTokens';
 import { exampleGroups } from '../../../tests/fixtures/exampleGroups';
 import { exampleTypographyTokens, expectedTypographyValue } from '../../../tests/fixtures/exampleTypographyTokens';
@@ -23,6 +24,11 @@ const dataProvider = [
     expectedVariableName: 'desktop',
   },
 ];
+
+// Mock the module where exportConfiguration is defined
+jest.mock('../../index', () => ({
+  exportConfiguration: exampleConfigurationDefault,
+}));
 
 describe('tokenHelper', () => {
   describe.each(dataProvider)('tokenVariableName', ({ hasParentPrefix, description, expectedVariableName }) => {

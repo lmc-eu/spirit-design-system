@@ -8,6 +8,7 @@ import {
   TokenType,
 } from '@supernovaio/sdk-exporters';
 import { exampleColorsTokens } from '../../../tests/fixtures/exampleColorTokens';
+import { exampleConfiguration } from '../../../tests/fixtures/exampleConfiguration';
 import { exampleDimensionAndStringTokens } from '../../../tests/fixtures/exampleDimensionAndStringTokens';
 import { exampleGradientTokens } from '../../../tests/fixtures/exampleGradientTokens';
 import { exampleGroups } from '../../../tests/fixtures/exampleGroups';
@@ -18,6 +19,11 @@ import { generateStylesFromTokens, tokenToStyleByType } from '../stylesGenerator
 
 const mappedTokens: Map<string, Token> = new Map([]);
 const tokenGroups: Array<TokenGroup> = exampleGroups;
+
+// Mock the module where exportConfiguration is defined
+jest.mock('../../index', () => ({
+  exportConfiguration: exampleConfiguration,
+}));
 
 describe('stylesGenerator', () => {
   describe('tokenToStyleByType', () => {
