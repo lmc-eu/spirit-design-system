@@ -6,11 +6,9 @@ import {
   RemoteVersionIdentifier,
   Supernova,
 } from '@supernovaio/sdk-exporters';
-import { ExporterConfiguration } from '../config';
+import { exportConfiguration } from '../config';
 import { generateOutputFilesByThemes } from './generators/fileGenerator';
 import { safeStringify } from './helpers/safeStringify';
-
-export const exportConfiguration = Pulsar.exportConfig<ExporterConfiguration>();
 
 // https://github.com/Supernova-Studio/exporters/issues/4
 // @ts-ignore-next-line

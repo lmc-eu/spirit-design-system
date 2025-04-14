@@ -11,4 +11,40 @@ export type ExporterConfiguration = {
    * and should not be changed manually will appear in all files
    */
   generateOriginalDataFiles: boolean;
+
+  /* Search font 1 */
+  searchFont1: string;
+
+  /* Replace font 1 */
+  replaceFont1: string;
+
+  /* Search font 2 */
+  searchFont2: string;
+
+  /* Replace font 2 */
+  replaceFont2: string;
+
+  /* Search font 3 */
+  searchFont3: string;
+
+  /* Replace font 3 */
+  replaceFont3: string;
+
+  /* Search font 4 */
+  searchFont4: string;
+
+  /* Replace font 4 */
+  replaceFont4: string;
+
+  /* Search font 5 */
+  searchFont5: string;
+
+  /* Replace font 5 */
+  replaceFont5: string;
+
+  /* For dynamic generation of array in replaceFontName() */
+  [key: `searchFont${number}` | `replaceFont${number}`]: string;
 };
+
+/** Exporter configuration from the resolved default configuration and user overrides */
+export const exportConfiguration: ExporterConfiguration = Pulsar.exportConfig<ExporterConfiguration>();

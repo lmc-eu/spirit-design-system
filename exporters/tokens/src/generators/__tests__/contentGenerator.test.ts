@@ -1,6 +1,11 @@
 import fs from 'fs';
 import path from 'path';
 import { Token, TokenGroup, TokenType } from '@supernovaio/sdk-exporters';
+import { exampleDimensionAndStringTokens } from '../../../tests/fixtures/exampleDimensionAndStringTokens';
+import { FileData } from '../../config/fileConfig';
+import { exampleTypographyTokens } from '../../../tests/fixtures/exampleTypographyTokens';
+import { exampleGroups } from '../../../tests/fixtures/exampleGroups';
+import { sampleConfigurationDefault } from '../../../tests/fixtures/sampleConfiguration';
 import {
   generateFileContent,
   addDisclaimer,
@@ -9,10 +14,6 @@ import {
   generateJsObjectOutput,
   getGroups,
 } from '../contentGenerator';
-import { exampleDimensionAndStringTokens } from '../../../tests/fixtures/exampleDimensionAndStringTokens';
-import { FileData } from '../../config/fileConfig';
-import { exampleTypographyTokens } from '../../../tests/fixtures/exampleTypographyTokens';
-import { exampleGroups } from '../../../tests/fixtures/exampleGroups';
 
 const mockedExpectedResult = fs.readFileSync(
   path.join(__dirname, '../../../tests/fixtures/exampleFileContent.scss'),
@@ -20,6 +21,9 @@ const mockedExpectedResult = fs.readFileSync(
 );
 const mappedTokens: Map<string, Token> = new Map([]);
 const tokenGroups: Array<TokenGroup> = exampleGroups;
+jest.mock('../../../config', () => ({
+  exportConfiguration: sampleConfigurationDefault,
+}));
 
 describe('contentGenerator', () => {
   describe('generateFileContent', () => {
