@@ -17,7 +17,7 @@ $transition-checkbox:
     color transitions.$duration-200 transitions.$timing-eased-in-out,
     border-color transitions.$duration-200 transitions.$timing-eased-in-out,
     background-color transitions.$duration-200 transitions.$timing-eased-in-out;
-$max-items: 5;
+$max-items: 10;
 $focus-ring: tokens.$focus-ring;
 $fill-variant-dictionary: dictionaries.$fill-variants;
 
