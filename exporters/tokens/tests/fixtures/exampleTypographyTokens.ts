@@ -39,3 +39,11 @@ font-style: italic,
 font-weight: 700,
 line-height: 1.2,
 )`;
+
+export const expectedTypographyWithFontReplacement = `(
+font-family: "'Replaced-font', replaced-substitute-font",
+font-size: 64px,
+font-style: italic,
+font-weight: 700,
+line-height: 1.2,
+)`;
