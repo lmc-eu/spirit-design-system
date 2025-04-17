@@ -1,7 +1,6 @@
 import { Supernova, Token, TokenGroup, TokenTheme } from '@supernovaio/sdk-exporters';
 import fs from 'fs';
 import path from 'path';
-import { exampleConfiguration } from '../../../tests/fixtures/exampleConfiguration';
 import { exampleDimensionAndStringTokens } from '../../../tests/fixtures/exampleDimensionAndStringTokens';
 import { exampleGroups } from '../../../tests/fixtures/exampleGroups';
 import { nonThemedFilesData } from '../../config/fileConfig';
@@ -15,11 +14,6 @@ import {
   jsImportStatement,
   scssImportStatement,
 } from '../fileGenerator';
-
-// Mock the module where exportConfiguration is defined
-jest.mock('../../index', () => ({
-  exportConfiguration: exampleConfiguration,
-}));
 
 const mockedExpectedResult = fs.readFileSync(
   path.join(__dirname, '../../../tests/fixtures/exampleFileContent.scss'),

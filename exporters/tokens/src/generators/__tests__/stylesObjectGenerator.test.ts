@@ -1,6 +1,5 @@
 import { Token, TokenGroup, TypographyToken } from '@supernovaio/sdk-exporters';
 import { exampleColorsTokens } from '../../../tests/fixtures/exampleColorTokens';
-import { exampleConfigurationDefault } from '../../../tests/fixtures/exampleConfiguration';
 import { exampleDimensionAndStringTokens } from '../../../tests/fixtures/exampleDimensionAndStringTokens';
 import { exampleGroups } from '../../../tests/fixtures/exampleGroups';
 import { exampleTypographyTokens } from '../../../tests/fixtures/exampleTypographyTokens';
@@ -17,11 +16,6 @@ import {
 } from '../stylesObjectGenerator';
 
 const tokenGroups: Array<TokenGroup> = exampleGroups;
-
-// Mock the module where exportConfiguration is defined
-jest.mock('../../index', () => ({
-  exportConfiguration: exampleConfigurationDefault,
-}));
 
 describe('stylesObjectGenerator', () => {
   describe('generateStylesObjectFromTokens', () => {

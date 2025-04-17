@@ -1,7 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 import { Token, TokenGroup, TokenType } from '@supernovaio/sdk-exporters';
-import { exampleConfigurationDefault } from '../../../tests/fixtures/exampleConfiguration';
 import {
   generateFileContent,
   addDisclaimer,
@@ -14,11 +13,6 @@ import { exampleDimensionAndStringTokens } from '../../../tests/fixtures/example
 import { FileData } from '../../config/fileConfig';
 import { exampleTypographyTokens } from '../../../tests/fixtures/exampleTypographyTokens';
 import { exampleGroups } from '../../../tests/fixtures/exampleGroups';
-
-// Mock the module where exportConfiguration is defined
-jest.mock('../../index', () => ({
-  exportConfiguration: exampleConfigurationDefault,
-}));
 
 const mockedExpectedResult = fs.readFileSync(
   path.join(__dirname, '../../../tests/fixtures/exampleFileContent.scss'),
