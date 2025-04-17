@@ -68,16 +68,21 @@ and [escape hatches][readme-escape-hatches].
 The `SegmentedControlItem` component is a single item in the segmented control. It can be used to create a segmented control with multiple items.
 
 ```jsx
-import { SegmentedControlItem } from '@lmc-eu/spirit-web-react';
-import { SegmentedControl } from '@lmc-eu/spirit-web-react';
+import {
+  Icon,
+  SegmentedControl,
+  SegmentedControlItem,
+  UNSTABLE_Truncate,
+  VisuallyHidden,
+} from '@lmc-eu/spirit-web-react';
 
 <SegmentedControl name="segmented-control-example" label="Label">
   <SegmentedControlItem id="segmented-control-item-1" value="value-1">
-    Label Only
+    <UNSTABLE_Truncate>Label Only</UNSTABLE_Truncate>
   </SegmentedControlItem>
   <SegmentedControlItem id="segmented-control-item-2" value="value-2">
     <Icon name="file" boxSize={20} />
-    Label And Icon
+    <UNSTABLE_Truncate>Label And Icon</UNSTABLE_Truncate>
   </SegmentedControlItem>
   <SegmentedControlItem id="segmented-control-item-3" value="value-3">
     <Icon name="file" boxSize={20} />
@@ -93,10 +98,10 @@ To disable a `SegmentedControlItem`, you can use the `isDisabled` prop.
 ```jsx
 <SegmentedControl name="segmented-control-example" label="Label">
   <SegmentedControlItem id="segmented-control-item-1" value="value-1" isDisabled>
-    Label Only
+    <UNSTABLE_Truncate>Label</UNSTABLE_Truncate>
   </SegmentedControlItem>
   <SegmentedControlItem id="segmented-control-item-2" value="value-2">
-    Label And Icon
+    <UNSTABLE_Truncate>Label</UNSTABLE_Truncate>
   </SegmentedControlItem>
 </SegmentedControl>
 ```
@@ -111,10 +116,10 @@ If no item is marked with `isDefaultSelected`, the first item will be selected a
 ```jsx
 <SegmentedControl name="segmented-control-example" label="Label">
   <SegmentedControlItem id="segmented-control-item-1" value="value-1">
-    Label Only
+    <UNSTABLE_Truncate>Label</UNSTABLE_Truncate>
   </SegmentedControlItem>
   <SegmentedControlItem id="segmented-control-item-2" value="value-2" isDefaultSelected>
-    Label And Icon
+    <UNSTABLE_Truncate>Label</UNSTABLE_Truncate>
   </SegmentedControlItem>
   <SegmentedControlItem id="segmented-control-item-3" value="value-3">
     <Icon name="file" boxSize={20} />
