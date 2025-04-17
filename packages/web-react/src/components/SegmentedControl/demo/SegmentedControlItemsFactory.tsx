@@ -2,6 +2,7 @@ import React from 'react';
 import { FillVariants } from '../../../constants';
 import { FillVariantDictionaryType } from '../../../types';
 import { Icon } from '../../Icon';
+import { VisuallyHidden } from '../../VisuallyHidden';
 import SegmentedControl from '../SegmentedControl';
 import SegmentedControlItem from '../SegmentedControlItem';
 
@@ -34,8 +35,13 @@ const SegmentedControlItemsFactory: React.FC<SegmentedControlItemsFactoryProps> 
     >
       {items.map((value, index) => (
         <SegmentedControlItem key={value} id={`segmentedControl-${name}-${index + 1}`} value={value}>
-          {contentVariant !== 'label-only' && <Icon name="file" boxSize={20} />}
           {contentVariant !== 'icon-only' && <>Label</>}
+          {contentVariant !== 'label-only' && (
+            <>
+              <Icon name="file" boxSize={20} />
+              <VisuallyHidden>Label</VisuallyHidden>
+            </>
+          )}
         </SegmentedControlItem>
       ))}
     </SegmentedControl>

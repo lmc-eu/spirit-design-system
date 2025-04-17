@@ -25,7 +25,7 @@ const SegmentedControlItem = forwardRef<HTMLLabelElement, SpiritSegmentedControl
         {...otherProps}
         {...styleProps}
         className={classNames(classProps.input, styleProps.className)}
-        disabled={isDisabled ? true : undefined}
+        {...(isDisabled && { disabled: true })}
       />
       <label ref={ref} htmlFor={id} {...styleProps} className={classNames(classProps.label, styleProps.className)}>
         {children}

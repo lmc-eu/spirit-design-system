@@ -81,6 +81,7 @@ import { SegmentedControl } from '@lmc-eu/spirit-web-react';
   </SegmentedControlItem>
   <SegmentedControlItem id="segmented-control-item-3" value="value-3">
     <Icon name="file" boxSize={20} />
+    <VisuallyHidden>Label</VisuallyHidden>
   </SegmentedControlItem>
 </SegmentedControl>;
 ```
