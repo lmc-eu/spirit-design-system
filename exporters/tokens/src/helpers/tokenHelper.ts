@@ -226,7 +226,7 @@ export const typographyValue = (
   { fontFamily, fontSize, fontWeight, lineHeight }: TypographyTokenValue,
   isItalic: boolean,
   hasJsOutput: boolean,
-) => {
+): string => {
   const fontName = replaceFontName(fontFamily.text);
 
   const typographyObject: TypographyShape = {
