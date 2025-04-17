@@ -141,6 +141,39 @@ On top of the API options, the components accept [additional attributes][readme-
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
+## Usage with Tooltip
+
+```jsx
+const [activeTooltipIndex, setActiveTooltipIndex] = (useState < number) | (null > null);
+
+<SegmentedControl label="Label" name="segmented-control-tooltip-example">
+  <Tooltip
+    id="tooltip-1"
+    isOpen={activeTooltipIndex === 0}
+    onToggle={() => setActiveTooltipIndex(activeTooltipIndex === 0 ? null : 0)}
+  >
+    <TooltipTrigger elementType={SegmentedControlItem} value="value-1" id="segmented-control-tooltip-1">
+      <Icon name="file" boxSize={20} />
+      <TooltipPopover>
+        <UNSTABLE_Truncate>Label 1</UNSTABLE_Truncate>
+      </TooltipPopover>
+    </TooltipTrigger>
+  </Tooltip>
+  <Tooltip
+    id="tooltip-2"
+    isOpen={activeTooltipIndex === 1}
+    onToggle={() => setActiveTooltipIndex(activeTooltipIndex === 1 ? null : 1)}
+  >
+    <TooltipTrigger elementType={SegmentedControlItem} value="value-2" id="segmented-control-tooltip-2">
+      <Icon name="file" boxSize={20} />
+      <TooltipPopover>
+        <UNSTABLE_Truncate>Label 2</UNSTABLE_Truncate>
+      </TooltipPopover>
+    </TooltipTrigger>
+  </Tooltip>
+</SegmentedControl>;
+```
+
 [dictionary-variant]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#variant
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
