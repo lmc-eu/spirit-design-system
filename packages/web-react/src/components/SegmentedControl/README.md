@@ -30,7 +30,7 @@ You can set the design variant of the SegmentedControl using the `variant` prop.
 
 ### Multiple Selection
 
-Set the `hasMultipleSelection` prop to allow selecting multiple items.
+You can enable multiple selection by setting the `hasMultipleSelection` prop.
 
 ```jsx
 <SegmentedControl name="segmented-control-example" label="Label" hasMultipleSelection>
@@ -40,7 +40,7 @@ Set the `hasMultipleSelection` prop to allow selecting multiple items.
 
 ### Fluid Alignment
 
-You can enable multiple selection by setting the `hasMultipleSelection` prop.
+To make the `SegmentedControl` adjust to the size of its container, use the `isFluid` prop.
 
 ```jsx
 <SegmentedControl name="segmented-control-example" label="Label" isFluid>
