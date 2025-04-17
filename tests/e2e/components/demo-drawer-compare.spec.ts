@@ -40,7 +40,7 @@ const runDrawerTests = async (page: Page, componentName: string): Promise<void> 
   await page.click('[id="drawer-alignment-left"]');
   await page.click('[data-testid="drawer-open-button"]');
   await takeScreenshot(page, `${componentName}-left-backdrop-click`);
-  await page.locator('body').click({ position: { x: 300, y: 0 } });
+  await page.locator('body').click({ position: { x: 400, y: 0 } });
   await expect(page.getByTestId('drawer-panel')).not.toBeVisible();
 
   // open drawer on the right side, close with close button
