@@ -1,14 +1,14 @@
 // 1. We pass the input arrows width if the input type is number.
-// 2. If the input has a size attribute, we calculate the width based on the input width, padding, border width and arrows width.
-// 3. We generate the input width based on the number of characters.
-// 4. We position the password toggle button next to the input and use pseudo-element for border styling.
+// 2. If the input has set `.TextField__input--customWidth`, we calculate the width based
+//    on the given input and arrows width from CSS property.
+// 3. We position the password toggle button next to the input and use pseudo-element for border styling.
 //    We do this because password managers place their icon buttons inside the password input.
-// 5. Because the button is next to the input, we need to use pseudo element to style the border around both of them.
-// 6. We need to set the same background color for the button when the input is hovered, active or focused.
-// 7. We toggle icons of the password toggle and we disable the no-descending-specificity to make the code more readable.
-// 8. To make the 5. work, we need to style the input and the button when the input is focused.
-// 9. The password toggle button should have its own focus-visible style.
-// 10. Disabled input and its optional password toggle should have the same disabled style.
+// 4. Because the button is next to the input, we need to use pseudo element to style the border around both of them.
+// 5. We need to set the same background color for the button when the input is hovered, active or focused.
+// 6. We toggle icons of the password toggle and we disable the no-descending-specificity to make the code more readable.
+// 7. To make the 5. work, we need to style the input and the button when the input is focused.
+// 8. The password toggle button should have its own focus-visible style.
+// 9. Disabled input and its optional password toggle should have the same disabled style.
 //     The code is more comprehensible when styling elements in this order:
 //       1. input (with a pseudo-element),
 //       2. password toggle button,
@@ -17,6 +17,7 @@
 
 @use '../../settings/cursors';
 @use '../../theme/form-fields' as form-fields-theme;
+@use '../../tools/breakpoint';
 @use '../../tools/form-fields' as form-fields-tools;
 @use '../../tools/reset';
 @use 'theme';
@@ -54,27 +55,19 @@ $_field-name: 'TextField';
 
     // 1.
     &[type='number'] {
-        --text-field-arrows-width: #{theme.$input-number-arrows-width};
-    }
-
-    // 2.
-    &[size] {
-        width: calc(
-            var(--text-field-input-width) + 2 * #{form-fields-theme.$box-field-input-padding-x} + 2 *
-                #{form-fields-theme.$box-field-input-border-width} + var(--text-field-arrows-width, 0px)
-        );
-    }
-
-    // 3.
-    @each $size in theme.$input-size-characters {
-        &[size='#{$size}'] {
-            --text-field-input-width: #{$size}ch;
+        @include breakpoint.up(theme.$breakpoint-tablet) {
+            --text-field-arrows-width: #{theme.$input-number-arrows-width};
         }
     }
 }
 
 .TextField--fluid {
     @include form-fields-tools.box-field-fluid();
+}
+
+.TextField__input--customWidth {
+    box-sizing: content-box;
+    width: calc(var(--text-field-input-width, 3) * 1ch + var(--text-field-arrows-width, 0px)); // 2.
 }
 
 .TextField__passwordToggle {
@@ -90,7 +83,7 @@ $_field-name: 'TextField';
     border-bottom-right-radius: 0;
 }
 
-// 4.
+// 3.
 .TextField__passwordToggle__button {
     @include reset.button();
 
@@ -102,7 +95,7 @@ $_field-name: 'TextField';
     border-radius: 0 form-fields-theme.$box-field-input-border-radius form-fields-theme.$box-field-input-border-radius 0;
     background-color: form-fields-theme.$input-background-color;
 
-    // 5.
+    // 4.
     &::before {
         content: '';
         position: absolute;
@@ -114,7 +107,7 @@ $_field-name: 'TextField';
     }
 }
 
-// 6.
+// 5.
 .TextField__passwordToggle > .TextField__input:focus-visible,
 .TextField__passwordToggle__button:focus-visible {
     outline: 0;
@@ -138,20 +131,20 @@ $_field-name: 'TextField';
     display: block;
 }
 
-// stylelint-disable-next-line no-descending-specificity -- 7.
+// stylelint-disable-next-line no-descending-specificity -- 6.
 .TextField__passwordToggle__icon--shown,
 .TextField__passwordToggle__button[aria-checked='true'] > .TextField__passwordToggle__icon--hidden {
     display: none;
 }
 
-// stylelint-disable selector-max-specificity, selector-max-class, selector-max-compound-selectors -- 8.
+// stylelint-disable selector-max-specificity, selector-max-class, selector-max-compound-selectors -- 7.
 .TextField > .TextField__input:focus-visible,
 .TextField > .TextField__passwordToggle > .TextField__input:focus-visible ~ .TextField__passwordToggle__button::before {
     @include form-fields-tools.box-field-focus-visible();
 }
 // stylelint-enable selector-max-specificity, selector-max-class, selector-max-compound-selectors
 
-// 9.
+// 8.
 .TextField__passwordToggle__button:focus-visible::after {
     content: '';
     position: absolute;
@@ -184,7 +177,7 @@ $_field-name: 'TextField';
     @include form-fields-tools.box-field-disabled-input();
 }
 
-// stylelint-disable no-descending-specificity, selector-max-specificity, selector-max-class, selector-max-compound-selectors -- 10.
+// stylelint-disable no-descending-specificity, selector-max-specificity, selector-max-class, selector-max-compound-selectors -- 9.
 .TextField > .TextField__passwordToggle > .TextField__input:disabled,
 :is(.TextField--disabled, .TextField.is-disabled) > .TextField__passwordToggle > .TextField__input {
     border-color: transparent;

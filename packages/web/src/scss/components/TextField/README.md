@@ -85,32 +85,25 @@ input field will not be consistent across platforms/browsers.
 
 There are several ways to adjust the input width:
 
-### Size Attribute
-
-The `size` attribute is supported on inputs of the following types: `email`,
-`password`, `tel`, `text`, `url`.
+### Input Width
 
 This option is generally recommended for inputs with a limited value length
-(e.g. numeric representation of day, month, year). Supported values are `2`, `3`
-and `4` (characters). If you need any other value or prefer using `em` unit
-instead of default `ch`, define a `--text-field-input-width` CSS custom property on the `<input>`
-element:
+(e.g. numeric representation of day, month, year). Define a `--text-field-input-width` CSS custom property on the `<input>`
+element. This property corresponds with the unit `ch` (character).
+
+Please, bear in mind, this property replaces the native `size` attribute, which is supported for inputs
+of the following types: `email`, `number`, `password`, `tel`, `text`, `url`.
 
 ```html
-<div class="TextField">
-  <label for="text-field-size" class="TextField__label">4000 (in Roman numerals)</label>
-  <input type="text" size="4" id="text-field-size" class="TextField__input" name="size" placeholder="Placeholder" />
-</div>
 <div class="TextField">
   <label for="text-field-size-em" class="TextField__label">4000 (in Roman numerals)</label>
   <input
     type="text"
-    size="4"
-    id="text-field-size-em"
-    class="TextField__input"
-    name="sizeEm"
+    id="text-field-size-ch"
+    class="TextField__input TextField__input--customWidth"
+    name="sizeCh"
     placeholder="Placeholder"
-    style="--text-field-input-width: 4em;"
+    style="--text-field-input-width: 4;"
   />
 </div>
 ```
@@ -306,6 +299,6 @@ JS interaction class when controlled by JavaScript:
 </div>
 ```
 
-[prefixed]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#prefixing-css-class-names
 [dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
+[prefixed]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#prefixing-css-class-names
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
