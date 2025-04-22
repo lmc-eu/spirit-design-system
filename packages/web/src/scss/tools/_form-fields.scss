@@ -2,17 +2,20 @@
 // 2. Put the input above the stretched label.
 
 @use 'sass:map';
+@use 'sass:string';
+@use '@tokens' as tokens;
 @use '../settings/cursors';
-@use '../theme/form-fields' as form-fields-theme;
+@use '../settings/form-fields' as form-fields-settings;
 @use 'accessibility';
 @use 'reset';
+@use 'string' as spirit-string;
 @use 'typography';
 
 @mixin label-disabled() {
-    color: form-fields-theme.$label-color-state-disabled;
+    color: form-fields-settings.$label-color-state-disabled;
 
     &::after {
-        color: form-fields-theme.$label-color-state-disabled;
+        color: form-fields-settings.$label-color-state-disabled;
     }
 }
 
@@ -21,23 +24,23 @@
 }
 
 @mixin label-required() {
-    @include typography.generate(form-fields-theme.$label-required-typography);
+    @include typography.generate(form-fields-settings.$label-required-typography);
 
     content: '*';
-    margin-left: form-fields-theme.$label-required-margin-left;
-    color: form-fields-theme.$label-required-color;
+    margin-left: form-fields-settings.$label-required-margin-left;
+    color: form-fields-settings.$label-required-color;
 }
 
 @mixin input-disabled() {
-    color: form-fields-theme.$input-color-state-disabled;
+    color: form-fields-settings.$input-color-state-disabled;
     cursor: cursors.$disabled;
 }
 
 @mixin validation-text() {
-    @include typography.generate(form-fields-theme.$validation-text-typography);
+    @include typography.generate(form-fields-settings.$validation-text-typography);
 
     display: block;
-    margin-top: form-fields-theme.$validation-text-margin-top;
+    margin-top: form-fields-settings.$validation-text-margin-top;
 
     & > ul {
         @include reset.list();
@@ -49,17 +52,17 @@
 
     &:has(> svg:first-child:not(:only-child)) {
         display: flex;
-        column-gap: form-fields-theme.$validation-text-icon-gap;
+        column-gap: form-fields-settings.$validation-text-icon-gap;
     }
 }
 
 @mixin validation-text-disabled() {
-    color: form-fields-theme.$validation-text-color-state-disabled;
+    color: form-fields-settings.$validation-text-color-state-disabled;
 }
 
 @mixin inline-field-root() {
     display: inline-flex;
-    margin-block: form-fields-theme.$inline-field-margin-y;
+    margin-block: form-fields-settings.$inline-field-margin-y;
 }
 
 @mixin inline-field-root-disabled() {
@@ -68,14 +71,14 @@
 
 @mixin box-field-root() {
     display: inline-block;
-    width: form-fields-theme.$box-field-input-width;
+    width: form-fields-settings.$box-field-input-width;
 }
 
 @mixin inline-field-label() {
-    @include typography.generate(form-fields-theme.$input-typography);
+    @include typography.generate(form-fields-settings.$input-typography);
 
     display: block;
-    color: form-fields-theme.$label-color-state-default;
+    color: form-fields-settings.$label-color-state-default;
     cursor: cursors.$form-fields;
 }
 
@@ -86,68 +89,74 @@
 }
 
 @mixin box-field-label() {
-    @include typography.generate(form-fields-theme.$box-field-label-typography);
+    @include typography.generate(form-fields-settings.$box-field-label-typography);
 
     display: block;
-    margin-bottom: form-fields-theme.$box-field-label-margin-bottom;
-    color: form-fields-theme.$label-color-state-default;
+    margin-bottom: form-fields-settings.$box-field-label-margin-bottom;
+    color: form-fields-settings.$label-color-state-default;
 }
 
 @mixin inline-field-input() {
     z-index: 1; // 2.
     appearance: none;
-    border: form-fields-theme.$inline-field-input-border-width solid form-fields-theme.$input-border-color;
-    background-color: form-fields-theme.$input-background-color;
+    border: form-fields-settings.$inline-field-input-border-width solid form-fields-settings.$input-border-color;
+    background-color: form-fields-settings.$input-background-color;
     cursor: cursors.$form-fields;
     print-color-adjust: exact; // 1.
 
     &:focus-visible {
         outline: 0;
-        box-shadow: form-fields-theme.$input-focus-shadow;
+        box-shadow: form-fields-settings.$input-focus-shadow;
     }
 
     @media (hover: hover) {
         &:hover {
-            background-color: form-fields-theme.$input-background-color-state-hover;
+            background-color: form-fields-settings.$input-background-color-state-hover;
         }
     }
 
     &:active {
-        background-color: form-fields-theme.$input-background-color-state-active;
+        background-color: form-fields-settings.$input-background-color-state-active;
     }
 }
 
-@mixin box-field-input() {
-    @include typography.generate(form-fields-theme.$input-typography);
+@mixin box-field-input($field-name) {
+    // @deprecated Remove typography fallback when form field sizes are mandatory.
+    // Migration: delete the `$fallback-config` parameter.
+    // https://jira.almacareer.tech/browse/DS-1884 — Remove deprecated typography mixin from form fields
+    @include typography.from-css-variables(
+        $infix: #{spirit-string.convert-pascal-case-to-kebab-case($field-name)}-input,
+        $fallback-config: map.get(form-fields-settings.$box-field-size-config, medium, typography, mobile)
+    );
 
     display: block;
     width: 100%;
-    padding: form-fields-theme.$box-field-input-padding-y form-fields-theme.$box-field-input-padding-x;
-    color: form-fields-theme.$box-field-input-color-state-default;
-    border: form-fields-theme.$box-field-input-border-width form-fields-theme.$box-field-input-border-style
-        form-fields-theme.$input-border-color;
-    border-radius: form-fields-theme.$box-field-input-border-radius;
-    background: form-fields-theme.$input-background-color;
+    padding: form-fields-settings.$box-field-input-padding-y form-fields-settings.$box-field-input-padding-x;
+    color: form-fields-settings.$box-field-input-color-state-default;
+    border: form-fields-settings.$box-field-input-border-width form-fields-settings.$box-field-input-border-style
+        form-fields-settings.$input-border-color;
+    border-radius: form-fields-settings.$box-field-input-border-radius;
+    background: form-fields-settings.$input-background-color;
 
     &::placeholder {
-        color: form-fields-theme.$box-field-input-placeholder-color-state-default;
+        color: form-fields-settings.$box-field-input-placeholder-color-state-default;
         opacity: 1;
     }
 
     @media (hover: hover) {
         &:hover {
-            background-color: form-fields-theme.$input-background-color-state-hover;
+            background-color: form-fields-settings.$input-background-color-state-hover;
         }
     }
 
     &:active,
     &:focus-within {
-        background-color: form-fields-theme.$input-background-color-state-active;
+        background-color: form-fields-settings.$input-background-color-state-active;
     }
 }
 
 @mixin input-field-validation-states($field-name) {
-    @each $validation-state-name, $validation-state-value in form-fields-theme.$validation-states {
+    @each $validation-state-name, $validation-state-value in form-fields-settings.$validation-states {
         @if $field-name == 'FileUploaderInput' {
             :is(.#{$field-name}--#{$validation-state-name}, .#{$field-name}.has-#{$validation-state-name})
                 > .#{$field-name}__input
@@ -209,69 +218,69 @@
 }
 
 @mixin box-field-focus-visible() {
-    border-color: form-fields-theme.$box-field-input-border-color-focus;
+    border-color: form-fields-settings.$box-field-input-border-color-focus;
     outline: 0;
-    box-shadow: form-fields-theme.$input-focus-shadow;
+    box-shadow: form-fields-settings.$input-focus-shadow;
 }
 
 @mixin box-field-disabled-input() {
     @include input-disabled();
 
-    border-color: form-fields-theme.$input-border-color-state-disabled;
-    background-color: form-fields-theme.$input-background-color-state-disabled;
+    border-color: form-fields-settings.$input-border-color-state-disabled;
+    background-color: form-fields-settings.$input-background-color-state-disabled;
 
     &::placeholder {
-        color: form-fields-theme.$box-field-input-placeholder-color-state-disabled;
+        color: form-fields-settings.$box-field-input-placeholder-color-state-disabled;
     }
 }
 
 @mixin item() {
     align-items: center;
     width: 100%;
-    padding: form-fields-theme.$item-padding-y form-fields-theme.$item-padding-x;
+    padding: form-fields-settings.$item-padding-y form-fields-settings.$item-padding-x;
     margin-block: 0;
-    border-radius: form-fields-theme.$item-border-radius;
-    background-color: form-fields-theme.$item-background-color-state-default;
+    border-radius: form-fields-settings.$item-border-radius;
+    background-color: form-fields-settings.$item-background-color-state-default;
 
     @media (hover: hover) {
         &:hover {
-            background-color: form-fields-theme.$item-background-color-state-hover;
+            background-color: form-fields-settings.$item-background-color-state-hover;
         }
     }
 
     &:active {
-        background-color: form-fields-theme.$item-background-color-state-active;
+        background-color: form-fields-settings.$item-background-color-state-active;
     }
 }
 
 @mixin item-disabled() {
-    background-color: form-fields-theme.$item-background-color-state-default;
+    background-color: form-fields-settings.$item-background-color-state-default;
 }
 
 @mixin item-validation-text() {
-    @include typography.generate(form-fields-theme.$item-validation-text-typography);
+    @include typography.generate(form-fields-settings.$item-validation-text-typography);
 }
 
 @mixin item-label() {
-    @include typography.generate(form-fields-theme.$item-label-typography);
+    @include typography.generate(form-fields-settings.$item-label-typography);
 
-    color: form-fields-theme.$label-color-state-default;
+    color: form-fields-settings.$label-color-state-default;
 }
 
 @mixin helper-text() {
-    @include typography.generate(form-fields-theme.$helper-text-typography);
+    @include typography.generate(form-fields-settings.$helper-text-typography);
 
     display: block;
-    margin-top: form-fields-theme.$helper-text-margin-top;
-    color: form-fields-theme.$helper-text-color-state-default;
+    margin-top: form-fields-settings.$helper-text-margin-top;
+    color: form-fields-settings.$helper-text-color-state-default;
 }
 
 @mixin helper-text-disabled() {
-    color: form-fields-theme.$helper-text-color-state-disabled;
+    color: form-fields-settings.$helper-text-color-state-disabled;
 }
 
 @mixin item-helper-text() {
-    @include typography.generate(form-fields-theme.$item-helper-text-typography);
+    @include typography.generate(form-fields-settings.$item-helper-text-typography);
 }
 
 @mixin stretch($pseudo-element: before) {

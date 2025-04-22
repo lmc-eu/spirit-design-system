@@ -1,6 +1,6 @@
 @use 'true' as test;
 @use '../../settings/cursors';
-@use '../../theme/form-fields' as form-fields-theme;
+@use '../../settings/form-fields' as form-fields-settings;
 @use '../form-fields';
 
 @include test.describe('form-fields mixins') {
@@ -14,10 +14,10 @@
 
             @include test.expect() {
                 .label-disabled-test {
-                    color: form-fields-theme.$label-color-state-disabled;
+                    color: form-fields-settings.$label-color-state-disabled;
 
                     &::after {
-                        color: form-fields-theme.$label-color-state-disabled;
+                        color: form-fields-settings.$label-color-state-disabled;
                     }
                 }
             }
@@ -34,7 +34,7 @@
 
             @include test.expect() {
                 .input-disabled-test {
-                    color: form-fields-theme.$input-color-state-disabled;
+                    color: form-fields-settings.$input-color-state-disabled;
                     cursor: cursors.$disabled;
                 }
             }

@@ -1,3 +1,4 @@
+@use 'sass:list';
 @use '@tokens' as tokens;
 @use '../../settings/dictionaries';
 @use '../../settings/transitions';
@@ -64,7 +65,8 @@ $transition-timing: transitions.$timing-eased-in-out;
 
 $artwork-alignment-dictionary: dictionaries.$alignments-x;
 
-$media-sizes-vertical: (
+$size-dictionary: list.join(dictionaries.$size, 'auto');
+$media-vertical-size-config: (
     auto: (
         size: auto,
     ),
@@ -78,7 +80,7 @@ $media-sizes-vertical: (
         size: 280px,
     ),
 );
-$media-sizes-horizontal: (
+$media-horizontal-size-config: (
     auto: (
         size: auto,
     ),

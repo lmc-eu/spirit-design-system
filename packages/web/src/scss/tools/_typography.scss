@@ -1,46 +1,62 @@
 @use 'sass:map';
+@use 'sass:meta';
 @use 'sass:string';
 @use 'breakpoint';
 @use '@tokens' as tokens;
 
-@mixin generate($token) {
+// Typography properties supported by mixins in this file.
+// Matches `TypographyShape` in Spirit Tokens Exporter.
+$_properties: (font-style, font-weight, font-size, line-height, font-family);
+
+// Mixin to generate typography styles
+// Parameters are:
+// * $token: the composite token to generate styles from
+// * $as-css-variables: if true, generates CSS custom properties (variables) instead of CSS properties
+// * $css-variable-infix: infix to use for CSS custom properties (e.g. 'input' for input fields)
+@mixin generate($token, $as-css-variables: false, $css-variable-infix: '') {
+    $custom-property-prefix: '';
+
+    @if $as-css-variables {
+        @if $css-variable-infix == '' {
+            @error 'Infix is required when $as-css-variables is true.';
+        }
+
+        $custom-property-prefix: '--#{tokens.$css-variable-prefix}#{$css-variable-infix}-';
+    }
+
     @each $breakpoint-name, $breakpoint-value in tokens.$breakpoints {
         @include breakpoint.up($breakpoint-value) {
-            @if map.has-key($token, $breakpoint-name, font-style) {
-                font-style: map.get($token, $breakpoint-name, font-style);
+            @each $property in $_properties {
+                @if map.has-key($token, $breakpoint-name, $property) {
+                    @if meta.type-of(map.get($token, $breakpoint-name, $property)) == 'string' {
+                        #{$custom-property-prefix}#{$property}: string.unquote(
+                            map.get($token, $breakpoint-name, $property)
+                        );
+                    } @else {
+                        #{$custom-property-prefix}#{$property}: map.get($token, $breakpoint-name, $property);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Mixin to read typography properties from CSS custom properties
+// Parameters are:
+// * $infix: infix to use for CSS custom properties (variables) (e.g. 'input' for input fields)
+// * $fallback-config: optional fallback config to use if variables are not set
+@mixin from-css-variables($infix, $fallback-config: null) {
+    @each $property in $_properties {
+        @if $fallback-config {
+            $fallback: map.get($fallback-config, $property);
+
+            @if meta.type-of($fallback) == 'string' {
+                $fallback: string.unquote($fallback);
             }
 
-            @if map.has-key($token, $breakpoint-name, font-weight) {
-                font-weight: map.get($token, $breakpoint-name, font-weight);
-            }
-
-            @if map.has-key($token, $breakpoint-name, font-size) {
-                font-size: map.get($token, $breakpoint-name, font-size);
-            }
-
-            @if map.has-key($token, $breakpoint-name, line-height) {
-                line-height: map.get($token, $breakpoint-name, line-height);
-            }
-
-            @if map.has-key($token, $breakpoint-name, font-family) {
-                font-family: string.unquote(map.get($token, $breakpoint-name, font-family));
-            }
-
-            @if map.has-key($token, $breakpoint-name, letter-spacing) {
-                letter-spacing: map.get($token, $breakpoint-name, letter-spacing);
-            }
-
-            @if map.has-key($token, $breakpoint-name, text-decoration) {
-                text-decoration: map.get($token, $breakpoint-name, text-decoration);
-            }
-
-            @if map.has-key($token, $breakpoint-name, text-transform) {
-                text-transform: map.get($token, $breakpoint-name, text-transform);
-            }
-
-            @if map.has-key($token, $breakpoint-name, text-indent) {
-                text-indent: map.get($token, $breakpoint-name, text-indent);
-            }
+            #{$property}: var(--#{tokens.$css-variable-prefix}#{$infix}-#{$property}, #{$fallback});
+        } @else {
+            #{$property}: var(--#{tokens.$css-variable-prefix}#{$infix}-#{$property});
         }
     }
 }

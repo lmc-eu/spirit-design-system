@@ -401,9 +401,12 @@
         @include test.assert() {
             @include test.output() {
                 @include dictionaries.generate-variants(
-                    'TestFill',
-                    (fill, outline),
-                    (
+                    $class-name: 'TestFill',
+                    $dictionary-values: (
+                        'fill',
+                        'outline',
+                    ),
+                    $config: (
                         fill: (
                             margin-bottom: 0,
                             border-radius: 5px,
@@ -434,9 +437,12 @@
         @include test.assert() {
             @include test.output() {
                 @include dictionaries.generate-variants(
-                    'TestFill',
-                    (fill, outline),
-                    (
+                    $class-name: 'TestFill',
+                    $dictionary-values: (
+                        'fill',
+                        'outline',
+                    ),
+                    $config: (
                         fill: (
                             margin-bottom: 0,
                             border-radius: 5px,
@@ -446,7 +452,7 @@
                             border-radius: 15px,
                         ),
                     ),
-                    'custom'
+                    $custom-component-infix: 'custom'
                 );
             }
 
@@ -470,8 +476,11 @@
         @include test.assert() {
             @include test.output() {
                 @include dictionaries.generate-sizes(
-                    'TestSize',
-                    (
+                    $class-name: 'TestSize',
+                    $dictionary-values: (
+                        'large',
+                    ),
+                    $config: (
                         large: (
                             width: 100px,
                             height: 200px,
@@ -488,6 +497,37 @@
                     --spirit-test-size-height: 200px;
                     --spirit-test-size-padding-y: 12px;
                     --spirit-test-size-padding-x: 16px;
+                }
+            }
+        }
+    }
+
+    @include test.it('should generate correct size classes based on a config and infix') {
+        @include test.assert() {
+            @include test.output() {
+                @include dictionaries.generate-sizes(
+                    $class-name: 'TestSize',
+                    $dictionary-values: (
+                        'large',
+                    ),
+                    $config: (
+                        large: (
+                            width: 100px,
+                            height: 200px,
+                            padding-y: 12px,
+                            padding-x: 16px,
+                        ),
+                    ),
+                    $infix: 'infix'
+                );
+            }
+
+            @include test.expect() {
+                .TestSize--large {
+                    --spirit-test-size-infix-width: 100px;
+                    --spirit-test-size-infix-height: 200px;
+                    --spirit-test-size-infix-padding-y: 12px;
+                    --spirit-test-size-infix-padding-x: 16px;
                 }
             }
         }

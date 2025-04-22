@@ -5,6 +5,8 @@
 @use 'theme';
 
 .Tag {
+    @include typography.from-css-variables($infix: 'tag');
+
     display: inline-block;
     padding-inline: var(--#{tokens.$css-variable-prefix}tag-padding-x);
     padding-block: var(--#{tokens.$css-variable-prefix}tag-padding-y);
@@ -26,9 +28,13 @@
 @include dictionaries.generate-colors(
     $class-name: 'Tag',
     $dictionary-values: theme.$color-dictionary,
-    $config: theme.$color-dictionary-config
+    $config: theme.$color-config
 );
-@include dictionaries.generate-sizes('Tag', theme.$sizes);
+@include dictionaries.generate-sizes(
+    $class-name: 'Tag',
+    $dictionary-values: theme.$size-dictionary,
+    $config: theme.$size-config
+);
 
 .Tag--subtle.Tag--xsmall {
     border-color: transparent;

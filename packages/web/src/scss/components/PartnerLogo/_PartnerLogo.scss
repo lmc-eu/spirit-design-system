@@ -19,7 +19,11 @@
     height: var(--#{tokens.$css-variable-prefix}partner-logo-image-height);
 }
 
-@include dictionaries.generate-sizes($class-name: 'PartnerLogo', $sizes: theme.$sizes);
+@include dictionaries.generate-sizes(
+    $class-name: 'PartnerLogo',
+    $dictionary-values: theme.$size-dictionary,
+    $config: theme.$size-config
+);
 
 .PartnerLogo--fluid {
     display: flex;

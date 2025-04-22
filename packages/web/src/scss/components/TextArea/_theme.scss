@@ -1,1 +1,17 @@
-$input-min-height: 3.375rem;
+@use 'sass:map';
+@use '../../settings/form-fields' as form-fields-settings;
+
+$input-size-config: map.deep-merge(
+    form-fields-settings.$box-field-size-config,
+    (
+        small: (
+            height: 64px,
+        ),
+        medium: (
+            height: 80px,
+        ),
+        large: (
+            height: 96px,
+        ),
+    )
+);

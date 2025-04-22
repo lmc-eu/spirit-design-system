@@ -3,7 +3,7 @@
 // 2. Make the text selectable and allow links to be clickable in the helper text.
 
 @use 'sass:map';
-@use '../../theme/form-fields' as form-fields-theme;
+@use '../../settings/form-fields' as form-fields-settings;
 @use '../../tools/form-fields' as form-fields-tools;
 @use 'theme';
 
@@ -26,10 +26,10 @@ $_field-name: 'Radio';
     margin: theme.$input-margin;
     font: inherit;
     border-radius: theme.$input-border-radius;
-    background-color: form-fields-theme.$input-background-color;
+    background-color: form-fields-settings.$input-background-color;
 
     &:checked {
-        border-color: form-fields-theme.$inline-field-input-border-color-checked;
+        border-color: form-fields-settings.$inline-field-input-border-color-checked;
     }
 
     &::before {
@@ -54,7 +54,7 @@ $_field-name: 'Radio';
 
     position: relative; // 2.
     z-index: 1; // 2.
-    margin-left: form-fields-theme.$inline-field-gap;
+    margin-left: form-fields-settings.$inline-field-gap;
 }
 
 @include form-fields-tools.input-field-validation-states($_field-name);
@@ -63,7 +63,7 @@ $_field-name: 'Radio';
     @include form-fields-tools.inline-field-label();
     @include form-fields-tools.stretch();
 
-    margin-left: form-fields-theme.$inline-field-gap;
+    margin-left: form-fields-settings.$inline-field-gap;
 }
 
 .Radio__label--hidden {
@@ -112,11 +112,11 @@ $_field-name: 'Radio';
 .Radio > .Radio__input:disabled {
     @include form-fields-tools.input-disabled();
 
-    border-color: form-fields-theme.$input-border-color-state-disabled;
-    background-color: form-fields-theme.$input-background-color-state-disabled;
+    border-color: form-fields-settings.$input-border-color-state-disabled;
+    background-color: form-fields-settings.$input-background-color-state-disabled;
 
     &:checked {
-        border-color: form-fields-theme.$input-border-color-state-disabled;
+        border-color: form-fields-settings.$input-border-color-state-disabled;
     }
 
     &::before {
@@ -126,5 +126,5 @@ $_field-name: 'Radio';
 
 // stylelint-disable-next-line selector-max-specificity -- 1.
 .Radio--item:not(.Radio--disabled, .Radio.is-disabled) .Radio__input:is(:hover, :active):not(:checked, :disabled) {
-    background-color: form-fields-theme.$input-background-color;
+    background-color: form-fields-settings.$input-background-color;
 }

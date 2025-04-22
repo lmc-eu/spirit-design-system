@@ -10,8 +10,7 @@ $color-dictionary: (
     emotion: dictionaries.$emotion-colors,
     neutral: neutral,
 );
-
-$color-dictionary-config: (
+$color-config: (
     color: 'content-subtle',
     border-color: 'border-basic',
     background-color: 'background-basic',
@@ -20,7 +19,8 @@ $color-dictionary-config: (
     subtle-background-color: 'background-subtle',
 );
 
-$sizes: (
+$size-dictionary: dictionaries.$size-extended;
+$size-config: (
     xsmall: (
         padding-x: tokens.$space-500,
         padding-y: tokens.$space-200,

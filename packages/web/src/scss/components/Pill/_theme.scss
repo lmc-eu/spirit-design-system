@@ -13,7 +13,7 @@ $color-dictionary: (
     neutral: neutral,
 );
 
-$color-dictionary-config: (
+$color-config: (
     color: 'content-subtle',
     background-color: 'background-basic',
 );
@@ -22,7 +22,7 @@ $color-selected-dictionary: (
     selected: selected,
 );
 
-$color-selected-dictionary-config: (
+$color-selected-config: (
     color: 'content-subtle',
     background-color: 'state-default',
 );

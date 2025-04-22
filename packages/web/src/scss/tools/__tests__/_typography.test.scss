@@ -1,7 +1,7 @@
 @use 'sass:map';
 @use 'true' as test;
-@use '../typography';
 @use '@tokens' as tokens;
+@use '../typography';
 
 @include test.describe('generate mixin') {
     @include test.it('should generate typography styles for a given token and breakpoint') {
@@ -11,11 +11,7 @@
                 'font-size': 16px,
                 'font-style': italic,
                 'font-weight': 700,
-                'text-indent': 2em,
-                'text-transform': uppercase,
-                'text-decoration': underline,
                 'line-height': 1.5,
-                'letter-spacing': 0.05em,
             ),
         );
 
@@ -28,19 +24,99 @@
 
             @include test.expect() {
                 @media (width >= #{map.get(tokens.$breakpoints, 'tablet')}) {
-                    // stylelint-disable order/properties-order -- Disabling rule due to conditional rendering affecting property order
                     .typography-test {
                         font-style: italic;
                         font-weight: 700;
                         font-size: 16px;
                         line-height: 1.5;
                         font-family: Arial, sans-serif;
-                        letter-spacing: 0.05em;
-                        text-decoration: underline;
-                        text-transform: uppercase;
-                        text-indent: 2em;
                     }
-                    // stylelint-enable order/properties-order
+                }
+            }
+        }
+    }
+
+    @include test.it('should generate typography styles for a given token and breakpoint as custom properties') {
+        $sample-token: (
+            'tablet': (
+                'font-family': 'arial, sans-serif',
+                'font-size': 16px,
+                'font-style': italic,
+                'font-weight': 700,
+                'line-height': 1.5,
+            ),
+        );
+
+        @include test.assert() {
+            @include test.output() {
+                .typography-test {
+                    @include typography.generate(
+                        $token: $sample-token,
+                        $as-css-variables: true,
+                        $css-variable-infix: 'my-component'
+                    );
+                }
+            }
+
+            @include test.expect() {
+                @media (width >= #{map.get(tokens.$breakpoints, 'tablet')}) {
+                    .typography-test {
+                        --spirit-my-component-font-style: italic;
+                        --spirit-my-component-font-weight: 700;
+                        --spirit-my-component-font-size: 16px;
+                        --spirit-my-component-line-height: 1.5;
+                        --spirit-my-component-font-family: arial, sans-serif;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include test.describe('from-css-variables mixin') {
+    @include test.it('should read typography properties from custom properties') {
+        @include test.assert() {
+            @include test.output() {
+                .typography-test {
+                    @include typography.from-css-variables($infix: 'my-component');
+                }
+            }
+
+            @include test.expect() {
+                .typography-test {
+                    font-style: var(--spirit-my-component-font-style);
+                    font-weight: var(--spirit-my-component-font-weight);
+                    font-size: var(--spirit-my-component-font-size);
+                    line-height: var(--spirit-my-component-line-height);
+                    font-family: var(--spirit-my-component-font-family);
+                }
+            }
+        }
+    }
+
+    @include test.it('should read typography properties from custom properties with fallback') {
+        $sample-fallback: (
+            'font-family': 'arial, sans-serif',
+            'font-size': 16px,
+            'font-style': italic,
+            'font-weight': 700,
+            'line-height': 1.5,
+        );
+
+        @include test.assert() {
+            @include test.output() {
+                .typography-test {
+                    @include typography.from-css-variables($infix: 'my-component', $fallback-config: $sample-fallback);
+                }
+            }
+
+            @include test.expect() {
+                .typography-test {
+                    font-style: var(--spirit-my-component-font-style, italic);
+                    font-weight: var(--spirit-my-component-font-weight, 700);
+                    font-size: var(--spirit-my-component-font-size, 16px);
+                    line-height: var(--spirit-my-component-line-height, 1.5);
+                    font-family: var(--spirit-my-component-font-family, arial, sans-serif);
                 }
             }
         }
