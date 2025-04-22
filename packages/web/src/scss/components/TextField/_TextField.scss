@@ -97,7 +97,7 @@ $_field-name: 'TextField';
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: theme.$input-password-toggle-padding;
+    padding-inline: theme.$input-password-toggle-padding-x;
     color: form-fields-theme.$box-field-input-color-state-default;
     border-radius: 0 form-fields-theme.$box-field-input-border-radius form-fields-theme.$box-field-input-border-radius 0;
     background-color: form-fields-theme.$input-background-color;
@@ -133,9 +133,10 @@ $_field-name: 'TextField';
     pointer-events: none;
 }
 
+.TextField__passwordToggle__icon:not(.TextField__passwordToggle__icon--shown, .TextField__passwordToggle__icon--hidden),
 .TextField__passwordToggle__icon--hidden,
 .TextField__passwordToggle__button[aria-checked='true'] > .TextField__passwordToggle__icon--shown {
-    display: block;
+    display: flex;
 }
 
 // stylelint-disable-next-line no-descending-specificity -- 7.
@@ -158,7 +159,7 @@ $_field-name: 'TextField';
     top: 0;
     right: 0;
     z-index: 1;
-    width: (2 * theme.$input-password-toggle-padding) + theme.$input-password-toggle-icon-size;
+    width: (2 * theme.$input-password-toggle-padding-x) + theme.$input-password-toggle-icon-size;
     height: 100%;
     border-radius: form-fields-theme.$box-field-input-border-radius;
     box-shadow: form-fields-theme.$input-focus-shadow;
