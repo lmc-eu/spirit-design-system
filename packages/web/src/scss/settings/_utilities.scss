@@ -1,25 +1,51 @@
 @use 'sass:map';
 @use '@tokens' as tokens;
+@use '../tools/utilities';
+
+$accent-prefix: 'accent-';
+$accent-tokens-key: 'accent-colors';
 
 $utilities: (
     'background-color': (
         responsive: false,
         property: background-color,
         class: bg,
-        values: (
-            primary: tokens.$background-primary,
-            secondary: tokens.$background-secondary,
-            tertiary: tokens.$background-tertiary,
-        ),
+        values: map.merge(
+                utilities.generate-token-map(
+                    $tokens-group: $accent-tokens-key,
+                    $keys-to-generate: (
+                        background-basic,
+                        background-subtle,
+                    ),
+                    $prefix: $accent-prefix,
+                    $remove-from-name: 'background',
+                ),
+                (
+                    primary: tokens.$background-primary,
+                    secondary: tokens.$background-secondary,
+                    tertiary: tokens.$background-tertiary,
+                )
+            ),
     ),
     'border-color': (
         responsive: false,
         property: border-color,
         class: border,
-        values: (
-            basic: tokens.$border-basic,
-            focus: tokens.$border-focus,
-        ),
+        values: map.merge(
+                utilities.generate-token-map(
+                    $tokens-group: $accent-tokens-key,
+                    $keys-to-generate: (
+                        border-basic,
+                        border-subtle,
+                    ),
+                    $prefix: $accent-prefix,
+                    $remove-from-name: 'border',
+                ),
+                (
+                    basic: tokens.$border-basic,
+                    focus: tokens.$border-focus,
+                )
+            ),
     ),
     'border-radius': (
         responsive: true,
@@ -179,10 +205,21 @@ $utilities: (
         responsive: false,
         property: color,
         class: text,
-        values: (
-            primary: tokens.$text-primary,
-            secondary: tokens.$text-secondary,
-            tertiary: tokens.$text-tertiary,
-        ),
+        values: map.merge(
+                utilities.generate-token-map(
+                    $tokens-group: $accent-tokens-key,
+                    $keys-to-generate: (
+                        content-basic,
+                        content-subtle,
+                    ),
+                    $prefix: $accent-prefix,
+                    $remove-from-name: 'content',
+                ),
+                (
+                    primary: tokens.$text-primary,
+                    secondary: tokens.$text-secondary,
+                    tertiary: tokens.$text-tertiary,
+                )
+            ),
     ),
 );

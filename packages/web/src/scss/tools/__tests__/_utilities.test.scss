@@ -1,6 +1,47 @@
 @use 'true' as test;
 @use '../utilities';
 
+@include test.describe('generate-token-map function') {
+    @include test.it('should return accent tokens filtered by scope for background colors') {
+        @include test.assert-equal(
+            utilities.generate-token-map(
+                $tokens-group: 'accent-colors',
+                $keys-to-generate: (
+                    background-basic,
+                    background-subtle,
+                ),
+                $prefix: 'accent-',
+                $remove-from-name: 'background'
+            ),
+            (
+                accent-01-basic: var(--spirit-color-accent-01-background-basic),
+                accent-01-subtle: var(--spirit-color-accent-01-background-subtle),
+                accent-02-basic: var(--spirit-color-accent-02-background-basic),
+                accent-02-subtle: var(--spirit-color-accent-02-background-subtle),
+            )
+        );
+    }
+
+    @include test.it('should return an empty map if tokens do not exist') {
+        @include test.assert-equal(
+            utilities.generate-token-map($tokens-group: 'test-colors', $keys-to-generate: 'test'),
+            ()
+        );
+    }
+
+    @include test.it('should return an empty map if tokens do not match the scope') {
+        @include test.assert-equal(
+            utilities.generate-token-map(
+                $tokens-group: 'accent-colors',
+                $keys-to-generate: test,
+                $prefix: '',
+                $remove-from-name: ''
+            ),
+            ()
+        );
+    }
+}
+
 @include test.describe('generate mixin') {
     @include test.it('should generate utility classes based on the provided utility map and infix') {
         $sample-utility: (
