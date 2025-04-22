@@ -3,7 +3,7 @@
 // 3. Increase specificity to make the disabled state override any other
 
 @use '../../settings/cursors';
-@use '../../theme/form-fields' as form-fields-theme;
+@use '../../settings/form-fields' as form-fields-settings;
 @use '../../tools/accessibility';
 @use '../../tools/form-fields' as form-fields-tools;
 @use '../../tools/links';
@@ -36,7 +36,7 @@ $_field-name: 'FileUploaderInput';
 }
 
 .FileUploaderInput__input:focus-visible ~ .FileUploaderInput__dropZone {
-    box-shadow: form-fields-theme.$input-focus-shadow;
+    box-shadow: form-fields-settings.$input-focus-shadow;
 }
 
 .FileUploaderInput__dropZone > svg {
@@ -123,7 +123,7 @@ $_field-name: 'FileUploaderInput';
     ~ .FileUploaderInput__dropZone
     > .FileUploaderInput__dropZoneLabel
     > .FileUploaderInput__link {
-    color: form-fields-theme.$input-color-state-disabled;
+    color: form-fields-settings.$input-color-state-disabled;
 }
 
 .FileUploaderInput
@@ -136,8 +136,8 @@ $_field-name: 'FileUploaderInput';
 // stylelint-enable selector-max-compound-selectors, selector-max-specificity
 
 .FileUploaderInput > .FileUploaderInput__input:disabled ~ .FileUploaderInput__dropZone {
-    border-color: form-fields-theme.$input-border-color-state-disabled;
-    background-color: form-fields-theme.$input-background-color-state-disabled;
+    border-color: form-fields-settings.$input-border-color-state-disabled;
+    background-color: form-fields-settings.$input-background-color-state-disabled;
 }
 // stylelint-enable selector-max-class
 

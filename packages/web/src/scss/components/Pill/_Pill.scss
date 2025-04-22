@@ -19,10 +19,10 @@
 @include dictionaries.generate-colors(
     $class-name: 'Pill',
     $dictionary-values: theme.$color-dictionary,
-    $config: theme.$color-dictionary-config
+    $config: theme.$color-config
 );
 @include dictionaries.generate-colors(
     $class-name: 'Pill',
     $dictionary-values: theme.$color-selected-dictionary,
-    $config: theme.$color-selected-dictionary-config
+    $config: theme.$color-selected-config
 );

@@ -5,7 +5,7 @@
 // 3. Make the text selectable and allow links to be clickable in the helper and validation texts.
 
 @use 'theme';
-@use '../../theme/form-fields' as form-fields-theme;
+@use '../../settings/form-fields' as form-fields-settings;
 @use '../../tools/form-fields' as form-fields-tools;
 @use '../../tools/svg';
 
@@ -18,7 +18,7 @@ $_field-name: 'Checkbox';
 }
 
 .Checkbox__text {
-    margin-left: form-fields-theme.$inline-field-gap;
+    margin-left: form-fields-settings.$inline-field-gap;
 }
 
 .Checkbox__label {
@@ -45,12 +45,12 @@ $_field-name: 'Checkbox';
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    background-color: form-fields-theme.$input-background-color;
+    background-color: form-fields-settings.$input-background-color;
 
     &:checked,
     &:indeterminate {
-        border-color: form-fields-theme.$inline-field-input-border-color-checked;
-        background-color: form-fields-theme.$inline-field-input-background-color-checked;
+        border-color: form-fields-settings.$inline-field-input-border-color-checked;
+        background-color: form-fields-settings.$inline-field-input-background-color-checked;
     }
 
     &:checked {
@@ -121,12 +121,12 @@ $_field-name: 'Checkbox';
 .Checkbox > .Checkbox__input:disabled {
     @include form-fields-tools.input-disabled();
 
-    border-color: form-fields-theme.$input-border-color-state-disabled;
-    background-color: form-fields-theme.$input-background-color-state-disabled;
+    border-color: form-fields-settings.$input-border-color-state-disabled;
+    background-color: form-fields-settings.$input-background-color-state-disabled;
 
     &:checked,
     &:indeterminate {
-        border-color: form-fields-theme.$inline-field-input-border-color-checked-disabled;
+        border-color: form-fields-settings.$inline-field-input-border-color-checked-disabled;
     }
 
     &:checked {
@@ -141,5 +141,5 @@ $_field-name: 'Checkbox';
 
 // stylelint-disable-next-line selector-max-specificity -- 2.
 .Checkbox--item:not(.Checkbox--disabled, .Checkbox.is-disabled) .Checkbox__input:is(:hover, :active):not(:checked) {
-    background-color: form-fields-theme.$input-background-color;
+    background-color: form-fields-settings.$input-background-color;
 }

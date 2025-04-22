@@ -1,8 +1,11 @@
 @use 'theme';
 @use '@tokens' as tokens;
 @use '../../tools/dictionaries';
+@use '../../tools/typography';
 
 .Avatar {
+    @include typography.from-css-variables($infix: 'avatar');
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -37,4 +40,8 @@
     object-fit: cover;
 }
 
-@include dictionaries.generate-sizes('Avatar', theme.$sizes);
+@include dictionaries.generate-sizes(
+    $class-name: 'Avatar',
+    $dictionary-values: theme.$size-dictionary,
+    $config: theme.$size-config
+);

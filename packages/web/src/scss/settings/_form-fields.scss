@@ -1,4 +1,5 @@
 @use '@tokens' as tokens;
+@use 'dictionaries';
 
 // Common for all form components
 $input-typography: tokens.$body-medium-regular;
@@ -53,6 +54,22 @@ $box-field-input-padding-y: calc(#{tokens.$space-500} - #{tokens.$border-width-1
 $box-field-input-width: 18rem;
 $box-field-label-typography: tokens.$body-small-semibold;
 $box-field-label-margin-bottom: tokens.$space-400;
+
+$box-field-size-dictionary: dictionaries.$size;
+$box-field-size-config: (
+    small: (
+        height: 32px,
+        typography: tokens.$body-small-regular,
+    ),
+    medium: (
+        height: 40px,
+        typography: tokens.$body-medium-regular,
+    ),
+    large: (
+        height: 48px,
+        typography: tokens.$body-medium-regular,
+    ),
+);
 
 $validation-states: (
     success: (

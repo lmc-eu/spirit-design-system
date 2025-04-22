@@ -15,10 +15,12 @@
 //       3. validation text.
 //     Also, high-specificity selectors are necessary to achieve the desired result.
 
+@use '@tokens' as tokens;
 @use '../../settings/cursors';
-@use '../../theme/form-fields' as form-fields-theme;
+@use '../../settings/form-fields' as form-fields-settings;
 @use '../../tools/form-fields' as form-fields-tools;
 @use '../../tools/reset';
+@use '../../tools/string' as spirit-string;
 @use 'theme';
 
 $_field-name: 'TextField';
@@ -40,7 +42,11 @@ $_field-name: 'TextField';
 }
 
 .TextField__input {
-    @include form-fields-tools.box-field-input();
+    @include form-fields-tools.box-field-input($_field-name);
+
+    height: var(
+        --#{tokens.$css-variable-prefix}#{spirit-string.convert-pascal-case-to-kebab-case($_field-name)}-input-height
+    );
 
     &[type='email'],
     &[type='number'],
@@ -60,8 +66,8 @@ $_field-name: 'TextField';
     // 2.
     &[size] {
         width: calc(
-            var(--text-field-input-width) + 2 * #{form-fields-theme.$box-field-input-padding-x} + 2 *
-                #{form-fields-theme.$box-field-input-border-width} + var(--text-field-arrows-width, 0px)
+            var(--text-field-input-width) + 2 * #{form-fields-settings.$box-field-input-padding-x} + 2 *
+                #{form-fields-settings.$box-field-input-border-width} + var(--text-field-arrows-width, 0px)
         );
     }
 
@@ -98,18 +104,19 @@ $_field-name: 'TextField';
     align-items: center;
     justify-content: center;
     padding-inline: theme.$input-password-toggle-padding-x;
-    color: form-fields-theme.$box-field-input-color-state-default;
-    border-radius: 0 form-fields-theme.$box-field-input-border-radius form-fields-theme.$box-field-input-border-radius 0;
-    background-color: form-fields-theme.$input-background-color;
+    color: form-fields-settings.$box-field-input-color-state-default;
+    border-radius: 0 form-fields-settings.$box-field-input-border-radius
+        form-fields-settings.$box-field-input-border-radius 0;
+    background-color: form-fields-settings.$input-background-color;
 
     // 5.
     &::before {
         content: '';
         position: absolute;
         inset: 0;
-        border: form-fields-theme.$box-field-input-border-width form-fields-theme.$box-field-input-border-style
-            form-fields-theme.$input-border-color;
-        border-radius: form-fields-theme.$box-field-input-border-radius;
+        border: form-fields-settings.$box-field-input-border-width form-fields-settings.$box-field-input-border-style
+            form-fields-settings.$input-border-color;
+        border-radius: form-fields-settings.$box-field-input-border-radius;
         pointer-events: none;
     }
 }
@@ -121,12 +128,12 @@ $_field-name: 'TextField';
 }
 
 .TextField__input:hover + .TextField__passwordToggle__button {
-    background-color: form-fields-theme.$input-background-color-state-hover;
+    background-color: form-fields-settings.$input-background-color-state-hover;
 }
 
 .TextField__input:active + .TextField__passwordToggle__button,
 .TextField__input:focus-within + .TextField__passwordToggle__button {
-    background-color: form-fields-theme.$input-background-color-state-active;
+    background-color: form-fields-settings.$input-background-color-state-active;
 }
 
 .TextField__passwordToggle__icon {
@@ -161,8 +168,8 @@ $_field-name: 'TextField';
     z-index: 1;
     width: (2 * theme.$input-password-toggle-padding-x) + theme.$input-password-toggle-icon-size;
     height: 100%;
-    border-radius: form-fields-theme.$box-field-input-border-radius;
-    box-shadow: form-fields-theme.$input-focus-shadow;
+    border-radius: form-fields-settings.$box-field-input-border-radius;
+    box-shadow: form-fields-settings.$input-focus-shadow;
 }
 
 .TextField__validationText,
@@ -197,14 +204,14 @@ $_field-name: 'TextField';
 :is(.TextField--disabled, .TextField.is-disabled)
     .TextField__passwordToggle
     .TextField__passwordToggle__button::before {
-    border-color: form-fields-theme.$input-border-color-state-disabled;
+    border-color: form-fields-settings.$input-border-color-state-disabled;
 }
 
 .TextField .TextField__input:disabled ~ .TextField__passwordToggle__button,
 :is(.TextField--disabled, .TextField.is-disabled) .TextField__passwordToggle__button {
     @include form-fields-tools.input-disabled();
 
-    background-color: form-fields-theme.$input-background-color-state-disabled;
+    background-color: form-fields-settings.$input-background-color-state-disabled;
     pointer-events: none;
     cursor: cursors.$disabled;
 }

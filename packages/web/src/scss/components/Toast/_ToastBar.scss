@@ -101,7 +101,7 @@
 @include dictionaries.generate-colors(
     $class-name: 'ToastBar',
     $dictionary-values: theme.$color-dictionary,
-    $config: theme.$color-dictionary-config,
+    $config: theme.$color-config,
     $generate-data-attribute: true
 );
 

@@ -1,6 +1,7 @@
 @use 'sass:map';
-@use '../../theme/form-fields' as form-fields-theme;
+@use '@tokens' as tokens;
 @use '../../tools/form-fields' as form-fields-tools;
+@use '../../tools/string' as spirit-string;
 @use 'theme';
 
 $_field-name: 'TextArea';
@@ -22,11 +23,11 @@ $_field-name: 'TextArea';
 }
 
 .TextArea__input {
-    @include form-fields-tools.box-field-input();
+    @include form-fields-tools.box-field-input($_field-name);
 
-    min-height: calc(
-        #{theme.$input-min-height} + 2 * #{form-fields-theme.$box-field-input-padding-x} + 2 *
-            #{form-fields-theme.$box-field-input-border-width}
+    min-height: var(
+        --#{tokens.$css-variable-prefix}#{spirit-string.convert-pascal-case-to-kebab-case($_field-name)}-input-height,
+        map.get(theme.$input-size-config, medium, height)
     );
     resize: vertical;
 }

@@ -1,4 +1,4 @@
-@use '../../theme/form-fields' as form-fields-theme;
+@use '../../settings/form-fields' as form-fields-settings;
 @use '../../tools/accessibility';
 @use '../../tools/reset';
 @use '../../tools/typography';
@@ -56,6 +56,6 @@
 
     &:focus-visible {
         outline: 0;
-        box-shadow: form-fields-theme.$input-focus-shadow;
+        box-shadow: form-fields-settings.$input-focus-shadow;
     }
 }

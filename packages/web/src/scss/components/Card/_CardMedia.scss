@@ -39,11 +39,19 @@
         $infix: breakpoint.get-modifier(infix, $breakpoint-name, $breakpoint-value);
 
         .Card--#{$infix}vertical > {
-            @include dictionaries.generate-sizes($class-name: 'CardMedia', $sizes: theme.$media-sizes-vertical);
+            @include dictionaries.generate-sizes(
+                $class-name: 'CardMedia',
+                $dictionary-values: theme.$size-dictionary,
+                $config: theme.$media-vertical-size-config
+            );
         }
 
         :is(.Card--#{$infix}horizontal, .Card--#{$infix}horizontalReversed) > {
-            @include dictionaries.generate-sizes($class-name: 'CardMedia', $sizes: theme.$media-sizes-horizontal);
+            @include dictionaries.generate-sizes(
+                $class-name: 'CardMedia',
+                $dictionary-values: theme.$size-dictionary,
+                $config: theme.$media-horizontal-size-config
+            );
         }
 
         .Card--#{$infix}vertical > .CardMedia {

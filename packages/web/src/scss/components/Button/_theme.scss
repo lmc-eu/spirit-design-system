@@ -1,9 +1,8 @@
 @use 'sass:map';
 @use '@tokens' as tokens;
 @use '../../settings/dictionaries';
+@use '../../settings/form-fields' as form-fields-settings;
 
-$typography: tokens.$body-small-semibold;
-$typography-large: tokens.$body-medium-semibold;
 $border-width: tokens.$border-width-100;
 $border-style: solid;
 $border-radius: tokens.$radius-full;
@@ -21,7 +20,7 @@ $color-emotion-dictionary: (
     emotion: dictionaries.$emotion-colors,
 );
 
-$color-action-button-dictionary-config: (
+$color-action-button-config: (
     color: 'content',
     border-color: 'border',
     background-color: 'state-default',
@@ -29,7 +28,7 @@ $color-action-button-dictionary-config: (
     background-color-state-active: 'state-active',
 );
 
-$color-emotion-dictionary-config: (
+$color-emotion-config: (
     color: 'content-subtle',
     border-color: 'border-basic',
     background-color: 'state-default',
@@ -37,7 +36,7 @@ $color-emotion-dictionary-config: (
     background-color-state-active: 'state-active',
 );
 
-$loading-color-dictionary-config: (
+$loading-color-config: (
     color: 'content',
 );
 
@@ -48,24 +47,24 @@ $loading-color-dictionary-overrides: (
     ),
 );
 
-// We subtract the border width to achieve the same dimensions as other form elements
-$sizes: (
-    small: (
-        height: 32px,
-        padding-x: calc(#{tokens.$space-700} - #{tokens.$border-width-100}),
-        padding-y: calc(#{tokens.$space-300} - #{tokens.$border-width-100}),
-        typography: $typography,
-    ),
-    medium: (
-        height: 40px,
-        padding-x: calc(#{tokens.$space-900} - #{tokens.$border-width-100}),
-        padding-y: calc(#{tokens.$space-500} - #{tokens.$border-width-100}),
-        typography: $typography,
-    ),
-    large: (
-        height: 48px,
-        padding-x: calc(#{tokens.$space-900} - #{tokens.$border-width-100}),
-        padding-y: calc(#{tokens.$space-500} - #{tokens.$border-width-100}),
-        typography: $typography-large,
-    ),
+$size-dictionary: dictionaries.$size;
+$size-config: map.deep-merge(
+    form-fields-settings.$box-field-size-config,
+    (
+        small: (
+            padding-x: calc(#{tokens.$space-700} - #{tokens.$border-width-100}),
+            padding-y: calc(#{tokens.$space-300} - #{tokens.$border-width-100}),
+            typography: tokens.$body-small-semibold,
+        ),
+        medium: (
+            padding-x: calc(#{tokens.$space-900} - #{tokens.$border-width-100}),
+            padding-y: calc(#{tokens.$space-500} - #{tokens.$border-width-100}),
+            typography: tokens.$body-small-semibold,
+        ),
+        large: (
+            padding-x: calc(#{tokens.$space-900} - #{tokens.$border-width-100}),
+            padding-y: calc(#{tokens.$space-500} - #{tokens.$border-width-100}),
+            typography: tokens.$body-medium-semibold,
+        ),
+    )
 );
