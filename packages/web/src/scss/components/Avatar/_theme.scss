@@ -1,4 +1,5 @@
 @use '@tokens' as tokens;
+@use '../../settings/dictionaries';
 
 $color: tokens.$text-primary;
 $border-width: tokens.$border-width-100;
@@ -8,7 +9,8 @@ $border-radius: tokens.$radius-full;
 $border-radius-square: tokens.$radius-200;
 $background-color: tokens.$background-primary;
 
-$sizes: (
+$size-dictionary: dictionaries.$size-extended;
+$size-config: (
     xsmall: (
         width: tokens.$space-900,
         height: tokens.$space-900,

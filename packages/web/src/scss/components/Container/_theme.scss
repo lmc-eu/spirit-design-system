@@ -1,5 +1,6 @@
 @use 'sass:map';
 @use '@tokens' as tokens;
+@use '../../settings/dictionaries';
 @use '../../tools/tokens' as tokens-tools;
 @use 'tools';
 
@@ -9,7 +10,8 @@ $container-max-width: tokens-tools.get-variable-if-exists('container-xlarge-max-
 $container-paddings: map.get(tokens.$containers, padding);
 $container-breakpoints: tokens.$breakpoints;
 
-$container-sizes: (
+$size-dictionary: dictionaries.$size-extended;
+$size-config: (
     xsmall: tools.get-size('xsmall', $container-max-width),
     small: tools.get-size('small', $container-max-width),
     medium: tools.get-size('medium', $container-max-width),

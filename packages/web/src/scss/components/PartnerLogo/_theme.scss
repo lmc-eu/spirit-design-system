@@ -1,8 +1,10 @@
 @use '@tokens' as tokens;
+@use '../../settings/dictionaries';
 
 $background-color: tokens.$background-primary;
 $border-radius: tokens.$radius-200;
-$sizes: (
+$size-dictionary: dictionaries.$size;
+$size-config: (
     small: (
         image-height: 32px,
         padding: tokens.$space-500,

@@ -15,10 +15,12 @@
 //       3. validation text.
 //     Also, high-specificity selectors are necessary to achieve the desired result.
 
+@use '@tokens' as tokens;
 @use '../../settings/cursors';
 @use '../../theme/form-fields' as form-fields-theme;
 @use '../../tools/form-fields' as form-fields-tools;
 @use '../../tools/reset';
+@use '../../tools/string' as spirit-string;
 @use 'theme';
 
 $_field-name: 'TextField';
@@ -40,7 +42,11 @@ $_field-name: 'TextField';
 }
 
 .TextField__input {
-    @include form-fields-tools.box-field-input();
+    @include form-fields-tools.box-field-input($_field-name);
+
+    height: var(
+        --#{tokens.$css-variable-prefix}#{spirit-string.convert-pascal-case-to-kebab-case($_field-name)}-input-height
+    );
 
     &[type='email'],
     &[type='number'],

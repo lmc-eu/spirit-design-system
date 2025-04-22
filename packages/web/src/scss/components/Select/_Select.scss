@@ -1,10 +1,12 @@
 // 1. Calculate select end padding to cover the space occupied by the icon.
 
 @use 'sass:map';
+@use '@tokens' as tokens;
 @use '../../settings/cursors';
 @use '../../theme/form-fields' as form-fields-theme;
 @use '../../tools/form-fields' as form-fields-tools;
 @use '../../tools/reset';
+@use '../../tools/string' as spirit-string;
 
 $_field-name: 'Select';
 
@@ -43,9 +45,12 @@ $_field-name: 'Select';
 }
 
 .Select__input {
-    @include form-fields-tools.box-field-input();
+    @include form-fields-tools.box-field-input($_field-name);
 
     appearance: none;
+    height: var(
+        --#{tokens.$css-variable-prefix}#{spirit-string.convert-pascal-case-to-kebab-case($_field-name)}-input-height
+    );
 
     // 1.
     padding-inline-end: calc(

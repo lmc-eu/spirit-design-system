@@ -2,10 +2,13 @@
 // 2. Put the input above the stretched label.
 
 @use 'sass:map';
+@use 'sass:string';
+@use '@tokens' as tokens;
 @use '../settings/cursors';
 @use '../theme/form-fields' as form-fields-theme;
 @use 'accessibility';
 @use 'reset';
+@use 'string' as spirit-string;
 @use 'typography';
 
 @mixin label-disabled() {
@@ -117,8 +120,14 @@
     }
 }
 
-@mixin box-field-input() {
-    @include typography.generate(form-fields-theme.$input-typography);
+@mixin box-field-input($field-name) {
+    // @deprecated Remove typography fallback when form field sizes are mandatory.
+    // Migration: delete the `$fallback-config` parameter.
+    // https://jira.almacareer.tech/browse/DS-1884 — Remove deprecated typography mixin from form fields
+    @include typography.read(
+        $infix: #{spirit-string.convert-pascal-case-to-kebab-case($field-name)}-input,
+        $fallback-config: map.get(form-fields-theme.$box-field-size-config, medium, typography, mobile)
+    );
 
     display: block;
     width: 100%;

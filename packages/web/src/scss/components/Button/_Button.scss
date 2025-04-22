@@ -8,6 +8,8 @@
 @use '../../tools/typography';
 
 .Button {
+    @include typography.read($infix: 'button');
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -56,14 +58,18 @@
 @include dictionaries.generate-colors(
     $class-name: 'Button',
     $dictionary-values: theme.$color-component-button-dictionary,
-    $config: theme.$color-action-button-dictionary-config
+    $config: theme.$color-action-button-config
 );
 @include dictionaries.generate-colors(
     $class-name: 'Button',
     $dictionary-values: theme.$color-emotion-dictionary,
-    $config: theme.$color-emotion-dictionary-config
+    $config: theme.$color-emotion-config
 );
-@include dictionaries.generate-sizes('Button', theme.$sizes);
+@include dictionaries.generate-sizes(
+    $class-name: 'Button',
+    $dictionary-values: theme.$size-dictionary,
+    $config: theme.$size-config
+);
 
 .Button--block {
     display: block;

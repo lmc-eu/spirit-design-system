@@ -11,7 +11,11 @@
     @include tools.paddings(theme.$container-paddings, theme.$container-breakpoints);
 }
 
-@include dictionaries.generate-sizes('Container', theme.$container-sizes);
+@include dictionaries.generate-sizes(
+    $class-name: 'Container',
+    $dictionary-values: theme.$size-dictionary,
+    $config: theme.$size-config
+);
 
 .Container:not(.Container--fluid) {
     max-width: var(--#{tokens.$css-variable-prefix}container-max-width, #{theme.$container-max-width});
