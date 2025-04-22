@@ -1,13 +1,62 @@
-// Inspired by React UI and Bootstrap
+// 1. Format key if it's type of number so it's always 2 digits
+// 2. Don't prefix if value key is null (e.g. with shadow class)
+// 3. Remove default postfix from class name
+
+@use '@tokens' as tokens;
 @use 'sass:list';
 @use 'sass:map';
 @use 'sass:meta';
-@use 'string';
+@use 'sass:string';
+@use 'string' as spirit-string;
+@use 'tokens' as tokens-tools;
 
+// Generates a map of tokens based on the provided key, prefix, replacement, and scope.
+// It iterates over the tokens and creates a new map with modified keys and values.
+// Parameters are:
+// * $tokens-group: the key used to retrieve a group of tokens from `@tokens`.
+// * $keys-to-generate: a list of keys to filter tokens included in the generated map.
+// * $prefix: a prefix to prepend to each key in the generated map.
+// * $remove-from-name: a string to be removed in the token keys.
+// Returns a map of tokens with modified keys and values.
+@function generate-token-map($tokens-group, $keys-to-generate, $prefix: '', $remove-from-name: '') {
+    $result: ();
+    $tokens: tokens-tools.get-variable-if-exists($tokens-group, null);
+
+    @each $key, $values in $tokens {
+        @each $subkey, $value in $values {
+            @if meta.type-of($keys-to-generate) ==
+                'list' and
+                $subkey !=
+                null and
+                list.index($keys-to-generate, $subkey) !=
+                null
+            {
+                // 1.
+                $name: $prefix +
+                    if(meta.type-of($key) == 'number' and $key < 10, '0' + $key, $key) +
+                    '-' +
+                    if($remove-from-name != '', spirit-string.replace($subkey, $remove-from-name + '-', ''), null);
+
+                $result: map.set($result, string.unquote($name), $value);
+            }
+        }
+    }
+
+    @return $result;
+}
+
+// Dynamically generates utility classes based on a given utility map.
+// It iterates over the values defined in the utility map and creates CSS classes with the specified properties.
+// Parameters are:
+// * $utility - a map containing utility configuration. It should include:
+// ** `values`: a map or list of key-value pairs for the utility values.
+// ** `property`: a list of CSS properties to apply for each value.
+// ** `class`: the base class name for the utility.
+// * $infix - a string to append to the base class name, typically used for responsive or state-specific variations.
+// Inspired by React UI and Bootstrap.
 @mixin generate($utility, $infix) {
     $values: map.get($utility, values);
 
-    // If the values are a list or string, convert it into a map
     @if meta.type-of($values) == 'string' or meta.type-of(list.nth($values, 1)) != 'list' {
         $values: list.zip($values, $values);
     }
@@ -16,11 +65,11 @@
         $properties: map.get($utility, property);
         $property-class: map.get($utility, class);
 
-        // Don't prefix if value key is null (e.g. with shadow class)
+        // 2.
         $property-class-modifier: if($key, '-' + $key, '');
 
-        // Remove default postfix from class name
-        $property-class-modifier: string.replace($property-class-modifier, '-default', '');
+        // 3.
+        $property-class-modifier: spirit-string.replace($property-class-modifier, '-default', '');
 
         .#{$property-class + $infix + $property-class-modifier} {
             @each $property in $properties {
