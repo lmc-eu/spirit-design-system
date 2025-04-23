@@ -3,11 +3,12 @@ import TextField from '../TextField';
 
 const TextFieldInputWidth = () => (
   <TextField
-    id="textfield-size"
+    id="text-field-width-ch"
     isFluid
-    label="4000 (in Roman numerals)"
-    name="textfieldSize"
-    placeholder="Placeholder"
+    label="Input width of 4 characters"
+    name="textFieldWidthCh"
+    placeholder="1000"
+    type="number"
     inputWidth={4}
   />
 );

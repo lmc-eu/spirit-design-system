@@ -239,13 +239,19 @@
 
   <div class="Container">
 
-    <h2 class="docs-Heading">Size</h2>
+    <h2 class="docs-Heading">Input Width</h2>
 
     <div class="docs-Stack docs-Stack--start">
 
       <div class="TextField">
-        <label for="text-field-size" class="TextField__label">4000 (in Roman numerals)</label>
-        <input type="text" size="4" id="text-field-size" class="TextField__input" name="size" placeholder="Placeholder" />
+        <label for="text-field-width-ch" class="TextField__label">Input width of 4 characters</label>
+        <input
+          type="number"
+          id="text-field-width-ch"
+          class="TextField__input TextField__input--customWidth"
+          style="--text-field-input-width: 4;"
+          placeholder="1000"
+        />
       </div>
 
     </div>
