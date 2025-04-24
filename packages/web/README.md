@@ -70,6 +70,12 @@ Having the Sass load path configured, you can import just the components you nee
 @use 'node_modules/@lmc-eu/spirit-web/scss/utilities';
 ```
 
+### Usage of Mixins and Functions
+
+The mixins and functions provided in this package are intended for internal use only.
+Their stability is not guaranteed under semantic versioning.
+If you choose to use them, consider copying them into your own codebase to avoid potential issues.
+
 ### Custom Themes
 
 #### Automatically: Using Figma and Supernova
