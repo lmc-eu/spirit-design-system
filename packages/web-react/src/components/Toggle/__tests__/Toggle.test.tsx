@@ -2,6 +2,7 @@ import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
 import {
+  ariaAttributesTest,
   classNamePrefixProviderTest,
   validationStatePropsTest,
   requiredPropsTest,
@@ -23,6 +24,8 @@ describe('Toggle', () => {
   requiredPropsTest(Toggle, 'checkbox', 'id', 'example-id');
 
   validHtmlAttributesTest(Toggle);
+
+  ariaAttributesTest(Toggle);
 
   it('should have correct className', () => {
     render(<Toggle id="test-toggle" label="Toggle Label" />);

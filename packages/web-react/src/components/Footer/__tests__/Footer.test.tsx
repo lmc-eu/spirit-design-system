@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import React from 'react';
 import '@testing-library/jest-dom';
 import {
+  ariaAttributesTest,
   classNamePrefixProviderTest,
   restPropsTest,
   stylePropsTest,
@@ -21,6 +22,8 @@ describe('Footer', () => {
   textAlignmentPropsTest(Footer);
 
   validHtmlAttributesTest(Footer);
+
+  ariaAttributesTest(Footer);
 
   it('should render text children', () => {
     render(<Footer>Hello World</Footer>);

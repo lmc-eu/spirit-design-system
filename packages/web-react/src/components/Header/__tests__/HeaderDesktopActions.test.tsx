@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  ariaAttributesTest,
+  classNamePrefixProviderTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import HeaderDesktopActions from '../HeaderDesktopActions';
 
 describe('HeaderDesktopActions', () => {
@@ -15,6 +21,8 @@ describe('HeaderDesktopActions', () => {
   restPropsTest((props) => <HeaderDesktopActions {...props} />, 'nav');
 
   validHtmlAttributesTest(HeaderDesktopActions);
+
+  ariaAttributesTest(HeaderDesktopActions);
 
   it('should render text children', () => {
     render(<HeaderDesktopActions id="test">Hello World</HeaderDesktopActions>);

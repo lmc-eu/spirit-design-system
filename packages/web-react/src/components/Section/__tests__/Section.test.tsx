@@ -2,6 +2,7 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import {
+  ariaAttributesTest,
   classNamePrefixProviderTest,
   elementTypePropsTest,
   restPropsTest,
@@ -34,6 +35,8 @@ describe('Section', () => {
   textAlignmentPropsTest(Section);
 
   validHtmlAttributesTest(Section);
+
+  ariaAttributesTest(Section);
 
   elementTypePropsTest(Section);
 

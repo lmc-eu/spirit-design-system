@@ -2,6 +2,7 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import {
+  ariaAttributesTest,
   classNamePrefixProviderTest,
   componentButtonColorPropsTest,
   emotionColorPropsTest,
@@ -23,6 +24,8 @@ describe('DrawerCloseButton', () => {
   emotionColorPropsTest(DrawerCloseButton, 'Button--');
 
   validHtmlAttributesTest(DrawerCloseButton);
+
+  ariaAttributesTest(DrawerCloseButton);
 
   it('should render drawer close button', () => {
     render(<DrawerCloseButton />);

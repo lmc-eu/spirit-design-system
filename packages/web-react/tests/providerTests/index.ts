@@ -1,3 +1,4 @@
+export * from './ariaAttributesTest';
 export * from './classNamePrefixProviderTest';
 export * from './dictionaryPropsTest';
 export * from './elementTypePropsTest';

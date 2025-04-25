@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  ariaAttributesTest,
+  classNamePrefixProviderTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import { Sizes } from '../../../constants';
 import PartnerLogo from '../PartnerLogo';
 
@@ -13,6 +19,8 @@ describe('PartnerLogo', () => {
   restPropsTest(PartnerLogo, 'div');
 
   validHtmlAttributesTest(PartnerLogo);
+
+  ariaAttributesTest(PartnerLogo);
 
   it('should render children', () => {
     render(<PartnerLogo>Content</PartnerLogo>);

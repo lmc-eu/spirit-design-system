@@ -4,7 +4,6 @@ export * from './adornments';
 export * from './dialogs';
 export * from './dictionaries';
 export * from './directions';
-export * from './dom';
 export * from './dragAndDrop';
 export * from './element';
 export * from './events';

@@ -2,6 +2,7 @@ import '@testing-library/jest-dom';
 import { render, renderHook, screen } from '@testing-library/react';
 import React from 'react';
 import {
+  ariaAttributesTest,
   classNamePrefixProviderTest,
   elementTypePropsTest,
   restPropsTest,
@@ -20,6 +21,8 @@ describe('SkeletonShape', () => {
   restPropsTest(SkeletonShape, 'div');
 
   validHtmlAttributesTest(SkeletonShape);
+
+  ariaAttributesTest(SkeletonShape);
 
   elementTypePropsTest(SkeletonShape);
 

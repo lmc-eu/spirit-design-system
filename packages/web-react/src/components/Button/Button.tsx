@@ -6,7 +6,7 @@ import { useStyleProps } from '../../hooks';
 import { SpiritButtonProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { Spinner } from '../Spinner';
-import { useButtonAriaProps } from './useButtonAriaProps';
+import { useButtonProps } from './useButtonProps';
 import { useButtonStyleProps } from './useButtonStyleProps';
 
 const defaultProps: Partial<SpiritButtonProps> = {
@@ -34,7 +34,7 @@ const _Button = <T extends ElementType = 'button', C = void, S = void>(
     ...restProps
   } = propsWithDefaults;
 
-  const { buttonProps } = useButtonAriaProps(restProps);
+  const { buttonProps } = useButtonProps(restProps);
   const { classProps, props: modifiedProps } = useButtonStyleProps(restProps);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
   const mergedStyleProps = mergeStyleProps(ElementTag, { classProps, styleProps, otherProps });

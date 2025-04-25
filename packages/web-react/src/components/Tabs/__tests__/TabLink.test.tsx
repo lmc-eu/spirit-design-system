@@ -2,6 +2,7 @@ import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
 import {
+  ariaAttributesTest,
   classNamePrefixProviderTest,
   elementTypePropsTest,
   stylePropsTest,
@@ -15,6 +16,8 @@ describe('TabLink', () => {
   classNamePrefixProviderTest(TabLink, 'Tabs__item');
 
   validHtmlAttributesTest(TabLink);
+
+  ariaAttributesTest(TabLink);
 
   elementTypePropsTest(TabLink);
 

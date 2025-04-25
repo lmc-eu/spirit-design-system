@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  ariaAttributesTest,
+  classNamePrefixProviderTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import HeaderButton from '../HeaderButton';
 
 describe('HeaderButton', () => {
@@ -12,6 +18,8 @@ describe('HeaderButton', () => {
   restPropsTest((props) => <HeaderButton {...props} />, 'button');
 
   validHtmlAttributesTest(HeaderButton);
+
+  ariaAttributesTest(HeaderButton);
 
   it('should render text children', () => {
     const dom = render(<HeaderButton id="test">Hello World</HeaderButton>);

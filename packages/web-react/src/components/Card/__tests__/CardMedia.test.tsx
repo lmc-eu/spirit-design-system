@@ -2,6 +2,7 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import {
+  ariaAttributesTest,
   classNamePrefixProviderTest,
   sizePropsTest,
   restPropsTest,
@@ -20,6 +21,8 @@ describe('CardMedia', () => {
   sizePropsTest(CardMedia);
 
   validHtmlAttributesTest(CardMedia);
+
+  ariaAttributesTest(CardMedia);
 
   it('should render media card media component and have default class names', () => {
     render(<CardMedia data-testid="test" />);

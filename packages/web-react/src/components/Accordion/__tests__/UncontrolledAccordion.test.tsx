@@ -2,6 +2,7 @@ import '@testing-library/jest-dom';
 import { fireEvent, render } from '@testing-library/react';
 import React from 'react';
 import {
+  ariaAttributesTest,
   classNamePrefixProviderTest,
   elementTypePropsTest,
   restPropsTest,
@@ -30,6 +31,8 @@ describe('UncontrolledAccordion', () => {
   restPropsTest(UncontrolledAccordion, '.Accordion');
 
   validHtmlAttributesTest(UncontrolledAccordion);
+
+  ariaAttributesTest(UncontrolledAccordion);
 
   it('should render text children', () => {
     const dom = render(<UncontrolledAccordion>Hello World</UncontrolledAccordion>);

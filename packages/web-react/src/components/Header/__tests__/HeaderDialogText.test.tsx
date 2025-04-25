@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  ariaAttributesTest,
+  classNamePrefixProviderTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import HeaderDialogText from '../HeaderDialogText';
 
 describe('HeaderDialogText', () => {
@@ -15,6 +21,8 @@ describe('HeaderDialogText', () => {
   restPropsTest((props) => <HeaderDialogText {...props} />, 'span');
 
   validHtmlAttributesTest(HeaderDialogText);
+
+  ariaAttributesTest(HeaderDialogText);
 
   it('should render text children', () => {
     const dom = render(<HeaderDialogText id="test">Hello World</HeaderDialogText>);

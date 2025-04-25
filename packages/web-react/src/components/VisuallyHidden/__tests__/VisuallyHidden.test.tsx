@@ -2,6 +2,7 @@ import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
 import {
+  ariaAttributesTest,
   classNamePrefixProviderTest,
   elementTypePropsTest,
   restPropsTest,
@@ -18,6 +19,8 @@ describe('Visually Hidden', () => {
   restPropsTest(VisuallyHidden, 'span');
 
   validHtmlAttributesTest(VisuallyHidden);
+
+  ariaAttributesTest(VisuallyHidden);
 
   elementTypePropsTest(VisuallyHidden, 'div');
 

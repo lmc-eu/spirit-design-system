@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { elementTypePropsTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  ariaAttributesTest,
+  elementTypePropsTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import Label from '../Label';
 
 describe('Label', () => {
@@ -10,6 +16,8 @@ describe('Label', () => {
   restPropsTest(Label, 'label');
 
   validHtmlAttributesTest(Label);
+
+  ariaAttributesTest(Label);
 
   elementTypePropsTest(Label);
 

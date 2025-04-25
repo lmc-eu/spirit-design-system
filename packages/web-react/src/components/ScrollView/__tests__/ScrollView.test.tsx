@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  ariaAttributesTest,
+  classNamePrefixProviderTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import { ScrollViewDirectionType, ScrollViewOverflowDecoratorsType } from '../../../types';
 import ScrollView from '../ScrollView';
 
@@ -13,6 +19,8 @@ describe('ScrollView', () => {
   restPropsTest(ScrollView, 'div');
 
   validHtmlAttributesTest(ScrollView);
+
+  ariaAttributesTest(ScrollView);
 
   it('should render children', () => {
     render(<ScrollView>Content</ScrollView>);

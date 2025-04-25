@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  ariaAttributesTest,
+  classNamePrefixProviderTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import { Button } from '../../Button';
 import { Tooltip, TooltipPopover, TooltipTrigger } from '..';
 
@@ -17,6 +23,8 @@ describe('Tooltip', () => {
   restPropsTest((props) => <Tooltip id={id} {...props} />, 'div');
 
   validHtmlAttributesTest(Tooltip);
+
+  ariaAttributesTest(Tooltip);
 
   it('should render tooltip', () => {
     const onToggle = () => null;

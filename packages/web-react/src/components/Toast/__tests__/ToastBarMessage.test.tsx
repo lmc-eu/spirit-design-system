@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import { ariaAttributesTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
 import ToastBarMessage from '../ToastBarMessage';
 
 describe('ToastBarMessage', () => {
@@ -10,6 +10,8 @@ describe('ToastBarMessage', () => {
   restPropsTest(ToastBarMessage, 'div');
 
   validHtmlAttributesTest(ToastBarMessage);
+
+  ariaAttributesTest(ToastBarMessage);
 
   beforeEach(() => {
     render(<ToastBarMessage>Example children</ToastBarMessage>);

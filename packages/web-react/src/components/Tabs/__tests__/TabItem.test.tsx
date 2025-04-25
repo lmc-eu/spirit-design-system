@@ -2,6 +2,7 @@ import '@testing-library/jest-dom';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import React from 'react';
 import {
+  ariaAttributesTest,
   classNamePrefixProviderTest,
   restPropsTest,
   stylePropsTest,
@@ -18,6 +19,8 @@ describe('TabItem', () => {
   restPropsTest((props) => <TabItem forTabPane={0} {...props} />, 'button');
 
   validHtmlAttributesTest(TabItem, { forTabPane: 0 });
+
+  ariaAttributesTest(TabItem, { forTabPane: 0 });
 
   it('should render list item', () => {
     render(<TabItem forTabPane={0} />);

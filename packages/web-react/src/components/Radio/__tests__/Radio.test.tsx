@@ -2,6 +2,7 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import {
+  ariaAttributesTest,
   classNamePrefixProviderTest,
   validationStatePropsTest,
   itemPropsTest,
@@ -26,6 +27,8 @@ describe('Radio', () => {
   requiredPropsTest(Radio, 'radio', 'id', 'example-id');
 
   validHtmlAttributesTest(Radio);
+
+  ariaAttributesTest(Radio);
 
   it('should have label classname', () => {
     render(<Radio id="radio" label="label" />);

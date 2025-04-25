@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { elementTypePropsTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  ariaAttributesTest,
+  elementTypePropsTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import ActionGroup from '../ActionGroup';
 
 describe('ActionGroup', () => {
@@ -13,6 +19,8 @@ describe('ActionGroup', () => {
   restPropsTest(ActionGroup, 'div');
 
   validHtmlAttributesTest(ActionGroup);
+
+  ariaAttributesTest(ActionGroup);
 
   elementTypePropsTest(ActionGroup);
 

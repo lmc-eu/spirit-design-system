@@ -1,7 +1,6 @@
 import { ComponentPropsWithRef, ElementType } from 'react';
 import {
   ComponentButtonColorsDictionaryType,
-  AriaLabelingProps,
   ChildrenProps,
   ClickEvents,
   EmotionColorsDictionaryType,
@@ -13,7 +12,7 @@ export type ButtonColor<C> = ComponentButtonColorsDictionaryType | EmotionColors
 export type ButtonSize<S> = SizesDictionaryType | S;
 export type ButtonType = 'button' | 'submit' | 'reset';
 
-export interface ButtonBaseProps<C = void, S = void> extends ChildrenProps, StyleProps, AriaLabelingProps, ClickEvents {
+export interface ButtonBaseProps<C = void, S = void> extends ChildrenProps, StyleProps, ClickEvents {
   /** The color of the button. */
   color?: ButtonColor<C>;
   /** Whether the button is disabled. */

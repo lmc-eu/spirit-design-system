@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import React from 'react';
 import {
+  ariaAttributesTest,
   classNamePrefixProviderTest,
   sizeExtendedPropsTest,
   sizePropsTest,
@@ -32,6 +33,8 @@ describe('Text', () => {
   restPropsTest(Text, 'p');
 
   validHtmlAttributesTest(Text);
+
+  ariaAttributesTest(Text);
 
   elementTypePropsTest(Text);
 
