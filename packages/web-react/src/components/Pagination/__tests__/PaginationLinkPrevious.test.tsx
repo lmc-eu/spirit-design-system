@@ -1,5 +1,11 @@
 import '@testing-library/jest-dom';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  ariaAttributesTest,
+  classNamePrefixProviderTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import PaginationLinkPrevious from '../PaginationLinkPrevious';
 
 jest.mock('../../../hooks/useIcon');
@@ -12,4 +18,6 @@ describe('PaginationLinkPrevious', () => {
   restPropsTest(PaginationLinkPrevious, 'a');
 
   validHtmlAttributesTest(PaginationLinkPrevious);
+
+  ariaAttributesTest(PaginationLinkPrevious);
 });

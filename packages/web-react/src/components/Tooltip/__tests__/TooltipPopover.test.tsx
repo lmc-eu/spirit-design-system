@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  ariaAttributesTest,
+  classNamePrefixProviderTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import { TooltipPopover } from '..';
 
 describe('TooltipPopover', () => {
@@ -12,6 +18,8 @@ describe('TooltipPopover', () => {
   restPropsTest((props) => <TooltipPopover {...props} />, 'div');
 
   validHtmlAttributesTest(TooltipPopover);
+
+  ariaAttributesTest(TooltipPopover);
 
   it('should render tooltip popover', () => {
     const popoverText = 'TooltipPopover';

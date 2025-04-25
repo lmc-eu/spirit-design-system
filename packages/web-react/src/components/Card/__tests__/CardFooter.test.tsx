@@ -2,6 +2,7 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import {
+  ariaAttributesTest,
   classNamePrefixProviderTest,
   alignmentXPropsTest,
   restPropsTest,
@@ -20,6 +21,8 @@ describe('CardFooter', () => {
   alignmentXPropsTest(CardFooter, 'CardFooter');
 
   validHtmlAttributesTest(CardFooter);
+
+  ariaAttributesTest(CardFooter);
 
   it('should render footer card component and have default class names', () => {
     render(<CardFooter />);

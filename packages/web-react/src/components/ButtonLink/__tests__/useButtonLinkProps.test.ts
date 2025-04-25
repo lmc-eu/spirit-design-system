@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { UseButtonLinkAriaProps, useButtonLinkAriaProps } from '../useButtonLinkAriaProps';
+import { UseButtonLinkProps, useButtonLinkProps } from '../useButtonLinkProps';
 
 describe('useButtonAriaProps', () => {
   it('should return aria props for anchor tag', () => {
@@ -9,8 +9,8 @@ describe('useButtonAriaProps', () => {
       isDisabled: false,
       target: '_blank',
       rel: 'noopener',
-    } as UseButtonLinkAriaProps;
-    const { result } = renderHook(() => useButtonLinkAriaProps(props));
+    } as UseButtonLinkProps;
+    const { result } = renderHook(() => useButtonLinkProps(props));
 
     expect(result.current.buttonLinkProps).toEqual({
       'aria-label': undefined,
@@ -30,8 +30,8 @@ describe('useButtonAriaProps', () => {
       isDisabled: true,
       target: '_blank',
       rel: 'noopener',
-    } as UseButtonLinkAriaProps;
-    const { result } = renderHook(() => useButtonLinkAriaProps(props));
+    } as UseButtonLinkProps;
+    const { result } = renderHook(() => useButtonLinkProps(props));
 
     expect(result.current.buttonLinkProps).toEqual({
       'aria-label': undefined,
@@ -48,8 +48,8 @@ describe('useButtonAriaProps', () => {
     const props = {
       elementType: 'button',
       isDisabled: false,
-    } as unknown as UseButtonLinkAriaProps;
-    const { result } = renderHook(() => useButtonLinkAriaProps(props));
+    } as unknown as UseButtonLinkProps;
+    const { result } = renderHook(() => useButtonLinkProps(props));
 
     expect(result.current.buttonLinkProps).toEqual({
       'aria-label': undefined,
@@ -65,8 +65,8 @@ describe('useButtonAriaProps', () => {
     const props = {
       elementType: 'button',
       isDisabled: true,
-    } as unknown as UseButtonLinkAriaProps;
-    const { result } = renderHook(() => useButtonLinkAriaProps(props));
+    } as unknown as UseButtonLinkProps;
+    const { result } = renderHook(() => useButtonLinkProps(props));
 
     expect(result.current.buttonLinkProps).toEqual({
       'aria-label': undefined,

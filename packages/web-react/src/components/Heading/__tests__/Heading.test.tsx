@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import React from 'react';
 import '@testing-library/jest-dom';
 import {
+  ariaAttributesTest,
   classNamePrefixProviderTest,
   sizeExtendedPropsTest,
   sizePropsTest,
@@ -41,6 +42,8 @@ describe('Heading', () => {
   restPropsTest((props) => <Heading elementType="h1" {...props} />, 'h1');
 
   validHtmlAttributesTest((props) => <Heading elementType="h1" {...props} />);
+
+  ariaAttributesTest((props) => <Heading elementType="h1" {...props} />);
 
   elementTypePropsTest(Heading);
 

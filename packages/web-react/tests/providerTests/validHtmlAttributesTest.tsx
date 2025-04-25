@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react';
 import { htmlElementAttributes } from 'html-element-attributes';
 import React, { ComponentType } from 'react';
+import { getComponentName } from '../testUtils/getComponentName';
 
 const globalAttributes = [...htmlElementAttributes['*'], 'role'];
 
@@ -34,7 +35,7 @@ const validateHTMLForComponent = (container: HTMLElement) => {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const validHtmlAttributesTest = (Component: ComponentType<any>, props: object = {}) => {
-  const componentName = Component.displayName || Component.name || Component.spiritComponent || 'UnknownComponent';
+  const componentName = getComponentName(Component);
 
   test(`should render valid HTML for ${componentName}`, () => {
     const { container } = render(<Component {...props} />);

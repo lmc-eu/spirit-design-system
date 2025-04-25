@@ -2,6 +2,7 @@ import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
 import {
+  ariaAttributesTest,
   classNamePrefixProviderTest,
   elementTypePropsTest,
   restPropsTest,
@@ -21,6 +22,8 @@ describe('HeaderDialogLink', () => {
   restPropsTest((props) => <HeaderDialogLink {...props} />, 'a');
 
   validHtmlAttributesTest(HeaderDialogLink);
+
+  ariaAttributesTest(HeaderDialogLink);
 
   elementTypePropsTest(HeaderDialogLink);
 

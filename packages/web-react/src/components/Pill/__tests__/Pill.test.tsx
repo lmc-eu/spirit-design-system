@@ -2,6 +2,7 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import {
+  ariaAttributesTest,
   classNamePrefixProviderTest,
   elementTypePropsTest,
   emotionColorPropsTest,
@@ -21,6 +22,8 @@ describe('Pill', () => {
   restPropsTest(Pill, 'span');
 
   validHtmlAttributesTest(Pill);
+
+  ariaAttributesTest(Pill);
 
   elementTypePropsTest(Pill, 'div');
 

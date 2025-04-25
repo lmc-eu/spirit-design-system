@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import React from 'react';
 import '@testing-library/jest-dom';
 import {
+  ariaAttributesTest,
   classNamePrefixProviderTest,
   restPropsTest,
   stylePropsTest,
@@ -26,6 +27,8 @@ describe('Container', () => {
   textAlignmentPropsTest(Container);
 
   validHtmlAttributesTest(Container);
+
+  ariaAttributesTest(Container);
 
   it('should render', () => {
     render(<Container data-testid={testId}>{text}</Container>);

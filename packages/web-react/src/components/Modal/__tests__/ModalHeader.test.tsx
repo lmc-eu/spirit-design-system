@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  ariaAttributesTest,
+  classNamePrefixProviderTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import ModalHeader from '../ModalHeader';
 
 jest.mock('../../../hooks/useIcon');
@@ -14,6 +20,8 @@ describe('ModalHeader', () => {
   restPropsTest(ModalHeader, 'header');
 
   validHtmlAttributesTest(ModalHeader);
+
+  ariaAttributesTest(ModalHeader);
 
   it('should have close button', () => {
     render(<ModalHeader>Modal Title</ModalHeader>);

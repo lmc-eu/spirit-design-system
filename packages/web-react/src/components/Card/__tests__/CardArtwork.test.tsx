@@ -2,6 +2,7 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import {
+  ariaAttributesTest,
   classNamePrefixProviderTest,
   alignmentXPropsTest,
   restPropsTest,
@@ -20,6 +21,8 @@ describe('CardArtwork', () => {
   alignmentXPropsTest(CardArtwork, 'CardArtwork');
 
   validHtmlAttributesTest(CardArtwork);
+
+  ariaAttributesTest(CardArtwork);
 
   it('should render artwork card component and have default class name', () => {
     render(<CardArtwork data-testid="test" />);

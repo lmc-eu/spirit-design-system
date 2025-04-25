@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
+import { ariaAttributesTest, classNamePrefixProviderTest, restPropsTest, stylePropsTest } from '@local/tests';
 import AccordionContent from '../AccordionContent';
 import AccordionItem from '../AccordionItem';
 
@@ -18,6 +18,8 @@ describe('AccordionContent', () => {
   );
 
   restPropsTest(AccordionContent, '.Accordion__content');
+
+  ariaAttributesTest(AccordionContent);
 
   it('should render text children', () => {
     const dom = render(<AccordionContent>Hello World</AccordionContent>);

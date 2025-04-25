@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import { ariaAttributesTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
 import UncontrolledSlider from '../UncontrolledSlider';
 
 describe('Slider', () => {
@@ -18,6 +18,8 @@ describe('Slider', () => {
   restPropsTest((props) => <UncontrolledSlider id={defaultProps.id} {...props} />, 'div');
 
   validHtmlAttributesTest((props) => <UncontrolledSlider id={defaultProps.id} {...props} />);
+
+  ariaAttributesTest((props) => <UncontrolledSlider id={defaultProps.id} {...props} />);
 
   it('should render slider', () => {
     render(<UncontrolledSlider {...defaultProps} />);

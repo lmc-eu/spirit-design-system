@@ -2,6 +2,7 @@ import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
 import {
+  ariaAttributesTest,
   classNamePrefixProviderTest,
   elementTypePropsTest,
   restPropsTest,
@@ -24,6 +25,8 @@ describe('Accordion', () => {
   restPropsTest(Accordion, '.Accordion');
 
   validHtmlAttributesTest(Accordion);
+
+  ariaAttributesTest(Accordion);
 
   it('should render text children', () => {
     const toggle = () => null;

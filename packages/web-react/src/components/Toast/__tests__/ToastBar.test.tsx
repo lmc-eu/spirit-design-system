@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  ariaAttributesTest,
+  classNamePrefixProviderTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import ToastBar from '../ToastBar';
 
 jest.mock('../../../hooks/useIcon');
@@ -14,6 +20,8 @@ describe('ToastBar', () => {
   restPropsTest((props) => <ToastBar {...props} id="test" />, 'div');
 
   validHtmlAttributesTest(ToastBar);
+
+  ariaAttributesTest(ToastBar);
 
   it('should not render', () => {
     const dom = render(<ToastBar isOpen={false} id="test" />);

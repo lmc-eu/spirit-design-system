@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  ariaAttributesTest,
+  classNamePrefixProviderTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import NavigationItem from '../NavigationItem';
 
 describe('NavigationItem', () => {
@@ -12,6 +18,8 @@ describe('NavigationItem', () => {
   restPropsTest(NavigationItem, 'li');
 
   validHtmlAttributesTest(NavigationItem);
+
+  ariaAttributesTest(NavigationItem);
 
   it('should have default classname', () => {
     render(<NavigationItem>Content</NavigationItem>);

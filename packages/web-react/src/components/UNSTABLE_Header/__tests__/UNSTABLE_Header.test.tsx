@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  ariaAttributesTest,
+  classNamePrefixProviderTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import UNSTABLE_Header from '../UNSTABLE_Header';
 
 describe('UNSTABLE_Header', () => {
@@ -12,6 +18,8 @@ describe('UNSTABLE_Header', () => {
   restPropsTest(UNSTABLE_Header, 'header');
 
   validHtmlAttributesTest(UNSTABLE_Header);
+
+  ariaAttributesTest(UNSTABLE_Header);
 
   it('should have default classname', () => {
     render(<UNSTABLE_Header>Content</UNSTABLE_Header>);

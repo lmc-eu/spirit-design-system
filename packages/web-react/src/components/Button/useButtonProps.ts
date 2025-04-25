@@ -12,13 +12,13 @@ const handleClick = (event: ClickEvent, isDisabled?: boolean, onClick?: (event: 
   }
 };
 
-export type UseButtonAriaProps = Partial<SpiritButtonProps>;
-export type UseButtonAriaReturn = {
-  buttonProps: UseButtonAriaProps;
+export type UseButtonProps = Partial<SpiritButtonProps>;
+export type UseButtonReturn = {
+  buttonProps: UseButtonProps;
 };
 
-export const useButtonAriaProps = (props: UseButtonAriaProps): UseButtonAriaReturn => {
-  const { isDisabled, isLoading, onClick, type = 'button', ariaLabel } = props;
+export const useButtonProps = (props: UseButtonProps): UseButtonReturn => {
+  const { isDisabled, isLoading, onClick, type = 'button' } = props;
 
   const additionalProps = {
     type,
@@ -29,7 +29,6 @@ export const useButtonAriaProps = (props: UseButtonAriaProps): UseButtonAriaRetu
     buttonProps: {
       ...additionalProps,
       onClick: (event) => handleClick(event as ClickEvent, isDisabled, onClick),
-      'aria-label': ariaLabel || undefined,
     },
   };
 };

@@ -5,7 +5,7 @@ import { useStyleProps } from '../../hooks';
 import { SpiritButtonLinkProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { Spinner } from '../Spinner';
-import { useButtonLinkAriaProps } from './useButtonLinkAriaProps';
+import { useButtonLinkProps } from './useButtonLinkProps';
 import { useButtonLinkStyleProps } from './useButtonLinkStyleProps';
 
 const defaultProps: Partial<SpiritButtonLinkProps> = {
@@ -31,7 +31,7 @@ const _ButtonLink = <T extends ElementType = 'a', C = void, S = void>(
     ...restProps
   } = propsWithDefaults;
 
-  const { buttonLinkProps } = useButtonLinkAriaProps(propsWithDefaults);
+  const { buttonLinkProps } = useButtonLinkProps(propsWithDefaults);
   const { classProps, props: modifiedProps } = useButtonLinkStyleProps(restProps);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
   const mergedStyleProps = mergeStyleProps(ElementTag, { classProps, styleProps, otherProps });

@@ -2,6 +2,7 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import {
+  ariaAttributesTest,
   classNamePrefixProviderTest,
   validationStatePropsTest,
   requiredPropsTest,
@@ -26,6 +27,8 @@ describe('TextArea', () => {
   validationTextPropsTest(TextArea, '.TextArea__validationText');
 
   validHtmlAttributesTest(TextArea);
+
+  ariaAttributesTest(TextArea);
 
   it('should have label classname', () => {
     render(<TextArea id="textarea" label="Label" />);

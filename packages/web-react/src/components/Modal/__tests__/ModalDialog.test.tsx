@@ -2,6 +2,7 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import {
+  ariaAttributesTest,
   classNamePrefixProviderTest,
   elementTypePropsTest,
   restPropsTest,
@@ -18,6 +19,8 @@ describe('ModalDialog', () => {
   restPropsTest(ModalDialog, 'article');
 
   validHtmlAttributesTest(ModalDialog);
+
+  ariaAttributesTest(ModalDialog);
 
   elementTypePropsTest(ModalDialog);
 

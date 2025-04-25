@@ -1,7 +1,12 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, requiredPropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  ariaAttributesTest,
+  classNamePrefixProviderTest,
+  requiredPropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import { TextFieldType } from '../../../types';
 import TextFieldBase from '../TextFieldBase';
 
@@ -11,6 +16,8 @@ describe('TextFieldBase', () => {
   requiredPropsTest(TextFieldBase, 'textbox', 'id', 'textfieldbase');
 
   validHtmlAttributesTest(TextFieldBase);
+
+  ariaAttributesTest(TextFieldBase);
 
   describe.each(['text', 'password', 'email'])('input type %s', (type) => {
     it('should have connected label and input', () => {

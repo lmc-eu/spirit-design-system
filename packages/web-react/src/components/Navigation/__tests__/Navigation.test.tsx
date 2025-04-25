@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  ariaAttributesTest,
+  classNamePrefixProviderTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import { Direction } from '../../../constants';
 import Navigation from '../Navigation';
 
@@ -28,6 +34,8 @@ describe('Navigation', () => {
   restPropsTest(Navigation, 'nav');
 
   validHtmlAttributesTest(Navigation);
+
+  ariaAttributesTest(Navigation);
 
   describe.each(dataProvider)('when direction is $direction', ({ direction, directionClassName }) => {
     beforeEach(() => {

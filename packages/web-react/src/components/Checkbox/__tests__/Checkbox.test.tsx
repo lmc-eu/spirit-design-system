@@ -2,6 +2,7 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import {
+  ariaAttributesTest,
   classNamePrefixProviderTest,
   validationStatePropsTest,
   itemPropsTest,
@@ -29,6 +30,8 @@ describe('Checkbox', () => {
   requiredPropsTest(Checkbox, 'checkbox', 'id', 'test-checkbox');
 
   validHtmlAttributesTest(Checkbox);
+
+  ariaAttributesTest(Checkbox);
 
   it('should have text classname', () => {
     render(<Checkbox id="checkbox" label="Label" />);

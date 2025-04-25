@@ -2,6 +2,7 @@ import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
 import {
+  ariaAttributesTest,
   classNamePrefixProviderTest,
   validationStatePropsTest,
   restPropsTest,
@@ -27,6 +28,8 @@ describe('TextField', () => {
     validationTextPropsTest(TextField, '.TextField__validationText', type as TextFieldType);
 
     validHtmlAttributesTest(TextField);
+
+    ariaAttributesTest(TextField);
 
     it('should have label classname', () => {
       render(<TextField id="textfield" label="Label" type={type as TextFieldType} />);

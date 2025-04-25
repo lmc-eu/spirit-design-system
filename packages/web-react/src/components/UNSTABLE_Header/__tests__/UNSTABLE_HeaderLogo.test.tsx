@@ -2,6 +2,7 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import {
+  ariaAttributesTest,
   classNamePrefixProviderTest,
   elementTypePropsTest,
   restPropsTest,
@@ -18,6 +19,8 @@ describe('UNSTABLE_HeaderLogo', () => {
   restPropsTest(UNSTABLE_HeaderLogo, 'a');
 
   validHtmlAttributesTest(UNSTABLE_HeaderLogo);
+
+  ariaAttributesTest(UNSTABLE_HeaderLogo);
 
   elementTypePropsTest(UNSTABLE_HeaderLogo);
 

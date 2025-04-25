@@ -2,6 +2,7 @@ import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
 import {
+  ariaAttributesTest,
   classNamePrefixProviderTest,
   componentButtonColorPropsTest,
   emotionColorPropsTest,
@@ -32,6 +33,8 @@ describe('Button', () => {
   restPropsTest(Button, 'button');
 
   validHtmlAttributesTest(Button);
+
+  ariaAttributesTest(Button);
 
   elementTypePropsTest(Button);
 

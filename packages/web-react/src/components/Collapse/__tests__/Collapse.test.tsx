@@ -2,6 +2,7 @@ import '@testing-library/jest-dom';
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import React, { useState } from 'react';
 import {
+  ariaAttributesTest,
   classNamePrefixProviderTest,
   elementTypePropsTest,
   restPropsTest,
@@ -21,6 +22,8 @@ describe('Collapse', () => {
   restPropsTest(Collapse, 'div');
 
   validHtmlAttributesTest(Collapse);
+
+  ariaAttributesTest(Collapse);
 
   elementTypePropsTest(Collapse);
 

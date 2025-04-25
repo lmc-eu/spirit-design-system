@@ -2,6 +2,7 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import {
+  ariaAttributesTest,
   classNamePrefixProviderTest,
   validationStatePropsTest,
   restPropsTest,
@@ -34,6 +35,8 @@ describe('FieldGroup', () => {
   restPropsTest((props) => <FieldGroup {...props} label="Label" />, 'fieldset');
 
   validHtmlAttributesTest(FieldGroup);
+
+  ariaAttributesTest(FieldGroup);
 
   it('should render items as children', () => {
     render(

@@ -2,6 +2,7 @@ import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
 import {
+  ariaAttributesTest,
   classNamePrefixProviderTest,
   emotionColorPropsTest,
   sizeExtendedPropsTest,
@@ -24,6 +25,8 @@ describe('Tag', () => {
   restPropsTest(Tag, 'span');
 
   validHtmlAttributesTest(Tag);
+
+  ariaAttributesTest(Tag);
 
   elementTypePropsTest(Tag);
 

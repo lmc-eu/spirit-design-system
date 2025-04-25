@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  ariaAttributesTest,
+  classNamePrefixProviderTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import CardBody from '../CardBody';
 
 describe('CardBody', () => {
@@ -12,6 +18,8 @@ describe('CardBody', () => {
   restPropsTest(CardBody, '.CardBody');
 
   validHtmlAttributesTest(CardBody);
+
+  ariaAttributesTest(CardBody);
 
   it('should render body card component and have default class name', () => {
     render(<CardBody data-testid="test" />);

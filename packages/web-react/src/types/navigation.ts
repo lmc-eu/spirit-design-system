@@ -3,7 +3,6 @@ import { NavigationItem } from '../components';
 import { LinkTarget } from './link';
 import {
   AlignmentYExtendedDictionaryType,
-  AriaLabelingProps,
   ChildrenProps,
   DirectionDictionaryType,
   ShapeVariantDictionaryType,
@@ -16,7 +15,7 @@ type NonNullableShapeVariant = NonNullable<ShapeVariantDictionaryType>;
 
 export type NavigationActionVariantsType = NonNullableShapeVariant | Record<string, NonNullableShapeVariant>;
 
-export interface NavigationActionBaseProps extends ChildrenProps, StyleProps, AriaLabelingProps, TransferProps {
+export interface NavigationActionBaseProps extends ChildrenProps, StyleProps, TransferProps {
   /** NavigationAction's href attribute */
   href?: string;
   /** Whether is the NavigationAction disabled */
@@ -29,7 +28,7 @@ export interface NavigationActionBaseProps extends ChildrenProps, StyleProps, Ar
   variant?: NavigationActionVariantsType;
 }
 
-export interface NavigationAvatarBaseProps extends ChildrenProps, StyleProps, AriaLabelingProps, TransferProps {
+export interface NavigationAvatarBaseProps extends ChildrenProps, StyleProps, TransferProps {
   /** Content of the avatar, such as an image, icon, or text. */
   avatarContent: ReactElement | ReactNode;
   /** NavigationAvatar's href attribute */
@@ -70,7 +69,7 @@ export type SpiritNavigationActionProps<E extends ElementType = 'a'> = Navigatio
 export type SpiritNavigationAvatarProps<E extends ElementType = 'a'> = NavigationAvatarProps<E> &
   SpiritPolymorphicElementPropsWithRef<E, NavigationAvatarProps<E>>;
 
-export interface SpiritNavigationProps extends StyleProps, AriaLabelingProps {
+export interface SpiritNavigationProps extends StyleProps {
   children:
     | ReactElement<HTMLLIElement>
     | ReactElement<typeof NavigationItem>

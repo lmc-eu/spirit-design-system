@@ -1,5 +1,11 @@
 import '@testing-library/jest-dom';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  ariaAttributesTest,
+  classNamePrefixProviderTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import ModalBody from '../ModalBody';
 
 describe('ModalBody', () => {
@@ -10,4 +16,6 @@ describe('ModalBody', () => {
   restPropsTest(ModalBody, 'div');
 
   validHtmlAttributesTest(ModalBody);
+
+  ariaAttributesTest(ModalBody);
 });

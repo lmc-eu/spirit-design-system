@@ -2,6 +2,7 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import {
+  ariaAttributesTest,
   classNamePrefixProviderTest,
   elementTypePropsTest,
   restPropsTest,
@@ -21,6 +22,8 @@ describe('NavigationAvatar', () => {
   restPropsTest(NavigationAvatar, 'a');
 
   validHtmlAttributesTest(NavigationAvatar);
+
+  ariaAttributesTest(NavigationAvatar);
 
   elementTypePropsTest(NavigationAvatar);
 

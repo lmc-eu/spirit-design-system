@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  ariaAttributesTest,
+  classNamePrefixProviderTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import HeaderNavItem from '../HeaderNavItem';
 
 describe('HeaderNavItem', () => {
@@ -12,6 +18,8 @@ describe('HeaderNavItem', () => {
   restPropsTest((props) => <HeaderNavItem {...props} />, 'li');
 
   validHtmlAttributesTest(HeaderNavItem);
+
+  ariaAttributesTest(HeaderNavItem);
 
   it('should render text children', () => {
     const dom = render(<HeaderNavItem id="test">Hello World</HeaderNavItem>);

@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  ariaAttributesTest,
+  classNamePrefixProviderTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import Toast from '../Toast';
 
 describe('Toast', () => {
@@ -12,6 +18,8 @@ describe('Toast', () => {
   restPropsTest(Toast, 'div');
 
   validHtmlAttributesTest(Toast);
+
+  ariaAttributesTest(Toast);
 
   it('should render with default alignments', () => {
     const dom = render(<Toast />);
