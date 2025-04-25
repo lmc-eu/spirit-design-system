@@ -151,6 +151,12 @@ $form-field-warning: var(--spirit-color-form-field-warning);
 $gradient-basic-overlay-color-01: var(--spirit-color-gradient-basic-overlay-color-01);
 $gradient-basic-overlay-color-02: var(--spirit-color-gradient-basic-overlay-color-02);
 
+$gradient-primary-color-01: var(--spirit-color-gradient-primary-color-01);
+$gradient-primary-color-02: var(--spirit-color-gradient-primary-color-02);
+
+$gradient-secondary-color-01: var(--spirit-color-gradient-secondary-color-01);
+$gradient-secondary-color-02: var(--spirit-color-gradient-secondary-color-02);
+
 $gradient-skeleton-color-01: var(--spirit-color-gradient-skeleton-color-01);
 $gradient-skeleton-color-02: var(--spirit-color-gradient-skeleton-color-02);
 $gradient-skeleton-color-03: var(--spirit-color-gradient-skeleton-color-03);
@@ -386,6 +392,14 @@ $gradient-colors: (
     basic-overlay: (
         color-01: $gradient-basic-overlay-color-01,
         color-02: $gradient-basic-overlay-color-02,
+    ),
+    primary: (
+        color-01: $gradient-primary-color-01,
+        color-02: $gradient-primary-color-02,
+    ),
+    secondary: (
+        color-01: $gradient-secondary-color-01,
+        color-02: $gradient-secondary-color-02,
     ),
     skeleton: (
         color-01: $gradient-skeleton-color-01,
