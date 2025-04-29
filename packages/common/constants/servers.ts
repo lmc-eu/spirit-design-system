@@ -24,9 +24,9 @@ const SERVERS: ServerEnvironments = {
       path: 'packages/web-react/',
     },
     'web-twig': {
-      host: 'localhost',
-      https: true,
-      port: 4443,
+      host: 'host.docker.internal',
+      https: false,
+      port: 8880,
     },
     // @see: https://vitejs.dev/config/server-options.html
     'form-validations': {

@@ -31,9 +31,9 @@ services:
       - server_config:/config
     ports:
       # HTTP
-      # - target: 80
-      #   published: ${HTTP_PORT:-8880}
-      #   protocol: tcp
+      - target: 80
+        published: ${HTTP_PORT:-8880}
+        protocol: tcp
       # HTTPS
       - target: 443
         published: ${HTTPS_PORT:-4443}
