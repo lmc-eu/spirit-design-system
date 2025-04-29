@@ -1,5 +1,5 @@
 # Executables (local)
-DOCKER_COMP						= docker compose
+DOCKER_COMP						= SERVER_NAME="http://localhost" docker compose
 DOCKER_PHP_SERVICE		= web-twig-demo-php
 DOCKER_ENCORE_SERVICE	= web-twig-demo-encore
 DOCKER_SERVER_SERVICE	= web-twig-demo-server
