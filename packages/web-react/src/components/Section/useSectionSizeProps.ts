@@ -8,7 +8,7 @@ export interface UseSectionSizeProps {
 
 const sizePaddingMapping: Record<
   SizeExtendedDictionaryType<never>,
-  { paddingY: Record<BreakpointToken, SpaceToken> }
+  { paddingY: Partial<Record<BreakpointToken, SpaceToken>> }
 > = {
   [SizesExtended.XSMALL]: { paddingY: { mobile: 'space-900', tablet: 'space-1000' } },
   [SizesExtended.SMALL]: { paddingY: { mobile: 'space-1000', tablet: 'space-1100' } },
