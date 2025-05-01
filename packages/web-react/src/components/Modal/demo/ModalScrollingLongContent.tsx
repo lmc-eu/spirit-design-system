@@ -13,12 +13,12 @@ import {
   ScrollView,
   Stack,
 } from '../..';
-import { BreakpointToken } from '../../../types';
+import { BreakpointToken, SpaceToken } from '../../../types';
 
 const breakpointControls = {
-  mobile: { marginBottom: { mobile: 'space-800' }, className: '' },
-  tablet: { marginBottom: { tablet: 'space-800' }, className: 'd-none d-tablet-grid' },
-  desktop: { marginBottom: {}, className: 'd-none d-desktop-grid' },
+  mobile: { marginBottom: { mobile: 'space-800' }, className: 'border-0' },
+  tablet: { marginBottom: { tablet: 'space-800' }, className: 'd-none d-tablet-grid border-0' },
+  desktop: { marginBottom: {}, className: 'd-none d-desktop-grid border-0' },
 };
 
 const setVerticalDimensionValueForProp = (
@@ -26,15 +26,13 @@ const setVerticalDimensionValueForProp = (
   breakpoint: BreakpointToken,
   event: ChangeEvent<HTMLInputElement>,
   propName: 'height' | 'maxHeight',
-) => {
-  return {
-    ...prevState,
-    [propName]: {
-      ...prevState[propName],
-      [breakpoint]: Number(event.target.value),
-    },
-  };
-};
+) => ({
+  ...prevState,
+  [propName]: {
+    ...prevState[propName],
+    [breakpoint]: Number(event.target.value),
+  },
+});
 
 const ModalScrollingLongContent = () => {
   const [isModalLongContentOpen, setModalLongContentOpen] = useState(false);
@@ -80,8 +78,8 @@ const ModalScrollingLongContent = () => {
     setHeightValue((prevState) => setVerticalDimensionValueForProp(prevState, breakpoint, event, 'height'));
   };
 
-  const generateHeightObject = (isMax = false) => {
-    return (['mobile', 'tablet', 'desktop'] as BreakpointToken[]).reduce(
+  const generateHeightObject = (isMax = false) =>
+    (['mobile', 'tablet', 'desktop'] as BreakpointToken[]).reduce(
       (acc, breakpoint) => {
         acc[breakpoint] = isCustomHeightEnabled[breakpoint]
           ? `${heightValue[isMax ? 'maxHeight' : 'height'][breakpoint]}px`
@@ -91,7 +89,6 @@ const ModalScrollingLongContent = () => {
       },
       {} as Record<BreakpointToken, string | null>,
     );
-  };
 
   return (
     <>
@@ -216,14 +213,21 @@ const ModalScrollingLongContent = () => {
           <ModalHeader>Modal with Custom Height</ModalHeader>
           <ModalBody>
             <form>
-              {Object.entries(breakpointControls).map(([breakpoint, { marginBottom, className }]) => (
+              {(
+                Object.entries(breakpointControls) as [
+                  BreakpointToken,
+                  {
+                    marginBottom: Partial<Record<string, SpaceToken>>;
+                    className: string;
+                  },
+                ][]
+              ).map(([breakpoint, { marginBottom, className }]) => (
                 <Stack
                   elementType="fieldset"
                   hasSpacing
                   key={breakpoint}
-                  marginBottom={marginBottom as Partial<Record<string, `space-${number}`>>}
+                  marginBottom={marginBottom as Partial<Record<string, SpaceToken>>}
                   UNSAFE_className={className}
-                  UNSAFE_style={{ border: 0 }}
                 >
                   <legend hidden>{breakpoint.charAt(0).toUpperCase() + breakpoint.slice(1)}</legend>
                   <Checkbox
@@ -237,7 +241,7 @@ const ModalScrollingLongContent = () => {
                       }))
                     }
                   />
-                  <Grid UNSAFE_style={{ columnGap: 'var(--spirit-space-600)' }}>
+                  <Grid spacingX="space-600">
                     <Label
                       UNSAFE_className="GridItem"
                       htmlFor={`custom-height-${breakpoint}`}
@@ -274,7 +278,7 @@ const ModalScrollingLongContent = () => {
                       type="range"
                     />
                   </Grid>
-                  <Grid UNSAFE_style={{ columnGap: 'var(--spirit-space-600)' }}>
+                  <Grid spacingX="space-600">
                     <Label
                       UNSAFE_className="GridItem"
                       htmlFor={`custom-max-height-${breakpoint}`}
