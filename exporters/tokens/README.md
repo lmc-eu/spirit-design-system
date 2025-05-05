@@ -135,5 +135,5 @@ This allows replacement for up to **5** font families.
 - Multiword font names **must** be wrapped in **single quotes** to ensure proper parsing and handling of spaces.
 - **Double quotes** will be removed.
 
-[supernova-studio]: https://github.com/Supernova-Studio
 [alma-career]: https://github.com/lmc-eu
+[supernova-studio]: https://github.com/Supernova-Studio
