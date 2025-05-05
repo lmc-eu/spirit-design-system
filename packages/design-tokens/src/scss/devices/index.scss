@@ -1,0 +1,85 @@
+// Breakpoint
+$breakpoint-mobile: 0 !default;
+$breakpoint-tablet: 768px !default;
+$breakpoint-desktop: 1280px !default;
+
+// Form field
+$form-field-small-radius-mobile: 8px !default;
+$form-field-small-radius-tablet: 8px !default;
+$form-field-small-radius-desktop: 8px !default;
+
+$form-field-medium-radius-mobile: 8px !default;
+$form-field-medium-radius-tablet: 8px !default;
+$form-field-medium-radius-desktop: 8px !default;
+
+$form-field-large-radius-mobile: 8px !default;
+$form-field-large-radius-tablet: 8px !default;
+$form-field-large-radius-desktop: 8px !default;
+
+// Button
+$button-large-radius-mobile: 9999px !default;
+$button-large-radius-tablet: 9999px !default;
+$button-large-radius-desktop: 9999px !default;
+
+$button-medium-radius-mobile: 9999px !default;
+$button-medium-radius-tablet: 9999px !default;
+$button-medium-radius-desktop: 9999px !default;
+
+$button-small-radius-mobile: 9999px !default;
+$button-small-radius-tablet: 9999px !default;
+$button-small-radius-desktop: 9999px !default;
+
+// Objects
+$buttons: (
+    large: (
+        radius: (
+            mobile: $button-large-radius-mobile,
+            tablet: $button-large-radius-tablet,
+            desktop: $button-large-radius-desktop,
+        ),
+    ),
+    medium: (
+        radius: (
+            mobile: $button-medium-radius-mobile,
+            tablet: $button-medium-radius-tablet,
+            desktop: $button-medium-radius-desktop,
+        ),
+    ),
+    small: (
+        radius: (
+            mobile: $button-small-radius-mobile,
+            tablet: $button-small-radius-tablet,
+            desktop: $button-small-radius-desktop,
+        ),
+    ),
+) !default;
+
+$breakpoints: (
+    mobile: $breakpoint-mobile,
+    tablet: $breakpoint-tablet,
+    desktop: $breakpoint-desktop,
+) !default;
+
+$form-fields: (
+    small: (
+        radius: (
+            mobile: $form-field-small-radius-mobile,
+            tablet: $form-field-small-radius-tablet,
+            desktop: $form-field-small-radius-desktop,
+        ),
+    ),
+    medium: (
+        radius: (
+            mobile: $form-field-medium-radius-mobile,
+            tablet: $form-field-medium-radius-tablet,
+            desktop: $form-field-medium-radius-desktop,
+        ),
+    ),
+    large: (
+        radius: (
+            mobile: $form-field-large-radius-mobile,
+            tablet: $form-field-large-radius-tablet,
+            desktop: $form-field-large-radius-desktop,
+        ),
+    ),
+) !default;
