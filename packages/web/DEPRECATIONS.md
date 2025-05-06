@@ -23,6 +23,16 @@ The direction values `row` and `column` were removed, please use `horizontal` an
 - `<div class="Flex Flex--row" />` → `<div class="Flex Flex--horizontal" />`
 - `<div class="Flex Flex--column" />` → `<div class="Flex Flex--vertical" />`
 
+### Form Fields
+
+Form fields now support the `size` property. Ensure that a size is set for all form fields. The default size is `medium`.
+
+#### Migration Guide
+
+- `<div class="Select"><!-- … --></div>` → `<div class="Select Select--medium"><!-- … --></div>`
+- `<div class="TextArea"><!-- … --></div>` → `<div class="TextArea TextArea--medium"><!-- … --></div>`
+- `<div class="TextField"><!-- … --></div>` → `<div class="TextField TextField--medium"><!-- … --></div>`
+
 ### Header
 
 The `Header` component was removed, please use `UNSTABLE_Header` component instead.

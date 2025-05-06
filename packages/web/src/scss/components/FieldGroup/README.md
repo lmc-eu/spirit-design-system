@@ -119,7 +119,7 @@ disabled styling on all elements.
   <legend class="accessibility-hidden">Label</legend>
   <div class="FieldGroup__label" aria-hidden="true">Label</div>
   <div class="FieldGroup__fields">
-    <div class="TextField TextField--disabled">
+    <div class="TextField TextField--medium TextField--disabled">
       <label for="text-field" class="TextField__label">Label</label>
       <input type="text" id="text-field" class="TextField__input" name="textField" placeholder="Placeholder" disabled />
     </div>

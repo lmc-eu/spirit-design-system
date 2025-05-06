@@ -3,7 +3,7 @@
 Basic usage:
 
 ```html
-<div class="Select">
+<div class="Select Select--medium">
   <label for="select-simple" class="Select__label">Label</label>
   <div class="Select__inputContainer">
     <select id="select-simple" name="simple" class="Select__input">
@@ -19,10 +19,59 @@ Basic usage:
 </div>
 ```
 
+Sizes:
+
+```html
+<div class="Select Select--small">
+  <label for="select-size-small" class="Select__label">Small</label>
+  <div class="Select__inputContainer">
+    <select id="select-size-small" name="size-small" class="Select__input">
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+    </select>
+    <div class="Select__icon">
+      <svg width="24" height="24" aria-hidden="true">
+        <use xlink:href="/assets/icons/svg/sprite.svg#chevron-down" />
+      </svg>
+    </div>
+  </div>
+</div>
+
+<div class="Select Select--medium">
+  <label for="select-size-medium" class="Select__label">Medium (default)</label>
+  <div class="Select__inputContainer">
+    <select id="select-size-medium" name="size-medium" class="Select__input">
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+    </select>
+    <div class="Select__icon">
+      <svg width="24" height="24" aria-hidden="true">
+        <use xlink:href="/assets/icons/svg/sprite.svg#chevron-down" />
+      </svg>
+    </div>
+  </div>
+</div>
+
+<div class="Select Select--large">
+  <label for="select-size-large" class="Select__label">Large</label>
+  <div class="Select__inputContainer">
+    <select id="select-size-large" name="size-large" class="Select__input">
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+    </select>
+    <div class="Select__icon">
+      <svg width="24" height="24" aria-hidden="true">
+        <use xlink:href="/assets/icons/svg/sprite.svg#chevron-down" />
+      </svg>
+    </div>
+  </div>
+</div>
+```
+
 Required select (requires a placeholder option):
 
 ```html
-<div class="Select">
+<div class="Select Select--medium">
   <label for="select-simple" class="Select__label Select__label--required">Label</label>
   <div class="Select__inputContainer">
     <select id="select-simple" name="simple" class="Select__input" required>
@@ -42,7 +91,7 @@ Required select (requires a placeholder option):
 Hidden label:
 
 ```html
-<div class="Select">
+<div class="Select Select--medium">
   <label for="select-hidden-label" class="Select__label Select__label--hidden">Label</label>
   <div class="Select__inputContainer">
     <select id="select-hidden-label" name="hiddenLabel" class="Select__input">
@@ -69,7 +118,7 @@ until the user picks a real option, not the placeholder. This makes
 sure users give all needed details before sending the form.
 
 ```html
-<div class="Select">
+<div class="Select Select--medium">
   <label for="select-placeholder" class="Select__label">Label</label>
   <div class="Select__inputContainer">
     <select id="select-placeholder" name="placeholder" class="Select__input">
@@ -85,7 +134,7 @@ sure users give all needed details before sending the form.
   </div>
 </div>
 
-<div class="Select">
+<div class="Select Select--medium">
   <label for="select-placeholder-disabled" class="Select__label Select__label--required">Label</label>
   <div class="Select__inputContainer">
     <select id="select-placeholder-disabled" name="placeholderDisabled" class="Select__input" required>
@@ -105,7 +154,7 @@ sure users give all needed details before sending the form.
 Fluid width:
 
 ```html
-<div class="Select Select--fluid">
+<div class="Select Select--medium Select--fluid">
   <label for="select-fluid" class="Select__label">Label</label>
   <div class="Select__inputContainer">
     <select id="select-fluid" name="fluid" class="Select__input">
@@ -124,7 +173,7 @@ Fluid width:
 Usage with helper text:
 
 ```html
-<div class="Select">
+<div class="Select Select--medium">
   <label for="select-helper-text" class="Select__label">Label</label>
   <div class="Select__inputContainer">
     <select id="select-helper-text" name="helperText" class="Select__input">
@@ -152,7 +201,7 @@ a JS interaction class when controlled by JavaScript (`has-success`,
 - To render validation text with an icon, add `<svg>` icon inside of `.Select__validationText`.
 
 ```html
-<div class="Select Select--success">
+<div class="Select Select--medium Select--success">
   <label for="select-success" class="Select__label">Label</label>
   <div class="Select__inputContainer">
     <select id="select-success" name="success" class="Select__input">
@@ -167,7 +216,7 @@ a JS interaction class when controlled by JavaScript (`has-success`,
   </div>
 </div>
 
-<div class="Select Select--warning">
+<div class="Select Select--medium Select--warning">
   <label for="select-warning" class="Select__label">Label</label>
   <div class="Select__inputContainer">
     <select id="select-warning" name="warning" class="Select__input">
@@ -183,7 +232,7 @@ a JS interaction class when controlled by JavaScript (`has-success`,
   <div class="Select__validationText">Validation text</div>
 </div>
 
-<div class="Select Select--danger">
+<div class="Select Select--medium Select--danger">
   <label for="select-danger" class="Select__label">Label</label>
   <div class="Select__inputContainer">
     <select id="select-danger" name="danger" class="Select__input">
@@ -204,7 +253,7 @@ a JS interaction class when controlled by JavaScript (`has-success`,
   </div>
 </div>
 
-<div class="Select Select--warning">
+<div class="Select Select--medium Select--warning">
   <label for="select-warning" class="Select__label">Label</label>
   <div class="Select__inputContainer">
     <select id="select-warning" name="warning" class="Select__input">
@@ -238,7 +287,7 @@ attribute. This way your JS remains disconnected from CSS that may or may not be
 components mix CSS with JS by design and handle prefixes their own way.**
 
 ```html
-<div class="Select has-danger">
+<div class="Select Select--medium has-danger">
   <label for="select-js-validation" class="Select__label">Label</label>
   <div class="Select__inputContainer">
     <select id="select-js-validation" name="jsValidation" class="Select__input">
@@ -262,7 +311,7 @@ be marked by adding `Select--disabled` modifier class, or with `is-disabled`
 JS interaction class when controlled by JavaScript:
 
 ```html
-<div class="Select Select--disabled">
+<div class="Select Select--medium Select--disabled">
   <label for="select-disabled" class="Select__label">Label</label>
   <div class="Select__inputContainer">
     <select id="select-disabled" name="disabled" class="Select__input" disabled>
@@ -276,7 +325,7 @@ JS interaction class when controlled by JavaScript:
     </div>
   </div>
 </div>
-<div class="Select is-disabled">
+<div class="Select Select--medium is-disabled">
   <label for="select-is-disabled" class="Select__label">Label</label>
   <div class="Select__inputContainer">
     <select id="select-is-disabled" name="isDisabled" class="Select__input" disabled>
