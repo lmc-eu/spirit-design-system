@@ -75,7 +75,7 @@
 }
 
 @mixin inline-field-label() {
-    @include typography.generate(form-fields-settings.$input-typography);
+    @include typography.generate(form-fields-settings.$inline-field-label-typography);
 
     display: block;
     color: form-fields-settings.$label-color-state-default;

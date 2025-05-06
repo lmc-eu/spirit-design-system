@@ -180,7 +180,7 @@
         <fieldset style="border: 0;">
           <legend class="mb-500">New Toast:</legend>
           <div class="Stack Stack--hasSpacing">
-            <div class="Select">
+            <div class="Select Select--medium">
               <label for="toast-color" class="Select__label">Color</label>
               <div class="Select__inputContainer">
                 <select id="toast-color" name="color" class="Select__input" autocomplete="off">
@@ -218,12 +218,12 @@
                 <label class="Checkbox__label" for="toast-enable-auto-close">Enable AutoClose</label>
               </div>
             </div>
-            <div class="TextField">
+            <div class="TextField TextField--medium">
               <label for="toast-auto-close-interval" class="TextField__label">AutoClose interval (ms)</label>
               <input type="number" min="0" max="60000" step="500" value="3000" id="toast-auto-close-interval"
                      name="auto-close-interval" class="TextField__input"/>
             </div>
-            <div class="TextArea">
+            <div class="TextArea TextArea--medium">
               <label for="toast-message" class="TextArea__label">Message</label>
               <textarea id="toast-message" class="TextArea__input"
                         autocomplete="off">This is a new toast message.</textarea>
@@ -236,7 +236,7 @@
                 <label class="Checkbox__label" for="toast-enable-link">Add link</label>
               </div>
             </div>
-            <div class="TextArea">
+            <div class="TextArea TextArea--medium">
               <label for="toast-link" class="TextArea__label">Link</label>
               <textarea id="toast-link" class="TextArea__input" autocomplete="off">This is a toast link.</textarea>
               <div class="TextArea__helperText">Can contain HTML.</div>
@@ -273,7 +273,7 @@
       <form>
         <fieldset style="border: 0;">
           <legend class="mb-500">Virtual keyboard interaction:</legend>
-          <div class="TextField">
+          <div class="TextField TextField--medium">
             <label for="text-field-for-focus" class="TextField__label">In Chrome on Android, tap into this text field to
               see how Toast position updates:</label>
             <input type="text" id="text-field-for-focus" class="TextField__input" name="default" placeholder="Tap here!"/>

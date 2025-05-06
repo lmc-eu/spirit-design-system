@@ -52,31 +52,31 @@
 
       <form id="form-1" method="get" novalidate>
         <div class="Stack Stack--hasSpacing">
-          <div class="TextField TextField--fluid" data-spirit-validate>
+          <div class="TextField TextField--medium TextField--fluid" data-spirit-validate>
             <label for="username" class="TextField__label TextField__label--required">Username</label>
             <input type="text" id="username" class="TextField__input" required data-spirit-required-message="Please choose a username" />
           </div>
-          <div class="TextField TextField--fluid" data-spirit-validate>
+          <div class="TextField TextField--medium TextField--fluid" data-spirit-validate>
             <label for="zipcode" class="TextField__label">ZIP code</label>
             <input type="text" id="zipcode" class="TextField__input" placeholder="123" data-spirit-pattern="/d{5}|\d{3}[ ]?\d{2}/" data-spirit-pattern-message="Invalid ZIP code" />
           </div>
-          <div class="TextField TextField--fluid" data-spirit-validate>
+          <div class="TextField TextField--medium TextField--fluid" data-spirit-validate>
             <label for="age" class="TextField__label TextField__label--required">Your age (min. 14)</label>
             <input type="number" id="age" class="TextField__input" required min="14" data-spirit-min-message="You must be at least 14-years-old"/>
           </div>
-          <div class="TextField TextField--fluid" data-spirit-validate>
+          <div class="TextField TextField--medium TextField--fluid" data-spirit-validate>
             <label for="password" class="TextField__label TextField__label--required">Password</label>
             <input type="password" id="password" class="TextField__input" required data-spirit-required-message="Please choose a password" data-spirit-pattern= "/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/" data-spirit-pattern-message="Minimum 8 characters, at least one uppercase letter, one lowercase letter and one number" />
           </div>
-          <div class="TextField TextField--fluid" data-spirit-validate>
+          <div class="TextField TextField--medium TextField--fluid" data-spirit-validate>
             <label for="retype-password" class="TextField__label TextField__label--required">Retype password</label>
             <input type="password" id="retype-password" class="TextField__input" data-spirit-equals="#password" data-spirit-equals-message="Passwords don't match" />
           </div>
-          <div class="TextField TextField--fluid" data-spirit-validate>
+          <div class="TextField TextField--medium TextField--fluid" data-spirit-validate>
             <label for="email" class="TextField__label TextField__label--required">Email</label>
             <input type="email" id="email" class="TextField__input" required data-spirit-required-message="Please enter your email" />
           </div>
-          <div class="TextField TextField--fluid" data-spirit-validate>
+          <div class="TextField TextField--medium TextField--fluid" data-spirit-validate>
             <label for="phone" class="TextField__label">Phone</label>
             <input type="tel" id="phone" class="TextField__input" placeholder="+420 733 333 333" data-spirit-pattern="/^(?:\+\d{3}\s?)?(\d{3}\s?){3}$/" data-spirit-pattern-message="Invalid phone number" />
           </div>
@@ -113,35 +113,35 @@
 
       <form id="form-2" method="get" novalidate>
         <div class="Stack Stack--hasSpacing">
-          <div class="TextField TextField--fluid" data-spirit-validate>
+          <div class="TextField TextField--medium TextField--fluid" data-spirit-validate>
             <label for="required" class="TextField__label TextField__label--required">Required TextField</label>
             <input type="text" id="required" class="TextField__input" required />
           </div>
-          <div class="TextField TextField--fluid" data-spirit-validate>
+          <div class="TextField TextField--medium TextField--fluid" data-spirit-validate>
             <label for="email-common" class="TextField__label">TextField <code>type="email"</code>, not required</label>
             <input type="email" id="email-common" class="TextField__input" />
           </div>
-          <div class="TextField TextField--fluid" data-spirit-validate>
+          <div class="TextField TextField--medium TextField--fluid" data-spirit-validate>
             <label for="min-length" class="TextField__label">TextField <code>minlength="2"</code></label>
             <input type="text" id="min-length" class="TextField__input" minlength="2" />
           </div>
-          <div class="TextField TextField--fluid" data-spirit-validate>
+          <div class="TextField TextField--medium TextField--fluid" data-spirit-validate>
             <label for="number" class="TextField__label">TextField <code>type="number"</code>, not required</label>
             <input type="number" id="number" class="TextField__input" />
           </div>
-          <div class="TextField TextField--fluid" data-spirit-validate>
+          <div class="TextField TextField--medium TextField--fluid" data-spirit-validate>
             <label for="number-min" class="TextField__label">TextField <code>type="number"</code>, <code>min="100"</code>, not required</label>
             <input type="number" id="number-min" class="TextField__input" min="100" />
           </div>
-          <div class="TextField TextField--fluid" data-spirit-validate>
+          <div class="TextField TextField--medium TextField--fluid" data-spirit-validate>
             <label for="number-min-required" class="TextField__label TextField__label--required">TextField <code>type="number"</code>, <code>min="100"</code>, required</label>
             <input type="number" id="number-min-required" class="TextField__input" min="100" required />
           </div>
-          <div class="TextField TextField--fluid" data-spirit-validate>
+          <div class="TextField TextField--medium TextField--fluid" data-spirit-validate>
             <label for="pattern-required" class="TextField__label TextField__label--required">TextField with <code>pattern="/^\d+\.\d{2}$/"</code> (match decimal with 2 points), required</label>
             <input type="number" id="pattern-required" step="0.01" class="TextField__input" pattern="/^\d+\.\d{2}$/" required />
           </div>
-          <div class="TextField TextField--fluid" data-spirit-validate>
+          <div class="TextField TextField--medium TextField--fluid" data-spirit-validate>
             <label for="pattern-custom-message" class="TextField__label TextField__label--required">TextField with same as above field, but with custom message</label>
             <input type="number" id="pattern-custom-message" step="0.01" class="TextField__input" pattern="/^\d+\.\d{2}$/g" required data-spirit-pattern-message="The value must have 2 decimal points" />
           </div>
@@ -173,7 +173,7 @@
 
       <form id="form-3" method="get" novalidate>
         <div class="Stack Stack--hasSpacing">
-          <div class="TextField TextField--fluid" data-spirit-validate>
+          <div class="TextField TextField--medium TextField--fluid" data-spirit-validate>
             <label for="custom-global-validator" class="TextField__label TextField__label--required">Required TextField, Range 10 - 30</label>
             <input type="text" id="custom-global-validator" class="TextField__input" required data-spirit-my-range="10,30" />
           </div>
@@ -205,7 +205,7 @@
 
       <form id="form-4" method="get" novalidate>
         <div class="Stack Stack--hasSpacing">
-          <div class="TextField TextField--fluid" data-spirit-validate>
+          <div class="TextField TextField--medium TextField--fluid" data-spirit-validate>
             <label for="custom-field-specific-validator" class="TextField__label TextField__label--required">Required TextField, First Letter Capitalized</label>
             <input type="text" id="custom-field-specific-validator" class="TextField__input" required />
           </div>
@@ -237,15 +237,15 @@
 
       <form id="form-5" method="get" novalidate>
         <div class="Stack Stack--hasSpacing">
-          <div class="TextField TextField--fluid" data-spirit-validate>
+          <div class="TextField TextField--medium TextField--fluid" data-spirit-validate>
             <label for="custom-errors-textfield" class="TextField__label TextField__label--required">Required TextField</label>
             <input type="text" id="custom-errors-textfield" class="TextField__input" minlength="2" required data-spirit-required-message="My custom message"  />
           </div>
-          <div class="TextField TextField--fluid" data-spirit-validate>
-            <label for="custom-errors-textfield" class="TextField__label TextField__label--required">Required TextField, valid email, minlength="10"</label>
-            <input type="email" id="custom-errors-textfield" class="TextField__input" required data-spirit-required-message="Please enter your email" data-spirit-minlength="10" />
+          <div class="TextField TextField--medium TextField--fluid" data-spirit-validate>
+            <label for="custom-errors-textfield-minlength" class="TextField__label TextField__label--required">Required TextField, valid email, minlength="10"</label>
+            <input type="email" id="custom-errors-textfield-minlength" class="TextField__input" required data-spirit-required-message="Please enter your email" data-spirit-minlength="10" />
           </div>
-          <div class="TextField TextField--fluid" data-spirit-validate>
+          <div class="TextField TextField--medium TextField--fluid" data-spirit-validate>
             <label for="custom-errors-number" class="TextField__label TextField__label--required">Required TextField, <code>type="number"</code>, <code>min="100"</code></label>
             <input type="number" id="custom-errors-number" class="TextField__input" value="5" required min="100" data-spirit-min-message="Anything larger than 99" />
           </div>
