@@ -23,7 +23,7 @@ const runComponentCompareTests = ({ componentsDir, packageName, componentName }:
     test(`Test ${componentName} component in ${formattedPackageName} package`, async ({ page }: { page: Page }) => {
       try {
         const url = getServerUrl(packageName);
-        await page.goto(`${url}${componentsDir}/${componentName}/${packageName === 'web-twig' ? '?HIDE_TOOLBAR' : ''}`);
+        await page.goto(`${url}${componentsDir}/${componentName}/`);
         await waitForPageLoad(page);
         await hideFromVisualTests(page);
         await runModalTests(page, componentName);
@@ -111,14 +111,5 @@ const testConfigs: TestConfig[] = [
     packageName: 'web-react',
   },
 ];
-
-// Disable web-twig tests for now on CI, because we don't have a way to run them in CI yet.
-if (!isTestingEnvironment()) {
-  testConfigs.push({
-    componentName,
-    componentsDir: '/components',
-    packageName: 'web-twig',
-  });
-}
 
 testConfigs.forEach(runComponentCompareTests);

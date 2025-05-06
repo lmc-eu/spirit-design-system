@@ -1,4 +1,4 @@
-export type PackageName = 'web' | 'web-react' | 'web-twig' | 'form-validations';
+export type PackageName = 'web' | 'web-react' | 'form-validations';
 export type ServerOptions = { host: string; https: boolean; port: number; path?: string; strictPort?: boolean };
 export type ServerEnvironments = {
   DEVELOPMENT: Record<PackageName, ServerOptions>;
@@ -23,11 +23,6 @@ const SERVERS: ServerEnvironments = {
       strictPort: true,
       path: 'packages/web-react/',
     },
-    'web-twig': {
-      host: 'host.docker.internal',
-      https: false,
-      port: 8880,
-    },
     // @see: https://vitejs.dev/config/server-options.html
     'form-validations': {
       host: 'localhost',
@@ -39,7 +34,6 @@ const SERVERS: ServerEnvironments = {
   TESTING: {
     web: `${process.env.WEBSITE_URL || 'https://spirit-design-system.netlify.app'}/packages/web/`,
     'web-react': `${process.env.WEBSITE_URL || 'https://spirit-design-system.netlify.app'}/packages/web-react/`,
-    'web-twig': process.env.DEMO_WEB_TWIG_URL || '',
   },
 };
 
