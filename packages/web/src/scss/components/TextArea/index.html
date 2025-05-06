@@ -8,12 +8,12 @@
 
     <div class="docs-Stack docs-Stack--start">
 
-      <div class="TextArea">
+      <div class="TextArea TextArea--medium">
         <label for="text-area-default" class="TextArea__label">Label</label>
         <textarea id="text-area-default" class="TextArea__input" name="default" placeholder="Placeholder"></textarea>
       </div>
 
-      <div class="TextArea">
+      <div class="TextArea TextArea--medium">
         <label for="text-area-filled" class="TextArea__label">Label</label>
         <textarea id="text-area-filled" class="TextArea__input" name="defaultFilled" placeholder="Placeholder">Filled</textarea>
       </div>
@@ -28,11 +28,45 @@
 
   <div class="Container">
 
+    <h2 class="docs-Heading">Sizes</h2>
+
+    <div class="docs-Stack docs-Stack--stretch">
+      <div class="Grid Grid--cols-1 Grid--desktop--cols-3">
+
+        <div class="TextArea TextArea--small">
+          <label for="text-area-size-small" class="TextArea__label">Small</label>
+          <textarea id="text-area-size-small" class="TextArea__input" name="size-small" placeholder="Placeholder"></textarea>
+          <div class="TextArea__helperText">Helper text</div>
+        </div>
+
+        <div class="TextArea TextArea--medium">
+          <label for="text-area-size-medium" class="TextArea__label">Medium (default)</label>
+          <textarea id="text-area-size-medium" class="TextArea__input" name="size-medium" placeholder="Placeholder"></textarea>
+          <div class="TextArea__helperText">Helper text</div>
+        </div>
+
+        <div class="TextArea TextArea--large">
+          <label for="text-area-size-large" class="TextArea__label">Large</label>
+          <textarea id="text-area-size-large" class="TextArea__input" name="size-large" placeholder="Placeholder"></textarea>
+          <div class="TextArea__helperText">Helper text</div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="py-900 py-tablet-1000">
+
+  <div class="Container">
+
     <h2 class="docs-Heading">Required</h2>
 
     <div class="docs-Stack docs-Stack--start">
 
-      <div class="TextArea">
+      <div class="TextArea TextArea--medium">
         <label for="text-area-required" class="TextArea__label TextArea__label--required">Label</label>
         <textarea id="text-area-required" class="TextArea__input" name="required" placeholder="Placeholder" required></textarea>
       </div>
@@ -51,7 +85,7 @@
 
     <div class="docs-Stack docs-Stack--start">
 
-      <div class="TextArea">
+      <div class="TextArea TextArea--medium">
         <label for="text-area-hidden-label" class="TextArea__label TextArea__label--hidden">Hidden Label</label>
         <textarea id="text-area-hidden-label" class="TextArea__input" name="hiddenLabel" placeholder="Placeholder"></textarea>
       </div>
@@ -70,7 +104,7 @@
 
     <div class="docs-Stack docs-Stack--start">
 
-      <div class="TextArea">
+      <div class="TextArea TextArea--medium">
         <label for="text-area-helper-text" class="TextArea__label">Label</label>
         <textarea id="text-area-helper-text" class="TextArea__input" name="helperText" placeholder="Placeholder"></textarea>
         <div class="TextArea__helperText">Helper text</div>
@@ -90,12 +124,12 @@
 
     <div class="docs-Stack docs-Stack--start">
 
-      <div class="TextArea TextArea--disabled">
+      <div class="TextArea TextArea--medium TextArea--disabled">
         <label for="text-area-disabled" class="TextArea__label">Label</label>
         <textarea id="text-area-disabled" class="TextArea__input" name="disabled" placeholder="Placeholder" disabled></textarea>
       </div>
 
-      <div class="TextArea TextArea--disabled">
+      <div class="TextArea TextArea--medium TextArea--disabled">
         <label for="text-area-disabled-filled" class="TextArea__label TextArea__label--required">Label</label>
         <textarea id="text-area-disabled-filled" class="TextArea__input" name="disabledFilled" disabled required>Filled</textarea>
       </div>
@@ -114,18 +148,18 @@
 
     <div class="docs-Stack docs-Stack--start">
 
-      <div class="TextArea TextArea--success">
+      <div class="TextArea TextArea--medium TextArea--success">
         <label for="text-area-success" class="TextArea__label">Label</label>
         <textarea id="text-area-success" class="TextArea__input" name="success" placeholder="Placeholder">Filled</textarea>
       </div>
 
-      <div class="TextArea TextArea--warning">
+      <div class="TextArea TextArea--medium TextArea--warning">
         <label for="text-area-warning" class="TextArea__label">Label</label>
         <textarea id="text-area-warning" class="TextArea__input" name="warning" placeholder="Placeholder">Filled</textarea>
         <div class="TextArea__validationText">Validation text</div>
       </div>
 
-      <div class="TextArea TextArea--danger">
+      <div class="TextArea TextArea--medium TextArea--danger">
         <label for="text-area-danger" class="TextArea__label">Label</label>
         <textarea id="text-area-danger" class="TextArea__input" name="danger" placeholder="Placeholder">Filled</textarea>
         <div class="TextArea__validationText">
@@ -136,7 +170,7 @@
         </div>
       </div>
 
-      <div class="TextArea TextArea--danger">
+      <div class="TextArea TextArea--medium TextArea--danger">
         <label for="text-area-danger-with-helper-text" class="TextArea__label TextArea__label--required">Label</label>
         <textarea id="text-area-danger-with-helper-text" class="TextArea__input" placeholder="Placeholder" name="dangerWithHelperText" required>Filled</textarea>
         <div class="TextArea__helperText">This is helper text</div>
@@ -157,7 +191,7 @@
       {{setVar "states" "success" "warning" "danger" }}
       {{#each @root.states as |state|}}
 
-      <div class="TextArea TextArea--{{state}}">
+      <div class="TextArea TextArea--medium TextArea--{{state}}">
         <label for="text-area-{{state}}-with-icon"
                class="TextArea__label TextArea__label--required"
         >Label</label>
@@ -189,7 +223,7 @@
 
     <div class="docs-Stack docs-Stack--start">
 
-      <div class="TextArea TextArea--fluid">
+      <div class="TextArea TextArea--medium TextArea--fluid">
         <label for="text-area-fluid" class="TextArea__label">Label</label>
         <textarea id="text-area-fluid" class="TextArea__input" name="fluid" placeholder="Placeholder">Filled</textarea>
       </div>
@@ -209,7 +243,7 @@
     <div class="docs-Stack docs-Stack--start">
 
       <div style="display: flex; gap: 1rem; align-items: flex-start">
-        <div class="TextArea">
+        <div class="TextArea TextArea--medium">
           <label for="text-area-inline" class="TextArea__label TextArea__label--hidden">Hidden Label</label>
           <textarea id="text-area-inline" class="TextArea__input" name="inline" placeholder="Placeholder">Filled</textarea>
         </div>
@@ -230,7 +264,7 @@
 
     <div class="docs-Stack docs-Stack--start">
 
-      <div class="TextArea" data-spirit-toggle="autoResize">
+      <div class="TextArea TextArea--medium" data-spirit-toggle="autoResize">
         <label for="text-area-auto-resize" class="TextArea__label">Label</label>
         <textarea id="text-area-auto-resize" class="TextArea__input" name="autoResize"></textarea>
       </div>

@@ -2,7 +2,6 @@
 @use 'dictionaries';
 
 // Common for all form components
-$input-typography: tokens.$body-medium-regular;
 $input-color-state-disabled: tokens.$disabled-content;
 $input-background-color: tokens.$form-field-filled-background-state-default;
 $input-background-color-state-hover: tokens.$form-field-filled-background-state-hover;
@@ -32,6 +31,7 @@ $helper-text-color-state-default: tokens.$form-field-helper-text;
 $helper-text-color-state-disabled: tokens.$disabled-content;
 
 // Inline field form components – Checkbox, Radio, etc.
+$inline-field-label-typography: tokens.$body-medium-regular;
 $inline-field-gap: tokens.$space-500;
 $inline-field-margin-y: tokens.$space-500;
 $inline-field-input-border-color-checked: tokens.$form-field-filled-border-state-selected;
@@ -45,6 +45,11 @@ $box-field-input-border-width: tokens.$border-width-100;
 $box-field-input-border-style: solid;
 $box-field-input-border-color-focus: tokens.$border-focus;
 $box-field-input-focus-shadow: tokens.$focus-ring;
+
+// @deprecated Remove typography fallback when form field sizes are mandatory.
+// Migration: delete the `$box-field-input-fallback-typography` variable.
+// https://jira.almacareer.tech/browse/DS-1884 — Remove deprecated typography mixin from form fields
+$box-field-input-fallback-typography: tokens.$body-medium-regular;
 
 $box-field-input-border-radius: tokens.$radius-300;
 $box-field-input-placeholder-color-state-default: tokens.$form-field-filled-placeholder;
