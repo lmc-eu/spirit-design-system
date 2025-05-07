@@ -34,6 +34,7 @@
     @media (hover: hover) {
         :not(:checked, :disabled) + &:hover {
             background-color: theme.$item-background-hover;
+            transition: theme.$transition-hover;
         }
     }
 
