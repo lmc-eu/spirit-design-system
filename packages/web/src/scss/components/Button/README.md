@@ -15,8 +15,32 @@ Variants:
 
 Block-level Button:
 
+## ⚠️ DEPRECATION NOTICE
+
+CSS modifiers `Button--isBlock` is deprecated and will be removed in the next major release.
+Use display utility classes or `Grid` classes to achieve desired layout.
+
 ```html
 <button type="button" class="Button Button--primary Button--medium Button--block">Primary block-level Button</button>
+```
+
+```html
+<div class="d-grid">
+  <button type="button" class="Button Button--primary Button--medium">Primary block-level Button</button>
+</div>
+<div class="d-grid d-inline-flex--tablet">
+  <button type="button" class="Button Button--primary Button--medium">Primary responsive block-level Button</button>
+</div>
+<div
+  class="Grid Grid--cols-1 Grid--tablet--cols-2"
+  style="
+    --grid-spacing-x: var(--spirit-space-1100);
+    --grid-spacing-y: var(--spirit-space-1100);
+  "
+>
+  <button type="button" class="Button Button--primary Button--medium">Primary responsive block-level Button</button>
+  <a href="#" class="Button Button--primary Button--medium">Primary responsive block-level Button</a>
+</div>
 ```
 
 Disabling a Button:

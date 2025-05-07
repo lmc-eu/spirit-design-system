@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { ElementType } from 'react';
 import { warning } from '../../common/utilities';
-import { useClassNamePrefix } from '../../hooks';
+import { useClassNamePrefix, useDeprecationMessage } from '../../hooks';
 import { ButtonColor, ButtonSize, SpiritButtonProps } from '../../types';
 import { applyColor, applySize } from '../../utils/classname';
 import { compose } from '../../utils/compose';
@@ -24,6 +24,17 @@ export function useButtonLinkStyleProps<T extends ElementType = 'button', C = vo
   props: SpiritButtonProps<T, C, S>,
 ): ButtonLinkStyles {
   const { color, isBlock, isDisabled, isLoading, isSymmetrical, size, ...restProps } = props;
+
+  // @see https://jira.almacareer.tech/browse/DS-1897
+  useDeprecationMessage({
+    method: 'property',
+    trigger: isBlock === true,
+    componentName: 'ButtonLink',
+    propertyProps: {
+      delete: true,
+      deprecatedName: 'isBlock',
+    },
+  });
 
   const buttonClass = useClassNamePrefix('Button');
   const buttonBlockClass = `${buttonClass}--block`;

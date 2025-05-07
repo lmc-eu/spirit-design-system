@@ -38,4 +38,8 @@ If you are using the `Stack` component with dividers, you must wrap each item in
 </Stack>
 ```
 
+### Button and ButtonLink
+
+The `isBlock` property was removed. Please, use display utility classes or `Grid` component to achieve desired layout.
+
 [readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#deprecations

@@ -31,22 +31,43 @@ import { RouterLink } from 'react-router-dom';
 </Button>;
 ```
 
+## ⚠️ DEPRECATION NOTICE
+
+Property `isBlock` is deprecated and will be removed in the next major release.
+Use display utility classes or `Grid` classes to achieve desired layout.
+
+```jsx
+<div className="d-grid">
+  <Button>Primary block-level Button</Button>
+</div>
+<div className="d-grid d-inline-flex--tablet">
+  <Button>Primary responsive block-level Button</Button>
+</div>
+<Grid
+  cols="{{ mobile: 1, tablet: 2 }}"
+  spacing="space-1100"
+>
+  <Button>Primary responsive block-level Button</ButtonLink>
+  <ButtonLink href="#">Primary responsive block-level Button</ButtonLink>
+</div>
+```
+
 ### API
 
-| Name            | Type                                                                                                | Default   | Required | Description                                                                |
-| --------------- | --------------------------------------------------------------------------------------------------- | --------- | -------- | -------------------------------------------------------------------------- |
-| `children`      | `ReactNode`                                                                                         | `null`    | ✕        | Content of the Button                                                      |
-| `color`         | [Component Button Color dictionary][dictionary-color], [Emotion Color dictionary][dictionary-color] | `primary` | ✕        | Color variant                                                              |
-| `elementType`   | `ElementType`                                                                                       | `button`  | ✕        | Type of element                                                            |
-| `isBlock`       | `bool`                                                                                              | `false`   | ✕        | Span the element to the full width of its parent                           |
-| `isDisabled`    | `bool`                                                                                              | `false`   | ✕        | If true, Button is disabled                                                |
-| `isLoading`     | `bool`                                                                                              | `false`   | ✕        | If true, Button is in a loading state, disabled and the Spinner is visible |
-| `isSymmetrical` | `bool`                                                                                              | `false`   | ✕        | If true, Button has symmetrical dimensions, usually only with an Icon      |
-| `name`          | `string`                                                                                            | —         | ✕        | For use a button as a form data reference                                  |
-| `onClick`       | `string`                                                                                            | `null`    | ✕        | JS function to call on click                                               |
-| `ref`           | `ForwardedRef<HTMLButtonElement>`                                                                   | —         | ✕        | Button element reference                                                   |
-| `size`          | [Size dictionary][dictionary-size]                                                                  | `medium`  | ✕        | Size variant                                                               |
-| `type`          | `string`                                                                                            | `button`  | ✕        | Type of the Button                                                         |
+| Name            | Type                                                                                                | Default   | Required | Description                                                                            |
+| --------------- | --------------------------------------------------------------------------------------------------- | --------- | -------- | -------------------------------------------------------------------------------------- |
+| `children`      | `ReactNode`                                                                                         | `null`    | ✕        | Content of the Button                                                                  |
+| `color`         | [Component Button Color dictionary][dictionary-color], [Emotion Color dictionary][dictionary-color] | `primary` | ✕        | Color variant                                                                          |
+| `elementType`   | `ElementType`                                                                                       | `button`  | ✕        | Type of element                                                                        |
+| `isBlock`       | `bool`                                                                                              | `false`   | ✕        | [**DEPRECATED**][readme-deprecations] Span the element to the full width of its parent |
+| `isDisabled`    | `bool`                                                                                              | `false`   | ✕        | If true, Button is disabled                                                            |
+| `isLoading`     | `bool`                                                                                              | `false`   | ✕        | If true, Button is in a loading state, disabled and the Spinner is visible             |
+| `isSymmetrical` | `bool`                                                                                              | `false`   | ✕        | If true, Button has symmetrical dimensions, usually only with an Icon                  |
+| `name`          | `string`                                                                                            | —         | ✕        | For use a button as a form data reference                                              |
+| `onClick`       | `string`                                                                                            | `null`    | ✕        | JS function to call on click                                                           |
+| `ref`           | `ForwardedRef<HTMLButtonElement>`                                                                   | —         | ✕        | Button element reference                                                               |
+| `size`          | [Size dictionary][dictionary-size]                                                                  | `medium`  | ✕        | Size variant                                                                           |
+| `type`          | `string`                                                                                            | `button`  | ✕        | Type of the Button                                                                     |
 
 For more information see [Button][button] component. Button also contain all the appropriate
 attributes according to the type of element. The default element type for Button is `<button>`.
@@ -64,6 +85,7 @@ please refer to the [Icon component documentation][web-react-icon-documentation]
 [dictionary-color]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#color
 [dictionary-size]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#size
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
+[readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#deprecations
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props
 [web-react-icon-documentation]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Icon/README.md#-usage

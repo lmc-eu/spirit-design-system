@@ -53,6 +53,10 @@ If you are using the `Stack` component with dividers, you must wrap each item in
 </div>
 ```
 
+### Button
+
+The `isBlock` property was removed. Please, use display utility classes or `Grid` classes to achieve desired layout.
+
 👉 [What are deprecations?][readme-deprecations]
 
 [readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#deprecations

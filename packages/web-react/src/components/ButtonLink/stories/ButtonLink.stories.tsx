@@ -41,6 +41,8 @@ const meta: Meta<typeof ButtonLink> = {
     },
     isBlock: {
       control: 'boolean',
+      description:
+        "**DEPRECATED**: Property will be removed in the next major version. Please read component's README for more information.",
     },
     isDisabled: {
       control: 'boolean',
@@ -71,5 +73,9 @@ export default meta;
 type Story = StoryObj<typeof ButtonLink>;
 
 export const Playground: Story = {
+  args: {
+    isBlock: true,
+  },
+
   name: 'ButtonLink',
 };
