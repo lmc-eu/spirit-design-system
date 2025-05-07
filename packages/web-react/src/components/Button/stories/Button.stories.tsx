@@ -41,6 +41,8 @@ const meta: Meta<typeof Button> = {
     },
     isBlock: {
       control: 'boolean',
+      description:
+        "**DEPRECATED**: Property will be removed in the next major version. Please read component's README for more information.",
     },
     isDisabled: {
       control: 'boolean',

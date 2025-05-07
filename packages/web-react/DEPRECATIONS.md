@@ -52,9 +52,13 @@ If you are using the `Stack` component with dividers, you must wrap each item in
 ```jsx
 <Stack hasIntermediateDividers>
   <StackItem>Item</StackItem>
-  <STackItem>Item</StackItem>
+  <StackItem>Item</StackItem>
 </Stack>
 ```
+
+### Button and ButtonLink
+
+The `isBlock` property was removed. Please, use display utility classes or `Grid` component to achieve desired layout.
 
 [codemod-collapse]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/codemods/src/transforms/v4/web-react/README.md#v4web-reactcollapse-isdisposable-prop--uncontrolledcollapse-hideoncollapse-to-isdisposable-prop-change
 [codemod-flex]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/codemods/src/transforms/v4/web-react/README.md#v4web-reactflex-direction-values---flex-direction-prop-values-row-to-horizontal-and-column-to-vertical
