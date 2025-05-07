@@ -20,6 +20,14 @@ The `UNSTABLE_Header` component is a main wrapper which provides mainly the visu
 </header>
 ```
 
+You can use the `UNSTABLE_Header--hasBottomDivider` modifier to add a bottom divider to the Header.
+
+```html
+<header class="UNSTABLE_Header UNSTABLE_Header--hasBottomDivider">
+  <!-- content -->
+</header>
+```
+
 It also sets CSS variable for the Header height which can be used by nested components.
 
 ## UNSTABLE HeaderLogo

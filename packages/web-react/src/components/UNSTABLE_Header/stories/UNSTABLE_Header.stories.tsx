@@ -15,7 +15,16 @@ const meta: Meta<typeof UNSTABLE_Header> = {
       page: () => <Markdown>{ReadMe}</Markdown>,
     },
   },
+  argTypes: {
+    hasBottomDivider: {
+      control: 'boolean',
+      table: {
+        defaultValue: { summary: 'false' },
+      },
+    },
+  },
   args: {
+    hasBottomDivider: false,
     children: (
       <UNSTABLE_HeaderLogo href="/">
         <ProductLogo>{defaultSvgLogo}</ProductLogo>

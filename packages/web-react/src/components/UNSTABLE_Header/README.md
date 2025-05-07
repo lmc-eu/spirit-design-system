@@ -24,9 +24,10 @@ It also sets CSS variable for the Header height which can be used by nested comp
 
 ### API
 
-| Name       | Type                    | Default | Required | Description                    |
-| ---------- | ----------------------- | ------- | -------- | ------------------------------ |
-| `children` | `string` \| `ReactNode` | `null`  | ✓        | Content of the UNSTABLE_Header |
+| Name               | Type                    | Default | Required | Description                               |
+| ------------------ | ----------------------- | ------- | -------- | ----------------------------------------- |
+| `children`         | `string` \| `ReactNode` | `null`  | ✓        | Content of the UNSTABLE_Header            |
+| `hasBottomDivider` | `bool`                  | `false` | ✕        | If the UNSTABLE_Header has bottom divider |
 
 The components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

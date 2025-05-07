@@ -11,8 +11,11 @@
     flex: none;
     box-sizing: content-box; // 1.
     height: var(--#{tokens.$css-variable-prefix}header-height);
-    border-bottom: theme.$border-width theme.$border-style theme.$border-color;
     background-color: theme.$background-color;
+}
+
+.UNSTABLE_Header--hasBottomDivider {
+    border-bottom: theme.$border-width theme.$border-style theme.$border-color;
 }
 
 // stylelint-disable-next-line selector-max-universal -- 1.

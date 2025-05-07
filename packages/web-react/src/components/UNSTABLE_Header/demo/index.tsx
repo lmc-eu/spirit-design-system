@@ -10,6 +10,7 @@ import { IconsProvider } from '../../../context';
 import HeaderDefault from './HeaderDefault';
 import HeaderFluid from './HeaderFluid';
 import HeaderMinimal from './HeaderMinimal';
+import HeaderWithBottomDivider from './HeaderWithBottomDivider';
 import HeaderWithNavigation from './HeaderWithNavigation';
 import HeaderWithNavigationAndNestedItems from './HeaderWithNavigationAndNestedItems';
 import HeaderWithPillNavigation from './HeaderWithPillNavigation';
@@ -22,6 +23,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       </DocsSection>
       <DocsSection title="Full Header" stackAlignment="stretch" container="heading-only">
         <HeaderDefault />
+      </DocsSection>
+      <DocsSection title="Header with bottom divider" stackAlignment="stretch" container="heading-only">
+        <HeaderWithBottomDivider />
       </DocsSection>
       <DocsSection title="Fluid Header" stackAlignment="stretch" container="heading-only">
         <HeaderFluid />
