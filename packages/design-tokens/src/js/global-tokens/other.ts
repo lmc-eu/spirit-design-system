@@ -15,6 +15,10 @@ export const containerMaxWidth = '1280px';
 
 export const containerXlargeMaxWidth = '1280px';
 
+export const breakpointMobile = 0;
+export const breakpointTablet = '768px';
+export const breakpointDesktop = '1280px';
+
 export const gridSpacingMobile = '16px';
 export const gridSpacingDesktop = '32px';
 export const gridSpacingTablet = '32px';
@@ -45,6 +49,12 @@ export const containers = {
   xlarge: {
     maxWidth: containerXlargeMaxWidth,
   },
+};
+
+export const breakpoints = {
+  mobile: breakpointMobile,
+  tablet: breakpointTablet,
+  desktop: breakpointDesktop,
 };
 
 export const grids = {
