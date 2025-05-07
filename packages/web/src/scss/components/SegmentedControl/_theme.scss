@@ -11,12 +11,15 @@ $border-width: tokens.$border-width-100;
 $border-radius: tokens.$radius-full;
 $transition-radio:
     transform transitions.$duration-200 transitions.$timing-eased-in-out,
-    color transitions.$duration-100 transitions.$timing-eased-in-out,
-    background-color transitions.$duration-200 transitions.$timing-eased-in-out;
+    background-color transitions.$duration-100 transitions.$timing-eased-out,
+    color transitions.$duration-100 transitions.$timing-eased-in-out;
 $transition-checkbox:
+    background-color transitions.$duration-200 transitions.$timing-eased-out,
     color transitions.$duration-200 transitions.$timing-eased-in-out,
-    border-color transitions.$duration-200 transitions.$timing-eased-in-out,
-    background-color transitions.$duration-200 transitions.$timing-eased-in-out;
+    border-color transitions.$duration-200 transitions.$timing-eased-in-out;
+$transition-hover:
+    background-color transitions.$duration-200 transitions.$timing-eased-in-out,
+    color transitions.$duration-200 transitions.$timing-eased-in-out;
 $max-items: 10;
 $focus-ring: tokens.$focus-ring;
 $fill-variant-dictionary: dictionaries.$fill-variants;
