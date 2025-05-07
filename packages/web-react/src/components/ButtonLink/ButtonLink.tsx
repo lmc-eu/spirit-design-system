@@ -11,6 +11,10 @@ import { useButtonLinkStyleProps } from './useButtonLinkStyleProps';
 const defaultProps: Partial<SpiritButtonLinkProps> = {
   color: 'primary',
   elementType: 'a',
+  /**
+   * @deprecated "isBlock" property will be removed in the next major version. Please read component's README for more information.
+   * @see https://jira.almacareer.tech/browse/DS-1897
+   */
   isBlock: false,
   isDisabled: false,
   isLoading: false,

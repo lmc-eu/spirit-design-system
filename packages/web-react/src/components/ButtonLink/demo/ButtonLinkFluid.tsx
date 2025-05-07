@@ -1,40 +1,35 @@
 import React from 'react';
 import DocsSection from '../../../../docs/DocsSection';
 import { ComponentButtonColors, EmotionColors, Sizes } from '../../../constants';
-import { ButtonBaseProps } from '../../../types';
+import { Grid } from '../../Grid';
 import { Icon } from '../../Icon';
-import { VisuallyHidden } from '../../VisuallyHidden';
 import ButtonLink from '../ButtonLink';
 
-const ButtonLinkDemoFactory = ({ ...props }: ButtonBaseProps) => {
+const ButtonLinkFluid = () => {
   const sizes = Object.values(Sizes);
   const buttonColors = Object.values(ComponentButtonColors);
   const emotionColors = Object.values(EmotionColors);
   const colors = [...buttonColors, ...emotionColors];
 
   return (
-    <>
+    <Grid cols={{ mobile: 1, desktop: 3 }} spacingY="space-1100">
       {sizes.map((size) => (
         <DocsSection key={size} title={`Size ${size}`} container="none" hasPadding={false}>
           {colors.map((color) => (
-            <div key={color}>
-              <ButtonLink href="#" size={size} color={color} {...props}>
+            <Grid cols={1} spacing="space-400" key={color}>
+              <ButtonLink href="#" size={size} color={color}>
                 {`Button ${color}`}
               </ButtonLink>{' '}
-              <ButtonLink href="#" size={size} color={color} {...props}>
-                <Icon name="link" marginRight="space-400" />
-                Menu
-              </ButtonLink>{' '}
-              <ButtonLink href="#" size={size} color={color} isSymmetrical {...props}>
-                <Icon name="link" />
-                <VisuallyHidden>Link</VisuallyHidden>
+              <ButtonLink href="#" size={size} color={color}>
+                <Icon name="chevron-left" marginRight="space-400" />
+                Return back
               </ButtonLink>
-            </div>
+            </Grid>
           ))}
         </DocsSection>
       ))}
-    </>
+    </Grid>
   );
 };
 
-export default ButtonLinkDemoFactory;
+export default ButtonLinkFluid;

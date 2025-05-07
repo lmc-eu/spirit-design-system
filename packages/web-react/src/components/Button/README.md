@@ -31,22 +31,48 @@ import { RouterLink } from 'react-router-dom';
 </Button>;
 ```
 
+### How to Make a Fluid Button
+
+To span a `Button` to the full width of its parent, you can use display utility classes or `Grid` to achieve the desired layout.
+
+```jsx
+<div className="d-grid">
+  <Button>Primary block-level Button</Button>
+</div>
+<div className="d-grid d-tablet-block">
+  <Button>Primary responsive block-level Button</Button>
+</div>
+<Grid
+  cols={{ mobile: 1, tablet: 2 }}
+  spacing="space-1100"
+>
+  <Button>Primary responsive block-level Button</Button>
+  <Button color="secondary">Secondary responsive block-level Button</Button>
+</Grid>
+```
+
+### DEPRECATION NOTICE
+
+Property `isBlock` is deprecated and will be removed in the next major release.
+
+For more information, please read the section [How to Make a Fluid Button](#how-to-make-a-fluid-button).
+
 ### API
 
-| Name            | Type                                                                                                | Default   | Required | Description                                                                |
-| --------------- | --------------------------------------------------------------------------------------------------- | --------- | -------- | -------------------------------------------------------------------------- |
-| `children`      | `ReactNode`                                                                                         | `null`    | ✕        | Content of the Button                                                      |
-| `color`         | [Component Button Color dictionary][dictionary-color], [Emotion Color dictionary][dictionary-color] | `primary` | ✕        | Color variant                                                              |
-| `elementType`   | `ElementType`                                                                                       | `button`  | ✕        | Type of element                                                            |
-| `isBlock`       | `bool`                                                                                              | `false`   | ✕        | Span the element to the full width of its parent                           |
-| `isDisabled`    | `bool`                                                                                              | `false`   | ✕        | If true, Button is disabled                                                |
-| `isLoading`     | `bool`                                                                                              | `false`   | ✕        | If true, Button is in a loading state, disabled and the Spinner is visible |
-| `isSymmetrical` | `bool`                                                                                              | `false`   | ✕        | If true, Button has symmetrical dimensions, usually only with an Icon      |
-| `name`          | `string`                                                                                            | —         | ✕        | For use a button as a form data reference                                  |
-| `onClick`       | `string`                                                                                            | `null`    | ✕        | JS function to call on click                                               |
-| `ref`           | `ForwardedRef<HTMLButtonElement>`                                                                   | —         | ✕        | Button element reference                                                   |
-| `size`          | [Size dictionary][dictionary-size]                                                                  | `medium`  | ✕        | Size variant                                                               |
-| `type`          | `string`                                                                                            | `button`  | ✕        | Type of the Button                                                         |
+| Name            | Type                                                                                                | Default   | Required | Description                                                                                                                                                   |
+| --------------- | --------------------------------------------------------------------------------------------------- | --------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `children`      | `ReactNode`                                                                                         | `null`    | ✕        | Content of the Button                                                                                                                                         |
+| `color`         | [Component Button Color dictionary][dictionary-color], [Emotion Color dictionary][dictionary-color] | `primary` | ✕        | Color variant                                                                                                                                                 |
+| `elementType`   | `ElementType`                                                                                       | `button`  | ✕        | Type of element                                                                                                                                               |
+| `isBlock`       | `bool`                                                                                              | `false`   | ✕        | [**DEPRECATED**](#deprecation-notice) Span the element to the full width of its parent, see [How to Make a Fluid Button](#how-to-make-a-fluid-button) section |
+| `isDisabled`    | `bool`                                                                                              | `false`   | ✕        | If true, Button is disabled                                                                                                                                   |
+| `isLoading`     | `bool`                                                                                              | `false`   | ✕        | If true, Button is in a loading state, disabled and the Spinner is visible                                                                                    |
+| `isSymmetrical` | `bool`                                                                                              | `false`   | ✕        | If true, Button has symmetrical dimensions, usually only with an Icon                                                                                         |
+| `name`          | `string`                                                                                            | —         | ✕        | For use a button as a form data reference                                                                                                                     |
+| `onClick`       | `string`                                                                                            | `null`    | ✕        | JS function to call on click                                                                                                                                  |
+| `ref`           | `ForwardedRef<HTMLButtonElement>`                                                                   | —         | ✕        | Button element reference                                                                                                                                      |
+| `size`          | [Size dictionary][dictionary-size]                                                                  | `medium`  | ✕        | Size variant                                                                                                                                                  |
+| `type`          | `string`                                                                                            | `button`  | ✕        | Type of the Button                                                                                                                                            |
 
 For more information see [Button][button] component. Button also contain all the appropriate
 attributes according to the type of element. The default element type for Button is `<button>`.
