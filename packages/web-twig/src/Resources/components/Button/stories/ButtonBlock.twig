@@ -1,0 +1,21 @@
+<Grid cols="{{ { mobile: 1, desktop: 3 } }}" spacingY="space-1100">
+    {% for size in sizes %}
+
+        {% set title = 'Size ' ~ size %}
+
+        <DocsSection container="none" hasPadding={ false } title={{ title }}>
+            {% for color in colors %}
+                <Grid cols="1" spacing="space-400">
+                    <Button color={ color } size={ size } onclick="alert('Button clicked')">
+                        Button {{ color }}
+                    </Button>
+                    <Button color={ color } size={ size }>
+                        <Icon name="hamburger" marginRight="space-400" />
+                        Menu
+                    </Button>
+                </Grid>
+            {% endfor %}
+        </DocsSection>
+
+    {% endfor %}
+</Grid>
