@@ -95,7 +95,6 @@
     background-color: var(--#{tokens.$css-variable-prefix}segmented-control-item-background-color);
     box-shadow: var(--#{tokens.$css-variable-prefix}segmented-control-item-box-shadow);
 }
-
 // stylelint-enable selector-max-specificity
 
 @include tools.generate-item-transform(theme.$max-items);
