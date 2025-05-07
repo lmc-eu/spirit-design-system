@@ -110,7 +110,7 @@ input field will not be consistent across platforms/browsers.
 
 There are several ways to adjust the input width:
 
-### Size Attribute
+### Input Size Attribute
 
 The `size` attribute is supported on inputs of the following types: `email`,
 `password`, `tel`, `text`, `url`.
