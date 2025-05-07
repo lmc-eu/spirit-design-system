@@ -18,7 +18,9 @@ export type HeaderLogoProps<E extends ElementType> = {
   elementType?: E;
 } & HeaderLogoBaseProps;
 
-export interface SpiritHeaderProps extends StyleProps, ChildrenProps {}
+export interface SpiritHeaderProps extends StyleProps, ChildrenProps {
+  hasBottomDivider?: boolean;
+}
 
 export type SpiritHeaderLogoProps<E extends ElementType = 'a'> = HeaderLogoProps<E> &
   SpiritPolymorphicElementPropsWithRef<E, HeaderLogoProps<E>>;
