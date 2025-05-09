@@ -27,6 +27,12 @@ $utilities: (
                 )
             ),
     ),
+    'background-gradient': (
+        responsive: true,
+        property: background-image,
+        class: bg-gradient,
+        values: map.remove(tokens.$gradients, skeleton, basic-overlay),
+    ),
     'border-color': (
         responsive: false,
         property: border-color,
