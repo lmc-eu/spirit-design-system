@@ -16,7 +16,7 @@
       },
       "require": {
         "ext-simplexml": "*",
-        "lmc/twigx-bundle": "^3.3",
+        "almacareer/twigx-bundle": "^5.0",
         "php": "^8.1",
         "symfony/config": "^4.4 || ^5.4 || ^6.1",
         "symfony/dependency-injection": "^4.4 || ^5.4 || ^6.1",
@@ -100,16 +100,16 @@
       }
     },
     {
-      "name": "lmc/twigx-bundle",
-      "version": "3.3.0",
+      "name": "almacareer/twigx-bundle",
+      "version": "5.0.0",
       "source": {
         "type": "git",
-        "url": "https://github.com/lmc-eu/twigx-bundle.git",
+        "url": "https://github.com/alma-oss/twigx-bundle.git",
         "reference": "45a647eaa70d688365b78430bb1ce6a73b168c1d"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/lmc-eu/twigx-bundle/zipball/45a647eaa70d688365b78430bb1ce6a73b168c1d",
+        "url": "https://api.github.com/repos/alma-oss/twigx-bundle/zipball/45a647eaa70d688365b78430bb1ce6a73b168c1d",
         "reference": "45a647eaa70d688365b78430bb1ce6a73b168c1d",
         "shasum": ""
       },
