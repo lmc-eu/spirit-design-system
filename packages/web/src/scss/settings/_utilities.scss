@@ -27,6 +27,15 @@ $utilities: (
                 )
             ),
     ),
+    'background-gradient': (
+        responsive: true,
+        property: background-image,
+        class: bg-gradient,
+        values: (
+            primary: tokens.$gradient-primary,
+            secondary: tokens.$gradient-secondary,
+        ),
+    ),
     'border-color': (
         responsive: false,
         property: border-color,
