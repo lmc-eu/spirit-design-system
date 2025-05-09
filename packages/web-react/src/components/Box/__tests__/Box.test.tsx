@@ -20,6 +20,18 @@ const dataProvider = [
     description: 'background color',
   },
   {
+    prop: 'backgroundGradient',
+    value: 'primary',
+    className: 'bg-gradient-primary',
+    description: 'background gradient',
+  },
+  {
+    prop: 'backgroundGradient',
+    value: { mobile: 'primary', tablet: 'secondary', desktop: 'secondary' },
+    className: 'bg-gradient-primary bg-gradient-tablet-secondary bg-gradient-desktop-secondary',
+    description: 'responsive background gradient',
+  },
+  {
     prop: 'borderColor',
     value: 'basic',
     className: 'border-basic',

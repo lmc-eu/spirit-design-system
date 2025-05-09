@@ -1,7 +1,7 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { BackgroundColors, BorderColors, BorderStyles, BorderWidths } from '../../../constants';
+import { BackgroundColors, BackgroundGradients, BorderColors, BorderStyles, BorderWidths } from '../../../constants';
 import Box from '../Box';
 import ReadMe from '../README.md';
 
@@ -80,7 +80,7 @@ const meta: Meta<typeof Box> = {
     },
     borderWidth: {
       control: 'select',
-      options: Object.values(BorderWidths),
+      options: [...Object.values(BorderWidths), undefined],
       table: {
         type: {
           summary: 'BorderWidthsDictionaryType',
@@ -94,6 +94,7 @@ const meta: Meta<typeof Box> = {
       control: 'select',
       options: Object.values(BorderStyles),
       table: {
+        defaultValue: { summary: BorderStyles.SOLID },
         type: {
           summary: 'BorderStylesDictionaryType',
         },
@@ -101,7 +102,7 @@ const meta: Meta<typeof Box> = {
     },
     borderColor: {
       control: 'select',
-      options: Object.values(BorderColors),
+      options: [...Object.values(BorderColors), undefined],
       table: {
         type: {
           summary: 'BorderColorsDictionaryType',
@@ -110,10 +111,19 @@ const meta: Meta<typeof Box> = {
     },
     backgroundColor: {
       control: 'select',
-      options: Object.values(BackgroundColors),
+      options: [...Object.values(BackgroundColors), undefined],
       table: {
         type: {
           summary: 'BackgroundColorsDictionaryType',
+        },
+      },
+    },
+    backgroundGradient: {
+      control: 'select',
+      options: [...Object.values(BackgroundGradients), undefined],
+      table: {
+        type: {
+          summary: 'BackgroundGradientsDictionaryType',
         },
       },
     },
@@ -128,8 +138,8 @@ const meta: Meta<typeof Box> = {
       tablet: '200',
       desktop: '400',
     },
-    borderColor: 'basic',
-    backgroundColor: 'primary',
+    borderColor: undefined,
+    backgroundColor: undefined,
   },
 };
 
