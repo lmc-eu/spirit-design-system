@@ -155,6 +155,12 @@ $gradient-skeleton-color-01: #e5e5e5 !default;
 $gradient-skeleton-color-02: #fff !default;
 $gradient-skeleton-color-03: #e5e5e5 !default;
 
+$gradient-primary-color-01: #e4eae5 !default;
+$gradient-primary-color-02: #545457 !default;
+
+$gradient-secondary-color-01: #eae3ff !default;
+$gradient-secondary-color-02: #cebcff !default;
+
 $link-primary-state-active: #3c2480 !default;
 $link-primary-state-default: #6039cc !default;
 $link-primary-state-hover: #4e2ea6 !default;
@@ -330,6 +336,10 @@ $text-tertiary: #7f7f7f !default;
     --spirit-color-gradient-skeleton-color-01: #{$gradient-skeleton-color-01};
     --spirit-color-gradient-skeleton-color-02: #{$gradient-skeleton-color-02};
     --spirit-color-gradient-skeleton-color-03: #{$gradient-skeleton-color-03};
+    --spirit-color-gradient-primary-color-01: #{$gradient-primary-color-01};
+    --spirit-color-gradient-primary-color-02: #{$gradient-primary-color-02};
+    --spirit-color-gradient-secondary-color-01: #{$gradient-secondary-color-01};
+    --spirit-color-gradient-secondary-color-02: #{$gradient-secondary-color-02};
     --spirit-color-link-primary-state-active: #{$link-primary-state-active};
     --spirit-color-link-primary-state-default: #{$link-primary-state-default};
     --spirit-color-link-primary-state-hover: #{$link-primary-state-hover};
