@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Lmc\SpiritWebTwigBundle\Helper;
 
+use AlmaCareer\TwigXBundle\Compiler\ComponentLexer;
 use Lmc\SpiritWebTwigBundle\DependencyInjection\CompilerPass\OverrideServiceCompilerPass;
 use Lmc\SpiritWebTwigBundle\DependencyInjection\SpiritWebTwigExtension;
 use Lmc\SpiritWebTwigBundle\Twig\PropsExtension;
 use Lmc\SpiritWebTwigBundle\Twig\SvgExtension;
-use Lmc\TwigXBundle\Compiler\ComponentLexer;
 use Symfony\Component\HttpKernel\Log\Logger;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;

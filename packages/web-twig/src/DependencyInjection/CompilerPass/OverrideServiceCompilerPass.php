@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Lmc\SpiritWebTwigBundle\DependencyInjection\CompilerPass;
 
+use AlmaCareer\TwigXBundle\Compiler\ComponentLexer;
 use Lmc\SpiritWebTwigBundle\DependencyInjection\SpiritWebTwigExtension;
-use Lmc\TwigXBundle\Compiler\ComponentLexer;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
