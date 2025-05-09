@@ -4,6 +4,7 @@ import DocsSection from '../../../../docs/DocsSection';
 import BoxDefault from './BoxDefault';
 import BoxWithAll from './BoxWithAll';
 import BoxWithBackgroundColor from './BoxWithBackgroundColor';
+import BoxWithBackgroundGradient from './BoxWithBackgroundGradient';
 import BoxWithBorder from './BoxWithBorder';
 import BoxWithCustomPadding from './BoxWithCustomPadding';
 import BoxWithRadius from './BoxWithRadius';
@@ -21,6 +22,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     </DocsSection>
     <DocsSection title="With Background Color">
       <BoxWithBackgroundColor />
+    </DocsSection>
+    <DocsSection title="With Background Gradient">
+      <BoxWithBackgroundGradient />
     </DocsSection>
     <DocsSection title="With Radius">
       <BoxWithRadius />

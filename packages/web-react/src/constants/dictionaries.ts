@@ -97,6 +97,12 @@ export const Emphasis = {
   ITALIC: 'italic',
 } as const;
 
+/* Gradient */
+export const BackgroundGradients = {
+  PRIMARY: 'primary',
+  SECONDARY: 'secondary',
+} as const;
+
 /* Size */
 export const Sizes = {
   SMALL: 'small',
