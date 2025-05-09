@@ -4,6 +4,7 @@ import {
   AlignmentY,
   AlignmentYExtended,
   BackgroundColors,
+  BackgroundGradients,
   BorderColors,
   BorderRadii,
   BorderStyles,
@@ -101,6 +102,12 @@ export type EmphasisDictionaryType<C = undefined> = (typeof Emphasis)[EmphasisDi
 export interface EmphasisProps<E> {
   emphasis?: E;
 }
+
+/* Gradient */
+export type BackgroundGradientsDictionaryKeys = keyof typeof BackgroundGradients;
+export type BackgroundGradientsDictionaryType<C = undefined> =
+  | (typeof BackgroundGradients)[BackgroundGradientsDictionaryKeys]
+  | C;
 
 /* Placement */
 export type PlacementDictionaryKeys = keyof typeof Placements;

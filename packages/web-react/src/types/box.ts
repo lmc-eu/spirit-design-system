@@ -1,6 +1,7 @@
 import { ElementType, JSXElementConstructor } from 'react';
 import {
   BackgroundColorsDictionaryType,
+  BackgroundGradientsDictionaryType,
   BorderColorsDictionaryType,
   BorderRadiiDictionaryType,
   BorderStylesDictionaryType,
@@ -15,6 +16,10 @@ import {
 export interface BoxBaseProps extends ChildrenProps, StyleProps {
   /** The background color of the box. */
   backgroundColor?: BackgroundColorsDictionaryType;
+  /** The background gradient of the box. */
+  backgroundGradient?:
+    | BackgroundGradientsDictionaryType
+    | Partial<Record<BreakpointToken, BackgroundGradientsDictionaryType>>;
   /** The border color of the box. */
   borderColor?: BorderColorsDictionaryType;
   /** The border radius of the box. */

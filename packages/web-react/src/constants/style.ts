@@ -1,3 +1,7 @@
+export const BackgroundStyleProps = {
+  backgroundGradient: 'bg-gradient',
+} as const;
+
 export const BorderRadiusStyleProps = {
   borderRadius: 'rounded',
 } as const;
