@@ -13,6 +13,7 @@ This project uses `dictionaries` to unify props between different components.
 - [Border Properities](#border-properties)
 - [Color](#color)
 - [Emphasis](#emphasis)
+- [Gradient](#gradient)
 - [Placement](#placement)
 - [Size](#size)
 - [Validation](#validation)
@@ -60,6 +61,12 @@ This project uses `dictionaries` to unify props between different components.
 | Dictionary | Values                                  | Code name |
 | ---------- | --------------------------------------- | --------- |
 | Emphasis   | `regular`, `bold`, `semibold`, `italic` | Emphasis  |
+
+### Gradient
+
+| Dictionary          | Values                 | Code name          |
+| ------------------- | ---------------------- | ------------------ |
+| Background Gradient | `primary`, `secondary` | BackgroundGradient |
 
 ### Placement
 
