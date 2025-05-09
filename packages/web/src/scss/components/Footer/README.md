@@ -221,7 +221,7 @@ Responsive values can be defined using the `tablet` and `desktop` infixes.
       </ul>
       <!-- Language switch -->
       <div class="text-desktop-right">
-        <div class="Select">
+        <div class="Select Select--medium">
           <label for="select-language" class="Select__label Select__label--hidden">Language</label>
           <div class="Select__inputContainer">
             <select id="select-language" name="language" class="Select__input">
