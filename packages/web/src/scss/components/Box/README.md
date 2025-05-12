@@ -59,3 +59,20 @@ You can define background color using utility classes `bg-<color>`.
 <div class="bg-secondary">Secondary Background</div>
 <div class="bg-tertiary">Tertiary Background</div>
 ```
+
+## Background Gradient
+
+You can define background gradient using utility classes `bg-gradient-<color>`.
+
+```html
+<div class="bg-gradient-primary">Primary Background Gradient</div>
+<div class="bg-gradient-secondary">Secondary Background Gradient</div>
+```
+
+Responsive values can be set for each prop using utility classes. For example, `bg-gradient-<color>` for mobile, `bg-gradient-tablet-<color>` for tablet, and `bg-gradient-desktop-<color>` for desktop.
+
+```html
+<div class="bg-gradient-primary bg-gradient-tablet-secondary bg-gradient-desktop-primary">
+  Responsive background gradient
+</div>
+```
