@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.4.0"></a>
+
+# [0.4.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-common@0.3.11...@lmc-eu/spirit-common@0.4.0) (2025-05-12)
+
+### Chores
+
+- **demo:** Run web-twig demo app on port 80 ([6696722](https://github.com/lmc-eu/spirit-design-system/commit/6696722))
+
+### Features
+
+- **common:** Remove support for web-twig package from the servers ([6db8ec6](https://github.com/lmc-eu/spirit-design-system/commit/6db8ec6))
+
+**Note:** Version bump only for package @lmc-eu/spirit-common
+
 <a name="0.3.11"></a>
 
 ## [0.3.11](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-common@0.3.10...@lmc-eu/spirit-common@0.3.11) (2025-03-26)

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.14"></a>
+
+## [2.0.14](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-scss@2.0.13...@lmc-eu/spirit-exporters-scss@2.0.14) (2025-05-12)
+
+### Dependencies
+
+- Update compile tools non-major ([da7dc28](https://github.com/lmc-eu/spirit-design-system/commit/da7dc28))
+- Update dependency @swc/core to v1.11.21 ([f01c690](https://github.com/lmc-eu/spirit-design-system/commit/f01c690))
+
+**Note:** Version bump only for package @lmc-eu/spirit-exporters-scss
+
 <a name="2.0.13"></a>
 
 ## [2.0.13](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-scss@2.0.12...@lmc-eu/spirit-exporters-scss@2.0.13) (2025-03-26)

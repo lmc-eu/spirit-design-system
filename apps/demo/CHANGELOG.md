@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.3.2"></a>
+
+## [1.3.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo-app@1.3.1...@lmc-eu/spirit-demo-app@1.3.2) (2025-05-12)
+
+### Chores
+
+- **web,web-react:** Improve demos to be accessibility compatible [#DS-1851](https://github.com/lmc-eu/spirit-design-system/issues/DS-1851) ([22190ea](https://github.com/lmc-eu/spirit-design-system/commit/22190ea))
+
+### Documentation
+
+- **form-validations,web,web-react,web-twig:** Drawer opening button set as symmetrical ([812502b](https://github.com/lmc-eu/spirit-design-system/commit/812502b))
+
+**Note:** Version bump only for package @lmc-eu/spirit-demo-app
+
 <a name="1.3.1"></a>
 
 ## [1.3.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo-app@1.3.0...@lmc-eu/spirit-demo-app@1.3.1) (2025-03-26)

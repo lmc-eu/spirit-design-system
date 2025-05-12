@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.3"></a>
+
+## [1.1.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-post-changelog@1.1.2...@lmc-eu/spirit-post-changelog@1.1.3) (2025-05-12)
+
+### Dependencies
+
+- Pin dependencies ([e6721dd](https://github.com/lmc-eu/spirit-design-system/commit/e6721dd))
+
+**Note:** Version bump only for package @lmc-eu/spirit-post-changelog
+
 <a name="1.1.2"></a>
 
 ## [1.1.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-post-changelog@1.1.1...@lmc-eu/spirit-post-changelog@1.1.2) (2025-04-11)

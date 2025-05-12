@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.6.0"></a>
+
+# [4.6.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@4.5.1...@lmc-eu/spirit-web-twig@4.6.0) (2025-05-12)
+
+### Bug Fixes
+
+- **web,web-react,web-twig:** Remove aria-selected and role from TabLink [#DS-1851](https://github.com/lmc-eu/spirit-design-system/issues/DS-1851) ([eabfc6f](https://github.com/lmc-eu/spirit-design-system/commit/eabfc6f))
+
+### Chores
+
+- **demo:** Run web-twig demo app on port 80 ([6696722](https://github.com/lmc-eu/spirit-design-system/commit/6696722))
+
+### Features
+
+- **web-react,web-twig:** Remove aria-selected from Item [#DS-1851](https://github.com/lmc-eu/spirit-design-system/issues/DS-1851) ([83b9bc8](https://github.com/lmc-eu/spirit-design-system/commit/83b9bc8))
+- **web,web-react,web-twig:** Add tabindex to ScrollView [#DS-1851](https://github.com/lmc-eu/spirit-design-system/issues/DS-1851) ([3452dcf](https://github.com/lmc-eu/spirit-design-system/commit/3452dcf))
+
+### Tests
+
+- **web-twig:** Update snapshots [#DS-1817](https://github.com/lmc-eu/spirit-design-system/issues/DS-1817) ([222e4ad](https://github.com/lmc-eu/spirit-design-system/commit/222e4ad))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="4.5.1"></a>
 
 ## [4.5.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@4.5.0...@lmc-eu/spirit-web-twig@4.5.1) (2025-04-11)

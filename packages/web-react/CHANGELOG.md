@@ -3,6 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.9.0"></a>
+
+# [3.9.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.8.0...@lmc-eu/spirit-web-react@3.9.0) (2025-05-12)
+
+### Bug Fixes
+
+- **web-react:** Use aria-label on buttons intead ariaLabel prop [#DS-1879](https://github.com/lmc-eu/spirit-design-system/issues/DS-1879) ([3953993](https://github.com/lmc-eu/spirit-design-system/commit/3953993))
+- **web, web-react:** Make individual items in vertical `Flex` reflect `alignmentX` [#DS-1820](https://github.com/lmc-eu/spirit-design-system/issues/DS-1820) ([9eae352](https://github.com/lmc-eu/spirit-design-system/commit/9eae352))
+- **web,web-react,web-twig:** Remove aria-selected and role from TabLink [#DS-1851](https://github.com/lmc-eu/spirit-design-system/issues/DS-1851) ([eabfc6f](https://github.com/lmc-eu/spirit-design-system/commit/eabfc6f))
+
+### Chores
+
+- **web,web-react:** Improve demos to be accessibility compatible [#DS-1851](https://github.com/lmc-eu/spirit-design-system/issues/DS-1851) ([22190ea](https://github.com/lmc-eu/spirit-design-system/commit/22190ea))
+
+### Code Refactoring
+
+- **web-react:** Refactor breakpoint types [#DS-1701](https://github.com/lmc-eu/spirit-design-system/issues/DS-1701) ([09c1fe1](https://github.com/lmc-eu/spirit-design-system/commit/09c1fe1))
+
+### Dependencies
+
+- Pin dependencies ([e6721dd](https://github.com/lmc-eu/spirit-design-system/commit/e6721dd))
+
+### Features
+
+- **web-react,web-twig:** Remove aria-selected from Item [#DS-1851](https://github.com/lmc-eu/spirit-design-system/issues/DS-1851) ([83b9bc8](https://github.com/lmc-eu/spirit-design-system/commit/83b9bc8))
+- **web-react:** Introduce SegmentedControl [#DS-1657](https://github.com/lmc-eu/spirit-design-system/issues/DS-1657) ([e6f8fee](https://github.com/lmc-eu/spirit-design-system/commit/e6f8fee))
+- **web-react:** Remove aria-describedby from form elements if no helper or validation [#DS-1851](https://github.com/lmc-eu/spirit-design-system/issues/DS-1851) ([0ff105e](https://github.com/lmc-eu/spirit-design-system/commit/0ff105e))
+- **web,web-react,web-twig:** Add tabindex to ScrollView [#DS-1851](https://github.com/lmc-eu/spirit-design-system/issues/DS-1851) ([3452dcf](https://github.com/lmc-eu/spirit-design-system/commit/3452dcf))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="3.8.0"></a>
 
 # [3.8.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.7.0...@lmc-eu/spirit-web-react@3.8.0) (2025-04-11)

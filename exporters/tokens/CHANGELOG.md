@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.3.0"></a>
+
+# [2.3.0](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-tokens-exporter@2.2.5...@almacareer/spirit-tokens-exporter@2.3.0) (2025-05-12)
+
+### Dependencies
+
+- Update compile tools non-major ([da7dc28](https://github.com/lmc-eu/spirit-design-system/commit/da7dc28))
+- Update dependency @swc/core to v1.11.21 ([f01c690](https://github.com/lmc-eu/spirit-design-system/commit/f01c690))
+
+### Features
+
+- **design-tokens:** Add new index file for scss device tokens ([a8810c9](https://github.com/lmc-eu/spirit-design-system/commit/a8810c9))
+- **exporter-tokens:** Introduce configuration for typography [#DS-1713](https://github.com/lmc-eu/spirit-design-system/issues/DS-1713) ([92dd7a3](https://github.com/lmc-eu/spirit-design-system/commit/92dd7a3))
+
+**Note:** Version bump only for package @almacareer/spirit-tokens-exporter
+
 <a name="2.2.5"></a>
 
 ## [2.2.5](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-tokens-exporter@2.2.4...@almacareer/spirit-tokens-exporter@2.2.5) (2025-03-26)

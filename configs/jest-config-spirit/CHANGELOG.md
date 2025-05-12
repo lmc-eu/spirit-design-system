@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.1.6"></a>
+
+## [0.1.6](https://github.com/lmc-eu/spirit-design-system/compare/jest-config-spirit@0.1.5...jest-config-spirit@0.1.6) (2025-05-12)
+
+### Dependencies
+
+- Update compile tools non-major ([da7dc28](https://github.com/lmc-eu/spirit-design-system/commit/da7dc28))
+- Update dependency @swc/core to v1.11.21 ([f01c690](https://github.com/lmc-eu/spirit-design-system/commit/f01c690))
+
+**Note:** Version bump only for package jest-config-spirit
+
 <a name="0.1.5"></a>
 
 ## [0.1.5](https://github.com/lmc-eu/spirit-design-system/compare/jest-config-spirit@0.1.4...jest-config-spirit@0.1.5) (2025-03-26)

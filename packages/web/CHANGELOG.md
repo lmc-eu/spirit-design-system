@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.9.0"></a>
+
+# [3.9.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.8.0...@lmc-eu/spirit-web@3.9.0) (2025-05-12)
+
+### Bug Fixes
+
+- **web, web-react:** Make individual items in vertical `Flex` reflect `alignmentX` [#DS-1820](https://github.com/lmc-eu/spirit-design-system/issues/DS-1820) ([9eae352](https://github.com/lmc-eu/spirit-design-system/commit/9eae352))
+- **web,web-react,web-twig:** Remove aria-selected and role from TabLink [#DS-1851](https://github.com/lmc-eu/spirit-design-system/issues/DS-1851) ([eabfc6f](https://github.com/lmc-eu/spirit-design-system/commit/eabfc6f))
+- **web:** Prevent password toggle icon from expanding the `TextField` ([803b813](https://github.com/lmc-eu/spirit-design-system/commit/803b813))
+- **web:** Update `Drawer` width according to the latest design ([6b4d10b](https://github.com/lmc-eu/spirit-design-system/commit/6b4d10b))
+
+### Chores
+
+- **web,web-react:** Improve demos to be accessibility compatible [#DS-1851](https://github.com/lmc-eu/spirit-design-system/issues/DS-1851) ([22190ea](https://github.com/lmc-eu/spirit-design-system/commit/22190ea))
+
+### Code Refactoring
+
+- **web:** Refactor component size variants to use custom properties for typography [#DS-1689](https://github.com/lmc-eu/spirit-design-system/issues/DS-1689) ([2abfa73](https://github.com/lmc-eu/spirit-design-system/commit/2abfa73))
+- **web:** Refactor SegmentedControl [#DS-1657](https://github.com/lmc-eu/spirit-design-system/issues/DS-1657) ([7409cee](https://github.com/lmc-eu/spirit-design-system/commit/7409cee))
+
+### Documentation
+
+- **web:** Custom Sass functions and mixins are for internal usage only [#DS-1883](https://github.com/lmc-eu/spirit-design-system/issues/DS-1883) ([b40603b](https://github.com/lmc-eu/spirit-design-system/commit/b40603b))
+
+### Features
+
+- **web,web-react,web-twig:** Add tabindex to ScrollView [#DS-1851](https://github.com/lmc-eu/spirit-design-system/issues/DS-1851) ([3452dcf](https://github.com/lmc-eu/spirit-design-system/commit/3452dcf))
+- **web:** Introduce utility classes for new accent colors [#DS-1773](https://github.com/lmc-eu/spirit-design-system/issues/DS-1773) ([2c0ac70](https://github.com/lmc-eu/spirit-design-system/commit/2c0ac70))
+- **web:** Set correct aria in SegmentedControl with Tooltip [#DS-1851](https://github.com/lmc-eu/spirit-design-system/issues/DS-1851) ([bb373fe](https://github.com/lmc-eu/spirit-design-system/commit/bb373fe))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="3.8.0"></a>
 
 # [3.8.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.7.0...@lmc-eu/spirit-web@3.8.0) (2025-04-11)

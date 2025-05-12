@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.4.0"></a>
+
+# [3.4.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@3.3.1...@lmc-eu/spirit-design-tokens@3.4.0) (2025-05-12)
+
+### Features
+
+- **design-tokens:** Add new barrel file for js device tokens ([d8a9cb2](https://github.com/lmc-eu/spirit-design-system/commit/d8a9cb2))
+- **design-tokens:** Add new index file for scss device tokens ([a8810c9](https://github.com/lmc-eu/spirit-design-system/commit/a8810c9))
+- **design-tokens:** Change form helper text, selected content basic and selected header item colors ([2106a20](https://github.com/lmc-eu/spirit-design-system/commit/2106a20))
+- **design-tokens:** Introduce accent colors [#DS-1771](https://github.com/lmc-eu/spirit-design-system/issues/DS-1771) ([ebd3170](https://github.com/lmc-eu/spirit-design-system/commit/ebd3170))
+
+**Note:** Version bump only for package @lmc-eu/spirit-design-tokens
+
 <a name="3.3.1"></a>
 
 ## [3.3.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@3.3.0...@lmc-eu/spirit-design-tokens@3.3.1) (2025-03-26)
