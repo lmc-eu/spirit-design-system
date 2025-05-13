@@ -229,7 +229,7 @@ Responsive values can be defined using the `tablet` and `desktop` infixes.
               <option value="cs">Čeština</option>
             </select>
             <div class="Select__icon">
-              <svg width="24" height="24" aria-hidden="true">
+              <svg width="20" height="20" aria-hidden="true">
                 <use xlink:href="/assets/icons/svg/sprite.svg#chevron-down" />
               </svg>
             </div>

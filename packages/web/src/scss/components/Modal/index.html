@@ -24,11 +24,11 @@
       element.disabled = !element.disabled;
 
       if (element.type == 'checkbox') {
-        element.closest('label').classList.toggle('Checkbox--disabled');
+        element.parentNode.classList.toggle('Checkbox--disabled');
       }
 
       if (element.type == 'radio') {
-        element.closest('label').classList.toggle('Radio--disabled');
+        element.parentNode.classList.toggle('Radio--disabled');
       }
     });
   }
@@ -241,7 +241,7 @@
             <!-- Content: start -->
             <div class="TextField TextField--medium mb-400">
               <label for="text-field" class="TextField__label">Label</label>
-              <input type="text" id="text-field" class="TextField__input" placeholder="TextField TextField--medium" />
+              <input type="text" id="text-field" class="TextField__input" placeholder="TextField" />
             </div>
             <p>
               The primary action is a button with <code>type="submit"</code> and closes the dialog on submission.
