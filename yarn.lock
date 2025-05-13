@@ -75,8 +75,8 @@ __metadata:
   resolution: "@almacareer/spirit-tokens-exporter@workspace:exporters/tokens"
   dependencies:
     "@lmc-eu/eslint-config-typescript": "npm:2.1.5"
-    "@supernovaio/export-helpers": "npm:1.0.30"
-    "@supernovaio/sdk-exporters": "npm:2.0.33"
+    "@supernovaio/export-helpers": "npm:1.0.31"
+    "@supernovaio/sdk-exporters": "npm:2.2.7"
     "@swc/core": "npm:1.11.22"
     "@swc/jest": "npm:0.2.38"
     eslint: "npm:8.57.1"
@@ -6227,6 +6227,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@rollup/rollup-darwin-x64@npm:^4.34.6":
+  version: 4.40.2
+  resolution: "@rollup/rollup-darwin-x64@npm:4.40.2"
+  conditions: os=darwin & cpu=x64
+  languageName: node
+  linkType: hard
+
 "@rollup/rollup-freebsd-arm64@npm:4.34.6":
   version: 4.34.6
   resolution: "@rollup/rollup-freebsd-arm64@npm:4.34.6"
@@ -7145,16 +7152,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@supernova-studio/client@npm:0.58.14":
-  version: 0.58.14
-  resolution: "@supernova-studio/client@npm:0.58.14"
+"@supernova-studio/client@npm:1.6.2":
+  version: 1.6.2
+  resolution: "@supernova-studio/client@npm:1.6.2"
   dependencies:
+    p-queue: "npm:^8.0.1"
     prosemirror-model: "npm:1.22.3"
-    typescript: "npm:5.0.4"
+    queue-promise: "npm:^2.2.1"
     y-prosemirror: "npm:1.2.2"
     yjs: "npm:13.6.19"
     zod: "npm:3.23.6"
-  checksum: 10/1e725ce2fd98d159f9c64365398760f67e3e7de5fd2d2c62dd186a9a8158043d9b8a9f20b71f61291ace45ac1bd82683071b896c57325be5a41b8e6309de7d3d
+  checksum: 10/70ddf1174455a7662b2402e38e74232e4ef7e0487650e1aa78cd87b5701bffe55b729cd103ef58335905010916a68bcecd4cf136f922c325584b9c046a320d7b
   languageName: node
   linkType: hard
 
@@ -7169,24 +7177,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@supernova-studio/model@npm:0.58.14":
-  version: 0.58.14
-  resolution: "@supernova-studio/model@npm:0.58.14"
+"@supernova-studio/model@npm:1.6.2":
+  version: 1.6.2
+  resolution: "@supernova-studio/model@npm:1.6.2"
   dependencies:
     "@sindresorhus/slugify": "npm:1.1.2"
     ip-cidr: "npm:3.1.0"
     zod: "npm:3.23.6"
-  checksum: 10/21d7f55c469b6c76a4256aa4eb40f051e9aba8fc79b8d3ef41bc5ea626ecaaa6401554c0108cecddb4e1e667d41c0c3eccf2b93af324f234abbc76c61284b615
+  checksum: 10/7365e22324c10cc2973377b6b4340ca72a689387f709fc3eef8e162fb85ac0217a125acea241318da9ed571934f4ee2a2f29576c1a611624f081a4e6b305c3e1
   languageName: node
   linkType: hard
 
-"@supernovaio/export-helpers@npm:1.0.30":
-  version: 1.0.30
-  resolution: "@supernovaio/export-helpers@npm:1.0.30"
+"@supernovaio/export-helpers@npm:1.0.31":
+  version: 1.0.31
+  resolution: "@supernovaio/export-helpers@npm:1.0.31"
   dependencies:
     "@supernovaio/sdk-exporters": "npm:2.0.30"
     change-case: "npm:4.1.2"
-  checksum: 10/449a9155199b8acfea98247a7ec0eab8f8a13fb7cfbd9c88cbdd813c2895c1c3d412a3f1e8b0ac408a9c01a69a3cb2230aa5b404fc45069b8adad8c3ca210973
+  checksum: 10/7173317df27e928fae157ff740c1d2e67e83c58d7f791dcc2ba501e37c0f374a578695db968e5c3e1fe2fc2be1453990d3de875bc126c184294f81a141ebdbc8
   languageName: node
   linkType: hard
 
@@ -7200,13 +7208,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@supernovaio/sdk-exporters@npm:2.0.33":
-  version: 2.0.33
-  resolution: "@supernovaio/sdk-exporters@npm:2.0.33"
+"@supernovaio/sdk-exporters@npm:2.2.7":
+  version: 2.2.7
+  resolution: "@supernovaio/sdk-exporters@npm:2.2.7"
   dependencies:
-    "@supernova-studio/client": "npm:0.58.14"
-    "@supernova-studio/model": "npm:0.58.14"
-  checksum: 10/362884b95086df27d4768bc5b6e3c4b4b9c496c4bad6b99e0490576a7c5ecf5e879c3753f4b360f08e6fc40a6978de5902c1ea360bb449d9b68b7723ef43027e
+    "@rollup/rollup-darwin-x64": "npm:^4.34.6"
+    "@supernova-studio/client": "npm:1.6.2"
+    "@supernova-studio/model": "npm:1.6.2"
+  dependenciesMeta:
+    "@rollup/rollup-darwin-x64":
+      optional: true
+  checksum: 10/2ce2b4f9ae155506c0187f876971a779f87c2f95cfe7f79f35da63c26a0c60084a9bd586c92c092b557cb0ec6148a31ac80a1772770c8a4238c42e612b5d8b60
   languageName: node
   linkType: hard
 
@@ -24155,6 +24167,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"p-queue@npm:^8.0.1":
+  version: 8.1.0
+  resolution: "p-queue@npm:8.1.0"
+  dependencies:
+    eventemitter3: "npm:^5.0.1"
+    p-timeout: "npm:^6.1.2"
+  checksum: 10/0dc23488b855c6b3a6c551e41c3c9c1c0991f097c294a2476f34d47ea3b1c74deac5ccd465ebc1560432e6a490a133a60b428dd44d8e51dff662f6b792814320
+  languageName: node
+  linkType: hard
+
 "p-reduce@npm:2.1.0, p-reduce@npm:^2.0.0, p-reduce@npm:^2.1.0":
   version: 2.1.0
   resolution: "p-reduce@npm:2.1.0"
@@ -24195,7 +24217,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"p-timeout@npm:^6.0.0":
+"p-timeout@npm:^6.0.0, p-timeout@npm:^6.1.2":
   version: 6.1.4
   resolution: "p-timeout@npm:6.1.4"
   checksum: 10/5ee0df408ba353cc2d7036af90d2eb1724c428fd1cf67cd9110c03f0035077c29f6506bff7198dfbef4910ec558c711f21f9741d89d043a6f2c2ff82064afcaf
@@ -25532,6 +25554,13 @@ __metadata:
   version: 1.2.3
   resolution: "queue-microtask@npm:1.2.3"
   checksum: 10/72900df0616e473e824202113c3df6abae59150dfb73ed13273503127235320e9c8ca4aaaaccfd58cf417c6ca92a6e68ee9a5c3182886ae949a768639b388a7b
+  languageName: node
+  linkType: hard
+
+"queue-promise@npm:^2.2.1":
+  version: 2.2.1
+  resolution: "queue-promise@npm:2.2.1"
+  checksum: 10/da14bd7062522af2bc8b6779e8305ad256d5a8a6b902101d856c4be6ab4b159c9ba429d80eafd1406b6356a9250be3fe857c990ad67bbf073e8cc3e9af14c51d
   languageName: node
   linkType: hard
 
