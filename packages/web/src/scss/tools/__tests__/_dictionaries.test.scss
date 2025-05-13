@@ -3,13 +3,32 @@
 @use '../../settings/links' as links-settings;
 @use '../dictionaries';
 
-@include test.describe('validate dictionary value mixin') {
-    @include test.it('should not throw an error if the value is in the dictionary') {
-        $test: dictionaries.validate-dictionary-value(
-            $dictionary: (
-                'value',
+@include test.describe('validate config keys function') {
+    @include test.it('should not throw an error if config keys match the dictionary values') {
+        $test: dictionaries.validate-config-keys(
+            $dictionary-values: (
+                'key1',
+                'key2',
             ),
-            $value: 'value',
+            $config: (
+                key1: value,
+                key2: value,
+            ),
+        );
+
+        @include test.assert-true($test);
+    }
+
+    @include test.it('should not throw an error even if the keys are not in the same order') {
+        $test: dictionaries.validate-config-keys(
+            $dictionary-values: (
+                'key1',
+                'key2',
+            ),
+            $config: (
+                key2: value,
+                key1: value,
+            ),
         );
 
         @include test.assert-true($test);
@@ -452,7 +471,7 @@
                             border-radius: 15px,
                         ),
                     ),
-                    $custom-component-infix: 'custom'
+                    $infix: 'custom'
                 );
             }
 
