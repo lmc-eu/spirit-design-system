@@ -267,7 +267,20 @@ Merge all appropriate PRs you want to publish into the appropriate branch
 - branches:
   - `main` - for the latest stable version
 
-#### Manually
+#### Automatically
+
+1. Go to repository **Actions** tab and select the `Version` workflow
+   i. or go to the [workflow page directly][version-action]
+2. On the right top corner, click on the `Run workflow` button
+   i. Select the branch you want to publish from (e.g. `main`)
+   ii. You can check the `Dry run` checkbox to run the workflow without publishing the packages
+   iii. Confirm version push by writing `yes` in the input field (otherwise the changes will not be pushed)
+   iv. Click on the `Run workflow` button
+   ![Run version workflow](./static/version-workflow-run.jpg)
+3. Check that the version number is correct and everything looks good during the workflow run or try the dry run first
+4. Publishing is done automatically (event driven) by [`Publish` Action][publish-action] (uses `build` script and `make publish` command)
+
+#### Manually (Fallback Option)
 
 1. Run `make pristine` and `make install` to ensure that your local copy is clean and up to date
 2. Run the `make version` command to bump the version number in packages (a new version number is determined automatically based on commit history)
@@ -277,18 +290,6 @@ Merge all appropriate PRs you want to publish into the appropriate branch
 6. Push changes and tags to repository
    6a. Run manually `git push && git push --tags` to push the changes to the remote
    6b. or use `git push --follow-tags` to push the changes and tags at once (works only when tags are annotated).
-
-#### Automatically
-
-1. Go to repository **Actions** tab and select the `Version` workflow
-   1a. or go to the [workflow page directly][version-action]
-2. On the right top corner, click on the `Run workflow` button
-   2a. Select the branch you want to publish from (e.g. `main`)
-   2b. You can check the `Dry run` checkbox to run the workflow without publishing the packages
-   2c. Confirm version push by writing `yes` in the input field (otherwise the changes will not be pushed)
-   2d. Click on the `Run workflow` button
-3. Check that the version number is correct and everything looks good during the workflow run or try the dry run first
-4. Publishing is done automatically (event driven) by [`Publish` Action][publish-action] (uses `build` script and `make publish` command)
 
 Both manual and automatic workflows are interchangeable.
 If something went wrong you can always go step-by-step through the manual process.
