@@ -1,0 +1,47 @@
+@use 'true' as test;
+@use '../map';
+
+@include test.describe('merge-multiple function') {
+    @include test.it('should merge multiple maps together') {
+        $map1: (
+            key1: value1,
+            key2: value2,
+        );
+        $map2: (
+            key3: value3,
+            key4: value4,
+        );
+        $map3: (
+            key5: value5,
+        );
+
+        $expected: (
+            key1: value1,
+            key2: value2,
+            key3: value3,
+            key4: value4,
+            key5: value5,
+        );
+
+        @include test.assert-equal(map.merge-multiple($map1, $map2, $map3), $expected);
+    }
+
+    @include test.it('should override values from earlier maps with later maps') {
+        $map1: (
+            key1: value1,
+            key2: value2,
+        );
+        $map2: (
+            key2: new-value2,
+            key3: value3,
+        );
+
+        $expected: (
+            key1: value1,
+            key2: new-value2,
+            key3: value3,
+        );
+
+        @include test.assert-equal(map.merge-multiple($map1, $map2), $expected);
+    }
+}

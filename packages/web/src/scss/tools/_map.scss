@@ -1,0 +1,12 @@
+@use 'sass:map';
+
+// Merge multiple maps
+@function merge-multiple($maps...) {
+    $merged-maps: ();
+
+    @each $map in $maps {
+        $merged-maps: map.merge($merged-maps, $map);
+    }
+
+    @return $merged-maps;
+}
