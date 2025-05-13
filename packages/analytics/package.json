@@ -61,7 +61,7 @@
     "shx": "0.3.4",
     "ts-node": "10.9.2",
     "tsup": "8.4.0",
-    "typescript": "5.7.3"
+    "typescript": "5.8.3"
   },
   "dependencies": {
     "filedirname": "^3.0.0",
