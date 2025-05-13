@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.9.1"></a>
+
+## [3.9.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.9.0...@lmc-eu/spirit-web@3.9.1) (2025-05-13)
+
+### Bug Fixes
+
+- **web:** Do not export `border-focus` as utility class ([909b02a](https://github.com/lmc-eu/spirit-design-system/commit/909b02a))
+
+### Code Refactoring
+
+- **web:** Hover background for a moment overlaps the active background tweak [#DS-1902](https://github.com/lmc-eu/spirit-design-system/issues/DS-1902) ([bf0ad55](https://github.com/lmc-eu/spirit-design-system/commit/bf0ad55))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="3.9.0"></a>
 
 # [3.9.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.8.0...@lmc-eu/spirit-web@3.9.0) (2025-05-12)
