@@ -9,6 +9,14 @@
         {% include '@components/TextField/stories/TextFieldDefault.twig' %}
     </DocsSection>
 
+    <DocsSection title="Password Toggle">
+        {% include '@components/TextField/stories/TextFieldPasswordToggle.twig' %}
+    </DocsSection>
+
+    <DocsSection title="Sizes">
+        {% include '@components/TextField/stories/TextFieldSizes.twig' %}
+    </DocsSection>
+
     <DocsSection title="Required">
         {% include '@components/TextField/stories/TextFieldRequired.twig' %}
     </DocsSection>
@@ -37,16 +45,12 @@
         {% include '@components/TextField/stories/TextFieldFluid.twig' %}
     </DocsSection>
 
-    <DocsSection title="Size">
-        {% include '@components/TextField/stories/TextFieldInputWidth.twig' %}
+    <DocsSection title="Input Size">
+        {% include '@components/TextField/stories/TextFieldInputSize.twig' %}
     </DocsSection>
 
     <DocsSection title="Inline" stackAlignment="stretch">
         {% include '@components/TextField/stories/TextFieldInline.twig' %}
-    </DocsSection>
-
-    <DocsSection title="Password Toggle">
-        {% include '@components/TextField/stories/TextFieldPasswordToggle.twig' %}
     </DocsSection>
 
 {% endblock %}
