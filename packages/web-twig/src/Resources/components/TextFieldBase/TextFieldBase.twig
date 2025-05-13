@@ -11,6 +11,7 @@
 {%- set _isRequired = props.isRequired | default(false) -%}
 {%- set _label = props.label | default(null) -%}
 {%- set _name = props.name | default(null) -%}
+{%- set _size = props.size | default('medium') -%}
 {%- set _type = props.type | default('text') -%}
 {%- set _unsafeHelperText = props.UNSAFE_helperText | default(null) -%}
 {%- set _unsafeLabel = props.UNSAFE_label | default(null) -%}
@@ -28,6 +29,7 @@
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ _isMultiline ? 'TextArea' : 'TextField' -%}
+{%- set _rootSizeClassName = _spiritClassPrefix ~ _rootClassName ~ '--' ~ _size -%}
 {%- set _inputClassName = _rootClassName ~ '__input' -%}
 {%- set _labelClassName = _rootClassName ~ '__label' -%}
 {%- set _labelHiddenClassName = _isLabelHidden ? _rootClassName ~ '__label--hidden' : null -%}
@@ -45,8 +47,9 @@
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
-{%- set _rootClassNames = [ _rootClassName, _rootDisabledClassName, _rootFluidClassName, _rootValidationStateClassName, _styleProps.className ] -%}
+{%- set _rootClassNames = [ _rootClassName, _rootSizeClassName, _rootDisabledClassName, _rootFluidClassName, _rootValidationStateClassName, _styleProps.className ] -%}
 {%- set _helperTextId = _helperText or _unsafeHelperText ? _id ~ '-helper-text' : null -%}
+{%- set _iconSize = (_size == 'small') ? '16' : '20' -%}
 {%- set _labelClassNames = [ _labelClassName, _labelHiddenClassName, _labelRequiredClassName ] -%}
 {%- set _allowedAttributes = [ 'autocomplete', 'placeholder'] -%}
 {%- set _textFieldAllowedAttributes = _allowedAttributes | merge([ 'value' ]) -%}
@@ -107,10 +110,10 @@
                     {{ _disabledAttr }}
                 >
                     <span class="{{ _passwordToggleIconClassName }} {{ _passwordToggleIconHiddenClassName }}">
-                        <Icon name="visibility-on" />
+                        <Icon name="visibility-on" boxSize="{{ _iconSize }}" />
                     </span>
                     <span class="{{ _passwordToggleIconClassName }} {{ _passwordToggleIconShownClassName }}">
-                        <Icon name="visibility-off" />
+                        <Icon name="visibility-off" boxSize="{{ _iconSize }}" />
                     </span>
                 </button>
             </div>

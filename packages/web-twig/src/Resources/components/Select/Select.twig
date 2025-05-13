@@ -10,6 +10,7 @@
 {%- set _isRequired = props.isRequired | default(false) -%}
 {%- set _label = props.label | default(null) -%}
 {%- set _name = props.name | default(null) -%}
+{%- set _size = props.size | default('medium') -%}
 {%- set _unsafeHelperText = props.UNSAFE_helperText | default(null) -%}
 {%- set _unsafeLabel = props.UNSAFE_label | default(null) -%}
 {%- set _unsafeValidationText = props.UNSAFE_validationText | default(null) -%}
@@ -18,6 +19,7 @@
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Select' -%}
+{%- set _rootSizeClassName = _spiritClassPrefix ~ 'Select--' ~ _size -%}
 {%- set _rootFluidClassName = _isFluid ? _spiritClassPrefix ~ 'Select--fluid' : null -%}
 {%- set _rootDisabledClassName = _isDisabled ? _spiritClassPrefix ~ 'Select--disabled' : null -%}
 {%- set _rootValidationStateClassName = _validationState ? _spiritClassPrefix ~ 'Select--' ~ _validationState : null -%}
@@ -32,8 +34,9 @@
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
-{%- set _classNames = [ _rootClassName, _rootFluidClassName, _rootDisabledClassName, _rootValidationStateClassName, _styleProps.className ] -%}
+{%- set _classNames = [ _rootClassName, _rootSizeClassName, _rootFluidClassName, _rootDisabledClassName, _rootValidationStateClassName, _styleProps.className ] -%}
 {%- set _helperTextId = _helperText or _unsafeHelperText ? _id ~ '-helper-text' : null -%}
+{%- set _iconSize = (_size == 'small') ? '16' : '20' -%}
 {%- set _labelClassNames = [ _labelClassName, _labelHiddenClassName, _labelRequiredClassName ] -%}
 {%- set _mainPropsWithoutId = props | filter((value, prop) => prop is not same as('id')) -%}
 {%- set _validationTextId = _validationText or _unsafeValidationText ? _id ~ '-validation-text' : null -%}
@@ -60,7 +63,7 @@
             {%- block content %}{% endblock -%}
         </select>
         <div class="{{ _iconClassName }}">
-            <Icon name="chevron-down" />
+            <Icon name="chevron-down" boxSize="{{ _iconSize }}" />
         </div>
     </div>
     <HelperText
