@@ -3,13 +3,32 @@
 @use '../../settings/links' as links-settings;
 @use '../dictionaries';
 
-@include test.describe('validate dictionary value mixin') {
-    @include test.it('should not throw an error if the value is in the dictionary') {
-        $test: dictionaries.validate-dictionary-value(
-            $dictionary: (
-                'value',
+@include test.describe('validate config keys function') {
+    @include test.it('should not throw an error if config keys match the dictionary values') {
+        $test: dictionaries.validate-config-keys(
+            $dictionary-values: (
+                'key1',
+                'key2',
             ),
-            $value: 'value',
+            $config: (
+                key1: value,
+                key2: value,
+            ),
+        );
+
+        @include test.assert-true($test);
+    }
+
+    @include test.it('should not throw an error even if the keys are not in the same order') {
+        $test: dictionaries.validate-config-keys(
+            $dictionary-values: (
+                'key1',
+                'key2',
+            ),
+            $config: (
+                key2: value,
+                key1: value,
+            ),
         );
 
         @include test.assert-true($test);
@@ -415,18 +434,17 @@
                             margin-bottom: 20px,
                             border-radius: 15px,
                         ),
-                    ),
-                    $class-name-infix: 'mobile'
+                    )
                 );
             }
 
             @include test.expect() {
-                .TestFill--mobile--fill {
+                .TestFill--fill {
                     --spirit-test-fill-margin-bottom: 0;
                     --spirit-test-fill-border-radius: 5px;
                 }
 
-                .TestFill--mobile--outline {
+                .TestFill--outline {
                     --spirit-test-fill-margin-bottom: 20px;
                     --spirit-test-fill-border-radius: 15px;
                 }
@@ -434,7 +452,7 @@
         }
     }
 
-    @include test.it('should generate custom infix fill variant classes based on a config') {
+    @include test.it('should generate custom variant classes with infixes based on a config') {
         @include test.assert() {
             @include test.output() {
                 @include dictionaries.generate-variants(
@@ -453,17 +471,18 @@
                             border-radius: 15px,
                         ),
                     ),
-                    $custom-component-infix: 'custom'
+                    $css-variable-infix: 'custom',
+                    $class-name-infix: 'mobile'
                 );
             }
 
             @include test.expect() {
-                .TestFill--fill {
+                .TestFill--mobile--fill {
                     --spirit-test-fill-custom-margin-bottom: 0;
                     --spirit-test-fill-custom-border-radius: 5px;
                 }
 
-                .TestFill--outline {
+                .TestFill--mobile--outline {
                     --spirit-test-fill-custom-margin-bottom: 20px;
                     --spirit-test-fill-custom-border-radius: 15px;
                 }
@@ -519,7 +538,7 @@
                             padding-x: 16px,
                         ),
                     ),
-                    $infix: 'infix'
+                    $css-variable-infix: 'infix'
                 );
             }
 
