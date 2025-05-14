@@ -60,6 +60,7 @@ export const tokenToStyleByType = (
   if (hasTokenType(TokenType.color)) {
     const colorToken = token as ColorToken;
     const name = tokenVariableName(colorToken, tokenGroups, hasParentPrefix);
+    const cssVariableName = `var(--${tokenPrefix}color-${name})`;
 
     if (hasMixin) {
       let value = CSSHelper.colorTokenValueToCSS(colorToken.value, mappedTokens, {
@@ -74,7 +75,7 @@ export const tokenToStyleByType = (
       return formatTokenStyleByOutput(name, value, hasJsOutput);
     }
 
-    return `$${name}: var(--${tokenPrefix}color-${name});`;
+    return hasJsOutput ? formatTokenStyleByOutput(name, cssVariableName, true) : `$${name}: ${cssVariableName};`;
   }
 
   if (hasTokenType(TokenType.shadow)) {
