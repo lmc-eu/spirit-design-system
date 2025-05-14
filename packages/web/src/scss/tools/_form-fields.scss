@@ -6,6 +6,7 @@
 @use '@tokens' as tokens;
 @use '../settings/cursors';
 @use '../settings/form-fields' as form-fields-settings;
+@use '../tools/breakpoint';
 @use 'accessibility';
 @use 'reset';
 @use 'string' as spirit-string;
@@ -74,6 +75,18 @@
     width: form-fields-settings.$box-field-input-width;
 }
 
+@mixin box-field-root-responsive-border-radius($field-name) {
+    @each $breakpoint-name, $breakpoint-value in tokens.$breakpoints {
+        @include breakpoint.up($breakpoint-value) {
+            --#{tokens.$css-variable-prefix}form-fields-border-radius: var(
+                --#{tokens.$css-variable-prefix}#{spirit-string.convert-pascal-case-to-kebab-case(
+                        $field-name
+                    )}-input-border-radius-#{$breakpoint-name}
+            );
+        }
+    }
+}
+
 @mixin inline-field-label() {
     @include typography.generate(form-fields-settings.$inline-field-label-typography);
 
@@ -135,7 +148,7 @@
     color: form-fields-settings.$box-field-input-color-state-default;
     border: form-fields-settings.$box-field-input-border-width form-fields-settings.$box-field-input-border-style
         form-fields-settings.$input-border-color;
-    border-radius: form-fields-settings.$box-field-input-border-radius;
+    border-radius: var(--#{tokens.$css-variable-prefix}form-fields-border-radius);
     background: form-fields-settings.$input-background-color;
 
     &::placeholder {

@@ -28,6 +28,7 @@ $_field-name: 'TextField';
 
 .TextField {
     @include form-fields-tools.box-field-root();
+    @include form-fields-tools.box-field-root-responsive-border-radius($_field-name);
 }
 
 .TextField__label {
@@ -106,8 +107,8 @@ $_field-name: 'TextField';
     justify-content: center;
     padding-inline: theme.$input-password-toggle-padding-x;
     color: form-fields-settings.$box-field-input-color-state-default;
-    border-radius: 0 form-fields-settings.$box-field-input-border-radius
-        form-fields-settings.$box-field-input-border-radius 0;
+    border-radius: 0 var(--#{tokens.$css-variable-prefix}form-fields-border-radius)
+        var(--#{tokens.$css-variable-prefix}form-fields-border-radius) 0;
     background-color: form-fields-settings.$input-background-color;
 
     // 5.
@@ -117,7 +118,7 @@ $_field-name: 'TextField';
         inset: 0;
         border: form-fields-settings.$box-field-input-border-width form-fields-settings.$box-field-input-border-style
             form-fields-settings.$input-border-color;
-        border-radius: form-fields-settings.$box-field-input-border-radius;
+        border-radius: var(--#{tokens.$css-variable-prefix}form-fields-border-radius);
         pointer-events: none;
     }
 }
@@ -169,7 +170,7 @@ $_field-name: 'TextField';
     z-index: 1;
     width: (2 * theme.$input-password-toggle-padding-x) + theme.$input-password-toggle-icon-size;
     height: 100%;
-    border-radius: form-fields-settings.$box-field-input-border-radius;
+    border-radius: var(--#{tokens.$css-variable-prefix}form-fields-border-radius);
     box-shadow: form-fields-settings.$input-focus-shadow;
 }
 
