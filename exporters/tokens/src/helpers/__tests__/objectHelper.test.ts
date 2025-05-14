@@ -43,6 +43,9 @@ const mergedJsObject = {
       mobile: 'gridSpacingMobile',
       tablet: 'gridSpacingTablet',
     },
+    _01: {
+      background: 'backgroundSubtle',
+    },
     columns: 'gridColumns',
     focus: 'focus',
   },
@@ -157,6 +160,9 @@ spacing: {
 desktop: gridSpacingDesktop,
 mobile: gridSpacingMobile,
 tablet: gridSpacingTablet,
+},
+'01': {
+background: backgroundSubtle,
 },
 columns: gridColumns,
 focus,

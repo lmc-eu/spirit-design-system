@@ -59,17 +59,21 @@ export function convertToScss(obj: StylesObjectType): string {
 export const convertToJs = (obj: StylesObjectType): string => {
   return Object.entries(obj)
     .map(([key, value]) => {
+      const match = key.match(/^_(\d+)/); // Match keys starting with _ followed by a number
+      const newKey = match ? `'${match[1]}'` : key; // Replace with the number as a string if matched
+      let resultEntry = `${newKey}: ${value},\n`;
+
       if (typeof value === 'object' && value !== null) {
         const nestedObject = convertToJs(value as StylesObjectType);
 
-        return `${key}: {\n${nestedObject}\n},\n`;
+        resultEntry = `${newKey}: {\n${nestedObject}\n},\n`;
       }
 
-      if (key === value) {
-        return `${key},\n`;
+      if (newKey === value) {
+        resultEntry = `${newKey},\n`;
       }
 
-      return `${key}: ${value},\n`;
+      return resultEntry;
     })
     .join('')
     .slice(0, -1);
