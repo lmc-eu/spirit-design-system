@@ -157,11 +157,11 @@ export const formFieldWarning = '#c26400';
 export const gradientBasicOverlayColor01 = '#fff';
 export const gradientBasicOverlayColor02 = '#fff0';
 
-export const gradientPrimaryColor01 = '#7847ff';
-export const gradientPrimaryColor02 = '#482b99';
+export const gradientPrimaryColor01 = '#eae3ff';
+export const gradientPrimaryColor02 = '#cebcff';
 
-export const gradientSecondaryColor01 = '#eae3ff';
-export const gradientSecondaryColor02 = '#cebcff';
+export const gradientSecondaryColor01 = '#fff';
+export const gradientSecondaryColor02 = '#a7d9e2';
 
 export const gradientSkeletonColor01 = '#e5e5e5';
 export const gradientSkeletonColor02 = '#fff';
