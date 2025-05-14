@@ -10,6 +10,7 @@ $_field-name: 'TextArea';
 
 .TextArea {
     @include form-fields-tools.box-field-root();
+    @include form-fields-tools.box-field-root-responsive-border-radius($_field-name);
 }
 
 .TextArea__label {

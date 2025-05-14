@@ -14,6 +14,7 @@ $_field-name: 'Select';
 
 .Select {
     @include form-fields-tools.box-field-root();
+    @include form-fields-tools.box-field-root-responsive-border-radius($_field-name);
 }
 
 .Select__label {
