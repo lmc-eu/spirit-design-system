@@ -4,6 +4,7 @@
 @use 'sass:map';
 @use 'sass:string';
 @use '@tokens' as tokens;
+@use '../tools/breakpoint' as breakpoint;
 @use '../settings/cursors';
 @use '../settings/form-fields' as form-fields-settings;
 @use 'accessibility';
@@ -135,7 +136,6 @@
     color: form-fields-settings.$box-field-input-color-state-default;
     border: form-fields-settings.$box-field-input-border-width form-fields-settings.$box-field-input-border-style
         form-fields-settings.$input-border-color;
-    border-radius: form-fields-settings.$box-field-input-border-radius;
     background: form-fields-settings.$input-background-color;
 
     &::placeholder {
@@ -152,6 +152,12 @@
     &:active,
     &:focus-within {
         background-color: form-fields-settings.$input-background-color-state-active;
+    }
+
+    @each $breakpoint-name, $breakpoint-value in tokens.$breakpoints {
+        @include breakpoint.up($breakpoint-value) {
+            border-radius: var(--spirit-select-input-border-radius-#{$breakpoint-name});
+        }
     }
 }
 
