@@ -45,21 +45,27 @@ export const componentButtonPlainStateHover = '#f1edff';
 
 export const componentButtonPrimaryBorder = '#4e2ea6';
 export const componentButtonPrimaryContent = '#fff';
+export const componentButtonPrimaryContentSelected = '#fff';
 export const componentButtonPrimaryStateActive = '#6039cc';
 export const componentButtonPrimaryStateDefault = '#7847ff';
 export const componentButtonPrimaryStateHover = '#6c40e5';
+export const componentButtonPrimaryStateSelected = '#a07eff';
 
 export const componentButtonSecondaryBorder = '#7847ff';
 export const componentButtonSecondaryContent = '#6039cc';
+export const componentButtonSecondaryContentSelected = '#fff';
 export const componentButtonSecondaryStateActive = '#e4daff';
 export const componentButtonSecondaryStateDefault = '#fff';
 export const componentButtonSecondaryStateHover = '#f1edff';
+export const componentButtonSecondaryStateSelected = '#7847ff';
 
 export const componentButtonTertiaryBorder = '#e5e5e5';
 export const componentButtonTertiaryContent = '#202020';
+export const componentButtonTertiaryContentSelected = '#fff';
 export const componentButtonTertiaryStateActive = '#d9d9d9';
 export const componentButtonTertiaryStateDefault = '#f2f2f2';
 export const componentButtonTertiaryStateHover = '#e5e5e5';
+export const componentButtonTertiaryStateSelected = '#535353';
 
 export const componentHeaderBackground = '#fff';
 export const componentHeaderItemBackgroundStateActive = '#f1edff';
@@ -143,7 +149,7 @@ export const formFieldFilledBorderStateSelected = '#7847ff';
 export const formFieldFilledContent = '#202020';
 export const formFieldFilledPlaceholder = '#666';
 
-export const formFieldHelperText = '#7f7f7f';
+export const formFieldHelperText = '#535353';
 export const formFieldLabel = '#202020';
 export const formFieldSuccess = '#327c3f';
 export const formFieldWarning = '#c26400';
@@ -185,7 +191,7 @@ export const neutralStateActive = '#535353';
 export const neutralStateDefault = '#202020';
 export const neutralStateHover = '#404040';
 
-export const selectedContentBasic = '#4e2ea6';
+export const selectedContentBasic = '#7847ff';
 export const selectedContentSubtle = '#fff';
 export const selectedStateActive = '#6039cc';
 export const selectedStateDefault = '#7847ff';

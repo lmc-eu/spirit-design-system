@@ -45,21 +45,27 @@ export const componentButtonPlainStateHover = '#ffffff1a';
 
 export const componentButtonPrimaryBorder = '#1e1240';
 export const componentButtonPrimaryContent = '#3c2480';
+export const componentButtonPrimaryContentSelected = '#fff';
 export const componentButtonPrimaryStateActive = '#e4daff';
 export const componentButtonPrimaryStateDefault = '#fff';
 export const componentButtonPrimaryStateHover = '#f1edff';
+export const componentButtonPrimaryStateSelected = '#fff';
 
 export const componentButtonSecondaryBorder = '#f8f6ff';
 export const componentButtonSecondaryContent = '#fff';
+export const componentButtonSecondaryContentSelected = '#fff';
 export const componentButtonSecondaryStateActive = '#1a1b1b26';
 export const componentButtonSecondaryStateDefault = '#1a1b1b00';
 export const componentButtonSecondaryStateHover = '#1a1b1b1a';
+export const componentButtonSecondaryStateSelected = '#3c2480';
 
 export const componentButtonTertiaryBorder = '#1a1b1b00';
 export const componentButtonTertiaryContent = '#fff';
+export const componentButtonTertiaryContentSelected = '#fff';
 export const componentButtonTertiaryStateActive = '#1a1b1b4d';
 export const componentButtonTertiaryStateDefault = '#1a1b1b33';
 export const componentButtonTertiaryStateHover = '#1a1b1b40';
+export const componentButtonTertiaryStateSelected = '#fff';
 
 export const componentHeaderBackground = '#6039cc';
 export const componentHeaderItemBackgroundStateActive = '#1a1b1b26';
@@ -69,7 +75,7 @@ export const componentHeaderItemBackgroundStateSelected = '#4e2ea6';
 export const componentHeaderItemStateActive = '#e5e5e5';
 export const componentHeaderItemStateDefault = '#fff';
 export const componentHeaderItemStateHover = '#f2f2f2';
-export const componentHeaderItemStateSelected = '#ffbe00';
+export const componentHeaderItemStateSelected = '#fff';
 export const componentHeaderStripeStateSelected = '#fff';
 export const componentHeaderStripeStateUnselected = '#ffffff40';
 
