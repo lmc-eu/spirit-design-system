@@ -3,9 +3,9 @@ import DocsSection from '../../../../docs/DocsSection';
 import { ComponentButtonColors, EmotionColors, Sizes } from '../../../constants';
 import { Grid } from '../../Grid';
 import { Icon } from '../../Icon';
-import Button from '../Button';
+import ButtonLink from '../ButtonLink';
 
-const ButtonBlock = () => {
+const ButtonLinkFluid = () => {
   const sizes = Object.values(Sizes);
   const buttonColors = Object.values(ComponentButtonColors);
   const emotionColors = Object.values(EmotionColors);
@@ -16,14 +16,14 @@ const ButtonBlock = () => {
       {sizes.map((size) => (
         <DocsSection key={size} title={`Size ${size}`} container="none" hasPadding={false}>
           {colors.map((color) => (
-            <Grid key={color} cols={1} spacing="space-400">
-              <Button elementType="a" href="#" size={size} color={color}>
+            <Grid cols={1} spacing="space-400" key={color}>
+              <ButtonLink href="#" size={size} color={color} elementType="a">
                 {`Button ${color}`}
-              </Button>{' '}
-              <Button size={size} color={color}>
-                <Icon name="hamburger" marginRight="space-400" />
-                Menu
-              </Button>
+              </ButtonLink>{' '}
+              <ButtonLink href="#" size={size} color={color}>
+                <Icon name="chevron-left" marginRight="space-400" />
+                Return back
+              </ButtonLink>
             </Grid>
           ))}
         </DocsSection>
@@ -32,4 +32,4 @@ const ButtonBlock = () => {
   );
 };
 
-export default ButtonBlock;
+export default ButtonLinkFluid;

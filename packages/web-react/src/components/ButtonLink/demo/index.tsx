@@ -7,9 +7,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import DocsSection from '../../../../docs/DocsSection';
 import { IconsProvider } from '../../../context';
-import ButtonLinkBlock from './ButtonLinkBlock';
 import ButtonLinkDefault from './ButtonLinkDefault';
 import ButtonLinkDisabled from './ButtonLinkDisabled';
+import ButtonLinkFluid from './ButtonLinkFluid';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -20,8 +20,8 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <DocsSection title="Disabled" stackAlignment="stretch">
         <ButtonLinkDisabled />
       </DocsSection>
-      <DocsSection title="Block" stackAlignment="stretch">
-        <ButtonLinkBlock />
+      <DocsSection title="Fluid" stackAlignment="stretch">
+        <ButtonLinkFluid />
       </DocsSection>
     </IconsProvider>
   </React.StrictMode>,
