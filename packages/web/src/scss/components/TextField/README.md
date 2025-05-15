@@ -1,5 +1,7 @@
 # TextField
 
+👉 Please note that responsive border radius is defined by design specifications.
+
 Basic usage:
 
 ```html
