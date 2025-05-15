@@ -22,6 +22,11 @@
 {%- set _classNames = [ _rootClassName, _rootColorClassName, _rootBlockClassName, _rootDisabledClassName, _rootLoadingClassName, _rootSizeClassName, _rootSymmetricalClassName, _styleProps.className ] -%}
 {%- set _allowedAttributes = [ 'target', 'title' ] -%}
 
+{# Deprecations #}
+{% if _isBlock %}
+    {% deprecated 'ButtonLink: The `isBlock` property will be deleted in the next major version. Please read component\'s documentation for more information.' %}
+{% endif %}
+
 <a
     {{ mainProps(props, _allowedAttributes) }}
     {{ styleProp(_styleProps) }}

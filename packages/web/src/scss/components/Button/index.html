@@ -137,4 +137,45 @@
 
 </section>
 
+<section class="py-900 py-tablet-1000">
+
+  <div class="Container">
+
+    <h2 class="docs-Heading">Block</h2>
+
+    <div class="docs-Stack docs-Stack--stretch">
+
+      <div class="Grid Grid--cols-1 Grid--desktop--cols-3" style="--grid-spacing-y: var(--spirit-space-1100);">
+        {{#each @root.sizes as |size|}}
+        <section>
+          <h2 class="docs-Heading">Size {{size}}</h2>
+          <div class="docs-Stack docs-Stack--start">
+            {{#each @root.colors as |color|}}
+            <div
+              class="Grid Grid--cols-1"
+              style="
+                --grid-spacing-x: var(--spirit-space-400);
+                --grid-spacing-y: var(--spirit-space-400);
+              "
+            >
+              <a href="#" class="Button Button--{{color}} Button--{{size}}">Button {{color}}</a>
+              <button type="button" class="Button Button--{{color}} Button--{{size}}">
+                <svg class="mr-400" width="24" height="24" aria-hidden="true">
+                  <use xlink:href="/assets/icons/svg/sprite.svg#hamburger" />
+                </svg>
+                Menu
+              </button>
+            </div>
+            {{/each}}
+          </div>
+        </section>
+        {{/each}}
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
 {{/web/layout/default }}

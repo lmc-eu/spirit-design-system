@@ -24,6 +24,11 @@
 {%- set _classNames = [ _rootClassName, _rootColorClassName, _rootSizeClassName, _rootBlockClassName, _rootLoadingClassName, _rootSymmetricalClassName, _styleProps.className ] -%}
 {%- set _allowedAttributes = [ 'formtarget', 'name' ] -%}
 
+{# Deprecations #}
+{% if _isBlock %}
+    {% deprecated 'Button: The `isBlock` property will be deleted in the next major version. Please read component\'s documentation for more information.' %}
+{% endif %}
+
 <button
     {{ mainProps(props, _allowedAttributes) }}
     {{ styleProp(_styleProps) }}

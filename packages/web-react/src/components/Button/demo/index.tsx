@@ -9,6 +9,7 @@ import DocsSection from '../../../../docs/DocsSection';
 import { IconsProvider } from '../../../context';
 import ButtonDefault from './ButtonDefault';
 import ButtonDisabled from './ButtonDisabled';
+import ButtonFluid from './ButtonFluid';
 import ButtonLoading from './ButtonLoading';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
@@ -22,6 +23,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       </DocsSection>
       <DocsSection title="Loading" stackAlignment="stretch">
         <ButtonLoading />
+      </DocsSection>
+      <DocsSection title="Fluid" stackAlignment="stretch">
+        <ButtonFluid />
       </DocsSection>
     </IconsProvider>
   </React.StrictMode>,

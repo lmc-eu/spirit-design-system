@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { ElementType } from 'react';
 import { warning } from '../../common/utilities';
-import { useClassNamePrefix } from '../../hooks';
+import { useClassNamePrefix, useDeprecationMessage } from '../../hooks';
 import { ButtonColor, ButtonSize, SpiritButtonProps } from '../../types';
 import { applyColor, applySize } from '../../utils/classname';
 import { compose } from '../../utils/compose';
@@ -24,6 +24,15 @@ export function useButtonStyleProps<T extends ElementType = 'button', C = void, 
   props: SpiritButtonProps<T, C, S>,
 ): ButtonStyles {
   const { color, isBlock, isDisabled, isLoading, isSymmetrical, size, ...restProps } = props;
+
+  // @see https://jira.almacareer.tech/browse/DS-1897
+  useDeprecationMessage({
+    method: 'custom',
+    trigger: !!isBlock,
+    componentName: 'Button',
+    customText:
+      "The `isBlock` property will be deleted in the next major release. Please read component's documentation for more information.",
+  });
 
   const buttonClass = useClassNamePrefix('Button');
   const buttonBlockClass = `${buttonClass}--block`;

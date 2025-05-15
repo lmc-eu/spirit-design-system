@@ -15,8 +15,27 @@ Variants:
 
 Block-level Button:
 
+⚠️ DEPRECATION NOTICE: The `Button--block` modifier is deprecated and will be removed in the next major release.
+
+To span a `Button` to the full width of its parent, you can use display utility classes or the `Grid` classes to achieve the desired layout.
+
 ```html
-<button type="button" class="Button Button--primary Button--medium Button--block">Primary block-level Button</button>
+<div class="d-grid">
+  <button type="button" class="Button Button--primary Button--medium">Primary block-level Button</button>
+</div>
+<div class="d-grid d-tablet-block">
+  <button type="button" class="Button Button--primary Button--medium">Primary responsive block-level Button</button>
+</div>
+<div
+  class="Grid Grid--cols-1 Grid--tablet--cols-2"
+  style="
+    --grid-spacing-x: var(--spirit-space-1100);
+    --grid-spacing-y: var(--spirit-space-1100);
+  "
+>
+  <button type="button" class="Button Button--primary Button--medium">Primary responsive block-level Button</button>
+  <a href="#" class="Button Button--primary Button--medium">Primary responsive block-level Button</a>
+</div>
 ```
 
 Disabling a Button:

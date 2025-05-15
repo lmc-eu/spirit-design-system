@@ -53,6 +53,13 @@ If you are using the `Stack` component with dividers, you must wrap each item in
 </div>
 ```
 
+### Button
+
+The `Button--block` modifier will be removed in the next major version.
+
+For more information, see documentation for [Button][button] component.
+
 👉 [What are deprecations?][readme-deprecations]
 
+[button]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Button/README.md
 [readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#deprecations
