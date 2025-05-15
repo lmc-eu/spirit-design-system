@@ -35,6 +35,6 @@ describe('UNSTABLE_Header', () => {
     const header = screen.getByRole('banner');
 
     expect(header).toHaveClass('UNSTABLE_Header');
-    expect(header).toHaveClass('UNSTABLE_Header--hasBottomDivider');
+    expect(header).toHaveClass('UNSTABLE_Header--bottomDivider');
   });
 });

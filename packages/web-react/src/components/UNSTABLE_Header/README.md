@@ -20,6 +20,14 @@ import { UNSTABLE_Header } from '@lmc-eu/spirit-web-react';
 <UNSTABLE_Header>{/* Content go here */}</UNSTABLE_Header>;
 ```
 
+You can set `hasBottomDivider` prop to add a bottom divider to the Header.
+
+```jsx
+import { UNSTABLE_Header } from '@lmc-eu/spirit-web-react';
+
+<UNSTABLE_Header hasBottomDivider>{/* Content go here */}</UNSTABLE_Header>;
+```
+
 It also sets CSS variable for the Header height which can be used by nested components.
 
 ### API

@@ -24,7 +24,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <DocsSection title="Full Header" stackAlignment="stretch" container="heading-only">
         <HeaderDefault />
       </DocsSection>
-      <DocsSection title="Header with bottom divider" stackAlignment="stretch" container="heading-only">
+      <DocsSection title="Header with Bottom Divider" stackAlignment="stretch" container="heading-only">
         <HeaderWithBottomDivider />
       </DocsSection>
       <DocsSection title="Fluid Header" stackAlignment="stretch" container="heading-only">

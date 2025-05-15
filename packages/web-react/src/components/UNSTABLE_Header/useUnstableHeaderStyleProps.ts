@@ -14,8 +14,8 @@ export const useUnstableHeaderStyleProps = (props: SpiritHeaderProps): HeaderSty
   const { hasBottomDivider = false, ...restProps } = props;
 
   const headerClass = useClassNamePrefix('UNSTABLE_Header');
-  const headerLogoClass = useClassNamePrefix('UNSTABLE_HeaderLogo');
-  const headerHasBottomDividerClass = useClassNamePrefix('UNSTABLE_Header--hasBottomDivider');
+  const headerLogoClass = `${headerClass}Logo`;
+  const headerHasBottomDividerClass = `${headerClass}--bottomDivider`;
 
   const rootClass = classNames(headerClass, {
     [headerHasBottomDividerClass]: hasBottomDivider,
@@ -26,6 +26,6 @@ export const useUnstableHeaderStyleProps = (props: SpiritHeaderProps): HeaderSty
       root: rootClass,
       logo: headerLogoClass,
     },
-    props: { ...restProps },
+    props: restProps,
   };
 };

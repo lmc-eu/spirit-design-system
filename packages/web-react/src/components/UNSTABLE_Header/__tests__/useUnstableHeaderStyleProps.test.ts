@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { SpiritHeaderProps } from '../../../types';
+import { type SpiritHeaderProps } from '../../../types';
 import { useUnstableHeaderStyleProps } from '../useUnstableHeaderStyleProps';
 
 describe('useUnstableHeaderStyleProps', () => {
@@ -15,6 +15,6 @@ describe('useUnstableHeaderStyleProps', () => {
     const props = { hasBottomDivider: true } as SpiritHeaderProps;
     const { result } = renderHook(() => useUnstableHeaderStyleProps(props));
 
-    expect(result.current.classProps.root).toBe('UNSTABLE_Header UNSTABLE_Header--hasBottomDivider');
+    expect(result.current.classProps.root).toBe('UNSTABLE_Header UNSTABLE_Header--bottomDivider');
   });
 });
