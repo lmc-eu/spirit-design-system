@@ -1,7 +1,7 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { AlignmentX, ComponentButtonColors, EmotionColors } from '../../../constants';
+import { AlignmentX, ComponentButtonColors, EmotionColors, Sizes } from '../../../constants';
 import { DRAWER_CLOSE_BUTTON_LABEL_DEFAULT } from '../constants';
 import Drawer from '../Drawer';
 import DrawerCloseButton from '../DrawerCloseButton';
@@ -24,10 +24,23 @@ const meta: Meta<typeof DrawerCloseButton> = {
         defaultValue: { summary: ComponentButtonColors.TERTIARY },
       },
     },
+    iconBoxSize: {
+      control: 'object',
+      table: {
+        defaultValue: { summary: '24' },
+      },
+    },
     label: {
       control: 'text',
       table: {
         defaultValue: { summary: DRAWER_CLOSE_BUTTON_LABEL_DEFAULT },
+      },
+    },
+    size: {
+      control: 'select',
+      options: [...Object.values(Sizes)],
+      table: {
+        defaultValue: { summary: Sizes.MEDIUM },
       },
     },
   },

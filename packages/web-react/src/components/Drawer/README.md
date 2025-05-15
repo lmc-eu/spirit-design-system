@@ -83,18 +83,28 @@ import { DrawerCloseButton } from '@lmc-eu/spirit-web-react';
 <DrawerCloseButton />;
 ```
 
-Use `color` prop to change the color variant of the button.
+Use `color` prop to change the color variant of the button. You can also change the size of the button using the `size` prop.
 
 ```jsx
-<DrawerCloseButton color="secondary" />
+<DrawerCloseButton color="secondary" size="large" />
+```
+
+Size of the icon can be changed via `iconBoxSize` prop.
+This prop accepts a number or an object with responsive values.
+
+```jsx
+<DrawerCloseButton iconBoxSize={20} />
+<DrawerCloseButton iconBoxSize={{ mobile: 20, tablet: 30, desktop: 40 }} />
 ```
 
 ### API
 
-| Name    | Type                                                                                                     | Default    | Required | Description                      |
-| ------- | -------------------------------------------------------------------------------------------------------- | ---------- | -------- | -------------------------------- |
-| `color` | \[[Component Button Color dictionary][dictionary-color] \| [Emotion Color dictionary][dictionary-color]] | `tertiary` | ✕        | Color variant                    |
-| `label` | `string`                                                                                                 | `Close`    | ✕        | Label of the drawer close button |
+| Name          | Type                                                                                                     | Default    | Required | Description                                                                                           |
+| ------------- | -------------------------------------------------------------------------------------------------------- | ---------- | -------- | ----------------------------------------------------------------------------------------------------- |
+| `color`       | \[[Component Button Color dictionary][dictionary-color] \| [Emotion Color dictionary][dictionary-color]] | `tertiary` | ✕        | Color variant                                                                                         |
+| `iconBoxSize` | \[ `number` \| `Partial<Record<BreakpointToken, number>>` ]                                              | 24         | ✕        | Size of the icon, use object to set responsive values, e.g. `{ mobile: 20, tablet: 30, desktop: 40 }` |
+| `label`       | `string`                                                                                                 | `Close`    | ✕        | Label of the drawer close button                                                                      |
+| `size`        | [Size dictionary][dictionary-size]                                                                       | `medium`   | ✕        | Size of the drawer close button                                                                       |
 
 The component further inherits properties from the [`<button>`][mdn-button-element] element.
 
@@ -146,6 +156,7 @@ const handleClose = () => setIsOpen(false);
 ```
 
 [dictionary-color]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#color
+[dictionary-size]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#size
 [mdn-button-element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
 [mdn-dialog-element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
