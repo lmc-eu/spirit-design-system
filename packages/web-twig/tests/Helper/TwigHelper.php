@@ -8,7 +8,7 @@ use Lmc\SpiritWebTwigBundle\DependencyInjection\CompilerPass\OverrideServiceComp
 use Lmc\SpiritWebTwigBundle\DependencyInjection\SpiritWebTwigExtension;
 use Lmc\SpiritWebTwigBundle\Twig\PropsExtension;
 use Lmc\SpiritWebTwigBundle\Twig\SvgExtension;
-use Lmc\TwigXBundle\Compiler\ComponentLexer;
+use AlmaCareer\TwigXBundle\Compiler\ComponentLexer;
 use Symfony\Component\HttpKernel\Log\Logger;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
