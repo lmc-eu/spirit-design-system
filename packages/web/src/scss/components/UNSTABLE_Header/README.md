@@ -20,10 +20,10 @@ The `UNSTABLE_Header` component is a main wrapper which provides mainly the visu
 </header>
 ```
 
-You can use the `UNSTABLE_Header--hasBottomDivider` modifier to add a bottom divider to the Header.
+You can use the `UNSTABLE_Header--bottomDivider` modifier to add a bottom divider to the Header.
 
 ```html
-<header class="UNSTABLE_Header UNSTABLE_Header--hasBottomDivider">
+<header class="UNSTABLE_Header UNSTABLE_Header--bottomDivider">
   <!-- content -->
 </header>
 ```
