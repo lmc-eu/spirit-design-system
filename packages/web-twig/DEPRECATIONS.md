@@ -45,5 +45,5 @@ The `isBlock` property will be removed in the next major version.
 For more information, see documentation for [Button][button] and [ButtonLink][button-link] components.
 
 [button]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/src/Resources/components/Button/README.md#how-to-make-a-fluid-button
-[button-link]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/src/Resources/components/ButtonLink/README.md#how-to-make-a-fluid-button
+[button-link]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/src/Resources/components/ButtonLink/README.md#how-to-make-a-fluid-buttonlink
 [readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#deprecations
