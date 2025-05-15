@@ -33,9 +33,14 @@ describe('DrawerCloseButton', () => {
     expect(screen.getByRole('button')).toHaveClass('DrawerCloseButton');
   });
 
-  it('should render with correct class', () => {
+  it('should render with correct classes', () => {
     render(<DrawerCloseButton data-testid="test" />);
 
-    expect(screen.getByTestId('test')).toHaveClass('DrawerCloseButton');
+    const button = screen.getByRole('button');
+
+    expect(button).toHaveClass('DrawerCloseButton', 'Button--medium', 'Button--tertiary');
+
+    expect(button.querySelector('svg')).toHaveAttribute('height', '24');
+    expect(button.querySelector('svg')).toHaveAttribute('width', '24');
   });
 });
