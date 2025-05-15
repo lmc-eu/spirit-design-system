@@ -78,6 +78,9 @@ makefile
 # Favicon
 *.ico
 
+# Git
+.gitattributes
+
 # GitHub
 CODEOWNERS
 
