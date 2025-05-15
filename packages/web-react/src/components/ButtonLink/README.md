@@ -22,10 +22,10 @@ import { ButtonLink } from '@lmc-eu/spirit-web-react';
 To span a `ButtonLink` to the full width of its parent, you can use display utility classes or `Grid` to achieve the desired layout.
 
 ```jsx
-<div class="d-grid">
+<div className="d-grid">
   <ButtonLink href="#">Primary block-level Button</ButtonLink>
 </div>
-<div class="d-grid d-tablet-block">
+<div className="d-grid d-tablet-block">
   <ButtonLink href="#">Primary responsive block-level Button</ButtonLink>
 </div>
 <Grid
