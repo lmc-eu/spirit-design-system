@@ -1,5 +1,7 @@
+@use 'sass:map';
 @use '@tokens' as tokens;
 @use 'dictionaries';
+@use '../tools/tokens' as tokens-tools;
 
 // Common for all form components
 $input-color-state-disabled: tokens.$disabled-content;
@@ -60,20 +62,47 @@ $box-field-input-width: 18rem;
 $box-field-label-typography: tokens.$body-small-semibold;
 $box-field-label-margin-bottom: tokens.$space-400;
 
+@function generate-responsive-radii($size) {
+    $result: ();
+
+    @each $breakpoint, $bp-value in tokens.$breakpoints {
+        $key: 'border-radius-#{$breakpoint}';
+        $variable-name: 'form-field-#{$size}-radius-#{$breakpoint}';
+        $radius: tokens-tools.get-variable-if-exists($variable-name, $box-field-input-border-radius);
+        $result: map.merge(
+            $result,
+            (
+                $key: $radius,
+            )
+        );
+    }
+
+    @return $result;
+}
+
 $box-field-size-dictionary: dictionaries.$size;
 $box-field-size-config: (
-    small: (
-        height: 32px,
-        typography: tokens.$body-small-regular,
-    ),
-    medium: (
-        height: 40px,
-        typography: tokens.$body-medium-regular,
-    ),
-    large: (
-        height: 48px,
-        typography: tokens.$body-medium-regular,
-    ),
+    small: map.merge(
+            (
+                height: 32px,
+                typography: tokens.$body-small-regular,
+            ),
+            generate-responsive-radii('small')
+        ),
+    medium: map.merge(
+            (
+                height: 40px,
+                typography: tokens.$body-medium-regular,
+            ),
+            generate-responsive-radii('medium')
+        ),
+    large: map.merge(
+            (
+                height: 48px,
+                typography: tokens.$body-medium-regular,
+            ),
+            generate-responsive-radii('large')
+        ),
 );
 
 $validation-states: (
