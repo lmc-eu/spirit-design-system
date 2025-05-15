@@ -1,6 +1,7 @@
 import { ComponentPropsWithRef, ElementType } from 'react';
 import { AlignmentX } from '../constants';
-import { ButtonColor } from './button';
+import { ButtonColor, ButtonSize } from './button';
+import { IconBoxSize } from './icon';
 import {
   ChildrenProps,
   ClickEvent,
@@ -21,9 +22,12 @@ export type DrawerPanelHandlingProps = {
   closeOnEscapeKeyDown?: boolean;
 };
 
-export interface DrawerCloseButtonProps<C = void> extends Omit<SpiritButtonElementProps, 'children' | 'color'> {
+export interface DrawerCloseButtonProps<C = void, S = void>
+  extends Omit<SpiritButtonElementProps, 'children' | 'color' | 'size'> {
   color?: ButtonColor<C>;
+  iconBoxSize?: IconBoxSize;
   label?: string;
+  size?: ButtonSize<S>;
 }
 
 export type DrawerPanelBaseProps<E extends ElementType = DrawerPanelElementType> = {
