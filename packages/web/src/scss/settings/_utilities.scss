@@ -1,16 +1,19 @@
 @use 'sass:map';
 @use '@tokens' as tokens;
+@use '../tools/map' as spirit-map;
 @use '../tools/utilities';
 
 $accent-prefix: 'accent-';
 $accent-tokens-key: 'accent-colors';
+$emotion-prefix: 'emotion-';
+$emotion-tokens-key: 'emotion-colors';
 
 $utilities: (
     'background-color': (
         responsive: false,
         property: background-color,
         class: bg,
-        values: map.merge(
+        values: spirit-map.merge-multiple(
                 utilities.generate-token-map(
                     $tokens-group: $accent-tokens-key,
                     $keys-to-generate: (
@@ -18,6 +21,15 @@ $utilities: (
                         background-subtle,
                     ),
                     $prefix: $accent-prefix,
+                    $remove-from-name: 'background',
+                ),
+                utilities.generate-token-map(
+                    $tokens-group: $emotion-tokens-key,
+                    $keys-to-generate: (
+                        background-basic,
+                        background-subtle,
+                    ),
+                    $prefix: $emotion-prefix,
                     $remove-from-name: 'background',
                 ),
                 (
@@ -37,7 +49,7 @@ $utilities: (
         responsive: false,
         property: border-color,
         class: border,
-        values: map.merge(
+        values: spirit-map.merge-multiple(
                 utilities.generate-token-map(
                     $tokens-group: $accent-tokens-key,
                     $keys-to-generate: (
@@ -45,6 +57,15 @@ $utilities: (
                         border-subtle,
                     ),
                     $prefix: $accent-prefix,
+                    $remove-from-name: 'border',
+                ),
+                utilities.generate-token-map(
+                    $tokens-group: $emotion-tokens-key,
+                    $keys-to-generate: (
+                        border-basic,
+                        border-subtle,
+                    ),
+                    $prefix: $emotion-prefix,
                     $remove-from-name: 'border',
                 ),
                 (
@@ -210,7 +231,7 @@ $utilities: (
         responsive: false,
         property: color,
         class: text,
-        values: map.merge(
+        values: spirit-map.merge-multiple(
                 utilities.generate-token-map(
                     $tokens-group: $accent-tokens-key,
                     $keys-to-generate: (
@@ -218,6 +239,15 @@ $utilities: (
                         content-subtle,
                     ),
                     $prefix: $accent-prefix,
+                    $remove-from-name: 'content',
+                ),
+                utilities.generate-token-map(
+                    $tokens-group: $emotion-tokens-key,
+                    $keys-to-generate: (
+                        content-basic,
+                        content-subtle,
+                    ),
+                    $prefix: $emotion-prefix,
                     $remove-from-name: 'content',
                 ),
                 (
