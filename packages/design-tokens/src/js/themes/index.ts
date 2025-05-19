@@ -10,3 +10,5 @@ export const themes = {
     tokens: themeLightOnBrand,
   },
 };
+
+export * from './colorTokens';
