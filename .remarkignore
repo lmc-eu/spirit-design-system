@@ -7,5 +7,5 @@ build
 public
 .github
 
-# Fix case of the files
-MIGRATION-*
+# Heading capitalization problems
+migration-*
