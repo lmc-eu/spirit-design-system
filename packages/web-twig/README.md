@@ -171,7 +171,7 @@ Check your Symfony console or log to see if you are using any of the deprecated 
 [changelog]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/CHANGELOG.md
 [components-directory]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/src/Resources/components
 [contributing]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/CONTRIBUTING.md
-[example-guide]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/docs/extendComponents.md
+[example-guide]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/docs/extend-components.md
 [prefixing-css-class-names]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#prefixing-css-class-names
 [raw]: https://twig.symfony.com/doc/3.x/filters/raw.html
 [spirit-design-system]: https://github.com/lmc-eu/spirit-design-system

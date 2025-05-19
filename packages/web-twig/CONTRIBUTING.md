@@ -34,7 +34,7 @@ This is an example of a typical file structure of a component:
 ## Rules in Components
 
 1. Name of components must be camelCase with first letter small.
-2. New components must contain a property class so that they can be extended according to the [instructions](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/docs/extendComponents.md)
+2. New components must contain a property class so that they can be extended according to the [instructions](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/docs/extend-components.md)
 
 ```twig
 {% set _class = (props.class is defined) ? ' ' ~  props.class : '' -%}
