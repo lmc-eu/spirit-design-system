@@ -67,5 +67,5 @@ section in README to learn how and when to use them.
 
 [escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
 [icon-package]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/icons
-[inlinesvg-docs]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/docs/inlineSVG.md
+[inlinesvg-docs]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/docs/inline-svg.md
 [mdn-symbol]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/symbol
