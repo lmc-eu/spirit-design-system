@@ -4,7 +4,10 @@
       "pattern": "^https://github.com/(alma-oss|lmc-eu)/spirit-design-system/(pull|issues|commit|compare)/"
     },
     {
-      "pattern": "^https://github.com/projects/lmc-eu/repos/spirit-design-system/"
+      "pattern": "^https://jira.lmc.cz/"
+    },
+    {
+      "pattern": "^https://jira.almacareer.tech/"
     },
     {
       "pattern": "^http://localhost"
