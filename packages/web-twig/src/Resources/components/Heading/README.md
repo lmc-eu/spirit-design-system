@@ -83,14 +83,14 @@ You can also define responsive values for the `textAlignment` prop using an obje
 
 ## API
 
-| Name            | Type                                                             | Default  | Required | Description                                                    |
-| --------------- | ---------------------------------------------------------------- | -------- | -------- | -------------------------------------------------------------- |
-| `elementType`   | `string`                                                         | -        | ✓        | HTML tag to render                                             |
-| `emphasis`      | [Emphasis dictionary][dictionary-emphasis]                       | `bold`   | ✕        | Emphasis of the text                                           |
-| `size`          | [Size Extended dictionary][dictionary-size]                      | `medium` | ✕        | Size of the text                                               |
-| `textAlignment` | \[[Text Alignment dictionary][dictionary-alignment] \| `object`] | -        | ✕        | Text alignment                                                 |
-| `textColor`     | [Text Color dictionary][dictionary-color]                        | -        | ✕        | Color of the text                                              |
-| `translate`     | \[`yes` \| `no` \| `''`]                                         | `null`   | ✕        | Set to `no` to disable machine translation of the text content |
+| Name            | Type                                                                                                                                                        | Default  | Required | Description                                                    |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------- | -------------------------------------------------------------- |
+| `elementType`   | `string`                                                                                                                                                    | -        | ✓        | HTML tag to render                                             |
+| `emphasis`      | [Emphasis dictionary][dictionary-emphasis]                                                                                                                  | `bold`   | ✕        | Emphasis of the text                                           |
+| `size`          | [Size Extended dictionary][dictionary-size]                                                                                                                 | `medium` | ✕        | Size of the text                                               |
+| `textAlignment` | \[[Text Alignment dictionary][dictionary-alignment] \| `object`]                                                                                            | -        | ✕        | Text alignment                                                 |
+| `textColor`     | \[Accent Color \| [Emotion Color dictionary][dictionary-color] ✕ [Intensity dictionary][dictionary-intensity] \| [Text Color dictionary][dictionary-color]] | -        | ✕        | Color of the text                                              |
+| `translate`     | \[`yes` \| `no` \| `''`]                                                                                                                                    | `null`   | ✕        | Set to `no` to disable machine translation of the text content |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -99,6 +99,7 @@ and [escape hatches][readme-escape-hatches].
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#alignment
 [dictionary-color]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#color
 [dictionary-emphasis]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#emphasis
+[dictionary-intensity]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#intensity
 [dictionary-size]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#size
 [heading]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/src/components/Heading
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#additional-attributes
