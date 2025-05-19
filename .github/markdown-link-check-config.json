@@ -11,6 +11,9 @@
     },
     {
       "pattern": "^http://localhost"
+    },
+    {
+      "pattern": "^https://figma.com/"
     }
   ],
   "aliveStatusCodes": [999, 429, 200]
