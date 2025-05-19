@@ -22,15 +22,16 @@ import {
   TextColors,
   ValidationStates,
 } from '../../constants';
+import { TextAccentColorsType, TextEmotionColorsType } from './colors';
 
 /**
  * Allow autocomplete for string literals.
  *
- * This is a Typescript quirk.
+ * This is a TypeScript quirk.
  *
  * @see { @link https://github.com/microsoft/TypeScript/issues/29729}
  *
- * When you want to allow any string, but still give suggestions for known string literals.
+ * When you want to allow any string but still give suggestions for known string literals.
  * This works because it prevents TypeScript from eagerly collapsing string | "literal" into just string.
  * It behaves exactly the same way as string, but with autocomplete added.
  * Someday, string | "literal" will just work.
@@ -92,7 +93,7 @@ export type TextColorsDictionaryKeys = keyof typeof TextColors;
 export type TextColorsDictionaryType<C = undefined> = (typeof TextColors)[TextColorsDictionaryKeys] | C;
 
 export interface TextColorProps<C> {
-  textColor?: C;
+  textColor?: C | TextAccentColorsType | TextEmotionColorsType | TextColorsDictionaryType;
 }
 
 /* Emphasis */

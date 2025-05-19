@@ -2,8 +2,17 @@ import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { Emphasis, SizesExtended, TextAlignments, TextColors } from '../../../constants';
+import { getAccentTextColors, getEmotionTextColors } from '../../../utils/colorObjectGenerators';
 import ReadMe from '../README.md';
 import { Heading } from '..';
+
+const accentColorsObject = getAccentTextColors();
+const emotionColorsObject = getEmotionTextColors();
+const textColorValues = [
+  ...Object.values(TextColors),
+  ...Object.values(accentColorsObject),
+  ...Object.values(emotionColorsObject),
+];
 
 const meta: Meta<typeof Heading> = {
   title: 'Components/Heading',
@@ -43,7 +52,7 @@ const meta: Meta<typeof Heading> = {
     },
     textColor: {
       control: 'select',
-      options: [...Object.values(TextColors), undefined],
+      options: [...textColorValues, undefined],
       table: {
         defaultValue: { summary: undefined },
       },
