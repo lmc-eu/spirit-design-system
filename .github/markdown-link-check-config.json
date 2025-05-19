@@ -14,6 +14,12 @@
     },
     {
       "pattern": "^https://figma.com/"
+    },
+    {
+      "pattern": "^#unstable-*"
+    },
+    {
+      "pattern": "^#commit-*"
     }
   ],
   "aliveStatusCodes": [999, 429, 200]
