@@ -7,4 +7,4 @@ You can find the migration guide for a specific version by following the links b
 
 - [Migration Guide to version 1][migration-guide-v1]
 
-[migration-guide-v1]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/migrations/form-validations/MIGRATION-v1.md
+[migration-guide-v1]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/migrations/form-validations/migration-v1.md

@@ -173,5 +173,5 @@ Instead of using `inverted`, use `neutral`.
 
 Please refer back to these instructions or reach out to our team if you encounter any issues during migration.
 
-[migration-guide-web]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/migrations/web/MIGRATION-v3.md
+[migration-guide-web]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/migrations/web/migration-v3.md
 [readme-codemods]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/codemods/README.md
