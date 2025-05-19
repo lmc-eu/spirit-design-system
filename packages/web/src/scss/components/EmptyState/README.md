@@ -54,4 +54,4 @@ This component is based on the [Stack][stack] component and accepts all its vari
 </div>
 ```
 
-[stack]: https://github.com/lmc-eu/spirit-design-system/blob/dependencies/major-monorepo-storybook/packages/web/src/scss/components/Stack/README.md
+[stack]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Stack/README.md

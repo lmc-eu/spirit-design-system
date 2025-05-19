@@ -327,7 +327,7 @@ After the release notes are ready, you can publish them (copy&paste from canvas)
 [docker]: https://www.docker.com/
 [eslint]: https://eslint.org/
 [jest]: https://jestjs.io/
-[lerna-home]: https://lernajs.io
+[lerna-home]: https://lerna.js.org
 [netlify-preview-gist]: https://gist.github.com/adamkudrna/694f3048c1338f07375b9b8af24afe2f
 [packages]: packages/
 [playwright]: https://playwright.dev/
