@@ -1,5 +1,19 @@
 {% set textColors = [ 'primary', 'secondary', 'tertiary' ] %}
+{% set accentColors = [ 'accent-01-basic', 'accent-01-subtle', 'accent-02-basic', 'accent-02-subtle' ] %}
+{% set emotionColors = [ 'emotion-danger-basic', 'emotion-danger-subtle' , 'emotion-informative-basic', 'emotion-informative-subtle', 'emotion-success-basic', 'emotion-success-subtle', 'emotion-warning-basic', 'emotion-warning-subtle'] %}
 
 {% for textColor in textColors %}
     <Heading elementType="h2" textColor={{ textColor }}>Heading {{ textColor }}</Heading>
+{% endfor %}
+
+{% for textColor in accentColors %}
+    <DocsBox size="small">
+        <Heading elementType="h2" textColor={{ textColor }}>Heading {{ textColor }}</Heading>
+    </DocsBox>
+{% endfor %}
+
+{% for textColor in emotionColors %}
+    <DocsBox size="small">
+        <Heading elementType="h2" textColor={{ textColor }}>Heading {{ textColor }}</Heading>
+    </DocsBox>
 {% endfor %}
