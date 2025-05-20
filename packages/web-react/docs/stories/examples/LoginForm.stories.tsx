@@ -13,7 +13,7 @@ export const LoginForm = () => (
           <TextField type="text" id="name" label="Name" isFluid />
           <TextField type="password" id="password" label="Password" isFluid />
           <Checkbox id="keep-logged" label="Stay Logged In" />
-          <Button isBlock>Login</Button>
+          <Button>Login</Button>
         </Stack>
       </GridItem>
     </Grid>
