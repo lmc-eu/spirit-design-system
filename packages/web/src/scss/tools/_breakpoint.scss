@@ -1,4 +1,7 @@
+@use 'sass:map';
 @use 'sass:string';
+@use '@tokens' as tokens;
+@use '../tools/tokens' as tokens-tools;
 
 // Mixin to get the width media query for a breakpoint value in up direction.
 //
@@ -54,4 +57,39 @@
     }
 
     @return '';
+}
+
+// Function to generate a map of responsive values for a given property, size, and token prefix.
+//
+// Example:
+// generate-responsive-values('border-radius', 'radius', 'small', 'form-field', 4px) might return:
+// (
+//   'border-radius-mobile': 4px,
+//   'border-radius-tablet': 6px,
+//   'border-radius-desktop': 8px,
+// )
+//
+// Parameters are:
+// * $property: the base CSS property name (e.g. 'border-radius')
+// * $size: the size variant (e.g. 'small', 'medium')
+// * $variable-prefix: prefix used for the token variable names (e.g. 'form-field')
+// * $token-name: token name (e.g. 'radius')
+// * $fallback: value to use if token is not found
+@function generate-responsive-values($property, $size, $variable-prefix, $token-name, $fallback) {
+    $result: ();
+
+    @each $breakpoint, $bp-value in tokens.$breakpoints {
+        $key: '#{$property}-#{$breakpoint}';
+        $variable-name: '#{$variable-prefix}-#{$size}-#{$token-name}-#{$breakpoint}';
+        $value: tokens-tools.get-variable-if-exists($variable-name, $fallback);
+
+        $result: map.merge(
+            $result,
+            (
+                $key: $value,
+            )
+        );
+    }
+
+    @return $result;
 }
