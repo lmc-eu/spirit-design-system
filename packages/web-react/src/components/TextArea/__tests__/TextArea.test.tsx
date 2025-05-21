@@ -10,6 +10,7 @@ import {
   stylePropsTest,
   validationTextPropsTest,
   validHtmlAttributesTest,
+  sizePropsTest,
 } from '@local/tests';
 import TextArea from '../TextArea';
 
@@ -29,6 +30,8 @@ describe('TextArea', () => {
   validHtmlAttributesTest(TextArea);
 
   ariaAttributesTest(TextArea);
+
+  sizePropsTest(TextArea);
 
   it('should have label classname', () => {
     render(<TextArea id="textarea" label="Label" />);

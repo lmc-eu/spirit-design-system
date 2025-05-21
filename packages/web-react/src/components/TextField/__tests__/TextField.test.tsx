@@ -9,6 +9,7 @@ import {
   stylePropsTest,
   validationTextPropsTest,
   validHtmlAttributesTest,
+  sizePropsTest,
 } from '@local/tests';
 import { TextFieldType } from '../../../types';
 import TextField from '../TextField';
@@ -30,6 +31,8 @@ describe('TextField', () => {
     validHtmlAttributesTest(TextField);
 
     ariaAttributesTest(TextField);
+
+    sizePropsTest(TextField);
 
     it('should have label classname', () => {
       render(<TextField id="textfield" label="Label" type={type as TextFieldType} />);

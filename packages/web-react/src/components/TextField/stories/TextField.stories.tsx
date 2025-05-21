@@ -1,7 +1,7 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { ValidationStates } from '../../../constants';
+import { Sizes, ValidationStates } from '../../../constants';
 import ReadMe from '../README.md';
 import { TextField } from '..';
 
@@ -94,6 +94,13 @@ const meta: Meta<typeof TextField> = {
     value: {
       control: 'text',
     },
+    size: {
+      control: 'select',
+      options: [...Object.values(Sizes), undefined],
+      table: {
+        defaultValue: { summary: Sizes.MEDIUM },
+      },
+    },
   },
   args: {
     autoComplete: 'off',
@@ -109,6 +116,7 @@ const meta: Meta<typeof TextField> = {
     name: 'TextField',
     placeholder: 'Placeholder',
     type: 'text',
+    size: Sizes.MEDIUM,
     validationState: undefined,
     validationText: 'Validation text',
   },

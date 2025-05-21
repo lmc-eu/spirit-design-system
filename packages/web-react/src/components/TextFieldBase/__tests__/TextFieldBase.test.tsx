@@ -5,6 +5,7 @@ import {
   ariaAttributesTest,
   classNamePrefixProviderTest,
   requiredPropsTest,
+  sizePropsTest,
   validHtmlAttributesTest,
 } from '@local/tests';
 import { TextFieldType } from '../../../types';
@@ -18,6 +19,8 @@ describe('TextFieldBase', () => {
   validHtmlAttributesTest(TextFieldBase);
 
   ariaAttributesTest(TextFieldBase);
+
+  sizePropsTest(TextFieldBase);
 
   describe.each(['text', 'password', 'email'])('input type %s', (type) => {
     it('should have connected label and input', () => {

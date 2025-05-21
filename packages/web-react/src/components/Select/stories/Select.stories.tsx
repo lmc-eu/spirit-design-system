@@ -1,7 +1,7 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { ValidationStates } from '../../../constants';
+import { Sizes, ValidationStates } from '../../../constants';
 import ReadMe from '../README.md';
 import { Select } from '..';
 
@@ -119,6 +119,13 @@ const meta: Meta<typeof Select> = {
     value: {
       control: 'text',
     },
+    size: {
+      control: 'select',
+      options: [...Object.values(Sizes), undefined],
+      table: {
+        defaultValue: { summary: Sizes.MEDIUM },
+      },
+    },
   },
   args: {
     hasValidationIcon: false,
@@ -134,6 +141,7 @@ const meta: Meta<typeof Select> = {
     name: 'Select',
     validationState: undefined,
     validationText: 'Validation text',
+    size: Sizes.MEDIUM,
   },
 };
 

@@ -16,6 +16,7 @@ import TextFieldInline from './TextFieldInline';
 import TextFieldInputWidth from './TextFieldInputWidth';
 import TextFieldPasswordToggle from './TextFieldPasswordToggle';
 import TextFieldRequired from './TextFieldRequired';
+import TextFieldSize from './TextFieldSize';
 import TextFieldValidation from './TextFieldValidation';
 import TextFieldValidationWithIcon from './TextFieldValidationWithIcon';
 
@@ -24,6 +25,12 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <IconsProvider value={icons}>
       <DocsSection title="Default">
         <TextFieldDefault />
+      </DocsSection>
+      <DocsSection title="Password Toggle">
+        <TextFieldPasswordToggle />
+      </DocsSection>
+      <DocsSection title="Sizes">
+        <TextFieldSize />
       </DocsSection>
       <DocsSection title="Required">
         <TextFieldRequired />
@@ -46,14 +53,11 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <DocsSection title="Fluid">
         <TextFieldFluid />
       </DocsSection>
-      <DocsSection title="Size">
+      <DocsSection title="Input Sizes">
         <TextFieldInputWidth />
       </DocsSection>
       <DocsSection title="Inline">
         <TextFieldInline />
-      </DocsSection>
-      <DocsSection title="Password Toggle">
-        <TextFieldPasswordToggle />
       </DocsSection>
     </IconsProvider>
   </React.StrictMode>,

@@ -10,6 +10,7 @@ import {
   stylePropsTest,
   validationTextPropsTest,
   validHtmlAttributesTest,
+  sizePropsTest,
 } from '@local/tests';
 import Select from '../Select';
 
@@ -31,6 +32,8 @@ describe('Select', () => {
   validHtmlAttributesTest(Select);
 
   ariaAttributesTest(Select);
+
+  sizePropsTest(Select);
 
   it('should have label classname', () => {
     render(
