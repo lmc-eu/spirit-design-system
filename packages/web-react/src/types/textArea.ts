@@ -5,15 +5,16 @@ import {
   HelperTextProps,
   InputBaseProps,
   RequiredProps,
+  SizesDictionaryType,
   SpiritTextAreaElementPropsWithRef,
   TextInputProps,
   Validation,
   ValidationTextProp,
 } from './shared';
 
-export type TextAreaElementBaseProps = SpiritTextAreaElementPropsWithRef;
+export type TextAreaElementBaseProps = Omit<SpiritTextAreaElementPropsWithRef, 'size'>;
 
-export interface TextAreaProps
+export interface TextAreaProps<S = void>
   extends TextAreaElementBaseProps,
     InputBaseProps,
     ChildrenProps,
@@ -29,6 +30,7 @@ export interface TextAreaProps
   isAutoResizing?: boolean;
   /** Label for the textarea, which provides context or description for the field */
   label: ReactNode;
+  size?: SizesDictionaryType<S>;
 }
 
-export interface SpiritTextAreaProps extends TextAreaProps {}
+export interface SpiritTextAreaProps<S = void> extends TextAreaProps<S> {}

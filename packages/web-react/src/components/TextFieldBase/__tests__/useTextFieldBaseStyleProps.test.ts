@@ -1,4 +1,5 @@
 import { renderHook } from '@testing-library/react';
+import { Sizes } from '../../../constants';
 import { SpiritTextFieldBaseProps } from '../../../types';
 import { useTextFieldBaseStyleProps } from '../useTextFieldBaseStyleProps';
 
@@ -59,5 +60,12 @@ describe('useTagStyleProps', () => {
     expect(result.current.classProps.label).toBe(
       'TextField__label TextField__label--required TextField__label--hidden',
     );
+  });
+
+  it.each([Object.values(Sizes)])('should return field with size %s', (size) => {
+    const props = { size } as SpiritTextFieldBaseProps;
+    const { result } = renderHook(() => useTextFieldBaseStyleProps(props));
+
+    expect(result.current.classProps.root).toBe(`TextField TextField--${size}`);
   });
 });
