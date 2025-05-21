@@ -6,6 +6,7 @@ import {
   InputBaseProps,
   PasswordToggleAdornmentProp,
   RequiredProps,
+  SizesDictionaryType,
   SpiritInputElementPropsWithRef,
   TextInputProps,
   Validation,
@@ -14,9 +15,9 @@ import {
 
 export type TextFieldType = 'email' | 'number' | 'password' | 'search' | 'tel' | 'text' | 'url';
 
-export type TextFieldElementBaseProps = SpiritInputElementPropsWithRef;
+export type TextFieldElementBaseProps = Omit<SpiritInputElementPropsWithRef, 'size'>;
 
-export interface TextFieldProps
+export interface TextFieldProps<S = void>
   extends TextFieldElementBaseProps,
     InputBaseProps,
     PasswordToggleAdornmentProp,
@@ -29,8 +30,9 @@ export interface TextFieldProps
     Validation {
   /** The type of text field */
   type?: TextFieldType;
+  size?: SizesDictionaryType<S>;
 }
 
-export interface SpiritTextFieldProps extends TextFieldProps {
+export interface SpiritTextFieldProps<S = void> extends TextFieldProps<S> {
   label: ReactNode;
 }

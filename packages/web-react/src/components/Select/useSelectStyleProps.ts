@@ -1,11 +1,12 @@
 import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks';
-import { Validation } from '../../types';
+import { SizesDictionaryType, Validation } from '../../types';
 
-export interface UseSelectStyleProps extends Validation {
+export interface UseSelectStyleProps<S = void> extends Validation {
   isDisabled?: boolean;
   isFluid?: boolean;
   isLabelHidden?: boolean;
+  size?: SizesDictionaryType<S>;
 }
 
 export interface UseSelectStyleReturn {
@@ -26,11 +27,13 @@ export const useSelectStyleProps = ({
   isFluid,
   isLabelHidden,
   isRequired,
+  size,
   validationState,
 }: UseSelectStyleProps): UseSelectStyleReturn => {
   const selectRootClass = useClassNamePrefix('Select');
   const selectRootFluidClass = `${selectRootClass}--fluid`;
   const selectRootDisabledClass = `${selectRootClass}--disabled`;
+  const selectRootSizeClass = `${selectRootClass}--${size}`;
   const selectRootValidationClass = `${selectRootClass}--${validationState}`;
   const selectLabelClass = `${selectRootClass}__label`;
   const selectLabelRequiredClass = `${selectLabelClass}--required`;
@@ -46,6 +49,7 @@ export const useSelectStyleProps = ({
       root: classNames(selectRootClass, {
         [selectRootDisabledClass]: isDisabled,
         [selectRootFluidClass]: isFluid,
+        [selectRootSizeClass]: size,
         [selectRootValidationClass]: validationState,
       }),
       label: classNames(selectLabelClass, {

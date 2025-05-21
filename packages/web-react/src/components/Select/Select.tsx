@@ -2,6 +2,7 @@
 
 import classNames from 'classnames';
 import React, { ForwardedRef, forwardRef } from 'react';
+import { Sizes } from '../../constants';
 import { useAriaDescribedBy, useStyleProps } from '../../hooks';
 import { SpiritSelectProps } from '../../types';
 import { HelperText, Label, ValidationText, useAriaIds } from '../Field';
@@ -23,6 +24,7 @@ const _Select = (props: SpiritSelectProps, ref: ForwardedRef<HTMLSelectElement>)
     isLabelHidden,
     isRequired,
     label,
+    size = Sizes.MEDIUM,
     validationState,
     validationText,
     ...restProps
@@ -31,8 +33,9 @@ const _Select = (props: SpiritSelectProps, ref: ForwardedRef<HTMLSelectElement>)
     hasValidationIcon,
     isDisabled,
     isFluid,
-    isRequired,
     isLabelHidden,
+    isRequired,
+    size,
     validationState,
   });
   const { styleProps, props: transferProps } = useStyleProps(restProps);
@@ -61,7 +64,7 @@ const _Select = (props: SpiritSelectProps, ref: ForwardedRef<HTMLSelectElement>)
           {children}
         </select>
         <div className={classProps.icon}>
-          <Icon name="chevron-down" />
+          <Icon name="chevron-down" boxSize={size === Sizes.SMALL ? 16 : 20} />
         </div>
       </div>
       <HelperText

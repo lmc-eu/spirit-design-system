@@ -23,6 +23,7 @@ Advanced example usage:
   name="textAreaAdvanced"
   placeholder="Placeholder"
   rows="10"
+  size="large"
   validationState="danger"
   validationText="validation failed"
   value="TextArea"
@@ -37,26 +38,27 @@ Example with Auto-Height Adjustment
 
 ## API
 
-| Name                    | Type                                           | Default | Required | Description                                                          |
-| ----------------------- | ---------------------------------------------- | ------- | -------- | -------------------------------------------------------------------- |
-| `autoComplete`          | `string`                                       | -       | ✕        | [Automated assistance in filling][autocomplete-attr]                 |
-| `autoResizingMaxHeight` | `number`                                       | `400`   | ✕        | Maximum field height with automatic height control                   |
-| `hasValidationIcon`     | `bool`                                         | `false` | ✕        | Whether to show validation icon                                      |
-| `helperText`            | `string`                                       | —       | ✕        | Custom helper text                                                   |
-| `id`                    | `string`                                       | —       | ✓        | Textarea and label identification                                    |
-| `isAutoResizing`        | `bool`                                         | —       | ✕        | Whether is field auto resizing which adjusts its height while typing |
-| `isDisabled`            | `bool`                                         | —       | ✕        | Whether is field disabled                                            |
-| `isLabelHidden`         | `bool`                                         | —       | ✕        | Whether is label hidden                                              |
-| `isRequired`            | `bool`                                         | —       | ✕        | Whether is field required                                            |
-| `label`                 | `ReactNode`                                    | —       | ✓        | Label text                                                           |
-| `maxLength`             | `number`                                       | —       | ✕        | Maximum number of characters                                         |
-| `name`                  | `string`                                       | —       | ✕        | Textarea name                                                        |
-| `placeholder`           | `string`                                       | —       | ✕        | Textarea placeholder                                                 |
-| `ref`                   | `ForwardedRef<HTMLTextAreaElement>`            | —       | ✕        | Textarea element reference                                           |
-| `rows`                  | `number`                                       | —       | ✕        | Number of visible rows                                               |
-| `validationState`       | [Validation dictionary][dictionary-validation] | —       | ✕        | Type of validation state                                             |
-| `validationText`        | \[`ReactNode` \| `ReactNode[]`]                | —       | ✕        | Validation text                                                      |
-| `value`                 | `string`                                       | —       | ✕        | Textarea value                                                       |
+| Name                    | Type                                           | Default  | Required | Description                                                          |
+| ----------------------- | ---------------------------------------------- | -------- | -------- | -------------------------------------------------------------------- |
+| `autoComplete`          | `string`                                       | -        | ✕        | [Automated assistance in filling][autocomplete-attr]                 |
+| `autoResizingMaxHeight` | `number`                                       | `400`    | ✕        | Maximum field height with automatic height control                   |
+| `hasValidationIcon`     | `bool`                                         | `false`  | ✕        | Whether to show validation icon                                      |
+| `helperText`            | `string`                                       | —        | ✕        | Custom helper text                                                   |
+| `id`                    | `string`                                       | —        | ✓        | Textarea and label identification                                    |
+| `isAutoResizing`        | `bool`                                         | —        | ✕        | Whether is field auto resizing which adjusts its height while typing |
+| `isDisabled`            | `bool`                                         | —        | ✕        | Whether is field disabled                                            |
+| `isLabelHidden`         | `bool`                                         | —        | ✕        | Whether is label hidden                                              |
+| `isRequired`            | `bool`                                         | —        | ✕        | Whether is field required                                            |
+| `label`                 | `ReactNode`                                    | —        | ✓        | Label text                                                           |
+| `maxLength`             | `number`                                       | —        | ✕        | Maximum number of characters                                         |
+| `name`                  | `string`                                       | —        | ✕        | Textarea name                                                        |
+| `placeholder`           | `string`                                       | —        | ✕        | Textarea placeholder                                                 |
+| `ref`                   | `ForwardedRef<HTMLTextAreaElement>`            | —        | ✕        | Textarea element reference                                           |
+| `rows`                  | `number`                                       | —        | ✕        | Number of visible rows                                               |
+| `size`                  | [Size dictionary][dictionary-size]             | `medium` | ✕        | Size variant                                                         |
+| `validationState`       | [Validation dictionary][dictionary-validation] | —        | ✕        | Type of validation state                                             |
+| `validationText`        | \[`ReactNode` \| `ReactNode[]`]                | —        | ✕        | Validation text                                                      |
+| `value`                 | `string`                                       | —        | ✕        | Textarea value                                                       |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -84,6 +86,7 @@ const CustomTextArea = (props: SpiritTextAreaProps): JSX.Element => {
 For detailed information see [TextArea](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/TextArea/README.md) component.
 
 [autocomplete-attr]: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete
+[dictionary-size]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#size
 [dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches

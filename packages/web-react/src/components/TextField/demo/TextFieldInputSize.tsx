@@ -1,7 +1,7 @@
 import React from 'react';
 import TextField from '../TextField';
 
-const TextFieldInputWidth = () => (
+const TextFieldInputSize = () => (
   <TextField
     id="textfield-size"
     isFluid
@@ -12,4 +12,4 @@ const TextFieldInputWidth = () => (
   />
 );
 
-export default TextFieldInputWidth;
+export default TextFieldInputSize;
