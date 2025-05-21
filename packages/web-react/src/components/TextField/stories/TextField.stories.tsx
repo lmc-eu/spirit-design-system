@@ -1,7 +1,7 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { ValidationStates } from '../../../constants';
+import { Sizes, ValidationStates } from '../../../constants';
 import ReadMe from '../README.md';
 import { TextField } from '..';
 
@@ -19,6 +19,12 @@ const meta: Meta<typeof TextField> = {
       control: 'text',
     },
     hasPasswordToggle: {
+      control: 'boolean',
+      table: {
+        defaultValue: { summary: 'false' },
+      },
+    },
+    hasValidationIcon: {
       control: 'boolean',
       table: {
         defaultValue: { summary: 'false' },
@@ -66,6 +72,13 @@ const meta: Meta<typeof TextField> = {
     placeholder: {
       control: 'text',
     },
+    size: {
+      control: 'select',
+      options: [...Object.values(Sizes), undefined],
+      table: {
+        defaultValue: { summary: Sizes.MEDIUM },
+      },
+    },
     type: {
       control: 'select',
       options: ['email', 'number', 'password', 'search', 'tel', 'text', 'url'],
@@ -85,12 +98,6 @@ const meta: Meta<typeof TextField> = {
       description:
         'The validation text. Only visible if validationState is set. Use a string `"foo"` for single validation text or an array for multiple validation texts `["foo", "bar"]`.',
     },
-    hasValidationIcon: {
-      control: 'boolean',
-      table: {
-        defaultValue: { summary: 'false' },
-      },
-    },
     value: {
       control: 'text',
     },
@@ -107,10 +114,13 @@ const meta: Meta<typeof TextField> = {
     isRequired: false,
     label: 'Label',
     name: 'TextField',
+    pattern: undefined,
     placeholder: 'Placeholder',
+    size: Sizes.MEDIUM,
     type: 'text',
     validationState: undefined,
     validationText: 'Validation text',
+    value: undefined,
   },
 };
 

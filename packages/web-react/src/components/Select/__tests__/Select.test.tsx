@@ -4,10 +4,11 @@ import React from 'react';
 import {
   ariaAttributesTest,
   classNamePrefixProviderTest,
-  validationStatePropsTest,
   requiredPropsTest,
   restPropsTest,
+  sizePropsTest,
   stylePropsTest,
+  validationStatePropsTest,
   validationTextPropsTest,
   validHtmlAttributesTest,
 } from '@local/tests';
@@ -31,6 +32,8 @@ describe('Select', () => {
   validHtmlAttributesTest(Select);
 
   ariaAttributesTest(Select);
+
+  sizePropsTest(Select);
 
   it('should have label classname', () => {
     render(
