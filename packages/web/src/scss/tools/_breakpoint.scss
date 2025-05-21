@@ -79,7 +79,7 @@
     $result: ();
 
     @each $breakpoint-name, $breakpoint-value in tokens.$breakpoints {
-        $key: '#{$property}-#{$breakpoint}';
+        $key: '#{$property}-#{$breakpoint-name}';
         $variable-name: '#{$variable-prefix}-#{$size}-#{$token-name}-#{$breakpoint-name}';
         $value: tokens-tools.get-variable-if-exists($variable-name, $fallback);
 
