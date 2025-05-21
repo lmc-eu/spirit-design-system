@@ -4,10 +4,11 @@ import React from 'react';
 import {
   ariaAttributesTest,
   classNamePrefixProviderTest,
-  validationStatePropsTest,
   requiredPropsTest,
   restPropsTest,
+  sizePropsTest,
   stylePropsTest,
+  validationStatePropsTest,
   validationTextPropsTest,
   validHtmlAttributesTest,
 } from '@local/tests';
@@ -29,6 +30,8 @@ describe('TextArea', () => {
   validHtmlAttributesTest(TextArea);
 
   ariaAttributesTest(TextArea);
+
+  sizePropsTest(TextArea);
 
   it('should have label classname', () => {
     render(<TextArea id="textarea" label="Label" />);

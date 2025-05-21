@@ -3,19 +3,28 @@ import { LabelProps } from './label';
 import {
   HelperTextProps,
   RequiredProps,
+  SizesDictionaryType,
   SpiritSelectElementPropsWithRef,
   Validation,
   ValidationTextType,
 } from './shared';
 
-export type SelectElementBaseProps = SpiritSelectElementPropsWithRef;
+export type SelectElementBaseProps = Omit<SpiritSelectElementPropsWithRef, 'size'>;
 
-export interface SelectProps extends SelectElementBaseProps, LabelProps, HelperTextProps, RequiredProps, Validation {
+export type SelectSizeType<S> = SizesDictionaryType<S>;
+
+export interface SelectProps<S = void>
+  extends SelectElementBaseProps,
+    LabelProps,
+    HelperTextProps,
+    RequiredProps,
+    Validation {
   isDisabled?: boolean;
   isFluid?: boolean;
   isLabelHidden?: boolean;
   label: ReactNode;
+  size?: SelectSizeType<S>;
   validationText?: ValidationTextType;
 }
 
-export interface SpiritSelectProps extends SelectProps {}
+export interface SpiritSelectProps<S = void> extends SelectProps<S> {}

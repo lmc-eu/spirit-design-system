@@ -14,6 +14,7 @@ import SelectHiddenLabel from './SelectHiddenLabel';
 import SelectPlaceholder from './SelectPlaceholder';
 import SelectRequired from './SelectRequired';
 import SelectSimple from './SelectSimple';
+import SelectSizes from './SelectSizes';
 import SelectValidation from './SelectValidation';
 import SelectValidationWithIcon from './SelectValidationWithIcon';
 
@@ -22,6 +23,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <IconsProvider value={icons}>
       <DocsSection title="Default">
         <SelectSimple />
+      </DocsSection>
+      <DocsSection title="Sizes">
+        <SelectSizes />
       </DocsSection>
       <DocsSection title="Required with Placeholder">
         <SelectRequired />

@@ -18,13 +18,14 @@ function withPasswordToggle<T extends PasswordToggleAdornmentProp>(WrappedCompon
 
   const ComponentWithPasswordToggle = (props: T, ref: ForwardedRef<HTMLInputElement | HTMLTextAreaElement>) => {
     const { isPasswordShown, passwordToggle } = usePasswordToggle();
-    const { hasPasswordToggle, isDisabled, ...restProps } = props;
+    const { hasPasswordToggle, isDisabled, size, ...restProps } = props;
 
     return hasPasswordToggle ? (
       <TextFieldBasePasswordToggle
         isDisabled={isDisabled}
         isPasswordShown={isPasswordShown}
         onToggleClick={passwordToggle}
+        size={size}
       >
         <WrappedComponent
           {...restProps}

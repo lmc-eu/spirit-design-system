@@ -1,5 +1,11 @@
 import { ReactNode } from 'react';
-import { ChildrenProps, PasswordToggleAdornmentProp, RequiredProps, TextInputProps } from './shared';
+import {
+  ChildrenProps,
+  PasswordToggleAdornmentProp,
+  RequiredProps,
+  SizesDictionaryType,
+  TextInputProps,
+} from './shared';
 import { TextAreaProps } from './textArea';
 import { TextFieldProps } from './textField';
 
@@ -14,19 +20,24 @@ export type SpiritTextFieldBaseProps = {
   label: ReactNode;
 } & TextFieldBaseProps;
 
+export type TextFieldBaseSizeType<S> = SizesDictionaryType<S>;
+
 export type TextFieldBaseInputProps = TextInputProps & TextFieldBaseMultiLineProps;
 
 export interface SpiritTextFieldBaseInputProps extends RequiredProps, TextFieldBaseInputProps {}
 
-export interface PasswordToggleProps {
+export interface PasswordToggleProps<S = void> {
   isDisabled?: boolean;
   isPasswordShown: boolean;
   onToggleClick: () => void;
+  size?: TextFieldBaseSizeType<S>;
 }
 
-export interface TextFieldBasePasswordToggleProps
+export interface TextFieldBasePasswordToggleProps<S = void>
   extends ChildrenProps,
     SpiritTextFieldBaseInputProps,
-    PasswordToggleAdornmentProp {}
+    PasswordToggleAdornmentProp {
+  size?: TextFieldBaseSizeType<S>;
+}
 
 export interface SpiritTextFieldBasePasswordToggleProps extends TextFieldBasePasswordToggleProps, PasswordToggleProps {}
