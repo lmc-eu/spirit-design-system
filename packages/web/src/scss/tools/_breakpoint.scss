@@ -78,9 +78,9 @@
 @function generate-responsive-values($property, $size, $variable-prefix, $token-name, $fallback) {
     $result: ();
 
-    @each $breakpoint, $bp-value in tokens.$breakpoints {
+    @each $breakpoint-name, $breakpoint-value in tokens.$breakpoints {
         $key: '#{$property}-#{$breakpoint}';
-        $variable-name: '#{$variable-prefix}-#{$size}-#{$token-name}-#{$breakpoint}';
+        $variable-name: '#{$variable-prefix}-#{$size}-#{$token-name}-#{$breakpoint-name}';
         $value: tokens-tools.get-variable-if-exists($variable-name, $fallback);
 
         $result: map.merge(
