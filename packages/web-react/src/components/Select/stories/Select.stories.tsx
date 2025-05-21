@@ -1,7 +1,7 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { ValidationStates } from '../../../constants';
+import { Sizes, ValidationStates } from '../../../constants';
 import ReadMe from '../README.md';
 import { Select } from '..';
 
@@ -62,6 +62,12 @@ const meta: Meta<typeof Select> = {
         ),
       },
     },
+    hasValidationIcon: {
+      control: 'boolean',
+      table: {
+        defaultValue: { summary: 'false' },
+      },
+    },
     helperText: {
       control: 'text',
     },
@@ -98,6 +104,13 @@ const meta: Meta<typeof Select> = {
     name: {
       control: 'text',
     },
+    size: {
+      control: 'select',
+      options: [...Object.values(Sizes), undefined],
+      table: {
+        defaultValue: { summary: Sizes.MEDIUM },
+      },
+    },
     validationState: {
       control: 'select',
       options: [...Object.values(ValidationStates), undefined],
@@ -110,20 +123,14 @@ const meta: Meta<typeof Select> = {
       description:
         'The validation text. Only visible if validationState is set. Use a string `"foo"` for single validation text or an array for multiple validation texts `["foo", "bar"]`.',
     },
-    hasValidationIcon: {
-      control: 'boolean',
-      table: {
-        defaultValue: { summary: 'false' },
-      },
-    },
     value: {
       control: 'text',
     },
   },
   args: {
-    hasValidationIcon: false,
     autoComplete: 'off',
     children: 'placeholder & disabled',
+    hasValidationIcon: false,
     helperText: 'Helper text',
     id: 'Select',
     isDisabled: false,
@@ -132,6 +139,7 @@ const meta: Meta<typeof Select> = {
     isRequired: false,
     label: 'Label',
     name: 'Select',
+    size: Sizes.MEDIUM,
     validationState: undefined,
     validationText: 'Validation text',
   },
