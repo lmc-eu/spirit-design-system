@@ -97,7 +97,16 @@
 
 @include test.describe('generate-responsive-values function') {
     @include test.it('should return a map with responsive values for given arguments') {
-        $result: breakpoint.generate-responsive-values('border-radius', 'medium', 'form-field', 'radius', 4px);
+        $result: breakpoint.generate-responsive-values(
+            (
+                property: 'border-radius',
+                size: 'medium',
+                variable-prefix: 'form-field',
+                token-name: 'radius',
+                fallback: 4px,
+            )
+        );
+
         $expected: (
             'border-radius-mobile': 8px,
             'border-radius-tablet': 8px,
@@ -108,7 +117,16 @@
     }
 
     @include test.it('should return a map with fallback values for given arguments') {
-        $result: breakpoint.generate-responsive-values('border-radius', 'medium', 'form-field', 'TEST', 4px);
+        $result: breakpoint.generate-responsive-values(
+            (
+                property: 'border-radius',
+                size: 'medium',
+                variable-prefix: 'form-field',
+                token-name: 'TEST',
+                fallback: 4px,
+            )
+        );
+
         $expected: (
             'border-radius-mobile': 4px,
             'border-radius-tablet': 4px,
