@@ -75,8 +75,13 @@
 // * $variable-prefix: prefix used for the token variable names (e.g. 'form-field')
 // * $token-name: token name (e.g. 'radius')
 // * $fallback: value to use if token is not found
-@function generate-responsive-values($property, $size, $variable-prefix, $token-name, $fallback) {
+@function generate-responsive-values($args) {
     $result: ();
+    $property: map.get($args, 'property');
+    $size: map.get($args, 'size');
+    $variable-prefix: map.get($args, 'variable-prefix');
+    $token-name: map.get($args, 'token-name');
+    $fallback: map.get($args, 'fallback');
 
     @each $breakpoint-name, $breakpoint-value in tokens.$breakpoints {
         $key: '#{$property}-#{$breakpoint-name}';
