@@ -57,7 +57,10 @@
 @mixin generate($utility, $infix) {
     $values: map.get($utility, values);
 
-    @if meta.type-of($values) == 'string' or meta.type-of(list.nth($values, 1)) != 'list' {
+    @if meta.type-of($values) ==
+        'string' or
+        (meta.type-of($values) == 'list' and list.length($values) > 0 and meta.type-of(list.nth($values, 1)) != 'list')
+    {
         $values: list.zip($values, $values);
     }
 

@@ -96,4 +96,20 @@
             }
         }
     }
+
+    @include test.it('should not fail if values are empty') {
+        $sample-utility: (
+            property: display,
+            class: d,
+            values: (),
+        );
+
+        @include test.assert() {
+            @include test.output() {
+                @include utilities.generate($sample-utility, '');
+            }
+
+            @include test.expect();
+        }
+    }
 }
