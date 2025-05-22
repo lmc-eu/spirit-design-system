@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid } from '../../Grid';
 import TextField from '../TextField';
 
-const TextFieldSize = () => (
+const TextFieldSizes = () => (
   <Grid cols={{ mobile: 1, desktop: 3 }}>
     <TextField
       id="text-field-size-small"
@@ -57,4 +57,4 @@ const TextFieldSize = () => (
   </Grid>
 );
 
-export default TextFieldSize;
+export default TextFieldSizes;

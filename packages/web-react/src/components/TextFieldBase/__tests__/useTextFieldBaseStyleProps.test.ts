@@ -62,10 +62,10 @@ describe('useTagStyleProps', () => {
     );
   });
 
-  it.each([Object.values(Sizes)])('should return field with size %s', (state) => {
-    const props = { size: state } as SpiritTextFieldBaseProps;
+  it.each([Object.values(Sizes)])('should return field with size %s', (size) => {
+    const props = { size } as SpiritTextFieldBaseProps;
     const { result } = renderHook(() => useTextFieldBaseStyleProps(props));
 
-    expect(result.current.classProps.root).toBe(`TextField TextField--${state}`);
+    expect(result.current.classProps.root).toBe(`TextField TextField--${size}`);
   });
 });

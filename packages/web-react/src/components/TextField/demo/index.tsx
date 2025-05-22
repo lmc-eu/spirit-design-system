@@ -16,7 +16,7 @@ import TextFieldInline from './TextFieldInline';
 import TextFieldInputWidth from './TextFieldInputWidth';
 import TextFieldPasswordToggle from './TextFieldPasswordToggle';
 import TextFieldRequired from './TextFieldRequired';
-import TextFieldSize from './TextFieldSize';
+import TextFieldSizes from './TextFieldSizes';
 import TextFieldValidation from './TextFieldValidation';
 import TextFieldValidationWithIcon from './TextFieldValidationWithIcon';
 
@@ -30,7 +30,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         <TextFieldPasswordToggle />
       </DocsSection>
       <DocsSection title="Sizes">
-        <TextFieldSize />
+        <TextFieldSizes />
       </DocsSection>
       <DocsSection title="Required">
         <TextFieldRequired />
@@ -53,7 +53,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <DocsSection title="Fluid">
         <TextFieldFluid />
       </DocsSection>
-      <DocsSection title="Input Sizes">
+      <DocsSection title="Input Width">
         <TextFieldInputWidth />
       </DocsSection>
       <DocsSection title="Inline">
