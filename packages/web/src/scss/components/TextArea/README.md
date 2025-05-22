@@ -1,7 +1,5 @@
 # TextArea
 
-👉 Please note that responsive border radius is defined by design specifications.
-
 Basic usage:
 
 ```html
@@ -208,6 +206,8 @@ Filled</textarea
   >
 </div>
 ```
+
+👉 Please note that responsive border radius is defined by design specifications.
 
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
 [prefixed]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#prefixing-css-class-names
