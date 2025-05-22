@@ -48,6 +48,12 @@ This project uses `dictionaries` to unify props between different components.
 | Link Color             | `primary`, `secondary`, `tertiary`            | LinkColor            |
 | Text Color             | `primary`, `secondary`, `tertiary`            | TextColor            |
 
+### Intensity
+
+| Dictionary | Values            | Code name |
+| ---------- | ----------------- | --------- |
+| Intensity  | `basic`, `subtle` | Intensity |
+
 ### Direction
 
 | Dictionary        | Values                                       | Code name         |
