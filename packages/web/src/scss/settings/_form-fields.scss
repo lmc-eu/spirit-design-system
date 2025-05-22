@@ -1,6 +1,6 @@
 @use 'sass:map';
 @use '@tokens' as tokens;
-@use '../tools/breakpoint' as breakpoint;
+@use '../tools/tokens' as tokens-tools;
 @use 'dictionaries';
 
 // Common for all form components
@@ -69,7 +69,7 @@ $box-field-size-config: (
                 height: 32px,
                 typography: tokens.$body-small-regular,
             ),
-            breakpoint.generate-responsive-values(
+            tokens-tools.generate-responsive-map(
                 (
                     property: 'border-radius',
                     size: 'small',
@@ -84,7 +84,7 @@ $box-field-size-config: (
                 height: 40px,
                 typography: tokens.$body-medium-regular,
             ),
-            breakpoint.generate-responsive-values(
+            tokens-tools.generate-responsive-map(
                 (
                     property: 'border-radius',
                     size: 'medium',
@@ -99,7 +99,7 @@ $box-field-size-config: (
                 height: 48px,
                 typography: tokens.$body-medium-regular,
             ),
-            breakpoint.generate-responsive-values(
+            tokens-tools.generate-responsive-map(
                 (
                     property: 'border-radius',
                     size: 'large',

@@ -40,3 +40,45 @@ $test-theme: (
         @include test.assert-equal(tokens-tools.get-variable-if-exists('new-variable', '0px'), '0px');
     }
 }
+
+@include test.describe('generate-responsive-map function') {
+    @include test.it('should return a map with responsive values for given arguments') {
+        $result: tokens-tools.generate-responsive-map(
+            (
+                property: 'border-radius',
+                size: 'medium',
+                variable-prefix: 'form-field',
+                token-name: 'radius',
+                fallback: 4px,
+            )
+        );
+
+        $expected: (
+            'border-radius-mobile': 8px,
+            'border-radius-tablet': 8px,
+            'border-radius-desktop': 8px,
+        );
+
+        @include test.assert-equal($result, $expected);
+    }
+
+    @include test.it('should return a map with fallback values for given arguments') {
+        $result: tokens-tools.generate-responsive-map(
+            (
+                property: 'border-radius',
+                size: 'medium',
+                variable-prefix: 'form-field',
+                token-name: 'TEST',
+                fallback: 4px,
+            )
+        );
+
+        $expected: (
+            'border-radius-mobile': 4px,
+            'border-radius-tablet': 4px,
+            'border-radius-desktop': 4px,
+        );
+
+        @include test.assert-equal($result, $expected);
+    }
+}
