@@ -11,13 +11,19 @@
 @use 'string' as spirit-string;
 @use 'typography';
 
-// Function to validate presence of a given value in a dictionary
+// Function to validate keys in a config map against values in a dictionary
 // Parameters are:
-// * $dictionary: the dictionary to validate against
-// * $value: the value to validate
-@function validate-dictionary-value($dictionary, $value) {
-    @if not list.index($dictionary, $value) {
-        @error 'The value `#{$value}` is not defined in the dictionary provided. Available values are: #{$dictionary}.';
+// * $dictionary-values: list of the dictionary values to validate the $config keys against
+// * $config: dictionary config to validate
+@function validate-config-keys($dictionary-values, $config) {
+    @if not(list.length($dictionary-values) == list.length(map.keys($config))) {
+        @error 'Invalid dictionary config: The number of config keys does not match the dictionary values. The dictionary has #{$dictionary-values} values, but the config has #{map.keys($config)} keys.';
+    } @else {
+        @each $key in map.keys($config) {
+            @if not list.index($dictionary-values, $key) {
+                @error 'Invalid dictionary config: The config key `#{$key}` is not defined in the dictionary provided. Available values are: #{$dictionary-values}.';
+            }
+        }
     }
 
     @return true;
@@ -173,21 +179,25 @@
 // * $class-name: the name of the component class to generate
 // * $dictionary-values: list of the dictionary values to validate the $config keys against
 // * $config: map of the properties to generate, their value is the suffix of the token variable
-// * $custom-component-infix: custom component infix (for parent selector variant with child CSS variables)
-@mixin generate-variants($class-name, $dictionary-values, $config, $custom-component-infix: '') {
-    $component-infix: spirit-string.convert-pascal-case-to-kebab-case(
-        spirit-string.remove-prefix($class-name, 'UNSTABLE_')
-    );
+// * $infix: infix to use for custom properties (e.g. 'input' for input fields)
+@mixin generate-variants($class-name, $dictionary-values, $config, $infix: '') {
+    @if validate-config-keys($dictionary-values, $config) {
+        $_base: spirit-string.convert-pascal-case-to-kebab-case(spirit-string.remove-prefix($class-name, 'UNSTABLE_'));
+        $_infix: if($infix == '', '', '-#{spirit-string.convert-pascal-case-to-kebab-case($infix)}');
+        $custom-property-base-name: '#{$_base}#{$_infix}';
 
-    @if $custom-component-infix != '' {
-        $custom-component-infix: '-' + spirit-string.convert-pascal-case-to-kebab-case($custom-component-infix);
-    }
-
-    @each $key, $variables in $config {
-        @if validate-dictionary-value($dictionary-values, $key) {
+        @each $key, $variables in $config {
             .#{$class-name}--#{$key} {
                 @each $property-name, $property-value in $variables {
-                    --#{tokens.$css-variable-prefix}#{$component-infix}#{$custom-component-infix}-#{$property-name}: #{$property-value};
+                    @if $property-name == 'typography' {
+                        @include typography.generate(
+                            $property-value,
+                            $as-css-variables: true,
+                            $css-variable-infix: $custom-property-base-name
+                        );
+                    } @else {
+                        --#{tokens.$css-variable-prefix}#{$custom-property-base-name}-#{$property-name}: #{$property-value};
+                    }
                 }
             }
         }
@@ -201,29 +211,5 @@
 // * $config: map of the properties to generate, their value is the suffix of the token variable
 // * $infix: infix to use for custom properties (e.g. 'input' for input fields)
 @mixin generate-sizes($class-name, $dictionary-values, $config, $infix: '') {
-    $custom-property-infix: spirit-string.convert-pascal-case-to-kebab-case(
-        spirit-string.remove-prefix($class-name, 'UNSTABLE_')
-    );
-
-    @if $infix != '' {
-        $custom-property-infix: '#{$custom-property-infix}-#{spirit-string.convert-pascal-case-to-kebab-case($infix)}';
-    }
-
-    @each $key, $variables in $config {
-        @if validate-dictionary-value($dictionary-values, $key) {
-            .#{$class-name}--#{$key} {
-                @each $property-name, $property-value in $variables {
-                    @if $property-name == 'typography' {
-                        @include typography.generate(
-                            $property-value,
-                            $as-css-variables: true,
-                            $css-variable-infix: $custom-property-infix
-                        );
-                    } @else {
-                        --#{tokens.$css-variable-prefix}#{$custom-property-infix}-#{$property-name}: #{$property-value};
-                    }
-                }
-            }
-        }
-    }
+    @include generate-variants($class-name, $dictionary-values, $config, $infix);
 }

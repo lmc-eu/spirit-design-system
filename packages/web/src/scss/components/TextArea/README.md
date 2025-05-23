@@ -3,16 +3,35 @@
 Basic usage:
 
 ```html
-<div class="TextArea">
+<div class="TextArea TextArea--medium">
   <label for="text-area-default" class="TextArea__label">Label</label>
   <textarea id="text-area-default" class="TextArea__input" name="default" placeholder="Placeholder"></textarea>
+</div>
+```
+
+Sizes:
+
+```html
+<div class="TextArea TextArea--small">
+  <label for="text-area-size-small" class="TextArea__label">Small</label>
+  <textarea id="text-area-size-small" class="TextArea__input" name="size-small" placeholder="Placeholder"></textarea>
+</div>
+
+<div class="TextArea TextArea--medium">
+  <label for="text-area-size-medium" class="TextArea__label">Medium (default)</label>
+  <textarea id="text-area-size-medium" class="TextArea__input" name="size-medium" placeholder="Placeholder"></textarea>
+</div>
+
+<div class="TextArea TextArea--large">
+  <label for="text-area-size-large" class="TextArea__label">Large</label>
+  <textarea id="text-area-size-large" class="TextArea__input" name="size-large" placeholder="Placeholder"></textarea>
 </div>
 ```
 
 Required textarea:
 
 ```html
-<div class="TextArea">
+<div class="TextArea TextArea--medium">
   <label for="text-area-required" class="TextArea__label TextArea__label--required">Label</label>
   <textarea id="text-area-required" class="TextArea__input" name="required" placeholder="Placeholder"></textarea>
 </div>
@@ -21,7 +40,7 @@ Required textarea:
 Hidden label:
 
 ```html
-<div class="TextArea">
+<div class="TextArea TextArea--medium">
   <label for="text-area-hidden-label" class="TextArea__label TextArea__label--hidden">Hidden Label</label>
   <textarea id="text-area-hidden-label" class="TextArea__input" name="hiddenLabel" placeholder="Placeholder">
 Filled</textarea
@@ -32,7 +51,7 @@ Filled</textarea
 Fluid width:
 
 ```html
-<div class="TextArea TextArea--fluid">
+<div class="TextArea TextArea--medium TextArea--fluid">
   <label for="text-area-fluid" class="TextArea__label">Label</label>
   <textarea id="text-area-fluid" class="TextArea__input" name="fluid" placeholder="Placeholder"></textarea>
 </div>
@@ -41,7 +60,7 @@ Fluid width:
 Helper text:
 
 ```html
-<div class="TextArea">
+<div class="TextArea TextArea--medium">
   <label for="text-area-helper-text" class="TextArea__label">Label</label>
   <textarea id="text-area-helper-text" class="TextArea__input" name="helperText" placeholder="Placeholder"></textarea>
   <div class="TextArea__helperText">Helper text</div>
@@ -57,7 +76,7 @@ There are several ways to adjust the textarea width:
 The number of visible text lines for the control. Supported values are positive integers from `3` up.
 
 ```html
-<div class="TextArea">
+<div class="TextArea TextArea--medium">
   <label for="text-area-rows" class="TextArea__label">Label</label>
   <textarea id="text-area-rows" class="TextArea__input" rows="3" name="rows"></textarea>
 </div>
@@ -84,7 +103,7 @@ plugins.
 Then you need to add data attribute `data-spirit-toggle="autoResize"` to the component.
 
 ```html
-<div class="TextArea" data-spirit-toggle="autoResize">
+<div class="TextArea TextArea--medium" data-spirit-toggle="autoResize">
   <label for="text-area-auto-resize" class="TextArea__label">Label of auto-resizing TextArea</label>
   <textarea id="text-area-auto-resize" class="TextArea__input" name="autoResize"></textarea>
 </div>
@@ -101,13 +120,13 @@ a JS interaction class when controlled by JavaScript (`has-success`,
 - To render validation text with an icon, add `<svg>` icon inside of `.TextArea__validationText`.
 
 ```html
-<div class="TextArea TextArea--danger">
+<div class="TextArea TextArea--medium TextArea--danger">
   <label for="text-area-danger" class="TextArea__label">Label</label>
   <textarea id="text-area-danger" class="TextArea__input" name="danger" placeholder="Placeholder">Filled</textarea>
   <div class="TextArea__validationText">Danger validation text</div>
 </div>
 
-<div class="TextArea has-danger">
+<div class="TextArea TextArea--medium has-danger">
   <label for="text-area-danger-has-danger" class="TextArea__label">Label</label>
   <textarea id="text-area-danger-has-danger" class="TextArea__input" name="hasDanger" placeholder="Placeholder">
     Filled
@@ -122,7 +141,7 @@ a JS interaction class when controlled by JavaScript (`has-success`,
   </ul>
 </div>
 
-<div class="TextArea has-warning">
+<div class="TextArea TextArea--medium has-warning">
   <label for="text-area-danger-has-warning" class="TextArea__label">Label</label>
   <textarea id="text-area-danger-has-warning" class="TextArea__input" name="hasDanger" placeholder="Placeholder">
     Filled
@@ -148,7 +167,7 @@ attribute. This way your JS remains disconnected from CSS that may or may not be
 components mix CSS with JS by design and handle prefixes their own way.**
 
 ```html
-<div class="TextArea has-danger">
+<div class="TextArea TextArea--medium has-danger">
   <label for="text-area-js-validation" class="TextArea__label">Label</label>
   <textarea id="text-area-js-validation" class="TextArea__input" name="jsValidation" placeholder="Placeholder">
 Filled</textarea
@@ -164,7 +183,7 @@ be marked by adding `TextArea--disabled` modifier class, or with `is-disabled`
 JS interaction class when controlled by JavaScript:
 
 ```html
-<div class="TextArea TextArea--disabled">
+<div class="TextArea TextArea--medium TextArea--disabled">
   <label for="text-area-disabled" class="TextArea__label">Label</label>
   <textarea
     id="text-area-disabled"
@@ -174,7 +193,7 @@ JS interaction class when controlled by JavaScript:
     disabled
   ></textarea>
 </div>
-<div class="TextArea TextArea--disabled">
+<div class="TextArea TextArea--medium TextArea--disabled">
   <label for="text-area-disabled-filled" class="TextArea__label">Label</label>
   <textarea
     id="text-area-disabled-filled"

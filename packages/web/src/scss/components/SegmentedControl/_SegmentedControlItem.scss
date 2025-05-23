@@ -84,7 +84,7 @@
     $class-name: 'SegmentedControl',
     $dictionary-values: theme.$fill-variant-dictionary,
     $config: theme.$fill-variant-active-config,
-    $custom-component-infix: 'item'
+    $infix: 'item'
 );
 
 // stylelint-disable selector-max-specificity -- 5.
