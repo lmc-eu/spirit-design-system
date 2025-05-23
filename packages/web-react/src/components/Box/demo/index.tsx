@@ -2,6 +2,7 @@ import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import DocsSection from '../../../../docs/DocsSection';
 import BoxDefault from './BoxDefault';
+import BoxTextColor from './BoxTextColor';
 import BoxWithAll from './BoxWithAll';
 import BoxWithBackgroundColor from './BoxWithBackgroundColor';
 import BoxWithBackgroundGradient from './BoxWithBackgroundGradient';
@@ -28,6 +29,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     </DocsSection>
     <DocsSection title="With Radius">
       <BoxWithRadius />
+    </DocsSection>
+    <DocsSection title="With Text Color">
+      <BoxTextColor />
     </DocsSection>
     <DocsSection title="With All">
       <BoxWithAll />

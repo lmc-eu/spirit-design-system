@@ -13,9 +13,10 @@ import {
   SpaceToken,
   SpiritPolymorphicElementPropsWithRef,
   StyleProps,
+  TextColorProps,
 } from './shared';
 
-export interface BoxBaseProps extends ChildrenProps, StyleProps {
+export interface BoxBaseProps extends ChildrenProps, TextColorProps, StyleProps {
   /** The background color of the box. */
   backgroundColor?: AccentColorsType | EmotionColorsType | BackgroundColorsDictionaryType;
   /** The background gradient of the box. */
