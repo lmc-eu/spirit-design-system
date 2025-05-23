@@ -1,9 +1,31 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { BackgroundColors, BackgroundGradients, BorderColors, BorderStyles, BorderWidths } from '../../../constants';
+import {
+  BackgroundColors,
+  BackgroundGradients,
+  BorderColors,
+  BorderStyles,
+  BorderWidths,
+  TextColors,
+} from '../../../constants';
+import {
+  getAccentBackgroundColors,
+  getAccentBorderColors,
+  getAccentTextColors,
+  getEmotionBackgroundColors,
+  getEmotionBorderColors,
+  getEmotionTextColors,
+} from '../../../utils/colorObjectGenerators';
 import Box from '../Box';
 import ReadMe from '../README.md';
+
+const accentTextColorsObject = getAccentTextColors();
+const emotionTextColorsObject = getEmotionTextColors();
+const accentBorderColorsObject = getAccentBorderColors();
+const emotionBorderColorsObject = getEmotionBorderColors();
+const accentBackgroundColorsObject = getAccentBackgroundColors();
+const emotionBackgroundColorsObject = getEmotionBackgroundColors();
 
 const meta: Meta<typeof Box> = {
   title: 'Components/Box',
@@ -102,19 +124,27 @@ const meta: Meta<typeof Box> = {
     },
     borderColor: {
       control: 'select',
-      options: [...Object.values(BorderColors), undefined],
+      options: [
+        ...Object.values(BorderColors),
+        ...[...Object.values(accentBorderColorsObject), ...Object.values(emotionBorderColorsObject)],
+        undefined,
+      ],
       table: {
         type: {
-          summary: 'BorderColorsDictionaryType',
+          summary: 'BorderColorsDictionaryType | AccentColorsType | EmotionColorsType',
         },
       },
     },
     backgroundColor: {
       control: 'select',
-      options: [...Object.values(BackgroundColors), undefined],
+      options: [
+        ...Object.values(BackgroundColors),
+        ...[...Object.values(accentBackgroundColorsObject), ...Object.values(emotionBackgroundColorsObject)],
+        undefined,
+      ],
       table: {
         type: {
-          summary: 'BackgroundColorsDictionaryType',
+          summary: 'BackgroundColorsDictionaryType | AccentColorsType | EmotionColorsType',
         },
       },
     },
@@ -124,6 +154,19 @@ const meta: Meta<typeof Box> = {
       table: {
         type: {
           summary: 'BackgroundGradientsDictionaryType',
+        },
+      },
+    },
+    textColor: {
+      control: 'select',
+      options: [
+        ...Object.values(TextColors),
+        ...[...Object.values(accentTextColorsObject), ...Object.values(emotionTextColorsObject)],
+        undefined,
+      ],
+      table: {
+        type: {
+          summary: 'TextColorsDictionaryType | AccentColorsType | EmotionColorsType',
         },
       },
     },
@@ -141,6 +184,7 @@ const meta: Meta<typeof Box> = {
     borderColor: undefined,
     backgroundColor: undefined,
     backgroundGradient: undefined,
+    textColor: undefined,
   },
 };
 
