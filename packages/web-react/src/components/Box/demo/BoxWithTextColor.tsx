@@ -6,7 +6,7 @@ import Box from '../Box';
 const accentColorsObject = getAccentTextColors();
 const emotionColorsObject = getEmotionTextColors();
 
-const BoxTextColor = () => (
+const BoxWithTextColor = () => (
   <>
     <p>For demo purposes, the boxes have custom padding and background color.</p>
     {Object.values([
@@ -21,4 +21,4 @@ const BoxTextColor = () => (
   </>
 );
 
-export default BoxTextColor;
+export default BoxWithTextColor;

@@ -2,13 +2,13 @@ import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import DocsSection from '../../../../docs/DocsSection';
 import BoxDefault from './BoxDefault';
-import BoxTextColor from './BoxTextColor';
 import BoxWithAll from './BoxWithAll';
 import BoxWithBackgroundColor from './BoxWithBackgroundColor';
 import BoxWithBackgroundGradient from './BoxWithBackgroundGradient';
 import BoxWithBorder from './BoxWithBorder';
 import BoxWithCustomPadding from './BoxWithCustomPadding';
 import BoxWithRadius from './BoxWithRadius';
+import BoxWithTextColor from './BoxWithTextColor';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <StrictMode>
@@ -31,7 +31,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <BoxWithRadius />
     </DocsSection>
     <DocsSection title="With Text Color">
-      <BoxTextColor />
+      <BoxWithTextColor />
     </DocsSection>
     <DocsSection title="With All">
       <BoxWithAll />
