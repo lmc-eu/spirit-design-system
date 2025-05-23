@@ -4,13 +4,13 @@ import React from 'react';
 import {
   ariaAttributesTest,
   classNamePrefixProviderTest,
-  validationStatePropsTest,
   requiredPropsTest,
   restPropsTest,
+  sizePropsTest,
   stylePropsTest,
+  validationStatePropsTest,
   validationTextPropsTest,
   validHtmlAttributesTest,
-  sizePropsTest,
 } from '@local/tests';
 import TextArea from '../TextArea';
 

@@ -4,12 +4,12 @@ import React from 'react';
 import {
   ariaAttributesTest,
   classNamePrefixProviderTest,
-  validationStatePropsTest,
   restPropsTest,
+  sizePropsTest,
   stylePropsTest,
+  validationStatePropsTest,
   validationTextPropsTest,
   validHtmlAttributesTest,
-  sizePropsTest,
 } from '@local/tests';
 import { TextFieldType } from '../../../types';
 import TextField from '../TextField';

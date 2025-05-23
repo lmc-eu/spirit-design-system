@@ -24,6 +24,12 @@ const meta: Meta<typeof TextField> = {
         defaultValue: { summary: 'false' },
       },
     },
+    hasValidationIcon: {
+      control: 'boolean',
+      table: {
+        defaultValue: { summary: 'false' },
+      },
+    },
     helperText: {
       control: 'text',
     },
@@ -66,6 +72,13 @@ const meta: Meta<typeof TextField> = {
     placeholder: {
       control: 'text',
     },
+    size: {
+      control: 'select',
+      options: [...Object.values(Sizes), undefined],
+      table: {
+        defaultValue: { summary: Sizes.MEDIUM },
+      },
+    },
     type: {
       control: 'select',
       options: ['email', 'number', 'password', 'search', 'tel', 'text', 'url'],
@@ -85,21 +98,8 @@ const meta: Meta<typeof TextField> = {
       description:
         'The validation text. Only visible if validationState is set. Use a string `"foo"` for single validation text or an array for multiple validation texts `["foo", "bar"]`.',
     },
-    hasValidationIcon: {
-      control: 'boolean',
-      table: {
-        defaultValue: { summary: 'false' },
-      },
-    },
     value: {
       control: 'text',
-    },
-    size: {
-      control: 'select',
-      options: [...Object.values(Sizes), undefined],
-      table: {
-        defaultValue: { summary: Sizes.MEDIUM },
-      },
     },
   },
   args: {
@@ -114,11 +114,13 @@ const meta: Meta<typeof TextField> = {
     isRequired: false,
     label: 'Label',
     name: 'TextField',
+    pattern: undefined,
     placeholder: 'Placeholder',
-    type: 'text',
     size: Sizes.MEDIUM,
+    type: 'text',
     validationState: undefined,
     validationText: 'Validation text',
+    value: undefined,
   },
 };
 
