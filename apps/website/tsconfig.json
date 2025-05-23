@@ -1,0 +1,26 @@
+{
+  "extends": "../../configs/typescript-config-spirit/dom",
+  "compilerOptions": {
+    "useUnknownInCatchVariables": false,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "strict": true,
+    "moduleResolution": "node",
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@local/*": ["./src/*"],
+      "@lmc-eu/spirit-web-react": ["../../node_modules/@lmc-eu/spirit-web-react/src"]
+    },
+    "forceConsistentCasingInFileNames": true,
+    "target": "ES2017",
+    "module": "esnext",
+    "isolatedModules": true
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}
