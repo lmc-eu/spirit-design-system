@@ -3,7 +3,7 @@
 import React, { ReactNode } from 'react';
 import { Container, Footer } from '@lmc-eu/spirit-web-react';
 import useIsPage from '@local/hooks/useIsPage';
-import Header from '@local/ui/Header';
+import { Header } from '@local/ui/Header';
 // import { Cover } from '@local/ui/Cover';
 import clsx from 'clsx';
 
