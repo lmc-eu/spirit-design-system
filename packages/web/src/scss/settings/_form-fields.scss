@@ -70,13 +70,11 @@ $box-field-size-config: (
                 typography: tokens.$body-small-regular,
             ),
             tokens-tools.generate-responsive-map(
-                (
-                    property: 'border-radius',
-                    size: 'small',
-                    variable-prefix: 'form-field',
-                    token-name: 'radius',
-                    fallback: $box-field-input-border-radius,
-                )
+                $property: 'border-radius',
+                $size: 'small',
+                $variable-prefix: 'form-field',
+                $token-name: 'radius',
+                $fallback: $box-field-input-border-radius,
             )
         ),
     medium: map.merge(
@@ -85,13 +83,11 @@ $box-field-size-config: (
                 typography: tokens.$body-medium-regular,
             ),
             tokens-tools.generate-responsive-map(
-                (
-                    property: 'border-radius',
-                    size: 'medium',
-                    variable-prefix: 'form-field',
-                    token-name: 'radius',
-                    fallback: $box-field-input-border-radius,
-                )
+                $property: 'border-radius',
+                $size: 'medium',
+                $variable-prefix: 'form-field',
+                $token-name: 'radius',
+                $fallback: $box-field-input-border-radius,
             )
         ),
     large: map.merge(
@@ -100,13 +96,11 @@ $box-field-size-config: (
                 typography: tokens.$body-medium-regular,
             ),
             tokens-tools.generate-responsive-map(
-                (
-                    property: 'border-radius',
-                    size: 'large',
-                    variable-prefix: 'form-field',
-                    token-name: 'radius',
-                    fallback: $box-field-input-border-radius,
-                )
+                $property: 'border-radius',
+                $size: 'large',
+                $variable-prefix: 'form-field',
+                $token-name: 'radius',
+                $fallback: $box-field-input-border-radius,
             )
         ),
 );

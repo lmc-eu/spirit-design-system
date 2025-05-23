@@ -25,7 +25,7 @@
 // Function to generate a map of responsive values for a given property, size, and token prefix.
 //
 // Example:
-// generate-responsive-map('border-radius', 'radius', 'small', 'form-field', 4px) might return:
+// generate-responsive-map($property: 'border-radius', $token-name: 'radius',  $size: 'small', $variable-name: 'form-field', $fallback: 4px) might return:
 // (
 //   'border-radius-mobile': 4px,
 //   'border-radius-tablet': 6px,
@@ -38,13 +38,14 @@
 // * $variable-prefix: prefix used for the token variable names (e.g. 'form-field')
 // * $token-name: token name (e.g. 'radius')
 // * $fallback: value to use if token is not found
-@function generate-responsive-map($args) {
+@function generate-responsive-map(
+    $property: 'border-radius',
+    $token-name: 'radius',
+    $size: 'small',
+    $variable-prefix: 'form-field',
+    $fallback: 4px
+) {
     $result: ();
-    $property: map.get($args, 'property');
-    $size: map.get($args, 'size');
-    $variable-prefix: map.get($args, 'variable-prefix');
-    $token-name: map.get($args, 'token-name');
-    $fallback: map.get($args, 'fallback');
 
     @each $breakpoint-name, $breakpoint-value in tokens.$breakpoints {
         $key: '#{$property}-#{$breakpoint-name}';

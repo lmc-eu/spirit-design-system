@@ -44,13 +44,11 @@ $test-theme: (
 @include test.describe('generate-responsive-map function') {
     @include test.it('should return a map with responsive values for given arguments') {
         $result: tokens-tools.generate-responsive-map(
-            (
-                property: 'border-radius',
-                size: 'medium',
-                variable-prefix: 'form-field',
-                token-name: 'radius',
-                fallback: 4px,
-            )
+            $property: 'border-radius',
+            $size: 'medium',
+            $variable-prefix: 'form-field',
+            $token-name: 'radius',
+            $fallback: 4px,
         );
 
         $expected: (
@@ -64,13 +62,11 @@ $test-theme: (
 
     @include test.it('should return a map with fallback values for given arguments') {
         $result: tokens-tools.generate-responsive-map(
-            (
-                property: 'border-radius',
-                size: 'medium',
-                variable-prefix: 'form-field',
-                token-name: 'TEST',
-                fallback: 4px,
-            )
+            $property: 'border-radius',
+            $size: 'medium',
+            $variable-prefix: 'form-field',
+            $token-name: 'TEST',
+            $fallback: 4px,
         );
 
         $expected: (
