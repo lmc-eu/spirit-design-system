@@ -13,8 +13,7 @@
     "node": ">=18"
   },
   "workspaces": [
-    "apps/demo",
-    "apps/storybook",
+    "apps/*",
     "configs/*",
     "examples/*",
     "exporters/*",

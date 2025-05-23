@@ -12,6 +12,12 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@alma-oss/spirit-docsite@workspace:apps/docsite":
+  version: 0.0.0-use.local
+  resolution: "@alma-oss/spirit-docsite@workspace:apps/docsite"
+  languageName: unknown
+  linkType: soft
+
 "@almacareer/remark-config@npm:0.1.0":
   version: 0.1.0
   resolution: "@almacareer/remark-config@npm:0.1.0"
