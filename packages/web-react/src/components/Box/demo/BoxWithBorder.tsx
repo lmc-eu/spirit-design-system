@@ -1,5 +1,9 @@
 import React from 'react';
+import { getAccentTextColors, getEmotionTextColors } from '../../../utils/colorObjectGenerators';
 import Box from '../Box';
+
+const accentColorsObject = getAccentTextColors();
+const emotionColorsObject = getEmotionTextColors();
 
 const BoxWithBorder = () => (
   <>
@@ -16,6 +20,11 @@ const BoxWithBorder = () => (
     <Box padding="space-800" borderWidth="200">
       With thicker border
     </Box>
+    {Object.values([...Object.values(accentColorsObject), ...Object.values(emotionColorsObject)]).map((borderColor) => (
+      <Box padding="space-800" borderColor={borderColor} borderWidth="100">
+        With {borderColor} border color
+      </Box>
+    ))}
   </>
 );
 

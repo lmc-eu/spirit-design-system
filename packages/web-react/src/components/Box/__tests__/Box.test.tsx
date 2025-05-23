@@ -86,10 +86,10 @@ const dataProvider = [
     description: 'padding right',
   },
   {
-    prop: 'padding',
-    value: { mobile: 'space-600', tablet: 'space-800', desktop: 'space-1000' },
-    className: 'p-600 p-tablet-800 p-desktop-1000',
-    description: 'responsive padding',
+    prop: 'textColor',
+    value: 'primary',
+    className: 'text-primary',
+    description: 'text color',
   },
 ];
 

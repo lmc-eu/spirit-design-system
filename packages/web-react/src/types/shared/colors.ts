@@ -4,11 +4,11 @@ type ContentKeys<T> = keyof {
   [K in Extract<keyof T, string> as K extends `content${string}` ? K : never]: string;
 };
 
-type GenerateTextColorsType<T, Prefix extends string, C> = keyof {
+type GenerateColorsType<T, Prefix extends string, C> = keyof {
   [K in Extract<keyof T, string> as ContentKeys<T[K]> extends `content${infer Rest}`
     ? `${Prefix}-${K}-${Lowercase<Rest>}`
     : never]: never | C;
 };
 
-export type TextAccentColorsType<C = undefined> = GenerateTextColorsType<typeof accentColors, 'accent', C>;
-export type TextEmotionColorsType<C = undefined> = GenerateTextColorsType<typeof emotionColors, 'emotion', C>;
+export type AccentColorsType<C = undefined> = GenerateColorsType<typeof accentColors, 'accent', C>;
+export type EmotionColorsType<C = undefined> = GenerateColorsType<typeof emotionColors, 'emotion', C>;
