@@ -1,5 +1,6 @@
 import { ElementType, JSXElementConstructor } from 'react';
 import {
+  AccentColorsType,
   BackgroundColorsDictionaryType,
   BackgroundGradientsDictionaryType,
   BorderColorsDictionaryType,
@@ -7,6 +8,7 @@ import {
   BorderStylesDictionaryType,
   BorderWidthsDictionaryType,
   BreakpointToken,
+  EmotionColorsType,
   ChildrenProps,
   SpaceToken,
   SpiritPolymorphicElementPropsWithRef,
@@ -15,13 +17,13 @@ import {
 
 export interface BoxBaseProps extends ChildrenProps, StyleProps {
   /** The background color of the box. */
-  backgroundColor?: BackgroundColorsDictionaryType;
+  backgroundColor?: AccentColorsType | EmotionColorsType | BackgroundColorsDictionaryType;
   /** The background gradient of the box. */
   backgroundGradient?:
     | BackgroundGradientsDictionaryType
     | Partial<Record<BreakpointToken, BackgroundGradientsDictionaryType>>;
   /** The border color of the box. */
-  borderColor?: BorderColorsDictionaryType;
+  borderColor?: AccentColorsType | EmotionColorsType | BorderColorsDictionaryType;
   /** The border radius of the box. */
   borderRadius?: BorderRadiiDictionaryType | Partial<Record<BreakpointToken, BorderRadiiDictionaryType>>;
   /** The border style of the box. */

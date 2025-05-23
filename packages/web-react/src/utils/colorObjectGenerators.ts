@@ -1,5 +1,5 @@
 import { accentColors, emotionColors } from '@lmc-eu/spirit-design-tokens';
-import { TextAccentColorsType, TextEmotionColorsType } from '../types';
+import { AccentColorsType, EmotionColorsType } from '../types';
 
 /**
  * Generates a color object by processing a set of colors and formatting their keys.
@@ -33,15 +33,15 @@ export const generateColorsObject = <T extends string>(
 /**
  * Generates an object containing formatted keys for accent text colors.
  *
- * @returns {Record<string, TextAccentColorsType>} A record of formatted accent color keys.
+ * @returns {Record<string, AccentColorsType>} A record of formatted accent color keys.
  */
-export const getAccentTextColors = (): Record<string, TextAccentColorsType> =>
+export const getAccentTextColors = (): Record<string, AccentColorsType> =>
   generateColorsObject(accentColors, 'content', 'accent');
 
 /**
  * Generates an object containing formatted keys for emotion text colors.
  *
- * @returns {Record<string, TextEmotionColorsType>} A record of formatted emotion color keys.
+ * @returns {Record<string, EmotionColorsType>} A record of formatted emotion color keys.
  */
-export const getEmotionTextColors = (): Record<string, TextEmotionColorsType> =>
+export const getEmotionTextColors = (): Record<string, EmotionColorsType> =>
   generateColorsObject(emotionColors, 'content', 'emotion');

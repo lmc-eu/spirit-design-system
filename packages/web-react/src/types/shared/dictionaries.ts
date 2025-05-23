@@ -22,7 +22,7 @@ import {
   TextColors,
   ValidationStates,
 } from '../../constants';
-import { TextAccentColorsType, TextEmotionColorsType } from './colors';
+import { AccentColorsType, EmotionColorsType } from './colors';
 
 /**
  * Allow autocomplete for string literals.
@@ -93,7 +93,7 @@ export type TextColorsDictionaryKeys = keyof typeof TextColors;
 export type TextColorsDictionaryType<C = undefined> = (typeof TextColors)[TextColorsDictionaryKeys] | C;
 
 export interface TextColorProps<C> {
-  textColor?: C | TextAccentColorsType | TextEmotionColorsType | TextColorsDictionaryType;
+  textColor?: C | AccentColorsType | EmotionColorsType | TextColorsDictionaryType;
 }
 
 /* Emphasis */

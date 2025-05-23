@@ -1,5 +1,9 @@
 import React from 'react';
+import { getAccentTextColors, getEmotionTextColors } from '../../../utils/colorObjectGenerators';
 import Box from '../Box';
+
+const accentColorsObject = getAccentTextColors();
+const emotionColorsObject = getEmotionTextColors();
 
 const BoxWithBackgroundColor = () => (
   <>
@@ -11,6 +15,13 @@ const BoxWithBackgroundColor = () => (
     <Box padding="space-800" backgroundColor="tertiary">
       Tertiary Background
     </Box>
+    {Object.values([...Object.values(accentColorsObject), ...Object.values(emotionColorsObject)]).map(
+      (backgroundColor) => (
+        <Box padding="space-800" backgroundColor={backgroundColor}>
+          Background with {backgroundColor} color
+        </Box>
+      ),
+    )}
   </>
 );
 
