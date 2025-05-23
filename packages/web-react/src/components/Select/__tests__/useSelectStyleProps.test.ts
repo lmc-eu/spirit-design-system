@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { ValidationStates } from '../../../constants';
+import { Sizes, ValidationStates } from '../../../constants';
 import { useSelectStyleProps } from '../useSelectStyleProps';
 
 describe('useSelectStyleProps', () => {
@@ -41,6 +41,13 @@ describe('useSelectStyleProps', () => {
 
   it.each([Object.values(ValidationStates)])('should return field with %s', (state) => {
     const props = { validationState: state };
+    const { result } = renderHook(() => useSelectStyleProps(props));
+
+    expect(result.current.classProps.root).toBe(`Select Select--${state}`);
+  });
+
+  it.each([Object.values(Sizes)])('should return field with size %s', (state) => {
+    const props = { size: state };
     const { result } = renderHook(() => useSelectStyleProps(props));
 
     expect(result.current.classProps.root).toBe(`Select Select--${state}`);

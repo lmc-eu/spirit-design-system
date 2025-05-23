@@ -21,6 +21,7 @@ Advanced example usage:
   hasValidationIcon
   id="select-advanced"
   name="selectAdvanced"
+  size="large"
   validationState="danger"
   validationText="validation failed"
   isRequired
@@ -35,21 +36,22 @@ Advanced example usage:
 
 ## API
 
-| Name                | Type                                           | Default | Required | Description                     |
-| ------------------- | ---------------------------------------------- | ------- | -------- | ------------------------------- |
-| `children`          | `ReactNode`                                    | `null`  | ✕        | Content of the Select           |
-| `hasValidationIcon` | `bool`                                         | `false` | ✕        | Whether to show validation icon |
-| `helperText`        | `string`                                       | —       | ✕        | Custom helper text              |
-| `id`                | `string`                                       | —       | ✓        | Select and label identification |
-| `isDisabled`        | `bool`                                         | —       | ✕        | Whether is field disabled       |
-| `isFluid`           | `bool`                                         | —       | ✕        | Whether is field is fluid       |
-| `isLabelHidden`     | `bool`                                         | —       | ✕        | Whether is label hidden         |
-| `isRequired`        | `bool`                                         | —       | ✕        | Whether is field required       |
-| `label`             | `ReactNode`                                    | —       | ✕        | Label text                      |
-| `name`              | `string`                                       | —       | ✕        | Select name                     |
-| `ref`               | `ForwardedRef<HTMLSelectElement>`              | —       | ✕        | Select element reference        |
-| `validationState`   | [Validation dictionary][dictionary-validation] | —       | ✕        | Type of validation state        |
-| `validationText`    | \[`ReactNode` \| `ReactNode[]`]                | —       | ✕        | Validation text                 |
+| Name                | Type                                           | Default  | Required | Description                     |
+| ------------------- | ---------------------------------------------- | -------- | -------- | ------------------------------- |
+| `children`          | `ReactNode`                                    | `null`   | ✕        | Content of the Select           |
+| `hasValidationIcon` | `bool`                                         | `false`  | ✕        | Whether to show validation icon |
+| `helperText`        | `string`                                       | —        | ✕        | Custom helper text              |
+| `id`                | `string`                                       | —        | ✓        | Select and label identification |
+| `isDisabled`        | `bool`                                         | —        | ✕        | Whether is field disabled       |
+| `isFluid`           | `bool`                                         | —        | ✕        | Whether is field is fluid       |
+| `isLabelHidden`     | `bool`                                         | —        | ✕        | Whether is label hidden         |
+| `isRequired`        | `bool`                                         | —        | ✕        | Whether is field required       |
+| `label`             | `ReactNode`                                    | —        | ✕        | Label text                      |
+| `name`              | `string`                                       | —        | ✕        | Select name                     |
+| `ref`               | `ForwardedRef<HTMLSelectElement>`              | —        | ✕        | Select element reference        |
+| `size`              | [Size dictionary][dictionary-size]             | `medium` | ✕        | Size variant                    |
+| `validationState`   | [Validation dictionary][dictionary-validation] | —        | ✕        | Type of validation state        |
+| `validationText`    | \[`ReactNode` \| `ReactNode[]`]                | —        | ✕        | Validation text                 |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -98,6 +100,7 @@ const CustomSelect = (props: SpiritSelectProps): JSX.Element => {
 
 For detailed information see [Select][select] component or [Select][select-element] element.
 
+[dictionary-size]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#size
 [dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
