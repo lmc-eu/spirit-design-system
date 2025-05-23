@@ -5,13 +5,13 @@ const BoxWithBackgroundGradient = () => (
   <>
     <p>For demo purposes, the boxes have custom padding.</p>
     <Box padding="space-800" backgroundGradient="primary">
-      Primary Background Gradient
+      Primary background gradient
     </Box>
     <Box padding="space-800" backgroundGradient="secondary">
-      Secondary Background Gradient
+      Secondary background gradient
     </Box>
     <Box padding="space-800" backgroundGradient={{ mobile: 'primary', tablet: 'secondary', desktop: 'primary' }}>
-      Responsive Background Gradient
+      Responsive background gradient
     </Box>
   </>
 );

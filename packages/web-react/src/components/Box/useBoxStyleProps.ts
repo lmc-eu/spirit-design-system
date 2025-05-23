@@ -14,7 +14,7 @@ export interface UseBoxStyleProps<T> {
 export const useBoxStyleProps = (
   props: Partial<SpiritBoxProps<ElementType>>,
 ): UseBoxStyleProps<Partial<SpiritBoxProps<ElementType>>> => {
-  const { backgroundColor, borderColor, borderStyle, borderWidth, ...restProps } = props || {};
+  const { backgroundColor, borderColor, borderStyle, borderWidth, textColor, ...restProps } = props || {};
   const boxBackgroundClassName = useClassNamePrefix(`bg-${backgroundColor}`);
   const boxBorderClassName = useClassNamePrefix('border-');
 
@@ -23,6 +23,8 @@ export const useBoxStyleProps = (
   let boxBorderStyle = '';
   const boxBorderWidth = borderWidth ? borderWidth.replace('', boxBorderClassName) : '';
 
+  const boxTextColorClass = useClassNamePrefix(textColor ? `text-${textColor}` : '');
+
   if (borderWidth && parseInt(borderWidth, 10) > 0) {
     boxBorderStyle = `${boxBorderClassName}${borderStyle}`;
     if (!borderColor) {
@@ -30,7 +32,9 @@ export const useBoxStyleProps = (
     }
   }
 
-  const boxClasses = classNames(boxBackgroundColor, boxBorderColor, boxBorderStyle, boxBorderWidth);
+  const boxClasses = classNames(boxBackgroundColor, boxBorderColor, boxBorderStyle, boxBorderWidth, {
+    [boxTextColorClass]: !!textColor,
+  });
 
   return {
     classProps: boxClasses,

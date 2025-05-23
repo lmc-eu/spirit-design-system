@@ -77,24 +77,33 @@ Responsive values can be set for each prop using an object:
 <Box backgroundGradient={{ mobile: 'primary', tablet: 'secondary', desktop: 'primary' }}>{/* Content goes here */}</Box>
 ```
 
+## Text Color
+
+You can define text color using the `textColor` prop.
+
+```jsx
+<Box textColor="primary">{/* Content goes here */}</Box>
+```
+
 ## API
 
-| Name                 | Type                                                                                            | Default | Required | Description                    |
-| -------------------- | ----------------------------------------------------------------------------------------------- | ------- | -------- | ------------------------------ |
-| `backgroundColor`    | [Background Color dictionary][dictionary-color]                                                 | -       | ✕        | Background color of the Box    |
-| `backgroundGradient` | [Background Gradient dictionary][dictionary-gradient]                                           | -       | ✕        | Background gradient of the Box |
-| `borderColor`        | [Border Color dictionary][dictionary-border-properities]                                        | -       | ✕        | Border color of the Box        |
-| `borderRadius`       | \[`BorderRadiiDictionaryType` \| `Partial<Record<BreakpointToken, BorderRadiiDictionaryType>>`] | -       | ✕        | Border radius of the Box       |
-| `borderStyle`        | [Border Style dictionary][dictionary-border-properities]                                        | `solid` | ✕        | Border style of the Box        |
-| `borderWidth`        | [Border Width dictionary][dictionary-border-properities]                                        | -       | ✕        | Border width of the Box        |
-| `elementType`        | `ElementType`                                                                                   | `div`   | ✕        | Type of element                |
-| `padding`            | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]                               | -       | ✕        | Padding of the Box             |
-| `paddingX`           | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]                               | -       | ✕        | Horizontal padding of the Box  |
-| `paddingY`           | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]                               | -       | ✕        | Vertical padding of the Box    |
-| `paddingTop`         | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]                               | -       | ✕        | Padding top of the Box         |
-| `paddingRight`       | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]                               | -       | ✕        | Padding right of the Box       |
-| `paddingBottom`      | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]                               | -       | ✕        | Padding bottom of the Box      |
-| `paddingLeft`        | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]                               | -       | ✕        | Padding left of the Box        |
+| Name                 | Type                                                                                                                                                                       | Default | Required | Description                    |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | -------- | ------------------------------ |
+| `backgroundColor`    | \[[Background Color dictionary][dictionary-color] \| Accent Color \| [Emotion Color dictionary][dictionary-color] ✕ [Intensity dictionary][dictionary-intensity]]          | -       | ✕        | Background color of the Box    |
+| `backgroundGradient` | [Background Gradient dictionary][dictionary-gradient]                                                                                                                      | -       | ✕        | Background gradient of the Box |
+| `borderColor`        | \[[Border Color dictionary][dictionary-border-properities] \| Accent Color \| [Emotion Color dictionary][dictionary-color] ✕ [Intensity dictionary][dictionary-intensity]] | -       | ✕        | Border color of the Box        |
+| `borderRadius`       | \[`BorderRadiiDictionaryType` \| `Partial<Record<BreakpointToken, BorderRadiiDictionaryType>>`]                                                                            | -       | ✕        | Border radius of the Box       |
+| `borderStyle`        | [Border Style dictionary][dictionary-border-properities]                                                                                                                   | `solid` | ✕        | Border style of the Box        |
+| `borderWidth`        | [Border Width dictionary][dictionary-border-properities]                                                                                                                   | -       | ✕        | Border width of the Box        |
+| `elementType`        | `ElementType`                                                                                                                                                              | `div`   | ✕        | Type of element                |
+| `padding`            | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]                                                                                                          | -       | ✕        | Padding of the Box             |
+| `paddingX`           | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]                                                                                                          | -       | ✕        | Horizontal padding of the Box  |
+| `paddingY`           | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]                                                                                                          | -       | ✕        | Vertical padding of the Box    |
+| `paddingTop`         | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]                                                                                                          | -       | ✕        | Padding top of the Box         |
+| `paddingRight`       | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]                                                                                                          | -       | ✕        | Padding right of the Box       |
+| `paddingBottom`      | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]                                                                                                          | -       | ✕        | Padding bottom of the Box      |
+| `paddingLeft`        | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]                                                                                                          | -       | ✕        | Padding left of the Box        |
+| `textColor`          | \[[Text Color dictionary][dictionary-color] \| Accent Color \| [Emotion Color dictionary][dictionary-color] ✕ [Intensity dictionary][dictionary-intensity]]                | -       | ✕        | Color of the text              |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -103,6 +112,7 @@ and [escape hatches][readme-escape-hatches].
 [dictionary-color]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#color
 [dictionary-border-properities]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#border-properties
 [dictionary-gradient]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#gradient
+[dictionary-intensity]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#intensity
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props
