@@ -47,4 +47,13 @@ describe('useBoxStyleProps', () => {
 
     expect(result.current.classProps).toBe('border-basic border-dashed border-100');
   });
+
+  it('should return text color classProps', () => {
+    const props: SpiritBoxProps = {
+      textColor: 'primary',
+    };
+    const { result } = renderHook(() => useBoxStyleProps(props));
+
+    expect(result.current.classProps).toBe('text-primary');
+  });
 });

@@ -1,14 +1,29 @@
 import { accentColors, emotionColors } from '@lmc-eu/spirit-design-tokens';
 
-type ContentKeys<T> = keyof {
-  [K in Extract<keyof T, string> as K extends `content${string}` ? K : never]: string;
+type MatchingKeys<T, Prefix extends string> = keyof {
+  [K in Extract<keyof T, string> as K extends `${Prefix}${string}` ? K : never]: string;
 };
 
-type GenerateTextColorsType<T, Prefix extends string, C> = keyof {
-  [K in Extract<keyof T, string> as ContentKeys<T[K]> extends `content${infer Rest}`
-    ? `${Prefix}-${K}-${Lowercase<Rest>}`
-    : never]: never | C;
+type GenerateColorsType<T, Prefix extends string, TokenPrefix extends string, C> = keyof {
+  [K in Extract<keyof T, string> as MatchingKeys<T[K], Prefix> extends `${Prefix}${infer Rest}`
+    ? `${TokenPrefix}-${K}-${Lowercase<Rest>}`
+    : never]: C;
 };
 
-export type TextAccentColorsType<C = undefined> = GenerateTextColorsType<typeof accentColors, 'accent', C>;
-export type TextEmotionColorsType<C = undefined> = GenerateTextColorsType<typeof emotionColors, 'emotion', C>;
+export type TextAccentColorsType<C = undefined> = GenerateColorsType<typeof accentColors, 'content', 'accent', C>;
+export type BorderAccentColorsType<C = undefined> = GenerateColorsType<typeof accentColors, 'border', 'accent', C>;
+export type BackgroundAccentColorsType<C = undefined> = GenerateColorsType<
+  typeof accentColors,
+  'background',
+  'accent',
+  C
+>;
+
+export type TextEmotionColorsType<C = undefined> = GenerateColorsType<typeof emotionColors, 'content', 'emotion', C>;
+export type BorderEmotionColorsType<C = undefined> = GenerateColorsType<typeof emotionColors, 'border', 'emotion', C>;
+export type BackgroundEmotionColorsType<C = undefined> = GenerateColorsType<
+  typeof emotionColors,
+  'background',
+  'emotion',
+  C
+>;
