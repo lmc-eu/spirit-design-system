@@ -14,7 +14,7 @@ const DocumentationLayout = ({ children }: { children: ReactNode }) => {
     <>
       <Header />
       <Cover />
-      <main>{children}</main>
+      <main className="py-1100 pt-tablet-1600">{children}</main>
       <Footer
         UNSAFE_className={clsx('bg-secondary mt-1200 mt-tablet-1700 pb-1200 text-center', {
           'hide-from-visual-tests': isComponentsPage,
