@@ -4,7 +4,7 @@ import React, { ReactNode } from 'react';
 import { Container, Footer } from '@lmc-eu/spirit-web-react';
 import useIsPage from '@local/hooks/useIsPage';
 import { Header } from '@local/ui/Header';
-// import { Cover } from '@local/ui/Cover';
+import { Cover } from '@local/ui/Cover';
 import clsx from 'clsx';
 
 const DocumentationLayout = ({ children }: { children: ReactNode }) => {
@@ -14,7 +14,7 @@ const DocumentationLayout = ({ children }: { children: ReactNode }) => {
     <>
       <Header />
       <main>
-        {/* <Cover /> */}
+        <Cover />
         {children}
       </main>
       <Footer
