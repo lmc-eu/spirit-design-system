@@ -26,6 +26,16 @@ The PartnerLogo component is available in [sizes][dictionary-size].
 </PartnerLogo>
 ```
 
+## Responsive Size
+
+To create a PartnerLogo with responsive size, pass an object as the value for the `size` property, using breakpoint keys to specify different size for each screen size.
+
+```jsx
+<PartnerLogo size={{ mobile: 'small', tablet: 'medium', desktop: 'large' }}>
+  <!-- Logo goes here -->
+</PartnerLogo>
+```
+
 ℹ️ You can also make the logo adjust to the size of the container in which it is placed. See [Fluid Size](#fluid-size) section for more details.
 
 ## Disabled Safe Area
@@ -77,12 +87,12 @@ should be present.
 
 ## API
 
-| Name          | Type                               | Default  | Required | Description                                                   |
-| ------------- | ---------------------------------- | -------- | -------- | ------------------------------------------------------------- |
-| `children`    | `ReactNode`                        | `null`   | ✓        | Content of the PartnerLogo                                    |
-| `hasSafeArea` | `boolean`                          | `true`   | ✕        | If false, the PartnerLogo is displayed without safe area      |
-| `isFluid`     | `boolean`                          | `false`  | ✕        | If true, the PartnerLogo adjusts to the size of its container |
-| `size`        | [Size dictionary][dictionary-size] | `medium` | ✕        | Size of the PartnerLogo                                       |
+| Name          | Type                                                                                                              | Default  | Required | Description                                                   |
+| ------------- | ----------------------------------------------------------------------------------------------------------------- | -------- | -------- | ------------------------------------------------------------- |
+| `children`    | `ReactNode`                                                                                                       | `null`   | ✓        | Content of the PartnerLogo                                    |
+| `hasSafeArea` | `boolean`                                                                                                         | `true`   | ✕        | If false, the PartnerLogo is displayed without safe area      |
+| `isFluid`     | `boolean`                                                                                                         | `false`  | ✕        | If true, the PartnerLogo adjusts to the size of its container |
+| `size`        | \[[Size dictionary][dictionary-size] \| `Partial<Record<BreakpointToken`, [Size dictionary][dictionary-size]`>>`] | `medium` | ✕        | Size of the PartnerLogo                                       |
 
 The components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import DocsSection from '../../../../docs/DocsSection';
 import PartnerLogoDefault from './PartnerLogoDefault';
 import PartnerLogoFluid from './PartnerLogoFluid';
+import PartnerLogoResponsiveSize from './PartnerLogoResponsiveSize';
 import PartnerLogoSafeAreaDisabled from './PartnerLogoSafeAreaDisabled';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
@@ -12,6 +13,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     </DocsSection>
     <DocsSection title="Disabled safe area" hasStack={false}>
       <PartnerLogoSafeAreaDisabled />
+    </DocsSection>
+    <DocsSection title="Responsive Size" hasStack={false}>
+      <PartnerLogoResponsiveSize />
     </DocsSection>
     <DocsSection title="Fluid Size" hasStack={false}>
       <PartnerLogoFluid />

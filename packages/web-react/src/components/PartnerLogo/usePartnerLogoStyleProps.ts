@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks';
+import { useSizeClass } from '../../hooks/useSizeClass';
 import { SpiritPartnerLogoProps } from '../../types/partnerLogo';
 
 export interface PartnerLogoStyles<T> {
@@ -13,13 +14,16 @@ export const usePartnerLogoStyleProps = (props: SpiritPartnerLogoProps): Partner
   const partnerLogoClass = useClassNamePrefix('PartnerLogo');
   const partnerLogoFluidClass = `${partnerLogoClass}--fluid`;
   const partnerLogoSafeAreaClass = `${partnerLogoClass}--safeArea`;
-  const partnerLogoSizeClass = `${partnerLogoClass}--${size}`;
+  const partnerLogoSizeClass = useSizeClass(partnerLogoClass, size);
 
-  const classProps = classNames(partnerLogoClass, {
-    [partnerLogoFluidClass]: isFluid,
-    [partnerLogoSafeAreaClass]: hasSafeArea,
-    [partnerLogoSizeClass]: size,
-  });
+  const classProps = classNames(
+    partnerLogoClass,
+    {
+      [partnerLogoFluidClass]: isFluid,
+      [partnerLogoSafeAreaClass]: hasSafeArea,
+    },
+    partnerLogoSizeClass,
+  );
 
   return {
     classProps,
