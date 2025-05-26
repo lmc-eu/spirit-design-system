@@ -1,3 +1,4 @@
+import { AppProvider } from '@local/ui/AppProvider';
 import { inter } from '@local/ui/fonts';
 import { Metadata } from 'next';
 import { ReactNode } from 'react';
@@ -15,7 +16,9 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>{children}</body>
+      <body className={`${inter.className} antialiased`}>
+        <AppProvider>{children}</AppProvider>
+      </body>
     </html>
   );
 };
