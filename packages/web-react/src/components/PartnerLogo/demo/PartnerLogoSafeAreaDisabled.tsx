@@ -1,10 +1,11 @@
 import React from 'react';
+import { Flex } from '../../Flex';
 import PartnerLogoDemoFactory from './PartnerLogoDemoFactory';
 
 const PartnerLogoSafeAreaDisabled = () => (
-  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '24px' }}>
+  <Flex spacing="space-900" isWrapping>
     <PartnerLogoDemoFactory hasSafeArea={false} />
-  </div>
+  </Flex>
 );
 
 export default PartnerLogoSafeAreaDisabled;

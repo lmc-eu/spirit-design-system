@@ -1,6 +1,7 @@
 import React from 'react';
 import { Sizes } from '../../../constants';
 import { SpiritPartnerLogoProps } from '../../../types/partnerLogo';
+import { Box } from '../../Box';
 import PartnerLogo from '../PartnerLogo';
 
 export const logo = (
@@ -88,16 +89,11 @@ const PartnerLogoDemoFactory = ({ ...props }: SpiritPartnerLogoProps) => {
       {sizes.map((size) => (
         <div key={size}>
           <h3>{`Size ${size}`}</h3>
-          <div
-            style={{
-              backgroundColor: '#F2F3F5',
-              padding: '48px',
-            }}
-          >
+          <Box backgroundColor="secondary" padding="space-1200">
             <PartnerLogo size={size} {...props}>
               {logo}
             </PartnerLogo>
-          </div>
+          </Box>
         </div>
       ))}
     </>
