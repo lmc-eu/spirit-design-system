@@ -6,10 +6,13 @@
     $string: '';
 
     @for $i from 1 through list.length($list) {
-        $string: $string + list.nth($list, $i);
+        $item: list.nth($list, $i);
 
-        @if $i < list.length($list) {
-            $string: $string + $separator;
+        @if $item != null and $item != '' {
+            @if $string != '' {
+                $string: $string + $separator;
+            }
+            $string: $string + $item;
         }
     }
 
