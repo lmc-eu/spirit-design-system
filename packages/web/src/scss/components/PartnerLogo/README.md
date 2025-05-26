@@ -25,6 +25,16 @@ Use the `PartnerLogo--<size>` modifier class to change the size of the PartnerLo
 </div>
 ```
 
+## Responsive Size
+
+To create a PartnerLogo with responsive size, use the `tablet` and `desktop` infixes, e.g. `PartnerLogo--tablet--medium`.
+
+```html
+<div class="PartnerLogo--small PartnerLogo--tablet--medium PartnerLogo--desktop--large">
+  <!-- Logo goes here -->
+</div>
+```
+
 ℹ️ You can also make the logo adjust to the size of the container in which it is placed. See [Fluid Size](#fluid-size) section for more details.
 
 ## Enable Safe Area
