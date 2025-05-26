@@ -1,10 +1,11 @@
 import React from 'react';
+import { Flex } from '../../Flex';
 import PartnerLogoDemoFactory from './PartnerLogoDemoFactory';
 
 const PartnerLogoDefault = () => (
-  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '24px' }}>
+  <Flex spacing="space-900" isWrapping>
     <PartnerLogoDemoFactory />
-  </div>
+  </Flex>
 );
 
 export default PartnerLogoDefault;
