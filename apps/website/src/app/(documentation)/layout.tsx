@@ -13,10 +13,8 @@ const DocumentationLayout = ({ children }: { children: ReactNode }) => {
   return (
     <>
       <Header />
-      <main>
-        <Cover />
-        {children}
-      </main>
+      <Cover />
+      <main>{children}</main>
       <Footer
         UNSAFE_className={clsx('bg-secondary mt-1200 mt-tablet-1700 pb-1200 text-center', {
           'hide-from-visual-tests': isComponentsPage,

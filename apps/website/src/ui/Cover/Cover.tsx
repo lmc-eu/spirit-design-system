@@ -5,7 +5,7 @@ import React from 'react';
 const Cover = () => {
   return (
     <Section
-      paddingY={{ tablet: 'space-1700', desktop: 'space-1200' }}
+      paddingY={{ tablet: 'space-1700', mobile: 'space-1200' }}
       textAlignment="center"
       backgroundColor="primary"
       color="primary"
