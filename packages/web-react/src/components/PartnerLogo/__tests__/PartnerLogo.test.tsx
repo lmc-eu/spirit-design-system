@@ -40,6 +40,14 @@ describe('PartnerLogo', () => {
     expect(screen.getByText('Content')).toHaveClass(`PartnerLogo--${size}`);
   });
 
+  it('should return responsive size', () => {
+    render(<PartnerLogo size={{ mobile: 'small', tablet: 'medium', desktop: 'large' }}>Content</PartnerLogo>);
+
+    expect(screen.getByText('Content')).toHaveClass(
+      `PartnerLogo--small PartnerLogo--safeArea PartnerLogo--tablet--medium PartnerLogo--desktop--large`,
+    );
+  });
+
   it('should render without safe area', () => {
     render(<PartnerLogo hasSafeArea={false}>Content</PartnerLogo>);
 

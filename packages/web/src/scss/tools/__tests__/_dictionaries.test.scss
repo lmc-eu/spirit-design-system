@@ -415,17 +415,18 @@
                             margin-bottom: 20px,
                             border-radius: 15px,
                         ),
-                    )
+                    ),
+                    $class-name-infix: 'mobile'
                 );
             }
 
             @include test.expect() {
-                .TestFill--fill {
+                .TestFill--mobile--fill {
                     --spirit-test-fill-margin-bottom: 0;
                     --spirit-test-fill-border-radius: 5px;
                 }
 
-                .TestFill--outline {
+                .TestFill--mobile--outline {
                     --spirit-test-fill-margin-bottom: 20px;
                     --spirit-test-fill-border-radius: 15px;
                 }
