@@ -27,10 +27,10 @@ Use the `PartnerLogo--<size>` modifier class to change the size of the PartnerLo
 
 ## Responsive Size
 
-To create a PartnerLogo with responsive size, use the `tablet` and `desktop` infixes, e.g. `PartnerLogo--mobile--small`.
+To create a PartnerLogo with responsive size, use the `tablet` and `desktop` infixes, e.g. `PartnerLogo--tablet--medium`.
 
 ```html
-<div class="PartnerLogo--mobile--small PartnerLogo--tablet--medium PartnerLogo--desktop--large">
+<div class="PartnerLogo--small PartnerLogo--tablet--medium PartnerLogo--desktop--large">
   <!-- Logo goes here -->
 </div>
 ```
