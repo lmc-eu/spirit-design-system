@@ -28,6 +28,7 @@ export * from './navigation';
 export * from './pagination';
 export * from './partnerLogo';
 export * from './pill';
+export * from './productLogo';
 export * from './radio';
 export * from './scrollView';
 export * from './section';
