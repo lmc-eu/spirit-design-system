@@ -5,9 +5,7 @@ PartnerLogo is a component designed to display the partner's logo (e.g. advertis
 ```jsx
 import { PartnerLogo } from '@lmc-eu/spirit-web-react';
 
-<PartnerLogo>
-  <!-- Logo goes here -->
-</PartnerLogo>
+<PartnerLogo>{/* Logo goes here */}</PartnerLogo>;
 ```
 
 ## Sizes
@@ -16,13 +14,13 @@ The PartnerLogo component is available in [sizes][dictionary-size].
 
 ```jsx
 <PartnerLogo size="small">
-  <!-- Logo goes here -->
+  {/* Logo goes here */}
 </PartnerLogo>
 <PartnerLogo size="medium">
-  <!-- Logo goes here -->
+  {/* Logo goes here */}
 </PartnerLogo>
 <PartnerLogo size="large">
-  <!-- Logo goes here -->
+  {/* Logo goes here */}
 </PartnerLogo>
 ```
 
@@ -31,9 +29,7 @@ The PartnerLogo component is available in [sizes][dictionary-size].
 To create a PartnerLogo with responsive size, pass an object as the value for the `size` property, using breakpoint keys to specify different size for each screen size.
 
 ```jsx
-<PartnerLogo size={{ mobile: 'small', tablet: 'medium', desktop: 'large' }}>
-  <!-- Logo goes here -->
-</PartnerLogo>
+<PartnerLogo size={{ mobile: 'small', tablet: 'medium', desktop: 'large' }}>{/* Logo goes here */}</PartnerLogo>
 ```
 
 ℹ️ You can also make the logo adjust to the size of the container in which it is placed. See [Fluid Size](#fluid-size) section for more details.
@@ -43,9 +39,7 @@ To create a PartnerLogo with responsive size, pass an object as the value for th
 The PartnerLogo component can be displayed without the safe area (padding). Use `hasSafeArea` prop set to `false` to disable safe area around logo.
 
 ```jsx
-<PartnerLogo hasSafeArea={false}>
-  <!-- Logo goes here -->
-</PartnerLogo>
+<PartnerLogo hasSafeArea={false}>{/* Logo goes here */}</PartnerLogo>
 ```
 
 ### Fluid Size
@@ -54,9 +48,7 @@ To adjust the PartnerLogo to the size of its container, use the `isFluid` prop. 
 and ensures it remains vertically and horizontally aligned within the container.
 
 ```jsx
-  <PartnerLogo isFluid>
-    <!-- Logo goes here -->
-  </PartnerLogo>
+<PartnerLogo isFluid>{/* Logo goes here */}</PartnerLogo>
 ```
 
 ## Content

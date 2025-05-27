@@ -1,20 +1,17 @@
 import React from 'react';
+import { Box } from '../../Box';
+import { Flex } from '../../Flex';
 import PartnerLogo from '../PartnerLogo';
 import { logo } from './PartnerLogoDemoFactory';
 
 const PartnerLogoResponsiveSize = () => (
-  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '24px' }}>
-    <div
-      style={{
-        backgroundColor: '#F2F3F5',
-        padding: '48px',
-      }}
-    >
+  <Flex spacing="space-900" isWrapping>
+    <Box backgroundColor="secondary" padding="space-1200">
       <PartnerLogo hasSafeArea={false} size={{ mobile: 'small', tablet: 'medium', desktop: 'large' }}>
         {logo}
       </PartnerLogo>
-    </div>
-  </div>
+    </Box>
+  </Flex>
 );
 
 export default PartnerLogoResponsiveSize;

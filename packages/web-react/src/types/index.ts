@@ -26,6 +26,7 @@ export * from './link';
 export * from './modal';
 export * from './navigation';
 export * from './pagination';
+export * from './partnerLogo';
 export * from './pill';
 export * from './radio';
 export * from './scrollView';

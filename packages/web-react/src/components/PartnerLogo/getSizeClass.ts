@@ -1,7 +1,6 @@
-import { SpiritPartnerLogoSizeType } from '../types/partnerLogo';
-import { BREAKPOINT_MOBILE } from '../types/shared';
+import { BREAKPOINT_MOBILE, type SpiritPartnerLogoSizeType } from '../../types';
 
-export function useSizeClass(classNamePrefix: string, size?: SpiritPartnerLogoSizeType<string>): string | undefined {
+export function getSizeClass(classNamePrefix: string, size?: SpiritPartnerLogoSizeType<string>): string | undefined {
   if (!size) return undefined;
 
   if (typeof size === 'string') {
