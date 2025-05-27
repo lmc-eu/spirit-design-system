@@ -4,9 +4,10 @@ import React from 'react';
 import {
   ariaAttributesTest,
   classNamePrefixProviderTest,
-  validationStatePropsTest,
   restPropsTest,
+  sizePropsTest,
   stylePropsTest,
+  validationStatePropsTest,
   validationTextPropsTest,
   validHtmlAttributesTest,
 } from '@local/tests';
@@ -30,6 +31,8 @@ describe('TextField', () => {
     validHtmlAttributesTest(TextField);
 
     ariaAttributesTest(TextField);
+
+    sizePropsTest(TextField);
 
     it('should have label classname', () => {
       render(<TextField id="textfield" label="Label" type={type as TextFieldType} />);
