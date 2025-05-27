@@ -1,4 +1,6 @@
+@use 'sass:map';
 @use '@tokens' as tokens;
+@use '../tools/tokens' as tokens-tools;
 @use 'dictionaries';
 
 // Common for all form components
@@ -62,18 +64,45 @@ $box-field-label-margin-bottom: tokens.$space-400;
 
 $box-field-size-dictionary: dictionaries.$size;
 $box-field-size-config: (
-    small: (
-        height: 32px,
-        typography: tokens.$body-small-regular,
-    ),
-    medium: (
-        height: 40px,
-        typography: tokens.$body-medium-regular,
-    ),
-    large: (
-        height: 48px,
-        typography: tokens.$body-medium-regular,
-    ),
+    small: map.merge(
+            (
+                height: 32px,
+                typography: tokens.$body-small-regular,
+            ),
+            tokens-tools.generate-responsive-map(
+                $property: 'border-radius',
+                $size: 'small',
+                $variable-prefix: 'form-field',
+                $token-name: 'radius',
+                $fallback: $box-field-input-border-radius,
+            )
+        ),
+    medium: map.merge(
+            (
+                height: 40px,
+                typography: tokens.$body-medium-regular,
+            ),
+            tokens-tools.generate-responsive-map(
+                $property: 'border-radius',
+                $size: 'medium',
+                $variable-prefix: 'form-field',
+                $token-name: 'radius',
+                $fallback: $box-field-input-border-radius,
+            )
+        ),
+    large: map.merge(
+            (
+                height: 48px,
+                typography: tokens.$body-medium-regular,
+            ),
+            tokens-tools.generate-responsive-map(
+                $property: 'border-radius',
+                $size: 'large',
+                $variable-prefix: 'form-field',
+                $token-name: 'radius',
+                $fallback: $box-field-input-border-radius,
+            )
+        ),
 );
 
 $validation-states: (
