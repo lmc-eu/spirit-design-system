@@ -12,6 +12,7 @@ import {
 } from '@supernovaio/sdk-exporters';
 import { exportConfiguration } from '../../config';
 import { TYPOGRAPHY_SUBSTITUTE_FONT } from '../constants';
+import { getDeviceAlias, getDeviceTokenValue } from './deviceHelpers';
 import { toCamelCase } from './stringHelper';
 
 export const tokenVariableName = (token: Token, tokenGroups: Array<TokenGroup>, hasParentPrefix: boolean): string => {
@@ -22,7 +23,10 @@ export const tokenVariableName = (token: Token, tokenGroups: Array<TokenGroup>, 
     parent = null;
   }
 
-  return NamingHelper.codeSafeVariableNameForToken(token, StringCase.paramCase, parent, '');
+  const devicePart = getDeviceAlias(token);
+  const variableName = NamingHelper.codeSafeVariableNameForToken(token, StringCase.paramCase, parent, '');
+
+  return devicePart !== '' ? getDeviceTokenValue(variableName, devicePart) : variableName;
 };
 
 export const normalizeZeroValueWithUnit = (value: string | number, unit: string): string | number => {

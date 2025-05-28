@@ -23,7 +23,27 @@ exampleColorsTokens.set('actionColorRef', {
     },
     referencedTokenId: null,
   },
-} as ColorToken);
+  properties: [
+    {
+      name: 'Collection',
+      options: [
+        {
+          id: 'theme-tokens-id',
+          name: 'Theme tokens',
+        },
+        {
+          id: 'primitives-id',
+          name: 'Primitives',
+        },
+        {
+          id: 'global-tokens-id',
+          name: 'Global tokens',
+        },
+      ],
+    },
+  ],
+  propertyValues: { collection: 'theme-tokens-id' },
+} as unknown as ColorToken);
 exampleColorsTokens.set('backgroundColorRef', {
   id: 'backgroundColorRef',
   name: 'primary',
@@ -46,4 +66,24 @@ exampleColorsTokens.set('backgroundColorRef', {
     },
     referencedTokenId: null,
   },
-} as ColorToken);
+  properties: [
+    {
+      name: 'Collection',
+      options: [
+        {
+          id: 'theme-tokens-id',
+          name: 'Theme tokens',
+        },
+        {
+          id: 'primitives-id',
+          name: 'Primitives',
+        },
+        {
+          id: 'global-tokens-id',
+          name: 'Global tokens',
+        },
+      ],
+    },
+  ],
+  propertyValues: { collection: 'theme-tokens-id' },
+} as unknown as ColorToken);
