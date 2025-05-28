@@ -1,8 +1,21 @@
 import { Supernova, Token, TokenGroup, TokenTheme } from '@supernovaio/sdk-exporters';
-import { commonThemedFilesData, FileData, nonThemedFilesData, themedFilesData } from '../config/fileConfig';
-import { GLOBAL_DIRECTORY, JS_DIRECTORY, SCSS_DIRECTORY, THEMES_DIRECTORY } from '../constants';
+import {
+  commonThemedFilesData,
+  devicesFilesData,
+  FileData,
+  nonThemedFilesData,
+  themedFilesData,
+} from '../config/fileConfig';
+import { DEVICES_DIRECTORY, GLOBAL_DIRECTORY, JS_DIRECTORY, SCSS_DIRECTORY, THEMES_DIRECTORY } from '../constants';
 import { indentAndFormat } from '../formatters/stylesFormatter';
+import {
+  filterAllCollections,
+  filterDeviceCollections,
+  filterThemesByCollection,
+  getCollectionId,
+} from '../helpers/collectionsHelper';
 import { filterColorCollections } from '../helpers/colorHelper';
+import { getDeviceThemes } from '../helpers/deviceHelpers';
 import { toCamelCase } from '../helpers/stringHelper';
 import { generateFileContent } from './contentGenerator';
 
@@ -82,12 +95,44 @@ export const generateOutputFilesByThemes = async (
 ): Promise<{ path: string; fileName: string; content: string }[]> => {
   const outputFiles: { path: string; fileName: string; content: string }[] = [];
   const filteredColorCollections = filterColorCollections(tokens);
+  const filteredDeviceCollections = filterDeviceCollections(tokens);
+  const filteredGlobalCollections = filterAllCollections(tokens);
+  const deviceCollectionId = getCollectionId(filteredDeviceCollections);
+
+  // themes from color collections and omits device themes
+  const filteredThemes = filterThemesByCollection(themes, deviceCollectionId, true);
+
+  // themes from device collections
+  const filteredDevices = filterThemesByCollection(themes, deviceCollectionId, false);
+
+  // Compute themed tokens for all themes in parallel
+  const allThemes = await Promise.all(
+    filteredThemes.map(async (theme) => {
+      const themedTokens = sdk.tokens.computeTokensByApplyingThemes(tokens, filteredColorCollections, [theme]);
+
+      return { themedTokens, theme };
+    }),
+  );
+
+  // Compute themed tokens for all devices in parallel
+  const allDevices = await Promise.all(
+    filteredDevices.map(async (theme) => {
+      const deviceTokens = sdk.tokens.computeTokensByApplyingThemes(tokens, filteredDeviceCollections, [theme]);
+
+      return { deviceTokens, theme };
+    }),
+  );
+
+  const deviceTokens: Token[] = getDeviceThemes(allDevices);
 
   // Generate global files for non-themed tokens
-  const globalFiles = generateFiles(tokens, mappedTokens, tokenGroups, nonThemedFilesData);
-  const globalJsFiles = generateFiles(tokens, mappedTokens, tokenGroups, nonThemedFilesData, true);
+  const globalFiles = generateFiles(filteredGlobalCollections, mappedTokens, tokenGroups, nonThemedFilesData);
+  const globalJsFiles = generateFiles(filteredGlobalCollections, mappedTokens, tokenGroups, nonThemedFilesData, true);
   const globalBarrelFile = generateBarrelFile(globalFiles);
   const globalJsBarrelFile = generateBarrelFile(globalJsFiles, true);
+  const forwardDevices = deviceTokens.length > 0 ? `@forward '${DEVICES_DIRECTORY}';\n` : '';
+  const exportDevices = deviceTokens.length > 0 ? `export * from './${DEVICES_DIRECTORY}';\n` : '';
+
   outputFiles.push(
     ...globalFiles.map((file) => ({
       path: `./${SCSS_DIRECTORY}/${GLOBAL_DIRECTORY}`,
@@ -113,22 +158,13 @@ export const generateOutputFilesByThemes = async (
   outputFiles.push({
     path: `./${SCSS_DIRECTORY}/`,
     fileName: '@tokens.scss',
-    content: `@forward '${GLOBAL_DIRECTORY}';\n@forward '${THEMES_DIRECTORY}';\n`,
+    content: `${forwardDevices}@forward '${GLOBAL_DIRECTORY}';\n@forward '${THEMES_DIRECTORY}';\n`,
   });
   outputFiles.push({
     path: `./${JS_DIRECTORY}/`,
     fileName: 'index.ts',
-    content: `export * from './${GLOBAL_DIRECTORY}';\nexport * from './${THEMES_DIRECTORY}';\n`,
+    content: `${exportDevices}export * from './${GLOBAL_DIRECTORY}';\nexport * from './${THEMES_DIRECTORY}';\n`,
   });
-
-  // Compute themed tokens for all themes in parallel
-  const allThemes = await Promise.all(
-    themes.map(async (theme) => {
-      const themedTokens = sdk.tokens.computeTokensByApplyingThemes(tokens, filteredColorCollections, [theme]);
-
-      return { themedTokens, theme };
-    }),
-  );
 
   // Generate files for each theme
   for (const { themedTokens, theme } of allThemes) {
@@ -161,8 +197,8 @@ export const generateOutputFilesByThemes = async (
   }
 
   // Generate root themes file
-  const rootThemesFileContent = generateThemesRootFile(themes);
-  const rootTsThemesFileContent = generateThemesRootFile(themes, true);
+  const rootThemesFileContent = generateThemesRootFile(filteredThemes);
+  const rootTsThemesFileContent = generateThemesRootFile(filteredThemes, true);
   const rootScssThemesFile = "@forward 'color-tokens';\n";
   const rootJsThemesFile = "export * from './colorTokens';\n";
   const colorTokensFile = generateFiles(
@@ -205,6 +241,37 @@ export const generateOutputFilesByThemes = async (
       content: file.content,
     })),
   );
+
+  // Generate a file for device collection
+  if (deviceTokens.length > 0) {
+    const deviceFile = generateFiles(deviceTokens, mappedTokens, tokenGroups, devicesFilesData, false);
+    const deviceTsFile = generateFiles(deviceTokens, mappedTokens, tokenGroups, devicesFilesData, true);
+    const deviceBarrelFile = generateBarrelFile(deviceFile);
+    const deviceTsBarrelFile = generateBarrelFile(deviceTsFile, true);
+
+    outputFiles.push(
+      ...deviceFile.map((file) => ({
+        path: `./${SCSS_DIRECTORY}/${DEVICES_DIRECTORY}/`,
+        fileName: `_${file.fileName}.scss`,
+        content: file.content,
+      })),
+      ...deviceTsFile.map((file) => ({
+        path: `./${JS_DIRECTORY}/${DEVICES_DIRECTORY}/`,
+        fileName: `${file.fileName}.ts`,
+        content: file.content,
+      })),
+    );
+    outputFiles.push({
+      path: `./${SCSS_DIRECTORY}/${DEVICES_DIRECTORY}/`,
+      fileName: 'index.scss',
+      content: deviceBarrelFile,
+    });
+    outputFiles.push({
+      path: `./${JS_DIRECTORY}/${DEVICES_DIRECTORY}/`,
+      fileName: 'index.ts',
+      content: deviceTsBarrelFile,
+    });
+  }
 
   return outputFiles;
 };
