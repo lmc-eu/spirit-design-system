@@ -64,4 +64,12 @@ export const themedFilesData: FileData[] = [
   },
 ];
 
+export const devicesFilesData: FileData[] = [
+  {
+    fileName: 'devices',
+    tokenTypes: [TokenType.dimension, TokenType.string],
+    sortByNumValue: false,
+  },
+];
+
 export const commonThemedFilesData: FileData[] = [{ fileName: 'color-tokens', tokenTypes: [TokenType.color] }];

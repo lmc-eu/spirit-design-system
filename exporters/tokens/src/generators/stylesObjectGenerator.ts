@@ -6,6 +6,7 @@ import {
   normalizeFirstNamePart,
   deepMergeObjects,
 } from '../helpers/objectHelper';
+import { getDeviceAlias } from '../helpers/deviceHelpers';
 import { sortTokens, tokenVariableName, typographyValue } from '../helpers/tokenHelper';
 import { toCamelCase } from '../helpers/stringHelper';
 import { COLOR_JS_SUFFIX, COLOR_KEY, COLOR_SCSS_SUFFIX, TYPOGRAPHY_KEY } from '../constants';
@@ -55,7 +56,13 @@ export const handleNonTypographyTokens = (
         ? `${toCamelCase(tokenVariableName(token, tokenGroups, hasParentPrefix))}`
         : `$${tokenVariableName(token, tokenGroups, hasParentPrefix)}`;
       const tokenAlias = getTokenAlias(token, hasJsOutput);
-      currentObject[tokenAlias] = tokenValue;
+      const devicePart = getDeviceAlias(token);
+
+      if (devicePart !== '') {
+        currentObject[tokenAlias] = { [devicePart]: tokenValue };
+      } else {
+        currentObject[tokenAlias] = tokenValue;
+      }
     } else {
       currentObject[hasJsOutput ? toCamelCase(modifiedPart) : modifiedPart] = currentObject[modifiedPart] || {};
       currentObject = currentObject[hasJsOutput ? toCamelCase(modifiedPart) : modifiedPart] as StylesObjectType;

@@ -1,5 +1,6 @@
 import { Token, TokenGroup, TypographyToken } from '@supernovaio/sdk-exporters';
 import { exampleColorsTokens } from '../../../tests/fixtures/exampleColorTokens';
+import { exampleDeviceUpdatedTokens } from '../../../tests/fixtures/exampleDeviceTokens';
 import { exampleDimensionAndStringTokens } from '../../../tests/fixtures/exampleDimensionAndStringTokens';
 import { exampleGroups } from '../../../tests/fixtures/exampleGroups';
 import { exampleTypographyTokens } from '../../../tests/fixtures/exampleTypographyTokens';
@@ -107,6 +108,18 @@ describe('stylesObjectGenerator', () => {
           },
         },
         description: 'should generate object from typography tokens with js output',
+        hasJsOutput: true,
+      },
+      {
+        tokens: exampleDeviceUpdatedTokens,
+        expectedStyles: { $grids: { spacing: { mobile: '$grid-spacing-mobile' } } },
+        description: 'should generate device object from tokens',
+        hasJsOutput: false,
+      },
+      {
+        tokens: exampleDeviceUpdatedTokens,
+        expectedStyles: { grids: { spacing: { mobile: 'gridSpacingMobile' } } },
+        description: 'should generate device object from tokens with js output',
         hasJsOutput: true,
       },
     ];
