@@ -8,7 +8,12 @@ import {
 } from '../config/fileConfig';
 import { DEVICES_DIRECTORY, GLOBAL_DIRECTORY, JS_DIRECTORY, SCSS_DIRECTORY, THEMES_DIRECTORY } from '../constants';
 import { indentAndFormat } from '../formatters/stylesFormatter';
-import { filterAllCollections, filterDeviceCollections, getCollectionId } from '../helpers/collectionsHelper';
+import {
+  filterAllCollections,
+  filterDeviceCollections,
+  filterThemesByCollection,
+  getCollectionId,
+} from '../helpers/collectionsHelper';
 import { filterColorCollections } from '../helpers/colorHelper';
 import { getDeviceThemes } from '../helpers/deviceHelpers';
 import { toCamelCase } from '../helpers/stringHelper';
@@ -91,23 +96,14 @@ export const generateOutputFilesByThemes = async (
   const outputFiles: { path: string; fileName: string; content: string }[] = [];
   const filteredColorCollections = filterColorCollections(tokens);
   const filteredDeviceCollections = filterDeviceCollections(tokens);
+  const filteredGlobalCollections = filterAllCollections(tokens);
   const deviceCollectionId = getCollectionId(filteredDeviceCollections);
 
   // themes from color collections and omits device themes
-  const filteredThemes = themes.filter((theme) => {
-    const collectionId = theme.overriddenTokens?.[0]?.propertyValues?.collection;
-
-    return !collectionId || collectionId !== deviceCollectionId; // Exclude device themes
-  });
+  const filteredThemes = filterThemesByCollection(themes, deviceCollectionId, true);
 
   // themes from device collections
-  const filteredDevices = themes.filter((theme) => {
-    const collectionId = theme.overriddenTokens?.[0]?.propertyValues?.collection;
-
-    return collectionId === deviceCollectionId;
-  });
-
-  const filteredTokens = filterAllCollections(tokens); // returns all tokens except device tokens
+  const filteredDevices = filterThemesByCollection(themes, deviceCollectionId, false);
 
   // Compute themed tokens for all themes in parallel
   const allThemes = await Promise.all(
@@ -118,7 +114,7 @@ export const generateOutputFilesByThemes = async (
     }),
   );
 
-  // Compute device tokens for all filtered devices in parallel
+  // Compute themed tokens for all devices in parallel
   const allDevices = await Promise.all(
     filteredDevices.map(async (theme) => {
       const deviceTokens = sdk.tokens.computeTokensByApplyingThemes(tokens, filteredDeviceCollections, [theme]);
@@ -127,15 +123,15 @@ export const generateOutputFilesByThemes = async (
     }),
   );
 
-  const deviceThemes: Token[] = getDeviceThemes(allDevices);
+  const deviceTokens: Token[] = getDeviceThemes(allDevices);
 
   // Generate global files for non-themed tokens
-  const globalFiles = generateFiles(filteredTokens, mappedTokens, tokenGroups, nonThemedFilesData);
-  const globalJsFiles = generateFiles(filteredTokens, mappedTokens, tokenGroups, nonThemedFilesData, true);
+  const globalFiles = generateFiles(filteredGlobalCollections, mappedTokens, tokenGroups, nonThemedFilesData);
+  const globalJsFiles = generateFiles(filteredGlobalCollections, mappedTokens, tokenGroups, nonThemedFilesData, true);
   const globalBarrelFile = generateBarrelFile(globalFiles);
   const globalJsBarrelFile = generateBarrelFile(globalJsFiles, true);
-  const forwardDevices = deviceThemes.length > 0 ? `@forward '${DEVICES_DIRECTORY}';\n` : '';
-  const exportDevices = deviceThemes.length > 0 ? `export * from './${DEVICES_DIRECTORY}';\n` : '';
+  const forwardDevices = deviceTokens.length > 0 ? `@forward '${DEVICES_DIRECTORY}';\n` : '';
+  const exportDevices = deviceTokens.length > 0 ? `export * from './${DEVICES_DIRECTORY}';\n` : '';
 
   outputFiles.push(
     ...globalFiles.map((file) => ({
@@ -247,9 +243,9 @@ export const generateOutputFilesByThemes = async (
   );
 
   // Generate a file for device collection
-  if (deviceThemes.length > 0) {
-    const deviceFile = generateFiles(deviceThemes, mappedTokens, tokenGroups, devicesFilesData, false);
-    const deviceTsFile = generateFiles(deviceThemes, mappedTokens, tokenGroups, devicesFilesData, true);
+  if (deviceTokens.length > 0) {
+    const deviceFile = generateFiles(deviceTokens, mappedTokens, tokenGroups, devicesFilesData, false);
+    const deviceTsFile = generateFiles(deviceTokens, mappedTokens, tokenGroups, devicesFilesData, true);
     const deviceBarrelFile = generateBarrelFile(deviceFile);
     const deviceTsBarrelFile = generateBarrelFile(deviceTsFile, true);
 

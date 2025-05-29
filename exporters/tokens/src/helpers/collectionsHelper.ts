@@ -1,4 +1,4 @@
-import { Token } from '@supernovaio/sdk-exporters';
+import { Token, TokenTheme } from '@supernovaio/sdk-exporters';
 import { TOKEN_COLLECTION_DEVICES_NAME, TOKEN_PROPERTY_NAME } from '../constants';
 
 /**
@@ -52,4 +52,34 @@ export const filterAllCollections = (tokens: Token[]) => {
  */
 export const getCollectionId = (tokens: Token[]): string | boolean | number | undefined => {
   return tokens.find((item) => item.propertyValues?.collection)?.propertyValues?.collection;
+};
+
+/**
+ * Retrieves the collection ID from a theme.
+ *
+ * @param {TokenTheme} theme - The theme object containing overridden tokens.
+ * @returns {string | boolean | number | undefined} - The collection ID if found, otherwise undefined.
+ */
+export const getThemeCollectionId = (theme: TokenTheme): string | boolean | number | undefined => {
+  return theme.overriddenTokens?.[0]?.propertyValues?.collection;
+};
+
+/**
+ * Filters themes based on their collection ID and an exclusion flag.
+ *
+ * @param {TokenTheme[]} themes - Array of themes to filter.
+ * @param {string | boolean | number | undefined} deviceCollectionId - The collection ID to compare against.
+ * @param {boolean} exclude - Whether to exclude themes matching the collection ID.
+ * @returns {TokenTheme[]} - Array of filtered themes.
+ */
+export const filterThemesByCollection = (
+  themes: TokenTheme[],
+  deviceCollectionId: string | boolean | number | undefined,
+  exclude: boolean,
+): TokenTheme[] => {
+  return themes.filter((theme) => {
+    const collectionId = getThemeCollectionId(theme);
+
+    return exclude ? collectionId !== deviceCollectionId : collectionId === deviceCollectionId;
+  });
 };
