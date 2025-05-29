@@ -1,9 +1,21 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { BackgroundColors, BackgroundGradients, BorderColors, BorderStyles, BorderWidths } from '../../../constants';
+import {
+  BackgroundColors,
+  BackgroundGradients,
+  BorderColors,
+  BorderStyles,
+  BorderWidths,
+  TextColors,
+} from '../../../constants';
+import { getAccentTextColors, getEmotionTextColors } from '../../../utils/colorObjectGenerators';
 import Box from '../Box';
 import ReadMe from '../README.md';
+
+const accentColorsObject = getAccentTextColors();
+const emotionColorsObject = getEmotionTextColors();
+const colorValues = [...Object.values(accentColorsObject), ...Object.values(emotionColorsObject)];
 
 const meta: Meta<typeof Box> = {
   title: 'Components/Box',
@@ -102,19 +114,19 @@ const meta: Meta<typeof Box> = {
     },
     borderColor: {
       control: 'select',
-      options: [...Object.values(BorderColors), undefined],
+      options: [...Object.values(BorderColors), ...colorValues, undefined],
       table: {
         type: {
-          summary: 'BorderColorsDictionaryType',
+          summary: 'BorderColorsDictionaryType | AccentColorsType | EmotionColorsType',
         },
       },
     },
     backgroundColor: {
       control: 'select',
-      options: [...Object.values(BackgroundColors), undefined],
+      options: [...Object.values(BackgroundColors), ...colorValues, undefined],
       table: {
         type: {
-          summary: 'BackgroundColorsDictionaryType',
+          summary: 'BackgroundColorsDictionaryType | AccentColorsType | EmotionColorsType',
         },
       },
     },
@@ -124,6 +136,15 @@ const meta: Meta<typeof Box> = {
       table: {
         type: {
           summary: 'BackgroundGradientsDictionaryType',
+        },
+      },
+    },
+    textColor: {
+      control: 'select',
+      options: [...Object.values(TextColors), ...colorValues, undefined],
+      table: {
+        type: {
+          summary: 'TextColorsDictionaryType | AccentColorsType | EmotionColorsType',
         },
       },
     },
@@ -141,6 +162,7 @@ const meta: Meta<typeof Box> = {
     borderColor: undefined,
     backgroundColor: undefined,
     backgroundGradient: undefined,
+    textColor: undefined,
   },
 };
 
