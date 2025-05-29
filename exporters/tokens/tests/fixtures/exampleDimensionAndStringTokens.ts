@@ -19,6 +19,30 @@ const testString: StringTokenValue = {
   referencedTokenId: null,
 };
 
+const testProperties = [
+  {
+    name: 'Collection',
+    options: [
+      {
+        id: 'theme-tokens-id',
+        name: 'Theme tokens',
+      },
+      {
+        id: 'primitives-id',
+        name: 'Primitives',
+      },
+      {
+        id: 'global-tokens-id',
+        name: 'Global tokens',
+      },
+      {
+        id: 'device-tokens-id',
+        name: 'Device',
+      },
+    ],
+  },
+];
+
 export const exampleDimensionAndStringTokens = new Map<string, Token>();
 exampleDimensionAndStringTokens.set('dimensionRef', {
   id: 'dimensionRef',
@@ -29,7 +53,10 @@ exampleDimensionAndStringTokens.set('dimensionRef', {
     name: 'Grid/spacing/desktop',
   },
   value: testDimension,
-} as DimensionToken);
+  properties: testProperties,
+  propertyValues: { collection: 'global-tokens-id' },
+} as unknown as DimensionToken);
+
 exampleDimensionAndStringTokens.set('stringRef', {
   id: 'stringRef',
   name: 'Columns',
@@ -39,7 +66,9 @@ exampleDimensionAndStringTokens.set('stringRef', {
     name: 'Grid/Columns',
   },
   value: testString,
-} as StringToken);
+  properties: testProperties,
+  propertyValues: { collection: 'global-tokens-id' },
+} as unknown as StringToken);
 
 export const exampleInvariantTokens = new Map<string, Token>();
 exampleInvariantTokens.set('radiiRef', {
@@ -55,4 +84,6 @@ exampleInvariantTokens.set('radiiRef', {
     measure: 9999,
     referencedTokenId: null,
   },
-} as DimensionToken);
+  properties: testProperties,
+  propertyValues: { collection: 'global-tokens-id' },
+} as unknown as DimensionToken);

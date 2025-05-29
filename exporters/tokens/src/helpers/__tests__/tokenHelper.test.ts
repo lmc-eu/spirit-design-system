@@ -1,4 +1,5 @@
 import { Token, TokenGroup, TypographyToken } from '@supernovaio/sdk-exporters';
+import { exampleDeviceUpdatedTokens } from '../../../tests/fixtures/exampleDeviceTokens';
 import { exampleDimensionAndStringTokens } from '../../../tests/fixtures/exampleDimensionAndStringTokens';
 import { exampleGroups } from '../../../tests/fixtures/exampleGroups';
 import { exampleTypographyTokens, expectedTypographyValue } from '../../../tests/fixtures/exampleTypographyTokens';
@@ -21,25 +22,36 @@ const dataProvider = [
     hasParentPrefix: true,
     description: 'with parent prefix',
     expectedVariableName: 'grid-spacing-desktop',
+    tokenRef: exampleDimensionAndStringTokens.get('dimensionRef'),
   },
   {
     hasParentPrefix: false,
     description: 'without parent prefix',
     expectedVariableName: 'desktop',
+    tokenRef: exampleDimensionAndStringTokens.get('dimensionRef'),
+  },
+  {
+    hasParentPrefix: false,
+    description: 'with device suffix',
+    expectedVariableName: 'spacing-mobile',
+    tokenRef: exampleDeviceUpdatedTokens.get('stringRef1'),
   },
 ];
 
 describe('tokenHelper', () => {
-  describe.each(dataProvider)('tokenVariableName', ({ hasParentPrefix, description, expectedVariableName }) => {
-    it(`should return the expected variable name for exampleToken ${description} parent prefix`, () => {
-      const mockedToken: Token = exampleDimensionAndStringTokens.get('dimensionRef') as Token;
-      const mockedTokenGroups: Array<TokenGroup> = exampleGroups;
+  describe.each(dataProvider)(
+    'tokenVariableName',
+    ({ hasParentPrefix, description, expectedVariableName, tokenRef }) => {
+      it(`should return the expected variable name for exampleToken ${description} parent prefix`, () => {
+        const mockedToken: Token = tokenRef as Token;
+        const mockedTokenGroups: Array<TokenGroup> = exampleGroups;
 
-      const result = tokenVariableName(mockedToken, mockedTokenGroups, hasParentPrefix);
+        const result = tokenVariableName(mockedToken, mockedTokenGroups, hasParentPrefix);
 
-      expect(result).toBe(expectedVariableName);
-    });
-  });
+        expect(result).toBe(expectedVariableName);
+      });
+    },
+  );
 
   describe('formatTokenStyleByOutput', () => {
     it('should return the expected formatted token name with unit', () => {
