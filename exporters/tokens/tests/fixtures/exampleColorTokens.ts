@@ -42,7 +42,7 @@ exampleColorsTokens.set('actionColorRef', {
       ],
     },
   ],
-  propertyValues: { Collection: 'theme-tokens-id' },
+  propertyValues: { collection: 'theme-tokens-id' },
 } as unknown as ColorToken);
 exampleColorsTokens.set('backgroundColorRef', {
   id: 'backgroundColorRef',
@@ -85,5 +85,5 @@ exampleColorsTokens.set('backgroundColorRef', {
       ],
     },
   ],
-  propertyValues: { Collection: 'theme-tokens-id' },
+  propertyValues: { collection: 'theme-tokens-id' },
 } as unknown as ColorToken);
