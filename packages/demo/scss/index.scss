@@ -97,6 +97,11 @@ body {
     white-space: normal;
 }
 
+.docs-Box--multiline {
+    overflow: unset;
+    white-space: unset;
+}
+
 .docs-Placeholder {
     display: flex;
     flex-direction: column;
