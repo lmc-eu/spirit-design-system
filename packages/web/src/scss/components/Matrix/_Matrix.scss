@@ -1,0 +1,69 @@
+// 1. To use CSS subgrid, the number of grid rows must be explicitly set. We use a default value of 100 rows which
+//    should be enough for most use cases. Since there is a zero row gap by default, empty grid rows automatically
+//    collapse.
+//
+// 2. Number of grid rows and columns, column and row gaps, and item rows are customizable via custom properties.
+//
+//    a) Columns, rows, and item rows are assigned manually so we can use the `repeat()` function and the `span`
+//       keyword.
+//    b) Column gap and row gap are applied directly as CSS declarations by the `create-cascade()` mixin.
+//
+// 3. Force subgrid on direct descendants. Only effective when the descendant's `display` is set to `grid`.
+//
+// 4. Place the descendants in the Matrix layout and make them inherit its grid rows.
+
+@use '@tokens' as tokens;
+@use '../../tools/reset';
+@use '../../tools/responsive-properties';
+@use 'theme';
+
+$_default-rows: 100; // 1.
+
+.Matrix {
+    @include reset.list();
+
+    // 2.a
+    @include responsive-properties.create-cascade(
+        $property: null,
+        $input-custom-property-base-name: '#{tokens.$css-variable-prefix}matrix-columns',
+        $breakpoints: theme.$breakpoints,
+        $fallback-value: 3
+    );
+    @include responsive-properties.create-cascade(
+        $property: null,
+        $input-custom-property-base-name: '#{tokens.$css-variable-prefix}matrix-rows',
+        $breakpoints: theme.$breakpoints,
+        $fallback-value: $_default-rows
+    );
+    @include responsive-properties.create-cascade(
+        $property: null,
+        $input-custom-property-base-name: '#{tokens.$css-variable-prefix}matrix-item-rows',
+        $breakpoints: theme.$breakpoints,
+        $fallback-value: $_default-rows
+    );
+
+    // 2.b
+    @include responsive-properties.create-cascade(
+        $property: 'column-gap',
+        $input-custom-property-base-name: '#{tokens.$css-variable-prefix}matrix-spacing-x',
+        $breakpoints: theme.$breakpoints,
+        $fallback-value: theme.$default-column-gap
+    );
+    @include responsive-properties.create-cascade(
+        $property: 'row-gap',
+        $input-custom-property-base-name: '#{tokens.$css-variable-prefix}matrix-spacing-y',
+        $breakpoints: theme.$breakpoints,
+        $fallback-value: 0
+    );
+
+    display: grid;
+    grid-template-columns: repeat(var(--#{tokens.$css-variable-prefix}matrix-columns-internal), 1fr); // 2.a
+    grid-template-rows: repeat(var(--#{tokens.$css-variable-prefix}matrix-rows-internal), auto); // 2.a
+}
+
+// stylelint-disable-next-line selector-max-universal -- 3.
+.Matrix > * {
+    // stylelint-disable-next-line declaration-no-important -- 3.
+    grid-template-rows: subgrid !important; // 3.
+    grid-row: span var(--#{tokens.$css-variable-prefix}matrix-item-rows-internal); // 2.a, 4.
+}
