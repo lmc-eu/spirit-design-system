@@ -1,0 +1,48 @@
+// 1. Establish a random number of grid rows that is high enough to accommodate the usual number of pricing plan
+//    features. The number of rows must be defined to allow for the subgrid layout of the subcomponents. In other words,
+//    auto rows cannot be used. The default number of rows can be overridden from outside of the component via a custom
+//    property.
+//
+//    👉 When multiple pricing plans are wrapped in a Matrix component, their headers (including individual header
+//    items), bodies, and (optional) footers are vertically aligned with each other. In this scenario, Matrix replaces
+//    the default pricing plan rows with its own rows.
+//
+// 2. Establish named grid lines for subcomponents to make the placement of individual plan items (mostly in the header)
+//    easier. An additional element is needed to do so because `grid-template-rows` of the root element can be
+//    overridden to `subgrid` by the component's parent (typically the Matrix component), making the line names
+//    unavailable.
+
+@use '@tokens' as tokens;
+@use '../../tools/typography';
+@use 'theme';
+
+.PricingPlan {
+    @include typography.generate(theme.$typography);
+
+    display: grid;
+    grid-template-rows: repeat(var(--#{tokens.$css-variable-prefix}pricing-plan-rows, theme.$rows), auto); // 1.
+    min-width: theme.$min-width;
+    color: theme.$color;
+    border: theme.$border-width solid theme.$border-color;
+    border-radius: theme.$border-radius;
+}
+
+.PricingPlan__layout {
+    display: grid;
+    grid-template-rows:
+        subgrid
+        [header-start badge]
+        [title]
+        [subtitle]
+        [price]
+        [action]
+        [note]
+        [header-end body-start]; // 2.
+
+    grid-row: 1 / -1;
+}
+
+.PricingPlan--highlighted {
+    border-color: theme.$highlight-border-color;
+    background-color: theme.$highlight-background-color;
+}

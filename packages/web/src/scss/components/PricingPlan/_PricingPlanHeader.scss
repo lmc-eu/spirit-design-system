@@ -1,0 +1,81 @@
+// 1. Use a subgrid layout to allow for the header items to be aligned vertically across multiple pricing plans.
+//
+//    👉 Please note that the pricing plans must be wrapped in the Matrix component for this to work. Otherwise, the
+//    header items will be just stacked vertically.
+//
+// 2. Since the badge at the top of the header is optional, we use an additional element for the header content, so we
+//    don't have to add `padding-inline` to individual header items.
+//
+// 3. Again, the additional container re-applies the subgrid layout to align the header items vertically across multiple
+//    pricing plans.
+//
+// 4. We use named grid lines (established by the parent subcomponent) to place the header and its items in the correct
+//    header rows so they are aligned vertically even when some of the header items are missing from any pricing plan.
+
+@use '../../tools/typography';
+@use 'theme';
+
+.PricingPlanHeader__badge,
+.PricingPlanHeader__content {
+    padding-inline: theme.$padding-x;
+}
+
+.PricingPlanHeader {
+    display: grid;
+    grid-template-rows: subgrid; // 1.
+    grid-row: header-start / header-end; // 4.
+    text-align: center;
+
+    &:not(:last-child) {
+        border-bottom: theme.$border-width solid theme.$border-color;
+    }
+}
+
+.PricingPlanHeader__badge {
+    grid-row-start: badge;
+    padding-block: theme.$header-badge-padding-y;
+    color: theme.$header-badge-color;
+    border-top-left-radius: calc(#{theme.$border-radius} - #{theme.$border-width});
+    border-top-right-radius: calc(#{theme.$border-radius} - #{theme.$border-width});
+    background-color: theme.$header-badge-background-color;
+}
+
+// 2.
+.PricingPlanHeader__content {
+    display: grid;
+    grid-template-rows: subgrid; // 3.
+    grid-row: title / header-end; // 4.
+    padding-block: theme.$header-padding-top theme.$header-padding-bottom;
+}
+
+.PricingPlanHeader__title {
+    @include typography.generate(theme.$header-title-typography);
+
+    grid-row-start: title;
+    margin-bottom: 0;
+}
+
+.PricingPlanHeader__subtitle {
+    grid-row-start: subtitle;
+}
+
+.PricingPlanHeader__price {
+    @include typography.generate(theme.$header-price-typography);
+
+    grid-row-start: price;
+    margin-block: theme.$header-price-margin-top theme.$header-price-margin-bottom;
+}
+
+.PricingPlanHeader__action {
+    display: grid;
+    grid-row-start: action;
+}
+
+.PricingPlanHeader__content:not(:has(> .PricingPlanHeader__price)) > .PricingPlanHeader__action {
+    margin-top: theme.$header-action-margin-top;
+}
+
+.PricingPlanHeader__note {
+    grid-row-start: note;
+    margin-top: theme.$header-note-margin-top;
+}

@@ -1,0 +1,45 @@
+@use '@tokens' as tokens;
+@use '../../tools/tokens' as tokens-tools;
+
+$min-width: 328px;
+$rows: 100;
+$typography: tokens.$body-small-regular;
+$padding-x: tokens.$space-800;
+$border-width: tokens.$border-width-100;
+$border-radius: tokens.$radius-500;
+$border-color: tokens.$border-basic;
+$color: tokens.$text-primary;
+$background-color: tokens.$background-primary;
+
+// @deprecated We are deprecating the usage of the 'get-variable-if-exists' function.
+// In the next major version, we can be sure the required token will be present so no check will be needed.
+$highlight-border-color: tokens-tools.get-variable-if-exists('accent-02-border-basic');
+$highlight-background-color: tokens-tools.get-variable-if-exists('accent-02-background-subtle');
+$highlight-body-feature-icon-color: tokens-tools.get-variable-if-exists('accent-02-content-basic');
+
+$header-padding-top: tokens.$space-700;
+$header-padding-bottom: tokens.$space-900;
+$header-badge-padding-y: tokens.$space-500;
+$header-badge-color: tokens.$emotion-success-content-basic;
+$header-badge-background-color: tokens.$emotion-success-background-subtle;
+$header-title-typography: tokens.$heading-xsmall-semibold;
+$header-price-typography: tokens.$heading-medium-semibold;
+$header-price-margin-top: tokens.$space-800;
+$header-price-margin-bottom: tokens.$space-700;
+$header-action-margin-top: tokens.$space-700;
+$header-note-margin-top: tokens.$space-700;
+
+$body-padding-top: tokens.$space-700;
+$body-padding-bottom: tokens.$space-1000;
+$body-color: tokens.$text-secondary;
+$body-feature-spacing: tokens.$space-900;
+$body-feature-row-gap: tokens.$space-300;
+$body-feature-column-gap: tokens.$space-500;
+$body-feature-title-typography: tokens.$body-medium-semibold;
+$body-feature-title-color: tokens.$text-primary;
+$body-feature-icon-margin-top: tokens.$space-300;
+$body-feature-icon-color: tokens.$emotion-success-content-basic;
+
+$footer-rows: 1;
+$footer-padding-top: tokens.$space-700;
+$footer-padding-bottom: tokens.$space-900;
