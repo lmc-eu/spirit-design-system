@@ -1,0 +1,4 @@
+@use '@tokens' as tokens;
+
+$breakpoints: tokens.$breakpoints;
+$default-column-gap: tokens.$space-700;

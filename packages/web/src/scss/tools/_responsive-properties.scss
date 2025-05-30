@@ -7,7 +7,7 @@
 // Mixin to generate custom properties cascade with fallbacks
 //
 // Parameters are:
-// * $property: the CSS property to apply the value to
+// * $property: the CSS property to apply the value to; set to `null` if you want to apply the value manually
 // * $input-custom-property-base-name: the base name of the responsive CSS custom property passed in via inline styles (API), without the `--` prefix
 // * $breakpoints: the breakpoints map
 // * $fallback-value: the default value in case no input properties have been set; CSS value or breakpoint-to-value map
@@ -24,7 +24,7 @@
 //    d) Dynamic list of all responsive custom property names c).
 //
 // 2. Create custom property cascade with fallbacks. This is where the magic happens! 🎩
-// 3. Assign the custom property cascade (stored in the internal custom property 1.a) to the CSS property `$property`.
+// 3. If `$property` is set, assign the custom property cascade (stored in the internal custom property 1.a) to the CSS property `$property`.
 // 4. Prevent the custom property value from being inherited by **any child elements** in case of nesting. Write out all
 //    custom properties at once to reduce the number of declaration blocks.
 //
@@ -68,7 +68,7 @@
             #{$internal-custom-property-name}: var(#{string.unquote($responsive-custom-property-name)}, #{$fallback});
 
             // 3.
-            @if $breakpoint-value == 0 {
+            @if $property and ($breakpoint-value == 0) {
                 #{$property}: var(#{$internal-custom-property-name});
             }
         }

@@ -40,12 +40,12 @@
         }
     }
 
-    @include test.it('should return correct property with custom property cascade and no inheritance prevention') {
+    @include test.it('should return correct custom property cascade, no property, and no inheritance prevention') {
         @include test.assert() {
             @include test.output() {
                 .test {
                     @include responsive-properties.create-cascade(
-                        $property: 'row-gap',
+                        $property: null,
                         $input-custom-property-base-name: 'gap',
                         $breakpoints: (
                             'mobile': 0,
@@ -60,8 +60,6 @@
             @include test.expect() {
                 .test {
                     --gap-internal: var(--gap, 16px);
-
-                    row-gap: var(--gap-internal);
                 }
 
                 @media (width >= 768px) {
