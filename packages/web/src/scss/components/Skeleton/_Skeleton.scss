@@ -32,18 +32,18 @@
     }
 
     .Skeleton--shape {
-        display: inline-flex;
-        flex-shrink: 0;
-        width: var(--#{tokens.$css-variable-prefix}skeleton-shape-width);
-        height: var(--#{tokens.$css-variable-prefix}skeleton-shape-height);
-        border: theme.$shape-border-width solid theme.$shape-border-color;
-
         @include responsive-properties.create-cascade(
             $property: 'border-radius',
             $input-custom-property-base-name: '#{tokens.$css-variable-prefix}skeleton-shape-radius',
             $breakpoints: theme.$breakpoints,
             $fallback-value: theme.$shape-default-border-radius
         );
+
+        display: inline-flex;
+        flex-shrink: 0;
+        width: var(--#{tokens.$css-variable-prefix}skeleton-shape-width);
+        height: var(--#{tokens.$css-variable-prefix}skeleton-shape-height);
+        border: theme.$shape-border-width solid theme.$shape-border-color;
     }
 
     .Skeleton__item,

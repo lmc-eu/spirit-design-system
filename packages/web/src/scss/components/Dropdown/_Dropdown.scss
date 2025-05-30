@@ -11,10 +11,6 @@
     $infix: breakpoint.get-modifier('infix', $breakpoint-name, $breakpoint-value);
 
     @include breakpoint.up($breakpoint-value) {
-        .Dropdown[class*='Dropdown--#{$infix}alignment'] {
-            display: flex;
-        }
-
         @include dictionaries.generate-alignments(
             $class-name: 'Dropdown',
             $dictionary-values: theme.$alignment-x-dictionary,
@@ -27,5 +23,8 @@
             $axis: 'y',
             $infix: $infix
         );
+        .Dropdown[class*='Dropdown--#{$infix}alignment'] {
+            display: flex;
+        }
     }
 }
