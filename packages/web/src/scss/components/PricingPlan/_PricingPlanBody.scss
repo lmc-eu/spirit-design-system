@@ -1,0 +1,84 @@
+// 1. Make space for the footer, no matter it's present or not. Since the empty grid rows collapse, there won't be any
+//    undesired vertical space in case the footer is not there.
+//
+// 2. Use `margin-top` instead of `gap` to avoid the gap being added between empty grid rows.
+//
+// 3. Optionally, using the subgrid layout, the pricing plan features can be aligned across pricing plans if they are
+//    all marked as comparable.
+//
+//    👉 Please note that the pricing plans must be wrapped in the Matrix component for this to work. Otherwise, the
+//    body items will be just stacked vertically.
+//
+// 4. Leave space for optional description.
+
+@use '../../tools/typography';
+@use 'theme';
+
+.PricingPlanBody {
+    display: grid;
+    grid-row: body-start / (-1 - theme.$footer-rows); // 1.
+    align-content: start;
+    padding-inline: theme.$padding-x;
+    padding-block: theme.$body-padding-top theme.$body-padding-bottom;
+    color: theme.$body-color;
+
+    &:not(:last-child) {
+        border-bottom: theme.$border-width solid theme.$border-color;
+    }
+}
+
+.PricingPlanBody__featureList:not(:first-child) {
+    margin-top: theme.$body-feature-spacing; // 2.
+}
+
+.PricingPlanBody__featureItem {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+        'icon title'
+        '. description';
+    gap: theme.$body-feature-row-gap theme.$body-feature-column-gap;
+    align-content: start;
+
+    &:not(:first-child) {
+        margin-top: theme.$body-feature-spacing; // 2.
+    }
+}
+
+.PricingPlanBody__featureTitle {
+    display: contents;
+}
+
+.PricingPlanBody__featureTitle > svg {
+    margin-top: theme.$body-feature-icon-margin-top;
+    color: theme.$body-feature-icon-color;
+}
+
+.PricingPlanBody__featureTitleText {
+    @include typography.generate(theme.$body-feature-title-typography);
+
+    grid-area: title;
+    color: theme.$body-feature-title-color;
+}
+
+.PricingPlanBody__featureDescription {
+    grid-area: description;
+}
+
+.PricingPlan--highlighted .PricingPlanBody__featureTitle > svg {
+    color: theme.$highlight-body-feature-icon-color;
+}
+
+.PricingPlan--comparableFeatures .PricingPlanBody,
+.PricingPlan--comparableFeatures .PricingPlanBody__featureList {
+    grid-template-rows: subgrid; // 3.
+}
+
+.PricingPlan--comparableFeatures .PricingPlanBody__featureList {
+    display: grid;
+    grid-row: 1 / -1;
+
+    &:not(:first-child) {
+        grid-row-start: 2; // 4.
+    }
+}
