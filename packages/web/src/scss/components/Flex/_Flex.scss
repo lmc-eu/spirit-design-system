@@ -32,6 +32,23 @@
     $infix: breakpoint.get-modifier('infix', $breakpoint-name, $breakpoint-value);
 
     @include breakpoint.up($breakpoint-value) {
+        @include dictionaries.generate-alignments(
+            $class-name: 'Flex',
+            $dictionary-values: theme.$alignment-x-dictionary,
+            $axis: 'x',
+            $properties: (
+                'justify-content',
+                'justify-items',
+            ),
+            $infix: $infix
+        );
+        @include dictionaries.generate-alignments(
+            $class-name: 'Flex',
+            $dictionary-values: theme.$alignment-y-dictionary,
+            $axis: 'y',
+            $infix: $infix
+        );
+
         // @deprecated The 'row' direction will be removed in the next major version.
         // Migration: delete 'row' selector
         // @see https://jira.almacareer.tech/browse/DS-1629 - Remove 'row' selector
@@ -69,22 +86,5 @@
         .Flex--#{$infix}noWrap {
             flex-wrap: nowrap; // 3.
         }
-
-        @include dictionaries.generate-alignments(
-            $class-name: 'Flex',
-            $dictionary-values: theme.$alignment-x-dictionary,
-            $axis: 'x',
-            $properties: (
-                'justify-content',
-                'justify-items',
-            ),
-            $infix: $infix
-        );
-        @include dictionaries.generate-alignments(
-            $class-name: 'Flex',
-            $dictionary-values: theme.$alignment-y-dictionary,
-            $axis: 'y',
-            $infix: $infix
-        );
     }
 }

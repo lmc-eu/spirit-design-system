@@ -5,10 +5,6 @@
 @use 'theme';
 
 .Grid {
-    display: grid;
-    grid-template-columns: repeat(theme.$columns, 1fr);
-    width: 100%;
-
     @include reset.list();
     @include responsive-properties.create-cascade(
         $property: 'column-gap',
@@ -22,6 +18,10 @@
         $breakpoints: theme.$breakpoints,
         $fallback-value: theme.$default-spacings
     );
+
+    display: grid;
+    grid-template-columns: repeat(theme.$columns, 1fr);
+    width: 100%;
 }
 
 @each $breakpoint-name, $breakpoint-value in theme.$breakpoints {

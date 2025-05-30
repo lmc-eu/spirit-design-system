@@ -4,11 +4,11 @@
 @use 'tools';
 
 .Container {
+    @include tools.paddings(theme.$container-paddings, theme.$container-breakpoints);
+
     width: 100%;
     padding-inline: var(--container-padding-inline);
     margin-inline: auto;
-
-    @include tools.paddings(theme.$container-paddings, theme.$container-breakpoints);
 }
 
 @include dictionaries.generate-sizes(
