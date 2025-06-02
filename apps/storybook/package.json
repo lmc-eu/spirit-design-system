@@ -26,10 +26,12 @@
     "@storybook/test": "8.6.14",
     "@storybook/theming": "8.6.14",
     "@vitejs/plugin-react": "4.5.0",
+    "postcss": "8.5.4",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "storybook": "8.6.14",
     "typescript": "5.7.3",
-    "vite": "6.1.0"
+    "vite": "6.1.0",
+    "vite-raw-plugin": "1.0.2"
   }
 }
