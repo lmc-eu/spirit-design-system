@@ -47,6 +47,7 @@ export type TabLinkProps<E extends ElementType = 'a'> = {
    * @default 'a'
    */
   elementType?: E;
+  forTabPane?: TabId;
 } & TabLinkBaseProps;
 
 export type SpiritTabLinkProps<E extends ElementType = 'a'> = TabLinkProps<E> &
