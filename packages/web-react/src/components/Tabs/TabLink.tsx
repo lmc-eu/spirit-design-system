@@ -5,6 +5,7 @@ import React, { type ElementType, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
 import { type PolymorphicRef, type SpiritTabLinkProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
+import { useTabContext } from './TabContext';
 import { useTabsStyleProps } from './useTabsStyleProps';
 
 const defaultProps: SpiritTabLinkProps = {
@@ -14,9 +15,10 @@ const defaultProps: SpiritTabLinkProps = {
 /* We need an exception for components exported with forwardRef */
 /* eslint no-underscore-dangle: ['error', { allow: ['_TabLink'] }] */
 const _TabLink = <E extends ElementType = 'a'>(props: SpiritTabLinkProps<E>, ref: PolymorphicRef<E>): JSX.Element => {
+  const { selectedId } = useTabContext();
   const propsWithDefaults = { ...defaultProps, ...props };
-  const { elementType: ElementTag = 'a', children, itemProps = {}, ...restProps } = propsWithDefaults;
-  const { classProps } = useTabsStyleProps();
+  const { elementType: ElementTag = 'a', children, forTabPane, itemProps = {}, ...restProps } = propsWithDefaults;
+  const { classProps } = useTabsStyleProps({ selectedId, forTabPane });
   const { styleProps: itemStyleProps, props: itemTransferProps } = useStyleProps(itemProps);
   const mergedStyleProps = mergeStyleProps(ElementTag, { classProps: classProps.link });
 
