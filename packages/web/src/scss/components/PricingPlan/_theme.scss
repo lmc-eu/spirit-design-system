@@ -1,5 +1,8 @@
 @use '@tokens' as tokens;
+@use '../../tools/tokens' as tokens-tools;
 
+$min-width: 328px;
+$rows: 100;
 $typography: tokens.$body-small-regular;
 $padding-x: tokens.$space-800;
 $border-width: tokens.$border-width-100;
@@ -8,8 +11,10 @@ $border-color: tokens.$border-basic;
 $color: tokens.$text-primary;
 $background-color: tokens.$background-primary;
 
-$highlight-border-color: tokens.$accent-02-border-basic;
-$highlight-background-color: tokens.$accent-02-background-subtle;
+// @deprecated We are deprecating the usage of the 'get-variable-if-exists' function.
+// In the next major version, we can be sure the required token will be present so no check will be needed.
+$highlight-border-color: tokens-tools.get-variable-if-exists('accent-02-border-basic');
+$highlight-background-color: tokens-tools.get-variable-if-exists('accent-02-background-subtle');
 
 $header-padding-top: tokens.$space-700;
 $header-padding-bottom: tokens.$space-900;
@@ -32,5 +37,6 @@ $body-feature-title-typography: tokens.$body-medium-semibold;
 $body-feature-title-color: tokens.$text-primary;
 $body-feature-icon-margin-top: tokens.$space-300;
 
+$footer-rows: 1;
 $footer-padding-top: tokens.$space-700;
 $footer-padding-bottom: tokens.$space-900;

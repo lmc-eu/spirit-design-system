@@ -6,19 +6,15 @@
 // 3. Optionally, using the subgrid layout, the pricing plan features can be aligned across pricing plans if they are
 //    all marked as comparable.
 //
-//    a) The feature list spans the entire body.
-//    b) The feature items always take up two rows.
-//
 //    👉 Please note that the pricing plans must be wrapped in the Matrix component for this to work. Otherwise, the
 //    body items will be just stacked vertically.
 
 @use '../../tools/typography';
-@use 'settings';
 @use 'theme';
 
 .PricingPlanBody {
     display: grid;
-    grid-row: body-start / (-1 - settings.$footer-rows); // 1.
+    grid-row: body-start / (-1 - theme.$footer-rows); // 1.
     align-content: start;
     padding-inline: theme.$padding-x;
     padding-block: theme.$body-padding-top theme.$body-padding-bottom;
@@ -43,11 +39,15 @@
     }
 }
 
-.PricingPlanBody__featureItem > svg {
+.PricingPlanBody__featureTitle {
+    display: contents;
+}
+
+.PricingPlanBody__featureTitle > svg {
     margin-top: theme.$body-feature-icon-margin-top;
 }
 
-.PricingPlanBody__featureTitle {
+.PricingPlanBody__featureTitleText {
     @include typography.generate(theme.$body-feature-title-typography);
 
     grid-area: title;
@@ -59,16 +59,11 @@
 }
 
 .PricingPlan--comparable .PricingPlanBody,
-.PricingPlan--comparable .PricingPlanBody__featureList,
-.PricingPlan--comparable .PricingPlanBody__featureItem {
+.PricingPlan--comparable .PricingPlanBody__featureList {
     grid-template-rows: subgrid; // 3.
 }
 
 .PricingPlan--comparable .PricingPlanBody__featureList {
     display: grid;
-    grid-row: 1 / -1; // 3.a
-}
-
-.PricingPlan--comparable .PricingPlanBody__featureItem {
-    grid-row-end: span 2; // 3.b
+    grid-row: 1 / -1;
 }
