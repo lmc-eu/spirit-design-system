@@ -174,7 +174,8 @@
 // * $dictionary-values: list of the dictionary values to validate the $config keys against
 // * $config: map of the properties to generate, their value is the suffix of the token variable
 // * $custom-component-infix: custom component infix (for parent selector variant with child CSS variables)
-@mixin generate-variants($class-name, $dictionary-values, $config, $custom-component-infix: '') {
+// * $class-name-infix: infix to add to the class name
+@mixin generate-variants($class-name, $dictionary-values, $config, $custom-component-infix: '', $class-name-infix: '') {
     $component-infix: spirit-string.convert-pascal-case-to-kebab-case(
         spirit-string.remove-prefix($class-name, 'UNSTABLE_')
     );
@@ -185,7 +186,8 @@
 
     @each $key, $variables in $config {
         @if validate-dictionary-value($dictionary-values, $key) {
-            .#{$class-name}--#{$key} {
+            $class-name-complete: ($class-name, $class-name-infix, $key);
+            .#{spirit-list.to-string($class-name-complete, '--')} {
                 @each $property-name, $property-value in $variables {
                     --#{tokens.$css-variable-prefix}#{$component-infix}#{$custom-component-infix}-#{$property-name}: #{$property-value};
                 }

@@ -1,5 +1,6 @@
 @use 'theme';
 @use '@tokens' as tokens;
+@use '../../tools/breakpoint';
 @use '../../tools/dictionaries';
 
 .PartnerLogo {
@@ -19,11 +20,18 @@
     height: var(--#{tokens.$css-variable-prefix}partner-logo-image-height);
 }
 
-@include dictionaries.generate-sizes(
-    $class-name: 'PartnerLogo',
-    $dictionary-values: theme.$size-dictionary,
-    $config: theme.$size-config
-);
+@each $breakpoint-name, $breakpoint-value in theme.$breakpoints {
+    $infix: breakpoint.get-modifier('infix', $breakpoint-name, $breakpoint-value);
+
+    @include breakpoint.up($breakpoint-value) {
+        @include dictionaries.generate-variants(
+            $class-name: 'PartnerLogo',
+            $dictionary-values: theme.$size-dictionary,
+            $config: theme.$size-config,
+            $class-name-infix: if($breakpoint-name == mobile, '', $breakpoint-name)
+        );
+    }
+}
 
 .PartnerLogo--fluid {
     display: flex;

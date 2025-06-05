@@ -1,7 +1,12 @@
-import { ChildrenProps, SizesDictionaryType, StyleProps } from './shared';
+import { BreakpointToken, ChildrenProps, SizesDictionaryType, StyleProps } from './shared';
 
-export interface SpiritPartnerLogoProps<S = void> extends ChildrenProps, StyleProps {
+export type SpiritPartnerLogoSizeType<S> =
+  | SizesDictionaryType<S>
+  | S
+  | Partial<Record<BreakpointToken, SizesDictionaryType<S>>>;
+
+export interface SpiritPartnerLogoProps<S = string> extends ChildrenProps, StyleProps {
   hasSafeArea?: boolean;
   isFluid?: boolean;
-  size?: SizesDictionaryType<S> | S;
+  size?: SpiritPartnerLogoSizeType<S>;
 }
