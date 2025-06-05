@@ -1,0 +1,8 @@
+@use 'theme';
+
+.PricingPlanFooter {
+    grid-row-start: -1;
+    padding-inline: theme.$padding-x;
+    padding-block: theme.$footer-padding-top theme.$footer-padding-bottom;
+    text-align: center;
+}

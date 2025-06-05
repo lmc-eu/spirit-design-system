@@ -58,7 +58,11 @@ Matrix to align multiple [Stack][stack] layouts:
 
 As of now, the following components are compatible with the Matrix layout:
 
+- [PricingPlan][pricing-plan]
 - [Stack][stack]
+
+👉 Use Matrix with multiple [Pricing Plan][pricing-plan] components to create
+aligned, easy-to-read pricing overviews.
 
 ## Customization
 
@@ -228,6 +232,7 @@ As of now, only **single-column components** are supported in Matrix.
 [grid]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Grid/README.md
 [scroll-view]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/ScrollView/README.md#horizontal-scrolling
 [stack]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Stack/README.md
+[pricing-plan]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/PricingPlan/README.md
 [mdn-grid]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout
 [mdn-grid-row]: https://developer.mozilla.org/en-US/docs/Glossary/Grid_Row
 [mdn-subgrid]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Subgrid
