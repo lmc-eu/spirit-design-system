@@ -32,10 +32,10 @@ const ViewsLayout = ({ views, params }: ViewsLayoutProps) => {
           React
         </TabLink>
         <TabLink elementType={NextLink} href={`/components/${component}/web-preview`} forTabPane="web-preview">
-          Web Preview
+          Web (Preview)
         </TabLink>
         <TabLink elementType={NextLink} href={`/components/${component}/react-preview`} forTabPane="react-preview">
-          React Preview
+          React (Preview)
         </TabLink>
       </TabList>
       <TabContent>{views}</TabContent>

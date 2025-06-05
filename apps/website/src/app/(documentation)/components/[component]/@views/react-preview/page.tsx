@@ -1,10 +1,20 @@
 import { Container, TabPane } from '@lmc-eu/spirit-web-react';
+import { ucFirst } from '@local/lib/helpers';
 import React from 'react';
 
-const ReactPreviewTabPage = async () => {
+interface ReactPreviewTabProps {
+  params: Promise<{ component: string }>;
+}
+
+const ReactPreviewTabPage = async ({ params }: ReactPreviewTabProps) => {
+  const { component } = await params;
+  const { default: Preview } = await import(`@lmc-eu/spirit-web-react/src/components/${ucFirst(component)}/preview`);
+
   return (
     <TabPane id="react-preview">
-      <Container>react preview</Container>
+      <Container>
+        <Preview />
+      </Container>
     </TabPane>
   );
 };
