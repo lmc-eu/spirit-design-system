@@ -1,5 +1,7 @@
 @use 'sass:map';
 @use '@tokens' as tokens;
+@use '../../settings/form-fields' as form-fields-settings;
+@use '../../tools/dictionaries';
 @use '../../tools/form-fields' as form-fields-tools;
 @use '../../tools/string' as spirit-string;
 @use 'theme';
@@ -49,6 +51,12 @@ $_field-name: 'TextArea';
     @include form-fields-tools.helper-text();
 }
 
+@include dictionaries.generate-sizes(
+    $class-name: $_field-name,
+    $dictionary-values: form-fields-settings.$box-field-size-dictionary,
+    $config: theme.$input-size-config,
+    $infix: 'input'
+);
 @include form-fields-tools.input-field-validation-states($_field-name);
 
 .TextArea--disabled > .TextArea__label {
