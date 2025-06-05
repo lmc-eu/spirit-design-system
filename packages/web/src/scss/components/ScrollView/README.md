@@ -1,6 +1,6 @@
 # ScrollView
 
-ScrollView makes long content scrollable. On its edges, it provides indication of whether there is more content to scroll to.
+ScrollView makes long content scrollable. On its edges, it provides an indication of whether there is more content to scroll to.
 
 ## JavaScript Plugin
 
@@ -37,35 +37,43 @@ For vertical scrolling, you need to add the `ScrollView--vertical` class to the 
 Analogically, add the `ScrollView--horizontal` class to the container element and set the `data-spirit-direction` attribute to
 `horizontal` to achieve horizontal scrolling.
 
+⚠️ To use horizontal ScrollView, its width must be limited. Otherwise, the content will simply overflow the container.
+You can do so in many ways in CSS. We recommend applying either `display: grid` on the container in your CSS, or adding
+our `d-grid` utility class to it.
+
 👉 For text content, you may need to explicitly set the `white-space` CSS property to `nowrap` on the content element to prevent the
 content from wrapping.
 
 ```html
-<div class="ScrollView ScrollView--horizontal" data-spirit-toggle="scrollView" data-spirit-direction="horizontal">
-  <div class="ScrollView__viewport" data-spirit-element="viewport">
-    <div class="ScrollView__content" data-spirit-element="content">
-      <p class="mb-700" style="white-space: nowrap">Lorem ipsum dolor sit amet, consectetuer adipiscing elit…</p>
+<div class="g-grid">
+  <div class="ScrollView ScrollView--horizontal" data-spirit-toggle="scrollView" data-spirit-direction="horizontal">
+    <div class="ScrollView__viewport" data-spirit-element="viewport">
+      <div class="ScrollView__content" data-spirit-element="content">
+        <p class="mb-700" style="white-space: nowrap">Lorem ipsum dolor sit amet, consectetuer adipiscing elit…</p>
+      </div>
     </div>
+    <div class="ScrollView__overflowDecorators ScrollView__overflowDecorators--shadows" aria-hidden="true"></div>
   </div>
-  <div class="ScrollView__overflowDecorators ScrollView__overflowDecorators--shadows" aria-hidden="true"></div>
 </div>
 ```
 
 👉 For other content types, you may need to provide fixed width to the content element (or elements) to force scrolling.
 
 ```html
-<div class="ScrollView ScrollView--horizontal" data-spirit-toggle="scrollView" data-spirit-direction="horizontal">
-  <div class="ScrollView__viewport" data-spirit-element="viewport">
-    <div class="ScrollView__content" data-spirit-element="content">
-      <div class="Grid Grid--cols-4 mb-700">
-        <div style="width: 20rem">1/4</div>
-        <div style="width: 20rem">1/4</div>
-        <div style="width: 20rem">1/4</div>
-        <div style="width: 20rem">1/4</div>
+<div class="g-grid">
+  <div class="ScrollView ScrollView--horizontal" data-spirit-toggle="scrollView" data-spirit-direction="horizontal">
+    <div class="ScrollView__viewport" data-spirit-element="viewport">
+      <div class="ScrollView__content" data-spirit-element="content">
+        <div class="Grid Grid--cols-4 mb-700">
+          <div style="width: 20rem">1/4</div>
+          <div style="width: 20rem">1/4</div>
+          <div style="width: 20rem">1/4</div>
+          <div style="width: 20rem">1/4</div>
+        </div>
       </div>
     </div>
+    <div class="ScrollView__overflowDecorators ScrollView__overflowDecorators--shadows" aria-hidden="true"></div>
   </div>
-  <div class="ScrollView__overflowDecorators ScrollView__overflowDecorators--shadows" aria-hidden="true"></div>
 </div>
 ```
 
@@ -104,7 +112,7 @@ You can customize the shadows by overriding the following CSS variables:
 
 ## Scrollbar
 
-Depending on user's operating system and browser, the scrollbar may be hidden by default, or take up space in the container element.
+Depending on user's operating system and browser, the scrollbar may be hidden by default or take up space in the container element.
 
 👉 Unless you decide to [hide the scrollbar](#hiding-the-scrollbar), you may need to provide spacing for the scrollbar, so it does
 not cover your content when visible. For example, having a horizontal ScrollView, you can do so by adding a margin or padding utility
