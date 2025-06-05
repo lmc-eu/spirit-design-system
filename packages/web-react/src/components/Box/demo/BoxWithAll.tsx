@@ -8,17 +8,18 @@ const BoxWithAll = () => (
       With primary background, solid border and no radius
     </Box>
     <Box padding="space-800" backgroundColor="secondary" borderRadius="300" borderStyle="dashed" borderWidth="200">
-      With primary background, custom radius, dashed thicker border
+      With secondary background, custom radius, dashed thicker border
     </Box>
     <Box
       padding="space-800"
       backgroundColor="tertiary"
+      textColor="tertiary"
       borderRadius="full"
       borderStyle="dotted"
       borderWidth="200"
       borderColor="basic"
     >
-      With primary background, full radius, dotted thicker border
+      With tertiary background, tertiary text color, full radius, dotted thicker border
     </Box>
   </>
 );
