@@ -22,7 +22,7 @@
     @include typography.generate(theme.$typography);
 
     display: grid;
-    grid-template-rows: repeat(var(--#{tokens.$css-variable-prefix}pricing-plan-card-rows, theme.$rows), auto); // 1.
+    grid-template-rows: repeat(var(--#{tokens.$css-variable-prefix}pricing-plan-rows, theme.$rows), auto); // 1.
     min-width: theme.$min-width;
     overflow: clip; // 2.
     color: theme.$color;

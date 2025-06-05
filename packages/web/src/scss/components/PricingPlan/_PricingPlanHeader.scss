@@ -25,7 +25,10 @@
     grid-template-rows: subgrid; // 1.
     grid-row: header-start / header-end; // 4.
     text-align: center;
-    border-bottom: theme.$border-width solid theme.$border-color;
+
+    &:not(:last-child) {
+        border-bottom: theme.$border-width solid theme.$border-color;
+    }
 }
 
 .PricingPlanHeader__badge {

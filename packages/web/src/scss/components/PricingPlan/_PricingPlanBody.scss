@@ -19,6 +19,10 @@
     padding-inline: theme.$padding-x;
     padding-block: theme.$body-padding-top theme.$body-padding-bottom;
     color: theme.$body-color;
+
+    &:not(:last-child) {
+        border-bottom: theme.$border-width solid theme.$border-color;
+    }
 }
 
 .PricingPlanBody__featureList:not(:first-child) {
