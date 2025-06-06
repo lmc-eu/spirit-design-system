@@ -2,8 +2,17 @@ import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { Emphasis, SizesExtended, TextAlignments, TextColors } from '../../../constants';
+import { getAccentTextColors, getEmotionTextColors } from '../../../utils/colorObjectGenerators';
 import ReadMe from '../README.md';
 import { Text } from '..';
+
+const accentColorsObject = getAccentTextColors();
+const emotionColorsObject = getEmotionTextColors();
+const textColorValues = [
+  ...Object.values(TextColors),
+  ...Object.values(accentColorsObject),
+  ...Object.values(emotionColorsObject),
+];
 
 const meta: Meta<typeof Text> = {
   title: 'Components/Text',
@@ -43,7 +52,7 @@ const meta: Meta<typeof Text> = {
     },
     textColor: {
       control: 'select',
-      options: [...Object.values(TextColors), undefined],
+      options: [...textColorValues, undefined],
       table: {
         defaultValue: { summary: undefined },
       },
@@ -64,4 +73,17 @@ type Story = StoryObj<typeof Text>;
 
 export const Playground: Story = {
   name: 'Text',
+  render: (args) => {
+    const { children, textColor, ...restProps } = args;
+    const bgColor = textColor?.replace(/basic|subtle/, (match) => (match === 'basic' ? 'subtle' : 'basic'));
+    const boxClass = textColor?.match(/basic|subtle/) ? `bg-${bgColor}` : '';
+
+    return (
+      <div className={`${boxClass} p-800`}>
+        <Text textColor={textColor} {...restProps}>
+          {children}
+        </Text>
+      </div>
+    );
+  },
 };

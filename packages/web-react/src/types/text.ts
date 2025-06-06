@@ -6,11 +6,18 @@ import {
   SizeExtendedDictionaryType,
   SizeProps,
   StyleProps,
+  TextAccentColorsType,
   TextAlignmentType,
   TextColorProps,
   TextColorsDictionaryType,
+  TextEmotionColorsType,
   TransferProps,
 } from './shared';
+
+export type TextColorsType<C = undefined> =
+  | TextColorsDictionaryType<C>
+  | TextAccentColorsType<C>
+  | TextEmotionColorsType<C>;
 
 export interface TextElementTypeProps<T extends ElementType = 'p'> {
   /**
@@ -33,4 +40,4 @@ export interface SpiritTextProps<T extends ElementType = 'p', S = void, E = void
   extends TextProps<T>,
     SizeProps<SizeExtendedDictionaryType<S>>,
     EmphasisProps<EmphasisDictionaryType<E>>,
-    TextColorProps<TextColorsDictionaryType<C>> {}
+    TextColorProps<TextColorsType<C>> {}
