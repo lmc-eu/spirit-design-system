@@ -36,4 +36,4 @@ export interface SpiritHeadingProps<T extends ElementType, S = void, E = void, C
   extends HeadingProps<T>,
     SizeProps<SizeExtendedDictionaryType<S>>,
     EmphasisProps<EmphasisDictionaryType<E>>,
-    TextColorProps<TextAccentColorsType<C> | TextEmotionColorsType<C> | TextColorsDictionaryType<C>> {}
+    TextColorProps<TextColorsDictionaryType<C> | TextAccentColorsType<C> | TextEmotionColorsType<C>> {}
