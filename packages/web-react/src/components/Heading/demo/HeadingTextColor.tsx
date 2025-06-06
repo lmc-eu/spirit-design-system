@@ -1,5 +1,4 @@
 import React from 'react';
-import DocsBox from '../../../../docs/DocsBox';
 import { TextColors } from '../../../constants';
 import { getAccentTextColors, getEmotionTextColors } from '../../../utils/colorObjectGenerators';
 import Heading from '../Heading';
@@ -15,13 +14,17 @@ const HeadingTextColor = () => (
       </Heading>
     ))}
 
-    {Object.values([...Object.values(accentColorsObject), ...Object.values(emotionColorsObject)]).map((textColor) => (
-      <DocsBox key={textColor}>
-        <Heading elementType="h2" textColor={textColor}>
-          Heading {textColor}
-        </Heading>
-      </DocsBox>
-    ))}
+    {[...Object.values(accentColorsObject), ...Object.values(emotionColorsObject)].map((textColor) => {
+      const bgColor = textColor.replace(/basic|subtle/, (match) => (match === 'basic' ? 'subtle' : 'basic'));
+
+      return (
+        <div className={`bg-${bgColor} p-800`} key={textColor}>
+          <Heading elementType="h2" key={textColor} textColor={textColor}>
+            Heading {textColor}
+          </Heading>
+        </div>
+      );
+    })}
   </>
 );
 
