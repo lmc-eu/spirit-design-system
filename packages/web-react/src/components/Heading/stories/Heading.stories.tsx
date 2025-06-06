@@ -73,4 +73,17 @@ type Story = StoryObj<typeof Heading>;
 
 export const Playground: Story = {
   name: 'Heading',
+  render: (args) => {
+    const { children, textColor, ...restProps } = args;
+    const bgColor = textColor?.replace(/basic|subtle/, (match) => (match === 'basic' ? 'subtle' : 'basic'));
+    const boxClass = textColor?.match(/basic|subtle/) ? `bg-${bgColor}` : '';
+
+    return (
+      <div className={`${boxClass} p-800`}>
+        <Heading textColor={textColor} {...restProps}>
+          {children}
+        </Heading>
+      </div>
+    );
+  },
 };
