@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.7.0"></a>
+
+# [4.7.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@4.6.0...@lmc-eu/spirit-web-twig@4.7.0) (2025-06-09)
+
+### Chores
+
+- **web-twig:** Change dependency from `lmc/twigx-bundle` to `almacareer/twigx-bundle` ([cb6136f](https://github.com/lmc-eu/spirit-design-system/commit/cb6136f)), closes [#DS-1810](https://github.com/lmc-eu/spirit-design-system/issues/DS-1810)
+
+### Code Refactoring
+
+- **demo:** Do not use `isBlock`/`Button--block` anymore [#DS-944](https://github.com/lmc-eu/spirit-design-system/issues/DS-944) ([75229f1](https://github.com/lmc-eu/spirit-design-system/commit/75229f1))
+
+### Dependencies
+
+- Update dependency `lmc/twigx-bundle` from 3.3 to 4.0 ([54ce699](https://github.com/lmc-eu/spirit-design-system/commit/54ce699)), closes [#DS-1810](https://github.com/lmc-eu/spirit-design-system/issues/DS-1810)
+
+### Documentation
+
+- **repo:** Fix bad links in the documentation ([af02fd4](https://github.com/lmc-eu/spirit-design-system/commit/af02fd4))
+- **repo:** Fix migration files link casing ([ffa8d8f](https://github.com/lmc-eu/spirit-design-system/commit/ffa8d8f))
+- **web-twig:** Fix bad link to how extend component ([0b25956](https://github.com/lmc-eu/spirit-design-system/commit/0b25956))
+- **web-twig:** How to add tag to the new release ([45e7f55](https://github.com/lmc-eu/spirit-design-system/commit/45e7f55))
+
+### Features
+
+- **web-twig:** Enable emotion or accent colors in the `Heading` [#DS-1781](https://github.com/lmc-eu/spirit-design-system/issues/DS-1781) ([453aabf](https://github.com/lmc-eu/spirit-design-system/commit/453aabf))
+- **web-twig:** Introduce new approaches how to achieve block Button and ButtonLink [#DS-944](https://github.com/lmc-eu/spirit-design-system/issues/DS-944) ([7035c64](https://github.com/lmc-eu/spirit-design-system/commit/7035c64))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="4.6.0"></a>
 
 # [4.6.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@4.5.1...@lmc-eu/spirit-web-twig@4.6.0) (2025-05-12)

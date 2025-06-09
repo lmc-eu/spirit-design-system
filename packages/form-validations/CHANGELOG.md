@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.16"></a>
+
+## [2.0.16](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@2.0.15...@lmc-eu/spirit-form-validations@2.0.16) (2025-06-09)
+
+### Code Refactoring
+
+- **demo:** Do not use `isBlock`/`Button--block` anymore [#DS-944](https://github.com/lmc-eu/spirit-design-system/issues/DS-944) ([75229f1](https://github.com/lmc-eu/spirit-design-system/commit/75229f1))
+
+### Dependencies
+
+- Update all non-major dependencies ([e4ed61a](https://github.com/lmc-eu/spirit-design-system/commit/e4ed61a))
+
+### Documentation
+
+- **repo:** Fix migration files link casing ([ffa8d8f](https://github.com/lmc-eu/spirit-design-system/commit/ffa8d8f))
+
+**Note:** Version bump only for package @lmc-eu/spirit-form-validations
+
 <a name="2.0.15"></a>
 
 ## [2.0.15](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@2.0.14...@lmc-eu/spirit-form-validations@2.0.15) (2025-04-11)

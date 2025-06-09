@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.4.0"></a>
+
+# [2.4.0](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-tokens-exporter@2.3.0...@almacareer/spirit-tokens-exporter@2.4.0) (2025-06-09)
+
+### Chores
+
+- **exporter-tokens:** Rebuild exporter ([6043be1](https://github.com/lmc-eu/spirit-design-system/commit/6043be1))
+- **exporter-tokens:** Rebuild exporter ([cc62945](https://github.com/lmc-eu/spirit-design-system/commit/cc62945))
+
+### Dependencies
+
+- Update dependency @supernovaio/sdk-exporters to v2.2.10 ([751d215](https://github.com/lmc-eu/spirit-design-system/commit/751d215))
+- Update monorepo:supernovaio non-major ([2101c4d](https://github.com/lmc-eu/spirit-design-system/commit/2101c4d))
+
+### Features
+
+- **exporter-tokens:** Introduce devices tokens [#DS-1873](https://github.com/lmc-eu/spirit-design-system/issues/DS-1873) ([4b438ec](https://github.com/lmc-eu/spirit-design-system/commit/4b438ec))
+- **exporter-tokens:** Introduce export of color token maps [#DS-1880](https://github.com/lmc-eu/spirit-design-system/issues/DS-1880) ([e31a5af](https://github.com/lmc-eu/spirit-design-system/commit/e31a5af))
+
+**Note:** Version bump only for package @almacareer/spirit-tokens-exporter
+
 <a name="2.3.0"></a>
 
 # [2.3.0](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-tokens-exporter@2.2.5...@almacareer/spirit-tokens-exporter@2.3.0) (2025-05-12)

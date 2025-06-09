@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.5.0"></a>
+
+# [3.5.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@3.4.0...@lmc-eu/spirit-design-tokens@3.5.0) (2025-06-09)
+
+### Dependencies
+
+- Update all non-major dependencies ([e4ed61a](https://github.com/lmc-eu/spirit-design-system/commit/e4ed61a))
+
+### Features
+
+- **design-tokens:** Color tokens [#DS-1781](https://github.com/lmc-eu/spirit-design-system/issues/DS-1781) ([1e5ff15](https://github.com/lmc-eu/spirit-design-system/commit/1e5ff15))
+- **design-tokens:** Introduce gradient colors [#DS-1886](https://github.com/lmc-eu/spirit-design-system/issues/DS-1886) ([e88064c](https://github.com/lmc-eu/spirit-design-system/commit/e88064c))
+
+**Note:** Version bump only for package @lmc-eu/spirit-design-tokens
+
 <a name="3.4.0"></a>
 
 # [3.4.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@3.3.1...@lmc-eu/spirit-design-tokens@3.4.0) (2025-05-12)

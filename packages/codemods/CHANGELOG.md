@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.6.1"></a>
+
+## [1.6.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@1.6.0...@lmc-eu/spirit-codemods@1.6.1) (2025-06-09)
+
+### Dependencies
+
+- Update all non-major dependencies ([e4ed61a](https://github.com/lmc-eu/spirit-design-system/commit/e4ed61a))
+
+**Note:** Version bump only for package @lmc-eu/spirit-codemods
+
 <a name="1.6.0"></a>
 
 # [1.6.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@1.5.1...@lmc-eu/spirit-codemods@1.6.0) (2025-03-26)

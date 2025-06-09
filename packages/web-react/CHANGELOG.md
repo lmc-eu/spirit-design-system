@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.10.0"></a>
+
+# [3.10.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.9.1...@lmc-eu/spirit-web-react@3.10.0) (2025-06-09)
+
+### Code Refactoring
+
+- **demo:** Do not use `isBlock`/`Button--block` anymore [#DS-944](https://github.com/lmc-eu/spirit-design-system/issues/DS-944) ([75229f1](https://github.com/lmc-eu/spirit-design-system/commit/75229f1))
+
+### Dependencies
+
+- Update all non-major dependencies ([e4ed61a](https://github.com/lmc-eu/spirit-design-system/commit/e4ed61a))
+- Update eslint plugins and configs non-major ([c8b42a4](https://github.com/lmc-eu/spirit-design-system/commit/c8b42a4))
+
+### Documentation
+
+- **repo:** Fix migration files link casing ([ffa8d8f](https://github.com/lmc-eu/spirit-design-system/commit/ffa8d8f))
+
+### Features
+
+- **web-react:** Add background gradient prop to Box component [#DS-1887](https://github.com/lmc-eu/spirit-design-system/issues/DS-1887) ([2427bd5](https://github.com/lmc-eu/spirit-design-system/commit/2427bd5))
+- **web-react:** Enable set emotion or accent color to the Box [#DS-1782](https://github.com/lmc-eu/spirit-design-system/issues/DS-1782) ([48c7a58](https://github.com/lmc-eu/spirit-design-system/commit/48c7a58))
+- **web-react:** Enable set emotion or accent colors in `Heading` [#DS-1781](https://github.com/lmc-eu/spirit-design-system/issues/DS-1781) ([5bbb434](https://github.com/lmc-eu/spirit-design-system/commit/5bbb434))
+- **web-react:** Introduce `size` and `iconBoxSize` property on `DrawerCloseButton` [#DS-1870](https://github.com/lmc-eu/spirit-design-system/issues/DS-1870) ([4140eff](https://github.com/lmc-eu/spirit-design-system/commit/4140eff))
+- **web-react:** Introduce new approaches how to achieve block Button and ButtonLink [#DS-944](https://github.com/lmc-eu/spirit-design-system/issues/DS-944) ([1f8a2e1](https://github.com/lmc-eu/spirit-design-system/commit/1f8a2e1))
+- **web-react:** Introduce new property `hasBottomDivider` to `UNSTABLE_Header` [#DS-1839](https://github.com/lmc-eu/spirit-design-system/issues/DS-1839) ([8b44f6a](https://github.com/lmc-eu/spirit-design-system/commit/8b44f6a))
+- **web-react:** Responsive `size` property for `PartnerLogo` [#DS-1919](https://github.com/lmc-eu/spirit-design-system/issues/DS-1919) ([98513d5](https://github.com/lmc-eu/spirit-design-system/commit/98513d5))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="3.9.1"></a>
 
 ## [3.9.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.9.0...@lmc-eu/spirit-web-react@3.9.1) (2025-05-13)

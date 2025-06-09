@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.1.1"></a>
+
+## [2.1.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-icons@2.1.0...@lmc-eu/spirit-icons@2.1.1) (2025-06-09)
+
+### Bug Fixes
+
+- **icons:** Normalize bullet-outline icon [#DS-1890](https://github.com/lmc-eu/spirit-design-system/issues/DS-1890) ([6814a1b](https://github.com/lmc-eu/spirit-design-system/commit/6814a1b))
+
+### Dependencies
+
+- Update all non-major dependencies ([e4ed61a](https://github.com/lmc-eu/spirit-design-system/commit/e4ed61a))
+
+**Note:** Version bump only for package @lmc-eu/spirit-icons
+
 <a name="2.1.0"></a>
 
 # [2.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-icons@2.0.9...@lmc-eu/spirit-icons@2.1.0) (2025-05-12)

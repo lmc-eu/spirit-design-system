@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.0"></a>
+
+# [1.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo@1.0.3...@lmc-eu/spirit-demo@1.1.0) (2025-06-09)
+
+### Features
+
+- **web:** Introduce `Matrix` component to create aligned component layouts [#DS-1922](https://github.com/lmc-eu/spirit-design-system/issues/DS-1922) ([0aaac5c](https://github.com/lmc-eu/spirit-design-system/commit/0aaac5c))
+
+**Note:** Version bump only for package @lmc-eu/spirit-demo
+
 <a name="1.0.3"></a>
 
 ## [1.0.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo@1.0.2...@lmc-eu/spirit-demo@1.0.3) (2025-03-26)

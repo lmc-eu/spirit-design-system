@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.10.0"></a>
+
+# [3.10.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.9.1...@lmc-eu/spirit-web@3.10.0) (2025-06-09)
+
+### Bug Fixes
+
+- **web:** Changed order due to updated dependencies ([f933831](https://github.com/lmc-eu/spirit-design-system/commit/f933831))
+- **web:** Check if utility values list is not empty before generating ([29d6e77](https://github.com/lmc-eu/spirit-design-system/commit/29d6e77))
+
+### Dependencies
+
+- Update all non-major dependencies ([e4ed61a](https://github.com/lmc-eu/spirit-design-system/commit/e4ed61a))
+
+### Documentation
+
+- **repo:** Fix bad links in the documentation ([af02fd4](https://github.com/lmc-eu/spirit-design-system/commit/af02fd4))
+- **repo:** Fix migration files link casing ([ffa8d8f](https://github.com/lmc-eu/spirit-design-system/commit/ffa8d8f))
+- **web:** Add more details to the documentation of horizontal `ScrollView` ([2f2503d](https://github.com/lmc-eu/spirit-design-system/commit/2f2503d))
+
+### Features
+
+- **web:** Add background gradient to Box component [#DS-1887](https://github.com/lmc-eu/spirit-design-system/issues/DS-1887) ([9743d8d](https://github.com/lmc-eu/spirit-design-system/commit/9743d8d))
+- **web:** Add background gradient utility class [#DS-1887](https://github.com/lmc-eu/spirit-design-system/issues/DS-1887) ([0f5a162](https://github.com/lmc-eu/spirit-design-system/commit/0f5a162))
+- **web:** Generate emotion utilities [#DS-1910](https://github.com/lmc-eu/spirit-design-system/issues/DS-1910) ([711b825](https://github.com/lmc-eu/spirit-design-system/commit/711b825))
+- **web:** Introduce `Matrix` component to create aligned component layouts [#DS-1922](https://github.com/lmc-eu/spirit-design-system/issues/DS-1922) ([0aaac5c](https://github.com/lmc-eu/spirit-design-system/commit/0aaac5c))
+- **web:** Introduce new approaches how to achieve block Button [#DS-944](https://github.com/lmc-eu/spirit-design-system/issues/DS-944) ([bec6424](https://github.com/lmc-eu/spirit-design-system/commit/bec6424))
+- **web:** Introduce new property `hasBottomDivider` to `UNSTABLE_Header` [#DS-1839](https://github.com/lmc-eu/spirit-design-system/issues/DS-1839) ([6f58260](https://github.com/lmc-eu/spirit-design-system/commit/6f58260))
+- **web:** Introduce text color prop to the Box [#DS-1782](https://github.com/lmc-eu/spirit-design-system/issues/DS-1782) ([2010c8f](https://github.com/lmc-eu/spirit-design-system/commit/2010c8f))
+- **web:** Responsive `size` property for `PartnerLogo` [#DS-1919](https://github.com/lmc-eu/spirit-design-system/issues/DS-1919) ([aad5d96](https://github.com/lmc-eu/spirit-design-system/commit/aad5d96))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="3.9.1"></a>
 
 ## [3.9.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.9.0...@lmc-eu/spirit-web@3.9.1) (2025-05-13)

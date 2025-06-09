@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.4.0"></a>
+
+# [1.4.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo-app@1.3.2...@lmc-eu/spirit-demo-app@1.4.0) (2025-06-09)
+
+### Dependencies
+
+- Update all non-major dependencies ([e4ed61a](https://github.com/lmc-eu/spirit-design-system/commit/e4ed61a))
+
+### Features
+
+- **repo:** Use `UNSTABLE_Header--bottomDivider` in the demo [#DS-1839](https://github.com/lmc-eu/spirit-design-system/issues/DS-1839) ([7149dea](https://github.com/lmc-eu/spirit-design-system/commit/7149dea))
+
+**Note:** Version bump only for package @lmc-eu/spirit-demo-app
+
 <a name="1.3.2"></a>
 
 ## [1.3.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo-app@1.3.1...@lmc-eu/spirit-demo-app@1.3.2) (2025-05-12)
