@@ -33,6 +33,7 @@ export * from './NoSsr';
 export * from './Pagination';
 export * from './PartnerLogo';
 export * from './Pill';
+export * from './PricingPlan';
 export * from './ProductLogo';
 export * from './Radio';
 export * from './ScrollView';
