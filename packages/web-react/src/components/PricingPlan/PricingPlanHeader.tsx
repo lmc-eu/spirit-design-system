@@ -8,21 +8,35 @@ import { usePricingPlanStyleProps } from './usePricingPlanStyleProps';
 
 const defaultProps: Partial<SpiritPricingPlanHeaderProps> = {
   action: undefined,
-  badge: null,
-  note: null,
-  price: null,
-  subtitle: null,
-  title: null,
+  badge: undefined,
+  note: undefined,
+  price: undefined,
+  subtitle: undefined,
+  title: undefined,
 };
 
 const PricingPlanHeader = (props: SpiritPricingPlanHeaderProps) => {
   const propsWithDefaults = { ...defaultProps, ...props };
-  const { ...restProps } = propsWithDefaults;
+  const { classProps, props: modifiedProps } = usePricingPlanStyleProps(propsWithDefaults);
 
-  const { classProps, props: modifiedProps } = usePricingPlanStyleProps(restProps);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
 
-  return <header {...otherProps} className={classNames(classProps, styleProps.className)} style={styleProps.style} />;
+  return (
+    <header
+      {...otherProps}
+      className={classNames(classProps.header.root, styleProps.className)}
+      style={styleProps.style}
+    >
+      <div className={classNames(classProps.header.badge)}>{propsWithDefaults.badge}</div>
+      <div className={classNames(classProps.header.content, styleProps.className)}>
+        <h3 className={classNames(classProps.header.title)}>{propsWithDefaults.title}</h3>
+        <div className={classNames(classProps.header.subtitle)}>{propsWithDefaults.subtitle}</div>
+        <div className={classNames(classProps.header.price)}>{propsWithDefaults.price}</div>
+        <div className={classNames(classProps.header.action)}>{propsWithDefaults.action}</div>
+        <div className={classNames(classProps.header.note)}>{propsWithDefaults.note}</div>
+      </div>
+    </header>
+  );
 };
 
 PricingPlanHeader.spiritComponent = 'PricingPlanHeader';

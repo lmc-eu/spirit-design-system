@@ -1,4 +1,4 @@
-import { ComponentPropsWithRef, ElementType, JSXElementConstructor } from 'react';
+import { ComponentPropsWithRef, ElementType, FunctionComponent, JSXElementConstructor, ReactNode } from 'react';
 import { BreakpointToken, ChildrenProps, StyleProps } from './shared';
 
 export interface PricingPlanBaseProps extends ChildrenProps, StyleProps {
@@ -11,12 +11,20 @@ export interface PricingPlanBaseProps extends ChildrenProps, StyleProps {
 }
 
 export interface PricingPlanHeaderBaseProps extends StyleProps {
-  action?: React.Component;
-  badge: string | null;
-  note: string | null;
-  price: string | null;
-  subtitle: string | null;
-  title: string | null;
+  action?: ReactNode;
+  badge?: string;
+  note?: string;
+  price?: string;
+  subtitle?: string;
+  title?: string;
+}
+
+export interface PricingPlanBodyBaseProps extends StyleProps {
+  description?: string;
+  features?: {
+    title: string;
+    description?: string;
+  }[];
 }
 
 export type PricingPlanProps<E extends ElementType> = {
@@ -30,3 +38,5 @@ export type PricingPlanProps<E extends ElementType> = {
 
 export type SpiritPricingPlanProps<E extends ElementType = 'article'> = PricingPlanProps<E> & ComponentPropsWithRef<E>;
 export type SpiritPricingPlanHeaderProps = PricingPlanHeaderBaseProps;
+export type SpiritPricingPlanBodyProps = PricingPlanBodyBaseProps;
+export type SpiritPricingPlanFooterProps = StyleProps & ChildrenProps;

@@ -1,0 +1,79 @@
+import React from 'react';
+import { ButtonLink } from '../../ButtonLink';
+import { Grid } from '../../Grid';
+import PricingPlan from '../PricingPlan';
+import PricingPlanBody from '../PricingPlanBody';
+import PricingPlanFooter from '../PricingPlanFooter';
+import PricingPlanHeader from '../PricingPlanHeader';
+
+const PricingPlanInMatrix = () => (
+  <Grid cols={3} marginBottom="space-800" UNSAFE_style={{ marginInline: 'var(--container-padding-inline)' }}>
+    <PricingPlan>
+      <PricingPlanHeader
+        action={
+          <ButtonLink href="#" size="large">
+            Get started
+          </ButtonLink>
+        }
+        title="Plan 1"
+        subtitle="Supporting text or message"
+        price="39 EUR"
+      />
+      <PricingPlanBody
+        features={[
+          {
+            title: 'Feature name',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+          },
+        ]}
+      />
+      <PricingPlanFooter>footer</PricingPlanFooter>
+    </PricingPlan>
+    <PricingPlan>
+      <PricingPlanHeader
+        action={
+          <ButtonLink href="#" size="large">
+            Get started
+          </ButtonLink>
+        }
+        badge="Recommended"
+        title="Plan 2"
+        subtitle="Supporting text or message"
+        price="59 EUR"
+      />
+      <PricingPlanBody
+        features={[
+          {
+            title: 'Feature name',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+          },
+        ]}
+      />
+      <PricingPlanFooter>footer</PricingPlanFooter>
+    </PricingPlan>
+    <PricingPlan isHighlighted>
+      <PricingPlanHeader
+        action={
+          <ButtonLink href="#" size="large">
+            Get started
+          </ButtonLink>
+        }
+        title="Plan 3"
+        price="99 EUR"
+        note="Another supporting text or message"
+      />
+      <PricingPlanBody
+        description="Everything in Plan 2 plus:"
+        features={[
+          {
+            title: 'Feature name',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+          },
+        ]}
+      />
+      <PricingPlanFooter>footer</PricingPlanFooter>
+    </PricingPlan>
+  </Grid>
+);
+
+export default PricingPlanInMatrix;
