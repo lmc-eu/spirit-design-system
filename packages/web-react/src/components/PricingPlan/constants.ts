@@ -1,0 +1,1 @@
+export const NUMBER_OF_PLAN_ROWS_DEFAULT = 100;

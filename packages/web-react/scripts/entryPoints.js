@@ -44,6 +44,7 @@ const entryPoints = [
   { dirs: ['components', 'Pagination'] },
   { dirs: ['components', 'PartnerLogo'] },
   { dirs: ['components', 'Pill'] },
+  { dirs: ['components', 'PricingPlan'] },
   { dirs: ['components', 'ProductLogo'] },
   { dirs: ['components', 'Radio'] },
   { dirs: ['components', 'ScrollView'] },
