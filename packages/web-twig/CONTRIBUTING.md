@@ -171,7 +171,7 @@ Or
 Then switch to the `lmc-eu/spirit-web-twig-bundle` repository locally and tag the latest commit with the new version.
 
 - `git pull`
-- `git tag -a <version> m "@lmc-eu/spirit-web-twig@<version>"` (e.g. `git tag -a 4.6.0 -m "@lmc-eu/spirit-web-twig@4.6.0"`)
+- `git tag -a <version> -m "@lmc-eu/spirit-web-twig@<version>"` (e.g. `git tag -a 4.6.0 -m "@lmc-eu/spirit-web-twig@4.6.0"`)
 - `git push --tags`
 
 After these steps, the new version will be available on [Packagist][packagist-spirit-web-twig-bundle].
