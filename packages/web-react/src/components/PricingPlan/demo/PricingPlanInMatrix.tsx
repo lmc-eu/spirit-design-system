@@ -25,6 +25,15 @@ const PricingPlanInMatrix = () => (
             title: 'Feature name',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
           },
+          {
+            title: 'Feature name',
+            description:
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.',
+          },
+          {
+            title: 'Feature name',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+          },
         ]}
       />
       <PricingPlanFooter>footer</PricingPlanFooter>
@@ -42,10 +51,21 @@ const PricingPlanInMatrix = () => (
         price="59 EUR"
       />
       <PricingPlanBody
+        description="Everything in Plan 1 plus:"
         features={[
           {
             title: 'Feature name',
+            description:
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.',
+          },
+          {
+            title: 'Feature name',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+          },
+          {
+            title: 'Feature name',
+            description:
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.',
           },
         ]}
       />
@@ -67,7 +87,23 @@ const PricingPlanInMatrix = () => (
         features={[
           {
             title: 'Feature name',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            description:
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.',
+          },
+          {
+            title: 'Feature name with a very long name that should wrap to the next line',
+            description:
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.',
+          },
+          {
+            title: 'Feature name',
+            description:
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.',
+          },
+          {
+            title: 'Feature name',
+            description:
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.',
           },
         ]}
       />
