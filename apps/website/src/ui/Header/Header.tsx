@@ -1,3 +1,5 @@
+'use client';
+
 import { Container, Flex, UNSTABLE_Header, UNSTABLE_HeaderLogo } from '@lmc-eu/spirit-web-react';
 import useIsPage from '@local/hooks/useIsPage';
 import { Menu } from '@local/ui/Menu';

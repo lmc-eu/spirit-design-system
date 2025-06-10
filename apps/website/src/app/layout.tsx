@@ -1,5 +1,6 @@
 import { AppProvider } from '@local/ui/AppProvider';
 import { inter } from '@local/ui/fonts';
+import { Header } from '@local/ui/Header';
 import { Metadata } from 'next';
 import { ReactNode } from 'react';
 import '../ui/globals.scss';
@@ -17,7 +18,10 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
-        <AppProvider>{children}</AppProvider>
+        <AppProvider>
+          <Header />
+          {children}
+        </AppProvider>
       </body>
     </html>
   );
