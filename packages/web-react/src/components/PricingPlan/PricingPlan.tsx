@@ -11,7 +11,6 @@ import { usePricingPlanStyleProps } from './usePricingPlanStyleProps';
 const defaultProps: Partial<SpiritPricingPlanProps> = {
   isComparable: false,
   isHighlighted: false,
-  rows: 100,
 };
 
 const PricingPlan = <T extends ElementType = 'article'>(props: SpiritPricingPlanProps<T>) => {

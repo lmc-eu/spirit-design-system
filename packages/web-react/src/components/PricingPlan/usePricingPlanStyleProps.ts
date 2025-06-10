@@ -1,5 +1,4 @@
 import classNames from 'classnames';
-import React from 'react';
 import { useClassNamePrefix } from '../../hooks';
 import {
   SpiritPricingPlanBodyProps,

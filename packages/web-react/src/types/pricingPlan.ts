@@ -1,26 +1,32 @@
 import { ComponentPropsWithRef, ElementType, FunctionComponent, JSXElementConstructor, ReactNode } from 'react';
-import { BreakpointToken, ChildrenProps, StyleProps } from './shared';
+import { ChildrenProps, StyleProps } from './shared';
 
 export interface PricingPlanBaseProps extends ChildrenProps, StyleProps {
   /** If pricing plan is comparable  */
   isComparable?: boolean;
   /** If pricing plan is highlighted */
   isHighlighted?: boolean;
-  /** Number of rows in the pricing plan */
-  rows?: number | Partial<Record<BreakpointToken, number>>;
 }
 
 export interface PricingPlanHeaderBaseProps extends StyleProps {
+  /** Action element, e.g. a button or link */
   action?: ReactNode;
+  /** Badge text or element */
   badge?: string;
+  /** Note or additional information */
   note?: string;
+  /** Price of the plan */
   price?: string;
+  /** Subtitle of the plan */
   subtitle?: string;
+  /** Title of the plan */
   title?: string;
 }
 
 export interface PricingPlanBodyBaseProps extends StyleProps {
+  /** Description of the plan body */
   description?: string;
+  /** Features of the plan body */
   features?: {
     title: string;
     description?: string;
