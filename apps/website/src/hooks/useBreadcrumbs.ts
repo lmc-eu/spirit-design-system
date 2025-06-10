@@ -1,7 +1,7 @@
 'use client';
 
 import { COMPONENT_SEGMENTS } from '@local/lib/constants';
-import { ucFirstAll } from '@local/lib/helpers';
+import { normalizeComponentName } from '@local/lib/helpers';
 import { usePathname } from 'next/navigation';
 
 type Breadcrumb = {
@@ -18,7 +18,7 @@ const assembleBreadcrumbUrl = (pathNames: string[], index: number) => {
 const createBreadcrumb = (slugs: string[], slug: string, index: number): Breadcrumb => {
   return {
     slug,
-    name: ucFirstAll(slug),
+    name: normalizeComponentName(slug),
     url: assembleBreadcrumbUrl(slugs, index),
   };
 };
