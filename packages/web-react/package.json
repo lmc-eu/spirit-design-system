@@ -22,8 +22,8 @@
   "dependencies": {
     "@floating-ui/react": "^0.27.0",
     "classnames": "^2.3.1",
-    "html-dom-parser": "5.1.1",
-    "html-react-parser": "5.2.5",
+    "html-dom-parser": "5.0.13",
+    "html-react-parser": "5.1.1",
     "react-transition-group": "^4.4.5"
   },
   "devDependencies": {
