@@ -1,6 +1,7 @@
 'use client';
 
 import { TabContent, TabLink, TabList, Tabs } from '@lmc-eu/spirit-web-react';
+import { COMPONENT_SEGMENTS } from '@local/lib/constants';
 import NextLink from 'next/link';
 import { useSelectedLayoutSegment } from 'next/navigation';
 import { use, type ReactNode } from 'react';
@@ -11,10 +12,9 @@ interface ViewsLayoutProps {
 }
 
 const ViewsLayout = ({ views, params }: ViewsLayoutProps) => {
-  const segments = ['design', 'web', 'react', 'web-preview', 'react-preview'];
   const { component } = use(params);
   const selectedSegment = useSelectedLayoutSegment('views') || '';
-  const selectedTab = segments.includes(selectedSegment) ? selectedSegment : 'guidelines';
+  const selectedTab = COMPONENT_SEGMENTS.includes(selectedSegment) ? selectedSegment : 'guidelines';
 
   return (
     <Tabs selectedTab={selectedTab} toggle={() => {}}>
