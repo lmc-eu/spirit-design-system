@@ -1,7 +1,6 @@
 'use client';
 
 import classNames from 'classnames';
-import { root } from 'postcss';
 import React, { ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritPricingPlanProps } from '../../types/pricingPlan';

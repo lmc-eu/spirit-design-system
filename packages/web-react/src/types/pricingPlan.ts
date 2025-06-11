@@ -1,4 +1,4 @@
-import { ComponentPropsWithRef, ElementType, FunctionComponent, JSXElementConstructor, ReactNode } from 'react';
+import { ComponentPropsWithRef, ElementType, JSXElementConstructor, ReactNode } from 'react';
 import { ChildrenProps, StyleProps } from './shared';
 
 export interface PricingPlanBaseProps extends ChildrenProps, StyleProps {
