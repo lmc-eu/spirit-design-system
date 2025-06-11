@@ -1,7 +1,7 @@
 'use client';
 
-export * from './PricingPlan';
-export * from './PricingPlanHeader';
-export * from './PricingPlanBody';
-export * from './PricingPlanFooter';
+export { default as PricingPlan } from './PricingPlan';
+export { default as PricingPlanHeader } from './PricingPlanHeader';
+export { default as PricingPlanBody } from './PricingPlanBody';
+export { default as PricingPlanFooter } from './PricingPlanFooter';
 export * from './usePricingPlanStyleProps';
