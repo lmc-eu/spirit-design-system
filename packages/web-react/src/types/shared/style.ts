@@ -23,6 +23,8 @@ export interface SpacingCSSProperties extends CSSProperties {
   [index: `--${string}`]: string | undefined | number;
 }
 
+export type DimensionType = number | Partial<Record<BreakpointToken, number>>;
+
 export type ElementTypeProp = string | ElementType;
 
 export interface StyleProps extends SpacingProps {
