@@ -27,6 +27,7 @@ export * from './Heading';
 export * from './Icon';
 export * from './Item';
 export * from './Link';
+export * from './Matrix';
 export * from './Modal';
 export * from './Navigation';
 export * from './NoSsr';
