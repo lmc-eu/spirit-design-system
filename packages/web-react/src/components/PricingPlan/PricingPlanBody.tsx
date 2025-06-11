@@ -14,22 +14,22 @@ const defaultProps: Partial<SpiritPricingPlanBodyProps> = {
 
 const PricingPlanBody = (props: SpiritPricingPlanBodyProps) => {
   const propsWithDefaults = { ...defaultProps, ...props };
-  const { features = [] } = propsWithDefaults;
 
   const { classProps, props: modifiedProps } = usePricingPlanStyleProps(propsWithDefaults);
+  const { description, features = [] } = propsWithDefaults;
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
 
   return (
     <div {...otherProps} className={classNames(classProps.body.root, styleProps.className)} style={styleProps.style}>
-      <div>{propsWithDefaults.description}</div>
-      <dl className={classNames(classProps.body.featureList)}>
+      <div>{description}</div>
+      <dl className={classProps.body.featureList}>
         {features.map((feature, index) => (
-          <div className={classNames(classProps.body.featureItem)} key={`feature-${index + 1}`}>
-            <dt className={classNames(classProps.body.featureTitle)}>
+          <div className={classProps.body.featureItem} key={`featureItem-${index + 1}`}>
+            <dt className={classProps.body.featureTitle}>
               <Icon name="check-plain" boxSize={16} />
-              <div className={classNames(classProps.body.featureTitleText)}>{feature.title}</div>
+              <div className={classProps.body.featureTitleText}>{feature.title}</div>
             </dt>
-            <dd className={classNames(classProps.body.featureDescription)}>{feature.description}</dd>
+            <dd className={classProps.body.featureDescription}>{feature.description}</dd>
           </div>
         ))}
       </dl>

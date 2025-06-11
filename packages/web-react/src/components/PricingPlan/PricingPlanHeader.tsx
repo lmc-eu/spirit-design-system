@@ -17,8 +17,9 @@ const defaultProps: Partial<SpiritPricingPlanHeaderProps> = {
 
 const PricingPlanHeader = (props: SpiritPricingPlanHeaderProps) => {
   const propsWithDefaults = { ...defaultProps, ...props };
-  const { classProps, props: modifiedProps } = usePricingPlanStyleProps(propsWithDefaults);
 
+  const { classProps, props: modifiedProps } = usePricingPlanStyleProps(propsWithDefaults);
+  const { badge, title, subtitle, price, action, note } = propsWithDefaults;
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
 
   return (
@@ -27,19 +28,13 @@ const PricingPlanHeader = (props: SpiritPricingPlanHeaderProps) => {
       className={classNames(classProps.header.root, styleProps.className)}
       style={styleProps.style}
     >
-      {propsWithDefaults.badge && <div className={classNames(classProps.header.badge)}>{propsWithDefaults.badge}</div>}
-      <div className={classNames(classProps.header.content)}>
-        {propsWithDefaults.title && <h3 className={classNames(classProps.header.title)}>{propsWithDefaults.title}</h3>}
-        {propsWithDefaults.subtitle && (
-          <div className={classNames(classProps.header.subtitle)}>{propsWithDefaults.subtitle}</div>
-        )}
-        {propsWithDefaults.price && (
-          <div className={classNames(classProps.header.price)}>{propsWithDefaults.price}</div>
-        )}
-        {propsWithDefaults.action && (
-          <div className={classNames(classProps.header.action)}>{propsWithDefaults.action}</div>
-        )}
-        {propsWithDefaults.note && <div className={classNames(classProps.header.note)}>{propsWithDefaults.note}</div>}
+      {badge && <div className={classProps.header.badge}>{badge}</div>}
+      <div className={classProps.header.content}>
+        {title && <h3 className={classProps.header.title}>{title}</h3>}
+        {subtitle && <div className={classNames(classProps.header.subtitle)}>{subtitle}</div>}
+        {price && <div className={classProps.header.price}>{price}</div>}
+        {action && <div className={classProps.header.action}>{action}</div>}
+        {note && <div className={classProps.header.note}>{note}</div>}
       </div>
     </header>
   );
