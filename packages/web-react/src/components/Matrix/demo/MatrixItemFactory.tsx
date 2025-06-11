@@ -9,7 +9,7 @@ type MatrixItemFactoryProps = {
 const MatrixItemFactory = ({ items, label }: MatrixItemFactoryProps) => (
   <>
     {Array.from({ length: items }, (_, index) => (
-      <DocsBox key={`${label}-${index}`}>
+      <DocsBox key={`${label}-${index}`} isMultiline>
         {label} {index + 1}
       </DocsBox>
     ))}

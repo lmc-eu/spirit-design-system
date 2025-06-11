@@ -14,37 +14,33 @@ const MatrixResponsiveColumnsGap = () => (
       spacingY="space-1200"
     >
       <Stack hasSpacing>
-        <DocsBox UNSAFE_className="docs-Box--multiline">Stack 1</DocsBox>
-        <DocsBox UNSAFE_className="docs-Box--multiline">
+        <DocsBox isMultiline>Stack 1</DocsBox>
+        <DocsBox isMultiline>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.
         </DocsBox>
-        <DocsBox UNSAFE_className="docs-Box--multiline">Lorem ipsum</DocsBox>
+        <DocsBox isMultiline>Lorem ipsum</DocsBox>
       </Stack>
 
       <Stack hasSpacing>
-        <DocsBox UNSAFE_className="docs-Box--multiline">Stack 2</DocsBox>
-        <DocsBox UNSAFE_className="docs-Box--multiline">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </DocsBox>
-        <DocsBox UNSAFE_className="docs-Box--multiline">
+        <DocsBox isMultiline>Stack 2</DocsBox>
+        <DocsBox isMultiline>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</DocsBox>
+        <DocsBox isMultiline>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.
         </DocsBox>
       </Stack>
 
       <Stack hasSpacing>
-        <DocsBox UNSAFE_className="docs-Box--multiline">Stack 3</DocsBox>
-        <DocsBox UNSAFE_className="docs-Box--multiline">
+        <DocsBox isMultiline>Stack 3</DocsBox>
+        <DocsBox isMultiline>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.
         </DocsBox>
-        <DocsBox UNSAFE_className="docs-Box--multiline">Lorem ipsum</DocsBox>
+        <DocsBox isMultiline>Lorem ipsum</DocsBox>
       </Stack>
 
       <Stack hasSpacing>
-        <DocsBox UNSAFE_className="docs-Box--multiline">Stack 4</DocsBox>
-        <DocsBox UNSAFE_className="docs-Box--multiline">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </DocsBox>
-        <DocsBox UNSAFE_className="docs-Box--multiline">
+        <DocsBox isMultiline>Stack 4</DocsBox>
+        <DocsBox isMultiline>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</DocsBox>
+        <DocsBox isMultiline>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.
         </DocsBox>
       </Stack>
