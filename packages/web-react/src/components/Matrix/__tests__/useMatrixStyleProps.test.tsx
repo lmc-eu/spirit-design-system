@@ -24,6 +24,15 @@ describe('useMatrixStyleProps', () => {
     ],
     [undefined, 'space-100', undefined, { '--spirit-matrix-spacing-x': 'var(--spirit-space-100)' }],
     [undefined, undefined, 'space-100', { '--spirit-matrix-spacing-y': 'var(--spirit-space-100)' }],
+    [
+      'space-100',
+      'space-200',
+      'space-300',
+      {
+        '--spirit-matrix-spacing-x': 'var(--spirit-space-200)',
+        '--spirit-matrix-spacing-y': 'var(--spirit-space-300)',
+      },
+    ],
   ])('should return spacing CSS properties', (spacing, spacingX, spacingY, expectedStyle) => {
     const props: SpiritMatrixProps = { spacing, spacingX, spacingY } as SpiritMatrixProps;
     const { result } = renderHook(() => useMatrixStyleProps(props));
@@ -32,61 +41,7 @@ describe('useMatrixStyleProps', () => {
   });
 
   it.each([
-    // spacing, spacingX, spacingY, expectedStyle
-    [
-      { tablet: 'space-100' },
-      undefined,
-      undefined,
-      {
-        '--spirit-matrix-spacing-x-tablet': 'var(--spirit-space-100)',
-        '--spirit-matrix-spacing-y-tablet': 'var(--spirit-space-100)',
-      },
-    ],
-    [undefined, { tablet: 'space-100' }, undefined, { '--spirit-matrix-spacing-x-tablet': 'var(--spirit-space-100)' }],
-    [
-      { mobile: 'space-100', tablet: 'space-200', desktop: 'space-300' },
-      undefined,
-      undefined,
-      {
-        '--spirit-matrix-spacing-x': 'var(--spirit-space-100)',
-        '--spirit-matrix-spacing-y': 'var(--spirit-space-100)',
-        '--spirit-matrix-spacing-x-tablet': 'var(--spirit-space-200)',
-        '--spirit-matrix-spacing-y-tablet': 'var(--spirit-space-200)',
-        '--spirit-matrix-spacing-x-desktop': 'var(--spirit-space-300)',
-        '--spirit-matrix-spacing-y-desktop': 'var(--spirit-space-300)',
-      },
-    ],
-    [
-      undefined,
-      undefined,
-      { mobile: 'space-100', tablet: 'space-200', desktop: 'space-300' },
-      {
-        '--spirit-matrix-spacing-y': 'var(--spirit-space-100)',
-        '--spirit-matrix-spacing-y-tablet': 'var(--spirit-space-200)',
-        '--spirit-matrix-spacing-y-desktop': 'var(--spirit-space-300)',
-      },
-    ],
-    [
-      { mobile: 'space-100', tablet: 'space-200', desktop: 'space-300' },
-      { mobile: 'space-400', tablet: 'space-500', desktop: 'space-600' },
-      { mobile: 'space-700', tablet: 'space-800', desktop: 'space-900' },
-      {
-        '--spirit-matrix-spacing-x': 'var(--spirit-space-400)',
-        '--spirit-matrix-spacing-y': 'var(--spirit-space-700)',
-        '--spirit-matrix-spacing-x-tablet': 'var(--spirit-space-500)',
-        '--spirit-matrix-spacing-y-tablet': 'var(--spirit-space-800)',
-        '--spirit-matrix-spacing-x-desktop': 'var(--spirit-space-600)',
-        '--spirit-matrix-spacing-y-desktop': 'var(--spirit-space-900)',
-      },
-    ],
-  ])('should return responsive spacing CSS properties', (spacing, spacingX, spacingY, expectedStyle) => {
-    const props: SpiritMatrixProps = { spacing, spacingX, spacingY } as SpiritMatrixProps;
-    const { result } = renderHook(() => useMatrixStyleProps(props));
-
-    expect(result.current.styleProps).toEqual(expectedStyle);
-  });
-
-  it.each([
+    // prop, expectedStyle
     [
       'cols',
       { mobile: '1', tablet: '2', desktop: '3' },

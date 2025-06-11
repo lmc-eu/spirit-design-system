@@ -27,15 +27,21 @@ describe('Matrix', () => {
 
   elementTypePropsTest(Matrix);
 
-  it('should render text children', () => {
-    render(<Matrix>{text}</Matrix>);
+  beforeEach(() => {
+    render(<Matrix data-testid="matrix-test-id">{text}</Matrix>);
+  });
 
+  it('should render text children', () => {
     expect(screen.getByText(text)).toBeInTheDocument();
   });
 
-  it('should render with default CSS properties', () => {
-    render(<Matrix data-testid={testId} />);
+  it('should render default elementType', () => {
+    const element = screen.getByTestId(testId);
 
+    expect(element.tagName).toBe('DIV');
+  });
+
+  it('should render with default CSS properties', () => {
     const element = screen.getByTestId(testId) as HTMLElement;
 
     expect(element).toHaveStyle({ '--spirit-matrix-columns': '3' });
