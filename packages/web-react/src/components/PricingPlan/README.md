@@ -1,15 +1,14 @@
 # PricingPlan
 
-PartnerLogo is a component designed to display the partner's logo (e.g. advertiser, business partner, etc.).
+TODO
 
 ## API
 
-| Name          | Type                               | Default  | Required | Description                                                   |
-| ------------- | ---------------------------------- | -------- | -------- | ------------------------------------------------------------- |
-| `children`    | `ReactNode`                        | `null`   | ✓        | Content of the PartnerLogo                                    |
-| `hasSafeArea` | `boolean`                          | `true`   | ✕        | If false, the PartnerLogo is displayed without safe area      |
-| `isFluid`     | `boolean`                          | `false`  | ✕        | If true, the PartnerLogo adjusts to the size of its container |
-| `size`        | [Size dictionary][dictionary-size] | `medium` | ✕        | Size of the PartnerLogo                                       |
+| Name           | Type        | Default | Required | Description                             |
+| -------------- | ----------- | ------- | -------- | --------------------------------------- |
+| `children`     | `ReactNode` | `null`  | ✓        | Content of the PricingPlan              |
+| `isComparable` | `boolean`   | `false` | ✕        | If true, the PricingPlan is comparable  |
+| `isHighlated`  | `boolean`   | `false` | ✕        | If true, the PricingPlan is highlighted |
 
 The components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
