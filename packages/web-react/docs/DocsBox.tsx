@@ -1,9 +1,10 @@
 import classNames from 'classnames';
 import React, { ReactNode } from 'react';
-import { SizesDictionaryType, StyleProps, useStyleProps } from '../src';
+import { SizesDictionaryType, StyleProps, useClassNamePrefix, useStyleProps } from '../src';
 
 interface DocsBoxProps extends StyleProps {
   children: ReactNode;
+  isMultiline?: boolean;
   size?: SizesDictionaryType;
 }
 
@@ -13,12 +14,19 @@ const defaultProps: Partial<DocsBoxProps> = {
 
 const DocsBox = (props: DocsBoxProps) => {
   const propsWithDefaults = { ...defaultProps, ...props };
-  const { children, size, ...restProps } = propsWithDefaults;
+  const { children, isMultiline, size, ...restProps } = propsWithDefaults;
   const { styleProps, props: transferProps } = useStyleProps(restProps);
-  const sizeClass = size ? `docs-Box--${size}` : '';
+  const docsBoxClass = useClassNamePrefix('docs-Box');
+  const sizeClass = `${docsBoxClass}--${size}`;
+  const multilineClass = `${docsBoxClass}--multiline`;
+
+  const classProps = classNames(docsBoxClass, {
+    [sizeClass]: size,
+    [multilineClass]: isMultiline,
+  });
 
   return (
-    <div {...styleProps} {...transferProps} className={classNames('docs-Box', sizeClass, styleProps.className)}>
+    <div {...styleProps} {...transferProps} className={classNames(classProps, styleProps.className)}>
       {children}
     </div>
   );
