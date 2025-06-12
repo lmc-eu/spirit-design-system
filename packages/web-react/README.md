@@ -84,7 +84,9 @@ application conforms to design requirements, and is adaptive across platform sca
 
 ### Style Props
 
-All Spirit components accept a set of props that can be used to control their outer spacing. The props are:
+All Spirit components accept a set of props that can be used to control their outer spacing and display. The props are:
+
+#### Spacing Props
 
 - `margin`
 - `marginTop`
@@ -97,11 +99,26 @@ All Spirit components accept a set of props that can be used to control their ou
 These props accept a spacing token (eg. `space-100`), `auto` or an object with breakpoint keys and spacing token
 values or `auto`. We use these props to set global CSS utility classes on the root element of the component.
 
-Examples:
+#### Display Props
+
+- `hideOn` - Hide the component only at specific breakpoint(s)
+- `hideFrom` - Hide the component from a specific breakpoint and up
+
+The `hideOn` prop accepts either a single breakpoint token (eg. `mobile`, `tablet`, `desktop`) or an array of breakpoint tokens.
+The `hideFrom` prop accepts a single breakpoint token.
+The component will be hidden from the specified breakpoints up using CSS display utilities.
+
+#### Examples
 
 ```jsx
+// Spacing examples
 <Alert marginBottom="space-100" />
 <Button marginX={{ mobile: 'space-100', tablet: 'space-200' }} />
+
+// Hide examples
+<Alert hideOn="mobile" />  // Hidden only on mobile
+<Button hideOn={['mobile', 'tablet']} />  // Hidden only on mobile and tablet
+<Alert hideFrom="tablet" />  // Hidden from tablet breakpoint and up
 ```
 
 If you need even more control over the component styling, use [escape hatches](#escape-hatches).

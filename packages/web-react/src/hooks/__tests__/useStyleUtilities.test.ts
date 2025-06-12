@@ -12,6 +12,8 @@ describe('useStyleUtilities hook', () => {
         tablet: 'auto',
         desktop: 'space-300',
       },
+      hideOn: 'tablet',
+      hideFrom: 'desktop',
     };
     const mockPrefix = 'test-prefix';
 
@@ -22,6 +24,8 @@ describe('useStyleUtilities hook', () => {
       'test-prefix-mx-200',
       'test-prefix-mx-tablet-auto',
       'test-prefix-mx-desktop-300',
+      'test-prefix-d-only-tablet-none',
+      'test-prefix-d-desktop-none',
     ]);
     expect(result.current.props).toEqual({});
   });
@@ -34,11 +38,19 @@ describe('useStyleUtilities hook', () => {
         tablet: 'auto',
         desktop: 'space-300',
       },
+      hideOn: ['mobile', 'desktop'],
     };
 
-    const { result } = renderHook(() => useStyleUtilities(mockProps as StyleProps));
+    const { result } = renderHook(() => useStyleUtilities(mockProps as StyleProps, ''));
 
-    expect(result.current.styleUtilities).toEqual(['m-100', 'mx-200', 'mx-tablet-auto', 'mx-desktop-300']);
+    expect(result.current.styleUtilities).toEqual([
+      'm-100',
+      'mx-200',
+      'mx-tablet-auto',
+      'mx-desktop-300',
+      'd-only-mobile-none',
+      'd-only-desktop-none',
+    ]);
     expect(result.current.props).toEqual({});
   });
 
@@ -46,6 +58,7 @@ describe('useStyleUtilities hook', () => {
     const mockProps = {
       margin: { mobile: 'space-100', tablet: 'space-200', desktop: 'space-300' },
       marginX: { mobile: 'space-200', tablet: 'space-200', desktop: 'space-300' },
+      hideFrom: 'tablet',
     };
     const mockPrefix = 'test-prefix';
 
@@ -58,6 +71,7 @@ describe('useStyleUtilities hook', () => {
       'test-prefix-mx-200',
       'test-prefix-mx-tablet-200',
       'test-prefix-mx-desktop-300',
+      'test-prefix-d-tablet-none',
     ]);
     expect(result.current.props).toEqual({});
   });
@@ -90,6 +104,8 @@ describe('useStyleUtilities hook', () => {
       paddingX: 'space-600',
       paddingY: 'space-700',
       textAlignment: TextAlignments.RIGHT,
+      hideOn: 'mobile',
+      hideFrom: 'desktop',
     };
     const additionalSpacingProps = {
       padding: 'p',
@@ -110,6 +126,8 @@ describe('useStyleUtilities hook', () => {
       'test-prefix-px-600',
       'test-prefix-py-700',
       'test-prefix-text-right',
+      'test-prefix-d-only-mobile-none',
+      'test-prefix-d-desktop-none',
     ]);
   });
 
@@ -161,6 +179,8 @@ describe('useStyleUtilities hook', () => {
         tablet: undefined,
         desktop: 'space-300',
       },
+      hideOn: undefined,
+      hideFrom: null,
     };
 
     // Type casting to `unknown` - `undefined` and `null` are not valid values for StyleProps
@@ -168,5 +188,71 @@ describe('useStyleUtilities hook', () => {
 
     expect(result.current.styleUtilities).toEqual(['mx-desktop-300']);
     expect(result.current.props).toEqual({});
+  });
+
+  it('should process hideOn utility with single breakpoint', () => {
+    const mockProps = {
+      hideOn: 'tablet',
+    };
+
+    const { result } = renderHook(() => useStyleUtilities(mockProps as StyleProps));
+
+    expect(result.current.styleUtilities).toEqual(['d-only-tablet-none']);
+  });
+
+  it('should process hideOn utility with multiple breakpoints', () => {
+    const mockProps = {
+      hideOn: ['mobile', 'desktop'],
+    };
+
+    const { result } = renderHook(() => useStyleUtilities(mockProps as StyleProps));
+
+    expect(result.current.styleUtilities).toEqual(['d-only-mobile-none', 'd-only-desktop-none']);
+  });
+
+  it('should process hideFrom utility with single breakpoint', () => {
+    const mockProps = {
+      hideFrom: 'tablet',
+    };
+
+    const { result } = renderHook(() => useStyleUtilities(mockProps as StyleProps));
+
+    expect(result.current.styleUtilities).toEqual(['d-tablet-none']);
+  });
+
+  it('should process hideFrom utility with mobile breakpoint', () => {
+    const mockProps = {
+      hideFrom: 'mobile',
+    };
+
+    const { result } = renderHook(() => useStyleUtilities(mockProps as StyleProps));
+
+    expect(result.current.styleUtilities).toEqual(['d-none']);
+  });
+
+  it('should process both hideOn and hideFrom utilities together', () => {
+    const mockProps = {
+      hideOn: ['tablet', 'desktop'],
+      hideFrom: 'mobile',
+    };
+
+    const { result } = renderHook(() => useStyleUtilities(mockProps as StyleProps));
+
+    expect(result.current.styleUtilities).toEqual(['d-only-tablet-none', 'd-only-desktop-none', 'd-none']);
+  });
+
+  it('should process display utilities with prefix', () => {
+    const mockProps = {
+      hideOn: ['tablet', 'desktop'],
+      hideFrom: 'mobile',
+    };
+
+    const { result } = renderHook(() => useStyleUtilities(mockProps as StyleProps, 'test-prefix'));
+
+    expect(result.current.styleUtilities).toEqual([
+      'test-prefix-d-only-tablet-none',
+      'test-prefix-d-only-desktop-none',
+      'test-prefix-d-none',
+    ]);
   });
 });
