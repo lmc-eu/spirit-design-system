@@ -81,7 +81,111 @@
     }
 }
 
-@include test.describe('get-modifier mixin') {
+@include test.describe('between mixin from breakpoint') {
+    @include test.it('should output media query for provided breakpoint range') {
+        @include test.assert() {
+            @include test.output() {
+                @include breakpoint.between(768px, 1280px) {
+                    .selector {
+                        color: #bada55;
+                    }
+                }
+            }
+
+            @include test.expect() {
+                @media (width >= 768px) and (width < 1280px) {
+                    .selector {
+                        color: #bada55;
+                    }
+                }
+            }
+        }
+    }
+
+    @include test.it('should output media query when starting from 0') {
+        @include test.assert() {
+            @include test.output() {
+                @include breakpoint.between(0, 768px) {
+                    .selector {
+                        color: #bada55;
+                    }
+                }
+            }
+
+            @include test.expect() {
+                @media (width >= 0) and (width < 768px) {
+                    .selector {
+                        color: #bada55;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include test.describe('only mixin from breakpoint') {
+    @include test.it('should output media query for first breakpoint') {
+        @include test.assert() {
+            @include test.output() {
+                @include breakpoint.only(0) {
+                    .selector {
+                        color: #bada55;
+                    }
+                }
+            }
+
+            @include test.expect() {
+                @media (width < 768px) {
+                    .selector {
+                        color: #bada55;
+                    }
+                }
+            }
+        }
+    }
+
+    @include test.it('should output media query for middle breakpoint') {
+        @include test.assert() {
+            @include test.output() {
+                @include breakpoint.only(768px) {
+                    .selector {
+                        color: #bada55;
+                    }
+                }
+            }
+
+            @include test.expect() {
+                @media (width >= 768px) and (width < 1280px) {
+                    .selector {
+                        color: #bada55;
+                    }
+                }
+            }
+        }
+    }
+
+    @include test.it('should output media query for last breakpoint') {
+        @include test.assert() {
+            @include test.output() {
+                @include breakpoint.only(1280px) {
+                    .selector {
+                        color: #bada55;
+                    }
+                }
+            }
+
+            @include test.expect() {
+                @media (width >= 1280px) {
+                    .selector {
+                        color: #bada55;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include test.describe('get-modifier function') {
     @include test.it('should output empty string for a zero breakpoint value') {
         @include test.assert-equal(breakpoint.get-modifier('infix', 'mobile', 0), '');
     }
