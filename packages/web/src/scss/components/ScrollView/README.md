@@ -77,6 +77,40 @@ content from wrapping.
 </div>
 ```
 
+### Edge-to-Edge Scrolling
+
+To expand ScrollView horizontally edge-to-edge and restore the original
+horizontal padding of the parent Container inside, use our `breakout-container`
+helper with the `--container-padding-inline` CSS variable provided by the
+[Container][container] component. This technique is useful when you can't place
+the ScrollView and its content outside a parent Container.
+
+```html
+<div class="Container">
+  <!-- Content… -->
+  <!-- Break out from the Container and prepare a grid layout for ScrollView: -->
+  <div class="breakout-container d-grid">
+    <!-- Establish horizontal ScrollView: -->
+    <div class="ScrollView ScrollView--horizontal" data-spirit-toggle="scrollView" data-spirit-direction="horizontal">
+      <div class="ScrollView__viewport" data-spirit-element="viewport" tabindex="0">
+        <div class="ScrollView__content" data-spirit-element="content">
+          <!-- Restore Container's horizontal padding on a Grid (for example): -->
+          <div class="Grid Grid--cols-3" style="margin-inline: var(--container-padding-inline);">
+            <!-- Scrollable content… -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+⚠️ Composition of [Container][container] and other Spirit layout components
+inside a horizontal ScrollView is currently not supported. We recommend taking
+the `--container-padding-inline` CSS variable provided by the parent Container
+and applying it to the desired layout component via inline styles instead as
+shown above.
+
 ## Scrolling Overflow Decorators
 
 The ScrollView component provides overflow decorators on its edges, showing that there is more content to scroll to. The default overflow
@@ -169,5 +203,6 @@ See [WAI Scrollable content guidelines][wai-scrollable-content] for more informa
 | `getInstance`         | _Static_ method which allows you to get the ScrollView instance associated with a DOM element.                                                    |
 | `getOrCreateInstance` | _Static_ method which allows you to get the ScrollView instance associated with a DOM element, or create a new one in case it wasn’t initialized. |
 
+[container]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Container/README.md
 [wai-scrollable-content]: https://www.w3.org/WAI/standards-guidelines/act/rules/0ssw9k/
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
