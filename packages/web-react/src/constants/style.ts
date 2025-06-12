@@ -29,3 +29,8 @@ export const PaddingStyleProps = {
 export const TextStyleProps = {
   textAlignment: 'text',
 } as const;
+
+export const HideStyleProps = {
+  hideOn: 'd',
+  hideFrom: 'd',
+} as const;
