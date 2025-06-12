@@ -25,7 +25,12 @@ export interface SpacingCSSProperties extends CSSProperties {
 
 export type ElementTypeProp = string | ElementType;
 
-export interface StyleProps extends SpacingProps {
+export type HideProps = {
+  hideOn?: BreakpointToken | BreakpointToken[];
+  hideFrom?: BreakpointToken | BreakpointToken[];
+};
+
+export interface StyleProps extends SpacingProps, HideProps {
   // For backward compatibility!
   /** Sets the CSS [className](https://developer.mozilla.org/en-US/docs/Web/API/Element/className) for the element. Only use as a **last resort**. Use style props instead. */
   UNSAFE_className?: string;
