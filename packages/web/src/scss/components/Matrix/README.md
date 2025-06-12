@@ -149,6 +149,9 @@ breakpoints.
 </div>
 ```
 
+👉 Head over to the [ScrollView documentation][scroll-view] to see how to
+achieve edge-to-edge horizontal scrolling.
+
 ## Responsive Matrix
 
 Using the Matrix layout for a single line of content is very straightforward.
