@@ -1,4 +1,6 @@
+@use 'sass:list';
 @use 'sass:string';
+@use '@tokens' as tokens;
 
 // Mixin to get the width media query for a breakpoint value in up direction.
 //
@@ -31,6 +33,58 @@
         }
     } @else {
         @content;
+    }
+}
+
+// Mixin to get the width media query for a breakpoint value in between direction.
+//
+// Example: between(0, 768px) { … } will return @media (width >= 0) and (width < 768px) { … }
+//
+// Parameters are:
+// * $min: the minimum breakpoint value (in pixels)
+// * $max: the maximum breakpoint value (in pixels)
+@mixin between($min, $max) {
+    @media (width >= $min) and (width < $max) {
+        @content;
+    }
+}
+
+// Mixin to get the width media query for a breakpoint value in only direction.
+//
+// Example: only(0) { … } will return @media (width < [next-breakpoint]) { … }
+// Example: only([middle-breakpoint]) { … } will return @media (width >= [middle-breakpoint]) and (width < [next-breakpoint]) { … }
+// Example: only([last-breakpoint]) { … } will return @media (width >= [last-breakpoint]) { … }
+//
+// Parameters are:
+// * $breakpoint-value: the current breakpoint value (in pixels)
+@mixin only($breakpoint-value) {
+    $values: ();
+
+    @each $name, $value in tokens.$breakpoints {
+        $values: list.append($values, $value);
+    }
+
+    $next-value: null;
+    $is-last: true;
+    $index: list.index($values, $breakpoint-value);
+
+    @if $index and $index < list.length($values) {
+        $next-value: list.nth($values, $index + 1);
+        $is-last: false;
+    }
+
+    @if $breakpoint-value == list.nth($values, 1) {
+        @include down($next-value) {
+            @content;
+        }
+    } @else if not $is-last {
+        @include between($breakpoint-value, $next-value) {
+            @content;
+        }
+    } @else {
+        @include up($breakpoint-value) {
+            @content;
+        }
     }
 }
 
