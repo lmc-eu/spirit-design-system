@@ -1,4 +1,4 @@
-import { SpacingStyleProp as DefaultSpacingStyleProp } from '../constants';
+import { SpacingStyleProp as DefaultSpacingStyleProp, HideStyleProps } from '../constants';
 import {
   BREAKPOINT_MOBILE,
   BreakpointToken,
@@ -76,14 +76,64 @@ const processBreakpointProperties = (
     return accumulatedBreakpointUtilities;
   }, []);
 
-const processProperties = (
+/**
+ * Process the hide properties.
+ *
+ * @param {keyof typeof HideStyleProps} utilityKey - The utility key.
+ * @param {UtilityName} utilityName - The utility name.
+ * @param {BreakpointToken | BreakpointToken[]} propValue - The prop value.
+ * @param {ClassNamePrefix} prefix - The prefix.
+ * @returns {string[]} - The processed utilities.
+ */
+const processHideProperties = (
+  utilityKey: keyof typeof HideStyleProps,
   utilityName: UtilityName,
-  propValue: string | BreakpointPropValue,
+  propValue: BreakpointToken | BreakpointToken[],
   prefix: ClassNamePrefix,
-): string[] =>
-  typeof propValue === 'string'
+): string[] => {
+  if (utilityKey === 'hideOn') {
+    const breakpoints = Array.isArray(propValue) ? propValue : [propValue];
+
+    return breakpoints.map((breakpoint) =>
+      applyClassNamePrefix(prefix)(
+        `${utilityName}${CLASS_SEPARATOR}${breakpoint}${CLASS_SEPARATOR}only${CLASS_SEPARATOR}none`,
+      ),
+    );
+  }
+
+  if (utilityKey === 'hideFrom') {
+    const breakpoint = propValue;
+    const infix = breakpoint === BREAKPOINT_MOBILE ? '' : `${CLASS_SEPARATOR}${breakpoint}`;
+
+    return [applyClassNamePrefix(prefix)(`${utilityName}${infix}${CLASS_SEPARATOR}none`)];
+  }
+
+  return [];
+};
+
+/**
+ * Process the properties.
+ *
+ * @param {keyof typeof DefaultSpacingStyleProp | keyof typeof HideStyleProps} utilityKey - The utility key.
+ * @param {UtilityName} utilityName - The utility name.
+ * @param {string | BreakpointPropValue | BreakpointToken | BreakpointToken[]} propValue - The prop value.
+ * @param {ClassNamePrefix} prefix - The prefix.
+ * @returns {string[]} - The processed utilities.
+ */
+const processProperties = (
+  utilityKey: keyof typeof DefaultSpacingStyleProp | keyof typeof HideStyleProps,
+  utilityName: UtilityName,
+  propValue: string | BreakpointPropValue | BreakpointToken | BreakpointToken[],
+  prefix: ClassNamePrefix,
+): string[] => {
+  if (utilityKey === 'hideOn' || utilityKey === 'hideFrom') {
+    return processHideProperties(utilityKey, utilityName, propValue as BreakpointToken | BreakpointToken[], prefix);
+  }
+
+  return typeof propValue === 'string'
     ? [applyClassNamePrefix(prefix)(`${utilityName}-${getUtilityValue(propValue)}`)]
-    : processBreakpointProperties(utilityName, propValue, prefix);
+    : processBreakpointProperties(utilityName, propValue as BreakpointPropValue, prefix);
+};
 
 type IsStylePropProcessableOptions = {
   /** The flag to check if the key should be included in the styleProp or not. */
@@ -127,14 +177,17 @@ export const useStyleUtilities = (
   prefix: ClassNamePrefix = '',
   additionalProps: PropsShape = {},
 ): StyleUtilitiesResult => {
-  const styleProps = { ...DefaultSpacingStyleProp, ...additionalProps };
+  const styleProps = { ...DefaultSpacingStyleProp, ...HideStyleProps, ...additionalProps };
 
   const propEntries = Object.entries(props);
   const styleUtilities = propEntries.reduce((accumulatedUtilities: string[], [key, propValue]) => {
     if (isStylePropProcessable(styleProps, key, propValue)) {
       const utilityName = styleProps[key as keyof typeof styleProps];
 
-      return [...accumulatedUtilities, ...processProperties(utilityName, propValue, prefix)];
+      return [
+        ...accumulatedUtilities,
+        ...processProperties(key as keyof typeof styleProps, utilityName, propValue, prefix),
+      ];
     }
 
     return accumulatedUtilities;
