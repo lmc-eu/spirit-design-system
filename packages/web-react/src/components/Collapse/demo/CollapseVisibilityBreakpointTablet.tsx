@@ -8,7 +8,7 @@ const CollapseVisibilityBreakpointTablet = () => {
 
   return (
     <>
-      <ButtonLink onClick={toggleHandlerTablet} size="medium" UNSAFE_className="d-tablet-none">
+      <ButtonLink onClick={toggleHandlerTablet} size="medium" hideFrom="tablet">
         Collapse trigger
       </ButtonLink>
       <Collapse id="collapse-visibility-breakpoint-tablet-id" isOpen={isOpenTablet} collapsibleToBreakpoint="tablet">

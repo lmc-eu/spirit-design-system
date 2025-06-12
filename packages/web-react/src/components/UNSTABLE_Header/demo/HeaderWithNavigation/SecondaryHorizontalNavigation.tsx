@@ -23,22 +23,22 @@ const SecondaryHorizontalNavigation: FunctionComponent<SecondaryHorizontalNaviga
         <VisuallyHidden>Search</VisuallyHidden>
       </Button>
     </NavigationItem>
-    <NavigationItem alignmentY="center" UNSAFE_className="d-none d-desktop-flex">
+    <NavigationItem alignmentY="center" hideOn={['mobile', 'tablet']}>
       <NavigationAvatar avatarContent={<Icon name="profile" boxSize={20} />} aria-label="Profile of Jiří Bárta">
         <Text elementType="span" size="small" emphasis="semibold">
           My Account
         </Text>
       </NavigationAvatar>
     </NavigationItem>
-    <NavigationItem UNSAFE_className="d-none d-desktop-flex">
+    <NavigationItem hideOn={['mobile', 'tablet']}>
       <ButtonLink href="#" color="secondary">
         Log In
       </ButtonLink>
     </NavigationItem>
-    <NavigationItem UNSAFE_className="d-none d-desktop-flex">
+    <NavigationItem hideOn={['mobile', 'tablet']}>
       <ButtonLink href="#">Post a Job</ButtonLink>
     </NavigationItem>
-    <NavigationItem UNSAFE_className="d-desktop-none">
+    <NavigationItem hideOn="desktop">
       <Button
         id={`${id}-open-button`}
         color="tertiary"

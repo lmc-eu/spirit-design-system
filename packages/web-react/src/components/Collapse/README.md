@@ -68,8 +68,10 @@ const [isOpen, toggle] = useState<boolean>(true);
 
 // ...
 
-<Button UNSAFE_className="d-tablet-none" onClick={() => toggle(!isOpen)}>Collapse Trigger ({ isOpen ? 'Open' : 'Closed' })</Button>
-<Collapse isOpen={isOpen} collapsibleToBreakpoint="tablet">
+<Button hideFrom="tablet" onClick={() => toggle(!isOpen)}>
+  Collapse Trigger ({ isOpen ? 'Open' : 'Closed' })
+</Button>
+<Collapse isOpen={isOpen}>
   ...
 </Collapse>
 ```
