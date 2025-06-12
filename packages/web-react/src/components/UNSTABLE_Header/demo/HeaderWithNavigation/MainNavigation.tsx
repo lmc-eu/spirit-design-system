@@ -14,7 +14,7 @@ export const MainNavigation = ({
   <Navigation
     aria-label="Main Navigation"
     direction={direction}
-    UNSAFE_className={direction === Direction.HORIZONTAL ? 'd-none d-desktop-flex' : undefined}
+    {...(direction === Direction.HORIZONTAL ? { hideOn: ['mobile', 'tablet'] } : {})}
   >
     <NavigationItem>
       <NavigationAction href="#" variant={variant} isSelected>

@@ -3,7 +3,7 @@ import { Navigation, NavigationAction, NavigationItem } from '../../../Navigatio
 import MainHorizontalNavigationDropdown from './MainHorizontalNavigationDropdown';
 
 export const MainHorizontalNavigation = () => (
-  <Navigation aria-label="Main Navigation" UNSAFE_className="d-none d-desktop-flex">
+  <Navigation aria-label="Main Navigation" hideOn={['mobile', 'tablet']}>
     <NavigationItem>
       <NavigationAction href="#" isSelected>
         Selected
