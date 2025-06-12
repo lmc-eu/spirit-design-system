@@ -1,7 +1,7 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { ValidationStates } from '../../../constants';
+import { Sizes, ValidationStates } from '../../../constants';
 import ReadMe from '../README.md';
 import { TextArea } from '..';
 
@@ -22,6 +22,12 @@ const meta: Meta<typeof TextArea> = {
       control: 'number',
       table: {
         defaultValue: { summary: '400' },
+      },
+    },
+    hasValidationIcon: {
+      control: 'boolean',
+      table: {
+        defaultValue: { summary: 'false' },
       },
     },
     helperText: {
@@ -75,6 +81,13 @@ const meta: Meta<typeof TextArea> = {
     rows: {
       control: 'number',
     },
+    size: {
+      control: 'select',
+      options: [...Object.values(Sizes), undefined],
+      table: {
+        defaultValue: { summary: Sizes.MEDIUM },
+      },
+    },
     validationState: {
       control: 'select',
       options: [...Object.values(ValidationStates), undefined],
@@ -86,12 +99,6 @@ const meta: Meta<typeof TextArea> = {
       control: 'object',
       description:
         'The validation text. Only visible if validationState is set. Use a string `"foo"` for single validation text or an array for multiple validation texts `["foo", "bar"]`.',
-    },
-    hasValidationIcon: {
-      control: 'boolean',
-      table: {
-        defaultValue: { summary: 'false' },
-      },
     },
     value: {
       control: 'text',
@@ -109,10 +116,14 @@ const meta: Meta<typeof TextArea> = {
     isLabelHidden: false,
     isRequired: false,
     label: 'Label',
+    maxLength: undefined,
     name: 'TextArea',
     placeholder: 'Placeholder',
+    rows: undefined,
+    size: Sizes.MEDIUM,
     validationState: undefined,
     validationText: 'Validation text',
+    value: undefined,
   },
 };
 

@@ -15,6 +15,7 @@ import TextAreaHelperText from './TextAreaHelperText';
 import TextAreaHiddenLabel from './TextAreaHiddenLabel';
 import TextAreaInline from './TextAreaInline';
 import TextAreaRequired from './TextAreaRequired';
+import TextAreaSizes from './TextAreaSizes';
 import TextAreaValidation from './TextAreaValidation';
 import TextAreaValidationWithIcon from './TextAreaValidationWithIcon';
 
@@ -23,6 +24,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <IconsProvider value={icons}>
       <DocsSection title="Default">
         <TextAreaDefault />
+      </DocsSection>
+      <DocsSection title="Sizes">
+        <TextAreaSizes />
       </DocsSection>
       <DocsSection title="Required">
         <TextAreaRequired />

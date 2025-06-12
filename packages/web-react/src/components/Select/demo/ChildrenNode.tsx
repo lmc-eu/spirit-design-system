@@ -1,6 +1,10 @@
 import React from 'react';
 
-export default (props: { isDisabledPlaceholder?: boolean; showPlaceholder?: boolean; showSubOption?: boolean }) => {
+export const ChildNode = (props: {
+  isDisabledPlaceholder?: boolean;
+  showPlaceholder?: boolean;
+  showSubOption?: boolean;
+}) => {
   const { isDisabledPlaceholder = false, showPlaceholder = false, showSubOption = false } = props;
 
   return (
@@ -21,3 +25,5 @@ export default (props: { isDisabledPlaceholder?: boolean; showPlaceholder?: bool
     </>
   );
 };
+
+export default ChildNode;
