@@ -258,3 +258,13 @@ $utilities: (
             ),
     ),
 );
+
+$utilities-breakpoint-specific: (
+    'display': (
+        property: display,
+        class: d,
+        values: (
+            none,
+        ),
+    ),
+);

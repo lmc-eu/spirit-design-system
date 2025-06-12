@@ -16,3 +16,11 @@
         }
     }
 }
+
+@each $breakpoint-name, $breakpoint-value in tokens.$breakpoints {
+    @include breakpoint.only($breakpoint-value) {
+        @each $key, $utility in utilities-settings.$utilities-breakpoint-specific {
+            @include utilities.generate($utility, '-only-#{$breakpoint-name}');
+        }
+    }
+}
