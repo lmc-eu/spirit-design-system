@@ -27,7 +27,12 @@ export type DimensionType = number | Partial<Record<BreakpointToken, number>>;
 
 export type ElementTypeProp = string | ElementType;
 
-export interface StyleProps extends SpacingProps {
+export type DisplayProps = {
+  hideOn?: BreakpointToken | BreakpointToken[];
+  hideFrom?: BreakpointToken;
+};
+
+export interface StyleProps extends SpacingProps, DisplayProps {
   // For backward compatibility!
   /** Sets the CSS [className](https://developer.mozilla.org/en-US/docs/Web/API/Element/className) for the element. Only use as a **last resort**. Use style props instead. */
   UNSAFE_className?: string;
