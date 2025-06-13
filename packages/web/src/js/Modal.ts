@@ -4,7 +4,7 @@ import { EVENT_KEY } from './constants';
 import EventHandler from './dom/EventHandler';
 import SelectorEngine from './dom/SelectorEngine';
 import { enableToggleTrigger, ScrollControl, SpiritConfig } from './utils';
-import { SpiritElement } from './types';
+import { type SpiritElement } from './types';
 
 // TODO: Remove `handleKeyDown` listener when Chrome fixes the bug,
 // right now Chrome is bugged and sends un-cancelable events, so closing modal based on
@@ -24,6 +24,7 @@ class Modal extends BaseComponent {
   isShown: boolean;
   isTouchDevice: boolean;
   scrollControl: ScrollControl;
+  mouseDownTarget: EventTarget | null = null;
 
   static get NAME() {
     return NAME;
@@ -41,6 +42,11 @@ class Modal extends BaseComponent {
   // Using `Element | Window` - Property 'hasAttribute' does not exist on type 'EventTarget'.
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onClick(event: Event & { target: any }) {
+    // segregate clicks that may start inside dialog but end outside
+    if (event.target !== this.mouseDownTarget) {
+      return;
+    }
+
     if (event.target === this.element || event.target.dataset.spiritDismiss) {
       event.preventDefault();
       event.stopPropagation();
@@ -51,6 +57,10 @@ class Modal extends BaseComponent {
         this.hide(event);
       }
     }
+  }
+
+  onMouseDown(event: Event & { target: unknown }) {
+    this.mouseDownTarget = event.target;
   }
 
   onDialogClose(event: KeyboardEvent) {
@@ -86,6 +96,7 @@ class Modal extends BaseComponent {
     if (this.isTouchDevice) {
       EventHandler.on(window, 'touchstart', (event: Event & { target: Window }) => this.onClick(event));
     } else {
+      EventHandler.on(window, 'mousedown', (event: Event & { target: Window }) => this.onMouseDown(event));
       EventHandler.on(window, 'click', (event: Event & { target: Window }) => this.onClick(event));
     }
     EventHandler.on(this.element, 'cancel', (event: Event) => this.handleCancel(event));
@@ -97,6 +108,7 @@ class Modal extends BaseComponent {
     if (this.isTouchDevice) {
       EventHandler.off(window, 'touchstart', (event: Event & { target: Window }) => this.onClick(event));
     } else {
+      EventHandler.off(window, 'mousedown', (event: Event & { target: Window }) => this.onMouseDown(event));
       EventHandler.off(window, 'click', (event: Event & { target: Window }) => this.onClick(event));
     }
     EventHandler.off(this.element, 'cancel', (event: Event) => this.handleCancel(event));

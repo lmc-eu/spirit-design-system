@@ -122,13 +122,17 @@ describe('Modal', () => {
       const dialog = fixtureEl.querySelector('dialog') as HTMLElement;
       const modal = new Modal(dialog);
 
-      const event = new Event('click', { bubbles: true });
+      const mousedownEvent = new Event('mousedown', { bubbles: true });
+      Object.defineProperty(mousedownEvent, 'target', { writable: false, value: dialog });
+      modal.onMouseDown(mousedownEvent);
+
+      const clickEvent = new Event('click', { bubbles: true });
       const targetElement = modal.element;
-      Object.defineProperty(event, 'target', { writable: false, value: targetElement });
+      Object.defineProperty(clickEvent, 'target', { writable: false, value: targetElement });
 
       jest.spyOn(modal, 'hide');
 
-      modal.onClick(event);
+      modal.onClick(clickEvent);
 
       expect(modal.hide).toHaveBeenCalled();
     });
