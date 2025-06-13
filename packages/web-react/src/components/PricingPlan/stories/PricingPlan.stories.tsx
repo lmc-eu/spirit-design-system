@@ -2,8 +2,6 @@ import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { ButtonLink } from '../../ButtonLink';
-import { Icon } from '../../Icon';
-import { Text } from '../../Text';
 import PricingPlan from '../PricingPlan';
 import PricingPlanBody from '../PricingPlanBody';
 import PricingPlanFooter from '../PricingPlanFooter';

@@ -7,6 +7,7 @@ import PricingPlanFooter from '../PricingPlanFooter';
 import PricingPlanHeader from '../PricingPlanHeader';
 
 const PricingPlanInMatrix = () => (
+  // TODO: Change to Matrix after https://jira.almacareer.tech/browse/DS-1952 will be implemented
   <Grid cols={3} marginBottom="space-800" UNSAFE_style={{ marginInline: 'var(--container-padding-inline)' }}>
     <PricingPlan>
       <PricingPlanHeader

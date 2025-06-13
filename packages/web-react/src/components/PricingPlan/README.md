@@ -192,7 +192,6 @@ prevent the empty rows from expanding the component vertically, we use `margin`
 to separate individual content rows.
 
 [matrix-documentation]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Matrix/README.md
-[mdn-dl]: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dl
 [mdn-grid]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout
 [mdn-subgrid]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Subgrid
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
