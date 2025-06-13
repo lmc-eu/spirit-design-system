@@ -3,13 +3,13 @@ import {
   AlignmentXExtendedDictionaryType,
   AlignmentYExtendedDictionaryType,
   BreakpointToken,
+  GridColumns,
   ChildrenProps,
   SpaceToken,
   StyleProps,
   TransferProps,
 } from './shared';
 
-export type GridColumns = 1 | 2 | 3 | 4 | 5 | 6 | 12;
 export type GridColsBreakpoints = {
   mobile?: GridColumns;
   tablet?: GridColumns;
