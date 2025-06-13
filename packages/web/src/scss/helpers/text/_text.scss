@@ -1,3 +1,10 @@
+.text-dotted {
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
+    text-decoration-thickness: 14%;
+    text-underline-position: from-font;
+}
+
 .text-truncate {
     display: block;
     overflow: hidden;
