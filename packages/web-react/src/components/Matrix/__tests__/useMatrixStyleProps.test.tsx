@@ -41,7 +41,7 @@ describe('useMatrixStyleProps', () => {
   });
 
   it.each([
-    // prop, expectedStyle
+    // prop, value, expectedStyle
     [
       'cols',
       { mobile: '1', tablet: '2', desktop: '3' },
