@@ -10,8 +10,8 @@ import {
   DEFAULT_MATRIX_SPACING_X,
   DEFAULT_MATRIX_SPACING_Y,
 } from '../constant';
+import Matrix from '../Matrix';
 import ReadMe from '../README.md';
-import { Matrix } from '..';
 
 const meta: Meta<typeof Matrix> = {
   title: 'Components/Matrix',
