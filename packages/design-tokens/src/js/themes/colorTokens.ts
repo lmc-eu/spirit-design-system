@@ -68,6 +68,7 @@ export const componentButtonTertiaryStateHover = 'var(--spirit-color-component-b
 export const componentButtonTertiaryStateSelected = 'var(--spirit-color-component-button-tertiary-state-selected)';
 
 export const componentHeaderBackground = 'var(--spirit-color-component-header-background)';
+export const componentHeaderBorder = 'var(--spirit-color-component-header-border)';
 export const componentHeaderItemBackgroundStateActive = 'var(--spirit-color-component-header-item-background-state-active)';
 export const componentHeaderItemBackgroundStateDefault = 'var(--spirit-color-component-header-item-background-state-default)';
 export const componentHeaderItemBackgroundStateHover = 'var(--spirit-color-component-header-item-background-state-hover)';
@@ -296,6 +297,7 @@ export const componentColors = {
   },
   header: {
     background: componentHeaderBackground,
+    border: componentHeaderBorder,
     itemBackgroundStateActive: componentHeaderItemBackgroundStateActive,
     itemBackgroundStateDefault: componentHeaderItemBackgroundStateDefault,
     itemBackgroundStateHover: componentHeaderItemBackgroundStateHover,
