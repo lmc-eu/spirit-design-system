@@ -19,7 +19,7 @@ const meta: Meta<typeof PricingPlanBody> = {
     features: {
       control: 'object',
       table: {
-        type: { summary: 'Array<{ title: string; description: string }>' },
+        type: { summary: '{ title: string; description: string }[]' },
       },
     },
     description: {
