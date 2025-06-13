@@ -4,8 +4,8 @@ import { SizesDictionaryType, StyleProps, useClassNamePrefix, useStyleProps } fr
 
 interface DocsBoxProps extends StyleProps {
   children: ReactNode;
-  size?: SizesDictionaryType;
   isMultiline?: boolean;
+  size?: SizesDictionaryType;
 }
 
 const defaultProps: Partial<DocsBoxProps> = {

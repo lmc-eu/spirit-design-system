@@ -1,10 +1,10 @@
 import React from 'react';
-import { Matrix } from '../index';
+import Matrix from '../Matrix';
 import MatrixItemFactory from './MatrixItemFactory';
 
 const MatrixDefault = () => (
   <Matrix>
-    <MatrixItemFactory items={3} label="Item" />
+    <MatrixItemFactory items={['Item 1', 'Item 2', 'Item 3']} />
   </Matrix>
 );
 

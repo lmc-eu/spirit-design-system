@@ -38,7 +38,7 @@ describe('Matrix', () => {
   it('should render default elementType', () => {
     const element = screen.getByTestId(testId);
 
-    expect(element.tagName).toBe('DIV');
+    expect(element.localName).toBe('div');
   });
 
   it('should render with default CSS properties', () => {

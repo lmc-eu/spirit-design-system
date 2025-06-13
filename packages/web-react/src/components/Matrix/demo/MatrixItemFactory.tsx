@@ -1,19 +1,23 @@
 import React from 'react';
 import DocsBox from '../../../../docs/DocsBox';
+import { Stack } from '../../Stack';
 
 type MatrixItemFactoryProps = {
-  items: number;
-  label: string;
+  hasStack?: boolean;
+  items: string[];
 };
 
-const MatrixItemFactory = ({ items, label }: MatrixItemFactoryProps) => (
-  <>
-    {Array.from({ length: items }, (_, index) => (
-      <DocsBox key={`${label}-${index}`} isMultiline>
-        {label} {index + 1}
-      </DocsBox>
-    ))}
-  </>
-);
+const MatrixItemFactory = ({ items, hasStack }: MatrixItemFactoryProps) => {
+  const Wrapper = hasStack ? Stack : React.Fragment;
 
+  return (
+    <Wrapper {...(hasStack ? { hasSpacing: true } : {})}>
+      {items.map((item) => (
+        <DocsBox key={`docs-box-${item}`} isMultiline>
+          {item}
+        </DocsBox>
+      ))}
+    </Wrapper>
+  );
+};
 export default MatrixItemFactory;

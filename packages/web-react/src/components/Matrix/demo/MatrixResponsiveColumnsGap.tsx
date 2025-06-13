@@ -1,8 +1,30 @@
 import React from 'react';
-import DocsBox from '../../../../docs/DocsBox';
 import { ScrollView } from '../../ScrollView';
-import { Stack } from '../../Stack';
-import { Matrix } from '../index';
+import Matrix from '../Matrix';
+import MatrixItemFactory from './MatrixItemFactory';
+
+const columns = [
+  [
+    'Stack 1',
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.',
+    'Lorem ipsum',
+  ],
+  [
+    'Stack 2',
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.',
+  ],
+  [
+    'Stack 3',
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.',
+    'Lorem ipsum',
+  ],
+  [
+    'Stack 4',
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.',
+  ],
+];
 
 const MatrixResponsiveColumnsGap = () => (
   <ScrollView direction="horizontal" data-spirit-toggle="scrollView">
@@ -13,37 +35,9 @@ const MatrixResponsiveColumnsGap = () => (
       spacingX={{ tablet: 'space-1200' }}
       spacingY="space-1200"
     >
-      <Stack hasSpacing>
-        <DocsBox isMultiline>Stack 1</DocsBox>
-        <DocsBox isMultiline>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.
-        </DocsBox>
-        <DocsBox isMultiline>Lorem ipsum</DocsBox>
-      </Stack>
-
-      <Stack hasSpacing>
-        <DocsBox isMultiline>Stack 2</DocsBox>
-        <DocsBox isMultiline>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</DocsBox>
-        <DocsBox isMultiline>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.
-        </DocsBox>
-      </Stack>
-
-      <Stack hasSpacing>
-        <DocsBox isMultiline>Stack 3</DocsBox>
-        <DocsBox isMultiline>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.
-        </DocsBox>
-        <DocsBox isMultiline>Lorem ipsum</DocsBox>
-      </Stack>
-
-      <Stack hasSpacing>
-        <DocsBox isMultiline>Stack 4</DocsBox>
-        <DocsBox isMultiline>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</DocsBox>
-        <DocsBox isMultiline>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.
-        </DocsBox>
-      </Stack>
+      {columns.map((column) => (
+        <MatrixItemFactory key={`responsive-cols-${column}`} items={column} hasStack />
+      ))}
     </Matrix>
   </ScrollView>
 );

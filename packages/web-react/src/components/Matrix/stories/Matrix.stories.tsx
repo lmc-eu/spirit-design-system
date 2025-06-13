@@ -107,7 +107,7 @@ export const Playground: Story = {
           const key = `col-${colIndex}`;
 
           return (
-            <Stack hasSpacing key={key}>
+            <Stack key={key} hasSpacing>
               {[...Array(3)].map((_item, itemIndex) => {
                 const itemKey = `${key}-item-${itemIndex}`;
 
