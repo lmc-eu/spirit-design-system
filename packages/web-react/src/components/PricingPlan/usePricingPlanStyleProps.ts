@@ -1,4 +1,6 @@
+import { cssVariablePrefix } from '@lmc-eu/spirit-design-tokens';
 import classNames from 'classnames';
+import { CSSProperties } from 'react';
 import { useClassNamePrefix } from '../../hooks';
 import {
   SpiritPricingPlanBodyProps,
@@ -6,11 +8,16 @@ import {
   SpiritPricingPlanHeaderProps,
   SpiritPricingPlanProps,
 } from '../../types/pricingPlan';
+import { DEFAULT_NUMBER_OF_PLAN_ROWS } from './constants';
 
-type PricingPlanOwnProps = SpiritPricingPlanProps &
+type PricingPlanStyleProps = SpiritPricingPlanProps &
   SpiritPricingPlanHeaderProps &
   SpiritPricingPlanBodyProps &
   SpiritPricingPlanFooterProps;
+
+interface PricingPlanCSSProperties extends CSSProperties {
+  [key: string]: string | undefined | number;
+}
 
 export interface PricingPlanReturnStyles<T> {
   classProps: {
@@ -36,11 +43,12 @@ export interface PricingPlanReturnStyles<T> {
     };
     footer: string;
   };
-  props: Omit<T, keyof PricingPlanOwnProps>;
+  props: Omit<T, keyof PricingPlanStyleProps>;
+  styleProps: PricingPlanCSSProperties;
 }
 
-export const usePricingPlanStyleProps = <T extends PricingPlanOwnProps>(props: T): PricingPlanReturnStyles<T> => {
-  const { isComparable, isHighlighted, action, badge, title, subtitle, note, price, ...restProps } = props;
+export const usePricingPlanStyleProps = <T extends PricingPlanStyleProps>(props: T): PricingPlanReturnStyles<T> => {
+  const { isComparable, isHighlighted, action, badge, title, subtitle, note, price, rows, ...restProps } = props;
 
   const pricingPlanClass = useClassNamePrefix('PricingPlan');
   const pricingPlanComparableClass = `${pricingPlanClass}--comparable`;
@@ -70,6 +78,12 @@ export const usePricingPlanStyleProps = <T extends PricingPlanOwnProps>(props: T
     [pricingPlanHighlightedClass]: isHighlighted,
   });
 
+  const pricingPlanStyle: PricingPlanCSSProperties = {};
+
+  if (rows !== DEFAULT_NUMBER_OF_PLAN_ROWS) {
+    pricingPlanStyle[`--${cssVariablePrefix}pricing-plan-rows`] = rows?.toString();
+  }
+
   return {
     classProps: {
       root: rootClassProps,
@@ -94,6 +108,7 @@ export const usePricingPlanStyleProps = <T extends PricingPlanOwnProps>(props: T
       },
       footer: pricingPlanFooterClass,
     },
-    props: restProps as Omit<T, keyof PricingPlanOwnProps>,
+    props: restProps as Omit<T, keyof PricingPlanStyleProps>,
+    styleProps: pricingPlanStyle,
   };
 };

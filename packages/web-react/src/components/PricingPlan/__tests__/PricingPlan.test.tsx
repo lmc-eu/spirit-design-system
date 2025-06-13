@@ -50,4 +50,10 @@ describe('PricingPlan', () => {
 
     expect(screen.getByRole('article')).toHaveClass('PricingPlan PricingPlan--comparable');
   });
+
+  it('should render with custom rows number', () => {
+    render(<PricingPlan rows={3}>Content</PricingPlan>);
+
+    expect(screen.getByRole('article')).toHaveStyle('--spirit-pricing-plan-rows: 3;');
+  });
 });

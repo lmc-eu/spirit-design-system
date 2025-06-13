@@ -6,6 +6,8 @@ export interface PricingPlanBaseProps extends ChildrenProps, StyleProps {
   isComparable?: boolean;
   /** If pricing plan is highlighted */
   isHighlighted?: boolean;
+  /** Number of grid rows in the plan layout */
+  rows?: number;
 }
 
 export interface PricingPlanHeaderBaseProps extends StyleProps {

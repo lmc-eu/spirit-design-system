@@ -48,6 +48,7 @@ import { PricingPlan, Matrix } from '@lmc-eu/spirit-web-react';
 | `children`     | `ReactNode` | -       | ✓        | Content of the PricingPlan              |
 | `isComparable` | `boolean`   | `false` | ✕        | If true, the PricingPlan is comparable  |
 | `isHighlated`  | `boolean`   | `false` | ✕        | If true, the PricingPlan is highlighted |
+| `rows`         | `number`    | -       | ✕        | Number of grid rows in the plan layout  |
 
 The components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -161,6 +162,16 @@ import { PricingPlan, PricingPlanHeader, PricingPlanBody, PricingPlanFooter } fr
 </PricingPlan>;
 ```
 
+## Customization
+
+There is a default number of 100 grid rows in the PricingPlan layout (see
+[Implementation Notes](#implementation-notes) to learn why). To change the
+number of grid rows, use the `rows` prop.
+
+```jsx
+<PricingPlan rows={50}>{/* PricingPlan content go here */}</PricingPlan>
+```
+
 ## Implementation Notes
 
 The PricingPlan component uses [CSS Grid][mdn-grid] with [subgrid][mdn-subgrid]
@@ -181,6 +192,9 @@ prevent the empty rows from expanding the component vertically, we use `margin`
 to separate individual content rows.
 
 [matrix-documentation]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Matrix/README.md
+[mdn-dl]: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dl
+[mdn-grid]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout
+[mdn-subgrid]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Subgrid
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props
