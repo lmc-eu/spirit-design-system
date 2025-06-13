@@ -1,3 +1,11 @@
+.text-underlined-dotted {
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
+    text-decoration-thickness: 14%;
+    text-underline-offset: 8%;
+    text-underline-position: from-font;
+}
+
 .text-truncate {
     display: block;
     overflow: hidden;
