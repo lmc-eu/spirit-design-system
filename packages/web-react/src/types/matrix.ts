@@ -1,7 +1,5 @@
 import { ElementType, JSXElementConstructor } from 'react';
-import { BreakpointToken, ChildrenProps, SpaceToken, StyleProps, TransferProps } from './shared';
-
-export type MatrixColumns = 1 | 2 | 3 | 4 | 5 | 6 | 12;
+import { BreakpointToken, GridColumns, ChildrenProps, SpaceToken, StyleProps, TransferProps } from './shared';
 
 export interface MatrixElementTypeProps<T extends ElementType = 'div'> {
   /**
@@ -14,7 +12,7 @@ export interface MatrixElementTypeProps<T extends ElementType = 'div'> {
 
 export interface MatrixCustomLayoutProps {
   /** Custom columns in the matrix */
-  cols?: MatrixColumns | Partial<Record<BreakpointToken, number>>;
+  cols?: GridColumns | Partial<Record<BreakpointToken, number>>;
   /** Custom rows in the matrix */
   rows?: number | Partial<Record<BreakpointToken, number>>;
   /** Custom number of rows for each item */
