@@ -1,4 +1,4 @@
-import { MutableRefObject, useCallback } from 'react';
+import { MutableRefObject, useCallback, useRef } from 'react';
 import { useIsomorphicLayoutEffect } from './useIsomorphicLayoutEffect';
 
 export interface UseClickOutsideProps {
@@ -7,23 +7,34 @@ export interface UseClickOutsideProps {
 }
 
 export const useClickOutside = ({ ref, callback }: UseClickOutsideProps): void => {
+  const stateRef = useRef<{
+    mouseDownTarget: EventTarget | null;
+  }>({
+    mouseDownTarget: null,
+  });
+
   const clickHandler = useCallback(
     (event: Event) => {
-      // Do nothing if there is no reference or no callback
-      if (!ref || !callback) {
+      const state = stateRef.current;
+      // Do nothing (do not close the Dialog) if
+      if (
+        // there is no reference
+        !ref ||
+        // or no callback
+        !callback ||
+        // or the event was already processed
+        event.defaultPrevented ||
+        // or the click (mouse down) started inside the Dialog
+        (ref.current && ref.current.contains(state.mouseDownTarget as Node))
+      ) {
         return;
       }
 
-      // Do nothing if the event was already processed.
-      if (event.defaultPrevented) {
-        return;
-      }
-
-      // we can call callback only
+      // we can call callback only when
       if (
         // reference to current element exists
         ref.current &&
-        // and the use the not clicked into the container,
+        // and the user not clicked into the container,
         // e. g. the user clicked outside of the Dialog (click on backdrop)
         !ref.current.contains(event?.target as Node) &&
         // and callback should exits, of course
@@ -35,9 +46,17 @@ export const useClickOutside = ({ ref, callback }: UseClickOutsideProps): void =
     [ref, callback],
   );
 
+  const onMouseDown = (event: Event) => {
+    stateRef.current.mouseDownTarget = event.target;
+  };
+
   useIsomorphicLayoutEffect(() => {
+    document.addEventListener('mousedown', onMouseDown, { capture: true });
     document.addEventListener('click', clickHandler, { capture: true });
 
-    return () => document.removeEventListener('click', clickHandler, { capture: true });
+    return () => {
+      document.removeEventListener('mousedown', onMouseDown, { capture: true });
+      document.removeEventListener('click', clickHandler, { capture: true });
+    };
   }, [clickHandler]);
 };
