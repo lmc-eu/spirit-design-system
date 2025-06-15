@@ -37,6 +37,7 @@ const entryPoints = [
   { dirs: ['components', 'Icon'] },
   { dirs: ['components', 'Item'] },
   { dirs: ['components', 'Link'] },
+  { dirs: ['components', 'Matrix'] },
   { dirs: ['components', 'Modal'] },
   { dirs: ['components', 'Navigation'] },
   { dirs: ['components', 'NoSsr'] },
