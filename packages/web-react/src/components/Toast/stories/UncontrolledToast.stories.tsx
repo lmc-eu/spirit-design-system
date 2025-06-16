@@ -1,5 +1,5 @@
 import { Markdown } from '@storybook/blocks';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { AlignmentX, EmotionColors } from '../../../constants';
 import { ToastColorType, ToastLinkProps, UncontrolledToastProps } from '../../../types';

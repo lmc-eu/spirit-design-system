@@ -1,5 +1,5 @@
 import { Markdown } from '@storybook/blocks';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { AlignmentX, ComponentButtonColors, EmotionColors, Sizes } from '../../../constants';
 import { DRAWER_CLOSE_BUTTON_LABEL_DEFAULT } from '../constants';

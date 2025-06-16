@@ -1,5 +1,5 @@
 import { Markdown } from '@storybook/blocks';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React, { useEffect, useState } from 'react';
 import { FillVariants } from '../../../constants';
 import { SegmentedControlProps } from '../../../types/segmentedControl';

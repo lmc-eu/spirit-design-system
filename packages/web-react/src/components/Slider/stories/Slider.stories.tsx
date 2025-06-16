@@ -1,5 +1,5 @@
 import { Markdown } from '@storybook/blocks';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React, { useState } from 'react';
 import { ValidationStates } from '../../../constants';
 import { SpiritSliderProps } from '../../../types';
