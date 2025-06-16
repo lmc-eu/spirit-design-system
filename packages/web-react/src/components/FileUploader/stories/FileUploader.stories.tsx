@@ -1,4 +1,4 @@
-import { Markdown } from '@storybook/blocks';
+import { Markdown } from '@storybook/addon-docs/blocks';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { fn } from '@storybook/test';
 import React from 'react';
