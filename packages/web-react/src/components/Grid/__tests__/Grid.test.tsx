@@ -6,6 +6,7 @@ import {
   classNamePrefixProviderTest,
   elementTypePropsTest,
   restPropsTest,
+  spacingPropsTest,
   stylePropsTest,
   validHtmlAttributesTest,
 } from '@local/tests';
@@ -18,6 +19,8 @@ describe('Grid', () => {
   classNamePrefixProviderTest(Grid, 'Grid');
 
   stylePropsTest(Grid);
+
+  spacingPropsTest(Grid, 'grid');
 
   restPropsTest(Grid, 'div');
 
@@ -61,53 +64,12 @@ describe('Grid', () => {
     expect(screen.getByTestId(testId)).toHaveClass('Grid--cols-2');
   });
 
-  it('should render with custom spacing', () => {
-    render(<Grid spacing="space-600" data-testid={testId} />);
+  it('should render without spacing', () => {
+    render(<Grid data-testid={testId} />);
 
     const element = screen.getByTestId(testId) as HTMLElement;
 
-    expect(element).toHaveStyle({ '--grid-spacing-x': 'var(--spirit-space-600)' });
-    expect(element).toHaveStyle({ '--grid-spacing-y': 'var(--spirit-space-600)' });
-  });
-
-  it('should render with custom spacing for each breakpoint', () => {
-    render(
-      <Grid spacing={{ mobile: 'space-100', tablet: 'space-1000', desktop: 'space-1200' }} data-testid={testId} />,
-    );
-
-    const element = screen.getByTestId(testId) as HTMLElement;
-
-    expect(element).toHaveStyle({ '--grid-spacing-x': 'var(--spirit-space-100)' });
-    expect(element).toHaveStyle({ '--grid-spacing-y': 'var(--spirit-space-100)' });
-    expect(element).toHaveStyle({ '--grid-spacing-x-tablet': 'var(--spirit-space-1000)' });
-    expect(element).toHaveStyle({ '--grid-spacing-y-tablet': 'var(--spirit-space-1000)' });
-    expect(element).toHaveStyle({ '--grid-spacing-x-desktop': 'var(--spirit-space-1200)' });
-    expect(element).toHaveStyle({ '--grid-spacing-y-desktop': 'var(--spirit-space-1200)' });
-  });
-
-  it('should render with custom vertical spacing for each breakpoint', () => {
-    render(
-      <Grid spacingY={{ mobile: 'space-100', tablet: 'space-1000', desktop: 'space-1200' }} data-testid={testId} />,
-    );
-
-    const element = screen.getByTestId(testId) as HTMLElement;
-
-    expect(element).toHaveStyle({ '--grid-spacing-y': 'var(--spirit-space-100)' });
-    expect(element).toHaveStyle({ '--grid-spacing-y-tablet': 'var(--spirit-space-1000)' });
-    expect(element).toHaveStyle({ '--grid-spacing-y-desktop': 'var(--spirit-space-1200)' });
-  });
-
-  it('should render with custom spacing for only one breakpoint', () => {
-    render(<Grid spacing={{ tablet: 'space-1000' }} data-testid={testId} />);
-
-    const element = screen.getByTestId(testId) as HTMLElement;
-
-    expect(element).toHaveStyle({ '--grid-spacing-x-tablet': 'var(--spirit-space-1000)' });
-    expect(element).toHaveStyle({ '--grid-spacing-y-tablet': 'var(--spirit-space-1000)' });
-    expect(element).not.toHaveStyle({ '--grid-spacing-x': 'var(--spirit-space-1000)' });
-    expect(element).not.toHaveStyle({ '--grid-spacing-y': 'var(--spirit-space-1000)' });
-    expect(element).not.toHaveStyle({ '--grid-spacing-x-desktop': 'var(--spirit-space-1200)' });
-    expect(element).not.toHaveStyle({ '--grid-spacing-y-desktop': 'var(--spirit-space-1200)' });
+    expect(element).not.toHaveAttribute('style');
   });
 
   it('should render with default alignment classes', () => {

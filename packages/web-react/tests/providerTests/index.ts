@@ -6,6 +6,7 @@ export * from './itemPropsTest';
 export * from './loadingPropsTest';
 export * from './requiredPropsTest';
 export * from './restPropsTest';
+export * from './spacingPropsTest';
 export * from './stylePropsTest';
 export * from './textAlignmentPropsTest';
 export * from './validationTextPropsTest';

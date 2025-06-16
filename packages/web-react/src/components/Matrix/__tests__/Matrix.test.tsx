@@ -6,6 +6,7 @@ import {
   classNamePrefixProviderTest,
   elementTypePropsTest,
   restPropsTest,
+  spacingPropsTest,
   stylePropsTest,
   validHtmlAttributesTest,
 } from '@local/tests';
@@ -18,6 +19,8 @@ describe('Matrix', () => {
   classNamePrefixProviderTest(Matrix, 'Matrix');
 
   stylePropsTest(Matrix);
+
+  spacingPropsTest(Matrix, 'spirit-matrix');
 
   restPropsTest(Matrix, 'div');
 
