@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React, { type FormEvent, type MutableRefObject, createRef, useState } from 'react';
 import { ValidationStates } from '../../../constants';
 import {

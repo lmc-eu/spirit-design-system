@@ -1,5 +1,5 @@
-import { Markdown } from '@storybook/blocks';
-import type { Meta, StoryObj } from '@storybook/react';
+import { Markdown } from '@storybook/addon-docs/blocks';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React, { useState } from 'react';
 import { type HeaderProps } from '../../../types';
 import { Link } from '../../Link';
