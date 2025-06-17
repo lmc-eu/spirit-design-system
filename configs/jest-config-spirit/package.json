@@ -25,7 +25,7 @@
     "@testing-library/jest-dom": "^6.4.5",
     "@types/jest": "30.0.0",
     "jest": "30.0.0",
-    "jest-cli": "29.7.0",
+    "jest-cli": "30.0.0",
     "jest-environment-jsdom": "29.7.0",
     "jest-environment-node-single-context": "29.4.0",
     "resize-observer-polyfill": "^1.5.1"
