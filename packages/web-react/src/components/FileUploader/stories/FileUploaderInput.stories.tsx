@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { ValidationStates } from '../../../constants';
 import { SpiritFileUploaderAttachmentProps, SpiritFileUploaderInputProps } from '../../../types';

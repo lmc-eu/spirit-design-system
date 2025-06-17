@@ -1,5 +1,5 @@
-import { Markdown } from '@storybook/blocks';
-import type { Meta, StoryObj } from '@storybook/react';
+import { Markdown } from '@storybook/addon-docs/blocks';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { Emphasis, SizesExtended, TextAlignments, TextColors } from '../../../constants';
 import { getAccentTextColors, getEmotionTextColors } from '../../../utils/colorObjectGenerators';
