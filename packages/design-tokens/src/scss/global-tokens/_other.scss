@@ -15,6 +15,10 @@ $container-max-width: 1280px !default;
 
 $container-xlarge-max-width: 1280px !default;
 
+$breakpoint-mobile: 0 !default;
+$breakpoint-tablet: 768px !default;
+$breakpoint-desktop: 1280px !default;
+
 $grid-spacing-mobile: 16px !default;
 $grid-spacing-desktop: 32px !default;
 $grid-spacing-tablet: 32px !default;
@@ -45,6 +49,12 @@ $containers: (
     xlarge: (
         max-width: $container-xlarge-max-width,
     ),
+) !default;
+
+$breakpoints: (
+    mobile: $breakpoint-mobile,
+    tablet: $breakpoint-tablet,
+    desktop: $breakpoint-desktop,
 ) !default;
 
 $grids: (
