@@ -9,6 +9,7 @@
 @use 'placement';
 @use 'reset';
 @use 'string' as spirit-string;
+@use 'tokens' as tokens-tools;
 @use 'typography';
 
 // Function to validate keys in a config map against values in a dictionary
@@ -84,6 +85,12 @@
 
     @each $dictionary-group-name, $dictionary-group-values in $dictionary-values {
         @each $dictionary-item-name, $dictionary-item-value in $dictionary-group-values {
+            $dictionary-item-name: if(
+                meta.type-of($dictionary-item-name) == 'number',
+                tokens-tools.format-numeric-key($dictionary-item-name),
+                $dictionary-item-name
+            );
+
             $data-attribute-selector: if(
                 $generate-data-attribute,
                 '.#{$class-name}[data-spirit-color="#{$dictionary-item-name}"]',

@@ -11,6 +11,7 @@
 //
 // 4. Leave space for optional description.
 
+@use '@tokens' as tokens;
 @use '../../tools/typography';
 @use 'theme';
 
@@ -52,7 +53,7 @@
 
 .PricingPlanBody__featureTitle > svg {
     margin-top: theme.$body-feature-icon-margin-top;
-    color: theme.$body-feature-icon-color;
+    color: var(--#{tokens.$css-variable-prefix}pricing-plan-icon-color, theme.$body-feature-icon-color);
 }
 
 .PricingPlanBody__featureTitleText {
@@ -64,10 +65,6 @@
 
 .PricingPlanBody__featureDescription {
     grid-area: description;
-}
-
-.PricingPlan--highlighted .PricingPlanBody__featureTitle > svg {
-    color: theme.$highlight-body-feature-icon-color;
 }
 
 .PricingPlan--comparableFeatures .PricingPlanBody,
