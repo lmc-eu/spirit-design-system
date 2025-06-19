@@ -10,6 +10,16 @@ $test-theme: (
     ),
 );
 
+@include test.describe('format-numeric-key function') {
+    @include test.it('should format a single-digit numeric input') {
+        @include test.assert-equal(tokens-tools.format-numeric-key(1), '01');
+    }
+
+    @include test.it('should return a two-digit numeric input as string') {
+        @include test.assert-equal(tokens-tools.format-numeric-key(22), '22');
+    }
+}
+
 @include test.describe('generate-css-variables mixin') {
     @include test.it('should generate CSS variables based on the provided map') {
         @include test.assert() {

@@ -11,12 +11,6 @@ $border-color: tokens.$border-basic;
 $color: tokens.$text-primary;
 $background-color: tokens.$background-primary;
 
-// @deprecated We are deprecating the usage of the 'get-variable-if-exists' function.
-// In the next major version, we can be sure the required token will be present so no check will be needed.
-$highlight-border-color: tokens-tools.get-variable-if-exists('accent-02-border-basic');
-$highlight-background-color: tokens-tools.get-variable-if-exists('accent-02-background-subtle');
-$highlight-body-feature-icon-color: tokens-tools.get-variable-if-exists('accent-02-content-basic');
-
 $header-padding-top: tokens.$space-700;
 $header-padding-bottom: tokens.$space-900;
 $header-badge-padding-y: tokens.$space-500;
@@ -43,3 +37,18 @@ $body-feature-icon-color: tokens.$emotion-success-content-basic;
 $footer-rows: 1;
 $footer-padding-top: tokens.$space-700;
 $footer-padding-bottom: tokens.$space-900;
+
+// @deprecated We are deprecating the usage of the 'get-variable-if-exists' function.
+// In the next major version, we can be sure the required token will be present so no check will be needed.
+$highlighted-border-color: tokens-tools.get-variable-if-exists(
+    'component-pricing-plan-highlighted-border',
+    tokens-tools.get-variable-if-exists('accent-02-border-basic', tokens.$border-basic)
+);
+$highlighted-background-color: tokens-tools.get-variable-if-exists(
+    'component-pricing-plan-highlighted-background',
+    tokens-tools.get-variable-if-exists('accent-02-background-subtle', tokens.$background-primary)
+);
+$highlighted-body-feature-icon-color: tokens-tools.get-variable-if-exists(
+    'component-pricing-plan-highlighted-content',
+    tokens-tools.get-variable-if-exists('accent-02-content-basic', tokens.$emotion-success-content-basic)
+);

@@ -1,6 +1,25 @@
 @use 'sass:map';
 @use 'sass:meta';
 @use '@tokens' as tokens;
+@use 'string' as spirit-string;
+
+$_numeric-keys-length: 2;
+$_numeric-keys-pad-string: '0';
+
+// Function to format numeric key names to match Figma variable names
+//
+// Example:
+// format-numeric-key(1) outputs '01'
+//
+// Parameters are:
+// * $key: key name to format (string or number)
+@function format-numeric-key($key) {
+    @return spirit-string.pad-start(
+        $string: '#{$key}',
+        $target-length: $_numeric-keys-length,
+        $pad-string: $_numeric-keys-pad-string
+    );
+}
 
 @mixin generate-css-variables($map, $prefix: '') {
     @each $key, $value in $map {

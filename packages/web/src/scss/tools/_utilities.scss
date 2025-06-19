@@ -1,4 +1,4 @@
-// 1. Format key if it's type of number so it's always 2 digits
+// 1. Format numeric key names to match Figma variable names, e.g. 1 => '01'
 // 2. Don't prefix if value key is null (e.g. with shadow class)
 // 3. Remove default postfix from class name
 
@@ -33,7 +33,7 @@
             {
                 // 1.
                 $name: $prefix +
-                    if(meta.type-of($key) == 'number' and $key < 10, '0' + $key, $key) +
+                    if(meta.type-of($key) == 'number', tokens-tools.format-numeric-key($key), $key) +
                     '-' +
                     if($remove-from-name != '', spirit-string.replace($subkey, $remove-from-name + '-', ''), null);
 
