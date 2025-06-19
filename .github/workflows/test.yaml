@@ -13,7 +13,9 @@ env:
   NX_BRANCH: ${{ github.event.number || github.ref_name }}
   NX_VERBOSE_LOGGING: true
   NX_NO_CLOUD: true
-  CACHE_KEY: repository-cache-key-${{ github.run_id }}
+  # temporarily rename the cache key to skip the lock period introduce by GitHub incident
+  # @see: https://www.githubstatus.com/incidents/y7lb2rg4btd7
+  CACHE_KEY: repository-cache-key-${{ github.run_id }}-v2
 
 jobs:
   install-build:
