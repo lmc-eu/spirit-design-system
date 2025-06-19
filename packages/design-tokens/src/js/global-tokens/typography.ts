@@ -9,82 +9,12 @@ export const bodyLargeBold = {
   },
 };
 
-export const bodyLargeBoldItalic = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '18px',
-    fontStyle: 'italic',
-    fontWeight: 700,
-    lineHeight: 1.5,
-  },
-};
-
-export const bodyLargeExtrabold = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '18px',
-    fontStyle: 'normal',
-    fontWeight: 800,
-    lineHeight: 1.5,
-  },
-};
-
-export const bodyLargeExtraboldItalic = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '18px',
-    fontStyle: 'italic',
-    fontWeight: 800,
-    lineHeight: 1.5,
-  },
-};
-
 export const bodyLargeItalic = {
   mobile: {
     fontFamily: "'Inter', sans-serif",
     fontSize: '18px',
     fontStyle: 'italic',
     fontWeight: 400,
-    lineHeight: 1.5,
-  },
-};
-
-export const bodyLargeLight = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '18px',
-    fontStyle: 'normal',
-    fontWeight: 300,
-    lineHeight: 1.5,
-  },
-};
-
-export const bodyLargeLightItalic = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '18px',
-    fontStyle: 'italic',
-    fontWeight: 400,
-    lineHeight: 1.5,
-  },
-};
-
-export const bodyLargeMedium = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '18px',
-    fontStyle: 'normal',
-    fontWeight: 500,
-    lineHeight: 1.5,
-  },
-};
-
-export const bodyLargeMediumItalic = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '18px',
-    fontStyle: 'italic',
-    fontWeight: 500,
     lineHeight: 1.5,
   },
 };
@@ -109,16 +39,6 @@ export const bodyLargeSemibold = {
   },
 };
 
-export const bodyLargeSemiboldItalic = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '18px',
-    fontStyle: 'italic',
-    fontWeight: 600,
-    lineHeight: 1.5,
-  },
-};
-
 export const bodyMediumBold = {
   mobile: {
     fontFamily: "'Inter', sans-serif",
@@ -129,82 +49,12 @@ export const bodyMediumBold = {
   },
 };
 
-export const bodyMediumBoldItalic = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '16px',
-    fontStyle: 'italic',
-    fontWeight: 700,
-    lineHeight: 1.5,
-  },
-};
-
-export const bodyMediumExtrabold = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '16px',
-    fontStyle: 'normal',
-    fontWeight: 800,
-    lineHeight: 1.5,
-  },
-};
-
-export const bodyMediumExtraboldItalic = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '16px',
-    fontStyle: 'italic',
-    fontWeight: 800,
-    lineHeight: 1.5,
-  },
-};
-
 export const bodyMediumItalic = {
   mobile: {
     fontFamily: "'Inter', sans-serif",
     fontSize: '16px',
     fontStyle: 'italic',
     fontWeight: 400,
-    lineHeight: 1.5,
-  },
-};
-
-export const bodyMediumLight = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '16px',
-    fontStyle: 'normal',
-    fontWeight: 300,
-    lineHeight: 1.5,
-  },
-};
-
-export const bodyMediumLightItalic = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '16px',
-    fontStyle: 'italic',
-    fontWeight: 300,
-    lineHeight: 1.5,
-  },
-};
-
-export const bodyMediumMedium = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '16px',
-    fontStyle: 'normal',
-    fontWeight: 500,
-    lineHeight: 1.5,
-  },
-};
-
-export const bodyMediumMediumItalic = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '16px',
-    fontStyle: 'italic',
-    fontWeight: 500,
     lineHeight: 1.5,
   },
 };
@@ -229,16 +79,6 @@ export const bodyMediumSemibold = {
   },
 };
 
-export const bodyMediumSemiboldItalic = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '16px',
-    fontStyle: 'italic',
-    fontWeight: 500,
-    lineHeight: 1.5,
-  },
-};
-
 export const bodySmallBold = {
   mobile: {
     fontFamily: "'Inter', sans-serif",
@@ -249,82 +89,12 @@ export const bodySmallBold = {
   },
 };
 
-export const bodySmallBoldItalic = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '14px',
-    fontStyle: 'italic',
-    fontWeight: 700,
-    lineHeight: 1.5,
-  },
-};
-
-export const bodySmallExtrabold = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '14px',
-    fontStyle: 'normal',
-    fontWeight: 800,
-    lineHeight: 1.5,
-  },
-};
-
-export const bodySmallExtraboldItalic = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '14px',
-    fontStyle: 'italic',
-    fontWeight: 800,
-    lineHeight: 1.5,
-  },
-};
-
 export const bodySmallItalic = {
   mobile: {
     fontFamily: "'Inter', sans-serif",
     fontSize: '14px',
     fontStyle: 'italic',
     fontWeight: 400,
-    lineHeight: 1.5,
-  },
-};
-
-export const bodySmallLight = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '14px',
-    fontStyle: 'normal',
-    fontWeight: 300,
-    lineHeight: 1.5,
-  },
-};
-
-export const bodySmallLightItalic = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '14px',
-    fontStyle: 'italic',
-    fontWeight: 300,
-    lineHeight: 1.5,
-  },
-};
-
-export const bodySmallMedium = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '14px',
-    fontStyle: 'normal',
-    fontWeight: 500,
-    lineHeight: 1.5,
-  },
-};
-
-export const bodySmallMediumItalic = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '14px',
-    fontStyle: 'italic',
-    fontWeight: 500,
     lineHeight: 1.5,
   },
 };
@@ -349,16 +119,6 @@ export const bodySmallSemibold = {
   },
 };
 
-export const bodySmallSemiboldItalic = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '14px',
-    fontStyle: 'italic',
-    fontWeight: 600,
-    lineHeight: 1.5,
-  },
-};
-
 export const bodyXlargeBold = {
   mobile: {
     fontFamily: "'Inter', sans-serif",
@@ -369,82 +129,12 @@ export const bodyXlargeBold = {
   },
 };
 
-export const bodyXlargeBoldItalic = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '20px',
-    fontStyle: 'italic',
-    fontWeight: 700,
-    lineHeight: 1.5,
-  },
-};
-
-export const bodyXlargeExtrabold = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '20px',
-    fontStyle: 'normal',
-    fontWeight: 800,
-    lineHeight: 1.5,
-  },
-};
-
-export const bodyXlargeExtraboldItalic = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '20px',
-    fontStyle: 'italic',
-    fontWeight: 800,
-    lineHeight: 1.5,
-  },
-};
-
 export const bodyXlargeItalic = {
   mobile: {
     fontFamily: "'Inter', sans-serif",
     fontSize: '20px',
     fontStyle: 'italic',
     fontWeight: 400,
-    lineHeight: 1.5,
-  },
-};
-
-export const bodyXlargeLight = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '20px',
-    fontStyle: 'normal',
-    fontWeight: 300,
-    lineHeight: 1.5,
-  },
-};
-
-export const bodyXlargeLightItalic = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '20px',
-    fontStyle: 'italic',
-    fontWeight: 300,
-    lineHeight: 1.5,
-  },
-};
-
-export const bodyXlargeMedium = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '20px',
-    fontStyle: 'normal',
-    fontWeight: 500,
-    lineHeight: 1.5,
-  },
-};
-
-export const bodyXlargeMediumItalic = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '20px',
-    fontStyle: 'italic',
-    fontWeight: 500,
     lineHeight: 1.5,
   },
 };
@@ -469,16 +159,6 @@ export const bodyXlargeSemibold = {
   },
 };
 
-export const bodyXlargeSemiboldItalic = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '20px',
-    fontStyle: 'italic',
-    fontWeight: 600,
-    lineHeight: 1.5,
-  },
-};
-
 export const bodyXsmallBold = {
   mobile: {
     fontFamily: "'Inter', sans-serif",
@@ -489,82 +169,12 @@ export const bodyXsmallBold = {
   },
 };
 
-export const bodyXsmallBoldItalic = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '12px',
-    fontStyle: 'italic',
-    fontWeight: 700,
-    lineHeight: 1.5,
-  },
-};
-
-export const bodyXsmallExtrabold = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '12px',
-    fontStyle: 'normal',
-    fontWeight: 800,
-    lineHeight: 1.5,
-  },
-};
-
-export const bodyXsmallExtraboldItalic = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '12px',
-    fontStyle: 'italic',
-    fontWeight: 800,
-    lineHeight: 1.5,
-  },
-};
-
 export const bodyXsmallItalic = {
   mobile: {
     fontFamily: "'Inter', sans-serif",
     fontSize: '12px',
     fontStyle: 'italic',
     fontWeight: 400,
-    lineHeight: 1.5,
-  },
-};
-
-export const bodyXsmallLight = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '12px',
-    fontStyle: 'normal',
-    fontWeight: 300,
-    lineHeight: 1.5,
-  },
-};
-
-export const bodyXsmallLightItalic = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '12px',
-    fontStyle: 'italic',
-    fontWeight: 400,
-    lineHeight: 1.5,
-  },
-};
-
-export const bodyXsmallMedium = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '12px',
-    fontStyle: 'normal',
-    fontWeight: 500,
-    lineHeight: 1.5,
-  },
-};
-
-export const bodyXsmallMediumItalic = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '12px',
-    fontStyle: 'italic',
-    fontWeight: 500,
     lineHeight: 1.5,
   },
 };
@@ -584,16 +194,6 @@ export const bodyXsmallSemibold = {
     fontFamily: "'Inter', sans-serif",
     fontSize: '12px',
     fontStyle: 'normal',
-    fontWeight: 600,
-    lineHeight: 1.5,
-  },
-};
-
-export const bodyXsmallSemiboldItalic = {
-  mobile: {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: '12px',
-    fontStyle: 'italic',
     fontWeight: 600,
     lineHeight: 1.5,
   },
@@ -1081,65 +681,25 @@ export const headingXsmallSemibold = {
 
 export const styles = {
   bodyLargeBold,
-  bodyLargeBoldItalic,
-  bodyLargeExtrabold,
-  bodyLargeExtraboldItalic,
   bodyLargeItalic,
-  bodyLargeLight,
-  bodyLargeLightItalic,
-  bodyLargeMedium,
-  bodyLargeMediumItalic,
   bodyLargeRegular,
   bodyLargeSemibold,
-  bodyLargeSemiboldItalic,
   bodyMediumBold,
-  bodyMediumBoldItalic,
-  bodyMediumExtrabold,
-  bodyMediumExtraboldItalic,
   bodyMediumItalic,
-  bodyMediumLight,
-  bodyMediumLightItalic,
-  bodyMediumMedium,
-  bodyMediumMediumItalic,
   bodyMediumRegular,
   bodyMediumSemibold,
-  bodyMediumSemiboldItalic,
   bodySmallBold,
-  bodySmallBoldItalic,
-  bodySmallExtrabold,
-  bodySmallExtraboldItalic,
   bodySmallItalic,
-  bodySmallLight,
-  bodySmallLightItalic,
-  bodySmallMedium,
-  bodySmallMediumItalic,
   bodySmallRegular,
   bodySmallSemibold,
-  bodySmallSemiboldItalic,
   bodyXlargeBold,
-  bodyXlargeBoldItalic,
-  bodyXlargeExtrabold,
-  bodyXlargeExtraboldItalic,
   bodyXlargeItalic,
-  bodyXlargeLight,
-  bodyXlargeLightItalic,
-  bodyXlargeMedium,
-  bodyXlargeMediumItalic,
   bodyXlargeRegular,
   bodyXlargeSemibold,
-  bodyXlargeSemiboldItalic,
   bodyXsmallBold,
-  bodyXsmallBoldItalic,
-  bodyXsmallExtrabold,
-  bodyXsmallExtraboldItalic,
   bodyXsmallItalic,
-  bodyXsmallLight,
-  bodyXsmallLightItalic,
-  bodyXsmallMedium,
-  bodyXsmallMediumItalic,
   bodyXsmallRegular,
   bodyXsmallSemibold,
-  bodyXsmallSemiboldItalic,
   headingLargeBold,
   headingLargeItalic,
   headingLargeRegular,

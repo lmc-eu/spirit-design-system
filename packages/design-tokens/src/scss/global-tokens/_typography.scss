@@ -9,82 +9,12 @@ $body-large-bold: (
     ),
 ) !default;
 
-$body-large-bold-italic: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 18px,
-        font-style: italic,
-        font-weight: 700,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-large-extrabold: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 18px,
-        font-style: normal,
-        font-weight: 800,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-large-extrabold-italic: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 18px,
-        font-style: italic,
-        font-weight: 800,
-        line-height: 1.5,
-    ),
-) !default;
-
 $body-large-italic: (
     mobile: (
         font-family: "'Inter', sans-serif",
         font-size: 18px,
         font-style: italic,
         font-weight: 400,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-large-light: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 18px,
-        font-style: normal,
-        font-weight: 300,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-large-light-italic: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 18px,
-        font-style: italic,
-        font-weight: 400,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-large-medium: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 18px,
-        font-style: normal,
-        font-weight: 500,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-large-medium-italic: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 18px,
-        font-style: italic,
-        font-weight: 500,
         line-height: 1.5,
     ),
 ) !default;
@@ -109,16 +39,6 @@ $body-large-semibold: (
     ),
 ) !default;
 
-$body-large-semibold-italic: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 18px,
-        font-style: italic,
-        font-weight: 600,
-        line-height: 1.5,
-    ),
-) !default;
-
 $body-medium-bold: (
     mobile: (
         font-family: "'Inter', sans-serif",
@@ -129,82 +49,12 @@ $body-medium-bold: (
     ),
 ) !default;
 
-$body-medium-bold-italic: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 16px,
-        font-style: italic,
-        font-weight: 700,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-medium-extrabold: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 16px,
-        font-style: normal,
-        font-weight: 800,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-medium-extrabold-italic: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 16px,
-        font-style: italic,
-        font-weight: 800,
-        line-height: 1.5,
-    ),
-) !default;
-
 $body-medium-italic: (
     mobile: (
         font-family: "'Inter', sans-serif",
         font-size: 16px,
         font-style: italic,
         font-weight: 400,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-medium-light: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 16px,
-        font-style: normal,
-        font-weight: 300,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-medium-light-italic: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 16px,
-        font-style: italic,
-        font-weight: 300,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-medium-medium: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 16px,
-        font-style: normal,
-        font-weight: 500,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-medium-medium-italic: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 16px,
-        font-style: italic,
-        font-weight: 500,
         line-height: 1.5,
     ),
 ) !default;
@@ -229,16 +79,6 @@ $body-medium-semibold: (
     ),
 ) !default;
 
-$body-medium-semibold-italic: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 16px,
-        font-style: italic,
-        font-weight: 500,
-        line-height: 1.5,
-    ),
-) !default;
-
 $body-small-bold: (
     mobile: (
         font-family: "'Inter', sans-serif",
@@ -249,82 +89,12 @@ $body-small-bold: (
     ),
 ) !default;
 
-$body-small-bold-italic: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 14px,
-        font-style: italic,
-        font-weight: 700,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-small-extrabold: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 14px,
-        font-style: normal,
-        font-weight: 800,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-small-extrabold-italic: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 14px,
-        font-style: italic,
-        font-weight: 800,
-        line-height: 1.5,
-    ),
-) !default;
-
 $body-small-italic: (
     mobile: (
         font-family: "'Inter', sans-serif",
         font-size: 14px,
         font-style: italic,
         font-weight: 400,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-small-light: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 14px,
-        font-style: normal,
-        font-weight: 300,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-small-light-italic: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 14px,
-        font-style: italic,
-        font-weight: 300,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-small-medium: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 14px,
-        font-style: normal,
-        font-weight: 500,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-small-medium-italic: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 14px,
-        font-style: italic,
-        font-weight: 500,
         line-height: 1.5,
     ),
 ) !default;
@@ -349,16 +119,6 @@ $body-small-semibold: (
     ),
 ) !default;
 
-$body-small-semibold-italic: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 14px,
-        font-style: italic,
-        font-weight: 600,
-        line-height: 1.5,
-    ),
-) !default;
-
 $body-xlarge-bold: (
     mobile: (
         font-family: "'Inter', sans-serif",
@@ -369,82 +129,12 @@ $body-xlarge-bold: (
     ),
 ) !default;
 
-$body-xlarge-bold-italic: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 20px,
-        font-style: italic,
-        font-weight: 700,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-xlarge-extrabold: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 20px,
-        font-style: normal,
-        font-weight: 800,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-xlarge-extrabold-italic: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 20px,
-        font-style: italic,
-        font-weight: 800,
-        line-height: 1.5,
-    ),
-) !default;
-
 $body-xlarge-italic: (
     mobile: (
         font-family: "'Inter', sans-serif",
         font-size: 20px,
         font-style: italic,
         font-weight: 400,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-xlarge-light: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 20px,
-        font-style: normal,
-        font-weight: 300,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-xlarge-light-italic: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 20px,
-        font-style: italic,
-        font-weight: 300,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-xlarge-medium: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 20px,
-        font-style: normal,
-        font-weight: 500,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-xlarge-medium-italic: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 20px,
-        font-style: italic,
-        font-weight: 500,
         line-height: 1.5,
     ),
 ) !default;
@@ -469,16 +159,6 @@ $body-xlarge-semibold: (
     ),
 ) !default;
 
-$body-xlarge-semibold-italic: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 20px,
-        font-style: italic,
-        font-weight: 600,
-        line-height: 1.5,
-    ),
-) !default;
-
 $body-xsmall-bold: (
     mobile: (
         font-family: "'Inter', sans-serif",
@@ -489,82 +169,12 @@ $body-xsmall-bold: (
     ),
 ) !default;
 
-$body-xsmall-bold-italic: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 12px,
-        font-style: italic,
-        font-weight: 700,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-xsmall-extrabold: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 12px,
-        font-style: normal,
-        font-weight: 800,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-xsmall-extrabold-italic: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 12px,
-        font-style: italic,
-        font-weight: 800,
-        line-height: 1.5,
-    ),
-) !default;
-
 $body-xsmall-italic: (
     mobile: (
         font-family: "'Inter', sans-serif",
         font-size: 12px,
         font-style: italic,
         font-weight: 400,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-xsmall-light: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 12px,
-        font-style: normal,
-        font-weight: 300,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-xsmall-light-italic: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 12px,
-        font-style: italic,
-        font-weight: 400,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-xsmall-medium: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 12px,
-        font-style: normal,
-        font-weight: 500,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-xsmall-medium-italic: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 12px,
-        font-style: italic,
-        font-weight: 500,
         line-height: 1.5,
     ),
 ) !default;
@@ -584,16 +194,6 @@ $body-xsmall-semibold: (
         font-family: "'Inter', sans-serif",
         font-size: 12px,
         font-style: normal,
-        font-weight: 600,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-xsmall-semibold-italic: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 12px,
-        font-style: italic,
         font-weight: 600,
         line-height: 1.5,
     ),
@@ -1081,65 +681,25 @@ $heading-xsmall-semibold: (
 
 $styles: (
     body-large-bold: $body-large-bold,
-    body-large-bold-italic: $body-large-bold-italic,
-    body-large-extrabold: $body-large-extrabold,
-    body-large-extrabold-italic: $body-large-extrabold-italic,
     body-large-italic: $body-large-italic,
-    body-large-light: $body-large-light,
-    body-large-light-italic: $body-large-light-italic,
-    body-large-medium: $body-large-medium,
-    body-large-medium-italic: $body-large-medium-italic,
     body-large-regular: $body-large-regular,
     body-large-semibold: $body-large-semibold,
-    body-large-semibold-italic: $body-large-semibold-italic,
     body-medium-bold: $body-medium-bold,
-    body-medium-bold-italic: $body-medium-bold-italic,
-    body-medium-extrabold: $body-medium-extrabold,
-    body-medium-extrabold-italic: $body-medium-extrabold-italic,
     body-medium-italic: $body-medium-italic,
-    body-medium-light: $body-medium-light,
-    body-medium-light-italic: $body-medium-light-italic,
-    body-medium-medium: $body-medium-medium,
-    body-medium-medium-italic: $body-medium-medium-italic,
     body-medium-regular: $body-medium-regular,
     body-medium-semibold: $body-medium-semibold,
-    body-medium-semibold-italic: $body-medium-semibold-italic,
     body-small-bold: $body-small-bold,
-    body-small-bold-italic: $body-small-bold-italic,
-    body-small-extrabold: $body-small-extrabold,
-    body-small-extrabold-italic: $body-small-extrabold-italic,
     body-small-italic: $body-small-italic,
-    body-small-light: $body-small-light,
-    body-small-light-italic: $body-small-light-italic,
-    body-small-medium: $body-small-medium,
-    body-small-medium-italic: $body-small-medium-italic,
     body-small-regular: $body-small-regular,
     body-small-semibold: $body-small-semibold,
-    body-small-semibold-italic: $body-small-semibold-italic,
     body-xlarge-bold: $body-xlarge-bold,
-    body-xlarge-bold-italic: $body-xlarge-bold-italic,
-    body-xlarge-extrabold: $body-xlarge-extrabold,
-    body-xlarge-extrabold-italic: $body-xlarge-extrabold-italic,
     body-xlarge-italic: $body-xlarge-italic,
-    body-xlarge-light: $body-xlarge-light,
-    body-xlarge-light-italic: $body-xlarge-light-italic,
-    body-xlarge-medium: $body-xlarge-medium,
-    body-xlarge-medium-italic: $body-xlarge-medium-italic,
     body-xlarge-regular: $body-xlarge-regular,
     body-xlarge-semibold: $body-xlarge-semibold,
-    body-xlarge-semibold-italic: $body-xlarge-semibold-italic,
     body-xsmall-bold: $body-xsmall-bold,
-    body-xsmall-bold-italic: $body-xsmall-bold-italic,
-    body-xsmall-extrabold: $body-xsmall-extrabold,
-    body-xsmall-extrabold-italic: $body-xsmall-extrabold-italic,
     body-xsmall-italic: $body-xsmall-italic,
-    body-xsmall-light: $body-xsmall-light,
-    body-xsmall-light-italic: $body-xsmall-light-italic,
-    body-xsmall-medium: $body-xsmall-medium,
-    body-xsmall-medium-italic: $body-xsmall-medium-italic,
     body-xsmall-regular: $body-xsmall-regular,
     body-xsmall-semibold: $body-xsmall-semibold,
-    body-xsmall-semibold-italic: $body-xsmall-semibold-italic,
     heading-large-bold: $heading-large-bold,
     heading-large-italic: $heading-large-italic,
     heading-large-regular: $heading-large-regular,
