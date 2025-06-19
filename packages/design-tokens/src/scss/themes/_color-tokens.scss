@@ -45,27 +45,21 @@ $component-button-plain-state-hover: var(--spirit-color-component-button-plain-s
 
 $component-button-primary-border: var(--spirit-color-component-button-primary-border);
 $component-button-primary-content: var(--spirit-color-component-button-primary-content);
-$component-button-primary-content-selected: var(--spirit-color-component-button-primary-content-selected);
 $component-button-primary-state-active: var(--spirit-color-component-button-primary-state-active);
 $component-button-primary-state-default: var(--spirit-color-component-button-primary-state-default);
 $component-button-primary-state-hover: var(--spirit-color-component-button-primary-state-hover);
-$component-button-primary-state-selected: var(--spirit-color-component-button-primary-state-selected);
 
 $component-button-secondary-border: var(--spirit-color-component-button-secondary-border);
 $component-button-secondary-content: var(--spirit-color-component-button-secondary-content);
-$component-button-secondary-content-selected: var(--spirit-color-component-button-secondary-content-selected);
 $component-button-secondary-state-active: var(--spirit-color-component-button-secondary-state-active);
 $component-button-secondary-state-default: var(--spirit-color-component-button-secondary-state-default);
 $component-button-secondary-state-hover: var(--spirit-color-component-button-secondary-state-hover);
-$component-button-secondary-state-selected: var(--spirit-color-component-button-secondary-state-selected);
 
 $component-button-tertiary-border: var(--spirit-color-component-button-tertiary-border);
 $component-button-tertiary-content: var(--spirit-color-component-button-tertiary-content);
-$component-button-tertiary-content-selected: var(--spirit-color-component-button-tertiary-content-selected);
 $component-button-tertiary-state-active: var(--spirit-color-component-button-tertiary-state-active);
 $component-button-tertiary-state-default: var(--spirit-color-component-button-tertiary-state-default);
 $component-button-tertiary-state-hover: var(--spirit-color-component-button-tertiary-state-hover);
-$component-button-tertiary-state-selected: var(--spirit-color-component-button-tertiary-state-selected);
 
 $component-header-background: var(--spirit-color-component-header-background);
 $component-header-border: var(--spirit-color-component-header-border);
@@ -281,29 +275,23 @@ $component-colors: (
         primary: (
             border: $component-button-primary-border,
             content: $component-button-primary-content,
-            content-selected: $component-button-primary-content-selected,
             state-active: $component-button-primary-state-active,
             state-default: $component-button-primary-state-default,
             state-hover: $component-button-primary-state-hover,
-            state-selected: $component-button-primary-state-selected,
         ),
         secondary: (
             border: $component-button-secondary-border,
             content: $component-button-secondary-content,
-            content-selected: $component-button-secondary-content-selected,
             state-active: $component-button-secondary-state-active,
             state-default: $component-button-secondary-state-default,
             state-hover: $component-button-secondary-state-hover,
-            state-selected: $component-button-secondary-state-selected,
         ),
         tertiary: (
             border: $component-button-tertiary-border,
             content: $component-button-tertiary-content,
-            content-selected: $component-button-tertiary-content-selected,
             state-active: $component-button-tertiary-state-active,
             state-default: $component-button-tertiary-state-default,
             state-hover: $component-button-tertiary-state-hover,
-            state-selected: $component-button-tertiary-state-selected,
         ),
     ),
     header: (

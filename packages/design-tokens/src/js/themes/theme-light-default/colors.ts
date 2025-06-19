@@ -45,27 +45,21 @@ export const componentButtonPlainStateHover = '#f1edff';
 
 export const componentButtonPrimaryBorder = '#4e2ea6';
 export const componentButtonPrimaryContent = '#fff';
-export const componentButtonPrimaryContentSelected = '#fff';
 export const componentButtonPrimaryStateActive = '#6039cc';
 export const componentButtonPrimaryStateDefault = '#7847ff';
 export const componentButtonPrimaryStateHover = '#6c40e5';
-export const componentButtonPrimaryStateSelected = '#a07eff';
 
 export const componentButtonSecondaryBorder = '#7847ff';
 export const componentButtonSecondaryContent = '#6039cc';
-export const componentButtonSecondaryContentSelected = '#fff';
 export const componentButtonSecondaryStateActive = '#e4daff';
 export const componentButtonSecondaryStateDefault = '#fff';
 export const componentButtonSecondaryStateHover = '#f1edff';
-export const componentButtonSecondaryStateSelected = '#7847ff';
 
 export const componentButtonTertiaryBorder = '#e5e5e5';
 export const componentButtonTertiaryContent = '#202020';
-export const componentButtonTertiaryContentSelected = '#fff';
 export const componentButtonTertiaryStateActive = '#d9d9d9';
 export const componentButtonTertiaryStateDefault = '#f4f4f4';
 export const componentButtonTertiaryStateHover = '#e5e5e5';
-export const componentButtonTertiaryStateSelected = '#535353';
 
 export const componentHeaderBackground = '#fff';
 export const componentHeaderBorder = '#e5e5e5';

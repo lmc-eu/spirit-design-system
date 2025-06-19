@@ -45,27 +45,21 @@ export const componentButtonPlainStateHover = 'var(--spirit-color-component-butt
 
 export const componentButtonPrimaryBorder = 'var(--spirit-color-component-button-primary-border)';
 export const componentButtonPrimaryContent = 'var(--spirit-color-component-button-primary-content)';
-export const componentButtonPrimaryContentSelected = 'var(--spirit-color-component-button-primary-content-selected)';
 export const componentButtonPrimaryStateActive = 'var(--spirit-color-component-button-primary-state-active)';
 export const componentButtonPrimaryStateDefault = 'var(--spirit-color-component-button-primary-state-default)';
 export const componentButtonPrimaryStateHover = 'var(--spirit-color-component-button-primary-state-hover)';
-export const componentButtonPrimaryStateSelected = 'var(--spirit-color-component-button-primary-state-selected)';
 
 export const componentButtonSecondaryBorder = 'var(--spirit-color-component-button-secondary-border)';
 export const componentButtonSecondaryContent = 'var(--spirit-color-component-button-secondary-content)';
-export const componentButtonSecondaryContentSelected = 'var(--spirit-color-component-button-secondary-content-selected)';
 export const componentButtonSecondaryStateActive = 'var(--spirit-color-component-button-secondary-state-active)';
 export const componentButtonSecondaryStateDefault = 'var(--spirit-color-component-button-secondary-state-default)';
 export const componentButtonSecondaryStateHover = 'var(--spirit-color-component-button-secondary-state-hover)';
-export const componentButtonSecondaryStateSelected = 'var(--spirit-color-component-button-secondary-state-selected)';
 
 export const componentButtonTertiaryBorder = 'var(--spirit-color-component-button-tertiary-border)';
 export const componentButtonTertiaryContent = 'var(--spirit-color-component-button-tertiary-content)';
-export const componentButtonTertiaryContentSelected = 'var(--spirit-color-component-button-tertiary-content-selected)';
 export const componentButtonTertiaryStateActive = 'var(--spirit-color-component-button-tertiary-state-active)';
 export const componentButtonTertiaryStateDefault = 'var(--spirit-color-component-button-tertiary-state-default)';
 export const componentButtonTertiaryStateHover = 'var(--spirit-color-component-button-tertiary-state-hover)';
-export const componentButtonTertiaryStateSelected = 'var(--spirit-color-component-button-tertiary-state-selected)';
 
 export const componentHeaderBackground = 'var(--spirit-color-component-header-background)';
 export const componentHeaderBorder = 'var(--spirit-color-component-header-border)';
@@ -281,29 +275,23 @@ export const componentColors = {
     primary: {
       border: componentButtonPrimaryBorder,
       content: componentButtonPrimaryContent,
-      contentSelected: componentButtonPrimaryContentSelected,
       stateActive: componentButtonPrimaryStateActive,
       stateDefault: componentButtonPrimaryStateDefault,
       stateHover: componentButtonPrimaryStateHover,
-      stateSelected: componentButtonPrimaryStateSelected,
     },
     secondary: {
       border: componentButtonSecondaryBorder,
       content: componentButtonSecondaryContent,
-      contentSelected: componentButtonSecondaryContentSelected,
       stateActive: componentButtonSecondaryStateActive,
       stateDefault: componentButtonSecondaryStateDefault,
       stateHover: componentButtonSecondaryStateHover,
-      stateSelected: componentButtonSecondaryStateSelected,
     },
     tertiary: {
       border: componentButtonTertiaryBorder,
       content: componentButtonTertiaryContent,
-      contentSelected: componentButtonTertiaryContentSelected,
       stateActive: componentButtonTertiaryStateActive,
       stateDefault: componentButtonTertiaryStateDefault,
       stateHover: componentButtonTertiaryStateHover,
-      stateSelected: componentButtonTertiaryStateSelected,
     },
   },
   header: {
