@@ -1,5 +1,4 @@
 @use '@tokens' as tokens;
-@use '../../tools/tokens' as tokens-tools;
 
 $min-width: 328px;
 $rows: 100;
@@ -11,11 +10,15 @@ $border-color: tokens.$border-basic;
 $color: tokens.$text-primary;
 $background-color: tokens.$background-primary;
 
-// @deprecated We are deprecating the usage of the 'get-variable-if-exists' function.
-// In the next major version, we can be sure the required token will be present so no check will be needed.
-$highlight-border-color: tokens-tools.get-variable-if-exists('accent-02-border-basic');
-$highlight-background-color: tokens-tools.get-variable-if-exists('accent-02-background-subtle');
-$highlight-body-feature-icon-color: tokens-tools.get-variable-if-exists('accent-02-content-basic');
+$color-dictionary: (
+    accent: tokens.$accent-colors,
+);
+
+$color-config: (
+    border-color: 'border-basic',
+    background-color: 'background-subtle',
+    icon-color: 'content-basic',
+);
 
 $header-padding-top: tokens.$space-700;
 $header-padding-bottom: tokens.$space-900;

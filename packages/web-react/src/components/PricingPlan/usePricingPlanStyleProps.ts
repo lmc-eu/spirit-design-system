@@ -54,7 +54,7 @@ export const usePricingPlanStyleProps = <T extends PricingPlanStyleProps>(props:
   const pricingPlanClass = useClassNamePrefix('PricingPlan');
   const pricingPlanComparableClass = `${pricingPlanClass}--comparableFeatures`;
   const pricingPlanLayoutClass = `${pricingPlanClass}__layout`;
-  const pricingPlanHighlightedClass = `${pricingPlanClass}--highlighted`;
+  const pricingPlanHighlightedClass = `${pricingPlanClass}--02`;
 
   const pricingPlanHeaderClass = useClassNamePrefix('PricingPlanHeader');
   const pricingPlanHeaderBadgeClassName = `${pricingPlanHeaderClass}__badge`;

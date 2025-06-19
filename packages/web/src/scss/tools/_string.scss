@@ -1,3 +1,4 @@
+@use 'sass:meta';
 @use 'sass:string';
 
 // Convert kebab-case to camelCase
@@ -38,6 +39,28 @@
     }
 
     @return $kebab-case;
+}
+
+// Pad a given input (string or number) from left (start) with custom characters
+// Example: pad-start($string: 5, $target-length: 2, $pad-string: '0') will return '05'
+// Inspired by the `padStart()` JavaScript function.
+// See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart
+@function pad-start($string, $target-length, $pad-string: ' ') {
+    @if meta.type-of($string) != 'string' and meta.type-of($string) != 'number' {
+        @error 'The first argument of `pad-start()` must be a string or a number.';
+    }
+
+    @if $target-length <= string.length('#{$string}') {
+        @return $string;
+    } @else {
+        $padding: '';
+
+        @for $i from 1 through ($target-length - string.length('#{$string}')) {
+            $padding: '#{$padding}#{$pad-string}';
+        }
+
+        @return '#{$padding}#{$string}';
+    }
 }
 
 // Replace all occurrences of a string with another string

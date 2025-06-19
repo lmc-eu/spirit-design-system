@@ -42,7 +42,7 @@ describe('PricingPlan', () => {
   it('should render with highlighted class when isHighlighted is true', () => {
     render(<PricingPlan isHighlighted>Content</PricingPlan>);
 
-    expect(screen.getByRole('article')).toHaveClass('PricingPlan PricingPlan--highlighted');
+    expect(screen.getByRole('article')).toHaveClass('PricingPlan PricingPlan--02');
   });
 
   it('should render with comparable class when isComparable is true', () => {
