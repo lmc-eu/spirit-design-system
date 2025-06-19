@@ -62,6 +62,7 @@ $component-button-tertiary-state-default: #1a1b1b33 !default;
 $component-button-tertiary-state-hover: #1a1b1b40 !default;
 
 $component-header-background: #6039cc !default;
+$component-header-border: #936cff !default;
 $component-header-item-background-state-active: #1a1b1b26 !default;
 $component-header-item-background-state-default: #fff0 !default;
 $component-header-item-background-state-hover: #1a1b1b1a !default;
@@ -256,6 +257,7 @@ $text-tertiary: #b2b2b2 !default;
     --spirit-color-component-button-tertiary-state-default: #{$component-button-tertiary-state-default};
     --spirit-color-component-button-tertiary-state-hover: #{$component-button-tertiary-state-hover};
     --spirit-color-component-header-background: #{$component-header-background};
+    --spirit-color-component-header-border: #{$component-header-border};
     --spirit-color-component-header-item-background-state-active: #{$component-header-item-background-state-active};
     --spirit-color-component-header-item-background-state-default: #{$component-header-item-background-state-default};
     --spirit-color-component-header-item-background-state-hover: #{$component-header-item-background-state-hover};

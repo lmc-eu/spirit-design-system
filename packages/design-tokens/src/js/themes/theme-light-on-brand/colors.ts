@@ -62,6 +62,7 @@ export const componentButtonTertiaryStateDefault = '#1a1b1b33';
 export const componentButtonTertiaryStateHover = '#1a1b1b40';
 
 export const componentHeaderBackground = '#6039cc';
+export const componentHeaderBorder = '#936cff';
 export const componentHeaderItemBackgroundStateActive = '#1a1b1b26';
 export const componentHeaderItemBackgroundStateDefault = '#fff0';
 export const componentHeaderItemBackgroundStateHover = '#1a1b1b1a';
