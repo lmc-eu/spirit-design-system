@@ -80,6 +80,17 @@ export const componentHeaderItemStateSelected = '#fff';
 export const componentHeaderStripeStateSelected = '#fff';
 export const componentHeaderStripeStateUnselected = '#ffffff40';
 
+export const componentPaginationSelectedBorder = '#fff';
+export const componentPaginationSelectedContent = '#6039cc';
+export const componentPaginationSelectedStateActive = '#c9b5ff';
+export const componentPaginationSelectedStateDefault = '#f8f6ff';
+export const componentPaginationSelectedStateHover = '#e4daff';
+export const componentPaginationUnselectedBorder = '#f8f6ff';
+export const componentPaginationUnselectedContent = '#f8f6ff';
+export const componentPaginationUnselectedStateActive = '#7847ff';
+export const componentPaginationUnselectedStateDefault = '#6039cc';
+export const componentPaginationUnselectedStateHover = '#6c40e5';
+
 export const componentToggleSelectedBorder = '#a07eff';
 export const componentToggleSelectedContent = '#fff';
 export const componentToggleSelectedStateActive = '#3e9b4f';

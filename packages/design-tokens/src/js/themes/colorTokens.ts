@@ -80,6 +80,17 @@ export const componentHeaderItemStateSelected = 'var(--spirit-color-component-he
 export const componentHeaderStripeStateSelected = 'var(--spirit-color-component-header-stripe-state-selected)';
 export const componentHeaderStripeStateUnselected = 'var(--spirit-color-component-header-stripe-state-unselected)';
 
+export const componentPaginationSelectedBorder = 'var(--spirit-color-component-pagination-selected-border)';
+export const componentPaginationSelectedContent = 'var(--spirit-color-component-pagination-selected-content)';
+export const componentPaginationSelectedStateActive = 'var(--spirit-color-component-pagination-selected-state-active)';
+export const componentPaginationSelectedStateDefault = 'var(--spirit-color-component-pagination-selected-state-default)';
+export const componentPaginationSelectedStateHover = 'var(--spirit-color-component-pagination-selected-state-hover)';
+export const componentPaginationUnselectedBorder = 'var(--spirit-color-component-pagination-unselected-border)';
+export const componentPaginationUnselectedContent = 'var(--spirit-color-component-pagination-unselected-content)';
+export const componentPaginationUnselectedStateActive = 'var(--spirit-color-component-pagination-unselected-state-active)';
+export const componentPaginationUnselectedStateDefault = 'var(--spirit-color-component-pagination-unselected-state-default)';
+export const componentPaginationUnselectedStateHover = 'var(--spirit-color-component-pagination-unselected-state-hover)';
+
 export const componentToggleSelectedBorder = 'var(--spirit-color-component-toggle-selected-border)';
 export const componentToggleSelectedContent = 'var(--spirit-color-component-toggle-selected-content)';
 export const componentToggleSelectedStateActive = 'var(--spirit-color-component-toggle-selected-state-active)';
@@ -308,6 +319,18 @@ export const componentColors = {
     itemStateSelected: componentHeaderItemStateSelected,
     stripeStateSelected: componentHeaderStripeStateSelected,
     stripeStateUnselected: componentHeaderStripeStateUnselected,
+  },
+  pagination: {
+    selectedBorder: componentPaginationSelectedBorder,
+    selectedContent: componentPaginationSelectedContent,
+    selectedStateActive: componentPaginationSelectedStateActive,
+    selectedStateDefault: componentPaginationSelectedStateDefault,
+    selectedStateHover: componentPaginationSelectedStateHover,
+    unselectedBorder: componentPaginationUnselectedBorder,
+    unselectedContent: componentPaginationUnselectedContent,
+    unselectedStateActive: componentPaginationUnselectedStateActive,
+    unselectedStateDefault: componentPaginationUnselectedStateDefault,
+    unselectedStateHover: componentPaginationUnselectedStateHover,
   },
   toggle: {
     selectedBorder: componentToggleSelectedBorder,

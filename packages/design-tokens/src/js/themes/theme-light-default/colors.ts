@@ -26,7 +26,7 @@ export const backgroundInteractiveStateDefault = '#fff0';
 export const backgroundInteractiveStateHover = '#f8f6ff';
 
 export const backgroundPrimary = '#fff';
-export const backgroundSecondary = '#f2f4fc';
+export const backgroundSecondary = '#f4f4f4';
 export const backgroundTertiary = '#f1edff';
 
 export const borderBasic = '#d9d9d9';
@@ -63,7 +63,7 @@ export const componentButtonTertiaryBorder = '#e5e5e5';
 export const componentButtonTertiaryContent = '#202020';
 export const componentButtonTertiaryContentSelected = '#fff';
 export const componentButtonTertiaryStateActive = '#d9d9d9';
-export const componentButtonTertiaryStateDefault = '#f2f4fc';
+export const componentButtonTertiaryStateDefault = '#f4f4f4';
 export const componentButtonTertiaryStateHover = '#e5e5e5';
 export const componentButtonTertiaryStateSelected = '#535353';
 
@@ -80,6 +80,17 @@ export const componentHeaderItemStateSelected = '#6039cc';
 export const componentHeaderStripeStateSelected = '#ffbe00';
 export const componentHeaderStripeStateUnselected = '#e4daff';
 
+export const componentPaginationSelectedBorder = '#7847ff';
+export const componentPaginationSelectedContent = '#fff';
+export const componentPaginationSelectedStateActive = '#6039cc';
+export const componentPaginationSelectedStateDefault = '#7847ff';
+export const componentPaginationSelectedStateHover = '#6c40e5';
+export const componentPaginationUnselectedBorder = '#d9d9d9';
+export const componentPaginationUnselectedContent = '#535353';
+export const componentPaginationUnselectedStateActive = '#f4f4f4';
+export const componentPaginationUnselectedStateDefault = '#fff';
+export const componentPaginationUnselectedStateHover = '#f9f9f9';
+
 export const componentToggleSelectedBorder = '#327c3f';
 export const componentToggleSelectedContent = '#fff';
 export const componentToggleSelectedStateActive = '#3e9b4f';
@@ -87,7 +98,7 @@ export const componentToggleSelectedStateDefault = '#327c3f';
 export const componentToggleSelectedStateHover = '#388b47';
 export const componentToggleUnselectedBorder = '#a5a5a5';
 export const componentToggleUnselectedContent = '#404040';
-export const componentToggleUnselectedStateActive = '#f2f4fc';
+export const componentToggleUnselectedStateActive = '#f4f4f4';
 export const componentToggleUnselectedStateDefault = '#fff';
 export const componentToggleUnselectedStateHover = '#f9f9f9';
 
@@ -183,7 +194,7 @@ export const linkTertiaryStateDefault = '#7f7f7f';
 export const linkTertiaryStateHover = '#4e2ea6';
 
 export const neutralBackgroundBasic = '#202020';
-export const neutralBackgroundSubtle = '#f2f4fc';
+export const neutralBackgroundSubtle = '#f4f4f4';
 export const neutralBorderBasic = '#202020';
 export const neutralBorderSubtle = '#bfbfbf';
 export const neutralContentBasic = '#202020';

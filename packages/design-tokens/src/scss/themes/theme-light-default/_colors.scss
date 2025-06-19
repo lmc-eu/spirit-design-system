@@ -26,7 +26,7 @@ $background-interactive-state-default: #fff0 !default;
 $background-interactive-state-hover: #f8f6ff !default;
 
 $background-primary: #fff !default;
-$background-secondary: #f2f4fc !default;
+$background-secondary: #f4f4f4 !default;
 $background-tertiary: #f1edff !default;
 
 $border-basic: #d9d9d9 !default;
@@ -63,7 +63,7 @@ $component-button-tertiary-border: #e5e5e5 !default;
 $component-button-tertiary-content: #202020 !default;
 $component-button-tertiary-content-selected: #fff !default;
 $component-button-tertiary-state-active: #d9d9d9 !default;
-$component-button-tertiary-state-default: #f2f4fc !default;
+$component-button-tertiary-state-default: #f4f4f4 !default;
 $component-button-tertiary-state-hover: #e5e5e5 !default;
 $component-button-tertiary-state-selected: #535353 !default;
 
@@ -80,6 +80,17 @@ $component-header-item-state-selected: #6039cc !default;
 $component-header-stripe-state-selected: #ffbe00 !default;
 $component-header-stripe-state-unselected: #e4daff !default;
 
+$component-pagination-selected-border: #7847ff !default;
+$component-pagination-selected-content: #fff !default;
+$component-pagination-selected-state-active: #6039cc !default;
+$component-pagination-selected-state-default: #7847ff !default;
+$component-pagination-selected-state-hover: #6c40e5 !default;
+$component-pagination-unselected-border: #d9d9d9 !default;
+$component-pagination-unselected-content: #535353 !default;
+$component-pagination-unselected-state-active: #f4f4f4 !default;
+$component-pagination-unselected-state-default: #fff !default;
+$component-pagination-unselected-state-hover: #f9f9f9 !default;
+
 $component-toggle-selected-border: #327c3f !default;
 $component-toggle-selected-content: #fff !default;
 $component-toggle-selected-state-active: #3e9b4f !default;
@@ -87,7 +98,7 @@ $component-toggle-selected-state-default: #327c3f !default;
 $component-toggle-selected-state-hover: #388b47 !default;
 $component-toggle-unselected-border: #a5a5a5 !default;
 $component-toggle-unselected-content: #404040 !default;
-$component-toggle-unselected-state-active: #f2f4fc !default;
+$component-toggle-unselected-state-active: #f4f4f4 !default;
 $component-toggle-unselected-state-default: #fff !default;
 $component-toggle-unselected-state-hover: #f9f9f9 !default;
 
@@ -183,7 +194,7 @@ $link-tertiary-state-default: #7f7f7f !default;
 $link-tertiary-state-hover: #4e2ea6 !default;
 
 $neutral-background-basic: #202020 !default;
-$neutral-background-subtle: #f2f4fc !default;
+$neutral-background-subtle: #f4f4f4 !default;
 $neutral-border-basic: #202020 !default;
 $neutral-border-subtle: #bfbfbf !default;
 $neutral-content-basic: #202020 !default;
@@ -280,6 +291,16 @@ $text-tertiary: #7f7f7f !default;
     --spirit-color-component-header-item-state-selected: #{$component-header-item-state-selected};
     --spirit-color-component-header-stripe-state-selected: #{$component-header-stripe-state-selected};
     --spirit-color-component-header-stripe-state-unselected: #{$component-header-stripe-state-unselected};
+    --spirit-color-component-pagination-selected-border: #{$component-pagination-selected-border};
+    --spirit-color-component-pagination-selected-content: #{$component-pagination-selected-content};
+    --spirit-color-component-pagination-selected-state-active: #{$component-pagination-selected-state-active};
+    --spirit-color-component-pagination-selected-state-default: #{$component-pagination-selected-state-default};
+    --spirit-color-component-pagination-selected-state-hover: #{$component-pagination-selected-state-hover};
+    --spirit-color-component-pagination-unselected-border: #{$component-pagination-unselected-border};
+    --spirit-color-component-pagination-unselected-content: #{$component-pagination-unselected-content};
+    --spirit-color-component-pagination-unselected-state-active: #{$component-pagination-unselected-state-active};
+    --spirit-color-component-pagination-unselected-state-default: #{$component-pagination-unselected-state-default};
+    --spirit-color-component-pagination-unselected-state-hover: #{$component-pagination-unselected-state-hover};
     --spirit-color-component-toggle-selected-border: #{$component-toggle-selected-border};
     --spirit-color-component-toggle-selected-content: #{$component-toggle-selected-content};
     --spirit-color-component-toggle-selected-state-active: #{$component-toggle-selected-state-active};
