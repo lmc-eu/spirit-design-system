@@ -1,3 +1,4 @@
+@use 'sass:list';
 @use 'sass:string';
 
 // Convert kebab-case to camelCase
@@ -69,4 +70,10 @@
     }
 
     @return $string;
+}
+
+// Pad a given number from left with zero
+// Example: pad-leading-zeros(3) will return '03'
+@function pad-leading-zeros($number, $length: 2) {
+    @return if(list.length($number) >= $length, $number, '0#{$number}');
 }
