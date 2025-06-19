@@ -37,10 +37,10 @@ component to [subgrid][mdn-subgrid], so any grid line names would be lost.
 
 ### Highlighted PricingPlan
 
-Add the `PricingPlan--highlighted` class to emphasize a specific plan:
+Use an accent color number to emphasize a specific plan:
 
 ```html
-<article class="PricingPlan PricingPlan--highlighted">
+<article class="PricingPlan PricingPlan--01">
   <!-- Content as above -->
 </article>
 ```

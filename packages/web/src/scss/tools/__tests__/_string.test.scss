@@ -43,3 +43,9 @@
         @include test.assert-equal(string.remove-prefix('Component', 'UNSTABLE_'), 'Component');
     }
 }
+
+@include test.describe('padd a given number from left with zero') {
+    @include test.it('should pad a given number from left with zero') {
+        @include test.assert-equal(string.pad-leading-zeros(3), '03');
+    }
+}

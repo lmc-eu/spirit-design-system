@@ -84,6 +84,10 @@
 
     @each $dictionary-group-name, $dictionary-group-values in $dictionary-values {
         @each $dictionary-item-name, $dictionary-item-value in $dictionary-group-values {
+            @if meta.type-of($dictionary-item-name) == 'number' {
+                $dictionary-item-name: spirit-string.pad-leading-zeros($dictionary-item-name);
+            }
+
             $data-attribute-selector: if(
                 $generate-data-attribute,
                 '.#{$class-name}[data-spirit-color="#{$dictionary-item-name}"]',
