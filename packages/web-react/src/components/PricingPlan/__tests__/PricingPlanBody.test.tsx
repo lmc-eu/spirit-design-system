@@ -1,9 +1,10 @@
 import '@testing-library/jest-dom';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
 import {
   ariaAttributesTest,
   classNamePrefixProviderTest,
+  elementTypePropsTest,
   restPropsTest,
   stylePropsTest,
   validHtmlAttributesTest,
@@ -20,6 +21,8 @@ describe('PricingPlanBody', () => {
   validHtmlAttributesTest(PricingPlanBody);
 
   ariaAttributesTest(PricingPlanBody);
+
+  elementTypePropsTest(PricingPlanBody);
 
   describe('should render without side effects', () => {
     beforeEach(() => {
@@ -75,8 +78,70 @@ describe('PricingPlanBody', () => {
       const description = descriptions[index];
 
       expect(title).toHaveClass('PricingPlanBody__featureTitle');
+      expect(title).not.toHaveClass('Tooltip');
       expect(description).toHaveClass('PricingPlanBody__featureDescription');
       expect(title.parentElement).toHaveClass('PricingPlanBody__featureItem');
     });
+  });
+
+  it('should render features with tooltips', () => {
+    const features = [
+      {
+        title: 'Feature with tooltip',
+        description: 'Description with tooltip',
+        tooltipContent: 'Tooltip content',
+      },
+    ];
+
+    render(<PricingPlanBody features={features} />);
+
+    const featureTitle = screen.getByText('Feature with tooltip').parentElement;
+    const tooltipTrigger = screen.getByText('Feature with tooltip');
+    const tooltipPopover = screen.getByRole('tooltip');
+
+    expect(featureTitle).toHaveClass('Tooltip PricingPlanBody__featureTitle');
+    expect(tooltipTrigger).toHaveClass('PricingPlanBody__featureTitleText text-underlined-dotted');
+    expect(tooltipPopover).toHaveClass('TooltipPopover TooltipPopover--dismissible is-hidden');
+
+    fireEvent.click(tooltipTrigger);
+
+    expect(tooltipPopover).toHaveClass('TooltipPopover TooltipPopover--dismissible');
+    expect(tooltipPopover).not.toHaveClass('is-hidden');
+  });
+
+  it('should not render tooltips if tooltipContent is undefined', () => {
+    const features = [
+      { title: 'Feature without tooltip', description: 'Description without tooltip', tooltipContent: undefined },
+    ];
+
+    render(<PricingPlanBody features={features} />);
+
+    const featureTitle = screen.getByText('Feature without tooltip').parentElement;
+
+    expect(featureTitle).not.toHaveClass('Tooltip');
+    expect(screen.queryByRole('tooltip')).not.toBeInTheDocument();
+  });
+
+  it('should handle tooltip toggle state', () => {
+    const features = [
+      {
+        title: 'Feature with tooltip',
+        description: 'Description with tooltip',
+        tooltipContent: 'Tooltip content',
+      },
+    ];
+
+    render(<PricingPlanBody features={features} />);
+
+    const tooltipTrigger = screen.getByText('Feature with tooltip');
+    const tooltipCloseButton = screen.getByRole('button', { name: 'close' });
+
+    fireEvent.click(tooltipTrigger);
+
+    expect(screen.getByRole('tooltip')).not.toHaveClass('is-hidden');
+
+    fireEvent.click(tooltipCloseButton);
+
+    expect(screen.getByRole('tooltip')).toHaveClass('is-hidden');
   });
 });

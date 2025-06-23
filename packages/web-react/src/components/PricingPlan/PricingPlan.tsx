@@ -1,7 +1,7 @@
 'use client';
 
 import classNames from 'classnames';
-import React, { ElementType } from 'react';
+import React, { type ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritPricingPlanProps } from '../../types/pricingPlan';
 import { mergeStyleProps } from '../../utils';

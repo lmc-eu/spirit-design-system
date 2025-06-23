@@ -1,21 +1,22 @@
 'use client';
 
-import classNames from 'classnames';
-import React from 'react';
+import React, { type ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritPricingPlanFooterProps } from '../../types/pricingPlan';
+import { mergeStyleProps } from '../../utils';
 import { usePricingPlanStyleProps } from './usePricingPlanStyleProps';
 
-const PricingPlanFooter = (props: SpiritPricingPlanFooterProps) => {
-  const { children, ...restProps } = props;
+const PricingPlanFooter = <T extends ElementType = 'footer'>(props: SpiritPricingPlanFooterProps<T>) => {
+  const { children, elementType: ElementTag = 'footer', ...restProps } = props;
 
   const { classProps, props: modifiedProps } = usePricingPlanStyleProps(restProps);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+  const mergedStyleProps = mergeStyleProps(ElementTag, { classProps: classProps.footer, styleProps });
 
   return (
-    <footer {...otherProps} className={classNames(classProps.footer, styleProps.className)} style={styleProps.style}>
+    <ElementTag {...otherProps} {...mergedStyleProps}>
       {children}
-    </footer>
+    </ElementTag>
   );
 };
 

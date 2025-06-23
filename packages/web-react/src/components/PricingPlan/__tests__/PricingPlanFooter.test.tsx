@@ -4,6 +4,7 @@ import React from 'react';
 import {
   ariaAttributesTest,
   classNamePrefixProviderTest,
+  elementTypePropsTest,
   restPropsTest,
   stylePropsTest,
   validHtmlAttributesTest,
@@ -20,6 +21,8 @@ describe('PricingPlanFooter', () => {
   validHtmlAttributesTest(PricingPlanFooter);
 
   ariaAttributesTest(PricingPlanFooter);
+
+  elementTypePropsTest(PricingPlanFooter);
 
   beforeEach(() => {
     render(<PricingPlanFooter>Test footer content</PricingPlanFooter>);

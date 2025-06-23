@@ -1,16 +1,17 @@
 'use client';
 
-import classNames from 'classnames';
-import React, { useRef } from 'react';
+import React, { type ElementType, useRef } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritTooltipProps } from '../../types';
+import { mergeStyleProps } from '../../utils';
 import { TooltipProvider } from './TooltipContext';
 import { useFloating } from './useFloating';
 import { useTooltipStyleProps } from './useTooltipStyleProps';
 
-const Tooltip = (props: SpiritTooltipProps) => {
+const Tooltip = <T extends ElementType = 'div'>(props: SpiritTooltipProps<T>) => {
   const {
     children,
+    elementType: ElementTag = 'div',
     enableFlipping: flipProp = true,
     enableFlippingCrossAxis: flipCrossAxis = true,
     enableShifting: shiftProp = true,
@@ -34,6 +35,10 @@ const Tooltip = (props: SpiritTooltipProps) => {
     ...restProps,
   });
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+  const mergedStyleProps = mergeStyleProps(ElementTag, {
+    classProps: classProps.rootClassName,
+    styleProps,
+  });
 
   // Refs for FloatingUI
   const arrowRef = useRef<HTMLSpanElement>(null);
@@ -103,14 +108,9 @@ const Tooltip = (props: SpiritTooltipProps) => {
         position,
       }}
     >
-      <div
-        {...otherProps}
-        ref={tooltipRef}
-        className={classNames(classProps.rootClassName, styleProps.className)}
-        style={styleProps.style}
-      >
+      <ElementTag {...otherProps} ref={tooltipRef} {...mergedStyleProps}>
         {children}
-      </div>
+      </ElementTag>
     </TooltipProvider>
   );
 };

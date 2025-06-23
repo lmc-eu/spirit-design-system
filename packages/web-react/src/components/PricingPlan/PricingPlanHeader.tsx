@@ -1,9 +1,10 @@
 'use client';
 
 import classNames from 'classnames';
-import React from 'react';
+import React, { type ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritPricingPlanHeaderProps } from '../../types/pricingPlan';
+import { mergeStyleProps } from '../../utils';
 import { usePricingPlanStyleProps } from './usePricingPlanStyleProps';
 
 const defaultProps: Partial<SpiritPricingPlanHeaderProps> = {
@@ -15,19 +16,20 @@ const defaultProps: Partial<SpiritPricingPlanHeaderProps> = {
   title: undefined,
 };
 
-const PricingPlanHeader = (props: SpiritPricingPlanHeaderProps) => {
+const PricingPlanHeader = <T extends ElementType = 'header'>(props: SpiritPricingPlanHeaderProps<T>) => {
   const propsWithDefaults = { ...defaultProps, ...props };
+  const { elementType: ElementTag = 'header', ...restProps } = propsWithDefaults;
 
-  const { classProps, props: modifiedProps } = usePricingPlanStyleProps(propsWithDefaults);
+  const { classProps, props: modifiedProps } = usePricingPlanStyleProps(restProps);
   const { badge, title, subtitle, price, action, note } = propsWithDefaults;
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+  const mergedStyleProps = mergeStyleProps(ElementTag, {
+    classProps: classProps.header.root,
+    styleProps,
+  });
 
   return (
-    <header
-      {...otherProps}
-      className={classNames(classProps.header.root, styleProps.className)}
-      style={styleProps.style}
-    >
+    <ElementTag {...otherProps} {...mergedStyleProps}>
       {badge && <div className={classProps.header.badge}>{badge}</div>}
       <div className={classProps.header.content}>
         {title && <h3 className={classProps.header.title}>{title}</h3>}
@@ -36,7 +38,7 @@ const PricingPlanHeader = (props: SpiritPricingPlanHeaderProps) => {
         {action && <div className={classProps.header.action}>{action}</div>}
         {note && <div className={classProps.header.note}>{note}</div>}
       </div>
-    </header>
+    </ElementTag>
   );
 };
 
