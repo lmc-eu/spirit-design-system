@@ -48,6 +48,79 @@
 <section class="py-900 py-tablet-1000">
   <div class="Container">
 
+    <h2 class="docs-Heading">Pricing Plan with Tooltip</h2>
+
+    <div class="docs-Stack docs-Stack--start">
+
+      <article class="PricingPlan PricingPlan--comparableFeatures">
+        <div class="PricingPlan__layout">
+          <header class="PricingPlanHeader">
+            <div class="PricingPlanHeader__content">
+              <h3 class="PricingPlanHeader__title">Plan 1</h3>
+              <div class="PricingPlanHeader__subtitle">Supporting text or message</div>
+              <div class="PricingPlanHeader__price">39 EUR</div>
+              <div class="PricingPlanHeader__action">
+                <a href="#" class="Button Button--primary Button--large">Get started</a>
+              </div>
+              <div class="PricingPlanHeader__note">Another supporting text or message</div>
+            </div>
+          </header>
+          <div class="PricingPlanBody">
+            <dl class="PricingPlanBody__featureList">
+              <div class="PricingPlanBody__featureItem">
+                <dt class="PricingPlanBody__featureTitle">
+                  <svg width="16" height="16" aria-hidden="true">
+                    <use xlink:href="/assets/icons/svg/sprite.svg#check-plain" />
+                  </svg>
+                  <div class="Tooltip" data-spirit-element="tooltip">
+                    <div class="PricingPlanBody__featureTitleText text-underlined-dotted"
+                         data-spirit-toggle="tooltip"
+                         data-spirit-target="#my-dismissible-tooltip"
+                         aria-describedby="my-dismissible-tooltip"
+                    >
+                      Feature name
+                    </div>
+                    <div
+                      id="my-dismissible-tooltip"
+                      class="TooltipPopover TooltipPopover--dismissible is-hidden"
+                      data-spirit-placement="top"
+                      data-spirit-trigger="click"
+                    >
+                      This is a tooltip text.
+                      <button
+                        type="button"
+                        class="TooltipPopover__close"
+                        data-spirit-dismiss="tooltip"
+                        data-spirit-target="#my-dismissible-tooltip"
+                        aria-controls="my-dismissible-tooltip"
+                        aria-expanded="true"
+                      >
+                        <svg width="24" height="24" aria-hidden="true">
+                          <use xlink:href="/assets/icons/svg/sprite.svg#close" />
+                        </svg>
+                        <span class="accessibility-hidden">Close</span>
+                      </button>
+                      <span class="TooltipPopover__arrow" data-spirit-element="arrow"></span>
+                    </div>
+                  </div>
+                </dt>
+                <dd class="PricingPlanBody__featureDescription">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </dd>
+              </div>
+            </dl>
+          </div>
+          <footer class="PricingPlanFooter">footer</footer>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="py-900 py-tablet-1000">
+  <div class="Container">
+
     <h2 class="docs-Heading">Pricing Plans in Matrix and Scroll View</h2>
 
     <div class="breakout-container d-grid">
