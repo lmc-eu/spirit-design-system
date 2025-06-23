@@ -39,6 +39,7 @@
         '. description';
     gap: theme.$body-feature-row-gap theme.$body-feature-column-gap;
     align-content: start;
+    justify-items: start;
 
     &:not(:first-child) {
         margin-top: theme.$body-feature-spacing; // 2.
