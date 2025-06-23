@@ -1,6 +1,13 @@
 import { Placement, Strategy } from '@floating-ui/react';
-import { ReactNode } from 'react';
-import { ChildrenProps, ClickEvent, ElementTypeProp, StyleProps, TransferProps } from './shared';
+import type { ElementType, JSXElementConstructor, ReactNode } from 'react';
+import type {
+  ChildrenProps,
+  ClickEvent,
+  ElementTypeProp,
+  SpiritPolymorphicElementPropsWithRef,
+  StyleProps,
+  TransferProps,
+} from './shared';
 
 export const TOOLTIP_TRIGGER = {
   CLICK: 'click',
@@ -9,6 +16,8 @@ export const TOOLTIP_TRIGGER = {
   OUTSIDE_PRESS: 'outside-press',
   ESCAPE_KEY: 'escape-key',
 } as const;
+
+export interface TooltipPopoverProps extends ChildrenProps, StyleProps {}
 
 export type TooltipTriggerType = 'click' | 'hover' | 'manual';
 
@@ -36,16 +45,25 @@ export interface BaseTooltipProps extends ChildrenProps, StyleProps {
   placement?: Placement;
 }
 
-export interface TooltipProps extends BaseTooltipProps, TooltipHandlingProps {}
-
-export interface SpiritTooltipProps extends TooltipProps, ChildrenProps {
-  enableFlipping?: boolean;
-  enableFlippingCrossAxis?: boolean;
-  enableShifting?: boolean;
-  enableSizing?: boolean;
-  flipFallbackAxisSideDirection?: 'none' | 'start' | 'end';
-  flipFallbackPlacements?: Placement | Placement[];
-  isFocusableOnHover?: boolean;
-  positionStrategy?: Strategy;
-  trigger?: TooltipTriggerType[];
+export interface TooltipProps<E extends ElementType> extends BaseTooltipProps, TooltipHandlingProps {
+  /**
+   * The HTML element or React element used to render the plan, e.g. 'div', 'a', or `RouterLink`.
+   *
+   * @default 'div'
+   */
+  elementType?: E | JSXElementConstructor<unknown>;
 }
+
+export type SpiritTooltipProps<E extends ElementType = 'div'> = TooltipProps<E> &
+  SpiritPolymorphicElementPropsWithRef<E, TooltipProps<E>> &
+  ChildrenProps & {
+    enableFlipping?: boolean;
+    enableFlippingCrossAxis?: boolean;
+    enableShifting?: boolean;
+    enableSizing?: boolean;
+    flipFallbackAxisSideDirection?: 'none' | 'start' | 'end';
+    flipFallbackPlacements?: Placement | Placement[];
+    isFocusableOnHover?: boolean;
+    positionStrategy?: Strategy;
+    trigger?: TooltipTriggerType[];
+  };

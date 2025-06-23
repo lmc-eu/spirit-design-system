@@ -19,7 +19,7 @@ const meta: Meta<typeof PricingPlanBody> = {
     features: {
       control: 'object',
       table: {
-        type: { summary: '{ title: string; description: string }[]' },
+        type: { summary: '{ title: string; description: string. tooltipContent?: string | ReactNode }[]' },
       },
     },
     description: {
@@ -34,11 +34,12 @@ const meta: Meta<typeof PricingPlanBody> = {
     features: [
       {
         title: 'Feature name',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        description: 'This is a description for the feature.',
       },
       {
-        title: 'Feature name 2',
-        description: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        title: 'Feature name with Tooltip',
+        description: 'This is a description for the feature. Please click the title to see the tooltip.',
+        tooltipContent: 'This is a tooltip text',
       },
     ],
   },

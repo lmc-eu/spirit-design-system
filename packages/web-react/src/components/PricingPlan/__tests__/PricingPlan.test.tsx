@@ -4,6 +4,7 @@ import React from 'react';
 import {
   ariaAttributesTest,
   classNamePrefixProviderTest,
+  elementTypePropsTest,
   restPropsTest,
   stylePropsTest,
   validHtmlAttributesTest,
@@ -20,6 +21,8 @@ describe('PricingPlan', () => {
   validHtmlAttributesTest(PricingPlan);
 
   ariaAttributesTest(PricingPlan);
+
+  elementTypePropsTest(PricingPlan);
 
   describe('should render without side effects', () => {
     beforeEach(() => {

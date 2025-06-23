@@ -1,10 +1,10 @@
 'use client';
 
-import classNames from 'classnames';
-import React from 'react';
+import React, { type ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritPricingPlanBodyProps } from '../../types/pricingPlan';
-import { Icon } from '../Icon';
+import { mergeStyleProps } from '../../utils';
+import PricingPlanFeatureTitle from './PricingPlanFeatureTitle';
 import { usePricingPlanStyleProps } from './usePricingPlanStyleProps';
 
 const defaultProps: Partial<SpiritPricingPlanBodyProps> = {
@@ -12,28 +12,33 @@ const defaultProps: Partial<SpiritPricingPlanBodyProps> = {
   features: [],
 };
 
-const PricingPlanBody = (props: SpiritPricingPlanBodyProps) => {
+const PricingPlanBody = <T extends ElementType = 'div'>(props: SpiritPricingPlanBodyProps<T>) => {
   const propsWithDefaults = { ...defaultProps, ...props };
 
-  const { description, features = [], ...restProps } = propsWithDefaults;
+  const { description, elementType: ElementTag = 'div', features = [], ...restProps } = propsWithDefaults;
   const { classProps, props: modifiedProps } = usePricingPlanStyleProps(restProps);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+  const mergedStyleProps = mergeStyleProps(ElementTag, {
+    classProps: classProps.body.root,
+    styleProps,
+  });
 
   return (
-    <div {...otherProps} className={classNames(classProps.body.root, styleProps.className)} style={styleProps.style}>
+    <ElementTag {...otherProps} {...mergedStyleProps}>
       {description && <div>{description}</div>}
       <dl className={classProps.body.featureList}>
-        {features.map((feature, index) => (
-          <div className={classProps.body.featureItem} key={`featureItem-${index + 1}`}>
-            <dt className={classProps.body.featureTitle}>
-              <Icon name="check-plain" boxSize={16} />
-              <div className={classProps.body.featureTitleText}>{feature.title}</div>
-            </dt>
-            <dd className={classProps.body.featureDescription}>{feature.description}</dd>
-          </div>
-        ))}
+        {features.map((feature, featureIndex) => {
+          const featureItemKey = `featureItem-${featureIndex}`;
+
+          return (
+            <div className={classProps.body.featureItem} key={featureItemKey}>
+              <PricingPlanFeatureTitle feature={feature} featureIndex={featureIndex} />
+              <dd className={classProps.body.featureDescription}>{feature.description}</dd>
+            </div>
+          );
+        })}
       </dl>
-    </div>
+    </ElementTag>
   );
 };
 

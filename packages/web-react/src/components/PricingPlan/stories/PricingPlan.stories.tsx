@@ -17,10 +17,8 @@ const meta: Meta<typeof PricingPlan> = {
     },
   },
   argTypes: {
-    argTypes: {
-      children: {
-        control: 'text',
-      },
+    children: {
+      control: 'object',
     },
     elementType: {
       control: 'text',

@@ -44,12 +44,13 @@ import { PricingPlan, Matrix } from '@lmc-eu/spirit-web-react';
 
 ### API
 
-| Name                    | Type        | Default | Required | Description                                      |
-| ----------------------- | ----------- | ------- | -------- | ------------------------------------------------ |
-| `children`              | `ReactNode` | -       | ✓        | Content of the PricingPlan                       |
-| `hasComparableFeatures` | `boolean`   | `false` | ✕        | If true, the PricingPlan has comparable features |
-| `isHighlighted`         | `boolean`   | `false` | ✕        | If true, the PricingPlan is highlighted          |
-| `rows`                  | `number`    | -       | ✕        | Number of grid rows in the plan layout           |
+| Name                    | Type          | Default   | Required | Description                                      |
+| ----------------------- | ------------- | --------- | -------- | ------------------------------------------------ |
+| `children`              | `ReactNode`   | -         | ✓        | Content of the PricingPlan                       |
+| `elementType`           | `ElementType` | `article` | ✕        | Type of element                                  |
+| `hasComparableFeatures` | `bool`        | `false`   | ✕        | If true, the PricingPlan has comparable features |
+| `isHighlighted`         | `bool`        | `false`   | ✕        | If true, the PricingPlan is highlighted          |
+| `rows`                  | `number`      | -         | ✕        | Number of grid rows in the plan layout           |
 
 The components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -79,14 +80,15 @@ import { PricingPlanHeader } from '@lmc-eu/spirit-web-react';
 
 ### API
 
-| Name       | Type        | Default | Required | Description                              |
-| ---------- | ----------- | ------- | -------- | ---------------------------------------- |
-| `action`   | `ReactNode` | -       | ✕        | Call to action button                    |
-| `badge`    | `string`    | -       | ✕        | Optional badge to highlight the plan     |
-| `note`     | `string`    | -       | ✕        | Optional note for additional information |
-| `price`    | `string`    | -       | ✕        | Price amount of the plan                 |
-| `subtitle` | `string`    | -       | ✕        | Subtitle for the plan                    |
-| `title`    | `string`    | -       | ✕        | Title of the plan                        |
+| Name          | Type          | Default  | Required | Description                              |
+| ------------- | ------------- | -------- | -------- | ---------------------------------------- |
+| `action`      | `ReactNode`   | -        | ✕        | Call to action button                    |
+| `badge`       | `string`      | -        | ✕        | Optional badge to highlight the plan     |
+| `elementType` | `ElementType` | `header` | ✕        | Type of element                          |
+| `note`        | `string`      | -        | ✕        | Optional note for additional information |
+| `price`       | `string`      | -        | ✕        | Price amount of the plan                 |
+| `subtitle`    | `string`      | -        | ✕        | Subtitle for the plan                    |
+| `title`       | `string`      | -        | ✕        | Title of the plan                        |
 
 The components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -110,12 +112,30 @@ import { PricingPlanBody } from '@lmc-eu/spirit-web-react';
 />;
 ```
 
+You can also set the `tooltipContent` on the feature to provide additional information when the feature title is clicked.
+
+```jsx
+import { PricingPlanBody } from '@lmc-eu/spirit-web-react';
+
+<PricingPlanBody
+  description="Optional introductory text"
+  features={[
+    {
+      title: 'Feature name',
+      description: 'Feature description',
+      tooltipContent: 'Additional information about the feature',
+    },
+  ]}
+/>;
+```
+
 ### API
 
-| Name          | Type                                       | Default | Required | Description                                         |
-| ------------- | ------------------------------------------ | ------- | -------- | --------------------------------------------------- |
-| `description` | `string`                                   | -       | ✕        | Optional introductory text                          |
-| `features`    | `{ title: string; description: string }[]` | `[]`    | ✕        | List of features, each with a title and description |
+| Name          | Type                                                                            | Default | Required | Description                                                                                 |
+| ------------- | ------------------------------------------------------------------------------- | ------- | -------- | ------------------------------------------------------------------------------------------- |
+| `description` | `string`                                                                        | -       | ✕        | Optional introductory text                                                                  |
+| `elementType` | `ElementType`                                                                   | `div`   | ✕        | Type of element                                                                             |
+| `features`    | `{ title: string; description: string, tooltipContent?: string \| ReactNode}[]` | `[]`    | ✕        | List of features, each with a title and description. Optionally you can set tooltipContent. |
 
 ## PricingPlanFooter
 
@@ -129,9 +149,10 @@ import { PricingPlanFooter } from '@lmc-eu/spirit-web-react';
 
 ### API
 
-| Name       | Type        | Default | Required | Description                      |
-| ---------- | ----------- | ------- | -------- | -------------------------------- |
-| `children` | `ReactNode` | -       | ✓        | Content of the PricingPlanFooter |
+| Name          | Type          | Default  | Required | Description                      |
+| ------------- | ------------- | -------- | -------- | -------------------------------- |
+| `children`    | `ReactNode`   | -        | ✓        | Content of the PricingPlanFooter |
+| `elementType` | `ElementType` | `footer` | ✕        | Type of element                  |
 
 ## Full Example
 

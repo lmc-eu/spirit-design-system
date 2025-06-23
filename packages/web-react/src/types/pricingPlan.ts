@@ -1,5 +1,5 @@
-import { ComponentPropsWithRef, ElementType, JSXElementConstructor, ReactNode } from 'react';
-import { ChildrenProps, StyleProps } from './shared';
+import type { ElementType, JSXElementConstructor, ReactNode } from 'react';
+import type { ChildrenProps, SpiritPolymorphicElementPropsWithRef, StyleProps } from './shared';
 
 export interface PricingPlanBaseProps extends ChildrenProps, StyleProps {
   /** If pricing plan has comparable features  */
@@ -25,14 +25,17 @@ export interface PricingPlanHeaderBaseProps extends StyleProps {
   title?: string;
 }
 
+export type PricingPlanFeature = {
+  title: string;
+  description?: string;
+  tooltipContent?: string | ReactNode;
+};
+
 export interface PricingPlanBodyBaseProps extends StyleProps {
   /** Description of the plan body */
   description?: string;
   /** Features of the plan body */
-  features?: {
-    title: string;
-    description?: string;
-  }[];
+  features?: PricingPlanFeature[];
 }
 
 export type PricingPlanProps<E extends ElementType> = {
@@ -42,9 +45,18 @@ export type PricingPlanProps<E extends ElementType> = {
    * @default 'article'
    */
   elementType?: E | JSXElementConstructor<unknown>;
-} & PricingPlanBaseProps;
+};
 
-export type SpiritPricingPlanProps<E extends ElementType = 'article'> = PricingPlanProps<E> & ComponentPropsWithRef<E>;
-export type SpiritPricingPlanHeaderProps = PricingPlanHeaderBaseProps;
-export type SpiritPricingPlanBodyProps = PricingPlanBodyBaseProps;
-export type SpiritPricingPlanFooterProps = StyleProps & ChildrenProps;
+export type SpiritPricingPlanProps<E extends ElementType = 'article'> = PricingPlanProps<E> &
+  PricingPlanBaseProps &
+  SpiritPolymorphicElementPropsWithRef<E, PricingPlanProps<E>>;
+export type SpiritPricingPlanHeaderProps<E extends ElementType = 'header'> = PricingPlanProps<E> &
+  PricingPlanHeaderBaseProps &
+  SpiritPolymorphicElementPropsWithRef<E, PricingPlanProps<E>>;
+export type SpiritPricingPlanBodyProps<E extends ElementType = 'div'> = PricingPlanProps<E> &
+  PricingPlanBodyBaseProps &
+  SpiritPolymorphicElementPropsWithRef<E, PricingPlanProps<E>>;
+export type SpiritPricingPlanFooterProps<E extends ElementType = 'footer'> = PricingPlanProps<E> &
+  StyleProps &
+  ChildrenProps &
+  SpiritPolymorphicElementPropsWithRef<E, PricingPlanProps<E>>;

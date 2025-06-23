@@ -4,6 +4,7 @@ import React from 'react';
 import {
   ariaAttributesTest,
   classNamePrefixProviderTest,
+  elementTypePropsTest,
   restPropsTest,
   stylePropsTest,
   validHtmlAttributesTest,
@@ -21,6 +22,8 @@ describe('PricingPlanHeader', () => {
   validHtmlAttributesTest(PricingPlanHeader);
 
   ariaAttributesTest(PricingPlanHeader);
+
+  elementTypePropsTest(PricingPlanHeader);
 
   describe('should render individual props correctly', () => {
     it('should render title', () => {
