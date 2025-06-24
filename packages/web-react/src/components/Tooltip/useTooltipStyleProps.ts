@@ -1,23 +1,25 @@
 import classNames from 'classnames';
-import { useMemo } from 'react';
+import { ElementType, useMemo } from 'react';
 import { useClassNamePrefix } from '../../hooks';
 import { TooltipProps } from '../../types';
 
 type omittedProps = 'id' | 'onToggle';
 
-export interface UseTooltipStyleProps extends TooltipProps {}
+export interface UseTooltipStyleProps<E extends ElementType = 'div'> extends TooltipProps<E> {}
 
-export interface UseTooltipStylePropsReturn {
+export interface UseTooltipStylePropsReturn<E extends ElementType = 'div'> {
   classProps: {
     rootClassName: string;
     popoverClassName: string;
     arrowClassName: string;
     closeButtonClassName: string;
   };
-  props: Omit<TooltipProps, omittedProps>;
+  props: Omit<TooltipProps<E>, omittedProps>;
 }
 
-export const useTooltipStyleProps = (props: Omit<UseTooltipStyleProps, omittedProps>): UseTooltipStylePropsReturn => {
+export const useTooltipStyleProps = <E extends ElementType = 'div'>(
+  props: Omit<UseTooltipStyleProps<E>, omittedProps>,
+): UseTooltipStylePropsReturn<E> => {
   const { isDismissible, isOpen, ...modifiedProps } = props;
   const tooltipClass = useClassNamePrefix('Tooltip');
   const tooltipPopoverClass = `${tooltipClass}Popover`;

@@ -4,6 +4,7 @@ import React from 'react';
 import {
   ariaAttributesTest,
   classNamePrefixProviderTest,
+  elementTypePropsTest,
   restPropsTest,
   stylePropsTest,
   validHtmlAttributesTest,
@@ -25,6 +26,8 @@ describe('Tooltip', () => {
   validHtmlAttributesTest(Tooltip);
 
   ariaAttributesTest(Tooltip);
+
+  elementTypePropsTest(Tooltip);
 
   it('should render tooltip', () => {
     const onToggle = () => null;
