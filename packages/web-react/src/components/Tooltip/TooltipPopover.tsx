@@ -3,12 +3,10 @@
 import classNames from 'classnames';
 import React, { useMemo } from 'react';
 import { useStyleProps } from '../../hooks';
-import { ChildrenProps, StyleProps } from '../../types';
+import { TooltipPopoverProps } from '../../types';
 import TooltipCloseButton from './TooltipCloseButton';
 import { useTooltipContext } from './TooltipContext';
 import { useTooltipStyleProps } from './useTooltipStyleProps';
-
-interface TooltipPopoverProps extends ChildrenProps, StyleProps {}
 
 const TooltipPopover = (props: TooltipPopoverProps) => {
   const { children, ...rest } = props;

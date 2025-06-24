@@ -20,6 +20,14 @@ const meta: Meta<typeof Tooltip> = {
     children: {
       control: 'object',
     },
+    elementType: {
+      control: 'text',
+      table: {
+        defaultValue: {
+          summary: 'div',
+        },
+      },
+    },
     enableFlipping: { control: 'boolean' },
     enableFlippingCrossAxis: { control: 'boolean' },
     enableShifting: { control: 'boolean' },
@@ -51,6 +59,7 @@ const meta: Meta<typeof Tooltip> = {
         point to the center of the trigger.
       </>
     ),
+    elementType: 'div',
     enableFlipping: true,
     enableFlippingCrossAxis: true,
     enableShifting: true,
@@ -66,7 +75,7 @@ const meta: Meta<typeof Tooltip> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Tooltip>;
+type Story = StoryObj<SpiritTooltipProps>;
 
 const TooltipWithHooks = (args: SpiritTooltipProps) => {
   const { children, isOpen } = args;
