@@ -47,8 +47,8 @@ import { PricingPlan, Matrix } from '@lmc-eu/spirit-web-react';
 | Name                    | Type         | Default | Required | Description                                      |
 | ----------------------- | ------------ | ------- | -------- | ------------------------------------------------ |
 | `children`              | `ReactNode`  | -       | ✓        | Content of the PricingPlan                       |
-| `hasComparableFeatures` | `boolean`    | `false` | ✕        | If true, the PricingPlan has comparable features |
-| `highlightedColor`      | Accent Color | -       | ✕        | If true, the PricingPlan is highlighted          |
+| `hasComparableFeatures` | `bool`       | `false` | ✕        | If true, the PricingPlan has comparable features |
+| `highlightedColor`      | Accent Color | -       | ✕        | PricingPlan highlighted color                    |
 | `rows`                  | `number`     | -       | ✕        | Number of grid rows in the plan layout           |
 
 The components accept [additional attributes][readme-additional-attributes].
