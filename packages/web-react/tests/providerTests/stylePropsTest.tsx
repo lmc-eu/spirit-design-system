@@ -15,19 +15,19 @@ export const stylePropsTest = (Component: ComponentType<any>, testId?: string) =
   });
 
   it('renders style with UNSAFE_style', async () => {
-    const testStyle = { color: 'rgb(255, 0, 0)' };
+    const testStyle = { color: 'red' };
     const dom = render(<Component UNSAFE_style={testStyle} />);
 
     await waitFor(() => {
       const element = getElement(dom, testId);
-      expect(element).toHaveStyle(testStyle);
+      expect(element.getAttribute('style')).toContain('color: red');
     });
   });
 
   it('should warn when using unsupported `style` prop', async () => {
     const consoleWarnMock = jest.spyOn(global.console, 'warn').mockImplementation();
 
-    const testStyle = { color: 'rgb(255, 0, 0)' };
+    const testStyle = { color: 'red' };
     render(<Component style={testStyle} />);
 
     await waitFor(() =>
