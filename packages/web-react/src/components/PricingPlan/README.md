@@ -21,10 +21,10 @@ import { PricingPlan } from '@lmc-eu/spirit-web-react';
 
 ### Highlighted Pricing Plan
 
-Add `isHighlighted` prop to highlight the PricingPlan.
+Use `highlightedColor` prop with an accent color number to emphasize a specific plan.
 
 ```jsx
-<PricingPlan isHighlighted>{/* PricingPlan content go here */}</PricingPlan>
+<PricingPlan highlightedColor="02">{/* PricingPlan content go here */}</PricingPlan>
 ```
 
 ### Comparable Features
@@ -44,12 +44,12 @@ import { PricingPlan, Matrix } from '@lmc-eu/spirit-web-react';
 
 ### API
 
-| Name                    | Type        | Default | Required | Description                                      |
-| ----------------------- | ----------- | ------- | -------- | ------------------------------------------------ |
-| `children`              | `ReactNode` | -       | ✓        | Content of the PricingPlan                       |
-| `hasComparableFeatures` | `boolean`   | `false` | ✕        | If true, the PricingPlan has comparable features |
-| `isHighlighted`         | `boolean`   | `false` | ✕        | If true, the PricingPlan is highlighted          |
-| `rows`                  | `number`    | -       | ✕        | Number of grid rows in the plan layout           |
+| Name                    | Type         | Default | Required | Description                                      |
+| ----------------------- | ------------ | ------- | -------- | ------------------------------------------------ |
+| `children`              | `ReactNode`  | -       | ✓        | Content of the PricingPlan                       |
+| `hasComparableFeatures` | `boolean`    | `false` | ✕        | If true, the PricingPlan has comparable features |
+| `highlightedColor`      | Accent Color | -       | ✕        | If true, the PricingPlan is highlighted          |
+| `rows`                  | `number`     | -       | ✕        | Number of grid rows in the plan layout           |
 
 The components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -138,7 +138,7 @@ import { PricingPlanFooter } from '@lmc-eu/spirit-web-react';
 ```jsx
 import { PricingPlan, PricingPlanHeader, PricingPlanBody, PricingPlanFooter } from '@lmc-eu/spirit-web-react';
 
-<PricingPlan isHighlighted>
+<PricingPlan highlightedColor="02">
   <PricingPlanHeader
     action={
       <ButtonLink href="#" size="large">

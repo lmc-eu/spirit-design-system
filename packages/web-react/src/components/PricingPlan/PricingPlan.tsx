@@ -10,7 +10,6 @@ import { usePricingPlanStyleProps } from './usePricingPlanStyleProps';
 
 const defaultProps: Partial<SpiritPricingPlanProps> = {
   hasComparableFeatures: false,
-  isHighlighted: false,
   rows: NUMBER_OF_PLAN_ROWS_DEFAULT,
 };
 

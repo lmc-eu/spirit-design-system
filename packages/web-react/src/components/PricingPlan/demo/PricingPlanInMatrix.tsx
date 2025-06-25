@@ -78,7 +78,7 @@ const PricingPlanInMatrix = () => (
           />
           <PricingPlanFooter>footer</PricingPlanFooter>
         </PricingPlan>
-        <PricingPlan isHighlighted>
+        <PricingPlan highlightedColor="02">
           <PricingPlanHeader
             action={
               <ButtonLink href="#" size="large">

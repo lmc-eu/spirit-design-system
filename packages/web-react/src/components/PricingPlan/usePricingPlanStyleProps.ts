@@ -48,13 +48,13 @@ export interface PricingPlanReturnStyles<T> {
 }
 
 export const usePricingPlanStyleProps = <T extends PricingPlanStyleProps>(props: T): PricingPlanReturnStyles<T> => {
-  const { hasComparableFeatures, isHighlighted, action, badge, title, subtitle, note, price, rows, ...restProps } =
+  const { hasComparableFeatures, highlightedColor, action, badge, title, subtitle, note, price, rows, ...restProps } =
     props;
 
   const pricingPlanClass = useClassNamePrefix('PricingPlan');
   const pricingPlanComparableClass = `${pricingPlanClass}--comparableFeatures`;
   const pricingPlanLayoutClass = `${pricingPlanClass}__layout`;
-  const pricingPlanHighlightedClass = `${pricingPlanClass}--02`;
+  const pricingPlanHighlightedClass = `${pricingPlanClass}--${highlightedColor}`;
 
   const pricingPlanHeaderClass = useClassNamePrefix('PricingPlanHeader');
   const pricingPlanHeaderBadgeClassName = `${pricingPlanHeaderClass}__badge`;
@@ -76,7 +76,7 @@ export const usePricingPlanStyleProps = <T extends PricingPlanStyleProps>(props:
 
   const rootClassProps = classNames(pricingPlanClass, {
     [pricingPlanComparableClass]: hasComparableFeatures,
-    [pricingPlanHighlightedClass]: isHighlighted,
+    [pricingPlanHighlightedClass]: highlightedColor,
   });
 
   const pricingPlanStyle: PricingPlanCSSProperties = {};

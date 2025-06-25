@@ -1,3 +1,4 @@
+import { accentColors } from '@lmc-eu/spirit-design-tokens';
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
@@ -17,10 +18,8 @@ const meta: Meta<typeof PricingPlan> = {
     },
   },
   argTypes: {
-    argTypes: {
-      children: {
-        control: 'text',
-      },
+    children: {
+      control: 'object',
     },
     elementType: {
       control: 'text',
@@ -36,11 +35,9 @@ const meta: Meta<typeof PricingPlan> = {
         defaultValue: { summary: 'false' },
       },
     },
-    isHighlighted: {
-      control: 'boolean',
-      table: {
-        defaultValue: { summary: 'false' },
-      },
+    highlightedColor: {
+      control: 'select',
+      options: Object.keys(accentColors),
     },
   },
   args: {
@@ -70,7 +67,7 @@ const meta: Meta<typeof PricingPlan> = {
     ),
     elementType: 'article',
     hasComparableFeatures: false,
-    isHighlighted: false,
+    highlightedColor: accentColors['02'],
   },
 };
 

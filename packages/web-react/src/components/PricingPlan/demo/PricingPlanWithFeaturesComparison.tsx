@@ -101,7 +101,7 @@ const PricingPlanWithFeaturesComparison = () => {
               />
               <PricingPlanFooter>footer</PricingPlanFooter>
             </PricingPlan>
-            <PricingPlan hasComparableFeatures isHighlighted>
+            <PricingPlan hasComparableFeatures highlightedColor="02">
               <PricingPlanHeader
                 action={
                   <ButtonLink href="#" size="large">

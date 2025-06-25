@@ -40,7 +40,7 @@ describe('PricingPlan', () => {
   });
 
   it('should render with highlighted class when isHighlighted is true', () => {
-    render(<PricingPlan isHighlighted>Content</PricingPlan>);
+    render(<PricingPlan highlightedColor="02">Content</PricingPlan>);
 
     expect(screen.getByRole('article')).toHaveClass('PricingPlan PricingPlan--02');
   });

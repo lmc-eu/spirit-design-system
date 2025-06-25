@@ -1,11 +1,11 @@
 import { ComponentPropsWithRef, ElementType, JSXElementConstructor, ReactNode } from 'react';
-import { ChildrenProps, StyleProps } from './shared';
+import { AccentColorToken, ChildrenProps, StyleProps } from './shared';
 
 export interface PricingPlanBaseProps extends ChildrenProps, StyleProps {
   /** If pricing plan has comparable features  */
   hasComparableFeatures?: boolean;
   /** If pricing plan is highlighted */
-  isHighlighted?: boolean;
+  highlightedColor?: AccentColorToken;
   /** Number of grid rows in the plan layout */
   rows?: number;
 }

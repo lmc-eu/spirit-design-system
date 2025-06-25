@@ -35,8 +35,8 @@ describe('usePricingPlanStyleProps', () => {
     expect(result.current.props).toStrictEqual({});
   });
 
-  it('should return class with --02 when isHighlighted is true', () => {
-    const { result } = renderHook(() => usePricingPlanStyleProps({ isHighlighted: true }));
+  it('should return correct class with highlightedColor', () => {
+    const { result } = renderHook(() => usePricingPlanStyleProps({ highlightedColor: '02' }));
 
     expect(result.current.classProps.root).toContain('PricingPlan--02');
     expect(result.current.props).toStrictEqual({});
