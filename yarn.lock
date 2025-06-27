@@ -42,7 +42,7 @@ __metadata:
     react-dom: "npm:19.0.0"
     sass: "npm:1.89.0"
     sass-embedded: "npm:1.89.0"
-    typescript: "npm:5.7.3"
+    typescript: "npm:5.8.3"
   languageName: unknown
   linkType: soft
 
@@ -66,7 +66,7 @@ __metadata:
     next: "npm:14.2.29"
     react: "npm:^18"
     react-dom: "npm:^18"
-    typescript: "npm:5.7.3"
+    typescript: "npm:5.8.3"
   languageName: unknown
   linkType: soft
 
@@ -84,7 +84,7 @@ __metadata:
     jest-config-spirit: "workspace:^"
     npm-run-all2: "npm:6.2.6"
     prettier-config-spirit: "workspace:^"
-    typescript: "npm:5.7.3"
+    typescript: "npm:5.8.3"
     vite: "npm:6.1.0"
   languageName: unknown
   linkType: soft
@@ -4588,7 +4588,7 @@ __metadata:
     shx: "npm:0.4.0"
     ts-node: "npm:10.9.2"
     tsup: "npm:8.5.0"
-    typescript: "npm:5.7.3"
+    typescript: "npm:5.8.3"
     zx: "npm:^8.0.0"
   bin:
     spirit-analytics: ./bin/spirit-analytics.js
@@ -4614,7 +4614,7 @@ __metadata:
     sade: "npm:^1.8.1"
     shx: "npm:0.4.0"
     tsup: "npm:8.5.0"
-    typescript: "npm:5.7.3"
+    typescript: "npm:5.8.3"
     zx: "npm:^8.0.0"
   bin:
     spirit-codemods: ./bin/spirit-codemods.js
@@ -4629,7 +4629,7 @@ __metadata:
     "@types/node": "npm:20.17.24"
     jest: "npm:30.0.0"
     ts-node: "npm:10.9.2"
-    typescript: "npm:5.7.3"
+    typescript: "npm:5.8.3"
   languageName: unknown
   linkType: soft
 
@@ -4647,7 +4647,7 @@ __metadata:
     sass-embedded: "npm:1.89.0"
     sass-true: "npm:8.1.0"
     shx: "npm:0.4.0"
-    typescript: "npm:5.7.3"
+    typescript: "npm:5.8.3"
     vite: "npm:6.1.0"
     vite-plugin-handlebars: "npm:2.0.0"
   languageName: unknown
@@ -4668,7 +4668,7 @@ __metadata:
     shx: "npm:0.4.0"
     stylelint: "npm:16.14.1"
     stylelint-config-spirit: "workspace:^"
-    typescript: "npm:5.7.3"
+    typescript: "npm:5.8.3"
     vite: "npm:6.1.0"
     vite-plugin-dts: "npm:4.5.0"
   languageName: unknown
@@ -4683,7 +4683,7 @@ __metadata:
     eslint: "npm:8.57.1"
     jest: "npm:30.0.0"
     npm-run-all2: "npm:6.2.6"
-    typescript: "npm:5.7.3"
+    typescript: "npm:5.8.3"
     vite: "npm:6.1.0"
   languageName: unknown
   linkType: soft
@@ -4697,7 +4697,7 @@ __metadata:
     eslint: "npm:8.57.1"
     jest: "npm:30.0.0"
     npm-run-all2: "npm:6.2.6"
-    typescript: "npm:5.7.3"
+    typescript: "npm:5.8.3"
     vite: "npm:6.1.0"
   languageName: unknown
   linkType: soft
@@ -4713,7 +4713,7 @@ __metadata:
     sass-embedded: "npm:1.89.0"
     shx: "npm:0.4.0"
     tslib: "npm:2.8.1"
-    typescript: "npm:5.7.3"
+    typescript: "npm:5.8.3"
     vite: "npm:6.1.0"
   languageName: unknown
   linkType: soft
@@ -4760,7 +4760,7 @@ __metadata:
     simple-git: "npm:^3.27.0"
     slackify-markdown: "npm:^4.4.0"
     tsx: "npm:^4.19.3"
-    typescript: "npm:5.8.2"
+    typescript: "npm:5.8.3"
     zx: "npm:^8.3.0"
   languageName: unknown
   linkType: soft
@@ -4785,7 +4785,7 @@ __metadata:
     react: "npm:18.3.1"
     react-dom: "npm:18.3.1"
     storybook: "npm:8.6.14"
-    typescript: "npm:5.7.3"
+    typescript: "npm:5.8.3"
     vite: "npm:6.1.0"
     vite-raw-plugin: "npm:1.0.2"
   languageName: unknown
@@ -4855,7 +4855,7 @@ __metadata:
     ts-loader: "npm:9.5.2"
     ts-node: "npm:10.9.2"
     tsx: "npm:4.19.4"
-    typescript: "npm:5.7.3"
+    typescript: "npm:5.8.3"
     webpack: "npm:5.97.1"
     webpack-cli: "npm:5.1.4"
     webpack-merge: "npm:6.0.1"
@@ -4916,7 +4916,7 @@ __metadata:
     stylelint-config-spirit: "workspace:^"
     ts-node: "npm:10.9.2"
     tslib: "npm:2.8.1"
-    typescript: "npm:5.7.3"
+    typescript: "npm:5.8.3"
   peerDependencies:
     sass-embedded: ">=1.57.0 < 2"
   peerDependenciesMeta:
@@ -15868,7 +15868,7 @@ __metadata:
     eslint-restricted-globals: "npm:^0.2.0"
     prettier: "npm:^3.0.0"
     prettier-config-spirit: "workspace:^"
-    typescript: "npm:5.7.3"
+    typescript: "npm:5.8.3"
   peerDependencies:
     eslint: ^8.0.0
   languageName: unknown
@@ -31914,7 +31914,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "typescript-config-spirit@workspace:configs/typescript-config-spirit"
   dependencies:
-    typescript: "npm:5.7.3"
+    typescript: "npm:5.8.3"
   languageName: unknown
   linkType: soft
 
@@ -31958,6 +31958,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"typescript@npm:5.8.3":
+  version: 5.8.3
+  resolution: "typescript@npm:5.8.3"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10/65c40944c51b513b0172c6710ee62e951b70af6f75d5a5da745cb7fab132c09ae27ffdf7838996e3ed603bb015dadd099006658046941bd0ba30340cc563ae92
+  languageName: node
+  linkType: hard
+
 "typescript@patch:typescript@npm%3A5.0.4#optional!builtin<compat/typescript>":
   version: 5.0.4
   resolution: "typescript@patch:typescript@npm%3A5.0.4#optional!builtin<compat/typescript>::version=5.0.4&hash=b5f058"
@@ -31995,6 +32005,16 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 10/97920a082ffc57583b1cb6bc4faa502acc156358e03f54c7fc7fdf0b61c439a717f4c9070c449ee9ee683d4cfc3bb203127c2b9794b2950f66d9d307a4ff262c
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>":
+  version: 5.8.3
+  resolution: "typescript@patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10/b9b1e73dabac5dc730c041325dbd9c99467c1b0d239f1b74ec3b90d831384af3e2ba973946232df670519147eb51a2c20f6f96163cea2b359f03de1e2091cc4f
   languageName: node
   linkType: hard
 
