@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.1.0"></a>
+
+# [2.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@2.0.16...@lmc-eu/spirit-form-validations@2.1.0) (2025-06-30)
+
+### Dependencies
+
+- Update dependency jest to v30 ([b4d753c](https://github.com/lmc-eu/spirit-design-system/commit/b4d753c))
+
+### Features
+
+- **web:** Introduce sizes for `Select`, `TextArea`, and `TextField` [#DS-1689](https://github.com/lmc-eu/spirit-design-system/issues/DS-1689) ([5614135](https://github.com/lmc-eu/spirit-design-system/commit/5614135))
+
+**Note:** Version bump only for package @lmc-eu/spirit-form-validations
+
 <a name="2.0.16"></a>
 
 ## [2.0.16](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@2.0.15...@lmc-eu/spirit-form-validations@2.0.16) (2025-06-09)

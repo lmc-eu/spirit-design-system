@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.15"></a>
+
+## [2.0.15](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-js@2.0.14...@lmc-eu/spirit-exporters-js@2.0.15) (2025-06-30)
+
+### Dependencies
+
+- Update dependency jest to v30 ([b4d753c](https://github.com/lmc-eu/spirit-design-system/commit/b4d753c))
+
+**Note:** Version bump only for package @lmc-eu/spirit-exporters-js
+
 <a name="2.0.14"></a>
 
 ## [2.0.14](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-js@2.0.13...@lmc-eu/spirit-exporters-js@2.0.14) (2025-05-12)

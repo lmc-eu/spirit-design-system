@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.1.8"></a>
+
+## [0.1.8](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-storybook@0.1.7...@lmc-eu/spirit-storybook@0.1.8) (2025-06-30)
+
+### Chores
+
+- **repo:** Remove unnecessary dependencies from main `package.json` ([82b71e3](https://github.com/lmc-eu/spirit-design-system/commit/82b71e3)), closes [#203](https://github.com/lmc-eu/spirit-design-system/issues/203)
+
+### Dependencies
+
+- Update monorepo:storybook to v8.6.14 ([ea67edd](https://github.com/lmc-eu/spirit-design-system/commit/ea67edd))
+
+**Note:** Version bump only for package @lmc-eu/spirit-storybook
+
 <a name="0.1.7"></a>
 
 ## [0.1.7](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-storybook@0.1.6...@lmc-eu/spirit-storybook@0.1.7) (2025-06-09)

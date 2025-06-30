@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.6.0"></a>
+
+# [3.6.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@3.5.0...@lmc-eu/spirit-design-tokens@3.6.0) (2025-06-30)
+
+### Features
+
+- **design-tokens:** Introduce color of the Header's border [#DS-1734](https://github.com/lmc-eu/spirit-design-system/issues/DS-1734) ([e01ab89](https://github.com/lmc-eu/spirit-design-system/commit/e01ab89))
+
+**Note:** Version bump only for package @lmc-eu/spirit-design-tokens
+
 <a name="3.5.0"></a>
 
 # [3.5.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@3.4.0...@lmc-eu/spirit-design-tokens@3.5.0) (2025-06-09)

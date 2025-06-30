@@ -3,6 +3,42 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.11.0"></a>
+
+# [3.11.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.10.0...@lmc-eu/spirit-web-react@3.11.0) (2025-06-30)
+
+### Bug Fixes
+
+- **web-react:** Handle selecting inside and releasing click outside the reference ([41e5e6f](https://github.com/lmc-eu/spirit-design-system/commit/41e5e6f)), closes [#2086](https://github.com/lmc-eu/spirit-design-system/issues/2086)
+
+### Code Refactoring
+
+- **web-react:** Update demo emotion, accent colors in `Heading` [#DS-1774](https://github.com/lmc-eu/spirit-design-system/issues/DS-1774) ([1278432](https://github.com/lmc-eu/spirit-design-system/commit/1278432))
+
+### Dependencies
+
+- Update dependency jest to v30 ([b4d753c](https://github.com/lmc-eu/spirit-design-system/commit/b4d753c))
+- **web-react:** Revert update of `html-dom-parser` and `html-react-parser` ([0a9e9ab](https://github.com/lmc-eu/spirit-design-system/commit/0a9e9ab)), closes [#DS-1980](https://github.com/lmc-eu/spirit-design-system/issues/DS-1980)
+
+### Documentation
+
+- **web-react:** Added prop isMultiline to `docs-Box` [#DS-1952](https://github.com/lmc-eu/spirit-design-system/issues/DS-1952) ([0a8610c](https://github.com/lmc-eu/spirit-design-system/commit/0a8610c))
+
+### Features
+
+- **web-react:** Add elementType to Tooltip [#DS-1998](https://github.com/lmc-eu/spirit-design-system/issues/DS-1998) ([1c90878](https://github.com/lmc-eu/spirit-design-system/commit/1c90878))
+- **web-react:** Add Tooltip to PricingPlan [#DS-1998](https://github.com/lmc-eu/spirit-design-system/issues/DS-1998) ([2548a4b](https://github.com/lmc-eu/spirit-design-system/commit/2548a4b))
+- **web-react:** Introduce accent, emotions colors to `Text` [#DS-1774](https://github.com/lmc-eu/spirit-design-system/issues/DS-1774) ([1f4ed18](https://github.com/lmc-eu/spirit-design-system/commit/1f4ed18))
+- **web-react:** Introduce Matrix component [#DS-1952](https://github.com/lmc-eu/spirit-design-system/issues/DS-1952) ([9fa8cb3](https://github.com/lmc-eu/spirit-design-system/commit/9fa8cb3))
+- **web-react:** Introduce PricingPlan component [#DS-1953](https://github.com/lmc-eu/spirit-design-system/issues/DS-1953) ([f5f7ee5](https://github.com/lmc-eu/spirit-design-system/commit/f5f7ee5))
+- **web-react:** Introduce sizes for `Select`, `TextArea`, and `TextField` [#DS-1903](https://github.com/lmc-eu/spirit-design-system/issues/DS-1903) ([727e016](https://github.com/lmc-eu/spirit-design-system/commit/727e016))
+
+### Tests
+
+- **web-react:** Added spacingPropsTest [#DS-1952](https://github.com/lmc-eu/spirit-design-system/issues/DS-1952) ([ece7ab7](https://github.com/lmc-eu/spirit-design-system/commit/ece7ab7))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="3.10.0"></a>
 
 # [3.10.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.9.1...@lmc-eu/spirit-web-react@3.10.0) (2025-06-09)

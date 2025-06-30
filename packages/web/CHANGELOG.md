@@ -3,6 +3,43 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.11.0"></a>
+
+# [3.11.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.10.0...@lmc-eu/spirit-web@3.11.0) (2025-06-30)
+
+### Bug Fixes
+
+- **web:** Handle selecting inside and releasing click outside the Modal ([f62f1ea](https://github.com/lmc-eu/spirit-design-system/commit/f62f1ea)), closes [#2086](https://github.com/lmc-eu/spirit-design-system/issues/2086)
+
+### Chores
+
+- **repo:** Remove unnecessary dependencies from main `package.json` ([82b71e3](https://github.com/lmc-eu/spirit-design-system/commit/82b71e3)), closes [#203](https://github.com/lmc-eu/spirit-design-system/issues/203)
+
+### Code Refactoring
+
+- **web:** Improve validation of dictionary configs ([3df8264](https://github.com/lmc-eu/spirit-design-system/commit/3df8264))
+
+### Dependencies
+
+- Update dependency jest to v30 ([b4d753c](https://github.com/lmc-eu/spirit-design-system/commit/b4d753c))
+
+### Documentation
+
+- **web:** Document edge-to-edge horizontal scrolling with `ScrollView` [#DS-1922](https://github.com/lmc-eu/spirit-design-system/issues/DS-1922) ([3af46fa](https://github.com/lmc-eu/spirit-design-system/commit/3af46fa))
+
+### Features
+
+- **web-twig:** Introduce sizes for `Select`, `TextArea`, and `TextField` [#DS-1904](https://github.com/lmc-eu/spirit-design-system/issues/DS-1904) ([3575351](https://github.com/lmc-eu/spirit-design-system/commit/3575351))
+- **web:** Add Tooltip to PricingPlan [#DS-1998](https://github.com/lmc-eu/spirit-design-system/issues/DS-1998) ([e4174f0](https://github.com/lmc-eu/spirit-design-system/commit/e4174f0))
+- **web:** Change color of the UNSTABLE_Header's border [#DS-1734](https://github.com/lmc-eu/spirit-design-system/issues/DS-1734) ([e97dce9](https://github.com/lmc-eu/spirit-design-system/commit/e97dce9))
+- **web:** Get ready for highlighting a `PricingPlan` with any accent color ([f2fcea4](https://github.com/lmc-eu/spirit-design-system/commit/f2fcea4))
+- **web:** Introduce `PricingPlan` component to create pricing overviews [#DS-1922](https://github.com/lmc-eu/spirit-design-system/issues/DS-1922) ([77397ca](https://github.com/lmc-eu/spirit-design-system/commit/77397ca))
+- **web:** Introduce new responsive border radii for form fields [#DS-1875](https://github.com/lmc-eu/spirit-design-system/issues/DS-1875) ([88c90d7](https://github.com/lmc-eu/spirit-design-system/commit/88c90d7))
+- **web:** Introduce sizes for `Select`, `TextArea`, and `TextField` [#DS-1689](https://github.com/lmc-eu/spirit-design-system/issues/DS-1689) ([5614135](https://github.com/lmc-eu/spirit-design-system/commit/5614135))
+- **web:** Introduce text helper for dotted underline [#DS-1949](https://github.com/lmc-eu/spirit-design-system/issues/DS-1949) ([e649263](https://github.com/lmc-eu/spirit-design-system/commit/e649263))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="3.10.0"></a>
 
 # [3.10.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.9.1...@lmc-eu/spirit-web@3.10.0) (2025-06-09)

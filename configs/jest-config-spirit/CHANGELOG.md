@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.1.7"></a>
+
+## [0.1.7](https://github.com/lmc-eu/spirit-design-system/compare/jest-config-spirit@0.1.6...jest-config-spirit@0.1.7) (2025-06-30)
+
+### Dependencies
+
+- Update dependency jest to v30 ([b4d753c](https://github.com/lmc-eu/spirit-design-system/commit/b4d753c))
+- Update dependency jest-cli to v30 ([65f96f3](https://github.com/lmc-eu/spirit-design-system/commit/65f96f3))
+
+**Note:** Version bump only for package jest-config-spirit
+
 <a name="0.1.6"></a>
 
 ## [0.1.6](https://github.com/lmc-eu/spirit-design-system/compare/jest-config-spirit@0.1.5...jest-config-spirit@0.1.6) (2025-05-12)

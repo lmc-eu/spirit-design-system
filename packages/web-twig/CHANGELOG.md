@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.8.0"></a>
+
+# [4.8.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@4.7.0...@lmc-eu/spirit-web-twig@4.8.0) (2025-06-30)
+
+### Documentation
+
+- **web-twig:** Add missing char `-` in git command ([a451984](https://github.com/lmc-eu/spirit-design-system/commit/a451984))
+
+### Features
+
+- **web-twig:** Introduce sizes for `Select`, `TextArea`, and `TextField` [#DS-1904](https://github.com/lmc-eu/spirit-design-system/issues/DS-1904) ([3575351](https://github.com/lmc-eu/spirit-design-system/commit/3575351))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="4.7.0"></a>
 
 # [4.7.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@4.6.0...@lmc-eu/spirit-web-twig@4.7.0) (2025-06-09)
