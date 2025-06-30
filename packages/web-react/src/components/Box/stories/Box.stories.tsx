@@ -16,7 +16,7 @@ import {
   getEmotionBackgroundColors,
   getEmotionBorderColors,
   getEmotionTextColors,
-} from '../../../utils/colorObjectGenerators';
+} from '../../../utils';
 import Box from '../Box';
 import ReadMe from '../README.md';
 

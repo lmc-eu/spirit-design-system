@@ -2,7 +2,7 @@ import React from 'react';
 import DocsStack from '../../../../docs/DocsStack';
 import { TextColors } from '../../../constants';
 import { HeadingColorsType } from '../../../types';
-import { getAccentTextColors, getEmotionTextColors } from '../../../utils/colorObjectGenerators';
+import { getAccentTextColors, getEmotionTextColors } from '../../../utils';
 import { Grid } from '../../Grid';
 import Text from '../../Text/Text';
 import Heading from '../Heading';
