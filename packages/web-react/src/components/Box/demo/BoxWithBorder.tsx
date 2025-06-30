@@ -1,6 +1,6 @@
 import React from 'react';
 import DocsStack from '../../../../docs/DocsStack';
-import { getAccentBorderColors, getEmotionBorderColors } from '../../../utils/colorObjectGenerators';
+import { getAccentBorderColors, getEmotionBorderColors } from '../../../utils';
 import { Grid } from '../../Grid';
 import Box from '../Box';
 

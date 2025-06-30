@@ -3,8 +3,7 @@
 import React, { ForwardedRef, forwardRef } from 'react';
 import { useIcon, useStyleProps } from '../../hooks';
 import { SpiritIconProps } from '../../types';
-import { mergeStyleProps } from '../../utils';
-import { htmlReactParser } from '../../utils/htmlReactParser';
+import { htmlReactParser, mergeStyleProps } from '../../utils';
 import { DEFAULT_BOX_SIZE } from './constants';
 import { useIconBoxSize } from './useIconBoxSize';
 import { useIconStyleProps } from './useIconStyleProps';
