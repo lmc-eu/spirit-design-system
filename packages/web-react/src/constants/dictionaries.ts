@@ -89,6 +89,12 @@ export const TextColors = {
   TERTIARY: 'tertiary',
 } as const;
 
+/* Intensity */
+export const Intensity = {
+  BASIC: 'basic',
+  SUBTLE: 'subtle',
+} as const;
+
 /* Emphasis */
 export const Emphasis = {
   REGULAR: 'regular',

@@ -25,6 +25,7 @@ export * from './Grid';
 export * from './Header';
 export * from './Heading';
 export * from './Icon';
+export * from './IconBox';
 export * from './Item';
 export * from './Link';
 export * from './Matrix';
