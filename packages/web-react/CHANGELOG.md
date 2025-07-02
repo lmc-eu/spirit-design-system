@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.12.0"></a>
+
+# [3.12.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.11.0...@lmc-eu/spirit-web-react@3.12.0) (2025-07-02)
+
+### Features
+
+- **web-react:** Export accidentally omitted utils ([a81c790](https://github.com/lmc-eu/spirit-design-system/commit/a81c790))
+- **web-react:** Export types for PricingPlan ([30f5c55](https://github.com/lmc-eu/spirit-design-system/commit/30f5c55))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="3.11.0"></a>
 
 # [3.11.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.10.0...@lmc-eu/spirit-web-react@3.11.0) (2025-06-30)
