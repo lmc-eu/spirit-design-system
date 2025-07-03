@@ -74,6 +74,21 @@ $component-header-item-state-selected: var(--spirit-color-component-header-item-
 $component-header-stripe-state-selected: var(--spirit-color-component-header-stripe-state-selected);
 $component-header-stripe-state-unselected: var(--spirit-color-component-header-stripe-state-unselected);
 
+$component-pagination-selected-border: var(--spirit-color-component-pagination-selected-border);
+$component-pagination-selected-content: var(--spirit-color-component-pagination-selected-content);
+$component-pagination-selected-state-active: var(--spirit-color-component-pagination-selected-state-active);
+$component-pagination-selected-state-default: var(--spirit-color-component-pagination-selected-state-default);
+$component-pagination-selected-state-hover: var(--spirit-color-component-pagination-selected-state-hover);
+$component-pagination-unselected-border: var(--spirit-color-component-pagination-unselected-border);
+$component-pagination-unselected-content: var(--spirit-color-component-pagination-unselected-content);
+$component-pagination-unselected-state-active: var(--spirit-color-component-pagination-unselected-state-active);
+$component-pagination-unselected-state-default: var(--spirit-color-component-pagination-unselected-state-default);
+$component-pagination-unselected-state-hover: var(--spirit-color-component-pagination-unselected-state-hover);
+
+$component-pricing-box-background: var(--spirit-color-component-pricing-box-background);
+$component-pricing-box-border: var(--spirit-color-component-pricing-box-border);
+$component-pricing-box-content: var(--spirit-color-component-pricing-box-content);
+
 $component-toggle-selected-border: var(--spirit-color-component-toggle-selected-border);
 $component-toggle-selected-content: var(--spirit-color-component-toggle-selected-content);
 $component-toggle-selected-state-active: var(--spirit-color-component-toggle-selected-state-active);
@@ -296,6 +311,23 @@ $component-colors: (
         item-state-selected: $component-header-item-state-selected,
         stripe-state-selected: $component-header-stripe-state-selected,
         stripe-state-unselected: $component-header-stripe-state-unselected,
+    ),
+    pagination: (
+        selected-border: $component-pagination-selected-border,
+        selected-content: $component-pagination-selected-content,
+        selected-state-active: $component-pagination-selected-state-active,
+        selected-state-default: $component-pagination-selected-state-default,
+        selected-state-hover: $component-pagination-selected-state-hover,
+        unselected-border: $component-pagination-unselected-border,
+        unselected-content: $component-pagination-unselected-content,
+        unselected-state-active: $component-pagination-unselected-state-active,
+        unselected-state-default: $component-pagination-unselected-state-default,
+        unselected-state-hover: $component-pagination-unselected-state-hover,
+    ),
+    pricing-box: (
+        background: $component-pricing-box-background,
+        border: $component-pricing-box-border,
+        content: $component-pricing-box-content,
     ),
     toggle: (
         selected-border: $component-toggle-selected-border,
