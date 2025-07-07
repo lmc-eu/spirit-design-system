@@ -8,6 +8,14 @@
 </svg>
 ```
 
+In case you need to use the dual-tone icon, you need to add `Icon Icon--dualtone-{color}` class.
+
+```html
+<svg class="Icon Icon--dualtone-primary" width="24" height="24">
+  <use xlink:href="/assets/icons/svg/sprite.svg#shield-dualtone" />
+</svg>
+```
+
 ## Responsive Size
 
 Use CSS custom properties to define the `size` of the icon.

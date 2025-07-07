@@ -1,3 +1,30 @@
 @use '@tokens' as tokens;
+@use '../../tools/tokens' as tokens-tools;
 
 $breakpoints: tokens.$breakpoints;
+$background-default: tokens.$background-primary;
+$border-default: tokens.$border-basic;
+
+// @deprecated We are deprecating the default max width, it will be removed with next major version.
+// Apart from that, we are also deprecating the 'get-size' function and the usage of the 'get-variable-if-exists' function. In the next major version, we can be sure the required tokens will be present so no check will be needed.
+$dualtone-variants: (
+    primary: (
+        background-color: tokens-tools.get-variable-if-exists('dualtone-icon-primary-background', $background-default),
+        border: tokens-tools.get-variable-if-exists('dualtone-icon-primary-border', $border-default),
+    ),
+    secondary: (
+        background-color: tokens-tools.get-variable-if-exists('dualtone-icon-secondary-background', $background-default),
+        border: tokens-tools.get-variable-if-exists('dualtone-icon-secondary-border', $border-default),
+    ),
+    tertiary: (
+        background-color: tokens-tools.get-variable-if-exists('dualtone-icon-tertiary-background', $background-default),
+        border: tokens-tools.get-variable-if-exists('dualtone-icon-tertiary-border', $border-default),
+    ),
+    quaternary: (
+        background-color: tokens-tools.get-variable-if-exists(
+                'dualtone-icon-quarternary-background',
+                $background-default
+            ),
+        border: tokens-tools.get-variable-if-exists('dualtone-icon-quarternary-border', $border-default),
+    ),
+);
