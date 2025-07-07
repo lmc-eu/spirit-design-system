@@ -29,6 +29,7 @@
     "build:finalize": "npm-run-all build:react:clean build:copy"
   },
   "devDependencies": {
+    "@lmc-eu/spirit-design-tokens": "^3.6.0",
     "jsdom": "25.0.1",
     "npm-run-all2": "6.2.6",
     "shx": "0.4.0",
