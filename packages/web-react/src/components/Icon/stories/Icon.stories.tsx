@@ -1,6 +1,7 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
+import { IconDualtoneColors } from '../../../constants';
 import ReadMe from '../README.md';
 import { Icon } from '..';
 
@@ -25,6 +26,10 @@ const meta: Meta<typeof Icon> = {
         defaultValue: { summary: '24' },
       },
     },
+    dualtoneColor: {
+      control: 'select',
+      options: [undefined, ...Object.values(IconDualtoneColors)],
+    },
     name: {
       control: 'text',
     },
@@ -35,6 +40,7 @@ const meta: Meta<typeof Icon> = {
   args: {
     ariaHidden: true,
     boxSize: { mobile: 24, tablet: 24, desktop: 24 },
+    dualtoneColor: undefined,
     name: 'warning',
     title: 'Warning',
   },

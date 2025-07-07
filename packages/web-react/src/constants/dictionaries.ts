@@ -89,6 +89,11 @@ export const TextColors = {
   TERTIARY: 'tertiary',
 } as const;
 
+export const IconDualtoneColors = {
+  ...TextColors,
+  QUATERNARY: 'quaternary',
+} as const;
+
 /* Emphasis */
 export const Emphasis = {
   REGULAR: 'regular',
