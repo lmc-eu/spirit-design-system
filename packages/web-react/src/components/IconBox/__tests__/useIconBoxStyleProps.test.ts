@@ -7,7 +7,7 @@ describe('useIconBoxStyleProps', () => {
     const { result } = renderHook(() => useIconBoxStyleProps({}));
 
     expect(result.current.sizeProps).toEqual({ padding: 'space-600', iconSize: 24 });
-    expect(result.current.borderRadiusProps).toBe(BorderRadii['300']);
+    expect(result.current.shapesProps).toBe(BorderRadii['300']);
     expect(result.current.iconBoxStyles).toEqual({});
   });
 
@@ -20,7 +20,7 @@ describe('useIconBoxStyleProps', () => {
   it('should return correct borderRadiusProps for borderRadius="circle"', () => {
     const { result } = renderHook(() => useIconBoxStyleProps({ borderRadius: 'circle' }));
 
-    expect(result.current.borderRadiusProps).toBe(BorderRadii.FULL);
+    expect(result.current.shapesProps).toBe(BorderRadii.FULL);
   });
 
   it('should return padding style when hasBorder is false', () => {
