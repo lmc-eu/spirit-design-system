@@ -45,7 +45,7 @@ describe('IconBox', () => {
   });
 
   it('should render with custom borderRadius', () => {
-    render(<IconBox iconName="check" borderRadius="circle" data-testid="IconBox" />);
+    render(<IconBox iconName="check" shape="circle" data-testid="IconBox" />);
     expect(screen.getByTestId('IconBox')).toHaveClass('rounded-full');
   });
 
