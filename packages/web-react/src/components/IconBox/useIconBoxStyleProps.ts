@@ -1,7 +1,7 @@
 import { borderWidth100, cssVariablePrefix } from '@lmc-eu/spirit-design-tokens';
 import { CSSProperties, ElementType } from 'react';
 import { BorderRadii } from '../../constants';
-import { BorderRadiiDictionaryType, SpiritIconBoxProps } from '../../types';
+import type { BorderRadiiDictionaryType, SpiritIconBoxProps } from '../../types';
 
 const sizeMap = {
   xsmall: { padding: 'space-500', iconSize: 16 },

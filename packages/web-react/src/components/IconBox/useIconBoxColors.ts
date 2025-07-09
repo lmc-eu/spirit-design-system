@@ -1,5 +1,5 @@
 import { BackgroundColors, BorderColors, Intensity, TextColors } from '../../constants';
-import {
+import type {
   BorderAccentColorsType,
   BorderColorsDictionaryType,
   BorderEmotionColorsType,

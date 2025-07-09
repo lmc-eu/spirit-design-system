@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconBoxBaseProps } from '../../../types';
+import type { IconBoxBaseProps } from '../../../types';
 import { Flex } from '../../Flex';
 import IconBox from '../IconBox';
 

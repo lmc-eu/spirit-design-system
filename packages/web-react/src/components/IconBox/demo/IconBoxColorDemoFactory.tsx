@@ -1,6 +1,6 @@
 import React from 'react';
 import DocsStack from '../../../../docs/DocsStack';
-import { BoxBackgroundColorsType } from '../../../types';
+import type { BoxBackgroundColorsType } from '../../../types';
 import { Flex } from '../../Flex';
 import IconBox from '../IconBox';
 

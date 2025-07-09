@@ -3,7 +3,7 @@
 import React, { ElementType } from 'react';
 import { BackgroundColors, SizesExtended } from '../../constants';
 import { useStyleProps } from '../../hooks';
-import { SpiritIconBoxProps } from '../../types';
+import type { SpiritIconBoxProps } from '../../types';
 import { Box } from '../Box';
 import { Icon } from '../Icon';
 import { IconBoxShapes } from './constants';

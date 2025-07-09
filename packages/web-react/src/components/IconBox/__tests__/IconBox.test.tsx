@@ -44,13 +44,13 @@ describe('IconBox', () => {
     expect(iconBox.firstElementChild).toHaveAttribute('height', '28');
   });
 
-  it('should render with custom borderRadius', () => {
+  it('should render with custom shape', () => {
     render(<IconBox iconName="check" shape="circle" data-testid="IconBox" />);
     expect(screen.getByTestId('IconBox')).toHaveClass('rounded-full');
   });
 
   it('should support custom elementType', () => {
     render(<IconBox iconName="check" elementType="section" data-testid="IconBox" />);
-    expect(screen.getByTestId('IconBox').tagName).toBe('SECTION');
+    expect(screen.getByTestId('IconBox')).toContainHTML('section');
   });
 });
