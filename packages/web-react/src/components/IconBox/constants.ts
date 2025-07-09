@@ -1,4 +1,4 @@
-export const IconBoxBorderRadii = {
+export const IconBoxShapes = {
   ROUNDED: 'rounded',
   SQUARE: 'square',
   CIRCLE: 'circle',

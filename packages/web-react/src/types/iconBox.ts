@@ -1,16 +1,16 @@
 import { ElementType, JSXElementConstructor } from 'react';
-import { IconBoxBorderRadii } from '../components/IconBox/constants';
+import { IconBoxShapes } from '../components/IconBox/constants';
 import { BoxBackgroundColorsType } from './box';
 import { ChildrenProps, SpiritPolymorphicElementPropsWithRef, StyleProps, SizeExtendedDictionaryType } from './shared';
 
-export type IconBoxRadiiKeys = keyof typeof IconBoxBorderRadii;
-export type IconBoxRadiiType = (typeof IconBoxBorderRadii)[IconBoxRadiiKeys];
+export type IconBoxShapeKeys = keyof typeof IconBoxShapes;
+export type IconBoxShapeType = (typeof IconBoxShapes)[IconBoxShapeKeys];
 
 export interface IconBoxBaseProps extends ChildrenProps, StyleProps {
   /** The color of the iconBox. */
   color?: BoxBackgroundColorsType;
   /** The border radius of the iconBox. */
-  borderRadius?: IconBoxRadiiType;
+  shape?: IconBoxShapeType;
   /** Whether the iconBox has a border */
   hasBorder?: boolean;
   /** Name of the icon */

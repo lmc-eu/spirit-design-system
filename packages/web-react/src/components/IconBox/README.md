@@ -3,15 +3,15 @@
 The `IconBox` component is a composition of the `Icon` inside the `Box` component.
 
 ```jsx
-<Icon name="search" />
+<IconBox name="search" />
 ```
 
-## Border Radius
+## Shape
 
-You can define border radius `borderRadius` prop.
+You can define shape using the `shape` prop.
 
 ```jsx
-<Icon name="search" borderRadius="circle" />
+<IconBox name="search" shape="circle" />
 ```
 
 ## Has Border
@@ -19,7 +19,7 @@ You can define border radius `borderRadius` prop.
 You can set `hasBorder` prop to render the `IconBox` without a border.
 
 ```jsx
-<Icon name="search" hasBorder={false} />
+<IconBox name="search" hasBorder={false} />
 ```
 
 ## Size
@@ -27,7 +27,7 @@ You can set `hasBorder` prop to render the `IconBox` without a border.
 You can define size using the `size` prop.
 
 ```jsx
-<Icon name="search" size="large" />
+<IconBox name="search" size="large" />
 ```
 
 ## Color
@@ -35,7 +35,7 @@ You can define size using the `size` prop.
 You can define color using the `color` prop.
 
 ```jsx
-<Icon name="search" color="primary" />
+<IconBox name="search" color="primary" />
 ```
 
 ## Implementation Notes
@@ -56,14 +56,14 @@ import { Box, Icon } from '@lmc-eu/spirit-web-react';
 
 ## API
 
-| Name           | Type                                                                                                                                                              | Default  | Required | Description                      |
-| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------- | -------------------------------- |
-| `borderRadius` | \[`rounded` \| `circle` \| `square`]                                                                                                                              | `circle` | ✕        | Border radius of the IconBox     |
-| `color`        | \[[Background Color dictionary][dictionary-color] \| Accent Color \| [Emotion Color dictionary][dictionary-color] ✕ [Intensity dictionary][dictionary-intensity]] | -        | ✕        | Color variant of the IconBox     |
-| `elementType`  | `ElementType`                                                                                                                                                     | `div`    | ✕        | Type of element                  |
-| `iconName`     | `string`                                                                                                                                                          | ✓        | ✕        | Name of the icon to render       |
-| `size`         | [Size Extended dictionary][dictionary-size]                                                                                                                       | `medium` | ✕        | Size of the IconBox              |
-| `hasBorder`    | `bool`                                                                                                                                                            | `true`   | ✕        | Whether the IconBox has a border |
+| Name          | Type                                                                                                                                                              | Default  | Required | Description                      |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------- | -------------------------------- |
+| `shape`       | \[`rounded` \| `circle` \| `square`]                                                                                                                              | `circle` | ✕        | Shape of the IconBox             |
+| `color`       | \[[Background Color dictionary][dictionary-color] \| Accent Color \| [Emotion Color dictionary][dictionary-color] ✕ [Intensity dictionary][dictionary-intensity]] | -        | ✕        | Color variant of the IconBox     |
+| `elementType` | `ElementType`                                                                                                                                                     | `div`    | ✕        | Type of element                  |
+| `iconName`    | `string`                                                                                                                                                          | ✓        | ✕        | Name of the icon to render       |
+| `size`        | [Size Extended dictionary][dictionary-size]                                                                                                                       | `medium` | ✕        | Size of the IconBox              |
+| `hasBorder`   | `bool`                                                                                                                                                            | `true`   | ✕        | Whether the IconBox has a border |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

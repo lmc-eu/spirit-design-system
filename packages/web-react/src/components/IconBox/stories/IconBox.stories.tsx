@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { BackgroundColors, SizesExtended } from '../../../constants';
 import { getAccentBackgroundColors, getEmotionBackgroundColors } from '../../../utils';
-import { IconBoxBorderRadii } from '../constants';
+import { IconBoxShapes } from '../constants';
 import { IconBox } from '../index';
 import ReadMe from '../README.md';
 
@@ -19,16 +19,16 @@ const meta: Meta<typeof IconBox> = {
     },
   },
   argTypes: {
-    borderRadius: {
+    shape: {
       control: 'select',
-      options: [...Object.values(IconBoxBorderRadii)],
+      options: [...Object.values(IconBoxShapes)],
       table: {
         type: {
           summary: 'rounded | circle | square',
         },
       },
       defaultValue: {
-        summary: IconBoxBorderRadii.ROUNDED,
+        summary: IconBoxShapes.ROUNDED,
       },
     },
     color: {
@@ -84,7 +84,7 @@ const meta: Meta<typeof IconBox> = {
     },
   },
   args: {
-    borderRadius: IconBoxBorderRadii.ROUNDED,
+    shape: IconBoxShapes.ROUNDED,
     color: BackgroundColors.PRIMARY,
     elementType: 'div',
     hasBorder: true,

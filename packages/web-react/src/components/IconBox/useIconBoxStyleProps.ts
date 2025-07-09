@@ -27,9 +27,9 @@ export interface UseIconBoxStyleProps<T> {
 export const useIconBoxStyleProps = (
   props: Partial<SpiritIconBoxProps<ElementType>>,
 ): UseIconBoxStyleProps<Partial<SpiritIconBoxProps<ElementType>>> => {
-  const { borderRadius = 'rounded', hasBorder = true, size = 'medium', ...restProps } = props || {};
+  const { shape = 'rounded', hasBorder = true, size = 'medium', ...restProps } = props || {};
   const sizeProps = sizeMap[size];
-  const borderRadiusProps = borderRadiusMap[borderRadius];
+  const borderRadiusProps = borderRadiusMap[shape];
   const iconBoxStyles: CSSProperties = {};
 
   if (!hasBorder) {

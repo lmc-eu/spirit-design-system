@@ -10,7 +10,7 @@ import { useIconBoxColors } from './useIconBoxColors';
 import { useIconBoxStyleProps } from './useIconBoxStyleProps';
 
 const defaultProps: Partial<SpiritIconBoxProps> = {
-  borderRadius: 'rounded',
+  shape: 'rounded',
   color: BackgroundColors.PRIMARY,
   elementType: 'div',
   hasBorder: true,

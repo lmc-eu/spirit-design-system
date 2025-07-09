@@ -7,9 +7,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import DocsSection from '../../../../docs/DocsSection';
 import { IconsProvider } from '../../../context';
-import IconBoxBorderRadius from './IconBoxBorderRadius';
 import IconBoxColorVariants from './IconBoxColorVariants';
 import IconBoxDefault from './IconBoxDefault';
+import IconBoxShapes from './IconBoxShapes';
 import IconBoxWithoutBorder from './IconBoxWithoutBorder';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
@@ -18,8 +18,8 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <DocsSection title="Default">
         <IconBoxDefault />
       </DocsSection>
-      <DocsSection title="Border Radius">
-        <IconBoxBorderRadius />
+      <DocsSection title="Shapes">
+        <IconBoxShapes />
       </DocsSection>
       <DocsSection title="Without Border">
         <IconBoxWithoutBorder />
