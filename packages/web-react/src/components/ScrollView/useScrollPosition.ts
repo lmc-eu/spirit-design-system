@@ -1,5 +1,6 @@
-import { UIEvent, MutableRefObject, useState, useEffect } from 'react';
+import { UIEvent, MutableRefObject, useCallback, useState, useEffect } from 'react';
 import { Direction, Position } from '../../constants';
+import { useResizeObserver } from '../../hooks';
 import { PositionType, ScrollViewDirectionType } from '../../types';
 import { debounce } from '../../utils';
 import { EDGE_DETECTION_INACCURACY_PX, DEBOUNCE_DELAY } from './constants';
@@ -66,7 +67,12 @@ export const useScrollPosition = ({
     }
   };
 
-  window.addEventListener('resize', debounce(handleScrollViewState, DEBOUNCE_DELAY));
+  const debouncedHandler = useCallback(debounce(handleScrollViewState, DEBOUNCE_DELAY), [handleScrollViewState]);
+
+  useResizeObserver({
+    ref: viewportReference,
+    onResize: debouncedHandler,
+  });
 
   /* We want to call this hook only once */
   // eslint-disable-next-line react-hooks/exhaustive-deps
