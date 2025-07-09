@@ -1,11 +1,19 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { ariaAttributesTest, elementTypePropsTest, restPropsTest, validHtmlAttributesTest } from '@local/tests';
+import {
+  ariaAttributesTest,
+  elementTypePropsTest,
+  restPropsTest,
+  stylePropsTest,
+  validHtmlAttributesTest,
+} from '@local/tests';
 import IconBox from '../IconBox';
 
 describe('IconBox', () => {
   restPropsTest(IconBox, 'div');
+
+  stylePropsTest(IconBox);
 
   validHtmlAttributesTest(IconBox);
 

@@ -48,6 +48,7 @@ const IconBox = <T extends ElementType = 'div'>(props: SpiritIconBoxProps<T>) =>
       })}
       borderRadius={borderRadiusProps}
       textColor={textColor}
+      UNSAFE_className={styleProps.className}
       UNSAFE_style={{
         ...styleProps.style,
         ...iconBoxStyleProps,
