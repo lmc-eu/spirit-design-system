@@ -18,7 +18,7 @@ describe('useIconBoxStyleProps', () => {
   });
 
   it('should return correct borderRadiusProps for borderRadius="circle"', () => {
-    const { result } = renderHook(() => useIconBoxStyleProps({ borderRadius: 'circle' }));
+    const { result } = renderHook(() => useIconBoxStyleProps({ shape: 'circle' }));
 
     expect(result.current.shapesProps).toBe(BorderRadii.FULL);
   });
