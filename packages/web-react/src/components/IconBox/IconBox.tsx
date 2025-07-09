@@ -20,19 +20,19 @@ const defaultProps: Partial<SpiritIconBoxProps> = {
 
 const IconBox = <T extends ElementType = 'div'>(props: SpiritIconBoxProps<T>) => {
   const propsWithDefaults = { ...defaultProps, ...props };
-  const { elementType, borderRadius, color, iconName, hasBorder, size, ...restProps } = propsWithDefaults;
+  const { elementType, shapes, color, iconName, hasBorder, size, ...restProps } = propsWithDefaults;
 
   const { colors } = useIconBoxColors(color);
   const { backgroundColor, borderColor, textColor } = colors;
   const {
     props: modifiedProps,
     iconBoxStyles: iconBoxStyleProps,
-    borderRadiusProps,
+    shapesProps,
     sizeProps: { padding, iconSize },
   } = useIconBoxStyleProps({
     size,
     hasBorder,
-    borderRadius,
+    shapes,
     ...restProps,
   });
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
@@ -47,7 +47,7 @@ const IconBox = <T extends ElementType = 'div'>(props: SpiritIconBoxProps<T>) =>
         borderColor,
         padding,
       })}
-      borderRadius={borderRadiusProps}
+      borderRadius={shapesProps}
       textColor={textColor}
       UNSAFE_className={styleProps.className}
       UNSAFE_style={{
