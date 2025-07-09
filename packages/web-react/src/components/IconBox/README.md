@@ -49,8 +49,8 @@ If you encounter limitations or need finer control, you can always use Box and I
 ```jsx
 import { Box, Icon } from '@lmc-eu/spirit-web-react';
 
-<Box backgroundColor="primary" borderRadius="200" borderWidth="100" borderColor="basic" padding="space-600">
-  <Icon name="search" boxSize={24} />
+<Box backgroundColor="primary" borderRadius="200" borderWidth="100" padding="space-600">
+  <Icon name="search" />
 </Box>;
 ```
 

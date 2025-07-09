@@ -2,7 +2,7 @@ import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { BackgroundColors, SizesExtended } from '../../../constants';
-import { getAccentBackgroundColors, getEmotionBackgroundColors } from '../../../utils/colorObjectGenerators';
+import { getAccentBackgroundColors, getEmotionBackgroundColors } from '../../../utils';
 import { IconBoxBorderRadii } from '../constants';
 import { IconBox } from '../index';
 import ReadMe from '../README.md';

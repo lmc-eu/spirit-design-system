@@ -1,7 +1,7 @@
 'use client';
 
 import React, { ElementType } from 'react';
-import { BackgroundColors } from '../../constants';
+import { BackgroundColors, SizesExtended } from '../../constants';
 import { useStyleProps } from '../../hooks';
 import { SpiritIconBoxProps } from '../../types';
 import { Box } from '../Box';
@@ -14,7 +14,7 @@ const defaultProps: Partial<SpiritIconBoxProps> = {
   color: BackgroundColors.PRIMARY,
   elementType: 'div',
   hasBorder: true,
-  size: 'medium',
+  size: SizesExtended.MEDIUM,
 };
 
 const IconBox = <T extends ElementType = 'div'>(props: SpiritIconBoxProps<T>) => {
