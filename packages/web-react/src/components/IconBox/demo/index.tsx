@@ -10,6 +10,7 @@ import { IconsProvider } from '../../../context';
 import IconBoxColorVariants from './IconBoxColorVariants';
 import IconBoxDefault from './IconBoxDefault';
 import IconBoxShapes from './IconBoxShapes';
+import IconBoxSizes from './IconBoxSizes';
 import IconBoxWithoutBorder from './IconBoxWithoutBorder';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
@@ -17,6 +18,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <IconsProvider value={icons}>
       <DocsSection title="Default">
         <IconBoxDefault />
+      </DocsSection>
+      <DocsSection title="Sizes">
+        <IconBoxSizes />
       </DocsSection>
       <DocsSection title="Shapes">
         <IconBoxShapes />

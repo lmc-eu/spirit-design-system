@@ -6,11 +6,12 @@ import { useStyleProps } from '../../hooks';
 import { SpiritIconBoxProps } from '../../types';
 import { Box } from '../Box';
 import { Icon } from '../Icon';
+import { IconBoxShapes } from './constants';
 import { useIconBoxColors } from './useIconBoxColors';
 import { useIconBoxStyleProps } from './useIconBoxStyleProps';
 
 const defaultProps: Partial<SpiritIconBoxProps> = {
-  shape: 'rounded',
+  shape: IconBoxShapes.ROUNDED,
   color: BackgroundColors.PRIMARY,
   elementType: 'div',
   hasBorder: true,

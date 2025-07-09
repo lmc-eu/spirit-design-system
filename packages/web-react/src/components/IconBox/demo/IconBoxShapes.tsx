@@ -1,12 +1,14 @@
 import React from 'react';
-import IconBox from '../IconBox';
+import { Grid } from '../../Grid';
+import { IconBoxShapes as Shapes } from '../constants';
+import IconBoxDemoFactory from './IconBoxDemoFactory';
 
 const IconBoxShapes = () => (
-  <>
-    <IconBox iconName="search" />
-    <IconBox iconName="search" shape="circle" />
-    <IconBox iconName="search" shape="square" />
-  </>
+  <Grid cols={{ mobile: 1, desktop: 5 }} alignmentY="center" alignmentX="left">
+    {Object.values(Shapes).map((shape) => (
+      <IconBoxDemoFactory iconName="search" key={shape} label={shape} shape={shape} />
+    ))}
+  </Grid>
 );
 
 export default IconBoxShapes;

@@ -3,9 +3,9 @@ import IconBox from '../IconBox';
 
 const IconBoxWithoutBorder = () => (
   <>
-    <IconBox iconName="search" color="secondary" hasBorder={false} borderRadius="rounded" />
-    <IconBox iconName="search" color="secondary" hasBorder={false} borderRadius="circle" />
-    <IconBox iconName="search" color="secondary" hasBorder={false} borderRadius="square" />
+    <IconBox iconName="search" color="secondary" hasBorder={false} shape="rounded" />
+    <IconBox iconName="search" color="secondary" hasBorder={false} shape="circle" />
+    <IconBox iconName="search" color="secondary" hasBorder={false} shape="square" />
   </>
 );
 
