@@ -9,7 +9,7 @@ export type IconBoxShapeType = (typeof IconBoxShapes)[IconBoxShapeKeys];
 export interface IconBoxBaseProps extends ChildrenProps, StyleProps {
   /** The color of the iconBox. */
   color?: BoxBackgroundColorsType;
-  /** The border radius of the iconBox. */
+  /** The shape of the iconBox. */
   shape?: IconBoxShapeType;
   /** Whether the iconBox has a border */
   hasBorder?: boolean;
