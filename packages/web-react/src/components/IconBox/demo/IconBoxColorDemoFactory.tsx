@@ -14,7 +14,9 @@ const IconBoxColorDemoFactory = ({ label, colorList }: IconBoxColorDemoFactoryPr
     <DocsStack stackAlignment="start">
       <h3>{label}</h3>
       {colorList.map((color) => {
-        if (!color) return null;
+        if (!color) {
+          return null;
+        }
 
         return (
           <Flex alignmentY="center" key={color} gap="space-200">

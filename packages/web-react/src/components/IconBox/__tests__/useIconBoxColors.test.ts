@@ -7,9 +7,9 @@ describe('useIconBoxColors', () => {
     const { result } = renderHook(() => useIconBoxColors());
 
     expect(result.current.colors).toEqual({
-      backgroundColor: BackgroundColors.PRIMARY,
-      borderColor: BorderColors.BASIC,
-      textColor: TextColors.PRIMARY,
+      background: BackgroundColors.PRIMARY,
+      border: BorderColors.BASIC,
+      text: TextColors.PRIMARY,
     });
   });
 
@@ -17,9 +17,9 @@ describe('useIconBoxColors', () => {
     const { result } = renderHook(() => useIconBoxColors(BackgroundColors.SECONDARY));
 
     expect(result.current.colors).toEqual({
-      backgroundColor: BackgroundColors.SECONDARY,
-      borderColor: BorderColors.BASIC,
-      textColor: BackgroundColors.SECONDARY,
+      background: BackgroundColors.SECONDARY,
+      border: BorderColors.BASIC,
+      text: BackgroundColors.SECONDARY,
     });
   });
 
@@ -27,9 +27,9 @@ describe('useIconBoxColors', () => {
     const { result } = renderHook(() => useIconBoxColors('test-basic'));
 
     expect(result.current.colors).toEqual({
-      backgroundColor: 'test-basic',
-      borderColor: 'test-basic',
-      textColor: 'test-subtle',
+      background: 'test-basic',
+      border: 'test-basic',
+      text: 'test-subtle',
     });
   });
 
@@ -37,9 +37,9 @@ describe('useIconBoxColors', () => {
     const { result } = renderHook(() => useIconBoxColors('test-subtle'));
 
     expect(result.current.colors).toEqual({
-      backgroundColor: 'test-subtle',
-      borderColor: 'test-subtle',
-      textColor: 'test-basic',
+      background: 'test-subtle',
+      border: 'test-subtle',
+      text: 'test-basic',
     });
   });
 
@@ -47,9 +47,9 @@ describe('useIconBoxColors', () => {
     const { result } = renderHook(() => useIconBoxColors('tertiary'));
 
     expect(result.current.colors).toEqual({
-      backgroundColor: 'tertiary',
-      borderColor: 'basic',
-      textColor: 'tertiary',
+      background: 'tertiary',
+      border: 'basic',
+      text: 'tertiary',
     });
   });
 });

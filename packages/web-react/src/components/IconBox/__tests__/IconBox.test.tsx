@@ -10,16 +10,16 @@ import {
 } from '@local/tests';
 import { BackgroundColors } from '../../../constants';
 import type { BoxBackgroundColorsType, IconBoxShapeType, SizeExtendedDictionaryType } from '../../../types';
-import { IconBoxShapesMap, IconBoxSizeMap } from '../constants';
+import { IconBoxShapesRadii, IconBoxSizes } from '../constants';
 import IconBox from '../IconBox';
 
-const sizeTestCasesProvider = Object.entries(IconBoxSizeMap).map(([size, { iconSize, padding }]) => ({
+const sizeTestCasesProvider = Object.entries(IconBoxSizes).map(([size, { iconSize, padding }]) => ({
   size,
   iconSize,
   padding: padding.replace('space-', ''),
 }));
 
-const shapeTestCasesProvider = Object.entries(IconBoxShapesMap).map(([shape, radius]) => ({
+const shapeTestCasesProvider = Object.entries(IconBoxShapesRadii).map(([shape, radius]) => ({
   shape,
   radius,
 }));

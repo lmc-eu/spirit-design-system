@@ -1,6 +1,6 @@
 'use client';
 
-import React, { ElementType } from 'react';
+import React, { type ElementType } from 'react';
 import { BackgroundColors, SizesExtended } from '../../constants';
 import { useStyleProps } from '../../hooks';
 import type { SpiritIconBoxProps } from '../../types';
@@ -23,7 +23,6 @@ const IconBox = <T extends ElementType = 'div'>(props: SpiritIconBoxProps<T>) =>
   const { elementType, shapes, color, iconName, hasBorder, size, ...restProps } = propsWithDefaults;
 
   const { colors } = useIconBoxColors(color);
-  const { backgroundColor, borderColor, textColor } = colors;
   const {
     props: modifiedProps,
     iconBoxStyles: iconBoxStyleProps,
@@ -40,15 +39,15 @@ const IconBox = <T extends ElementType = 'div'>(props: SpiritIconBoxProps<T>) =>
   return (
     <Box
       {...otherProps}
-      backgroundColor={backgroundColor}
+      backgroundColor={colors.background}
       elementType={elementType}
       {...(hasBorder && {
         borderWidth: '100',
-        borderColor,
+        borderColor: colors.border,
         padding,
       })}
       borderRadius={shapesProps}
-      textColor={textColor}
+      textColor={colors.text}
       UNSAFE_className={styleProps.className}
       UNSAFE_style={{
         ...styleProps.style,

@@ -1,4 +1,4 @@
-import { BorderRadii } from '../../constants';
+import { BorderRadii, SizesExtended } from '../../constants';
 
 export const IconBoxShapes = {
   ROUNDED: 'rounded',
@@ -6,16 +6,16 @@ export const IconBoxShapes = {
   CIRCLE: 'circle',
 } as const;
 
-export const IconBoxSizeMap = {
-  xsmall: { padding: 'space-500', iconSize: 16 },
-  small: { padding: 'space-500', iconSize: 20 },
-  medium: { padding: 'space-600', iconSize: 24 },
-  large: { padding: 'space-600', iconSize: 28 },
-  xlarge: { padding: 'space-700', iconSize: 28 },
+export const IconBoxSizes = {
+  [SizesExtended.XSMALL]: { padding: 'space-500', iconSize: 16 },
+  [SizesExtended.SMALL]: { padding: 'space-500', iconSize: 20 },
+  [SizesExtended.MEDIUM]: { padding: 'space-600', iconSize: 24 },
+  [SizesExtended.LARGE]: { padding: 'space-600', iconSize: 28 },
+  [SizesExtended.XLARGE]: { padding: 'space-700', iconSize: 28 },
 } as const;
 
-export const IconBoxShapesMap = {
-  circle: BorderRadii.FULL,
-  rounded: BorderRadii['300'],
-  square: BorderRadii['0'],
+export const IconBoxShapesRadii = {
+  [IconBoxShapes.CIRCLE]: BorderRadii.FULL,
+  [IconBoxShapes.ROUNDED]: BorderRadii['300'],
+  [IconBoxShapes.SQUARE]: BorderRadii['0'],
 } as const;

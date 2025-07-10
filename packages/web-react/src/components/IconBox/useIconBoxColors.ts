@@ -10,9 +10,9 @@ import type {
 
 export interface UseIconBoxColorsProps {
   colors: {
-    backgroundColor: BoxBackgroundColorsType;
-    borderColor: BorderAccentColorsType | BorderEmotionColorsType | BorderColorsDictionaryType;
-    textColor: TextColorProps['textColor'];
+    background: BoxBackgroundColorsType;
+    border: BorderAccentColorsType | BorderEmotionColorsType | BorderColorsDictionaryType;
+    text: TextColorProps['textColor'];
   };
 }
 
@@ -33,9 +33,9 @@ export const useIconBoxColors = (color?: string): UseIconBoxColorsProps => {
   if (!color) {
     return {
       colors: {
-        backgroundColor: BackgroundColors.PRIMARY,
-        borderColor: BorderColors.BASIC,
-        textColor: TextColors.PRIMARY,
+        background: BackgroundColors.PRIMARY,
+        border: BorderColors.BASIC,
+        text: TextColors.PRIMARY,
       },
     };
   }
@@ -45,9 +45,9 @@ export const useIconBoxColors = (color?: string): UseIconBoxColorsProps => {
   if (staticColors.includes(color as BackgroundColorValues)) {
     return {
       colors: {
-        backgroundColor: color as BoxBackgroundColorsType,
-        borderColor: BorderColors.BASIC,
-        textColor: color as TextColorProps['textColor'],
+        background: color as BoxBackgroundColorsType,
+        border: BorderColors.BASIC,
+        text: color as TextColorProps['textColor'],
       },
     };
   }
@@ -58,12 +58,12 @@ export const useIconBoxColors = (color?: string): UseIconBoxColorsProps => {
 
   return {
     colors: {
-      backgroundColor: `${colorName}-${intensity}` as BoxBackgroundColorsType,
-      borderColor: `${colorName}-${intensity}` as
+      background: `${colorName}-${intensity}` as BoxBackgroundColorsType,
+      border: `${colorName}-${intensity}` as
         | BorderAccentColorsType
         | BorderEmotionColorsType
         | BorderColorsDictionaryType,
-      textColor: `${colorName}-${complementaryIntensity}` as TextColorProps['textColor'],
+      text: `${colorName}-${complementaryIntensity}` as TextColorProps['textColor'],
     },
   };
 };
