@@ -48,10 +48,10 @@ Its purpose is to improve the user experience by providing sensible defaults for
 To keep the API simple and opinionated, some styles and layout options are generalized or preset.
 If you encounter limitations or need finer control, you can always use Box and Icon directly for full customization.
 
-When composing your own version using Box and Icon, make sure the icon behaves as a block-level element to maintain the correct sizing and alignment. This can be achieved by either:
+When composing your own version using Box and Icon, make sure the icon behaves as a block-level element to maintain the correct sizing and alignment. This can be achieved by:
 
 - adding `UNSAFE_className="d-block"` directly to the Icon component, or
-- applying appropriate styling to its parent container.
+- applying appropriate styling to its parent container (e.g `UNSAFE_className="d-flex"` on Box component).
 
 ```jsx
 import { Box, Icon } from '@lmc-eu/spirit-web-react';

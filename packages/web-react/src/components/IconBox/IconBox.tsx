@@ -1,5 +1,6 @@
 'use client';
 
+import classNames from 'classnames';
 import React, { type ElementType } from 'react';
 import { BackgroundColors, SizesExtended } from '../../constants';
 import { useStyleProps } from '../../hooks';
@@ -48,7 +49,7 @@ const IconBox = <T extends ElementType = 'div'>(props: SpiritIconBoxProps<T>) =>
       })}
       borderRadius={shapesProps}
       textColor={colors.text}
-      UNSAFE_className={styleProps.className}
+      UNSAFE_className={classNames(styleProps.className, 'd-inline-flex')}
       UNSAFE_style={{
         ...styleProps.style,
         ...iconBoxStyleProps,
