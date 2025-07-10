@@ -1,12 +1,39 @@
 const fs = require('fs');
 const path = require('path');
-const { filterSvgFiles } = require('./shared');
+const { cssVariablePrefix } = require('@lmc-eu/spirit-design-tokens');
+const { filterSvgFiles, getIconType, DUALTONE_ICON_TYPE, COLORED_ICON_TYPE } = require('./shared');
 
 const svgSrcDir = path.resolve(__dirname, '../src/svg');
 const svgDistDir = path.resolve(__dirname, '../dist/svg');
 
-const normalizeSvgColors = (fileName, svgContent) =>
-  fileName.endsWith('-colored.svg') ? svgContent : svgContent.replace(/fill="#\w+"/g, 'fill="currentColor"');
+const DUALTONE_BACKGROUND_COLOR = '#F2F2F2';
+const DUALTONE_BORDER_COLOR = '#202020';
+
+const normalizeSvgColors = (fileName, svgContent) => {
+  const iconType = getIconType(fileName);
+
+  if (iconType === DUALTONE_ICON_TYPE) {
+    return svgContent
+      .replace(
+        new RegExp(`fill="${DUALTONE_BACKGROUND_COLOR}"`, 'g'),
+        `fill="var(--${cssVariablePrefix}icon-dualtone-color-background)"`,
+      )
+      .replace(
+        new RegExp(`fill="${DUALTONE_BORDER_COLOR}"`, 'g'),
+        `fill="var(--${cssVariablePrefix}icon-dualtone-color-border)"`,
+      )
+      .replace(
+        new RegExp(`stroke="${DUALTONE_BORDER_COLOR}"`, 'g'),
+        `stroke="var(--${cssVariablePrefix}icon-dualtone-color-border)"`,
+      );
+  }
+
+  if (iconType === COLORED_ICON_TYPE) {
+    return svgContent;
+  }
+
+  return svgContent.replace(/fill="#\w+"/g, 'fill="currentColor"');
+};
 
 const normalizeAndCopySvg = (srcDir, distDir) => {
   fs.readdir(srcDir, (err, files) => {
