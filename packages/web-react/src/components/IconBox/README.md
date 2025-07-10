@@ -32,11 +32,13 @@ You can define size using the `size` prop.
 
 ## Color
 
-You can define color using the `color` prop.
+The `color` prop defines the visual style of the IconBox by applying a combination of background color, border color, and icon color.
 
 ```jsx
 <IconBox name="search" color="primary" />
 ```
+
+Each predefined color value automatically maps to a set of design token-based styles, providing a cohesive appearance aligned with the design system.
 
 ## Implementation Notes
 
@@ -46,11 +48,16 @@ Its purpose is to improve the user experience by providing sensible defaults for
 To keep the API simple and opinionated, some styles and layout options are generalized or preset.
 If you encounter limitations or need finer control, you can always use Box and Icon directly for full customization.
 
+When composing your own version using Box and Icon, make sure the icon behaves as a block-level element to maintain the correct sizing and alignment. This can be achieved by either:
+
+- adding `UNSAFE_className="d-block"` directly to the Icon component, or
+- applying appropriate styling to its parent container.
+
 ```jsx
 import { Box, Icon } from '@lmc-eu/spirit-web-react';
 
 <Box backgroundColor="primary" borderRadius="200" borderWidth="100" padding="space-600">
-  <Icon name="search" />
+  <Icon name="search" UNSAFE_className="d-block" />
 </Box>;
 ```
 
