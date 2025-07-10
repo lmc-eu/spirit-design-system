@@ -18,16 +18,18 @@ export interface UseIconBoxColorsProps {
 
 type BackgroundColorValues = (typeof BackgroundColors)[keyof typeof BackgroundColors];
 
-function parseColorIntensity(color: string): { colorName: string; intensity: IntensityDictionaryType } {
-  if (color.endsWith('-basic')) {
-    return { colorName: color.slice(0, -'-basic'.length), intensity: Intensity.BASIC };
-  }
-  if (color.endsWith('-subtle')) {
-    return { colorName: color.slice(0, -'-subtle'.length), intensity: Intensity.SUBTLE };
-  }
+const parseColorIntensity = (color: string): { colorName: string; intensity: IntensityDictionaryType } => {
+  switch (true) {
+    case color.endsWith('-basic'):
+      return { colorName: color.slice(0, -'-basic'.length), intensity: Intensity.BASIC };
 
-  return { colorName: color, intensity: Intensity.BASIC };
-}
+    case color.endsWith('-subtle'):
+      return { colorName: color.slice(0, -'-subtle'.length), intensity: Intensity.SUBTLE };
+
+    default:
+      return { colorName: color, intensity: Intensity.BASIC };
+  }
+};
 
 export const useIconBoxColors = (color?: string): UseIconBoxColorsProps => {
   if (!color) {
