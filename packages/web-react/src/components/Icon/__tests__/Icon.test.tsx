@@ -88,4 +88,10 @@ describe('Icon', () => {
       '--spirit-icon-size-desktop': '60px',
     });
   });
+
+  it('should pass `dualtoneColor` to `Icon` class list', () => {
+    render(<Icon dualtoneColor="primary" name="shield-dualtone" data-testid="icon-dualtone" />);
+
+    expect(screen.getByTestId('icon-dualtone')).toHaveClass(/Icon--dualtone-primary/);
+  });
 });

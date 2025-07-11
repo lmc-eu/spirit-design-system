@@ -1,5 +1,6 @@
 import { renderHook } from '@testing-library/react';
-import { SpiritIconProps } from '../../../types';
+import { IconDualtoneColors } from '../../../constants';
+import { IconDualtoneColorsType, SpiritIconProps } from '../../../types';
 import { useIconStyleProps } from '../useIconStyleProps';
 
 describe('useIconStyleProps', () => {
@@ -28,5 +29,28 @@ describe('useIconStyleProps', () => {
     const { result } = renderHook(() => useIconStyleProps(props));
 
     expect(result.current.iconStyleProps).toEqual({});
+  });
+
+  it.each(Object.values(IconDualtoneColors))(
+    'should have dualtone color classname %s',
+    (dualtoneColor: IconDualtoneColorsType) => {
+      const props: SpiritIconProps = {
+        name: 'shield-dualtone',
+        dualtoneColor,
+      };
+      const { result } = renderHook(() => useIconStyleProps(props));
+
+      expect(result.current.classProps).toContain(`Icon--dualtone-${dualtoneColor}`);
+    },
+  );
+
+  it("should have default classname when `color` isn't defined", () => {
+    const props: SpiritIconProps = {
+      name: 'shield-dualtone',
+      dualtoneColor: undefined,
+    };
+    const { result } = renderHook(() => useIconStyleProps(props));
+
+    expect(result.current.classProps).toContain('Icon--dualtone-primary');
   });
 });

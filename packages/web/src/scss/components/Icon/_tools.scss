@@ -1,0 +1,12 @@
+@use 'sass:map';
+@use '@tokens' as tokens;
+@use 'theme';
+
+@mixin generate-variants() {
+    @each $name, $style in theme.$dualtone-variants {
+        .Icon--dualtone-#{$name} {
+            --#{tokens.$css-variable-prefix}icon-dualtone-color-background: #{map.get($style, background-color)};
+            --#{tokens.$css-variable-prefix}icon-dualtone-color-border: #{map.get($style, border)};
+        }
+    }
+}
