@@ -20,7 +20,7 @@ export const stylePropsTest = (Component: ComponentType<any>, testId?: string) =
 
     await waitFor(() => {
       const element = getElement(dom, testId);
-      expect(element).toHaveStyle(testStyle);
+      expect(element.getAttribute('style')).toContain('color: red');
     });
   });
 
