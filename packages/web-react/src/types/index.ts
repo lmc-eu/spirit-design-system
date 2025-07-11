@@ -20,6 +20,7 @@ export * from './grid';
 export * from './header';
 export * from './heading';
 export * from './icon';
+export * from './iconBox';
 export * from './item';
 export * from './label';
 export * from './link';
