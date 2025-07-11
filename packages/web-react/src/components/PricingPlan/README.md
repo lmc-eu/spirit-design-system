@@ -131,11 +131,11 @@ import { PricingPlanBody } from '@lmc-eu/spirit-web-react';
 
 ### API
 
-| Name          | Type                                                                            | Default | Required | Description                                                                                 |
-| ------------- | ------------------------------------------------------------------------------- | ------- | -------- | ------------------------------------------------------------------------------------------- |
-| `description` | `string`                                                                        | -       | ✕        | Optional introductory text                                                                  |
-| `elementType` | `ElementType`                                                                   | `div`   | ✕        | Type of element                                                                             |
-| `features`    | `{ title: string; description: string, tooltipContent?: string \| ReactNode}[]` | `[]`    | ✕        | List of features, each with a title and description. Optionally you can set tooltipContent. |
+| Name          | Type                                                                                         | Default | Required | Description                                                                                 |
+| ------------- | -------------------------------------------------------------------------------------------- | ------- | -------- | ------------------------------------------------------------------------------------------- |
+| `description` | `string`                                                                                     | -       | ✕        | Optional introductory text                                                                  |
+| `elementType` | `ElementType`                                                                                | `div`   | ✕        | Type of element                                                                             |
+| `features`    | `{ title: string; description: string \| ReactNode, tooltipContent?: string \| ReactNode}[]` | `[]`    | ✕        | List of features, each with a title and description. Optionally you can set tooltipContent. |
 
 ## PricingPlanFooter
 
