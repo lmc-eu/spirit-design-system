@@ -49,9 +49,13 @@ packageEntryPoints.forEach(({ dirs, bundleName = dirs[dirs.length - 1], sideEffe
       {
         name: path.posix.join('@lmc-eu', 'spirit-web-react', ...dirs),
         type: 'module',
-        main: `${bundleName}.cjs`,
-        module: 'index.js',
-        types: 'index.d.ts',
+        exports: {
+          '.': {
+            import: './index.js',
+            require: `./${bundleName}.cjs`,
+            types: './index.d.ts',
+          },
+        },
         sideEffects,
       },
       null,
