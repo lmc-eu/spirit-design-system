@@ -27,7 +27,7 @@
     "@lmc-eu/eslint-config-typescript": "2.1.5",
     "@swc/core": "1.11.22",
     "@swc/jest": "0.2.38",
-    "eslint": "8.57.1",
+    "eslint": "9.30.1",
     "jest": "30.0.0",
     "jest-config-spirit": "workspace:^",
     "npm-run-all2": "6.2.6",
