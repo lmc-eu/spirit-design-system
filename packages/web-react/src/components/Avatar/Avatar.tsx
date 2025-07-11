@@ -13,25 +13,20 @@ const defaultProps: Partial<SpiritAvatarProps> = {
   size: SizesExtended.MEDIUM,
 };
 
-/* We need an exception for components exported with forwardRef */
-/* eslint no-underscore-dangle: ['error', { allow: ['_Avatar'] }] */
-const _Avatar = <T extends ElementType = 'div', S = void>(
-  props: SpiritAvatarProps<T, S>,
-  ref: ForwardedRef<HTMLDivElement>,
-) => {
-  const propsWithDefaults = { ...defaultProps, ...props };
-  const { elementType: ElementTag = 'div', children, ...restProps } = propsWithDefaults;
-  const { classProps, props: modifiedProps } = useAvatarStyleProps(restProps);
-  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
-  const mergedStyleProps = mergeStyleProps(ElementTag, { classProps, styleProps });
+const Avatar = forwardRef<HTMLDivElement, SpiritAvatarProps<ElementType>>(
+  <T extends ElementType = 'div', S = void>(props: SpiritAvatarProps<T, S>, ref: ForwardedRef<HTMLDivElement>) => {
+    const propsWithDefaults = { ...defaultProps, ...props };
+    const { elementType: ElementTag = 'div', children, ...restProps } = propsWithDefaults;
+    const { classProps, props: modifiedProps } = useAvatarStyleProps(restProps);
+    const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+    const mergedStyleProps = mergeStyleProps(ElementTag, { classProps, styleProps });
 
-  return (
-    <ElementTag {...otherProps} {...mergedStyleProps} ref={ref}>
-      {children}
-    </ElementTag>
-  );
-};
-
-const Avatar = forwardRef<HTMLDivElement, SpiritAvatarProps<ElementType>>(_Avatar);
+    return (
+      <ElementTag {...otherProps} {...mergedStyleProps} ref={ref}>
+        {children}
+      </ElementTag>
+    );
+  },
+);
 
 export default Avatar;
