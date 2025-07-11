@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.13.0"></a>
+
+# [3.13.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.12.0...@lmc-eu/spirit-web-react@3.13.0) (2025-07-11)
+
+### Bug Fixes
+
+- **web-react:** Fix undefined `window` reference in server-side call [#DS-2029](https://github.com/lmc-eu/spirit-design-system/issues/DS-2029) ([450afd4](https://github.com/lmc-eu/spirit-design-system/commit/450afd4))
+
+### Features
+
+- **web-react:** Add ReactNode type to PricingPlanFeature description ([d1e142b](https://github.com/lmc-eu/spirit-design-system/commit/d1e142b))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="3.12.0"></a>
 
 # [3.12.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.11.0...@lmc-eu/spirit-web-react@3.12.0) (2025-07-02)

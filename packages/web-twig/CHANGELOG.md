@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.8.1"></a>
+
+## [4.8.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@4.8.0...@lmc-eu/spirit-web-twig@4.8.1) (2025-07-11)
+
+### Tests
+
+- **web-twig:** Update tests due to minor changes in icons ([1423bbb](https://github.com/lmc-eu/spirit-design-system/commit/1423bbb))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="4.8.0"></a>
 
 # [4.8.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@4.7.0...@lmc-eu/spirit-web-twig@4.8.0) (2025-06-30)
