@@ -13,6 +13,7 @@ import {
   EmotionColors,
   Emphasis,
   FillVariants,
+  Intensity,
   LinkColors,
   Placements,
   ShapeVariants,
@@ -95,6 +96,10 @@ export type TextColorsDictionaryType<C = undefined> = (typeof TextColors)[TextCo
 export interface TextColorProps<C = undefined> {
   textColor?: C | TextAccentColorsType | TextEmotionColorsType | TextColorsDictionaryType;
 }
+
+/* Intensity */
+export type IntensityDictionaryKeys = keyof typeof Intensity;
+export type IntensityDictionaryType = (typeof Intensity)[IntensityDictionaryKeys];
 
 /* Emphasis */
 export type EmphasisDictionaryKeys = keyof typeof Emphasis;
