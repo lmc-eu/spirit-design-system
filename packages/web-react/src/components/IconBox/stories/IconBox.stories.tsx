@@ -98,9 +98,5 @@ type Story = StoryObj<typeof IconBox>;
 
 export const Playground: Story = {
   name: 'IconBox',
-  render: (args) => (
-    <div className="d-inline-block">
-      <IconBox {...args} />
-    </div>
-  ),
+  render: (args) => <IconBox {...args} />,
 };
