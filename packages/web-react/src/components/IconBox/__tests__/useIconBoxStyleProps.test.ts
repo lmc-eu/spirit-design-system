@@ -37,7 +37,7 @@ describe('useIconBoxStyleProps', () => {
     expect(result.current.iconBoxStyles).toEqual({});
   });
 
-  it('should forward unknown props in .props', () => {
+  it('should forward other props', () => {
     const { result } = renderHook(() =>
       useIconBoxStyleProps({ size: 'medium', hasBorder: false, 'aria-label': 'foo' }),
     );
