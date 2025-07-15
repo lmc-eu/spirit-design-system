@@ -28,6 +28,7 @@ const PricingPlanFeatureTitle = ({
       isOpen={isTooltipOpen}
       onToggle={toggleTooltip}
       placement="top"
+      positionStrategy="fixed"
       trigger={['click']}
       UNSAFE_className={classProps.body.featureTitle}
     >
