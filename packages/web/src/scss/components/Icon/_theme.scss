@@ -1,3 +1,5 @@
 @use '@tokens' as tokens;
 
+$background-default: tokens.$background-primary;
+$border-default: tokens.$border-basic;
 $breakpoints: tokens.$breakpoints;
