@@ -27,3 +27,5 @@ export type BackgroundEmotionColorsType<C = undefined> = GenerateColorsType<
   'emotion',
   C
 >;
+
+export type AccentColorNamesType = keyof typeof accentColors;

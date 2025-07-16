@@ -1,10 +1,13 @@
-import { accentColors, emotionColors } from '@lmc-eu/spirit-design-tokens';
+import { accentColors, emotionColors, textColors } from '@lmc-eu/spirit-design-tokens';
 import {
+  AccentColorNamesType,
   BackgroundAccentColorsType,
   BackgroundEmotionColorsType,
   BorderAccentColorsType,
   BorderEmotionColorsType,
+  EmotionColorsDictionaryType,
   TextAccentColorsType,
+  TextColorsDictionaryType,
   TextEmotionColorsType,
 } from '../types';
 
@@ -84,3 +87,7 @@ export const getAccentBorderColors = (): Record<string, BorderAccentColorsType> 
  */
 export const getEmotionBorderColors = (): Record<string, BorderEmotionColorsType> =>
   generateColorsObject(emotionColors, 'border', 'emotion');
+
+export const getAccentColorNames = () => Object.keys(accentColors) as AccentColorNamesType[];
+export const getEmotionColorNames = () => Object.keys(emotionColors) as EmotionColorsDictionaryType[];
+export const getTextColorNames = () => Object.keys(textColors) as TextColorsDictionaryType[];
