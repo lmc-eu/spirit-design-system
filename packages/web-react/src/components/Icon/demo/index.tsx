@@ -7,6 +7,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import DocsSection from '../../../../docs/DocsSection';
 import { IconsProvider } from '../../../context';
+import IconColor from './IconColor';
+import IconColorDualtone from './IconColorDualtone';
 import IconDefault from './IconDefault';
 import IconResponsive from './IconResponsive';
 
@@ -18,6 +20,12 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       </DocsSection>
       <DocsSection title="Responsive Size">
         <IconResponsive />
+      </DocsSection>
+      <DocsSection title="Colors">
+        <IconColor />
+      </DocsSection>
+      <DocsSection title="Dualtone Colors">
+        <IconColorDualtone />
       </DocsSection>
     </IconsProvider>
   </React.StrictMode>,

@@ -5,6 +5,7 @@ import { ariaAttributesTest, restPropsTest, stylePropsTest, validHtmlAttributesT
 import { toBeInDocumentProviderTest } from '@local/tests/providerTests/toBeInDocumentProviderTest';
 import { SpiritIconProps } from '../../../types';
 import Icon from '../Icon';
+import { iconColors } from '../utils';
 
 jest.mock('../../../hooks/useIcon');
 
@@ -87,5 +88,17 @@ describe('Icon', () => {
     expect(screen.getByTestId('test-icon')).toHaveStyle({
       '--spirit-icon-size-desktop': '60px',
     });
+  });
+
+  it('should not have default color class', () => {
+    render(<Icon name="add" data-testid="test-icon" />);
+
+    expect(screen.getByTestId('test-icon')).not.toHaveClass('Icon--primary');
+  });
+
+  it.each(iconColors)('should have %c class when color is defined', (color) => {
+    render(<Icon name="add" data-testid="test-icon" color={color} />);
+
+    expect(screen.getByTestId('test-icon')).toHaveClass(`Icon--${color}`);
   });
 });

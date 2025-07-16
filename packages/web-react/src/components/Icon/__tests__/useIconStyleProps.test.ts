@@ -1,6 +1,7 @@
 import { renderHook } from '@testing-library/react';
-import { SpiritIconProps } from '../../../types';
+import { IconColorType, SpiritIconProps } from '../../../types';
 import { useIconStyleProps } from '../useIconStyleProps';
+import { iconColors } from '../utils';
 
 describe('useIconStyleProps', () => {
   it('should return responsive sizes', () => {
@@ -28,5 +29,34 @@ describe('useIconStyleProps', () => {
     const { result } = renderHook(() => useIconStyleProps(props));
 
     expect(result.current.iconStyleProps).toEqual({});
+  });
+
+  it.each(Object.values(iconColors))('should have dualtone color classname %s', (color: IconColorType) => {
+    const props: SpiritIconProps = {
+      name: 'shield-dualtone',
+      color,
+    };
+    const { result } = renderHook(() => useIconStyleProps(props));
+
+    expect(result.current.classProps).toContain(`Icon--${color}`);
+  });
+
+  it("should have default classname when `color` isn't defined for dualtone icon", () => {
+    const props: SpiritIconProps = {
+      name: 'shield-dualtone',
+      color: undefined,
+    };
+    const { result } = renderHook(() => useIconStyleProps(props));
+
+    expect(result.current.classProps).toContain('Icon--primary');
+  });
+
+  it("should not have default classname when `color` isn't defined for icon", () => {
+    const props: SpiritIconProps = {
+      name: 'file',
+    };
+    const { result } = renderHook(() => useIconStyleProps(props));
+
+    expect(result.current.classProps).not.toContain('Icon--primary');
   });
 });
