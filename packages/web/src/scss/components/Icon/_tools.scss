@@ -1,0 +1,87 @@
+// 1. Accent colors are optional in design systems. Process them only if they are defined.
+// 2. Apply the color to single-tone icons. Colors for dual-tone icons are handled by CSS variables.
+
+@use '@tokens' as tokens;
+@use 'sass:map';
+@use 'sass:meta';
+@use '../../tools/map' as map-tools;
+@use '../../tools/tokens' as tokens-tools;
+
+@function generate-dualtone-color-variants() {
+    $accent-variants: ();
+    $emotion-variants: ();
+    $text-variants: ();
+    $result: ();
+
+    // 1.
+    @if map.has-key(meta.module-variables('tokens'), 'accent-colors') {
+        @each $accent-key, $accent-props in tokens.$accent-colors {
+            $accent-key: if(
+                meta.type-of($accent-key) == 'number',
+                tokens-tools.format-numeric-key($accent-key),
+                $accent-key
+            );
+
+            $accent-variants: map.merge(
+                $accent-variants,
+                (
+                    $accent-key: (
+                            background-color: map.get($accent-props, 'background-subtle'),
+                            border: map.get($accent-props, 'border-basic'),
+                        ),
+                )
+            );
+        }
+    }
+
+    @each $emotion-key, $emotion-props in tokens.$emotion-colors {
+        $emotion-variants: map.merge(
+            $emotion-variants,
+            (
+                $emotion-key: (
+                        background-color: map.get($emotion-props, 'background-subtle'),
+                        border: map.get($emotion-props, 'border-basic'),
+                    ),
+            )
+        );
+    }
+
+    @each $text-key, $text-color in tokens.$text-colors {
+        $text-variants: map.merge(
+            $text-variants,
+            (
+                $text-key: (
+                        background-color: tokens.$background-primary,
+                        border: $text-color,
+                    ),
+            )
+        );
+    }
+
+    $result: map-tools.merge-multiple(
+        $result,
+        (
+            'accent': $accent-variants,
+            'emotion': $emotion-variants,
+            'text': $text-variants,
+        )
+    );
+
+    @return $result;
+}
+
+@mixin generate-variants() {
+    @each $name, $style in generate-dualtone-color-variants() {
+        @each $color, $color-style in $style {
+            .Icon--#{$color} {
+                --#{tokens.$css-variable-prefix}icon-dualtone-color-background: #{map.get(
+                        $color-style,
+                        background-color
+                    )};
+                --#{tokens.$css-variable-prefix}icon-dualtone-color-border: #{map.get($color-style, border)};
+
+                color: #{map.get($color-style, border)}; // 2.
+            }
+        }
+    }
+}
