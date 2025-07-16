@@ -18,10 +18,12 @@ const defaultProps = {
 const _Icon = (props: SpiritIconProps, ref: ForwardedRef<SVGSVGElement>) => {
   const propsWithDefaults = { ...defaultProps, ...props };
   const { boxSize, name, title, ariaHidden, ...restProps } = propsWithDefaults;
+
   let icon = useIcon(name);
   const iconSize = useIconBoxSize(boxSize);
-  const { styleProps, props: otherProps } = useStyleProps(restProps);
-  const { classProps, iconStyleProps } = useIconStyleProps(propsWithDefaults);
+
+  const { classProps, iconStyleProps, props: modifiedProps } = useIconStyleProps({ boxSize, name, ...restProps });
+  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
   const mergedStyleProps = mergeStyleProps('svg', {
     classProps,
     iconStyleProps,

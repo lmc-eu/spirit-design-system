@@ -1,7 +1,9 @@
 import { cssVariablePrefix } from '@lmc-eu/spirit-design-tokens';
+import classNames from 'classnames';
 import { CSSProperties } from 'react';
+import { TextColors } from '../../constants';
 import { useClassNamePrefix } from '../../hooks';
-import { IconBoxSize, SpiritIconProps } from '../../types';
+import type { IconBoxSize, SpiritIconProps } from '../../types';
 
 const setCustomDimension = (prefix: string, size: IconBoxSize): CSSProperties => {
   const style: CSSProperties = {};
@@ -18,17 +20,23 @@ const setCustomDimension = (prefix: string, size: IconBoxSize): CSSProperties =>
 };
 
 export const useIconStyleProps = (props: SpiritIconProps) => {
-  const { boxSize, ...otherProps } = props;
+  const { boxSize, color, name, ...otherProps } = props;
   const stylePrefix: string = `--${cssVariablePrefix}icon`;
+  const isDualtoneIcon = String(name).includes('-dualtone');
+  const dualtoneColorWithDefault = isDualtoneIcon && !color ? TextColors.PRIMARY : color;
 
   const iconClass = useClassNamePrefix('Icon');
+  const iconDualtoneColorClass = `${iconClass}--${dualtoneColorWithDefault}`;
+  const classProps = classNames(iconClass, {
+    [iconDualtoneColorClass]: color || dualtoneColorWithDefault,
+  });
 
   const customizedIconStyle = {
     ...(boxSize ? setCustomDimension(`${stylePrefix}-size`, boxSize) : {}),
   };
 
   return {
-    classProps: iconClass,
+    classProps,
     iconStyleProps: customizedIconStyle,
     props: otherProps,
   };
