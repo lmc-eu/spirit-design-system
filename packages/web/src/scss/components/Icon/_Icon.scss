@@ -1,6 +1,14 @@
+// 1. Fixing problem when Icon is used inside a flex container
+
 @use '@tokens' as tokens;
+@use 'tools';
 @use '../../tools/responsive-properties';
 @use 'theme';
+
+// 1.
+.Icon {
+    flex-shrink: 0;
+}
 
 // @deprecated We are deprecating attribute `[style*='#{tokens.$css-variable-prefix}icon-size']` selector.
 // We will remove this attribute selector in the next major version.
@@ -18,3 +26,5 @@
         $fallback-value: 'fit-content'
     );
 }
+
+@include tools.generate-variants();
