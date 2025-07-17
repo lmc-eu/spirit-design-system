@@ -112,7 +112,7 @@ import { PricingPlanBody } from '@lmc-eu/spirit-web-react';
 />;
 ```
 
-You can also set the `tooltipContent` on the feature to provide additional information when the feature title is clicked.
+You can also set the `tooltipContent` or `modalContent` on the feature to provide additional information when the feature title is clicked.
 
 ```jsx
 import { PricingPlanBody } from '@lmc-eu/spirit-web-react';
@@ -123,19 +123,35 @@ import { PricingPlanBody } from '@lmc-eu/spirit-web-react';
     {
       title: 'Feature name',
       description: 'Feature description',
-      tooltipContent: 'Additional information about the feature',
+      tooltipContent: 'Additional information in Tooltip about the feature',
+    },
+  ]}
+/>
+
+<PricingPlanBody
+  description="Optional introductory text"
+  features={[
+    {
+      title: 'Feature name',
+      description: 'Feature description',
+      modalContent: 'Additional information in Modal about the feature',
     },
   ]}
 />;
 ```
 
+👉 Please note that combination of ScrollView and Tooltips may cause troubles with cropped tooltips and unwanted scrollbars.
+
+ℹ️ Tooltip is for shorts tips, not for long paragraphs (it is not called Toolparagraph 😉), so if you need to use long content
+use Modal instead.
+
 ### API
 
-| Name          | Type                                                                                         | Default | Required | Description                                                                                 |
-| ------------- | -------------------------------------------------------------------------------------------- | ------- | -------- | ------------------------------------------------------------------------------------------- |
-| `description` | `string`                                                                                     | -       | ✕        | Optional introductory text                                                                  |
-| `elementType` | `ElementType`                                                                                | `div`   | ✕        | Type of element                                                                             |
-| `features`    | `{ title: string; description: string \| ReactNode, tooltipContent?: string \| ReactNode}[]` | `[]`    | ✕        | List of features, each with a title and description. Optionally you can set tooltipContent. |
+| Name          | Type                                                                                                                             | Default | Required | Description                                                                                                                                                          |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------- | ------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `description` | `string`                                                                                                                         | -       | ✕        | Optional introductory text                                                                                                                                           |
+| `elementType` | `ElementType`                                                                                                                    | `div`   | ✕        | Type of element                                                                                                                                                      |
+| `features`    | `{ title: string; description: string \| ReactNode, tooltipContent?: string \| ReactNode, modalContent?: string \| ReactNode}[]` | `[]`    | ✕        | List of features, each with a title and description. Optionally, you can set `tooltipContent` or `modalContent` to show additional information in a Tooltip or Modal |
 
 ## PricingPlanFooter
 

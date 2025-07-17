@@ -12,6 +12,7 @@
 // 4. Leave space for optional description.
 
 @use '@tokens' as tokens;
+@use '../../tools/reset';
 @use '../../tools/typography';
 @use 'theme';
 
@@ -54,6 +55,12 @@
 .PricingPlanBody__featureTitle > svg {
     margin-top: theme.$body-feature-icon-margin-top;
     color: var(--#{tokens.$css-variable-prefix}pricing-plan-icon-color, theme.$body-feature-icon-color);
+}
+
+.PricingPlanBody__featureTitleText:where(button) {
+    @include reset.button();
+
+    text-align: left;
 }
 
 .PricingPlanBody__featureTitleText {
