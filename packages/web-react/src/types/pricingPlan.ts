@@ -29,6 +29,7 @@ export type PricingPlanFeature = {
   title: string;
   description?: string | ReactNode;
   tooltipContent?: string | ReactNode;
+  modalContent?: string | ReactNode;
 };
 
 export interface PricingPlanBodyBaseProps extends StyleProps {
