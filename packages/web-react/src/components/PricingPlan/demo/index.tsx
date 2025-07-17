@@ -10,6 +10,7 @@ import { IconsProvider } from '../../../context';
 import PricingPlanDefault from './PricingPlanDefault';
 import PricingPlanInMatrix from './PricingPlanInMatrix';
 import PricingPlanWithFeaturesComparison from './PricingPlanWithFeaturesComparison';
+import PricingPlanWithModal from './PricingPlanWithModal';
 import PricingPlanWithTooltip from './PricingPlanWithTooltip';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
@@ -20,6 +21,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       </DocsSection>
       <DocsSection title="Pricing Plan with Tooltip" stackAlignment="start">
         <PricingPlanWithTooltip />
+      </DocsSection>
+      <DocsSection title="Pricing Plan with Modal" stackAlignment="start">
+        <PricingPlanWithModal />
       </DocsSection>
       <DocsSection title="Pricing Plans in Matrix and Scroll View" stackAlignment="start">
         <PricingPlanInMatrix />
