@@ -14,40 +14,45 @@ describe('PricingPlanFeatureTitle', () => {
 
   validHtmlAttributesTest(PricingPlanFeatureTitleWithRequiredProps);
 
-  describe('should render without tooltip', () => {
+  describe('should render basic feature without additional information', () => {
     const feature: PricingPlanFeature = { title: 'Basic Feature' };
 
     beforeEach(() => {
       render(<PricingPlanFeatureTitle feature={feature} featureIndex={0} />);
     });
 
-    it('should render the title', () => {
+    it('should render the feature title', () => {
       expect(screen.getByText('Basic Feature')).toBeInTheDocument();
     });
 
-    it('should not render tooltip trigger', () => {
+    it('should not render tooltip trigger or modal button', () => {
       expect(screen.queryByRole('tooltip')).not.toBeInTheDocument();
+      expect(screen.queryByRole('button')).not.toBeInTheDocument();
     });
 
-    it('should render inside dt element', () => {
+    it('should render inside dt element with correct styling', () => {
       const title = screen.getByText('Basic Feature');
+      const dtElement = title.closest('dt');
 
-      expect(title.parentElement).toContainHTML('dt');
+      expect(dtElement).toBeInTheDocument();
+      expect(dtElement).toHaveClass('PricingPlanBody__featureTitle');
     });
   });
 
-  describe('should render with tooltip', () => {
+  describe('should render feature with tooltip information', () => {
     const feature: PricingPlanFeature = {
       title: 'Feature with Tooltip',
-      tooltipContent: 'Helpful information',
+      tooltipContent: 'This feature provides helpful information in a tooltip',
     };
 
     beforeEach(() => {
       render(<PricingPlanFeatureTitle feature={feature} featureIndex={1} />);
     });
 
-    it('should render the title with tooltip trigger', () => {
-      expect(screen.getByText('Feature with Tooltip')).toBeInTheDocument();
+    it('should render the feature title as a clickable button', () => {
+      const titleButton = screen.getByRole('button', { name: 'Feature with Tooltip' });
+      expect(titleButton).toBeInTheDocument();
+      expect(titleButton).toHaveClass('text-underlined-dotted');
     });
 
     it('should render tooltip popover (initially hidden)', () => {
@@ -55,28 +60,123 @@ describe('PricingPlanFeatureTitle', () => {
       expect(tooltip).toHaveClass('is-hidden');
     });
 
-    it('should show tooltip on click', () => {
-      const trigger = screen.getByText('Feature with Tooltip');
+    it('should show tooltip with additional information on click', () => {
+      const trigger = screen.getByRole('button', { name: 'Feature with Tooltip' });
       const tooltip = screen.getByRole('tooltip');
 
       fireEvent.click(trigger);
 
       expect(tooltip).not.toHaveClass('is-hidden');
-      expect(tooltip).toHaveTextContent('Helpful information');
+      expect(tooltip).toHaveTextContent('This feature provides helpful information in a tooltip');
     });
 
     it('should hide tooltip on close button click', () => {
-      const trigger = screen.getByText('Feature with Tooltip');
+      const trigger = screen.getByRole('button', { name: 'Feature with Tooltip' });
       const closeButton = screen.getByRole('button', { name: 'close' });
       const tooltip = screen.getByRole('tooltip');
 
       fireEvent.click(trigger);
-
       expect(tooltip).not.toHaveClass('is-hidden');
 
       fireEvent.click(closeButton);
-
       expect(tooltip).toHaveClass('is-hidden');
+    });
+  });
+
+  describe('should render feature with modal information', () => {
+    const feature: PricingPlanFeature = {
+      title: 'Feature with Modal',
+      modalContent: 'This feature opens a modal with detailed information and additional content.',
+    };
+
+    beforeEach(() => {
+      render(<PricingPlanFeatureTitle feature={feature} featureIndex={2} />);
+    });
+
+    it('should render the feature title as a clickable button', () => {
+      const titleButton = screen.getByRole('button', { name: 'Feature with Modal' });
+      expect(titleButton).toBeInTheDocument();
+      expect(titleButton).toHaveClass('text-underlined-dotted');
+    });
+
+    it('should not render tooltip', () => {
+      expect(screen.queryByRole('tooltip')).not.toBeInTheDocument();
+    });
+
+    it('should open modal with detailed information on click', () => {
+      const trigger = screen.getByRole('button', { name: 'Feature with Modal' });
+
+      fireEvent.click(trigger);
+
+      expect(screen.getByRole('dialog')).toBeInTheDocument();
+      expect(screen.getByRole('heading', { name: 'Feature with Modal' })).toBeInTheDocument();
+      expect(
+        screen.getByText('This feature opens a modal with detailed information and additional content.'),
+      ).toBeInTheDocument();
+    });
+
+    it('should close modal when clicking close button', () => {
+      const trigger = screen.getByRole('button', { name: 'Feature with Modal' });
+
+      fireEvent.click(trigger);
+      expect(screen.getByRole('dialog')).toBeInTheDocument();
+
+      const closeButton = screen.getByRole('button', { name: 'Close' });
+      fireEvent.click(closeButton);
+
+      expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    });
+
+    it('should have correct modal ID', () => {
+      const trigger = screen.getByRole('button', { name: 'Feature with Modal' });
+
+      fireEvent.click(trigger);
+
+      const modal = screen.getByRole('dialog');
+      expect(modal).toHaveAttribute('id', 'feature-2-modal');
+    });
+  });
+
+  describe('should render feature with description', () => {
+    const feature: PricingPlanFeature = {
+      title: 'Feature with Description',
+      description: 'This feature includes a description for additional context.',
+    };
+
+    beforeEach(() => {
+      render(<PricingPlanFeatureTitle feature={feature} featureIndex={3} />);
+    });
+
+    it('should render the feature title', () => {
+      expect(screen.getByText('Feature with Description')).toBeInTheDocument();
+    });
+
+    it('should render as basic feature when only description is provided', () => {
+      expect(screen.queryByRole('button')).not.toBeInTheDocument();
+      expect(screen.queryByRole('tooltip')).not.toBeInTheDocument();
+      expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    });
+  });
+
+  describe('should prioritize modal over tooltip when both are provided', () => {
+    const feature: PricingPlanFeature = {
+      title: 'Feature with Both',
+      tooltipContent: 'This should not be shown',
+      modalContent: 'This should be shown in modal',
+    };
+
+    beforeEach(() => {
+      render(<PricingPlanFeatureTitle feature={feature} featureIndex={4} />);
+    });
+
+    it('should render modal variant instead of tooltip', () => {
+      expect(screen.queryByRole('tooltip')).not.toBeInTheDocument();
+
+      const trigger = screen.getByRole('button', { name: 'Feature with Both' });
+      fireEvent.click(trigger);
+
+      expect(screen.getByRole('dialog')).toBeInTheDocument();
+      expect(screen.getByText('This should be shown in modal')).toBeInTheDocument();
     });
   });
 });

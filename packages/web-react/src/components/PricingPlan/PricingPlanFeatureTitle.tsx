@@ -1,10 +1,11 @@
 'use client';
 
 import classNames from 'classnames';
-import React from 'react';
+import React, { useState } from 'react';
 import { useToggle } from '../../hooks';
 import type { PricingPlanFeature } from '../../types/pricingPlan';
 import { Icon } from '../Icon';
+import { Modal, ModalBody, ModalDialog, ModalHeader } from '../Modal';
 import { Tooltip, TooltipPopover, TooltipTrigger } from '../Tooltip';
 import { usePricingPlanStyleProps } from './usePricingPlanStyleProps';
 
@@ -16,33 +17,59 @@ const PricingPlanFeatureTitle = ({
   feature: PricingPlanFeature;
   featureIndex: number;
 }) => {
-  const { title, tooltipContent } = feature;
+  const { modalContent, title, tooltipContent } = feature;
   const { classProps } = usePricingPlanStyleProps(restProps);
   const [isTooltipOpen, toggleTooltip] = useToggle(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  return tooltipContent ? (
-    <Tooltip
-      elementType="dt"
-      id={`feature-${featureIndex}-tooltip`}
-      isDismissible
-      isOpen={isTooltipOpen}
-      onToggle={toggleTooltip}
-      placement="top"
-      trigger={['click']}
-      UNSAFE_className={classProps.body.featureTitle}
-    >
-      <Icon name="check-plain" boxSize={16} />
-      <TooltipTrigger
-        elementType="div"
-        UNSAFE_className={classNames(classProps.body.featureTitleText, 'text-underlined-dotted')}
+  if (modalContent) {
+    return (
+      <dt className={classProps.body.featureTitle}>
+        <Icon name="check-plain" boxSize={16} />
+        <button
+          type="button"
+          onClick={() => setIsModalOpen(true)}
+          className={classNames(classProps.body.featureTitleText, 'text-underlined-dotted')}
+        >
+          {title}
+        </button>
+        <Modal id={`feature-${featureIndex}-modal`} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+          <ModalDialog isScrollable>
+            <ModalHeader>{title}</ModalHeader>
+            <ModalBody>{modalContent}</ModalBody>
+          </ModalDialog>
+        </Modal>
+      </dt>
+    );
+  }
+
+  if (tooltipContent) {
+    return (
+      <Tooltip
+        elementType="dt"
+        id={`feature-${featureIndex}-tooltip`}
+        isDismissible
+        isOpen={isTooltipOpen}
+        onToggle={toggleTooltip}
+        placement="top"
+        trigger={['click']}
+        UNSAFE_className={classProps.body.featureTitle}
       >
-        {title}
-      </TooltipTrigger>
-      <TooltipPopover>
-        <div>{tooltipContent}</div>
-      </TooltipPopover>
-    </Tooltip>
-  ) : (
+        <Icon name="check-plain" boxSize={16} />
+        <TooltipTrigger
+          elementType="button"
+          UNSAFE_className={classNames(classProps.body.featureTitleText, 'text-underlined-dotted')}
+        >
+          {title}
+        </TooltipTrigger>
+        <TooltipPopover>
+          <div>{tooltipContent}</div>
+        </TooltipPopover>
+      </Tooltip>
+    );
+  }
+
+  return (
     <dt className={classProps.body.featureTitle}>
       <Icon name="check-plain" boxSize={16} />
       <div className={classProps.body.featureTitleText}>{title}</div>
