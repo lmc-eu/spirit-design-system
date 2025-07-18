@@ -23,7 +23,7 @@
   ],
   "scripts": {
     "start": "yarn packages:start --ignore '@almacareer/spirit-example*'",
-    "build": "npm-run-all --serial packages:build:libs packages:build:web",
+    "build": "npm-run-all --serial packages:build:tokens packages:build:libs packages:build:web",
     "es:lint": "eslint ./",
     "es:lint:fix": "yarn es:lint --fix",
     "format": "yarn format:check",
@@ -49,7 +49,8 @@
     "packages:test": "lerna run test",
     "packages:test:unit": "lerna run test:unit",
     "packages:types": "lerna run types --no-sort",
-    "packages:build:libs": "lerna run build --ignore '@lmc-eu/spirit-web*' --ignore=@lmc-eu/spirit-demo-app --ignore=@lmc-eu/spirit-storybook --ignore '@almacareer/spirit-example*'",
+    "packages:build:tokens": "lerna run build --scope '@lmc-eu/spirit-design-tokens'",
+    "packages:build:libs": "lerna run build --ignore '@lmc-eu/spirit-web*' --ignore=@lmc-eu/spirit-demo-app --ignore=@lmc-eu/spirit-storybook --ignore '@almacareer/spirit-example*' --ignore '@lmc-eu/spirit-design-tokens'",
     "packages:build:web": "lerna run build --scope '@lmc-eu/spirit-web*' --ignore=@lmc-eu/spirit-demo-app",
     "packages:publish": "lerna publish",
     "packages:diff": "lerna diff",

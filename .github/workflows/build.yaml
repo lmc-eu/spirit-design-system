@@ -43,12 +43,6 @@ jobs:
       - name: Install dependencies
         run: yarn --immutable --inline-builds
 
-      - name: Build design tokens
-        run: yarn workspace @lmc-eu/spirit-design-tokens build
-
-      - name: Build icons
-        run: yarn workspace @lmc-eu/spirit-icons build
-
       - name: Build packages
         run: yarn build
 
