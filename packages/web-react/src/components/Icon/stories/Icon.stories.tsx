@@ -2,6 +2,7 @@ import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import ReadMe from '../README.md';
+import { iconColors } from '../utils';
 import { Icon } from '..';
 
 const meta: Meta<typeof Icon> = {
@@ -25,6 +26,10 @@ const meta: Meta<typeof Icon> = {
         defaultValue: { summary: '24' },
       },
     },
+    color: {
+      control: 'select',
+      options: [undefined, ...Object.values(iconColors)],
+    },
     name: {
       control: 'text',
     },
@@ -35,6 +40,7 @@ const meta: Meta<typeof Icon> = {
   args: {
     ariaHidden: true,
     boxSize: { mobile: 24, tablet: 24, desktop: 24 },
+    color: undefined,
     name: 'warning',
     title: 'Warning',
   },

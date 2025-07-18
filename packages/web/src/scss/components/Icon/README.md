@@ -8,6 +8,26 @@
 </svg>
 ```
 
+## Color
+
+You can change the icon color by using the CSS class name `Icon--{color}`.  
+Available colors include `accent`, `emotion`, and `text` colors.
+
+- `Icon--{accent-color-name}`
+- `Icon--danger`
+- `Icon--informative`
+- `Icon--success`
+- `Icon--warning`
+- `Icon--primary`
+- `Icon--secondary`
+- `Icon--tertiary`
+
+```html
+<svg class="Icon Icon--success" width="24" height="24">
+  <use xlink:href="/assets/icons/svg/sprite.svg#shield-dualtone" />
+</svg>
+```
+
 ## Responsive Size
 
 Use CSS custom properties to define the `size` of the icon.
