@@ -1,9 +1,9 @@
 // 1. Fixing problem when Icon is used inside a flex container
 
 @use '@tokens' as tokens;
-@use 'tools';
 @use '../../tools/responsive-properties';
 @use 'theme';
+@use 'tools';
 
 // 1.
 .Icon {
