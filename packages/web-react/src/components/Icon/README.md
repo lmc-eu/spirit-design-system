@@ -60,7 +60,7 @@ import { Icon, IconsProvider } from '@lmc-eu/spirit-web-react';
 import icons from '@lmc-eu/spirit-icons/icons';
 
 <IconsProvider value={icons}>
-  <Icon name="warning" color="warning"  />
+  <Icon name="warning" color="warning" />
 </IconsProvider>;
 ```
 
