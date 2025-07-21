@@ -48,25 +48,44 @@ import icons from '@lmc-eu/spirit-icons/icons';
 </IconsProvider>;
 ```
 
-### Full Example
+## Color
+
+You can change the color of the icon by using the `color` attribute.
+Available colors include those from the [Emotion Color dictionary][dictionary-color], the [Text Color dictionary][dictionary-color], and the accent colors defined in your design tokens.
+
+### Example
 
 ```jsx
 import { Icon, IconsProvider } from '@lmc-eu/spirit-web-react';
 import icons from '@lmc-eu/spirit-icons/icons';
 
 <IconsProvider value={icons}>
-  <Icon name="warning" boxSize={{ mobile: 20, tablet: 30, desktop: 40 }} title="Icon Title" />
+  <Icon name="warning" color="warning" />
+</IconsProvider>;
+```
+
+## Full Example
+
+```jsx
+import { Icon, IconsProvider } from '@lmc-eu/spirit-web-react';
+import icons from '@lmc-eu/spirit-icons/icons';
+
+<IconsProvider value={icons}>
+  <Icon name="warning" color="warning" boxSize={{ mobile: 20, tablet: 30, desktop: 40 }} title="Icon Title" />
   Hey! Pay attention!
 </IconsProvider>;
 ```
 
 ## API
 
-| Name      | Type                                                        | Default | Required | Description                                                                                           |
-| --------- | ----------------------------------------------------------- | ------- | -------- | ----------------------------------------------------------------------------------------------------- |
-| `boxSize` | \[ `number` \| `Partial<Record<BreakpointToken, number>>` ] | 24      | ✕        | Size of the icon, use object to set responsive values, e.g. `{ mobile: 20, tablet: 30, desktop: 40 }` |
-| `name`    | `string`                                                    | —       | ✓        | Name of the icon                                                                                      |
-| `title`   | `string`                                                    | —       | ✕        | Title of the icon                                                                                     |
+| Name      | Type                                                                                                         | Default      | Required | Description                                                                                           |
+| --------- | ------------------------------------------------------------------------------------------------------------ | ------------ | -------- | ----------------------------------------------------------------------------------------------------- |
+| `boxSize` | \[`number` \| `Partial<Record<BreakpointToken, number>>`]                                                    | 24           | ✕        | Size of the icon, use object to set responsive values, e.g. `{ mobile: 20, tablet: 30, desktop: 40 }` |
+| `color`   | \[Accent Color \| [Emotion Color dictionary][dictionary-color] \| [Text Color dictionary][dictionary-color]] | `primary` \* | ✕        | Color of the dualtone icon                                                                            |
+| `name`    | `string`                                                                                                     | —            | ✓        | Name of the icon                                                                                      |
+| `title`   | `string`                                                                                                     | —            | ✕        | Title of the icon                                                                                     |
+
+(\*) The default color "Primary" is used only for dualtone icons. For single-tone icons, the default color is inherited from the parent element.
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -74,6 +93,7 @@ and [escape hatches][readme-escape-hatches].
 
 For more details about Icons see [Spirit Icons][spirit-icons] package.
 
+[dictionary-color]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#color
 [html-react-parser-package]: https://www.npmjs.com/package/html-react-parser
 [icons-package]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/icons
 [npm]: https://www.npmjs.com/
