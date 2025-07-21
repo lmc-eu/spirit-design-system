@@ -36,14 +36,22 @@ import icons from '@lmc-eu/spirit-icons/icons';
 <IconsProvider value={icons}>{/* Your Icon, app or component where Icon is used */}</IconsProvider>;
 ```
 
-## Color
-
-You can change color the icon by using the `color` attribute.
-Available colors are `accent`, `emotion` and `text` colors.
+### Example
 
 ```jsx
-<Icon color="success" name="shield-dualtone" />
+import { Icon, IconsProvider } from '@lmc-eu/spirit-web-react';
+import icons from '@lmc-eu/spirit-icons/icons';
+
+<IconsProvider value={icons}>
+  <Icon name="warning" />
+  Hey! Pay attention!
+</IconsProvider>;
 ```
+
+## Color
+
+You can change the color of the icon by using the `color` attribute.
+Available colors include those from the [Emotion Color dictionary][dictionary-color], the [Text Color dictionary][dictionary-color], and the accent colors defined in your design tokens.
 
 ### Example
 
@@ -52,12 +60,11 @@ import { Icon, IconsProvider } from '@lmc-eu/spirit-web-react';
 import icons from '@lmc-eu/spirit-icons/icons';
 
 <IconsProvider value={icons}>
-  <Icon name="warning" color="01" />
-  Hey! Pay attention!
+  <Icon name="warning" color="warning"  />
 </IconsProvider>;
 ```
 
-### Full Example
+## Full Example
 
 ```jsx
 import { Icon, IconsProvider } from '@lmc-eu/spirit-web-react';
