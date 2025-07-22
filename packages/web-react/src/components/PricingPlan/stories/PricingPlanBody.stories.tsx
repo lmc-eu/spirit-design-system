@@ -31,6 +31,9 @@ const meta: Meta<typeof PricingPlanBody> = {
         defaultValue: { summary: 'undefined' },
       },
     },
+    id: {
+      control: 'text',
+    },
   },
   args: {
     description: 'This is a description for the pricing plan body:',
@@ -49,6 +52,7 @@ const meta: Meta<typeof PricingPlanBody> = {
         modalContent: 'This is a modal content',
       },
     ],
+    id: 'tier-1',
   },
 };
 

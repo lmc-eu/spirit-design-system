@@ -1,5 +1,5 @@
 import type { ElementType, JSXElementConstructor, ReactNode } from 'react';
-import type { ChildrenProps, SpiritPolymorphicElementPropsWithRef, StyleProps } from './shared';
+import type { ChildrenProps, RequiredProps, SpiritPolymorphicElementPropsWithRef, StyleProps } from './shared';
 
 export interface PricingPlanBaseProps extends ChildrenProps, StyleProps {
   /** If pricing plan has comparable features  */
@@ -32,7 +32,7 @@ export type PricingPlanFeature = {
   tooltipContent?: string | ReactNode;
 };
 
-export interface PricingPlanBodyBaseProps extends StyleProps {
+export interface PricingPlanBodyBaseProps extends StyleProps, RequiredProps {
   /** Description of the plan body */
   description?: string;
   /** Features of the plan body */

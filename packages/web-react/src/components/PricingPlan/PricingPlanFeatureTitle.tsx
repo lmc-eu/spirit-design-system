@@ -11,11 +11,11 @@ import { usePricingPlanStyleProps } from './usePricingPlanStyleProps';
 
 const PricingPlanFeatureTitle = ({
   feature,
-  featureIndex,
+  featureId,
   ...restProps
 }: {
   feature: PricingPlanFeature;
-  featureIndex: number;
+  featureId: string;
 }) => {
   const { modalContent, title, tooltipContent } = feature;
   const { classProps } = usePricingPlanStyleProps(restProps);
@@ -33,7 +33,7 @@ const PricingPlanFeatureTitle = ({
         >
           {title}
         </button>
-        <Modal id={`feature-${featureIndex}-modal`} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <Modal id={`${featureId}-modal`} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
           <ModalDialog isScrollable>
             <ModalHeader>{title}</ModalHeader>
             <ModalBody>{modalContent}</ModalBody>
@@ -47,7 +47,7 @@ const PricingPlanFeatureTitle = ({
     return (
       <Tooltip
         elementType="dt"
-        id={`feature-${featureIndex}-tooltip`}
+        id={`${featureId}-tooltip`}
         isDismissible
         isOpen={isTooltipOpen}
         onToggle={toggleTooltip}
@@ -72,7 +72,9 @@ const PricingPlanFeatureTitle = ({
   return (
     <dt className={classProps.body.featureTitle}>
       <Icon name="check-plain" boxSize={16} />
-      <div className={classProps.body.featureTitleText}>{title}</div>
+      <div className={classProps.body.featureTitleText} id={`${featureId}-title`}>
+        {title}
+      </div>
     </dt>
   );
 };

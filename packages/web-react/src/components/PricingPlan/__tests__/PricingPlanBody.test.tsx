@@ -26,7 +26,7 @@ describe('PricingPlanBody', () => {
 
   describe('should render without side effects', () => {
     beforeEach(() => {
-      render(<PricingPlanBody description="Test description" />);
+      render(<PricingPlanBody id="tier-1" description="Test description" />);
     });
 
     it('should render description', () => {
@@ -52,7 +52,7 @@ describe('PricingPlanBody', () => {
       { title: 'Feature 2', description: 'Description 2' },
     ];
 
-    render(<PricingPlanBody features={features} />);
+    render(<PricingPlanBody id="tier-1" features={features} />);
 
     expect(screen.getByText('Feature 1')).toBeInTheDocument();
     expect(screen.getByText('Description 1')).toBeInTheDocument();
@@ -66,7 +66,7 @@ describe('PricingPlanBody', () => {
       { title: 'Feature 2', description: 'Description 2' },
     ];
 
-    render(<PricingPlanBody features={features} />);
+    render(<PricingPlanBody id="tier-1" features={features} />);
 
     const titles = screen.getAllByRole('term');
     const descriptions = screen.getAllByRole('definition');
@@ -93,7 +93,7 @@ describe('PricingPlanBody', () => {
       },
     ];
 
-    render(<PricingPlanBody features={features} />);
+    render(<PricingPlanBody id="tier-1" features={features} />);
 
     const featureTitle = screen.getByText('Feature with tooltip').parentElement;
     const tooltipTrigger = screen.getByText('Feature with tooltip');
@@ -114,7 +114,7 @@ describe('PricingPlanBody', () => {
       { title: 'Feature without tooltip', description: 'Description without tooltip', tooltipContent: undefined },
     ];
 
-    render(<PricingPlanBody features={features} />);
+    render(<PricingPlanBody id="tier-1" features={features} />);
 
     const featureTitle = screen.getByText('Feature without tooltip').parentElement;
 
@@ -131,7 +131,7 @@ describe('PricingPlanBody', () => {
       },
     ];
 
-    render(<PricingPlanBody features={features} />);
+    render(<PricingPlanBody id="tier-1" features={features} />);
 
     const tooltipTrigger = screen.getByText('Feature with tooltip');
     const tooltipCloseButton = screen.getByRole('button', { name: 'close' });
