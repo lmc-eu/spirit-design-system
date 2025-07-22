@@ -108,24 +108,23 @@ description.
   <div>Everything in previous plan plus:</div>
 
   <!-- Feature list -->
-  <dl class="PricingPlanBody__featureList">
-    <div class="PricingPlanBody__featureItem">
-      <dt class="PricingPlanBody__featureTitle">
+  <ul class="PricingPlanBody__featureList">
+    <li class="PricingPlanBody__featureItem">
+      <div class="PricingPlanBody__featureTitle">
         <svg width="16" height="16" aria-hidden="true">
           <use xlink:href="/assets/icons/svg/sprite.svg#check-plain" />
         </svg>
         <div class="PricingPlanBody__featureTitleText">Feature name</div>
-      </dt>
-      <dd class="PricingPlanBody__featureDescription">Feature description</dd>
-    </div>
+      </div>
+      <div class="PricingPlanBody__featureDescription">Feature description</div>
+    </li>
     <!-- Additional features -->
-  </dl>
+  </ul>
 </div>
 ```
 
-ℹ️ The feature list uses the `<dl>` HTML tag. For styling purposes, feature
-title and description groups are wrapped into a `<div>`. Yes, it's a
-[valid HTML][mdn-dl]!
+ℹ️ The feature list uses the `<ul>` HTML tag. For styling purposes, feature
+title and description groups are wrapped into a `<div>`.
 
 ## PricingPlanFooter
 
@@ -153,18 +152,18 @@ The footer is optional and can contain additional information or disclaimers.
     </header>
     <div class="PricingPlanBody">
       <div>Optional description</div>
-      <dl class="PricingPlanBody__featureList">
-        <div class="PricingPlanBody__featureItem">
-          <dt class="PricingPlanBody__featureTitle">
+      <ul class="PricingPlanBody__featureList">
+        <li class="PricingPlanBody__featureItem">
+          <div class="PricingPlanBody__featureTitle">
             <svg width="16" height="16" aria-hidden="true">
               <use xlink:href="/assets/icons/svg/sprite.svg#check-plain" />
             </svg>
             <div class="PricingPlanBody__featureTitleText">Feature name</div>
-          </dt>
-          <dd class="PricingPlanBody__featureDescription">Feature description</dd>
-        </div>
+          </div>
+          <div class="PricingPlanBody__featureDescription">Feature description</div>
+        </li>
         <!-- Additional features follow the same pattern -->
-      </dl>
+      </ul>
     </div>
     <footer class="PricingPlanFooter">Footer content</footer>
   </div>
@@ -191,6 +190,5 @@ prevent the empty rows from expanding the component vertically, we use `margin`
 to separate individual content rows.
 
 [matrix]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Matrix/README.md
-[mdn-dl]: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dl
 [mdn-grid]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout
 [mdn-subgrid]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Subgrid
