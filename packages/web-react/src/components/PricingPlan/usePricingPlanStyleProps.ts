@@ -2,12 +2,12 @@ import { cssVariablePrefix } from '@lmc-eu/spirit-design-tokens';
 import classNames from 'classnames';
 import type { CSSProperties, ElementType } from 'react';
 import { useClassNamePrefix } from '../../hooks';
-import {
+import type {
   SpiritPricingPlanBodyProps,
   SpiritPricingPlanFooterProps,
   SpiritPricingPlanHeaderProps,
   SpiritPricingPlanProps,
-} from '../../types/pricingPlan';
+} from '../../types';
 import { NUMBER_OF_PLAN_ROWS_DEFAULT } from './constants';
 
 type PricingPlanStyleProps = Partial<SpiritPricingPlanProps<ElementType>> &

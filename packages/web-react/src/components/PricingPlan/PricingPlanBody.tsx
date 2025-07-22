@@ -2,7 +2,7 @@
 
 import React, { type ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
-import { SpiritPricingPlanBodyProps } from '../../types/pricingPlan';
+import type { SpiritPricingPlanBodyProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import PricingPlanFeatureTitle from './PricingPlanFeatureTitle';
 import { usePricingPlanStyleProps } from './usePricingPlanStyleProps';
@@ -26,19 +26,19 @@ const PricingPlanBody = <T extends ElementType = 'div'>(props: SpiritPricingPlan
   return (
     <ElementTag {...otherProps} {...mergedStyleProps}>
       {description && <div>{description}</div>}
-      <dl className={classProps.body.featureList}>
+      <ul className={classProps.body.featureList}>
         {features.map((feature, featureIndex) => {
           const featureItemKey = `featureItem-${featureIndex}`;
           const featureId = `${id}-feature-${featureIndex}`;
 
           return (
-            <div className={classProps.body.featureItem} key={featureItemKey}>
+            <li className={classProps.body.featureItem} key={featureItemKey}>
               <PricingPlanFeatureTitle feature={feature} featureId={featureId} />
-              <dd className={classProps.body.featureDescription}>{feature.description}</dd>
-            </div>
+              <div className={classProps.body.featureDescription}>{feature.description}</div>
+            </li>
           );
         })}
-      </dl>
+      </ul>
     </ElementTag>
   );
 };

@@ -19,7 +19,7 @@ const PricingPlanWithTooltip = () => (
       note="Another supporting text or message"
     />
     <PricingPlanBody
-      id="tier-1"
+      id="tier-tooltiop-1"
       features={[
         {
           title: 'Feature name',

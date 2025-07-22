@@ -2,7 +2,7 @@
 
 import React, { type ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
-import { SpiritPricingPlanFooterProps } from '../../types/pricingPlan';
+import type { SpiritPricingPlanFooterProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { usePricingPlanStyleProps } from './usePricingPlanStyleProps';
 
