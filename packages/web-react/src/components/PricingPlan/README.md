@@ -102,6 +102,7 @@ The body contains the feature list. Each feature consists of a title and a descr
 import { PricingPlanBody } from '@lmc-eu/spirit-web-react';
 
 <PricingPlanBody
+  id="pricing-plan-body-id"
   description="Optional introductory text"
   features={[
     {
@@ -118,6 +119,7 @@ You can also set the `tooltipContent` on the feature to provide additional infor
 import { PricingPlanBody } from '@lmc-eu/spirit-web-react';
 
 <PricingPlanBody
+  id="pricing-plan-body-id"
   description="Optional introductory text"
   features={[
     {
@@ -136,6 +138,9 @@ import { PricingPlanBody } from '@lmc-eu/spirit-web-react';
 | `description` | `string`                                                                                     | -       | ✕        | Optional introductory text                                                                  |
 | `elementType` | `ElementType`                                                                                | `div`   | ✕        | Type of element                                                                             |
 | `features`    | `{ title: string; description: string \| ReactNode, tooltipContent?: string \| ReactNode}[]` | `[]`    | ✕        | List of features, each with a title and description. Optionally you can set tooltipContent. |
+| `id` \*       | `string`                                                                                     | -       | ✓        | Unique identifier for the PricingPlanBody element                                           |
+
+(\*) The `id` prop is used to generate a unique ID for each feature title. You can use this ID to link to specific features.
 
 ## PricingPlanFooter
 
@@ -173,6 +178,7 @@ import { PricingPlan, PricingPlanHeader, PricingPlanBody, PricingPlanFooter } fr
     note="Additional information"
   />
   <PricingPlanBody
+    id="pricing-plan-body-id"
     description="Optional introductory text"
     features={[
       {

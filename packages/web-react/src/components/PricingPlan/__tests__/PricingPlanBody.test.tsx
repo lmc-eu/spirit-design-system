@@ -26,7 +26,7 @@ describe('PricingPlanBody', () => {
 
   describe('should render without side effects', () => {
     beforeEach(() => {
-      render(<PricingPlanBody description="Test description" />);
+      render(<PricingPlanBody id="pricing-plan-body-id" description="Test description" />);
     });
 
     it('should render description', () => {
@@ -52,7 +52,7 @@ describe('PricingPlanBody', () => {
       { title: 'Feature 2', description: 'Description 2' },
     ];
 
-    render(<PricingPlanBody features={features} />);
+    render(<PricingPlanBody id="pricing-plan-body-id" features={features} />);
 
     expect(screen.getByText('Feature 1')).toBeInTheDocument();
     expect(screen.getByText('Description 1')).toBeInTheDocument();
@@ -66,7 +66,7 @@ describe('PricingPlanBody', () => {
       { title: 'Feature 2', description: 'Description 2' },
     ];
 
-    render(<PricingPlanBody features={features} />);
+    render(<PricingPlanBody id="pricing-plan-body-id" features={features} />);
 
     const titles = screen.getAllByRole('term');
     const descriptions = screen.getAllByRole('definition');
@@ -93,7 +93,7 @@ describe('PricingPlanBody', () => {
       },
     ];
 
-    render(<PricingPlanBody features={features} />);
+    render(<PricingPlanBody id="pricing-plan-body-id" features={features} />);
 
     const featureTitle = screen.getByText('Feature with tooltip').parentElement;
     const tooltipTrigger = screen.getByText('Feature with tooltip');
@@ -107,6 +107,7 @@ describe('PricingPlanBody', () => {
 
     expect(tooltipPopover).toHaveClass('TooltipPopover TooltipPopover--dismissible');
     expect(tooltipPopover).not.toHaveClass('is-hidden');
+    expect(tooltipPopover).toHaveAttribute('id', 'pricing-plan-body-id-feature-0-tooltip');
   });
 
   it('should not render tooltips if tooltipContent is undefined', () => {
@@ -114,7 +115,7 @@ describe('PricingPlanBody', () => {
       { title: 'Feature without tooltip', description: 'Description without tooltip', tooltipContent: undefined },
     ];
 
-    render(<PricingPlanBody features={features} />);
+    render(<PricingPlanBody id="pricing-plan-body-id" features={features} />);
 
     const featureTitle = screen.getByText('Feature without tooltip').parentElement;
 
@@ -131,7 +132,7 @@ describe('PricingPlanBody', () => {
       },
     ];
 
-    render(<PricingPlanBody features={features} />);
+    render(<PricingPlanBody id="pricing-plan-body-id" features={features} />);
 
     const tooltipTrigger = screen.getByText('Feature with tooltip');
     const tooltipCloseButton = screen.getByRole('button', { name: 'close' });

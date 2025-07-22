@@ -15,7 +15,7 @@ const defaultProps: Partial<SpiritPricingPlanBodyProps> = {
 const PricingPlanBody = <T extends ElementType = 'div'>(props: SpiritPricingPlanBodyProps<T>) => {
   const propsWithDefaults = { ...defaultProps, ...props };
 
-  const { description, elementType: ElementTag = 'div', features = [], ...restProps } = propsWithDefaults;
+  const { description, elementType: ElementTag = 'div', features = [], id, ...restProps } = propsWithDefaults;
   const { classProps, props: modifiedProps } = usePricingPlanStyleProps(restProps);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
   const mergedStyleProps = mergeStyleProps(ElementTag, {
@@ -29,10 +29,11 @@ const PricingPlanBody = <T extends ElementType = 'div'>(props: SpiritPricingPlan
       <dl className={classProps.body.featureList}>
         {features.map((feature, featureIndex) => {
           const featureItemKey = `featureItem-${featureIndex}`;
+          const featureId = `${id}-feature-${featureIndex}`;
 
           return (
             <div className={classProps.body.featureItem} key={featureItemKey}>
-              <PricingPlanFeatureTitle feature={feature} featureIndex={featureIndex} />
+              <PricingPlanFeatureTitle feature={feature} featureId={featureId} />
               <dd className={classProps.body.featureDescription}>{feature.description}</dd>
             </div>
           );

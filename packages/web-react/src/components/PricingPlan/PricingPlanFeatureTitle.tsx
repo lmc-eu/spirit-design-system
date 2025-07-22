@@ -1,7 +1,7 @@
 'use client';
 
 import classNames from 'classnames';
-import React, { useId } from 'react';
+import React from 'react';
 import { useToggle } from '../../hooks';
 import type { PricingPlanFeature } from '../../types/pricingPlan';
 import { Icon } from '../Icon';
@@ -10,21 +10,21 @@ import { usePricingPlanStyleProps } from './usePricingPlanStyleProps';
 
 const PricingPlanFeatureTitle = ({
   feature,
-  featureIndex,
+  featureId,
   ...restProps
 }: {
   feature: PricingPlanFeature;
-  featureIndex: number;
+  featureId: string;
 }) => {
   const { title, tooltipContent } = feature;
   const { classProps } = usePricingPlanStyleProps(restProps);
   const [isTooltipOpen, toggleTooltip] = useToggle(false);
-  const tooltipId = useId();
+  const titleId = `${featureId}-title`;
 
   return tooltipContent ? (
     <Tooltip
       elementType="dt"
-      id={`feature-${featureIndex}-tooltip-${tooltipId}`}
+      id={titleId}
       isDismissible
       isOpen={isTooltipOpen}
       onToggle={toggleTooltip}
@@ -46,7 +46,9 @@ const PricingPlanFeatureTitle = ({
   ) : (
     <dt className={classProps.body.featureTitle}>
       <Icon name="check-plain" boxSize={16} />
-      <div className={classProps.body.featureTitleText}>{title}</div>
+      <div className={classProps.body.featureTitleText} id={titleId}>
+        {title}
+      </div>
     </dt>
   );
 };

@@ -28,6 +28,12 @@ const meta: Meta<typeof PricingPlanBody> = {
         defaultValue: { summary: 'undefined' },
       },
     },
+    id: {
+      control: 'text',
+      table: {
+        type: { summary: 'string' },
+      },
+    },
   },
   args: {
     description: 'This is a description for the pricing plan body:',
@@ -46,6 +52,7 @@ const meta: Meta<typeof PricingPlanBody> = {
         tooltipContent: 'This is a tooltip text',
       },
     ],
+    id: 'pricing-plan-body-id',
   },
 };
 

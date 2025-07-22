@@ -19,6 +19,7 @@ const PricingPlanDefault = () => (
       note="Another supporting text or message"
     />
     <PricingPlanBody
+      id="pricing-plan-body-default"
       features={[
         {
           title: 'Feature name',
