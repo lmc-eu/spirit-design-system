@@ -6,7 +6,7 @@ import { PricingPlanFeature } from '../../../types/pricingPlan';
 import PricingPlanFeatureTitle from '../PricingPlanFeatureTitle';
 
 const PricingPlanFeatureTitleWithRequiredProps = (props: Partial<ComponentProps<typeof PricingPlanFeatureTitle>>) => (
-  <PricingPlanFeatureTitle feature={{ title: 'Test Feature' }} featureIndex={0} {...props} />
+  <PricingPlanFeatureTitle feature={{ title: 'Test Feature' }} featureId="tier-1-feature-1" {...props} />
 );
 
 describe('PricingPlanFeatureTitle', () => {
@@ -18,7 +18,7 @@ describe('PricingPlanFeatureTitle', () => {
     const feature: PricingPlanFeature = { title: 'Basic Feature' };
 
     beforeEach(() => {
-      render(<PricingPlanFeatureTitle feature={feature} featureIndex={0} />);
+      render(<PricingPlanFeatureTitle feature={feature} featureId="tier-1-feature-1" />);
     });
 
     it('should render the feature title', () => {
@@ -34,6 +34,7 @@ describe('PricingPlanFeatureTitle', () => {
       const title = screen.getByText('Basic Feature');
       const dtElement = title.closest('dt');
 
+      expect(title).toHaveAttribute('id', 'tier-1-feature-1-title');
       expect(dtElement).toBeInTheDocument();
       expect(dtElement).toHaveClass('PricingPlanBody__featureTitle');
     });
@@ -46,7 +47,7 @@ describe('PricingPlanFeatureTitle', () => {
     };
 
     beforeEach(() => {
-      render(<PricingPlanFeatureTitle feature={feature} featureIndex={1} />);
+      render(<PricingPlanFeatureTitle feature={feature} featureId="tier-1-feature-2" />);
     });
 
     it('should render the feature title as a clickable button', () => {
@@ -81,6 +82,12 @@ describe('PricingPlanFeatureTitle', () => {
       fireEvent.click(closeButton);
       expect(tooltip).toHaveClass('is-hidden');
     });
+
+    it('should have correct tooltip ID', () => {
+      const trigger = screen.getByRole('button', { name: 'Feature with Tooltip' });
+
+      expect(trigger).toHaveAttribute('id', 'tier-1-feature-2-tooltip');
+    });
   });
 
   describe('should render feature with modal information', () => {
@@ -90,7 +97,7 @@ describe('PricingPlanFeatureTitle', () => {
     };
 
     beforeEach(() => {
-      render(<PricingPlanFeatureTitle feature={feature} featureIndex={2} />);
+      render(<PricingPlanFeatureTitle feature={feature} featureId="tier-1-feature-3" />);
     });
 
     it('should render the feature title as a clickable button', () => {
@@ -133,7 +140,7 @@ describe('PricingPlanFeatureTitle', () => {
       fireEvent.click(trigger);
 
       const modal = screen.getByRole('dialog');
-      expect(modal).toHaveAttribute('id', 'feature-2-modal');
+      expect(modal).toHaveAttribute('id', 'tier-1-feature-3-modal');
     });
   });
 
@@ -144,7 +151,7 @@ describe('PricingPlanFeatureTitle', () => {
     };
 
     beforeEach(() => {
-      render(<PricingPlanFeatureTitle feature={feature} featureIndex={3} />);
+      render(<PricingPlanFeatureTitle feature={feature} featureId="tier-1-feature-4" />);
     });
 
     it('should render the feature title', () => {
@@ -166,7 +173,7 @@ describe('PricingPlanFeatureTitle', () => {
     };
 
     beforeEach(() => {
-      render(<PricingPlanFeatureTitle feature={feature} featureIndex={4} />);
+      render(<PricingPlanFeatureTitle feature={feature} featureId="tier-1-feature-5" />);
     });
 
     it('should render modal variant instead of tooltip', () => {

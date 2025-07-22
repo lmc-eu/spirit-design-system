@@ -49,6 +49,7 @@ const PricingPlanWithFeaturesComparison = () => {
                 price={selectedValue === 'monthly' ? '39 EUR' : '35 EUR'}
               />
               <PricingPlanBody
+                id="tier-1"
                 description="Optional description"
                 features={[
                   {
@@ -81,6 +82,7 @@ const PricingPlanWithFeaturesComparison = () => {
                 price={selectedValue === 'monthly' ? '59 EUR' : '54 EUR'}
               />
               <PricingPlanBody
+                id="tier-2"
                 description="Optional description"
                 features={[
                   {
@@ -113,6 +115,7 @@ const PricingPlanWithFeaturesComparison = () => {
                 note="Another supporting text or message"
               />
               <PricingPlanBody
+                id="tier-3"
                 description="Optional description"
                 features={[
                   {

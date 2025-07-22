@@ -27,6 +27,7 @@ const PricingPlanInMatrix = () => (
             price="39 EUR"
           />
           <PricingPlanBody
+            id="tier-0"
             features={[
               {
                 title: 'Feature name',
@@ -58,6 +59,7 @@ const PricingPlanInMatrix = () => (
             price="59 EUR"
           />
           <PricingPlanBody
+            id="tier-1"
             description="Everything in Plan 1 plus:"
             features={[
               {
@@ -90,6 +92,7 @@ const PricingPlanInMatrix = () => (
             note="Another supporting text or message"
           />
           <PricingPlanBody
+            id="tier-2"
             description="Everything in Plan 2 plus:"
             features={[
               {
