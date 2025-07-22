@@ -8,6 +8,7 @@ import { SpiritElement } from './types';
 const NAME = 'offcanvas';
 const DATA_KEY = 'offcanvas';
 const EVENT_KEY = `.${DATA_KEY}`;
+const ESCAPE_KEY = 'Escape';
 
 const EVENT_SHOW = `show${EVENT_KEY}`;
 const EVENT_SHOWN = `shown${EVENT_KEY}`;
@@ -91,16 +92,25 @@ class Offcanvas extends BaseComponent {
     event.preventDefault();
   }
 
+  onEscape = (event: KeyboardEvent) => {
+    if (event.key === ESCAPE_KEY) {
+      event.preventDefault();
+      this.hide();
+    }
+  };
+
   addEventListeners() {
     EventHandler.on(this.element, 'close', (event: KeyboardEvent) => this.onDialogClose(event));
     EventHandler.on(window, 'resize', (event: Event & { target: Window }) => this.onWindowResize(event));
     EventHandler.on(window, 'click', (event: Event & { target: Window }) => this.onClick(event));
+    EventHandler.on(window, 'keydown', (event: KeyboardEvent) => this.onEscape(event));
   }
 
   removeEventListeners() {
     EventHandler.off(this.element, 'close', (event: KeyboardEvent) => this.onDialogClose(event));
     EventHandler.off(window, 'resize', (event: Event & { target: Window }) => this.onWindowResize(event));
     EventHandler.off(window, 'click', (event: Event & { target: Window }) => this.onClick(event));
+    EventHandler.on(window, 'keydown', (event: KeyboardEvent) => this.onEscape(event));
   }
 
   show(relatedTarget: HTMLElement) {
@@ -140,16 +150,25 @@ class Offcanvas extends BaseComponent {
     }
 
     this.element.classList.remove(OPEN_CLASSNAME);
-    this.element.close();
-    this.element.removeAttribute('aria-modal');
-    this.element.removeAttribute('role');
+    let ended = false;
 
-    this.removeEventListeners();
-    this.isShown = false;
+    const endHandler = (event: TransitionEvent | AnimationEvent) => {
+      if (event.target === this.element && !ended) {
+        ended = true;
+        this.element.close();
+        this.element.removeAttribute('aria-modal');
+        this.element.removeAttribute('role');
+        this.removeEventListeners();
+        this.isShown = false;
+        EventHandler.trigger(this.element, EVENT_HIDDEN);
+        this.scrollControl.enableScroll();
+        this.element.removeEventListener('transitionend', endHandler);
+        this.element.removeEventListener('animationend', endHandler);
+      }
+    };
 
-    EventHandler.trigger(this.element, EVENT_HIDDEN);
-
-    this.scrollControl.enableScroll();
+    this.element.addEventListener('transitionend', endHandler);
+    this.element.addEventListener('animationend', endHandler);
   }
 
   toggle(targetElement: HTMLElement | null) {

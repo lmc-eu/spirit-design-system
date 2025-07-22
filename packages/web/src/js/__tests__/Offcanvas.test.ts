@@ -20,6 +20,31 @@ describe('Offcanvas', () => {
     jest.clearAllMocks();
   });
 
+  describe('event listeners management', () => {
+    it('should add and remove event listeners correctly', () => {
+      fixtureEl.innerHTML = [
+        '<button id="btn" data-spirit-toggle="offcanvas"></button>',
+        '<dialog class="offcanvas"></dialog>',
+      ].join('');
+
+      const offCanvasEl = fixtureEl.querySelector('.offcanvas') as HTMLElement;
+      const offCanvas = new Offcanvas(offCanvasEl);
+
+      const spyEscape = jest.spyOn(offCanvas as any, 'onEscape');
+      offCanvas.addEventListeners();
+
+      const event = new KeyboardEvent('keydown', { key: 'Escape' });
+      window.dispatchEvent(event);
+      expect(spyEscape).toHaveBeenCalled();
+
+      spyEscape.mockClear();
+      offCanvas.removeEventListeners();
+
+      window.dispatchEvent(event);
+      expect(spyEscape).not.toHaveBeenCalled();
+    });
+  });
+
   describe('toggle', () => {
     it('should call show method if show class is not present', () => {
       fixtureEl.innerHTML = [

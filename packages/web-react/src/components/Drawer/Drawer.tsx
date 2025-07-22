@@ -11,7 +11,7 @@ import { useDrawerStyleProps } from './useDrawerStyleProps';
 
 const Drawer = (props: SpiritDrawerProps) => {
   const { children, alignmentX = DRAWER_ALIGNMENT_DEFAULT, isOpen, onClose, id, ...restProps } = props;
-  const { classProps } = useDrawerStyleProps({ drawerAlignmentX: alignmentX });
+  const { classProps } = useDrawerStyleProps({ drawerAlignmentX: alignmentX, isOpen });
   const { styleProps, props: otherProps } = useStyleProps(restProps);
 
   const contextValue = {

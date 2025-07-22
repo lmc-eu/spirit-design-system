@@ -82,7 +82,7 @@
     }
 }
 
-[open] > .ModalDialog--dockOnMobile {
+.is-open > .ModalDialog--dockOnMobile {
     @include breakpoint.down(map.get(theme.$breakpoints, tablet)) {
         --modal-translate-y: 0;
     }
