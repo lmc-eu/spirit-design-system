@@ -43,13 +43,13 @@ $footer-padding-bottom: tokens.$space-900;
 // In the next major version, we can be sure the required token will be present so no check will be needed.
 $highlighted-border-color: tokens-tools.get-variable-if-exists(
     'component-pricing-plan-highlighted-border',
-    tokens-tools.get-variable-if-exists('accent-02-border-basic', tokens.$border-basic)
+    tokens.$emotion-informative-border-basic
 );
 $highlighted-background-color: tokens-tools.get-variable-if-exists(
     'component-pricing-plan-highlighted-background',
-    tokens-tools.get-variable-if-exists('accent-02-background-subtle', tokens.$background-primary)
+    tokens.$emotion-informative-background-subtle
 );
 $highlighted-body-feature-icon-color: tokens-tools.get-variable-if-exists(
     'component-pricing-plan-highlighted-content',
-    tokens-tools.get-variable-if-exists('accent-02-content-basic', tokens.$emotion-success-content-basic)
+    tokens.$emotion-informative-content-basic
 );
