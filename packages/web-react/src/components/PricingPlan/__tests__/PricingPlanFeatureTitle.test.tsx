@@ -30,13 +30,13 @@ describe('PricingPlanFeatureTitle', () => {
       expect(screen.queryByRole('button')).not.toBeInTheDocument();
     });
 
-    it('should render inside dt element with correct styling', () => {
+    it('should render inside div element with correct styling', () => {
       const title = screen.getByText('Basic Feature');
-      const dtElement = title.closest('dt');
+      const titleElement = title.parentNode;
 
       expect(title).toHaveAttribute('id', 'tier-1-feature-1-title');
-      expect(dtElement).toBeInTheDocument();
-      expect(dtElement).toHaveClass('PricingPlanBody__featureTitle');
+      expect(titleElement).toBeInTheDocument();
+      expect(titleElement).toHaveClass('PricingPlanBody__featureTitle');
     });
   });
 
@@ -52,12 +52,14 @@ describe('PricingPlanFeatureTitle', () => {
 
     it('should render the feature title as a clickable button', () => {
       const titleButton = screen.getByRole('button', { name: 'Feature with Tooltip' });
+
       expect(titleButton).toBeInTheDocument();
       expect(titleButton).toHaveClass('text-underlined-dotted');
     });
 
     it('should render tooltip popover (initially hidden)', () => {
       const tooltip = screen.getByRole('tooltip');
+
       expect(tooltip).toHaveClass('is-hidden');
     });
 
@@ -102,6 +104,7 @@ describe('PricingPlanFeatureTitle', () => {
 
     it('should render the feature title as a clickable button', () => {
       const titleButton = screen.getByRole('button', { name: 'Feature with Modal' });
+
       expect(titleButton).toBeInTheDocument();
       expect(titleButton).toHaveClass('text-underlined-dotted');
     });

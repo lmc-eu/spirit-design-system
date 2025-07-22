@@ -41,7 +41,7 @@ describe('PricingPlanBody', () => {
       const featureList = screen.getByText('Test description').nextElementSibling;
 
       expect(featureList).toHaveClass('PricingPlanBody__featureList');
-      expect(featureList?.tagName).toBe('DL');
+      expect(featureList?.localName).toBe('ul');
       expect(featureList?.children).toHaveLength(0);
     });
   });
@@ -68,14 +68,13 @@ describe('PricingPlanBody', () => {
 
     render(<PricingPlanBody id="tier-1" features={features} />);
 
-    const titles = screen.getAllByRole('term');
-    const descriptions = screen.getAllByRole('definition');
+    const items = screen.getAllByRole('listitem', { hidden: true });
 
-    expect(titles).toHaveLength(features.length);
-    expect(descriptions).toHaveLength(features.length);
+    expect(items).toHaveLength(features.length);
 
-    titles.forEach((title, index) => {
-      const description = descriptions[index];
+    items.forEach((item) => {
+      const title = item.childNodes[0];
+      const description = item.childNodes[1];
 
       expect(title).toHaveClass('PricingPlanBody__featureTitle');
       expect(title).not.toHaveClass('Tooltip');

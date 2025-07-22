@@ -43,13 +43,13 @@ const meta: Meta<typeof PricingPlanBody> = {
         description: 'This is a description for the feature.',
       },
       {
-        title: 'Feature name with Tooltip',
+        title: 'Feature name with Modal/Tooltip',
         description: (
           <>
-            This is a <strong>description</strong> for the feature. Please click the title to see the tooltip.
+            This is a <strong>description</strong> for the feature. Please click the title to see the modal/tooltip.
           </>
         ),
-        modalContent: 'This is a modal content',
+        modalContent: 'This is a modal/tooltip content',
       },
     ],
     id: 'tier-1',

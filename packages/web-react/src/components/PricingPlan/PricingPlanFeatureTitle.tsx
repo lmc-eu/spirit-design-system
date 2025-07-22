@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React, { useState } from 'react';
 import { useToggle } from '../../hooks';
-import type { PricingPlanFeature } from '../../types/pricingPlan';
+import type { PricingPlanFeature } from '../../types';
 import { Icon } from '../Icon';
 import { Modal, ModalBody, ModalDialog, ModalHeader } from '../Modal';
 import { Tooltip, TooltipPopover, TooltipTrigger } from '../Tooltip';
@@ -24,7 +24,7 @@ const PricingPlanFeatureTitle = ({
 
   if (modalContent) {
     return (
-      <dt className={classProps.body.featureTitle}>
+      <div className={classProps.body.featureTitle}>
         <Icon name="check-plain" boxSize={16} />
         <button
           type="button"
@@ -39,14 +39,14 @@ const PricingPlanFeatureTitle = ({
             <ModalBody>{modalContent}</ModalBody>
           </ModalDialog>
         </Modal>
-      </dt>
+      </div>
     );
   }
 
   if (tooltipContent) {
     return (
       <Tooltip
-        elementType="dt"
+        elementType="div"
         id={`${featureId}-tooltip`}
         isDismissible
         isOpen={isTooltipOpen}
@@ -70,12 +70,12 @@ const PricingPlanFeatureTitle = ({
   }
 
   return (
-    <dt className={classProps.body.featureTitle}>
+    <div className={classProps.body.featureTitle}>
       <Icon name="check-plain" boxSize={16} />
       <div className={classProps.body.featureTitleText} id={`${featureId}-title`}>
         {title}
       </div>
-    </dt>
+    </div>
   );
 };
 
