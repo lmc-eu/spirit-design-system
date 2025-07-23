@@ -33,11 +33,12 @@ const PricingPlanWithFeaturesComparison = () => {
       <div className="breakout-container d-grid">
         <ScrollView direction="horizontal">
           <Matrix
+            cols={{ mobile: 1, tablet: 3 }}
             spacingX={{ mobile: 'space-600', tablet: 'space-700' }}
             marginBottom="space-800"
             UNSAFE_style={{ marginInline: 'var(--container-padding-inline)' }}
           >
-            <PricingPlan hasComparableFeatures>
+            <PricingPlan hasComparableFeatures marginBottom={{ mobile: 'space-600', tablet: 'space-0' }}>
               <PricingPlanHeader
                 action={
                   <ButtonLink href="#" size="large">
@@ -69,7 +70,7 @@ const PricingPlanWithFeaturesComparison = () => {
               />
               <PricingPlanFooter>footer</PricingPlanFooter>
             </PricingPlan>
-            <PricingPlan hasComparableFeatures>
+            <PricingPlan hasComparableFeatures marginBottom={{ mobile: 'space-600', tablet: 'space-0' }}>
               <PricingPlanHeader
                 action={
                   <ButtonLink href="#" size="large">
