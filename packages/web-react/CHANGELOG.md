@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.14.0"></a>
+
+# [3.14.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.13.0...@lmc-eu/spirit-web-react@3.14.0) (2025-07-23)
+
+### Bug Fixes
+
+- **web-react:** Fix tooltip ID generation in PricingPlanFeatureTitle [#DS-2040](https://github.com/lmc-eu/spirit-design-system/issues/DS-2040) ([7474f8f](https://github.com/lmc-eu/spirit-design-system/commit/7474f8f))
+- **web-react:** PricingPlanBody dl, dt refactor [#DS-2022](https://github.com/lmc-eu/spirit-design-system/issues/DS-2022) ([d365ffa](https://github.com/lmc-eu/spirit-design-system/commit/d365ffa))
+
+### Chores
+
+- **eslint-config:** Upgrade `eslint-config-prettier` to 9.1.2 ([6c3242e](https://github.com/lmc-eu/spirit-design-system/commit/6c3242e))
+
+### Features
+
+- **web,web-react:** Introduce Modal additional info to PricingPlan Features [#DS-2050](https://github.com/lmc-eu/spirit-design-system/issues/DS-2050) ([1653928](https://github.com/lmc-eu/spirit-design-system/commit/1653928))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="3.13.0"></a>
 
 # [3.13.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.12.0...@lmc-eu/spirit-web-react@3.13.0) (2025-07-11)

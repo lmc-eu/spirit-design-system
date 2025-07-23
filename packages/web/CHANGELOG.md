@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.12.0"></a>
+
+# [3.12.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.11.0...@lmc-eu/spirit-web@3.12.0) (2025-07-23)
+
+### Bug Fixes
+
+- **web:** Fix `PricingPlan` header rows randomly collapsing in a single-column `Matrix` in Safari ([11cbcca](https://github.com/lmc-eu/spirit-design-system/commit/11cbcca))
+- **web:** PricingPlanBody dl, dt refactor [#DS-2022](https://github.com/lmc-eu/spirit-design-system/issues/DS-2022) ([3ead6e2](https://github.com/lmc-eu/spirit-design-system/commit/3ead6e2))
+
+### Features
+
+- **web,web-react:** Introduce Modal additional info to PricingPlan Features [#DS-2050](https://github.com/lmc-eu/spirit-design-system/issues/DS-2050) ([1653928](https://github.com/lmc-eu/spirit-design-system/commit/1653928))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="3.11.0"></a>
 
 # [3.11.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.10.0...@lmc-eu/spirit-web@3.11.0) (2025-06-30)

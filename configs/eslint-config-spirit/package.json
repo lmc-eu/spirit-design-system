@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-spirit",
   "description": "ESlint configuration and preset for Spirit Design System",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": true,
   "type": "commonjs",
   "repository": {

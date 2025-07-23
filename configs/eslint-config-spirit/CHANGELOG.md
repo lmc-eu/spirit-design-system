@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.1.3"></a>
+
+## [0.1.3](https://github.com/lmc-eu/spirit-design-system/compare/eslint-config-spirit@0.1.2...eslint-config-spirit@0.1.3) (2025-07-23)
+
+### Chores
+
+- **eslint-config:** Upgrade `eslint-config-prettier` to 9.1.2 ([6c3242e](https://github.com/lmc-eu/spirit-design-system/commit/6c3242e))
+
+**Note:** Version bump only for package eslint-config-spirit
+
 <a name="0.1.2"></a>
 
 ## [0.1.2](https://github.com/lmc-eu/spirit-design-system/compare/eslint-config-spirit@0.1.1...eslint-config-spirit@0.1.2) (2025-06-09)
