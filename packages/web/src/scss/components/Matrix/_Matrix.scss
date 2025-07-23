@@ -15,8 +15,15 @@
 // 5. Trigger repaint to fix PricingPlan header rows randomly collapsing in a single-column Matrix in Safari.
 //    Source: https://www.flowradar.com/answer/causing-css-grid-elements-display-incorrectly-safari-fix-safari-desktop-ipad
 //
-//    ℹ️ Alternative solution: detecting the number of columns with a style query
+//    Using `will-change: transform` value turned out to be a bug in combination with descendants
+//    with `position: fixed` and `transform` property (e.g. Modal component).
+//    The `will-change: contents` doesn't influence the visual appearance of elements, so it's preferable temporary solution.
 //
+//    ℹ️ Alternative solution:
+//    1. Detecting the number of columns with a style query.
+//    2. Turn off subgrid for Matrix children if the number of columns is 1.
+//
+//    Re: 1.
 //    Since the Matrix column count is controlled by custom properties, we could turn off subgrid for Matrix children
 //    based on a style query which is supported in Safari (but not in all baseline browsers) as of July 2025:
 //
@@ -78,7 +85,7 @@ $_default-rows: 100; // 1.
     display: grid;
     grid-template-columns: repeat(var(--#{tokens.$css-variable-prefix}matrix-columns-internal), 1fr); // 2.a
     grid-template-rows: repeat(var(--#{tokens.$css-variable-prefix}matrix-rows-internal), auto); // 2.a
-    will-change: transform; // 5.
+    will-change: contents; // 5.
 }
 
 // stylelint-disable-next-line selector-max-universal -- 3.
