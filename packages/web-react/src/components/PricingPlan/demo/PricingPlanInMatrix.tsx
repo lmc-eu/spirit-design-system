@@ -32,6 +32,15 @@ const PricingPlanInMatrix = () => (
               {
                 title: 'Feature name',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+                modalContent: (
+                  <>
+                    {[...Array(20)].map((_, index) => {
+                      const key = `paragraph-${index}`;
+
+                      return <p key={key}>This is a really long text that should be wrapped in a paragraph.</p>;
+                    })}
+                  </>
+                ),
               },
               {
                 title: 'Feature name',

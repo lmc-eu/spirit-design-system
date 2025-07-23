@@ -251,9 +251,52 @@
                           <svg width="16" height="16" aria-hidden="true">
                             <use xlink:href="/assets/icons/svg/sprite.svg#check-plain" />
                           </svg>
-                          <div class="PricingPlanBody__featureTitleText">
+
+                          <button
+                            type="button"
+                            class="PricingPlanBody__featureTitleText text-underlined-dotted"
+                            data-spirit-toggle="modal"
+                            data-spirit-target="#pricing-plan-scroll-view-modal"
+                            aria-controls="pricing-plan-scroll-view-modal"
+                            aria-expanded="false"
+                          >
                             Feature name
-                          </div>
+                          </button>
+
+                          <dialog id="pricing-plan-scroll-view-modal" class="Modal Modal--center" aria-labelledby="pricing-plan-scroll-view-modal-title">
+
+                            <article class="ModalDialog ModalDialog--scrollable">
+
+                              <!-- ModalHeader: start -->
+                              <header class="ModalHeader">
+                                <h2 id="pricing-plan-scroll-view-modal-title" class="ModalHeader__title">
+                                  Feature name
+                                </h2>
+                                <button
+                                  type="button"
+                                  class="Button Button--tertiary Button--symmetrical Button--medium"
+                                  data-spirit-dismiss="modal"
+                                  data-spirit-target="#pricing-plan-scroll-view-modal"
+                                  aria-controls="pricing-plan-scroll-view-modal"
+                                  aria-expanded="false"
+                                >
+                                  <svg width="24" height="24" aria-hidden="true">
+                                    <use xlink:href="/assets/icons/svg/sprite.svg#close" />
+                                  </svg>
+                                  <span class="accessibility-hidden">Close</span>
+                                </button>
+                              </header>
+
+                              <div class="ModalBody">
+                                {{setVar "paragraphs" "1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11" "12" "13" "14" "15" "16" "17" "18" "19" "20"}}
+                                {{#each @root.paragraphs as |paragraph|}}
+                                <p>This is a really long text that should be wrapped in a paragraph.</p>
+                                {{/each}}
+                              </div>
+
+                            </article>
+
+                          </dialog>
                         </div>
                         <div class="PricingPlanBody__featureDescription">
                           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -501,13 +544,16 @@
             <div
               class="Matrix mb-800"
               style="
+                --spirit-matrix-columns: 1;
+                --spirit-matrix-columns-tablet: 3;
                 --spirit-matrix-spacing-x: var(--spirit-space-600);
                 --spirit-matrix-spacing-x-tablet: var(--spirit-space-700);
+                --spirit-matrix-spacing-y: var(--spirit-space-0);
                 margin-inline: var(--container-padding-inline);
               "
             >
 
-              <article class="PricingPlan PricingPlan--comparableFeatures">
+              <article class="PricingPlan PricingPlan--comparableFeatures mb-600 mb-tablet-0">
                 <div class="PricingPlan__layout">
                   <header class="PricingPlanHeader">
                     <div class="PricingPlanHeader__content">
@@ -570,7 +616,7 @@
                 </div>
               </article>
 
-              <article class="PricingPlan PricingPlan--comparableFeatures" >
+              <article class="PricingPlan PricingPlan--comparableFeatures mb-600 mb-tablet-0" >
                 <div class="PricingPlan__layout">
                   <header class="PricingPlanHeader">
                     <div class="PricingPlanHeader__badge">Recommended</div>
