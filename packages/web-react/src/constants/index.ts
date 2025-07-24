@@ -1,3 +1,4 @@
+export * from './classes';
 export * from './colors';
 export * from './dictionaries';
 export * from './direction';

@@ -18,4 +18,4 @@ export const CLASS_NAME_LINK_DISABLED = 'link-disabled';
 
 export const DEFAULT_TOAST_AUTO_CLOSE_INTERVAL = 3000; // milliseconds
 
-export const EVENT_KEY = 'Escape';
+export const EVENT_KEY_ESCAPE = 'Escape';
