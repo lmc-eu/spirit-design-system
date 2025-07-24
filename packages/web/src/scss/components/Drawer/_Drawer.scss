@@ -51,7 +51,7 @@
     justify-content: end;
 }
 
-.Drawer[open] {
+.Drawer.is-open {
     --#{tokens.$css-variable-prefix}drawer-translate-x: 0%;
 
     visibility: visible;

@@ -2,6 +2,14 @@ import { clearFixture, getFixture } from '../../../tests/helpers/fixture';
 import EventHandler from '../dom/EventHandler';
 import Offcanvas from '../Offcanvas';
 
+// Mock the executeAfterTransition function
+jest.mock('../utils/Transitions', () => ({
+  executeAfterTransition: jest.fn((element, callback) => {
+    // Simulate immediate execution for tests
+    callback();
+  }),
+}));
+
 describe('Offcanvas', () => {
   let fixtureEl: HTMLElement;
 
@@ -131,35 +139,40 @@ describe('Offcanvas', () => {
   });
 
   describe('hide', () => {
-    it('should add `hiding` class during closing and remover `show` & `hiding` classes on end', async () => {
+    it('should remove is-open class and wait for transition before closing', async () => {
       fixtureEl.innerHTML = [
         '<button id="btn" data-spirit-toggle="offcanvas"></button>',
         '<dialog class="offcanvas"></dialog>',
       ].join('');
 
-      const offCanvasEl = fixtureEl.querySelector('.offcanvas') as HTMLElement;
+      const offCanvasEl = fixtureEl.querySelector('.offcanvas') as HTMLDialogElement;
       const triggerEl = fixtureEl.querySelector('button') as HTMLElement;
       const offCanvas = new Offcanvas(offCanvasEl);
 
+      // First show the offcanvas
+      offCanvas.show(triggerEl);
+
+      expect(offCanvasEl).toHaveClass('is-open');
+
       offCanvasEl.addEventListener('hide.offcanvas', () => {
-        expect(offCanvasEl).not.toHaveClass('showing');
-        expect(offCanvasEl).toHaveClass('show');
+        expect(offCanvasEl).toHaveClass('is-open');
       });
 
       offCanvasEl.addEventListener('hidden.offcanvas', () => {
-        expect(offCanvasEl).not.toHaveClass('hiding');
-        expect(offCanvasEl).not.toHaveClass('show');
+        expect(offCanvasEl).not.toHaveClass('is-open');
       });
 
-      await offCanvas.show(triggerEl);
-      offCanvasEl.addEventListener('shown.offcanvas', () => {
-        offCanvas.hide();
-        expect(offCanvasEl).not.toHaveClass('showing');
-        expect(offCanvasEl).toHaveClass('hiding');
-      });
+      // Hide the offcanvas
+      offCanvas.hide();
+
+      // Should remove is-open class immediately
+      expect(offCanvasEl).not.toHaveClass('is-open');
+
+      // Should close after transition (mocked to execute immediately)
+      expect(offCanvasEl.close).toHaveBeenCalled();
     });
 
-    it('should do nothing if already shown', () => {
+    it('should do nothing if already hidden', () => {
       fixtureEl.innerHTML = '<dialog class="offcanvas"></dialog>';
 
       const spyTrigger = jest.spyOn(EventHandler, 'trigger');
@@ -179,14 +192,14 @@ describe('Offcanvas', () => {
         '<dialog class="offcanvas"></dialog>',
       ].join('');
 
-      const offCanvasEl = fixtureEl.querySelector('dialog') as HTMLElement;
+      const offCanvasEl = fixtureEl.querySelector('dialog') as HTMLDialogElement;
       const triggerEl = fixtureEl.querySelector('button') as HTMLElement;
       const offCanvas = new Offcanvas(offCanvasEl);
       const spy = jest.spyOn(offCanvas, 'hide');
       await offCanvas.show(triggerEl);
 
       offCanvasEl.addEventListener('hidden.offcanvas', () => {
-        expect(offCanvasEl).not.toHaveClass('show');
+        expect(offCanvasEl).not.toHaveClass('is-open');
         expect(spy).toHaveBeenCalled();
       });
 
@@ -234,7 +247,7 @@ describe('Offcanvas', () => {
       const offCanvasEl = fixtureEl.querySelector('#offcanvas-div-1') as HTMLElement;
 
       offCanvasEl.addEventListener('shown.offcanvas', () => {
-        expect(offCanvasEl).toHaveClass('show');
+        expect(offCanvasEl).toHaveClass('is-open');
         expect(target.checked).toBeTruthy();
       });
 

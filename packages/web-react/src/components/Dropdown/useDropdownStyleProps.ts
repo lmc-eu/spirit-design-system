@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import { CLASS_NAME_OPEN } from '../../constants';
 import { AlignmentPropertyType, useAlignmentClass, useClassNamePrefix } from '../../hooks';
 import { DropdownStyleProps } from '../../types';
 
@@ -17,7 +18,7 @@ export const useDropdownStyleProps = (props: DropdownStyleProps = { isOpen: fals
   const dropdownRootClass = useClassNamePrefix('Dropdown');
   const dropdownPopoverClass = `${dropdownRootClass}Popover`;
   const expandedClass = isOpen ? 'is-expanded' : '';
-  const openClass = isOpen ? 'is-open' : '';
+  const openClass = isOpen ? CLASS_NAME_OPEN : '';
 
   const rootClass = classNames(dropdownRootClass, {
     [useAlignmentClass(dropdownRootClass, alignmentX as AlignmentPropertyType, 'alignmentX')]: alignmentX,
