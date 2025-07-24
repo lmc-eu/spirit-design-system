@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.15.0"></a>
+
+# [3.15.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.14.0...@lmc-eu/spirit-web-react@3.15.0) (2025-07-24)
+
+### Features
+
+- **web-react,web:** Extend PricingPlan demo about showcase with Modal inside Matrix [#DS-2051](https://github.com/lmc-eu/spirit-design-system/issues/DS-2051) ([9818b35](https://github.com/lmc-eu/spirit-design-system/commit/9818b35))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="3.14.0"></a>
 
 # [3.14.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.13.0...@lmc-eu/spirit-web-react@3.14.0) (2025-07-23)

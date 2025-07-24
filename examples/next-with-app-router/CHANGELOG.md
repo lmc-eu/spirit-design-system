@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.4.10"></a>
+
+## [0.4.10](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-example-next-with-app-router@0.4.9...@almacareer/spirit-example-next-with-app-router@0.4.10) (2025-07-24)
+
+Miscellaneous changes
+
+**Note:** Version bump only for package @almacareer/spirit-example-next-with-app-router
+
 <a name="0.4.9"></a>
 
 ## [0.4.9](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-example-next-with-app-router@0.4.8...@almacareer/spirit-example-next-with-app-router@0.4.9) (2025-07-23)
