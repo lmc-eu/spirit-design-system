@@ -2,6 +2,8 @@ import { useEffect, MutableRefObject } from 'react';
 import { useScrollControl } from '../../hooks';
 import { waitForTransitionEnd } from '../../utils';
 
+const OPEN_CLASS = 'is-open';
+
 export const useDialog = (ref: MutableRefObject<HTMLDialogElement | null>, isOpen: boolean) => {
   useEffect(() => {
     const dialogNode = ref?.current;
@@ -10,10 +12,10 @@ export const useDialog = (ref: MutableRefObject<HTMLDialogElement | null>, isOpe
       if (isOpen && dialogNode.showModal) {
         dialogNode.showModal();
         // Add visual state class to display dialog in the viewport
-        dialogNode.classList.add('is-open');
+        dialogNode.classList.add(OPEN_CLASS);
       } else if (dialogNode.close) {
         // Remove visual state class first to trigger transition
-        dialogNode.classList.remove('is-open');
+        dialogNode.classList.remove(OPEN_CLASS);
 
         // Wait for transition to complete before closing
         waitForTransitionEnd(dialogNode).then(() => {
@@ -28,7 +30,7 @@ export const useDialog = (ref: MutableRefObject<HTMLDialogElement | null>, isOpe
   const openDialog = () => {
     if (ref?.current) {
       ref.current.showModal();
-      ref.current.classList.add('is-open');
+      ref.current.classList.add(OPEN_CLASS);
     }
   };
 
@@ -36,7 +38,7 @@ export const useDialog = (ref: MutableRefObject<HTMLDialogElement | null>, isOpe
     const dialogNode = ref?.current;
     if (dialogNode && dialogNode.open) {
       // Remove visual state class first to trigger transition
-      dialogNode.classList.remove('is-open');
+      dialogNode.classList.remove(OPEN_CLASS);
 
       // Wait for transition to complete before closing
       waitForTransitionEnd(dialogNode).then(() => {
