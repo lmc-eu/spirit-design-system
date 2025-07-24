@@ -78,6 +78,10 @@ However, you can also explicitly set the `rows` prop if you want to control the 
 
 ⚠️ For multi-line Matrix layouts, the number of item rows `itemRows` must be set explicitly. This is required by the [`subgrid`][mdn-subgrid] feature.
 
+⚠️ Be careful when adding margin to Matrix items. It is a known issue that
+adding a top margin to an item causes a [rendering bug][jira-pricing-safari-bug]
+in Safari.
+
 ## Matrix Vs. Grid
 
 The key difference of [Grid][grid] and Matrix is that Matrix is capable of
@@ -118,6 +122,7 @@ If you need more control over the styling of a component, you can use [style pro
 and [escape hatches][readme-escape-hatches].
 
 [grid]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Grid/README.md
+[jira-pricing-safari-bug]: https://jira.almacareer.tech/browse/DS-2051
 [mdn-grid]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout
 [mdn-subgrid]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Subgrid
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
