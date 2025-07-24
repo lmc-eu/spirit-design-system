@@ -11,32 +11,6 @@
 // 3. Force subgrid on direct descendants. Only effective when the descendant's `display` is set to `grid`.
 //
 // 4. Place the descendants in the Matrix layout and make them inherit its grid rows.
-//
-// 5. Trigger repaint to fix PricingPlan header rows randomly collapsing in a single-column Matrix in Safari.
-//    Source: https://www.flowradar.com/answer/causing-css-grid-elements-display-incorrectly-safari-fix-safari-desktop-ipad
-//
-//    Using `will-change: transform` value turned out to be a bug in combination with descendants
-//    with `position: fixed` and `transform` property (e.g. Modal component).
-//    The `will-change: contents` doesn't influence the visual appearance of elements, so it's preferable temporary solution.
-//
-//    ℹ️ Alternative solution:
-//    1. Detecting the number of columns with a style query.
-//    2. Turn off subgrid for Matrix children if the number of columns is 1.
-//
-//    Re: 1.
-//    Since the Matrix column count is controlled by custom properties, we could turn off subgrid for Matrix children
-//    based on a style query which is supported in Safari (but not in all baseline browsers) as of July 2025:
-//
-//    ```
-//    @container style(--spirit-matrix-columns-internal: 1) {
-//       .Matrix > * {
-//         grid-template-rows: <BUT WHAT NOW?> !important;
-//       }
-//    }
-//    ```
-//
-//    We don't use this approach because it would lead to mixing component styles: it either requires forcing a number
-//    of rows of Matrix children from outside, or reading a custom property of Matrix in the PricingPlan component.
 
 @use '@tokens' as tokens;
 @use '../../tools/reset';
@@ -85,7 +59,6 @@ $_default-rows: 100; // 1.
     display: grid;
     grid-template-columns: repeat(var(--#{tokens.$css-variable-prefix}matrix-columns-internal), 1fr); // 2.a
     grid-template-rows: repeat(var(--#{tokens.$css-variable-prefix}matrix-rows-internal), auto); // 2.a
-    will-change: contents; // 5.
 }
 
 // stylelint-disable-next-line selector-max-universal -- 3.

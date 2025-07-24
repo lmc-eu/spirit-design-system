@@ -185,6 +185,10 @@ for tablets and larger screens, with a single column of content on mobile:
 `--spirit-matrix-item-rows` must be set explicitly. This is required by the
 [`subgrid`][mdn-subgrid] feature.
 
+⚠️ Be careful when adding margin to Matrix items. It is a known issue that
+adding a top margin to an item causes a [rendering bug][jira-pricing-safari-bug]
+in Safari.
+
 ### Custom Vertical Spacing
 
 By default, Matrix creates a zero-row gap, which is probably what you want for
@@ -236,6 +240,7 @@ As of now, only **single-column components** are supported in Matrix.
 [pricing-plan]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/PricingPlan/README.md
 [scroll-view]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/ScrollView/README.md#horizontal-scrolling
 [stack]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Stack/README.md
+[jira-pricing-safari-bug]: https://jira.almacareer.tech/browse/DS-2051
 [mdn-grid]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout
 [mdn-grid-row]: https://developer.mozilla.org/en-US/docs/Glossary/Grid_Row
 [mdn-subgrid]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Subgrid
