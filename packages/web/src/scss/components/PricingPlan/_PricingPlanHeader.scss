@@ -52,7 +52,7 @@
     @include typography.generate(theme.$header-title-typography);
 
     grid-row-start: title;
-    margin-bottom: 0;
+    margin-bottom: theme.$header-title-margin-bottom;
 }
 
 .PricingPlanHeader__subtitle {
