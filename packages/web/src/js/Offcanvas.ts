@@ -1,13 +1,21 @@
 import { breakpoints } from '@lmc-eu/spirit-design-tokens';
 import BaseComponent from './BaseComponent';
 import { warning } from './common/utilities';
+import { CLASS_NAME_OPEN } from './constants';
 import EventHandler from './dom/EventHandler';
-import { ScrollControl, SpiritConfig, enableDismissTrigger, enableToggleTrigger } from './utils';
+import {
+  ScrollControl,
+  SpiritConfig,
+  enableDismissTrigger,
+  enableToggleTrigger,
+  executeAfterTransition,
+} from './utils';
 import { SpiritElement } from './types';
 
 const NAME = 'offcanvas';
 const DATA_KEY = 'offcanvas';
 const EVENT_KEY = `.${DATA_KEY}`;
+const ESCAPE_KEY = 'Escape';
 
 const EVENT_SHOW = `show${EVENT_KEY}`;
 const EVENT_SHOWN = `shown${EVENT_KEY}`;
@@ -15,16 +23,24 @@ const EVENT_HIDE = `hide${EVENT_KEY}`;
 const EVENT_HIDDEN = `hidden${EVENT_KEY}`;
 
 const OFFCANVAS_BREAKPOINT = parseInt(breakpoints.desktop, 10);
-const OPEN_CLASSNAME = 'is-open';
 
 const VARIABLE_BREAKPOINT_DESKTOP = '--spirit-breakpoint-desktop';
 
+type Config = {
+  closableOnBackdropClick: boolean;
+  closableOnEscapeKey: boolean;
+};
+
 const Default = {
   breakpointDesktop: OFFCANVAS_BREAKPOINT,
+  closableOnBackdropClick: true,
+  closableOnEscapeKey: true,
 };
 
 const DefaultType = {
   breakpointDesktop: 'number',
+  closableOnBackdropClick: 'boolean',
+  closableOnEscapeKey: 'boolean',
 };
 
 class Offcanvas extends BaseComponent {
@@ -69,6 +85,12 @@ class Offcanvas extends BaseComponent {
     if (event.target === this.element || event.target.dataset.spiritDismiss) {
       event.preventDefault();
       event.stopPropagation();
+
+      // Check if backdrop click is enabled for closing
+      if (event.target === this.element && !(this.config as Config)?.closableOnBackdropClick) {
+        return;
+      }
+
       this.hide();
     }
   }
@@ -91,16 +113,31 @@ class Offcanvas extends BaseComponent {
     event.preventDefault();
   }
 
+  onEscape = (event: KeyboardEvent) => {
+    if (event.key === ESCAPE_KEY) {
+      event.preventDefault();
+
+      // Check if escape key is enabled for closing
+      if (!(this.config as Config)?.closableOnEscapeKey) {
+        return;
+      }
+
+      this.hide();
+    }
+  };
+
   addEventListeners() {
     EventHandler.on(this.element, 'close', (event: KeyboardEvent) => this.onDialogClose(event));
     EventHandler.on(window, 'resize', (event: Event & { target: Window }) => this.onWindowResize(event));
     EventHandler.on(window, 'click', (event: Event & { target: Window }) => this.onClick(event));
+    EventHandler.on(document, 'keydown', (event: KeyboardEvent) => this.onEscape(event));
   }
 
   removeEventListeners() {
     EventHandler.off(this.element, 'close', (event: KeyboardEvent) => this.onDialogClose(event));
     EventHandler.off(window, 'resize', (event: Event & { target: Window }) => this.onWindowResize(event));
     EventHandler.off(window, 'click', (event: Event & { target: Window }) => this.onClick(event));
+    EventHandler.off(document, 'keydown', (event: KeyboardEvent) => this.onEscape(event));
   }
 
   show(relatedTarget: HTMLElement) {
@@ -114,7 +151,12 @@ class Offcanvas extends BaseComponent {
       return;
     }
 
-    this.element.classList.add(OPEN_CLASSNAME);
+    // Close the dialog first if it's already open to prevent InvalidStateError
+    if (this.element.open) {
+      this.element.close();
+    }
+
+    this.element.classList.add(CLASS_NAME_OPEN);
     this.element.showModal();
     relatedTarget.setAttribute('aria-expanded', 'true');
     this.element.setAttribute('aria-modal', 'true');
@@ -139,17 +181,22 @@ class Offcanvas extends BaseComponent {
       return;
     }
 
-    this.element.classList.remove(OPEN_CLASSNAME);
-    this.element.close();
-    this.element.removeAttribute('aria-modal');
-    this.element.removeAttribute('role');
+    // Remove visual state class first to trigger transition
+    this.element.classList.remove(CLASS_NAME_OPEN);
 
-    this.removeEventListeners();
-    this.isShown = false;
+    // Wait for transition to complete before closing
+    executeAfterTransition(this.element, () => {
+      this.element.close();
+      this.element.removeAttribute('aria-modal');
+      this.element.removeAttribute('role');
 
-    EventHandler.trigger(this.element, EVENT_HIDDEN);
+      this.removeEventListeners();
+      this.isShown = false;
 
-    this.scrollControl.enableScroll();
+      EventHandler.trigger(this.element, EVENT_HIDDEN);
+
+      this.scrollControl.enableScroll();
+    });
   }
 
   toggle(targetElement: HTMLElement | null) {
