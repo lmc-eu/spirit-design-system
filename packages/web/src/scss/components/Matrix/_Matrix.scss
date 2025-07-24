@@ -59,6 +59,7 @@ $_default-rows: 100; // 1.
     display: grid;
     grid-template-columns: repeat(var(--#{tokens.$css-variable-prefix}matrix-columns-internal), 1fr); // 2.a
     grid-template-rows: repeat(var(--#{tokens.$css-variable-prefix}matrix-rows-internal), auto); // 2.a
+    width: 100%;
 }
 
 // stylelint-disable-next-line selector-max-universal -- 3.
