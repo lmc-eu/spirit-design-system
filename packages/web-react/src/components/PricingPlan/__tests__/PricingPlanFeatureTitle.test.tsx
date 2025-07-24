@@ -125,7 +125,7 @@ describe('PricingPlanFeatureTitle', () => {
       ).toBeInTheDocument();
     });
 
-    it('should close modal when clicking close button', () => {
+    it('should close modal when clicking close button', async () => {
       const trigger = screen.getByRole('button', { name: 'Feature with Modal' });
 
       fireEvent.click(trigger);
@@ -133,6 +133,13 @@ describe('PricingPlanFeatureTitle', () => {
 
       const closeButton = screen.getByRole('button', { name: 'Close' });
       fireEvent.click(closeButton);
+
+      // Wait for the transition to complete
+      await new Promise<void>((resolve) => {
+        setTimeout(() => {
+          resolve();
+        }, 100);
+      });
 
       expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
     });

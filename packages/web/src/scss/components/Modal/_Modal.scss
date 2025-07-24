@@ -30,6 +30,10 @@
         background-color: transparent;
     }
 
+    &:not([open]) {
+        display: none;
+    }
+
     @media (prefers-reduced-motion: no-preference) {
         transition-property: visibility, opacity;
         transition-duration: theme.$transition-duration;
@@ -62,7 +66,7 @@
     --modal-transform-origin: bottom center;
 }
 
-.Modal[open] {
+.Modal.is-open {
     --modal-scale: 1;
     --modal-translate-y: 0;
 
