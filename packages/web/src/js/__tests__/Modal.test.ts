@@ -2,16 +2,30 @@ import { clearFixture, getFixture } from '../../../tests/helpers/fixture';
 import EventHandler from '../dom/EventHandler';
 import Modal from '../Modal';
 
+// Mock the executeAfterTransition function
+jest.mock('../utils/Transitions', () => ({
+  executeAfterTransition: jest.fn((element, callback) => {
+    // Simulate immediate execution for tests
+    callback();
+  }),
+}));
+
 describe('Modal', () => {
   let fixtureEl: Element;
 
   beforeAll(() => {
     fixtureEl = getFixture();
+    // Dialog element do not work in Jest tests due to issue in jsdom
+    // `TypeError: this.element.showModal is not a function`
+    // @see: https://github.com/jsdom/jsdom/issues/3294
+    HTMLDialogElement.prototype.showModal = jest.fn();
+    HTMLDialogElement.prototype.close = jest.fn();
   });
 
   afterEach(() => {
     clearFixture();
     document.body.classList.remove('is-open');
+    jest.clearAllMocks();
   });
 
   describe('constructor', () => {
@@ -41,6 +55,18 @@ describe('Modal', () => {
 
       expect(spy).not.toHaveBeenCalled();
     });
+
+    it('should add is-open class after showing modal', () => {
+      fixtureEl.innerHTML = '<dialog class="Modal"><div class="Modal__content"></div></dialog>';
+
+      const modalEl = fixtureEl.querySelector('.Modal') as HTMLDialogElement;
+      const modal = new Modal(modalEl);
+
+      modal.show();
+
+      expect(modalEl.classList.contains('is-open')).toBe(true);
+      expect(modalEl.showModal).toHaveBeenCalled();
+    });
   });
 
   describe('hide', () => {
@@ -55,6 +81,43 @@ describe('Modal', () => {
       modal.hide(event);
 
       expect.anything();
+    });
+
+    it('should remove is-open class and wait for transition before closing', () => {
+      fixtureEl.innerHTML = '<dialog class="Modal"><div class="Modal__content"></div></dialog>';
+
+      const modalEl = fixtureEl.querySelector('.Modal') as HTMLDialogElement;
+      const modal = new Modal(modalEl);
+
+      modal.show();
+      expect(modalEl.classList.contains('is-open')).toBe(true);
+
+      const event = new Event('click');
+      Object.defineProperty(event, 'target', { value: modalEl });
+
+      modal.hide(event);
+
+      // Should remove is-open class immediately
+      expect(modalEl.classList.contains('is-open')).toBe(false);
+
+      // Should close after transition (mocked to execute immediately)
+      expect(modalEl.close).toHaveBeenCalled();
+    });
+
+    it('should handle target without close function', () => {
+      fixtureEl.innerHTML = '<div class="Modal"><div class="Modal__content"></div></div>';
+
+      const modalEl = fixtureEl.querySelector('.Modal') as HTMLElement;
+      const modal = new Modal(modalEl);
+
+      const event = new Event('click');
+      Object.defineProperty(event, 'target', { value: modalEl });
+
+      modal.hide(event);
+
+      // Should not call executeAfterTransition for elements without close function
+      // Since it's a div, it won't have a close method
+      expect(modalEl).not.toHaveProperty('close');
     });
   });
 

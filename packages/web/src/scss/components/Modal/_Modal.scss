@@ -70,7 +70,7 @@
     --modal-transform-origin: bottom center;
 }
 
-.Modal[open] {
+.Modal.is-open {
     --modal-scale: 1;
     --modal-translate-y: 0;
 

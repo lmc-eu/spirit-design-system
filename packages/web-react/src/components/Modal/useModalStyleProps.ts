@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { AlignmentX, AlignmentY } from '../../constants';
+import { AlignmentX, AlignmentY, CLASS_NAME_OPEN } from '../../constants';
 import { useClassNamePrefix } from '../../hooks';
 import { AlignmentXDictionaryType, AlignmentYDictionaryType } from '../../types';
 
@@ -7,6 +7,7 @@ export interface ModalStylesProps {
   footerAlignment?: AlignmentXDictionaryType;
   isDockedOnMobile?: boolean;
   isExpandedOnMobile?: boolean;
+  isOpen?: boolean;
   isScrollable?: boolean;
   modalAlignment?: AlignmentYDictionaryType;
 }
@@ -31,6 +32,7 @@ export function useModalStyleProps({
   footerAlignment = AlignmentX.RIGHT,
   isDockedOnMobile = false,
   isExpandedOnMobile = false,
+  isOpen = false,
   isScrollable = false,
   modalAlignment = AlignmentY.CENTER,
 }: ModalStylesProps = {}): ModalStylesReturn {
@@ -55,8 +57,12 @@ export function useModalStyleProps({
     center: `${modalFooterClass}--center`,
     right: `${modalFooterClass}--right`,
   };
+
   const classProps = {
-    root: classNames(modalClass, { [modalAlignClasses[modalAlignment]]: modalAlignment }),
+    root: classNames(modalClass, {
+      [modalAlignClasses[modalAlignment]]: modalAlignment,
+      [CLASS_NAME_OPEN]: isOpen,
+    }),
     dialog: classNames(modalDialogClass, {
       [modalDialogDockedOnMobileClass]: isDockedOnMobile,
       [modalDialogExpandedOnMobileClass]: isExpandedOnMobile,
