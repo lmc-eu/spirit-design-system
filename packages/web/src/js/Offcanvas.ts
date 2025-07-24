@@ -14,6 +14,7 @@ import { SpiritElement } from './types';
 const NAME = 'offcanvas';
 const DATA_KEY = 'offcanvas';
 const EVENT_KEY = `.${DATA_KEY}`;
+const ESCAPE_KEY = 'Escape';
 
 const EVENT_SHOW = `show${EVENT_KEY}`;
 const EVENT_SHOWN = `shown${EVENT_KEY}`;
@@ -25,12 +26,21 @@ const OPEN_CLASSNAME = 'is-open';
 
 const VARIABLE_BREAKPOINT_DESKTOP = '--spirit-breakpoint-desktop';
 
+type Config = {
+  closableOnBackdropClick: boolean;
+  closableOnEscapeKey: boolean;
+};
+
 const Default = {
   breakpointDesktop: OFFCANVAS_BREAKPOINT,
+  closableOnBackdropClick: true,
+  closableOnEscapeKey: true,
 };
 
 const DefaultType = {
   breakpointDesktop: 'number',
+  closableOnBackdropClick: 'boolean',
+  closableOnEscapeKey: 'boolean',
 };
 
 class Offcanvas extends BaseComponent {
@@ -75,6 +85,12 @@ class Offcanvas extends BaseComponent {
     if (event.target === this.element || event.target.dataset.spiritDismiss) {
       event.preventDefault();
       event.stopPropagation();
+
+      // Check if backdrop click is enabled for closing
+      if (event.target === this.element && !(this.config as Config)?.closableOnBackdropClick) {
+        return;
+      }
+
       this.hide();
     }
   }
@@ -97,16 +113,31 @@ class Offcanvas extends BaseComponent {
     event.preventDefault();
   }
 
+  onEscape = (event: KeyboardEvent) => {
+    if (event.key === ESCAPE_KEY) {
+      event.preventDefault();
+
+      // Check if escape key is enabled for closing
+      if (!(this.config as Config)?.closableOnEscapeKey) {
+        return;
+      }
+
+      this.hide();
+    }
+  };
+
   addEventListeners() {
     EventHandler.on(this.element, 'close', (event: KeyboardEvent) => this.onDialogClose(event));
     EventHandler.on(window, 'resize', (event: Event & { target: Window }) => this.onWindowResize(event));
     EventHandler.on(window, 'click', (event: Event & { target: Window }) => this.onClick(event));
+    EventHandler.on(document, 'keydown', (event: KeyboardEvent) => this.onEscape(event));
   }
 
   removeEventListeners() {
     EventHandler.off(this.element, 'close', (event: KeyboardEvent) => this.onDialogClose(event));
     EventHandler.off(window, 'resize', (event: Event & { target: Window }) => this.onWindowResize(event));
     EventHandler.off(window, 'click', (event: Event & { target: Window }) => this.onClick(event));
+    EventHandler.off(document, 'keydown', (event: KeyboardEvent) => this.onEscape(event));
   }
 
   show(relatedTarget: HTMLElement) {

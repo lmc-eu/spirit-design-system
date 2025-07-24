@@ -11,7 +11,7 @@ import { useModalStyleProps } from './useModalStyleProps';
 
 const Modal = (props: SpiritModalProps) => {
   const { children, alignmentY = AlignmentY.CENTER, isOpen, onClose, id, ...restProps } = props;
-  const { classProps } = useModalStyleProps({ modalAlignment: alignmentY });
+  const { classProps } = useModalStyleProps({ isOpen, modalAlignment: alignmentY });
   const { styleProps, props: otherProps } = useStyleProps(restProps);
 
   const contextValue = {

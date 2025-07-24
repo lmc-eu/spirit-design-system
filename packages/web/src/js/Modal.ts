@@ -16,6 +16,8 @@ const NAME = 'modal';
 
 const MODAL_TOGGLE_SELECTOR = '[data-spirit-toggle="modal"]';
 
+const OPEN_CLASSNAME = 'is-open';
+
 type Config = {
   closeOnEscapeKeyDown: boolean;
 };
@@ -130,7 +132,7 @@ class Modal extends BaseComponent {
 
     this.element?.showModal();
     // Add visual state class after showing modal
-    this.element?.classList.add('is-open');
+    this.element?.classList.add(OPEN_CLASSNAME);
 
     this.addEventListeners();
     this.isShown = true;
@@ -158,7 +160,7 @@ class Modal extends BaseComponent {
 
     if (typeof target.close === 'function') {
       // Remove visual state class first to trigger transition
-      target.classList.remove('is-open');
+      target.classList.remove(OPEN_CLASSNAME);
 
       // Wait for transition to complete before closing
       executeAfterTransition(target, () => {

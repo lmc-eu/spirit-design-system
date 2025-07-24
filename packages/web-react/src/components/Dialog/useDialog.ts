@@ -9,7 +9,7 @@ export const useDialog = (ref: MutableRefObject<HTMLDialogElement | null>, isOpe
     if (dialogNode) {
       if (isOpen && dialogNode.showModal) {
         dialogNode.showModal();
-        // Add visual state class after showing dialog
+        // Add visual state class to display dialog in the viewport
         dialogNode.classList.add('is-open');
       } else if (dialogNode.close) {
         // Remove visual state class first to trigger transition
