@@ -2,7 +2,13 @@ import { breakpoints } from '@lmc-eu/spirit-design-tokens';
 import BaseComponent from './BaseComponent';
 import { warning } from './common/utilities';
 import EventHandler from './dom/EventHandler';
-import { ScrollControl, SpiritConfig, enableDismissTrigger, enableToggleTrigger } from './utils';
+import {
+  ScrollControl,
+  SpiritConfig,
+  enableDismissTrigger,
+  enableToggleTrigger,
+  executeAfterTransition,
+} from './utils';
 import { SpiritElement } from './types';
 
 const NAME = 'offcanvas';
@@ -114,6 +120,11 @@ class Offcanvas extends BaseComponent {
       return;
     }
 
+    // Close the dialog first if it's already open to prevent InvalidStateError
+    if (this.element.open) {
+      this.element.close();
+    }
+
     this.element.classList.add(OPEN_CLASSNAME);
     this.element.showModal();
     relatedTarget.setAttribute('aria-expanded', 'true');
@@ -139,17 +150,22 @@ class Offcanvas extends BaseComponent {
       return;
     }
 
+    // Remove visual state class first to trigger transition
     this.element.classList.remove(OPEN_CLASSNAME);
-    this.element.close();
-    this.element.removeAttribute('aria-modal');
-    this.element.removeAttribute('role');
 
-    this.removeEventListeners();
-    this.isShown = false;
+    // Wait for transition to complete before closing
+    executeAfterTransition(this.element, () => {
+      this.element.close();
+      this.element.removeAttribute('aria-modal');
+      this.element.removeAttribute('role');
 
-    EventHandler.trigger(this.element, EVENT_HIDDEN);
+      this.removeEventListeners();
+      this.isShown = false;
 
-    this.scrollControl.enableScroll();
+      EventHandler.trigger(this.element, EVENT_HIDDEN);
+
+      this.scrollControl.enableScroll();
+    });
   }
 
   toggle(targetElement: HTMLElement | null) {

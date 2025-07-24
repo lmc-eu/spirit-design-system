@@ -3,7 +3,7 @@ import { warning } from './common/utilities';
 import { EVENT_KEY } from './constants';
 import EventHandler from './dom/EventHandler';
 import SelectorEngine from './dom/SelectorEngine';
-import { enableToggleTrigger, ScrollControl, SpiritConfig } from './utils';
+import { enableToggleTrigger, ScrollControl, SpiritConfig, executeAfterTransition } from './utils';
 import { type SpiritElement } from './types';
 
 // TODO: Remove `handleKeyDown` listener when Chrome fixes the bug,
@@ -122,7 +122,15 @@ class Modal extends BaseComponent {
 
     const toggleEl = SelectorEngine.findOne(MODAL_TOGGLE_SELECTOR, this.element);
     toggleEl?.setAttribute('aria-expanded', 'true');
+
+    // Close the dialog first if it's already open to prevent InvalidStateError
+    if (this.element?.open) {
+      this.element.close();
+    }
+
     this.element?.showModal();
+    // Add visual state class after showing modal
+    this.element?.classList.add('is-open');
 
     this.addEventListeners();
     this.isShown = true;
@@ -149,14 +157,24 @@ class Modal extends BaseComponent {
     const toggleEl = SelectorEngine.findOne(MODAL_TOGGLE_SELECTOR, this.element);
 
     if (typeof target.close === 'function') {
-      target.close();
+      // Remove visual state class first to trigger transition
+      target.classList.remove('is-open');
+
+      // Wait for transition to complete before closing
+      executeAfterTransition(target, () => {
+        target.close();
+        toggleEl?.setAttribute('aria-expanded', 'false');
+        this.removeEventListeners();
+        this.isShown = false;
+        this.scrollControl.enableScroll();
+      });
+    } else {
+      // If no close function, clean up immediately
+      toggleEl?.setAttribute('aria-expanded', 'false');
+      this.removeEventListeners();
+      this.isShown = false;
+      this.scrollControl.enableScroll();
     }
-    toggleEl?.setAttribute('aria-expanded', 'false');
-
-    this.removeEventListeners();
-    this.isShown = false;
-
-    this.scrollControl.enableScroll();
   }
 
   toggle(

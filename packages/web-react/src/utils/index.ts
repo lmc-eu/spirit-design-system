@@ -10,3 +10,4 @@ export * from './ssr';
 export * from './string';
 export * from './stylePropsClassesGenerator';
 export * from './toPascalCase';
+export * from './transitions';
