@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.14.0"></a>
+
+# [3.14.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.13.0...@lmc-eu/spirit-web@3.14.0) (2025-07-25)
+
+### Code Refactoring
+
+- **web:** Remove a recent "fix" of `Matrix` rendering in Safari [#DS-2051](https://github.com/lmc-eu/spirit-design-system/issues/DS-2051) ([070252c](https://github.com/lmc-eu/spirit-design-system/commit/070252c))
+
+### Features
+
+- **web:** Enlarge PricingPlanHeader title and apply bottom offset [#DS-2046](https://github.com/lmc-eu/spirit-design-system/issues/DS-2046) ([6e2dd87](https://github.com/lmc-eu/spirit-design-system/commit/6e2dd87))
+- **web:** Expand `Matrix` width to 100% of its container to match the behavior of `Grid` ([1406b69](https://github.com/lmc-eu/spirit-design-system/commit/1406b69))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="3.13.0"></a>
 
 # [3.13.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.12.0...@lmc-eu/spirit-web@3.13.0) (2025-07-24)
