@@ -42,11 +42,14 @@ const IconBox = <T extends ElementType = 'div'>(props: SpiritIconBoxProps<T>) =>
       {...otherProps}
       backgroundColor={colors.background}
       elementType={elementType}
-      {...(hasBorder && {
-        borderWidth: '100',
-        borderColor: colors.border,
-        padding,
-      })}
+      {...(hasBorder
+        ? {
+            borderWidth: '100',
+            borderColor: colors.border,
+          }
+        : {
+            padding,
+          })}
       borderRadius={shapesProps}
       textColor={colors.text}
       UNSAFE_className={classNames(styleProps.className, 'd-inline-flex')}
@@ -55,7 +58,7 @@ const IconBox = <T extends ElementType = 'div'>(props: SpiritIconBoxProps<T>) =>
         ...iconBoxStyleProps,
       }}
     >
-      <Icon aria-hidden="true" boxSize={iconSize} name={iconName} UNSAFE_className="d-block" />
+      <Icon aria-hidden="true" boxSize={iconSize} name={iconName} />
     </Box>
   );
 };

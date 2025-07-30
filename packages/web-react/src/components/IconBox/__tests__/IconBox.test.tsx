@@ -90,7 +90,7 @@ describe('IconBox', () => {
   });
 
   it.each(sizeTestCasesProvider)(
-    'should render correct icon size and padding for size "$size"',
+    'should render correct icon size and style for size "$size"',
     ({ size, iconSize, padding }) => {
       render(<IconBox iconName="check" size={size as SizeExtendedDictionaryType} data-testid="IconBox" />);
 
@@ -99,7 +99,26 @@ describe('IconBox', () => {
 
       expect(icon).toHaveAttribute('width', `${iconSize}`);
       expect(icon).toHaveAttribute('height', `${iconSize}`);
-      expect(iconBox.className).toContain(`p-${padding}`);
+
+      expect(iconBox).not.toHaveClass(`p-${padding}`);
+      expect(iconBox).toHaveStyle({ padding: `calc(var(--spirit-space-${padding}) - 1px)` });
+    },
+  );
+
+  it.each(sizeTestCasesProvider)(
+    'should render correct icon size and padding for size "$size" if has no border',
+    ({ size, iconSize, padding }) => {
+      render(
+        <IconBox iconName="check" size={size as SizeExtendedDictionaryType} data-testid="IconBox" hasBorder={false} />,
+      );
+
+      const iconBox = screen.getByTestId('IconBox');
+      const icon = iconBox.firstElementChild;
+
+      expect(icon).toHaveAttribute('width', `${iconSize}`);
+      expect(icon).toHaveAttribute('height', `${iconSize}`);
+
+      expect(iconBox).toHaveClass(`p-${padding}`);
     },
   );
 

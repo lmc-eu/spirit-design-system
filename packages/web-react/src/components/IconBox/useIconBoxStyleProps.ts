@@ -19,8 +19,8 @@ export const useIconBoxStyleProps = (
   const shapesProps = IconBoxShapesRadii[shape];
   const iconBoxStyles: CSSProperties = {};
 
-  if (!hasBorder) {
-    iconBoxStyles.padding = `calc(var(--${cssVariablePrefix}${sizeProps.padding}) + ${borderWidth100})`;
+  if (hasBorder) {
+    iconBoxStyles.padding = `calc(var(--${cssVariablePrefix}${sizeProps.padding}) - ${borderWidth100})`;
   }
 
   return {

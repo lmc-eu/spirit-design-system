@@ -8,13 +8,14 @@ describe('useIconBoxStyleProps', () => {
 
     expect(result.current.sizeProps).toEqual({ padding: 'space-600', iconSize: 24 });
     expect(result.current.shapesProps).toBe(BorderRadii['300']);
-    expect(result.current.iconBoxStyles).toEqual({});
+    expect(result.current.iconBoxStyles).toEqual({ padding: 'calc(var(--spirit-space-600) - 1px)' });
   });
 
   it('should return correct sizeProps for size="small"', () => {
     const { result } = renderHook(() => useIconBoxStyleProps({ size: 'small' }));
 
     expect(result.current.sizeProps).toEqual({ padding: 'space-500', iconSize: 20 });
+    expect(result.current.iconBoxStyles).toEqual({ padding: 'calc(var(--spirit-space-500) - 1px)' });
   });
 
   it('should return correct borderRadiusProps for borderRadius="circle"', () => {
@@ -26,15 +27,13 @@ describe('useIconBoxStyleProps', () => {
   it('should return padding style when hasBorder is false', () => {
     const { result } = renderHook(() => useIconBoxStyleProps({ hasBorder: false, size: 'xsmall' }));
 
-    expect(result.current.iconBoxStyles).toEqual({
-      padding: 'calc(var(--spirit-space-500) + 1px)',
-    });
+    expect(result.current.iconBoxStyles).toEqual({});
   });
 
   it('should return empty style when hasBorder is true', () => {
     const { result } = renderHook(() => useIconBoxStyleProps({ hasBorder: true, size: 'large' }));
 
-    expect(result.current.iconBoxStyles).toEqual({});
+    expect(result.current.iconBoxStyles).toEqual({ padding: 'calc(var(--spirit-space-600) - 1px)' });
   });
 
   it('should forward other props', () => {
