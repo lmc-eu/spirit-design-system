@@ -1,4 +1,5 @@
 import '@testing-library/jest-dom';
+import { accentColors } from '@lmc-eu/spirit-design-tokens';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import {
@@ -8,8 +9,13 @@ import {
   stylePropsTest,
   validHtmlAttributesTest,
 } from '@local/tests';
-import { BackgroundColors } from '../../../constants';
-import type { BoxBackgroundColorsType, IconBoxShapeType, SizeExtendedDictionaryType } from '../../../types';
+import { BackgroundColors, EmotionColors } from '../../../constants';
+import type {
+  BoxBackgroundColorsType,
+  IconBoxColorsType,
+  IconBoxShapeType,
+  SizeExtendedDictionaryType,
+} from '../../../types';
 import { IconBoxShapesRadii, IconBoxSizes } from '../constants';
 import IconBox from '../IconBox';
 
@@ -26,19 +32,19 @@ const shapeTestCasesProvider = Object.entries(IconBoxShapesRadii).map(([shape, r
 
 const colorTestCasesProvider = [
   {
-    color: BackgroundColors.PRIMARY,
-    textColor: BackgroundColors.PRIMARY,
-    expectedBorder: 'basic',
+    color: EmotionColors.INFORMATIVE,
+    textColor: 'emotion-informative-basic',
+    expectedBorder: 'emotion-informative-subtle',
   },
   {
-    color: 'accent-01-subtle',
+    color: '01',
     textColor: 'accent-01-basic',
     expectedBorder: 'accent-01-subtle',
   },
   {
-    color: 'emotion-success-basic',
-    textColor: 'emotion-success-subtle',
-    expectedBorder: 'emotion-success-basic',
+    color: EmotionColors.SUCCESS,
+    textColor: 'emotion-success-basic',
+    expectedBorder: 'emotion-success-subtle',
   },
 ];
 
@@ -63,10 +69,10 @@ describe('IconBox', () => {
     render(<IconBox iconName="check" data-testid="IconBox" />);
     const iconBox = screen.getByTestId('IconBox');
 
-    expect(iconBox).toHaveClass('bg-primary');
-    expect(iconBox).toHaveClass('border-100');
+    expect(iconBox).toHaveClass('bg-emotion-informative-subtle');
+    expect(iconBox).toHaveClass('border-emotion-informative-subtle border-solid border-100');
     expect(iconBox).toHaveClass('rounded-300');
-    expect(iconBox).toHaveClass('text-primary');
+    expect(iconBox).toHaveClass('text-emotion-informative-basic');
   });
 
   it('should render custom size icon', () => {
@@ -132,10 +138,9 @@ describe('IconBox', () => {
   it.each(colorTestCasesProvider)(
     'should apply correct classes for color "$color"',
     ({ color, textColor, expectedBorder }) => {
-      render(<IconBox iconName="check" color={color as BoxBackgroundColorsType} data-testid="IconBox" />);
+      render(<IconBox iconName="check" color={color as IconBoxColorsType} data-testid="IconBox" />);
       const iconBox = screen.getByTestId('IconBox');
 
-      expect(iconBox.className).toContain(`bg-${color}`);
       expect(iconBox.className).toContain(`text-${textColor}`);
       expect(iconBox.className).toContain(`border-${expectedBorder}`);
     },

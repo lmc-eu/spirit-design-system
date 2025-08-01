@@ -1,55 +1,55 @@
+import { accentColors } from '@lmc-eu/spirit-design-tokens';
 import { renderHook } from '@testing-library/react';
-import { BackgroundColors, BorderColors, TextColors } from '../../../constants';
+import { EmotionColors } from '../../../constants';
+import { IconBoxColorsType } from '../../../types';
 import { useIconBoxColors } from '../useIconBoxColors';
 
 describe('useIconBoxColors', () => {
-  it('should return defaults if no color is provided', () => {
+  it('should return default colors when no color and isSubtle=true (default)', () => {
     const { result } = renderHook(() => useIconBoxColors());
 
-    expect(result.current.colors).toEqual({
-      background: BackgroundColors.PRIMARY,
-      border: BorderColors.BASIC,
-      text: TextColors.PRIMARY,
-    });
+    expect(result.current.colors.background).toBe('emotion-informative-subtle');
+    expect(result.current.colors.border).toBe('emotion-informative-subtle');
+    expect(result.current.colors.text).toBe('emotion-informative-basic');
   });
 
-  it('should return correct colors for a background color in BackgroundColors', () => {
-    const { result } = renderHook(() => useIconBoxColors(BackgroundColors.SECONDARY));
+  it('should swap intensities when isSubtle is false', () => {
+    const { result } = renderHook(() => useIconBoxColors(undefined, false));
 
-    expect(result.current.colors).toEqual({
-      background: BackgroundColors.SECONDARY,
-      border: BorderColors.BASIC,
-      text: BackgroundColors.SECONDARY,
-    });
+    expect(result.current.colors.background).toBe('emotion-informative-basic');
+    expect(result.current.colors.border).toBe('emotion-informative-basic');
+    expect(result.current.colors.text).toBe('emotion-informative-subtle');
   });
 
-  it('should parse "-basic" suffix correctly and return complementary text color with "-subtle"', () => {
-    const { result } = renderHook(() => useIconBoxColors('test-basic'));
+  it('should use accent prefix when provided color is in accentColors', () => {
+    const { result } = renderHook(() => useIconBoxColors('01'));
 
-    expect(result.current.colors).toEqual({
-      background: 'test-basic',
-      border: 'test-basic',
-      text: 'test-subtle',
-    });
+    expect(result.current.colors.background).toBe('accent-01-subtle');
+    expect(result.current.colors.border).toBe('accent-01-subtle');
+    expect(result.current.colors.text).toBe('accent-01-basic');
   });
 
-  it('should parse "-subtle" suffix correctly and return complementary text color with "-basic"', () => {
-    const { result } = renderHook(() => useIconBoxColors('test-subtle'));
+  it('should use emotion prefix when provided color is not in accentColors', () => {
+    const { result } = renderHook(() => useIconBoxColors(EmotionColors.INFORMATIVE));
 
-    expect(result.current.colors).toEqual({
-      background: 'test-subtle',
-      border: 'test-subtle',
-      text: 'test-basic',
-    });
+    expect(result.current.colors.background).toBe('emotion-informative-subtle');
+    expect(result.current.colors.border).toBe('emotion-informative-subtle');
+    expect(result.current.colors.text).toBe('emotion-informative-basic');
   });
 
-  it('should default to BASIC intensity when no suffix present', () => {
-    const { result } = renderHook(() => useIconBoxColors('tertiary'));
+  it.each([...Object.values(EmotionColors)])('should return correct colors for %s emotion colors', (color) => {
+    const { result } = renderHook(() => useIconBoxColors(color));
 
-    expect(result.current.colors).toEqual({
-      background: 'tertiary',
-      border: 'basic',
-      text: 'tertiary',
-    });
+    expect(result.current.colors.background).toBe(`emotion-${color}-subtle`);
+    expect(result.current.colors.border).toBe(`emotion-${color}-subtle`);
+    expect(result.current.colors.text).toBe(`emotion-${color}-basic`);
+  });
+
+  it.each([...Object.keys(accentColors)])('should return correct colors for %s accent colors', (color) => {
+    const { result } = renderHook(() => useIconBoxColors(color as IconBoxColorsType));
+
+    expect(result.current.colors.background).toBe(`accent-${color}-subtle`);
+    expect(result.current.colors.border).toBe(`accent-${color}-subtle`);
+    expect(result.current.colors.text).toBe(`accent-${color}-basic`);
   });
 });

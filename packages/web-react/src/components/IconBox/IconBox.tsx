@@ -2,7 +2,7 @@
 
 import classNames from 'classnames';
 import React, { type ElementType } from 'react';
-import { BackgroundColors, EmotionColors, SizesExtended } from '../../constants';
+import { EmotionColors, SizesExtended } from '../../constants';
 import { useStyleProps } from '../../hooks';
 import type { SpiritIconBoxProps } from '../../types';
 import { Box } from '../Box';

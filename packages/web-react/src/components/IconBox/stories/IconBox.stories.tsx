@@ -1,14 +1,11 @@
+import { accentColors } from '@lmc-eu/spirit-design-tokens';
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { BackgroundColors, SizesExtended } from '../../../constants';
-import { getAccentBackgroundColors, getEmotionBackgroundColors } from '../../../utils';
+import { EmotionColors, SizesExtended } from '../../../constants';
 import { IconBoxShapes } from '../constants';
 import { IconBox } from '../index';
 import ReadMe from '../README.md';
-
-const accentBackgroundColorsObject = getAccentBackgroundColors();
-const emotionBackgroundColorsObject = getEmotionBackgroundColors();
 
 const meta: Meta<typeof IconBox> = {
   title: 'Components/IconBox',
@@ -19,31 +16,16 @@ const meta: Meta<typeof IconBox> = {
     },
   },
   argTypes: {
-    shape: {
-      control: 'select',
-      options: [...Object.values(IconBoxShapes)],
-      table: {
-        type: {
-          summary: 'rounded | circle | square',
-        },
-      },
-      defaultValue: {
-        summary: IconBoxShapes.ROUNDED,
-      },
-    },
     color: {
       control: 'select',
-      options: [
-        ...Object.values(BackgroundColors),
-        ...[...Object.values(accentBackgroundColorsObject), ...Object.values(emotionBackgroundColorsObject)],
-      ],
+      options: [...[...Object.keys(accentColors), ...Object.values(EmotionColors)]],
       table: {
         type: {
-          summary: 'BackgroundColorsDictionaryType | AccentColorsType | EmotionColorsType',
+          summary: 'AccentColor | EmotionColorsType',
         },
       },
       defaultValue: {
-        summary: BackgroundColors.PRIMARY,
+        summary: EmotionColors.INFORMATIVE,
       },
     },
     elementType: {
@@ -73,6 +55,26 @@ const meta: Meta<typeof IconBox> = {
         summary: 'undefined',
       },
     },
+    isSubtle: {
+      control: 'boolean',
+      table: {
+        defaultValue: {
+          summary: 'true',
+        },
+      },
+    },
+    shape: {
+      control: 'select',
+      options: [...Object.values(IconBoxShapes)],
+      table: {
+        type: {
+          summary: 'rounded | circle | square',
+        },
+      },
+      defaultValue: {
+        summary: IconBoxShapes.ROUNDED,
+      },
+    },
     size: {
       control: 'select',
       options: [...Object.values(SizesExtended)],
@@ -84,11 +86,12 @@ const meta: Meta<typeof IconBox> = {
     },
   },
   args: {
-    shape: IconBoxShapes.ROUNDED,
-    color: BackgroundColors.PRIMARY,
+    color: EmotionColors.INFORMATIVE,
     elementType: 'div',
     hasBorder: true,
     iconName: 'search',
+    isSubtle: true,
+    shape: IconBoxShapes.ROUNDED,
     size: SizesExtended.MEDIUM,
   },
 };
@@ -97,6 +100,10 @@ export default meta;
 type Story = StoryObj<typeof IconBox>;
 
 export const Playground: Story = {
+  args: {
+    isSubtle: true,
+  },
+
   name: 'IconBox',
   render: (args) => <IconBox {...args} />,
 };
