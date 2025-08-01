@@ -1,15 +1,16 @@
 import React from 'react';
 import DocsStack from '../../../../docs/DocsStack';
-import type { BoxBackgroundColorsType } from '../../../types';
+import { AccentColorToken, EmotionColorsDictionaryType } from '../../../types';
 import { Flex } from '../../Flex';
 import IconBox from '../IconBox';
 
 type IconBoxColorDemoFactoryProps = {
   label: string;
-  colorList: BoxBackgroundColorsType[];
+  colorList: (AccentColorToken | EmotionColorsDictionaryType)[];
+  isSubtle?: boolean;
 };
 
-const IconBoxColorDemoFactory = ({ label, colorList }: IconBoxColorDemoFactoryProps) => (
+const IconBoxColorDemoFactory = ({ label, colorList, isSubtle }: IconBoxColorDemoFactoryProps) => (
   <div>
     <DocsStack stackAlignment="start">
       <h3>{label}</h3>
@@ -20,7 +21,7 @@ const IconBoxColorDemoFactory = ({ label, colorList }: IconBoxColorDemoFactoryPr
 
         return (
           <Flex alignmentY="center" key={color} gap="space-200">
-            <IconBox iconName="search" color={color} />
+            <IconBox iconName="search" color={color} isSubtle={isSubtle} />
             <div>{color}</div>
           </Flex>
         );

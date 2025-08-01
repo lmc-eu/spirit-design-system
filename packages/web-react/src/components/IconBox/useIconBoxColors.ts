@@ -1,9 +1,12 @@
-import { BackgroundColors, BorderColors, Intensity, TextColors } from '../../constants';
+import { accentColors } from '@lmc-eu/spirit-design-tokens';
+import { EmotionColors, Intensity } from '../../constants';
 import type {
+  AccentColorToken,
   BorderAccentColorsType,
   BorderColorsDictionaryType,
   BorderEmotionColorsType,
   BoxBackgroundColorsType,
+  EmotionColorsDictionaryType,
   IntensityDictionaryType,
   TextColorProps,
 } from '../../types';
@@ -16,56 +19,48 @@ export interface UseIconBoxColorsProps {
   };
 }
 
-type BackgroundColorValues = (typeof BackgroundColors)[keyof typeof BackgroundColors];
+export const ColorPrefixes = {
+  ACCENT: 'accent',
+  EMOTION: 'emotion',
+} as const;
 
-const parseColorIntensity = (color: string): { colorName: string; intensity: IntensityDictionaryType } => {
-  switch (true) {
-    case color.endsWith('-basic'):
-      return { colorName: color.slice(0, -'-basic'.length), intensity: Intensity.BASIC };
+export type ColorPrefixesType = (typeof ColorPrefixes)[keyof typeof ColorPrefixes];
 
-    case color.endsWith('-subtle'):
-      return { colorName: color.slice(0, -'-subtle'.length), intensity: Intensity.SUBTLE };
+type BaseAccent = AccentColorToken;
+type BaseEmotion = EmotionColorsDictionaryType;
+type BaseColor = BaseAccent | BaseEmotion;
+type Prefix = ColorPrefixesType;
 
-    default:
-      return { colorName: color, intensity: Intensity.BASIC };
+const setFullColorName = (prefix: Prefix, base: string, intensity: IntensityDictionaryType) =>
+  `${prefix}-${base}-${intensity}`;
+
+const derivePrefix = (base: string): Prefix => {
+  if (Object.keys(accentColors).includes(base)) {
+    return ColorPrefixes.ACCENT;
   }
+
+  return ColorPrefixes.EMOTION;
 };
 
-export const useIconBoxColors = (color?: string): UseIconBoxColorsProps => {
-  if (!color) {
-    return {
-      colors: {
-        background: BackgroundColors.PRIMARY,
-        border: BorderColors.BASIC,
-        text: TextColors.PRIMARY,
-      },
-    };
-  }
+export const useIconBoxColors = (baseColor?: BaseColor, isSubtle = true): UseIconBoxColorsProps => {
+  const intensity: IntensityDictionaryType = isSubtle ? Intensity.SUBTLE : Intensity.BASIC;
+  const complementaryIntensity: IntensityDictionaryType =
+    intensity === Intensity.BASIC ? Intensity.SUBTLE : Intensity.BASIC;
+  const base: BaseColor = baseColor ?? EmotionColors.INFORMATIVE;
+  const prefix: Prefix = derivePrefix(base);
 
-  const staticColors = Object.values(BackgroundColors);
-
-  if (staticColors.includes(color as BackgroundColorValues)) {
-    return {
-      colors: {
-        background: color as BoxBackgroundColorsType,
-        border: BorderColors.BASIC,
-        text: color as TextColorProps['textColor'],
-      },
-    };
-  }
-
-  const { colorName, intensity } = parseColorIntensity(color);
-
-  const complementaryIntensity = intensity === Intensity.BASIC ? Intensity.SUBTLE : Intensity.BASIC;
+  const background = setFullColorName(prefix, base, intensity) as BoxBackgroundColorsType;
+  const border = setFullColorName(prefix, base, intensity) as
+    | BorderAccentColorsType
+    | BorderEmotionColorsType
+    | BorderColorsDictionaryType;
+  const text = setFullColorName(prefix, base, complementaryIntensity) as TextColorProps['textColor'];
 
   return {
     colors: {
-      background: `${colorName}-${intensity}` as BoxBackgroundColorsType,
-      border: `${colorName}-${intensity}` as
-        | BorderAccentColorsType
-        | BorderEmotionColorsType
-        | BorderColorsDictionaryType,
-      text: `${colorName}-${complementaryIntensity}` as TextColorProps['textColor'],
+      background,
+      border,
+      text,
     },
   };
 };

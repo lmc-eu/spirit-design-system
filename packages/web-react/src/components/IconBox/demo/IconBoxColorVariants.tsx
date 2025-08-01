@@ -1,18 +1,36 @@
-import React from 'react';
-import { BackgroundColors } from '../../../constants';
-import { getAccentBackgroundColors, getEmotionBackgroundColors } from '../../../utils';
+import { accentColors } from '@lmc-eu/spirit-design-tokens';
+import React, { useState } from 'react';
+import { EmotionColors } from '../../../constants';
+import { AccentColorToken } from '../../../types';
+import Checkbox from '../../Checkbox/Checkbox';
 import { Grid } from '../../Grid';
 import IconBoxColorDemoFactory from './IconBoxColorDemoFactory';
 
-const accentColorsObject = getAccentBackgroundColors();
-const emotionColorsObject = getEmotionBackgroundColors();
+const accentColorsObject = Object.keys(accentColors) as AccentColorToken[];
+const emotionColorsObject = Object.values(EmotionColors);
 
-const IconBoxColorVariants = () => (
-  <Grid cols={{ desktop: 3, mobile: 1 }} gap="space-600">
-    <IconBoxColorDemoFactory label="Background colors" colorList={Object.values(BackgroundColors)} />
-    <IconBoxColorDemoFactory label="Accent colors" colorList={Object.values(accentColorsObject)} />
-    <IconBoxColorDemoFactory label="Emotions colors" colorList={Object.values(emotionColorsObject)} />
-  </Grid>
-);
+const IconBoxColorVariants = () => {
+  const [isSubtle, setIsSubtle] = useState(true);
+
+  return (
+    <div>
+      <fieldset className="mb-600" style={{ border: 0 }}>
+        <legend className="mb-500">Intensity:</legend>
+        <Checkbox
+          id="checkbox-subtle"
+          name="checkboxSubtle"
+          label="Subtle variant"
+          isChecked={isSubtle}
+          onChange={() => setIsSubtle(!isSubtle)}
+        />
+      </fieldset>
+
+      <Grid cols={{ desktop: 3, mobile: 1 }} gap="space-600">
+        <IconBoxColorDemoFactory label="Accent colors" colorList={accentColorsObject} isSubtle={isSubtle} />
+        <IconBoxColorDemoFactory label="Emotion colors" colorList={emotionColorsObject} isSubtle={isSubtle} />
+      </Grid>
+    </div>
+  );
+};
 
 export default IconBoxColorVariants;

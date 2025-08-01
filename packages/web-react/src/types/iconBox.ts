@@ -1,20 +1,32 @@
 import { ElementType, JSXElementConstructor } from 'react';
 import { IconBoxShapes } from '../components/IconBox/constants';
 import { BoxBackgroundColorsType } from './box';
-import { ChildrenProps, SpiritPolymorphicElementPropsWithRef, StyleProps, SizeExtendedDictionaryType } from './shared';
+import {
+  ChildrenProps,
+  SpiritPolymorphicElementPropsWithRef,
+  StyleProps,
+  SizeExtendedDictionaryType,
+  BackgroundAccentColorsType,
+  BackgroundEmotionColorsType,
+  AccentColorToken,
+  EmotionColorsDictionaryKeys,
+  EmotionColorsDictionaryType,
+} from './shared';
 
 export type IconBoxShapeKeys = keyof typeof IconBoxShapes;
 export type IconBoxShapeType = (typeof IconBoxShapes)[IconBoxShapeKeys];
 
 export interface IconBoxBaseProps extends ChildrenProps, StyleProps {
   /** The color of the iconBox. */
-  color?: BoxBackgroundColorsType;
+  color?: AccentColorToken | EmotionColorsDictionaryType;
   /** The shape of the iconBox. */
   shape?: IconBoxShapeType;
   /** Whether the iconBox has a border */
   hasBorder?: boolean;
   /** Name of the icon */
   iconName: string;
+  /** Whether the iconBox is in subtle color scheme */
+  isSubtle?: boolean;
   /** The size of the iconBox */
   size?: SizeExtendedDictionaryType;
 }

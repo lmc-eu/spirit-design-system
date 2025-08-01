@@ -2,7 +2,7 @@
 
 import classNames from 'classnames';
 import React, { type ElementType } from 'react';
-import { BackgroundColors, SizesExtended } from '../../constants';
+import { BackgroundColors, EmotionColors, SizesExtended } from '../../constants';
 import { useStyleProps } from '../../hooks';
 import type { SpiritIconBoxProps } from '../../types';
 import { Box } from '../Box';
@@ -13,17 +13,18 @@ import { useIconBoxStyleProps } from './useIconBoxStyleProps';
 
 const defaultProps: Partial<SpiritIconBoxProps> = {
   shape: IconBoxShapes.ROUNDED,
-  color: BackgroundColors.PRIMARY,
+  color: EmotionColors.INFORMATIVE,
   elementType: 'div',
   hasBorder: true,
+  isSubtle: true,
   size: SizesExtended.MEDIUM,
 };
 
 const IconBox = <T extends ElementType = 'div'>(props: SpiritIconBoxProps<T>) => {
   const propsWithDefaults = { ...defaultProps, ...props };
-  const { elementType, shapes, color, iconName, hasBorder, size, ...restProps } = propsWithDefaults;
+  const { elementType, shapes, color, iconName, isSubtle, hasBorder, size, ...restProps } = propsWithDefaults;
 
-  const { colors } = useIconBoxColors(color);
+  const { colors } = useIconBoxColors(color, isSubtle);
   const {
     props: modifiedProps,
     iconBoxStyles: iconBoxStyleProps,
