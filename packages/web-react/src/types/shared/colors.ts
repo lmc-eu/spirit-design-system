@@ -1,4 +1,7 @@
 import { accentColors, emotionColors } from '@lmc-eu/spirit-design-tokens';
+import { ColorPrefixes } from '../../constants/colors';
+
+export type ColorPrefixesType = (typeof ColorPrefixes)[keyof typeof ColorPrefixes];
 
 type MatchingKeys<T, Prefix extends string> = keyof {
   [K in Extract<keyof T, string> as K extends `${Prefix}${string}` ? K : never]: string;
