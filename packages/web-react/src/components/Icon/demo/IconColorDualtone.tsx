@@ -7,7 +7,7 @@ const IconColorDualtone = () => {
   const iconName = 'folder-dualtone';
 
   return (
-    <Grid cols={{ desktop: 3, mobile: 1 }}>
+    <Grid cols={{ mobile: 1, desktop: 3 }} alignmentY="top">
       <IconColorDemoFactory label="Text Colors" iconName={iconName} colorList={textColors} />
       <IconColorDemoFactory label="Accent Colors" iconName={iconName} colorList={accentColors} />
       <IconColorDemoFactory label="Emotion Colors" iconName={iconName} colorList={emotionColors} />
