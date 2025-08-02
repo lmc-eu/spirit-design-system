@@ -5,6 +5,7 @@ import { DRAWER_ALIGNMENT_DEFAULT } from './constants';
 
 export interface UseDrawerStylesProps extends DrawerPanelProps {
   drawerAlignmentX?: DrawerAlignmentXType;
+  isOpen?: boolean;
 }
 
 export interface UseDrawerStylesReturn {
@@ -18,7 +19,7 @@ export interface UseDrawerStylesReturn {
 }
 
 export const useDrawerStyleProps = (props: UseDrawerStylesProps = {}): UseDrawerStylesReturn => {
-  const { drawerAlignmentX = DRAWER_ALIGNMENT_DEFAULT } = props;
+  const { drawerAlignmentX = DRAWER_ALIGNMENT_DEFAULT, isOpen = false } = props;
 
   const drawerClass = useClassNamePrefix('Drawer');
   const drawerAlignXClasses: Record<DrawerAlignmentXType, string> = {
@@ -28,9 +29,12 @@ export const useDrawerStyleProps = (props: UseDrawerStylesProps = {}): UseDrawer
   const drawerPanelClass = `${drawerClass}Panel`;
   const drawerContentClass = `${drawerPanelClass}__content`;
   const drawerCloseButtonClass = `${drawerClass}CloseButton`;
+  const openClass = 'is-open';
 
   const classProps = {
-    root: classNames(drawerClass, drawerAlignXClasses[drawerAlignmentX]),
+    root: classNames(drawerClass, drawerAlignXClasses[drawerAlignmentX], {
+      [openClass]: isOpen,
+    }),
     panel: drawerPanelClass,
     content: drawerContentClass,
     closeButton: drawerCloseButtonClass,
