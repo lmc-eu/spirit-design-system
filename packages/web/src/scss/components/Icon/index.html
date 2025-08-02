@@ -54,49 +54,42 @@
   <div class="Container">
     <h2 class="docs-Heading">Colors</h2>
 
-    <div
-      class="Grid Grid--alignmentXStretch Grid--alignmentYStretch Grid--desktop--cols-3 Grid--cols-1">
-      <div class="GridItem">
-        <div class="docs-Stack docs-Stack--start">
-          <h3>Text Colors</h3>
-          {{#each @root.textColors as |color|}}
-          <div class="Flex Flex--noWrap Flex--alignmentXStretch Flex--alignmentYStretch Flex--horizontal">
-            <svg class="Icon Icon--{{color}}" width="24" height="24">
-              <use xlink:href="/assets/icons/svg/sprite.svg#file" />
-            </svg>
-            {{color}}
-          </div>
-          {{/each}}
+    <div class="Grid Grid--alignmentXStretch Grid--alignmentYTop Grid--desktop--cols-3 Grid--cols-1">
+      <div class="docs-Stack docs-Stack--start">
+        <h3>Text Colors</h3>
+        {{#each @root.textColors as |color|}}
+        <div class="Flex Flex--noWrap Flex--alignmentXStretch Flex--alignmentYStretch Flex--horizontal">
+          <svg class="Icon Icon--{{color}}" width="24" height="24">
+            <use xlink:href="/assets/icons/svg/sprite.svg#file" />
+          </svg>
+          {{color}}
         </div>
+        {{/each}}
       </div>
-      <div class="GridItem">
-        <div class="docs-Stack docs-Stack--start">
-          <h3>Accent Colors</h3>
-          {{#each @root.accentColors as |color|}}
-          <div class="Flex Flex--noWrap Flex--alignmentXStretch Flex--alignmentYStretch Flex--horizontal">
-            <svg class="Icon Icon--{{color}}" width="24" height="24">
-              <use xlink:href="/assets/icons/svg/sprite.svg#file" />
-            </svg>
-            {{color}}
-          </div>
-          {{/each}}
+      <div class="docs-Stack docs-Stack--start">
+        <h3>Accent Colors</h3>
+        {{#each @root.accentColors as |color|}}
+        <div class="Flex Flex--noWrap Flex--alignmentXStretch Flex--alignmentYStretch Flex--horizontal">
+          <svg class="Icon Icon--{{color}}" width="24" height="24">
+            <use xlink:href="/assets/icons/svg/sprite.svg#file" />
+          </svg>
+          {{color}}
         </div>
+        {{/each}}
       </div>
-      <div class="GridItem">
-        <div class="docs-Stack docs-Stack--start">
-          <h3>Emotion Colors</h3>
-          {{#each @root.emotionColors as |color|}}
-          <div class="Flex Flex--noWrap Flex--alignmentXStretch Flex--alignmentYStretch Flex--horizontal">
-            <svg class="Icon Icon--{{color}}" width="24" height="24">
-              <use xlink:href="/assets/icons/svg/sprite.svg#file" />
-            </svg>
-            {{color}}
-          </div>
-          {{/each}}
+      <div class="docs-Stack docs-Stack--start">
+        <h3>Emotion Colors</h3>
+        {{#each @root.emotionColors as |color|}}
+        <div class="Flex Flex--noWrap Flex--alignmentXStretch Flex--alignmentYStretch Flex--horizontal">
+          <svg class="Icon Icon--{{color}}" width="24" height="24">
+            <use xlink:href="/assets/icons/svg/sprite.svg#file" />
+          </svg>
+          {{color}}
         </div>
+        {{/each}}
       </div>
-    </div>
-  </div>
+      </div>
+      </div>
 
 </section>
 
@@ -105,46 +98,39 @@
   <div class="Container">
     <h2 class="docs-Heading">Dualtone Colors</h2>
 
-    <div
-      class="Grid Grid--alignmentXStretch Grid--alignmentYStretch Grid--desktop--cols-3 Grid--cols-1">
-      <div class="GridItem">
-        <div class="docs-Stack docs-Stack--start">
-          <h3>Text Colors</h3>
-          {{#each @root.textColors as |color|}}
-          <div class="Flex Flex--noWrap Flex--alignmentXStretch Flex--alignmentYStretch Flex--horizontal">
-            <svg class="Icon Icon--{{color}}" width="24" height="24">
-              <use xlink:href="/assets/icons/svg/sprite.svg#folder-dualtone" />
-            </svg>
-            {{color}}
-          </div>
-          {{/each}}
+    <div class="Grid Grid--alignmentXStretch Grid--alignmentYTop Grid--desktop--cols-3 Grid--cols-1">
+      <div class="docs-Stack docs-Stack--start">
+        <h3>Text Colors</h3>
+        {{#each @root.textColors as |color|}}
+        <div class="Flex Flex--noWrap Flex--alignmentXStretch Flex--alignmentYStretch Flex--horizontal">
+          <svg class="Icon Icon--{{color}}" width="24" height="24">
+            <use xlink:href="/assets/icons/svg/sprite.svg#folder-dualtone" />
+          </svg>
+          {{color}}
         </div>
+        {{/each}}
       </div>
-      <div class="GridItem">
-        <div class="docs-Stack docs-Stack--start">
-          <h3>Accent Colors</h3>
-          {{#each @root.accentColors as |color|}}
-          <div class="Flex Flex--noWrap Flex--alignmentXStretch Flex--alignmentYStretch Flex--horizontal">
-            <svg class="Icon Icon--{{color}}" width="24" height="24">
-              <use xlink:href="/assets/icons/svg/sprite.svg#folder-dualtone" />
-            </svg>
-            {{color}}
-          </div>
-          {{/each}}
+      <div class="docs-Stack docs-Stack--start">
+        <h3>Accent Colors</h3>
+        {{#each @root.accentColors as |color|}}
+        <div class="Flex Flex--noWrap Flex--alignmentXStretch Flex--alignmentYStretch Flex--horizontal">
+          <svg class="Icon Icon--{{color}}" width="24" height="24">
+            <use xlink:href="/assets/icons/svg/sprite.svg#folder-dualtone" />
+          </svg>
+          {{color}}
         </div>
+        {{/each}}
       </div>
-      <div class="GridItem">
-        <div class="docs-Stack docs-Stack--start">
-          <h3>Emotion Colors</h3>
-          {{#each @root.emotionColors as |color|}}
-          <div class="Flex Flex--noWrap Flex--alignmentXStretch Flex--alignmentYStretch Flex--horizontal">
-            <svg class="Icon Icon--{{color}}" width="24" height="24">
-              <use xlink:href="/assets/icons/svg/sprite.svg#folder-dualtone" />
-            </svg>
-            {{color}}
-          </div>
-          {{/each}}
+      <div class="docs-Stack docs-Stack--start">
+        <h3>Emotion Colors</h3>
+        {{#each @root.emotionColors as |color|}}
+        <div class="Flex Flex--noWrap Flex--alignmentXStretch Flex--alignmentYStretch Flex--horizontal">
+          <svg class="Icon Icon--{{color}}" width="24" height="24">
+            <use xlink:href="/assets/icons/svg/sprite.svg#folder-dualtone" />
+          </svg>
+          {{color}}
         </div>
+        {{/each}}
       </div>
     </div>
   </div>

@@ -1,4 +1,4 @@
-// 1. Fixing problem when Icon is used inside a flex container
+// 1. Prevent shrinking when Icon is inside a flex container
 
 @use '@tokens' as tokens;
 @use '../../tools/responsive-properties';

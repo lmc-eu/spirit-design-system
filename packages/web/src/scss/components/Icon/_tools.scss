@@ -1,10 +1,10 @@
+// 1. Apply the color to single-tone icons. Colors for dual-tone icons are handled by CSS variables.
+
 @use '@tokens' as tokens;
 @use 'sass:map';
 @use 'sass:meta';
-@use 'sass:string';
-@use '../../tools/map' as spirit-map;
+@use '../../tools/map' as map-tools;
 @use '../../tools/tokens' as tokens-tools;
-@use '../../tools/utilities';
 
 @function generate-dualtone-color-variants() {
     $accent-variants: ();
@@ -54,7 +54,7 @@
         );
     }
 
-    $result: spirit-map.merge-multiple(
+    $result: map-tools.merge-multiple(
         $result,
         (
             'accent': $accent-variants,
@@ -76,7 +76,7 @@
                     )};
                 --#{tokens.$css-variable-prefix}icon-dualtone-color-border: #{map.get($color-style, border)};
 
-                color: #{map.get($color-style, border)};
+                color: #{map.get($color-style, border)}; // 1.
             }
         }
     }
