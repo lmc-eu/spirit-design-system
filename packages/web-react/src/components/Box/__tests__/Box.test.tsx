@@ -123,7 +123,7 @@ describe('Box', () => {
   it('should render with background color', () => {
     render(<Box backgroundColor="primary">Content</Box>);
 
-    expect(screen.getByText('Content')).toHaveStyle('background-color: var(--color-primary)');
+    expect(screen.getByText('Content')).toHaveClass('bg-primary');
   });
 
   it('should render with border radius and width', () => {
