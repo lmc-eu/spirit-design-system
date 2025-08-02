@@ -28,6 +28,10 @@ jobs:
       - name: Setup Node and Install Dependencies
         uses: ./.github/actions/setup-install
 
+      - name: Build design Tokens
+        working-directory: ./packages/design-tokens
+        run: yarn build
+
       - name: Build Icons
         working-directory: ./packages/icons
         run: yarn build
