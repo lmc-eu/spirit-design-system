@@ -2,18 +2,19 @@ module.exports = {
   extends: ['eslint-config-spirit'],
 
   ignorePatterns: [
-    'node_modules',
     '!.*.js',
+    'examples/*',
+    'exporters/js',
+    'exporters/scss',
+    'exporters/tokens',
+    'node_modules',
     'packages/analytics',
+    'packages/codemods',
     'packages/common',
     'packages/design-tokens',
-    'packages/web-react',
-    'packages/web',
     'packages/form-validations',
-    'packages/codemods',
-    'exporters/scss',
-    'exporters/js',
-    'exporters/tokens',
-    'examples/*'
+    'packages/icons',
+    'packages/web-react',
+    'packages/web'
   ],
 };
