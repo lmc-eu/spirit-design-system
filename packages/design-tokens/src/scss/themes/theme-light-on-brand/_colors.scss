@@ -85,6 +85,10 @@ $component-pagination-unselected-state-active: #7847ff !default;
 $component-pagination-unselected-state-default: #6039cc !default;
 $component-pagination-unselected-state-hover: #6c40e5 !default;
 
+$component-pricing-box-background: #4e2ea6 !default;
+$component-pricing-box-border: #e4daff !default;
+$component-pricing-box-content: #ffcb33 !default;
+
 $component-toggle-selected-border: #a07eff !default;
 $component-toggle-selected-content: #fff !default;
 $component-toggle-selected-state-active: #3e9b4f !default;
@@ -289,6 +293,9 @@ $text-tertiary: #b2b2b2 !default;
     --spirit-color-component-pagination-unselected-state-active: #{$component-pagination-unselected-state-active};
     --spirit-color-component-pagination-unselected-state-default: #{$component-pagination-unselected-state-default};
     --spirit-color-component-pagination-unselected-state-hover: #{$component-pagination-unselected-state-hover};
+    --spirit-color-component-pricing-box-background: #{$component-pricing-box-background};
+    --spirit-color-component-pricing-box-border: #{$component-pricing-box-border};
+    --spirit-color-component-pricing-box-content: #{$component-pricing-box-content};
     --spirit-color-component-toggle-selected-border: #{$component-toggle-selected-border};
     --spirit-color-component-toggle-selected-content: #{$component-toggle-selected-content};
     --spirit-color-component-toggle-selected-state-active: #{$component-toggle-selected-state-active};

@@ -85,6 +85,10 @@ export const componentPaginationUnselectedStateActive = 'var(--spirit-color-comp
 export const componentPaginationUnselectedStateDefault = 'var(--spirit-color-component-pagination-unselected-state-default)';
 export const componentPaginationUnselectedStateHover = 'var(--spirit-color-component-pagination-unselected-state-hover)';
 
+export const componentPricingBoxBackground = 'var(--spirit-color-component-pricing-box-background)';
+export const componentPricingBoxBorder = 'var(--spirit-color-component-pricing-box-border)';
+export const componentPricingBoxContent = 'var(--spirit-color-component-pricing-box-content)';
+
 export const componentToggleSelectedBorder = 'var(--spirit-color-component-toggle-selected-border)';
 export const componentToggleSelectedContent = 'var(--spirit-color-component-toggle-selected-content)';
 export const componentToggleSelectedStateActive = 'var(--spirit-color-component-toggle-selected-state-active)';
@@ -319,6 +323,11 @@ export const componentColors = {
     unselectedStateActive: componentPaginationUnselectedStateActive,
     unselectedStateDefault: componentPaginationUnselectedStateDefault,
     unselectedStateHover: componentPaginationUnselectedStateHover,
+  },
+  pricingBox: {
+    background: componentPricingBoxBackground,
+    border: componentPricingBoxBorder,
+    content: componentPricingBoxContent,
   },
   toggle: {
     selectedBorder: componentToggleSelectedBorder,

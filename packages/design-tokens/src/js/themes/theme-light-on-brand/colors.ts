@@ -85,6 +85,10 @@ export const componentPaginationUnselectedStateActive = '#7847ff';
 export const componentPaginationUnselectedStateDefault = '#6039cc';
 export const componentPaginationUnselectedStateHover = '#6c40e5';
 
+export const componentPricingBoxBackground = '#4e2ea6';
+export const componentPricingBoxBorder = '#e4daff';
+export const componentPricingBoxContent = '#ffcb33';
+
 export const componentToggleSelectedBorder = '#a07eff';
 export const componentToggleSelectedContent = '#fff';
 export const componentToggleSelectedStateActive = '#3e9b4f';

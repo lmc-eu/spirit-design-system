@@ -85,6 +85,10 @@ $component-pagination-unselected-state-active: var(--spirit-color-component-pagi
 $component-pagination-unselected-state-default: var(--spirit-color-component-pagination-unselected-state-default);
 $component-pagination-unselected-state-hover: var(--spirit-color-component-pagination-unselected-state-hover);
 
+$component-pricing-box-background: var(--spirit-color-component-pricing-box-background);
+$component-pricing-box-border: var(--spirit-color-component-pricing-box-border);
+$component-pricing-box-content: var(--spirit-color-component-pricing-box-content);
+
 $component-toggle-selected-border: var(--spirit-color-component-toggle-selected-border);
 $component-toggle-selected-content: var(--spirit-color-component-toggle-selected-content);
 $component-toggle-selected-state-active: var(--spirit-color-component-toggle-selected-state-active);
@@ -319,6 +323,11 @@ $component-colors: (
         unselected-state-active: $component-pagination-unselected-state-active,
         unselected-state-default: $component-pagination-unselected-state-default,
         unselected-state-hover: $component-pagination-unselected-state-hover,
+    ),
+    pricing-box: (
+        background: $component-pricing-box-background,
+        border: $component-pricing-box-border,
+        content: $component-pricing-box-content,
     ),
     toggle: (
         selected-border: $component-toggle-selected-border,
