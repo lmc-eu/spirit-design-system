@@ -9,6 +9,7 @@ import DocsSection from '../../../../docs/DocsSection';
 import { IconsProvider } from '../../../context';
 import GalleryBnB from './GalleryBnB';
 import GalleryDefault from './GalleryDefault';
+import GalleryMasonry from './GalleryMasonry';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -18,6 +19,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       </DocsSection>
       <DocsSection title="BnB">
         <GalleryBnB />
+      </DocsSection>
+      <DocsSection title="Masonry">
+        <GalleryMasonry />
       </DocsSection>
     </IconsProvider>
   </React.StrictMode>,

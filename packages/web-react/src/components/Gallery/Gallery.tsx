@@ -20,6 +20,16 @@ const Gallery = (props: SpiritGalleryProps) => {
 
   const contextValue = { variant };
 
+  if (variant === 'masonry') {
+    return (
+      <GalleryProvider value={contextValue}>
+        <div {...otherProps} className={classNames('Gallery--masonry', styleProps.className)}>
+          {children}
+        </div>
+      </GalleryProvider>
+    );
+  }
+
   // const childrenWithIndex = [];
   // let galleryItemIndex = 0;
   //

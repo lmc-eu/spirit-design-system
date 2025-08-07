@@ -12,7 +12,7 @@ const GalleryItem = (props: SpiritGalleryItemProps) => {
   const { classProps } = useGalleryStyleProps(restProps);
   const { styleProps, props: otherProps } = useStyleProps(restProps);
 
-  const bnbLayoutProps =
+  const layoutProps =
     variant === 'bnb' && isFirst
       ? {
           columnStart: { tablet: 1 },
@@ -26,7 +26,7 @@ const GalleryItem = (props: SpiritGalleryItemProps) => {
     <GridItem
       {...otherProps}
       {...styleProps}
-      {...bnbLayoutProps}
+      {...layoutProps}
       UNSAFE_className={classNames(classProps.item, styleProps.className)}
     >
       {children}

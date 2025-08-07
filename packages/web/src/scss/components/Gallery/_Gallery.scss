@@ -1,0 +1,13 @@
+@use '../../tools/responsive-properties';
+@use 'theme';
+
+.Gallery--masonry {
+    column-count: 3;
+    column-gap: 16px;
+
+    .GalleryItem {
+        aspect-ratio: unset;
+        break-inside: avoid;
+        margin-bottom: 16px;
+    }
+}
