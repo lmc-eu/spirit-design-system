@@ -4,24 +4,37 @@ import GalleryItem from '../GalleryItem';
 import { Gallery } from '../index';
 
 const items = [
-  { title: 'Obrázek 1', image: MEDIA_IMAGE },
-  { title: 'Obrázek 2', image: MEDIA_IMAGE },
-  { title: 'Obrázek 3', image: MEDIA_IMAGE },
-  { title: 'Obrázek 4', image: MEDIA_IMAGE },
-  { title: 'Obrázek 5', image: MEDIA_IMAGE },
+  {
+    img: 'https://images.unsplash.com/photo-1549388604-817d15aa0110',
+    title: 'Bed',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1525097487452-6278ff080c31',
+    title: 'Books',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1523413651479-597eb2da0ad6',
+    title: 'Sink',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1563298723-dcfebaa392e3',
+    title: 'Kitchen',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
+    title: 'Coffee',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1574180045827-681f8a1a9622',
+    title: 'Chairs',
+  },
 ];
 
 const GalleryBnB = () => (
-  <Gallery variant="bnb" cols={{ mobile: 1, tablet: 2, desktop: 4 }} spacing="space-800">
+  <Gallery variant="bnb" spacing="space-800">
     {items.map((item, index) => (
-      <GalleryItem
-        key={`gallery-item-${index + 1}`}
-        columnStart={index === 0 ? { tablet: 1 } : undefined}
-        columnEnd={index === 0 ? { tablet: 3 } : undefined}
-        rowStart={index === 0 ? { tablet: 1 } : undefined}
-        rowEnd={index === 0 ? { tablet: 3 } : undefined}
-      >
-        {item.image}
+      <GalleryItem key={`item-${index + 1}`} {...(index === 0 ? { isFirst: true } : undefined)}>
+        <img src={item.img} alt={item.title} />
       </GalleryItem>
     ))}
   </Gallery>

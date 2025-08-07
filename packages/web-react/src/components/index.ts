@@ -21,6 +21,7 @@ export * from './FieldGroup';
 export * from './FileUploader';
 export * from './Flex';
 export * from './Footer';
+export * from './Gallery';
 export * from './Grid';
 export * from './Header';
 export * from './Heading';

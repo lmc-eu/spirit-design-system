@@ -3,18 +3,48 @@ import { MEDIA_IMAGE } from '../../Card/demo/constants';
 import GalleryItem from '../GalleryItem';
 import { Gallery } from '../index';
 
+// const items = [
+//   { title: 'Image 1', image: MEDIA_IMAGE },
+//   { title: 'Image 2', image: MEDIA_IMAGE },
+//   { title: 'Image 3', image: MEDIA_IMAGE },
+//   { title: 'Image 4', image: MEDIA_IMAGE },
+//   { title: 'Image 5', image: MEDIA_IMAGE },
+//   { title: 'Image 6', image: MEDIA_IMAGE },
+// ];
+
 const items = [
-  { title: 'Obrázek 1', image: MEDIA_IMAGE },
-  { title: 'Obrázek 2', image: MEDIA_IMAGE },
-  { title: 'Obrázek 3', image: MEDIA_IMAGE },
-  { title: 'Obrázek 4', image: MEDIA_IMAGE },
-  { title: 'Obrázek 5', image: MEDIA_IMAGE },
+  {
+    img: 'https://images.unsplash.com/photo-1549388604-817d15aa0110',
+    title: 'Bed',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1525097487452-6278ff080c31',
+    title: 'Books',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1523413651479-597eb2da0ad6',
+    title: 'Sink',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1563298723-dcfebaa392e3',
+    title: 'Kitchen',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
+    title: 'Coffee',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1574180045827-681f8a1a9622',
+    title: 'Chairs',
+  },
 ];
 
 const GalleryDefault = () => (
-  <Gallery variant="grid" cols={{ mobile: 1, tablet: 2, desktop: 3 }} spacing="space-800">
+  <Gallery variant="grid" spacing="space-800">
     {items.map((item) => (
-      <GalleryItem key={item.title}>{item.image}</GalleryItem>
+      <GalleryItem key={item.title}>
+        <img src={item.img} alt={item.title} />
+      </GalleryItem>
     ))}
   </Gallery>
 );

@@ -1,13 +1,10 @@
-import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks';
-import { DrawerAlignmentXType, DrawerPanelProps } from '../../types';
-import { DRAWER_ALIGNMENT_DEFAULT } from './constants';
+import { SpiritGridProps } from '../../types';
+import { SpiritGalleryProps } from '../../types/gallery';
 
-export interface UseDrawerStylesProps extends DrawerPanelProps {
-  drawerAlignmentX?: DrawerAlignmentXType;
-}
+export interface UseGalleryStylesProps extends Partial<SpiritGalleryProps>, SpiritGridProps {}
 
-export interface UseDrawerStylesReturn {
+export interface UseGalleryStylesReturn {
   /** className props */
   classProps: {
     root: string;
@@ -15,7 +12,7 @@ export interface UseDrawerStylesReturn {
   };
 }
 
-export const useGalleryStyleProps = (props: UseDrawerStylesProps = {}): UseDrawerStylesReturn => {
+export const useGalleryStyleProps = (props: UseGalleryStylesProps): UseGalleryStylesReturn => {
   const galleryClass = useClassNamePrefix('Gallery');
   const galleryClassItem = useClassNamePrefix('GalleryItem');
 
