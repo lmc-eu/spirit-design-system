@@ -22,15 +22,18 @@ const GalleryItem = (props: SpiritGalleryItemProps) => {
         }
       : {};
 
+  const WrapperComponent = variant === 'masonry' ? 'div' : GridItem;
+  const combinedClassName = classNames(classProps.item, styleProps.className);
+
   return (
-    <GridItem
+    <WrapperComponent
       {...otherProps}
       {...styleProps}
       {...layoutProps}
-      UNSAFE_className={classNames(classProps.item, styleProps.className)}
+      {...(variant === 'masonry' ? { className: combinedClassName } : { UNSAFE_className: combinedClassName })}
     >
       {children}
-    </GridItem>
+    </WrapperComponent>
   );
 };
 

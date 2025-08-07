@@ -11,7 +11,7 @@ import { useGalleryStyleProps } from './useGalleryStyleProps';
 
 const Gallery = (props: SpiritGalleryProps) => {
   const { variant = 'grid', children, ...restProps } = props;
-  const { classProps } = useGalleryStyleProps(restProps);
+  const { classProps } = useGalleryStyleProps({ ...restProps, variant });
   const { styleProps, props: otherProps } = useStyleProps(restProps);
 
   const defaultCols = variant === 'bnb' ? { mobile: 1, tablet: 2, desktop: 4 } : { mobile: 1, tablet: 2, desktop: 3 };
@@ -20,15 +20,8 @@ const Gallery = (props: SpiritGalleryProps) => {
 
   const contextValue = { variant };
 
-  if (variant === 'masonry') {
-    return (
-      <GalleryProvider value={contextValue}>
-        <div {...otherProps} className={classNames('Gallery--masonry', styleProps.className)}>
-          {children}
-        </div>
-      </GalleryProvider>
-    );
-  }
+  const WrapperComponent = variant === 'masonry' ? 'div' : Grid;
+  const combinedClassName = classNames(classProps.root, styleProps.className);
 
   // const childrenWithIndex = [];
   // let galleryItemIndex = 0;
@@ -54,13 +47,13 @@ const Gallery = (props: SpiritGalleryProps) => {
 
   return (
     <GalleryProvider value={contextValue}>
-      <Grid
+      <WrapperComponent
         {...otherProps}
         cols={cols as GridColsBreakpoints | GridColumns}
-        UNSAFE_className={classNames(classProps.root, styleProps.className)}
+        {...(variant === 'masonry' ? { className: combinedClassName } : { UNSAFE_className: combinedClassName })}
       >
         {children}
-      </Grid>
+      </WrapperComponent>
     </GalleryProvider>
   );
 };

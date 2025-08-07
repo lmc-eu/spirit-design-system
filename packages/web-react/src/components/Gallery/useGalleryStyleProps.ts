@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks';
 import { SpiritGridProps } from '../../types';
 import { SpiritGalleryProps } from '../../types/gallery';
@@ -13,11 +14,18 @@ export interface UseGalleryStylesReturn {
 }
 
 export const useGalleryStyleProps = (props: UseGalleryStylesProps): UseGalleryStylesReturn => {
+  const { variant } = props;
+
   const galleryClass = useClassNamePrefix('Gallery');
   const galleryClassItem = useClassNamePrefix('GalleryItem');
+  const galleryClassMasonry = useClassNamePrefix('Gallery--masonry');
+
+  const galleryClassProps = classNames(galleryClass, {
+    [galleryClassMasonry]: variant === 'masonry',
+  });
 
   const classProps = {
-    root: galleryClass,
+    root: galleryClassProps,
     item: galleryClassItem,
   };
 
