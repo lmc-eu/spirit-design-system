@@ -4730,6 +4730,9 @@ __metadata:
   resolution: "@lmc-eu/spirit-icons@workspace:packages/icons"
   dependencies:
     "@lmc-eu/spirit-design-tokens": "workspace:^"
+    "@types/jest": "npm:30.0.0"
+    jest: "npm:30.0.0"
+    jest-config-spirit: "workspace:^"
     jsdom: "npm:25.0.1"
     npm-run-all2: "npm:6.2.6"
     shx: "npm:0.4.0"

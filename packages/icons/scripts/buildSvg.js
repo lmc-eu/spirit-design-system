@@ -6,10 +6,10 @@ const { filterSvgFiles, getIconType, ICON_TYPE_DUALTONE, ICON_TYPE_COLORED } = r
 const svgSrcDir = path.resolve(__dirname, '../src/svg');
 const svgDistDir = path.resolve(__dirname, '../dist/svg');
 
-const DUALTONE_COLOR_BACKGROUND_DEFAULT = '#F2F2F2'; // Gray95
-const DUALTONE_COLOR_BORDER_DEFAULT = '#202020'; // DarkGray
+export const DUALTONE_COLOR_BACKGROUND_DEFAULT = '#F2F2F2'; // Gray95
+export const DUALTONE_COLOR_BORDER_DEFAULT = '#202020'; // DarkGray
 
-const normalizeSvgColors = (fileName, svgContent) => {
+export const normalizeSvgColors = (fileName, svgContent) => {
   const iconType = getIconType(fileName);
 
   switch (iconType) {
@@ -32,7 +32,7 @@ const normalizeSvgColors = (fileName, svgContent) => {
   }
 };
 
-const normalizeAndCopySvg = (srcDir, distDir) => {
+export const normalizeAndCopySvg = (srcDir, distDir) => {
   fs.readdir(srcDir, (err, files) => {
     const svgs = filterSvgFiles(files);
 

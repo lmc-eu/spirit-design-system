@@ -1,10 +1,11 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { filterSvgFiles } from './shared';
 
 const svgDistDir = path.resolve(__dirname, '../dist/svg');
 const tmpDistDir = path.resolve(__dirname, '../dist/.tmp-svg');
 
-const toPascalCase = (string) =>
+export const toPascalCase = (string) =>
   string
     .replace('.svg', '')
     .replace(/\w+/g, (word) => {
@@ -12,9 +13,9 @@ const toPascalCase = (string) =>
     })
     .replaceAll('-', '');
 
-const prepareSvgForReactComponent = (srcDir, distDir) => {
+export const prepareSvgForReactComponent = (srcDir, distDir) => {
   fs.readdir(srcDir, (err, files) => {
-    const svgs = files.filter((el) => path.extname(el) === '.svg' && el !== 'sprite.svg');
+    const svgs = filterSvgFiles(files);
     if (svgs.length > 0) {
       svgs.forEach((svg) => {
         const svgPath = path.join(srcDir, svg);
