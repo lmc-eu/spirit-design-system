@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { filterSvgFiles } = require('./shared');
 
 const svgDistDir = path.resolve(__dirname, '../dist/svg');
 const tmpDistDir = path.resolve(__dirname, '../dist/.tmp-svg');
@@ -14,7 +15,7 @@ const toPascalCase = (string) =>
 
 const prepareSvgForReactComponent = (srcDir, distDir) => {
   fs.readdir(srcDir, (err, files) => {
-    const svgs = files.filter((el) => path.extname(el) === '.svg' && el !== 'sprite.svg');
+    const svgs = filterSvgFiles(files);
     if (svgs.length > 0) {
       svgs.forEach((svg) => {
         const svgPath = path.join(srcDir, svg);
@@ -27,3 +28,5 @@ const prepareSvgForReactComponent = (srcDir, distDir) => {
 };
 
 prepareSvgForReactComponent(svgDistDir, tmpDistDir);
+
+module.exports = { toPascalCase, prepareSvgForReactComponent };

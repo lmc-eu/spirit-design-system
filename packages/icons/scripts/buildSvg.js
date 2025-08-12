@@ -60,3 +60,10 @@ const normalizeAndCopySvg = (srcDir, distDir) => {
 };
 
 normalizeAndCopySvg(svgSrcDir, svgDistDir);
+
+module.exports = {
+  DUALTONE_COLOR_BACKGROUND_DEFAULT,
+  DUALTONE_COLOR_BORDER_DEFAULT,
+  normalizeSvgColors,
+  normalizeAndCopySvg,
+};

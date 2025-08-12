@@ -26,10 +26,17 @@
     "build:const": "node ./scripts/buildConstants.js",
     "build:prepare": "npm-run-all build:clean build:dist",
     "build": "npm-run-all --serial build:prepare build:svg prepare:react build:react build:const build:finalize",
-    "build:finalize": "npm-run-all build:react:clean build:copy"
+    "build:finalize": "npm-run-all build:react:clean build:copy",
+    "test": "npm-run-all --serial test:unit",
+    "test:unit": "jest",
+    "test:unit:watch": "yarn test:unit --watchAll",
+    "test:unit:coverage": "yarn test:unit --coverage"
   },
   "devDependencies": {
     "@lmc-eu/spirit-design-tokens": "workspace:^",
+    "@types/jest": "30.0.0",
+    "jest": "30.0.0",
+    "jest-config-spirit": "workspace:^",
     "jsdom": "25.0.1",
     "npm-run-all2": "6.2.6",
     "shx": "0.4.0",
