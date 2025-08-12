@@ -7,7 +7,7 @@ const { filterSvgFiles } = require('./shared');
 const svgSrcDir = path.resolve(__dirname, '../dist/svg');
 const distFile = path.resolve(__dirname, '../dist/icons.js');
 
-const buildContants = (srcDir, file) => {
+const buildConstants = (srcDir, file) => {
   fs.readdir(srcDir, (err, files) => {
     const svgs = filterSvgFiles(files);
 
@@ -35,4 +35,6 @@ const buildContants = (srcDir, file) => {
   });
 };
 
-buildContants(svgSrcDir, distFile);
+buildConstants(svgSrcDir, distFile);
+
+module.exports = { buildConstants };
