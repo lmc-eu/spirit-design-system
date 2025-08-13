@@ -68,7 +68,7 @@ export const devicesFilesData: FileData[] = [
   {
     fileName: 'devices',
     tokenTypes: [TokenType.dimension, TokenType.string],
-    sortByNumValue: false,
+    sortByNumValue: true,
   },
 ];
 

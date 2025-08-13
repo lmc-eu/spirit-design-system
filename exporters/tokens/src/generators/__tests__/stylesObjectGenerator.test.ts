@@ -1,6 +1,11 @@
 import { Token, TokenGroup, TypographyToken } from '@supernovaio/sdk-exporters';
 import { exampleColorsTokens } from '../../../tests/fixtures/exampleColorTokens';
-import { exampleDeviceUpdatedTokens } from '../../../tests/fixtures/exampleDeviceTokens';
+import {
+  exampleDeviceUpdatedTokens,
+  exampleDeviceTokenBreakpoint,
+  exampleDeviceTokenMultiWord,
+  exampleDeviceTokenBreakpointCustom,
+} from '../../../tests/fixtures/exampleDeviceTokens';
 import { exampleDimensionAndStringTokens } from '../../../tests/fixtures/exampleDimensionAndStringTokens';
 import { exampleGroups } from '../../../tests/fixtures/exampleGroups';
 import { exampleTypographyTokens } from '../../../tests/fixtures/exampleTypographyTokens';
@@ -120,6 +125,42 @@ describe('stylesObjectGenerator', () => {
         tokens: exampleDeviceUpdatedTokens,
         expectedStyles: { grids: { spacing: { mobile: 'gridSpacingMobile' } } },
         description: 'should generate device object from tokens with js output',
+        hasJsOutput: true,
+      },
+      {
+        tokens: exampleDeviceTokenBreakpoint,
+        expectedStyles: { $breakpoints: { mobile: '$breakpoint-mobile' } },
+        description: 'should generate device breakpoint object from tokens',
+        hasJsOutput: false,
+      },
+      {
+        tokens: exampleDeviceTokenBreakpoint,
+        expectedStyles: { breakpoints: { mobile: 'breakpointMobile' } },
+        description: 'should generate device breakpoint object from tokens with js output',
+        hasJsOutput: true,
+      },
+      {
+        tokens: exampleDeviceTokenMultiWord,
+        expectedStyles: { '$breakpoint-tests': { mobile: '$breakpoint-test-mobile' } },
+        description: 'should generate device root multi-word object from tokens',
+        hasJsOutput: false,
+      },
+      {
+        tokens: exampleDeviceTokenMultiWord,
+        expectedStyles: { breakpointTests: { mobile: 'breakpointTestMobile' } },
+        description: 'should generate device root multi-word object from tokens with js object',
+        hasJsOutput: true,
+      },
+      {
+        tokens: exampleDeviceTokenBreakpointCustom,
+        expectedStyles: { $breakpoints: { 'mobile-custom': '$breakpoint-mobile-custom' } },
+        description: 'should generate custom device object from tokens',
+        hasJsOutput: false,
+      },
+      {
+        tokens: exampleDeviceTokenBreakpointCustom,
+        expectedStyles: { breakpoints: { mobileCustom: 'breakpointMobileCustom' } },
+        description: 'should generate custom device object from tokens with js output',
         hasJsOutput: true,
       },
     ];

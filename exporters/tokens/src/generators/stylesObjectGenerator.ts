@@ -8,7 +8,7 @@ import {
 } from '../helpers/objectHelper';
 import { getDeviceAlias } from '../helpers/deviceHelpers';
 import { sortTokens, tokenVariableName, typographyValue } from '../helpers/tokenHelper';
-import { toCamelCase } from '../helpers/stringHelper';
+import { toCamelCase, toPlural } from '../helpers/stringHelper';
 import { COLOR_JS_SUFFIX, COLOR_KEY, COLOR_SCSS_SUFFIX, TYPOGRAPHY_KEY } from '../constants';
 
 export type StylesObjectType = { [key: string]: (string | object) & { moveToTheEnd?: string } };
@@ -56,10 +56,11 @@ export const handleNonTypographyTokens = (
         ? `${toCamelCase(tokenVariableName(token, tokenGroups, hasParentPrefix))}`
         : `$${tokenVariableName(token, tokenGroups, hasParentPrefix)}`;
       const tokenAlias = getTokenAlias(token, hasJsOutput);
-      const devicePart = getDeviceAlias(token);
+      const rootTokenAlias = hasJsOutput ? toPlural(tokenAlias) : `$${toPlural(tokenAlias)}`;
+      const devicePart = hasJsOutput ? toCamelCase(getDeviceAlias(token)) : getDeviceAlias(token).toLowerCase();
 
       if (devicePart !== '') {
-        currentObject[tokenAlias] = { [devicePart]: tokenValue };
+        currentObject[index === 0 ? rootTokenAlias : tokenAlias] = { [devicePart]: tokenValue };
       } else {
         currentObject[tokenAlias] = tokenValue;
       }
@@ -77,11 +78,16 @@ export const createStylesObjectStructureFromTokenNameParts = (
   stylesObjectRef: StylesObjectType,
   hasJsOutput: boolean,
 ): StylesObjectType => {
-  const { tokenType } = token;
-  const tokenNameParts = token.origin?.name?.split('/');
+  const { tokenType, name: tokenName } = token;
+  const devicePart = getDeviceAlias(token);
+  let tokenNameParts: string[] = token.origin?.name?.split('/') || [];
 
-  if (!tokenNameParts || tokenNameParts.length <= 1) {
-    return stylesObjectRef;
+  if (tokenNameParts.length <= 1) {
+    if (devicePart) {
+      tokenNameParts = [tokenName];
+    } else {
+      return stylesObjectRef;
+    }
   }
 
   if (tokenType === TokenType.typography) {

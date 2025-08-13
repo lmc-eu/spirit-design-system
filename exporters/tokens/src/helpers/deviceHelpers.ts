@@ -56,5 +56,5 @@ export const getDeviceAlias = (token: Token | undefined): string => {
 export const getDeviceTokenValue = (tokenValue: string, device: string, hasJsOutput = false): string => {
   const deviceTokenValue = `${tokenValue}-${device}`;
 
-  return hasJsOutput ? toCamelCase(deviceTokenValue) : deviceTokenValue;
+  return hasJsOutput ? toCamelCase(deviceTokenValue) : deviceTokenValue.toLowerCase();
 };

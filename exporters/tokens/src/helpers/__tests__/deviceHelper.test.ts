@@ -70,5 +70,17 @@ describe('deviceHelper', () => {
 
       expect(result).toBe('valueDevice');
     });
+
+    it('returns the concatenated token value and multiword device', () => {
+      const result = getDeviceTokenValue('value', 'Device-Name');
+
+      expect(result).toBe('value-device-name');
+    });
+
+    it('returns the concatenated token value and multiword device when hasJsOutput is true', () => {
+      const result = getDeviceTokenValue('value', 'Device-Name', true);
+
+      expect(result).toBe('valueDeviceName');
+    });
   });
 });
