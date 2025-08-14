@@ -1,7 +1,8 @@
 import fs from 'fs';
 import os from 'os';
 import path from 'path';
-import { buildConstants } from '../buildConstants';
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { buildConstants } = require('../buildConstants');
 
 // Helper to create a temp workspace with svg files
 const setupTemp = (svgs: Record<string, string>) => {

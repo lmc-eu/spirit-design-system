@@ -2,7 +2,8 @@ import fs from 'fs';
 import os from 'os';
 import path from 'path';
 // eslint-disable-next-line import/extensions
-import { toPascalCase, prepareSvgForReactComponent } from '../prepareSvgReact';
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { toPascalCase, prepareSvgForReactComponent } = require('../prepareSvgReact');
 
 /** Wait until directory contains expected file count (polling) */
 const waitForFilesCount = async (dir: string, expectedCount: number, timeoutMs = 2000) => {
