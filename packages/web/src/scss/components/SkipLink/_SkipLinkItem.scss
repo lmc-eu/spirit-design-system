@@ -1,0 +1,29 @@
+// 1. Ensure the skip link is above other content when focused,
+//    but it's possible to have other elements with a higher z-index.
+
+@use 'theme';
+
+.SkipLink {
+    position: absolute;
+    top: theme.$offset;
+    left: theme.$offset;
+    z-index: 1000; // 1.
+    padding: theme.$padding;
+    border-radius: theme.$border-radius;
+    background-color: theme.$background-color;
+    box-shadow: theme.$box-shadow;
+    opacity: 0;
+    transform: translateY(-100%);
+
+    &:active,
+    &:focus {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        transition-property: opacity, transform;
+        transition-duration: theme.$transition-duration;
+        transition-timing-function: theme.$transition-timing;
+    }
+}
