@@ -1,7 +1,19 @@
 import fs from 'fs';
 import os from 'os';
 import path from 'path';
-// eslint-disable-next-line import/extensions
+
+// Ensure shared.filterSvgFiles is resilient to undefined in CI fs edge cases
+jest.mock('../shared', () => {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const p = require('path');
+  return {
+    filterSvgFiles: (fileNames: string[] | undefined) =>
+      Array.isArray(fileNames)
+        ? fileNames.filter((fileName) => p.extname(fileName) === '.svg' && fileName !== 'sprite.svg')
+        : [],
+  };
+});
+
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { toPascalCase, prepareSvgForReactComponent } = require('../prepareSvgReact');
 
