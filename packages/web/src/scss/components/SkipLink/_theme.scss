@@ -1,0 +1,11 @@
+@use '@tokens' as tokens;
+@use '../../settings/transitions';
+
+$background-color: tokens.$background-primary;
+$border-radius: tokens.$radius-300;
+$box-shadow: tokens.$shadow-400;
+$offset: tokens.$space-900;
+$padding: tokens.$space-700;
+
+$transition-duration: transitions.$duration-200;
+$transition-timing: transitions.$timing-eased-in-out;
