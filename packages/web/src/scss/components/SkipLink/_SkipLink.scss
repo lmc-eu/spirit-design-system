@@ -1,0 +1,31 @@
+// 1. The root element doesn't need any styles. To comply BEM methodology, we still should to define it.
+
+@use 'theme';
+
+// stylelint-disable-next-line block-no-empty -- 1.
+.SkipLink {
+}
+
+.SkipLink__item {
+    position: absolute;
+    top: theme.$inset-top;
+    left: theme.$inset-left;
+    z-index: 4;
+    padding: theme.$padding;
+    border-radius: theme.$border-radius;
+    background-color: theme.$background-color;
+    box-shadow: theme.$box-shadow;
+    opacity: 0;
+    transform: translateY(-100%);
+
+    &:focus {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        transition-property: opacity, transform;
+        transition-duration: theme.$transition-duration;
+        transition-timing-function: theme.$transition-timing;
+    }
+}
