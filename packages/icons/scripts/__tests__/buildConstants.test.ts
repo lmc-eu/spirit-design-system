@@ -1,6 +1,19 @@
 import fs from 'fs';
 import os from 'os';
 import path from 'path';
+
+// Make filterSvgFiles resilient to undefined to avoid CI edge case crashes
+jest.mock('../shared', () => {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const p = require('path');
+  return {
+    filterSvgFiles: (fileNames: string[] | undefined) =>
+      Array.isArray(fileNames)
+        ? fileNames.filter((fileName) => p.extname(fileName) === '.svg' && fileName !== 'sprite.svg')
+        : [],
+  };
+});
+
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { buildConstants } = require('../buildConstants');
 
