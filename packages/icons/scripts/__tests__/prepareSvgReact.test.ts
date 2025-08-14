@@ -31,7 +31,7 @@ const waitForFilesCount = async (dir: string, expectedCount: number, timeoutMs =
 };
 
 /** Helper that runs exported prepareSvgForReactComponent with temp dirs */
-const runScriptWithFiles = async (inputFileNames: string[]) => {
+const prepareSvgReactWithTempSvgs = async (inputFileNames: string[]) => {
   const tmpRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'prepare-svg-react-'));
   const srcDir = path.join(tmpRoot, 'src');
   const destDir = path.join(tmpRoot, 'dest');
@@ -81,7 +81,7 @@ describe('toPascalCase', () => {
 
 describe('prepareSvgReact script', () => {
   it('copies svg files (excluding sprite.svg) and converts names to PascalCase + Icon suffix', async () => {
-    const produced = await runScriptWithFiles([
+    const produced = await prepareSvgReactWithTempSvgs([
       'add.svg',
       'folder-dualtone.svg',
       'logo-facebook-colored.svg',
@@ -92,7 +92,7 @@ describe('prepareSvgReact script', () => {
   });
 
   it('handles filenames with uppercase letters and multiple hyphens', async () => {
-    const produced = await runScriptWithFiles(['API-status-check.svg', 'FLAG-COLORED.svg']);
+    const produced = await prepareSvgReactWithTempSvgs(['API-status-check.svg', 'FLAG-COLORED.svg']);
 
     expect(produced).toEqual(['ApiStatusCheckIcon.svg', 'FlagColoredIcon.svg']);
   });

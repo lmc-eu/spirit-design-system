@@ -5,11 +5,11 @@ import path from 'path';
 // Make filterSvgFiles resilient to undefined to avoid CI edge case crashes
 jest.mock('../shared', () => {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const p = require('path');
+  const path = require('path');
   return {
     filterSvgFiles: (fileNames: string[] | undefined) =>
       Array.isArray(fileNames)
-        ? fileNames.filter((fileName) => p.extname(fileName) === '.svg' && fileName !== 'sprite.svg')
+        ? fileNames.filter((fileName) => path.extname(fileName) === '.svg' && fileName !== 'sprite.svg')
         : [],
   };
 });
@@ -43,7 +43,7 @@ const waitForFile = async (filePath: string, timeoutMs = 2000) => {
   }
 };
 
-const run = async (svgs: Record<string, string>) => {
+const buildConstantsWithTempSvgs = async (svgs: Record<string, string>) => {
   const { tmpRoot, srcDir } = setupTemp(svgs);
   const distFile = path.join(tmpRoot, 'icons.js');
 
@@ -60,7 +60,10 @@ const run = async (svgs: Record<string, string>) => {
 
 describe('buildConstants', () => {
   it('should create constants file with icon inner SVG contents', async () => {
-    const { exists, content } = await run({ addIcon: '<path d="u"/>', bulletIcon: '<g><rect/></g>' });
+    const { exists, content } = await buildConstantsWithTempSvgs({
+      addIcon: '<path d="u"/>',
+      bulletIcon: '<g><rect/></g>',
+    });
 
     expect(exists).toBe(true);
     expect(content).toContain('const icons =');
