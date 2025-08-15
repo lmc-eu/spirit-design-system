@@ -57,7 +57,7 @@ The index files contains SCSS forwards of all other outputs.
 
 Devices tokens include all tokens from the Device collection in Supernova.
 These tokens are exported as SCSS maps and CSS variables, grouped by dimension and string categories.
-The exporter processes these tokens to ensure they are updated with to the device theme.
+The exporter processes these tokens to ensure they are updated with the device theme.
 
 - \_devices.scss - Contains dimension and string values and mapping to CSS variables
 - index.scss
@@ -65,7 +65,7 @@ The exporter processes these tokens to ensure they are updated with to the devic
 ## Sorting
 
 Tokens are sorted alphabetically by their origin name (Figma) or their Supernova name.
-Exceptions include Borders, Radii, Spacing,Other tokens and all tokens from Device collection, which are sorted numerically by their value.
+Exceptions include Borders, Radii, Spacing, Other tokens and all tokens from Device collection, which are sorted numerically by their value.
 
 ## Development
 
