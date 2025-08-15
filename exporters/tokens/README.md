@@ -65,7 +65,7 @@ The exporter processes these tokens to ensure they are updated with to the devic
 ## Sorting
 
 Tokens are sorted alphabetically by their origin name (Figma) or their Supernova name.
-Exceptions include Borders, Radii, Spacing, and Other tokens, which are sorted numerically by their value.
+Exceptions include Borders, Radii, Spacing,Other tokens and all tokens from Device collection, which are sorted numerically by their value.
 
 ## Development
 
