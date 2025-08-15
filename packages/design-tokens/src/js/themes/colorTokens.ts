@@ -45,27 +45,21 @@ export const componentButtonPlainStateHover = 'var(--spirit-color-component-butt
 
 export const componentButtonPrimaryBorder = 'var(--spirit-color-component-button-primary-border)';
 export const componentButtonPrimaryContent = 'var(--spirit-color-component-button-primary-content)';
-export const componentButtonPrimaryContentSelected = 'var(--spirit-color-component-button-primary-content-selected)';
 export const componentButtonPrimaryStateActive = 'var(--spirit-color-component-button-primary-state-active)';
 export const componentButtonPrimaryStateDefault = 'var(--spirit-color-component-button-primary-state-default)';
 export const componentButtonPrimaryStateHover = 'var(--spirit-color-component-button-primary-state-hover)';
-export const componentButtonPrimaryStateSelected = 'var(--spirit-color-component-button-primary-state-selected)';
 
 export const componentButtonSecondaryBorder = 'var(--spirit-color-component-button-secondary-border)';
 export const componentButtonSecondaryContent = 'var(--spirit-color-component-button-secondary-content)';
-export const componentButtonSecondaryContentSelected = 'var(--spirit-color-component-button-secondary-content-selected)';
 export const componentButtonSecondaryStateActive = 'var(--spirit-color-component-button-secondary-state-active)';
 export const componentButtonSecondaryStateDefault = 'var(--spirit-color-component-button-secondary-state-default)';
 export const componentButtonSecondaryStateHover = 'var(--spirit-color-component-button-secondary-state-hover)';
-export const componentButtonSecondaryStateSelected = 'var(--spirit-color-component-button-secondary-state-selected)';
 
 export const componentButtonTertiaryBorder = 'var(--spirit-color-component-button-tertiary-border)';
 export const componentButtonTertiaryContent = 'var(--spirit-color-component-button-tertiary-content)';
-export const componentButtonTertiaryContentSelected = 'var(--spirit-color-component-button-tertiary-content-selected)';
 export const componentButtonTertiaryStateActive = 'var(--spirit-color-component-button-tertiary-state-active)';
 export const componentButtonTertiaryStateDefault = 'var(--spirit-color-component-button-tertiary-state-default)';
 export const componentButtonTertiaryStateHover = 'var(--spirit-color-component-button-tertiary-state-hover)';
-export const componentButtonTertiaryStateSelected = 'var(--spirit-color-component-button-tertiary-state-selected)';
 
 export const componentHeaderBackground = 'var(--spirit-color-component-header-background)';
 export const componentHeaderBorder = 'var(--spirit-color-component-header-border)';
@@ -79,6 +73,21 @@ export const componentHeaderItemStateHover = 'var(--spirit-color-component-heade
 export const componentHeaderItemStateSelected = 'var(--spirit-color-component-header-item-state-selected)';
 export const componentHeaderStripeStateSelected = 'var(--spirit-color-component-header-stripe-state-selected)';
 export const componentHeaderStripeStateUnselected = 'var(--spirit-color-component-header-stripe-state-unselected)';
+
+export const componentPaginationSelectedBorder = 'var(--spirit-color-component-pagination-selected-border)';
+export const componentPaginationSelectedContent = 'var(--spirit-color-component-pagination-selected-content)';
+export const componentPaginationSelectedStateActive = 'var(--spirit-color-component-pagination-selected-state-active)';
+export const componentPaginationSelectedStateDefault = 'var(--spirit-color-component-pagination-selected-state-default)';
+export const componentPaginationSelectedStateHover = 'var(--spirit-color-component-pagination-selected-state-hover)';
+export const componentPaginationUnselectedBorder = 'var(--spirit-color-component-pagination-unselected-border)';
+export const componentPaginationUnselectedContent = 'var(--spirit-color-component-pagination-unselected-content)';
+export const componentPaginationUnselectedStateActive = 'var(--spirit-color-component-pagination-unselected-state-active)';
+export const componentPaginationUnselectedStateDefault = 'var(--spirit-color-component-pagination-unselected-state-default)';
+export const componentPaginationUnselectedStateHover = 'var(--spirit-color-component-pagination-unselected-state-hover)';
+
+export const componentPricingBoxBackground = 'var(--spirit-color-component-pricing-box-background)';
+export const componentPricingBoxBorder = 'var(--spirit-color-component-pricing-box-border)';
+export const componentPricingBoxContent = 'var(--spirit-color-component-pricing-box-content)';
 
 export const componentToggleSelectedBorder = 'var(--spirit-color-component-toggle-selected-border)';
 export const componentToggleSelectedContent = 'var(--spirit-color-component-toggle-selected-content)';
@@ -270,29 +279,23 @@ export const componentColors = {
     primary: {
       border: componentButtonPrimaryBorder,
       content: componentButtonPrimaryContent,
-      contentSelected: componentButtonPrimaryContentSelected,
       stateActive: componentButtonPrimaryStateActive,
       stateDefault: componentButtonPrimaryStateDefault,
       stateHover: componentButtonPrimaryStateHover,
-      stateSelected: componentButtonPrimaryStateSelected,
     },
     secondary: {
       border: componentButtonSecondaryBorder,
       content: componentButtonSecondaryContent,
-      contentSelected: componentButtonSecondaryContentSelected,
       stateActive: componentButtonSecondaryStateActive,
       stateDefault: componentButtonSecondaryStateDefault,
       stateHover: componentButtonSecondaryStateHover,
-      stateSelected: componentButtonSecondaryStateSelected,
     },
     tertiary: {
       border: componentButtonTertiaryBorder,
       content: componentButtonTertiaryContent,
-      contentSelected: componentButtonTertiaryContentSelected,
       stateActive: componentButtonTertiaryStateActive,
       stateDefault: componentButtonTertiaryStateDefault,
       stateHover: componentButtonTertiaryStateHover,
-      stateSelected: componentButtonTertiaryStateSelected,
     },
   },
   header: {
@@ -308,6 +311,23 @@ export const componentColors = {
     itemStateSelected: componentHeaderItemStateSelected,
     stripeStateSelected: componentHeaderStripeStateSelected,
     stripeStateUnselected: componentHeaderStripeStateUnselected,
+  },
+  pagination: {
+    selectedBorder: componentPaginationSelectedBorder,
+    selectedContent: componentPaginationSelectedContent,
+    selectedStateActive: componentPaginationSelectedStateActive,
+    selectedStateDefault: componentPaginationSelectedStateDefault,
+    selectedStateHover: componentPaginationSelectedStateHover,
+    unselectedBorder: componentPaginationUnselectedBorder,
+    unselectedContent: componentPaginationUnselectedContent,
+    unselectedStateActive: componentPaginationUnselectedStateActive,
+    unselectedStateDefault: componentPaginationUnselectedStateDefault,
+    unselectedStateHover: componentPaginationUnselectedStateHover,
+  },
+  pricingBox: {
+    background: componentPricingBoxBackground,
+    border: componentPricingBoxBorder,
+    content: componentPricingBoxContent,
   },
   toggle: {
     selectedBorder: componentToggleSelectedBorder,
