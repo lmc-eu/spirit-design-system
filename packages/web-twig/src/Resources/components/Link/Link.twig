@@ -22,7 +22,7 @@
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _classNames = [ _colorClassName, _rootDisabledClassName, rootUnderlinedClassName, _rootAllowVisitedStyleClassName, _styleProps.className ] -%}
-{%- set _allowedAttributes = [ 'target', 'title' ] -%}
+{%- set _allowedAttributes = [ 'rel', 'target', 'title' ] -%}
 <a
     {{ mainProps(props, _allowedAttributes) }}
     href="{{ _href }}"

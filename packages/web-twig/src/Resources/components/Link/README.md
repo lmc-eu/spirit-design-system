@@ -85,6 +85,7 @@ You can allow the link to have visited state style with the `hasVisitedStyleAllo
 | `hasVisitedStyleAllowed` | `bool`                                           | `false`   | ✕        | Allow link to have visited style   |
 | `href`                   | `string`                                         | —         | ✓        | Link URL                           |
 | `isDisabled`             | `bool`                                           | `false`   | ✕        | If true, Link is disabled          |
+| `rel`                    | `string`                                         | `null`    | ✕        | Link relationship                  |
 | `target`                 | `string`                                         | `null`    | ✕        | Browsing context for the link      |
 | `title`                  | `string`                                         | `null`    | ✕        | Optional title to display on hover |
 | `underlined`             | `hover` \| `always` \| `never`                   | `hover`   | ✕        | When is the link underlined        |
