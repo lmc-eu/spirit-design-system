@@ -38,25 +38,34 @@ The index file contains SCSS forwards of all other outputs.
 
 ### Theme Tokens
 
-Theme tokens include all theme-specific tokens (currently limited to color tokens) from Supernova.
+Theme tokens include all theme-specific tokens (currently limited to color tokens), with the exception of device collections from Supernova.
 The exporter creates a dedicated directory for each theme, containing SCSS maps and CSS variables grouped by color categories.
 
 #### Outputs
 
-- \_color-tokens.scss - Contains color css variables for each color and mapping to color groups
+- \_color-tokens.scss - Contains color CSS variables for each color and mapping to color groups
 - index.scss
 
 For each theme, the exporter generates the following files:
 
-- \\{theme_name}\\\_colors.scss - Contains color values and mapping to css variables
+- \\{theme_name}\\\_colors.scss - Contains color values and mapping to CSS variables
 - \\{theme_name}\\index.scss
 
 The index files contains SCSS forwards of all other outputs.
 
+### Device Tokens
+
+Device tokens include all tokens from the Device collection in Supernova.
+These tokens are exported as SCSS maps and CSS variables, grouped by dimension and string categories.
+The exporter processes these tokens to ensure they are updated with the device theme.
+
+- \_devices.scss - Contains dimension and string values and mapping to CSS variables
+- index.scss
+
 ## Sorting
 
 Tokens are sorted alphabetically by their origin name (Figma) or their Supernova name.
-Exceptions include Borders, Radii, Spacing, and Other tokens, which are sorted numerically by their value.
+Exceptions include Borders, Radii, Spacing, Other tokens, and all tokens from the Device collection which are sorted numerically by their value.
 
 ## Development
 
