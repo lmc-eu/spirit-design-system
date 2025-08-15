@@ -48,6 +48,16 @@ The `isSubtle` prop allows you to render the IconBox with a subtle color variant
 <IconBox name="search" isSubtle={false} />
 ```
 
+## Icons
+
+The `iconName` prop specifies the name of the icon to render within the IconBox. You can use any icon from the available icon set.
+
+> ⚠️ Dualtone Icons are not supported. Do not try to pass the icon name with the `-dualtone` suffix.
+
+```jsx
+<IconBox iconName="search" />
+```
+
 ## Implementation Notes
 
 IconBox is a composed component built from [Box][box-component] and [Icon][icon-component] components, designed to streamline the presentation of icons within a consistent visual container.
