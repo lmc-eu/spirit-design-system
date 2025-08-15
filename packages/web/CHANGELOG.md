@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.15.0"></a>
+
+# [3.15.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.14.0...@lmc-eu/spirit-web@3.15.0) (2025-08-15)
+
+### Code Refactoring
+
+- **web:** Use `informative` color as fallback for highlighted `PricingPlan` ([74e3ec9](https://github.com/lmc-eu/spirit-design-system/commit/74e3ec9))
+
+### Features
+
+- **web:** Introduce color prop to Icon component [#DS-2010](https://github.com/lmc-eu/spirit-design-system/issues/DS-2010) ([c3fc992](https://github.com/lmc-eu/spirit-design-system/commit/c3fc992))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="3.14.0"></a>
 
 # [3.14.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.13.0...@lmc-eu/spirit-web@3.14.0) (2025-07-25)

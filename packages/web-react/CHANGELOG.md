@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.16.0"></a>
+
+# [3.16.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.15.1...@lmc-eu/spirit-web-react@3.16.0) (2025-08-15)
+
+### Bug Fixes
+
+- **web-react:** Set default height of opened Collapse to undefined [#DS-2048](https://github.com/lmc-eu/spirit-design-system/issues/DS-2048) ([3ff5d9e](https://github.com/lmc-eu/spirit-design-system/commit/3ff5d9e))
+
+### Documentation
+
+- **web-react:** IconBox does not support dualtone icons ([48bf6b4](https://github.com/lmc-eu/spirit-design-system/commit/48bf6b4)), closes [#DS-2104](https://github.com/lmc-eu/spirit-design-system/issues/DS-2104)
+
+### Features
+
+- **web-react:** Introduce color prop to Icon component [#DS-2010](https://github.com/lmc-eu/spirit-design-system/issues/DS-2010) ([9d469cf](https://github.com/lmc-eu/spirit-design-system/commit/9d469cf))
+- **web-react:** Introduce IconBox component [#DS-1945](https://github.com/lmc-eu/spirit-design-system/issues/DS-1945) ([57acb96](https://github.com/lmc-eu/spirit-design-system/commit/57acb96))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="3.15.1"></a>
 
 ## [3.15.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.15.0...@lmc-eu/spirit-web-react@3.15.1) (2025-07-25)

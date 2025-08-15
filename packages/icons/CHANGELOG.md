@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.3.0"></a>
+
+# [2.3.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-icons@2.2.0...@lmc-eu/spirit-icons@2.3.0) (2025-08-15)
+
+### Features
+
+- **icons:** Support build of dualtones icons [#DS-1906](https://github.com/lmc-eu/spirit-design-system/issues/DS-1906) ([44dc4f5](https://github.com/lmc-eu/spirit-design-system/commit/44dc4f5))
+- **icons:** Update icons ([0c1c48e](https://github.com/lmc-eu/spirit-design-system/commit/0c1c48e))
+
+**Note:** Version bump only for package @lmc-eu/spirit-icons
+
 <a name="2.2.0"></a>
 
 # [2.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-icons@2.1.1...@lmc-eu/spirit-icons@2.2.0) (2025-07-11)

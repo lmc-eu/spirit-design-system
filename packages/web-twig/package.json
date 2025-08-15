@@ -1,6 +1,6 @@
 {
   "name": "@lmc-eu/spirit-web-twig",
-  "version": "4.8.1",
+  "version": "4.9.0",
   "description": "Twig implementation of Spirit Design System components",
   "license": "MIT",
   "private": true,

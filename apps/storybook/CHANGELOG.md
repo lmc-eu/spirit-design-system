@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.1.9"></a>
+
+## [0.1.9](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-storybook@0.1.8...@lmc-eu/spirit-storybook@0.1.9) (2025-08-15)
+
+### Chores
+
+- **repo:** Build tokens before everything else [#DS-1906](https://github.com/lmc-eu/spirit-design-system/issues/DS-1906) ([2d57859](https://github.com/lmc-eu/spirit-design-system/commit/2d57859))
+
+**Note:** Version bump only for package @lmc-eu/spirit-storybook
+
 <a name="0.1.8"></a>
 
 ## [0.1.8](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-storybook@0.1.7...@lmc-eu/spirit-storybook@0.1.8) (2025-06-30)
