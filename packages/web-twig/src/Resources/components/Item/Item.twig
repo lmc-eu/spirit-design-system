@@ -32,9 +32,10 @@
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _classNames = [ _rootClassName, _disabledClassName, _selectedClassName, _styleProps.className ] -%}
 {%- set _selectedIconName = 'check-plain' -%}
+{%- set _allowedAttributes = [ 'rel' ] -%}
 
 <{{ _elementType }}
-  {{ mainProps(props) }}
+  {{ mainProps(props, _allowedAttributes) }}
   {{ styleProp(_styleProps) }}
   {{ classProp(_classNames) }}
   {{ _hrefAttr }}
