@@ -257,4 +257,31 @@ $utilities: (
                 )
             ),
     ),
+    'text-hyphens': (
+        responsive: false,
+        property: hyphens,
+        class: 'text-hyphens',
+        values: (
+            auto,
+            manual,
+            none,
+        ),
+    ),
+    'text-word-break': (
+        responsive: false,
+        property: word-break,
+        class: 'text-word-break',
+        values: (
+            normal: normal,
+            anywhere: break-all,
+        ),
+    ),
+    'text-wrap': (
+        responsive: false,
+        property: text-wrap,
+        class: 'text-wrap',
+        values: (
+            balance,
+        ),
+    ),
 );
