@@ -1,0 +1,22 @@
+@use '@tokens' as tokens;
+
+$timeline-max-width: 800px;
+$timeline-step-gap: tokens.$space-600;
+
+$timeline-marker-border: tokens.$border-width-200 solid tokens.$border-basic;
+$timeline-marker-dot-color: tokens.$text-secondary;
+$timeline-marker-dot-radius: tokens.$radius-full;
+$timeline-marker-dot-size: 10px;
+$timeline-marker-margin: tokens.$space-600;
+$timeline-marker-radius: tokens.$radius-full;
+$timeline-marker-size: 32px;
+$timeline-marker-typography: tokens.$body-small-semibold;
+
+$timeline-connector-background-color: tokens.$border-basic;
+$timeline-connector-min-height: tokens.$space-600;
+$timeline-connector-width: tokens.$border-width-100;
+
+$timeline-heading-padding: tokens.$space-600;
+
+$timeline-content-padding-bottom: tokens.$space-900;
+$timeline-content-padding-top: tokens.$space-600;
