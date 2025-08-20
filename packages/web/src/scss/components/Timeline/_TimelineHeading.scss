@@ -1,0 +1,7 @@
+@use 'theme';
+
+.TimelineHeading {
+    grid-area: 1 / 2 / 2 / 3;
+    align-self: center;
+    padding-block: theme.$timeline-heading-padding;
+}
