@@ -63,6 +63,16 @@ Each size sets the paddingY of the Section using utility classes.
 <Section size="xlarge">Content</Section>
 ```
 
+Table of sizes with their corresponding vertical padding values:
+
+| Size     | Padding y-axis (mobile) | Padding y-axis (tablet/desktop) |
+| -------- | ----------------------- | ------------------------------- |
+| `xsmall` | `space-900`             | `space-1000`                    |
+| `small`  | `space-1000`            | `space-1100`                    |
+| `medium` | `space-1100`            | `space-1300`                    |
+| `large`  | `space-1200`            | `space-1400`                    |
+| `xlarge` | `space-1400`            | `space-1600`                    |
+
 You can combine the `size` prop with `paddingTop` and `paddingBottom` for more control.
 
 ```jsx
