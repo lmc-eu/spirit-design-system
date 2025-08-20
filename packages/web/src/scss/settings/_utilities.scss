@@ -1,3 +1,6 @@
+// 1. `word-break: break-word` is deprecated in favour of `overflow-wrap: anywhere`
+//     https://developer.mozilla.org/en-US/docs/Web/CSS/word-break#break-word
+
 @use 'sass:map';
 @use '@tokens' as tokens;
 @use '../tools/map' as spirit-map;
@@ -256,6 +259,42 @@ $utilities: (
                     tertiary: tokens.$text-tertiary,
                 )
             ),
+    ),
+    'text-hyphens': (
+        responsive: false,
+        property: hyphens,
+        class: 'text-hyphens',
+        values: (
+            auto,
+            manual,
+            none,
+        ),
+    ),
+    'text-word-break': (
+        responsive: false,
+        property: word-break,
+        class: 'text-word-break',
+        values: (
+            normal: normal,
+            anywhere: break-all,
+        ),
+    ),
+    'text-word-break-with-overflow-wrwap': (
+        responsive: false,
+        // 1.
+        property: overflow-wrap,
+        class: 'text-word-break',
+        values: (
+            long-words: anywhere,
+        ),
+    ),
+    'text-wrap': (
+        responsive: false,
+        property: text-wrap,
+        class: 'text-wrap',
+        values: (
+            balance,
+        ),
     ),
 );
 
