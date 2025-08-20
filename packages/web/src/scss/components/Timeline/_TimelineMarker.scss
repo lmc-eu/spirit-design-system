@@ -1,0 +1,37 @@
+@use '../../tools/typography';
+@use 'theme';
+
+.TimelineMarker {
+    @include typography.generate(theme.$timeline-marker-typography);
+
+    display: flex;
+    grid-area: marker;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    width: theme.$timeline-marker-size;
+    height: theme.$timeline-marker-size;
+    margin-block: theme.$timeline-marker-margin;
+}
+
+.TimelineMarker--dot,
+.TimelineMarker--number {
+    border: theme.$timeline-marker-border;
+    border-radius: theme.$timeline-marker-radius;
+}
+
+.TimelineMarker--dot {
+    position: relative;
+    color: theme.$timeline-marker-dot-color;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        width: theme.$timeline-marker-dot-size;
+        height: theme.$timeline-marker-dot-size;
+        margin: auto;
+        border-radius: theme.$timeline-marker-dot-radius;
+        background-color: currentcolor;
+    }
+}

@@ -1,0 +1,13 @@
+// 1. In case step does not have a heading, the content should span both rows and have appropriate padding.
+
+@use 'theme';
+
+.TimelineContent {
+    grid-area: content;
+    padding-bottom: theme.$timeline-content-padding-bottom;
+}
+
+.TimelineStep:not(:has(.TimelineHeading)) > .TimelineContent {
+    grid-area: heading / heading / content / content; // 1.
+    padding-top: theme.$timeline-content-padding-top;
+}
