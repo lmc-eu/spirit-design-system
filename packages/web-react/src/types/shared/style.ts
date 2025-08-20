@@ -35,7 +35,9 @@ export interface StyleProps extends SpacingProps {
   UNSAFE_style?: CSSProperties;
 }
 
-export type TextAlignmentType = TextAlignmentDictionaryType | Record<BreakpointToken, TextAlignmentDictionaryType>;
+export type TextAlignmentType =
+  | TextAlignmentDictionaryType
+  | Partial<Record<BreakpointToken, TextAlignmentDictionaryType>>;
 
 export type UnsafeStyleProps = 'style' | 'className';
 
