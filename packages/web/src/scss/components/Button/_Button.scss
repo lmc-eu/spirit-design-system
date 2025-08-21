@@ -2,15 +2,17 @@
 
 @use 'sass:map';
 @use 'sass:string';
-@use 'theme';
 @use '@tokens' as tokens;
 @use '../../settings/cursors';
 @use '../../tools/dictionaries';
 @use '../../tools/typography';
+@use 'theme';
+@use 'tools';
 
 $_component-name: 'Button';
 
 .Button {
+    @include tools.responsive-border-radius();
     @include typography.from-css-variables($infix: string.to-lower-case($_component-name));
 
     display: inline-flex;
@@ -28,11 +30,20 @@ $_component-name: 'Button';
     border-color: var(--#{tokens.$css-variable-prefix}button-border-color);
     border-start-start-radius: var(
         --#{tokens.$css-variable-prefix}button-border-start-start-radius,
-        theme.$border-radius
+        var(--#{tokens.$css-variable-prefix}button-border-radius)
     );
-    border-start-end-radius: var(--#{tokens.$css-variable-prefix}button-border-start-end-radius, theme.$border-radius);
-    border-end-start-radius: var(--#{tokens.$css-variable-prefix}button-border-end-start-radius, theme.$border-radius);
-    border-end-end-radius: var(--#{tokens.$css-variable-prefix}button-border-end-end-radius, theme.$border-radius);
+    border-start-end-radius: var(
+        --#{tokens.$css-variable-prefix}button-border-start-end-radius,
+        var(--#{tokens.$css-variable-prefix}button-border-radius)
+    );
+    border-end-start-radius: var(
+        --#{tokens.$css-variable-prefix}button-border-end-start-radius,
+        var(--#{tokens.$css-variable-prefix}button-border-radius)
+    );
+    border-end-end-radius: var(
+        --#{tokens.$css-variable-prefix}button-border-end-end-radius,
+        var(--#{tokens.$css-variable-prefix}button-border-radius)
+    );
     background-color: var(--#{tokens.$css-variable-prefix}button-background-color);
     user-select: none;
     cursor: cursors.$buttons;

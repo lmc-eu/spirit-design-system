@@ -2,6 +2,7 @@
 @use '@tokens' as tokens;
 @use '../../settings/dictionaries';
 @use '../../settings/form-fields' as form-fields-settings;
+@use '../../tools/tokens' as tokens-tools;
 
 $border-width: tokens.$border-width-100;
 $border-style: solid;
@@ -51,20 +52,47 @@ $size-dictionary: dictionaries.$size;
 $size-config: map.deep-merge(
     form-fields-settings.$box-field-size-config,
     (
-        small: (
-            padding-x: calc(#{tokens.$space-700} - #{tokens.$border-width-100}),
-            padding-y: calc(#{tokens.$space-300} - #{tokens.$border-width-100}),
-            typography: tokens.$body-small-semibold,
-        ),
-        medium: (
-            padding-x: calc(#{tokens.$space-900} - #{tokens.$border-width-100}),
-            padding-y: calc(#{tokens.$space-500} - #{tokens.$border-width-100}),
-            typography: tokens.$body-small-semibold,
-        ),
-        large: (
-            padding-x: calc(#{tokens.$space-900} - #{tokens.$border-width-100}),
-            padding-y: calc(#{tokens.$space-500} - #{tokens.$border-width-100}),
-            typography: tokens.$body-medium-semibold,
-        ),
+        small: map.merge(
+                (
+                    padding-x: calc(#{tokens.$space-700} - #{tokens.$border-width-100}),
+                    padding-y: calc(#{tokens.$space-300} - #{tokens.$border-width-100}),
+                    typography: tokens.$body-small-semibold,
+                ),
+                tokens-tools.generate-responsive-map(
+                    $property: 'border-radius',
+                    $size: 'small',
+                    $variable-prefix: 'button',
+                    $token-name: 'radius',
+                    $fallback: $border-radius,
+                )
+            ),
+        medium: map.merge(
+                (
+                    padding-x: calc(#{tokens.$space-900} - #{tokens.$border-width-100}),
+                    padding-y: calc(#{tokens.$space-500} - #{tokens.$border-width-100}),
+                    typography: tokens.$body-small-semibold,
+                ),
+                tokens-tools.generate-responsive-map(
+                    $property: 'border-radius',
+                    $size: 'medium',
+                    $variable-prefix: 'button',
+                    $token-name: 'radius',
+                    $fallback: $border-radius,
+                )
+            ),
+        large: map.merge(
+                (
+                    padding-x: calc(#{tokens.$space-900} - #{tokens.$border-width-100}),
+                    padding-y: calc(#{tokens.$space-500} - #{tokens.$border-width-100}),
+                    typography: tokens.$body-medium-semibold,
+                ),
+                tokens-tools.generate-responsive-map(
+                    $property: 'border-radius',
+                    $size: 'large',
+                    $variable-prefix: 'button',
+                    $token-name: 'radius',
+                    $fallback: $border-radius,
+                )
+            ),
     )
 );
