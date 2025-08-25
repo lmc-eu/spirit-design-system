@@ -47,12 +47,14 @@ const runModalTests = async (page: Page, componentName: string): Promise<void> =
   await takeScreenshot(page, `${componentName}-with-dropdown`);
   await page.click('dialog[open] header button');
 
-  // open two stacking modals, close with escape keys
+  // open two stacking modals, close with escape keys, wait for animation to finish
   await page.click('[data-test-id="modal-stacking"]');
   await page.click('dialog[open] footer button');
   await takeScreenshot(page, `${componentName}-stacking`);
   await page.keyboard.press('Escape');
+  await page.waitForTimeout(1000);
   await page.keyboard.press('Escape');
+  await page.waitForTimeout(1000);
 
   // open modal with hidden close button, close with action button
   await page.click('button[data-test-id="modal-with-hidden-close-button"]');

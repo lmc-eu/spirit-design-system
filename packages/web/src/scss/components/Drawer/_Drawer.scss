@@ -24,6 +24,10 @@
         background-color: transparent;
     }
 
+    &:not([open]) {
+        display: none;
+    }
+
     @media (prefers-reduced-motion: no-preference) {
         transition-property: visibility, opacity;
         transition-duration: theme.$drawer-transition-duration;
@@ -42,7 +46,7 @@
     justify-content: end;
 }
 
-.Drawer[open] {
+.Drawer.is-open {
     --#{tokens.$css-variable-prefix}drawer-translate-x: 0%;
 
     visibility: visible;
