@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { TextAlignments, TextStyleProps } from '../../constants';
+import { TextAlignments, TextHyphens, TextStyleProps, TextWordBreaks } from '../../constants';
 import { StyleProps } from '../../types';
 import { useStyleUtilities } from '../useStyleUtilities';
 
@@ -103,7 +103,10 @@ describe('useStyleUtilities hook', () => {
       padding: 'space-500',
       paddingX: 'space-600',
       paddingY: 'space-700',
-      textAlignment: TextAlignments.RIGHT,
+      isTextBalanced: true,
+      textAlignment: TextAlignments.CENTER,
+      textHyphens: TextHyphens.AUTO,
+      textWordBreak: TextWordBreaks.LONG_WORDS,
       hideOn: 'mobile',
       hideFrom: 'desktop',
     };
@@ -111,7 +114,10 @@ describe('useStyleUtilities hook', () => {
       padding: 'p',
       paddingX: 'px',
       paddingY: 'py',
+      isTextBalanced: TextStyleProps.isTextBalanced,
       textAlignment: TextStyleProps.textAlignment,
+      textHyphens: TextStyleProps.textHyphens,
+      textWordBreak: TextStyleProps.textWordBreak,
     };
 
     const { result } = renderHook(() =>
@@ -125,7 +131,10 @@ describe('useStyleUtilities hook', () => {
       'test-prefix-p-500',
       'test-prefix-px-600',
       'test-prefix-py-700',
-      'test-prefix-text-right',
+      'test-prefix-text-wrap-balance',
+      'test-prefix-text-center',
+      'test-prefix-text-hyphens-auto',
+      'test-prefix-text-word-break-long-words',
       'test-prefix-d-only-mobile-none',
       'test-prefix-d-desktop-none',
     ]);

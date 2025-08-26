@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 import { Container, Section, StyleProps, Tag, useStyleProps } from '../src';
+import { mergeStyleProps } from '../src/utils';
 import DocsStack from './DocsStack';
 
 interface DocsSectionProps extends StyleProps {
@@ -23,7 +24,11 @@ const defaultProps: Partial<DocsSectionProps> = {
 const DocsSection = (props: DocsSectionProps) => {
   const propsWithDefaults = { ...defaultProps, ...props };
   const { children, container, hasPadding, hasStack, stackAlignment, title, tag, ...restProps } = propsWithDefaults;
-  const { styleProps, props: transferProps } = useStyleProps(restProps);
+  const { styleProps, props: otherProps } = useStyleProps(restProps);
+  const mergedStyleProps = mergeStyleProps('section', {
+    styleProps,
+    otherProps,
+  });
 
   const heading = (
     <h2 className="docs-Heading">
@@ -45,10 +50,10 @@ const DocsSection = (props: DocsSectionProps) => {
 
   return (
     <Section
+      {...otherProps}
+      {...mergedStyleProps}
       hasContainer={container === 'all'}
       size={hasPadding ? 'xsmall' : undefined}
-      {...styleProps}
-      {...transferProps}
     >
       {content}
     </Section>

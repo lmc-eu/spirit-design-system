@@ -12,6 +12,9 @@ import {
   textColorPropsTest,
   validHtmlAttributesTest,
   elementTypePropsTest,
+  textHyphensPropsTest,
+  textWordBreakPropsTest,
+  textIsBalancedPropsTest,
 } from '@local/tests';
 import { EmphasisDictionaryType, SizesDictionaryType, SizeExtendedDictionaryType } from '../../../types';
 import Text from '../Text';
@@ -29,6 +32,12 @@ describe('Text', () => {
   textAlignmentPropsTest(Text);
 
   textColorPropsTest(Text);
+
+  textHyphensPropsTest(Text);
+
+  textIsBalancedPropsTest(Text);
+
+  textWordBreakPropsTest(Text);
 
   restPropsTest(Text, 'p');
 

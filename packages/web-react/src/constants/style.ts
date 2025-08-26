@@ -27,7 +27,10 @@ export const PaddingStyleProps = {
 } as const;
 
 export const TextStyleProps = {
+  isTextBalanced: 'text-wrap-balance',
   textAlignment: 'text',
+  textHyphens: 'text-hyphens',
+  textWordBreak: 'text-word-break',
 } as const;
 
 export const DisplayStyleProps = {

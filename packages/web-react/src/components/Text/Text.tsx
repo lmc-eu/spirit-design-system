@@ -18,7 +18,10 @@ const Text = <T extends ElementType = 'p', S = void>(props: SpiritTextProps<T, S
   const { elementType: ElementTag = 'p', children, ...restProps } = propsWithDefaults;
   const { classProps, props: modifiedProps } = useTextStyleProps(restProps);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps, {
+    isTextBalanced: TextStyleProps.isTextBalanced,
     textAlignment: TextStyleProps.textAlignment,
+    textHyphens: TextStyleProps.textHyphens,
+    textWordBreak: TextStyleProps.textWordBreak,
   });
   const mergedStyleProps = mergeStyleProps(ElementTag, { classProps, styleProps, otherProps });
 
