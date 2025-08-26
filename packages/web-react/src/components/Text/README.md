@@ -34,15 +34,6 @@ Use the `emphasis` prop to set the emphasis of the text.
 <Text emphasis="bold">Bold text</Text>
 ```
 
-## Text Color
-
-Use the `textColor` prop to set color of the text. When undefined, the text color
-is inherited from the parent element.
-
-```jsx
-<Text textColor="secondary">Secondary text</Text>
-```
-
 ## Text Alignment
 
 Use the `textAlignment` prop to set the alignment of the text.
@@ -58,23 +49,72 @@ You can also define responsive values for the `textAlignment` prop using an obje
 <Text textAlignment={{ mobile: 'center', tablet: 'right', desktop: 'left' }}>Responsive text alignment</Text>
 ```
 
+## Text Color
+
+Use the `textColor` prop to set color of the text. When undefined, the text color
+is inherited from the parent element.
+
+```jsx
+<Text textColor="secondary">Secondary text</Text>
+```
+
+### Text Hyphens
+
+Use the `textHyphens` prop to set how words should be hyphenated when text wraps across multiple lines.
+
+```jsx
+<Text textHyphens="auto">Hyphens applied automatically when text wraps across multiple lines.</Text>
+```
+
+### Text Word Break
+
+Use the `textWordBreak` prop to set how words should break when reaching the end of a line.
+It's crucial to combine it with [Text Hyphens](#text-hyphens) to maintain readability followed by typography rules in text layouts .
+
+```jsx
+<Text textWordBreak="break-word">Allows long words to be splitted and wrapped onto the next line.</Text>
+```
+
+### Text Balanced Wrapping
+
+Use the `isTextBalanced` prop to enable balanced wrapping for better readability.
+
+```jsx
+<Text isTextBalanced>
+  Balanced wrapping is a technique used to optimize the distribution of text across multiple lines, enhancing
+  readability and visual appeal.
+</Text>
+```
+
 ## Full Example
 
 ```jsx
-<Text elementType="span" size="large" emphasis="bold" textColor="secondary">
-  Text
+<Text
+  elementType="span"
+  emphasis="bold"
+  isTextBalanced
+  size="large"
+  textAlignment="center"
+  textColor="secondary"
+  textHyphens="auto"
+  textWordBreak="long-words"
+>
+  Demonstration of a full example of the Text component.
 </Text>
 ```
 
 ## API
 
-| Name            | Type                                                                                                                                                        | Default   | Required | Description           |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | -------- | --------------------- |
-| `elementType`   | `React.Element`                                                                                                                                             | `p`       | ✕        | HTML tag              |
-| `emphasis`      | [Emphasis dictionary][dictionary-emphasis]                                                                                                                  | `regular` | ✕        | Emphasis of the text  |
-| `size`          | [Size Extended dictionary][dictionary-size]                                                                                                                 | `medium`  | ✕        | Size of the text      |
-| `textAlignment` | \[[Text Alignment dictionary][dictionary-alignment] \| `Partial<Record<BreakpointToken, TextAlignmentDictionaryType>>`]                                     | -         | ✕        | Alignment of the text |
-| `textColor`     | \[[Text Color dictionary][dictionary-color] \| Accent Color \| [Emotion Color dictionary][dictionary-color] ✕ [Intensity dictionary][dictionary-intensity]] | —         | ✕        | Color of the text     |
+| Name             | Type                                                                                                                                                        | Default   | Required | Description                             |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | -------- | --------------------------------------- |
+| `elementType`    | `React.Element`                                                                                                                                             | `p`       | ✕        | HTML tag                                |
+| `emphasis`       | [Emphasis dictionary][dictionary-emphasis]                                                                                                                  | `regular` | ✕        | Emphasis of the text                    |
+| `size`           | [Size Extended dictionary][dictionary-size]                                                                                                                 | `medium`  | ✕        | Size of the text                        |
+| `isTextBalanced` | `bool`                                                                                                                                                      | `false`   | ✕        | If true, the text has balanced wrapping |
+| `textAlignment`  | \[[Text Alignment dictionary][dictionary-alignment] \| `Partial<Record<BreakpointToken, TextAlignmentDictionaryType>>`]                                     | —         | ✕        | Alignment of the text                   |
+| `textColor`      | \[[Text Color dictionary][dictionary-color] \| Accent Color \| [Emotion Color dictionary][dictionary-color] ✕ [Intensity dictionary][dictionary-intensity]] | —         | ✕        | Color of the text                       |
+| `textHyphens`    | \[`none` \| `auto` \| `manual`]                                                                                                                             | `none`    | ✕        | Hyphens strategy applied to the text    |
+| `textWordBreak`  | \[`normal` \| `anywhere` \| `long-words`]                                                                                                                   | `normal`  | ✕        | Word break strategy applied to the text |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

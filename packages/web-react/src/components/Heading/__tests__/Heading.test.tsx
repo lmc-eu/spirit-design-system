@@ -12,6 +12,9 @@ import {
   textColorPropsTest,
   validHtmlAttributesTest,
   elementTypePropsTest,
+  textHyphensPropsTest,
+  textIsBalancedPropsTest,
+  textWordBreakPropsTest,
 } from '@local/tests';
 import { SizesDictionaryType, SizeExtendedDictionaryType, EmphasisDictionaryType } from '../../../types';
 import Heading from '../Heading';
@@ -35,6 +38,21 @@ describe('Heading', () => {
   );
 
   textColorPropsTest(
+    (props) => <Heading elementType="h1" data-testid="heading-test-id" {...props} />,
+    'heading-test-id',
+  );
+
+  textHyphensPropsTest(
+    (props) => <Heading elementType="h1" data-testid="heading-test-id" {...props} />,
+    'heading-test-id',
+  );
+
+  textIsBalancedPropsTest(
+    (props) => <Heading elementType="h1" data-testid="heading-test-id" {...props} />,
+    'heading-test-id',
+  );
+
+  textWordBreakPropsTest(
     (props) => <Heading elementType="h1" data-testid="heading-test-id" {...props} />,
     'heading-test-id',
   );

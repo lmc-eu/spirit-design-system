@@ -17,7 +17,10 @@ const Heading = <T extends ElementType, S = void, E = void>(props: SpiritHeading
   const { elementType: ElementTag, children, ...restProps } = propsWithDefaults;
   const { classProps, props: modifiedProps } = useHeadingStyleProps({ ...restProps });
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps, {
+    isTextBalanced: TextStyleProps.isTextBalanced,
     textAlignment: TextStyleProps.textAlignment,
+    textHyphens: TextStyleProps.textHyphens,
+    textWordBreak: TextStyleProps.textWordBreak,
   });
   const mergedStyleProps = mergeStyleProps(ElementTag, { classProps, styleProps, otherProps });
 

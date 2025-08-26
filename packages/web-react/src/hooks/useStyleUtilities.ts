@@ -78,12 +78,18 @@ const processBreakpointProperties = (
 
 const processProperties = (
   utilityName: UtilityName,
-  propValue: string | BreakpointPropValue,
+  propValue: string | boolean | BreakpointPropValue,
   prefix: ClassNamePrefix,
-): string[] =>
-  typeof propValue === 'string'
-    ? [applyClassNamePrefix(prefix)(`${utilityName}-${getUtilityValue(propValue)}`)]
-    : processBreakpointProperties(utilityName, propValue, prefix);
+): string[] => {
+  if (typeof propValue === 'boolean') {
+    return propValue ? [applyClassNamePrefix(prefix)(utilityName)] : [];
+  }
+  if (typeof propValue === 'string') {
+    return [applyClassNamePrefix(prefix)(`${utilityName}-${getUtilityValue(propValue)}`)];
+  }
+
+  return processBreakpointProperties(utilityName, propValue, prefix);
+};
 
 type IsStylePropProcessableOptions = {
   /** The flag to check if the key should be included in the styleProp or not. */

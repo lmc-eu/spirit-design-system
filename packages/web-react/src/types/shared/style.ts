@@ -39,6 +39,10 @@ export type TextAlignmentType =
   | TextAlignmentDictionaryType
   | Partial<Record<BreakpointToken, TextAlignmentDictionaryType>>;
 
+export type TextHyphensType = 'auto' | 'manual' | 'none';
+
+export type TextWordBreakType = 'normal' | 'anywhere' | 'long-words';
+
 export type UnsafeStyleProps = 'style' | 'className';
 
 export type OmittedExtendedUnsafeStyleProps<E, P> = Omit<E, UnsafeStyleProps & P>;
