@@ -109,19 +109,6 @@ export const BackgroundGradients = {
   SECONDARY: 'secondary',
 } as const;
 
-/* Size */
-export const Sizes = {
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-} as const;
-
-export const SizesExtended = {
-  XSMALL: 'xsmall',
-  ...Sizes,
-  XLARGE: 'xlarge',
-} as const;
-
 /* Placement */
 export const Placements = {
   TOP: 'top',
@@ -136,6 +123,19 @@ export const Placements = {
   RIGHT: 'right',
   RIGHT_START: 'right-start',
   RIGHT_END: 'right-end',
+} as const;
+
+/* Size */
+export const Sizes = {
+  SMALL: 'small',
+  MEDIUM: 'medium',
+  LARGE: 'large',
+} as const;
+
+export const SizesExtended = {
+  XSMALL: 'xsmall',
+  ...Sizes,
+  XLARGE: 'xlarge',
 } as const;
 
 /* Validation */

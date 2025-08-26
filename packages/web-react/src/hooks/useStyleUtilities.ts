@@ -7,8 +7,7 @@ import {
   StyleProps,
   StyleSpacingAuto,
 } from '../types';
-import { applyClassNamePrefix } from '../utils';
-import { isEmpty } from '../utils/assert';
+import { applyClassNamePrefix, isEmpty } from '../utils';
 
 /** The breakpoint property value. */
 type BreakpointPropValue = Partial<Record<BreakpointToken, string | SpaceToken | StyleSpacingAuto>>;
@@ -154,7 +153,7 @@ const processDisplayProperties = (
 const processProperties = (
   utilityKey: keyof typeof DefaultSpacingStyleProp | keyof typeof DisplayStyleProps,
   utilityName: UtilityName,
-  propValue: string | BreakpointPropValue | BreakpointToken | BreakpointToken[],
+  propValue: string | boolean | BreakpointPropValue | BreakpointToken | BreakpointToken[],
   prefix: ClassNamePrefix,
 ): string[] => {
   if (utilityKey in DisplayStyleProps) {
@@ -166,9 +165,15 @@ const processProperties = (
     );
   }
 
-  return typeof propValue === 'string'
-    ? [applyClassNamePrefix(prefix)(`${utilityName}-${getUtilityValue(propValue)}`)]
-    : processBreakpointProperties(utilityName, propValue as BreakpointPropValue, prefix);
+  if (typeof propValue === 'boolean') {
+    return propValue ? [applyClassNamePrefix(prefix)(utilityName)] : [];
+  }
+
+  if (typeof propValue === 'string') {
+    return [applyClassNamePrefix(prefix)(`${utilityName}-${getUtilityValue(propValue)}`)];
+  }
+
+  return processBreakpointProperties(utilityName, propValue as BreakpointPropValue, prefix);
 };
 
 type IsStylePropProcessableOptions = {
