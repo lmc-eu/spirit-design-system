@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.4.2"></a>
+
+## [2.4.2](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-tokens-exporter@2.4.1...@almacareer/spirit-tokens-exporter@2.4.2) (2025-08-27)
+
+### Bug Fixes
+
+- **exporter-tokens:** Fix missing breakpoint map for devices [#DS-2103](https://github.com/lmc-eu/spirit-design-system/issues/DS-2103) ([61f5a61](https://github.com/lmc-eu/spirit-design-system/commit/61f5a61))
+
+### Documentation
+
+- **exporter-tokens:** Update to include Devices Tokens section and clarify Theme Tokens [#DS-2103](https://github.com/lmc-eu/spirit-design-system/issues/DS-2103) ([5f297f2](https://github.com/lmc-eu/spirit-design-system/commit/5f297f2))
+
+**Note:** Version bump only for package @almacareer/spirit-tokens-exporter
+
 <a name="2.4.1"></a>
 
 ## [2.4.1](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-tokens-exporter@2.4.0...@almacareer/spirit-tokens-exporter@2.4.1) (2025-06-30)

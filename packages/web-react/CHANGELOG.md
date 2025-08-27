@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.16.1"></a>
+
+## [3.16.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.16.0...@lmc-eu/spirit-web-react@3.16.1) (2025-08-27)
+
+### Bug Fixes
+
+- **web-react:** Fix TextAlignment type [#DS-2096](https://github.com/lmc-eu/spirit-design-system/issues/DS-2096) ([81ed7d5](https://github.com/lmc-eu/spirit-design-system/commit/81ed7d5))
+
+### Documentation
+
+- **web-react:** Add more detailed docs for Section component's sizes [#DS-2102](https://github.com/lmc-eu/spirit-design-system/issues/DS-2102) ([63d759f](https://github.com/lmc-eu/spirit-design-system/commit/63d759f))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="3.16.0"></a>
 
 # [3.16.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.15.1...@lmc-eu/spirit-web-react@3.16.0) (2025-08-15)

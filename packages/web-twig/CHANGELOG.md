@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.10.0"></a>
+
+# [4.10.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@4.9.0...@lmc-eu/spirit-web-twig@4.10.0) (2025-08-27)
+
+### Features
+
+- **web-twig:** Allow rel attribute in Item ([5a3ffc1](https://github.com/lmc-eu/spirit-design-system/commit/5a3ffc1))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="4.9.0"></a>
 
 # [4.9.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@4.8.1...@lmc-eu/spirit-web-twig@4.9.0) (2025-08-15)
