@@ -19,6 +19,12 @@ $accent-02-state-active: var(--spirit-color-accent-02-state-active);
 $accent-02-state-default: var(--spirit-color-accent-02-state-default);
 $accent-02-state-hover: var(--spirit-color-accent-02-state-hover);
 
+// TODO why these are not available in browser?
+$config-dynamic-lightness-state-hover: var(--spirit-color-config-dynamic-lightness-state-hover);
+$config-dynamic-lightness-state-active: var(--spirit-color-config-dynamic-lightness-state-active);
+$config-dynamic-opacity-state-hover: var(--spirit-color-config-dynamic-opacity-state-hover);
+$config-dynamic-opacity-state-active: var(--spirit-color-config-dynamic-opacity-state-active);
+
 $background-backdrop: var(--spirit-color-background-backdrop);
 
 $background-interactive-state-active: var(--spirit-color-background-interactive-state-active);

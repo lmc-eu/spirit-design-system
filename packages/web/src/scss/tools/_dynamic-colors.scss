@@ -1,0 +1,22 @@
+@use '@tokens' as tokens;
+
+@mixin dynamic-interaction-background-colors {
+    --#{tokens.$css-variable-prefix}local-background-color-state-default: #{tokens.$background-interactive-state-default};
+
+    // Fallbacks
+    // --#{tokens.$css-variable-prefix}local-background-color-state-hover: #{tokens.$background-interactive-state-hover};
+    // --#{tokens.$css-variable-prefix}local-background-color-state-active: #{tokens.$background-interactive-state-active};
+
+    @supports (color: oklch(from red l c h)) {
+        --#{tokens.$css-variable-prefix}local-background-color-state-hover: oklch(
+            from var(--#{tokens.$css-variable-prefix}local-background-color)
+                calc(l + var(--#{tokens.$css-variable-prefix}color-config-dynamic-lightness-state-hover)) c h /
+                calc(alpha + var(--#{tokens.$css-variable-prefix}color-config-dynamic-opacity-state-hover, 0))
+        );
+        --#{tokens.$css-variable-prefix}local-background-color-state-active: oklch(
+            from var(--#{tokens.$css-variable-prefix}local-background-color)
+                calc(l + var(--#{tokens.$css-variable-prefix}color-config-dynamic-lightness-state-active)) c h /
+                calc(alpha + var(--#{tokens.$css-variable-prefix}color-config-dynamic-opacity-state-active, 0))
+        );
+    }
+}

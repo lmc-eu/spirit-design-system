@@ -1,1 +1,14 @@
 @forward 'colors';
+
+// TODO: ⚠️ DEMO, move somewhere else.
+$config-dynamic-lightness-state-hover: -0.2;
+$config-dynamic-lightness-state-active: -0.2;
+$config-dynamic-opacity-state-hover: -0.6;
+$config-dynamic-opacity-state-active: -0.3;
+
+@mixin dynamic-color-config() {
+    --spirit-color-config-dynamic-lightness-state-hover: #{$config-dynamic-lightness-state-hover};
+    --spirit-color-config-dynamic-lightness-state-active: #{$config-dynamic-lightness-state-active};
+    --spirit-color-config-dynamic-opacity-state-hover: #{$config-dynamic-opacity-state-hover};
+    --spirit-color-config-dynamic-opacity-state-active: #{$config-dynamic-opacity-state-active};
+}
