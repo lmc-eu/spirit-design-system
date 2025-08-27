@@ -1,11 +1,13 @@
 // 1. Make the icon span two rows to spread over the whole Item vertically and make it centered.
 
 @use 'sass:map';
-@use 'theme';
+@use '@tokens' as tokens;
 @use '../../settings/cursors';
+@use '../../tools/dynamic-colors';
 @use '../../tools/form-fields';
 @use '../../tools/reset';
 @use '../../tools/typography';
+@use 'theme';
 
 .Item:where(button) {
     @include reset.button();
@@ -60,6 +62,20 @@
 .Item__icon--end {
     grid-column: 3;
     margin-inline-start: theme.$gap;
+}
+
+.Item--dynamicBackground {
+    @include dynamic-colors.dynamic-interaction-background-colors();
+
+    background-color: var(--#{tokens.$css-variable-prefix}local-background-color-state-default);
+
+    &:hover {
+        background-color: var(--#{tokens.$css-variable-prefix}local-background-color-state-hover);
+    }
+
+    &:active {
+        background-color: var(--#{tokens.$css-variable-prefix}local-background-color-state-active);
+    }
 }
 
 .Item--disabled {
