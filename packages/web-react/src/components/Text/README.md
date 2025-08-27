@@ -86,11 +86,17 @@ Use the `isTextBalanced` prop to enable balanced wrapping for better readability
 </Text>
 ```
 
+⚠️ This feature relies on the CSS `text-wrap: balance` property. The [MDN documentation][mdn-text-wrap] notifies:
+
+> Because counting characters and balancing them across multiple lines is computationally expensive,
+> this value is only supported for blocks of text spanning a limited number of lines
+> (six or less for Chromium and ten or less for Firefox).
+
 ## Full Example
 
 ```jsx
 <Text
-  elementType="span"
+  elementType="div"
   emphasis="bold"
   isTextBalanced
   size="large"
@@ -141,6 +147,7 @@ const CustomText = (props: SpiritTextProps): JSX.Element => {
 [dictionary-emphasis]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#emphasis
 [dictionary-intensity]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#intensity
 [dictionary-size]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#size
+[mdn-text-wrap]: https://developer.mozilla.org/en-US/docs/Web/CSS/text-wrap
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props
