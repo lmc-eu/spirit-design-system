@@ -21,6 +21,8 @@ import {
   SizesExtended,
   TextAlignments,
   TextColors,
+  TextHyphens,
+  TextWordBreaks,
   ValidationStates,
 } from '../../constants';
 import { TextAccentColorsType, TextEmotionColorsType } from './colors';
@@ -59,6 +61,14 @@ export type AlignmentYExtendedDictionaryType<T = undefined> =
 
 export type TextAlignmentDictionaryKeys = keyof typeof TextAlignments;
 export type TextAlignmentDictionaryType<T = undefined> = (typeof TextAlignments)[TextAlignmentDictionaryKeys] | T;
+
+export type TextHyphensDictionaryKeys = keyof typeof TextHyphens;
+export type TextHyphensDictionaryType = (typeof TextHyphens)[TextHyphensDictionaryKeys] | AutocompleteStringLiteral;
+
+export type TextWordBreakDictionaryKeys = keyof typeof TextWordBreaks;
+export type TextWordBreakDictionaryType =
+  | (typeof TextWordBreaks)[TextWordBreakDictionaryKeys]
+  | AutocompleteStringLiteral;
 
 /* Border Properties */
 export type BorderColorsDictionaryKeys = keyof typeof BorderColors;

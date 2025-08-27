@@ -1,6 +1,6 @@
 import { CSSProperties, ElementType } from 'react';
 import { SpacingStyleProp } from '../../constants';
-import { TextAlignmentDictionaryType } from './dictionaries';
+import { TextAlignmentDictionaryType, TextHyphensDictionaryType, TextWordBreakDictionaryType } from './dictionaries';
 import { BreakpointToken, SpaceToken } from './tokens';
 
 export const STYLE_SPACING_AUTO = 'auto' as const;
@@ -39,9 +39,9 @@ export type TextAlignmentType =
   | TextAlignmentDictionaryType
   | Partial<Record<BreakpointToken, TextAlignmentDictionaryType>>;
 
-export type TextHyphensType = 'auto' | 'manual' | 'none';
+export type TextHyphensType = TextHyphensDictionaryType;
 
-export type TextWordBreakType = 'normal' | 'anywhere' | 'long-words';
+export type TextWordBreakType = TextWordBreakDictionaryType;
 
 export type UnsafeStyleProps = 'style' | 'className';
 
