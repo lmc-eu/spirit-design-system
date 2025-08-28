@@ -1,3 +1,11 @@
+import { componentColors, containers, emotionColors, textColors } from '@lmc-eu/spirit-design-tokens';
+
+function generateDictionaryObject<T extends Record<string, unknown>>(obj: T) {
+  return Object.fromEntries(Object.keys(obj).map((key) => [key.toUpperCase(), key])) as {
+    [K in keyof T as Uppercase<string & K>]: K;
+  };
+}
+
 /* Alignment */
 export const AlignmentX = {
   LEFT: 'left',
@@ -57,25 +65,18 @@ export const BorderWidths = {
 } as const;
 
 /* Color */
+
 export const BackgroundColors = {
   PRIMARY: 'primary',
   SECONDARY: 'secondary',
   TERTIARY: 'tertiary',
 } as const;
 
-export const ComponentButtonColors = {
-  PRIMARY: 'primary',
-  SECONDARY: 'secondary',
-  TERTIARY: 'tertiary',
-  PLAIN: 'plain',
-} as const;
+export const ComponentButtonColors = generateDictionaryObject(componentColors.button);
 
-export const EmotionColors = {
-  SUCCESS: 'success',
-  INFORMATIVE: 'informative',
-  WARNING: 'warning',
-  DANGER: 'danger',
-} as const;
+export const EmotionColors = generateDictionaryObject(emotionColors);
+
+// export const EmotionColors = Object.keys(emotionColors) as Array<keyof typeof emotionColors>;
 
 export const LinkColors = {
   PRIMARY: 'primary',
@@ -83,11 +84,7 @@ export const LinkColors = {
   TERTIARY: 'tertiary',
 } as const;
 
-export const TextColors = {
-  PRIMARY: 'primary',
-  SECONDARY: 'secondary',
-  TERTIARY: 'tertiary',
-} as const;
+export const TextColors = generateDictionaryObject(textColors);
 
 /* Intensity */
 export const Intensity = {
@@ -137,6 +134,10 @@ export const SizesExtended = {
   ...Sizes,
   XLARGE: 'xlarge',
 } as const;
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const { MAXWIDTH, PADDING, ...ContainerTokenSizes } = generateDictionaryObject(containers);
+export { ContainerTokenSizes };
 
 /* Validation */
 export const ValidationStates = {

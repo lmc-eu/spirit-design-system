@@ -9,17 +9,14 @@ import type {
   TextAccentColorsType,
   TextAlignmentType,
   TextColorProps,
-  TextColorsDictionaryType,
   TextEmotionColorsType,
   TextHyphensType,
   TextWordBreakType,
   TransferProps,
+  TextColorNamesType,
 } from './shared';
 
-export type TextColorsType<C = undefined> =
-  | TextColorsDictionaryType<C>
-  | TextAccentColorsType<C>
-  | TextEmotionColorsType<C>;
+export type TextColorsType<C = undefined> = TextColorNamesType<C> | TextAccentColorsType<C> | TextEmotionColorsType<C>;
 
 export interface TextElementTypeProps<T extends ElementType = 'p'> {
   /**
