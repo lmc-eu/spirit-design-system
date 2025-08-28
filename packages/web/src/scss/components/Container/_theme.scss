@@ -9,12 +9,16 @@
 $container-max-width: tokens-tools.get-variable-if-exists('container-xlarge-max-width', tokens.$container-max-width);
 $container-paddings: map.get(tokens.$containers, padding);
 $container-breakpoints: tokens.$breakpoints;
+$container-size-tokens: tools.exclude-keys(tokens.$containers, ('padding', 'max-width'));
 
-$size-dictionary: dictionaries.$size-extended;
-$size-config: (
-    xsmall: tools.get-size('xsmall', $container-max-width),
-    small: tools.get-size('small', $container-max-width),
-    medium: tools.get-size('medium', $container-max-width),
-    large: tools.get-size('large', $container-max-width),
-    xlarge: tools.get-size('xlarge', $container-max-width),
-);
+$container-sizes: map.keys($container-size-tokens);
+$size-config: ();
+
+@each $size in $container-sizes {
+    $size-config: map.merge(
+        $size-config,
+        (
+            $size: tools.get-size($size, $container-max-width),
+        )
+    );
+}
