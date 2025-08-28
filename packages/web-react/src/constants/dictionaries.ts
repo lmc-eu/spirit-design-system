@@ -138,19 +138,6 @@ export const SizesExtended = {
   XLARGE: 'xlarge',
 } as const;
 
-/* Text Wrap */
-export const TextHyphens = {
-  NONE: 'none',
-  AUTO: 'auto',
-  MANUAL: 'manual',
-} as const;
-
-export const TextWordBreaks = {
-  NORMAL: 'normal',
-  ANYWHERE: 'anywhere',
-  LONG_WORDS: 'long-words',
-} as const;
-
 /* Validation */
 export const ValidationStates = {
   SUCCESS: 'success',

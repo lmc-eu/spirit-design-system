@@ -1,6 +1,7 @@
 import { CSSProperties, ElementType } from 'react';
 import { SpacingStyleProp } from '../../constants';
-import { TextAlignmentDictionaryType, TextHyphensDictionaryType, TextWordBreakDictionaryType } from './dictionaries';
+import { TextAlignmentDictionaryType } from './dictionaries';
+import { TextHyphensDictionaryType, TextWordBreakDictionaryType } from './text';
 import { BreakpointToken, SpaceToken } from './tokens';
 
 export const STYLE_SPACING_AUTO = 'auto' as const;

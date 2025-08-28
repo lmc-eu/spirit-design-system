@@ -23,39 +23,21 @@ import headingSizeDataProvider from './headingSizeDataProvider';
 describe('Heading', () => {
   classNamePrefixProviderTest(() => <Heading elementType="h1" />, 'typography-heading-medium-bold');
 
-  stylePropsTest((props) => <Heading elementType="h1" data-testid="heading-test-id" {...props} />, 'heading-test-id');
+  stylePropsTest((props) => <Heading elementType="h1" {...props} />);
 
-  sizePropsTest((props) => <Heading elementType="h1" data-testid="heading-test-id" {...props} />, 'heading-test-id');
+  sizePropsTest((props) => <Heading elementType="h1" {...props} />);
 
-  sizeExtendedPropsTest(
-    (props) => <Heading elementType="h1" data-testid="heading-test-id" {...props} />,
-    'heading-test-id',
-  );
+  sizeExtendedPropsTest((props) => <Heading elementType="h1" {...props} />);
 
-  textAlignmentPropsTest(
-    (props) => <Heading elementType="h1" {...props} data-testid="heading-test-id" />,
-    'heading-test-id',
-  );
+  textAlignmentPropsTest((props) => <Heading elementType="h1" {...props} />);
 
-  textColorPropsTest(
-    (props) => <Heading elementType="h1" data-testid="heading-test-id" {...props} />,
-    'heading-test-id',
-  );
+  textColorPropsTest((props) => <Heading elementType="h1" {...props} />);
 
-  textHyphensPropsTest(
-    (props) => <Heading elementType="h1" data-testid="heading-test-id" {...props} />,
-    'heading-test-id',
-  );
+  textHyphensPropsTest((props) => <Heading elementType="h1" {...props} />);
 
-  textIsBalancedPropsTest(
-    (props) => <Heading elementType="h1" data-testid="heading-test-id" {...props} />,
-    'heading-test-id',
-  );
+  textIsBalancedPropsTest((props) => <Heading elementType="h1" {...props} />);
 
-  textWordBreakPropsTest(
-    (props) => <Heading elementType="h1" data-testid="heading-test-id" {...props} />,
-    'heading-test-id',
-  );
+  textWordBreakPropsTest((props) => <Heading elementType="h1" {...props} />);
 
   restPropsTest((props) => <Heading elementType="h1" {...props} />, 'h1');
 
