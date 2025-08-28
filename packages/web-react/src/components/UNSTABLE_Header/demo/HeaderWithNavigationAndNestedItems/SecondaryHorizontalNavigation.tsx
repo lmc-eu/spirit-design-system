@@ -19,18 +19,18 @@ const SecondaryHorizontalNavigation: FunctionComponent<SecondaryHorizontalNaviga
         <VisuallyHidden>Search</VisuallyHidden>
       </Button>
     </NavigationItem>
-    <NavigationItem alignmentY="stretch" UNSAFE_className="d-none d-desktop-flex">
+    <NavigationItem alignmentY="stretch" hideOn={['mobile', 'tablet']}>
       <SecondaryHorizontalNavigationDropdown id="dropdown-avatar" isSquare />
     </NavigationItem>
-    <NavigationItem UNSAFE_className="d-none d-desktop-flex">
+    <NavigationItem hideOn={['mobile', 'tablet']}>
       <ButtonLink href="#" color="secondary">
         Log Out
       </ButtonLink>
     </NavigationItem>
-    <NavigationItem UNSAFE_className="d-none d-desktop-flex">
+    <NavigationItem hideOn={['mobile', 'tablet']}>
       <ButtonLink href="#">Post a Job</ButtonLink>
     </NavigationItem>
-    <NavigationItem UNSAFE_className="d-desktop-none">
+    <NavigationItem hideOn="desktop">
       <Button
         id="drawer-navigation-expanded-open-button"
         color="tertiary"
