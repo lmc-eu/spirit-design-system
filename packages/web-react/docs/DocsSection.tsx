@@ -45,10 +45,11 @@ const DocsSection = (props: DocsSectionProps) => {
 
   return (
     <Section
+      {...transferProps}
       hasContainer={container === 'all'}
       size={hasPadding ? 'xsmall' : undefined}
-      {...styleProps}
-      {...transferProps}
+      UNSAFE_className={styleProps.className}
+      UNSAFE_style={styleProps.style}
     >
       {content}
     </Section>

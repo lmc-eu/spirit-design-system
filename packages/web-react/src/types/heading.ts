@@ -1,5 +1,5 @@
-import { ElementType, JSXElementConstructor } from 'react';
-import {
+import { type ElementType, JSXElementConstructor } from 'react';
+import type {
   ChildrenProps,
   EmphasisDictionaryType,
   EmphasisProps,
@@ -11,6 +11,8 @@ import {
   TextColorProps,
   TextColorsDictionaryType,
   TextEmotionColorsType,
+  TextHyphensType,
+  TextWordBreakType,
   TransferProps,
 } from './shared';
 
@@ -30,11 +32,11 @@ export interface HeadingProps<T extends ElementType>
   extends HeadingElementTypeProps<T>,
     ChildrenProps,
     StyleProps,
-    HeadingStyleProps,
-    TransferProps {}
-
-export interface HeadingStyleProps {
+    TransferProps {
+  isTextBalanced?: boolean;
   textAlignment?: TextAlignmentType;
+  textHyphens?: TextHyphensType;
+  textWordBreak?: TextWordBreakType;
 }
 
 export interface SpiritHeadingProps<T extends ElementType, S = void, E = void, C = void>

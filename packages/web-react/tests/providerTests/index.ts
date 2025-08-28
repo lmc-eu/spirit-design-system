@@ -9,5 +9,8 @@ export * from './restPropsTest';
 export * from './spacingPropsTest';
 export * from './stylePropsTest';
 export * from './textAlignmentPropsTest';
+export * from './textHyphensPropsTest';
+export * from './textIsBalancedPropsTest';
+export * from './textWordBreakPropsTest';
 export * from './validationTextPropsTest';
 export * from './validHtmlAttributesTest';
