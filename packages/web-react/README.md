@@ -123,6 +123,13 @@ The component will be hidden from the specified breakpoints up using CSS display
 
 If you need even more control over the component styling, use [escape hatches](#escape-hatches).
 
+## Types Generated From Design Tokens
+
+Some props (e.g. color, radii, container sizes, …) use types generated from design tokens.
+They restrict values to those defined in the design system and stay up to date with every token change.
+
+If you need additional values, you’ll need to coordinate with a designer so they can be added to the Figma and become available through tokens.
+
 ### Escape Hatches
 
 While we encourage teams to utilize Spirit design as it is, we do realize that sometimes product specific customizations

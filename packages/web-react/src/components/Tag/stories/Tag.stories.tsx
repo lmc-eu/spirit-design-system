@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { EmotionColors, SizesExtended } from '../../../constants';
 import ReadMe from '../README.md';
-import { Tag } from '..';
+import { Tag, TagColorsExtended } from '..';
 
 const meta: Meta<typeof Tag> = {
   title: 'Components/Tag',
@@ -19,7 +19,7 @@ const meta: Meta<typeof Tag> = {
     },
     color: {
       control: 'select',
-      options: [...Object.values(EmotionColors), 'neutral'],
+      options: [...Object.values(TagColorsExtended), ...Object.values(EmotionColors)],
       table: {
         defaultValue: { summary: 'neutral' },
       },
@@ -46,7 +46,7 @@ const meta: Meta<typeof Tag> = {
   },
   args: {
     children: 'Tag',
-    color: 'neutral',
+    color: TagColorsExtended.NEUTRAL,
     elementType: 'span',
     isSubtle: false,
     size: SizesExtended.MEDIUM,

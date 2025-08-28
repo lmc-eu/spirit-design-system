@@ -1,16 +1,18 @@
 'use client';
 
 import React, { ElementType, ForwardedRef, forwardRef } from 'react';
+import { SizesExtended } from '../../constants';
 import { useStyleProps } from '../../hooks';
 import { SpiritTagProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
+import { TagColorsExtended } from './constants';
 import { useTagStyleProps } from './useTagStyleProps';
 
 const defaultProps: Partial<SpiritTagProps> = {
-  color: 'neutral',
+  color: TagColorsExtended.NEUTRAL,
   elementType: 'span',
   isSubtle: false,
-  size: 'medium',
+  size: SizesExtended.MEDIUM,
 };
 
 /* We need an exception for components exported with forwardRef */

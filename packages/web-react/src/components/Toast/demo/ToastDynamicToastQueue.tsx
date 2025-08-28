@@ -7,18 +7,22 @@ import { Select } from '../../Select';
 import { Stack } from '../../Stack';
 import { TextArea } from '../../TextArea';
 import { TextField } from '../../TextField';
-import { DEFAULT_TOAST_AUTO_CLOSE_INTERVAL } from '../constants';
-import Toast from '../Toast';
-import ToastBar from '../ToastBar';
 import { ToastItem, ToastProvider } from '../ToastContext';
-import { useToast } from '../useToast';
-import { ToastBarLink, ToastBarMessage } from '..';
+import {
+  DEFAULT_TOAST_AUTO_CLOSE_INTERVAL,
+  Toast,
+  ToastBar,
+  ToastBarLink,
+  ToastBarMessage,
+  ToastColorsExtended,
+  useToast,
+} from '..';
 
 const ToastDynamicToastQueue = () => {
   const [isCollapsible, setIsCollapsible] = useState(true);
   const [alignmentY, setAlignmentY] = useState<AlignmentYDictionaryType>('bottom');
   const [alignmentX, setAlignmentX] = useState<AlignmentXDictionaryType>('center');
-  const [colorValue, setColorValue] = useState<ToastColorType>('neutral');
+  const [colorValue, setColorValue] = useState<ToastColorType>(ToastColorsExtended.NEUTRAL);
   const [hasIconValue, setHasIconValue] = useState(true);
   const [isDismissibleValue, setIsDismissibleValue] = useState(true);
   const [enableAutoCloseValue, setEnableAutoCloseValue] = useState(true);

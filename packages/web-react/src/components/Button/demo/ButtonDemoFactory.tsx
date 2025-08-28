@@ -1,6 +1,7 @@
 import React from 'react';
+import { DemoButtonComponentColors, DemoEmotionColors } from '../../../../docs/constants';
 import DocsSection from '../../../../docs/DocsSection';
-import { ComponentButtonColors, EmotionColors, Sizes } from '../../../constants';
+import { Sizes } from '../../../constants';
 import { ButtonBaseProps } from '../../../types';
 import { Icon } from '../../Icon';
 import { VisuallyHidden } from '../../VisuallyHidden';
@@ -8,8 +9,8 @@ import Button from '../Button';
 
 const ButtonDemoFactory = ({ ...props }: ButtonBaseProps) => {
   const sizes = Object.values(Sizes);
-  const buttonColors = Object.values(ComponentButtonColors);
-  const emotionColors = Object.values(EmotionColors);
+  const buttonColors = Object.values(DemoButtonComponentColors);
+  const emotionColors = Object.values(DemoEmotionColors);
   const colors = [...buttonColors, ...emotionColors];
 
   return (

@@ -1,7 +1,10 @@
 import { ComponentPropsWithRef, ElementType } from 'react';
-import { ChildrenProps, EmotionColorsDictionaryType, StyleProps, TransferProps } from './shared';
+import { PillColorsExtended } from '../components/Pill';
+import type { ChildrenProps, EmotionColorNamesType, StyleProps, TransferProps } from './shared';
 
-export type PillColor<C> = EmotionColorsDictionaryType | 'selected' | 'neutral' | C;
+export type PillColorsExtendedNamesType = (typeof PillColorsExtended)[keyof typeof PillColorsExtended];
+
+export type PillColor<C> = EmotionColorNamesType<C> | PillColorsExtendedNamesType | C;
 
 export interface AriaPillElementTypeProps<T extends ElementType = 'span'> {
   /**

@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { EmotionColors } from '../../../constants';
 import ReadMe from '../README.md';
-import { Pill } from '..';
+import { PillColorsExtended, Pill } from '..';
 
 const meta: Meta<typeof Pill> = {
   title: 'Components/Pill',
@@ -19,7 +19,7 @@ const meta: Meta<typeof Pill> = {
     },
     color: {
       control: 'select',
-      options: [...Object.values(EmotionColors), 'selected', 'neutral'],
+      options: [...Object.values(PillColorsExtended), ...Object.values(EmotionColors)],
       table: {
         defaultValue: { summary: 'selected' },
       },
@@ -33,7 +33,7 @@ const meta: Meta<typeof Pill> = {
   },
   args: {
     children: '3',
-    color: 'selected',
+    color: PillColorsExtended.SELECTED,
     elementType: 'span',
   },
 };
