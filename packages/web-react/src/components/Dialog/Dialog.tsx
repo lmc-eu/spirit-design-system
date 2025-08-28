@@ -14,7 +14,10 @@ const Dialog = (props: DialogProps, ref: ForwardedRef<HTMLDialogElement | null>)
   const contentElementRef: MutableRefObject<HTMLElement | null> = useRef(null);
 
   // handles toggling based on state
-  const { closeDialog } = useDialog(dialogElementRef as MutableRefObject<HTMLDialogElement | null>, isOpen);
+  const { closeDialog, onTransitionEnd } = useDialog(
+    dialogElementRef as MutableRefObject<HTMLDialogElement | null>,
+    isOpen,
+  );
   const handleClickOutside = (event: Event) => {
     // check if it should be closed on backdrop click and if the click was on backdrop (dialog element, not on dialog content)
     if (closeOnBackdropClick && event.target === dialogElementRef.current) {
@@ -49,7 +52,11 @@ const Dialog = (props: DialogProps, ref: ForwardedRef<HTMLDialogElement | null>)
   const child = Children.only(children);
 
   return (
-    <dialog ref={dialogElementRef as MutableRefObject<HTMLDialogElement | null>} {...restProps}>
+    <dialog
+      ref={dialogElementRef as MutableRefObject<HTMLDialogElement | null>}
+      onTransitionEnd={onTransitionEnd}
+      {...restProps}
+    >
       {cloneElement(child as ReactElement, {
         ref: (clonedElementRef: HTMLElement) => {
           contentElementRef.current = clonedElementRef;
