@@ -52,7 +52,8 @@ $loading-color-dictionary-overrides: (
     ),
 );
 
-$size-dictionary: dictionaries.$size;
+$size-dictionary: map.keys(tokens.$buttons);
+
 $size-config: map.deep-merge(
     form-fields-settings.$box-field-size-config,
     (

@@ -13,7 +13,7 @@
 
 @include dictionaries.generate-sizes(
     $class-name: 'Container',
-    $dictionary-values: theme.$size-dictionary,
+    $dictionary-values: theme.$container-sizes,
     $config: theme.$size-config
 );
 
