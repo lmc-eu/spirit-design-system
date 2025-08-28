@@ -1,16 +1,16 @@
 import type { SVGAttributes } from 'react';
-import {
+import type {
   AccentColorNamesType,
   BreakpointToken,
   ChildrenProps,
-  EmotionColorsDictionaryType,
+  EmotionColorNamesType,
   StyleProps,
-  TextColorsDictionaryType,
+  TextColorNamesType,
   TransferProps,
 } from './shared';
 
 export type IconBoxSize = number | Partial<Record<BreakpointToken, number>>;
-export type IconColorType = TextColorsDictionaryType | EmotionColorsDictionaryType | AccentColorNamesType;
+export type IconColorType = TextColorNamesType | EmotionColorNamesType | AccentColorNamesType;
 
 export interface IconProps extends StyleProps, ChildrenProps, SVGAttributes<SVGElement>, TransferProps {
   /** Aria hidden */

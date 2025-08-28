@@ -4,11 +4,12 @@ import React, { ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritPillProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
+import { PillColorsExtended } from './constants';
 import { usePillStyleProps } from './usePillStyleProps';
 
 const defaultProps: Partial<SpiritPillProps> = {
+  color: PillColorsExtended.SELECTED,
   elementType: 'span',
-  color: 'selected',
 };
 
 const Pill = <T extends ElementType = 'span', C = void>(props: SpiritPillProps<T, C>): JSX.Element => {

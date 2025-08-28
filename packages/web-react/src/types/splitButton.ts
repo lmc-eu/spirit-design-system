@@ -1,7 +1,7 @@
 import { ButtonSize } from './button';
-import {
+import type {
   ChildrenProps,
-  ComponentButtonColorsDictionaryType,
+  ComponentButtonColorNamesType,
   PlacementDictionaryType,
   StyleProps,
   TransferProps,
@@ -9,7 +9,7 @@ import {
 
 export interface SplitButtonProps extends TransferProps, StyleProps, ChildrenProps {}
 
-export type SplitButtonColorType<C> = Exclude<ComponentButtonColorsDictionaryType<C>, 'plain'>;
+export type SplitButtonColorType<C> = Exclude<ComponentButtonColorNamesType<C>, 'plain'>;
 
 export interface SpiritSplitButtonProps<C = void, S = void> extends SplitButtonProps {
   color?: SplitButtonColorType<C>;

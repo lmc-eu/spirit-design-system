@@ -10,6 +10,7 @@ import {
   textAlignmentPropsTest,
   validHtmlAttributesTest,
 } from '@local/tests';
+import { ContainerTokenSizes } from '../../../constants';
 import Container from '../Container';
 
 describe('Container', () => {
@@ -50,5 +51,11 @@ describe('Container', () => {
     );
 
     expect(screen.getByTestId(testId)).toHaveClass('Container Container--fluid');
+  });
+
+  it.each([Object.values(ContainerTokenSizes)])('should render extended size %s', async (size) => {
+    render(<Container size={size} data-testid={testId} />);
+
+    expect(screen.getByTestId(testId)).toHaveClass(`Container--${size}`);
   });
 });

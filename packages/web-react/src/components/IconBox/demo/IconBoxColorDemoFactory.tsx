@@ -1,12 +1,12 @@
 import React from 'react';
 import DocsStack from '../../../../docs/DocsStack';
-import type { AccentColorToken, EmotionColorsDictionaryType } from '../../../types';
+import type { AccentColorNamesType, EmotionColorNamesType } from '../../../types';
 import { Flex } from '../../Flex';
 import IconBox from '../IconBox';
 
 type IconBoxColorDemoFactoryProps = {
   label: string;
-  colorList: (AccentColorToken | EmotionColorsDictionaryType)[];
+  colorList: (AccentColorNamesType | EmotionColorNamesType)[];
   isSubtle?: boolean;
 };
 

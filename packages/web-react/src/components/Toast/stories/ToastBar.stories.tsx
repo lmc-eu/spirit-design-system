@@ -1,11 +1,10 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
+import { EmotionColors } from '../../../constants';
 import { SpiritToastBarProps } from '../../../types';
 import ReadMe from '../README.md';
-import ToastBarLink from '../ToastBarLink';
-import ToastBarMessage from '../ToastBarMessage';
-import { Toast, ToastBar } from '..';
+import { ToastColorsExtended, Toast, ToastBar, ToastBarMessage, ToastBarLink } from '..';
 
 const meta: Meta<typeof ToastBar> = {
   title: 'Components/Toast',
@@ -27,7 +26,7 @@ const meta: Meta<typeof ToastBar> = {
     },
     color: {
       control: 'select',
-      options: ['neutral', 'informative', 'success', 'warning', 'danger'],
+      options: [...Object.values(ToastColorsExtended), ...Object.values(EmotionColors)],
       table: {
         defaultValue: { summary: 'neutral' },
       },
@@ -66,7 +65,7 @@ const meta: Meta<typeof ToastBar> = {
       </>
     ),
     closeLabel: 'Close',
-    color: 'neutral',
+    color: ToastColorsExtended.NEUTRAL,
     hasIcon: false,
     iconName: '',
     isDismissible: false,

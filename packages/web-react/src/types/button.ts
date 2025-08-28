@@ -1,15 +1,15 @@
 import { ComponentPropsWithRef, ElementType } from 'react';
-import {
-  ComponentButtonColorsDictionaryType,
+import type {
+  ButtonSizesType,
   ChildrenProps,
   ClickEvents,
-  EmotionColorsDictionaryType,
-  SizesDictionaryType,
+  ComponentButtonColorNamesType,
+  EmotionColorNamesType,
   StyleProps,
 } from './shared';
 
-export type ButtonColor<C> = ComponentButtonColorsDictionaryType | EmotionColorsDictionaryType | C;
-export type ButtonSize<S> = SizesDictionaryType | S;
+export type ButtonColor<C> = ComponentButtonColorNamesType<C> | EmotionColorNamesType<C>;
+export type ButtonSize<S> = ButtonSizesType | S;
 export type ButtonType = 'button' | 'submit' | 'reset';
 
 export interface ButtonBaseProps<C = void, S = void> extends ChildrenProps, StyleProps, ClickEvents {

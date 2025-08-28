@@ -1,8 +1,8 @@
-import { ChildrenProps, SizeExtendedDictionaryType, StyleProps, TextAlignmentType, TransferProps } from './shared';
+import type { ChildrenProps, ContainerSizesType, StyleProps, TextAlignmentType, TransferProps } from './shared';
 
 export interface ContainerProps extends ChildrenProps, ContainerTextStyleProps, StyleProps, TransferProps {}
 
-export type ContainerSize<C> = SizeExtendedDictionaryType | C;
+export type ContainerSize<C> = ContainerSizesType | C;
 
 export interface ContainerTextStyleProps {
   textAlignment?: TextAlignmentType;

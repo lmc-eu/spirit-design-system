@@ -1,14 +1,17 @@
 import { ElementType } from 'react';
+import { ToastColorsExtended } from '../components/Toast';
 import { LinkTarget } from './link';
-import {
+import type {
   AlignmentXDictionaryType,
   AlignmentYDictionaryType,
   ChildrenProps,
-  EmotionColorsDictionaryType,
+  EmotionColorNamesType,
   StyleProps,
 } from './shared';
 
-export type ToastColorType = 'neutral' | EmotionColorsDictionaryType;
+export type ToastColorsExtendedNamesType = (typeof ToastColorsExtended)[keyof typeof ToastColorsExtended];
+
+export type ToastColorType = ToastColorsExtendedNamesType | EmotionColorNamesType;
 
 export interface BaseToastProps extends ChildrenProps, StyleProps {}
 

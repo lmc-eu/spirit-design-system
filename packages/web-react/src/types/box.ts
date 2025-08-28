@@ -5,9 +5,9 @@ import {
   BackgroundEmotionColorsType,
   BackgroundGradientsDictionaryType,
   BorderAccentColorsType,
-  BorderEmotionColorsType,
   BorderColorsDictionaryType,
-  BorderRadiiDictionaryType,
+  BorderEmotionColorsType,
+  BorderRadiiTokenType,
   BorderStylesDictionaryType,
   BorderWidthsDictionaryType,
   BreakpointToken,
@@ -33,7 +33,7 @@ export interface BoxBaseProps extends ChildrenProps, TextColorProps, StyleProps 
   /** The border color of the box. */
   borderColor?: BorderAccentColorsType | BorderEmotionColorsType | BorderColorsDictionaryType;
   /** The border radius of the box. */
-  borderRadius?: BorderRadiiDictionaryType | Partial<Record<BreakpointToken, BorderRadiiDictionaryType>>;
+  borderRadius?: BorderRadiiTokenType | Partial<Record<BreakpointToken, BorderRadiiTokenType>>;
   /** The border style of the box. */
   borderStyle?: BorderStylesDictionaryType;
   /** The border width of the box. */

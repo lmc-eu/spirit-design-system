@@ -9,7 +9,10 @@
 $container-max-width: tokens-tools.get-variable-if-exists('container-xlarge-max-width', tokens.$container-max-width);
 $container-paddings: map.get(tokens.$containers, padding);
 $container-breakpoints: tokens.$breakpoints;
-$container-size-tokens: tools.exclude-keys(tokens.$containers, ('padding', 'max-width'));
+
+// Exclude unwanted tokens so we can iterate over Container sizes.
+// Max-width and padding will be moved out of this map in the future.
+$container-size-tokens: map.remove(tokens.$containers, 'padding', 'max-width');
 
 $container-sizes: map.keys($container-size-tokens);
 $size-config: ();

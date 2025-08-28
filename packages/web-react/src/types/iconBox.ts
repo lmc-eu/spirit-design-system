@@ -1,18 +1,18 @@
 import { ElementType, JSXElementConstructor } from 'react';
 import { IconBoxShapes } from '../components/IconBox/constants';
-import {
+import type {
+  AccentColorNamesType,
   ChildrenProps,
+  EmotionColorNamesType,
+  SizeExtendedDictionaryType,
   SpiritPolymorphicElementPropsWithRef,
   StyleProps,
-  SizeExtendedDictionaryType,
-  AccentColorToken,
-  EmotionColorsDictionaryType,
 } from './shared';
 
 export type IconBoxShapeKeys = keyof typeof IconBoxShapes;
 export type IconBoxShapeType = (typeof IconBoxShapes)[IconBoxShapeKeys];
 
-export type IconBoxColorsType = AccentColorToken | EmotionColorsDictionaryType;
+export type IconBoxColorsType = AccentColorNamesType | EmotionColorNamesType;
 
 export interface IconBoxBaseProps extends ChildrenProps, StyleProps {
   /** The color of the iconBox. */
