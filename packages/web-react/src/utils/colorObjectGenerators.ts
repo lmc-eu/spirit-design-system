@@ -5,7 +5,7 @@ import {
   BackgroundEmotionColorsType,
   BorderAccentColorsType,
   BorderEmotionColorsType,
-  EmotionColorsDictionaryType,
+  EmotionColorNamesType,
   TextAccentColorsType,
   TextColorsDictionaryType,
   TextEmotionColorsType,
@@ -89,5 +89,5 @@ export const getEmotionBorderColors = (): Record<string, BorderEmotionColorsType
   generateColorsObject(emotionColors, 'border', 'emotion');
 
 export const getAccentColorNames = () => Object.keys(accentColors) as AccentColorNamesType[];
-export const getEmotionColorNames = () => Object.keys(emotionColors) as EmotionColorsDictionaryType[];
+export const getEmotionColorNames = () => Object.keys(emotionColors) as EmotionColorNamesType[];
 export const getTextColorNames = () => Object.keys(textColors) as TextColorsDictionaryType[];

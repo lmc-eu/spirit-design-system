@@ -1,4 +1,5 @@
 @use 'sass:map';
+@use 'sass:list';
 @use '../../tools/breakpoint';
 @use '../../tools/tokens' as tokens-tools;
 
@@ -14,4 +15,21 @@
 // Apart from that, we are also deprecating the 'get-size' function and the usage of the 'get-variable-if-exists' function. In the next major version, we can be sure the required tokens will be present so no check will be needed.
 @function get-size($size, $default-size) {
     @return ('max-width': tokens-tools.get-variable-if-exists('container-#{$size}-max-width', $default-size));
+}
+
+@function exclude-keys($map, $exclude-keys) {
+    $result: ();
+
+    @each $key, $value in $map {
+        @if not list.index($exclude-keys, $key) {
+            $result: map.merge(
+                $result,
+                (
+                    $key: $value,
+                )
+            );
+        }
+    }
+
+    @return $result;
 }
