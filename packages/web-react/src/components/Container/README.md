@@ -42,7 +42,7 @@ You can define responsive values for the `textAlignment` prop using an object:
 | Name            | Type                                                                                                                    | Default  | Required | Description                 |
 | --------------- | ----------------------------------------------------------------------------------------------------------------------- | -------- | -------- | --------------------------- |
 | `isFluid`       | `bool`                                                                                                                  | `false`  | ✕        | If true, Container is fluid |
-| `size`          | [Size Extended dictionary][dictionary-size]                                                                             | `xlarge` | ✕        | Size variant                |
+| `size`          | [ContainerSizesType][generated-types]                                                                                   | `xlarge` | ✕        | Size variant                |
 | `textAlignment` | \[[Text Alignment dictionary][dictionary-alignment] \| `Partial<Record<BreakpointToken, TextAlignmentDictionaryType>>`] | -        | ✕        | Text alignment              |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
@@ -52,7 +52,7 @@ and [escape hatches][readme-escape-hatches].
 For detailed information see [Container][web-container] component
 
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#alignment
-[dictionary-size]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#size
+[generated-types]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#types-generated-from-design-tokens
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props

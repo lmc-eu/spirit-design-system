@@ -4,11 +4,11 @@ import {
   AlignmentXDictionaryType,
   AlignmentYDictionaryType,
   ChildrenProps,
-  EmotionColorsDictionaryType,
+  EmotionColorNamesType,
   StyleProps,
 } from './shared';
 
-export type ToastColorType = 'neutral' | EmotionColorsDictionaryType;
+export type ToastColorType = 'neutral' | EmotionColorNamesType;
 
 export interface BaseToastProps extends ChildrenProps, StyleProps {}
 

@@ -1,4 +1,4 @@
-import { accentColors, emotionColors } from '@lmc-eu/spirit-design-tokens';
+import { accentColors, emotionColors, componentColors, textColors } from '@lmc-eu/spirit-design-tokens';
 import { ColorPrefixes } from '../../constants/colors';
 
 export type ColorPrefixesType = (typeof ColorPrefixes)[keyof typeof ColorPrefixes];
@@ -31,4 +31,9 @@ export type BackgroundEmotionColorsType<C = undefined> = GenerateColorsType<
   C
 >;
 
-export type AccentColorNamesType = keyof typeof accentColors;
+export const EmotionColorsConst = Object.keys(emotionColors);
+
+export type AccentColorNamesType<C = undefined> = keyof typeof accentColors | C;
+export type ComponentButtonColorNamesType<C = undefined> = keyof typeof componentColors.button | C;
+export type EmotionColorNamesType<C = undefined> = keyof typeof emotionColors | C;
+export type TextColorNamesType<C = undefined> = keyof typeof textColors | C;
