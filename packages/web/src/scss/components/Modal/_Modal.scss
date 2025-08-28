@@ -6,6 +6,9 @@
 // 4. Clip overflow during transition of the docked variant on mobile screens.
 // 5. Allow scrolling through the modal. Has no effect unless the modal is taller than the viewport.
 // 6. Restore text selection after `all: unset`.
+// 7. To keep the Modal in top-layer until the animation is complete we animate the `display` and `overlay` properties too and set
+//    the @starting-style. Unfortunatelly, this works only in Chromium-based browsers.
+//    See https://developer.mozilla.org/en-US/docs/Web/CSS/overlay and https://developer.mozilla.org/en-US/docs/Web/CSS/@starting-style
 
 @use 'theme';
 
@@ -31,8 +34,13 @@
     }
 
     @media (prefers-reduced-motion: no-preference) {
-        transition-property: visibility, opacity;
-        transition-duration: theme.$transition-duration;
+        /* stylelint-disable declaration-property-value-disallowed-list -- 7. */
+        transition:
+            display theme.$transition-duration allow-discrete,
+            overlay theme.$transition-duration allow-discrete,
+            visibility theme.$transition-duration,
+            opacity theme.$transition-duration;
+        /* stylelint-enable declaration-property-value-disallowed-list */
     }
 }
 
@@ -70,4 +78,37 @@
     opacity: 1;
     user-select: text; // 6.
     pointer-events: auto;
+}
+
+// 7.
+@starting-style {
+    .Modal[open] {
+        --modal-scale: #{theme.$transition-scale-ratio};
+
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .Modal--center[open],
+    .Modal:not(.Modal--top, .Modal--bottom)[open] {
+        --modal-top: auto;
+        --modal-bottom: auto;
+        --modal-translate-y: 0;
+        --modal-transform-origin: center center;
+    }
+
+    .Modal--top[open] {
+        --modal-top: 0;
+        --modal-bottom: auto;
+        --modal-translate-y: #{-1 * theme.$transition-shift-distance};
+        --modal-transform-origin: top center;
+    }
+
+    .Modal--bottom[open] {
+        --modal-top: auto;
+        --modal-bottom: 0;
+        --modal-translate-y: #{theme.$transition-shift-distance};
+        --modal-transform-origin: bottom center;
+    }
 }
