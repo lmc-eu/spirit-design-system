@@ -1,0 +1,23 @@
+@use 'theme';
+
+.TimelineItem {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    grid-auto-flow: column;
+    column-gap: theme.$timeline-item-gap;
+
+    &::after {
+        content: '';
+        display: flex;
+        grid-area: 2 / 1 / 3 / 2;
+        justify-self: center;
+        width: theme.$timeline-connector-width;
+        min-height: theme.$timeline-connector-min-height;
+        background: theme.$timeline-connector-background-color;
+    }
+
+    &:last-of-type::after {
+        display: none;
+    }
+}
