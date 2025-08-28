@@ -54,6 +54,6 @@ export default [
     plugins: {
       import: fixupPluginRules(importPlugin),
     },
-    ...fixupConfigRules(compat.extends('eslint-config-spirit', 'eslint-config-spirit/prettier'))[0],
+    ...fixupConfigRules(compat.extends('eslint-config-spirit', 'eslint-config-spirit/style'))[0],
   },
 ];
