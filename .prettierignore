@@ -16,6 +16,10 @@ static/assets/icons/react
 
 # Ignoring js files because they are already formatted by ESLint (which is using Prettier plugin)
 **/*.js
+**/*.cjs
+**/*.mjs
+**/*.ts
+**/*.tsx
 
 # Code coverage
 **/coverage
