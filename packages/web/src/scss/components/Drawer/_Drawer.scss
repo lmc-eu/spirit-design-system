@@ -25,8 +25,13 @@
     }
 
     @media (prefers-reduced-motion: no-preference) {
-        transition-property: visibility, opacity;
-        transition-duration: theme.$drawer-transition-duration;
+        /* stylelint-disable declaration-property-value-disallowed-list -- allow display and overlay to be transitioned */
+        transition:
+            display theme.$drawer-transition-duration allow-discrete,
+            overlay theme.$drawer-transition-duration allow-discrete,
+            visibility theme.$drawer-transition-duration,
+            opacity theme.$drawer-transition-duration;
+        /* stylelint-enable declaration-property-value-disallowed-list */
     }
 }
 
@@ -46,4 +51,20 @@
     --#{tokens.$css-variable-prefix}drawer-translate-x: 0%;
 
     visibility: visible;
+}
+
+@starting-style {
+    .Drawer--left[open] {
+        --#{tokens.$css-variable-prefix}drawer-translate-x: -100%;
+    }
+
+    .Drawer--right[open] {
+        --#{tokens.$css-variable-prefix}drawer-translate-x: 100%;
+    }
+
+    .Drawer[open] {
+        --#{tokens.$css-variable-prefix}drawer-translate-x: 0%;
+
+        visibility: hidden;
+    }
 }
