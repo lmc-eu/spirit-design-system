@@ -18,7 +18,7 @@ Encore
     // only needed for CDN's or subdirectory deploy
     // .setManifestKeyPrefix('build/')
 
-    /*
+    /*!
      * ENTRY CONFIG
      *
      * Each entry will result in one JavaScript file (e.g. app.js)
@@ -43,7 +43,7 @@ Encore
     // but, you probably want this, unless you're building a single-page app
     .enableSingleRuntimeChunk()
 
-    /*
+    /*!
      * FEATURE CONFIG
      *
      * Enable & configure other features below. For a full
@@ -97,6 +97,7 @@ Encore
     // uncomment to get integrity="..." attributes on your script & link tags
     // requires WebpackEncoreBundle 1.4 or higher
     // .enableIntegrityHashes(Encore.isProduction())
+// eslint-disable-next-line semi-style
 ;
 
 const config = Encore.getWebpackConfig();
