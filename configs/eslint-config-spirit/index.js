@@ -1,9 +1,3 @@
-let prettierConfig;
-
-(async () => {
-  prettierConfig = (await import('prettier-config-spirit')).prettierConfig;
-})();
-
 module.exports = {
   root: true,
 
@@ -27,6 +21,7 @@ module.exports = {
   plugins: ['promise', 'react', '@typescript-eslint', 'react-refresh'],
 
   rules: {
+
     /**
      * Set sorting of imports
      *
