@@ -15,7 +15,8 @@ export const config = {
   // https://jestjs.io/docs/configuration#testenvironment-string
   testEnvironment: 'jsdom',
 
-  // A list of paths to modules that run some code to configure or set up the testing framework before each test file in the suite is executed.
+  // A list of paths to modules that run some code to configure
+  // or set up the testing framework before each test file in the suite is executed.
   // https://jestjs.io/docs/configuration#setupfilesafterenv-array
   setupFilesAfterEnv: [resolve(__dirname, './setup/setupAfterEnv.js')],
 

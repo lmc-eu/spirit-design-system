@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+
+/* eslint-disable id-length -- cli arguments definition */
 const Path = require('path');
 // eslint-disable-next-line import/no-unresolved
 const Bossy = require('bossy');
@@ -16,7 +18,7 @@ const cliArgs = {
     type: 'string',
     require: false,
     multiple: false,
-    default: Path.resolve(__dirname, '..', 'lts.json')
+    default: Path.resolve(__dirname, '..', 'lts.json'),
   },
   s: {
     description: 'Query start date',
@@ -24,7 +26,7 @@ const cliArgs = {
     type: 'string',
     require: false,
     multiple: false,
-    default: now
+    default: now,
   },
   e: {
     description: 'Query end date',
@@ -32,7 +34,7 @@ const cliArgs = {
     type: 'string',
     require: false,
     multiple: false,
-    default: oneYearFromNow
+    default: oneYearFromNow,
   },
   h: {
     description: 'HTML output file',
@@ -40,7 +42,7 @@ const cliArgs = {
     type: 'string',
     require: false,
     multiple: false,
-    default: null
+    default: null,
   },
   g: {
     description: 'SVG output file',
@@ -48,7 +50,7 @@ const cliArgs = {
     type: 'string',
     require: false,
     multiple: false,
-    default: null
+    default: null,
   },
   p: {
     description: 'PNG output file',
@@ -56,7 +58,7 @@ const cliArgs = {
     type: 'string',
     require: false,
     multiple: false,
-    default: null
+    default: null,
   },
   a: {
     description: 'Animate bars on load',
@@ -64,7 +66,7 @@ const cliArgs = {
     type: 'boolean',
     require: false,
     multiple: false,
-    default: false
+    default: false,
   },
   m: {
     description: 'Exclude Master (unstable) in graph',
@@ -72,7 +74,7 @@ const cliArgs = {
     type: 'boolean',
     require: false,
     multiple: false,
-    default: false
+    default: false,
   },
   n: {
     description: 'Project Name',
@@ -80,8 +82,8 @@ const cliArgs = {
     type: 'string',
     require: false,
     multiple: false,
-    default: 'Spirit'
-  }
+    default: 'Spirit',
+  },
 };
 
 const args = Bossy.parse(cliArgs, { argv: process.argv });
@@ -101,7 +103,7 @@ const options = {
   png: args.png ? Path.resolve(args.png) : null,
   animate: args.animate,
   excludeMaster: args.excludeMaster,
-  projectName: args.projectName
+  projectName: args.projectName,
 };
 
 Lib.create(options);
