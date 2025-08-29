@@ -1,4 +1,4 @@
-import { breakpoints } from '@lmc-eu/spirit-design-tokens';
+import { breakpoints } from '@local/virtual-design-tokens-alias';
 import BaseComponent from './BaseComponent';
 import { warning } from './common/utilities';
 import EventHandler from './dom/EventHandler';
