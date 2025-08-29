@@ -85,7 +85,8 @@ module.exports = {
 
     // Disallow or enforce spaces inside of brackets
     // Disallow
-    '@stylistic/array-bracket-spacing': ['warn', 'always'],
+    // @see { @link https://eslint.style/rules/array-bracket-spacing }
+    '@stylistic/array-bracket-spacing': ['warn', 'never'],
 
     // Require space before/after arrow function's arrow
     '@stylistic/arrow-spacing': ['warn', {
@@ -270,7 +271,7 @@ module.exports = {
     // Functions that take numerous parameters can be difficult to read and write because it
     // requires the memorization of what each parameter is, its type, and the order they should
     // appear in.
-    'max-params': ['warn', 4],
+    'max-params': ['warn', 5],
 
     // Set Maximum Depth of Nested Callbacks
     // This rule is aimed at increasing code clarity by discouraging deeply nesting callbacks.
@@ -284,10 +285,11 @@ module.exports = {
 
     // Enforce a particular style for multiline comments
     // Prefer consecutive line comments for multiline comment block
-    '@stylistic/multiline-comment-style': ['warn', 'separate-lines'],
-    // Do not enforce comment style
+    // Prefer JSDoc comment style that starts with `/**`
     // @see { @link } https://eslint.style/rules/multiline-comment-style
-    // '@stylistic/multiline-comment-style': ['off'],
+    // @todo: Enable this after migration to ESLint v9
+    // '@stylistic/multiline-comment-style': ['warn', 'separate-lines',],
+    '@stylistic/multiline-comment-style': ['off'],
 
     // Enforce newlines between operands of ternary expressions
     // Enforce either the whole ternary on a single line or each part of the ternary on its own line
@@ -424,7 +426,9 @@ module.exports = {
     // These comments are a warning signal, that there is something not production ready in your
     // code. Most likely you want to fix it or remove the comments before you roll out your code
     // with a good feeling.
+    // @see { @link https://eslint.org/docs/latest/rules/no-warning-comments }
     'no-warning-comments': ['warn', {
+      terms: [],
       location: 'anywhere',
     }],
 
@@ -482,13 +486,14 @@ module.exports = {
     // Require or disallow padding lines between statements
     // This rule requires or disallows blank lines between the given 2 kinds of statements. Properly
     // blank lines help developers to understand the code.
+    // @see { @link https://eslint.style/rules/padding-line-between-statements }
     '@stylistic/padding-line-between-statements': [
       'warn',
       { blankLine: 'always', next: '*', prev: ['cjs-import', 'directive'] },
       { blankLine: 'always', prev: '*', next: ['cjs-export', 'class', 'export', 'function'] },
       { blankLine: 'never', prev: 'directive', next: 'directive' },
       { blankLine: 'never', prev: 'cjs-import', next: 'cjs-import' },
-      { blankLine: 'never', prev: 'export', next: 'export' },
+      { blankLine: 'always', prev: 'export', next: 'export' },
       { blankLine: 'never', prev: 'import', next: 'import' },
       { blankLine: 'always', prev: '*', next: ['function', 'for', 'do', 'switch', 'if', 'try'] },
     ],
@@ -544,11 +549,12 @@ module.exports = {
     // Generally, semicolons are at the end of lines. However, in semicolon-less style, semicolons
     // are at the beginning of lines. This rule enforces that semicolons are at the configured
     // location.
-    '@stylistic/semi-style': ['warn', 'first'],
+    // @see { @link https://eslint.style/rules/semi-style }
+    '@stylistic/semi-style': ['warn', 'last'],
 
     // Enforce or Disallow Semicolons
     // This rule is aimed at ensuring consistent use of semicolons.
-    '@stylistic/semi': ['warn', 'never'],
+    '@stylistic/semi': ['warn', 'always'],
 
     // Require Or Disallow Space Before Blocks
     // This rule will enforce consistency of spacing before blocks.
@@ -581,9 +587,15 @@ module.exports = {
 
     // Require or disallow a whitespace beginning a comment
     // This rule will enforce consistency of spacing after the start of a comment // or /*.
+    // @see { @link https://eslint.style/rules/spaced-comment#spaced-comment }
     '@stylistic/spaced-comment': ['warn', 'always', {
-      // Allow TypeScript's `/// <reference />` stanzas
-      markers: ['/'],
+      line: {
+        // Allow TypeScript's `/// <reference />` stanzas
+        markers: ['/'],
+      },
+      block: {
+        markers: ['/', '*', '!'],
+      },
     }],
 
     // Enforce spacing around colons of switch statements
@@ -611,9 +623,7 @@ module.exports = {
     // variable comes second ("red" === color).
     yoda: 'warn',
 
-
     // PLUGIN: eslint-plugin-import
-
 
     // This rule either enforces or bans the use of inline type-only markers for named imports
     'import/consistent-type-specifier-style': ['warn', 'prefer-inline'],
@@ -628,7 +638,8 @@ module.exports = {
     // An export declaration or module.exports assignment can appear anywhere in the code. By
     // requiring a single export declaration all your exports will remain at one place, making it
     // easier to see what exports a module provides.
-    'import/group-exports': 'warn',
+    // @see { @link https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/group-exports.md }
+    'import/group-exports': 'off',
 
     // Reports the use of empty named import blocks
     // Example: `import {} from 'foo'`
