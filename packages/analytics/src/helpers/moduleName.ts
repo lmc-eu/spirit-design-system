@@ -14,7 +14,7 @@ export const getModuleName = (instance: Instance, componentName: string) => {
   const { moduleName } = instance.importInfo;
 
   // project components (import starts with ./ or ../)
-  if (/^\./.test(moduleName)) {
+  if ((/^\./).test(moduleName)) {
     return 'local_component';
   }
 
