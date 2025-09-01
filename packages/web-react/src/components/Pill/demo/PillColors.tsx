@@ -1,9 +1,9 @@
 import React from 'react';
-import { EmotionColors } from '../../../constants';
+import { DemoEmotionColors } from '../../../constants';
 import Pill from '../Pill';
 
 const PillColors = () => {
-  const emotionColors = Object.values(EmotionColors);
+  const emotionColors = Object.values(DemoEmotionColors);
   const colors = ['selected', 'neutral', ...emotionColors];
 
   return (

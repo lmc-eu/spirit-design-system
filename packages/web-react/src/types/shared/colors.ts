@@ -1,5 +1,5 @@
 import { accentColors, emotionColors, componentColors, textColors } from '@lmc-eu/spirit-design-tokens';
-import { ColorPrefixes } from '../../constants/colors';
+import { ColorPrefixes } from '../../constants';
 
 export type ColorPrefixesType = (typeof ColorPrefixes)[keyof typeof ColorPrefixes];
 

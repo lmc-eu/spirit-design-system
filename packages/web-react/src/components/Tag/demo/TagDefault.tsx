@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react';
 import DocsSection from '../../../../docs/DocsSection';
-import { EmotionColors, SizesExtended } from '../../../constants';
+import { SizesExtended, DemoEmotionColors } from '../../../constants';
 import { Grid } from '../../Grid';
 import Tag from '../Tag';
 
 const TagDefault = () => {
   const sizes = Object.values(SizesExtended);
-  const emotionColors = Object.values(EmotionColors);
+  const emotionColors = Object.values(DemoEmotionColors);
   const colors = ['neutral', ...emotionColors];
 
   return (
