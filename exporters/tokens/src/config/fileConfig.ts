@@ -62,6 +62,12 @@ export const themedFilesData: FileData[] = [
     hasMixin: true,
     hasStylesObject: false,
   },
+  {
+    fileName: 'other',
+    tokenTypes: [TokenType.dimension],
+    hasMixin: true,
+    hasStylesObject: false,
+  },
 ];
 
 export const devicesFilesData: FileData[] = [
