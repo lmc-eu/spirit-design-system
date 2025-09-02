@@ -1,13 +1,14 @@
 import React, { Fragment } from 'react';
 import { DemoEmotionColors, DocsSection } from '../../../../docs';
-import { SizesExtended } from '../../../constants';
+import { BasicTagColors, SizesExtended } from '../../../constants';
 import { Grid } from '../../Grid';
 import Tag from '../Tag';
 
 const TagDefault = () => {
   const sizes = Object.values(SizesExtended);
+  const tagColors = Object.values(BasicTagColors);
   const emotionColors = Object.values(DemoEmotionColors);
-  const colors = ['neutral', ...emotionColors];
+  const colors = [...tagColors, ...emotionColors];
 
   return (
     <Grid cols={{ mobile: 1, tablet: 3, desktop: 5 }} spacingY="space-1100">
