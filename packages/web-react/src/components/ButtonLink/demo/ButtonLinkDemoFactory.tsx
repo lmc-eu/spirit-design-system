@@ -1,7 +1,6 @@
 import React from 'react';
-import DocsSection from '../../../../docs/DocsSection';
+import { DemoButtonComponentColors, DemoEmotionColors, DocsSection } from '../../../../docs';
 import { Sizes } from '../../../constants';
-import { DemoButtonComponentColors, DemoEmotionColors } from '../../../constants/colors';
 import { ButtonBaseProps } from '../../../types';
 import { Icon } from '../../Icon';
 import { VisuallyHidden } from '../../VisuallyHidden';

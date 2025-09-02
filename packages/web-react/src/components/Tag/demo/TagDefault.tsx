@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
-import DocsSection from '../../../../docs/DocsSection';
-import { SizesExtended, DemoEmotionColors } from '../../../constants';
+import { DemoEmotionColors, DocsSection } from '../../../../docs';
+import { SizesExtended } from '../../../constants';
 import { Grid } from '../../Grid';
 import Tag from '../Tag';
 

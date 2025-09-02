@@ -1,6 +1,6 @@
 import { accentColors } from '@lmc-eu/spirit-design-tokens';
 import React, { useState } from 'react';
-import { DemoEmotionColors } from '../../../constants';
+import { DemoEmotionColors } from '../../../../docs';
 import { AccentColorNamesType } from '../../../types';
 import Checkbox from '../../Checkbox/Checkbox';
 import { Grid } from '../../Grid';

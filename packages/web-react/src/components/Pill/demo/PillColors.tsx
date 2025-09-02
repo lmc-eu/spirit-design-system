@@ -1,5 +1,5 @@
 import React from 'react';
-import { DemoEmotionColors } from '../../../constants';
+import { DemoEmotionColors } from '../../../../docs';
 import Pill from '../Pill';
 
 const PillColors = () => {

@@ -31,8 +31,6 @@ export type BackgroundEmotionColorsType<C = undefined> = GenerateColorsType<
   C
 >;
 
-export const EmotionColorsConst = Object.keys(emotionColors);
-
 export type AccentColorNamesType<C = undefined> = keyof typeof accentColors | C;
 export type ComponentButtonColorNamesType<C = undefined> = keyof typeof componentColors.button | C;
 export type EmotionColorNamesType<C = undefined> = keyof typeof emotionColors | C;

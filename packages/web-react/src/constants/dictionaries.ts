@@ -1,6 +1,6 @@
 import { componentColors, containers, emotionColors, textColors } from '@lmc-eu/spirit-design-tokens';
 
-function generateDictionaryObject<T extends Record<string, unknown>>(obj: T) {
+function createUppercaseKeyDictionary<T extends Record<string, unknown>>(obj: T) {
   return Object.fromEntries(Object.keys(obj).map((key) => [key.toUpperCase(), key])) as {
     [K in keyof T as Uppercase<string & K>]: K;
   };
@@ -72,9 +72,9 @@ export const BackgroundColors = {
   TERTIARY: 'tertiary',
 } as const;
 
-export const ComponentButtonColors = generateDictionaryObject(componentColors.button);
+export const ComponentButtonColors = createUppercaseKeyDictionary(componentColors.button);
 
-export const EmotionColors = generateDictionaryObject(emotionColors);
+export const EmotionColors = createUppercaseKeyDictionary(emotionColors);
 
 // export const EmotionColors = Object.keys(emotionColors) as Array<keyof typeof emotionColors>;
 
@@ -84,7 +84,7 @@ export const LinkColors = {
   TERTIARY: 'tertiary',
 } as const;
 
-export const TextColors = generateDictionaryObject(textColors);
+export const TextColors = createUppercaseKeyDictionary(textColors);
 
 /* Intensity */
 export const Intensity = {
@@ -136,7 +136,7 @@ export const SizesExtended = {
 } as const;
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const { MAXWIDTH, PADDING, ...ContainerTokenSizes } = generateDictionaryObject(containers);
+const { MAXWIDTH, PADDING, ...ContainerTokenSizes } = createUppercaseKeyDictionary(containers);
 export { ContainerTokenSizes };
 
 /* Validation */
