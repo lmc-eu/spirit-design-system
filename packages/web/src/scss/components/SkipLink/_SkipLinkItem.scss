@@ -1,12 +1,6 @@
-// 1. The root element doesn't need any styles. To comply BEM methodology, we still should to define it.
-
 @use 'theme';
 
-// stylelint-disable-next-line block-no-empty -- 1.
-.SkipLink {
-}
-
-.SkipLink__item {
+.SkipLinkItem {
     position: absolute;
     top: theme.$inset-top;
     left: theme.$inset-left;

@@ -7,8 +7,8 @@ improving accessibility for keyboard and screen reader users.
 
 ```html
 <body>
-  <nav class="SkipLink" aria-label="Navigation with skip links">
-    <a href="#main-content" class="SkipLink__item"> Skip to main content </a>
+  <nav aria-label="Navigation with skip links">
+    <a href="#main-content" class="SkipLinkItem"> Skip to main content </a>
   </nav>
   <!-- Other navigation elements -->
   <main id="main-content">
@@ -17,4 +17,16 @@ improving accessibility for keyboard and screen reader users.
 </body>
 ```
 
-⚠️ Ensure that the `SkipLink` is placed at the top of the page, before any other navigation elements.
+⚠️ Ensure that the `SkipLink` is placed before the section you want to skip to.
+
+### 👍 When to Use
+
+- Provide a way for sighted keyboard or screen reader users to bypass repetitive navigation
+  links and access the main content directly.
+- To satisfy the accessibility standard [WCAG2.0 Guideline 2.4.1 Bypass Blocks][wcag-bypass-blocks].
+
+### 👎 When Not to Use
+
+- If the page has a few navigable items or a minimal repetitive content.
+
+[wcag-bypass-blocks]: https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-skip.html
