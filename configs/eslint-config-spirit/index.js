@@ -1,9 +1,3 @@
-let prettierConfig;
-
-(async () => {
-  prettierConfig = (await import('prettier-config-spirit')).prettierConfig;
-})();
-
 module.exports = {
   root: true,
 
@@ -20,25 +14,13 @@ module.exports = {
     '@lmc-eu/eslint-config-react/base',
     '@lmc-eu/eslint-config-react/optional',
     '@lmc-eu/eslint-config-jest',
-    'prettier',
-    'plugin:prettier/recommended',
     'plugin:storybook/recommended',
+    './style.js',
   ],
 
-  plugins: ['promise', 'react', '@typescript-eslint', 'prettier', 'react-refresh'],
+  plugins: ['promise', 'react', '@typescript-eslint', 'react-refresh'],
 
   rules: {
-    /**
-     * Use prettier config for code formatting
-     *
-     * @see { @link https://github.com/prettier/eslint-plugin-prettier }
-     */
-    'prettier/prettier': [
-      'error',
-      {
-        ...prettierConfig,
-      },
-    ],
 
     /**
      * Set sorting of imports

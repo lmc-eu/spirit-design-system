@@ -15,6 +15,6 @@ module.exports = {
     'packages/form-validations',
     'packages/icons',
     'packages/web-react',
-    'packages/web'
+    'packages/web',
   ],
 };
