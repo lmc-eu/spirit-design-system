@@ -17,10 +17,10 @@ import { Pill } from '@lmc-eu/spirit-web-react';
 
 ## API
 
-| Name       | Type                                                                | Default    | Required | Description            |
-| ---------- | ------------------------------------------------------------------- | ---------- | -------- | ---------------------- |
-| `children` | `ReactNode`                                                         | —          | ✓        | Content of the Pill    |
-| `color`    | [EmotionColorNamesType][generated-types] \| `selected` \| `neutral` | `selected` | ✕        | Color of the component |
+| Name       | Type                                                                       | Default    | Required | Description            |
+| ---------- | -------------------------------------------------------------------------- | ---------- | -------- | ---------------------- |
+| `children` | `ReactNode`                                                                | —          | ✓        | Content of the Pill    |
+| `color`    | [EmotionColorNamesType][readme-generated-types] \| `selected` \| `neutral` | `selected` | ✕        | Color of the component |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -28,8 +28,8 @@ and [escape hatches][readme-escape-hatches].
 
 For detailed information see [Pill][pill] component
 
-[generated-types]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#types-generated-from-design-tokens
 [pill]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Pill/README.md
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
+[readme-generated-types]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#types-generated-from-design-tokens
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props

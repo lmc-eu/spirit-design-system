@@ -78,12 +78,12 @@ import icons from '@lmc-eu/spirit-icons/icons';
 
 ## API
 
-| Name      | Type                                                                                   | Default      | Required | Description                                                                                           |
-| --------- | -------------------------------------------------------------------------------------- | ------------ | -------- | ----------------------------------------------------------------------------------------------------- |
-| `boxSize` | \[`number` \| `Partial<Record<BreakpointToken, number>>`]                              | 24           | ✕        | Size of the icon, use object to set responsive values, e.g. `{ mobile: 20, tablet: 30, desktop: 40 }` |
-| `color`   | [AccentColorNamesType \| EmotionColorNamesType \| TextColorNamesType][generated-types] | `primary` \* | ✕        | Color of the dualtone icon                                                                            |
-| `name`    | `string`                                                                               | —            | ✓        | Name of the icon                                                                                      |
-| `title`   | `string`                                                                               | —            | ✕        | Title of the icon                                                                                     |
+| Name      | Type                                                                                          | Default      | Required | Description                                                                                           |
+| --------- | --------------------------------------------------------------------------------------------- | ------------ | -------- | ----------------------------------------------------------------------------------------------------- |
+| `boxSize` | \[`number` \| `Partial<Record<BreakpointToken, number>>`]                                     | 24           | ✕        | Size of the icon, use object to set responsive values, e.g. `{ mobile: 20, tablet: 30, desktop: 40 }` |
+| `color`   | [AccentColorNamesType \| EmotionColorNamesType \| TextColorNamesType][readme-generated-types] | `primary` \* | ✕        | Color of the dualtone icon                                                                            |
+| `name`    | `string`                                                                                      | —            | ✓        | Name of the icon                                                                                      |
+| `title`   | `string`                                                                                      | —            | ✕        | Title of the icon                                                                                     |
 
 (\*) The default color "Primary" is used only for dualtone icons. For single-tone icons, the default color is inherited from the parent element.
 
@@ -93,12 +93,12 @@ and [escape hatches][readme-escape-hatches].
 
 For more details about Icons see [Spirit Icons][spirit-icons] package.
 
-[generated-types]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#types-generated-from-design-tokens
 [html-react-parser-package]: https://www.npmjs.com/package/html-react-parser
 [icons-package]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/icons
 [npm]: https://www.npmjs.com/
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
+[readme-generated-types]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#types-generated-from-design-tokens
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props
 [spirit-icons]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/icons/README.md
 [yarn]: https://yarnpkg.com/

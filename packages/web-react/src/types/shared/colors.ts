@@ -3,6 +3,9 @@ import { ColorPrefixes } from '../../constants';
 
 export type ColorPrefixesType = (typeof ColorPrefixes)[keyof typeof ColorPrefixes];
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type ComponentKeys<Obj extends Record<string, any>, C = never> = keyof Obj | C;
+
 type MatchingKeys<T, Prefix extends string> = keyof {
   [K in Extract<keyof T, string> as K extends `${Prefix}${string}` ? K : never]: string;
 };
@@ -31,7 +34,7 @@ export type BackgroundEmotionColorsType<C = undefined> = GenerateColorsType<
   C
 >;
 
-export type AccentColorNamesType<C = undefined> = keyof typeof accentColors | C;
-export type ComponentButtonColorNamesType<C = undefined> = keyof typeof componentColors.button | C;
-export type EmotionColorNamesType<C = undefined> = keyof typeof emotionColors | C;
-export type TextColorNamesType<C = undefined> = keyof typeof textColors | C;
+export type AccentColorNamesType<C = undefined> = ComponentKeys<typeof accentColors, C>;
+export type ComponentButtonColorNamesType<C = undefined> = ComponentKeys<typeof componentColors.button, C>;
+export type EmotionColorNamesType<C = undefined> = ComponentKeys<typeof emotionColors, C>;
+export type TextColorNamesType<C = undefined> = ComponentKeys<typeof textColors, C>;

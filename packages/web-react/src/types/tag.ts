@@ -1,5 +1,5 @@
 import { ElementType } from 'react';
-import { BasicTagColors } from '../constants';
+import { BasicTagColors } from '../components';
 import { ChildrenProps, EmotionColorNamesType, SizeExtendedDictionaryType, StyleProps, TransferProps } from './shared';
 
 export type BasicTagColorsNamesType = (typeof BasicTagColors)[keyof typeof BasicTagColors];

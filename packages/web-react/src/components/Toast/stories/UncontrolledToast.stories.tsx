@@ -4,7 +4,7 @@ import React from 'react';
 import { AlignmentX, EmotionColors } from '../../../constants';
 import { ToastColorType, ToastLinkProps, UncontrolledToastProps } from '../../../types';
 import { Button } from '../../Button';
-import { DEFAULT_TOAST_AUTO_CLOSE_INTERVAL } from '../constants';
+import { BasicToastColors, DEFAULT_TOAST_AUTO_CLOSE_INTERVAL } from '../constants';
 import ReadMe from '../README.md';
 import { ToastItem, ToastProvider } from '../ToastContext';
 import UncontrolledToast from '../UncontrolledToast';
@@ -55,7 +55,7 @@ const meta: Meta<UncontrolledToastPlaygroundProps> = {
     },
     color: {
       control: 'select',
-      options: ['neutral', ...Object.values(EmotionColors)],
+      options: [Object.values(BasicToastColors), ...Object.values(EmotionColors)],
       table: {
         defaultValue: { summary: 'neutral' },
       },
@@ -92,7 +92,7 @@ const meta: Meta<UncontrolledToastPlaygroundProps> = {
     closeLabel: 'Close',
     hasIcon: false,
     isDismissible: true,
-    color: 'neutral',
+    color: BasicToastColors.NEUTRAL,
     iconName: '',
     isCollapsible: true,
     enableAutoClose: true,

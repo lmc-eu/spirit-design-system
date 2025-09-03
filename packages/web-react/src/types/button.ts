@@ -1,11 +1,11 @@
 import { ComponentPropsWithRef, ElementType } from 'react';
 import {
+  ButtonSizesType,
   ChildrenProps,
   ClickEvents,
-  StyleProps,
   ComponentButtonColorNamesType,
   EmotionColorNamesType,
-  ButtonSizesType,
+  StyleProps,
 } from './shared';
 
 export type ButtonColor<C> = ComponentButtonColorNamesType<C> | EmotionColorNamesType<C>;

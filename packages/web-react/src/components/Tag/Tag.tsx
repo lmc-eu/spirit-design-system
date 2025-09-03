@@ -1,10 +1,11 @@
 'use client';
 
 import React, { ElementType, ForwardedRef, forwardRef } from 'react';
-import { BasicTagColors, SizesExtended } from '../../constants';
+import { SizesExtended } from '../../constants';
 import { useStyleProps } from '../../hooks';
 import { SpiritTagProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
+import { BasicTagColors } from './constants';
 import { useTagStyleProps } from './useTagStyleProps';
 
 const defaultProps: Partial<SpiritTagProps> = {

@@ -7,7 +7,7 @@ import { Select } from '../../Select';
 import { Stack } from '../../Stack';
 import { TextArea } from '../../TextArea';
 import { TextField } from '../../TextField';
-import { DEFAULT_TOAST_AUTO_CLOSE_INTERVAL } from '../constants';
+import { BasicToastColors, DEFAULT_TOAST_AUTO_CLOSE_INTERVAL } from '../constants';
 import Toast from '../Toast';
 import ToastBar from '../ToastBar';
 import { ToastItem, ToastProvider } from '../ToastContext';
@@ -18,7 +18,7 @@ const ToastDynamicToastQueue = () => {
   const [isCollapsible, setIsCollapsible] = useState(true);
   const [alignmentY, setAlignmentY] = useState<AlignmentYDictionaryType>('bottom');
   const [alignmentX, setAlignmentX] = useState<AlignmentXDictionaryType>('center');
-  const [colorValue, setColorValue] = useState<ToastColorType>('neutral');
+  const [colorValue, setColorValue] = useState<ToastColorType>(BasicToastColors.NEUTRAL);
   const [hasIconValue, setHasIconValue] = useState(true);
   const [isDismissibleValue, setIsDismissibleValue] = useState(true);
   const [enableAutoCloseValue, setEnableAutoCloseValue] = useState(true);

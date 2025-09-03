@@ -1,9 +1,9 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { BasicPillColors, EmotionColors } from '../../../constants';
+import { EmotionColors } from '../../../constants';
 import ReadMe from '../README.md';
-import { Pill } from '..';
+import { BasicPillColors, Pill } from '..';
 
 const meta: Meta<typeof Pill> = {
   title: 'Components/Pill',

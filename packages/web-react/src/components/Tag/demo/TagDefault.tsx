@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react';
 import { DemoEmotionColors, DocsSection } from '../../../../docs';
-import { BasicTagColors, SizesExtended } from '../../../constants';
+import { SizesExtended } from '../../../constants';
 import { Grid } from '../../Grid';
+import { BasicTagColors } from '../constants';
 import Tag from '../Tag';
 
 const TagDefault = () => {

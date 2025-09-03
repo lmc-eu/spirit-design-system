@@ -1,5 +1,5 @@
 import { ComponentPropsWithRef, ElementType } from 'react';
-import { BasicPillColors } from '../constants';
+import { BasicPillColors } from '../components/Pill';
 import { ChildrenProps, EmotionColorNamesType, StyleProps, TransferProps } from './shared';
 
 export type BasicPillColorsNamesType = (typeof BasicPillColors)[keyof typeof BasicPillColors];

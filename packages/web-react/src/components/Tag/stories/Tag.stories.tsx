@@ -1,9 +1,9 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { BasicTagColors, EmotionColors, SizesExtended } from '../../../constants';
+import { EmotionColors, SizesExtended } from '../../../constants';
 import ReadMe from '../README.md';
-import { Tag } from '..';
+import { BasicTagColors, Tag } from '..';
 
 const meta: Meta<typeof Tag> = {
   title: 'Components/Tag',

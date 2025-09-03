@@ -1,10 +1,10 @@
 'use client';
 
 import React, { ElementType } from 'react';
-import { BasicPillColors } from '../../constants';
 import { useStyleProps } from '../../hooks';
 import { SpiritPillProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
+import { BasicPillColors } from './constants';
 import { usePillStyleProps } from './usePillStyleProps';
 
 const defaultProps: Partial<SpiritPillProps> = {

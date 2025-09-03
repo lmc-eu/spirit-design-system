@@ -76,8 +76,6 @@ export const ComponentButtonColors = createUppercaseKeyDictionary(componentColor
 
 export const EmotionColors = createUppercaseKeyDictionary(emotionColors);
 
-// export const EmotionColors = Object.keys(emotionColors) as Array<keyof typeof emotionColors>;
-
 export const LinkColors = {
   PRIMARY: 'primary',
   SECONDARY: 'secondary',

@@ -1,6 +1,6 @@
 import React from 'react';
 import { DemoEmotionColors } from '../../../../docs';
-import { BasicPillColors } from '../../../constants';
+import { BasicPillColors } from '../constants';
 import Pill from '../Pill';
 
 const PillColors = () => {
