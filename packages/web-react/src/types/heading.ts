@@ -9,7 +9,7 @@ import type {
   TextAccentColorsType,
   TextAlignmentType,
   TextColorProps,
-  TextColorsDictionaryType,
+  TextColorNamesType,
   TextEmotionColorsType,
   TextHyphensType,
   TextWordBreakType,
@@ -17,7 +17,7 @@ import type {
 } from './shared';
 
 export type HeadingColorsType<C = undefined> =
-  | TextColorsDictionaryType<C>
+  | TextColorNamesType<C>
   | TextAccentColorsType<C>
   | TextEmotionColorsType<C>;
 

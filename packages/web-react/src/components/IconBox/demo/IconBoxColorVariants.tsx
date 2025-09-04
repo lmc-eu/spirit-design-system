@@ -1,13 +1,13 @@
 import { accentColors } from '@lmc-eu/spirit-design-tokens';
 import React, { useState } from 'react';
-import { EmotionColors } from '../../../constants';
-import type { AccentColorToken } from '../../../types';
+import { DemoEmotionColors } from '../../../../docs';
+import { AccentColorNamesType } from '../../../types';
 import Checkbox from '../../Checkbox/Checkbox';
 import { Grid } from '../../Grid';
 import IconBoxColorDemoFactory from './IconBoxColorDemoFactory';
 
-const accentColorsObject = Object.keys(accentColors) as AccentColorToken[];
-const emotionColorsObject = Object.values(EmotionColors);
+const accentColorsObject = Object.keys(accentColors) as AccentColorNamesType[];
+const emotionColorsObject = Object.values(DemoEmotionColors);
 
 const IconBoxColorVariants = () => {
   const [isSubtle, setIsSubtle] = useState(true);

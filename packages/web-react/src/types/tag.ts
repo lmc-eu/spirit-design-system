@@ -1,13 +1,10 @@
 import { ElementType } from 'react';
-import {
-  ChildrenProps,
-  EmotionColorsDictionaryType,
-  SizeExtendedDictionaryType,
-  StyleProps,
-  TransferProps,
-} from './shared';
+import { BasicTagColors } from '..';
+import { ChildrenProps, EmotionColorNamesType, SizeExtendedDictionaryType, StyleProps, TransferProps } from './shared';
 
-export type TagColor<C> = EmotionColorsDictionaryType | 'neutral' | C;
+export type BasicTagColorsNamesType = (typeof BasicTagColors)[keyof typeof BasicTagColors];
+
+export type TagColor<C> = EmotionColorNamesType | BasicTagColorsNamesType | C;
 
 export type TagSize<S> = SizeExtendedDictionaryType | S;
 

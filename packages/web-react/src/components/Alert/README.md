@@ -27,12 +27,12 @@ import { Alert } from '@lmc-eu/spirit-web-react/components';
 
 ## API
 
-| Name           | Type                                         | Default   | Required | Description                |
-| -------------- | -------------------------------------------- | --------- | -------- | -------------------------- |
-| `children`     | `ReactNode`                                  | —         | ✓        | Content of the Alert       |
-| `color`        | [Emotion Color dictionary][dictionary-color] | `success` | ✕        | Color of the component     |
-| `iconName`     | `string`                                     | `info` \* | ✕        | Icon used in Alert         |
-| `isCentered` . | `bool`                                       | `false`   | ✕        | If true, Alert is centered |
+| Name           | Type                                            | Default   | Required | Description                |
+| -------------- | ----------------------------------------------- | --------- | -------- | -------------------------- |
+| `children`     | `ReactNode`                                     | —         | ✓        | Content of the Alert       |
+| `color`        | [EmotionColorNamesType][readme-generated-types] | `success` | ✕        | Color of the component     |
+| `iconName`     | `string`                                        | `info` \* | ✕        | Icon used in Alert         |
+| `isCentered` . | `bool`                                          | `false`   | ✕        | If true, Alert is centered |
 
 (\*) For each emotion color, a default icon is defined.
 The icons come from the [Icon package][icon-package], or from your custom source of icons.
@@ -53,9 +53,9 @@ This component uses the `Icon` component internally. To ensure correct rendering
 please refer to the [Icon component documentation][web-react-icon-documentation] for setup instructions.
 
 [alert]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Alert/README.md
-[dictionary-color]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#color
 [icon-package]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/icons
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
+[readme-generated-types]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#types-generated-from-design-tokens
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props
 [web-react-icon-documentation]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Icon/README.md#-usage

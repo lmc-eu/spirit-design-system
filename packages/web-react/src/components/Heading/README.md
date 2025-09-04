@@ -111,16 +111,16 @@ Use the `isTextBalanced` prop to enable balanced wrapping for better readability
 
 ## API
 
-| Name             | Type                                                                                                                                                        | Default  | Required | Description                             |
-| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------- | --------------------------------------- |
-| `elementType`    | `React.Element`                                                                                                                                             | —        | ✓        | HTML tag                                |
-| `emphasis`       | [Emphasis dictionary][dictionary-emphasis]                                                                                                                  | `bold`   | ✕        | Emphasis of the text                    |
-| `isTextBalanced` | `bool`                                                                                                                                                      | `false`  | ✕        | If true, the text has balanced wrapping |
-| `size`           | [Size Extended dictionary][dictionary-size]                                                                                                                 | `medium` | ✕        | Size of the text                        |
-| `textAlignment`  | \[[Text Alignment dictionary][dictionary-alignment] \| `Partial<Record<BreakpointToken, TextAlignmentDictionaryType>>`]                                     | —        | ✕        | Text alignment                          |
-| `textColor`      | \[[Text Color dictionary][dictionary-color] \| Accent Color \| [Emotion Color dictionary][dictionary-color] ✕ [Intensity dictionary][dictionary-intensity]] | —        | ✕        | Color of the text                       |
-| `textHyphens`    | \[`none` \| `auto` \| `manual`]                                                                                                                             | —        | ✕        | Hyphens strategy applied to the text    |
-| `textWordBreak`  | \[`normal` \| `anywhere` \| `long-words`]                                                                                                                   | —        | ✕        | Word break strategy applied to the text |
+| Name             | Type                                                                                                                                            | Default  | Required | Description                             |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------- | --------------------------------------- |
+| `elementType`    | `React.Element`                                                                                                                                 | —        | ✓        | HTML tag                                |
+| `emphasis`       | [Emphasis dictionary][dictionary-emphasis]                                                                                                      | `bold`   | ✕        | Emphasis of the text                    |
+| `isTextBalanced` | `bool`                                                                                                                                          | `false`  | ✕        | If true, the text has balanced wrapping |
+| `size`           | [Size Extended dictionary][dictionary-size]                                                                                                     | `medium` | ✕        | Size of the text                        |
+| `textAlignment`  | \[[Text Alignment dictionary][dictionary-alignment] \| `Partial<Record<BreakpointToken, TextAlignmentDictionaryType>>`]                         | —        | ✕        | Text alignment                          |
+| `textColor`      | \[[TextColorNamesType \| AccentColorNamesType \| EmotionColorNamesType][readme-generated-types] ✕ [Intensity dictionary][dictionary-intensity]] | -        | ✕        | Color of the text                       |
+| `textHyphens`    | \[`none` \| `auto` \| `manual`]                                                                                                                 | —        | ✕        | Hyphens strategy applied to the text    |
+| `textWordBreak`  | \[`normal` \| `anywhere` \| `long-words`]                                                                                                       | —        | ✕        | Word break strategy applied to the text |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -143,10 +143,10 @@ const CustomText = (props: SpiritHeadingProps): JSX.Element => {
 ```
 
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#alignment
-[dictionary-color]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#color
 [dictionary-emphasis]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#emphasis
 [dictionary-intensity]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#intensity
 [dictionary-size]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#size
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
+[readme-generated-types]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#types-generated-from-design-tokens
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props

@@ -13,6 +13,7 @@ packages/**/types/*
 packages/**/esm/*
 packages/**/cjs/*
 packages/**/umd/*
+static/assets/icons/*
 
 # Highly recommended to re-include JavaScript dotfiles to lint them
 # (This will cause .eslintrc.js to be linted by ESLint 🤘)

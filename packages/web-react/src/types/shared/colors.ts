@@ -1,7 +1,10 @@
-import { accentColors, emotionColors } from '@lmc-eu/spirit-design-tokens';
-import { ColorPrefixes } from '../../constants/colors';
+import { accentColors, componentColors, emotionColors, textColors } from '@lmc-eu/spirit-design-tokens';
+import { ColorPrefixes } from '../../constants';
 
 export type ColorPrefixesType = (typeof ColorPrefixes)[keyof typeof ColorPrefixes];
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type ComponentKeys<Obj extends Record<string, any>, C = never> = keyof Obj | C;
 
 type MatchingKeys<T, Prefix extends string> = keyof {
   [K in Extract<keyof T, string> as K extends `${Prefix}${string}` ? K : never]: string;
@@ -31,4 +34,7 @@ export type BackgroundEmotionColorsType<C = undefined> = GenerateColorsType<
   C
 >;
 
-export type AccentColorNamesType = keyof typeof accentColors;
+export type AccentColorNamesType<C = undefined> = ComponentKeys<typeof accentColors, C>;
+export type ComponentButtonColorNamesType<C = undefined> = ComponentKeys<typeof componentColors.button, C>;
+export type EmotionColorNamesType<C = undefined> = ComponentKeys<typeof emotionColors, C>;
+export type TextColorNamesType<C = undefined> = ComponentKeys<typeof textColors, C>;

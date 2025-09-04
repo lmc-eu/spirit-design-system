@@ -244,7 +244,7 @@ said action), as it is very hard (if not impossible) to reach for users with ass
 
 ### Colors
 
-The ToastBar component is available in all [emotion colors][dictionary-color], plus the `neutral` variant (default).
+The ToastBar component is available in all emotion colors, plus the `neutral` variant (default).
 Use the `color` option to change the color of the ToastBar component.
 
 For example:
@@ -284,7 +284,7 @@ To make the ToastBar dismissible, add the `isDismissible` prop along with a `onC
 | Name            | Type                                                         | Default    | Required | Description                                         |
 | --------------- | ------------------------------------------------------------ | ---------- | -------- | --------------------------------------------------- |
 | `closeLabel`    | `string`                                                     | `Close`    | ✕        | Close label                                         |
-| `color`         | \[[Emotion Color dictionary][dictionary-color] \| `neutral`] | `neutral`  | ✕        | Color variant                                       |
+| `color`         | [EmotionColorNamesType][readme-generated-types] \| `neutral` | `neutral`  | ✕        | Color variant                                       |
 | `hasIcon`       | `bool`                                                       | `false` \* | ✕        | If true, an icon is shown along the message         |
 | `iconName`      | `string`                                                     | `info` \*  | ✕        | Name of a custom icon to be shown along the message |
 | `id`            | `string`                                                     | —          | ✓        | ToastBar ID                                         |
@@ -371,7 +371,7 @@ This hook returns:
 | Name       | Type                                                         | Default   | Description                                         |
 | ---------- | ------------------------------------------------------------ | --------- | --------------------------------------------------- |
 | `clear`    | `() => void`                                                 | () => {}  | Function that will clear toast queue                |
-| `color`    | \[[Emotion Color dictionary][dictionary-color] \| `neutral`] | `neutral` | Color variant                                       |
+| `color`    | [EmotionColorNamesType][readme-generated-types] \| `neutral` | `neutral` | Color variant                                       |
 | `hide`     | `(toastId) => void`                                          | () => {}  | Function that will hide UncontrolledToast           |
 | `iconName` | `string`                                                     | —         | Name of a custom icon to be shown along the message |
 | `id`       | `string`                                                     | `''`      | ToastBar ID                                         |
@@ -429,14 +429,14 @@ This component uses the `Icon` component internally. To ensure correct rendering
 please refer to the [Icon component documentation][web-react-icon-documentation] for setup instructions.
 
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
-[dictionary-color]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#color
 [icon-package]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/icons
 [mdn-aria-live]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-live
 [mdn-role-log]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/log_role
 [react-uncontrolled]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#controlled-vs-uncontrolled-components
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#escape-hatches
+[readme-generated-types]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#types-generated-from-design-tokens
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#style-props
 [scott-o-hara-toast]: https://www.scottohara.me/blog/2019/07/08/a-toast-to-a11y-toasts.html
-[web-toast]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Toast
 [web-react-icon-documentation]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Icon/README.md#-usage
+[web-toast]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Toast

@@ -10,7 +10,7 @@ import {
   ComponentButtonColors,
   ComponentButtonColorsDictionaryType,
   EmotionColors,
-  EmotionColorsDictionaryType,
+  EmotionColorNamesType,
   LinkColors,
   LinkColorsDictionaryType,
   SizeExtendedDictionaryType,
@@ -75,7 +75,7 @@ export const actionLinkColorPropsTest = (Component: ComponentType<any>, prefix: 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const emotionColorPropsTest = (Component: ComponentType<any>, prefix: string, testId?: string) => {
   it.each([Object.values(EmotionColors)])('should render emotion color %s', async (color) => {
-    const dom = render(<Component color={color as EmotionColorsDictionaryType<string>} />);
+    const dom = render(<Component color={color as EmotionColorNamesType<string>} />);
 
     await waitFor(() => {
       const element = getElement(dom, testId);
