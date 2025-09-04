@@ -1,0 +1,25 @@
+@use 'theme';
+
+.TimelineStep {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        'marker heading'
+        'connector content';
+    column-gap: theme.$timeline-step-gap;
+
+    &::after {
+        content: '';
+        display: flex;
+        grid-area: connector;
+        justify-self: center;
+        width: theme.$timeline-connector-width;
+        min-height: theme.$timeline-connector-min-height;
+        background: theme.$timeline-connector-background-color;
+    }
+
+    &:last-of-type::after {
+        display: none;
+    }
+}

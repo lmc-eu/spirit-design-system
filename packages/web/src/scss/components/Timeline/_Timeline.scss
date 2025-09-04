@@ -1,0 +1,5 @@
+@use 'theme';
+
+.Timeline {
+    max-width: theme.$timeline-max-width;
+}
