@@ -13,7 +13,7 @@
     background-color: theme.$background-color;
     box-shadow: theme.$box-shadow;
     opacity: 0;
-    transform: translateY(-100%);
+    transform: translateY(-100vh);
 
     &:active,
     &:focus {
