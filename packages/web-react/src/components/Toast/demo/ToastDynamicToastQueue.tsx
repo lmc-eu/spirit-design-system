@@ -7,12 +7,16 @@ import { Select } from '../../Select';
 import { Stack } from '../../Stack';
 import { TextArea } from '../../TextArea';
 import { TextField } from '../../TextField';
-import { BasicToastColors, DEFAULT_TOAST_AUTO_CLOSE_INTERVAL } from '../constants';
-import Toast from '../Toast';
-import ToastBar from '../ToastBar';
 import { ToastItem, ToastProvider } from '../ToastContext';
-import { useToast } from '../useToast';
-import { ToastBarLink, ToastBarMessage } from '..';
+import {
+  BasicToastColors,
+  DEFAULT_TOAST_AUTO_CLOSE_INTERVAL,
+  Toast,
+  ToastBar,
+  ToastBarLink,
+  ToastBarMessage,
+  useToast,
+} from '..';
 
 const ToastDynamicToastQueue = () => {
   const [isCollapsible, setIsCollapsible] = useState(true);

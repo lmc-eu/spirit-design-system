@@ -1,5 +1,5 @@
 import { ElementType } from 'react';
-import { BasicToastColors } from '../components/Toast/constants';
+import { BasicToastColors } from '../components/Toast';
 import { LinkTarget } from './link';
 import {
   AlignmentXDictionaryType,

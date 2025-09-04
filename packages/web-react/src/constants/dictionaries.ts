@@ -133,6 +133,8 @@ export const SizesExtended = {
   XLARGE: 'xlarge',
 } as const;
 
+// Exclude unwanted tokens so we can iterate over Container sizes.
+// Max-width and padding will be moved out of this map in the future.
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const { MAXWIDTH, PADDING, ...ContainerTokenSizes } = createUppercaseKeyDictionary(containers);
 export { ContainerTokenSizes };

@@ -4,11 +4,9 @@ import React from 'react';
 import { AlignmentX, EmotionColors } from '../../../constants';
 import { ToastColorType, ToastLinkProps, UncontrolledToastProps } from '../../../types';
 import { Button } from '../../Button';
-import { BasicToastColors, DEFAULT_TOAST_AUTO_CLOSE_INTERVAL } from '../constants';
 import ReadMe from '../README.md';
 import { ToastItem, ToastProvider } from '../ToastContext';
-import UncontrolledToast from '../UncontrolledToast';
-import { useToast } from '../useToast';
+import { BasicToastColors, DEFAULT_TOAST_AUTO_CLOSE_INTERVAL, UncontrolledToast, useToast } from '..';
 
 interface UncontrolledToastPlaygroundProps extends UncontrolledToastProps, ToastItem {}
 

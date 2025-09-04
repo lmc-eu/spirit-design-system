@@ -5,8 +5,7 @@ import { SizesExtended } from '../../constants';
 import { useStyleProps } from '../../hooks';
 import { SpiritTagProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
-import { BasicTagColors } from './constants';
-import { useTagStyleProps } from './useTagStyleProps';
+import { BasicTagColors, useTagStyleProps } from '.';
 
 const defaultProps: Partial<SpiritTagProps> = {
   color: BasicTagColors.NEUTRAL,

@@ -1,7 +1,6 @@
 import React from 'react';
 import { DemoEmotionColors } from '../../../../docs';
-import { BasicPillColors } from '../constants';
-import Pill from '../Pill';
+import { BasicPillColors, Pill } from '..';
 
 const PillColors = () => {
   const pillColors = Object.values(BasicPillColors);
