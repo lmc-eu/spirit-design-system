@@ -4,7 +4,8 @@ import React, { ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritPillProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
-import { BasicPillColors, usePillStyleProps } from '.';
+import { BasicPillColors } from './constants';
+import { usePillStyleProps } from './usePillStyleProps';
 
 const defaultProps: Partial<SpiritPillProps> = {
   elementType: 'span',
