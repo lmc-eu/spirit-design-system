@@ -51,3 +51,7 @@ nx-cloud.env
 
 # Dotenv
 .env*
+
+# AI instructions
+.cursor/rules/nx-rules.mdc
+.github/instructions/nx.instructions.md
