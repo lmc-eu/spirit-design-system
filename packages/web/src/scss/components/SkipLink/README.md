@@ -7,9 +7,7 @@ improving accessibility for keyboard and screen reader users.
 
 ```html
 <body>
-  <nav aria-label="Navigation with skip links">
-    <a href="#main-content" class="SkipLinkItem"> Skip to main content </a>
-  </nav>
+  <a href="#main-content" class="SkipLink"> Skip to main content </a>
   <!-- Other navigation elements -->
   <main id="main-content">
     <!-- Main content -->
@@ -19,6 +17,24 @@ improving accessibility for keyboard and screen reader users.
 
 ⚠️ In the case you want to skip repetitive main navigation, ensure that the `SkipLink` is placed at the top of the page
 before this navigation.
+
+If you need to provide multiple skip links, wrap them in a `<nav>` element:
+
+```html
+<body>
+  <nav aria-label="Navigation with skip links">
+    <a href="#main-content" class="SkipLink"> Skip to main content </a>
+    <a href="#footer-content" class="SkipLink"> Skip to footer content </a>
+  </nav>
+  <!-- Other navigation elements -->
+  <main id="main-content">
+    <!-- Main content -->
+  </main>
+  <footer id="footer-content">
+    <!-- Footer content -->
+  </footer>
+</body>
+```
 
 ### 👍 When to Use
 
