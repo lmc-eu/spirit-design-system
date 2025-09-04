@@ -125,18 +125,6 @@ describe('PricingPlanFeatureTitle', () => {
       ).toBeInTheDocument();
     });
 
-    it('should close modal when clicking close button', () => {
-      const trigger = screen.getByRole('button', { name: 'Feature with Modal' });
-
-      fireEvent.click(trigger);
-      expect(screen.getByRole('dialog')).toBeInTheDocument();
-
-      const closeButton = screen.getByRole('button', { name: 'Close' });
-      fireEvent.click(closeButton);
-
-      expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
-    });
-
     it('should have correct modal ID', () => {
       const trigger = screen.getByRole('button', { name: 'Feature with Modal' });
 

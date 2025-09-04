@@ -1,6 +1,8 @@
 {{#> web/layout/default title="Drawer" parentPageName="Components" }}
 
-<script>
+<script type="module">
+  import Offcanvas from '../../../js/Offcanvas';
+
   document.addEventListener("DOMContentLoaded", () => {
     const radios = document.querySelectorAll('input[name="drawer-alignment"]');
     const drawer = document.getElementById("drawer-example");
@@ -9,9 +11,13 @@
     const contentTextArea = document.getElementById("drawer-content");
     const drawerContentDiv = drawer.querySelector("[data-drawer-demo-content]");
 
-    let isClosableOnBackdropClick = backdropCheckbox.checked;
-    let isClosableOnEscapeKey = escapeKeyCheckbox.checked;
+    // Initialize the Offcanvas plugin
+    const offcanvas = new Offcanvas(drawer, {
+      closableOnBackdropClick: backdropCheckbox.checked,
+      closableOnEscapeKey: escapeKeyCheckbox.checked,
+    });
 
+    // Handle alignment changes
     radios.forEach(radio => {
       radio.addEventListener("change", () => {
         if (radio.checked) {
@@ -24,43 +30,19 @@
       });
     });
 
+    // Handle configuration changes
     backdropCheckbox.addEventListener("change", () => {
-      isClosableOnBackdropClick = backdropCheckbox.checked;
+      offcanvas.config.closableOnBackdropClick = backdropCheckbox.checked;
     });
 
     escapeKeyCheckbox.addEventListener("change", () => {
-      isClosableOnEscapeKey = escapeKeyCheckbox.checked;
+      offcanvas.config.closableOnEscapeKey = escapeKeyCheckbox.checked;
     });
 
+    // Handle content changes
     contentTextArea.addEventListener("input", () => {
       drawerContentDiv.textContent = contentTextArea.value;
     });
-
-    const closeDrawer = () => {
-      drawer.close();
-      drawer.setAttribute("aria-expanded", "false");
-    };
-
-    const openDrawerButton = document.querySelector('button[data-testid="drawer-open-button"]');
-    openDrawerButton.addEventListener("click", () => {
-      drawer.show();
-      drawer.setAttribute("aria-expanded", "true");
-
-      drawer.addEventListener("click", (event) => {
-        if (isClosableOnBackdropClick && event.target === drawer) {
-          closeDrawer();
-        }
-      });
-
-      document.addEventListener("keydown", (event) => {
-        if (isClosableOnEscapeKey && event.key === "Escape") {
-          closeDrawer();
-        }
-      });
-    });
-
-    const closeButton = drawer.querySelector(".DrawerCloseButton");
-    closeButton.addEventListener("click", closeDrawer);
   });
 </script>
 
