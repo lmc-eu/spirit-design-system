@@ -86,6 +86,9 @@ and [escape hatches][readme-escape-hatches].
 This component uses the `Icon` component internally. To ensure correct rendering,
 please refer to the [Icon component documentation][web-react-icon-documentation] for setup instructions.
 
+Icon sizes differ based on button size. Small and medium use a 20px icon size, while large uses a 24px icon size.
+You can always set your desired size of an icon with `boxSize` prop.
+
 [button]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Button
 [dictionary-color]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#color
 [dictionary-size]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#size
