@@ -13,6 +13,10 @@ $disabled-color: tokens.$disabled-content;
 $disabled-border-color: tokens.$disabled-border;
 $disabled-background-color: tokens.$disabled-background;
 
+$icon-size-small: 20px;
+$icon-size-medium: 20px;
+$icon-size-large: 24px;
+
 $color-component-button-dictionary: (
     component-button: map.keys(map.get(tokens.$component-colors, button)),
 );
@@ -57,6 +61,7 @@ $size-config: map.deep-merge(
                     padding-x: calc(#{tokens.$space-700} - #{tokens.$border-width-100}),
                     padding-y: calc(#{tokens.$space-300} - #{tokens.$border-width-100}),
                     typography: tokens.$body-small-semibold,
+                    icon-size: $icon-size-small,
                 ),
                 tokens-tools.generate-responsive-map(
                     $property: 'border-radius',
@@ -71,6 +76,7 @@ $size-config: map.deep-merge(
                     padding-x: calc(#{tokens.$space-900} - #{tokens.$border-width-100}),
                     padding-y: calc(#{tokens.$space-500} - #{tokens.$border-width-100}),
                     typography: tokens.$body-small-semibold,
+                    icon-size: $icon-size-medium,
                 ),
                 tokens-tools.generate-responsive-map(
                     $property: 'border-radius',
@@ -85,6 +91,7 @@ $size-config: map.deep-merge(
                     padding-x: calc(#{tokens.$space-900} - #{tokens.$border-width-100}),
                     padding-y: calc(#{tokens.$space-500} - #{tokens.$border-width-100}),
                     typography: tokens.$body-medium-semibold,
+                    icon-size: $icon-size-large,
                 ),
                 tokens-tools.generate-responsive-map(
                     $property: 'border-radius',
