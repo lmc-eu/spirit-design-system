@@ -1,4 +1,7 @@
 // 1. Prevent shrinking when Icon is inside a flex container
+// 2. Set the icon size according to the button's size
+//    The size should be passed from the parent component, but with the current deprecated selector this is not possible.
+//    After the BC, only the '.Icon' selector will remain.
 
 @use '@tokens' as tokens;
 @use '../../tools/responsive-properties';
@@ -11,8 +14,10 @@
 }
 
 // @deprecated We are deprecating attribute `[style*='#{tokens.$css-variable-prefix}icon-size']` selector.
-// We will remove this attribute selector in the next major version.
-.Icon[style*='#{tokens.$css-variable-prefix}icon-size'] {
+// We will remove this attribute selectors and .Button selector in the next major version.
+// 2.
+.Icon[style*='#{tokens.$css-variable-prefix}icon-size'],
+.Button .Icon:not([style*='#{tokens.$css-variable-prefix}icon-size']) {
     @include responsive-properties.create-cascade(
         $property: 'width',
         $input-custom-property-base-name: '#{tokens.$css-variable-prefix}icon-size',
