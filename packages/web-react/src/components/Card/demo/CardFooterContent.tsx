@@ -78,10 +78,10 @@ const CardFooterContent = () => {
           <Flex>
             <Avatar size="large">{AVATAR}</Avatar>
             <div>
-              <Text elementType="div" size="small" color="primary" emphasis="semibold">
+              <Text elementType="div" size="small" textColor="primary" emphasis="semibold">
                 Jiří Bárta
               </Text>
-              <Text elementType="div" size="small" color="secondary">
+              <Text elementType="div" size="small" textColor="tertiary">
                 Senior UI Designer
               </Text>
             </div>
