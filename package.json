@@ -63,10 +63,10 @@
   "devDependencies": {
     "@almacareer/remark-config": "0.1.0",
     "@commitlint/cli": "19.8.1",
-    "@lmc-eu/commitlint-config": "2.0.3",
-    "@lmc-eu/conventional-changelog-lmc-github": "3.0.3",
-    "@omlet/cli": "1.13.2",
-    "@playwright/test": "1.52.0",
+    "@lmc-eu/commitlint-config": "2.0.4",
+    "@lmc-eu/conventional-changelog-lmc-github": "3.0.4",
+    "@omlet/cli": "1.13.4",
+    "@playwright/test": "1.55.0",
     "eslint": "8.57.1",
     "eslint-config-spirit": "workspace:^",
     "husky": "9.1.7",
@@ -87,5 +87,5 @@
   "resolutions": {
     "nx": "19.8.14"
   },
-  "packageManager": "yarn@4.9.1"
+  "packageManager": "yarn@4.9.4"
 }
