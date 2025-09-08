@@ -32,47 +32,95 @@ Use the `emphasis` prop to set the emphasis of the text.
 </Heading>
 ```
 
+## Text Alignment
+
+Use the `textAlignment` prop to set the alignment of the text.
+
+```jsx
+<Heading elementType="h2" textAlignment="center">Centered heading</Heading>
+<Heading elementType="h2" textAlignment="right">Right-aligned heading</Heading>
+```
+
+You can define responsive values for the `textAlignment` prop using an object:
+
+```jsx
+<Heading elementType="h2" textAlignment={{ mobile: 'center', tablet: 'right', desktop: 'left' }}>
+  Responsive text alignment
+</Heading>
+```
+
 ## Text Color
 
 Use the `textColor` prop to set color of the text. When undefined, the text color
 is inherited from the parent element.
 
 ```jsx
-<Heading textColor="secondary">Secondary heading</Heading>
+<Heading elementType="h2" textColor="secondary">
+  Secondary heading
+</Heading>
 ```
 
-## Text Alignment
+### Text Hyphens
 
-Use the `textAlignment` prop to set the alignment of the text.
+Use the `textHyphens` prop to set how words should be hyphenated when text wraps across multiple lines.
 
 ```jsx
-<Heading textAlignment="center">Centered heading</Heading>
-<Heading textAlignment="right">Right-aligned heading</Heading>
+<Heading elementType="h2" textHyphens="auto">
+  Hyphens applied automatically when text wraps across multiple lines.
+</Heading>
 ```
 
-You can define responsive values for the `textAlignment` prop using an object:
+### Text Word Break
+
+Use the `textWordBreak` prop to set how words should break when reaching the end of a line.
+It's crucial to combine it with [Text Hyphens](#text-hyphens) to maintain readability, followed by typography rules in text layouts.
 
 ```jsx
-<Heading textAlignment={{ mobile: 'center', tablet: 'right', desktop: 'left' }}>Responsive text alignment</Heading>
+<Heading elementType="h2" textWordBreak="long-words">
+  Allows long words to be splitted and wrapped onto the next line.
+</Heading>
+```
+
+### Text Balanced Wrapping
+
+Use the `isTextBalanced` prop to enable balanced wrapping for better readability.
+
+```jsx
+<Heading elementType="h2" isTextBalanced>
+  Balanced wrapping is a technique used to optimise the distribution of text across multiple lines, enhancing
+  readability and visual appeal.
+</Heading>
 ```
 
 ## Full Example
 
 ```jsx
-<Heading elementType="h1" size="large" emphasis="semibold" textColor="secondary">
-  Heading
+<Heading
+  elementType="h1"
+  size="large"
+  emphasis="semibold"
+  isTextBalanced
+  textAlignment="center"
+  textColor="secondary"
+  textHyphens="auto"
+  textWordBreak="long-words"
+>
+  Demonstration of a full example of the Heading component.
 </Heading>
 ```
 
 ## API
 
-| Name            | Type                                                                                                                                                        | Default  | Required | Description          |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------- | -------------------- |
-| `elementType`   | `React.Element`                                                                                                                                             | -        | ✓        | HTML tag             |
-| `emphasis`      | [Emphasis dictionary][dictionary-emphasis]                                                                                                                  | `bold`   | ✕        | Emphasis of the text |
-| `size`          | [Size Extended dictionary][dictionary-size]                                                                                                                 | `medium` | ✕        | Size of the text     |
-| `textAlignment` | \[[Text Alignment dictionary][dictionary-alignment] \| `Partial<Record<BreakpointToken, TextAlignmentDictionaryType>>`]                                     | -        | ✕        | Text alignment       |
-| `textColor`     | \[[Text Color dictionary][dictionary-color] \| Accent Color \| [Emotion Color dictionary][dictionary-color] ✕ [Intensity dictionary][dictionary-intensity]] | -        | ✕        | Color of the text    |
+| Name             | Type                                                                                                                                                        | Default  | Required | Description                             |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------- | --------------------------------------- |
+| `elementType`    | `React.Element`                                                                                                                                             | —        | ✓        | HTML tag                                |
+| `emphasis`       | [Emphasis dictionary][dictionary-emphasis]                                                                                                                  | `bold`   | ✕        | Emphasis of the text                    |
+| `isTextBalanced` | `bool`                                                                                                                                                      | `false`  | ✕        | If true, the text has balanced wrapping |
+| `size`           | [Size Extended dictionary][dictionary-size]                                                                                                                 | `medium` | ✕        | Size of the text                        |
+| `textAlignment`  | \[[Text Alignment dictionary][dictionary-alignment] \| `Partial<Record<BreakpointToken, TextAlignmentDictionaryType>>`]                                     | —        | ✕        | Text alignment                          |
+| `textColor`      | \[[Text Color dictionary][dictionary-color] \| Accent Color \| [Emotion Color dictionary][dictionary-color] ✕ [Intensity dictionary][dictionary-intensity]] | —        | ✕        | Color of the text                       |
+| `textHyphens`    | \[`none` \| `auto` \| `manual`]                                                                                                                             | —        | ✕        | Hyphens strategy applied to the text    |
+| `textWordBreak`  | \[`normal` \| `anywhere` \| `long-words`]                                                                                                                   | —        | ✕        | Word break strategy applied to the text |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

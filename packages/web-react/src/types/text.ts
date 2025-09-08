@@ -1,5 +1,5 @@
-import { ElementType } from 'react';
-import {
+import { type ElementType } from 'react';
+import type {
   ChildrenProps,
   EmphasisDictionaryType,
   EmphasisProps,
@@ -11,6 +11,8 @@ import {
   TextColorProps,
   TextColorsDictionaryType,
   TextEmotionColorsType,
+  TextHyphensType,
+  TextWordBreakType,
   TransferProps,
 } from './shared';
 
@@ -33,7 +35,10 @@ export interface TextProps<T extends ElementType = 'p'>
     ChildrenProps,
     StyleProps,
     TransferProps {
+  isTextBalanced?: boolean;
   textAlignment?: TextAlignmentType;
+  textHyphens?: TextHyphensType;
+  textWordBreak?: TextWordBreakType;
 }
 
 export interface SpiritTextProps<T extends ElementType = 'p', S = void, E = void, C = void>

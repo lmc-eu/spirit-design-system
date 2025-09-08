@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
-import { TextAlignments, TextStyleProps } from '../../constants';
-import { StyleProps } from '../../types';
+import { TextAlignments, TextHyphens, TextStyleProps, TextWordBreaks } from '../../constants';
+import { type StyleProps } from '../../types';
 import { useStyleProps } from '../styleProps';
 
 describe('styleProps', () => {
@@ -141,19 +141,26 @@ describe('styleProps', () => {
       padding: 'space-500',
       paddingX: 'space-600',
       paddingY: 'space-700',
+      isTextBalanced: true,
       textAlignment: TextAlignments.CENTER,
+      textHyphens: TextHyphens.AUTO,
+      textWordBreak: TextWordBreaks.LONG_WORDS,
     };
     const additionalUtilities = {
       padding: 'p',
       paddingX: 'px',
       paddingY: 'py',
+      isTextBalanced: TextStyleProps.isTextBalanced,
       textAlignment: TextStyleProps.textAlignment,
+      textHyphens: TextStyleProps.textHyphens,
+      textWordBreak: TextStyleProps.textWordBreak,
     };
 
     const { result } = renderHook(() => useStyleProps(mockProps as StyleProps, additionalUtilities));
 
     expect(result.current.styleProps).toEqual({
-      className: 'm-100 mx-200 my-400 p-500 px-600 py-700 text-center',
+      className:
+        'm-100 mx-200 my-400 p-500 px-600 py-700 text-wrap-balance text-center text-hyphens-auto text-word-break-long-words',
       style: undefined,
     });
   });

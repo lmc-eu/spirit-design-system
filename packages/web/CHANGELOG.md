@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.16.0"></a>
+
+# [3.16.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.15.1...@lmc-eu/spirit-web@3.16.0) (2025-09-08)
+
+### Bug Fixes
+
+- **web:** Improve Dialog animations using new CSS overlay transition and @starting-style [#DS-2066](https://github.com/lmc-eu/spirit-design-system/issues/DS-2066) ([80b95cd](https://github.com/lmc-eu/spirit-design-system/commit/80b95cd))
+- **web:** Typo in utility class name ([dda6db9](https://github.com/lmc-eu/spirit-design-system/commit/dda6db9))
+
+### Features
+
+- **web:** Introduce new text utilities for text wrapping a word breaking ([2eaf571](https://github.com/lmc-eu/spirit-design-system/commit/2eaf571))
+- **web:** Introduce one breakpoint only display utilities [#DS-1957](https://github.com/lmc-eu/spirit-design-system/issues/DS-1957) ([9c31cf5](https://github.com/lmc-eu/spirit-design-system/commit/9c31cf5))
+- **web:** Use newly introduced button radii tokens in the Button component [#DS-2100](https://github.com/lmc-eu/spirit-design-system/issues/DS-2100) ([ac0be1a](https://github.com/lmc-eu/spirit-design-system/commit/ac0be1a))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="3.15.1"></a>
 
 ## [3.15.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.15.0...@lmc-eu/spirit-web@3.15.1) (2025-08-27)
