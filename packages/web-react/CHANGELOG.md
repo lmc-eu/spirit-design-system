@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.17.0"></a>
+
+# [3.17.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.16.1...@lmc-eu/spirit-web-react@3.17.0) (2025-09-08)
+
+### Bug Fixes
+
+- **web-react:** Fixed type in PaginationLink component ([e5bbfbb](https://github.com/lmc-eu/spirit-design-system/commit/e5bbfbb))
+
+### Code Refactoring
+
+- **web-react:** Replace `UNSAFE_className` with `hideOn` and `hideFrom` props in demos [#DS-1957](https://github.com/lmc-eu/spirit-design-system/issues/DS-1957) ([5b69d52](https://github.com/lmc-eu/spirit-design-system/commit/5b69d52))
+
+### Features
+
+- **web-react:** Introduce `hideOn` and `hideFrom` props to hide components on breakpoints [#DS-1957](https://github.com/lmc-eu/spirit-design-system/issues/DS-1957) ([202d151](https://github.com/lmc-eu/spirit-design-system/commit/202d151))
+- **web-react:** Introduce text wrapping a word breaking for Heading and Text component [#DS-1979](https://github.com/lmc-eu/spirit-design-system/issues/DS-1979) ([d8fcde0](https://github.com/lmc-eu/spirit-design-system/commit/d8fcde0))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="3.16.1"></a>
 
 ## [3.16.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.16.0...@lmc-eu/spirit-web-react@3.16.1) (2025-08-27)

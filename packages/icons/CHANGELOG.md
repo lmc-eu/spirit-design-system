@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.3.2"></a>
+
+## [2.3.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-icons@2.3.1...@lmc-eu/spirit-icons@2.3.2) (2025-09-08)
+
+### Tests
+
+- **icons:** Add unit tests for icon scripts [#DS-1750](https://github.com/lmc-eu/spirit-design-system/issues/DS-1750) ([2b881bd](https://github.com/lmc-eu/spirit-design-system/commit/2b881bd))
+
+**Note:** Version bump only for package @lmc-eu/spirit-icons
+
 <a name="2.3.1"></a>
 
 ## [2.3.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-icons@2.3.0...@lmc-eu/spirit-icons@2.3.1) (2025-08-27)
