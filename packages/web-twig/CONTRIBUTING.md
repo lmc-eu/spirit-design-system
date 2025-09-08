@@ -158,7 +158,7 @@ Please use these commands to update the READ-ONLY repository.
 
 Add remote repository only once:
 
-- `git remote add web-twig-readonly git@github.com:lmc-eu/spirit-web-twig-bundle.git`
+- `git remote add web-twig-readonly git@github.com:alma-oss/spirit-web-twig-bundle.git`
 
 Force push current changes to remote using subtree:
 
@@ -168,7 +168,7 @@ Or
 
 - use `make publish pkg=web-twig` in repository root to publish changes to remote.
 
-Then switch to the `lmc-eu/spirit-web-twig-bundle` repository locally and tag the latest commit with the new version.
+Then switch to the `alma-oss/spirit-web-twig-bundle` repository locally and tag the latest commit with the new version.
 
 - `git pull`
 - `git tag -a <version> -m "@lmc-eu/spirit-web-twig@<version>"` (e.g. `git tag -a 4.6.0 -m "@lmc-eu/spirit-web-twig@4.6.0"`)
