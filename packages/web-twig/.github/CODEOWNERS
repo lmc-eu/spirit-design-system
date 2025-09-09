@@ -1,0 +1,8 @@
+# Code owners for lmc/spirit-web-twig-bundle
+# https://help.github.com/en/articles/about-code-owners
+
+* @alma-oss/twig-ui
+
+# Package owners
+
+* radek.hrebecek@almacareer.com lubomir.mihalik@almacareer.com
