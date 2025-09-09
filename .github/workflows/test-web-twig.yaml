@@ -1,3 +1,5 @@
+# TODO: Delete this file once web-twig package is abandoned
+# @see: https://github.com/lmc-eu/spirit-design-system/pull/2163
 name: '🔍 Web Twig: Code Quality Checks'
 
 on:
