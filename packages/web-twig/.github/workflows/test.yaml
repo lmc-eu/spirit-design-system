@@ -1,0 +1,119 @@
+name: '🔍 Code Quality Checks'
+
+on:
+  pull_request:
+  # Run this workflow on push to branches only (not tags)
+  push:
+    branches:
+      - '**'
+
+jobs:
+  prepare-icons:
+    name: 📱 Preparing Icons
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Enable Corepack
+        shell: bash
+        run: corepack enable
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+
+      - name: Install Icons
+        shell: bash
+        run: |
+          mkdir -p ./temp/icons
+          npm pack @lmc-eu/spirit-icons@2.3.2
+          tar -xzf lmc-eu-spirit-icons-*.tgz -C ./temp/icons
+
+      - name: Save built icons
+        uses: actions/upload-artifact@v4
+        with:
+          name: icons-dist
+          path: ./temp/icons/package
+
+  unit-tests:
+    needs: [prepare-icons]
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        php-version: ['8.1', '8.2', '8.3', '8.4']
+        dependencies: ['']
+
+    name: 🧪 Unit Testing - PHP ${{ matrix.php-version }} ${{ matrix.dependencies }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download built icons
+        uses: actions/download-artifact@v4
+        with:
+          name: icons-dist
+          path: ./temp/icons/package
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          extensions: json, mbstring
+          coverage: xdebug
+
+      - name: Install dependencies
+        run: composer update --no-progress --no-interaction ${{ matrix.dependencies }}
+
+      - name: Copy Assets
+        run: cp ./temp/icons/package/svg/* ./static
+
+      - name: Run tests
+        run: |
+          composer phpunit:coverage
+
+      # Publish code coverage after the code is public
+      - name: Submit coverage to Coveralls
+        continue-on-error: true
+        env:
+          COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COVERALLS_PARALLEL: true
+          COVERALLS_FLAG_NAME: ${{ github.job }}-PHP-${{ matrix.php-version }} ${{ matrix.dependencies }}
+        run: |
+          composer global require php-coveralls/php-coveralls
+          ~/.composer/vendor/bin/php-coveralls --coverage_clover=coverage/clover.xml --json_path=coverage/coveralls-upload.json -v
+
+  finalize-tests:
+    name: 🏁 Finalizing Tests
+    needs: [unit-tests]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Coveralls
+        uses: coverallsapp/github-action@master
+        continue-on-error: true
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          parallel-finished: true
+          flag-name: web-twig
+          carryforward: web, web-react, analytics, design-tokens, icons, common, codemods, form-validations
+
+  codestyle:
+    name: '📐 Analyzing Code Style and Types'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          extensions: json, mbstring
+
+      - name: Install dependencies
+        run: composer update --no-progress
+
+      - name: Run lint
+        run: composer lint
+
+      - name: Run checks
+        run: composer analyze
