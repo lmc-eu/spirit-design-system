@@ -1,11 +1,17 @@
 @use '@tokens' as tokens;
 
 // Mixin to generate dynamic background colors for interactive states.
+// - The lightness term smoothly moves any color toward the mid tone `$_midpoint-lightness`, making light colors darker and dark colors lighter.
+// - The chroma term scales saturation up for light colors and down for dark colors, proportional to distance from the midpoint `$_midpoint-lightness-in-chroma`, so it’s subtle near the midpoint and stronger at the extremes.
+// - max(0, …) prevents chroma from going negative.
 @mixin dynamic-interaction-background-colors {
-    $_default-dynamic-lightness-state-hover: -0.05;
-    $_default-dynamic-lightness-state-active: -0.08;
-    $_default-dynamic-opacity-state-hover: -0.45;
-    $_default-dynamic-opacity-state-active: -0.3;
+    $_midpoint-lightness: 0.25; // light/dark threshold
+    $_midpoint-lightness-in-chroma: 0.55; // light/dark threshold for chroma, lower = more saturated for dark colors
+    $_chroma-upper-limit: 2;
+    $_default-dynamic-lightness-delta-state-hover: 0.3; // number <0, 1>, higher = stronger darken/lighten effect
+    $_default-dynamic-chroma-scale-state-hover: 2; // number, higher = more saturation change
+    $_default-dynamic-lightness-delta-state-active: 0.45;
+    $_default-dynamic-chroma-scale-state-active: 2;
 
     --#{tokens.$css-variable-prefix}local-background-color-state-default: #{tokens.$background-interactive-state-default};
 
@@ -15,36 +21,54 @@
                 calc(
                     l +
                         var(
-                            --#{tokens.$css-variable-prefix}color-config-dynamic-lightness-state-hover,
-                            #{$_default-dynamic-lightness-state-hover}
-                        )
+                            --#{tokens.$css-variable-prefix}color-config-dynamic-lightness-delta-state-hover,
+                            #{$_default-dynamic-lightness-delta-state-hover}
+                        ) *
+                        (#{$_midpoint-lightness} - l)
                 )
-                c h /
-                calc(
-                    alpha +
-                        var(
-                            --#{tokens.$css-variable-prefix}color-config-dynamic-opacity-state-hover,
-                            #{$_default-dynamic-opacity-state-hover}
-                        )
+                clamp(
+                    0,
+                    calc(
+                        c *
+                            (
+                                1 +
+                                    var(
+                                        --#{tokens.$css-variable-prefix}color-config-dynamic-chroma-scale-state-hover,
+                                        #{$_default-dynamic-chroma-scale-state-hover}
+                                    ) *
+                                    (l - #{$_midpoint-lightness-in-chroma})
+                            )
+                    ),
+                    #{$_chroma-upper-limit}
                 )
+                h
         );
         --#{tokens.$css-variable-prefix}local-background-color-state-active: oklch(
             from var(--#{tokens.$css-variable-prefix}local-background-color)
                 calc(
                     l +
                         var(
-                            --#{tokens.$css-variable-prefix}color-config-dynamic-lightness-state-active,
-                            #{$_default-dynamic-lightness-state-active}
-                        )
+                            --#{tokens.$css-variable-prefix}color-config-dynamic-lightness-delta-state-active,
+                            #{$_default-dynamic-lightness-delta-state-active}
+                        ) *
+                        (#{$_midpoint-lightness} - l)
                 )
-                c h /
-                calc(
-                    alpha +
-                        var(
-                            --#{tokens.$css-variable-prefix}color-config-dynamic-opacity-state-active,
-                            #{$_default-dynamic-opacity-state-active}
-                        )
+                clamp(
+                    0,
+                    calc(
+                        c *
+                            (
+                                1 +
+                                    var(
+                                        --#{tokens.$css-variable-prefix}color-config-dynamic-chroma-scale-state-active,
+                                        #{$_default-dynamic-chroma-scale-state-active}
+                                    ) *
+                                    (l - #{$_midpoint-lightness-in-chroma})
+                            )
+                    ),
+                    #{$_chroma-upper-limit}
                 )
+                h
         );
     }
 }
