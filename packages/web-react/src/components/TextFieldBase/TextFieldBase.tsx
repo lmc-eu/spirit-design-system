@@ -31,7 +31,6 @@ const _TextFieldBase = (props: SpiritTextFieldBaseProps, ref: ForwardedRef<HTMLI
   } = props;
   const { classProps, props: modifiedProps } = useTextFieldBaseStyleProps({
     id,
-    label,
     size,
     validationState,
     ...restProps,

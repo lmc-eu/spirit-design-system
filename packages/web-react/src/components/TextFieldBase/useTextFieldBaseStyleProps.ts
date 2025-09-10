@@ -15,10 +15,10 @@ export interface TextFieldBaseStyles {
     passwordToggleIcon: string;
   };
   /** props to be passed to the input element */
-  props: TextFieldBaseProps;
+  props: Omit<TextFieldBaseProps, 'label'>;
 }
 
-export function useTextFieldBaseStyleProps(props: SpiritTextFieldBaseProps): TextFieldBaseStyles {
+export function useTextFieldBaseStyleProps(props: Omit<SpiritTextFieldBaseProps, 'label'>): TextFieldBaseStyles {
   const { isFluid, isMultiline, isLabelHidden, size, validationState, ...restProps } = props;
   const { isDisabled, isRequired } = restProps;
 
