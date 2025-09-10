@@ -1,0 +1,10 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "local>alma-oss/renovate-config",
+    "local>alma-oss/renovate-config:scheduleEveryTwoWeeksBusinessHours",
+    ":dependencyDashboard"
+  ],
+  "enabledManagers": ["composer", "github-actions", "docker-compose", "dockerfile"],
+  "commitMessagePrefix": "Deps: "
+}
