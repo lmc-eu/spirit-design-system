@@ -167,12 +167,12 @@ Check your Symfony console or log to see if you are using any of the deprecated 
 
 👉 [See a DEPRECATIONS file][all-deprecations] for a list of all deprecations.
 
-[all-deprecations]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/DEPRECATIONS.md
-[changelog]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/CHANGELOG.md
-[components-directory]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/src/Resources/components
-[contributing]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/CONTRIBUTING.md
-[example-guide]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/docs/extend-components.md
-[prefixing-css-class-names]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#prefixing-css-class-names
+[all-deprecations]: https://github.com/alma-oss/spirit-web-twig-bundle/tree/main/DEPRECATIONS.md
+[changelog]: https://github.com/alma-oss/spirit-web-twig-bundle/blob/main/CHANGELOG.md
+[components-directory]: https://github.com/alma-oss/spirit-web-twig-bundle/tree/main/src/Resources/components
+[contributing]: https://github.com/alma-oss/spirit-web-twig-bundle/blob/main/CONTRIBUTING.md
+[example-guide]: https://github.com/alma-oss/spirit-web-twig-bundle/blob/main/docs/extend-components.md
+[prefixing-css-class-names]: https://github.com/alma-oss/spirit-web-twig-bundle/blob/main/README.md#prefixing-css-class-names
 [raw]: https://twig.symfony.com/doc/3.x/filters/raw.html
 [spirit-design-system]: https://github.com/lmc-eu/spirit-design-system
 [twigx-bundle]: https://github.com/lmc-eu/twigx-bundle/blob/main/README.md#usage
