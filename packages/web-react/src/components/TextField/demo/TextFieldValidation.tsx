@@ -9,39 +9,39 @@ const TextFieldValidation = () => (
       name="textfieldSuccess"
       placeholder="Placeholder"
       validationState="success"
-      value="Filled"
+      defaultValue="Filled"
     />
 
     <TextField
       id="textfield-warning"
       label="Label"
-      validationText="Validation text"
       name="textfieldWarning"
       placeholder="Placeholder"
       validationState="warning"
-      value="Filled"
+      validationText="Validation text"
+      defaultValue="Filled"
     />
 
     <TextField
       id="textfield-danger"
       label="Label"
-      validationText={['Validation text', 'Second validation text']}
       name="textfieldDanger"
       placeholder="Placeholder"
       validationState="danger"
-      value="Filled"
+      validationText={['Validation text', 'Second validation text']}
+      defaultValue="Filled"
     />
 
     <TextField
+      helperText="This is helper text"
       id="textfield-danger-helper"
       isRequired
       label="Label"
-      helperText="This is helper text"
-      validationText="Danger validation text"
-      validationState="danger"
       name="textfieldDangerHelper"
       placeholder="Placeholder"
-      value="Filled"
+      validationState="danger"
+      validationText="Danger validation text"
+      defaultValue="Filled"
     />
   </>
 );

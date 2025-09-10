@@ -11,7 +11,7 @@ const TextFieldInline = () => (
         label="Hidden Label"
         name="textfieldInline"
         placeholder="Placeholder"
-        value="Filled"
+        defaultValue="Filled"
       />
       <Button>Button</Button>
     </div>
@@ -23,18 +23,18 @@ const TextFieldInline = () => (
         label="Hidden Label"
         name="textfieldInlineFirst"
         placeholder="Placeholder"
-        value="Filled"
+        defaultValue="Filled"
       />
       <TextField
+        hasPasswordToggle
         id="textfield-inline-password"
         isLabelHidden
         label="Hidden Label"
-        hasPasswordToggle
         name="textfieldInlinePassword"
+        placeholder="Placeholder"
         validationState="danger"
         validationText="Too short"
-        placeholder="Placeholder"
-        value="1234"
+        defaultValue="1234"
       />
       <Button>Button</Button>
     </div>

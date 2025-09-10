@@ -7,12 +7,12 @@ const TextFieldDisabled = () => (
 
     <TextField
       id="textfield-disabled-filled"
+      isDisabled
+      isRequired
       label="Label"
       name="textfieldDisabledFilled"
       placeholder="Placeholder"
-      value="Filled"
-      isDisabled
-      isRequired
+      defaultValue="Filled"
     />
   </>
 );
