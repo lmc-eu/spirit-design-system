@@ -7,6 +7,7 @@ const TextFieldFluid = () => (
     isFluid
     label="Label"
     name="textfieldFluid"
+    onChange={(e) => console.log(`Value: ${(e.target as HTMLInputElement).value}`)}
     placeholder="Placeholder"
     value="Filled"
   />
