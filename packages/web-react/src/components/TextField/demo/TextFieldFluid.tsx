@@ -8,7 +8,7 @@ const TextFieldFluid = () => (
     label="Label"
     name="textfieldFluid"
     placeholder="Placeholder"
-    value="Filled"
+    defaultValue="Filled"
   />
 );
 

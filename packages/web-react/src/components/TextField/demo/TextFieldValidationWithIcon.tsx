@@ -9,16 +9,16 @@ const TextFieldValidationWithIcon = () => {
     <>
       {states.map((state) => (
         <TextField
+          key={`text-field-${state}-validation-icon`}
+          hasValidationIcon
           id={`text-field-${state}-validation-icon`}
           isRequired
           label="Label"
-          validationText={`This is ${state} validation text. Long validation text to show how it wraps.`}
-          validationState={state}
-          hasValidationIcon
           name="textfieldDangerHelper"
           placeholder="Placeholder"
-          value="Filled"
-          key={`text-field-${state}-validation-icon`}
+          validationState={state}
+          validationText={`This is ${state} validation text. Long validation text to show how it wraps.`}
+          defaultValue="Filled"
         />
       ))}
     </>
