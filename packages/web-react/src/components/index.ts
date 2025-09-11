@@ -43,6 +43,7 @@ export * from './Section';
 export * from './SegmentedControl';
 export * from './Select';
 export * from './Skeleton';
+export * from './SkipLink';
 export * from './Slider';
 export * from './Spinner';
 export * from './SplitButton';
