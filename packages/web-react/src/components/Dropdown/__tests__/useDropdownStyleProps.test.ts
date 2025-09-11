@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { SpiritDropdownProps } from '../../../types';
+import { type SpiritDropdownProps } from '../../../types';
 import { useDropdownStyleProps } from '../useDropdownStyleProps';
 
 describe('useDropdownStyleProps', () => {

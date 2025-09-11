@@ -2,9 +2,9 @@ import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { EmotionColors } from '../../../constants';
-import { SpiritToastBarProps } from '../../../types';
+import { type SpiritToastBarProps } from '../../../types';
 import ReadMe from '../README.md';
-import { ToastColorsExtended, Toast, ToastBar, ToastBarMessage, ToastBarLink } from '..';
+import { Toast, ToastBar, ToastBarLink, ToastBarMessage, ToastColorsExtended } from '..';
 
 const meta: Meta<typeof ToastBar> = {
   title: 'Components/Toast',

@@ -1,7 +1,7 @@
 import React from 'react';
 import DocsStack from '../../../../docs/DocsStack';
 import { TextColors } from '../../../constants';
-import { TextColorsType } from '../../../types';
+import { type TextColorsType } from '../../../types';
 import { getAccentTextColors, getEmotionTextColors } from '../../../utils';
 import { Grid } from '../../Grid';
 import Text from '../Text';

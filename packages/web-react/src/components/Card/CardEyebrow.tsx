@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import { useStyleProps } from '../../hooks';
-import { SpiritCardEyebrowProps } from '../../types';
+import { type SpiritCardEyebrowProps } from '../../types';
 import { useCardStyleProps } from './useCardStyleProps';
 
 const CardEyebrow = (props: SpiritCardEyebrowProps) => {

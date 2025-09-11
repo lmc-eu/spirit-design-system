@@ -1,21 +1,21 @@
-import { ElementType, JSXElementConstructor } from 'react';
+import { type ElementType, type JSXElementConstructor } from 'react';
 import {
-  BackgroundAccentColorsType,
-  BackgroundColorsDictionaryType,
-  BackgroundEmotionColorsType,
-  BackgroundGradientsDictionaryType,
-  BorderAccentColorsType,
-  BorderColorsDictionaryType,
-  BorderEmotionColorsType,
-  BorderRadiiTokenType,
-  BorderStylesDictionaryType,
-  BorderWidthsDictionaryType,
-  BreakpointToken,
-  ChildrenProps,
-  SpaceToken,
-  SpiritPolymorphicElementPropsWithRef,
-  StyleProps,
-  TextColorProps,
+  type BackgroundAccentColorsType,
+  type BackgroundColorsDictionaryType,
+  type BackgroundEmotionColorsType,
+  type BackgroundGradientsDictionaryType,
+  type BorderAccentColorsType,
+  type BorderColorsDictionaryType,
+  type BorderEmotionColorsType,
+  type BorderRadiiTokenType,
+  type BorderStylesDictionaryType,
+  type BorderWidthsDictionaryType,
+  type BreakpointToken,
+  type ChildrenProps,
+  type SpaceToken,
+  type SpiritPolymorphicElementPropsWithRef,
+  type StyleProps,
+  type TextColorProps,
 } from './shared';
 
 export type BoxBackgroundColorsType =

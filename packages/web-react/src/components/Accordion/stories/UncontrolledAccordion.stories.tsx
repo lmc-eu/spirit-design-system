@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { Link } from '../../Link';
 import { Pill } from '../../Pill';
-import { Accordion, AccordionHeader, AccordionContent, AccordionItem, UncontrolledAccordion } from '..';
+import { type Accordion, AccordionContent, AccordionHeader, AccordionItem, UncontrolledAccordion } from '..';
 import content from './content';
 
 const meta: Meta<typeof UncontrolledAccordion> = {

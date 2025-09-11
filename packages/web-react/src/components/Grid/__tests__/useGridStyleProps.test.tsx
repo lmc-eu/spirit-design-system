@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { SpiritGridProps } from '../../../types';
+import { type SpiritGridProps } from '../../../types';
 import { useGridStyleProps } from '../useGridStyleProps';
 
 describe('useGridStyleProps', () => {

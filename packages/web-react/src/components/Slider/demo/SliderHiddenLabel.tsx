@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from 'react';
+import React, { type ChangeEvent, useState } from 'react';
 import { DEMO_SLIDER_DEFAULT_VALUE } from '../constants';
 import Slider from '../Slider';
 

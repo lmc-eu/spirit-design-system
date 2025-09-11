@@ -1,5 +1,5 @@
-import React, { ElementType, forwardRef, ReactElement, useState } from 'react';
-import { PolymorphicRef, SpiritNavigationAvatarProps } from '../../../../types';
+import React, { type ElementType, type ReactElement, forwardRef, useState } from 'react';
+import { type PolymorphicRef, type SpiritNavigationAvatarProps } from '../../../../types';
 import { Dropdown, DropdownPopover, DropdownTrigger } from '../../../Dropdown';
 import { Icon } from '../../../Icon';
 import { NavigationAvatar } from '../../../Navigation';

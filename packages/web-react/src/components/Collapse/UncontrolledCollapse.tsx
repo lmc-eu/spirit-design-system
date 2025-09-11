@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { SpiritUncontrolledCollapseProps } from '../../types';
+import { type SpiritUncontrolledCollapseProps } from '../../types';
 import Collapse from './Collapse';
 import { useCollapse } from './useCollapse';
 import { useCollapseAriaProps } from './useCollapseAriaProps';

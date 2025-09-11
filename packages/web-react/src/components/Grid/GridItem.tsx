@@ -1,8 +1,8 @@
 'use client';
 
-import React, { ElementType } from 'react';
+import React, { type ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
-import { SpiritGridItemProps } from '../../types';
+import { type SpiritGridItemProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { useGridItemStyleProps } from './useGridItemStyleProps';
 

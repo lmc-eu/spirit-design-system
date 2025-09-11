@@ -1,13 +1,13 @@
-import { ReactNode } from 'react';
-import { LabelProps } from './label';
+import { type ReactNode } from 'react';
+import { type LabelProps } from './label';
 import {
-  ChildrenProps,
-  HelperTextProps,
-  InputBaseProps,
-  ItemProps,
-  RequiredProps,
-  SpiritInputElementPropsWithRef,
-  Validation,
+  type ChildrenProps,
+  type HelperTextProps,
+  type InputBaseProps,
+  type ItemProps,
+  type RequiredProps,
+  type SpiritInputElementPropsWithRef,
+  type Validation,
 } from './shared';
 
 export type RadioElementBaseProps = SpiritInputElementPropsWithRef;

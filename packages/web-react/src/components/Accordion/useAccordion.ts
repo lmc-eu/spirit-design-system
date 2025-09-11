@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { AccordionOpenStateType, UncontrolledAccordionProps, AccordionHandlingProps } from '../../types';
+import { type AccordionHandlingProps, type AccordionOpenStateType, type UncontrolledAccordionProps } from '../../types';
 
 export const useAccordion = ({ defaultOpen, stayOpen }: UncontrolledAccordionProps): AccordionHandlingProps => {
   const [open, setOpen] = useState<AccordionOpenStateType>(defaultOpen);

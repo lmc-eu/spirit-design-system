@@ -1,4 +1,4 @@
-import { TextHyphens, TextWordBreaks } from '../../constants';
+import { type TextHyphens, type TextWordBreaks } from '../../constants';
 
 export type TextHyphensDictionaryKeys = keyof typeof TextHyphens;
 export type TextHyphensDictionaryType = (typeof TextHyphens)[TextHyphensDictionaryKeys];

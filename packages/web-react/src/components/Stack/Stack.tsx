@@ -1,8 +1,8 @@
 'use client';
 
-import React, { ElementType } from 'react';
+import React, { type ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
-import { SpiritStackProps } from '../../types';
+import { type SpiritStackProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { useStackStyleProps } from './useStackStyleProps';
 

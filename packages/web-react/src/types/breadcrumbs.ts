@@ -1,5 +1,5 @@
-import { ElementType } from 'react';
-import { ChildrenProps, StyleProps, TransferProps } from './shared';
+import { type ElementType } from 'react';
+import { type ChildrenProps, type StyleProps, type TransferProps } from './shared';
 
 type BreadcrumbsItem = {
   title: string;

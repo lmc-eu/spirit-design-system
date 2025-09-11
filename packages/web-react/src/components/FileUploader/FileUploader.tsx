@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import { useStyleProps } from '../../hooks';
-import { SpiritFileUploaderProps } from '../../types';
+import { type SpiritFileUploaderProps } from '../../types';
 import {
   DEFAULT_ERROR_MESSAGE_MAX_FILE_SIZE,
   DEFAULT_ERROR_MESSAGE_QUEUE_DUPLICITY,

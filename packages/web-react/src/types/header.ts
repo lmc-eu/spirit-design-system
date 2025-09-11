@@ -1,16 +1,16 @@
-import { ElementType } from 'react';
+import { type ElementType } from 'react';
 import {
-  ChildrenProps,
-  ClickEvent,
-  SpiritButtonElementProps,
-  SpiritDialogElementProps,
-  SpiritElementProps,
-  SpiritLItemElementProps,
-  SpiritPolymorphicElementPropsWithRef,
-  SpiritSpanElementProps,
-  SpiritUListElementProps,
-  StyleProps,
-  TransferProps,
+  type ChildrenProps,
+  type ClickEvent,
+  type SpiritButtonElementProps,
+  type SpiritDialogElementProps,
+  type SpiritElementProps,
+  type SpiritLItemElementProps,
+  type SpiritPolymorphicElementPropsWithRef,
+  type SpiritSpanElementProps,
+  type SpiritUListElementProps,
+  type StyleProps,
+  type TransferProps,
 } from './shared';
 
 export type HeaderActionsColorType = 'primary' | 'secondary';

@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import { useStyleProps } from '../../hooks';
-import { HeaderDialogActionsProps } from '../../types';
+import { type HeaderDialogActionsProps } from '../../types';
 import { HEADER_ACTIONS_COLOR_DEFAULT } from './constants';
 import { useHeaderStyleProps } from './useHeaderStyleProps';
 

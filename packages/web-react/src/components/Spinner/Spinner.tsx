@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import { useStyleProps } from '../../hooks';
-import { SpiritSpinnerProps } from '../../types';
+import { type SpiritSpinnerProps } from '../../types';
 import { Icon } from '../Icon';
 import { useSpinnerStyleProps } from './useSpinnerStyleProps';
 

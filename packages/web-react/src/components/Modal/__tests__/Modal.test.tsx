@@ -8,7 +8,7 @@ import {
   stylePropsTest,
   validHtmlAttributesTest,
 } from '@local/tests';
-import { SpiritModalProps } from '../../../types';
+import { type SpiritModalProps } from '../../../types';
 import Modal from '../Modal';
 
 describe('Modal', () => {

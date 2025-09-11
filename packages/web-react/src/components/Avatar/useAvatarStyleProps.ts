@@ -1,7 +1,7 @@
 import classNames from 'classnames';
-import { ElementType } from 'react';
+import { type ElementType } from 'react';
 import { useClassNamePrefix } from '../../hooks';
-import { AvatarSize, SpiritAvatarProps } from '../../types';
+import { type AvatarSize, type SpiritAvatarProps } from '../../types';
 import { applySize, compose } from '../../utils';
 
 export interface AvatarStyles<E extends ElementType = ElementType, S = void> {

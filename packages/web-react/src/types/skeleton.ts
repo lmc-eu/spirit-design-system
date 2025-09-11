@@ -1,11 +1,11 @@
-import { ElementType } from 'react';
+import { type ElementType } from 'react';
 import {
-  BorderRadiiDictionaryType,
-  BreakpointToken,
-  ChildrenProps,
-  SizeExtendedDictionaryType,
-  StyleProps,
-  TransferProps,
+  type BorderRadiiDictionaryType,
+  type BreakpointToken,
+  type ChildrenProps,
+  type SizeExtendedDictionaryType,
+  type StyleProps,
+  type TransferProps,
 } from './shared';
 
 export interface AriaSkeletonElementTypeProps<T extends ElementType = 'div'> {

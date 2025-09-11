@@ -1,5 +1,5 @@
-import { ComponentPropsWithRef, ElementType } from 'react';
-import { PillColorsExtended } from '../components/Pill';
+import { type ComponentPropsWithRef, type ElementType } from 'react';
+import { type PillColorsExtended } from '../components/Pill';
 import type { ChildrenProps, EmotionColorNamesType, StyleProps, TransferProps } from './shared';
 
 export type PillColorsExtendedNamesType = (typeof PillColorsExtended)[keyof typeof PillColorsExtended];

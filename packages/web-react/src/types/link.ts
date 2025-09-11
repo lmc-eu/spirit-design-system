@@ -1,5 +1,5 @@
-import { ElementType } from 'react';
-import { LinkColorsDictionaryType, ChildrenProps, StyleProps, TransferProps } from './shared';
+import { type ElementType } from 'react';
+import { type ChildrenProps, type LinkColorsDictionaryType, type StyleProps, type TransferProps } from './shared';
 
 export const UNDERLINED_OPTIONS = {
   ALWAYS: 'always',

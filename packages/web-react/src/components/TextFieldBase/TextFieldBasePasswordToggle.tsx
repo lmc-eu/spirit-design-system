@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Sizes } from '../../constants';
-import { SpiritTextFieldBasePasswordToggleProps } from '../../types';
+import { type SpiritTextFieldBasePasswordToggleProps } from '../../types';
 import { Icon } from '../Icon';
 import { useTextFieldBasePasswordToggleStyleProps } from './useTextFieldBasePasswordToggleStyleProps';
 

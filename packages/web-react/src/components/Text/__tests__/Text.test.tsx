@@ -4,19 +4,19 @@ import React from 'react';
 import {
   ariaAttributesTest,
   classNamePrefixProviderTest,
+  elementTypePropsTest,
+  restPropsTest,
   sizeExtendedPropsTest,
   sizePropsTest,
-  restPropsTest,
   stylePropsTest,
   textAlignmentPropsTest,
   textColorPropsTest,
-  validHtmlAttributesTest,
-  elementTypePropsTest,
   textHyphensPropsTest,
-  textWordBreakPropsTest,
   textIsBalancedPropsTest,
+  textWordBreakPropsTest,
+  validHtmlAttributesTest,
 } from '@local/tests';
-import { EmphasisDictionaryType, SizesDictionaryType, SizeExtendedDictionaryType } from '../../../types';
+import { type EmphasisDictionaryType, type SizeExtendedDictionaryType, type SizesDictionaryType } from '../../../types';
 import Text from '../Text';
 import textPropsDataProvider from './textPropsDataProvider';
 

@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { SpiritLinkProps } from '../../../types';
+import { type SpiritLinkProps } from '../../../types';
 import { useLinkStyleProps } from '../useLinkStyleProps';
 import linkPropsDataProvider from './linkPropsDataProvider';
 

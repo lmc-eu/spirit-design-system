@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { SpiritButtonProps } from '../../../types';
+import { type SpiritButtonProps } from '../../../types';
 import { useButtonLinkStyleProps } from '../useButtonLinkStyleProps';
 
 describe('useButtonStyleProps', () => {

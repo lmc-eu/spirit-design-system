@@ -1,4 +1,4 @@
-import { ChildrenProps, DirectionDictionaryType, StyleProps } from './shared';
+import { type ChildrenProps, type DirectionDictionaryType, type StyleProps } from './shared';
 
 export type ScrollViewDirectionType = DirectionDictionaryType;
 export type ScrollViewOverflowDecoratorsType = 'borders' | 'shadows' | 'both';

@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { SpiritAlertProps } from '../../../types';
+import { type SpiritAlertProps } from '../../../types';
 import { useAlertStyleProps } from '../useAlertStyleProps';
 
 describe('useAlertStyleProps', () => {

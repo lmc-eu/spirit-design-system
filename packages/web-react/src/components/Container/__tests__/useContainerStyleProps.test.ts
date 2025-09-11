@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
 import { SizesExtended } from '../../../constants';
-import { SpiritContainerProps } from '../../../types';
+import { type SpiritContainerProps } from '../../../types';
 import { useContainerStyleProps } from '../useContainerStyleProps';
 
 describe('useContainerStyleProps', () => {

@@ -1,6 +1,6 @@
-import { RefObject } from 'react';
+import { type RefObject } from 'react';
 import { useIsomorphicLayoutEffect } from '../../hooks';
-import { FileMetadata } from '../../types/fileUploader';
+import { type FileMetadata } from '../../types/fileUploader';
 import { getAttachmentInput, getAttachmentMetaInput } from './utils';
 
 export interface UseFileUploaderAttachmentProps {

@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import React from 'react';
 import { Sizes } from '../../constants';
 import { useStyleProps } from '../../hooks';
-import { SpiritPartnerLogoProps } from '../../types/partnerLogo';
+import { type SpiritPartnerLogoProps } from '../../types/partnerLogo';
 import { usePartnerLogoStyleProps } from './usePartnerLogoStyleProps';
 
 const defaultProps: Partial<SpiritPartnerLogoProps> = {

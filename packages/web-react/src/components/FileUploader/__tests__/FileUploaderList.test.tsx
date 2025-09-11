@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import React from 'react';
 import { validHtmlAttributesTest } from '@local/tests';
-import { SpiritFileUploaderAttachmentProps } from '../../../types';
+import { type SpiritFileUploaderAttachmentProps } from '../../../types';
 import FileUploader from '../FileUploader';
 import FileUploaderList from '../FileUploaderList';
 

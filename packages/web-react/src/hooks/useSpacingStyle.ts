@@ -1,6 +1,6 @@
 import { cssVariablePrefix } from '@lmc-eu/spirit-design-tokens';
-import { DirectionAxis } from '../constants';
-import { SpacingCSSProperties, SpacingType } from '../types';
+import { type DirectionAxis } from '../constants';
+import { type SpacingCSSProperties, type SpacingType } from '../types';
 
 export function useSpacingStyle(
   spacing: SpacingType | undefined,

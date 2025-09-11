@@ -1,8 +1,8 @@
 import classNames from 'classnames';
-import { CSSProperties, HTMLAttributes, useContext } from 'react';
+import { type CSSProperties, type HTMLAttributes, useContext } from 'react';
 import { warning } from '../common/utilities';
 import ClassNamePrefixContext from '../context/ClassNamePrefixContext';
-import { StyleProps } from '../types';
+import { type StyleProps } from '../types';
 import { useStyleUtilities } from './useStyleUtilities';
 
 export type StylePropsResult = {

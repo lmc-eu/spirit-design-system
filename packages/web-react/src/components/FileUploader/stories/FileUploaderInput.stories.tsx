@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { ValidationStates } from '../../../constants';
-import { SpiritFileUploaderAttachmentProps, SpiritFileUploaderInputProps } from '../../../types';
+import { type SpiritFileUploaderAttachmentProps, type SpiritFileUploaderInputProps } from '../../../types';
 import { FileUploader, FileUploaderAttachment, FileUploaderInput, FileUploaderList, useFileQueue } from '..';
 
 const meta: Meta<typeof FileUploaderInput> = {

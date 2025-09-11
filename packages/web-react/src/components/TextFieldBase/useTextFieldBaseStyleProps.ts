@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks';
-import { SpiritTextFieldBaseProps, TextFieldBaseProps } from '../../types';
+import { type SpiritTextFieldBaseProps, type TextFieldBaseProps } from '../../types';
 
 export interface TextFieldBaseStyles {
   /** className props */

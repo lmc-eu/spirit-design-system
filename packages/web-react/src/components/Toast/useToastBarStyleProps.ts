@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks';
-import { ToastBarProps } from '../../types';
+import { type ToastBarProps } from '../../types';
 import { ToastColorsExtended } from '.';
 
 export const useToastBarStyleProps = (props: ToastBarProps) => {

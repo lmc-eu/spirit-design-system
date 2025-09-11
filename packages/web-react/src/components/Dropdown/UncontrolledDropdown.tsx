@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React, { useRef } from 'react';
 import { useStyleProps } from '../../hooks';
-import { UncontrolledDropdownProps } from '../../types';
+import { type UncontrolledDropdownProps } from '../../types';
 import { DropdownProvider } from './DropdownContext';
 import { useDropdown } from './useDropdown';
 import { useDropdownStyleProps } from './useDropdownStyleProps';

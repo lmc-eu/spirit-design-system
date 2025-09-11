@@ -1,16 +1,16 @@
-import { ReactNode } from 'react';
-import { LabelProps } from './label';
+import { type ReactNode } from 'react';
+import { type LabelProps } from './label';
 import {
-  ChildrenProps,
-  HelperTextProps,
-  InputBaseProps,
-  PasswordToggleAdornmentProp,
-  RequiredProps,
-  SizesDictionaryType,
-  SpiritInputElementPropsWithRef,
-  TextInputProps,
-  Validation,
-  ValidationTextProp,
+  type ChildrenProps,
+  type HelperTextProps,
+  type InputBaseProps,
+  type PasswordToggleAdornmentProp,
+  type RequiredProps,
+  type SizesDictionaryType,
+  type SpiritInputElementPropsWithRef,
+  type TextInputProps,
+  type Validation,
+  type ValidationTextProp,
 } from './shared';
 
 export type TextFieldType = 'email' | 'number' | 'password' | 'search' | 'tel' | 'text' | 'url';

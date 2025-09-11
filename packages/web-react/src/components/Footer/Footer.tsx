@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import React from 'react';
 import { BackgroundColors, PaddingStyleProps, TextStyleProps } from '../../constants';
 import { useStyleProps } from '../../hooks';
-import { SpiritFooterProps } from '../../types';
+import { type SpiritFooterProps } from '../../types';
 import { PADDING_BOTTOM, PADDING_TOP } from './constants';
 import { useFooterStyleProps } from './useFooterStyleProps';
 

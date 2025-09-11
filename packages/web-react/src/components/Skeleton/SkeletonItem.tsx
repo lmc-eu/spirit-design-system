@@ -1,7 +1,7 @@
 'use client';
 
 import classNames from 'classnames';
-import React, { ReactElement } from 'react';
+import React, { type ReactElement } from 'react';
 import { useSkeletonStyleProps } from './useSkeletonStyleProps';
 
 const SkeletonItem = (): ReactElement => {

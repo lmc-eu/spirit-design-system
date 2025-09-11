@@ -1,13 +1,13 @@
-import { ElementType, JSXElementConstructor } from 'react';
+import { type ElementType, type JSXElementConstructor } from 'react';
 import {
-  AlignmentXExtendedDictionaryType,
-  AlignmentYExtendedDictionaryType,
-  BreakpointToken,
-  ChildrenProps,
-  GridColumns,
-  SpaceToken,
-  StyleProps,
-  TransferProps,
+  type AlignmentXExtendedDictionaryType,
+  type AlignmentYExtendedDictionaryType,
+  type BreakpointToken,
+  type ChildrenProps,
+  type GridColumns,
+  type SpaceToken,
+  type StyleProps,
+  type TransferProps,
 } from './shared';
 
 export type GridColsBreakpoints = {

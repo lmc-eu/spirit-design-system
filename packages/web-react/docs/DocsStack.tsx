@@ -1,6 +1,6 @@
 import classNames from 'classnames';
-import React, { ReactNode } from 'react';
-import { StyleProps, useStyleProps } from '../src';
+import React, { type ReactNode } from 'react';
+import { type StyleProps, useStyleProps } from '../src';
 
 interface DocsStackProps extends StyleProps {
   children: ReactNode;

@@ -1,8 +1,8 @@
 'use client';
 
-import React, { ElementType, forwardRef } from 'react';
+import React, { type ElementType, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
-import { PolymorphicRef, SpiritLinkProps } from '../../types';
+import { type PolymorphicRef, type SpiritLinkProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { useLinkStyleProps } from './useLinkStyleProps';
 

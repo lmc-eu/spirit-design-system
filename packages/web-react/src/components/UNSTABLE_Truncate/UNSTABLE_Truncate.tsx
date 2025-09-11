@@ -1,8 +1,8 @@
 'use client';
 
-import React, { ElementType } from 'react';
+import React, { type ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
-import { SpiritTruncateProps } from '../../types/truncate';
+import { type SpiritTruncateProps } from '../../types/truncate';
 import { mergeStyleProps } from '../../utils';
 import { useTruncateStyleProps } from './useTruncateStyleProps';
 

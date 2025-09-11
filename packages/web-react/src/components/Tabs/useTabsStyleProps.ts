@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { useClassNamePrefix, useSpacingStyle } from '../../hooks';
-import { SpacingCSSProperties, SpiritTabsProps } from '../../types';
+import { type SpacingCSSProperties, type SpiritTabsProps } from '../../types';
 import { useTabContext } from './TabContext';
 
 export interface TabsStyles {

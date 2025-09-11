@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { SpiritFieldGroupProps } from '../../../types';
+import { type SpiritFieldGroupProps } from '../../../types';
 import { useFieldGroupStyleProps } from '../useFieldGroupStyleProps';
 
 describe('useFieldGroupStyleProps', () => {

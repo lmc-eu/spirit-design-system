@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import { useStyleProps } from '../../hooks';
-import { HeaderDialogButtonProps } from '../../types';
+import { type HeaderDialogButtonProps } from '../../types';
 import { useHeaderStyleProps } from './useHeaderStyleProps';
 
 const HeaderDialogButton = (props: HeaderDialogButtonProps) => {

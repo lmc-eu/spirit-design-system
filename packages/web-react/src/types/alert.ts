@@ -1,4 +1,4 @@
-import { ElementType } from 'react';
+import { type ElementType } from 'react';
 import type { ChildrenProps, EmotionColorNamesType, StyleProps, TransferProps } from './shared';
 
 export interface AriaAlertElementTypeProps<T extends ElementType = 'div'> {

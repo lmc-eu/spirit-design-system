@@ -1,4 +1,4 @@
-import React, { ChangeEvent, createRef, useState } from 'react';
+import React, { type ChangeEvent, createRef, useState } from 'react';
 import {
   Button,
   Checkbox,
@@ -13,7 +13,7 @@ import {
   ScrollView,
   Stack,
 } from '../..';
-import { BreakpointToken, SpaceToken } from '../../../types';
+import { type BreakpointToken, type SpaceToken } from '../../../types';
 
 const breakpointControls = {
   mobile: { marginBottom: { mobile: 'space-800' }, className: 'border-0' },

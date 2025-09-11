@@ -5,7 +5,7 @@ import { Button, Icon, Text } from '../..';
 import { Placements } from '../../../constants';
 import { DropdownFullWidthModes } from '../../../types';
 import ReadMe from '../README.md';
-import { DropdownTrigger, DropdownPopover, UncontrolledDropdown } from '..';
+import { DropdownPopover, DropdownTrigger, UncontrolledDropdown } from '..';
 
 const meta: Meta<typeof UncontrolledDropdown> = {
   title: 'Components/Dropdown',

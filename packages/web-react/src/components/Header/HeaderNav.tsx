@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import { useStyleProps } from '../../hooks';
-import { HeaderNavProps } from '../../types';
+import { type HeaderNavProps } from '../../types';
 import { useHeaderStyleProps } from './useHeaderStyleProps';
 
 const HeaderNav = (props: HeaderNavProps) => {

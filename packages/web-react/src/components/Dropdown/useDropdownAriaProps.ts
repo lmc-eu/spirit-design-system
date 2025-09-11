@@ -1,5 +1,10 @@
 import { Placements } from '../../constants';
-import { Booleanish, ClickEvent, DropdownFullWidthMode, PlacementDictionaryType } from '../../types';
+import {
+  type Booleanish,
+  type ClickEvent,
+  type DropdownFullWidthMode,
+  type PlacementDictionaryType,
+} from '../../types';
 
 const NAME_ARIA_EXPANDED = 'aria-expanded';
 const NAME_ARIA_CONTROLS = 'aria-controls';

@@ -1,8 +1,8 @@
 'use client';
 
-import React, { ElementType, forwardRef } from 'react';
+import React, { type ElementType, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
-import { PolymorphicRef, SpiritPaginationLinkProps } from '../../types';
+import { type PolymorphicRef, type SpiritPaginationLinkProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { VisuallyHidden } from '../VisuallyHidden';
 import { usePaginationStyleProps } from './usePaginationStyleProps';
