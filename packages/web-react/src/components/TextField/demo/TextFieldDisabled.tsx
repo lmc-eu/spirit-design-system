@@ -7,12 +7,13 @@ const TextFieldDisabled = () => (
 
     <TextField
       id="textfield-disabled-filled"
-      label="Label"
-      name="textfieldDisabledFilled"
-      placeholder="Placeholder"
-      value="Filled"
       isDisabled
       isRequired
+      label="Label"
+      name="textfieldDisabledFilled"
+      onChange={(e) => console.log(`Value: ${(e.target as HTMLInputElement).value}`)}
+      placeholder="Placeholder"
+      value="Filled"
     />
   </>
 );
