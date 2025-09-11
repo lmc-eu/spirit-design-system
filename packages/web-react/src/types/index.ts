@@ -38,6 +38,7 @@ export * from './section';
 export * from './select';
 export * from './shared';
 export * from './skeleton';
+export * from './skipLink';
 export * from './slider';
 export * from './spinner';
 export * from './splitButton';
