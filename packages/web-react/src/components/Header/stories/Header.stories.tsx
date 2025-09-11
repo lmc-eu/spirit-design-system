@@ -1,7 +1,7 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
-import { HeaderProps } from '../../../types';
+import { type HeaderProps } from '../../../types';
 import { Link } from '../../Link';
 import { ProductLogo } from '../../ProductLogo';
 import JobBoardLogo from '../demo/JobBoardLogo';

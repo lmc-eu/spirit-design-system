@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 import React, { useState } from 'react';
-import { HeaderDialogProps } from '../../../types';
+import { type HeaderDialogProps } from '../../../types';
 import { Link } from '../../Link';
 import { ProductLogo } from '../../ProductLogo';
 import JobBoardLogo from '../demo/JobBoardLogo';

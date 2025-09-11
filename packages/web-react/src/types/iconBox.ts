@@ -1,5 +1,5 @@
-import { ElementType, JSXElementConstructor } from 'react';
-import { IconBoxShapes } from '../components/IconBox/constants';
+import { type ElementType, type JSXElementConstructor } from 'react';
+import { type IconBoxShapes } from '../components/IconBox/constants';
 import type {
   AccentColorNamesType,
   ChildrenProps,

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { TabsProps } from '../../types';
+import { type TabsProps } from '../../types';
 import { TabsProvider } from './TabContext';
 
 const Tabs = ({ children, selectedTab, toggle: selectTab, onSelectionChange, spacing }: TabsProps): JSX.Element => (

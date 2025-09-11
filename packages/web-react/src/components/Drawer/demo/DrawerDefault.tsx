@@ -1,7 +1,7 @@
-import React, { ChangeEvent, useState } from 'react';
+import React, { type ChangeEvent, useState } from 'react';
 import { Button, Checkbox, Radio, Stack, TextArea } from '../..';
 import { AlignmentX } from '../../../constants';
-import { DrawerAlignmentXType } from '../../../types';
+import { type DrawerAlignmentXType } from '../../../types';
 import { Box } from '../../Box';
 import Drawer from '../Drawer';
 import DrawerCloseButton from '../DrawerCloseButton';

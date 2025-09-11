@@ -1,4 +1,4 @@
-import { ClickEvent, SpiritButtonProps } from '../../types';
+import { type ClickEvent, type SpiritButtonProps } from '../../types';
 
 const handleClick = (event: ClickEvent, isDisabled?: boolean, onClick?: (event: ClickEvent) => void) => {
   if (isDisabled) {

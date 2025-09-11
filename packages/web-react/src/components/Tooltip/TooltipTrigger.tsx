@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useStyleProps } from '../../hooks';
-import { TooltipTriggerProps } from '../../types';
+import { type TooltipTriggerProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { useTooltipContext } from './TooltipContext';
 

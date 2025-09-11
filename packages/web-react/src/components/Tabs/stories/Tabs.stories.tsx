@@ -1,7 +1,7 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { useCallback, useState } from 'react';
-import { TabId, TabsProps } from '../../../types';
+import { type TabId, type TabsProps } from '../../../types';
 import ReadMe from '../README.md';
 import { TabContent, TabItem, TabList, TabPane, Tabs } from '..';
 

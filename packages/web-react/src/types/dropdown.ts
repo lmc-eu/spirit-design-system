@@ -1,12 +1,12 @@
-import { ComponentPropsWithRef, ElementType, LegacyRef, ReactNode } from 'react';
+import { type ComponentPropsWithRef, type ElementType, type LegacyRef, type ReactNode } from 'react';
 import {
-  AlignmentXExtendedDictionaryType,
-  AlignmentYExtendedDictionaryType,
-  Booleanish,
-  ChildrenProps,
-  ClickEvent,
-  PlacementDictionaryType,
-  StyleProps,
+  type AlignmentXExtendedDictionaryType,
+  type AlignmentYExtendedDictionaryType,
+  type Booleanish,
+  type ChildrenProps,
+  type ClickEvent,
+  type PlacementDictionaryType,
+  type StyleProps,
 } from './shared';
 
 export const DropdownFullWidthModes = {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { UncontrolledSplitButtonProps } from '../../types';
+import { type UncontrolledSplitButtonProps } from '../../types';
 import { Button } from '../Button';
 import { Dropdown, DropdownPopover, DropdownTrigger } from '../Dropdown';
 import { Icon } from '../Icon';

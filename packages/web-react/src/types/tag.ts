@@ -1,5 +1,5 @@
-import { ElementType } from 'react';
-import { TagColorsExtended } from '..';
+import { type ElementType } from 'react';
+import { type TagColorsExtended } from '..';
 import type {
   ChildrenProps,
   EmotionColorNamesType,

@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { SizeExtendedDictionaryType, SpiritSectionProps } from '../../../types';
+import { type SizeExtendedDictionaryType, type SpiritSectionProps } from '../../../types';
 import { useSectionSizeProps } from '../useSectionSizeProps';
 import sectionSizeDataProvider from './sectionSizeDataProvider';
 

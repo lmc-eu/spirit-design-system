@@ -1,12 +1,12 @@
-import { MutableRefObject, ReactNode, MouseEvent } from 'react';
+import { type MouseEvent, type MutableRefObject, type ReactNode } from 'react';
 import {
-  SpiritButtonElementProps,
-  SpiritDivElementProps,
-  SpiritInputElementProps,
-  SpiritLItemElementProps,
-  SpiritUListElementProps,
-  Validation,
-  ValidationTextType,
+  type SpiritButtonElementProps,
+  type SpiritDivElementProps,
+  type SpiritInputElementProps,
+  type SpiritLItemElementProps,
+  type SpiritUListElementProps,
+  type Validation,
+  type ValidationTextType,
 } from './shared';
 
 export type FileUploaderAttachmentComponentType = (props: FileUploaderAttachmentBaseProps) => ReactNode;

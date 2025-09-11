@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from 'react';
+import React, { type ChangeEvent, useState } from 'react';
 import {
   Button,
   Checkbox,
@@ -15,7 +15,7 @@ import {
   Stack,
   TextField,
 } from '../..';
-import { AlignmentX, AlignmentXDictionaryType, AlignmentY, AlignmentYDictionaryType } from '../../..';
+import { AlignmentX, type AlignmentXDictionaryType, AlignmentY, type AlignmentYDictionaryType } from '../../..';
 
 const ModalDefault = () => {
   const [isModalBasicOpen, setModalBasicOpen] = useState(false);

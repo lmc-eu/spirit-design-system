@@ -1,10 +1,10 @@
 import React from 'react';
 import DocsStack from '../../../../docs/DocsStack';
 import {
-  BoxBackgroundColorsType,
-  TextAccentColorsType,
-  TextColorsDictionaryType,
-  TextEmotionColorsType,
+  type BoxBackgroundColorsType,
+  type TextAccentColorsType,
+  type TextColorsDictionaryType,
+  type TextEmotionColorsType,
 } from '../../../types';
 import Box from '../Box';
 

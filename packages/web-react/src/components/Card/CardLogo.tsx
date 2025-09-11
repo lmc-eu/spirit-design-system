@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import { useStyleProps } from '../../hooks';
-import { SpiritCardLogoProps } from '../../types';
+import { type SpiritCardLogoProps } from '../../types';
 import { useCardStyleProps } from './useCardStyleProps';
 
 const CardLogo = (props: SpiritCardLogoProps) => {

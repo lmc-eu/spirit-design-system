@@ -1,10 +1,10 @@
 'use client';
 
 import classNames from 'classnames';
-import React, { ReactElement } from 'react';
+import React, { type ReactElement } from 'react';
 import { AlignmentYExtended } from '../../constants';
 import { useStyleProps } from '../../hooks';
-import { SpiritNavigationItemProps } from '../../types';
+import { type SpiritNavigationItemProps } from '../../types';
 import { useNavigationStyleProps } from './useNavigationStyleProps';
 
 const defaultProps: Partial<SpiritNavigationItemProps> = {

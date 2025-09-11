@@ -1,6 +1,11 @@
-import { ElementType } from 'react';
+import { type ElementType } from 'react';
 import { SizesExtended } from '../../constants';
-import { BreakpointToken, SizeExtendedDictionaryType, SpaceToken, SpiritSectionProps } from '../../types';
+import {
+  type BreakpointToken,
+  type SizeExtendedDictionaryType,
+  type SpaceToken,
+  type SpiritSectionProps,
+} from '../../types';
 
 export interface UseSectionSizeProps {
   modifiedProps: Partial<SpiritSectionProps<ElementType>>;

@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { SpiritNavigationActionProps } from '../../../types';
+import { type SpiritNavigationActionProps } from '../../../types';
 import { useNavigationActionProps } from '../useNavigationActionProps';
 
 describe('useNavigationActionProps', () => {

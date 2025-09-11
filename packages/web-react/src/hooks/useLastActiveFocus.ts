@@ -1,4 +1,4 @@
-import { useRef, useEffect, MutableRefObject } from 'react';
+import { type MutableRefObject, useEffect, useRef } from 'react';
 
 export const useLastActiveFocus = (isOpen: boolean) => {
   const lastActiveElement: MutableRefObject<HTMLElement | null> = useRef(null);

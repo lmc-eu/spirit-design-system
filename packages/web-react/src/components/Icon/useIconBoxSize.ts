@@ -1,4 +1,4 @@
-import { IconBoxSize } from '../../types';
+import { type IconBoxSize } from '../../types';
 import { DEFAULT_BOX_SIZE } from './constants';
 
 export const useIconBoxSize = (boxSize: IconBoxSize | undefined) =>

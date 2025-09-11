@@ -1,7 +1,7 @@
 import classNames from 'classnames';
-import { ElementType } from 'react';
+import { type ElementType } from 'react';
 import { useClassNamePrefix } from '../../hooks';
-import { SpiritTextProps, TextProps } from '../../types';
+import { type SpiritTextProps, type TextProps } from '../../types';
 
 export interface TextStyles<T extends ElementType = 'p'> {
   /** className props */

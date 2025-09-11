@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import { useClassNamePrefix, useStyleProps } from '../../hooks';
-import { SpiritProductLogoProps } from '../../types';
+import { type SpiritProductLogoProps } from '../../types';
 
 const ProductLogo = (props: SpiritProductLogoProps) => {
   const { children, ...restProps } = props;

@@ -1,12 +1,12 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
-import { AccordionOpenStateType, AccordionProps } from '../../../types';
+import { type AccordionOpenStateType, type AccordionProps } from '../../../types';
 import { Link } from '../../Link';
 import { Pill } from '../../Pill';
 import toggleValueByType from '../demo/toggleValueByType';
 import ReadMe from '../README.md';
-import { Accordion, AccordionHeader, AccordionContent, AccordionItem } from '..';
+import { Accordion, AccordionContent, AccordionHeader, AccordionItem } from '..';
 import content from './content';
 
 const meta: Meta<typeof Accordion> = {

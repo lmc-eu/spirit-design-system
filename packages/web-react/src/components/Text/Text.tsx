@@ -1,9 +1,9 @@
 'use client';
 
-import React, { ElementType } from 'react';
+import React, { type ElementType } from 'react';
 import { Emphasis, SizesExtended, TextStyleProps } from '../../constants';
 import { useStyleProps } from '../../hooks';
-import { SpiritTextProps } from '../../types';
+import { type SpiritTextProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { useTextStyleProps } from './useTextStyleProps';
 

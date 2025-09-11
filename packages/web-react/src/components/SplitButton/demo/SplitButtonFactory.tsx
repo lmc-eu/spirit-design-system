@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import DocsSection from '../../../../docs/DocsSection';
 import { Sizes } from '../../../constants';
-import { SplitButtonColorType } from '../../../types';
+import { type SplitButtonColorType } from '../../../types';
 import { Button } from '../../Button';
 import { Dropdown, DropdownPopover, DropdownTrigger } from '../../Dropdown';
 import { Icon } from '../../Icon';
@@ -11,15 +11,13 @@ import { VisuallyHidden } from '../../VisuallyHidden';
 import SplitButton from '../SplitButton';
 import { dropdownContent } from './constants';
 
-const DropdownContent = () => {
-  return (
-    <>
-      {dropdownContent.map(({ icon, text }) => (
-        <Item key={icon} label={text} elementType="a" iconName={icon} href={`#${icon}`} />
-      ))}
-    </>
-  );
-};
+const DropdownContent = () => (
+  <>
+    {dropdownContent.map(({ icon, text }) => (
+      <Item key={icon} label={text} elementType="a" iconName={icon} href={`#${icon}`} />
+    ))}
+  </>
+);
 
 const SplitButtonDemoFactory = <C extends void>(props: {
   color?: SplitButtonColorType<C>;

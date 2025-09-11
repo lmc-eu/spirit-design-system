@@ -1,8 +1,8 @@
 'use client';
 
-import React, { ElementType, ForwardedRef, forwardRef, HTMLAttributes } from 'react';
+import React, { type ElementType, type ForwardedRef, type HTMLAttributes, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
-import { DrawerPanelElementType, DrawerPanelProps } from '../../types';
+import { type DrawerPanelElementType, type DrawerPanelProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { useDrawerStyleProps } from './useDrawerStyleProps';
 

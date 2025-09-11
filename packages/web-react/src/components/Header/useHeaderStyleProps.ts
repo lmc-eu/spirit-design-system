@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks';
-import { HeaderColorType, HeaderActionsColorType } from '../../types';
-import { HEADER_COLOR_DEFAULT, HEADER_ACTIONS_COLOR_DEFAULT } from './constants';
+import { type HeaderActionsColorType, type HeaderColorType } from '../../types';
+import { HEADER_ACTIONS_COLOR_DEFAULT, HEADER_COLOR_DEFAULT } from './constants';
 
 export interface UseHeaderStyleProps {
   color?: HeaderColorType;

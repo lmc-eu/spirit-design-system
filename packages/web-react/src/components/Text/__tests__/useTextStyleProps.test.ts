@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
 import { Emphasis, SizesExtended, TextColors } from '../../../constants';
-import { SpiritTextProps } from '../../../types';
+import { type SpiritTextProps } from '../../../types';
 import { useTextStyleProps } from '../useTextStyleProps';
 import textPropsDataProvider from './textPropsDataProvider';
 

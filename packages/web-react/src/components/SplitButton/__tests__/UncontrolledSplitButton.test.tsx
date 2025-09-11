@@ -9,7 +9,7 @@ import {
   validHtmlAttributesTest,
 } from '@local/tests';
 import { ComponentButtonColors, Sizes } from '../../../constants';
-import { SplitButtonColorType } from '../../../types';
+import { type SplitButtonColorType } from '../../../types';
 import UncontrolledSplitButton from '../UncontrolledSplitButton';
 
 describe('SplitButton', () => {

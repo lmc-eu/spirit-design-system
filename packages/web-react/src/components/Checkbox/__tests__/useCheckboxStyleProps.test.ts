@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
 import { ValidationStates } from '../../../constants';
-import { SpiritCheckboxProps } from '../../../types';
+import { type SpiritCheckboxProps } from '../../../types';
 import { useCheckboxStyleProps } from '../useCheckboxStyleProps';
 
 describe('useCheckboxStyleProps', () => {

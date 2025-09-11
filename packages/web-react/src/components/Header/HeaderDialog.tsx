@@ -2,8 +2,8 @@
 
 import classNames from 'classnames';
 import React from 'react';
-import { useStyleProps, useLastActiveFocus } from '../../hooks';
-import { HeaderDialogProps } from '../../types';
+import { useLastActiveFocus, useStyleProps } from '../../hooks';
+import { type HeaderDialogProps } from '../../types';
 import { Dialog } from '../Dialog';
 import { HeaderDialogProvider } from './HeaderDialogContext';
 import { useHeaderStyleProps } from './useHeaderStyleProps';

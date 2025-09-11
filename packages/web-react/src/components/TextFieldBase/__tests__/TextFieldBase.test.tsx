@@ -8,7 +8,7 @@ import {
   sizePropsTest,
   validHtmlAttributesTest,
 } from '@local/tests';
-import { TextFieldType } from '../../../types';
+import { type TextFieldType } from '../../../types';
 import TextFieldBase from '../TextFieldBase';
 
 describe('TextFieldBase', () => {

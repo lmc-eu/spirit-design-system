@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import { TabId } from '../../types';
+import { type TabId } from '../../types';
 
 export const useTab = (initialId: TabId) => {
   const [selectedId, setState] = useState<TabId>(initialId);

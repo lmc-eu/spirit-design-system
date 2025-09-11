@@ -1,6 +1,11 @@
-import { ElementType } from 'react';
-import { LinkTarget } from './link';
-import { ChildrenProps, SpiritPolymorphicElementPropsWithRef, StyleProps, TransferProps } from './shared';
+import { type ElementType } from 'react';
+import { type LinkTarget } from './link';
+import {
+  type ChildrenProps,
+  type SpiritPolymorphicElementPropsWithRef,
+  type StyleProps,
+  type TransferProps,
+} from './shared';
 
 export interface HeaderLogoBaseProps extends ChildrenProps, StyleProps, TransferProps {
   /** Header's href attribute */

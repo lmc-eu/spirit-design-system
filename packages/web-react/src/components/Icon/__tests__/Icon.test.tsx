@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { ariaAttributesTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
 import { toBeInDocumentProviderTest } from '@local/tests/providerTests/toBeInDocumentProviderTest';
-import { SpiritIconProps } from '../../../types';
+import { type SpiritIconProps } from '../../../types';
 import Icon from '../Icon';
 import { iconColors } from '../utils';
 

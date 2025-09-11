@@ -1,9 +1,9 @@
 'use client';
 
-import React, { ElementType, MutableRefObject, useRef } from 'react';
-import { Transition, TransitionStatus } from 'react-transition-group';
+import React, { type ElementType, type MutableRefObject, useRef } from 'react';
+import { Transition, type TransitionStatus } from 'react-transition-group';
 import { useStyleProps } from '../../hooks';
-import { SpiritCollapseProps } from '../../types';
+import { type SpiritCollapseProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { useCollapseAriaProps } from './useCollapseAriaProps';
 import { useCollapseStyleProps } from './useCollapseStyleProps';

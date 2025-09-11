@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { UncontrolledAccordionProps } from '../../types';
+import { type UncontrolledAccordionProps } from '../../types';
 import Accordion from './Accordion';
 import { useAccordion } from './useAccordion';
 

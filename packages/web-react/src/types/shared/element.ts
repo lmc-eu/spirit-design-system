@@ -1,12 +1,12 @@
 import {
-  ComponentPropsWithRef,
-  ComponentPropsWithoutRef,
-  DetailedHTMLProps,
-  ElementType,
-  HTMLAttributes,
-  HTMLProps,
+  type ComponentPropsWithRef,
+  type ComponentPropsWithoutRef,
+  type DetailedHTMLProps,
+  type ElementType,
+  type HTMLAttributes,
+  type HTMLProps,
 } from 'react';
-import { OverloadStyleProps } from './style';
+import { type OverloadStyleProps } from './style';
 
 /** Returns all relevant attributes and their types from a given HTML Element */
 export type SpiritDetailedHTMLProps<E> = DetailedHTMLProps<HTMLAttributes<E>, E>;

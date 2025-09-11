@@ -1,10 +1,10 @@
 'use client';
 
 import classNames from 'classnames';
-import React, { ForwardedRef, forwardRef } from 'react';
+import React, { type ForwardedRef, forwardRef } from 'react';
 import { Sizes } from '../../constants';
 import { useAriaDescribedBy, useStyleProps } from '../../hooks';
-import { SpiritTextFieldBaseProps, TextFieldBasePasswordToggleProps } from '../../types';
+import { type SpiritTextFieldBaseProps, type TextFieldBasePasswordToggleProps } from '../../types';
 import { HelperText, Label, ValidationText, useAriaIds } from '../Field';
 import { useValidationTextRole } from '../Field/useValidationTextRole';
 import TextFieldBaseInput from './TextFieldBaseInput';

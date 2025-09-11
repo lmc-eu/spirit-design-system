@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { SpiritSkeletonProps } from '../../../types';
+import { type SpiritSkeletonProps } from '../../../types';
 import { useSkeletonStyleProps } from '../useSkeletonStyleProps';
 
 describe('useSkeletonStyleProps', () => {

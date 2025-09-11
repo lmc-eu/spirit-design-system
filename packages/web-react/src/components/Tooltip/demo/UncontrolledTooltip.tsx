@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '../../Button';
-import { UncontrolledTooltip, TooltipPopover, TooltipTrigger } from '..';
+import { TooltipPopover, TooltipTrigger, UncontrolledTooltip } from '..';
 
 const UncontrolledTooltipDemo = () => (
   <UncontrolledTooltip id="uncontrolled-tooltip" placement="left" isFocusableOnHover isDismissible>

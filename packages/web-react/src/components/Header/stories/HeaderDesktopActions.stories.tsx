@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
-import { HeaderDesktopActionsProps } from '../../../types';
+import { type HeaderDesktopActionsProps } from '../../../types';
 import { Link } from '../../Link';
 import { ProductLogo } from '../../ProductLogo';
 import JobBoardLogo from '../demo/JobBoardLogo';

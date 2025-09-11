@@ -10,7 +10,7 @@ import {
   validHtmlAttributesTest,
 } from '@local/tests';
 import { ComponentButtonColors } from '../../../constants';
-import { SplitButtonColorType } from '../../../types';
+import { type SplitButtonColorType } from '../../../types';
 import { Button } from '../../Button';
 import SplitButton from '../SplitButton';
 

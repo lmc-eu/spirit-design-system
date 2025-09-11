@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { SpiritFileUploaderAttachmentProps } from '../../../types';
+import { type SpiritFileUploaderAttachmentProps } from '../../../types';
 import { FileUploader, FileUploaderAttachment, FileUploaderInput, FileUploaderList, useFileQueue } from '..';
 
 const FileUploaderDraggingNotAvailable = () => {

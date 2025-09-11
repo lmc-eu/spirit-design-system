@@ -1,5 +1,6 @@
-import React, { ElementType, JSXElementConstructor } from 'react';
-import { StyleProps, TransferProps } from './shared';
+import { type ElementType, type JSXElementConstructor } from 'react';
+import type React from 'react';
+import { type StyleProps, type TransferProps } from './shared';
 
 export interface AriaItemElementTypeProps<T extends ElementType = 'button'> {
   /**

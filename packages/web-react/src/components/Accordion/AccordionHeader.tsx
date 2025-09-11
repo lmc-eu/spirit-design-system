@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import { useStyleProps } from '../../hooks';
-import { AccordionHeaderProps } from '../../types';
+import { type AccordionHeaderProps } from '../../types';
 import { Icon } from '../Icon';
 import { useAccordionContext } from './AccordionContext';
 import { useAccordionItemContext } from './AccordionItemContext';

@@ -1,6 +1,6 @@
-import React, { CSSProperties } from 'react';
+import React, { type CSSProperties } from 'react';
 import { Button } from '../../components';
-import { ElementTypeProp } from '../../types';
+import { type ElementTypeProp } from '../../types';
 import { mergeStyleProps } from '../mergeStyleProps';
 
 describe('mergeStyleProps', () => {

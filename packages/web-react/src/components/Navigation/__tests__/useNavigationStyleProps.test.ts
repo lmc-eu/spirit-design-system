@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
 import { Direction, ShapeVariants } from '../../../constants';
-import { SpiritNavigationActionProps } from '../../../types';
+import { type SpiritNavigationActionProps } from '../../../types';
 import { useNavigationStyleProps } from '../useNavigationStyleProps';
 
 const navigationActionVariantDataProvider = [

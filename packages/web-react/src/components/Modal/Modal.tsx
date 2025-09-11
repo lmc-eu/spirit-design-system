@@ -3,8 +3,8 @@
 import classNames from 'classnames';
 import React from 'react';
 import { AlignmentY } from '../../constants';
-import { useStyleProps, useLastActiveFocus } from '../../hooks';
-import { SpiritModalProps } from '../../types';
+import { useLastActiveFocus, useStyleProps } from '../../hooks';
+import { type SpiritModalProps } from '../../types';
 import Dialog from '../Dialog/Dialog';
 import { ModalProvider } from './ModalContext';
 import { useModalStyleProps } from './useModalStyleProps';

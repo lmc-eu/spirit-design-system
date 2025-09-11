@@ -1,9 +1,9 @@
 'use client';
 
-import React, { ElementType } from 'react';
+import React, { type ElementType } from 'react';
 import { PaddingStyleProps, TextStyleProps } from '../../constants';
 import { useStyleProps } from '../../hooks';
-import { SpiritSectionProps } from '../../types';
+import { type SpiritSectionProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { Container } from '../Container';
 import { useSectionSizeProps } from './useSectionSizeProps';

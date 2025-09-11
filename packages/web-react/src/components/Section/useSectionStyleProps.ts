@@ -1,7 +1,7 @@
 import classNames from 'classnames';
-import { ElementType } from 'react';
+import { type ElementType } from 'react';
 import { useClassNamePrefix } from '../../hooks';
-import { SpiritSectionProps } from '../../types';
+import { type SpiritSectionProps } from '../../types';
 
 export interface UseSectionStyleProps {
   /** className props */

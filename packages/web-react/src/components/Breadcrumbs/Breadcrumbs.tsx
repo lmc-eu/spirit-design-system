@@ -1,8 +1,8 @@
 'use client';
 
-import React, { ElementType, Fragment } from 'react';
+import React, { type ElementType, Fragment } from 'react';
 import { useStyleProps } from '../../hooks';
-import { SpiritBreadcrumbsProps } from '../../types';
+import { type SpiritBreadcrumbsProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import BreadcrumbsItem from './BreadcrumbsItem';
 import { useBreadcrumbsStyleProps } from './useBreadcrumbsStyleProps';
@@ -19,9 +19,7 @@ const Breadcrumbs = <T extends ElementType = 'nav'>(props: SpiritBreadcrumbsProp
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
   const mergedStyleProps = mergeStyleProps(ElementTag, { classProps: classProps.root, styleProps });
 
-  const isLast = (index: number, itemsCount: number) => {
-    return index === itemsCount - 1;
-  };
+  const isLast = (index: number, itemsCount: number) => index === itemsCount - 1;
 
   return (
     <ElementTag {...otherProps} {...mergedStyleProps} aria-label="Breadcrumb">

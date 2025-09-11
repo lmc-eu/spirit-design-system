@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import { useStyleProps } from '../../hooks';
-import { SpiritDividerProps } from '../../types';
+import { type SpiritDividerProps } from '../../types';
 import { useDividerStyleProps } from './useDividerStyleProps';
 
 const Divider = (props: SpiritDividerProps): JSX.Element => {

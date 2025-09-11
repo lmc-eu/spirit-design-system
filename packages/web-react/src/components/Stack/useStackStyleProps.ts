@@ -1,7 +1,7 @@
 import classNames from 'classnames';
-import { ElementType } from 'react';
+import { type ElementType } from 'react';
 import { useClassNamePrefix, useSpacingStyle } from '../../hooks';
-import { SpacingCSSProperties, SpiritStackProps } from '../../types';
+import { type SpacingCSSProperties, type SpiritStackProps } from '../../types';
 
 interface StackCSSProperties extends SpacingCSSProperties {}
 

@@ -1,5 +1,5 @@
-import { ElementType, JSXElementConstructor } from 'react';
-import { ChildrenProps, StyleProps, TransferProps } from './shared';
+import { type ElementType, type JSXElementConstructor } from 'react';
+import { type ChildrenProps, type StyleProps, type TransferProps } from './shared';
 
 export interface VisuallyHiddenElementTypeProps<T extends ElementType = 'span'> {
   /**

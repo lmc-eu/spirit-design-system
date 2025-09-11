@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Container, Grid, Icon, Text } from '../../components';
-import IconsContext, { IconsContextType } from '../../context/IconsContext';
+import IconsContext, { type IconsContextType } from '../../context/IconsContext';
 
 const Icons = () => {
   let icons;

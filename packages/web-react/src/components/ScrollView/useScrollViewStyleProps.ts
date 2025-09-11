@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks';
-import { ScrollViewDirectionType, ScrollViewOverflowDecoratorsType } from '../../types';
+import { type ScrollViewDirectionType, type ScrollViewOverflowDecoratorsType } from '../../types';
 
 export interface UseScrollViewStyleProps {
   direction: ScrollViewDirectionType;

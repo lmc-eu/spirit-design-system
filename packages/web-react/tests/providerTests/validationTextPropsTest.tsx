@@ -1,6 +1,6 @@
-import { render, waitFor, screen } from '@testing-library/react';
-import React, { ComponentType } from 'react';
-import { TextFieldType } from '../../src';
+import { render, screen, waitFor } from '@testing-library/react';
+import React, { type ComponentType } from 'react';
+import { type TextFieldType } from '../../src';
 import { A11Y_ALERT_ROLE } from '../../src/components/Field/constants';
 
 export const validationTextPropsTest = (

@@ -1,4 +1,4 @@
-import { Placement, Strategy } from '@floating-ui/react';
+import { type Placement, type Strategy } from '@floating-ui/react';
 import type { ElementType, JSXElementConstructor, ReactNode } from 'react';
 import type {
   ChildrenProps,

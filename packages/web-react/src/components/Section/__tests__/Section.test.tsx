@@ -10,7 +10,7 @@ import {
   textAlignmentPropsTest,
   validHtmlAttributesTest,
 } from '@local/tests';
-import { SizeExtendedDictionaryType, SpiritSectionProps } from '../../../types';
+import { type SizeExtendedDictionaryType, type SpiritSectionProps } from '../../../types';
 import Section from '../Section';
 
 const sizePaddingClasses = {

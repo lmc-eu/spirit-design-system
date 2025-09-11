@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import { useStyleProps } from '../../hooks';
-import { ChildrenProps, StyleProps } from '../../types';
+import { type ChildrenProps, type StyleProps } from '../../types';
 import { useDropdownContext } from './DropdownContext';
 import { useDropdownAriaProps } from './useDropdownAriaProps';
 import { useDropdownStyleProps } from './useDropdownStyleProps';

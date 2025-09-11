@@ -2,7 +2,7 @@ import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { useEffect, useState } from 'react';
 import { FillVariants } from '../../../constants';
-import { SegmentedControlProps } from '../../../types/segmentedControl';
+import { type SegmentedControlProps } from '../../../types/segmentedControl';
 import { Icon } from '../../Icon';
 import { VisuallyHidden } from '../../VisuallyHidden';
 import ReadMe from '../README.md';

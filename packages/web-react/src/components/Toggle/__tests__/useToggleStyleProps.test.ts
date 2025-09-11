@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
 import { ValidationStates } from '../../../constants';
-import { SpiritToggleProps } from '../../../types';
+import { type SpiritToggleProps } from '../../../types';
 import { useToggleStyleProps } from '../useToggleStyleProps';
 
 describe('useToggleStyleProps', () => {

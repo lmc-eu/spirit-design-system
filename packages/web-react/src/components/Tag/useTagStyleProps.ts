@@ -1,7 +1,7 @@
 import classNames from 'classnames';
-import { ElementType } from 'react';
+import { type ElementType } from 'react';
 import { useClassNamePrefix } from '../../hooks';
-import { SpiritTagProps } from '../../types';
+import { type SpiritTagProps } from '../../types';
 
 export interface TagStyles {
   /** className props */

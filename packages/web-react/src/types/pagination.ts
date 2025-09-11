@@ -1,11 +1,11 @@
-import { ElementType } from 'react';
-import { SpiritButtonProps } from './button';
+import { type ElementType } from 'react';
+import { type SpiritButtonProps } from './button';
 import {
-  ChildrenProps,
-  SpiritElementProps,
-  SpiritLItemElementProps,
-  SpiritPolymorphicElementPropsWithRef,
-  SpiritUListElementProps,
+  type ChildrenProps,
+  type SpiritElementProps,
+  type SpiritLItemElementProps,
+  type SpiritPolymorphicElementPropsWithRef,
+  type SpiritUListElementProps,
 } from './shared';
 
 export type PaginationLinkDirectionType = 'previous' | 'next';

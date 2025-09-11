@@ -1,4 +1,4 @@
-import { type ElementType, JSXElementConstructor } from 'react';
+import { type ElementType, type JSXElementConstructor } from 'react';
 import type {
   ChildrenProps,
   EmphasisDictionaryType,
@@ -8,8 +8,8 @@ import type {
   StyleProps,
   TextAccentColorsType,
   TextAlignmentType,
-  TextColorProps,
   TextColorNamesType,
+  TextColorProps,
   TextEmotionColorsType,
   TextHyphensType,
   TextWordBreakType,

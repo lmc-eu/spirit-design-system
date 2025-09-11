@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import { useStyleProps } from '../../hooks';
-import { TooltipCloseButtonProps } from '../../types';
+import { type TooltipCloseButtonProps } from '../../types';
 import { Icon } from '../Icon';
 import { VisuallyHidden } from '../VisuallyHidden';
 import { useTooltipStyleProps } from './useTooltipStyleProps';

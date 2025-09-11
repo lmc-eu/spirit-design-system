@@ -1,9 +1,9 @@
 'use client';
 
 import classNames from 'classnames';
-import React, { ReactElement } from 'react';
+import React, { type ReactElement } from 'react';
 import { useStyleProps } from '../../hooks';
-import { TabListProps } from '../../types';
+import { type TabListProps } from '../../types';
 import { useTabsStyleProps } from './useTabsStyleProps';
 
 const TabList = ({ children, ...restProps }: TabListProps): ReactElement => {

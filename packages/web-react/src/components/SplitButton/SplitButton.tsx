@@ -5,7 +5,7 @@ import React from 'react';
 import { ComponentButtonColors, Sizes } from '../../constants';
 import { PropsProvider } from '../../context';
 import { useStyleProps } from '../../hooks';
-import { SpiritSplitButtonProps } from '../../types';
+import { type SpiritSplitButtonProps } from '../../types';
 import { useSplitButtonStyleProps } from './useSplitButtonStyleProps';
 
 const defaultProps: Partial<SpiritSplitButtonProps> = {

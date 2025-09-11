@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { SpiritSectionProps } from '../../../types';
+import { type SpiritSectionProps } from '../../../types';
 import { useSectionStyleProps } from '../useSectionStyleProps';
 
 describe('useSectionStyleProps', () => {

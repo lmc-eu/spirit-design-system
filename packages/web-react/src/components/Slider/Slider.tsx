@@ -1,9 +1,9 @@
 'use client';
 
 import classNames from 'classnames';
-import React, { CSSProperties, ChangeEvent, FormEvent, ForwardedRef, forwardRef } from 'react';
+import React, { type CSSProperties, type ChangeEvent, type FormEvent, type ForwardedRef, forwardRef } from 'react';
 import { useAriaDescribedBy, useStyleProps } from '../../hooks';
-import { SpiritSliderProps } from '../../types';
+import { type SpiritSliderProps } from '../../types';
 import { HelperText, Label, ValidationText, useAriaIds } from '../Field';
 import { useValidationTextRole } from '../Field/useValidationTextRole';
 import { SLIDER_DEFAULT_PROPS } from './constants';

@@ -1,6 +1,6 @@
 import { render, waitFor } from '@testing-library/react';
-import React, { ComponentType } from 'react';
-import { TextWordBreaks, TextWordBreakType } from '../../src';
+import React, { type ComponentType } from 'react';
+import { type TextWordBreakType, TextWordBreaks } from '../../src';
 import getElement from '../testUtils/getElement';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

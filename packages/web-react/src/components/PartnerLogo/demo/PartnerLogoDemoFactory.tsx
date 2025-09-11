@@ -1,6 +1,6 @@
 import React from 'react';
 import { Sizes } from '../../../constants';
-import { SpiritPartnerLogoProps } from '../../../types/partnerLogo';
+import { type SpiritPartnerLogoProps } from '../../../types/partnerLogo';
 import { Box } from '../../Box';
 import PartnerLogo from '../PartnerLogo';
 

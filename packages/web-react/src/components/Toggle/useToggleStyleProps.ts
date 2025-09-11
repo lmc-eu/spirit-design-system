@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks';
-import { SpiritToggleProps } from '../../types';
+import { type SpiritToggleProps } from '../../types';
 
 export interface ToggleStyles<T> {
   classProps: {

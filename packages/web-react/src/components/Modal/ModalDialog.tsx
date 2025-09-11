@@ -1,8 +1,8 @@
 'use client';
 
-import React, { ElementType, ForwardedRef, forwardRef } from 'react';
+import React, { type ElementType, type ForwardedRef, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
-import { ModalDialogProps } from '../../types';
+import { type ModalDialogProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { useModalDialogStyleProps } from './useModalDialogStyleProps';
 import { useModalStyleProps } from './useModalStyleProps';
