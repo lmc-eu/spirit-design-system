@@ -8,6 +8,7 @@ Introducing version 5 of the _spirit-web-twig_ package.
 
 - [Component Changes](#component-changes)
   - [Button and ButtonLink: `isBlock` Prop Removed](#button-and-buttonlink-isblock-prop-removed)
+  - [Collapse: Rename `data-spirit-more` to `data-spirit-is-disposable`](#collapse-rename-data-spirit-more-to-data-spirit-is-disposable)
 
 ## Component Changes
 
@@ -18,6 +19,14 @@ Button `isBlock` prop was removed. Use utility classes or the `Grid` component t
 #### Migration Guide
 
 See instructions how to make a fluid button in [`Button`][button-readme-fluid] or [`ButtonLink`][buttonlink-readme-fluid] README files.
+
+### Collapse: Rename `data-spirit-more` to `data-spirit-is-disposable`
+
+The `data-spirit-more` attribute was removed. Use `data-spirit-is-disposable` instead for hiding triggers on collapse.
+
+#### Migration Guide
+
+- `<Button {# … #} data-spirit-more>Collapse trigger</Button>` → `<Button {# … #} data-spirit-is-disposable>Collapse trigger</Button>`
 
 ---
 
