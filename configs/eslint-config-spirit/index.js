@@ -15,7 +15,6 @@ module.exports = {
     '@lmc-eu/eslint-config-react/optional',
     '@lmc-eu/eslint-config-jest',
     'plugin:storybook/recommended',
-    './style.js',
   ],
 
   plugins: ['promise', 'react', '@typescript-eslint', 'react-refresh'],
@@ -71,15 +70,5 @@ module.exports = {
      * @see { @link https://eslint.org/docs/latest/rules/quotes }
      */
     quotes: ['warn', 'single'],
-
-    /**
-     * Disable arrow body style
-     * There are places where arrow body make sense and where does not
-     *
-     * @todo create a guideline for this
-     *
-     * @see { @link https://eslint.org/docs/latest/rules/arrow-body-style }
-     */
-    'arrow-body-style': 'off',
   },
 };
