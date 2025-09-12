@@ -1,9 +1,3 @@
-let prettierConfig;
-
-(async () => {
-  prettierConfig = (await import('prettier-config-spirit')).prettierConfig;
-})();
-
 module.exports = {
   root: true,
 
@@ -20,26 +14,12 @@ module.exports = {
     '@lmc-eu/eslint-config-react/base',
     '@lmc-eu/eslint-config-react/optional',
     '@lmc-eu/eslint-config-jest',
-    'prettier',
-    'plugin:prettier/recommended',
     'plugin:storybook/recommended',
   ],
 
-  plugins: ['promise', 'react', '@typescript-eslint', 'prettier', 'react-refresh'],
+  plugins: ['promise', 'react', '@typescript-eslint', 'react-refresh'],
 
   rules: {
-    /**
-     * Use prettier config for code formatting
-     *
-     * @see { @link https://github.com/prettier/eslint-plugin-prettier }
-     */
-    'prettier/prettier': [
-      'error',
-      {
-        ...prettierConfig,
-      },
-    ],
-
     /**
      * Set sorting of imports
      *
@@ -89,15 +69,5 @@ module.exports = {
      * @see { @link https://eslint.org/docs/latest/rules/quotes }
      */
     quotes: ['warn', 'single'],
-
-    /**
-     * Disable arrow body style
-     * There are places where arrow body make sense and where does not
-     *
-     * @todo create a guideline for this
-     *
-     * @see { @link https://eslint.org/docs/latest/rules/arrow-body-style }
-     */
-    'arrow-body-style': 'off',
   },
 };
