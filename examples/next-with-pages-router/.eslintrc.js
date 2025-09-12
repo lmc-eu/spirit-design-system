@@ -4,15 +4,14 @@ module.exports = {
     '@lmc-eu/eslint-config-react',
     '@lmc-eu/eslint-config-typescript',
     '@lmc-eu/eslint-config-typescript/react',
-    'prettier',
-    'plugin:prettier/recommended',
     '@lmc-eu/eslint-config-jest',
     'plugin:@next/next/recommended',
+    'eslint-config-spirit/prettier',
   ],
   env: {
     jest: true,
   },
-  plugins: ['promise', 'react', '@typescript-eslint', 'prettier', 'react-refresh'],
+  plugins: ['promise', 'react', '@typescript-eslint', 'react-refresh'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
