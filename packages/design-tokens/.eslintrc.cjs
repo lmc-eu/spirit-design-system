@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['eslint-config-spirit', '@lmc-eu/eslint-config-typescript'],
+  extends: ['eslint-config-spirit', '@lmc-eu/eslint-config-typescript', 'eslint-config-spirit/prettier'],
 
   parserOptions: {
     ecmaVersion: 'latest',
