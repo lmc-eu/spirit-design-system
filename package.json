@@ -70,6 +70,7 @@
     "@playwright/test": "1.56.0",
     "eslint": "8.57.1",
     "eslint-config-spirit": "workspace:^",
+    "eslint-plugin-prettier": "5.5.4",
     "husky": "9.1.7",
     "is-ci": "3.0.1",
     "lerna": "8.2.2",

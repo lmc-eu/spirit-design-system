@@ -38,7 +38,7 @@ export default [
       'eslint-config-spirit',
       '@lmc-eu/eslint-config-typescript',
       '@lmc-eu/eslint-config-jest',
-      'prettier',
+      'eslint-config-spirit/prettier',
     ),
   ),
   {
