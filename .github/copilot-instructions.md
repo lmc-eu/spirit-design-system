@@ -1,0 +1,373 @@
+---
+applyTo: '**'
+---
+
+# Spirit Design System - AI Instructions for GitHub Copilot
+
+## Project Overview
+
+Spirit Design System is an open-source design system developed by Alma Career (formerly LMC). It's a comprehensive monorepo containing React components, vanilla JS/CSS implementations, design tokens, icons, and tooling.
+
+## Architecture & Technologies
+
+### Core Technologies
+
+- **TypeScript** - Primary language for all JavaScript/React code
+- **React 18+** - Component library implementation with Next.js support
+- **SCSS/Sass** - Styling with design token integration
+- **Node.js 18+** - Build tooling and development environment
+- **Lerna** - Monorepo management and publishing
+- **Yarn Workspaces** - Dependency management
+- **Nx** - Build system and task orchestration
+
+### Package Structure
+
+```
+packages/
+├── analytics/          # Analytics tools for design system adoption
+├── codemods/           # Migration transforms between versions
+├── common/             # Shared build scripts and utilities
+├── design-tokens/      # Design tokens (SCSS/JS/TS)
+├── form-validations/   # Form validation utilities
+├── icons/              # SVG icon library
+├── web/                # Vanilla CSS/JS implementation
+├── web-react/          # React components library
+└── web-twig/           # Twig/Symfony implementation
+```
+
+## Design System Principles
+
+### Component Naming & Organization
+
+- **BEM methodology** for CSS classes (`.Component`, `.Component--modifier`, `.Component__element`)
+- **PascalCase** for React components (`Button`, `CardHeader`, `NavigationLink`)
+- **Atomic design** structure (atoms, molecules, organisms)
+- **Semantic versioning** with careful breaking change management
+
+### Styling Architecture
+
+- **Design tokens** drive all styling decisions
+- **CSS Custom Properties** for theme switching
+- **Utility classes** for spacing, typography, colors
+- **Component-scoped styles** with consistent naming
+- **Responsive design** with mobile-first approach
+
+### TypeScript Patterns
+
+- **Strict type safety** with comprehensive interfaces
+- **Generic components** with proper constraint typing
+- **Design token-generated types** for consistency
+- **Prop spreading** with transfer props pattern
+- **Style props** integration for consistent styling API
+
+## Component Development Guidelines
+
+### React Component Structure
+
+```typescript
+// Component props interface
+export interface ButtonProps {
+  color?: ButtonColorType;
+  size?: SizeType;
+  isDisabled?: boolean;
+  // ... other props
+}
+
+// Main component interface with style props
+export interface SpiritButtonProps<T extends ElementType = 'button'>
+  extends ButtonProps,
+    SpiritPolymorphicElementProps<T, ButtonProps>,
+    StyleProps,
+    TransferProps {}
+
+// Component implementation
+const Button = <T extends ElementType = 'button'>(props: SpiritButtonProps<T>) => {
+  const {
+    elementType: ElementTag = 'button',
+    color = 'primary',
+    size = 'medium',
+    children,
+    ...restProps
+  } = props;
+
+  const buttonProps = useButtonStyleProps(props);
+
+  return (
+    <ElementTag {...buttonProps}>
+      {children}
+    </ElementTag>
+  );
+};
+
+Button.spiritComponent = 'Button';
+export default Button;
+```
+
+### Style Props Pattern
+
+```typescript
+// Use style props hooks for consistent styling
+const useButtonStyleProps = (props: SpiritButtonProps) => {
+  const { styleProps, props: otherProps } = useStyleProps(props);
+
+  const buttonStyleProps = useButtonStyleProps({
+    color: props.color,
+    size: props.size,
+    isDisabled: props.isDisabled,
+  });
+
+  return {
+    ...otherProps,
+    ...transferProps(otherProps),
+    ...styleProps,
+    ...buttonStyleProps,
+  };
+};
+```
+
+### SCSS Component Structure
+
+```scss
+// Component file: Button/_Button.scss
+@use 'sass:map';
+@use '@tokens' as tokens;
+@use '../../tools/spacing';
+@use '../../tools/typography';
+
+.Button {
+  // Base styles using design tokens
+  @include typography.generate-font-classes(tokens.$body-medium-medium);
+
+  padding: tokens.$space-300 tokens.$space-400;
+  border-radius: tokens.$radius-300;
+  border: tokens.$border-width-100 solid transparent;
+
+  // State modifiers
+  &:hover {
+    // Hover styles
+  }
+
+  &:focus-visible {
+    // Focus styles
+  }
+
+  &[disabled] {
+    // Disabled styles
+  }
+}
+
+// Size variants
+.Button--small {
+  padding: tokens.$space-200 tokens.$space-300;
+  font-size: tokens.$font-size-200;
+}
+
+.Button--large {
+  padding: tokens.$space-400 tokens.$space-500;
+  font-size: tokens.$font-size-400;
+}
+
+// Color variants using design tokens
+.Button--primary {
+  background-color: tokens.$component-button-primary-state-default;
+  color: tokens.$component-button-primary-content;
+  border-color: tokens.$component-button-primary-border;
+
+  &:hover {
+    background-color: tokens.$component-button-primary-state-hover;
+  }
+}
+```
+
+## Design Token Usage
+
+### SCSS Integration
+
+```scss
+@use '@tokens' as tokens;
+@use '@themes' as themes;
+
+// Use design tokens for consistent styling
+.MyComponent {
+  margin-bottom: tokens.$space-300;
+  color: tokens.$text-primary;
+  font-family: map.get(tokens.$body-medium-regular, mobile, font-family);
+  border-radius: tokens.$radius-300;
+}
+```
+
+### TypeScript Integration
+
+```typescript
+import { Sizes, Colors, BorderRadii } from '@lmc-eu/spirit-design-tokens';
+
+// Types are generated from design tokens
+type ButtonSize = keyof typeof Sizes;
+type ButtonColor = keyof typeof Colors;
+```
+
+## Testing Guidelines
+
+### Component Testing
+
+- **Unit tests** for component logic and props handling
+- **Snapshot tests** for component rendering
+- **Accessibility tests** using jest-axe
+- **Visual regression tests** with Playwright
+- **Interaction tests** for user behaviors
+
+### Test Structure
+
+```typescript
+import { render, screen } from '@testing-library/react';
+import { Button } from '../Button';
+
+describe('Button', () => {
+  it('should render with default props', () => {
+    render(<Button>Click me</Button>);
+
+    const button = screen.getByRole('button', { name: 'Click me' });
+    expect(button).toBeInTheDocument();
+    expect(button).toHaveClass('Button');
+  });
+
+  it('should apply correct size class', () => {
+    render(<Button size="small">Small button</Button>);
+
+    const button = screen.getByRole('button');
+    expect(button).toHaveClass('Button--small');
+  });
+});
+```
+
+## File Organization Patterns
+
+### Component Directory Structure
+
+```
+Component/
+├── index.ts                 # Public exports
+├── Component.tsx           # Main component
+├── Component.stories.tsx   # Storybook stories
+├── __tests__/
+│   ├── Component.test.tsx  # Unit tests
+│   └── Component.test.tsx.snap # Snapshots
+├── useComponentStyleProps.ts # Style props hook
+├── constants.ts            # Component constants
+└── README.md              # Component documentation
+```
+
+### Package Exports
+
+```typescript
+// Always use 'use client' directive for React components
+'use client';
+
+// Export pattern for components
+export { default as Button } from './Button';
+export { default as ButtonGroup } from './ButtonGroup';
+export * from './useButtonStyleProps';
+export * from './constants';
+
+// Re-export types
+export type { ButtonProps, SpiritButtonProps } from './types';
+```
+
+## Development Workflow
+
+### Branch Naming
+
+- `feature/DS-123-add-new-button-variant`
+- `fix/DS-456-button-accessibility-issue`
+- `docs/DS-789-update-component-documentation`
+
+### Commit Messages
+
+Follow conventional commits with Spirit-specific scopes:
+
+```
+feat(web-react): add new Button variant for destructive actions
+fix(design-tokens): update primary color token values
+docs(Button): add accessibility guidelines to README
+```
+
+### Code Generation Patterns
+
+When generating new components:
+
+1. **Create the main component file** with proper TypeScript interfaces
+2. **Add style props hook** for consistent styling API
+3. **Create SCSS file** with design token integration
+4. **Add comprehensive tests** including accessibility
+5. **Create Storybook stories** for documentation
+6. **Update package exports** in index.ts files
+
+## Migration & Compatibility
+
+### Breaking Changes
+
+- Always provide **codemods** for breaking changes
+- Update **MIGRATION.md** with upgrade paths
+- Use **deprecation warnings** before removal
+- Maintain **LTS versions** with security patches
+
+### Backward Compatibility
+
+- Use **feature flags** for experimental features
+- Provide **escape hatches** (UNSAFE_className, UNSAFE_style)
+- Maintain **consistent APIs** across versions
+- Support **multiple React versions** when possible
+
+## Build & Release
+
+### Build Process
+
+- **Design tokens** must be built first
+- **CSS compilation** with Sass and PostCSS
+- **TypeScript compilation** for multiple module formats
+- **Bundle analysis** for size optimization
+- **Type checking** across all packages
+
+### Release Strategy
+
+- **Semantic versioning** with automated changelog
+- **Coordinated releases** across all packages
+- **Pre-release testing** in staging environments
+- **Documentation updates** with each release
+
+## AI Assistant Guidelines
+
+### When Suggesting Code
+
+1. **Always use TypeScript** with proper typing
+2. **Include design token references** in styles
+3. **Follow component naming conventions** consistently
+4. **Add proper accessibility attributes** (ARIA, roles)
+5. **Include error handling** and prop validation
+6. **Consider responsive design** implications
+7. **Reference existing patterns** from similar components
+8. **Include relevant imports** and exports
+9. **Add JSDoc comments** for complex logic
+10. **Consider performance implications** of implementations
+
+### When Creating Components
+
+1. **Start with the interface design** and prop definitions
+2. **Use existing components as reference** for patterns
+3. **Implement proper polymorphic behavior** when needed
+4. **Add comprehensive TypeScript types** including generics
+5. **Include style props integration** for consistency
+6. **Consider theme compatibility** across light/dark themes
+7. **Add proper forwarding** of refs and event handlers
+8. **Include loading and error states** when applicable
+
+### Code Quality Standards
+
+- **Prefer functional components** with hooks
+- **Use descriptive variable names** following conventions
+- **Keep functions small** and single-purpose
+- **Avoid inline styles** in favor of CSS classes
+- **Use design tokens** instead of hardcoded values
+- **Include comprehensive error boundaries** where needed
+- **Optimize for tree-shaking** and bundle size
+- **Follow accessibility best practices** (WCAG 2.1 AA)
