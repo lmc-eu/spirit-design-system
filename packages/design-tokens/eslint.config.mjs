@@ -34,7 +34,9 @@ export default [
       '**/*.json',
     ],
   },
-  ...fixupConfigRules(compat.extends('eslint-config-spirit', '@lmc-eu/eslint-config-typescript')),
+  ...fixupConfigRules(
+    compat.extends('eslint-config-spirit', '@lmc-eu/eslint-config-typescript', 'eslint-config-spirit/prettier'),
+  ),
   {
     languageOptions: {
       parserOptions: {
