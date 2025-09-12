@@ -49,6 +49,7 @@ export * from './text';
 export * from './textArea';
 export * from './textField';
 export * from './textFieldBase';
+export * from './timeline';
 export * from './toast';
 export * from './toggle';
 export * from './tooltip';
