@@ -132,6 +132,24 @@ Usage in [Dropdown][dropdown] component:
 </div>
 ```
 
+## Dynamic Background Color
+
+Use the `Item--dynamicBackgroundColor` modifier to change background colors of the item in interactive states based on the background color of the parent element.
+
+👉 Spirit color utilities are required to use for this feature to work correctly in all scenarios.
+
+👉 Except the basic background colors, you will need to set both background color and text color.
+
+For example, to change the background color of the item when the parent element is `bg-emotion-success-basic text-emotion-success-subtle`:
+
+```html
+<div class="bg-emotion-success-basic text-emotion-success-subtle px-800 py-800">
+  <button type="button" class="Item Item--dynamicBackground">
+    <span class="Item__label" style="color: white;">Item on emotion-success-basic</span>
+  </button>
+</div>
+```
+
 [checkbox]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Checkbox/README.md
 [dropdown]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Dropdown/README.md
 [radio]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Radio/README.md

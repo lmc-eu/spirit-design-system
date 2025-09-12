@@ -67,6 +67,7 @@
 .Item--dynamicBackground {
     @include dynamic-colors.dynamic-interaction-background-colors();
 
+    color: inherit;
     background-color: var(--#{tokens.$css-variable-prefix}local-background-color-state-default);
 
     &:hover {
@@ -76,6 +77,10 @@
     &:active {
         background-color: var(--#{tokens.$css-variable-prefix}local-background-color-state-active);
     }
+}
+
+.Item--dynamicBackground .Item__label {
+    color: inherit;
 }
 
 .Item--disabled {

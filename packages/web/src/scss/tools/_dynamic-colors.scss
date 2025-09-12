@@ -1,17 +1,21 @@
 @use '@tokens' as tokens;
 
+// TODO get rid of tokes for now, it will reduce the complexity of this file.
+// TODO document thoroughly.
+// TODO walk through other components.
+// TODO maybe it's a helper class? But the components need to be compatible anyway, see the text color…
+
 // Mixin to generate dynamic background colors for interactive states.
 // - The lightness term smoothly moves any color toward the mid tone `$_midpoint-lightness`, making light colors darker and dark colors lighter.
 // - The chroma term scales saturation up for light colors and down for dark colors, proportional to distance from the midpoint `$_midpoint-lightness-in-chroma`, so it’s subtle near the midpoint and stronger at the extremes.
-// - max(0, …) prevents chroma from going negative.
 @mixin dynamic-interaction-background-colors {
-    $_midpoint-lightness: 0.25; // light/dark threshold
-    $_midpoint-lightness-in-chroma: 0.55; // light/dark threshold for chroma, lower = more saturated for dark colors
-    $_chroma-upper-limit: 2;
+    $_midpoint-lightness: 0.8; // number <0, 1>, light/dark threshold for lightness, higher = lighter colors are considered dark
+    $_midpoint-lightness-in-chroma: 0.5; // number <0, 1>, light/dark threshold for chroma, lower = more saturation for dark colors
+    $_chroma-upper-limit: 0.2; // number <0, 0.4>, lower = less saturation for dark colors
     $_default-dynamic-lightness-delta-state-hover: 0.3; // number <0, 1>, higher = stronger darken/lighten effect
-    $_default-dynamic-chroma-scale-state-hover: 2; // number, higher = more saturation change
-    $_default-dynamic-lightness-delta-state-active: 0.45;
-    $_default-dynamic-chroma-scale-state-active: 2;
+    $_default-dynamic-chroma-scale-state-hover: 4; // number, higher = more saturation change
+    $_default-dynamic-lightness-delta-state-active: 0.45; // number <0, 1>, higher = stronger darken/lighten effect
+    $_default-dynamic-chroma-scale-state-active: 4; // number, higher = more saturation change
 
     --#{tokens.$css-variable-prefix}local-background-color-state-default: #{tokens.$background-interactive-state-default};
 
