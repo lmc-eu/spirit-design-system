@@ -1,5 +1,4 @@
-// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions, no-unused-vars
-import { FileUploader, Modal } from '@lmc-eu/spirit-web/src/js/index.esm';
+import { FileUploader, Modal } from '@lmc-eu/spirit-web/js';
 
 window.addEventListener('DOMContentLoaded', () => {
   let file: { name: unknown } | undefined;

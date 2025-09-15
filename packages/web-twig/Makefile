@@ -6,7 +6,7 @@ DOCKER_SERVER_SERVICE	= web-twig-demo-server
 SHELL									= bash
 
 # Paths
-APP_DOCKER_DIR				= ../../apps/web-twig-demo/docker/
+APP_DOCKER_DIR				= ./docker/
 ICONS_PKG_DIR					= ../icons/
 DOCKER_PKG_DIR				= /srv/spirit-web-twig-bundle/
 
