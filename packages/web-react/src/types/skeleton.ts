@@ -1,11 +1,11 @@
-import { ElementType } from 'react';
+import { type ElementType } from 'react';
 import {
-  BorderRadiiDictionaryType,
-  BreakpointToken,
-  ChildrenProps,
-  SizeExtendedDictionaryType,
-  StyleProps,
-  TransferProps,
+  type BorderRadiiDictionaryType,
+  type ChildrenProps,
+  type SingleOrResponsive,
+  type SizeExtendedDictionaryType,
+  type StyleProps,
+  type TransferProps,
 } from './shared';
 
 export interface AriaSkeletonElementTypeProps<T extends ElementType = 'div'> {
@@ -19,10 +19,7 @@ export interface AriaSkeletonElementTypeProps<T extends ElementType = 'div'> {
 
 export type SkeletonSize<C> = SizeExtendedDictionaryType | C;
 
-export type SkeletonRadius<C> =
-  | BorderRadiiDictionaryType
-  | Partial<Record<BreakpointToken, BorderRadiiDictionaryType>>
-  | C;
+export type SkeletonRadius<C> = SingleOrResponsive<BorderRadiiDictionaryType> | C;
 
 export interface SkeletonProps extends ChildrenProps, StyleProps, TransferProps {}
 

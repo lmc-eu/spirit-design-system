@@ -1,5 +1,12 @@
-import { ElementType, JSXElementConstructor } from 'react';
-import { BreakpointToken, GridColumns, ChildrenProps, SpaceToken, StyleProps, TransferProps } from './shared';
+import { type ElementType, type JSXElementConstructor } from 'react';
+import {
+  type ChildrenProps,
+  type GridColumns,
+  type SingleOrResponsive,
+  type SpaceToken,
+  type StyleProps,
+  type TransferProps,
+} from './shared';
 
 export interface MatrixElementTypeProps<T extends ElementType = 'div'> {
   /**
@@ -12,17 +19,17 @@ export interface MatrixElementTypeProps<T extends ElementType = 'div'> {
 
 export interface MatrixCustomLayoutProps {
   /** Custom columns in the matrix */
-  cols?: GridColumns | Partial<Record<BreakpointToken, number>>;
+  cols?: SingleOrResponsive<GridColumns | number>;
   /** Custom number of rows for each item */
-  itemRows?: number | Partial<Record<BreakpointToken, number>>;
+  itemRows?: SingleOrResponsive<number>;
   /** Custom rows in the matrix */
-  rows?: number | Partial<Record<BreakpointToken, number>>;
+  rows?: SingleOrResponsive<number>;
   /** Custom spacing between items */
-  spacing?: SpaceToken | Partial<Record<BreakpointToken, SpaceToken>>;
+  spacing?: SingleOrResponsive<SpaceToken>;
   /** Custom horizontal spacing between items */
-  spacingX?: SpaceToken | Partial<Record<BreakpointToken, SpaceToken>>;
+  spacingX?: SingleOrResponsive<SpaceToken>;
   /** Custom vertical spacing between items */
-  spacingY?: SpaceToken | Partial<Record<BreakpointToken, SpaceToken>>;
+  spacingY?: SingleOrResponsive<SpaceToken>;
 }
 
 export interface MatrixProps<T extends ElementType = 'div'>

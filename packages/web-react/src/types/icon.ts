@@ -1,15 +1,15 @@
-import type { SVGAttributes } from 'react';
-import type {
-  AccentColorNamesType,
-  BreakpointToken,
-  ChildrenProps,
-  EmotionColorNamesType,
-  StyleProps,
-  TextColorNamesType,
-  TransferProps,
+import { type SVGAttributes } from 'react';
+import {
+  type AccentColorNamesType,
+  type ChildrenProps,
+  type EmotionColorNamesType,
+  type SingleOrResponsive,
+  type StyleProps,
+  type TextColorNamesType,
+  type TransferProps,
 } from './shared';
 
-export type IconBoxSize = number | Partial<Record<BreakpointToken, number>>;
+export type IconBoxSize = SingleOrResponsive<number>;
 export type IconColorType = TextColorNamesType | EmotionColorNamesType | AccentColorNamesType;
 
 export interface IconProps extends StyleProps, ChildrenProps, SVGAttributes<SVGElement>, TransferProps {

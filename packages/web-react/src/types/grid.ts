@@ -1,13 +1,13 @@
 import { ElementType, JSXElementConstructor } from 'react';
 import {
-  AlignmentXExtendedDictionaryType,
-  AlignmentYExtendedDictionaryType,
-  BreakpointToken,
-  ChildrenProps,
-  GridColumns,
-  SpaceToken,
-  StyleProps,
-  TransferProps,
+  type AlignmentXExtendedDictionaryType,
+  type AlignmentYExtendedDictionaryType,
+  type ChildrenProps,
+  type GridColumns,
+  type SingleOrResponsive,
+  type SpaceToken,
+  type StyleProps,
+  type TransferProps,
 } from './shared';
 
 export type GridColsBreakpoints = {
@@ -53,11 +53,11 @@ export interface GridCustomLayoutProps {
   alignmentY?: GridAlignmentYType;
   cols?: GridColumns | GridColsBreakpoints;
   /** Custom spacing between items */
-  spacing?: SpaceToken | Partial<Record<BreakpointToken, SpaceToken>>;
+  spacing?: SingleOrResponsive<SpaceToken>;
   /** Custom horizontal spacing between items */
-  spacingX?: SpaceToken | Partial<Record<BreakpointToken, SpaceToken>>;
+  spacingX?: SingleOrResponsive<SpaceToken>;
   /** Custom vertical spacing between items */
-  spacingY?: SpaceToken | Partial<Record<BreakpointToken, SpaceToken>>;
+  spacingY?: SingleOrResponsive<SpaceToken>;
 }
 
 export interface GridItemCustomLayoutProps {

@@ -1,15 +1,17 @@
 import { ElementType } from 'react';
 import { SizesExtended } from '../../constants';
-import { BreakpointToken, SizeExtendedDictionaryType, SpaceToken, SpiritSectionProps } from '../../types';
+import {
+  type Responsive,
+  type SizeExtendedDictionaryType,
+  type SpaceToken,
+  type SpiritSectionProps,
+} from '../../types';
 
 export interface UseSectionSizeProps {
   modifiedProps: Partial<SpiritSectionProps<ElementType>>;
 }
 
-const sizePaddingMapping: Record<
-  SizeExtendedDictionaryType<never>,
-  { paddingY: Partial<Record<BreakpointToken, SpaceToken>> }
-> = {
+const sizePaddingMapping: Record<SizeExtendedDictionaryType<never>, { paddingY: Responsive<SpaceToken> }> = {
   [SizesExtended.XSMALL]: { paddingY: { mobile: 'space-900', tablet: 'space-1000' } },
   [SizesExtended.SMALL]: { paddingY: { mobile: 'space-1000', tablet: 'space-1100' } },
   [SizesExtended.MEDIUM]: { paddingY: { mobile: 'space-1100', tablet: 'space-1300' } },

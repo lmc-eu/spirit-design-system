@@ -1,14 +1,14 @@
-import { ElementType } from 'react';
-import { ContainerProps } from './container';
+import { type ElementType } from 'react';
+import { type ContainerProps } from './container';
 import {
-  BackgroundColorsDictionaryType,
-  BreakpointToken,
-  ChildrenProps,
-  SizeExtendedDictionaryType,
-  SpaceToken,
-  SpiritPolymorphicElementPropsWithRef,
-  StyleProps,
-  TextAlignmentType,
+  type BackgroundColorsDictionaryType,
+  type ChildrenProps,
+  type SingleOrResponsive,
+  type SizeExtendedDictionaryType,
+  type SpaceToken,
+  type SpiritPolymorphicElementPropsWithRef,
+  type StyleProps,
+  type TextAlignmentType,
 } from './shared';
 
 export interface SectionBaseProps<E extends ElementType> extends ChildrenProps, StyleProps {
@@ -28,11 +28,11 @@ export interface SectionProps<E extends ElementType, S = void> extends SectionBa
   /** The background color of the section. */
   backgroundColor?: BackgroundColorsDictionaryType;
   /** Vertical padding of the section. */
-  paddingY?: SpaceToken | Partial<Record<BreakpointToken, SpaceToken>>;
+  paddingY?: SingleOrResponsive<SpaceToken>;
   /** Padding top of the section. */
-  paddingTop?: SpaceToken | Partial<Record<BreakpointToken, SpaceToken>>;
+  paddingTop?: SingleOrResponsive<SpaceToken>;
   /** Padding bottom of the section. */
-  paddingBottom?: SpaceToken | Partial<Record<BreakpointToken, SpaceToken>>;
+  paddingBottom?: SingleOrResponsive<SpaceToken>;
   /** Size of the section. */
   size?: SizeExtendedDictionaryType | S;
   /** Text alignment of the section */

@@ -14,6 +14,7 @@ export * from './item';
 export * from './positions';
 export * from './radii';
 export * from './refs';
+export * from './responsive';
 export * from './rest';
 export * from './sizes';
 export * from './style';

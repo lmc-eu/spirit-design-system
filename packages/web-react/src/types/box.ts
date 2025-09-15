@@ -1,21 +1,21 @@
 import { ElementType, JSXElementConstructor } from 'react';
 import {
-  BackgroundAccentColorsType,
-  BackgroundColorsDictionaryType,
-  BackgroundEmotionColorsType,
-  BackgroundGradientsDictionaryType,
-  BorderAccentColorsType,
-  BorderColorsDictionaryType,
-  BorderEmotionColorsType,
-  BorderRadiiTokenType,
-  BorderStylesDictionaryType,
-  BorderWidthsDictionaryType,
-  BreakpointToken,
-  ChildrenProps,
-  SpaceToken,
-  SpiritPolymorphicElementPropsWithRef,
-  StyleProps,
-  TextColorProps,
+  type BackgroundAccentColorsType,
+  type BackgroundColorsDictionaryType,
+  type BackgroundEmotionColorsType,
+  type BackgroundGradientsDictionaryType,
+  type BorderAccentColorsType,
+  type BorderColorsDictionaryType,
+  type BorderEmotionColorsType,
+  type BorderRadiiTokenType,
+  type BorderStylesDictionaryType,
+  type BorderWidthsDictionaryType,
+  type ChildrenProps,
+  type SingleOrResponsive,
+  type SpaceToken,
+  type SpiritPolymorphicElementPropsWithRef,
+  type StyleProps,
+  type TextColorProps,
 } from './shared';
 
 export type BoxBackgroundColorsType =
@@ -27,31 +27,29 @@ export interface BoxBaseProps extends ChildrenProps, TextColorProps, StyleProps 
   /** The background color of the box. */
   backgroundColor?: BoxBackgroundColorsType;
   /** The background gradient of the box. */
-  backgroundGradient?:
-    | BackgroundGradientsDictionaryType
-    | Partial<Record<BreakpointToken, BackgroundGradientsDictionaryType>>;
+  backgroundGradient?: SingleOrResponsive<BackgroundGradientsDictionaryType>;
   /** The border color of the box. */
   borderColor?: BorderAccentColorsType | BorderEmotionColorsType | BorderColorsDictionaryType;
   /** The border radius of the box. */
-  borderRadius?: BorderRadiiTokenType | Partial<Record<BreakpointToken, BorderRadiiTokenType>>;
+  borderRadius?: SingleOrResponsive<BorderRadiiTokenType>;
   /** The border style of the box. */
   borderStyle?: BorderStylesDictionaryType;
   /** The border width of the box. */
   borderWidth?: BorderWidthsDictionaryType;
   /** Padding of the box. */
-  padding?: SpaceToken | Partial<Record<BreakpointToken, SpaceToken>>;
+  padding?: SingleOrResponsive<SpaceToken>;
   /** Horizontal padding of the box. */
-  paddingX?: SpaceToken | Partial<Record<BreakpointToken, SpaceToken>>;
+  paddingX?: SingleOrResponsive<SpaceToken>;
   /** Vertical padding of the box. */
-  paddingY?: SpaceToken | Partial<Record<BreakpointToken, SpaceToken>>;
+  paddingY?: SingleOrResponsive<SpaceToken>;
   /** Padding top of the box. */
-  paddingTop?: SpaceToken | Partial<Record<BreakpointToken, SpaceToken>>;
+  paddingTop?: SingleOrResponsive<SpaceToken>;
   /** Padding bottom of the box. */
-  paddingBottom?: SpaceToken | Partial<Record<BreakpointToken, SpaceToken>>;
+  paddingBottom?: SingleOrResponsive<SpaceToken>;
   /** Padding left of the box. */
-  paddingLeft?: SpaceToken | Partial<Record<BreakpointToken, SpaceToken>>;
+  paddingLeft?: SingleOrResponsive<SpaceToken>;
   /** Padding right of the box. */
-  paddingRight?: SpaceToken | Partial<Record<BreakpointToken, SpaceToken>>;
+  paddingRight?: SingleOrResponsive<SpaceToken>;
 }
 
 export type BoxProps<E extends ElementType> = {

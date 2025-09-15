@@ -1,16 +1,19 @@
 import { SpacingStyleProp as DefaultSpacingStyleProp, DisplayStyleProps } from '../constants';
 import {
   BREAKPOINT_MOBILE,
-  BreakpointToken,
+  type BreakpointToken,
+  type Responsive,
   STYLE_SPACING_AUTO,
-  SpaceToken,
-  StyleProps,
-  StyleSpacingAuto,
+  type SpaceToken,
+  type StyleProps,
+  type StyleSpacingAuto,
 } from '../types';
 import { applyClassNamePrefix, isEmpty } from '../utils';
 
+type SpacingStyleProp = string | SpaceToken | StyleSpacingAuto;
+
 /** The breakpoint property value. */
-type BreakpointPropValue = Partial<Record<BreakpointToken, string | SpaceToken | StyleSpacingAuto>>;
+type BreakpointPropValue = Responsive<SpacingStyleProp>;
 
 /** The nullable string. */
 type NullableString = string | null | undefined;

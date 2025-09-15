@@ -1,13 +1,13 @@
 import { ElementType, JSXElementConstructor } from 'react';
 import {
-  AlignmentXExtendedDictionaryType,
-  AlignmentYExtendedDictionaryType,
-  BreakpointToken,
-  ChildrenProps,
-  DirectionExtendedDictionaryType,
-  SpaceToken,
-  StyleProps,
-  TransferProps,
+  type AlignmentXExtendedDictionaryType,
+  type AlignmentYExtendedDictionaryType,
+  type ChildrenProps,
+  type DirectionExtendedDictionaryType,
+  type SingleOrResponsive,
+  type SpaceToken,
+  type StyleProps,
+  type TransferProps,
 } from './shared';
 
 export interface FlexElementTypeProps<T extends ElementType = 'div'> {
@@ -39,11 +39,11 @@ export interface FlexCustomLayoutProps {
   direction?: FlexDirectionType;
   isWrapping?: FlexWrapType;
   /** Custom spacing between items */
-  spacing?: SpaceToken | Partial<Record<BreakpointToken, SpaceToken>>;
+  spacing?: SingleOrResponsive<SpaceToken>;
   /** Custom horizontal spacing between items */
-  spacingX?: SpaceToken | Partial<Record<BreakpointToken, SpaceToken>>;
+  spacingX?: SingleOrResponsive<SpaceToken>;
   /** Custom vertical spacing between items */
-  spacingY?: SpaceToken | Partial<Record<BreakpointToken, SpaceToken>>;
+  spacingY?: SingleOrResponsive<SpaceToken>;
 }
 
 export interface FlexProps<T extends ElementType = 'div'> extends FlexElementTypeProps<T>, FlexCustomLayoutProps {}
