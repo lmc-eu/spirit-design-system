@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+permissions:
+  id-token: write # Required for OIDC
+  contents: read
+
 jobs:
   has-tags:
     name: 🏷️ Analyze Tags
@@ -42,16 +46,17 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Authenticate npm
-        run: ./bin/ci/npm-auth.sh
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # TODO: Remove after Trusted Publishers are working
+      # - name: Authenticate npm
+      #   run: ./bin/ci/npm-auth.sh
+      #   env:
+      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish
         run: make publish
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          # NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Post Changelog
         run: yarn post-changelog
