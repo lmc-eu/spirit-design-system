@@ -1,5 +1,4 @@
-// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions, no-unused-vars
-import FormValidations from '@lmc-eu/spirit-form-validations/src';
+import FormValidations from '@lmc-eu/spirit-form-validations';
 
 window.onload = () => {
   FormValidations.addValidator(
