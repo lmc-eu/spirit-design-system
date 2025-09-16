@@ -1,4 +1,4 @@
-import { Toast } from '@lmc-eu/spirit-web/src/js/index.esm';
+import { Toast } from '@lmc-eu/spirit-web/js';
 
 const addDynamicToast = (event: Event, containerId: string) => {
   // @ts-expect-error -- TS2339: Property 'closest' does not exist on type 'EventTarget'.

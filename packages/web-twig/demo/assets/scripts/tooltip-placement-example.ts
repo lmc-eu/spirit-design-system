@@ -1,4 +1,4 @@
-import { Tooltip } from '@lmc-eu/spirit-web/src/js/index.esm';
+import { Tooltip } from '@lmc-eu/spirit-web/js';
 import { Placement } from '@floating-ui/dom';
 
 const radios = document.querySelectorAll('input[type="radio"]');
