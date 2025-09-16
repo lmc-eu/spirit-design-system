@@ -74,6 +74,7 @@ makefile
 
 # Shell Scripts
 *.sh
+console
 
 # Favicon
 *.ico
@@ -93,6 +94,13 @@ exporters/tokens/generated/**/*.cjs
 
 # Docker
 Dockerfile
+Caddyfile
+*.ini
+*.conf
 
 # Node version
 .nvmrc
+
+# Git
+.gitignore
+.gitattributes
