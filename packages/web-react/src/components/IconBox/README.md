@@ -81,15 +81,15 @@ import { Box, Icon } from '@lmc-eu/spirit-web-react';
 
 ## API
 
-| Name          | Type                                                                                                                   | Default  | Required | Description                                    |
-| ------------- | ---------------------------------------------------------------------------------------------------------------------- | -------- | -------- | ---------------------------------------------- |
-| `color`       | [AccentColorNamesType \| EmotionColorNamesType][readme-generated-types] ✕ [Intensity dictionary][dictionary-intensity] | -        | ✕        | Color variant of the IconBox                   |
-| `elementType` | `ElementType`                                                                                                          | `div`    | ✕        | Type of element                                |
-| `hasBorder`   | `bool`                                                                                                                 | `true`   | ✕        | Whether the IconBox has a border               |
-| `iconName`    | `string`                                                                                                               | ✓        | ✕        | Name of the icon to render                     |
-| `isSubtle`    | `bool`                                                                                                                 | `true`   | ✕        | Whether the IconBox has a subtle color variant |
-| `shape`       | \[`rounded` \| `circle` \| `square`]                                                                                   | `circle` | ✕        | Shape of the IconBox                           |
-| `size`        | [Size Extended dictionary][dictionary-size]                                                                            | `medium` | ✕        | Size of the IconBox                            |
+| Name          | Type                                                                                                                                                | Default  | Required | Description                                    |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------- | ---------------------------------------------- |
+| `color`       | \[[AccentColorNamesType][readme-generated-types] \| [EmotionColorNamesType][readme-generated-types] ✕ [Intensity dictionary][dictionary-intensity]] | -        | ✕        | Color variant of the IconBox                   |
+| `elementType` | `ElementType`                                                                                                                                       | `div`    | ✕        | Type of element                                |
+| `hasBorder`   | `bool`                                                                                                                                              | `true`   | ✕        | Whether the IconBox has a border               |
+| `iconName`    | `string`                                                                                                                                            | ✓        | ✕        | Name of the icon to render                     |
+| `isSubtle`    | `bool`                                                                                                                                              | `true`   | ✕        | Whether the IconBox has a subtle color variant |
+| `shape`       | \[`rounded` \| `circle` \| `square`]                                                                                                                | `circle` | ✕        | Shape of the IconBox                           |
+| `size`        | [Size Extended dictionary][dictionary-size]                                                                                                         | `medium` | ✕        | Size of the IconBox                            |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

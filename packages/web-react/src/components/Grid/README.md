@@ -101,9 +101,9 @@ Responsive horizontal and vertical alignment:
 | `alignmentY`  | \[[AlignmentYExtended dictionary][alignment-dictionary] \| `object`] | `stretch` | ✕        | Apply vertical alignment of items, use object to set responsive values, e.g. `{ mobile: 'top', tablet: 'center', desktop: 'bottom' }`   |
 | `cols`        | \[`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12` \| `object`]        | —         | ✕        | Number of columns to use, use object to set responsive values, e.g. `{ mobile: 1, tablet: 2, desktop: 3 }`                              |
 | `elementType` | HTML element                                                         | `div`     | ✕        | Element type to use for the Grid                                                                                                        |
-| `spacing`     | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]    | —         | ✕        | Apply [custom spacing](#custom-spacing) in both horizontal and vertical directions between items                                        |
-| `spacingX`    | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]    | —         | ✕        | Apply horizontal [custom spacing](#custom-spacing) between items                                                                        |
-| `spacingY`    | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]    | —         | ✕        | Apply vertical [custom spacing](#custom-spacing) between items                                                                          |
+| `spacing`     | \[`SpaceToken` \| `Responsive<SpaceToken>`]                          | —         | ✕        | Apply [custom spacing](#custom-spacing) in both horizontal and vertical directions between items                                        |
+| `spacingX`    | \[`SpaceToken` \| `Responsive<SpaceToken>`]                          | —         | ✕        | Apply horizontal [custom spacing](#custom-spacing) between items                                                                        |
+| `spacingY`    | \[`SpaceToken` \| `Responsive<SpaceToken>`]                          | —         | ✕        | Apply vertical [custom spacing](#custom-spacing) between items                                                                          |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

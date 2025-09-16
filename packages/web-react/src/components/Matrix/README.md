@@ -107,15 +107,15 @@ As of now, only **single-column components** are supported in Matrix.
 
 ## API
 
-| Name          | Type                                                              | Default     | Required | Description                                                                                                     |
-| ------------- | ----------------------------------------------------------------- | ----------- | -------- | --------------------------------------------------------------------------------------------------------------- |
-| `cols`        | \[`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12` \| `object`]     | `3`         | ✕        | Number of columns to use, use object to set responsive values, e.g. `{ mobile: 1, tablet: 2, desktop: 3 }`      |
-| `elementType` | HTML element                                                      | `div`       | ✕        | Element type to use for the Matrix                                                                              |
-| `itemRows`    | \[ `number` \| `object`]                                          | `100`       | ✕        | Number of items in row to use, use object to set responsive values, e.g. `{ mobile: 1, tablet: 2, desktop: 3 }` |
-| `rows`        | \[ `number` \| `object`]                                          | `100`       | ✕        | Number of rows to use, use object to set responsive values, e.g. `{ mobile: 1, tablet: 2, desktop: 3 }`         |
-| `spacing`     | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`] | —           | ✕        | Apply [custom spacing](#custom-spacing) in both horizontal and vertical directions between items                |
-| `spacingX`    | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`] | `space-700` | ✕        | Apply horizontal [custom spacing](#custom-spacing) between items                                                |
-| `spacingY`    | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`] | `space-0`   | ✕        | Apply vertical [custom spacing](#custom-spacing) between items                                                  |
+| Name          | Type                                                          | Default     | Required | Description                                                                                                     |
+| ------------- | ------------------------------------------------------------- | ----------- | -------- | --------------------------------------------------------------------------------------------------------------- |
+| `cols`        | \[`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12` \| `object`] | `3`         | ✕        | Number of columns to use, use object to set responsive values, e.g. `{ mobile: 1, tablet: 2, desktop: 3 }`      |
+| `elementType` | HTML element                                                  | `div`       | ✕        | Element type to use for the Matrix                                                                              |
+| `itemRows`    | \[ `number` \| `object`]                                      | `100`       | ✕        | Number of items in row to use, use object to set responsive values, e.g. `{ mobile: 1, tablet: 2, desktop: 3 }` |
+| `rows`        | \[ `number` \| `object`]                                      | `100`       | ✕        | Number of rows to use, use object to set responsive values, e.g. `{ mobile: 1, tablet: 2, desktop: 3 }`         |
+| `spacing`     | \[`SpaceToken` \| `Responsive<SpaceToken>`]                   | —           | ✕        | Apply [custom spacing](#custom-spacing) in both horizontal and vertical directions between items                |
+| `spacingX`    | \[`SpaceToken` \| `Responsive<SpaceToken>`]                   | `space-700` | ✕        | Apply horizontal [custom spacing](#custom-spacing) between items                                                |
+| `spacingY`    | \[`SpaceToken` \| `Responsive<SpaceToken>`]                   | `space-0`   | ✕        | Apply vertical [custom spacing](#custom-spacing) between items                                                  |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

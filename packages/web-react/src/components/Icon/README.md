@@ -78,12 +78,12 @@ import icons from '@lmc-eu/spirit-icons/icons';
 
 ## API
 
-| Name      | Type                                                                                          | Default      | Required | Description                                                                                           |
-| --------- | --------------------------------------------------------------------------------------------- | ------------ | -------- | ----------------------------------------------------------------------------------------------------- |
-| `boxSize` | \[`number` \| `Partial<Record<BreakpointToken, number>>`]                                     | 24           | ✕        | Size of the icon, use object to set responsive values, e.g. `{ mobile: 20, tablet: 30, desktop: 40 }` |
-| `color`   | [AccentColorNamesType \| EmotionColorNamesType \| TextColorNamesType][readme-generated-types] | `primary` \* | ✕        | Color of the dualtone icon                                                                            |
-| `name`    | `string`                                                                                      | —            | ✓        | Name of the icon                                                                                      |
-| `title`   | `string`                                                                                      | —            | ✕        | Title of the icon                                                                                     |
+| Name      | Type                                                                                                                                                 | Default      | Required | Description                                                                                           |
+| --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | -------- | ----------------------------------------------------------------------------------------------------- |
+| `boxSize` | \[`number` \| `Responsive<number>`]                                                                                                                  | 24           | ✕        | Size of the icon, use object to set responsive values, e.g. `{ mobile: 20, tablet: 30, desktop: 40 }` |
+| `color`   | \[[AccentColorNamesType][readme-generated-types] \| [EmotionColorNamesType][readme-generated-types] \| [TextColorNamesType][readme-generated-types]] | `primary` \* | ✕        | Color of the dualtone icon                                                                            |
+| `name`    | `string`                                                                                                                                             | —            | ✓        | Name of the icon                                                                                      |
+| `title`   | `string`                                                                                                                                             | —            | ✕        | Title of the icon                                                                                     |
 
 (\*) The default color "Primary" is used only for dualtone icons. For single-tone icons, the default color is inherited from the parent element.
 

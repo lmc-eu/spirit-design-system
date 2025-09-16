@@ -79,12 +79,12 @@ should be present.
 
 ## API
 
-| Name          | Type                                                                                                              | Default  | Required | Description                                                   |
-| ------------- | ----------------------------------------------------------------------------------------------------------------- | -------- | -------- | ------------------------------------------------------------- |
-| `children`    | `ReactNode`                                                                                                       | `null`   | ✓        | Content of the PartnerLogo                                    |
-| `hasSafeArea` | `boolean`                                                                                                         | `true`   | ✕        | If false, the PartnerLogo is displayed without safe area      |
-| `isFluid`     | `boolean`                                                                                                         | `false`  | ✕        | If true, the PartnerLogo adjusts to the size of its container |
-| `size`        | \[[Size dictionary][dictionary-size] \| `Partial<Record<BreakpointToken`, [Size dictionary][dictionary-size]`>>`] | `medium` | ✕        | Size of the PartnerLogo                                       |
+| Name          | Type                                                                   | Default  | Required | Description                                                   |
+| ------------- | ---------------------------------------------------------------------- | -------- | -------- | ------------------------------------------------------------- |
+| `children`    | `ReactNode`                                                            | `null`   | ✓        | Content of the PartnerLogo                                    |
+| `hasSafeArea` | `boolean`                                                              | `true`   | ✕        | If false, the PartnerLogo is displayed without safe area      |
+| `isFluid`     | `boolean`                                                              | `false`  | ✕        | If true, the PartnerLogo adjusts to the size of its container |
+| `size`        | \[[Size dictionary][dictionary-size] \| `Responsive<Size dictionary>`] | `medium` | ✕        | Size of the PartnerLogo                                       |
 
 The components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

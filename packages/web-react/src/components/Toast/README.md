@@ -281,16 +281,16 @@ To make the ToastBar dismissible, add the `isDismissible` prop along with a `onC
 
 ### API
 
-| Name            | Type                                                         | Default    | Required | Description                                         |
-| --------------- | ------------------------------------------------------------ | ---------- | -------- | --------------------------------------------------- |
-| `closeLabel`    | `string`                                                     | `Close`    | ✕        | Close label                                         |
-| `color`         | [EmotionColorNamesType][readme-generated-types] \| `neutral` | `neutral`  | ✕        | Color variant                                       |
-| `hasIcon`       | `bool`                                                       | `false` \* | ✕        | If true, an icon is shown along the message         |
-| `iconName`      | `string`                                                     | `info` \*  | ✕        | Name of a custom icon to be shown along the message |
-| `id`            | `string`                                                     | —          | ✓        | ToastBar ID                                         |
-| `isDismissible` | `bool`                                                       | `false`    | ✕        | If true, ToastBar can be dismissed by user          |
-| `isOpen`        | `bool`                                                       | `true`     | ✕        | If true, ToastBar is visible                        |
-| `onClose`       | `function`                                                   | —          | ✕        | Close button callback                               |
+| Name            | Type                                                            | Default    | Required | Description                                         |
+| --------------- | --------------------------------------------------------------- | ---------- | -------- | --------------------------------------------------- |
+| `closeLabel`    | `string`                                                        | `Close`    | ✕        | Close label                                         |
+| `color`         | \[[EmotionColorNamesType][readme-generated-types] \| `neutral`] | `neutral`  | ✕        | Color variant                                       |
+| `hasIcon`       | `bool`                                                          | `false` \* | ✕        | If true, an icon is shown along the message         |
+| `iconName`      | `string`                                                        | `info` \*  | ✕        | Name of a custom icon to be shown along the message |
+| `id`            | `string`                                                        | —          | ✓        | ToastBar ID                                         |
+| `isDismissible` | `bool`                                                          | `false`    | ✕        | If true, ToastBar can be dismissed by user          |
+| `isOpen`        | `bool`                                                          | `true`     | ✕        | If true, ToastBar is visible                        |
+| `onClose`       | `function`                                                      | —          | ✕        | Close button callback                               |
 
 (\*) For each emotion color, a default icon is defined.
 The icons come from the [Icon package][icon-package], or from your custom source of icons.
@@ -368,16 +368,16 @@ What is uncontrolled component you can find [here][react-uncontrolled]
 
 This hook returns:
 
-| Name       | Type                                                         | Default   | Description                                         |
-| ---------- | ------------------------------------------------------------ | --------- | --------------------------------------------------- |
-| `clear`    | `() => void`                                                 | () => {}  | Function that will clear toast queue                |
-| `color`    | [EmotionColorNamesType][readme-generated-types] \| `neutral` | `neutral` | Color variant                                       |
-| `hide`     | `(toastId) => void`                                          | () => {}  | Function that will hide UncontrolledToast           |
-| `iconName` | `string`                                                     | —         | Name of a custom icon to be shown along the message |
-| `id`       | `string`                                                     | `''`      | ToastBar ID                                         |
-| `isOpen`   | `bool`                                                       | `false`   | Open state of UncontrolledToast                     |
-| `message`  | \[`string` \| `ReactNode`]                                   | null      | Message inside UncontrolledToast                    |
-| `show`     | `(message, toastId, options?) => void`                       | () => {}  | Function that will show UncontrolledToast           |
+| Name       | Type                                                            | Default   | Description                                         |
+| ---------- | --------------------------------------------------------------- | --------- | --------------------------------------------------- |
+| `clear`    | `() => void`                                                    | () => {}  | Function that will clear toast queue                |
+| `color`    | \[[EmotionColorNamesType][readme-generated-types] \| `neutral`] | `neutral` | Color variant                                       |
+| `hide`     | `(toastId) => void`                                             | () => {}  | Function that will hide UncontrolledToast           |
+| `iconName` | `string`                                                        | —         | Name of a custom icon to be shown along the message |
+| `id`       | `string`                                                        | `''`      | ToastBar ID                                         |
+| `isOpen`   | `bool`                                                          | `false`   | Open state of UncontrolledToast                     |
+| `message`  | \[`string` \| `ReactNode`]                                      | null      | Message inside UncontrolledToast                    |
+| `show`     | `(message, toastId, options?) => void`                          | () => {}  | Function that will show UncontrolledToast           |
 
 #### How to Use `show` Function
 

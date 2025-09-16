@@ -106,17 +106,17 @@ You can define responsive values for the `textAlignment` prop using an object:
 
 ## API
 
-| Name              | Type                                                                                                                    | Default   | Required | Description                     |
-| ----------------- | ----------------------------------------------------------------------------------------------------------------------- | --------- | -------- | ------------------------------- |
-| `backgroundColor` | [Background Color dictionary][dictionary-color]                                                                         | -         | ✕        | Background color of the Section |
-| `containerProps`  | `ContainerProps`                                                                                                        | -         | ✕        | Props for the inner Container   |
-| `elementType`     | `ElementType`                                                                                                           | `section` | ✕        | Type of element                 |
-| `hasContainer`    | `boolean`                                                                                                               | `true`    | ✕        | Render inner Container          |
-| `paddingY`        | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]                                                       | -         | ✕        | Vertical padding of the Section |
-| `paddingTop`      | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]                                                       | -         | ✕        | Padding top of the Section      |
-| `paddingBottom`   | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]                                                       | -         | ✕        | Padding bottom of the Section   |
-| `size`            | [Size Extended dictionary][dictionary-size]                                                                             | -         | ✕        | Size of the Section             |
-| `textAlignment`   | \[[Text Alignment dictionary][dictionary-alignment] \| `Partial<Record<BreakpointToken, TextAlignmentDictionaryType>>`] | -         | ✕        | Text alignment                  |
+| Name              | Type                                                                                              | Default   | Required | Description                     |
+| ----------------- | ------------------------------------------------------------------------------------------------- | --------- | -------- | ------------------------------- |
+| `backgroundColor` | [Background Color dictionary][dictionary-color]                                                   | -         | ✕        | Background color of the Section |
+| `containerProps`  | `ContainerProps`                                                                                  | -         | ✕        | Props for the inner Container   |
+| `elementType`     | `ElementType`                                                                                     | `section` | ✕        | Type of element                 |
+| `hasContainer`    | `boolean`                                                                                         | `true`    | ✕        | Render inner Container          |
+| `paddingY`        | \[`SpaceToken` \| `Responsive<SpaceToken>`]                                                       | -         | ✕        | Vertical padding of the Section |
+| `paddingTop`      | \[`SpaceToken` \| `Responsive<SpaceToken>`]                                                       | -         | ✕        | Padding top of the Section      |
+| `paddingBottom`   | \[`SpaceToken` \| `Responsive<SpaceToken>`]                                                       | -         | ✕        | Padding bottom of the Section   |
+| `size`            | [Size Extended dictionary][dictionary-size]                                                       | -         | ✕        | Size of the Section             |
+| `textAlignment`   | \[[Text Alignment dictionary][dictionary-alignment] \| `Responsive<TextAlignmentDictionaryType>`] | -         | ✕        | Text alignment                  |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
