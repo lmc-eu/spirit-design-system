@@ -7,8 +7,9 @@ SHELL									= bash
 
 # Paths
 APP_DOCKER_DIR				= ./docker/
-ICONS_PKG_DIR					= ../icons/
+ICONS_PKG_DIR					= ./static/
 DOCKER_PKG_DIR				= /srv/spirit-web-twig-bundle/
+DOCKER_APP_DIR				= /srv/spirit-web-twig-demo/
 
 # Docker containers
 PHP_CONT_PHP = cd $(APP_DOCKER_DIR) && $(DOCKER_COMP) exec --workdir $(DOCKER_PKG_DIR) $(DOCKER_PHP_SERVICE)
@@ -46,12 +47,12 @@ down: ## Stop the docker hub
 logs: ## Show live logs
 	cd $(APP_DOCKER_DIR) && $(DOCKER_COMP) logs --tail=0 --follow
 
-prestart: ## Preparation before start
-	@if [ ! -d "$(ICONS_PKG_DIR)/dist/svg" ]; then \
-		$(MAKE) icons-build; \
+poststart: ## Finalization after start
+	@if [ ! -d "$(ICONS_PKG_DIR)/svg" ]; then \
+		$(MAKE) icons-copy; \
 	fi
 
-start: prestart up install encore ## Start the containers
+start: up install poststart ## Start the containers
 
 stop: down ## Stop the docker hub (alias for `down`)
 
@@ -79,37 +80,6 @@ endif
 encore-install: ## Install demo dependencies
 	cd $(APP_DOCKER_DIR) && $(DOCKER_COMP) exec $(DOCKER_ENCORE_SERVICE) yarn install
 
-#/# Every time you create a new package and use it in the demo, you need to link it here.
-#/# This is because the demo is not using the packages from npm, but from the local filesystem.
-#/# It ensures that the demo is always using the latest version of the package.
-#/# Thus the realtime local development is possible.
-
-encore-link: ## Link demo dependencies
-	cd $(APP_DOCKER_DIR) && \
-		$(DOCKER_COMP) exec $(DOCKER_ENCORE_SERVICE) sh -c "cd /srv/spirit-web && \
-		yarn link && \
-		cd /srv/spirit-web-twig-demo && \
-		yarn link @lmc-eu/spirit-web && \
-		\
-		cd /srv/spirit-form-validations && \
-		yarn link && \
-		cd /srv/spirit-web-twig-demo && \
-		yarn link @lmc-eu/spirit-form-validations && \
-		\
-		cd /srv/spirit-demo && \
-		yarn link && \
-		cd /srv/spirit-web-twig-demo && \
-		yarn link @lmc-eu/spirit-demo && \
-		\
-		cd /srv/spirit-design-tokens && \
-		yarn link && \
-		cd /srv/spirit-web-twig-demo && \
-		yarn link @lmc-eu/spirit-design-tokens && \
-		\
-		cd /srv/spirit-common && \
-		yarn link && \
-		cd /srv/spirit-web-twig-demo && \
-		yarn link @lmc-eu/spirit-common"
 encore-build: ## Build demo assets
 	cd $(APP_DOCKER_DIR) && $(DOCKER_COMP) exec $(DOCKER_ENCORE_SERVICE) yarn build
 
@@ -121,8 +91,6 @@ encore-sh: ## Connect to encore using bash
 
 encore-logs: ## Show live logs for Encore service
 	cd $(APP_DOCKER_DIR) && $(DOCKER_COMP) logs $(DOCKER_ENCORE_SERVICE) --tail=0 --follow
-
-encore: encore-link ## Start demo client
 
 ## —— Composer 🧙 ——————————————————————————————————————————————————————————————
 composer: ## Run composer, pass the parameter "c=" to run a given command, example: make composer c='req symfony/orm-pack'
@@ -161,8 +129,12 @@ test: ## Run composer tests
 	@$(COMPOSER) test
 
 ## —— Helpers 🔧 —————————————————————————————————————————————————————————————————
-icons-build: ## Build Icons package
-	cd $(ICONS_PKG_DIR) && yarn build
+icons-copy: ## Copy Icons package
+	curl -L -o lmc-eu-spirit-icons-2.3.2.tgz https://registry.npmjs.org/@lmc-eu/spirit-icons/-/spirit-icons-2.3.2.tgz
+	tar -xzf lmc-eu-spirit-icons-*.tgz -C ./static
+	cp -r ./static/package/svg/* ./static
+	rm lmc-eu-spirit-icons-*.tgz
+	rm -rf ./static/package
 
 ## —— Makefile 📜 ————————————————————————————————————————————————————————————————
 make: ## Run makefile in app pass the parameter "c=" to run a given command, example: make make c=npm-test
