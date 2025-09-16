@@ -274,12 +274,12 @@ You can also define responsive values for the `textAlignment` prop using an obje
 
 ### API
 
-| Name              | Type                                                                                                                    | Default      | Required | Description                                     |
-| ----------------- | ----------------------------------------------------------------------------------------------------------------------- | ------------ | -------- | ----------------------------------------------- |
-| `backgroundColor` | [Background Color dictionary][dictionary-background-color]                                                              | `secondary`  | ✕        | Sets the background color of the footer         |
-| `paddingBottom`   | `SpaceToken`                                                                                                            | `space-1400` | ✕        | Defines the padding at the bottom of the footer |
-| `paddingTop`      | `SpaceToken`                                                                                                            | `space-1200` | ✕        | Defines the padding at the top of the footer    |
-| `textAlignment`   | \[[Text Alignment dictionary][dictionary-alignment] \| `Partial<Record<BreakpointToken, TextAlignmentDictionaryType>>`] | -            | ✕        | Alignment of the text                           |
+| Name              | Type                                                                                              | Default      | Required | Description                                     |
+| ----------------- | ------------------------------------------------------------------------------------------------- | ------------ | -------- | ----------------------------------------------- |
+| `backgroundColor` | [Background Color dictionary][dictionary-background-color]                                        | `secondary`  | ✕        | Sets the background color of the footer         |
+| `paddingBottom`   | `SpaceToken`                                                                                      | `space-1400` | ✕        | Defines the padding at the bottom of the footer |
+| `paddingTop`      | `SpaceToken`                                                                                      | `space-1200` | ✕        | Defines the padding at the top of the footer    |
+| `textAlignment`   | \[[Text Alignment dictionary][dictionary-alignment] \| `Responsive<TextAlignmentDictionaryType>`] | -            | ✕        | Alignment of the text                           |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

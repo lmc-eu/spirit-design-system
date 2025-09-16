@@ -14,14 +14,14 @@ import { Tag } from '@lmc-eu/spirit-web-react';
 
 ## API
 
-| Name          | Type                                                  | Default   | Required | Description                     |
-| ------------- | ----------------------------------------------------- | --------- | -------- | ------------------------------- |
-| `children`    | `ReactNode`                                           | —         | ✓        | Content of the Tag              |
-| `color`       | [EmotionColorType][readme-generated-types], `neutral` | `neutral` | ✕        | Color of the component          |
-| `elementType` | `React.Element`                                       | `span`    | ✕        | HTML tag                        |
-| `isSubtle`    | `bool`                                                | `false`   | ✕        | If is Subtle color variant used |
-| `ref`         | `ForwardedRef<HTMLSpanElement>`                       | —         | ✕        | Tag element reference           |
-| `size`        | [Size Extended dictionary][dictionary-size]           | `medium`  | ✕        | Size of the Tag                 |
+| Name          | Type                                                       | Default   | Required | Description                     |
+| ------------- | ---------------------------------------------------------- | --------- | -------- | ------------------------------- |
+| `children`    | `ReactNode`                                                | —         | ✓        | Content of the Tag              |
+| `color`       | \[[EmotionColorType][readme-generated-types] \| `neutral`] | `neutral` | ✕        | Color of the component          |
+| `elementType` | `React.Element`                                            | `span`    | ✕        | HTML tag                        |
+| `isSubtle`    | `bool`                                                     | `false`   | ✕        | If is Subtle color variant used |
+| `ref`         | `ForwardedRef<HTMLSpanElement>`                            | —         | ✕        | Tag element reference           |
+| `size`        | [Size Extended dictionary][dictionary-size]                | `medium`  | ✕        | Size of the Tag                 |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

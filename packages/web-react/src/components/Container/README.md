@@ -39,11 +39,11 @@ You can define responsive values for the `textAlignment` prop using an object:
 
 ## API
 
-| Name            | Type                                                                                                                    | Default  | Required | Description                 |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------- | -------- | -------- | --------------------------- |
-| `isFluid`       | `bool`                                                                                                                  | `false`  | ✕        | If true, Container is fluid |
-| `size`          | [ContainerSizesType][readme-generated-types]                                                                            | `xlarge` | ✕        | Size variant                |
-| `textAlignment` | \[[Text Alignment dictionary][dictionary-alignment] \| `Partial<Record<BreakpointToken, TextAlignmentDictionaryType>>`] | -        | ✕        | Text alignment              |
+| Name            | Type                                                                                              | Default  | Required | Description                 |
+| --------------- | ------------------------------------------------------------------------------------------------- | -------- | -------- | --------------------------- |
+| `isFluid`       | `bool`                                                                                            | `false`  | ✕        | If true, Container is fluid |
+| `size`          | [ContainerSizesType][readme-generated-types]                                                      | `xlarge` | ✕        | Size variant                |
+| `textAlignment` | \[[Text Alignment dictionary][dictionary-alignment] \| `Responsive<TextAlignmentDictionaryType>`] | -        | ✕        | Text alignment              |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

@@ -85,24 +85,24 @@ Custom responsive spacing:
 
 #### API
 
-| Name                | Type                                                              | Default | Required | Description                                           |
-| ------------------- | ----------------------------------------------------------------- | ------- | -------- | ----------------------------------------------------- |
-| `selectedTab`       | \[`string` \| `number`]                                           | —       | ✓        | Identification of the selected tab                    |
-| `toggle`            | `Function`                                                        | —       | ✓        | Toggle function which accept tab ID as input          |
-| `children`          | `any`                                                             | —       | ✕        | Child component                                       |
-| `onSelectionChange` | `(previousId: TabId, currentId?: TabId) => void`                  | —       | ✕        | When the state of the selected panel changes          |
-| `spacing`           | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`] | —       | ✕        | Apply [custom spacing](#custom-spacing) between items |
+| Name                | Type                                             | Default | Required | Description                                           |
+| ------------------- | ------------------------------------------------ | ------- | -------- | ----------------------------------------------------- |
+| `selectedTab`       | \[`string` \| `number`]                          | —       | ✓        | Identification of the selected tab                    |
+| `toggle`            | `Function`                                       | —       | ✓        | Toggle function which accept tab ID as input          |
+| `children`          | `any`                                            | —       | ✕        | Child component                                       |
+| `onSelectionChange` | `(previousId: TabId, currentId?: TabId) => void` | —       | ✕        | When the state of the selected panel changes          |
+| `spacing`           | \[`SpaceToken` \| `Responsive<SpaceToken>`]      | —       | ✕        | Apply [custom spacing](#custom-spacing) between items |
 
 ### UncontrolledTabs
 
 #### API
 
-| Name                 | Type                                                              | Default | Required | Description                                           |
-| -------------------- | ----------------------------------------------------------------- | ------- | -------- | ----------------------------------------------------- |
-| `defaultSelectedTab` | \[`string` \| `number`]                                           | —       | ✓        | Identification of default selected tab                |
-| `children`           | `any`                                                             | —       | ✕        | Child component                                       |
-| `onSelectionChange`  | `(previousId: TabId, currentId?: TabId) => void`                  | —       | ✕        | When the state of the selected panel changes          |
-| `spacing`            | \[`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`] | —       | ✕        | Apply [custom spacing](#custom-spacing) between items |
+| Name                 | Type                                             | Default | Required | Description                                           |
+| -------------------- | ------------------------------------------------ | ------- | -------- | ----------------------------------------------------- |
+| `defaultSelectedTab` | \[`string` \| `number`]                          | —       | ✓        | Identification of default selected tab                |
+| `children`           | `any`                                            | —       | ✕        | Child component                                       |
+| `onSelectionChange`  | `(previousId: TabId, currentId?: TabId) => void` | —       | ✕        | When the state of the selected panel changes          |
+| `spacing`            | \[`SpaceToken` \| `Responsive<SpaceToken>`]      | —       | ✕        | Apply [custom spacing](#custom-spacing) between items |
 
 ### TabList
 
