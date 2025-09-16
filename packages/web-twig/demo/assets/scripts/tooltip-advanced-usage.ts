@@ -1,4 +1,4 @@
-import { Tooltip } from '@lmc-eu/spirit-web/src/js/index.esm';
+import { Tooltip } from '@lmc-eu/spirit-web/js';
 
 const checkboxFlip = document.getElementById('my-advanced-flip') as HTMLInputElement;
 const checkboxFlipCrossAxis = document.getElementById('my-advanced-flip-cross-axis') as HTMLInputElement;
