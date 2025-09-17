@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.17.0"></a>
+
+# [3.17.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.16.0...@lmc-eu/spirit-web@3.17.0) (2025-09-17)
+
+### Bug Fixes
+
+- **web,web-react:** Close HTML dialog after all Modal or Drawer transitions are done [#DS-2050](https://github.com/lmc-eu/spirit-design-system/issues/DS-2050) ([0d4d339](https://github.com/lmc-eu/spirit-design-system/commit/0d4d339))
+- **web:** Adjust icon sizes in button component [#DS-1876](https://github.com/lmc-eu/spirit-design-system/issues/DS-1876) ([c5e3bf5](https://github.com/lmc-eu/spirit-design-system/commit/c5e3bf5))
+
+### Documentation
+
+- **repo:** Provide SkipLink in the docs to navigate directly to the main content [#DS-1862](https://github.com/lmc-eu/spirit-design-system/issues/DS-1862) ([6391f99](https://github.com/lmc-eu/spirit-design-system/commit/6391f99))
+
+### Features
+
+- **web-react:** Generate types and constants directly from tokens [#DS-1650](https://github.com/lmc-eu/spirit-design-system/issues/DS-1650) ([8b42ecc](https://github.com/lmc-eu/spirit-design-system/commit/8b42ecc))
+- **web:** Generate CSS directly from tokens [#DS-1650](https://github.com/lmc-eu/spirit-design-system/issues/DS-1650) ([9122d40](https://github.com/lmc-eu/spirit-design-system/commit/9122d40))
+- **web:** Introduce SkipLink component [#DS-1862](https://github.com/lmc-eu/spirit-design-system/issues/DS-1862) ([6707858](https://github.com/lmc-eu/spirit-design-system/commit/6707858))
+- **web:** Introduce timeline [#DS-2019](https://github.com/lmc-eu/spirit-design-system/issues/DS-2019) ([e86ef59](https://github.com/lmc-eu/spirit-design-system/commit/e86ef59))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="3.16.0"></a>
 
 # [3.16.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.15.1...@lmc-eu/spirit-web@3.16.0) (2025-09-08)

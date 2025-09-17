@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.10.1"></a>
+
+## [4.10.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@4.10.0...@lmc-eu/spirit-web-twig@4.10.1) (2025-09-17)
+
+### Chores
+
+- **web-twig:** Introduce code quality check workflow ([6a66272](https://github.com/lmc-eu/spirit-design-system/commit/6a66272)), closes [#DS-1811](https://github.com/lmc-eu/spirit-design-system/issues/DS-1811)
+- **web-twig:** Introduce codeowners file ([03b81b3](https://github.com/lmc-eu/spirit-design-system/commit/03b81b3)), closes [#DS-1811](https://github.com/lmc-eu/spirit-design-system/issues/DS-1811)
+- **web-twig:** Introduce fixup commit checkt workflow ([51d2b2a](https://github.com/lmc-eu/spirit-design-system/commit/51d2b2a))
+- **web-twig:** Introduce license file ([58df00f](https://github.com/lmc-eu/spirit-design-system/commit/58df00f)), closes [#DS-1811](https://github.com/lmc-eu/spirit-design-system/issues/DS-1811)
+- **web-twig:** Introduce renovate configuration ([2295985](https://github.com/lmc-eu/spirit-design-system/commit/2295985)), closes [#DS-1811](https://github.com/lmc-eu/spirit-design-system/issues/DS-1811)
+
+### Documentation
+
+- **web-twig:** Move migration instructions as part of the package ([6616626](https://github.com/lmc-eu/spirit-design-system/commit/6616626)), closes [#DS-1811](https://github.com/lmc-eu/spirit-design-system/issues/DS-1811)
+- **web-twig:** Read-only repository have been moved to `alma-oss` organization ([108073d](https://github.com/lmc-eu/spirit-design-system/commit/108073d)), closes [#DS-1811](https://github.com/lmc-eu/spirit-design-system/issues/DS-1811), [#DS-1814](https://github.com/lmc-eu/spirit-design-system/issues/DS-1814)
+- **web-twig:** Update links to migrated repository ([a282628](https://github.com/lmc-eu/spirit-design-system/commit/a282628)), closes [#DS-1811](https://github.com/lmc-eu/spirit-design-system/issues/DS-1811)
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="4.10.0"></a>
 
 # [4.10.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@4.9.0...@lmc-eu/spirit-web-twig@4.10.0) (2025-08-27)

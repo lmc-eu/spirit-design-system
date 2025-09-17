@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.5.1"></a>
+
+## [1.5.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo-app@1.5.0...@lmc-eu/spirit-demo-app@1.5.1) (2025-09-17)
+
+### Bug Fixes
+
+- **demo-app:** Update icon sizes in header ([7aec1b9](https://github.com/lmc-eu/spirit-design-system/commit/7aec1b9))
+
+### Documentation
+
+- **repo:** Provide SkipLink in the docs to navigate directly to the main content [#DS-1862](https://github.com/lmc-eu/spirit-design-system/issues/DS-1862) ([6391f99](https://github.com/lmc-eu/spirit-design-system/commit/6391f99))
+
+**Note:** Version bump only for package @lmc-eu/spirit-demo-app
+
 <a name="1.5.0"></a>
 
 # [1.5.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo-app@1.4.0...@lmc-eu/spirit-demo-app@1.5.0) (2025-06-30)

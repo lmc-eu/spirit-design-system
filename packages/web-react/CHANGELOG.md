@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.18.0"></a>
+
+# [3.18.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.17.0...@lmc-eu/spirit-web-react@3.18.0) (2025-09-17)
+
+### Bug Fixes
+
+- **web,web-react:** Close HTML dialog after all Modal or Drawer transitions are done [#DS-2050](https://github.com/lmc-eu/spirit-design-system/issues/DS-2050) ([0d4d339](https://github.com/lmc-eu/spirit-design-system/commit/0d4d339))
+
+### Documentation
+
+- **web-react:** Adjust icon sizes in button component [#DS-1876](https://github.com/lmc-eu/spirit-design-system/issues/DS-1876) ([21ba823](https://github.com/lmc-eu/spirit-design-system/commit/21ba823))
+
+### Features
+
+- **web-react:** Generate types and constants directly from tokens [#DS-1650](https://github.com/lmc-eu/spirit-design-system/issues/DS-1650) ([8b42ecc](https://github.com/lmc-eu/spirit-design-system/commit/8b42ecc))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="3.17.0"></a>
 
 # [3.17.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.16.1...@lmc-eu/spirit-web-react@3.17.0) (2025-09-08)
