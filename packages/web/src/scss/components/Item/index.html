@@ -1,5 +1,9 @@
 {{#> web/layout/default title="Item" parentPageName="Components" }}
 
+{{setVar "basicColors" "primary" "secondary" "tertiary" }}
+{{setVar "emotionColors" "success" "informative" "warning" "danger" }}
+{{setVar "accentColors" "01" "02" }}
+
 <section class="py-900 py-tablet-1000">
 
   <div class="Container">
@@ -91,105 +95,49 @@
 
           <h3>Basic background colors</h3>
 
-          <div class="bg-primary px-800 py-800">
-            <button type="button" class="Item dynamic-background-interactive">
-              <span class="Item__label">Item on primary</span>
-            </button>
-          </div>
-
-          <div class="bg-secondary px-800 py-800">
-            <button type="button" class="Item dynamic-background-interactive">
-              <span class="Item__label">Item on secondary</span>
-            </button>
-          </div>
-
-          <div class="bg-tertiary px-800 py-800">
-            <button type="button" class="Item dynamic-background-interactive">
-              <span class="Item__label">Item on tertiary</span>
-            </button>
-          </div>
+          {{#each @root.basicColors as |color|}}
+            <div class="bg-{{color}} px-800 py-800">
+              <button type="button" class="Item dynamic-background-interactive">
+                <span class="Item__label">Item on {{primary}} background</span>
+              </button>
+            </div>
+          {{/each}}
 
         </div>
         <div class="docs-Stack docs-Stack--stretch">
 
           <h3>Emotion colors</h3>
 
-          <div class="bg-emotion-danger-basic text-emotion-danger-subtle px-800 py-800">
-            <button type="button" class="Item dynamic-background-interactive">
-              <span class="Item__label">Item on emotion-danger-basic</span>
-            </button>
-          </div>
-
-          <div class="bg-emotion-danger-subtle text-emotion-danger-basic px-800 py-800">
-            <button type="button" class="Item dynamic-background-interactive">
-              <span class="Item__label">Item on emotion-danger-subtle</span>
-            </button>
-          </div>
-
-          <div class="bg-emotion-informative-basic text-emotion-informative-subtle px-800 py-800">
-            <button type="button" class="Item dynamic-background-interactive">
-              <span class="Item__label">Item on emotion-informative-basic</span>
-            </button>
-          </div>
-
-          <div class="bg-emotion-informative-subtle text-emotion-informative-basic px-800 py-800">
-            <button type="button" class="Item dynamic-background-interactive">
-              <span class="Item__label">Item on emotion-informative-subtle</span>
-            </button>
-          </div>
-
-          <div class="bg-emotion-success-basic text-emotion-success-subtle px-800 py-800">
-            <button type="button" class="Item dynamic-background-interactive">
-              <span class="Item__label">Item on emotion-success-basic</span>
-            </button>
-          </div>
-
-          <div class="bg-emotion-success-subtle text-emotion-success-basic px-800 py-800">
-            <button type="button" class="Item dynamic-background-interactive">
-              <span class="Item__label">Item on emotion-success-subtle</span>
-            </button>
-          </div>
-
-          <div class="bg-emotion-warning-basic text-emotion-warning-subtle px-800 py-800">
-            <button type="button" class="Item dynamic-background-interactive">
-              <span class="Item__label">Item on emotion-warning-basic</span>
-            </button>
-          </div>
-
-          <div class="bg-emotion-warning-subtle text-emotion-warning-basic px-800 py-800">
-            <button type="button" class="Item dynamic-background-interactive">
-              <span class="Item__label">Item on emotion-warning-subtle</span>
-            </button>
-          </div>
+          {{#each @root.emotionColors as |color|}}
+            <div class="bg-emotion-{{color}}-basic text-emotion-{{color}}-subtle px-800 py-800">
+              <button type="button" class="Item dynamic-background-interactive">
+                <span class="Item__label">Item on emotion-{{color}}-basic</span>
+              </button>
+            </div>
+            <div class="bg-emotion-{{color}}-subtle text-emotion-{{color}}-basic px-800 py-800">
+              <button type="button" class="Item dynamic-background-interactive">
+                <span class="Item__label">Item on emotion-{{color}}-subtle</span>
+              </button>
+            </div>
+          {{/each}}
 
         </div>
         <div class="docs-Stack docs-Stack--stretch">
 
           <h3>Accent colors</h3>
 
-          <div class="bg-accent-01-basic text-accent-01-subtle px-800 py-800">
-            <button type="button" class="Item dynamic-background-interactive">
-              <span class="Item__label">Item on accent-01-basic</span>
-            </button>
-          </div>
-
-          <div class="bg-accent-01-subtle text-accent-01-basic px-800 py-800">
-            <button type="button" class="Item dynamic-background-interactive">
-              <span class="Item__label">Item on accent-01-subtle</span>
-            </button>
-          </div>
-
-          <div class="bg-accent-02-basic text-accent-02-subtle px-800 py-800">
-            <button type="button" class="Item dynamic-background-interactive">
-              <span class="Item__label">Item on accent-02-basic</span>
-            </button>
-          </div>
-
-          <div class="bg-accent-02-subtle text-accent-02-basic px-800 py-800">
-            <button type="button" class="Item dynamic-background-interactive">
-              <span class="Item__label">Item on accent-02-subtle</span>
-            </button>
-          </div>
+          {{#each @root.accentColors as |color|}}
+            <div class="bg-accent-{{color}}-basic text-accent-{{color}}-subtle px-800 py-800">
+              <button type="button" class="Item dynamic-background-interactive">
+                <span class="Item__label">Item on accent-{{color}}-basic</span>
+              </button>
+            </div>
+            <div class="bg-accent-{{color}}-subtle text-accent-{{color}}-basic px-800 py-800">
+              <button type="button" class="Item dynamic-background-interactive">
+                <span class="Item__label">Item on accent-{{color}}-subtle</span>
+              </button>
+            </div>
+          {{/each}}
 
         </div>
       </div>
