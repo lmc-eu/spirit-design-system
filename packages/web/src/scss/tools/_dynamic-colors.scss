@@ -5,10 +5,6 @@
 // `bg-secondary`, `bg-emotion-success-basic`, or even `bg-gradient-primary`.
 // If `--spirit-local-background-color` is not available, no background color can be applied.
 
-// TODO document thoroughly.
-// TODO walk through other components.
-// TODO maybe it's a helper class? But the components need to be compatible anyway, see the text color…
-
 $_lightness-delta-selected: 0.3;
 $_lightness-delta-state-hover: 0.3;
 $_lightness-delta-state-active: 0.45;
