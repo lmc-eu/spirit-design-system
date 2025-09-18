@@ -3,6 +3,8 @@
 # Exclude build/test files from archive
 /.github            export-ignore
 /bin                export-ignore
+/demo               export-ignore
+/docker             export-ignore
 /docs               export-ignore
 /tests              export-ignore
 /.editorconfig      export-ignore
