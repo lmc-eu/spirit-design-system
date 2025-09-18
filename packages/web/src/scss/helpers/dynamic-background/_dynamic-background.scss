@@ -1,0 +1,18 @@
+@use '../../tools/dynamic-colors';
+
+.dynamic-background-interactive {
+    @include dynamic-colors.background-interactive();
+
+    color: inherit;
+}
+
+.dynamic-background-selected {
+    @include dynamic-colors.background-selected();
+
+    color: inherit;
+
+    &:hover,
+    &:active {
+        color: inherit;
+    }
+}
