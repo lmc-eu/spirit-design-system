@@ -1,0 +1,75 @@
+@use 'true' as test;
+@use '../dynamic-colors';
+
+@include test.describe('alter-color function returns correct dynamic color') {
+    @include test.it('should return correct color') {
+        @include test.assert() {
+            @include test.output() {
+                --color-altered: #{dynamic-colors.alter-color($color: #bada55, $lightness-delta: 0.5, $chroma-scale: 2)};
+            }
+
+            @include test.expect() {
+                --color-altered: oklch(from #bada55 calc(l + 0.5 * (0.8 - l)) clamp(0, c * (1 + 2 * (l - 0.5)), 0.2) h);
+            }
+        }
+    }
+}
+
+@include test.describe('background color mixins') {
+    @include test.it('background-interactive mixin generates proper interactive states') {
+        @include test.assert() {
+            @include test.output() {
+                .test-button {
+                    @include dynamic-colors.background-interactive();
+                }
+            }
+
+            // prettier-ignore
+            @include test.expect() {
+                .test-button {
+                    --spirit-local-background-color-state-default: var(--spirit-color-background-interactive-state-default);
+                    --spirit-local-background-color-state-hover: var(--spirit-color-background-interactive-state-hover);
+                    --spirit-local-background-color-state-active: var(--spirit-color-background-interactive-state-active);
+
+                    @supports (color: oklch(from red l c h)) {
+                        --spirit-local-background-color-state-hover: oklch(from var(--spirit-local-background-color) calc(l + 0.3 * (0.8 - l)) clamp(0, c * (1 + 4 * (l - 0.5)), 0.2) h);
+                        --spirit-local-background-color-state-active: oklch(from var(--spirit-local-background-color) calc(l + 0.45 * (0.8 - l)) clamp(0, c * (1 + 4 * (l - 0.5)), 0.2) h);
+                    }
+
+                    background-color: var(--spirit-local-background-color-state-default);
+
+                    @media (hover: hover) {
+                        &:hover {
+                            background-color: var(--spirit-local-background-color-state-hover);
+                        }
+                    }
+
+                    &:active {
+                        background-color: var(--spirit-local-background-color-state-active);
+                    }
+                }
+            }
+        }
+    }
+
+    @include test.it('background-selected mixin generates correct CSS') {
+        @include test.assert() {
+            @include test.output() {
+                .test-element {
+                    @include dynamic-colors.background-selected();
+                }
+            }
+
+            @include test.expect() {
+                @supports (color: oklch(from red l c h)) {
+                    .test-element {
+                        background-color: oklch(
+                            from var(--spirit-local-background-color) calc(l + 0.3 * (0.8 - l))
+                                clamp(0, calc(c * (1 + 4 * (l - 0.5))), 0.2) h
+                        );
+                    }
+                }
+            }
+        }
+    }
+}
