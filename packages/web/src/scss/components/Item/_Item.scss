@@ -1,11 +1,13 @@
 // 1. Make the icon span two rows to spread over the whole Item vertically and make it centered.
 
 @use 'sass:map';
-@use 'theme';
+@use '@tokens' as tokens;
 @use '../../settings/cursors';
+@use '../../tools/dynamic-colors';
 @use '../../tools/form-fields';
 @use '../../tools/reset';
 @use '../../tools/typography';
+@use 'theme';
 
 .Item:where(button) {
     @include reset.button();

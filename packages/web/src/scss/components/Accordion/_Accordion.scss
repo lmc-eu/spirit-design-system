@@ -18,9 +18,10 @@
 // 8. Decorative border after the last item in the open state.
 
 @use 'sass:map';
-@use 'theme';
+@use '@tokens' as tokens;
 @use '../../tools/typography';
 @use '../../tools/reset';
+@use 'theme';
 
 .Accordion__itemHeader {
     position: relative; // 2.
@@ -68,7 +69,10 @@
         inset: 0;
         z-index: -1; // 7.
         border-radius: theme.$accordion-border-radius;
-        background-color: theme.$accordion-item-background-color-state-default; // 3.a
+        background-color: var(
+            --#{tokens.$css-variable-prefix}local-background-color-state-default,
+            #{theme.$accordion-item-background-color-state-default}
+        ); // 3.a
     }
 
     &[aria-expanded='true'] {
@@ -85,7 +89,10 @@
     // 3.b
     // stylelint-disable-next-line selector-max-specificity -- High specificity to target the background pseudo element (2).
     .Accordion__itemHeader:hover .Accordion__itemToggle:first-of-type::before {
-        background-color: theme.$accordion-item-background-color-state-hover;
+        background-color: var(
+            --#{tokens.$css-variable-prefix}local-background-color-state-hover,
+            #{theme.$accordion-item-background-color-state-hover}
+        );
     }
 }
 
@@ -93,7 +100,10 @@
     // 3.c
     // stylelint-disable-next-line selector-max-specificity -- High specificity to override the hover state selector 3.b.
     .Accordion__itemHeader .Accordion__itemToggle:active:first-of-type::before {
-        background-color: theme.$accordion-item-background-color-state-active;
+        background-color: var(
+            --#{tokens.$css-variable-prefix}local-background-color-state-active,
+            #{theme.$accordion-item-background-color-state-active}
+        );
     }
 }
 
