@@ -1,5 +1,9 @@
 {{#> web/layout/default title="Item" parentPageName="Components" }}
 
+{{setVar "basicColors" "primary" "secondary" "tertiary" }}
+{{setVar "emotionColors" "success" "informative" "warning" "danger" }}
+{{setVar "accentColors" "01" "02" }}
+
 <section class="py-900 py-tablet-1000">
 
   <div class="Container">
@@ -64,11 +68,79 @@
       <button type="button" class="Item Item--disabled Item--selected">
         <span class="Item__label">Item label</span>
         <span class="Item__icon Item__icon--end">
-        <svg width="24" height="24" aria-hidden="true">
-          <use xlink:href="/assets/icons/svg/sprite.svg#check-plain" />
-        </svg>
-      </span>
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/assets/icons/svg/sprite.svg#check-plain" />
+          </svg>
+        </span>
       </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="py-900 py-tablet-1000">
+
+  <div class="Container">
+
+    <h2 class="docs-Heading">Dynamic Background Color</h2>
+
+    <div class="docs-Stack docs-Stack--start">
+      <div
+        class="Grid Grid--alignmentXStretch Grid--alignmentYTop Grid--cols-1 Grid--desktop--cols-3"
+        style="--grid-spacing-y: var(--spirit-space-1100);"
+      >
+        <div class="docs-Stack docs-Stack--stretch">
+
+          <h3>Basic background colors</h3>
+
+          {{#each @root.basicColors as |color|}}
+            <div class="bg-{{color}} px-800 py-800">
+              <button type="button" class="Item dynamic-background-interactive">
+                <span class="Item__label">Item on {{primary}} background</span>
+              </button>
+            </div>
+          {{/each}}
+
+        </div>
+        <div class="docs-Stack docs-Stack--stretch">
+
+          <h3>Emotion colors</h3>
+
+          {{#each @root.emotionColors as |color|}}
+            <div class="bg-emotion-{{color}}-basic text-emotion-{{color}}-subtle px-800 py-800">
+              <button type="button" class="Item dynamic-background-interactive">
+                <span class="Item__label">Item on emotion-{{color}}-basic</span>
+              </button>
+            </div>
+            <div class="bg-emotion-{{color}}-subtle text-emotion-{{color}}-basic px-800 py-800">
+              <button type="button" class="Item dynamic-background-interactive">
+                <span class="Item__label">Item on emotion-{{color}}-subtle</span>
+              </button>
+            </div>
+          {{/each}}
+
+        </div>
+        <div class="docs-Stack docs-Stack--stretch">
+
+          <h3>Accent colors</h3>
+
+          {{#each @root.accentColors as |color|}}
+            <div class="bg-accent-{{color}}-basic text-accent-{{color}}-subtle px-800 py-800">
+              <button type="button" class="Item dynamic-background-interactive">
+                <span class="Item__label">Item on accent-{{color}}-basic</span>
+              </button>
+            </div>
+            <div class="bg-accent-{{color}}-subtle text-accent-{{color}}-basic px-800 py-800">
+              <button type="button" class="Item dynamic-background-interactive">
+                <span class="Item__label">Item on accent-{{color}}-subtle</span>
+              </button>
+            </div>
+          {{/each}}
+
+        </div>
+      </div>
 
     </div>
 
@@ -93,10 +165,10 @@
         <span class="Item__label">Item label</span>
         <span class="Item__helperText">Helper text</span>
         <span class="Item__icon Item__icon--end">
-        <svg width="24" height="24" aria-hidden="true">
-          <use xlink:href="/assets/icons/svg/sprite.svg#check-plain" />
-        </svg>
-      </span>
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/assets/icons/svg/sprite.svg#check-plain" />
+          </svg>
+        </span>
       </button>
 
       <button type="button" class="Item Item--disabled">
@@ -108,10 +180,10 @@
         <span class="Item__label">Item label</span>
         <span class="Item__helperText">Helper text</span>
         <span class="Item__icon Item__icon--end">
-        <svg width="24" height="24" aria-hidden="true">
-          <use xlink:href="/assets/icons/svg/sprite.svg#check-plain" />
-        </svg>
-      </span>
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/assets/icons/svg/sprite.svg#check-plain" />
+          </svg>
+        </span>
       </button>
     </div>
 
@@ -145,10 +217,10 @@
       </span>
         <span class="Item__label">Item label</span>
         <span class="Item__icon Item__icon--end">
-        <svg width="24" height="24" aria-hidden="true">
-          <use xlink:href="/assets/icons/svg/sprite.svg#check-plain" />
-        </svg>
-      </span>
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/assets/icons/svg/sprite.svg#check-plain" />
+          </svg>
+        </span>
       </button>
 
     </div>

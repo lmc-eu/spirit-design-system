@@ -202,6 +202,32 @@ Then link it using the `data-spirit-parent` attribute on individual Collapse ite
 <!-- More Accordion items here… -->
 ```
 
+## Dynamic Background Color
+
+Use the `dynamic-background-interactive` helper class on the toggle element to change background colors of the accordion header in interactive states based on the background color of the parent element.
+
+👉 Spirit color utilities are required to use for this feature to work correctly in all scenarios.
+
+👉 Except the basic background colors, you will need to set both background color and text color.
+
+For example, to change the background color of the item when the parent element is `bg-emotion-success-basic text-emotion-success-subtle`:
+
+```html
+<div class="bg-emotion-success-basic text-emotion-success-subtle">
+  <!-- (Accordion item header) -->
+  <button
+    type="button"
+    class="Accordion__itemToggle dynamic-background-interactive"
+    data-spirit-toggle="collapse"
+    data-spirit-target="example-1-item-1-collapse"
+    aria-expanded="false"
+  >
+    Accordion Item no. 1
+  </button>
+  <!-- (Accordion item content) -->
+</div>
+```
+
 ## Attributes
 
 All attributes are inherited from the [**Collapse** component][collapse].
