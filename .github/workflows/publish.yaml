@@ -52,6 +52,7 @@ jobs:
         run: yarn build
 
       # TODO: Remove after Trusted Publishers are working
+      # Uncomment the following line if trusted publishing is not configured or if you encounter authentication errors.
       # - name: Authenticate npm
       #   run: ./bin/ci/npm-auth.sh
       #   env:
@@ -61,6 +62,7 @@ jobs:
         run: make publish
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Uncomment the following line if trusted publishing is not configured or if you encounter authentication errors.
           # NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Post Changelog
