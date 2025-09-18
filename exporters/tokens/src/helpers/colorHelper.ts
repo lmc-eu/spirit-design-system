@@ -1,5 +1,5 @@
 import { Token, TokenType } from '@supernovaio/sdk-exporters';
-import { TOKEN_COLLECTION_NAME, TOKEN_PROPERTY_NAME } from '../constants';
+import { TOKEN_COLLECTION_THEMES_NAME, TOKEN_COLLECTION_PROPERTY_NAME } from '../constants';
 
 const HEX_COLOR_REGEX = /#([A-Fa-f0-9]{6,8})\b/g;
 const LONG_HEX_WITH_ALPHA_LENGTH = 8;
@@ -85,12 +85,12 @@ export const filterColorCollections = (tokens: Token[]) => {
     }
 
     // Proceed with filtering for "Color" tokenType
-    const collectionProperty = item.properties.find((prop) => prop.name === TOKEN_PROPERTY_NAME);
+    const collectionProperty = item.properties.find((prop) => prop.name === TOKEN_COLLECTION_PROPERTY_NAME);
     if (!collectionProperty) {
       return false;
     }
 
-    const themeTokenOption = collectionProperty.options?.find((option) => option.name === TOKEN_COLLECTION_NAME);
+    const themeTokenOption = collectionProperty.options?.find((option) => option.name === TOKEN_COLLECTION_THEMES_NAME);
     if (!themeTokenOption) {
       return false;
     }

@@ -9,8 +9,8 @@ import {
 import { DEVICES_DIRECTORY, GLOBAL_DIRECTORY, JS_DIRECTORY, SCSS_DIRECTORY, THEMES_DIRECTORY } from '../constants';
 import { indentAndFormat } from '../formatters/stylesFormatter';
 import {
-  filterAllCollections,
   filterDeviceCollections,
+  filterGlobalCollections,
   filterThemesByCollection,
   getCollectionId,
 } from '../helpers/collectionsHelper';
@@ -96,7 +96,7 @@ export const generateOutputFilesByThemes = async (
   const outputFiles: { path: string; fileName: string; content: string }[] = [];
   const filteredColorCollections = filterColorCollections(tokens);
   const filteredDeviceCollections = filterDeviceCollections(tokens);
-  const filteredGlobalCollections = filterAllCollections(tokens);
+  const filteredGlobalCollections = filterGlobalCollections(tokens);
   const deviceCollectionId = getCollectionId(filteredDeviceCollections);
 
   // themes from color collections and omits device themes
