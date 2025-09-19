@@ -1,11 +1,11 @@
 import { SpacingStyleProp as DefaultSpacingStyleProp, DisplayStyleProps } from '../constants';
 import {
   BREAKPOINT_MOBILE,
-  BreakpointToken,
+  type BreakpointToken,
   STYLE_SPACING_AUTO,
-  SpaceToken,
-  StyleProps,
-  StyleSpacingAuto,
+  type SpaceToken,
+  type StyleProps,
+  type StyleSpacingAuto,
 } from '../types';
 import { applyClassNamePrefix, isEmpty } from '../utils';
 

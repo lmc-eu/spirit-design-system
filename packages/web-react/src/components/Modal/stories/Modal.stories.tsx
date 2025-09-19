@@ -3,10 +3,10 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 import React, { useState } from 'react';
 import { AlignmentY } from '../../../constants';
-import { SpiritModalProps } from '../../../types';
+import { type SpiritModalProps } from '../../../types';
 import { Button } from '../../Button';
 import ReadMe from '../README.md';
-import { Modal, ModalHeader, ModalDialog, ModalBody, ModalFooter } from '..';
+import { Modal, ModalBody, ModalDialog, ModalFooter, ModalHeader } from '..';
 
 const meta: Meta<typeof Modal> = {
   title: 'Components/Modal',

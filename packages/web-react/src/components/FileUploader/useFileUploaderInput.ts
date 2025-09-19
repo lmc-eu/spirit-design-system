@@ -1,7 +1,11 @@
-import { ChangeEvent, DragEvent, useEffect, useState } from 'react';
+import { type ChangeEvent, type DragEvent, useEffect, useState } from 'react';
 import { warning } from '../../common/utilities';
 import { useDragAndDrop } from '../../hooks';
-import { DragAndDropHandlingProps, FileQueueMapType, FileUploaderQueueLimitBehaviorType } from '../../types';
+import {
+  type DragAndDropHandlingProps,
+  type FileQueueMapType,
+  type FileUploaderQueueLimitBehaviorType,
+} from '../../types';
 import { useFileUploaderContext } from './FileUploaderContext';
 
 export interface UseFileUploaderInputProps {

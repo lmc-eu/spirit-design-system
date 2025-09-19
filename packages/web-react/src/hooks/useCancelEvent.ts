@@ -1,4 +1,4 @@
-import { useCallback, MutableRefObject } from 'react';
+import { type MutableRefObject, useCallback } from 'react';
 import { useIsomorphicLayoutEffect } from './useIsomorphicLayoutEffect';
 
 // TODO: Remove `isOpen` and listeners with `handleKeyDown` when Chrome fixes the bug,

@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import React, { ComponentType } from 'react';
+import React, { type ComponentType } from 'react';
 
 /**
  * Tests whether a given React component renders an element with the expected tag name.

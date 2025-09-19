@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { SpiritStackProps } from '../../../types';
+import { type SpiritStackProps } from '../../../types';
 import { useStackStyleProps } from '../useStackStyleProps';
 
 describe('useStackStyleProps', () => {

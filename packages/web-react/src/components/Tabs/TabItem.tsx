@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import { useStyleProps } from '../../hooks';
-import { ClickEvent, TabItemProps } from '../../types';
+import { type ClickEvent, type TabItemProps } from '../../types';
 import { useTabContext } from './TabContext';
 import { useTabsStyleProps } from './useTabsStyleProps';
 

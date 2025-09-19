@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import { htmlElementAttributes } from 'html-element-attributes';
-import React, { ComponentType } from 'react';
+import React, { type ComponentType } from 'react';
 import { getComponentName } from '../testUtils/getComponentName';
 
 const globalAttributes = [...htmlElementAttributes['*'], 'role'];

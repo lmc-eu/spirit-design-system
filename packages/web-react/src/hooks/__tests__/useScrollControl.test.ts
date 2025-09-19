@@ -1,5 +1,5 @@
 import { act, renderHook } from '@testing-library/react';
-import { MutableRefObject } from 'react';
+import { type MutableRefObject } from 'react';
 import { useScrollControl } from '../useScrollControl';
 
 describe('useScrollControl', () => {

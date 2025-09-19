@@ -14,7 +14,7 @@ import { defaultSvgLogo } from '../../../src/components/ProductLogo/demo/Product
 import { Select } from '../../../src/components/Select';
 import { Stack } from '../../../src/components/Stack';
 import { VisuallyHidden } from '../../../src/components/VisuallyHidden';
-import { GridColumns } from '../../../src/types';
+import { type GridColumns } from '../../../src/types';
 
 type FooterCompositionsProps = {
   headingsWithLink: boolean;
@@ -107,18 +107,16 @@ type NavLinkColumnFactoryType = {
   withNestedLinks?: boolean;
 };
 
-const NavLinkColumnFactory = ({ id, headline, numOfLinks, withNestedLinks = false }: NavLinkColumnFactoryType) => {
-  return (
-    <nav aria-labelledby={id} className={withNestedLinks ? 'mb-1000' : undefined}>
-      <Heading id={id} elementType="h3" size="xsmall" emphasis="semibold" marginBottom="space-700">
-        {headline}
-      </Heading>
-      <Stack elementType="ul" spacing="space-600" hasSpacing>
-        <FooterLinkFactory items={numOfLinks} label="Link" />
-      </Stack>
-    </nav>
-  );
-};
+const NavLinkColumnFactory = ({ id, headline, numOfLinks, withNestedLinks = false }: NavLinkColumnFactoryType) => (
+  <nav aria-labelledby={id} className={withNestedLinks ? 'mb-1000' : undefined}>
+    <Heading id={id} elementType="h3" size="xsmall" emphasis="semibold" marginBottom="space-700">
+      {headline}
+    </Heading>
+    <Stack elementType="ul" spacing="space-600" hasSpacing>
+      <FooterLinkFactory items={numOfLinks} label="Link" />
+    </Stack>
+  </nav>
+);
 
 export const FooterCompositions = (args: FooterCompositionsProps) => {
   const {
@@ -169,9 +167,7 @@ export const FooterCompositions = (args: FooterCompositionsProps) => {
     }
   };
 
-  const columnHeading = (text: string) => {
-    return headingsWithLink ? <Link href="#">{text}</Link> : text;
-  };
+  const columnHeading = (text: string) => (headingsWithLink ? <Link href="#">{text}</Link> : text);
 
   const numOfColumnsOnDesktop = () => {
     if (numberOfLinkColumns > 7) {

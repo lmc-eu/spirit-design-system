@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AccordionOpenStateType } from '../../../types';
+import { type AccordionOpenStateType } from '../../../types';
 import Accordion from '../Accordion';
 import AccordionContent from '../AccordionContent';
 import AccordionHeader from '../AccordionHeader';

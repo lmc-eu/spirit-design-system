@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
-import { render, waitFor, screen } from '@testing-library/react';
-import React, { ComponentType } from 'react';
+import { render, screen, waitFor } from '@testing-library/react';
+import React, { type ComponentType } from 'react';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const toBeInDocumentProviderTest = (Component: ComponentType<any>, selector?: string, testId?: string) => {

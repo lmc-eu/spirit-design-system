@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import DocsStack from '../../../../docs/DocsStack';
 import { FillVariants } from '../../../constants';
-import { FillVariantDictionaryType } from '../../../types';
+import { type FillVariantDictionaryType } from '../../../types';
 import { UNSTABLE_Truncate } from '../../UNSTABLE_Truncate';
 import SegmentedControl from '../SegmentedControl';
 import SegmentedControlItem from '../SegmentedControlItem';

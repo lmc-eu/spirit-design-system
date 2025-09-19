@@ -1,6 +1,6 @@
-import { ElementType, ReactNode } from 'react';
-import { ChildrenProps, StyleProps, TransferProps, ValidationTextProp } from '../../types';
-import { RegisterType } from './useAriaIds';
+import { type ElementType, type ReactNode } from 'react';
+import { type ChildrenProps, type StyleProps, type TransferProps, type ValidationTextProp } from '../../types';
+import { type RegisterType } from './useAriaIds';
 
 export interface FieldElementTypeProps<T extends ElementType = 'div'> {
   /**

@@ -1,4 +1,4 @@
-import { FlexDirectionType } from '../types';
+import { type FlexDirectionType } from '../types';
 import { generateStylePropsClassNames } from '../utils';
 
 export function useDirectionClass(componentClass: string, property: FlexDirectionType) {

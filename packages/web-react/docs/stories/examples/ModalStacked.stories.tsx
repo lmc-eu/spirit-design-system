@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Modal, ModalDialog, ModalHeader, ModalBody, ModalFooter } from '../../../src/components';
+import { Button, Modal, ModalBody, ModalDialog, ModalFooter, ModalHeader } from '../../../src/components';
 
 export default {
   title: 'Examples/Compositions/Modals',

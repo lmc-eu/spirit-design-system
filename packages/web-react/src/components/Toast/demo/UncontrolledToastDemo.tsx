@@ -65,13 +65,11 @@ const ShowToastButton = () => {
   );
 };
 
-const UncontrolledToastDemo = () => {
-  return (
-    <ToastProvider>
-      <ShowToastButton />
-      <UncontrolledToast alignmentX="right" alignmentY="top" closeLabel="Close" />
-    </ToastProvider>
-  );
-};
+const UncontrolledToastDemo = () => (
+  <ToastProvider>
+    <ShowToastButton />
+    <UncontrolledToast alignmentX="right" alignmentY="top" closeLabel="Close" />
+  </ToastProvider>
+);
 
 export default UncontrolledToastDemo;

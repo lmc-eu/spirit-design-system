@@ -1,7 +1,7 @@
 'use client';
 
 import { createContext, useContext } from 'react';
-import { FileUploaderHandlingProps, FileUploaderErrorMessagesProps } from '../../types';
+import { type FileUploaderErrorMessagesProps, type FileUploaderHandlingProps } from '../../types';
 
 export interface FileUploaderContextProps extends FileUploaderHandlingProps, FileUploaderErrorMessagesProps {}
 

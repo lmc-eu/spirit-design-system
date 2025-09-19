@@ -1,5 +1,12 @@
-import { ElementType, JSXElementConstructor } from 'react';
-import { BreakpointToken, GridColumns, ChildrenProps, SpaceToken, StyleProps, TransferProps } from './shared';
+import { type ElementType, type JSXElementConstructor } from 'react';
+import {
+  type BreakpointToken,
+  type ChildrenProps,
+  type GridColumns,
+  type SpaceToken,
+  type StyleProps,
+  type TransferProps,
+} from './shared';
 
 export interface MatrixElementTypeProps<T extends ElementType = 'div'> {
   /**

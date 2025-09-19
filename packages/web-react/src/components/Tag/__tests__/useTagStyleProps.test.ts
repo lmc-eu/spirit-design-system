@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { SpiritTagProps } from '../../../types';
+import { type SpiritTagProps } from '../../../types';
 import { useTagStyleProps } from '../useTagStyleProps';
 
 describe('useTagStyleProps', () => {

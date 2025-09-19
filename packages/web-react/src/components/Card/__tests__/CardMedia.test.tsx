@@ -4,8 +4,8 @@ import React from 'react';
 import {
   ariaAttributesTest,
   classNamePrefixProviderTest,
-  sizePropsTest,
   restPropsTest,
+  sizePropsTest,
   stylePropsTest,
   validHtmlAttributesTest,
 } from '@local/tests';

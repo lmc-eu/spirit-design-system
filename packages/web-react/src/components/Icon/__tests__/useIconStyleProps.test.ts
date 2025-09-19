@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { IconColorType, SpiritIconProps } from '../../../types';
+import { type IconColorType, type SpiritIconProps } from '../../../types';
 import { useIconStyleProps } from '../useIconStyleProps';
 import { iconColors } from '../utils';
 

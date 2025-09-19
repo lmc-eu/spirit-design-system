@@ -3,7 +3,7 @@
  *
  * @see { @link https://usehooks-ts.com/react-hook/use-resize-observer }
  */
-import { useEffect, useRef, useState, type RefObject } from 'react';
+import { type RefObject, useEffect, useRef, useState } from 'react';
 import { isSSR } from '../utils';
 import { useIsMounted } from './useIsMounted';
 

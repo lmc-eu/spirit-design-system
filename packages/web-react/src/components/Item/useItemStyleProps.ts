@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks/useClassNamePrefix';
-import { ItemStyleProps } from '../../types';
+import { type ItemStyleProps } from '../../types';
 
 export interface ItemStyles {
   /** className props */

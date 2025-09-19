@@ -1,9 +1,9 @@
 'use client';
 
 import classNames from 'classnames';
-import React, { ForwardedRef, forwardRef } from 'react';
+import React, { type ForwardedRef, forwardRef } from 'react';
 import { useAriaDescribedBy, useStyleProps } from '../../hooks';
-import { SpiritRadioProps } from '../../types';
+import { type SpiritRadioProps } from '../../types';
 import { HelperText, Label, useAriaIds } from '../Field';
 import { useRadioStyleProps } from './useRadioStyleProps';
 

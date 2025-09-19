@@ -1,6 +1,6 @@
 import React from 'react';
 import DocsStack from '../../../../docs/DocsStack';
-import { IconColorType } from '../../../types';
+import { type IconColorType } from '../../../types';
 import { Flex } from '../../Flex';
 import Icon from '../Icon';
 

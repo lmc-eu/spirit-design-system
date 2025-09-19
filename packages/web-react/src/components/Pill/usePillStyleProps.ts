@@ -1,7 +1,7 @@
 import classNames from 'classnames';
-import { ElementType } from 'react';
+import { type ElementType } from 'react';
 import { useClassNamePrefix } from '../../hooks';
-import { SpiritPillProps } from '../../types';
+import { type SpiritPillProps } from '../../types';
 
 export interface PillStyles {
   /** className props */

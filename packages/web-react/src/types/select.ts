@@ -1,12 +1,12 @@
-import { ReactNode } from 'react';
-import { LabelProps } from './label';
+import { type ReactNode } from 'react';
+import { type LabelProps } from './label';
 import {
-  HelperTextProps,
-  RequiredProps,
-  SizesDictionaryType,
-  SpiritSelectElementPropsWithRef,
-  Validation,
-  ValidationTextType,
+  type HelperTextProps,
+  type RequiredProps,
+  type SizesDictionaryType,
+  type SpiritSelectElementPropsWithRef,
+  type Validation,
+  type ValidationTextType,
 } from './shared';
 
 export type SelectElementBaseProps = Omit<SpiritSelectElementPropsWithRef, 'size'>;

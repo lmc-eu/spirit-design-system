@@ -1,5 +1,5 @@
-import { CSSProperties } from 'react';
-import { DimensionType, SpacingCSSProperties } from '../types';
+import { type CSSProperties } from 'react';
+import { type DimensionType, type SpacingCSSProperties } from '../types';
 
 export interface DimensionCSSProperties extends SpacingCSSProperties {}
 

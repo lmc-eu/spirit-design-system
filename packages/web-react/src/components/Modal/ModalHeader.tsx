@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import { useStyleProps } from '../../hooks';
-import { ModalHeaderProps } from '../../types';
+import { type ModalHeaderProps } from '../../types';
 import ModalCloseButton from './ModalCloseButton';
 import { useModalContext } from './ModalContext';
 import { useModalStyleProps } from './useModalStyleProps';

@@ -1,8 +1,8 @@
 'use client';
 
-import React, { ReactElement } from 'react';
+import React, { type ReactElement } from 'react';
 import { AlignmentXExtended, DirectionExtended } from '../../constants';
-import { SpiritActionGroupProps } from '../../types';
+import { type SpiritActionGroupProps } from '../../types';
 import { Flex } from '../Flex';
 
 const defaultProps: Partial<SpiritActionGroupProps> = {

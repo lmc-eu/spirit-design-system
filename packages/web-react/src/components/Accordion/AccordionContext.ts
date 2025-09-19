@@ -1,7 +1,7 @@
 'use client';
 
 import { createContext, useContext } from 'react';
-import { AccordionHandlingProps } from '../../types';
+import { type AccordionHandlingProps } from '../../types';
 
 const defaultContext: AccordionHandlingProps = {
   open: undefined,

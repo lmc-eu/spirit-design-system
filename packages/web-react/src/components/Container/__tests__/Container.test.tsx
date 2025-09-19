@@ -5,8 +5,8 @@ import {
   ariaAttributesTest,
   classNamePrefixProviderTest,
   restPropsTest,
-  stylePropsTest,
   sizeExtendedPropsTest,
+  stylePropsTest,
   textAlignmentPropsTest,
   validHtmlAttributesTest,
 } from '@local/tests';

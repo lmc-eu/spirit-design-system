@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks/useClassNamePrefix';
-import { BreadcrumbsStyleProps } from '../../types';
+import { type BreadcrumbsStyleProps } from '../../types';
 
 export interface BreadcrumbsStyles {
   /** className props */

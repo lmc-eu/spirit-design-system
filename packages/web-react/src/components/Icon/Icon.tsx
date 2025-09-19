@@ -1,8 +1,8 @@
 'use client';
 
-import React, { ForwardedRef, forwardRef } from 'react';
+import React, { type ForwardedRef, forwardRef } from 'react';
 import { useIcon, useStyleProps } from '../../hooks';
-import { SpiritIconProps } from '../../types';
+import { type SpiritIconProps } from '../../types';
 import { htmlReactParser, mergeStyleProps } from '../../utils';
 import { DEFAULT_BOX_SIZE } from './constants';
 import { useIconBoxSize } from './useIconBoxSize';

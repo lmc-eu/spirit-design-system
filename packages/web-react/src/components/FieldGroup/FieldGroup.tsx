@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import { useAriaDescribedBy, useStyleProps } from '../../hooks';
-import { SpiritFieldGroupProps } from '../../types';
+import { type SpiritFieldGroupProps } from '../../types';
 import { HelperText, ValidationText, useAriaIds } from '../Field';
 import { useValidationTextRole } from '../Field/useValidationTextRole';
 import { VisuallyHidden } from '../VisuallyHidden';

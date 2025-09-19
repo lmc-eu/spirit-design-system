@@ -1,8 +1,8 @@
 'use client';
 
-import React, { ElementType } from 'react';
+import React, { type ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
-import { DropdownTriggerProps } from '../../types';
+import { type DropdownTriggerProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { useDropdownContext } from './DropdownContext';
 import { useDropdownAriaProps } from './useDropdownAriaProps';

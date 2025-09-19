@@ -1,14 +1,14 @@
-import { ChangeEvent, ReactNode } from 'react';
-import { LabelProps } from './label';
+import { type ChangeEvent, type ReactNode } from 'react';
+import { type LabelProps } from './label';
 import {
-  ChildrenProps,
-  HelperTextProps,
-  InputBaseProps,
-  RequiredProps,
-  SpiritInputElementPropsWithRef,
-  StyleProps,
-  Validation,
-  ValidationTextType,
+  type ChildrenProps,
+  type HelperTextProps,
+  type InputBaseProps,
+  type RequiredProps,
+  type SpiritInputElementPropsWithRef,
+  type StyleProps,
+  type Validation,
+  type ValidationTextType,
 } from './shared';
 
 export type ToggleElementBaseProps = SpiritInputElementPropsWithRef;

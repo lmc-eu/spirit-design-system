@@ -1,9 +1,9 @@
 'use client';
 
-import React, { ElementType, ForwardedRef, forwardRef } from 'react';
+import React, { type ElementType, type ForwardedRef, forwardRef } from 'react';
 import { usePropsContext } from '../../context';
 import { useStyleProps } from '../../hooks';
-import { SpiritButtonProps } from '../../types';
+import { type SpiritButtonProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { Spinner } from '../Spinner';
 import { useButtonProps } from './useButtonProps';

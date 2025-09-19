@@ -1,8 +1,8 @@
 'use client';
 
-import React, { ElementType } from 'react';
+import React, { type ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
-import { SpiritPillProps } from '../../types';
+import { type SpiritPillProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { PillColorsExtended } from './constants';
 import { usePillStyleProps } from './usePillStyleProps';

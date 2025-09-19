@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import React from 'react';
 import { AlignmentX, AlignmentY } from '../../constants';
 import { useStyleProps } from '../../hooks';
-import { SpiritToastProps } from '../../types';
+import { type SpiritToastProps } from '../../types';
 import { useToastStyleProps } from './useToastStyleProps';
 
 const defaultProps: SpiritToastProps = {

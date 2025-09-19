@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { SegmentedControlMultiselectProps } from '../../types/segmentedControl';
+import { type SegmentedControlMultiselectProps } from '../../types/segmentedControl';
 
 type UseSegmentedControlProps = SegmentedControlMultiselectProps & {
   defaultSelectedValue?: string | string[];

@@ -2,8 +2,8 @@
 
 import classNames from 'classnames';
 import React from 'react';
-import { useStyleProps, useLastActiveFocus } from '../../hooks';
-import { SpiritDrawerProps } from '../../types';
+import { useLastActiveFocus, useStyleProps } from '../../hooks';
+import { type SpiritDrawerProps } from '../../types';
 import { Dialog } from '../Dialog';
 import { DRAWER_ALIGNMENT_DEFAULT } from './constants';
 import { DrawerProvider } from './DrawerContext';

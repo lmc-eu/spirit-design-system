@@ -5,13 +5,13 @@ import {
   ariaAttributesTest,
   classNamePrefixProviderTest,
   componentButtonColorPropsTest,
+  elementTypePropsTest,
   emotionColorPropsTest,
-  sizePropsTest,
   loadingPropsTest,
   restPropsTest,
+  sizePropsTest,
   stylePropsTest,
   validHtmlAttributesTest,
-  elementTypePropsTest,
 } from '@local/tests';
 import Button from '../Button';
 

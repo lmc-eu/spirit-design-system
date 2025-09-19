@@ -1,11 +1,11 @@
-import { ElementType, HTMLProps } from 'react';
+import { type ElementType, type HTMLProps } from 'react';
 import {
-  ChildrenProps,
-  ClickEvents,
-  SpacingProp,
-  SpiritPolymorphicElementPropsWithRef,
-  StyleProps,
-  TransferProps,
+  type ChildrenProps,
+  type ClickEvents,
+  type SpacingProp,
+  type SpiritPolymorphicElementPropsWithRef,
+  type StyleProps,
+  type TransferProps,
 } from './shared';
 
 export type TabId = string | number;

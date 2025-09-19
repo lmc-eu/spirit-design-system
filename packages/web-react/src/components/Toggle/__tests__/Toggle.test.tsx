@@ -4,11 +4,11 @@ import React from 'react';
 import {
   ariaAttributesTest,
   classNamePrefixProviderTest,
-  validationStatePropsTest,
   requiredPropsTest,
   restPropsTest,
   stylePropsTest,
   validHtmlAttributesTest,
+  validationStatePropsTest,
 } from '@local/tests';
 import Toggle from '../Toggle';
 

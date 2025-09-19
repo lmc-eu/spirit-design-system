@@ -1,9 +1,9 @@
 import { cssVariablePrefix } from '@lmc-eu/spirit-design-tokens';
 import classNames from 'classnames';
-import { CSSProperties, ElementType } from 'react';
+import { type CSSProperties, type ElementType } from 'react';
 import { DirectionAxis } from '../../constants';
-import { DimensionCSSProperties, useClassNamePrefix, useDimensionStyle, useSpacingStyle } from '../../hooks';
-import { DimensionType, SpiritMatrixProps } from '../../types';
+import { type DimensionCSSProperties, useClassNamePrefix, useDimensionStyle, useSpacingStyle } from '../../hooks';
+import { type DimensionType, type SpiritMatrixProps } from '../../types';
 import { MATRIX_ROWS_DEFAULT } from './constant';
 
 export interface MatrixStyles<T> {

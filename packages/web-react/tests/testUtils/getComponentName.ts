@@ -1,4 +1,4 @@
-import { ComponentType } from 'react';
+import { type ComponentType } from 'react';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const getComponentName = (Component: ComponentType<any>): string => {

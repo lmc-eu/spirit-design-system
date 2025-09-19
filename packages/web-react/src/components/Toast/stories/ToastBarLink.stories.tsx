@@ -1,9 +1,9 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { ToastLinkProps } from '../../../types';
+import { type ToastLinkProps } from '../../../types';
 import ReadMe from '../README.md';
-import { Toast, ToastBar, ToastBarMessage, ToastBarLink } from '..';
+import { Toast, ToastBar, ToastBarLink, ToastBarMessage } from '..';
 
 const meta: Meta<typeof ToastBarLink & { message: string }> = {
   title: 'Components/Toast',

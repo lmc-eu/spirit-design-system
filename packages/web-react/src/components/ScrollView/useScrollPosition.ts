@@ -1,9 +1,9 @@
-import { UIEvent, MutableRefObject, useCallback, useState, useEffect } from 'react';
+import { type MutableRefObject, type UIEvent, useCallback, useEffect, useState } from 'react';
 import { Direction, Position } from '../../constants';
 import { useResizeObserver } from '../../hooks';
-import { PositionType, ScrollViewDirectionType } from '../../types';
+import { type PositionType, type ScrollViewDirectionType } from '../../types';
 import { debounce } from '../../utils';
-import { EDGE_DETECTION_INACCURACY_PX, DEBOUNCE_DELAY } from './constants';
+import { DEBOUNCE_DELAY, EDGE_DETECTION_INACCURACY_PX } from './constants';
 
 export interface UseScrollPositionProps {
   viewportReference: MutableRefObject<HTMLDivElement | null>;

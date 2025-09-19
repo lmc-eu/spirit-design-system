@@ -1,9 +1,9 @@
 'use client';
 
-import React, { ElementType } from 'react';
-import { BorderStyles, BorderRadiusStyleProps, PaddingStyleProps, BackgroundStyleProps } from '../../constants';
+import React, { type ElementType } from 'react';
+import { BackgroundStyleProps, BorderRadiusStyleProps, BorderStyles, PaddingStyleProps } from '../../constants';
 import { useStyleProps } from '../../hooks';
-import { SpiritBoxProps } from '../../types';
+import { type SpiritBoxProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { useBoxStyleProps } from './useBoxStyleProps';
 

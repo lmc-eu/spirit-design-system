@@ -1,4 +1,4 @@
-import { AccordionOpenStateType } from '../../../types';
+import { type AccordionOpenStateType } from '../../../types';
 
 const toggleValueByType = (id: string, state: AccordionOpenStateType | undefined) => {
   let value;

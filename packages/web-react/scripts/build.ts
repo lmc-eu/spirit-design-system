@@ -1,4 +1,4 @@
-import { readdirSync, existsSync } from 'fs';
+import { existsSync, readdirSync } from 'fs';
 import { resolve } from 'path';
 
 const getDirs = (source) =>

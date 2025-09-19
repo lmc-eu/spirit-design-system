@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
 import React from 'react';
-import { BreakpointToken, ChildrenProps, SpaceToken } from '../../../types';
+import { type BreakpointToken, type ChildrenProps, type SpaceToken } from '../../../types';
 import { TabsProvider } from '../TabContext';
 import { useTabsStyleProps } from '../useTabsStyleProps';
 

@@ -1,14 +1,14 @@
 import { accentColors, emotionColors, textColors } from '@lmc-eu/spirit-design-tokens';
 import {
-  AccentColorNamesType,
-  BackgroundAccentColorsType,
-  BackgroundEmotionColorsType,
-  BorderAccentColorsType,
-  BorderEmotionColorsType,
-  EmotionColorNamesType,
-  TextAccentColorsType,
-  TextColorsDictionaryType,
-  TextEmotionColorsType,
+  type AccentColorNamesType,
+  type BackgroundAccentColorsType,
+  type BackgroundEmotionColorsType,
+  type BorderAccentColorsType,
+  type BorderEmotionColorsType,
+  type EmotionColorNamesType,
+  type TextAccentColorsType,
+  type TextColorsDictionaryType,
+  type TextEmotionColorsType,
 } from '../types';
 
 /**

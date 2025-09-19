@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { SpiritUncontrolledCollapseProps } from '../../../types';
+import { type SpiritUncontrolledCollapseProps } from '../../../types';
 import { Button } from '../../Button';
 import { UncontrolledCollapse } from '..';
 

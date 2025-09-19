@@ -1,6 +1,6 @@
 import classNames from 'classnames';
-import React, { ReactNode } from 'react';
-import { SizesDictionaryType, StyleProps, useClassNamePrefix, useStyleProps } from '../src';
+import React, { type ReactNode } from 'react';
+import { type SizesDictionaryType, type StyleProps, useClassNamePrefix, useStyleProps } from '../src';
 
 interface DocsBoxProps extends StyleProps {
   children: ReactNode;

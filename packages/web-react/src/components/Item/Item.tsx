@@ -1,9 +1,9 @@
 'use client';
 
 import classNames from 'classnames';
-import React, { ElementType } from 'react';
+import React, { type ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
-import { SpiritItemProps } from '../../types';
+import { type SpiritItemProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { HelperText } from '../Field';
 import { Icon } from '../Icon';

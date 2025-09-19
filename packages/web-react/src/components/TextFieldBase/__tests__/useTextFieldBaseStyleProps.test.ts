@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
 import { Sizes } from '../../../constants';
-import { SpiritTextFieldBaseProps } from '../../../types';
+import { type SpiritTextFieldBaseProps } from '../../../types';
 import { useTextFieldBaseStyleProps } from '../useTextFieldBaseStyleProps';
 
 describe('useTagStyleProps', () => {

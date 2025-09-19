@@ -1,5 +1,5 @@
 import { warning } from '../../common/utilities';
-import { FileMetadata } from '../../types/fileUploader';
+import { type FileMetadata } from '../../types/fileUploader';
 
 const getAttachmentInput = (
   file: File,

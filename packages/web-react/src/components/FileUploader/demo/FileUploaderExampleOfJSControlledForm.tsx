@@ -1,5 +1,5 @@
-import React, { FormEvent, useState } from 'react';
-import { SpiritFileUploaderAttachmentProps } from '../../../types';
+import React, { type FormEvent, useState } from 'react';
+import { type SpiritFileUploaderAttachmentProps } from '../../../types';
 import { Button } from '../../Button';
 import { FileUploader, FileUploaderAttachment, FileUploaderInput, FileUploaderList, useFileQueue } from '..';
 

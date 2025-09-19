@@ -1,4 +1,4 @@
-import React, { ElementType } from 'react';
+import React, { type ElementType } from 'react';
 import {
   ButtonLink,
   Card,
@@ -14,11 +14,11 @@ import {
   Grid,
   Icon,
   PartnerLogo,
-  UseCardStyleProps,
+  type UseCardStyleProps,
 } from '../../../src/components';
 import { LOGO, MEDIA_IMAGE } from '../../../src/components/Card/demo/constants';
 import { AlignmentX, DirectionExtended, Sizes } from '../../../src/constants';
-import { CardSizes, GridColumns, SizesDictionaryType } from '../../../src/types';
+import { CardSizes, type GridColumns, type SizesDictionaryType } from '../../../src/types';
 
 type CardCompositionType = {
   cardElementType: ElementType;

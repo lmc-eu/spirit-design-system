@@ -1,8 +1,8 @@
 import classNames from 'classnames';
-import { ElementType } from 'react';
+import { type ElementType } from 'react';
 import { BorderColors } from '../../constants';
 import { useClassNamePrefix } from '../../hooks';
-import { SpiritBoxProps } from '../../types';
+import { type SpiritBoxProps } from '../../types';
 
 export interface UseBoxStyleProps<T> {
   /** className props */

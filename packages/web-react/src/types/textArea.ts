@@ -1,15 +1,15 @@
-import { ReactNode } from 'react';
-import { LabelProps } from './label';
+import { type ReactNode } from 'react';
+import { type LabelProps } from './label';
 import {
-  ChildrenProps,
-  HelperTextProps,
-  InputBaseProps,
-  RequiredProps,
-  SizesDictionaryType,
-  SpiritTextAreaElementPropsWithRef,
-  TextInputProps,
-  Validation,
-  ValidationTextProp,
+  type ChildrenProps,
+  type HelperTextProps,
+  type InputBaseProps,
+  type RequiredProps,
+  type SizesDictionaryType,
+  type SpiritTextAreaElementPropsWithRef,
+  type TextInputProps,
+  type Validation,
+  type ValidationTextProp,
 } from './shared';
 
 export type TextAreaElementBaseProps = Omit<SpiritTextAreaElementPropsWithRef, 'size'>;

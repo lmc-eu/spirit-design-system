@@ -5,9 +5,12 @@ import { restPropsTest, stylePropsTest } from '@local/tests';
 import UncontrolledTooltip from '../UncontrolledTooltip';
 
 describe('UncontrolledTooltip', () => {
-  stylePropsTest((props: Record<string, unknown>) => {
-    return <UncontrolledTooltip {...props} id="uncontrolled-tooltip" data-testid="test-tooltip" />;
-  }, 'test-tooltip');
+  stylePropsTest(
+    (props: Record<string, unknown>) => (
+      <UncontrolledTooltip {...props} id="uncontrolled-tooltip" data-testid="test-tooltip" />
+    ),
+    'test-tooltip',
+  );
 
   restPropsTest(UncontrolledTooltip, 'div');
 

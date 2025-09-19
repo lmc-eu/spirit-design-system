@@ -1,4 +1,4 @@
-import { BreakpointToken, ChildrenProps, SizesDictionaryType, StyleProps } from './shared';
+import { type BreakpointToken, type ChildrenProps, type SizesDictionaryType, type StyleProps } from './shared';
 
 export type SpiritPartnerLogoSizeType<S> =
   | SizesDictionaryType<S>

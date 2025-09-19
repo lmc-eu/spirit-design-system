@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import { useStyleProps } from '../../hooks';
-import { HeaderMobileActionsProps } from '../../types';
+import { type HeaderMobileActionsProps } from '../../types';
 import { Button } from '../Button';
 import { Icon } from '../Icon';
 import { VisuallyHidden } from '../VisuallyHidden';

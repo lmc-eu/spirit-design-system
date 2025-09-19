@@ -1,5 +1,5 @@
-import React, { MouseEvent, useState } from 'react';
-import { SpiritFileUploaderAttachmentProps } from '../../../types';
+import React, { type MouseEvent, useState } from 'react';
+import { type SpiritFileUploaderAttachmentProps } from '../../../types';
 import { Button } from '../../Button';
 import { Modal, ModalBody, ModalDialog, ModalFooter } from '../../Modal';
 import { FileUploader, FileUploaderAttachment, FileUploaderInput, FileUploaderList, useFileQueue } from '..';

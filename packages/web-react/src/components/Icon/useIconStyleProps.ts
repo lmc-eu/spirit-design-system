@@ -1,6 +1,6 @@
 import { cssVariablePrefix } from '@lmc-eu/spirit-design-tokens';
 import classNames from 'classnames';
-import { CSSProperties } from 'react';
+import { type CSSProperties } from 'react';
 import { TextColors } from '../../constants';
 import { useClassNamePrefix } from '../../hooks';
 import type { IconBoxSize, SpiritIconProps } from '../../types';

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FileMetadata, FileQueueValueType, FileUploaderHandlingProps } from '../../types';
+import { type FileMetadata, type FileQueueValueType, type FileUploaderHandlingProps } from '../../types';
 
 export interface FileQueueReturn extends FileUploaderHandlingProps {}
 

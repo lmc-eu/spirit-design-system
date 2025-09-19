@@ -1,13 +1,13 @@
-import { ElementType, JSXElementConstructor } from 'react';
+import { type ElementType, type JSXElementConstructor } from 'react';
 import {
-  AlignmentXExtendedDictionaryType,
-  AlignmentYExtendedDictionaryType,
-  BreakpointToken,
-  ChildrenProps,
-  DirectionExtendedDictionaryType,
-  SpaceToken,
-  StyleProps,
-  TransferProps,
+  type AlignmentXExtendedDictionaryType,
+  type AlignmentYExtendedDictionaryType,
+  type BreakpointToken,
+  type ChildrenProps,
+  type DirectionExtendedDictionaryType,
+  type SpaceToken,
+  type StyleProps,
+  type TransferProps,
 } from './shared';
 
 export interface FlexElementTypeProps<T extends ElementType = 'div'> {

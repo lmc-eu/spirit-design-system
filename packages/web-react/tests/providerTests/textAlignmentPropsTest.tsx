@@ -1,6 +1,6 @@
 import { render, waitFor } from '@testing-library/react';
-import React, { ComponentType } from 'react';
-import { TextAlignments, TextAlignmentType } from '../../src';
+import React, { type ComponentType } from 'react';
+import { type TextAlignmentType, TextAlignments } from '../../src';
 import getElement from '../testUtils/getElement';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

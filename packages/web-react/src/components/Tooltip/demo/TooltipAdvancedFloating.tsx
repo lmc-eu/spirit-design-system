@@ -1,4 +1,4 @@
-import { Placement } from '@floating-ui/react';
+import { type Placement } from '@floating-ui/react';
 import React, { useEffect, useRef, useState } from 'react';
 import { Button } from '../../Button';
 import { Checkbox } from '../../Checkbox';

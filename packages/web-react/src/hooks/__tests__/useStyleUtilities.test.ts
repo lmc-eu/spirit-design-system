@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
 import { TextAlignments, TextHyphens, TextStyleProps, TextWordBreaks } from '../../constants';
-import { StyleProps } from '../../types';
+import { type StyleProps } from '../../types';
 import { useStyleUtilities } from '../useStyleUtilities';
 
 describe('useStyleUtilities hook', () => {

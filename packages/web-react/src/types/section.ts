@@ -1,14 +1,14 @@
-import { ElementType } from 'react';
-import { ContainerProps } from './container';
+import { type ElementType } from 'react';
+import { type ContainerProps } from './container';
 import {
-  BackgroundColorsDictionaryType,
-  BreakpointToken,
-  ChildrenProps,
-  SizeExtendedDictionaryType,
-  SpaceToken,
-  SpiritPolymorphicElementPropsWithRef,
-  StyleProps,
-  TextAlignmentType,
+  type BackgroundColorsDictionaryType,
+  type BreakpointToken,
+  type ChildrenProps,
+  type SizeExtendedDictionaryType,
+  type SpaceToken,
+  type SpiritPolymorphicElementPropsWithRef,
+  type StyleProps,
+  type TextAlignmentType,
 } from './shared';
 
 export interface SectionBaseProps<E extends ElementType> extends ChildrenProps, StyleProps {

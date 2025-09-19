@@ -1,5 +1,5 @@
 import { useClassNamePrefix } from '../../hooks';
-import { SpiritDividerProps } from '../../types';
+import { type SpiritDividerProps } from '../../types';
 
 export interface DividerStyles {
   /** className props */

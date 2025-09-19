@@ -1,5 +1,5 @@
-import React, { ChangeEvent, useEffect, useState } from 'react';
-import { AlignmentXDictionaryType, AlignmentYDictionaryType, ToastColorType } from '../../../types';
+import React, { type ChangeEvent, useEffect, useState } from 'react';
+import { type AlignmentXDictionaryType, type AlignmentYDictionaryType, type ToastColorType } from '../../../types';
 import { Button } from '../../Button';
 import { Checkbox } from '../../Checkbox';
 import { Radio } from '../../Radio';
@@ -7,7 +7,7 @@ import { Select } from '../../Select';
 import { Stack } from '../../Stack';
 import { TextArea } from '../../TextArea';
 import { TextField } from '../../TextField';
-import { ToastItem, ToastProvider } from '../ToastContext';
+import { type ToastItem, ToastProvider } from '../ToastContext';
 import {
   DEFAULT_TOAST_AUTO_CLOSE_INTERVAL,
   Toast,

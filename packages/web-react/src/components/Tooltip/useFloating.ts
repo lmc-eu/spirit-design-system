@@ -1,6 +1,6 @@
 import {
-  Placement,
-  Strategy,
+  type Placement,
+  type Strategy,
   arrow,
   autoUpdate,
   flip,
@@ -18,7 +18,7 @@ import {
   useRole,
 } from '@floating-ui/react';
 import { useState } from 'react';
-import { TOOLTIP_TRIGGER, TooltipTriggerType } from '../../types';
+import { TOOLTIP_TRIGGER, type TooltipTriggerType } from '../../types';
 
 type UseTooltipUIProps = {
   arrowRef: React.MutableRefObject<HTMLElement | null>;

@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
 import { ValidationStates } from '../../../constants';
-import { SpiritRadioProps } from '../../../types';
+import { type SpiritRadioProps } from '../../../types';
 import { useRadioStyleProps } from '../useRadioStyleProps';
 
 describe('useRadioStyleProps', () => {

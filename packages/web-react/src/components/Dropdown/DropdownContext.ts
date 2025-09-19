@@ -1,8 +1,8 @@
 'use client';
 
-import { MutableRefObject, createContext, useContext } from 'react';
+import { type MutableRefObject, createContext, useContext } from 'react';
 import { Placements } from '../../constants';
-import { ClickEvent, PlacementDictionaryType } from '../../types';
+import { type ClickEvent, type PlacementDictionaryType } from '../../types';
 import { fullWidthModeKeys } from './useDropdownAriaProps';
 
 type DropdownContextType = {

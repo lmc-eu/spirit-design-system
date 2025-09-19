@@ -1,4 +1,4 @@
-import { ComponentPropsWithRef, ElementType } from 'react';
+import { type ComponentPropsWithRef, type ElementType } from 'react';
 import type {
   ButtonSizesType,
   ChildrenProps,

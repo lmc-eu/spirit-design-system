@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import React, { cloneElement, ComponentType } from 'react';
+import React, { type ComponentType, cloneElement } from 'react';
 
 export const requiredPropsTest = (
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

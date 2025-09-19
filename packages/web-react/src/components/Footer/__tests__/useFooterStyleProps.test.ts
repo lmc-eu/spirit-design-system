@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { SpiritFooterProps } from '../../../types';
+import { type SpiritFooterProps } from '../../../types';
 import { useFooterStyleProps } from '../useFooterStyleProps';
 
 describe('useFooterStyleProps', () => {

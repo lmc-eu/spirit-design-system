@@ -1,7 +1,7 @@
 'use client';
 
-import React, { ElementType } from 'react';
-import { TabsContextType, TabsProvider } from '../../src';
+import React, { type ElementType } from 'react';
+import { type TabsContextType, TabsProvider } from '../../src';
 
 export const withTabsContext =
   (Component: ElementType, value = { selectedId: 0, selectTab: jest.fn() } as TabsContextType) =>

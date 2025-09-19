@@ -8,8 +8,8 @@ error TS2322: Type 'Omit<T, "hasPasswordToggle"> & { type: string; }' is not ass
 
 'use client';
 
-import React, { ComponentType, ForwardedRef } from 'react';
-import { PasswordToggleAdornmentProp } from '../../types/shared/adornments';
+import React, { type ComponentType, type ForwardedRef } from 'react';
+import { type PasswordToggleAdornmentProp } from '../../types/shared/adornments';
 import TextFieldBasePasswordToggle from './TextFieldBasePasswordToggle';
 import { usePasswordToggle } from './usePasswordToggle';
 

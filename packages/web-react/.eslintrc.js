@@ -86,6 +86,22 @@ module.exports = {
     // @see: https://typescript-eslint.io/rules/no-empty-interface/
     '@typescript-eslint/no-empty-interface': ['error', { allowSingleExtends: true }],
 
+    // enforce consistent type imports
+    // @see: https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-type-imports.md
+    '@typescript-eslint/consistent-type-imports': [
+      'error',
+      { fixStyle: 'inline-type-imports', prefer: 'type-imports' },
+    ],
+
+    // sort imports
+    // @see: https://github.com/lydell/eslint-plugin-sort-imports/blob/main/docs/rules/imports.md
+    'sort-imports': [
+      'error',
+      {
+        ignoreDeclarationSort: true,
+      },
+    ],
+
     /**
      * Set sorting of imports
      *

@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { CLASS_NAME_OPEN } from '../../constants';
-import { AlignmentPropertyType, useAlignmentClass, useClassNamePrefix } from '../../hooks';
-import { DropdownStyleProps } from '../../types';
+import { type AlignmentPropertyType, useAlignmentClass, useClassNamePrefix } from '../../hooks';
+import { type DropdownStyleProps } from '../../types';
 
 export interface UseDropdownStylePropsReturn {
   classProps: {

@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React, { useMemo } from 'react';
 import { useStyleProps } from '../../hooks';
-import { TooltipPopoverProps } from '../../types';
+import { type TooltipPopoverProps } from '../../types';
 import TooltipCloseButton from './TooltipCloseButton';
 import { useTooltipContext } from './TooltipContext';
 import { useTooltipStyleProps } from './useTooltipStyleProps';

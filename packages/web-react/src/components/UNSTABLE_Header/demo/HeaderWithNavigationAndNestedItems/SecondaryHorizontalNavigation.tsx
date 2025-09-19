@@ -1,5 +1,5 @@
-import React, { FunctionComponent } from 'react';
-import { ClickEvent } from '../../../../types';
+import React, { type FunctionComponent } from 'react';
+import { type ClickEvent } from '../../../../types';
 import { Button } from '../../../Button';
 import { ButtonLink } from '../../../ButtonLink';
 import { Icon } from '../../../Icon';

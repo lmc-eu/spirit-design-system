@@ -1,6 +1,6 @@
 import React from 'react';
 import ScrollView from '../ScrollView';
-import { VERTICAL_CONTENT, HORIZONTAL_CONTENT } from './scrollViewContent';
+import { HORIZONTAL_CONTENT, VERTICAL_CONTENT } from './scrollViewContent';
 
 const ScrollViewOverflowDecorators = () => (
   <>

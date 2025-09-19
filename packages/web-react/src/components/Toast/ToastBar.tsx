@@ -1,10 +1,10 @@
 'use client';
 
 import classNames from 'classnames';
-import React, { MutableRefObject, useRef } from 'react';
-import { Transition, TransitionStatus } from 'react-transition-group';
+import React, { type MutableRefObject, useRef } from 'react';
+import { Transition, type TransitionStatus } from 'react-transition-group';
 import { useStyleProps } from '../../hooks';
-import { SpiritToastBarProps } from '../../types';
+import { type SpiritToastBarProps } from '../../types';
 import { Icon } from '../Icon';
 import {
   DEFAULT_TOAST_COLOR,

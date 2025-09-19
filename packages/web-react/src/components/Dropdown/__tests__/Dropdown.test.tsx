@@ -8,7 +8,7 @@ import {
   stylePropsTest,
   validHtmlAttributesTest,
 } from '@local/tests';
-import { DropdownAlignmentXType, DropdownAlignmentYType } from '../../../types';
+import { type DropdownAlignmentXType, type DropdownAlignmentYType } from '../../../types';
 import Dropdown from '../Dropdown';
 import DropdownPopover from '../DropdownPopover';
 import DropdownTrigger from '../DropdownTrigger';

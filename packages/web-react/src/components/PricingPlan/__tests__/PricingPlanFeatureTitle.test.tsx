@@ -1,8 +1,8 @@
 import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
-import React, { ComponentProps } from 'react';
+import React, { type ComponentProps } from 'react';
 import { classNamePrefixProviderTest, validHtmlAttributesTest } from '@local/tests';
-import { PricingPlanFeature } from '../../../types/pricingPlan';
+import { type PricingPlanFeature } from '../../../types/pricingPlan';
 import PricingPlanFeatureTitle from '../PricingPlanFeatureTitle';
 
 const PricingPlanFeatureTitleWithRequiredProps = (props: Partial<ComponentProps<typeof PricingPlanFeatureTitle>>) => (

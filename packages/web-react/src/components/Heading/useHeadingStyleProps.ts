@@ -1,7 +1,7 @@
 import classNames from 'classnames';
-import { ElementType } from 'react';
+import { type ElementType } from 'react';
 import { useClassNamePrefix } from '../../hooks';
-import { SpiritHeadingProps, HeadingProps } from '../../types';
+import { type HeadingProps, type SpiritHeadingProps } from '../../types';
 
 export interface HeadingStyles<T extends ElementType> {
   /** className props */

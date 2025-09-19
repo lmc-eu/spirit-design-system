@@ -4,12 +4,12 @@ import React from 'react';
 import {
   ariaAttributesTest,
   classNamePrefixProviderTest,
+  elementTypePropsTest,
   emotionColorPropsTest,
-  sizeExtendedPropsTest,
   restPropsTest,
+  sizeExtendedPropsTest,
   stylePropsTest,
   validHtmlAttributesTest,
-  elementTypePropsTest,
 } from '@local/tests';
 import Tag from '../Tag';
 

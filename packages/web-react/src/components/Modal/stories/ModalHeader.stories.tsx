@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
-import { ModalHeaderProps } from '../../../types';
+import { type ModalHeaderProps } from '../../../types';
 import { Button } from '../../Button';
-import { Modal, ModalHeader, ModalDialog, ModalBody, ModalFooter } from '..';
+import { Modal, ModalBody, ModalDialog, ModalFooter, ModalHeader } from '..';
 
 const meta: Meta<typeof ModalHeader> = {
   title: 'Components/Modal',

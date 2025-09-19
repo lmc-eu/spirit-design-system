@@ -1,5 +1,5 @@
 import { render, waitFor } from '@testing-library/react';
-import React, { ComponentType } from 'react';
+import React, { type ComponentType } from 'react';
 import { ClassNamePrefixProvider } from '../../src/context/ClassNamePrefixContext';
 import getElement from '../testUtils/getElement';
 
