@@ -6,5 +6,3 @@ set -o errexit
 cat <<NPMRC >> .npmrc
 @lmc-eu:registry=https://registry.npmjs.org/
 NPMRC
-
-npm whoami
