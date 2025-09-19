@@ -51,10 +51,9 @@ jobs:
       - name: Build
         run: yarn build
 
-      # TODO: Remove after Trusted Publishers are working
+      - name: Authenticate npm
+        run: ./bin/ci/npm-auth.sh
       # Uncomment the following line if trusted publishing is not configured or if you encounter authentication errors.
-      # - name: Authenticate npm
-      #   run: ./bin/ci/npm-auth.sh
       #   env:
       #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
