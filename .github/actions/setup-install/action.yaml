@@ -3,16 +3,8 @@ description: 'Setup Node and Install Dependencies'
 runs:
   using: 'composite'
   steps:
-    - name: Enable Corepack
-      shell: bash
-      run: corepack enable
-
-    - name: Set up Node
-      uses: actions/setup-node@v4
-      with:
-        node-version-file: '.nvmrc'
-        cache: 'yarn'
-        cache-dependency-path: yarn.lock
+    - name: Setup Node
+      uses: ./.github/actions/setup-node
 
     - name: Restore cached node_modules
       uses: actions/cache@v4
