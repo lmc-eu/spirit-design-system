@@ -1,5 +1,9 @@
 import { Token, TokenTheme } from '@supernovaio/sdk-exporters';
-import { TOKEN_COLLECTION_DEVICES_NAME, TOKEN_PROPERTY_NAME } from '../constants';
+import {
+  TOKEN_COLLECTION_DEVICES_NAME,
+  TOKEN_COLLECTION_GLOBAL_NAME,
+  TOKEN_COLLECTION_PROPERTY_NAME,
+} from '../constants';
 
 /**
  * Filters tokens based on a specific collection name and an optional exclusion flag.
@@ -12,7 +16,7 @@ import { TOKEN_COLLECTION_DEVICES_NAME, TOKEN_PROPERTY_NAME } from '../constants
 export const filterCollections = (tokens: Token[], collectionName: string, exclude: boolean = false): Token[] => {
   return tokens.filter((item) => {
     // Check if the item is a collection
-    const collectionProperty = item.properties?.find((prop) => prop.name === TOKEN_PROPERTY_NAME);
+    const collectionProperty = item.properties?.find((prop) => prop.name === TOKEN_COLLECTION_PROPERTY_NAME);
 
     // Check if the collection has an option for tokens
     const tokenOption = collectionProperty?.options?.find((option) => option.name === collectionName);
@@ -22,6 +26,16 @@ export const filterCollections = (tokens: Token[], collectionName: string, exclu
 
     return exclude ? collectionId !== tokenOptionId || tokenOption === undefined : collectionId === tokenOptionId;
   });
+};
+
+/**
+ * Filters tokens to find those that belong to the global collection.
+ *
+ * @param {Token[]} tokens - Array of tokens to filter.
+ * @returns {Token[]} - Array of tokens.
+ */
+export const filterGlobalCollections = (tokens: Token[]) => {
+  return filterCollections(tokens, TOKEN_COLLECTION_GLOBAL_NAME);
 };
 
 /**
