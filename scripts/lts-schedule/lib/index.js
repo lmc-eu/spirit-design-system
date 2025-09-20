@@ -98,9 +98,9 @@ const styles = `
 function parseInput(data, queryStart, queryEnd, excludeMaster, projectName) {
   const output = [];
 
-  Object.keys(data).forEach((v) => {
-    const version = data[v];
-    const name = `${projectName} ${v.replace('v', '')}`;
+  Object.keys(data).forEach((value) => {
+    const version = data[value];
+    const name = `${projectName} ${value.replace('v', '')}`;
     const prerelease = version.start ? new Date(version.start) : null;
     const active = version.lts ? new Date(version.lts) : null;
     const maint = version.maintenance ? new Date(version.maintenance) : null;
@@ -169,14 +169,13 @@ function create(options) {
   const margin = marginInput || { top: 64, right: 32, bottom: 32, left: 110 };
   const width = 1500 - margin.left - margin.right;
   const height = 500 - margin.top - margin.bottom;
-  const xScale = D3.scaleTime().domain([queryStart, queryEnd]).range([0, width]).clamp(true);
+  const xScale = D3.scaleTime()
+    .domain([queryStart, queryEnd])
+    .range([0, width])
+    .clamp(true);
   const yScale = D3.scaleBand()
-    .domain(
-      // eslint-disable-next-line no-shadow
-      data.map((data) => {
-        return data.name;
-      }),
-    )
+  // eslint-disable-next-line no-shadow
+    .domain(data.map((data) => data.name))
     .range([0, height])
     .padding(0.3);
   const xAxis = D3.axisBottom(xScale).tickSize(height).tickFormat(D3.timeFormat('%b %Y'));
@@ -210,63 +209,62 @@ function create(options) {
   }
 
   /**
-   * @param {object} g
+   * @param {object} graph
    */
-  function customXAxis(g) {
-    g.call(xAxis);
-    g.select('.domain').remove();
-    g.selectAll('.tick:nth-child(odd) line').attr('stroke', '#89a19d');
-    g.selectAll('.tick:nth-child(even) line').attr('stroke', '#89a19d').attr('stroke-dasharray', '2,2');
-    g.selectAll('.tick text').attr('y', 0).attr('dy', -10);
+  function customXAxis(graph) {
+    graph.call(xAxis);
+    graph.select('.domain').remove();
+    graph.selectAll('.tick:nth-child(odd) line').attr('stroke', '#89a19d');
+    graph.selectAll('.tick:nth-child(even) line').attr('stroke', '#89a19d').attr('stroke-dasharray', '2,2');
+    graph.selectAll('.tick text').attr('y', 0).attr('dy', -10);
   }
 
   /**
    *
-   * @param {object} g
+   * @param {object} graph
    */
-  function customYAxis(g) {
-    g.call(yAxis);
-    g.select('.domain').remove();
-    g.selectAll('.tick line').attr('stroke', '#e1e7e7');
-    g.selectAll('.tick text').attr('x', 0).attr('dx', -10);
-    g.append('line').attr('y1', height).attr('y2', height).attr('x2', width).attr('stroke', '#89a19d');
+  function customYAxis(graph) {
+    graph.call(yAxis);
+    graph.select('.domain').remove();
+    graph.selectAll('.tick line').attr('stroke', '#e1e7e7');
+    graph.selectAll('.tick text').attr('x', 0).attr('dx', -10);
+    graph.append('line')
+      .attr('y1', height)
+      .attr('y2', height)
+      .attr('x2', width)
+      .attr('stroke', '#89a19d');
   }
 
   svg.append('g').attr('class', 'axis axis--x').call(customXAxis);
 
   svg.append('g').attr('class', 'axis axis--y').call(customYAxis);
 
-  const bar = svg.selectAll('#bar-container').data(data).enter().append('g');
+  const bar = svg.selectAll('#bar-container')
+    .data(data)
+    .enter()
+    .append('g');
 
   const rect = bar
     .append('rect')
-    .attr('class', (data) => {
-      return `bar ${data.type}`;
-    })
-    .attr('x', (data) => {
-      return xScale(data.start);
-    })
-    .attr('y', (data) => {
-      return yScale(data.name);
-    })
+    .attr('class', (data) => `bar ${data.type}`)
+    .attr('x', (data) => xScale(data.start))
+    .attr('y', (data) => yScale(data.name))
     .attr('width', calculateWidth)
     .attr('height', calculateHeight);
 
   if (animate === true) {
-    rect.append('animate').attr('attributeName', 'width').attr('from', 0).attr('to', calculateWidth).attr('dur', '1s');
+    rect.append('animate')
+      .attr('attributeName', 'width')
+      .attr('from', 0)
+      .attr('to', calculateWidth)
+      .attr('dur', '1s');
   }
 
   bar
     .append('rect')
-    .attr('class', (data) => {
-      return `bar-join ${data.type}`;
-    })
-    .attr('x', (data) => {
-      return xScale(data.start) - 1;
-    })
-    .attr('y', (data) => {
-      return yScale(data.name);
-    })
+    .attr('class', (data) => `bar-join ${data.type}`)
+    .attr('x', (data) => xScale(data.start) - 1)
+    .attr('y', (data) => yScale(data.name))
     .attr('width', 2)
     .attr('height', calculateHeight)
     .style('opacity', (data) => {
@@ -281,21 +279,17 @@ function create(options) {
   bar
     .append('text')
     .attr('class', 'label')
-    .attr('x', (data) => {
-      return xScale(data.start) + 15;
-    })
+    .attr('x', (data) => xScale(data.start) + 15)
     .attr('y', (data) => {
       // + 2 is a small correction so the text fill is more centered.
-      return yScale(data.name) + calculateHeight(data) / 2 + 2;
+      return yScale(data.name) + (calculateHeight(data) / 2) + 2;
     })
-    .text((data) => {
-      return data.type;
-    })
+    .text((data) => data.type)
     .style('opacity', (data) => {
       // Hack to deal with overflow text.
       const min = data.type.length * 14;
 
-      return +(calculateWidth(data) >= min);
+      return Number(calculateWidth(data) >= min);
     });
 
   if (typeof html === 'string') {

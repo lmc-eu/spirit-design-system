@@ -28,6 +28,7 @@
     "@swc/core": "1.11.22",
     "@swc/jest": "0.2.38",
     "eslint": "8.57.1",
+    "eslint-config-spirit": "workspace:^",
     "jest": "30.0.0",
     "jest-config-spirit": "workspace:^",
     "npm-run-all2": "6.2.6",

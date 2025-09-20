@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['eslint-config-spirit'],
+  extends: ['eslint-config-spirit', 'eslint-config-spirit/style'],
 
   ignorePatterns: [
     '!.*.js',
@@ -15,6 +15,6 @@ module.exports = {
     'packages/form-validations',
     'packages/icons',
     'packages/web-react',
-    'packages/web'
+    'packages/web',
   ],
 };
