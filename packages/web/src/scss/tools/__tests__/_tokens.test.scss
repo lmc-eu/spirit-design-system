@@ -10,6 +10,8 @@ $test-theme: (
     ),
 );
 
+$test-dictionary: key1, key2, key3;
+
 @include test.describe('format-numeric-key function') {
     @include test.it('should format a single-digit numeric input') {
         @include test.assert-equal(tokens-tools.format-numeric-key(1), '01');
@@ -49,6 +51,23 @@ $test-theme: (
 
     @include test.it('should return the fallback variable') {
         @include test.assert-equal(tokens-tools.get-variable-if-exists('new-variable', '0px'), '0px');
+    }
+}
+
+@include test.describe('get-variable-keys-if-exists function') {
+    @include test.it('should return the variable keys that exists in the tokens') {
+        // ⚠️ External dependency: touches actual design token values.
+        @include test.assert-equal(
+            tokens-tools.get-variable-keys-if-exists('breakpoints', $test-dictionary),
+            (mobile, tablet, desktop)
+        );
+    }
+
+    @include test.it('should return the fallback variable') {
+        @include test.assert-equal(
+            tokens-tools.get-variable-keys-if-exists('new-variable', $test-dictionary),
+            $test-dictionary
+        );
     }
 }
 

@@ -41,6 +41,22 @@ $_numeric-keys-pad-string: '0';
     }
 }
 
+// Function to retrieve the keys of a token map if it exists.
+// If the token map does not exist, a fallback is returned.
+//
+// Parameters are:
+// * $variable-name: the name of the token map to retrieve keys from
+// * $fallback: the fallback dictionary to use if the token map does not exist
+@function get-variable-keys-if-exists($variable-name, $fallback) {
+    $token-value: get-variable-if-exists($variable-name, $fallback);
+
+    @if meta.type-of($token-value) == map {
+        @return map.keys($token-value);
+    } @else {
+        @return $token-value;
+    }
+}
+
 // Function to generate a map of responsive values for a given property, size, and token prefix.
 //
 // Example:
