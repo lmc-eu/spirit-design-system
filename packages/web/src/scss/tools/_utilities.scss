@@ -67,6 +67,7 @@
     @each $key, $value in $values {
         $properties: map.get($utility, property);
         $property-class: map.get($utility, class);
+        $generate-custom-properties: map.get($utility, generate-custom-properties);
 
         // 2.
         $property-class-modifier: if($key, '-' + $key, '');
@@ -76,6 +77,10 @@
 
         .#{$property-class + $infix + $property-class-modifier} {
             @each $property in $properties {
+                @if $generate-custom-properties {
+                    --#{tokens.$css-variable-prefix}local-#{$property}: #{$value};
+                }
+
                 // stylelint-disable-next-line declaration-no-important
                 #{$property}: $value !important;
             }

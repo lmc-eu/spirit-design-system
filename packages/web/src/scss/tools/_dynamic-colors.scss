@@ -1,0 +1,77 @@
+@use '@tokens' as tokens;
+
+// When oklch() is supported, we can use it to generate dynamic colors.
+// Dynamic colors are based on the `--spirit-local-background-color` variable, which is set by utility classes like
+// `bg-secondary`, `bg-emotion-success-basic`, or even `bg-gradient-primary`.
+// If `--spirit-local-background-color` is not available, no background color can be applied.
+
+$_lightness-delta-selected: 0.3;
+$_lightness-delta-state-hover: 0.3;
+$_lightness-delta-state-active: 0.45;
+$_chroma-scale-selected: 4;
+$_chroma-scale-state-hover: 4;
+$_chroma-scale-state-active: 4;
+
+// Function to generate dynamic color based on an input color.
+// - The lightness term smoothly moves any color toward the mid tone `$_lightness-midpoint`, making light colors darker and dark colors lighter.
+// - The chroma term scales saturation up for light colors and down for dark colors, proportional to distance from the midpoint `$_chroma-lightness-midpoint`,
+//   so it’s subtle near the midpoint and stronger at the extremes.
+//
+// Parameters are:
+// * $color: the base color to alter
+// * $lightness-delta: number <0, 1>, lightness change, higher = stronger darken/lighten effect
+// * $chroma-scale: number, chroma change, higher = more saturation change
+@function alter-color($color, $lightness-delta, $chroma-scale) {
+    $_lightness-midpoint: 0.8; // number <0, 1>, light/dark threshold for lightness, higher = lighter colors are considered dark
+    $_chroma-lightness-midpoint: 0.5; // number <0, 1>, light/dark threshold for chroma, lower = more saturation for dark colors
+    $_chroma-upper-limit: 0.2; // number <0, 0.4>, higher = more saturation for dark colors
+
+    @return oklch(
+        from #{$color} calc(l + #{$lightness-delta} * (#{$_lightness-midpoint} - l))
+            clamp(0, calc(c * (1 + #{$chroma-scale} * (l - #{$_chroma-lightness-midpoint}))), #{$_chroma-upper-limit}) h
+    );
+}
+
+// Mixin to generate dynamic background colors for interactive states.
+// Fall back to static colors when oklch() is not supported.
+@mixin background-interactive {
+    // Set up fallbacks when oklch() is not supported.
+    --#{tokens.$css-variable-prefix}local-background-color-state-default: #{tokens.$background-interactive-state-default};
+    --#{tokens.$css-variable-prefix}local-background-color-state-hover: #{tokens.$background-interactive-state-hover};
+    --#{tokens.$css-variable-prefix}local-background-color-state-active: #{tokens.$background-interactive-state-active};
+
+    @supports (color: oklch(from red l c h)) {
+        --#{tokens.$css-variable-prefix}local-background-color-state-hover: #{alter-color(
+                $color: var(--#{tokens.$css-variable-prefix}local-background-color),
+                $lightness-delta: $_lightness-delta-state-hover,
+                $chroma-scale: $_chroma-scale-state-hover
+            )};
+        --#{tokens.$css-variable-prefix}local-background-color-state-active: #{alter-color(
+                $color: var(--#{tokens.$css-variable-prefix}local-background-color),
+                $lightness-delta: $_lightness-delta-state-active,
+                $chroma-scale: $_chroma-scale-state-active
+            )};
+    }
+
+    background-color: var(--#{tokens.$css-variable-prefix}local-background-color-state-default);
+
+    @media (hover: hover) {
+        &:hover {
+            background-color: var(--#{tokens.$css-variable-prefix}local-background-color-state-hover);
+        }
+    }
+
+    &:active {
+        background-color: var(--#{tokens.$css-variable-prefix}local-background-color-state-active);
+    }
+}
+
+@mixin background-selected {
+    @supports (color: oklch(from red l c h)) {
+        background-color: alter-color(
+            $color: var(--#{tokens.$css-variable-prefix}local-background-color),
+            $lightness-delta: $_lightness-delta-selected,
+            $chroma-scale: $_chroma-scale-selected
+        );
+    }
+}
