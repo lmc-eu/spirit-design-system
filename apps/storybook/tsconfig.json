@@ -1,0 +1,13 @@
+{
+  "extends": "../../configs/typescript-config-spirit/dom",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@lmc-eu/spirit-design-tokens": ["../../packages/design-tokens/src/js"],
+      "@lmc-eu/spirit-web-react": ["../../packages/web-react/src"]
+    }
+  },
+  "include": ["./**/*.ts", "./**/*.tsx"],
+  "exclude": ["./node_modules", "./dist"]
+}

@@ -1,7 +1,20 @@
 import './assets/stylesheets/index.scss';
 import { IconGlobalDecorator } from './decorators/IconGlobalDecorator';
 import SpiritTheme from './spirit.theme';
+import {
+  displayArgTypes,
+  displayArgs,
+  escapeHatchArgTypes,
+  escapeHatchArgs,
+  marginArgTypes,
+  marginArgs,
+  themeArgType,
+  themeArgs,
+  themeDecorators,
+  themeGlobalTypes,
+} from './config';
 
+// Storybook config
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
@@ -15,6 +28,9 @@ export const parameters = {
   },
   docs: {
     theme: SpiritTheme,
+  },
+  backgrounds: {
+    disable: true,
   },
   options: {
     storySort: {
@@ -31,7 +47,27 @@ export const parameters = {
       ],
     },
   },
+} as const;
+
+// Arg types
+export const argTypes = {
+  theme: themeArgType,
+  ...marginArgTypes,
+  ...displayArgTypes,
+  ...escapeHatchArgTypes,
 };
 
-export const decorators = [IconGlobalDecorator];
+// Args defaults
+export const args = {
+  ...themeArgs,
+  ...marginArgs,
+  ...displayArgs,
+  ...escapeHatchArgs,
+};
+
+// Global types
+export const globalTypes = themeGlobalTypes;
+
+// Decorators
+export const decorators = [...themeDecorators, IconGlobalDecorator];
 export const tags = ['autodocs'];
