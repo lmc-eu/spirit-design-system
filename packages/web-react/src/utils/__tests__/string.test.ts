@@ -1,6 +1,24 @@
-import { kebabCaseToCamelCase, kebabCaseToCamelCaseValues, stringOrObjectKebabCaseToCamelCase } from '../string';
+import {
+  camelCaseToKebabCase,
+  kebabCaseToCamelCase,
+  kebabCaseToCamelCaseValues,
+  stringOrObjectKebabCaseToCamelCase,
+} from '../string';
 
 describe('string', () => {
+  describe('#camelCaseToKebabCase', () => {
+    it.each([
+      ['fooBar', 'foo-bar'],
+      ['testCase', 'test-case'],
+      ['someWordsHere', 'some-words-here'],
+      ['single', 'single'],
+      ['themeLightDefault', 'theme-light-default'],
+    ])('should convert camelCase string "%s" to kebab-case string "%s"', (input, expected) => {
+      const result = camelCaseToKebabCase(input);
+      expect(result).toEqual(expected);
+    });
+  });
+
   describe('#kebabCaseToCamelCase', () => {
     it.each([
       ['foo-bar', 'fooBar'],

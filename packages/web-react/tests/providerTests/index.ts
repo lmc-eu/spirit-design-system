@@ -12,5 +12,6 @@ export * from './textAlignmentPropsTest';
 export * from './textHyphensPropsTest';
 export * from './textIsBalancedPropsTest';
 export * from './textWordBreakPropsTest';
+export * from './themePropsTest';
 export * from './validationTextPropsTest';
 export * from './validHtmlAttributesTest';

@@ -1,4 +1,4 @@
-import { SpacingStyleProp as DefaultSpacingStyleProp, DisplayStyleProps } from '../constants';
+import { SpacingStyleProp as DefaultSpacingStyleProp, DisplayStyleProps, ThemeStyleProps } from '../constants';
 import {
   BREAKPOINT_MOBILE,
   type BreakpointToken,
@@ -7,8 +7,9 @@ import {
   type SpaceToken,
   type StyleProps,
   type StyleSpacingAuto,
+  type ThemeNameType,
 } from '../types';
-import { applyClassNamePrefix, isEmpty } from '../utils';
+import { applyClassNamePrefix, camelCaseToKebabCase, isEmpty } from '../utils';
 
 type SpacingStyleProp = string | SpaceToken | StyleSpacingAuto;
 
@@ -154,11 +155,21 @@ const processDisplayProperties = (
  * @returns {string[]} - The processed utilities.
  */
 const processProperties = (
-  utilityKey: keyof typeof DefaultSpacingStyleProp | keyof typeof DisplayStyleProps,
+  utilityKey: keyof typeof DefaultSpacingStyleProp | keyof typeof DisplayStyleProps | keyof typeof ThemeStyleProps,
   utilityName: UtilityName,
   propValue: string | boolean | BreakpointPropValue | BreakpointToken | BreakpointToken[],
   prefix: ClassNamePrefix,
 ): string[] => {
+  if (utilityName === ThemeStyleProps.theme) {
+    if (typeof propValue !== 'string') {
+      return [];
+    }
+
+    const themeClassName = camelCaseToKebabCase(propValue) as ThemeNameType;
+
+    return [applyClassNamePrefix(prefix)(themeClassName)];
+  }
+
   if (utilityKey in DisplayStyleProps) {
     return processDisplayProperties(
       utilityKey as keyof typeof DisplayStyleProps,
@@ -221,7 +232,7 @@ export const useStyleUtilities = (
   prefix: ClassNamePrefix = '',
   additionalProps: PropsShape = {},
 ): StyleUtilitiesResult => {
-  const styleProps = { ...DefaultSpacingStyleProp, ...DisplayStyleProps, ...additionalProps };
+  const styleProps = { ...DefaultSpacingStyleProp, ...DisplayStyleProps, ...ThemeStyleProps, ...additionalProps };
 
   const propEntries = Object.entries(props);
   const styleUtilities = propEntries.reduce((accumulatedUtilities: string[], [key, propValue]) => {

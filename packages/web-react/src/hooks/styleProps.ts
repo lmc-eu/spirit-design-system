@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import { CSSProperties, HTMLAttributes, useContext } from 'react';
 import { warning } from '../common/utilities';
+import { ThemeStyleProps } from '../constants';
 import ClassNamePrefixContext from '../context/ClassNamePrefixContext';
 import { StyleProps } from '../types';
 import { useStyleUtilities } from './useStyleUtilities';
@@ -16,7 +17,11 @@ export function useStyleProps<T extends StyleProps>(
 ): StylePropsResult {
   const classNamePrefix = useContext(ClassNamePrefixContext);
   const { UNSAFE_className, UNSAFE_style, ...otherProps } = props;
-  const { styleUtilities, props: modifiedProps } = useStyleUtilities(otherProps, classNamePrefix, additionalUtilities);
+  const styleUtilitiesConfig: Record<string, string> = {
+    theme: ThemeStyleProps.theme,
+    ...(additionalUtilities ?? {}),
+  };
+  const { styleUtilities, props: modifiedProps } = useStyleUtilities(otherProps, classNamePrefix, styleUtilitiesConfig);
 
   const style: CSSProperties = { ...UNSAFE_style };
 

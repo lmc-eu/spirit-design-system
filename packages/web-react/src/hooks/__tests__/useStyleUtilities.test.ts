@@ -4,6 +4,18 @@ import { StyleProps } from '../../types';
 import { useStyleUtilities } from '../useStyleUtilities';
 
 describe('useStyleUtilities hook', () => {
+  it('should process theme prop using kebab-case values', () => {
+    const mockProps = {
+      theme: 'theme-light-default',
+    };
+    const mockPrefix = 'test-prefix';
+
+    const { result } = renderHook(() => useStyleUtilities(mockProps as StyleProps, mockPrefix));
+
+    expect(result.current.styleUtilities).toEqual(['test-prefix-theme-light-default']);
+    expect(result.current.props).toEqual({});
+  });
+
   it('should process style utilities correctly', () => {
     const mockProps = {
       margin: 'space-100',

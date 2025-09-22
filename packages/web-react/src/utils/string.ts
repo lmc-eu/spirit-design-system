@@ -1,10 +1,19 @@
 /**
+ * Converts a camelCase or PascalCase string to kebab-case.
+ *
+ * @param {string} input - The camelCase string to be converted.
+ * @returns {string} The kebab-case version of the input string.
+ */
+export const camelCaseToKebabCase = (input: string): string =>
+  input.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase();
+
+/**
  * Converts a kebab-case string to camelCase.
  *
- * @param {string} str - The kebab-case string to be converted.
+ * @param {string} input - The kebab-case string to be converted.
  * @returns {string} The camelCase version of the input string.
  */
-export const kebabCaseToCamelCase = (str: string): string => str.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
+export const kebabCaseToCamelCase = (input: string): string => input.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
 
 /**
  * Converts an object with kebab-case string values to camelCase.

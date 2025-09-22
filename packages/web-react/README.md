@@ -86,6 +86,14 @@ application conforms to design requirements, and is adaptive across platform sca
 
 All Spirit components accept a set of props that can be used to control their outer spacing and display. The props are:
 
+#### Theme Prop
+
+- `theme`
+
+The `theme` prop applies a theme utility class generated from the design tokens.
+Use kebab-case values that mirror the token keys (eg. `theme-light-default`, `theme-light-on-brand`).
+You can apply the `theme` prop at any nest level where the component consumes style props and children components inherit the theme.
+
 #### Spacing Props
 
 - `margin`
@@ -119,6 +127,10 @@ The component will be hidden from the specified breakpoints up using CSS display
 <Alert hideOn="mobile" />  // Hidden only on mobile
 <Button hideOn={['mobile', 'tablet']} />  // Hidden only on mobile and tablet
 <Alert hideFrom="tablet" />  // Hidden from tablet breakpoint and up
+
+// Theme examples
+<Header theme="theme-light-default" />
+<Header theme="theme-light-on-brand" />
 ```
 
 If you need even more control over the component styling, use [escape hatches](#escape-hatches).

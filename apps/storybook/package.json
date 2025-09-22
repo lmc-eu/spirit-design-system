@@ -13,6 +13,14 @@
     "start": "storybook dev --config-dir ./ --port 6006 --no-open",
     "build": "storybook build --config-dir ./ --output-dir ./build"
   },
+  "peerDependencies": {
+    "@lmc-eu/spirit-design-tokens": "^3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@lmc-eu/spirit-design-tokens": {
+      "optional": true
+    }
+  },
   "devDependencies": {
     "@babel/core": "7.26.10",
     "@storybook/addon-a11y": "8.6.14",

@@ -3,7 +3,7 @@ import { SpacingStyleProp } from '../../constants';
 import { TextAlignmentDictionaryType } from './dictionaries';
 import { type BreakpointToken, type SingleOrResponsive } from './responsive';
 import { TextHyphensDictionaryType, TextWordBreakDictionaryType } from './text';
-import { SpaceToken } from './tokens';
+import { type SpaceToken, type ThemeNameType } from './tokens';
 
 export const STYLE_SPACING_AUTO = 'auto' as const;
 export type StyleSpacingAuto = typeof STYLE_SPACING_AUTO;
@@ -32,6 +32,8 @@ export type DisplayProps = {
 };
 
 export interface StyleProps extends SpacingProps, DisplayProps {
+  /** Applies a theme class based on the defined design tokens. */
+  theme?: ThemeNameType;
   // For backward compatibility!
   /** Sets the CSS [className](https://developer.mozilla.org/en-US/docs/Web/API/Element/className) for the element. Only use as a **last resort**. Use style props instead. */
   UNSAFE_className?: string;
