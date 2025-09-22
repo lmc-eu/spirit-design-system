@@ -8,6 +8,10 @@ on:
   schedule:
     - cron: '0 9 * * *' # every day at 9:00
 
+permissions:
+  actions: write
+  contents: read
+
 env:
   NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
   NX_BRANCH: ${{ github.event.number || github.ref_name }}
