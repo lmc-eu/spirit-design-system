@@ -4816,6 +4816,8 @@ __metadata:
   resolution: "@lmc-eu/spirit-storybook@workspace:apps/storybook"
   dependencies:
     "@babel/core": "npm:7.26.10"
+    "@lmc-eu/spirit-design-tokens": "workspace:^"
+    "@lmc-eu/spirit-web-react": "workspace:^"
     "@storybook/addon-a11y": "npm:8.6.14"
     "@storybook/addon-actions": "npm:8.6.14"
     "@storybook/addon-essentials": "npm:8.6.14"
