@@ -37,3 +37,7 @@ export const DisplayStyleProps = {
   hideOn: 'd',
   hideFrom: 'd',
 } as const;
+
+export const ThemeStyleProps = {
+  theme: '',
+} as const;

@@ -1,9 +1,12 @@
 import { render, waitFor } from '@testing-library/react';
 import React, { ComponentType } from 'react';
 import getElement from '../testUtils/getElement';
+import { themePropsTest } from './themePropsTest';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const stylePropsTest = (Component: ComponentType<any>, testId?: string) => {
+  themePropsTest(Component, testId);
+
   it('renders class with UNSAFE_className', async () => {
     const testClassName = 'test-class';
     const dom = render(<Component UNSAFE_className={testClassName} />);

@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
 import { TextAlignments, TextHyphens, TextStyleProps, TextWordBreaks } from '../../constants';
-import { type StyleProps } from '../../types';
+import { type StyleProps, type ThemeNameType } from '../../types';
 import { useStyleProps } from '../styleProps';
 
 describe('styleProps', () => {
@@ -68,6 +68,14 @@ describe('styleProps', () => {
 
         consoleWarnMock.mockRestore();
       });
+    });
+
+    it('should append theme class when theme prop is provided', () => {
+      const theme: ThemeNameType = 'theme-light-default';
+      const { result } = renderHook(() => useStyleProps({ theme } as StyleProps));
+
+      expect(result.current.styleProps).toEqual({ className: 'theme-light-default', style: undefined });
+      expect(result.current.props).toEqual({});
     });
 
     it('should return correct utility class for simple spacing prop', () => {
