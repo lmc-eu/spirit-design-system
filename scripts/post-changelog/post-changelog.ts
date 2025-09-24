@@ -7,13 +7,92 @@ import { config as dotenvConfig } from 'dotenv-safe';
 import gitDiffParser from 'gitdiff-parser';
 import { simpleGit } from 'simple-git';
 import slackifyMarkdown from 'slackify-markdown';
-import { $, fetch, argv, path } from 'zx';
+import { $, fetch, argv, path, fs } from 'zx';
 
 const COLOR_CORE = '#00A58E';
 const PACKAGES = ['web', 'web-react', 'web-twig', 'design-tokens', 'icons', 'codemods', 'analytics'];
 let SLACK_CHANGELOG_WEBHOOK_URL = process.env.SLACK_CHANGELOG_WEBHOOK_URL ?? '';
+// Git lock retry configuration
+const MAX_RETRIES = 5;
+const RETRY_DELAY_MS = 2000; // 2 seconds
 
 /**
+ * Wait for specified milliseconds
+ */
+async function wait(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+/**
+ * Check if git lock files are present
+ */
+function isGitLockPresent(repoDir: string = '.'): boolean {
+  // Checks for common git lock files
+  return (
+    fs.existsSync(path.join(repoDir, '.git', 'index.lock')) ||
+    fs.existsSync(path.join(repoDir, '.git', 'packed-refs.lock')) ||
+    fs.existsSync(path.join(repoDir, '.git', 'HEAD.lock'))
+  );
+}
+
+/**
+ * Executes a git operation with retry mechanism for handling git locks
+ *
+ * @param operation - The git operation function to execute
+ * @param repoDir - The repository directory (defaults to current directory)
+ * @param maxRetries - Maximum number of retries (defaults to MAX_RETRIES)
+ * @param retryDelay - Delay between retries in milliseconds (defaults to RETRY_DELAY_MS)
+ *
+ * @returns Promise resolving to the operation result
+ */
+async function executeGitOperationWithRetry<T>(
+  operation: () => Promise<T>,
+  repoDir: string = '.',
+  maxRetries: number = MAX_RETRIES,
+  retryDelay: number = RETRY_DELAY_MS,
+): Promise<T> {
+  let attempts = 0;
+  let lastError: Error;
+
+  while (attempts < maxRetries) {
+    try {
+      if (isGitLockPresent(repoDir)) {
+        throw new Error('Git lock file detected before operation.');
+      }
+
+      return await operation();
+    } catch (err) {
+      const error = err as Error;
+
+      const isGitLockError =
+        error.message.includes('Another git process seems to be running') ||
+        error.message.includes('index.lock') ||
+        error.message.includes('packed-refs.lock') ||
+        error.message.includes('HEAD.lock') ||
+        error.message.includes('Git lock file detected') ||
+        isGitLockPresent(repoDir);
+
+      if (isGitLockError) {
+        attempts++;
+        lastError = error;
+        console.warn(
+          `Git lock detected (attempt ${attempts}/${maxRetries}). Retrying in ${retryDelay / 1000} seconds...`,
+        );
+
+        if (attempts < maxRetries) {
+          await wait(retryDelay);
+          continue;
+        }
+      }
+
+      throw error;
+    }
+  }
+
+  throw new Error(`Git operation failed after ${maxRetries} retries: ${lastError!.message}`);
+}
+
+/*
  * Generates a title for the given package.
  *
  * @returns {string} The generated title.
@@ -202,12 +281,16 @@ async function configureWebhookURL() {
  */
 async function publishChangelog(npmPackage: string) {
   try {
-    await simpleGit().fetch(['origin', 'main', '--tags']);
-    const tags = await simpleGit().tags({ '--sort': '-taggerdate' });
-    const diff = await getDiff(
-      argv.dry ? '@lmc-eu/spirit-web-react@3.1.0' : (tags.latest ?? ''),
-      changelogPath(npmPackage),
-    );
+    const diff = await executeGitOperationWithRetry(async () => {
+      await simpleGit().fetch(['origin', 'main', '--tags']);
+      const tags = await simpleGit().tags({ '--sort': '-taggerdate' });
+      const diff = await getDiff(
+        argv.dry ? '@lmc-eu/spirit-web-react@3.1.0' : (tags.latest ?? ''),
+        changelogPath(npmPackage),
+      );
+
+      return diff;
+    });
     const files = gitDiffParser.parse(diff);
     if (files.length === 0) {
       console.log(`No changes in ${npmPackage}`);
