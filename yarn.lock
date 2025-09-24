@@ -4701,7 +4701,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@lmc-eu/spirit-design-tokens@npm:^3.7.0, @lmc-eu/spirit-design-tokens@workspace:^, @lmc-eu/spirit-design-tokens@workspace:packages/design-tokens":
+"@lmc-eu/spirit-design-tokens@npm:^3.7.1, @lmc-eu/spirit-design-tokens@workspace:^, @lmc-eu/spirit-design-tokens@workspace:packages/design-tokens":
   version: 0.0.0-use.local
   resolution: "@lmc-eu/spirit-design-tokens@workspace:packages/design-tokens"
   dependencies:
@@ -4853,7 +4853,7 @@ __metadata:
     "@lmc-eu/eslint-config-typescript": "npm:2.1.5"
     "@lmc-eu/spirit-common": "npm:^0.4.1"
     "@lmc-eu/spirit-demo": "npm:^1.1.0"
-    "@lmc-eu/spirit-web": "npm:^3.17.0"
+    "@lmc-eu/spirit-web": "npm:^3.18.0"
     "@rollup/plugin-node-resolve": "npm:15.3.1"
     "@rollup/plugin-replace": "npm:6.0.2"
     "@rollup/plugin-terser": "npm:0.4.4"
@@ -4926,7 +4926,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@lmc-eu/spirit-web@npm:^3.17.0, @lmc-eu/spirit-web@workspace:^, @lmc-eu/spirit-web@workspace:packages/web":
+"@lmc-eu/spirit-web@npm:^3.18.0, @lmc-eu/spirit-web@workspace:^, @lmc-eu/spirit-web@workspace:packages/web":
   version: 0.0.0-use.local
   resolution: "@lmc-eu/spirit-web@workspace:packages/web"
   dependencies:
@@ -4936,7 +4936,7 @@ __metadata:
     "@lmc-eu/browserslist-config": "npm:2.0.1"
     "@lmc-eu/spirit-common": "npm:^0.4.1"
     "@lmc-eu/spirit-demo": "npm:^1.1.0"
-    "@lmc-eu/spirit-design-tokens": "npm:^3.7.0"
+    "@lmc-eu/spirit-design-tokens": "npm:^3.7.1"
     "@lmc-eu/spirit-icons": "npm:^0.10.2"
     "@rollup/plugin-babel": "npm:6.0.4"
     "@rollup/plugin-node-resolve": "npm:15.3.1"

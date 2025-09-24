@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.18.0"></a>
+
+# [3.18.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.17.0...@lmc-eu/spirit-web@3.18.0) (2025-09-24)
+
+### Bug Fixes
+
+- **web:** Add fallback handling for missing token keys [#DS-2167](https://github.com/lmc-eu/spirit-design-system/issues/DS-2167) ([da4ef83](https://github.com/lmc-eu/spirit-design-system/commit/da4ef83))
+
+### Features
+
+- **web:** Update headline emphasis [#DS-2020](https://github.com/lmc-eu/spirit-design-system/issues/DS-2020) ([819d785](https://github.com/lmc-eu/spirit-design-system/commit/819d785))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="3.17.0"></a>
 
 # [3.17.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.16.0...@lmc-eu/spirit-web@3.17.0) (2025-09-17)

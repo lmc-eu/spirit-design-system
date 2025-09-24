@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.19.0"></a>
+
+# [3.19.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.18.0...@lmc-eu/spirit-web-react@3.19.0) (2025-09-24)
+
+### Bug Fixes
+
+- **web-react:** Add fallback handling for missing token keys [#DS-2167](https://github.com/lmc-eu/spirit-design-system/issues/DS-2167) ([164973f](https://github.com/lmc-eu/spirit-design-system/commit/164973f))
+
+### Documentation
+
+- **web-react:** Update Responsive types in API tables for components ([fc66252](https://github.com/lmc-eu/spirit-design-system/commit/fc66252)), closes [#DS-1819](https://github.com/lmc-eu/spirit-design-system/issues/DS-1819)
+
+### Features
+
+- **web-react:** Introduce Responsive type [#DS-1819](https://github.com/lmc-eu/spirit-design-system/issues/DS-1819) ([f45211a](https://github.com/lmc-eu/spirit-design-system/commit/f45211a))
+- **web-react:** Introduce SkipLink component [#DS-1863](https://github.com/lmc-eu/spirit-design-system/issues/DS-1863) ([29724a7](https://github.com/lmc-eu/spirit-design-system/commit/29724a7))
+- **web-react:** Introduce Timeline [#DS-2020](https://github.com/lmc-eu/spirit-design-system/issues/DS-2020) ([f3e62a3](https://github.com/lmc-eu/spirit-design-system/commit/f3e62a3))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="3.18.0"></a>
 
 # [3.18.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.17.0...@lmc-eu/spirit-web-react@3.18.0) (2025-09-17)
