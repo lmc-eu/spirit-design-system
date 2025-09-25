@@ -10,6 +10,7 @@ const TextFieldInline = () => (
         isLabelHidden
         label="Hidden Label"
         name="textfieldInline"
+        onChange={(e) => console.log(`Value: ${(e.target as HTMLInputElement).value}`)}
         placeholder="Placeholder"
         value="Filled"
       />
@@ -22,18 +23,20 @@ const TextFieldInline = () => (
         isLabelHidden
         label="Hidden Label"
         name="textfieldInlineFirst"
+        onChange={(e) => console.log(`Value: ${(e.target as HTMLInputElement).value}`)}
         placeholder="Placeholder"
         value="Filled"
       />
       <TextField
+        hasPasswordToggle
         id="textfield-inline-password"
         isLabelHidden
         label="Hidden Label"
-        hasPasswordToggle
         name="textfieldInlinePassword"
+        onChange={(e) => console.log(`Value: ${(e.target as HTMLInputElement).value}`)}
+        placeholder="Placeholder"
         validationState="danger"
         validationText="Too short"
-        placeholder="Placeholder"
         value="1234"
       />
       <Button>Button</Button>
