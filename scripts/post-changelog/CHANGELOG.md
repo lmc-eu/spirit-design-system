@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.4"></a>
+
+## [1.1.4](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-post-changelog@1.1.3...@lmc-eu/spirit-post-changelog@1.1.4) (2025-09-25)
+
+### Bug Fixes
+
+- **scripts:** Execute git commands with safe-guard and retry mechanism ([c10b2bb](https://github.com/lmc-eu/spirit-design-system/commit/c10b2bb))
+
+**Note:** Version bump only for package @lmc-eu/spirit-post-changelog
+
 <a name="1.1.3"></a>
 
 ## [1.1.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-post-changelog@1.1.2...@lmc-eu/spirit-post-changelog@1.1.3) (2025-05-12)

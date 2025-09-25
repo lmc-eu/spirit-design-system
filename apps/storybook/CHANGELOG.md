@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.2.0"></a>
+
+# [0.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-storybook@0.1.10...@lmc-eu/spirit-storybook@0.2.0) (2025-09-25)
+
+### Features
+
+- **storybook:** Update Storybook theme and styleProps ([a8152ff](https://github.com/lmc-eu/spirit-design-system/commit/a8152ff))
+- **web-react:** Introduce theme prop [#DS-2013](https://github.com/lmc-eu/spirit-design-system/issues/DS-2013) ([e2dc897](https://github.com/lmc-eu/spirit-design-system/commit/e2dc897))
+
+**Note:** Version bump only for package @lmc-eu/spirit-storybook
+
 <a name="0.1.10"></a>
 
 ## [0.1.10](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-storybook@0.1.9...@lmc-eu/spirit-storybook@0.1.10) (2025-09-24)

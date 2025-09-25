@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.20.0"></a>
+
+# [3.20.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.19.0...@lmc-eu/spirit-web-react@3.20.0) (2025-09-25)
+
+### Bug Fixes
+
+- **web-react:** Export `Timeline` component ([7a43504](https://github.com/lmc-eu/spirit-design-system/commit/7a43504))
+
+### Features
+
+- **web-react:** Introduce theme prop [#DS-2013](https://github.com/lmc-eu/spirit-design-system/issues/DS-2013) ([e2dc897](https://github.com/lmc-eu/spirit-design-system/commit/e2dc897))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="3.19.0"></a>
 
 # [3.19.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.18.0...@lmc-eu/spirit-web-react@3.19.0) (2025-09-24)
