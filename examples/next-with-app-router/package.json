@@ -13,14 +13,14 @@
     "@lmc-eu/spirit-icons": "workspace:^",
     "@lmc-eu/spirit-web": "workspace:^",
     "@lmc-eu/spirit-web-react": "workspace:^",
-    "next": "15.4.7",
+    "next": "15.5.4",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "sass": "1.89.0",
-    "sass-embedded": "1.89.0"
+    "sass": "1.93.2",
+    "sass-embedded": "1.93.2"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "14.2.29",
+    "@next/eslint-plugin-next": "14.2.33",
     "@types/node": "20.17.24",
     "@types/react": "18.3.18",
     "@types/react-dom": "18.3.5",
