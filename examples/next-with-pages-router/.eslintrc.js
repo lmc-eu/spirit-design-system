@@ -1,6 +1,6 @@
 module.exports = {
   extends: [
-    '../../.eslintrc',
+    'eslint-config-spirit',
     '@lmc-eu/eslint-config-react',
     '@lmc-eu/eslint-config-typescript',
     '@lmc-eu/eslint-config-typescript/react',
