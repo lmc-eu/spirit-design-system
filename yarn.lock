@@ -82,6 +82,7 @@ __metadata:
     "@swc/core": "npm:1.11.22"
     "@swc/jest": "npm:0.2.38"
     eslint: "npm:8.57.1"
+    eslint-config-spirit: "workspace:^"
     jest: "npm:30.0.0"
     jest-config-spirit: "workspace:^"
     npm-run-all2: "npm:6.2.6"
