@@ -6,7 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "ESLINT_USE_FLAT_CONFIG=false next lint"
   },
   "dependencies": {
     "@lmc-eu/spirit-design-tokens": "workspace:^",
