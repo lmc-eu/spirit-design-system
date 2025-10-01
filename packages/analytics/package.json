@@ -41,7 +41,7 @@
     "compile": "tsup --config ./config/tsup.config.ts",
     "start": "tsup src/index.ts --watch",
     "types": "tsc",
-    "lint": "eslint ./",
+    "lint": "ESLINT_USE_FLAT_CONFIG=false eslint ./",
     "lint:fix": "yarn lint --fix",
     "test": "npm-run-all --serial lint test:unit:coverage types",
     "test:unit": "jest",
