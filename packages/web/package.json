@@ -40,7 +40,7 @@
     "js:compile:bundle": "rollup --environment BUNDLE:true --config config/rollup.config.js",
     "js:compile:plugins": "tsc --module es2015 --outDir dist/js --project ./config/tsconfig.prod.json && yarn js:finalize",
     "js:finalize": "cd dist/js && shx mv index.esm.js index.js && shx mv index.esm.js.map index.js.map && shx mv index.esm.d.ts index.d.ts && rm index.umd.js index.umd.js.map index.umd.d.ts",
-    "js:lint": "eslint ./",
+    "js:lint": "ESLINT_USE_FLAT_CONFIG=false eslint ./",
     "js:lint:fix": "yarn js:lint --fix",
     "lint": "npm-run-all js:lint css:lint --serial",
     "lint:fix": "npm-run-all js:lint:fix css:lint:fix",

@@ -24,7 +24,7 @@
     "build:finalize": "shx cp package.json README.md dist/",
     "build:bundle": "vite build --config ./config/vite/lib.ts",
     "build:compile": "tsc --module es2015 --outDir dist --project ./config/tsconfig.prod.json",
-    "lint": "eslint ./",
+    "lint": "ESLINT_USE_FLAT_CONFIG=false eslint ./",
     "lint:fix": "yarn lint --fix",
     "test": "npm-run-all lint test:unit:coverage types",
     "test:unit": "jest",

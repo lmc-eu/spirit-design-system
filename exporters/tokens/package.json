@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "vite build --watch",
     "build": "vite build",
-    "lint": "eslint ./",
+    "lint": "ESLINT_USE_FLAT_CONFIG=false eslint ./",
     "lint:fix": "yarn lint --fix",
     "test": "npm-run-all lint test:unit:coverage types",
     "test:unit": "jest",
