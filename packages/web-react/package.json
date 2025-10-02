@@ -119,7 +119,7 @@
     "webpack:browser": "webpack --mode production --config ./config/webpack.browser.js --progress",
     "rollup": "rollup -c ./config/rollup.config.js",
     "resolve": "tsx ./scripts/resolveModuleIds.ts",
-    "lint": "eslint ./",
+    "lint": "ESLINT_USE_FLAT_CONFIG=false eslint ./",
     "lint:fix": "yarn lint --fix",
     "test": "npm-run-all --serial lint types test:unit:coverage",
     "test:unit": "jest",
