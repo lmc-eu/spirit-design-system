@@ -10,6 +10,6 @@ class ComponentsController extends AbstractController
     #[Route('/components/{component}', name: 'component_view')]
     public function show(string $component): Response
     {
-        return $this->render(sprintf('@components/%s/%s.stories.twig', $component, $component));
+        return $this->render(sprintf('@components/%s/%s.demo.twig', $component, $component));
     }
 }
