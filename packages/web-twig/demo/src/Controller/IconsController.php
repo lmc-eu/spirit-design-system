@@ -10,7 +10,7 @@ class IconsController extends AbstractController
     #[Route('/icons', name: 'icons_index')]
     public function index(): Response
     {
-        return $this->render('@icons/Icons.stories.twig', [ 'icons' => $this->getWebIcons() ]);
+        return $this->render('@icons/Icons.demo.twig', [ 'icons' => $this->getWebIcons() ]);
     }
 
     /**
