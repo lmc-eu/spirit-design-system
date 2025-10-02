@@ -25,7 +25,7 @@ This is an example of a typical file structure of a component:
     └── Resources
         └── components
             └── <ComponentName>
-                ├── stories - Component stories
+                ├── demo - Component demo
                 ├── <ComponentName>.stories.twig - Template rendered in demo app
                 ├── <ComponentName>.twig — Twig component
                 └── README.md — documentation of the component
