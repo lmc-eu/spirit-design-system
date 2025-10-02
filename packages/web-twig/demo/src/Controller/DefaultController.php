@@ -25,8 +25,8 @@ class DefaultController extends AbstractController
 
         /** @var SplFileInfo $file */
         foreach ($directories as $fileinfo) {
-            // display only directories where stories exists
-            if ($fileinfo->isDir() && !$fileinfo->isDot() && in_array('stories', scandir($fileinfo->getPathname()))) {
+            // display only directories where demo exists
+            if ($fileinfo->isDir() && !$fileinfo->isDot() && in_array('demo', scandir($fileinfo->getPathname()))) {
                 $components[] = $fileinfo->getBasename();
             }
         }
