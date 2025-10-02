@@ -68,7 +68,7 @@ TextField with password toggle (button to reveal the password):
 | `validationText`    | \[`ReactNode` \| `ReactNode[]`]                                              | —        | ✕        | Validation text                                                         |
 | `value`             | `string`                                                                     | —        | ✕        | Input value \*                                                          |
 
-(\*) When `value` is provided, the component acts as a controlled component and requires an native `onChange` handler to update the value. For more information, please read [React documentation][react-input]
+(\*) When `value` is provided, the component acts as an controlled component and requires an native `onChange` handler to update the value. For more information, please read [React documentation][react-input]
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
