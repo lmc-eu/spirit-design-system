@@ -40,6 +40,6 @@ class HelpersController extends AbstractController
     #[Route('/helpers/{helper}', name: 'helper_view')]
     public function show(string $helper): Response
     {
-        return $this->render(sprintf('@helpers/%s/%s.stories.twig', $helper, $helper));
+        return $this->render(sprintf('@helpers/%s/%s.demo.twig', $helper, $helper));
     }
 }
