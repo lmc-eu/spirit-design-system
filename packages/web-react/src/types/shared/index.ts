@@ -44,3 +44,12 @@ export enum SpiritBreakpoints {
  * Unfortunately it is not exported, and you must create it manually.
  */
 export type Booleanish = boolean | 'true' | 'false';
+
+/**
+ * Represents a non-negative integer.
+ *
+ * @template T - The type of the number.
+ */
+/* eslint-disable @typescript-eslint/no-explicit-any -- we don't care about the type here */
+export type PositiveInteger<T extends number> = `${T}` extends '0' | `-${any}` | `${any}.${any}` ? never : T;
+/* eslint-enable @typescript-eslint/no-explicit-any */
