@@ -1,0 +1,42 @@
+@use '@tokens' as tokens;
+@use '../../settings/cursors';
+@use '../../tools/dictionaries';
+@use '../../tools/reset';
+@use '../../tools/string' as spirit-string;
+@use '../../tools/typography';
+@use 'theme';
+
+$_component-name: 'ControlButton';
+$_component-name-infix: spirit-string.convert-pascal-case-to-kebab-case($_component-name);
+
+.ControlButton {
+    --#{tokens.$css-variable-prefix}icon-size: var(--#{tokens.$css-variable-prefix}#{$_component-name-infix}-icon-size);
+
+    @include reset.button();
+    @include typography.from-css-variables($infix: $_component-name-infix);
+
+    height: var(--#{tokens.$css-variable-prefix}#{$_component-name-infix}-height);
+    padding-inline: var(--#{tokens.$css-variable-prefix}#{$_component-name-infix}-padding-x);
+    padding-block: var(--#{tokens.$css-variable-prefix}#{$_component-name-infix}-padding-y);
+    border: theme.$border-width theme.$border-style transparent;
+    border-radius: theme.$border-radius;
+    user-select: none;
+    cursor: cursors.$buttons;
+
+    &:is(:disabled, .is-disabled, .ControlButton--disabled) {
+        pointer-events: none;
+        cursor: cursors.$disabled;
+    }
+}
+
+.ControlButton--symmetrical {
+    flex: none;
+    aspect-ratio: 1;
+    padding-inline: 0;
+}
+
+@include dictionaries.generate-sizes(
+    $class-name: $_component-name,
+    $dictionary-values: theme.$size-dictionary,
+    $config: theme.$size-config
+);
