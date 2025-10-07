@@ -62,6 +62,14 @@ The `isBlock` property will be removed in the next major version.
 
 For more information, see documentation for [Button][button] and [ButtonLink][button-link] components.
 
+### UNSTABLE_Truncate `lines` Prop
+
+The `lines` property will be removed in the next major version in the `UNSTABLE_Truncate` component.
+
+Use combination of `mode` and `limit` instead.
+
+- `<UNSTABLE_Truncate lines={3} … />` → `<UNSTABLE_Truncate mode="lines" limit={3} … />`
+
 [button]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Button/README.md#how-to-make-a-fluid-button
 [button-link]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/ButtonLink/README.md#how-to-make-a-fluid-buttonlink
 [codemod-collapse]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/codemods/src/transforms/v4/web-react/README.md#v4web-reactcollapse-isdisposable-prop--uncontrolledcollapse-hideoncollapse-to-isdisposable-prop-change
