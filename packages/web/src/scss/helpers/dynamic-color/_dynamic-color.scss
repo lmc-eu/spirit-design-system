@@ -1,0 +1,29 @@
+// 1. For dynamic-color backgrounds, we want the text color to inherit from parent element where a text color utility class is applied.
+
+@use '../../tools/dynamic-colors';
+
+.dynamic-color-border {
+    @include dynamic-colors.border();
+}
+
+.dynamic-color-background-interactive {
+    @include dynamic-colors.background-interactive();
+
+    color: inherit; // 1.
+}
+
+.dynamic-color-background-selected {
+    @include dynamic-colors.background-selected();
+
+    color: inherit; // 1.
+
+    &:active {
+        color: inherit; // 1.
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            color: inherit; // 1.
+        }
+    }
+}
