@@ -85,6 +85,7 @@ CODEOWNERS
 # Unformatted fixtures
 **/{fixtures}/**/unformatted*
 **/__fixtures__/unformatted*
+*.snap
 
 # tokens exporter generated cjs
 exporters/tokens/generated/**/*.cjs
