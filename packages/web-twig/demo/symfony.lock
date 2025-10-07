@@ -1,4 +1,7 @@
 {
+    "almacareer/twigx-bundle": {
+        "version": "5.0.1"
+    },
     "friendsofphp/php-cs-fixer": {
         "version": "3.14",
         "recipe": {
