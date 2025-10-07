@@ -1,16 +1,22 @@
+// When oklch() is supported by the browser, we can use it to generate dynamic colors.
+// Dynamic colors are based on the `--spirit-local-background-color` variable, which is set by utility classes like
+// `bg-secondary` or `bg-emotion-success-basic`. If `--spirit-local-background-color` is not available, transparent
+// color is used by the browser.
+//
+// @see https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch
+
 @use '@tokens' as tokens;
 
-// When oklch() is supported, we can use it to generate dynamic colors.
-// Dynamic colors are based on the `--spirit-local-background-color` variable, which is set by utility classes like
-// `bg-secondary`, `bg-emotion-success-basic`, or even `bg-gradient-primary`.
-// If `--spirit-local-background-color` is not available, no background color can be applied.
-
-$_lightness-delta-selected: 0.3;
-$_lightness-delta-state-hover: 0.3;
-$_lightness-delta-state-active: 0.45;
-$_chroma-scale-selected: 4;
-$_chroma-scale-state-hover: 4;
-$_chroma-scale-state-active: 4;
+// Constants for dynamic color generation are fine-tuned for the default light Spirit theme.
+// New design tokens may be added in the future to replace the constants and allow for theme-based customization.
+$_lightness-delta-border: 0.75;
+$_lightness-delta-background-state-hover: 0.3;
+$_lightness-delta-background-state-active: 0.45;
+$_lightness-delta-background-selected: 0.3;
+$_chroma-scale-border: 2;
+$_chroma-scale-background-state-hover: 4;
+$_chroma-scale-background-state-active: 4;
+$_chroma-scale-background-selected: 4;
 
 // Function to generate dynamic color based on an input color.
 // - The lightness term smoothly moves any color toward the mid tone `$_lightness-midpoint`, making light colors darker and dark colors lighter.
@@ -32,6 +38,17 @@ $_chroma-scale-state-active: 4;
     );
 }
 
+// Mixin to generate dynamic border color.
+@mixin border {
+    @supports (color: oklch(from red l c h)) {
+        border-color: alter-color(
+            $color: var(--#{tokens.$css-variable-prefix}local-background-color),
+            $lightness-delta: $_lightness-delta-border,
+            $chroma-scale: $_chroma-scale-border
+        );
+    }
+}
+
 // Mixin to generate dynamic background colors for interactive states.
 // Fall back to static colors when oklch() is not supported.
 @mixin background-interactive {
@@ -43,13 +60,13 @@ $_chroma-scale-state-active: 4;
     @supports (color: oklch(from red l c h)) {
         --#{tokens.$css-variable-prefix}local-background-color-state-hover: #{alter-color(
                 $color: var(--#{tokens.$css-variable-prefix}local-background-color),
-                $lightness-delta: $_lightness-delta-state-hover,
-                $chroma-scale: $_chroma-scale-state-hover
+                $lightness-delta: $_lightness-delta-background-state-hover,
+                $chroma-scale: $_chroma-scale-background-state-hover
             )};
         --#{tokens.$css-variable-prefix}local-background-color-state-active: #{alter-color(
                 $color: var(--#{tokens.$css-variable-prefix}local-background-color),
-                $lightness-delta: $_lightness-delta-state-active,
-                $chroma-scale: $_chroma-scale-state-active
+                $lightness-delta: $_lightness-delta-background-state-active,
+                $chroma-scale: $_chroma-scale-background-state-active
             )};
     }
 
@@ -66,12 +83,13 @@ $_chroma-scale-state-active: 4;
     }
 }
 
+// Mixin to generate dynamic background color for selected items.
 @mixin background-selected {
     @supports (color: oklch(from red l c h)) {
         background-color: alter-color(
             $color: var(--#{tokens.$css-variable-prefix}local-background-color),
-            $lightness-delta: $_lightness-delta-selected,
-            $chroma-scale: $_chroma-scale-selected
+            $lightness-delta: $_lightness-delta-background-selected,
+            $chroma-scale: $_chroma-scale-background-selected
         );
     }
 }
