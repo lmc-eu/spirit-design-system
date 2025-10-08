@@ -1,4 +1,4 @@
-import { Supernova, Token, TokenGroup, TokenTheme } from '@supernovaio/sdk-exporters';
+import { DimensionToken, Supernova, Token, TokenGroup, TokenTheme, TokenType } from '@supernovaio/sdk-exporters';
 import {
   commonThemedFilesData,
   devicesFilesData,
@@ -15,9 +15,37 @@ import {
   getCollectionId,
 } from '../helpers/collectionsHelper';
 import { filterColorCollections } from '../helpers/colorHelper';
-import { getDeviceThemes } from '../helpers/deviceHelpers';
+import { getDeviceAlias, getDeviceThemes } from '../helpers/deviceHelpers';
 import { toCamelCase } from '../helpers/stringHelper';
 import { generateFileContent } from './contentGenerator';
+import { DeviceDimensionMap, DeviceDimensionValue } from './stylesObjectGenerator';
+
+const buildDeviceDimensionMap = (tokens: Token[]): DeviceDimensionMap => {
+  return tokens.reduce((accumulator, token) => {
+    if (token.tokenType !== TokenType.dimension) {
+      return accumulator;
+    }
+
+    const device = getDeviceAlias(token).toLowerCase();
+
+    if (!device) {
+      return accumulator;
+    }
+
+    const dimensionToken = token as DimensionToken;
+    const { measure, unit } = dimensionToken.value;
+
+    if (typeof measure !== 'number' || !unit) {
+      return accumulator;
+    }
+
+    const deviceValues = accumulator.get(token.id) || {};
+    (deviceValues as Record<string, DeviceDimensionValue>)[device] = { measure, unit };
+    accumulator.set(token.id, deviceValues as Record<string, DeviceDimensionValue>);
+
+    return accumulator;
+  }, new Map<string, Record<string, DeviceDimensionValue>>());
+};
 
 export const generateFiles = (
   tokens: Array<Token>,
@@ -25,9 +53,10 @@ export const generateFiles = (
   tokenGroups: Array<TokenGroup>,
   filesData: FileData[],
   hasJsOutput: boolean = false,
+  deviceDimensions?: DeviceDimensionMap,
 ) => {
   return filesData.map((fileData) => {
-    const fileContent = generateFileContent(tokens, mappedTokens, tokenGroups, fileData, hasJsOutput);
+    const fileContent = generateFileContent(tokens, mappedTokens, tokenGroups, fileData, hasJsOutput, deviceDimensions);
     const fileName = hasJsOutput ? toCamelCase(fileData.fileName) : fileData.fileName;
 
     return {
@@ -124,10 +153,25 @@ export const generateOutputFilesByThemes = async (
   );
 
   const deviceTokens: Token[] = getDeviceThemes(allDevices);
+  const deviceDimensions = buildDeviceDimensionMap(deviceTokens);
 
   // Generate global files for non-themed tokens
-  const globalFiles = generateFiles(filteredGlobalCollections, mappedTokens, tokenGroups, nonThemedFilesData);
-  const globalJsFiles = generateFiles(filteredGlobalCollections, mappedTokens, tokenGroups, nonThemedFilesData, true);
+  const globalFiles = generateFiles(
+    filteredGlobalCollections,
+    mappedTokens,
+    tokenGroups,
+    nonThemedFilesData,
+    false,
+    deviceDimensions,
+  );
+  const globalJsFiles = generateFiles(
+    filteredGlobalCollections,
+    mappedTokens,
+    tokenGroups,
+    nonThemedFilesData,
+    true,
+    deviceDimensions,
+  );
   const globalBarrelFile = generateBarrelFile(globalFiles);
   const globalJsBarrelFile = generateBarrelFile(globalJsFiles, true);
   const forwardDevices = deviceTokens.length > 0 ? `@forward '${DEVICES_DIRECTORY}';\n` : '';
@@ -168,8 +212,15 @@ export const generateOutputFilesByThemes = async (
 
   // Generate files for each theme
   for (const { themedTokens, theme } of allThemes) {
-    const themeFiles = generateFiles(themedTokens, mappedTokens, tokenGroups, themedFilesData);
-    const themeTsFiles = generateFiles(themedTokens, mappedTokens, tokenGroups, themedFilesData, true);
+    const themeFiles = generateFiles(themedTokens, mappedTokens, tokenGroups, themedFilesData, false, deviceDimensions);
+    const themeTsFiles = generateFiles(
+      themedTokens,
+      mappedTokens,
+      tokenGroups,
+      themedFilesData,
+      true,
+      deviceDimensions,
+    );
     const themeBarrelFile = generateBarrelFile(themeFiles);
     const themeTsBarrelFile = generateBarrelFile(themeTsFiles, true);
     outputFiles.push(
@@ -207,6 +258,7 @@ export const generateOutputFilesByThemes = async (
     tokenGroups,
     commonThemedFilesData,
     false,
+    deviceDimensions,
   );
   const colorTsTokensFile = generateFiles(
     filteredColorCollections,
@@ -214,6 +266,7 @@ export const generateOutputFilesByThemes = async (
     tokenGroups,
     commonThemedFilesData,
     true,
+    deviceDimensions,
   );
 
   outputFiles.push({ path: `./${SCSS_DIRECTORY}/`, fileName: '@themes.scss', content: rootThemesFileContent });
@@ -244,8 +297,22 @@ export const generateOutputFilesByThemes = async (
 
   // Generate a file for device collection
   if (deviceTokens.length > 0) {
-    const deviceFile = generateFiles(deviceTokens, mappedTokens, tokenGroups, devicesFilesData, false);
-    const deviceTsFile = generateFiles(deviceTokens, mappedTokens, tokenGroups, devicesFilesData, true);
+    const deviceFile = generateFiles(
+      deviceTokens,
+      mappedTokens,
+      tokenGroups,
+      devicesFilesData,
+      false,
+      deviceDimensions,
+    );
+    const deviceTsFile = generateFiles(
+      deviceTokens,
+      mappedTokens,
+      tokenGroups,
+      devicesFilesData,
+      true,
+      deviceDimensions,
+    );
     const deviceBarrelFile = generateBarrelFile(deviceFile);
     const deviceTsBarrelFile = generateBarrelFile(deviceTsFile, true);
 
