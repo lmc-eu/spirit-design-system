@@ -29,7 +29,7 @@ exampleColorsTokens.set('actionColorRef', {
       options: [
         {
           id: 'theme-tokens-id',
-          name: 'Theme tokens',
+          name: 'Theme',
         },
         {
           id: 'primitives-id',
@@ -37,7 +37,7 @@ exampleColorsTokens.set('actionColorRef', {
         },
         {
           id: 'global-tokens-id',
-          name: 'Global tokens',
+          name: 'Global',
         },
       ],
     },
@@ -72,7 +72,7 @@ exampleColorsTokens.set('backgroundColorRef', {
       options: [
         {
           id: 'theme-tokens-id',
-          name: 'Theme tokens',
+          name: 'Theme',
         },
         {
           id: 'primitives-id',
@@ -80,7 +80,7 @@ exampleColorsTokens.set('backgroundColorRef', {
         },
         {
           id: 'global-tokens-id',
-          name: 'Global tokens',
+          name: 'Global',
         },
       ],
     },

@@ -85,7 +85,8 @@ export const filterColorCollections = (tokens: Token[]) => {
     }
 
     // Proceed with filtering for "Color" tokenType
-    const collectionProperty = item.properties.find((prop) => prop.name === TOKEN_COLLECTION_PROPERTY_NAME);
+    const collectionProperties = Array.isArray(item.properties) ? item.properties : [];
+    const collectionProperty = collectionProperties.find((prop) => prop.name === TOKEN_COLLECTION_PROPERTY_NAME);
     if (!collectionProperty) {
       return false;
     }
