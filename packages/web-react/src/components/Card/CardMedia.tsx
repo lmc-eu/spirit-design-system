@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import { useStyleProps } from '../../hooks';
-import { CardSizes, SpiritCardMediaProps } from '../../types';
+import { CardSizes, type SpiritCardMediaProps } from '../../types';
 import { useCardStyleProps } from './useCardStyleProps';
 
 const defaultProps: Partial<SpiritCardMediaProps> = {

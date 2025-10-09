@@ -1,4 +1,4 @@
-import { FormEvent, FormEventHandler, ForwardedRef, MutableRefObject, useEffect } from 'react';
+import { type FormEvent, type FormEventHandler, type ForwardedRef, type MutableRefObject, useEffect } from 'react';
 
 export interface UseAdjustHeightProps {
   elementReference?: MutableRefObject<ForwardedRef<HTMLTextAreaElement>>;

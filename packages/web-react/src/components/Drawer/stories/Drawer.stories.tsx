@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 import React, { useState } from 'react';
 import { AlignmentX } from '../../../constants';
-import { SpiritDrawerProps } from '../../../types';
+import { type SpiritDrawerProps } from '../../../types';
 import { Button } from '../../Button';
 import Drawer from '../Drawer';
 import DrawerCloseButton from '../DrawerCloseButton';

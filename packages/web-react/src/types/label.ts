@@ -1,5 +1,5 @@
-import { ElementType, ReactNode } from 'react';
-import { StyleProps, TransferProps } from './shared';
+import { type ElementType, type ReactNode } from 'react';
+import { type StyleProps, type TransferProps } from './shared';
 
 export type LabelElementProps<E extends ElementType> = {
   /**

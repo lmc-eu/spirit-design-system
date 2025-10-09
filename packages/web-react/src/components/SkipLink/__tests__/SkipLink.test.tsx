@@ -4,10 +4,10 @@ import React from 'react';
 import {
   ariaAttributesTest,
   classNamePrefixProviderTest,
+  elementTypePropsTest,
   restPropsTest,
   stylePropsTest,
   validHtmlAttributesTest,
-  elementTypePropsTest,
 } from '@local/tests';
 import SkipLink from '../SkipLink';
 

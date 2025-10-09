@@ -6,16 +6,14 @@ type GridItemFactoryProps = {
   label: string;
 };
 
-const GridItemFactory = ({ items, label }: GridItemFactoryProps) => {
-  return (
-    <>
-      {Array.from({ length: items }, (_, index) => (
-        <DocsBox key={`${label}-${index}`} size="small">
-          {label}
-        </DocsBox>
-      ))}
-    </>
-  );
-};
+const GridItemFactory = ({ items, label }: GridItemFactoryProps) => (
+  <>
+    {Array.from({ length: items }, (_, index) => (
+      <DocsBox key={`${label}-${index}`} size="small">
+        {label}
+      </DocsBox>
+    ))}
+  </>
+);
 
 export default GridItemFactory;

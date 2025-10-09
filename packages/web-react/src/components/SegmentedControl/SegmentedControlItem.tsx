@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React, { forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
-import { SpiritSegmentedControlItemProps } from '../../types/segmentedControl';
+import { type SpiritSegmentedControlItemProps } from '../../types/segmentedControl';
 import { useSegmentedControlContext } from './SegmentedControlContext';
 import { useSegmentedControlStyleProps } from './useSegmentedControlStyleProps';
 

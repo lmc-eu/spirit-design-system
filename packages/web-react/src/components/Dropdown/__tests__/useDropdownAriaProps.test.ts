@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
-import { PlacementDictionaryType } from '../../../types';
-import { fullWidthModeKeys, useDropdownAriaProps } from '../useDropdownAriaProps';
+import { type PlacementDictionaryType } from '../../../types';
+import { type fullWidthModeKeys, useDropdownAriaProps } from '../useDropdownAriaProps';
 
 const defaultProps = {
   fullWidthMode: undefined,

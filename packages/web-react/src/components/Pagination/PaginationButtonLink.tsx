@@ -1,7 +1,7 @@
 'use client';
 
-import React, { ElementType, ForwardedRef, forwardRef } from 'react';
-import { SpiritPaginationButtonLinkProps } from '../../types';
+import React, { type ElementType, type ForwardedRef, forwardRef } from 'react';
+import { type SpiritPaginationButtonLinkProps } from '../../types';
 import { ButtonLink } from '../Button';
 import { Icon } from '../Icon';
 import { VisuallyHidden } from '../VisuallyHidden';

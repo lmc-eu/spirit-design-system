@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React, { useRef } from 'react';
 import { useClickOutside, useStyleProps } from '../../hooks';
-import { SpiritDropdownProps } from '../../types';
+import { type SpiritDropdownProps } from '../../types';
 import { DropdownProvider } from './DropdownContext';
 import { useDropdownStyleProps } from './useDropdownStyleProps';
 

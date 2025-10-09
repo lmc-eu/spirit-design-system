@@ -1,7 +1,7 @@
 import { AlignmentX, DirectionExtended } from '../../../../constants';
-import { AlignmentXDictionaryType, CardSizes } from '../../../../types';
+import { type AlignmentXDictionaryType, CardSizes } from '../../../../types';
 import { toPascalCase } from '../../../../utils';
-import { UseCardStyleProps, UseCardStylePropsReturn } from '../../useCardStyleProps';
+import { type UseCardStyleProps, type UseCardStylePropsReturn } from '../../useCardStyleProps';
 
 type TextPropsDataProviderType = {
   props: UseCardStyleProps;

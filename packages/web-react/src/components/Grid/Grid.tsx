@@ -1,9 +1,9 @@
 'use client';
 
-import React, { ElementType } from 'react';
+import React, { type ElementType } from 'react';
 import { AlignmentXExtended, AlignmentYExtended } from '../../constants';
 import { useStyleProps } from '../../hooks';
-import { SpiritGridProps } from '../../types';
+import { type SpiritGridProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { useGridStyleProps } from './useGridStyleProps';
 

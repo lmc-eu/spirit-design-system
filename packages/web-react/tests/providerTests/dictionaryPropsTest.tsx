@@ -1,26 +1,26 @@
 import { render, waitFor } from '@testing-library/react';
-import React, { ComponentType } from 'react';
+import React, { type ComponentType } from 'react';
 import {
   AlignmentX,
-  AlignmentXDictionaryType,
+  type AlignmentXDictionaryType,
   AlignmentXExtended,
-  AlignmentXExtendedDictionaryType,
-  AlignmentYDictionaryType,
-  AlignmentYExtendedDictionaryType,
+  type AlignmentXExtendedDictionaryType,
+  type AlignmentYDictionaryType,
+  type AlignmentYExtendedDictionaryType,
   ComponentButtonColors,
-  ComponentButtonColorsDictionaryType,
+  type ComponentButtonColorsDictionaryType,
+  type EmotionColorNamesType,
   EmotionColors,
-  EmotionColorNamesType,
   LinkColors,
-  LinkColorsDictionaryType,
-  SizeExtendedDictionaryType,
+  type LinkColorsDictionaryType,
+  type SizeExtendedDictionaryType,
   Sizes,
-  SizesDictionaryType,
+  type SizesDictionaryType,
   SizesExtended,
   TextColors,
-  TextColorsDictionaryType,
+  type TextColorsDictionaryType,
   ValidationStates,
-  ValidationStatesDictionaryType,
+  type ValidationStatesDictionaryType,
 } from '../../src';
 import getElement from '../testUtils/getElement';
 

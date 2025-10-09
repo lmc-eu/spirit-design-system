@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import React from 'react';
 import { SizesExtended, TextStyleProps } from '../../constants';
 import { useStyleProps } from '../../hooks';
-import { SpiritContainerProps } from '../../types';
+import { type SpiritContainerProps } from '../../types';
 import { useContainerStyleProps } from './useContainerStyleProps';
 
 const defaultProps: SpiritContainerProps = {

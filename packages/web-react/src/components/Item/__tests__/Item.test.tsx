@@ -9,7 +9,7 @@ import {
   stylePropsTest,
   validHtmlAttributesTest,
 } from '@local/tests';
-import { SpiritItemProps } from '../../../types';
+import { type SpiritItemProps } from '../../../types';
 import Item from '../Item';
 
 jest.mock('../../../hooks/useIcon');

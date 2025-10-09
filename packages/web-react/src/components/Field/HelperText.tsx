@@ -1,9 +1,9 @@
 'use client';
 
-import React, { ElementType, useEffect } from 'react';
+import React, { type ElementType, useEffect } from 'react';
 import { useStyleProps } from '../../hooks';
 import { mergeStyleProps } from '../../utils';
-import { HelperTextProps } from './types';
+import { type HelperTextProps } from './types';
 
 const defaultProps: Partial<HelperTextProps> = {
   elementType: 'div',

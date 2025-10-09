@@ -1,4 +1,10 @@
-import { ChildrenProps, FillVariantDictionaryType, SpiritInputElementProps, StyleProps, TransferProps } from './shared';
+import {
+  type ChildrenProps,
+  type FillVariantDictionaryType,
+  type SpiritInputElementProps,
+  type StyleProps,
+  type TransferProps,
+} from './shared';
 
 export interface SegmentedControlBaseProps extends SegmentedControlMultiselectProps {
   isFluid?: boolean;

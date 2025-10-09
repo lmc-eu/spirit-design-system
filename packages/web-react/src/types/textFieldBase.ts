@@ -1,13 +1,13 @@
-import { ReactNode } from 'react';
+import { type ReactNode } from 'react';
 import {
-  ChildrenProps,
-  PasswordToggleAdornmentProp,
-  RequiredProps,
-  SizesDictionaryType,
-  TextInputProps,
+  type ChildrenProps,
+  type PasswordToggleAdornmentProp,
+  type RequiredProps,
+  type SizesDictionaryType,
+  type TextInputProps,
 } from './shared';
-import { TextAreaProps } from './textArea';
-import { TextFieldProps } from './textField';
+import { type TextAreaProps } from './textArea';
+import { type TextFieldProps } from './textField';
 
 export interface TextFieldBaseMultiLineProps {
   /** Whether the input is TextArea. */

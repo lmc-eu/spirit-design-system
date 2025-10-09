@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { UseButtonLinkProps, useButtonLinkProps } from '../useButtonLinkProps';
+import { type UseButtonLinkProps, useButtonLinkProps } from '../useButtonLinkProps';
 
 describe('useButtonAriaProps', () => {
   it('should return aria props for anchor tag', () => {

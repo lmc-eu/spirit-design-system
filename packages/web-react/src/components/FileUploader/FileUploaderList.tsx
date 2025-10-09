@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React, { useMemo } from 'react';
 import { useStyleProps } from '../../hooks';
-import { SpiritFileUploaderListProps } from '../../types';
+import { type SpiritFileUploaderListProps } from '../../types';
 import { useFileUploaderContext } from './FileUploaderContext';
 import { useFileUploaderStyleProps } from './useFileUploaderStyleProps';
 

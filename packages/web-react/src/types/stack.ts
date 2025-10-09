@@ -1,5 +1,10 @@
-import { ElementType } from 'react';
-import { ChildrenProps, SpacingProp, SpiritPolymorphicElementPropsWithoutRef, StyleProps } from './shared';
+import { type ElementType } from 'react';
+import {
+  type ChildrenProps,
+  type SpacingProp,
+  type SpiritPolymorphicElementPropsWithoutRef,
+  type StyleProps,
+} from './shared';
 
 export interface StackBaseProps extends ChildrenProps, SpacingProp, StyleProps {
   /** Whether the Stack has divider on the end */

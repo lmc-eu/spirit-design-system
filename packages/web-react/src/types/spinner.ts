@@ -1,4 +1,4 @@
-import { IconProps } from './icon';
+import { type IconProps } from './icon';
 import type { TextColorNamesType } from './shared';
 
 export interface SpinnerProps extends Omit<IconProps, 'name'> {}

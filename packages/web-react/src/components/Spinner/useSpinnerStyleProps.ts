@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks';
-import { SpinnerProps, SpiritSpinnerProps } from '../../types';
+import { type SpinnerProps, type SpiritSpinnerProps } from '../../types';
 
 export interface SpinnerStyles {
   /** className props */

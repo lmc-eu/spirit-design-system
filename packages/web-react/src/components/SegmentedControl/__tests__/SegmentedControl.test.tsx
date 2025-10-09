@@ -1,9 +1,9 @@
 import '@testing-library/jest-dom';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import React, { useState } from 'react';
 import { classNamePrefixProviderTest, restPropsTest, stylePropsTest, validHtmlAttributesTest } from '@local/tests';
 import { FillVariants } from '../../../constants';
-import { ChildrenProps, FillVariantDictionaryType } from '../../../types';
+import { type ChildrenProps, type FillVariantDictionaryType } from '../../../types';
 import SegmentedControl from '../SegmentedControl';
 import SegmentedControlItem from '../SegmentedControlItem';
 

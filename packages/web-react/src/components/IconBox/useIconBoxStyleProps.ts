@@ -1,8 +1,8 @@
 import { borderWidth100, cssVariablePrefix } from '@lmc-eu/spirit-design-tokens';
-import { CSSProperties, ElementType } from 'react';
+import { type CSSProperties, type ElementType } from 'react';
 import { SizesExtended } from '../../constants';
 import type { SpiritIconBoxProps } from '../../types';
-import { IconBoxSizes, IconBoxShapesRadii, IconBoxShapes } from './constants';
+import { IconBoxShapes, IconBoxShapesRadii, IconBoxSizes } from './constants';
 
 export interface UseIconBoxStyleProps<T> {
   iconBoxStyles: CSSProperties;

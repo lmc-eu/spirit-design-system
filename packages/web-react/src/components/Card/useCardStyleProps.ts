@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { useAlignmentClass, useClassNamePrefix } from '../../hooks';
-import { CardAlignmentXType, CardDirectionType, CardSizesDictionaryType } from '../../types';
+import { type CardAlignmentXType, type CardDirectionType, type CardSizesDictionaryType } from '../../types';
 import { generateStylePropsClassNames, stringOrObjectKebabCaseToCamelCase } from '../../utils';
 
 export interface UseCardStyleProps {

@@ -8,7 +8,7 @@ import {
   stylePropsTest,
   validHtmlAttributesTest,
 } from '@local/tests';
-import { SpiritDrawerProps } from '../../../types';
+import { type SpiritDrawerProps } from '../../../types';
 import Drawer from '../Drawer';
 
 const mockedOnClose = jest.fn();

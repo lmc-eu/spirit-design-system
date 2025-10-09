@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { useCallback, useState } from 'react';
-import { TabId, TabLinkProps } from '../../../types';
+import { type TabId, type TabLinkProps } from '../../../types';
 import { TabContent, TabItem, TabLink, TabList, TabPane, Tabs } from '..';
 
 const meta: Meta<typeof TabLink> = {

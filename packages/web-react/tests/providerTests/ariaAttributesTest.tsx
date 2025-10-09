@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import React, { ComponentType } from 'react';
+import React, { type ComponentType } from 'react';
 import { getComponentName } from '../testUtils/getComponentName';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

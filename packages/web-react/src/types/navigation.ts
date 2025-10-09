@@ -1,14 +1,14 @@
-import { ElementType, ReactElement, ReactNode } from 'react';
-import { NavigationItem } from '../components';
-import { LinkTarget } from './link';
+import { type ElementType, type ReactElement, type ReactNode } from 'react';
+import { type NavigationItem } from '../components';
+import { type LinkTarget } from './link';
 import {
-  AlignmentYExtendedDictionaryType,
-  ChildrenProps,
-  DirectionDictionaryType,
-  ShapeVariantDictionaryType,
-  SpiritPolymorphicElementPropsWithRef,
-  StyleProps,
-  TransferProps,
+  type AlignmentYExtendedDictionaryType,
+  type ChildrenProps,
+  type DirectionDictionaryType,
+  type ShapeVariantDictionaryType,
+  type SpiritPolymorphicElementPropsWithRef,
+  type StyleProps,
+  type TransferProps,
 } from './shared';
 
 type NonNullableShapeVariant = NonNullable<ShapeVariantDictionaryType>;

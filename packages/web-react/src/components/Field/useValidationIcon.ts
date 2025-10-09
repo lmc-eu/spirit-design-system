@@ -1,5 +1,5 @@
 import { useIconName } from '../../hooks';
-import { ValidationTextProps } from './types';
+import { type ValidationTextProps } from './types';
 
 export function useValidationIcon({ hasValidationStateIcon }: ValidationTextProps) {
   const iconNameValue = useIconName(hasValidationStateIcon as string, {

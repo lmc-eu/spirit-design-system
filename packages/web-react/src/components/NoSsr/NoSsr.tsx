@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { ChildrenProps } from '../../types';
+import { type ChildrenProps } from '../../types';
 
 interface NoSsrProps extends ChildrenProps {}
 

@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import { useClassNamePrefix, useStyleProps } from '../../hooks';
-import { ChildrenProps } from '../../types';
+import { type ChildrenProps } from '../../types';
 
 const ToastBarMessage = (props: ChildrenProps) => {
   const { children, ...restProps } = props;

@@ -1,7 +1,7 @@
 'use client';
 
 import { createContext, useContext } from 'react';
-import { DrawerPanelHandlingProps } from '../../types';
+import { type DrawerPanelHandlingProps } from '../../types';
 
 export type DrawerContextProps = {
   id: string;

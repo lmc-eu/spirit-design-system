@@ -1,5 +1,5 @@
 import { useIconName } from '../../hooks/useIconName';
-import { SpiritToastBarProps } from '../../types';
+import { type SpiritToastBarProps } from '../../types';
 import { DEFAULT_TOAST_COLOR } from './constants';
 
 export function useToastIcon({ color, iconName }: Partial<SpiritToastBarProps>) {

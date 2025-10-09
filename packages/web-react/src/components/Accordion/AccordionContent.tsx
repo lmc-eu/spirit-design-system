@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import { useStyleProps } from '../../hooks';
-import { AccordionContentProps } from '../../types';
+import { type AccordionContentProps } from '../../types';
 import { Collapse } from '../Collapse';
 import { useAccordionItemContext } from './AccordionItemContext';
 import { useAccordionAriaProps } from './useAccordionAriaProps';

@@ -1,9 +1,9 @@
 'use client';
 
 import classNames from 'classnames';
-import React, { ForwardedRef, forwardRef } from 'react';
+import React, { type ForwardedRef, forwardRef } from 'react';
 import { useAriaDescribedBy, useStyleProps } from '../../hooks';
-import { SpiritCheckboxProps } from '../../types';
+import { type SpiritCheckboxProps } from '../../types';
 import { HelperText, Label, ValidationText, useAriaIds } from '../Field';
 import { useValidationTextRole } from '../Field/useValidationTextRole';
 import { useCheckboxStyleProps } from './useCheckboxStyleProps';

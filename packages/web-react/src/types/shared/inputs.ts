@@ -1,5 +1,5 @@
-import { AriaRole, ReactNode } from 'react';
-import { ValidationStatesDictionaryType } from './dictionaries';
+import { type AriaRole, type ReactNode } from 'react';
+import { type ValidationStatesDictionaryType } from './dictionaries';
 
 export type ValidationState = ValidationStatesDictionaryType;
 

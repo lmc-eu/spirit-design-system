@@ -1,9 +1,9 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
-import React, { ElementType } from 'react';
+import React, { type ElementType } from 'react';
 import { validHtmlAttributesTest } from '@local/tests';
 import { A11Y_ALERT_ROLE } from '../constants';
-import { ValidationTextProps } from '../types';
+import { type ValidationTextProps } from '../types';
 import ValidationText from '../ValidationText';
 
 const renderValidationText = <T extends ElementType = 'div'>(props: Partial<ValidationTextProps<T>>) =>

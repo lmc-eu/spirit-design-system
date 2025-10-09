@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import { useStyleProps } from '../../hooks';
-import { SpiritPaginationItemProps } from '../../types';
+import { type SpiritPaginationItemProps } from '../../types';
 import { usePaginationStyleProps } from './usePaginationStyleProps';
 
 const PaginationItem = (props: SpiritPaginationItemProps) => {

@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { SpiritCollapseProps } from '../../../types';
+import { type SpiritCollapseProps } from '../../../types';
 import { useCollapseAriaProps } from '../useCollapseAriaProps';
 
 describe('useCollapseAriaProps', () => {

@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import { useStyleProps } from '../../hooks';
-import { SpiritAttachmentDismissButtonProps } from '../../types';
+import { type SpiritAttachmentDismissButtonProps } from '../../types';
 import { Icon } from '../Icon';
 import { VisuallyHidden } from '../VisuallyHidden';
 import { useFileUploaderStyleProps } from './useFileUploaderStyleProps';

@@ -1,10 +1,10 @@
 'use client';
 
-import React, { ElementType, useEffect } from 'react';
+import React, { type ElementType, useEffect } from 'react';
 import { useStyleProps } from '../../hooks';
 import { mergeStyleProps } from '../../utils';
 import { Icon } from '../Icon';
-import { ValidationTextProps } from './types';
+import { type ValidationTextProps } from './types';
 import { useValidationIcon } from './useValidationIcon';
 
 const defaultProps: Partial<ValidationTextProps> = {

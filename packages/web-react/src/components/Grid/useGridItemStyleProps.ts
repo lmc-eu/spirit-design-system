@@ -1,6 +1,6 @@
-import { ElementType, CSSProperties } from 'react';
+import { type CSSProperties, type ElementType } from 'react';
 import { useClassNamePrefix } from '../../hooks';
-import { GridItemPosition, GridItemPositionBreakpoints, SpiritGridItemProps } from '../../types';
+import { type GridItemPosition, type GridItemPositionBreakpoints, type SpiritGridItemProps } from '../../types';
 
 interface GridItemCSSProperties extends CSSProperties {
   [key: string]: string | undefined | number;

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { AttachmentImagePreviewProps } from '../../types';
+import { type AttachmentImagePreviewProps } from '../../types';
 import { IMAGE_DIMENSION } from './constants';
 import { useFileUploaderStyleProps } from './useFileUploaderStyleProps';
 

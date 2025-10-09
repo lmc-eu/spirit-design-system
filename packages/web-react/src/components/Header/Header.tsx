@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import { useDeprecationMessage, useStyleProps } from '../../hooks';
-import { HeaderProps } from '../../types';
+import { type HeaderProps } from '../../types';
 import { HEADER_COLOR_DEFAULT } from './constants';
 import { useHeaderStyleProps } from './useHeaderStyleProps';
 

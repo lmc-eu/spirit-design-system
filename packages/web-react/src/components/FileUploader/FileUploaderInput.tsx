@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React, { useEffect, useState } from 'react';
 import { useAriaDescribedBy, useStyleProps } from '../../hooks';
-import { SpiritFileUploaderInputProps } from '../../types';
+import { type SpiritFileUploaderInputProps } from '../../types';
 import { HelperText, Label, ValidationText, useAriaIds } from '../Field';
 import { useValidationTextRole } from '../Field/useValidationTextRole';
 import { Icon } from '../Icon';

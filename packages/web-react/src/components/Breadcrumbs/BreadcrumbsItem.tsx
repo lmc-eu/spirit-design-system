@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import { useStyleProps } from '../../hooks';
-import { SpiritBreadcrumbsItemProps } from '../../types';
+import { type SpiritBreadcrumbsItemProps } from '../../types';
 import { Icon } from '../Icon';
 import { Link } from '../Link';
 import { useBreadcrumbsStyleProps } from './useBreadcrumbsStyleProps';

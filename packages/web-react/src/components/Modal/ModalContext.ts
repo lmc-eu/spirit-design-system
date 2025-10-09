@@ -1,7 +1,7 @@
 'use client';
 
 import { createContext, useContext } from 'react';
-import { ModalDialogHandlingProps } from '../../types';
+import { type ModalDialogHandlingProps } from '../../types';
 
 export type ModalContextProps = {
   id: string;

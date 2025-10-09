@@ -1,10 +1,10 @@
 'use client';
 
 import classNames from 'classnames';
-import React, { ForwardedRef, forwardRef, useState } from 'react';
+import React, { type ForwardedRef, forwardRef, useState } from 'react';
 import { useAriaDescribedBy, useStyleProps } from '../../hooks';
-import { SpiritToggleProps } from '../../types';
-import { HelperText, Label, useAriaIds, ValidationText } from '../Field';
+import { type SpiritToggleProps } from '../../types';
+import { HelperText, Label, ValidationText, useAriaIds } from '../Field';
 import { useValidationTextRole } from '../Field/useValidationTextRole';
 import { useToggleStyleProps } from './useToggleStyleProps';
 

@@ -1,5 +1,5 @@
 import { render, waitFor } from '@testing-library/react';
-import React, { ComponentType } from 'react';
+import React, { type ComponentType } from 'react';
 import getElement from '../testUtils/getElement';
 
 const DEFAULT_THEME = 'theme-light-default';

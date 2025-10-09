@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React, { type ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
-import { SpiritPricingPlanProps } from '../../types/pricingPlan';
+import { type SpiritPricingPlanProps } from '../../types/pricingPlan';
 import { mergeStyleProps } from '../../utils';
 import { NUMBER_OF_PLAN_ROWS_DEFAULT } from './constants';
 import { usePricingPlanStyleProps } from './usePricingPlanStyleProps';

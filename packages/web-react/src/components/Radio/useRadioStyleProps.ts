@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks';
-import { SpiritRadioProps, RadioProps } from '../../types';
+import { type RadioProps, type SpiritRadioProps } from '../../types';
 
 export interface RadioStyles {
   /** className props */

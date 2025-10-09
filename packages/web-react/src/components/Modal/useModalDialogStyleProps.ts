@@ -1,5 +1,5 @@
-import { ElementType, CSSProperties } from 'react';
-import { ModalDialogCSSHeight, ModalDialogCSSHeightBreakpoints, ModalDialogProps } from '../../types';
+import { type CSSProperties, type ElementType } from 'react';
+import { type ModalDialogCSSHeight, type ModalDialogCSSHeightBreakpoints, type ModalDialogProps } from '../../types';
 
 interface CustomizedHeightCSSProperties extends CSSProperties {
   [key: string]: string | undefined | number;

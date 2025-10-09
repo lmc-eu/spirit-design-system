@@ -8,9 +8,9 @@ import {
   restPropsTest,
   sizePropsTest,
   stylePropsTest,
+  validHtmlAttributesTest,
   validationStatePropsTest,
   validationTextPropsTest,
-  validHtmlAttributesTest,
 } from '@local/tests';
 import Select from '../Select';
 

@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks';
-import { SpiritContainerProps, ContainerProps } from '../../types';
+import { type ContainerProps, type SpiritContainerProps } from '../../types';
 
 export interface ContainerStyles {
   /** className props */

@@ -1,13 +1,13 @@
-import { ComponentPropsWithRef, ElementType } from 'react';
+import { type ComponentPropsWithRef, type ElementType } from 'react';
 import {
-  AlignmentXDictionaryType,
-  AlignmentYDictionaryType,
-  ChildrenProps,
-  ClickEvent,
-  SpiritDialogElementProps,
-  SpiritDivElementProps,
-  SpiritElementProps,
-  StyleProps,
+  type AlignmentXDictionaryType,
+  type AlignmentYDictionaryType,
+  type ChildrenProps,
+  type ClickEvent,
+  type SpiritDialogElementProps,
+  type SpiritDivElementProps,
+  type SpiritElementProps,
+  type StyleProps,
 } from './shared';
 
 export type ModalDialogHandlingProps = {

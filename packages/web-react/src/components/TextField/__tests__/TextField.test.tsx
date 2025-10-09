@@ -7,11 +7,11 @@ import {
   restPropsTest,
   sizePropsTest,
   stylePropsTest,
+  validHtmlAttributesTest,
   validationStatePropsTest,
   validationTextPropsTest,
-  validHtmlAttributesTest,
 } from '@local/tests';
-import { TextFieldType } from '../../../types';
+import { type TextFieldType } from '../../../types';
 import TextField from '../TextField';
 
 jest.mock('../../../hooks/useIcon');

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useStyleProps } from '../../hooks';
-import { AccordionProps } from '../../types';
+import { type AccordionProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { AccordionProvider } from './AccordionContext';
 import { useAccordionStyleProps } from './useAccordionStyleProps';

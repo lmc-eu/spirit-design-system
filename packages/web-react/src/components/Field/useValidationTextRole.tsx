@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { ValidationState, ValidationTextType } from '../../types/shared';
+import { type ValidationState, type ValidationTextType } from '../../types/shared';
 import { A11Y_ALERT_ROLE } from './constants';
 
 export const useValidationTextRole = ({

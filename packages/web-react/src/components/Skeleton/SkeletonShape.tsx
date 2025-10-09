@@ -1,9 +1,9 @@
 'use client';
 
-import React, { ElementType, ReactElement } from 'react';
+import React, { type ElementType, type ReactElement } from 'react';
 import { BorderRadii } from '../../constants';
 import { useStyleProps } from '../../hooks';
-import { SpiritSkeletonShapeProps } from '../../types';
+import { type SpiritSkeletonShapeProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { useSkeletonShapeStyleProps } from './useSkeletonShapeStyleProps';
 

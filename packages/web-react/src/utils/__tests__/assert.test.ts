@@ -1,4 +1,4 @@
-import { isNullish, isEmptyString, isEmptyArray, isEmptyObject, isEnumerable, isEmpty } from '../assert';
+import { isEmpty, isEmptyArray, isEmptyObject, isEmptyString, isEnumerable, isNullish } from '../assert';
 
 describe('assert', () => {
   describe('isNullish', () => {

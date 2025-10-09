@@ -1,11 +1,11 @@
-import { ComponentPropsWithRef, ElementType } from 'react';
+import { type ComponentPropsWithRef, type ElementType } from 'react';
 import type {
   ButtonSizesType,
-  SizesDictionaryType,
   ChildrenProps,
   ClickEvents,
   ComponentButtonColorNamesType,
   EmotionColorNamesType,
+  SizesDictionaryType,
   StyleProps,
 } from './shared';
 

@@ -1,11 +1,11 @@
-import { ReactNode } from 'react';
-import { LabelProps } from './label';
+import { type ReactNode } from 'react';
+import { type LabelProps } from './label';
 import {
-  HelperTextProps,
-  RequiredProps,
-  SpiritFieldGroupElementPropsWithRef,
-  Validation,
-  ValidationTextType,
+  type HelperTextProps,
+  type RequiredProps,
+  type SpiritFieldGroupElementPropsWithRef,
+  type Validation,
+  type ValidationTextType,
 } from './shared';
 
 export type FieldGroupElementBaseProps = SpiritFieldGroupElementPropsWithRef;

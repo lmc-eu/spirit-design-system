@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks';
-import { SpiritSliderProps } from '../../types';
+import { type SpiritSliderProps } from '../../types';
 
 type UseSliderStyleProps = Omit<SpiritSliderProps, 'id' | 'value' | 'label'>;
 

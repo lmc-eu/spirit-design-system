@@ -4,11 +4,11 @@ import React from 'react';
 import {
   ariaAttributesTest,
   classNamePrefixProviderTest,
-  sizeExtendedPropsTest,
+  elementTypePropsTest,
   restPropsTest,
+  sizeExtendedPropsTest,
   stylePropsTest,
   validHtmlAttributesTest,
-  elementTypePropsTest,
 } from '@local/tests';
 import { Icon } from '../../Icon';
 import Avatar from '../Avatar';
