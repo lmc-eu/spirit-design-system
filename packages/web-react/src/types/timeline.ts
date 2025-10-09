@@ -1,5 +1,5 @@
 import { type ElementType } from 'react';
-import { TIMELINE_MARKER } from '../components/Timeline/constants';
+import { type TIMELINE_MARKER } from '../components/Timeline/constants';
 import type {
   BackgroundAccentColorsType,
   BackgroundColorsDictionaryType,

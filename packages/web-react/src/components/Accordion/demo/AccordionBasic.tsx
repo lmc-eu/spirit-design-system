@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AccordionOpenStateType } from '../../../types';
+import { type AccordionOpenStateType } from '../../../types';
 import { Link } from '../../Link';
 import { Pill } from '../../Pill';
 import Accordion from '../Accordion';

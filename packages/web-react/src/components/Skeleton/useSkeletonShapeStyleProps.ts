@@ -1,8 +1,8 @@
 import { cssVariablePrefix } from '@lmc-eu/spirit-design-tokens';
 import classNames from 'classnames';
-import { CSSProperties, ElementType } from 'react';
+import { type CSSProperties, type ElementType } from 'react';
 import { useClassNamePrefix } from '../../hooks';
-import { SpiritSkeletonShapeProps } from '../../types';
+import { type SpiritSkeletonShapeProps } from '../../types';
 
 interface CustomizedCSSProperties extends CSSProperties {
   [key: string]: string | undefined | number;

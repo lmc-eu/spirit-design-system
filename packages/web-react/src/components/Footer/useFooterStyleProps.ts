@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks';
-import { SpiritFooterProps } from '../../types';
+import { type SpiritFooterProps } from '../../types';
 
 export interface UseFooterStyleProps {
   classProps: string;

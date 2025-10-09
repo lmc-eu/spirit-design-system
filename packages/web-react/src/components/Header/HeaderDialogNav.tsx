@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import { useStyleProps } from '../../hooks';
-import { HeaderDialogNavProps } from '../../types';
+import { type HeaderDialogNavProps } from '../../types';
 import { useHeaderStyleProps } from './useHeaderStyleProps';
 
 const HeaderDialogNav = (props: HeaderDialogNavProps) => {

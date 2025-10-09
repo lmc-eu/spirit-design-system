@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { UseCardStyleProps, useCardStyleProps } from '../useCardStyleProps';
+import { type UseCardStyleProps, useCardStyleProps } from '../useCardStyleProps';
 import { defaultExpectedClasses, textPropsDataProvider } from './__fixtures__/CardStylePropsDataProvider';
 
 describe('useCardStyleProps', () => {

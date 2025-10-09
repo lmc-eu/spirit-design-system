@@ -4,19 +4,19 @@ import '@testing-library/jest-dom';
 import {
   ariaAttributesTest,
   classNamePrefixProviderTest,
+  elementTypePropsTest,
+  restPropsTest,
   sizeExtendedPropsTest,
   sizePropsTest,
-  restPropsTest,
   stylePropsTest,
   textAlignmentPropsTest,
   textColorPropsTest,
-  validHtmlAttributesTest,
-  elementTypePropsTest,
   textHyphensPropsTest,
   textIsBalancedPropsTest,
   textWordBreakPropsTest,
+  validHtmlAttributesTest,
 } from '@local/tests';
-import { SizesDictionaryType, SizeExtendedDictionaryType, EmphasisDictionaryType } from '../../../types';
+import { type EmphasisDictionaryType, type SizeExtendedDictionaryType, type SizesDictionaryType } from '../../../types';
 import Heading from '../Heading';
 import headingSizeDataProvider from './headingSizeDataProvider';
 

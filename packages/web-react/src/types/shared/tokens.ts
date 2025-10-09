@@ -1,4 +1,4 @@
-import { spaces, themes } from '@lmc-eu/spirit-design-tokens';
+import { type spaces, type themes } from '@lmc-eu/spirit-design-tokens';
 
 export const BREAKPOINT_MOBILE = 'mobile';
 

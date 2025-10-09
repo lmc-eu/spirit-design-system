@@ -1,5 +1,5 @@
-import { ElementType } from 'react';
-import { ChildrenProps, SizeExtendedDictionaryType, StyleProps, TransferProps } from './shared';
+import { type ElementType } from 'react';
+import { type ChildrenProps, type SizeExtendedDictionaryType, type StyleProps, type TransferProps } from './shared';
 
 export type AvatarSize<S> = SizeExtendedDictionaryType<S> | S;
 

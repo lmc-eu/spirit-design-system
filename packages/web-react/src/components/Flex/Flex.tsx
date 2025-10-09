@@ -1,9 +1,9 @@
 'use client';
 
-import React, { ElementType } from 'react';
+import React, { type ElementType } from 'react';
 import { AlignmentXExtended, AlignmentYExtended, DirectionExtended } from '../../constants';
 import { useStyleProps } from '../../hooks';
-import { SpiritFlexProps } from '../../types';
+import { type SpiritFlexProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { useFlexStyleProps } from './useFlexStyleProps';
 

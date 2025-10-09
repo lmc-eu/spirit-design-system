@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileUploaderAttachmentBaseProps, SpiritUncontrolledFileUploaderProps } from '../../../types';
+import { type FileUploaderAttachmentBaseProps, type SpiritUncontrolledFileUploaderProps } from '../../../types';
 import FileUploaderAttachment from '../FileUploaderAttachment';
 import UncontrolledFileUploader from '../UncontrolledFileUploader';
 

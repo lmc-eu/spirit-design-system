@@ -1,4 +1,4 @@
-import { FlexProps } from './flex';
-import { ChildrenProps, StyleProps, TransferProps } from './shared';
+import { type FlexProps } from './flex';
+import { type ChildrenProps, type StyleProps, type TransferProps } from './shared';
 
 export interface SpiritActionGroupProps extends FlexProps, ChildrenProps, StyleProps, TransferProps {}

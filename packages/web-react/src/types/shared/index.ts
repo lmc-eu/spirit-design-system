@@ -1,4 +1,4 @@
-import { ReactNode, ElementType, JSXElementConstructor } from 'react';
+import { type ElementType, type JSXElementConstructor, type ReactNode } from 'react';
 
 export * from './adornments';
 export * from './colors';

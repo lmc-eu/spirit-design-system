@@ -1,6 +1,6 @@
-import { CSSProperties, ElementType } from 'react';
+import { type CSSProperties, type ElementType } from 'react';
 import { useClassNamePrefix } from '../../hooks';
-import { SpiritTruncateProps } from '../../types/truncate';
+import { type SpiritTruncateProps } from '../../types/truncate';
 
 interface TruncateCSSProperties extends CSSProperties {
   '--text-truncate-lines'?: number;

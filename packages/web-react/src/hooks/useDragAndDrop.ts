@@ -1,5 +1,5 @@
-import { DragEvent, useState } from 'react';
-import { DragAndDropHandlingProps } from '../types';
+import { type DragEvent, useState } from 'react';
+import { type DragAndDropHandlingProps } from '../types';
 
 export interface UseDragAndDropProps<E = HTMLElement> extends Partial<DragAndDropHandlingProps<E>> {}
 

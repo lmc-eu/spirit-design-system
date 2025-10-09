@@ -1,12 +1,12 @@
 import classNames from 'classnames';
 import { AlignmentYExtended, Direction, ShapeVariants } from '../../constants';
-import { AlignmentPropertyType, useAlignmentClass, useClassNamePrefix } from '../../hooks';
+import { type AlignmentPropertyType, useAlignmentClass, useClassNamePrefix } from '../../hooks';
 import {
-  DirectionDictionaryType,
-  NavigationActionVariantsType,
-  SpiritNavigationActionProps,
-  SpiritNavigationItemAlignmentYType,
-  SpiritNavigationItemProps,
+  type DirectionDictionaryType,
+  type NavigationActionVariantsType,
+  type SpiritNavigationActionProps,
+  type SpiritNavigationItemAlignmentYType,
+  type SpiritNavigationItemProps,
 } from '../../types';
 
 export interface UseNavigationStyleProps {

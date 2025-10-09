@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TabId } from '../../../types';
+import { type TabId } from '../../../types';
 import TabContent from '../TabContent';
 import TabItem from '../TabItem';
 import TabLink from '../TabLink';

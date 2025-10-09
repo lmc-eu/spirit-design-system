@@ -1,4 +1,4 @@
-import { RenderResult } from '@testing-library/react';
+import { type RenderResult } from '@testing-library/react';
 
 const getElement = (dom: RenderResult, testId?: string) =>
   testId ? (dom.getByTestId(testId) as HTMLElement) : (dom.container.firstChild as HTMLElement);

@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { FillVariants } from '../../constants';
 import { useClassNamePrefix } from '../../hooks';
-import { SpiritSegmentedControlProps } from '../../types/segmentedControl';
+import { type SpiritSegmentedControlProps } from '../../types/segmentedControl';
 
 export interface UseSegmentedControlStylesProps extends Omit<SpiritSegmentedControlProps, 'name'> {}
 

@@ -9,7 +9,7 @@ import {
   validHtmlAttributesTest,
 } from '@local/tests';
 import { TextColors } from '../../../constants';
-import { TextColorsDictionaryType } from '../../../types';
+import { type TextColorsDictionaryType } from '../../../types';
 import Spinner from '../Spinner';
 
 jest.mock('../../../hooks/useIcon');

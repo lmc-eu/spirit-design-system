@@ -1,9 +1,9 @@
 'use client';
 
-import React, { ElementType, ReactElement } from 'react';
+import React, { type ElementType, type ReactElement } from 'react';
 import { SizesExtended } from '../../constants';
 import { useStyleProps } from '../../hooks';
-import { SpiritSkeletonProps } from '../../types';
+import { type SpiritSkeletonProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { LINES_COUNT_DEFAULT } from './constants';
 import SkeletonItem from './SkeletonItem';

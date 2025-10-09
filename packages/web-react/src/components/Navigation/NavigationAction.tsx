@@ -1,9 +1,9 @@
 'use client';
 
-import React, { ElementType, forwardRef, ReactElement } from 'react';
+import React, { type ElementType, type ReactElement, forwardRef } from 'react';
 import { ShapeVariants } from '../../constants';
 import { useStyleProps } from '../../hooks';
-import { PolymorphicRef, SpiritNavigationActionProps } from '../../types';
+import { type PolymorphicRef, type SpiritNavigationActionProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { useNavigationActionProps } from './useNavigationActionProps';
 import { useNavigationStyleProps } from './useNavigationStyleProps';

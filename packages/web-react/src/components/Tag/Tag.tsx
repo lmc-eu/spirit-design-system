@@ -1,9 +1,9 @@
 'use client';
 
-import React, { ElementType, ForwardedRef, forwardRef } from 'react';
+import React, { type ElementType, type ForwardedRef, forwardRef } from 'react';
 import { SizesExtended } from '../../constants';
 import { useStyleProps } from '../../hooks';
-import { SpiritTagProps } from '../../types';
+import { type SpiritTagProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { TagColorsExtended } from './constants';
 import { useTagStyleProps } from './useTagStyleProps';

@@ -1,8 +1,8 @@
 'use client';
 
-import React, { ElementType } from 'react';
+import React, { type ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
-import { SpiritLabelProps } from '../../types';
+import { type SpiritLabelProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 
 const Label = <T extends ElementType = 'label'>(props: SpiritLabelProps<T>): JSX.Element => {

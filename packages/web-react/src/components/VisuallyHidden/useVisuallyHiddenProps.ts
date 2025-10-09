@@ -1,6 +1,6 @@
-import { ElementType } from 'react';
+import { type ElementType } from 'react';
 import { useClassNamePrefix } from '../../hooks';
-import { SpiritVisuallyHiddenProps, VisuallyHiddenProps } from '../../types';
+import { type SpiritVisuallyHiddenProps, type VisuallyHiddenProps } from '../../types';
 
 export interface VisuallyHiddenStyles<T extends ElementType = 'span'> {
   /** className props */

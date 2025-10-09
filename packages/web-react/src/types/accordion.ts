@@ -1,5 +1,5 @@
-import { ReactNode, ElementType } from 'react';
-import { ChildrenProps, StyleProps, TransferProps, ElementTypeProps } from './shared';
+import { type ElementType, type ReactNode } from 'react';
+import { type ChildrenProps, type ElementTypeProps, type StyleProps, type TransferProps } from './shared';
 
 export type AccordionOpenStateType = string | string[] | undefined;
 

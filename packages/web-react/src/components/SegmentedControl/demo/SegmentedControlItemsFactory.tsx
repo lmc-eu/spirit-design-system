@@ -1,6 +1,6 @@
-import React, { FunctionComponent, useState } from 'react';
+import React, { type FunctionComponent, useState } from 'react';
 import { FillVariants } from '../../../constants';
-import { FillVariantDictionaryType } from '../../../types';
+import { type FillVariantDictionaryType } from '../../../types';
 import { Icon } from '../../Icon';
 import { UNSTABLE_Truncate } from '../../UNSTABLE_Truncate';
 import { VisuallyHidden } from '../../VisuallyHidden';

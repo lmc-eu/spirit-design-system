@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { SpiritFlexProps } from '../../../types';
+import { type SpiritFlexProps } from '../../../types';
 import { useFlexStyleProps } from '../useFlexStyleProps';
 
 describe('useFlexStyleProps', () => {

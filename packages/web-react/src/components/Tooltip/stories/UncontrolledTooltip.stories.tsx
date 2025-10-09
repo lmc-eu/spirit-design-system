@@ -3,9 +3,9 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React, { useEffect, useRef } from 'react';
 import { Button } from '../..';
 import { Placements } from '../../../constants';
-import { SpiritTooltipProps } from '../../../types';
+import { type SpiritTooltipProps } from '../../../types';
 import ReadMe from '../README.md';
-import { UncontrolledTooltip, TooltipPopover, TooltipTrigger } from '..';
+import { TooltipPopover, TooltipTrigger, UncontrolledTooltip } from '..';
 
 const meta: Meta<typeof UncontrolledTooltip> = {
   title: 'Components/Tooltip',

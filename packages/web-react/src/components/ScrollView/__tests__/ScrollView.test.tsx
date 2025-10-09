@@ -8,7 +8,7 @@ import {
   stylePropsTest,
   validHtmlAttributesTest,
 } from '@local/tests';
-import { ScrollViewDirectionType, ScrollViewOverflowDecoratorsType } from '../../../types';
+import { type ScrollViewDirectionType, type ScrollViewOverflowDecoratorsType } from '../../../types';
 import ScrollView from '../ScrollView';
 
 describe('ScrollView', () => {

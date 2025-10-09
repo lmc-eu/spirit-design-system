@@ -1,5 +1,5 @@
-import React, { ChangeEvent, useState } from 'react';
-import { PlacementDictionaryType } from '../../../types';
+import React, { type ChangeEvent, useState } from 'react';
+import { type PlacementDictionaryType } from '../../../types';
 import { Button } from '../../Button';
 import { Grid, GridItem } from '../../Grid';
 import { Item } from '../../Item';

@@ -9,7 +9,7 @@ import {
   stylePropsTest,
   validHtmlAttributesTest,
 } from '@local/tests';
-import { SpiritBoxProps } from '../../../types';
+import { type SpiritBoxProps } from '../../../types';
 import Box from '../Box';
 
 const dataProvider = [

@@ -1,4 +1,4 @@
-import { SyntheticEvent, MouseEvent as ReactMouseEvent } from 'react';
+import { type MouseEvent as ReactMouseEvent, type SyntheticEvent } from 'react';
 
 export type BaseEvent<T extends SyntheticEvent> = T & unknown;
 

@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import { useStyleProps } from '../../hooks';
-import { ClickEvent, HeaderDialogCloseButtonProps } from '../../types';
+import { type ClickEvent, type HeaderDialogCloseButtonProps } from '../../types';
 import { Icon } from '../Icon';
 import { VisuallyHidden } from '../VisuallyHidden';
 import { HEADER_DIALOG_CLOSE_BUTTON_LABEL_DEFAULT } from './constants';

@@ -1,4 +1,4 @@
-import { FlexAlignmentXType, FlexAlignmentYType } from '../types';
+import { type FlexAlignmentXType, type FlexAlignmentYType } from '../types';
 import { generateStylePropsClassNames } from '../utils';
 
 export type AlignmentPropertyType = FlexAlignmentXType | FlexAlignmentYType;

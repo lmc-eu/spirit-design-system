@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { CSSProperties, ElementType } from 'react';
+import { type CSSProperties, type ElementType } from 'react';
 import { DirectionAxis } from '../../constants';
 import {
   useAlignmentClass,
@@ -8,7 +8,7 @@ import {
   useSpacingStyle,
   useWrapClass,
 } from '../../hooks';
-import { FlexAlignmentXType, FlexAlignmentYType, SpacingType, SpiritFlexProps } from '../../types';
+import { type FlexAlignmentXType, type FlexAlignmentYType, type SpacingType, type SpiritFlexProps } from '../../types';
 import { generateStylePropsClassNames, stringOrObjectKebabCaseToCamelCase } from '../../utils';
 
 interface FlexCSSProperties extends CSSProperties {

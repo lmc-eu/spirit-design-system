@@ -1,8 +1,8 @@
 import classNames from 'classnames';
-import { ElementType } from 'react';
+import { type ElementType } from 'react';
 import { warning } from '../../common/utilities';
 import { useClassNamePrefix, useDeprecationMessage } from '../../hooks';
-import { ButtonColor, ButtonSize, SpiritButtonProps } from '../../types';
+import { type ButtonColor, type ButtonSize, type SpiritButtonProps } from '../../types';
 import { applyColor, applySize } from '../../utils/classname';
 import { compose } from '../../utils/compose';
 

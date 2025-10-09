@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useState } from 'react';
-import { UsePaginationProps } from '../../types/pagination';
+import { type UsePaginationProps } from '../../types/pagination';
 
 export const usePagination = ({ totalPages, onChange, defaultPage, visiblePages }: UsePaginationProps) => {
   const [currentPage, setCurrentPage] = useState(defaultPage <= 0 || defaultPage > totalPages ? 1 : (defaultPage ?? 1));

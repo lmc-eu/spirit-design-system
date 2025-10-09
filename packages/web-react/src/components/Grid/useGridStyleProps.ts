@@ -1,8 +1,13 @@
 import classNames from 'classnames';
-import { CSSProperties, ElementType } from 'react';
+import { type CSSProperties, type ElementType } from 'react';
 import { DirectionAxis } from '../../constants';
 import { useAlignmentClass, useClassNamePrefix, useSpacingStyle } from '../../hooks';
-import { GridColsBreakpoints, SpiritGridProps, GridAlignmentYType, GridAlignmentXType } from '../../types';
+import {
+  type GridAlignmentXType,
+  type GridAlignmentYType,
+  type GridColsBreakpoints,
+  type SpiritGridProps,
+} from '../../types';
 
 interface GridCSSProperties extends CSSProperties {
   [key: string]: string | undefined | number;

@@ -2,11 +2,11 @@ import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { AlignmentX, EmotionColors } from '../../../constants';
-import { ToastColorType, ToastLinkProps, UncontrolledToastProps } from '../../../types';
+import { type ToastColorType, type ToastLinkProps, type UncontrolledToastProps } from '../../../types';
 import { Button } from '../../Button';
 import ReadMe from '../README.md';
-import { ToastItem, ToastProvider } from '../ToastContext';
-import { ToastColorsExtended, DEFAULT_TOAST_AUTO_CLOSE_INTERVAL, UncontrolledToast, useToast } from '..';
+import { type ToastItem, ToastProvider } from '../ToastContext';
+import { DEFAULT_TOAST_AUTO_CLOSE_INTERVAL, ToastColorsExtended, UncontrolledToast, useToast } from '..';
 
 interface UncontrolledToastPlaygroundProps extends UncontrolledToastProps, ToastItem {}
 

@@ -1,9 +1,9 @@
 'use client';
 
 import classNames from 'classnames';
-import React, { MouseEvent, RefObject, useRef, useState } from 'react';
+import React, { type MouseEvent, type RefObject, useRef, useState } from 'react';
 import { useClassNamePrefix, useStyleProps } from '../../hooks';
-import { SpiritFileUploaderAttachmentProps } from '../../types';
+import { type SpiritFileUploaderAttachmentProps } from '../../types';
 import { Icon } from '../Icon';
 import AttachmentActionButton from './AttachmentActionButton';
 import AttachmentDismissButton from './AttachmentDismissButton';

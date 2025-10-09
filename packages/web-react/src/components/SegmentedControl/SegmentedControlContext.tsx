@@ -1,7 +1,7 @@
 'use client';
 
 import { createContext, useContext } from 'react';
-import { SegmentedControlMultiselectProps } from '../../types/segmentedControl';
+import { type SegmentedControlMultiselectProps } from '../../types/segmentedControl';
 
 export type SegmentedControlContextProps = SegmentedControlMultiselectProps & {
   name: string;

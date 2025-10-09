@@ -1,6 +1,6 @@
 import React from 'react';
 import { Direction, ShapeVariants } from '../../../../constants';
-import { NavigationActionVariantsType, SpiritNavigationProps } from '../../../../types';
+import { type NavigationActionVariantsType, type SpiritNavigationProps } from '../../../../types';
 import { Navigation, NavigationAction, NavigationItem } from '../../../Navigation';
 
 interface MainNavigationProps extends Partial<SpiritNavigationProps> {

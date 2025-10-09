@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import { useStyleProps } from '../../hooks';
-import { ToastCloseButtonProps } from '../../types';
+import { type ToastCloseButtonProps } from '../../types';
 import { Icon } from '../Icon';
 import { VisuallyHidden } from '../VisuallyHidden';
 import { useToastBarStyleProps } from './useToastBarStyleProps';

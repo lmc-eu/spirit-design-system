@@ -1,5 +1,5 @@
 import { useDeprecationMessage } from '../../hooks';
-import { CollapseProps, BaseCollapseProps, Booleanish } from '../../types';
+import { type BaseCollapseProps, type Booleanish, type CollapseProps } from '../../types';
 
 const ATTRIBUTE_ARIA_EXPANDED = 'aria-expanded';
 const ATTRIBUTE_ARIA_CONTROLS = 'aria-controls';

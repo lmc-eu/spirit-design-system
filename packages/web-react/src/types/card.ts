@@ -1,11 +1,11 @@
-import { ElementType, JSXElementConstructor } from 'react';
+import { type ElementType, type JSXElementConstructor } from 'react';
 import { Sizes } from '../constants';
 import {
-  AlignmentXDictionaryType,
-  ChildrenProps,
-  DirectionExtendedDictionaryType,
-  StyleProps,
-  TransferProps,
+  type AlignmentXDictionaryType,
+  type ChildrenProps,
+  type DirectionExtendedDictionaryType,
+  type StyleProps,
+  type TransferProps,
 } from './shared';
 
 export const CardSizes = {

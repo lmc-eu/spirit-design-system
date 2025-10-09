@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import React from 'react';
 import { ComponentButtonColors, Sizes } from '../../constants';
 import { useStyleProps } from '../../hooks';
-import { DrawerCloseButtonProps } from '../../types';
+import { type DrawerCloseButtonProps } from '../../types';
 import { Button } from '../Button';
 import { Icon } from '../Icon';
 import { DEFAULT_BOX_SIZE } from '../Icon/constants';

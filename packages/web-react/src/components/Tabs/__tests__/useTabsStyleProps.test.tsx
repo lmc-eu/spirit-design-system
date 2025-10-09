@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
 import React from 'react';
-import { type SingleOrResponsive, type ChildrenProps, type SpaceToken } from '../../../types';
+import { type ChildrenProps, type SingleOrResponsive, type SpaceToken } from '../../../types';
 import { TabsProvider } from '../TabContext';
 import { useTabsStyleProps } from '../useTabsStyleProps';
 

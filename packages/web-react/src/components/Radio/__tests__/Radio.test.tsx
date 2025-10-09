@@ -4,12 +4,12 @@ import React from 'react';
 import {
   ariaAttributesTest,
   classNamePrefixProviderTest,
-  validationStatePropsTest,
   itemPropsTest,
   requiredPropsTest,
   restPropsTest,
   stylePropsTest,
   validHtmlAttributesTest,
+  validationStatePropsTest,
 } from '@local/tests';
 import Radio from '../Radio';
 

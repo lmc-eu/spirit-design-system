@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Modal, ModalDialog, ModalHeader, ModalBody, UncontrolledCollapse } from '../../../src/components';
+import { Button, Modal, ModalBody, ModalDialog, ModalHeader, UncontrolledCollapse } from '../../../src/components';
 import { content } from '../../../src/components/Accordion/demo/Accordion';
 import { CollapseTrigger } from '../../../src/components/Collapse/demo/Collapse';
 

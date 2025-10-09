@@ -4,8 +4,8 @@ import { renderToString } from 'react-dom/server';
 import {
   classNamePrefixProviderTest,
   restPropsTest,
-  validationTextPropsTest,
   validHtmlAttributesTest,
+  validationTextPropsTest,
 } from '@local/tests';
 import FileUploaderInput from '../FileUploaderInput';
 import '@testing-library/jest-dom';

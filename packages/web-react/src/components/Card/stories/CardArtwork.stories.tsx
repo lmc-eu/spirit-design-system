@@ -41,33 +41,31 @@ type Story = StoryObj<typeof CardArtwork>;
 
 export const CardArtworkPlayground: Story = {
   name: 'CardArtwork',
-  render: (args) => {
-    return (
-      <Container>
-        <Card isBoxed>
-          <CardArtwork {...args}>
-            <Icon name="file" />
-          </CardArtwork>
-          <CardBody>
-            <CardEyebrow>Card eyebrow</CardEyebrow>
-            <CardTitle>Card Title</CardTitle>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida,
-              nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat. Morbi
-              fringilla convallis sapien. Sed ac felis. Aliquam erat volutpat. Aliquam euismod. Aenean vel lectus. Nunc
-              imperdiet justo nec dolor.
-            </p>
-          </CardBody>
-          <CardFooter>
-            <ButtonLink href="#" color="primary">
-              Primary
-            </ButtonLink>
-            <ButtonLink href="#" color="secondary">
-              Secondary
-            </ButtonLink>
-          </CardFooter>
-        </Card>
-      </Container>
-    );
-  },
+  render: (args) => (
+    <Container>
+      <Card isBoxed>
+        <CardArtwork {...args}>
+          <Icon name="file" />
+        </CardArtwork>
+        <CardBody>
+          <CardEyebrow>Card eyebrow</CardEyebrow>
+          <CardTitle>Card Title</CardTitle>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida,
+            nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat. Morbi
+            fringilla convallis sapien. Sed ac felis. Aliquam erat volutpat. Aliquam euismod. Aenean vel lectus. Nunc
+            imperdiet justo nec dolor.
+          </p>
+        </CardBody>
+        <CardFooter>
+          <ButtonLink href="#" color="primary">
+            Primary
+          </ButtonLink>
+          <ButtonLink href="#" color="secondary">
+            Secondary
+          </ButtonLink>
+        </CardFooter>
+      </Card>
+    </Container>
+  ),
 };

@@ -1,8 +1,8 @@
 'use client';
 
-import React, { ElementType, ForwardedRef, forwardRef } from 'react';
+import React, { type ElementType, type ForwardedRef, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
-import { ToastLinkProps } from '../../types';
+import { type ToastLinkProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { useToastBarStyleProps } from './useToastBarStyleProps';
 

@@ -1,5 +1,5 @@
 import { useClassNamePrefix } from '../../hooks';
-import { SpiritSkipLinkProps } from '../../types';
+import { type SpiritSkipLinkProps } from '../../types';
 
 export interface SkipLinkStyles {
   /** className props */
