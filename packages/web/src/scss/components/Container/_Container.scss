@@ -1,3 +1,6 @@
+// 1. Establishes a new block formatting context,
+//    which contains its floats and prevents margin collapsing.
+
 @use '@tokens' as tokens;
 @use '../../tools/dictionaries';
 @use 'theme';
@@ -6,6 +9,7 @@
 .Container {
     @include tools.paddings(theme.$container-paddings, theme.$container-breakpoints);
 
+    display: flow-root; // 1.
     width: 100%;
     padding-inline: var(--container-padding-inline);
     margin-inline: auto;
