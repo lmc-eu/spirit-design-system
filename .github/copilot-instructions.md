@@ -13,12 +13,14 @@ Spirit Design System is an open-source design system developed by Alma Career (f
 ### Core Technologies
 
 - **TypeScript** - Primary language for all JavaScript/React code
-- **React 18+** - Component library implementation with Next.js support
+- **React 19+** - Component library implementation with Next.js support
 - **SCSS/Sass** - Styling with design token integration
-- **Node.js 18+** - Build tooling and development environment
+- **Node.js 20+** - Build tooling and development environment
 - **Lerna** - Monorepo management and publishing
 - **Yarn Workspaces** - Dependency management
-- **Nx** - Build system and task orchestration
+- **Lerna** - Monorepo management and publishing (legacy; being phased out in favor of Nx)
+- **Yarn Workspaces** - Dependency management
+- **Nx** - Build system and task orchestration (new standard for builds and task running)
 
 ### Package Structure
 
@@ -29,17 +31,16 @@ packages/
 ├── common/             # Shared build scripts and utilities
 ├── design-tokens/      # Design tokens (SCSS/JS/TS)
 ├── form-validations/   # Form validation utilities
-├── icons/              # SVG icon library
+├── icons/              # SVG and React icon library
 ├── web/                # Vanilla CSS/JS implementation
-├── web-react/          # React components library
-└── web-twig/           # Twig/Symfony implementation
+└── web-react/          # React components library
 ```
 
 ## Design System Principles
 
 ### Component Naming & Organization
 
-- **BEM methodology** for CSS classes (`.Component`, `.Component--modifier`, `.Component__element`)
+- **BEM/SUIT CSS methodology** for CSS classes (`.Component`, `.Component--modifier`, `.Component__element`)
 - **PascalCase** for React components (`Button`, `CardHeader`, `NavigationLink`)
 - **Atomic design** structure (atoms, molecules, organisms)
 - **Semantic versioning** with careful breaking change management
@@ -65,6 +66,7 @@ packages/
 ### React Component Structure
 
 ```typescript
+// types.ts
 // Component props interface
 export interface ButtonProps {
   color?: ButtonColorType;
@@ -80,6 +82,7 @@ export interface SpiritButtonProps<T extends ElementType = 'button'>
     StyleProps,
     TransferProps {}
 
+// Button.tsx
 // Component implementation
 const Button = <T extends ElementType = 'button'>(props: SpiritButtonProps<T>) => {
   const {
@@ -106,15 +109,28 @@ export default Button;
 ### Style Props Pattern
 
 ```typescript
+// useButtonStyleProps.ts
 // Use style props hooks for consistent styling
 const useButtonStyleProps = (props: SpiritButtonProps) => {
   const { styleProps, props: otherProps } = useStyleProps(props);
 
-  const buttonStyleProps = useButtonStyleProps({
-    color: props.color,
-    size: props.size,
-    isDisabled: props.isDisabled,
-  });
+  const buttonClass = useClassNamePrefix('Button');
+  const buttonBlockClass = `${buttonClass}--block`;
+  const buttonDisabledClass = `${buttonClass}--disabled`;
+  const buttonLoadingClass = `${buttonClass}--loading`;
+  const buttonSymmetricalClass = `${buttonClass}--symmetrical`;
+
+  const classProps = classNames(
+    buttonClass,
+    getButtonColorClassname(buttonClass, color as ButtonColor<C>),
+    getButtonSizeClassname(buttonClass, size as ButtonSize<S>),
+    {
+      [buttonBlockClass]: isBlock && !isSymmetrical,
+      [buttonDisabledClass]: isDisabled || isLoading,
+      [buttonLoadingClass]: isLoading,
+      [buttonSymmetricalClass]: isSymmetrical && !isBlock,
+    },
+  );
 
   return {
     ...otherProps,
@@ -143,8 +159,10 @@ const useButtonStyleProps = (props: SpiritButtonProps) => {
   border: tokens.$border-width-100 solid transparent;
 
   // State modifiers
-  &:hover {
-    // Hover styles
+  @media (hover: hover) {
+    &:hover {
+      // Hover styles
+    }
   }
 
   &:focus-visible {
@@ -155,55 +173,6 @@ const useButtonStyleProps = (props: SpiritButtonProps) => {
     // Disabled styles
   }
 }
-
-// Size variants
-.Button--small {
-  padding: tokens.$space-200 tokens.$space-300;
-  font-size: tokens.$font-size-200;
-}
-
-.Button--large {
-  padding: tokens.$space-400 tokens.$space-500;
-  font-size: tokens.$font-size-400;
-}
-
-// Color variants using design tokens
-.Button--primary {
-  background-color: tokens.$component-button-primary-state-default;
-  color: tokens.$component-button-primary-content;
-  border-color: tokens.$component-button-primary-border;
-
-  &:hover {
-    background-color: tokens.$component-button-primary-state-hover;
-  }
-}
-```
-
-## Design Token Usage
-
-### SCSS Integration
-
-```scss
-@use '@tokens' as tokens;
-@use '@themes' as themes;
-
-// Use design tokens for consistent styling
-.MyComponent {
-  margin-bottom: tokens.$space-300;
-  color: tokens.$text-primary;
-  font-family: map.get(tokens.$body-medium-regular, mobile, font-family);
-  border-radius: tokens.$radius-300;
-}
-```
-
-### TypeScript Integration
-
-```typescript
-import { Sizes, Colors, BorderRadii } from '@lmc-eu/spirit-design-tokens';
-
-// Types are generated from design tokens
-type ButtonSize = keyof typeof Sizes;
-type ButtonColor = keyof typeof Colors;
 ```
 
 ## Testing Guidelines
@@ -227,6 +196,7 @@ describe('Button', () => {
     render(<Button>Click me</Button>);
 
     const button = screen.getByRole('button', { name: 'Click me' });
+
     expect(button).toBeInTheDocument();
     expect(button).toHaveClass('Button');
   });
@@ -248,12 +218,18 @@ describe('Button', () => {
 Component/
 ├── index.ts                 # Public exports
 ├── Component.tsx           # Main component
-├── Component.stories.tsx   # Storybook stories
+├── demo                    # Public demo files
+│   ├── index.tsx           # Export demo components
+│   └── Component.tsx    # Example demo component
+├── stories                 # Public stories
+│   ├── index.tsx           # Storybook stories
+│   └── Component.stories.tsx    # Example demo component
 ├── __tests__/
 │   ├── Component.test.tsx  # Unit tests
 │   └── Component.test.tsx.snap # Snapshots
 ├── useComponentStyleProps.ts # Style props hook
 ├── constants.ts            # Component constants
+├── types.ts                # Component types
 └── README.md              # Component documentation
 ```
 
@@ -288,7 +264,7 @@ Follow conventional commits with Spirit-specific scopes:
 ```
 feat(web-react): add new Button variant for destructive actions
 fix(design-tokens): update primary color token values
-docs(Button): add accessibility guidelines to README
+docs(web): add accessibility guidelines to README
 ```
 
 ### Code Generation Patterns
@@ -300,13 +276,13 @@ When generating new components:
 3. **Create SCSS file** with design token integration
 4. **Add comprehensive tests** including accessibility
 5. **Create Storybook stories** for documentation
-6. **Update package exports** in index.ts files
+6. **Update component exports** in index.ts files
 
 ## Migration & Compatibility
 
 ### Breaking Changes
 
-- Always provide **codemods** for breaking changes
+- Provide **codemods** for breaking changes where possible
 - Update **MIGRATION.md** with upgrade paths
 - Use **deprecation warnings** before removal
 - Maintain **LTS versions** with security patches
@@ -352,14 +328,15 @@ When generating new components:
 
 ### When Creating Components
 
-1. **Start with the interface design** and prop definitions
-2. **Use existing components as reference** for patterns
-3. **Implement proper polymorphic behavior** when needed
-4. **Add comprehensive TypeScript types** including generics
-5. **Include style props integration** for consistency
-6. **Consider theme compatibility** across light/dark themes
-7. **Add proper forwarding** of refs and event handlers
-8. **Include loading and error states** when applicable
+1. **Start with the coding component** using HTML and SCSS
+2. **Continue with the interface design** and prop definitions
+3. **Use existing components as reference** for patterns
+4. **Implement proper polymorphic behavior** when needed
+5. **Add comprehensive TypeScript types** including generics
+6. **Include style props integration** for consistency
+7. **Consider theme compatibility** across default/on brand themes
+8. **Add proper forwarding** of refs and event handlers
+9. **Include loading and error states** when applicable
 
 ### Code Quality Standards
 
