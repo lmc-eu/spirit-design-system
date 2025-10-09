@@ -52,3 +52,22 @@ Responsive values can be defined using the `tablet` and `desktop` infixes.
 ```html
 <div class="Container text-center text-tablet-right text-desktop-left">Content with responsive text alignment</div>
 ```
+
+## Feature Flag: Block Formatting Context
+
+This feature is behind the `enable-v5-container-block-formatting-context` feature flag.
+
+When the feature flag is enabled, the Container root element will create a new block formatting context
+by applying `flow-root` display property. This helps to manage the layout of floated children elements
+inside the Container or prevent margin collapsing issues.
+
+For more info, see main [README][readme-feature-flags].
+
+### ⚠️ DEPRECATION NOTICE
+
+The property which sets a new block formatting context to Container root element will be part of the next major release.
+
+[What are deprecations?][readme-deprecations]
+
+[readme-feature-flags]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/README.md#feature-flags
+[readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/README.md#deprecations
