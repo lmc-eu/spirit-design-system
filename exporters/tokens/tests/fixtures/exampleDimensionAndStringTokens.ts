@@ -23,18 +23,18 @@ const testProperties = [
   {
     name: 'Collection',
     options: [
-      {
-        id: 'theme-tokens-id',
-        name: 'Theme tokens',
-      },
+        {
+          id: 'theme-tokens-id',
+          name: 'Theme',
+        },
       {
         id: 'primitives-id',
         name: 'Primitives',
       },
-      {
-        id: 'global-tokens-id',
-        name: 'Global tokens',
-      },
+        {
+          id: 'global-tokens-id',
+          name: 'Global',
+        },
       {
         id: 'device-tokens-id',
         name: 'Device',

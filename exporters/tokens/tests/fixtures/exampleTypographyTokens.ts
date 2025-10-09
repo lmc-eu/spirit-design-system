@@ -7,13 +7,13 @@ exampleTypographyTokens.set('typographyRef1', {
   tokenType: TokenType.typography,
   parentGroupId: '6',
   origin: {
-    name: 'Heading/Desktop/XLarge/Bold',
+    name: 'Heading/XLarge/Bold',
   },
   value: {
-    fontSize: { unit: 'Pixels', measure: 64 },
-    lineHeight: { measure: 120 },
+    fontSize: { unit: 'Pixels', measure: 40, referencedTokenId: 'font-size-id' },
+    lineHeight: { unit: 'Pixels', measure: 52, referencedTokenId: 'line-height-id' },
     fontFamily: { text: 'Inter' },
-    fontWeight: { text: '700' },
+    fontWeight: { text: 'Bold' },
   },
 } as TypographyToken);
 exampleTypographyTokens.set('typographyRef2', {
@@ -22,28 +22,28 @@ exampleTypographyTokens.set('typographyRef2', {
   tokenType: TokenType.typography,
   parentGroupId: '7',
   origin: {
-    name: 'Heading/Desktop/XLarge/Bold-Underline',
+    name: 'Heading/XLarge/Bold-Underline',
   },
   value: {
-    fontSize: { unit: 'Pixels', measure: 64 },
-    lineHeight: { measure: 120 },
+    fontSize: { unit: 'Pixels', measure: 40, referencedTokenId: 'font-size-id' },
+    lineHeight: { unit: 'Pixels', measure: 52, referencedTokenId: 'line-height-id' },
     fontFamily: { text: 'Inter' },
-    fontWeight: { text: '700' },
+    fontWeight: { text: 'Bold' },
   },
 } as TypographyToken);
 
 export const expectedTypographyValue = `(
 font-family: "'Inter', sans-serif",
-font-size: 64px,
+font-size: 40px,
 font-style: italic,
 font-weight: 700,
-line-height: 1.2,
+line-height: 1.3,
 )`;
 
 export const expectedTypographyWithFontReplacement = `(
 font-family: "'Replaced-font', replaced-substitute-font",
-font-size: 64px,
+font-size: 40px,
 font-style: italic,
 font-weight: 700,
-line-height: 1.2,
+line-height: 1.3,
 )`;

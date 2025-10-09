@@ -1,4 +1,4 @@
-import { Token, TokenGroup, TokenType, TypographyToken } from '@supernovaio/sdk-exporters';
+import { Token, TokenGroup, TokenType, TypographyToken, TypographyTokenValue } from '@supernovaio/sdk-exporters';
 import {
   formatTypographyName,
   getBreakpoint,
@@ -13,16 +13,105 @@ import { COLOR_JS_SUFFIX, COLOR_KEY, COLOR_SCSS_SUFFIX, TYPOGRAPHY_KEY } from '.
 
 export type StylesObjectType = { [key: string]: (string | object) & { moveToTheEnd?: string } };
 
+type FontSizeUnit = NonNullable<TypographyTokenValue['fontSize']>['unit'];
+type LineHeightUnit = NonNullable<TypographyTokenValue['lineHeight']>['unit'];
+type TypographyUnit = FontSizeUnit | LineHeightUnit;
+
+export type DeviceDimensionValue = {
+  measure: number;
+  unit: TypographyUnit;
+};
+
+export type DeviceDimensionMap = Map<string, Record<string, DeviceDimensionValue>>;
+
+const cloneTypographyValue = (value: TypographyTokenValue): TypographyTokenValue => {
+  return {
+    ...value,
+    fontFamily: value.fontFamily ? { ...value.fontFamily } : value.fontFamily,
+    fontWeight: value.fontWeight ? { ...value.fontWeight } : value.fontWeight,
+    fontSize: value.fontSize ? { ...value.fontSize } : value.fontSize,
+    textDecoration: value.textDecoration ? { ...value.textDecoration } : value.textDecoration,
+    textCase: value.textCase ? { ...value.textCase } : value.textCase,
+    letterSpacing: value.letterSpacing ? { ...value.letterSpacing } : value.letterSpacing,
+    lineHeight: value.lineHeight ? { ...value.lineHeight } : value.lineHeight,
+    paragraphIndent: value.paragraphIndent ? { ...value.paragraphIndent } : value.paragraphIndent,
+    paragraphSpacing: value.paragraphSpacing ? { ...value.paragraphSpacing } : value.paragraphSpacing,
+    referencedTokenId: value.referencedTokenId ?? null,
+  };
+};
+
+const getDeviceTypographyValues = (
+  typographyToken: TypographyToken,
+  deviceDimensions?: DeviceDimensionMap,
+): Map<string, TypographyTokenValue> | null => {
+  if (!deviceDimensions) {
+    return null;
+  }
+
+  const { fontSize, lineHeight } = typographyToken.value;
+  const fontSizeReferenceId = fontSize?.referencedTokenId;
+  const lineHeightReferenceId = lineHeight?.referencedTokenId;
+  const fontSizeDevices = fontSizeReferenceId ? deviceDimensions.get(fontSizeReferenceId) : undefined;
+  const lineHeightDevices = lineHeightReferenceId ? deviceDimensions.get(lineHeightReferenceId) : undefined;
+
+  if (!fontSizeDevices && !lineHeightDevices) {
+    return null;
+  }
+
+  const devices = new Set<string>();
+
+  if (fontSizeDevices) {
+    Object.keys(fontSizeDevices).forEach((device) => devices.add(device));
+  }
+
+  if (lineHeightDevices) {
+    Object.keys(lineHeightDevices).forEach((device) => devices.add(device));
+  }
+
+  if (devices.size === 0) {
+    return null;
+  }
+
+  const deviceTypographyMap = Array.from(devices).reduce<Map<string, TypographyTokenValue>>((accumulator, device) => {
+    const clonedValue = cloneTypographyValue(typographyToken.value);
+
+    if (fontSizeDevices?.[device]) {
+      clonedValue.fontSize = {
+        ...clonedValue.fontSize,
+        measure: fontSizeDevices[device].measure,
+        unit: fontSizeDevices[device].unit,
+      };
+    }
+
+    if (lineHeightDevices?.[device]) {
+      clonedValue.lineHeight = {
+        ...clonedValue.lineHeight,
+        measure: lineHeightDevices[device].measure,
+        unit: lineHeightDevices[device].unit,
+      };
+    }
+
+    accumulator.set(device, clonedValue);
+
+    return accumulator;
+  }, new Map<string, TypographyTokenValue>());
+
+  return deviceTypographyMap.size > 0 ? deviceTypographyMap : null;
+};
+
 export const handleTypographyTokens = (
   tokenNameParts: string[],
   token: Token,
   stylesObjectRef: StylesObjectType,
   hasJsOutput: boolean,
+  deviceDimensions?: DeviceDimensionMap,
 ): void => {
   const typographyToken = token as TypographyToken;
   const reducedNameParts = tokenNameParts.slice(0, 2);
   const name = formatTypographyName(tokenNameParts).toLowerCase();
   const breakpoint = getBreakpoint(tokenNameParts).toLowerCase();
+  const isItalic = name.includes('italic');
+  const deviceTypographyValues = getDeviceTypographyValues(typographyToken, deviceDimensions);
 
   let currentObject = stylesObjectRef;
   reducedNameParts.forEach((part, index) => {
@@ -30,7 +119,48 @@ export const handleTypographyTokens = (
     const modifiedPart = index === 0 ? tokenName : part;
 
     if (index === reducedNameParts.length - 1) {
-      currentObject[breakpoint] = typographyValue(typographyToken.value, name.includes('italic'), hasJsOutput);
+      if (deviceTypographyValues) {
+        const baseFontSize = typographyToken.value.fontSize?.measure;
+        const baseLineHeight = typographyToken.value.lineHeight?.measure;
+        const hasDeviceVariation = Array.from(deviceTypographyValues.values()).some((value) => {
+          const deviceFontSize = value.fontSize?.measure;
+          const deviceLineHeight = value.lineHeight?.measure;
+
+          return (
+            (deviceFontSize !== undefined && baseFontSize !== undefined && deviceFontSize !== baseFontSize) ||
+            (deviceLineHeight !== undefined && baseLineHeight !== undefined && deviceLineHeight !== baseLineHeight)
+          );
+        });
+
+        if (hasDeviceVariation) {
+          const deviceKeys = Array.from(deviceTypographyValues.keys());
+
+          const ensureDevice = (device: string) => {
+            if (device && !deviceKeys.includes(device)) {
+              deviceKeys.push(device);
+            }
+          };
+
+          ensureDevice(breakpoint);
+          ensureDevice('mobile');
+
+          deviceKeys.forEach((device) => {
+            const deviceValue =
+              deviceTypographyValues.get(device) ||
+              (device === 'mobile' || device === breakpoint ? cloneTypographyValue(typographyToken.value) : undefined);
+
+            if (!deviceValue) {
+              return;
+            }
+
+            currentObject[device] = typographyValue(deviceValue, isItalic, hasJsOutput);
+          });
+
+          return;
+        }
+      }
+
+      currentObject[breakpoint] = typographyValue(typographyToken.value, isItalic, hasJsOutput);
     } else {
       currentObject[modifiedPart] = currentObject[modifiedPart] || {};
       currentObject = currentObject[modifiedPart] as StylesObjectType;
@@ -77,6 +207,7 @@ export const createStylesObjectStructureFromTokenNameParts = (
   hasParentPrefix: boolean,
   stylesObjectRef: StylesObjectType,
   hasJsOutput: boolean,
+  deviceDimensions?: DeviceDimensionMap,
 ): StylesObjectType => {
   const { tokenType, name: tokenName } = token;
   const devicePart = getDeviceAlias(token);
@@ -91,7 +222,7 @@ export const createStylesObjectStructureFromTokenNameParts = (
   }
 
   if (tokenType === TokenType.typography) {
-    handleTypographyTokens(tokenNameParts, token, stylesObjectRef, hasJsOutput);
+    handleTypographyTokens(tokenNameParts, token, stylesObjectRef, hasJsOutput, deviceDimensions);
   } else {
     handleNonTypographyTokens(tokenNameParts, token, tokenGroups, hasParentPrefix, stylesObjectRef, hasJsOutput);
   }
@@ -138,6 +269,7 @@ export const generateStylesObjectFromTokens = (
   hasParentPrefix: boolean,
   hasJsOutput: boolean,
   sortByNumValue: boolean,
+  deviceDimensions?: DeviceDimensionMap,
 ): StylesObjectType => {
   const sortedTokens = sortTokens(tokens, tokenGroups, hasParentPrefix, sortByNumValue);
   const stylesObject = sortedTokens.reduce((stylesObjectAccumulator, token) => {
@@ -147,6 +279,7 @@ export const generateStylesObjectFromTokens = (
       hasParentPrefix,
       {},
       hasJsOutput,
+      deviceDimensions,
     );
 
     // Merge the current object into the accumulator
