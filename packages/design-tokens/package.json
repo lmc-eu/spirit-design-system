@@ -37,6 +37,8 @@
     "types": "tsc"
   },
   "devDependencies": {
+    "eslint": "8.57.1",
+    "eslint-config-spirit": "workspace:^",
     "npm-run-all2": "6.2.6",
     "rimraf": "5.0.10",
     "shx": "0.4.0",
