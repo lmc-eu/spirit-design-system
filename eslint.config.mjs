@@ -22,7 +22,10 @@ export default [
       '**/.nx/**',
       '**/.yarn/**',
       // Ignore the playwright-report directory
-      'playwright-report',
+      '**/playwright-report/**',
+      '**/test-results/**',
+      // Ignore vendor directory in `packages/web-twig`
+      '**/vendor/**',
 
       // Internal output folders
       'static',
