@@ -1,6 +1,7 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
+import { TruncateModes } from '../../../types';
 import ReadMe from '../README.md';
 import UNSTABLE_Truncate from '../UNSTABLE_Truncate';
 
@@ -16,10 +17,24 @@ const meta: Meta<typeof UNSTABLE_Truncate> = {
     children: {
       control: 'text',
     },
+    limit: {
+      control: 'number',
+      table: {
+        defaultValue: { summary: '3' },
+      },
+    },
     lines: {
       control: 'number',
       table: {
         defaultValue: { summary: '3' },
+        category: 'Deprecated',
+      },
+    },
+    mode: {
+      control: 'select',
+      options: Object.values(TruncateModes),
+      table: {
+        defaultValue: { summary: TruncateModes.LINES },
       },
     },
   },
@@ -33,7 +48,8 @@ const meta: Meta<typeof UNSTABLE_Truncate> = {
       'elit eget erat. Nulla quis diam. Donec iaculis gravida nulla. Nulla pulvinar eleifend sem. Fusce aliquam vestibulum\n' +
       'ipsum. Sed ac dolor sit amet purus malesuada congue. In dapibus augue non sapien. Morbi imperdiet, mauris ac auctor\n' +
       'dictum, nisl ligula egestas nulla, et sollicitudin sem purus in lacus. Nam sed tellus id magna elementum tincidunt.',
-    lines: 3,
+    limit: 3,
+    mode: TruncateModes.LINES,
   },
 };
 
