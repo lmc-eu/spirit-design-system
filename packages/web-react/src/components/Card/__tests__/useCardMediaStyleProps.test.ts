@@ -1,4 +1,4 @@
-import { cssVariablePrefix } from '@lmc-eu/spirit-design-tokens';
+import { cssVariablePrefix } from '@alma-oss/spirit-design-tokens';
 import { renderHook } from '@testing-library/react';
 import { type SpiritCardMediaProps } from '../../../types';
 import { useCardMediaStyleProps } from '../useCardMediaStyleProps';

@@ -1,11 +1,6 @@
 {
-<<<<<<< HEAD
-  "name": "@lmc-eu/spirit-web",
-  "version": "3.22.0",
-=======
   "name": "@alma-oss/spirit-web",
-  "version": "3.21.0",
->>>>>>> ac9b77e4f (BREAKING CHANGE(web): Change package npm organization to alma-oss)
+  "version": "3.22.0",
   "description": "CSS and vanilla JS implementation of Spirit Design System",
   "license": "MIT",
   "engines": {
