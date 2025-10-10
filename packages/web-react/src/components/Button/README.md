@@ -5,7 +5,7 @@ This is React implementation of the [Button][button].
 ## Basic Example Usage
 
 ```jsx
-import { Button } from '@lmc-eu/spirit-web-react';
+import { Button } from '@alma-oss/spirit-web-react';
 ```
 
 ```jsx

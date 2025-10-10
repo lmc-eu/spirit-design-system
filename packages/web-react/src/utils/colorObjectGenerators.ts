@@ -1,4 +1,4 @@
-import { accentColors, emotionColors, textColors } from '@lmc-eu/spirit-design-tokens';
+import { accentColors, emotionColors, textColors } from '@alma-oss/spirit-design-tokens';
 import {
   type AccentColorNamesType,
   type BackgroundAccentColorsType,
