@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { cssVariablePrefix } = require('@lmc-eu/spirit-design-tokens');
+const { cssVariablePrefix } = require('@alma-oss/spirit-design-tokens');
 const { filterSvgFiles, getIconType, ICON_TYPE_DUALTONE, ICON_TYPE_COLORED } = require('./shared');
 
 const svgSrcDir = path.resolve(__dirname, '../src/svg');
