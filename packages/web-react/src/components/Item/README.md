@@ -8,7 +8,7 @@ with `isItem` property. We do this to avoid repeating the same code and to simpl
 Simple Item example:
 
 ```jsx
-import { Item } from '@lmc-eu/spirit-web-react';
+import { Item } from '@alma-oss/spirit-web-react';
 
 <Item label="Item" />;
 ```
@@ -16,7 +16,7 @@ import { Item } from '@lmc-eu/spirit-web-react';
 Item with icon example:
 
 ```jsx
-import { Item } from '@lmc-eu/spirit-web-react';
+import { Item } from '@alma-oss/spirit-web-react';
 
 <Item label="Item" iconName="search" />;
 ```
@@ -24,7 +24,7 @@ import { Item } from '@lmc-eu/spirit-web-react';
 Item in selected state example:
 
 ```jsx
-import { Item } from '@lmc-eu/spirit-web-react';
+import { Item } from '@alma-oss/spirit-web-react';
 
 <Item label="Item" isSelected />;
 ```
@@ -32,7 +32,7 @@ import { Item } from '@lmc-eu/spirit-web-react';
 Item with Helper text example:
 
 ```jsx
-import { Item } from '@lmc-eu/spirit-web-react';
+import { Item } from '@alma-oss/spirit-web-react';
 
 <Item label="Item" helperText="Helper text" />;
 ```
@@ -40,7 +40,7 @@ import { Item } from '@lmc-eu/spirit-web-react';
 Item in disabled state example:
 
 ```jsx
-import { Item } from '@lmc-eu/spirit-web-react';
+import { Item } from '@alma-oss/spirit-web-react';
 
 <Item label="Item" isDisabled />;
 ```
@@ -48,7 +48,7 @@ import { Item } from '@lmc-eu/spirit-web-react';
 Item with icon and helper text in selected state example:
 
 ```jsx
-import { Item } from '@lmc-eu/spirit-web-react';
+import { Item } from '@alma-oss/spirit-web-react';
 
 <Item label="Item" iconName="search" helperText="Helper text" isSelected />;
 ```
@@ -56,7 +56,7 @@ import { Item } from '@lmc-eu/spirit-web-react';
 Item as a link example:
 
 ```jsx
-import { Item } from '@lmc-eu/spirit-web-react';
+import { Item } from '@alma-oss/spirit-web-react';
 
 <Item label="Item" elementType="a" href="#" />;
 ```
@@ -64,7 +64,7 @@ import { Item } from '@lmc-eu/spirit-web-react';
 Radio as Item:
 
 ```jsx
-import { Radio } from '@lmc-eu/spirit-web-react';
+import { Radio } from '@alma-oss/spirit-web-react';
 
 <Radio id="radio-item" name="example" label="Radio Label" isItem />;
 ```
@@ -72,7 +72,7 @@ import { Radio } from '@lmc-eu/spirit-web-react';
 Checkbox as Item:
 
 ```jsx
-import { Checkbox } from '@lmc-eu/spirit-web-react';
+import { Checkbox } from '@alma-oss/spirit-web-react';
 
 <Checkbox id="checkbox-item" name="example" label="Checkbox Label" isItem />;
 ```
@@ -80,7 +80,7 @@ import { Checkbox } from '@lmc-eu/spirit-web-react';
 Usage in [Dropdown][dropdown] component:
 
 ```jsx
-import { Dropdown, DropdownTrigger, DropdownPopover, Item } from '@lmc-eu/spirit-web-react/components';
+import { Dropdown, DropdownTrigger, DropdownPopover, Item } from '@alma-oss/spirit-web-react';
 
 const [isOpen, setIsOpen] = React.useState(false);
 const onToggle = () => setIsOpen(!isOpen);

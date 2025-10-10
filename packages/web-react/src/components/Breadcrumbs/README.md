@@ -5,7 +5,7 @@
 ### Basic
 
 ```jsx
-import { Breadcrumbs } from '@lmc-eu/spirit-web-react/components';
+import { Breadcrumbs } from '@alma-oss/spirit-web-react';
 ```
 
 Define breadcrumb items as an array type of `BreadcrumbsItem[]`.

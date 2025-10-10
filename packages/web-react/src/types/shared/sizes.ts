@@ -1,4 +1,4 @@
-import { type buttons, type containers } from '@lmc-eu/spirit-design-tokens';
+import { type buttons, type containers } from '@alma-oss/spirit-design-tokens';
 
 export type ButtonSizesType = keyof typeof buttons;
 

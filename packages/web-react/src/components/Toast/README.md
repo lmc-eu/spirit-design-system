@@ -18,7 +18,7 @@ The Toast component is a container responsible for positioning the [ToastBar](#t
 handling even multiple toast messages at once, stacking them in a [queue](#toast-queue).
 
 ```jsx
-import { Toast } from '@lmc-eu/spirit-web-react/components';
+import { Toast } from '@alma-oss/spirit-web-react';
 ```
 
 ```jsx
@@ -152,7 +152,7 @@ elements.
 Minimum example:
 
 ```jsx
-import { ToastBar, ToastBarMessage } from '@lmc-eu/spirit-web-react/components';
+import { ToastBar, ToastBarMessage } from '@alma-oss/spirit-web-react';
 
 <ToastBar id="my-toast">
   <ToastBarMessage>Message only</ToastBarMessage>
@@ -250,7 +250,7 @@ Use the `color` option to change the color of the ToastBar component.
 For example:
 
 ```jsx
-import { ToastBarMessage } from '@lmc-eu/spirit-web-react/components';
+import { ToastBarMessage } from '@alma-oss/spirit-web-react';
 
 <ToastBar id="my-toast" color="success">
   <ToastBarMessage>Success message</ToastBarMessage>
@@ -303,7 +303,7 @@ and [escape hatches][readme-escape-hatches].
 ## Full Example
 
 ```jsx
-import { Button, Toast, ToastBar, ToastBarMessage, ToastBarLink } from '@lmc-eu/spirit-web-react/components';
+import { Button, Toast, ToastBar, ToastBarMessage, ToastBarLink } from '@alma-oss/spirit-web-react';
 
 const [isOpen, setIsOpen] = useState(false);
 
@@ -322,7 +322,7 @@ const [isOpen, setIsOpen] = useState(false);
 ## UncontrolledToast
 
 ```jsx
-import { ToastProvider, UncontrolledToast } from '@lmc-eu/spirit-web-react/components';
+import { ToastProvider, UncontrolledToast } from '@alma-oss/spirit-web-react';
 ```
 
 ### Minimal Props

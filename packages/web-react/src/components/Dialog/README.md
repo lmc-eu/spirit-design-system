@@ -3,7 +3,7 @@
 React implementation of native HTML [dialog][dialog] element.
 
 ```jsx
-import { Dialog } from '@lmc-eu/spirit-web-react/components';
+import { Dialog } from '@alma-oss/spirit-web-react';
 ```
 
 ```jsx

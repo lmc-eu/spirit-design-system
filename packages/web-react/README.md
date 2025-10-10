@@ -1,10 +1,10 @@
-# @lmc-eu/spirit-web-react
+# @alma-oss/spirit-web-react
 
-[![minified](https://badgen.net/bundlephobia/min/@lmc-eu/spirit-web-react)](https://bundlephobia.com/package/@lmc-eu/spirit-web-react)
-[![minified + gzip](https://badgen.net/bundlephobia/minzip/@lmc-eu/spirit-web-react)](https://bundlephobia.com/package/@lmc-eu/spirit-web-react)
-[![dependency count](https://badgen.net/bundlephobia/dependency-count/@lmc-eu/spirit-web-react)](https://bundlephobia.com/package/@lmc-eu/spirit-web-react)
-[![tree shaking](https://badgen.net/bundlephobia/tree-shaking/@lmc-eu/spirit-web-react)](https://bundlephobia.com/package/@lmc-eu/spirit-web-react)
-[![client components](https://badgen.net/badge/client%20components/supported/green)](https://bundlephobia.com/package/@lmc-eu/spirit-web-react)
+[![minified](https://badgen.net/bundlephobia/min/@alma-oss/spirit-web-react)](https://bundlephobia.com/package/@alma-oss/spirit-web-react)
+[![minified + gzip](https://badgen.net/bundlephobia/minzip/@alma-oss/spirit-web-react)](https://bundlephobia.com/package/@alma-oss/spirit-web-react)
+[![dependency count](https://badgen.net/bundlephobia/dependency-count/@alma-oss/spirit-web-react)](https://bundlephobia.com/package/@alma-oss/spirit-web-react)
+[![tree shaking](https://badgen.net/bundlephobia/tree-shaking/@alma-oss/spirit-web-react)](https://bundlephobia.com/package/@alma-oss/spirit-web-react)
+[![client components](https://badgen.net/badge/client%20components/supported/green)](https://bundlephobia.com/package/@alma-oss/spirit-web-react)
 
 > React implementation of Spirit Design System components.
 
@@ -13,13 +13,13 @@
 Expecting you have `react` and `react-dom` installed in your app, run:
 
 ```shell
-yarn add @lmc-eu/spirit-web @lmc-eu/spirit-web-react
+yarn add @alma-oss/spirit-web @alma-oss/spirit-web-react
 ```
 
 or
 
 ```shell
-npm install --save @lmc-eu/spirit-web @lmc-eu/spirit-web-react
+npm install --save @alma-oss/spirit-web @alma-oss/spirit-web-react
 ```
 
 ## Usage
@@ -27,10 +27,10 @@ npm install --save @lmc-eu/spirit-web @lmc-eu/spirit-web-react
 Link Spirit CSS (see [`spirit-web` docs][web-docs] for more options):
 
 ```html
-<link rel="stylesheet" href="node_modules/@lmc-eu/spirit-web/css/foundation.min.css" />
-<link rel="stylesheet" href="node_modules/@lmc-eu/spirit-web/css/components.min.css" />
-<link rel="stylesheet" href="node_modules/@lmc-eu/spirit-web/css/helpers.min.css" />
-<link rel="stylesheet" href="node_modules/@lmc-eu/spirit-web/css/utilities.min.css" />
+<link rel="stylesheet" href="node_modules/@alma-oss/spirit-web/css/foundation.min.css" />
+<link rel="stylesheet" href="node_modules/@alma-oss/spirit-web/css/components.min.css" />
+<link rel="stylesheet" href="node_modules/@alma-oss/spirit-web/css/helpers.min.css" />
+<link rel="stylesheet" href="node_modules/@alma-oss/spirit-web/css/utilities.min.css" />
 ```
 
 ⚠️ Make sure to load all CSS files above and in the same order.
@@ -38,7 +38,7 @@ Link Spirit CSS (see [`spirit-web` docs][web-docs] for more options):
 Import React components in your app:
 
 ```jsx
-import { Button } from '@lmc-eu/spirit-web-react/components/Button';
+import { Button } from '@alma-oss/spirit-web-react';
 ```
 
 ### Prefixing CSS Classes in Components
@@ -48,7 +48,7 @@ If you want to prefix the component classes with your own namespace, you can use
 Check [`spirit-web` docs][web-pkg-prefixes] to learn how to prefix CSS class names.
 
 ```jsx
-import { ClassNamePrefixProvider } from '@lmc-eu/spirit-web-react/context/ClassNamePrefixContext';
+import { ClassNamePrefixProvider } from '@alma-oss/spirit-web-react/context/ClassNamePrefixContext';
 
 <ClassNamePrefixProvider value="jobs">
   <Button>Button</Button>

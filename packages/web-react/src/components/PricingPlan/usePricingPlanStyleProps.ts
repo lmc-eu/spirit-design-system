@@ -1,4 +1,4 @@
-import { cssVariablePrefix } from '@lmc-eu/spirit-design-tokens';
+import { cssVariablePrefix } from '@alma-oss/spirit-design-tokens';
 import classNames from 'classnames';
 import type { CSSProperties, ElementType } from 'react';
 import { useClassNamePrefix } from '../../hooks';
