@@ -71,20 +71,20 @@ yarn add sass-embedded
 and the following packages:
 
 ```bash
-npm install @lmc-eu/spirit-design-tokens @lmc-eu/spirit-icons @lmc-eu/spirit-web @lmc-eu/spirit-web-react
+npm install @alma-oss/spirit-design-tokens @alma-oss/spirit-icons @alma-oss/spirit-web @alma-oss/spirit-web-react
 ```
 
 or
 
 ```bash
-yarn add @lmc-eu/spirit-design-tokens @lmc-eu/spirit-icons @lmc-eu/spirit-web @lmc-eu/spirit-web-react
+yarn add @alma-oss/spirit-design-tokens @alma-oss/spirit-icons @alma-oss/spirit-web @alma-oss/spirit-web-react
 ```
 
 <!--lint disable no-undefined-references-->
 
 > [!NOTE]
 > This setup applies only if you don’t want to use your own custom design tokens and/or icons. If you can use your own design tokens and/or icons,
-> you can skip the installation of `@lmc-eu/spirit-design-tokens` and/or `@lmc-eu/spirit-icons`.
+> you can skip the installation of `@alma-oss/spirit-design-tokens` and/or `@alma-oss/spirit-icons`.
 > For more information, see [Rebranding Spirit][rebranding-spirit].
 
 ### Configuring Next.js for Design Tokens Support
@@ -99,7 +99,7 @@ import { fileURLToPath } from 'url';
 const pathDir = dirname(fileURLToPath(import.meta.url));
 
 const nextConfig: NextConfig = {
-  transpilePackages: ['@lmc-eu/spirit-web-react'],
+  transpilePackages: ['@alma-oss/spirit-web-react'],
   reactStrictMode: true,
   sassOptions: {
     implementation: 'sass-embedded',
@@ -107,7 +107,7 @@ const nextConfig: NextConfig = {
     silenceDeprecations: ['legacy-js-api'],
     includePaths: [
       path.join(pathDir, './node_modules'),
-      path.join(pathDir, './node_modules/@lmc-eu/spirit-design-tokens/scss'),
+      path.join(pathDir, './node_modules/@alma-oss/spirit-design-tokens/scss'),
     ],
   },
 };
@@ -120,7 +120,7 @@ export default nextConfig;
 Create a file `src/app/globals.scss` and add the following import:
 
 ```scss
-@forward '@lmc-eu/spirit-web/scss';
+@forward '@alma-oss/spirit-web/scss';
 ```
 
 ### PostCSS Configuration
@@ -182,7 +182,7 @@ export default RootLayout;
 Open `src/app/page.tsx` and add a sample Spirit component:
 
 ```tsx
-import { Heading } from '@lmc-eu/spirit-web-react';
+import { Heading } from '@alma-oss/spirit-web-react';
 import { NextPage } from 'next';
 
 const Home: NextPage = () => (

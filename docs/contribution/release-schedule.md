@@ -73,8 +73,8 @@ To get more information about the release names, please refer to the [Release Na
 ## Assets Managed Under This Release Schedule
 
 This plan covers the design and development assets under maintenance of the
-Spirit Design System core team. This includes the `@lmc-eu/spirit-web`, `@lmc-eu/spirit-web-react` and
-`@lmc-eu/spirit-design-tokens` packages, as well as all other packages within the
+Spirit Design System core team. This includes the `@alma-oss/spirit-web`, `@alma-oss/spirit-web-react` and
+`@alma-oss/spirit-design-tokens` packages, as well as all other packages within the
 [`spirit` monorepo][spirit-github-monorepo].
 
 This plan also includes all design guidance and design kit assets (figma, etc.)

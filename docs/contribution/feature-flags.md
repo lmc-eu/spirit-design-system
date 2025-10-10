@@ -42,11 +42,11 @@ You have to do this **before** loading any other Spirit Web SCSS file.
 Example with fictional feature flag to enable fullscreen modal:
 
 ```sass
-@use '~@lmc-eu/spirit-web/scss/settings/feature-flags' with (
+@use '~@alma-oss/spirit-web/scss/settings/feature-flags' with (
   $enable-modal-fullscreen: true
 );
 
-@use '~@lmc-eu/spirit-web/scss/foundation';
+@use '~@alma-oss/spirit-web/scss/foundation';
 ```
 
 Every feature flag should also provide a class selector that can be used to enable or disable the feature.

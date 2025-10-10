@@ -1,7 +1,6 @@
 {
-  "name": "@almacareer/spirit-example-next-with-pages-router",
+  "name": "@alma-oss/spirit-example-next-with-pages-router",
   "version": "0.2.31",
-  "description": "This is a [Next.js](https://nextjs.org/) project with demo Spirit Design System components and pages router",
   "private": true,
   "author": "Spirit Design System Team",
   "main": "index.js",
@@ -13,10 +12,10 @@
     "lint:fix": "yarn lint --fix"
   },
   "dependencies": {
-    "@lmc-eu/spirit-design-tokens": "workspace:^",
-    "@lmc-eu/spirit-icons": "workspace:^",
-    "@lmc-eu/spirit-web": "workspace:^",
-    "@lmc-eu/spirit-web-react": "workspace:^",
+    "@alma-oss/spirit-design-tokens": "workspace:^",
+    "@alma-oss/spirit-icons": "workspace:^",
+    "@alma-oss/spirit-web": "workspace:^",
+    "@alma-oss/spirit-web-react": "workspace:^",
     "next": "15.5.9",
     "react": "^18",
     "react-dom": "^18"
