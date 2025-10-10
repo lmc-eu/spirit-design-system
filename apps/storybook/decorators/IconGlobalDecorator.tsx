@@ -3,9 +3,9 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore: No declaration file
 import type { Decorator } from '@storybook/react';
-import { IconsProvider } from '@lmc-eu/spirit-web-react';
+import { IconsProvider } from '@alma-oss/spirit-web-react';
 // @ts-ignore: No declaration file
-import icons from '@lmc-eu/spirit-icons/icons';
+import icons from '@alma-oss/spirit-icons/icons';
 
 export const IconGlobalDecorator: Decorator = (Story, context) => (
   <IconsProvider value={icons}>
