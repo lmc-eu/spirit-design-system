@@ -8,7 +8,7 @@ The Toggle component implements the HTML [checkbox input][mdn-checkbox] element.
 the native input element and styles it to look like a toggle switch.
 
 ```jsx
-import { Toggle } from '@lmc-eu/spirit-web-react/components';
+import { Toggle } from '@alma-oss/spirit-web-react';
 
 <Toggle id="toggle-default" label="Toggle Label" />;
 ```

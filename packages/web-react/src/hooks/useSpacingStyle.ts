@@ -1,4 +1,4 @@
-import { cssVariablePrefix } from '@lmc-eu/spirit-design-tokens';
+import { cssVariablePrefix } from '@alma-oss/spirit-design-tokens';
 import { type DirectionAxis } from '../constants';
 import { type SpacingCSSProperties, type SpacingType } from '../types';
 

@@ -7,7 +7,7 @@
       "<FIGMA_FILE_ID>": "https://www.figma.com/design/w9Ca4hvkuYLshsrHu1bYwT/Spirit-UI-KIT"
     },
     "importPaths": {
-      "src/components/*": "@lmc-eu/spirit-web-react"
+      "src/components/*": "@alma-oss/spirit-web-react"
     }
   }
 }

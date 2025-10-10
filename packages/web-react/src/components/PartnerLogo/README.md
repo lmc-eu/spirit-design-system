@@ -3,7 +3,7 @@
 PartnerLogo is a component designed to display the partner's logo (e.g. advertiser, business partner, etc.).
 
 ```jsx
-import { PartnerLogo } from '@lmc-eu/spirit-web-react';
+import { PartnerLogo } from '@alma-oss/spirit-web-react';
 
 <PartnerLogo>{/* Logo goes here */}</PartnerLogo>;
 ```

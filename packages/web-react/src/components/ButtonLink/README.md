@@ -3,7 +3,7 @@
 ## Basic Example Usage
 
 ```jsx
-import { ButtonLink } from '@lmc-eu/spirit-web-react';
+import { ButtonLink } from '@alma-oss/spirit-web-react';
 ```
 
 ```jsx

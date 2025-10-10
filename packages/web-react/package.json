@@ -1,5 +1,5 @@
 {
-  "name": "@lmc-eu/spirit-web-react",
+  "name": "@alma-oss/spirit-web-react",
   "version": "3.22.0",
   "description": "React implementation of Spirit Design System components",
   "license": "MIT",
@@ -27,6 +27,8 @@
     "react-transition-group": "^4.4.5"
   },
   "devDependencies": {
+    "@alma-oss/spirit-common": "workspace:^",
+    "@alma-oss/spirit-web": "workspace:^",
     "@babel/core": "7.26.10",
     "@babel/preset-env": "7.26.9",
     "@babel/preset-react": "7.26.3",
@@ -39,8 +41,7 @@
     "@lmc-eu/eslint-config-jest": "3.0.6",
     "@lmc-eu/eslint-config-react": "2.0.6",
     "@lmc-eu/eslint-config-typescript": "2.1.5",
-    "@lmc-eu/spirit-common": "^0.4.2",
-    "@lmc-eu/spirit-web": "^3.20.0",
+    "@lmc-eu/spirit-demo": "workspace:^",
     "@rollup/plugin-node-resolve": "15.3.1",
     "@rollup/plugin-replace": "6.0.2",
     "@rollup/plugin-terser": "0.4.4",
@@ -91,20 +92,20 @@
     "webpack-merge": "6.0.1"
   },
   "peerDependencies": {
-    "@lmc-eu/spirit-design-tokens": "^3.0.0",
-    "@lmc-eu/spirit-icons": "^2.0.0",
-    "@lmc-eu/spirit-web": "^3.0.0",
+    "@alma-oss/spirit-design-tokens": "^3.0.0",
+    "@alma-oss/spirit-icons": "^2.0.0",
+    "@alma-oss/spirit-web": "^3.0.0",
     "react": "^17.0.2 || ^18.0.0 || ^19.0.0",
     "react-dom": "^17.0.2 || ^18.0.0 || ^19.0.0"
   },
   "peerDependenciesMeta": {
-    "@lmc-eu/spirit-design-tokens": {
+    "@alma-oss/spirit-design-tokens": {
       "optional": true
     },
-    "@lmc-eu/spirit-icons": {
+    "@alma-oss/spirit-icons": {
       "optional": true
     },
-    "@lmc-eu/spirit-web": {
+    "@alma-oss/spirit-web": {
       "optional": true
     }
   },
