@@ -16,7 +16,7 @@ Do you need size consistency with form controls or a heavier visual? Use [Button
 ## Basic Usage
 
 ```jsx
-import { ControlButton, Icon } from '@lmc-eu/spirit-web-react';
+import { ControlButton, Icon } from '@alma-oss/spirit-web-react';
 
 <ControlButton aria-label="Close">
   <Icon name="close" />

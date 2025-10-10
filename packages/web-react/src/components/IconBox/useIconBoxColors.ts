@@ -1,4 +1,4 @@
-import { emotionColors } from '@lmc-eu/spirit-design-tokens';
+import { emotionColors } from '@alma-oss/spirit-design-tokens';
 import { EmotionColors, Intensity } from '../../constants';
 import { ColorPrefixes } from '../../constants/colors';
 import type {
