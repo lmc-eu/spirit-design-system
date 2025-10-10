@@ -1,4 +1,4 @@
-# @lmc-eu/spirit-design-tokens
+# @alma-oss/spirit-design-tokens
 
 > Design tokens for Spirit Design System.
 
@@ -76,13 +76,13 @@ as a dependency of `spirit-web`.
 If you want to use just `spirit-design-tokens` alone in your project, run:
 
 ```shell
-yarn add @lmc-eu/spirit-design-tokens
+yarn add @alma-oss/spirit-design-tokens
 ```
 
 or
 
 ```shell
-npm install --save @lmc-eu/spirit-design-tokens
+npm install --save @alma-oss/spirit-design-tokens
 ```
 
 ## Basic Usage
@@ -94,7 +94,7 @@ Sass (with the SCSS syntax) is the primary language for styling Spirit component
 The best way to use the design tokens is to load their path in Sass:
 
 ```shell
-sass --load-path=node_modules/@lmc-eu/spirit-design-tokens/scss my-styles.scss
+sass --load-path=node_modules/@alma-oss/spirit-design-tokens/scss my-styles.scss
 ```
 
 Or integrate them into your build system:
@@ -112,7 +112,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        includePaths: [path.resolve(__dirname, 'node_modules/@lmc-eu/spirit-design-tokens/scss')],
+        includePaths: [path.resolve(__dirname, 'node_modules/@alma-oss/spirit-design-tokens/scss')],
       },
     },
   },
@@ -141,7 +141,7 @@ module: {
             sassOptions: {
               includePaths: [
                 path.resolve(__dirname, 'node_modules'),
-                path.resolve(__dirname, 'node_modules/@lmc-eu/spirit-design-tokens/scss'),
+                path.resolve(__dirname, 'node_modules/@alma-oss/spirit-design-tokens/scss'),
               ],
             },
           },
@@ -183,7 +183,7 @@ module: {
             sassOptions: {
               loadPaths: [
                 path.resolve(__dirname, 'node_modules'),
-                path.resolve(__dirname, 'node_modules/@lmc-eu/spirit-design-tokens/scss'),
+                path.resolve(__dirname, 'node_modules/@alma-oss/spirit-design-tokens/scss'),
               ],
             },
           },
@@ -213,7 +213,7 @@ The [`spirit-web`][web-docs] package or your own components can simply reach tok
 For your components you can also load the token files directly:
 
 ```scss
-@use 'node_modules/@lmc-eu/spirit-design-tokens/scss/@tokens' as tokens;
+@use 'node_modules/@alma-oss/spirit-design-tokens/scss/@tokens' as tokens;
 ```
 
 ### In JavaScript
@@ -221,7 +221,7 @@ For your components you can also load the token files directly:
 Additionally, the design tokens are also provided as a JavaScript object.
 
 ```js
-import * as SpiritDesignTokens from '@lmc-eu/spirit-design-tokens';
+import * as SpiritDesignTokens from '@alma-oss/spirit-design-tokens';
 
 const desktopBreakpoint = SpiritDesignTokens.breakpoints.desktop;
 ```
@@ -241,7 +241,7 @@ to your needs. You can also add new tokens required by your design system.
 
 ### Using Your Design Tokens with TypeScript
 
-If you want to use your own set of design tokens instead of the default ones provided by `@lmc-eu/spirit-design-tokens`,
+If you want to use your own set of design tokens instead of the default ones provided by `@alma-oss/spirit-design-tokens`,
 you need to adjust your project's TypeScript configuration and your build system settings to correctly resolve imports.
 
 Add the following paths to your `tsconfig.json`:
@@ -250,8 +250,8 @@ Add the following paths to your `tsconfig.json`:
 {
   "compilerOptions": {
     "paths": {
-      "@lmc-eu/spirit-design-tokens": ["path-to-your-design-tokens-directory-or-package/js"],
-      "@lmc-eu/spirit-design-tokens/*": ["path-to-your-design-tokens-directory-or-package/*"]
+      "@alma-oss/spirit-design-tokens": ["path-to-your-design-tokens-directory-or-package/js"],
+      "@alma-oss/spirit-design-tokens/*": ["path-to-your-design-tokens-directory-or-package/*"]
     }
   }
 }
@@ -270,7 +270,7 @@ import path from 'path';
 export default config({
   resolve: {
     alias: {
-      '@lmc-eu/spirit-design-tokens': path.resolve(__dirname, 'path-to-your-design-tokens-directory-or-package'),
+      '@alma-oss/spirit-design-tokens': path.resolve(__dirname, 'path-to-your-design-tokens-directory-or-package'),
     },
   },
 });
@@ -289,7 +289,7 @@ import path from 'path';
 export default defineConfig({
   resolve: {
     alias: {
-      '@lmc-eu/spirit-design-tokens': path.resolve(__dirname, 'path-to-your-design-tokens-directory-or-package'),
+      '@alma-oss/spirit-design-tokens': path.resolve(__dirname, 'path-to-your-design-tokens-directory-or-package'),
     },
   },
 });
@@ -309,7 +309,7 @@ import { fileURLToPath } from "url";
 const pathDir = dirname(fileURLToPath(import.meta.url));
 
 const nextConfig: NextConfig = {
-  transpilePackages: ['@lmc-eu/spirit-web-react'],
+  transpilePackages: ['@alma-oss/spirit-web-react'],
   reactStrictMode: true,
   sassOptions: {
     implementation: 'sass-embedded',
@@ -319,7 +319,7 @@ const nextConfig: NextConfig = {
     ],
   },
   webpack: (config) => {
-    config.resolve.alias['@lmc-eu/spirit-design-tokens'] = path.resolve('path-to-your-design-tokens-directory-or-package');
+    config.resolve.alias['@alma-oss/spirit-design-tokens'] = path.resolve('path-to-your-design-tokens-directory-or-package');
     return config;
   },
 };
