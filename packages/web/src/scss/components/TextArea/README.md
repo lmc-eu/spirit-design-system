@@ -94,7 +94,7 @@ To enable auto-resizing of the textarea, first, you need to provide Spirit JavaS
 which will handle the functionality:
 
 ```html
-<script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
+<script src="node_modules/@alma-oss/spirit-web/js/cjs/spirit-web.min.js" async></script>
 ```
 
 Please consult the [main README][web-readme] for how to include JavaScript
