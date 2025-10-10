@@ -1,4 +1,4 @@
-# @lmc-eu/spirit-codemods
+# @alma-oss/spirit-codemods
 
 > Codemods for migration to the newer version of the Spirit Design library.
 
@@ -15,14 +15,14 @@ No installation of this package is necessary; you can run it using `npx`.
 To view the available arguments for this package, use `-h` or `--help` as shown in the example below:
 
 ```shell
-npx @lmc-eu/spirit-codemods -h
+npx @alma-oss/spirit-codemods -h
 ```
 
 There are **two mandatory arguments**: `-p`/`--path` and `-t`/`--transformation`.
 The former specifies the directory path where you want to execute transforms, while the latter specifies the desired codemod to run.
 
 ```shell
-npx @lmc-eu/spirit-codemods -p ./ -t v2/web-react/<codemod-name>
+npx @alma-oss/spirit-codemods -p ./ -t v2/web-react/<codemod-name>
 ```
 
 Other optional arguments include:
@@ -36,7 +36,7 @@ Other optional arguments include:
 For example, this could be the command you will run:
 
 ```shell
-npx @lmc-eu/spirit-codemods -p ./src -t v2/web-react/fileuploader-prop-names -e js,jsx --parser babel
+npx @alma-oss/spirit-codemods -p ./src -t v2/web-react/fileuploader-prop-names -e js,jsx --parser babel
 ```
 
 ## Available Scripts
