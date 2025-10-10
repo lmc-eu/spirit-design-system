@@ -6,7 +6,9 @@
 
 ```jsx
 import React, { useState } from 'react';
-import { Button } from '@lmc-eu/spirit-web-react';
+import { Button } from '@alma-oss/spirit-web-react';
+
+// ...
 
 const [isOpen, toggle] = useState<boolean>(true);
 
@@ -20,7 +22,9 @@ const [isOpen, toggle] = useState<boolean>(true);
 
 ```jsx
 import React, { useState } from 'react';
-import { Button, Collapse, useCollapse } from '@lmc-eu/spirit-web-react';
+import { Button, Collapse, useCollapse } from '@alma-oss/spirit-web-react';
+
+// ...
 
 const { isOpen, toggle } = useCollapse(false);
 
@@ -34,7 +38,9 @@ const { isOpen, toggle } = useCollapse(false);
 
 ```jsx
 import React, { useState } from 'react';
-import { Button, Collapse, useCollapse } from '@lmc-eu/spirit-web-react';
+import { Button, Collapse, useCollapse } from '@alma-oss/spirit-web-react';
+
+// ...
 
 const { isOpen, toggleHandler } = useCollapse(false);
 
@@ -48,7 +54,9 @@ const { isOpen, toggleHandler } = useCollapse(false);
 
 ```jsx
 import React, { useState } from 'react';
-import { Button, Collapse } from '@lmc-eu/spirit-web-react';
+import { Button, Collapse } from '@alma-oss/spirit-web-react';
+
+// ...
 
 const [isOpen, toggle] = useState<boolean>(true);
 
@@ -66,7 +74,7 @@ For inline text expansion (useful for "read more" functionality), use `elementTy
 
 ```jsx
 import React, { useState } from 'react';
-import { Button, Collapse } from '@lmc-eu/spirit-web-react';
+import { Button, Collapse } from '@alma-oss/spirit-web-react';
 
 const [isOpen, toggle] = useState < boolean > false;
 
@@ -104,7 +112,7 @@ and [escape hatches][readme-escape-hatches].
 
 ```jsx
 import React, { useState } from 'react';
-import { Button, UncontrolledCollapse } from '@lmc-eu/spirit-web-react';
+import { Button, UncontrolledCollapse } from '@alma-oss/spirit-web-react';
 
 // ...
 
@@ -120,7 +128,7 @@ import { Button, UncontrolledCollapse } from '@lmc-eu/spirit-web-react';
 
 ```jsx
 import React, { useState } from 'react';
-import { Button, UncontrolledCollapse } from '@lmc-eu/spirit-web-react';
+import { Button, UncontrolledCollapse } from '@alma-oss/spirit-web-react';
 
 // ...
 

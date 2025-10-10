@@ -3,7 +3,7 @@
 Pills can be used to show count or label.
 
 ```jsx
-import { Pill } from '@lmc-eu/spirit-web-react';
+import { Pill } from '@alma-oss/spirit-web-react';
 ```
 
 ```jsx

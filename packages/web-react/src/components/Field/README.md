@@ -5,7 +5,7 @@
 The ValidationText subcomponent displays validation texts for Field components like TextField, TextArea, Checkbox, FileUploader, etc.
 
 ```jsx
-import { ValidationText } from '@lmc-eu/spirit-web-react/components';
+import { ValidationText } from '@alma-oss/spirit-web-react';
 ```
 
 Basic example usage:

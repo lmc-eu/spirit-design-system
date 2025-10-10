@@ -3,7 +3,7 @@
 Truncate is a component that truncates text based on various criteria: lines, words, or characters.
 
 ```jsx
-import { Truncate } from '@lmc-eu/spirit-web-react';
+import { Truncate } from '@alma-oss/spirit-web-react';
 
 <Truncate>{/* Text go here */}</Truncate>;
 ```
@@ -87,7 +87,7 @@ This example demonstrates how to make truncated text expandable, allowing users 
 
 ```jsx
 import React, { useState } from 'react';
-import { Button, Text, Truncate } from '@lmc-eu/spirit-web-react';
+import { Button, Text, Truncate } from '@alma-oss/spirit-web-react';
 
 const Example = ({ children }) => {
   const [isExpanded, setIsExpanded] = useState(false);

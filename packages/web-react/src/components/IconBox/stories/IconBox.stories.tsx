@@ -1,4 +1,4 @@
-import { accentColors } from '@lmc-eu/spirit-design-tokens';
+import { accentColors } from '@alma-oss/spirit-design-tokens';
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';

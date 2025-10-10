@@ -47,7 +47,7 @@ packageEntryPoints.forEach(({ dirs, bundleName = dirs[dirs.length - 1], sideEffe
     path.join(distRoot, ...dirs, 'package.json'),
     `${JSON.stringify(
       {
-        name: path.posix.join('@lmc-eu', 'spirit-web-react', ...dirs),
+        name: path.posix.join('@alma-oss', 'spirit-web-react', ...dirs),
         type: 'module',
         main: `${bundleName}.cjs`,
         module: 'index.js',

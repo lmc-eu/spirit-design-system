@@ -1,7 +1,7 @@
 # Tag
 
 ```jsx
-import { Tag } from '@lmc-eu/spirit-web-react';
+import { Tag } from '@alma-oss/spirit-web-react';
 ```
 
 ```jsx
