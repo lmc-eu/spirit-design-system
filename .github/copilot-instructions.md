@@ -16,8 +16,6 @@ Spirit Design System is an open-source design system developed by Alma Career (f
 - **React 19+** - Component library implementation with Next.js support
 - **SCSS/Sass** - Styling with design token integration
 - **Node.js 20+** - Build tooling and development environment
-- **Lerna** - Monorepo management and publishing
-- **Yarn Workspaces** - Dependency management
 - **Lerna** - Monorepo management and publishing (legacy; being phased out in favor of Nx)
 - **Yarn Workspaces** - Dependency management
 - **Nx** - Build system and task orchestration (new standard for builds and task running)
@@ -218,9 +216,10 @@ describe('Button', () => {
 Component/
 ├── index.ts                 # Public exports
 ├── Component.tsx           # Main component
-├── demo                    # Public demo files
+├── demo/                   # Demo component examples
 │   ├── index.tsx           # Export demo components
-│   └── Component.tsx    # Example demo component
+│   ├── ComponentDefault.tsx    # Default demo
+│   └── ComponentDisabled.tsx   # Disabled state demo
 ├── stories                 # Public stories
 │   ├── index.tsx           # Storybook stories
 │   └── Component.stories.tsx    # Example demo component
