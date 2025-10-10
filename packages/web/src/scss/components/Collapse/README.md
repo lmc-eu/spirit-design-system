@@ -84,7 +84,7 @@ opening and `.Collapse.is-open.is-transitioning` during closing.
 For full functionality, you need to provide JavaScript which will handle toggling of the Collapse component.
 
 ```html
-<script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
+<script src="node_modules/@alma-oss/spirit-web/js/cjs/spirit-web.min.js" async></script>
 ```
 
 ## JavaScript API

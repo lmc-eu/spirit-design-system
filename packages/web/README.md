@@ -1,17 +1,17 @@
-# @lmc-eu/spirit-web
+# @alma-oss/spirit-web
 
 > CSS implementation of Spirit Design System.
 
 ## Install
 
 ```shell
-yarn add @lmc-eu/spirit-web
+yarn add @alma-oss/spirit-web
 ```
 
 or
 
 ```shell
-npm install --save @lmc-eu/spirit-web
+npm install --save @alma-oss/spirit-web
 ```
 
 ## Usage
@@ -24,11 +24,11 @@ Link the complete, vendor-prefixed and minimised CSS with default Spirit brandin
 
 ```html
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
-<link rel="stylesheet" href="node_modules/@lmc-eu/spirit-web/css/themes.min.css" />
-<link rel="stylesheet" href="node_modules/@lmc-eu/spirit-web/css/foundation.min.css" />
-<link rel="stylesheet" href="node_modules/@lmc-eu/spirit-web/css/components.min.css" />
-<link rel="stylesheet" href="node_modules/@lmc-eu/spirit-web/css/helpers.min.css" />
-<link rel="stylesheet" href="node_modules/@lmc-eu/spirit-web/css/utilities.min.css" />
+<link rel="stylesheet" href="node_modules/@alma-oss/spirit-web/css/themes.min.css" />
+<link rel="stylesheet" href="node_modules/@alma-oss/spirit-web/css/foundation.min.css" />
+<link rel="stylesheet" href="node_modules/@alma-oss/spirit-web/css/components.min.css" />
+<link rel="stylesheet" href="node_modules/@alma-oss/spirit-web/css/helpers.min.css" />
+<link rel="stylesheet" href="node_modules/@alma-oss/spirit-web/css/utilities.min.css" />
 ```
 
 👉 Alternatively, you can use [CDN](#cdn) links when you don't want to install any npm packages.
@@ -59,15 +59,15 @@ Having the Sass load path configured, you can import just the components you nee
 // my-product-styles.scss
 
 // Spirit themes and foundation are mandatory
-@use 'node_modules/@lmc-eu/spirit-web/scss/themes';
-@use 'node_modules/@lmc-eu/spirit-web/scss/foundation';
+@use 'node_modules/@alma-oss/spirit-web/scss/themes';
+@use 'node_modules/@alma-oss/spirit-web/scss/foundation';
 
 // Spirit components can be hand-picked
-@use 'node_modules/@lmc-eu/spirit-web/scss/components/Button';
+@use 'node_modules/@alma-oss/spirit-web/scss/components/Button';
 
 // Spirit helpers and utilities are optional
-@use 'node_modules/@lmc-eu/spirit-web/scss/helpers';
-@use 'node_modules/@lmc-eu/spirit-web/scss/utilities';
+@use 'node_modules/@alma-oss/spirit-web/scss/helpers';
+@use 'node_modules/@alma-oss/spirit-web/scss/utilities';
 ```
 
 ### Usage of Mixins and Functions
@@ -86,7 +86,7 @@ Once you have your design tokens, you can [use them in your Sass project][design
 To generate actual themes based on provided design tokens, just include our `themes` file in your Sass project:
 
 ```scss
-@use 'node_modules/@lmc-eu/spirit-web/scss/themes';
+@use 'node_modules/@alma-oss/spirit-web/scss/themes';
 ```
 
 #### Manual Theme Creation
@@ -141,10 +141,10 @@ Some components require JavaScript plugins for their full functionality. You can
 
 #### Individual or Compiled
 
-Plugins can be included individually as an ECMAScript module (using `import { <plugin> } from '@lmc-eu/spirit-web'`, see [Using Spirit Web as a module](#using-spirit-web-as-a-module-in-browser)), or all at once using `js/{cjs|esm|bundle}/spirit-web.js` or the minified `js/{cjs|esm|bundle}/spirit-web.min.js` (do not include both), all files are UMD ready.
+Plugins can be included individually as an ECMAScript module (using `import { <plugin> } from '@alma-oss/spirit-web'`, see [Using Spirit Web as a module](#using-spirit-web-as-a-module-in-browser)), or all at once using `js/{cjs|esm|bundle}/spirit-web.js` or the minified `js/{cjs|esm|bundle}/spirit-web.min.js` (do not include both), all files are UMD ready.
 
 ```html
-<script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
+<script src="node_modules/@alma-oss/spirit-web/js/cjs/spirit-web.min.js" async></script>
 ```
 
 If you use a bundler (Webpack, Rollup, …), you can use `/js/*.js` files which are ECMAScript modules.
@@ -216,14 +216,14 @@ var dropdown = new Dropdown('[data-spirit-toggle="dropdown"]');
 
 Spirit Design System is also available on CDN:
 
-| Description     | URL                                                                                       |
-| --------------- | ----------------------------------------------------------------------------------------- |
-| CSS: Foundation | https://cdn.jsdelivr.net/npm/@lmc-eu/spirit-web@latest/css/foundation.min.css             |
-| CSS: Components | https://cdn.jsdelivr.net/npm/@lmc-eu/spirit-web@latest/css/components.min.css             |
-| CSS: Helpers    | https://cdn.jsdelivr.net/npm/@lmc-eu/spirit-web@latest/css/helpers.min.css                |
-| CSS: Themes     | https://cdn.jsdelivr.net/npm/@lmc-eu/spirit-web@latest/css/themes.min.css                 |
-| CSS: Utilities  | https://cdn.jsdelivr.net/npm/@lmc-eu/spirit-web@latest/css/utilities.min.css              |
-| JavaScript      | https://cdn.jsdelivr.net/npm/@lmc-eu/spirit-web@latest/js/bundle/spirit-web.bundle.min.js |
+| Description     | URL                                                                                         |
+| --------------- | ------------------------------------------------------------------------------------------- |
+| CSS: Foundation | https://cdn.jsdelivr.net/npm/@alma-oss/spirit-web@latest/css/foundation.min.css             |
+| CSS: Components | https://cdn.jsdelivr.net/npm/@alma-oss/spirit-web@latest/css/components.min.css             |
+| CSS: Helpers    | https://cdn.jsdelivr.net/npm/@alma-oss/spirit-web@latest/css/helpers.min.css                |
+| CSS: Themes     | https://cdn.jsdelivr.net/npm/@alma-oss/spirit-web@latest/css/themes.min.css                 |
+| CSS: Utilities  | https://cdn.jsdelivr.net/npm/@alma-oss/spirit-web@latest/css/utilities.min.css              |
+| JavaScript      | https://cdn.jsdelivr.net/npm/@alma-oss/spirit-web@latest/js/bundle/spirit-web.bundle.min.js |
 
 👉 Consider using a specific version instead of `latest` in production.
 
