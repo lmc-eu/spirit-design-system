@@ -14,7 +14,7 @@ Toast is a composition of a few subcomponents:
 For full functionality, you need to provide Spirit JavaScript, which will handle toggling of the Toast component:
 
 ```html
-<script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
+<script src="node_modules/@alma-oss/spirit-web/js/cjs/spirit-web.min.js" async></script>
 ```
 
 You will find the [full documentation](#javascript-plugin-api) of the plugin below on this page.
@@ -404,7 +404,7 @@ the template and apply it on any toasts to be shown to the user, using the confi
 Then configure and create a new Toast instance and call the `show` method on it, for example:
 
 ```js
-import Toast from '@lmc-eu/spirit-web/dist/js/Toast';
+import Toast from '@alma-oss/spirit-web/dist/js/Toast';
 
 const toast = new Toast(null, {
   autoCloseInterval: 3000, // Set interval after ToastBar will be closed in ms, default: 3000

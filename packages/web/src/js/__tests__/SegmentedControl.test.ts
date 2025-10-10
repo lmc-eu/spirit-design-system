@@ -1,4 +1,4 @@
-import { cssVariablePrefix } from '@lmc-eu/spirit-design-tokens';
+import { cssVariablePrefix } from '@alma-oss/spirit-design-tokens';
 import { clearFixture, getFixture } from '../../../tests/helpers/fixture';
 import { CLASS_NAME_TRANSITIONING } from '../constants';
 import SegmentedControl from '../SegmentedControl';
