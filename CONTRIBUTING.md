@@ -211,7 +211,7 @@ You can see which components are already connected by looking for files with the
 To connect a new component to Figma:
 
 ```bash
-yarn workspace @lmc-eu/spirit-web-react run figma:connect
+yarn workspace @alma-oss/spirit-web-react run figma:connect
 ```
 
 This will guide you through the process of creating a new Code Connect file. Alternatively, you can create the file manually by following the pattern in existing `*.figma.tsx` files.
@@ -222,10 +222,10 @@ To publish Code Connect files to Figma:
 
 ```bash
 # Publish all Code Connect files
-yarn workspace @lmc-eu/spirit-web-react run figma:publish
+yarn workspace @alma-oss/spirit-web-react run figma:publish
 
 # Unpublish everything
-yarn workspace @lmc-eu/spirit-web-react run figma:unpublish
+yarn workspace @alma-oss/spirit-web-react run figma:unpublish
 ```
 
 See Figma Docs how to unpublish single node.

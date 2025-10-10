@@ -35,7 +35,7 @@ jobs:
         uses: ./.github/actions/setup-install
 
       - name: Build
-        run: yarn workspace @lmc-eu/spirit-design-tokens build
+        run: yarn workspace @alma-oss/spirit-design-tokens build
 
       - name: Save Repository to Cache
         id: save-repository-cache
@@ -88,6 +88,7 @@ jobs:
       - name: Unit Tests
         # Ignoring web-twig tests as they have separated workflow.
         # See `test-web-twig.yaml` for web-twig unit tests.
+        # @TODO: Remove ignore when web-twig package is abandoned (https://jira.almacareer.tech/browse/DS-1582).
         run: yarn test:unit --ignore '@lmc-eu/spirit-web-twig'
 
       - name: Publish Web Package Code Coverage
