@@ -20,8 +20,8 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "@lmc-eu/spirit-web-react": ["../../node_modules/@lmc-eu/spirit-web-react/src"],
-      "@lmc-eu/spirit-design-tokens": ["../../node_modules/@lmc-eu/spirit-design-tokens/src/js"]
+      "@alma-oss/spirit-web-react": ["../../node_modules/@alma-oss/spirit-web-react/src"],
+      "@alma-oss/spirit-design-tokens": ["../../node_modules/@alma-oss/spirit-design-tokens/src/js"]
     },
     "forceConsistentCasingInFileNames": true
   },

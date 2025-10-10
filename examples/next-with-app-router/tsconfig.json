@@ -20,7 +20,7 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "@lmc-eu/spirit-web-react": ["../../node_modules/@lmc-eu/spirit-web-react/src"]
+      "@alma-oss/spirit-web-react": ["../../node_modules/@alma-oss/spirit-web-react/src"]
     },
     "forceConsistentCasingInFileNames": true,
     "target": "ES2017"

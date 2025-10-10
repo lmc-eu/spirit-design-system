@@ -15,7 +15,7 @@ Timeline is a composition of several subcomponents:
 Timeline is the main container of the composition.
 
 ```jsx
-import { Timeline } from '@lmc-eu/spirit-web-react';
+import { Timeline } from '@alma-oss/spirit-web-react';
 
 <Timeline>{/* TimelineStep content */}</Timeline>;
 ```
@@ -213,7 +213,7 @@ import {
   TimelineHeading,
   TimelineMarker,
   TimelineStep,
-} from '@lmc-eu/spirit-web-react';
+} from '@alma-oss/spirit-web-react';
 
 <Timeline>
   <TimelineStep>

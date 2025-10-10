@@ -1,5 +1,5 @@
-import { breakpoints } from '@lmc-eu/spirit-design-tokens';
-import { DisplayStyleProps, SpacingStyleProp } from '@lmc-eu/spirit-web-react';
+import { breakpoints } from '@alma-oss/spirit-design-tokens';
+import { DisplayStyleProps, SpacingStyleProp } from '@alma-oss/spirit-web-react';
 
 export type SelectEntry<T extends string | undefined = string | undefined> = {
   label: string;

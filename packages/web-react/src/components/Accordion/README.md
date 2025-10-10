@@ -6,8 +6,8 @@
 
 ```javascript
 import React, { useState } from 'react';
-import { Accordion, AccordionItem, AccordionHeader, AccordionContent } from '@lmc-eu/spirit-web-react/components';
-import { AccordionOpenStateType } from '@lmc-eu/spirit-web-react/types';
+import { Accordion, AccordionItem, AccordionHeader, AccordionContent } from '@alma-oss/spirit-web-react/components';
+import { AccordionOpenStateType } from '@alma-oss/spirit-web-react/types';
 ```
 
 ```typescript
@@ -72,8 +72,8 @@ import {
   AccordionItem,
   AccordionHeader,
   AccordionContent,
-} from '@lmc-eu/spirit-web-react/components';
-import { AccordionOpenStateType } from '@lmc-eu/spirit-web-react/types';
+} from '@alma-oss/spirit-web-react/components';
+import { AccordionOpenStateType } from '@alma-oss/spirit-web-react/types';
 ```
 
 ```javascript

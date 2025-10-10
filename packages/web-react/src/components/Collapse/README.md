@@ -6,7 +6,7 @@
 
 ```javascript
 import React, { useState} from 'react';
-import { Button } from '@lmc-eu/spirit-web-react/components';
+import { Button } from '@alma-oss/spirit-web-react/components';
 
 // ...
 
@@ -24,7 +24,7 @@ const [isOpen, toggle] = useState<boolean>(true);
 
 ```javascript
 import React, { useState} from 'react';
-import { Button, Collapse, useCollapse } from '@lmc-eu/spirit-web-react/components';
+import { Button, Collapse, useCollapse } from '@alma-oss/spirit-web-react/components';
 
 // ...
 
@@ -42,7 +42,7 @@ const { isOpen, toggle } = useCollapse(false);
 
 ```javascript
 import React, { useState} from 'react';
-import { Button, Collapse, useCollapse } from '@lmc-eu/spirit-web-react/components';
+import { Button, Collapse, useCollapse } from '@alma-oss/spirit-web-react/components';
 
 // ...
 
@@ -60,7 +60,7 @@ const { isOpen, toggleHandler } = useCollapse(false);
 
 ```javascript
 import React, { useState} from 'react';
-import { Button, Collapse } from '@lmc-eu/spirit-web-react/components';
+import { Button, Collapse } from '@alma-oss/spirit-web-react/components';
 
 // ...
 
@@ -96,7 +96,7 @@ and [escape hatches][readme-escape-hatches].
 
 ```javascript
 import React, { useState } from 'react';
-import { Button, UncontrolledCollapse } from '@lmc-eu/spirit-web-react/components';
+import { Button, UncontrolledCollapse } from '@alma-oss/spirit-web-react/components';
 
 // ...
 
@@ -112,7 +112,7 @@ import { Button, UncontrolledCollapse } from '@lmc-eu/spirit-web-react/component
 
 ```javascript
 import React, { useState } from 'react';
-import { Button, UncontrolledCollapse } from '@lmc-eu/spirit-web-react/components';
+import { Button, UncontrolledCollapse } from '@alma-oss/spirit-web-react/components';
 
 // ...
 

@@ -55,7 +55,7 @@ start: ## Starts development environment, pass the parameter "pkg=" to start spe
 else
 start:
 	@$(eval pkg ?=)
-	@$(PKG_MANAGER) run start --scope @lmc-eu/spirit-$(pkg)
+	@$(PKG_MANAGER) run start --scope @alma-oss/spirit-$(pkg)
 endif
 
 ## —— Testing 🚦 ——————————————————————————————————————————————————————————————

@@ -3,7 +3,7 @@
 The `Avatar` component is used to display a user's profile picture or initials.
 
 ```jsx
-import { Avatar } from '@lmc-eu/spirit-web-react';
+import { Avatar } from '@alma-oss/spirit-web-react';
 
 <Avatar aria-label="Profile of Jiří Bárta">
   <span aria-hidden="true">JB</span>

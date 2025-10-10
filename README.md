@@ -17,6 +17,20 @@ See individual [packages](#packages) to learn how to get started.
 
 ## Packages
 
+### From Release of v4 🌈 Divine
+
+| Package name                                               | Description                                                   | Version                                                 |
+| ---------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------- |
+| [`@alma-oss/spirit-analytics`][packages-analytics]         | Analytic tools for Spirit Design System                       | [![@alma-oss/spirit-analytics][sa-badge]][sa-npm]       |
+| [`@alma-oss/spirit-codemods`][packages-codemods]           | Codemod transforms for Spirit Design System version migration | [![@alma-oss/spirit-codemods][sc-badge]][sc-npm]        |
+| [`@alma-oss/spirit-common`][packages-common]               | Common scripts for Spirit Design System                       | Private                                                 |
+| [`@alma-oss/spirit-design-tokens`][packages-design-tokens] | Design tokens for Spirit Design System                        | [![@alma-oss/spirit-design-tokens][sdt-badge]][sdt-npm] |
+| [`@alma-oss/spirit-icons`][packages-icons]                 | Icons for Spirit Design System                                | [![@alma-oss/spirit-icons][si-badge]][si-npm]           |
+| [`@alma-oss/spirit-web`][packages-web]                     | CSS and vanilla JS implementation of Spirit Design System     | [![@alma-oss/spirit-web][sw-badge]][sw-npm]             |
+| [`@alma-oss/spirit-web-react`][packages-web-react]         | React implementation of Spirit Design System components       | [![@alma-oss/spirit-web-react][swr-badge]][swr-npm]     |
+
+### Until Release of v4 🌈 Divine
+
 | Package name                                                   | Description                                                   | Version                                                  |
 | -------------------------------------------------------------- | ------------------------------------------------------------- | -------------------------------------------------------- |
 | [`@lmc-eu/spirit-analytics`][packages-analytics]               | Analytic tools for Spirit Design System                       | [![@lmc-eu/spirit-analytics][sa-badge]][sa-npm]          |
@@ -81,19 +95,19 @@ See the [LICENSE][license] file for information.
 [packages-web-twig]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig
 [package.json]: https://github.com/lmc-eu/spirit-design-system/blob/main/package.json
 [sa-badge]: https://img.shields.io/npm/v/%40lmc-eu/spirit-analytics.svg?style=flat-square
-[sa-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-analytics
+[sa-npm]: https://www.npmjs.com/package/@alma-oss/spirit-analytics
 [sc-badge]: https://img.shields.io/npm/v/%40lmc-eu/spirit-codemods.svg?style=flat-square
-[sc-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-codemods
+[sc-npm]: https://www.npmjs.com/package/@alma-oss/spirit-codemods
 [sdt-badge]: https://img.shields.io/npm/v/%40lmc-eu/spirit-design-tokens.svg?style=flat-square
-[sdt-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-design-tokens
+[sdt-npm]: https://www.npmjs.com/package/@alma-oss/spirit-design-tokens
 [sfv-badge]: https://img.shields.io/npm/v/%40lmc-eu/spirit-form-validations.svg?style=flat-square
-[sfv-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-form-validations
+[sfv-npm]: https://www.npmjs.com/package/@alma-oss/spirit-form-validations
 [si-badge]: https://img.shields.io/npm/v/%40lmc-eu/spirit-icons.svg?style=flat-square
-[si-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-icons
+[si-npm]: https://www.npmjs.com/package/@alma-oss/spirit-icons
 [sw-badge]: https://img.shields.io/npm/v/%40lmc-eu/spirit-web.svg?style=flat-square
-[sw-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-web
+[sw-npm]: https://www.npmjs.com/package/@alma-oss/spirit-web
 [swr-badge]: https://img.shields.io/npm/v/%40lmc-eu/spirit-web-react.svg?style=flat-square
-[swr-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-web-react
+[swr-npm]: https://www.npmjs.com/package/@alma-oss/spirit-web-react
 [swt-badge]: https://img.shields.io/packagist/v/lmc/spirit-web-twig-bundle.svg?style=flat-square
 [swt-packagist]: https://packagist.org/packages/lmc/spirit-web-twig-bundle
 [yarn]: https://yarnpkg.com

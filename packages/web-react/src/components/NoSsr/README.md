@@ -5,7 +5,7 @@ The NoSsr component disables rendering of any wrapped component by server preren
 ## 🚀 Usage
 
 ```jsx
-import { NoSsr } from '@lmc-eu/spirit-web-react/components';
+import { NoSsr } from '@alma-oss/spirit-web-react/components';
 ```
 
 Basic example usage:

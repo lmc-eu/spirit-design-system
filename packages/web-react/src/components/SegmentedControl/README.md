@@ -10,7 +10,7 @@ The `SegmentedControl` is a composition of several subcomponents:
 ## SegmentedControl
 
 ```jsx
-import { SegmentedControl } from '@lmc-eu/spirit-web-react';
+import { SegmentedControl } from '@alma-oss/spirit-web-react';
 
 <SegmentedControl name="segmented-control-example" label="Label">
   <!-- SegmentedControlItems go here-->
@@ -106,7 +106,7 @@ and [escape hatches][readme-escape-hatches].
 The `SegmentedControlItem` component is a single item in the segmented control. It can be used to create a segmented control with multiple items.
 
 ```jsx
-import { SegmentedControl, SegmentedControlItem } from '@lmc-eu/spirit-web-react';
+import { SegmentedControl, SegmentedControlItem } from '@alma-oss/spirit-web-react';
 
 <SegmentedControl name="segmented-control-example" label="Label">
   <SegmentedControlItem id="segmented-control-item-1" value="value-1">
@@ -195,7 +195,7 @@ import {
   SegmentedControlItem,
   UNSTABLE_Truncate,
   VisuallyHidden,
-} from '@lmc-eu/spirit-web-react';
+} from '@alma-oss/spirit-web-react';
 
 const [selectedValue, setSelectedValue] = useState('value-1');
 
