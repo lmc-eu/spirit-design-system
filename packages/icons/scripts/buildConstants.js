@@ -5,7 +5,7 @@ const jsdom = require('jsdom');
 const { filterSvgFiles } = require('./shared');
 
 const svgSrcDir = path.resolve(__dirname, '../dist/svg');
-const distFile = path.resolve(__dirname, '../dist/icons.js');
+const distFile = path.resolve(__dirname, '../dist/icons.mjs');
 
 const buildConstants = (srcDir, file) => {
   fs.readdir(srcDir, (err, files) => {
