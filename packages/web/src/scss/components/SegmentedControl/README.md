@@ -227,7 +227,7 @@ Set the `disabled` attribute on the input to disable the Segmented Control optio
 If you want to have more than **5** `radio` options, you must use the JavaScript plugin to handle the selection.
 
 ```html
-<script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
+<script src="node_modules/@alma-oss/spirit-web/js/cjs/spirit-web.min.js" async></script>
 ```
 
 Set `data-spirit-toggle="segmentedControl"` attribute on the `fieldset` element.
