@@ -1,5 +1,5 @@
 {
-  "name": "@lmc-eu/spirit-codemods",
+  "name": "@alma-oss/spirit-codemods",
   "version": "1.7.0",
   "description": "Codemods scripts for Spirit Design System packages",
   "license": "MIT",
