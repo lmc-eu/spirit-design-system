@@ -1,5 +1,5 @@
 {
-  "name": "@lmc-eu/spirit-web",
+  "name": "@alma-oss/spirit-web",
   "version": "3.21.0",
   "description": "CSS and vanilla JS implementation of Spirit Design System",
   "license": "MIT",
@@ -52,17 +52,17 @@
     "types": "tsc"
   },
   "dependencies": {
+    "@alma-oss/spirit-design-tokens": "workspace:^",
+    "@alma-oss/spirit-icons": "workspace:^",
     "@csstools/normalize.css": "^12.0.0",
-    "@floating-ui/dom": "^1.5.3",
-    "@lmc-eu/spirit-design-tokens": "^3.7.4",
-    "@lmc-eu/spirit-icons": "^0.10.2"
+    "@floating-ui/dom": "^1.5.3"
   },
   "devDependencies": {
+    "@alma-oss/spirit-common": "workspace:^",
     "@babel/core": "7.26.10",
     "@eslint/compat": "1.4.0",
     "@eslint/eslintrc": "3.3.1",
     "@lmc-eu/browserslist-config": "2.0.1",
-    "@lmc-eu/spirit-common": "^0.4.3",
     "@rollup/plugin-babel": "6.0.4",
     "@rollup/plugin-node-resolve": "15.3.1",
     "@rollup/plugin-replace": "6.0.2",

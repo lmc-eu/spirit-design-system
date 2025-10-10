@@ -1,4 +1,4 @@
-import { breakpoints } from '@lmc-eu/spirit-design-tokens';
+import { breakpoints } from '@alma-oss/spirit-design-tokens';
 import BaseComponent from './BaseComponent';
 import { warning } from './common/utilities';
 import { CLASS_NAME_OPEN, EVENT_KEY_ESCAPE } from './constants';
