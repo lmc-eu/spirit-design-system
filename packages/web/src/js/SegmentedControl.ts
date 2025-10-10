@@ -1,4 +1,4 @@
-import { cssVariablePrefix } from '@lmc-eu/spirit-design-tokens';
+import { cssVariablePrefix } from '@alma-oss/spirit-design-tokens';
 import BaseComponent from './BaseComponent';
 import { EventHandler } from './dom';
 import SelectorEngine from './dom/SelectorEngine';

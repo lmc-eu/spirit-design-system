@@ -14,7 +14,7 @@ const importers = [
       }
 
       return new URL(
-        pathToFileURL(resolve(process.cwd(), '../../node_modules/@lmc-eu/spirit-design-tokens/src/scss', url)),
+        pathToFileURL(resolve(process.cwd(), '../../node_modules/@alma-oss/spirit-design-tokens/src/scss', url)),
       );
     },
   },
