@@ -9,7 +9,7 @@ Spirit Web React components now include automated accessibility checks powered b
 - Unit tests can be executed with:
 
   ```sh
-  yarn workspace @lmc-eu/spirit-web-react test:unit
+  yarn workspace @alma-oss/spirit-web-react test:unit
   ```
 
   To focus on accessibility specs only, pass `--testPathPatterns=accessibility`.

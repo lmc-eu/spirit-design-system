@@ -7,7 +7,7 @@ module.exports = {
     '**/build/**/*',
   ],
   workspaces: {
-    '@lmc-eu/spirit-web-react': {
+    '@alma-oss/spirit-web-react': {
       exports: {
         '.': 'src/index.ts',
         './components': 'src/components/index.ts',

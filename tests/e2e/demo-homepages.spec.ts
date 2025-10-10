@@ -1,5 +1,5 @@
-import { isTesting } from '@lmc-eu/spirit-common/constants/environments';
-import { SERVERS, getDevelopmentEndpointUri } from '@lmc-eu/spirit-common/constants/servers';
+import { isTesting } from '@alma-oss/spirit-common/constants/environments';
+import { SERVERS, getDevelopmentEndpointUri } from '@alma-oss/spirit-common/constants/servers';
 import { test } from '@playwright/test';
 import { hideFromVisualTests, takeScreenshot, waitForPageLoad } from '../helpers';
 
