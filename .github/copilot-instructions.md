@@ -210,7 +210,18 @@ describe('Button', () => {
 
 ## File Organization Patterns
 
-### Component Directory Structure
+### Web Component Directory Structure
+
+```
+Component/
+├── _Component.scss        # Main component styles
+├── _theme.scss            # Component theme
+├── index.html             # Component demo
+├── index.scss             # Public exports
+└── README.md              # Component documentation
+```
+
+### Web React Component Directory Structure
 
 ```
 Component/
