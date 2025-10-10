@@ -6,13 +6,13 @@ const pathDir = dirname(fileURLToPath(import.meta.url));
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   outputFileTracingRoot: path.join(__dirname, '../../'),
-  transpilePackages: ['@lmc-eu/spirit-web-react'],
+  transpilePackages: ['@alma-oss/spirit-web-react'],
   reactStrictMode: true,
   sassOptions: {
     fiber: false,
     includePaths: [
       path.join(pathDir, '../../node_modules'),
-      path.join(pathDir, '../../node_modules/@lmc-eu/spirit-design-tokens/scss'),
+      path.join(pathDir, '../../node_modules/@alma-oss/spirit-design-tokens/scss'),
     ],
   },
 };

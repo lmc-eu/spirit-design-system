@@ -1,5 +1,5 @@
 {
-  "name": "@almacareer/spirit-example-next-with-app-router",
+  "name": "@alma-oss/spirit-example-next-with-app-router",
   "version": "0.4.22",
   "private": true,
   "scripts": {
@@ -10,10 +10,10 @@
     "lint:fix": "yarn lint --fix"
   },
   "dependencies": {
-    "@lmc-eu/spirit-design-tokens": "workspace:^",
-    "@lmc-eu/spirit-icons": "workspace:^",
-    "@lmc-eu/spirit-web": "workspace:^",
-    "@lmc-eu/spirit-web-react": "workspace:^",
+    "@alma-oss/spirit-design-tokens": "workspace:^",
+    "@alma-oss/spirit-icons": "workspace:^",
+    "@alma-oss/spirit-web": "workspace:^",
+    "@alma-oss/spirit-web-react": "workspace:^",
     "next": "15.5.9",
     "react": "19.0.0",
     "react-dom": "19.0.0",
