@@ -58,7 +58,7 @@ class Transformer {
     if (source && n.StringLiteral.check(source)) {
       // We mostly only worry about normalizing _relative_ module identifiers,
       // which start with a ./ or ../ and refer to other modules within the
-      // @lmc-eu/spirit-web-react package, but we also manually normalize one non-relative
+      // @alma-oss/spirit-web-react package, but we also manually normalize one non-relative
       // identifier, ts-invariant/process, to prevent webpack 5 errors
       // containing the phrase "failed to resolve only because it was resolved
       // as fully specified," referring to webpack's resolve.fullySpecified

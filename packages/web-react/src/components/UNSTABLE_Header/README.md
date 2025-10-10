@@ -15,7 +15,7 @@ The `UNSTABLE_Header` is a composition of several subcomponents:
 The `UNSTABLE_Header` component is a main wrapper which provides mainly the visual for the Header.
 
 ```jsx
-import { UNSTABLE_Header } from '@lmc-eu/spirit-web-react';
+import { UNSTABLE_Header } from '@alma-oss/spirit-web-react';
 
 <UNSTABLE_Header>{/* Content go here */}</UNSTABLE_Header>;
 ```
@@ -23,7 +23,7 @@ import { UNSTABLE_Header } from '@lmc-eu/spirit-web-react';
 You can set `hasBottomDivider` prop to add a bottom divider to the Header.
 
 ```jsx
-import { UNSTABLE_Header } from '@lmc-eu/spirit-web-react';
+import { UNSTABLE_Header } from '@alma-oss/spirit-web-react';
 
 <UNSTABLE_Header hasBottomDivider>{/* Content go here */}</UNSTABLE_Header>;
 ```
@@ -46,7 +46,7 @@ and [escape hatches][readme-escape-hatches].
 The `UNSTABLE_HeaderLogo` component is a container for the logo.
 
 ```jsx
-import { UNSTABLE_HeaderLogo } from '@lmc-eu/spirit-web-react';
+import { UNSTABLE_HeaderLogo } from '@alma-oss/spirit-web-react';
 
 <UNSTABLE_HeaderLogo>{/* Content go here */}</UNSTABLE_HeaderLogo>;
 ```

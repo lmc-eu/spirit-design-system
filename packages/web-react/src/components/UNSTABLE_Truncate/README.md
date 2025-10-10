@@ -6,7 +6,7 @@
 Truncate is a component that truncates text based on defined number of rows.
 
 ```jsx
-import { UNSTABLE_Truncate } from '@lmc-eu/spirit-web-react';
+import { UNSTABLE_Truncate } from '@alma-oss/spirit-web-react';
 
 <UNSTABLE_Truncate>{/* Text go here */}</UNSTABLE_Truncate>;
 ```

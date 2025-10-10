@@ -1,4 +1,4 @@
-import { accentColors } from '@lmc-eu/spirit-design-tokens';
+import { accentColors } from '@alma-oss/spirit-design-tokens';
 import { EmotionColors, Intensity } from '../../constants';
 import { ColorPrefixes } from '../../constants/colors';
 import type {

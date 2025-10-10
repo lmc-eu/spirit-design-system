@@ -1,4 +1,4 @@
-import { borderWidth100, cssVariablePrefix } from '@lmc-eu/spirit-design-tokens';
+import { borderWidth100, cssVariablePrefix } from '@alma-oss/spirit-design-tokens';
 import { type CSSProperties, type ElementType } from 'react';
 import { SizesExtended } from '../../constants';
 import type { SpiritIconBoxProps } from '../../types';

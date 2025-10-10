@@ -1,4 +1,4 @@
-import { accentColors } from '@lmc-eu/spirit-design-tokens';
+import { accentColors } from '@alma-oss/spirit-design-tokens';
 import React, { useState } from 'react';
 import { DemoEmotionColors } from '../../../../docs';
 import { type AccentColorNamesType } from '../../../types';
