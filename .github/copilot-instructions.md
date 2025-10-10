@@ -281,12 +281,20 @@ docs(web): add accessibility guidelines to README
 
 When generating new components:
 
-1. **Create the main component file** with proper TypeScript interfaces
-2. **Add style props hook** for consistent styling API
-3. **Create SCSS file** with design token integration
-4. **Add comprehensive tests** including accessibility
-5. **Create Storybook stories** for documentation
-6. **Update component exports** in index.ts files
+1. **Start with the web package**
+
+- **Create the main component directory** with necessary files
+- **Add SCSS files** with design token references
+- **Create demo HTML files** for visual testing
+
+2. **Move to the web-react package**
+
+- **Create the main component file** with proper TypeScript interfaces
+- **Add style props hook** for consistent styling API
+- **Create SCSS file** with design token integration
+- **Add comprehensive tests** including accessibility
+- **Create Storybook stories** for documentation
+- **Update component exports** in index.ts files
 
 ## Migration & Compatibility
 
