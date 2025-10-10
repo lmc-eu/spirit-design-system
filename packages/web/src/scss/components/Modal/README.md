@@ -444,7 +444,7 @@ Both trigger and close buttons use `data` attributes to open and close the Modal
 For full functionality you need to provide JavaScript which will handle the toggling of the Modal dialog component.
 
 ```html
-<script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
+<script src="node_modules/@alma-oss/spirit-web/js/cjs/spirit-web.min.js" async></script>
 ```
 
 Please consult the [main package README][web-readme] for how to include JavaScript plugins.

@@ -36,7 +36,7 @@ For full functionality, you need to provide Spirit JavaScript, which will handle
 toggling of the Header component:
 
 ```html
-<script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
+<script src="node_modules/@alma-oss/spirit-web/js/cjs/spirit-web.min.js" async></script>
 ```
 
 Please consult the [main README][web-readme] for how to include JavaScript
