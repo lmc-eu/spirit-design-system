@@ -1,4 +1,4 @@
-import { Heading } from '@lmc-eu/spirit-web-react';
+import { Heading } from '@alma-oss/spirit-web-react';
 import { NextPage } from 'next';
 
 const Home: NextPage = () => (

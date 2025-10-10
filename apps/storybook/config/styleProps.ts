@@ -1,5 +1,5 @@
-import { breakpoints, spaces } from '@lmc-eu/spirit-design-tokens';
-import { DisplayStyleProps, SpacingStyleProp } from '@lmc-eu/spirit-web-react';
+import { breakpoints, spaces } from '@alma-oss/spirit-design-tokens';
+import { DisplayStyleProps, SpacingStyleProp } from '@alma-oss/spirit-web-react';
 import { makeSelectMap, toTitleCase } from './utils';
 import type { BreakpointName, DisplayArgs, DisplayPropName, MarginArgs, MarginPropName, SelectEntry } from './types';
 

@@ -4,15 +4,15 @@ Introducing lists containing deprecations and feature flags to be removed in the
 
 💁 Please follow these steps to safely upgrade your Design System to Spirit Design System to the next major version.
 
-## @lmc-eu/spirit-web
+## @alma-oss/spirit-web
 
 - [Deprecations][web-deprecations]
 
-## @lmc-eu/spirit-web-react
+## @alma-oss/spirit-web-react
 
 - [Deprecations][web-react-deprecations]
 
-## @lmc-eu/spirit-web-twig
+## @alma-oss/spirit-web-twig
 
 - [Deprecations][web-twig-deprecations]
 

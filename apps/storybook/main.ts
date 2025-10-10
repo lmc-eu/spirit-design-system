@@ -24,9 +24,9 @@ const config: StorybookConfig = {
     return mergeConfig(config, {
       resolve: {
         alias: {
-          '@lmc-eu/spirit-design-tokens': resolve(__dirname, '../../packages/design-tokens/src/js'),
-          '@lmc-eu/spirit-icons': resolve(__dirname, '../../packages/icons/dist'),
-          '@lmc-eu/spirit-web-react': resolve(__dirname, '../../packages/web-react/src'),
+          '@alma-oss/spirit-design-tokens': resolve(__dirname, '../../packages/design-tokens/src/js'),
+          '@alma-oss/spirit-icons': resolve(__dirname, '../../packages/icons/dist'),
+          '@alma-oss/spirit-web-react': resolve(__dirname, '../../packages/web-react/src'),
         },
       },
       plugins: [
@@ -44,7 +44,7 @@ const config: StorybookConfig = {
             api: 'modern-compiler',
             loadPaths: [
               resolve(__dirname, '../../node_modules'),
-              resolve(__dirname, '../../node_modules/@lmc-eu/spirit-design-tokens/src/scss'),
+              resolve(__dirname, '../../node_modules/@alma-oss/spirit-design-tokens/src/scss'),
             ],
           },
         },
