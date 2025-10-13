@@ -19,6 +19,7 @@ import { getDeviceAlias, getDeviceThemes } from '../helpers/deviceHelpers';
 import { toCamelCase } from '../helpers/stringHelper';
 import { generateFileContent } from './contentGenerator';
 import { DeviceDimensionEntries, DeviceDimensionMap } from './stylesObjectGenerator';
+import { type OutputFile } from '../writers/fileWriter';
 
 const buildDeviceDimensionMap = (tokens: Token[]): DeviceDimensionMap => {
   return tokens.reduce<DeviceDimensionMap>((accumulator, token) => {
@@ -125,8 +126,8 @@ export const generateOutputFilesByThemes = async (
   tokenGroups: TokenGroup[],
   themes: TokenTheme[],
   sdk: Supernova,
-): Promise<{ path: string; fileName: string; content: string }[]> => {
-  const outputFiles: { path: string; fileName: string; content: string }[] = [];
+): Promise<Array<OutputFile>> => {
+  const outputFiles: Array<OutputFile> = [];
   const filteredColorCollections = filterColorCollections(tokens);
   const filteredDeviceCollections = filterDeviceCollections(tokens);
   const filteredGlobalCollections = filterGlobalCollections(tokens);
