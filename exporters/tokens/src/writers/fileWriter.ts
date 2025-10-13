@@ -1,4 +1,3 @@
-/* istanbul ignore file -- function alias without logic */
 import { FileHelper } from '@supernovaio/export-helpers';
 import { type OutputTextFile } from '@supernovaio/sdk-exporters';
 
