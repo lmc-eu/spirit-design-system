@@ -18,6 +18,7 @@ import { filterColorCollections } from '../helpers/colorHelper';
 import { getDeviceThemes } from '../helpers/deviceHelpers';
 import { toCamelCase } from '../helpers/stringHelper';
 import { generateFileContent } from './contentGenerator';
+import { type OutputFile } from '../writers/fileWriter';
 
 export const generateFiles = (
   tokens: Array<Token>,
@@ -92,8 +93,8 @@ export const generateOutputFilesByThemes = async (
   tokenGroups: TokenGroup[],
   themes: TokenTheme[],
   sdk: Supernova,
-): Promise<{ path: string; fileName: string; content: string }[]> => {
-  const outputFiles: { path: string; fileName: string; content: string }[] = [];
+): Promise<Array<OutputFile>> => {
+  const outputFiles: Array<OutputFile> = [];
   const filteredColorCollections = filterColorCollections(tokens);
   const filteredDeviceCollections = filterDeviceCollections(tokens);
   const filteredGlobalCollections = filterGlobalCollections(tokens);
