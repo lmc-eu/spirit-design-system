@@ -233,8 +233,8 @@ See the [LICENSE](LICENSE.md) file for information.
 [accessibility-testing]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/contribution/accessibility-testing.md
 [all-deprecations]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/DEPRECATIONS.md
 [examples]: https://spirit-design-system-storybook.netlify.app
+[react-controlled]: https://reactjs.org/docs/forms.html#controlled-components
+[react-uncontrolled]: https://reactjs.org/docs/uncontrolled-components.html
 [web-docs]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web#readme
 [web-pkg-rebrand]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web#rebranding
 [web-pkg-prefixes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#prefixing-css-class-names
-[react-controlled]: https://reactjs.org/docs/forms.html#controlled-components
-[react-uncontrolled]: https://reactjs.org/docs/uncontrolled-components.html

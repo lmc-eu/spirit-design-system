@@ -10,6 +10,7 @@ Here are some tips how to make your contributing efforts efficient and eventuall
 - [Commit Conventions](#commit-conventions)
 - [Code Style](#code-style)
 - [Documenting the Components](#documenting-the-components)
+- [Figma Code Connect](#figma-code-connect)
 - [Testing](#testing)
 - [Publishing](#publishing)
 
@@ -176,6 +177,75 @@ This project uses Prettier for code formatting. You can run `make format` to for
       - `Description` — the description of the prop, e.g. `Title of the accordion`
    3. The props MUST be sorted alphabetically by their name.
 
+## Figma Code Connect
+
+[Figma Code Connect][figma-code-connect] links Spirit Web React components to their Figma counterparts, showing developers the correct code to use when inspecting designs in [Figma Dev Mode][figma-dev-mode].
+
+### Prerequisites
+
+Before using Code Connect, you need:
+
+1. **Figma Desktop App** - Code Connect requires the Figma desktop application (not the browser version)
+2. **Access Token** - Generate a [personal access token][figma-access-token] from your Figma account settings
+3. **Environment Variable** - Set your token as an environment variable:
+
+```bash
+export FIGMA_ACCESS_TOKEN=your-token-here
+```
+
+Or create a `.env` file in the `packages/web-react` directory:
+
+```bash
+FIGMA_ACCESS_TOKEN=your-token-here
+```
+
+### Configuration
+
+Code Connect configuration is defined in `packages/web-react/figma.config.json`.
+
+### Connected Components
+
+You can see which components are already connected by looking for files with the suffix `.figma.tsx` in their component directory in `figma` folder.
+
+### Creating New Connections
+
+To connect a new component to Figma:
+
+```bash
+yarn workspace @lmc-eu/spirit-web-react run figma:connect
+```
+
+This will guide you through the process of creating a new Code Connect file. Alternatively, you can create the file manually by following the pattern in existing `*.figma.tsx` files.
+
+### Publishing to Figma
+
+To publish Code Connect files to Figma:
+
+```bash
+# Publish all Code Connect files
+yarn workspace @lmc-eu/spirit-web-react run figma:publish
+
+# Unpublish everything
+yarn workspace @lmc-eu/spirit-web-react run figma:unpublish
+```
+
+See Figma Docs how to unpublish single node.
+
+### Viewing in Figma
+
+Once published, developers can:
+
+1. Open the Spirit UI KIT file in Figma Dev Mode
+2. Select any connected component instance
+3. View the corresponding React code in the "Code" tab
+4. Copy the code snippet directly
+
+### Resources
+
+- [Figma Code Connect Documentation][figma-code-connect]
+- [Connecting React Components Guide][figma-react-guide]
+- [Code Connect CLI Reference][figma-cli]
+
 ## Testing
 
 Each package contains a script called `test`.
@@ -335,5 +405,10 @@ After the release notes are ready, you can publish them (copy&paste from canvas)
 [publish-action]: https://github.com/lmc-eu/spirit-design-system/actions/workflows/publish.yaml
 [release-notes-template]: https://almamedia.slack.com/docs/T0325RBAD/F08D6U6EAKH
 [typescript]: https://www.typescriptlang.org/
+[figma-access-token]: https://help.figma.com/hc/en-us/articles/8085703771159-Manage-personal-access-tokens
+[figma-cli]: https://github.com/figma/code-connect
+[figma-code-connect]: https://developers.figma.com/docs/code-connect/
+[figma-dev-mode]: https://help.figma.com/hc/en-us/articles/15023124644247-Guide-to-Dev-Mode
+[figma-react-guide]: https://developers.figma.com/docs/code-connect/react/
 [version-action]: https://github.com/lmc-eu/spirit-design-system/actions/workflows/version.yaml
 [web-twig-package-release]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/CONTRIBUTING.md#release-new-version
