@@ -39,7 +39,7 @@
     "compile": "tsup --config ./config/tsup.config.ts",
     "start": "tsup src/index.ts --watch",
     "types": "tsc",
-    "lint": "ESLINT_USE_FLAT_CONFIG=false eslint ./",
+    "lint": "eslint ./",
     "lint:fix": "yarn lint --fix",
     "test": "npm-run-all --serial lint test:unit:coverage types",
     "test:unit": "jest --passWithNoTests",
@@ -55,6 +55,8 @@
     "zx": "^8.0.0"
   },
   "devDependencies": {
+    "@eslint/compat": "1.4.0",
+    "@eslint/eslintrc": "3.3.1",
     "@lmc-eu/eslint-config-jest": "3.0.6",
     "@types/eslint": "8.56.12",
     "@types/jest": "30.0.0",
