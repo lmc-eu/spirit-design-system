@@ -1,0 +1,13 @@
+{
+  "codeConnect": {
+    "include": ["src/components/**/*.{tsx,ts}"],
+    "label": "React",
+    "interactiveSetupFigmaFileUrl": "https://www.figma.com/design/w9Ca4hvkuYLshsrHu1bYwT/Spirit-UI-KIT",
+    "documentUrlSubstitutions": {
+      "<FIGMA_FILE_ID>": "https://www.figma.com/design/w9Ca4hvkuYLshsrHu1bYwT/Spirit-UI-KIT"
+    },
+    "importPaths": {
+      "src/components/*": "@lmc-eu/spirit-web-react"
+    }
+  }
+}
