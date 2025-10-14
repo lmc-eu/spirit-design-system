@@ -18,6 +18,7 @@ export default [
       '**/node_modules/**',
       '**/dist/**',
       '**/build/**',
+      '**/.coverage/**',
 
       // # Highly recommended to re-include JavaScript dotfiles to lint them
       // # (This will cause .eslintrc.js to be linted by ESLint 🤘)
@@ -31,7 +32,7 @@ export default [
       '**/*.json',
     ],
   },
-  ...fixupConfigRules(compat.extends('eslint-config-spirit', '@lmc-eu/eslint-config-typescript', 'prettier')),
+  ...fixupConfigRules(compat.extends('eslint-config-spirit', '@lmc-eu/eslint-config-typescript', 'eslint-config-spirit/style')),
   {
     languageOptions: {
       parserOptions: {
