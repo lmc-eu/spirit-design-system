@@ -1,4 +1,4 @@
-import { Booleanish } from '../../types';
+import { type Booleanish } from '../../types';
 
 const NAME_ARIA_EXPANDED = 'aria-expanded';
 const NAME_ARIA_CONTROLS = 'aria-controls';

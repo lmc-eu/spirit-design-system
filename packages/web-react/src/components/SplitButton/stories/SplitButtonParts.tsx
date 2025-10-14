@@ -7,15 +7,13 @@ import { Tooltip, TooltipPopover, TooltipTrigger } from '../../Tooltip';
 import { VisuallyHidden } from '../../VisuallyHidden';
 import { dropdownContent } from '../demo/constants';
 
-export const DropdownContent = () => {
-  return (
-    <>
-      {dropdownContent.map(({ icon, text }) => (
-        <Item key={icon} label={text} elementType="a" iconName={icon} href={`#${icon}`} />
-      ))}
-    </>
-  );
-};
+export const DropdownContent = () => (
+  <>
+    {dropdownContent.map(({ icon, text }) => (
+      <Item key={icon} label={text} elementType="a" iconName={icon} href={`#${icon}`} />
+    ))}
+  </>
+);
 
 export const SplitButtonWithButtons = () => (
   <>

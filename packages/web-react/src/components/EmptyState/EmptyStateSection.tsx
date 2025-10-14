@@ -1,9 +1,9 @@
 'use client';
 
 import classNames from 'classnames';
-import React, { ReactElement } from 'react';
+import React, { type ReactElement } from 'react';
 import { useStyleProps } from '../../hooks';
-import { SpiritEmptyStateProps } from '../../types/emptyState';
+import { type SpiritEmptyStateProps } from '../../types/emptyState';
 import { Stack } from '../Stack';
 import { useEmptyStateStyleProps } from './useEmptyStateStyleProps';
 

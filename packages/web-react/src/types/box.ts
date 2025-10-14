@@ -1,4 +1,4 @@
-import { ElementType, JSXElementConstructor } from 'react';
+import { type ElementType, type JSXElementConstructor } from 'react';
 import {
   type BackgroundAccentColorsType,
   type BackgroundColorsDictionaryType,

@@ -1,6 +1,6 @@
 import { render, waitFor } from '@testing-library/react';
-import React, { ComponentType } from 'react';
-import { TextHyphens, TextHyphensType } from '../../src';
+import React, { type ComponentType } from 'react';
+import { TextHyphens, type TextHyphensType } from '../../src';
 import getElement from '../testUtils/getElement';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

@@ -1,4 +1,4 @@
-import { SpiritNavigationActionProps } from '../../types';
+import { type SpiritNavigationActionProps } from '../../types';
 
 export type UseNavigationActionProps = Partial<SpiritNavigationActionProps>;
 

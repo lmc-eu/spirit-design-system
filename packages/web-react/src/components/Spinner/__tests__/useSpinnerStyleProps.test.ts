@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
 import { TextColors } from '../../../constants';
-import { SpiritSpinnerProps } from '../../../types';
+import { type SpiritSpinnerProps } from '../../../types';
 import { useSpinnerStyleProps } from '../useSpinnerStyleProps';
 
 describe('useSpinnerStyleProps', () => {

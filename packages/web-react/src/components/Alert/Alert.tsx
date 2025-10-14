@@ -1,8 +1,8 @@
 'use client';
 
-import React, { ElementType } from 'react';
+import React, { type ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
-import { SpiritAlertProps } from '../../types';
+import { type SpiritAlertProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { Icon } from '../Icon';
 import { useAlertIcon } from './useAlertIcon';

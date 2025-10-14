@@ -8,12 +8,12 @@ import type {
   StyleProps,
   TextAccentColorsType,
   TextAlignmentType,
+  TextColorNamesType,
   TextColorProps,
   TextEmotionColorsType,
   TextHyphensType,
   TextWordBreakType,
   TransferProps,
-  TextColorNamesType,
 } from './shared';
 
 export type TextColorsType<C = undefined> = TextColorNamesType<C> | TextAccentColorsType<C> | TextEmotionColorsType<C>;

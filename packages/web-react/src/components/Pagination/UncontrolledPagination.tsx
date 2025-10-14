@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ClickEvent, SpiritUncontrolledPaginationProps } from '../../types';
+import { type ClickEvent, type SpiritUncontrolledPaginationProps } from '../../types';
 import Pagination from './Pagination';
 import PaginationItem from './PaginationItem';
 import PaginationLink from './PaginationLink';

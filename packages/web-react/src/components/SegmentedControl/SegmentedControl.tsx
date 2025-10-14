@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import React from 'react';
 import { FillVariants } from '../../constants';
 import { useStyleProps } from '../../hooks';
-import { SpiritSegmentedControlProps } from '../../types/segmentedControl';
+import { type SpiritSegmentedControlProps } from '../../types/segmentedControl';
 import { VisuallyHidden } from '../VisuallyHidden';
 import { SegmentedControlProvider } from './SegmentedControlContext';
 import { useSegmentedControlStyleProps } from './useSegmentedControlStyleProps';

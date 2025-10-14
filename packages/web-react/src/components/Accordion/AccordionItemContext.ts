@@ -1,7 +1,7 @@
 'use client';
 
 import { createContext, useContext } from 'react';
-import { AccordionItemContextProps } from '../../types';
+import { type AccordionItemContextProps } from '../../types';
 
 const defaultContext: AccordionItemContextProps = {
   id: '',

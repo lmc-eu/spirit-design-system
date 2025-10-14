@@ -1,7 +1,7 @@
 import { accentColors, emotionColors } from '@lmc-eu/spirit-design-tokens';
 import React from 'react';
 import { BackgroundColors, TextColors } from '../../../constants';
-import { BoxBackgroundColorsType } from '../../../types';
+import { type BoxBackgroundColorsType } from '../../../types';
 import { getAccentTextColors, getEmotionTextColors } from '../../../utils';
 import { Grid } from '../../Grid';
 import BoxColorDemoFactory from './BoxColorDemoFactory';

@@ -1,7 +1,7 @@
 'use client';
 
-import { MiddlewareData, Placement, Strategy } from '@floating-ui/react';
-import { HTMLProps, MutableRefObject, createContext, useContext } from 'react';
+import { type MiddlewareData, type Placement, type Strategy } from '@floating-ui/react';
+import { type HTMLProps, type MutableRefObject, createContext, useContext } from 'react';
 
 type refType = ((node: HTMLElement | null) => void) & ((node: HTMLElement | null) => void);
 

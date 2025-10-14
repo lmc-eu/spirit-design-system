@@ -1,10 +1,10 @@
 import {
-  BackgroundColorsDictionaryType,
-  ChildrenProps,
-  SpaceToken,
-  StyleProps,
-  TextAlignmentType,
-  TransferProps,
+  type BackgroundColorsDictionaryType,
+  type ChildrenProps,
+  type SpaceToken,
+  type StyleProps,
+  type TextAlignmentType,
+  type TransferProps,
 } from './shared';
 
 export interface FooterStyleProps {

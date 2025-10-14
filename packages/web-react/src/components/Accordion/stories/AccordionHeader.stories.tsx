@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
-import { AccordionHeaderProps, AccordionOpenStateType } from '../../../types';
+import { type AccordionHeaderProps, type AccordionOpenStateType } from '../../../types';
 import { Link } from '../../Link';
 import { Pill } from '../../Pill';
 import toggleValueByType from '../demo/toggleValueByType';
-import { Accordion, AccordionHeader, AccordionContent, AccordionItem } from '..';
+import { Accordion, AccordionContent, AccordionHeader, AccordionItem } from '..';
 import content from './content';
 
 const meta: Meta<typeof AccordionHeader> = {

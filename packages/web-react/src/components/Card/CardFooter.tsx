@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import React from 'react';
 import { AlignmentX } from '../../constants';
 import { useStyleProps } from '../../hooks';
-import { SpiritCardFooterProps } from '../../types';
+import { type SpiritCardFooterProps } from '../../types';
 import { useCardStyleProps } from './useCardStyleProps';
 
 const defaultProps: Partial<SpiritCardFooterProps> = {

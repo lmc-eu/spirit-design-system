@@ -1,6 +1,6 @@
 import React from 'react';
 import Alert from '../Alert';
-import { AlertInfoContent, AlertSuccessContent, AlertWarningContent, AlertDangerContent } from './AlertContents';
+import { AlertDangerContent, AlertInfoContent, AlertSuccessContent, AlertWarningContent } from './AlertContents';
 
 const AlertColors = () => (
   <>

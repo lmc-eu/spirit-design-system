@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { SpiritToastBarProps } from '../../../types';
+import { type SpiritToastBarProps } from '../../../types';
 import { useToastIcon } from '../useToastIcon';
 
 describe('useToastIcon', () => {

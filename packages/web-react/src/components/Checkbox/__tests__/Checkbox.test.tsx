@@ -4,13 +4,13 @@ import React from 'react';
 import {
   ariaAttributesTest,
   classNamePrefixProviderTest,
-  validationStatePropsTest,
   itemPropsTest,
   requiredPropsTest,
   restPropsTest,
   stylePropsTest,
-  validationTextPropsTest,
   validHtmlAttributesTest,
+  validationStatePropsTest,
+  validationTextPropsTest,
 } from '@local/tests';
 import Checkbox from '../Checkbox';
 

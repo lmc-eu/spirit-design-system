@@ -1,4 +1,4 @@
-import { breakpoints } from '@lmc-eu/spirit-design-tokens';
+import { type breakpoints } from '@lmc-eu/spirit-design-tokens';
 
 export type BreakpointToken = keyof typeof breakpoints;
 

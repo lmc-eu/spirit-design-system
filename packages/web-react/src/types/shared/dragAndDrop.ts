@@ -1,4 +1,4 @@
-import { DragEvent } from 'react';
+import { type DragEvent } from 'react';
 
 export interface DragAndDropHandlingProps<E = HTMLElement> {
   onDragEnter: (event: DragEvent<E>) => void;

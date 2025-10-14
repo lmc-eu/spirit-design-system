@@ -3,9 +3,9 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
 import { Button, Icon, Text } from '../..';
 import { AlignmentXExtended, AlignmentYExtended, Placements } from '../../../constants';
-import { DropdownFullWidthModes, SpiritDropdownProps } from '../../../types';
+import { DropdownFullWidthModes, type SpiritDropdownProps } from '../../../types';
 import ReadMe from '../README.md';
-import { Dropdown, DropdownTrigger, DropdownPopover } from '..';
+import { Dropdown, DropdownPopover, DropdownTrigger } from '..';
 
 const meta: Meta<typeof Dropdown> = {
   title: 'Components/Dropdown',

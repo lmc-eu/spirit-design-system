@@ -1,4 +1,4 @@
-import { MutableRefObject, useEffect } from 'react';
+import { type MutableRefObject, useEffect } from 'react';
 
 const CLASSNAME_SCROLLING_DISABLED = 'is-scrolling-disabled';
 

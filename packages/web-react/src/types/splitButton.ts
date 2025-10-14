@@ -1,4 +1,4 @@
-import { ButtonSize } from './button';
+import { type ButtonSize } from './button';
 import type {
   ChildrenProps,
   ComponentButtonColorNamesType,

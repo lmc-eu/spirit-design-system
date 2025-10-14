@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { SpiritPillProps } from '../../../types';
+import { type SpiritPillProps } from '../../../types';
 import { usePillStyleProps } from '../usePillStyleProps';
 
 describe('usePillStyleProps', () => {

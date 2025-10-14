@@ -1,6 +1,6 @@
-import { ElementType } from 'react';
-import { ToastColorsExtended } from '../components/Toast';
-import { LinkTarget } from './link';
+import { type ElementType } from 'react';
+import { type ToastColorsExtended } from '../components/Toast';
+import { type LinkTarget } from './link';
 import type {
   AlignmentXDictionaryType,
   AlignmentYDictionaryType,

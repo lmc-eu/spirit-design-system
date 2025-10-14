@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks';
-import { SpiritCheckboxProps, CheckboxProps } from '../../types';
+import { type CheckboxProps, type SpiritCheckboxProps } from '../../types';
 
 export interface CheckboxStyles {
   /** className props */

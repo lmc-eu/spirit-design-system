@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React, { useRef } from 'react';
 import { useStyleProps } from '../../hooks';
-import { SpiritScrollViewProps } from '../../types';
+import { type SpiritScrollViewProps } from '../../types';
 import { SCROLL_VIEW_DEFAULT_DIRECTION, SCROLL_VIEW_DEFAULT_OVERFLOW_DECORATOR } from './constants';
 import { useScrollPosition } from './useScrollPosition';
 import { useScrollViewStyleProps } from './useScrollViewStyleProps';

@@ -4,11 +4,11 @@ import React from 'react';
 import {
   ariaAttributesTest,
   classNamePrefixProviderTest,
-  validationStatePropsTest,
   restPropsTest,
   stylePropsTest,
-  validationTextPropsTest,
   validHtmlAttributesTest,
+  validationStatePropsTest,
+  validationTextPropsTest,
 } from '@local/tests';
 import FieldGroup from '../FieldGroup';
 

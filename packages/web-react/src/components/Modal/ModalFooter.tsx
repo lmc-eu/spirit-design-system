@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import React from 'react';
 import { AlignmentX } from '../../constants';
 import { useStyleProps } from '../../hooks';
-import { ModalFooterProps } from '../../types';
+import { type ModalFooterProps } from '../../types';
 import { useModalStyleProps } from './useModalStyleProps';
 
 const ModalFooter = (props: ModalFooterProps) => {

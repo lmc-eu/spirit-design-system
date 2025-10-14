@@ -6,17 +6,15 @@ import { defaultSvgLogo } from '../../ProductLogo/demo/ProductLogoDefault';
 import UNSTABLE_Header from '../UNSTABLE_Header';
 import UNSTABLE_HeaderLogo from '../UNSTABLE_HeaderLogo';
 
-const HeaderWithBottomDivider = () => {
-  return (
-    <UNSTABLE_Header hasBottomDivider>
-      <Container>
-        <Flex alignmentX="left" alignmentY="center">
-          <UNSTABLE_HeaderLogo href="#" aria-label="JobBoard homepage">
-            <ProductLogo>{defaultSvgLogo}</ProductLogo>
-          </UNSTABLE_HeaderLogo>
-        </Flex>
-      </Container>
-    </UNSTABLE_Header>
-  );
-};
+const HeaderWithBottomDivider = () => (
+  <UNSTABLE_Header hasBottomDivider>
+    <Container>
+      <Flex alignmentX="left" alignmentY="center">
+        <UNSTABLE_HeaderLogo href="#" aria-label="JobBoard homepage">
+          <ProductLogo>{defaultSvgLogo}</ProductLogo>
+        </UNSTABLE_HeaderLogo>
+      </Flex>
+    </Container>
+  </UNSTABLE_Header>
+);
 export default HeaderWithBottomDivider;

@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { SpiritBoxProps } from '../../../types';
+import { type SpiritBoxProps } from '../../../types';
 import { useBoxStyleProps } from '../useBoxStyleProps';
 
 describe('useBoxStyleProps', () => {

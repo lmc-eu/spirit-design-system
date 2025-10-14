@@ -1,5 +1,5 @@
 import { useClassNamePrefix } from '../../hooks';
-import { SpiritEmptyStateProps } from '../../types/emptyState';
+import { type SpiritEmptyStateProps } from '../../types/emptyState';
 
 export interface EmptyStateStyles<T> {
   classProps: {

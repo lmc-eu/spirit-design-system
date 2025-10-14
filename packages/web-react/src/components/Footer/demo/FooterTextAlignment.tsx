@@ -1,6 +1,6 @@
-import React, { ChangeEvent, useState } from 'react';
+import React, { type ChangeEvent, useState } from 'react';
 import { TextAlignments } from '../../../constants';
-import { TextAlignmentDictionaryType } from '../../../types';
+import { type TextAlignmentDictionaryType } from '../../../types';
 import { Box } from '../../Box';
 import { Container } from '../../Container';
 import { Grid } from '../../Grid';

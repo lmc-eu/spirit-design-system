@@ -1,4 +1,4 @@
-import { ChildrenProps, StyleProps } from './shared';
-import { SpiritStackProps } from './stack';
+import { type ChildrenProps, type StyleProps } from './shared';
+import { type SpiritStackProps } from './stack';
 
 export interface SpiritEmptyStateProps extends ChildrenProps, SpiritStackProps, StyleProps {}

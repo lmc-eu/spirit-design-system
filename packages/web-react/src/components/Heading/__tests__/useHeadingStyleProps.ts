@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react';
-import { ElementType } from 'react';
+import { type ElementType } from 'react';
 import { Emphasis, SizesExtended, TextColors } from '../../../constants';
-import { SpiritHeadingProps } from '../../../types';
+import { type SpiritHeadingProps } from '../../../types';
 import { useHeadingStyleProps } from '../useHeadingStyleProps';
 import headingSizeDataProvider from './headingSizeDataProvider';
 

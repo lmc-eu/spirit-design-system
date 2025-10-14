@@ -1,5 +1,5 @@
 import { act, renderHook } from '@testing-library/react';
-import { FormEvent, MutableRefObject } from 'react';
+import { type FormEvent, type MutableRefObject } from 'react';
 import { useAdjustHeight } from '../useAdjustHeight';
 
 describe('useAdjustHeight', () => {

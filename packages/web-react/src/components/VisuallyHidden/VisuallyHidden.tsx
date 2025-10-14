@@ -1,8 +1,8 @@
 'use client';
 
-import React, { ElementType } from 'react';
+import React, { type ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
-import { SpiritVisuallyHiddenProps } from '../../types';
+import { type SpiritVisuallyHiddenProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { useVisuallyHiddenProps } from './useVisuallyHiddenProps';
 

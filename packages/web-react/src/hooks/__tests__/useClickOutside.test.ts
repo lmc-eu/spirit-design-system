@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { MutableRefObject } from 'react';
+import { type MutableRefObject } from 'react';
 import { useClickOutside } from '../useClickOutside';
 
 describe('useClickOutside', () => {

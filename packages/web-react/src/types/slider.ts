@@ -1,12 +1,12 @@
-import { ReactNode } from 'react';
+import { type ReactNode } from 'react';
 import {
-  SpiritInputElementPropsWithRef,
-  StyleProps,
-  ValidationTextType,
-  HelperTextProps,
-  InputBaseProps,
-  RequiredProps,
-  Validation,
+  type HelperTextProps,
+  type InputBaseProps,
+  type RequiredProps,
+  type SpiritInputElementPropsWithRef,
+  type StyleProps,
+  type Validation,
+  type ValidationTextType,
 } from './shared';
 
 export type SliderBaseProps = SpiritInputElementPropsWithRef;

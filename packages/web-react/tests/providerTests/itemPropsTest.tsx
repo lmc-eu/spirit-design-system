@@ -1,5 +1,5 @@
-import { render, waitFor, screen } from '@testing-library/react';
-import React, { ComponentType } from 'react';
+import { render, screen, waitFor } from '@testing-library/react';
+import React, { type ComponentType } from 'react';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const itemPropsTest = (Component: ComponentType<any>) => {

@@ -9,7 +9,7 @@ import {
   stylePropsTest,
   validHtmlAttributesTest,
 } from '@local/tests';
-import { SpiritSkeletonShapeProps } from '../../../types';
+import { type SpiritSkeletonShapeProps } from '../../../types';
 import SkeletonShape from '../SkeletonShape';
 import { useSkeletonShapeStyleProps } from '../useSkeletonShapeStyleProps';
 

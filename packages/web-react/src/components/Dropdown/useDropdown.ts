@@ -1,6 +1,6 @@
-import { useState, MutableRefObject } from 'react';
+import { type MutableRefObject, useState } from 'react';
 import { useClickOutside } from '../../hooks';
-import { ClickEvent } from '../../types';
+import { type ClickEvent } from '../../types';
 
 export interface UseDropdownProps {
   /** dropdown element reference */

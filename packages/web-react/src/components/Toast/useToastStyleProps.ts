@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks';
-import { SpiritToastProps } from '../../types';
+import { type SpiritToastProps } from '../../types';
 
 export interface ToastStyles<T> {
   classProps: {

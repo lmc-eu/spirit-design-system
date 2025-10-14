@@ -2,7 +2,7 @@ import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
 import { ValidationStates } from '../../../constants';
-import { SpiritSliderProps } from '../../../types';
+import { type SpiritSliderProps } from '../../../types';
 import { DEMO_SLIDER_DEFAULT_VALUE, SLIDER_DEFAULT_PROPS } from '../constants';
 import ReadMe from '../README.md';
 import { Slider } from '..';

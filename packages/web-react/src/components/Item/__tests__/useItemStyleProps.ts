@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { SpiritItemProps } from '../../../types';
+import { type SpiritItemProps } from '../../../types';
 import { useItemStyleProps } from '../useItemStyleProps';
 
 describe('useItemStyleProps', () => {

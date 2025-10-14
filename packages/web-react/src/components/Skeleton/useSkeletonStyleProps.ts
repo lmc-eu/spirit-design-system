@@ -1,7 +1,7 @@
 import classNames from 'classnames';
-import { ElementType } from 'react';
+import { type ElementType } from 'react';
 import { useClassNamePrefix } from '../../hooks';
-import { SpiritSkeletonProps, SkeletonProps } from '../../types';
+import { type SkeletonProps, type SpiritSkeletonProps } from '../../types';
 
 export interface SkeletonStyles {
   /** className props */

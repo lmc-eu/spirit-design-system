@@ -222,7 +222,7 @@
             }
 
             @include test.expect() {
-                // stylelint-disable selector-no-qualifying-type, order/properties-order -- We need to allow this to make sass-true work
+                // stylelint-disable selector-no-qualifying-type, order/properties-order, no-descending-specificity, no-duplicate-selectors -- We need to allow this to make sass-true work
                 button.link-primary,
                 button.link-secondary,
                 button.link-tertiary {
@@ -241,7 +241,6 @@
                     cursor: pointer;
                     text-decoration-skip-ink: none;
                     text-underline-offset: 0.1875em;
-                    user-select: text;
                 }
 
                 @media (hover: hover) {
@@ -257,7 +256,13 @@
                 button.link-tertiary:active {
                     text-decoration: underline;
                 }
-                // stylelint-enable selector-no-qualifying-type, order/properties-order
+
+                button.link-primary,
+                button.link-secondary,
+                button.link-tertiary {
+                    user-select: text;
+                }
+                // stylelint-enable selector-no-qualifying-type, order/properties-order, no-descending-specificity, no-duplicate-selectors
             }
         }
     }

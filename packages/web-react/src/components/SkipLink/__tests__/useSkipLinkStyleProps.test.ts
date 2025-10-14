@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { SpiritSkipLinkProps } from '../../../types';
+import { type SpiritSkipLinkProps } from '../../../types';
 import { useSkipLinkStyleProps } from '../useSkipLinkStyleProps';
 
 describe('useSkipLinkStyleProps', () => {

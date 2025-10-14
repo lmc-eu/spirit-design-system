@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import React, { ReactNode } from 'react';
+import React, { type ReactNode } from 'react';
 import warning from '../../common/utilities/warning';
 import { IconsProvider } from '../../context/IconsContext';
 import { useIcon } from '../useIcon';

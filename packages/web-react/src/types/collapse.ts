@@ -1,5 +1,5 @@
-import { ReactNode } from 'react';
-import { Booleanish, ChildrenProps, ClickEvent, StyleProps } from './shared';
+import { type ReactNode } from 'react';
+import { type Booleanish, type ChildrenProps, type ClickEvent, type StyleProps } from './shared';
 
 export type CollapseElementType = 'div' | 'article' | 'section' | 'main' | 'header' | 'footer';
 

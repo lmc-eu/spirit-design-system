@@ -1,8 +1,8 @@
 'use client';
 
-import React, { ElementType } from 'react';
+import React, { type ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
-import { SpiritMatrixProps } from '../../types';
+import { type SpiritMatrixProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import {
   MATRIX_COLS_DEFAULT,

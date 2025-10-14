@@ -1,7 +1,7 @@
 'use client';
 
 import { createContext, useContext } from 'react';
-import { TabId, TabsContextType, TabsToggler } from '../../types';
+import { type TabId, type TabsContextType, type TabsToggler } from '../../types';
 
 const defaultContext: TabsContextType = {
   selectedId: '',

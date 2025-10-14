@@ -1,14 +1,14 @@
-import { ComponentPropsWithRef, ElementType } from 'react';
-import { AlignmentX } from '../constants';
-import { ButtonColor, ButtonSize } from './button';
-import { IconBoxSize } from './icon';
+import { type ComponentPropsWithRef, type ElementType } from 'react';
+import { type AlignmentX } from '../constants';
+import { type ButtonColor, type ButtonSize } from './button';
+import { type IconBoxSize } from './icon';
 import {
-  ChildrenProps,
-  ClickEvent,
-  OmittedExtendedUnsafeStyleProps,
-  SpiritButtonElementProps,
-  SpiritDialogElementProps,
-  StyleProps,
+  type ChildrenProps,
+  type ClickEvent,
+  type OmittedExtendedUnsafeStyleProps,
+  type SpiritButtonElementProps,
+  type SpiritDialogElementProps,
+  type StyleProps,
 } from './shared';
 
 export type DrawerAlignmentXType = (typeof AlignmentX)['LEFT' | 'RIGHT'];

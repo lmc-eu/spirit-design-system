@@ -1,7 +1,7 @@
 'use client';
 
-import React, { FC, ReactNode, createContext, useCallback, useMemo, useReducer } from 'react';
-import { ToastColorType, ToastLinkProps } from '../../types';
+import React, { type FC, type ReactNode, createContext, useCallback, useMemo, useReducer } from 'react';
+import { type ToastColorType, type ToastLinkProps } from '../../types';
 import { delayedCallback } from '../../utils';
 import { DEFAULT_TOAST_AUTO_CLOSE_INTERVAL } from './constants';
 

@@ -1,5 +1,5 @@
-import { CSSProperties, HTMLAttributes } from 'react';
-import { ElementTypeProp } from '../types';
+import { type CSSProperties, type HTMLAttributes } from 'react';
+import { type ElementTypeProp } from '../types';
 
 type MergedStyleProps = {
   className?: string;

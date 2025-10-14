@@ -1,7 +1,7 @@
 import classNames from 'classnames';
-import { ElementType } from 'react';
+import { type ElementType } from 'react';
 import { useClassNamePrefix } from '../../hooks';
-import { SpiritLinkProps, LinkProps, UNDERLINED_OPTIONS } from '../../types';
+import { type LinkProps, type SpiritLinkProps, UNDERLINED_OPTIONS } from '../../types';
 
 export interface LinkStyles<E extends ElementType = 'p'> {
   /** className props */

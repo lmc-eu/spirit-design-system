@@ -1,6 +1,6 @@
-import { ElementType } from 'react';
-import { LinkTarget } from './link';
-import { ChildrenProps, StyleProps, TransferProps } from './shared';
+import { type ElementType } from 'react';
+import { type LinkTarget } from './link';
+import { type ChildrenProps, type StyleProps, type TransferProps } from './shared';
 
 export interface SkipLinkBaseProps extends ChildrenProps, StyleProps, TransferProps {
   /** SkipLink's href attribute */

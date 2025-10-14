@@ -1,7 +1,7 @@
 'use client';
 
-import React, { ElementType, ForwardedRef, forwardRef } from 'react';
-import { SpiritPaginationLinkPreviousNextProps } from '../../types';
+import React, { type ElementType, type ForwardedRef, forwardRef } from 'react';
+import { type SpiritPaginationLinkPreviousNextProps } from '../../types';
 import { PAGINATION_NEXT_LINK_DEFAULT_ACCESSIBILITY_LABEL } from './constants';
 import PaginationButtonLink from './PaginationButtonLink';
 

@@ -1,7 +1,7 @@
 'use client';
 
 import { createContext, useContext } from 'react';
-import { ClickEvent } from '../../types';
+import { type ClickEvent } from '../../types';
 
 export interface HeaderDialogContextProps {
   id: string;

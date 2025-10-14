@@ -3,9 +3,7 @@ import { render } from '@testing-library/react';
 import React, { useRef } from 'react';
 import { useResizeHeight } from '../useResizeHeight';
 
-jest.spyOn(window, 'requestAnimationFrame').mockImplementation(() => {
-  return 0;
-});
+jest.spyOn(window, 'requestAnimationFrame').mockImplementation(() => 0);
 
 const TestComponent = () => {
   const ref = useRef(null);

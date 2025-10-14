@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ClickEvent } from '../../types';
+import { type ClickEvent } from '../../types';
 
 export interface CollapseReturn {
   /** collapse event handler */

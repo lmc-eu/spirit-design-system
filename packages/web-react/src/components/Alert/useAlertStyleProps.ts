@@ -1,7 +1,7 @@
 import classNames from 'classnames';
-import { ElementType } from 'react';
+import { type ElementType } from 'react';
 import { useClassNamePrefix } from '../../hooks';
-import { SpiritAlertProps, AlertProps } from '../../types';
+import { type AlertProps, type SpiritAlertProps } from '../../types';
 
 export interface AlertStyles {
   /** className props */

@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { GridItemSpan } from '../../../types';
+import { type GridItemSpan } from '../../../types';
 import { useGridItemStyleProps } from '../useGridItemStyleProps';
 
 describe('useGridItemStyleProps', () => {

@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
 import { DirectionAxis } from '../../constants';
-import { SpacingType } from '../../types';
+import { type SpacingType } from '../../types';
 import { useSpacingStyle } from '../useSpacingStyle';
 
 describe('useSpacingStyles', () => {

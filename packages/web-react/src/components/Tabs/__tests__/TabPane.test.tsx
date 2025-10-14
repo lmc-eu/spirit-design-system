@@ -9,7 +9,7 @@ import {
   withTabsContext,
 } from '@local/tests';
 import TabContent from '../TabContent';
-import { TabsContextType } from '../TabContext';
+import { type TabsContextType } from '../TabContext';
 import TabPane from '../TabPane';
 import Tabs from '../Tabs';
 

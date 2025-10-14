@@ -1,8 +1,8 @@
 'use client';
 
-import React, { forwardRef, ForwardedRef, RefObject } from 'react';
+import React, { type ForwardedRef, type RefObject, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
-import { SpiritTextFieldBaseInputProps } from '../../types';
+import { type SpiritTextFieldBaseInputProps } from '../../types';
 import { useTextFieldBaseInputStyleProps } from './useTextFieldBaseInputStyleProps';
 
 /* We need an exception for components exported with forwardRef */

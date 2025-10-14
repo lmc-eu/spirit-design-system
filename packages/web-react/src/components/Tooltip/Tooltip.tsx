@@ -2,7 +2,7 @@
 
 import React, { type ElementType, useRef } from 'react';
 import { useStyleProps } from '../../hooks';
-import { SpiritTooltipProps } from '../../types';
+import { type SpiritTooltipProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { TooltipProvider } from './TooltipContext';
 import { useFloating } from './useFloating';

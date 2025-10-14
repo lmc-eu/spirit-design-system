@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import React, { createRef, FormEvent, MutableRefObject, useState } from 'react';
+import React, { type FormEvent, type MutableRefObject, createRef, useState } from 'react';
 import { ValidationStates } from '../../../constants';
 import {
-  FileQueueMapType,
-  SpiritFileUploaderAttachmentProps,
-  SpiritUncontrolledFileUploaderProps,
-  ValidationState,
+  type FileQueueMapType,
+  type SpiritFileUploaderAttachmentProps,
+  type SpiritUncontrolledFileUploaderProps,
+  type ValidationState,
 } from '../../../types';
 import { Button } from '../../Button';
 import { FileUploaderAttachment, UncontrolledFileUploader } from '..';
