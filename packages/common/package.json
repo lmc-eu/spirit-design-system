@@ -17,7 +17,7 @@
     "directory": "packages/common"
   },
   "scripts": {
-    "lint": "ESLINT_USE_FLAT_CONFIG=false eslint ./",
+    "lint": "eslint ./",
     "lint:fix": "yarn lint --fix",
     "test": "npm-run-all --serial lint types test:unit:coverage",
     "test:unit": "jest",
@@ -26,8 +26,11 @@
     "types": "tsc"
   },
   "devDependencies": {
+    "@eslint/compat": "1.4.0",
+    "@eslint/eslintrc": "3.3.1",
     "@types/jest": "30.0.0",
     "@types/node": "20.17.24",
+    "eslint": "8.57.1",
     "jest": "30.2.0",
     "ts-node": "10.9.2",
     "typescript": "5.7.3"
