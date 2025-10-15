@@ -14,3 +14,5 @@ export const TOKEN_COLLECTION_THEMES_NAME = 'Theme';
 export const TOKEN_COLLECTION_PROPERTY_NAME = 'Collection';
 export const TYPOGRAPHY_KEY = 'styles';
 export const TYPOGRAPHY_SUBSTITUTE_FONT = 'sans-serif';
+
+export const PIXEL_UNIT = 'Pixels';

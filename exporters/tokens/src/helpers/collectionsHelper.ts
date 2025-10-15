@@ -53,13 +53,15 @@ const resolveCollectionOptionId = (tokens: Token[], collectionName: string): str
  */
 export const filterCollections = (tokens: Token[], collectionName: string, exclude: boolean = false): Token[] => {
   const targetCollectionId = resolveCollectionOptionId(tokens, collectionName);
+
   return tokens.filter((item) => {
     const collectionId = item.propertyValues?.collection;
-    const matchesCollection = collectionId === undefined || collectionId === null
-      ? collectionName === TOKEN_COLLECTION_GLOBAL_NAME
-      : targetCollectionId
-        ? collectionId === targetCollectionId
-        : false;
+    const matchesCollection =
+      collectionId === undefined || collectionId === null
+        ? collectionName === TOKEN_COLLECTION_GLOBAL_NAME
+        : targetCollectionId
+          ? collectionId === targetCollectionId
+          : false;
 
     return exclude ? !matchesCollection : matchesCollection;
   });

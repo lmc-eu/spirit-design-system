@@ -1,4 +1,4 @@
-import { Token, TokenGroup, TokenType, TypographyToken, TypographyTokenValue } from '@supernovaio/sdk-exporters';
+import type { Token, TokenGroup, TokenType, TypographyToken, TypographyTokenValue } from '@supernovaio/sdk-exporters';
 import {
   formatTypographyName,
   getBreakpoint,
@@ -22,7 +22,9 @@ export type DeviceDimensionValue = {
   unit: TypographyUnit;
 };
 
-export type DeviceDimensionMap = Map<string, Record<string, DeviceDimensionValue>>;
+export type DeviceDimensionEntries = Record<string, DeviceDimensionValue>;
+
+export type DeviceDimensionMap = Map<string, DeviceDimensionEntries>;
 
 const cloneTypographyValue = (value: TypographyTokenValue): TypographyTokenValue => {
   return {
@@ -37,6 +39,27 @@ const cloneTypographyValue = (value: TypographyTokenValue): TypographyTokenValue
     paragraphIndent: value.paragraphIndent ? { ...value.paragraphIndent } : value.paragraphIndent,
     paragraphSpacing: value.paragraphSpacing ? { ...value.paragraphSpacing } : value.paragraphSpacing,
     referencedTokenId: value.referencedTokenId ?? null,
+  };
+};
+
+const applyDeviceDimension = (
+  clonedValue: TypographyTokenValue,
+  deviceValues: DeviceDimensionEntries | undefined,
+  device: string,
+  key: 'fontSize' | 'lineHeight',
+) => {
+  const deviceDimension = deviceValues?.[device];
+
+  if (!deviceDimension) {
+    return;
+  }
+
+  const existingDimension = clonedValue[key];
+
+  clonedValue[key] = {
+    ...existingDimension,
+    measure: deviceDimension.measure,
+    unit: deviceDimension.unit,
   };
 };
 
@@ -59,14 +82,16 @@ const getDeviceTypographyValues = (
   }
 
   const devices = new Set<string>();
+  const addDeviceKeys = (deviceValues?: Record<string, unknown>) => {
+    if (!deviceValues) {
+      return;
+    }
 
-  if (fontSizeDevices) {
-    Object.keys(fontSizeDevices).forEach((device) => devices.add(device));
-  }
+    Object.keys(deviceValues).forEach((device) => devices.add(device));
+  };
 
-  if (lineHeightDevices) {
-    Object.keys(lineHeightDevices).forEach((device) => devices.add(device));
-  }
+  addDeviceKeys(fontSizeDevices);
+  addDeviceKeys(lineHeightDevices);
 
   if (devices.size === 0) {
     return null;
@@ -75,21 +100,8 @@ const getDeviceTypographyValues = (
   const deviceTypographyMap = Array.from(devices).reduce<Map<string, TypographyTokenValue>>((accumulator, device) => {
     const clonedValue = cloneTypographyValue(typographyToken.value);
 
-    if (fontSizeDevices?.[device]) {
-      clonedValue.fontSize = {
-        ...clonedValue.fontSize,
-        measure: fontSizeDevices[device].measure,
-        unit: fontSizeDevices[device].unit,
-      };
-    }
-
-    if (lineHeightDevices?.[device]) {
-      clonedValue.lineHeight = {
-        ...clonedValue.lineHeight,
-        measure: lineHeightDevices[device].measure,
-        unit: lineHeightDevices[device].unit,
-      };
-    }
+    applyDeviceDimension(clonedValue, fontSizeDevices, device, 'fontSize');
+    applyDeviceDimension(clonedValue, lineHeightDevices, device, 'lineHeight');
 
     accumulator.set(device, clonedValue);
 

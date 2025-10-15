@@ -18,10 +18,10 @@ import { filterColorCollections } from '../helpers/colorHelper';
 import { getDeviceAlias, getDeviceThemes } from '../helpers/deviceHelpers';
 import { toCamelCase } from '../helpers/stringHelper';
 import { generateFileContent } from './contentGenerator';
-import { DeviceDimensionMap, DeviceDimensionValue } from './stylesObjectGenerator';
+import { DeviceDimensionEntries, DeviceDimensionMap, DeviceDimensionValue } from './stylesObjectGenerator';
 
 const buildDeviceDimensionMap = (tokens: Token[]): DeviceDimensionMap => {
-  return tokens.reduce((accumulator, token) => {
+  return tokens.reduce<DeviceDimensionMap>((accumulator, token) => {
     if (token.tokenType !== TokenType.dimension) {
       return accumulator;
     }
@@ -39,12 +39,16 @@ const buildDeviceDimensionMap = (tokens: Token[]): DeviceDimensionMap => {
       return accumulator;
     }
 
-    const deviceValues = accumulator.get(token.id) || {};
-    (deviceValues as Record<string, DeviceDimensionValue>)[device] = { measure, unit };
-    accumulator.set(token.id, deviceValues as Record<string, DeviceDimensionValue>);
+    const deviceValues: DeviceDimensionEntries = accumulator.get(token.id) || {};
+    deviceValues[device] = {
+      measure,
+      unit,
+    };
+
+    accumulator.set(token.id, deviceValues);
 
     return accumulator;
-  }, new Map<string, Record<string, DeviceDimensionValue>>());
+  }, new Map<string, DeviceDimensionEntries>());
 };
 
 export const generateFiles = (

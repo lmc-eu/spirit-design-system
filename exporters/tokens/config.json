@@ -2,7 +2,7 @@
   {
     "key": "generateOriginalDataFiles",
     "type": "boolean",
-    "default": false,
+    "default": true,
     "title": "Generate Original Data Files",
     "description": "When enabled, the original data files will be generated in the output directory"
   },

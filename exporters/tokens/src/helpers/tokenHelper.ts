@@ -11,7 +11,7 @@ import {
   TypographyTokenValue,
 } from '@supernovaio/sdk-exporters';
 import { exportConfiguration } from '../../config';
-import { TYPOGRAPHY_SUBSTITUTE_FONT } from '../constants';
+import { PIXEL_UNIT, TYPOGRAPHY_SUBSTITUTE_FONT } from '../constants';
 import { getDeviceAlias, getDeviceTokenValue } from './deviceHelpers';
 import { toCamelCase } from './stringHelper';
 
@@ -300,7 +300,7 @@ const calculateLineHeightRatio = (
     return undefined;
   }
 
-  if (fontSize.unit !== 'Pixels' || lineHeight.unit !== 'Pixels') {
+  if (fontSize.unit !== PIXEL_UNIT || lineHeight.unit !== PIXEL_UNIT) {
     return undefined;
   }
 
@@ -315,7 +315,7 @@ export const typographyValue = (
   hasJsOutput: boolean,
 ): string => {
   const fontName = replaceFontName(fontFamily.text);
-  const fontSizeUnit = fontSize?.unit === 'Pixels' ? 'px' : fontSize?.unit || '';
+  const fontSizeUnit = fontSize?.unit === PIXEL_UNIT ? 'px' : fontSize?.unit || '';
   const fontSizeMeasure = fontSize?.measure ?? 0;
   const italicFromWeight = fontWeight?.text?.toLowerCase().includes('italic');
   const fontWeightValue = normalizeFontWeight(fontWeight.text);
