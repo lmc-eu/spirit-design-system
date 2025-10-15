@@ -1,4 +1,4 @@
-import type { Token, TokenGroup, TokenType, TypographyToken, TypographyTokenValue } from '@supernovaio/sdk-exporters';
+import { Token, TokenGroup, TokenType, TypographyToken, TypographyTokenValue } from '@supernovaio/sdk-exporters';
 import {
   formatTypographyName,
   getBreakpoint,
@@ -26,20 +26,45 @@ export type DeviceDimensionEntries = Record<string, DeviceDimensionValue>;
 
 export type DeviceDimensionMap = Map<string, DeviceDimensionEntries>;
 
+type CloneableTypographyField = keyof Pick<
+  TypographyTokenValue,
+  | 'fontFamily'
+  | 'fontWeight'
+  | 'fontSize'
+  | 'textDecoration'
+  | 'textCase'
+  | 'letterSpacing'
+  | 'lineHeight'
+  | 'paragraphIndent'
+  | 'paragraphSpacing'
+>;
+
+const CLONABLE_TYPOGRAPHY_FIELDS: CloneableTypographyField[] = [
+  'fontFamily',
+  'fontWeight',
+  'fontSize',
+  'textDecoration',
+  'textCase',
+  'letterSpacing',
+  'lineHeight',
+  'paragraphIndent',
+  'paragraphSpacing',
+];
+
 const cloneTypographyValue = (value: TypographyTokenValue): TypographyTokenValue => {
-  return {
-    ...value,
-    fontFamily: value.fontFamily ? { ...value.fontFamily } : value.fontFamily,
-    fontWeight: value.fontWeight ? { ...value.fontWeight } : value.fontWeight,
-    fontSize: value.fontSize ? { ...value.fontSize } : value.fontSize,
-    textDecoration: value.textDecoration ? { ...value.textDecoration } : value.textDecoration,
-    textCase: value.textCase ? { ...value.textCase } : value.textCase,
-    letterSpacing: value.letterSpacing ? { ...value.letterSpacing } : value.letterSpacing,
-    lineHeight: value.lineHeight ? { ...value.lineHeight } : value.lineHeight,
-    paragraphIndent: value.paragraphIndent ? { ...value.paragraphIndent } : value.paragraphIndent,
-    paragraphSpacing: value.paragraphSpacing ? { ...value.paragraphSpacing } : value.paragraphSpacing,
-    referencedTokenId: value.referencedTokenId ?? null,
-  };
+  const clonedValue: TypographyTokenValue = { ...value };
+
+  CLONABLE_TYPOGRAPHY_FIELDS.forEach((key) => {
+    const fieldValue = value[key];
+
+    if (fieldValue) {
+      clonedValue[key] = { ...fieldValue } as TypographyTokenValue[typeof key];
+    }
+  });
+
+  clonedValue.referencedTokenId = value.referencedTokenId ?? null;
+
+  return clonedValue;
 };
 
 const applyDeviceDimension = (
