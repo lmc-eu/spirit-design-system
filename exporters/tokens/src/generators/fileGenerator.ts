@@ -18,7 +18,7 @@ import { filterColorCollections } from '../helpers/colorHelper';
 import { getDeviceAlias, getDeviceThemes } from '../helpers/deviceHelpers';
 import { toCamelCase } from '../helpers/stringHelper';
 import { generateFileContent } from './contentGenerator';
-import { DeviceDimensionEntries, DeviceDimensionMap, DeviceDimensionValue } from './stylesObjectGenerator';
+import { DeviceDimensionEntries, DeviceDimensionMap } from './stylesObjectGenerator';
 
 const buildDeviceDimensionMap = (tokens: Token[]): DeviceDimensionMap => {
   return tokens.reduce<DeviceDimensionMap>((accumulator, token) => {
@@ -56,8 +56,8 @@ export const generateFiles = (
   mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
   filesData: FileData[],
-  hasJsOutput: boolean = false,
   deviceDimensions?: DeviceDimensionMap,
+  hasJsOutput: boolean = false,
 ) => {
   return filesData.map((fileData) => {
     const fileContent = generateFileContent(tokens, mappedTokens, tokenGroups, fileData, hasJsOutput, deviceDimensions);
@@ -165,16 +165,16 @@ export const generateOutputFilesByThemes = async (
     mappedTokens,
     tokenGroups,
     nonThemedFilesData,
-    false,
     deviceDimensions,
+    false,
   );
   const globalJsFiles = generateFiles(
     filteredGlobalCollections,
     mappedTokens,
     tokenGroups,
     nonThemedFilesData,
-    true,
     deviceDimensions,
+    true,
   );
   const globalBarrelFile = generateBarrelFile(globalFiles);
   const globalJsBarrelFile = generateBarrelFile(globalJsFiles, true);
@@ -216,14 +216,14 @@ export const generateOutputFilesByThemes = async (
 
   // Generate files for each theme
   for (const { themedTokens, theme } of allThemes) {
-    const themeFiles = generateFiles(themedTokens, mappedTokens, tokenGroups, themedFilesData, false, deviceDimensions);
+    const themeFiles = generateFiles(themedTokens, mappedTokens, tokenGroups, themedFilesData, deviceDimensions, false);
     const themeTsFiles = generateFiles(
       themedTokens,
       mappedTokens,
       tokenGroups,
       themedFilesData,
-      true,
       deviceDimensions,
+      true,
     );
     const themeBarrelFile = generateBarrelFile(themeFiles);
     const themeTsBarrelFile = generateBarrelFile(themeTsFiles, true);
@@ -261,16 +261,16 @@ export const generateOutputFilesByThemes = async (
     mappedTokens,
     tokenGroups,
     commonThemedFilesData,
-    false,
     deviceDimensions,
+    false,
   );
   const colorTsTokensFile = generateFiles(
     filteredColorCollections,
     mappedTokens,
     tokenGroups,
     commonThemedFilesData,
-    true,
     deviceDimensions,
+    true,
   );
 
   outputFiles.push({ path: `./${SCSS_DIRECTORY}/`, fileName: '@themes.scss', content: rootThemesFileContent });
@@ -306,16 +306,16 @@ export const generateOutputFilesByThemes = async (
       mappedTokens,
       tokenGroups,
       devicesFilesData,
-      false,
       deviceDimensions,
+      false,
     );
     const deviceTsFile = generateFiles(
       deviceTokens,
       mappedTokens,
       tokenGroups,
       devicesFilesData,
-      true,
       deviceDimensions,
+      true,
     );
     const deviceBarrelFile = generateBarrelFile(deviceFile);
     const deviceTsBarrelFile = generateBarrelFile(deviceTsFile, true);

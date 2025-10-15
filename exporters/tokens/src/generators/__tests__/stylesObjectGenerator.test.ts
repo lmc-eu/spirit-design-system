@@ -1,4 +1,4 @@
-import { Token, TokenGroup, TypographyToken } from '@supernovaio/sdk-exporters';
+import { Token, TokenGroup, TypographyToken, TypographyTokenValue } from '@supernovaio/sdk-exporters';
 import { exampleColorsTokens } from '../../../tests/fixtures/exampleColorTokens';
 import {
   exampleDeviceUpdatedTokens,
@@ -353,6 +353,7 @@ describe('stylesObjectGenerator', () => {
     });
   });
 });
+
 describe('cloneTypographyValue', () => {
   it('should deeply clone typography value', () => {
     const originalValue = {

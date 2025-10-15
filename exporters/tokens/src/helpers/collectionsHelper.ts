@@ -56,12 +56,14 @@ export const filterCollections = (tokens: Token[], collectionName: string, exclu
 
   return tokens.filter((item) => {
     const collectionId = item.propertyValues?.collection;
-    const matchesCollection =
-      collectionId === undefined || collectionId === null
-        ? collectionName === TOKEN_COLLECTION_GLOBAL_NAME
-        : targetCollectionId
-          ? collectionId === targetCollectionId
-          : false;
+    let matchesCollection: boolean;
+    if (collectionId === undefined || collectionId === null) {
+      matchesCollection = collectionName === TOKEN_COLLECTION_GLOBAL_NAME;
+    } else if (targetCollectionId) {
+      matchesCollection = collectionId === targetCollectionId;
+    } else {
+      matchesCollection = false;
+    }
 
     return exclude ? !matchesCollection : matchesCollection;
   });
