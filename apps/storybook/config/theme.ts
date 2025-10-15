@@ -1,6 +1,6 @@
 import type { Decorator } from '@storybook/react';
-import { themes } from '@lmc-eu/spirit-design-tokens';
-import { camelCaseToKebabCase } from '@lmc-eu/spirit-web-react';
+import { themes } from '@alma-oss/spirit-design-tokens';
+import { camelCaseToKebabCase } from '@alma-oss/spirit-web-react';
 import { DEFAULT_BODY_CLASS, DEFAULT_THEME_FALLBACK } from '../constants';
 import { makeSelectMap, toTitleCase } from './utils';
 import type { PreviewGlobals, ThemeEntry } from './types';

@@ -16,7 +16,7 @@ The `Navigation` is a `nav` wrapper for navigation items.
 The `Navigation` component can be horizontal or vertical. Use `direction` prop to set the orientation. Default direction is `horizontal`.
 
 ```jsx
-import { Navigation } from '@lmc-eu/spirit-web-react';
+import { Navigation } from '@alma-oss/spirit-web-react';
 
 <Navigation aria-label="Main Navigation">{/* Navigation items go here */}</Navigation>;
 <Navigation aria-label="Main Navigation" direction="vertical">
@@ -45,7 +45,7 @@ and [escape hatches][readme-escape-hatches].
 The `NavigationItem` is a container for navigation actions.
 
 ```jsx
-import { NavigationItem } from '@lmc-eu/spirit-web-react';
+import { NavigationItem } from '@alma-oss/spirit-web-react';
 
 <NavigationItem>{/* Navigation actions go here */}</NavigationItem>;
 ```
@@ -56,7 +56,7 @@ Use `alignmentY` prop to center or stretch the content. If there is a `Navigatio
 stretches its content vertically.
 
 ```jsx
-import { NavigationAction, NavigationItem } from '@lmc-eu/spirit-web-react';
+import { NavigationAction, NavigationItem } from '@alma-oss/spirit-web-react';
 
 <NavigationItem>{/* Vertically centered items */}</NavigationItem>;
 <NavigationItem alignmentY="stretch">{/* Vertically stretched items */}</NavigationItem>;
@@ -83,7 +83,7 @@ The `NavigationAction` is component that is styled to be used as a navigation ac
 It has to be either `box` or `pill` variant. Default variant is `box`.
 
 ```jsx
-import { NavigationAction } from '@lmc-eu/spirit-web-react';
+import { NavigationAction } from '@alma-oss/spirit-web-react';
 
 <NavigationAction href="#">Link</NavigationAction>;
 <NavigationAction href="#" variant="pill">
@@ -127,7 +127,7 @@ and [escape hatches][readme-escape-hatches].
 The `NavigationAvatar` is component that is styled to be used as a navigation action with an avatar.
 
 ```jsx
-import { NavigationAvatar } from '@lmc-eu/spirit-web-react';
+import { NavigationAvatar } from '@alma-oss/spirit-web-react';
 
 <NavigationAvatar avatarContent={<Icon name="profile" boxSize={20} />} aria-label="Profile of Jiří Bárta">
   <Text elementType="span" size="small" emphasis="semibold">
@@ -139,7 +139,7 @@ import { NavigationAvatar } from '@lmc-eu/spirit-web-react';
 If you want the avatar to be square, don't forget to add the `isSquare` prop to the `NavigationAvatar` component.
 
 ```jsx
-import { NavigationAvatar } from '@lmc-eu/spirit-web-react';
+import { NavigationAvatar } from '@alma-oss/spirit-web-react';
 
 <NavigationAvatar avatarContent={<Icon name="profile" boxSize={20} />} isSquare aria-label="Profile of Jiří Bárta">
   <Text elementType="span" size="small" emphasis="semibold">

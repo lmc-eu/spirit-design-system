@@ -1,4 +1,4 @@
-# @lmc-eu/spirit-analytics
+# @alma-oss/spirit-analytics
 
 > Analytic tools for Spirit Design System.
 
@@ -9,10 +9,10 @@ The output is a JSON file or files with collected data.
 
 ```shell
 # NPM
-npm install --save-dev @lmc-eu/spirit-analytics
+npm install --save-dev @alma-oss/spirit-analytics
 
 # Yarn
-yarn add -D @lmc-eu/spirit-analytics
+yarn add -D @alma-oss/spirit-analytics
 ```
 
 ## Usage

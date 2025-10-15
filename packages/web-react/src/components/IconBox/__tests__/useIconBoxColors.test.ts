@@ -1,4 +1,4 @@
-import { accentColors } from '@lmc-eu/spirit-design-tokens';
+import { accentColors } from '@alma-oss/spirit-design-tokens';
 import { renderHook } from '@testing-library/react';
 import { EmotionColors } from '../../../constants';
 import type { IconBoxColorsType } from '../../../types';
