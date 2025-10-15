@@ -108,7 +108,7 @@ export const generateFileContent = (
       const filteredTokens = filterTokensByTypeAndGroup(tokens, tokenType, group);
       const tokenPrefix = findTokenPrefix(tokens);
 
-     // Generate css tokens
+      // Generate css tokens
       if (tokenType !== TokenType.typography) {
         styledTokens += generateStylesFromTokens(
           filteredTokens,

@@ -353,22 +353,22 @@ describe('stylesObjectGenerator', () => {
     });
   });
 });
-  describe('cloneTypographyValue', () => {
-    it('should deeply clone typography value', () => {
-      const originalValue = {
-        fontFamily: { text: 'Inter' },
-        fontWeight: { text: 'Bold' },
-        fontSize: { unit: 'Pixels', measure: 16 },
-        letterSpacing: { unit: 'Pixels', measure: 0 },
-        paragraphIndent: { unit: 'Pixels', measure: 0 },
-        paragraphSpacing: { unit: 'Pixels', measure: 0 },
-        referencedTokenId: null,
-      } as TypographyTokenValue;
+describe('cloneTypographyValue', () => {
+  it('should deeply clone typography value', () => {
+    const originalValue = {
+      fontFamily: { text: 'Inter' },
+      fontWeight: { text: 'Bold' },
+      fontSize: { unit: 'Pixels', measure: 16 },
+      letterSpacing: { unit: 'Pixels', measure: 0 },
+      paragraphIndent: { unit: 'Pixels', measure: 0 },
+      paragraphSpacing: { unit: 'Pixels', measure: 0 },
+      referencedTokenId: null,
+    } as TypographyTokenValue;
 
-      const clonedValue = cloneTypographyValue(originalValue);
+    const clonedValue = cloneTypographyValue(originalValue);
 
-      expect(clonedValue).toStrictEqual(originalValue);
-      expect(clonedValue.fontFamily).not.toBe(originalValue.fontFamily);
-      expect(clonedValue.fontSize).not.toBe(originalValue.fontSize);
-    });
+    expect(clonedValue).toStrictEqual(originalValue);
+    expect(clonedValue.fontFamily).not.toBe(originalValue.fontFamily);
+    expect(clonedValue.fontSize).not.toBe(originalValue.fontSize);
   });
+});
