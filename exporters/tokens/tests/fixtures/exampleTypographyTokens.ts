@@ -14,6 +14,12 @@ exampleTypographyTokens.set('typographyRef1', {
     lineHeight: { unit: 'Pixels', measure: 52, referencedTokenId: 'line-height-id' },
     fontFamily: { text: 'Inter' },
     fontWeight: { text: 'Bold' },
+    textDecoration: { value: 'None' },
+    textCase: { value: 'Original' },
+    letterSpacing: { unit: 'Pixels', measure: 0 },
+    paragraphIndent: { unit: 'Pixels', measure: 0 },
+    paragraphSpacing: { unit: 'Pixels', measure: 0 },
+    referencedTokenId: null,
   },
 } as TypographyToken);
 exampleTypographyTokens.set('typographyRef2', {
@@ -29,6 +35,12 @@ exampleTypographyTokens.set('typographyRef2', {
     lineHeight: { unit: 'Pixels', measure: 52, referencedTokenId: 'line-height-id' },
     fontFamily: { text: 'Inter' },
     fontWeight: { text: 'Bold' },
+    textDecoration: { value: 'Underline' },
+    textCase: { value: 'Original' },
+    letterSpacing: { unit: 'Pixels', measure: 0 },
+    paragraphIndent: { unit: 'Pixels', measure: 0 },
+    paragraphSpacing: { unit: 'Pixels', measure: 0 },
+    referencedTokenId: null,
   },
 } as TypographyToken);
 

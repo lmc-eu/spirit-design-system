@@ -51,7 +51,7 @@ const CLONABLE_TYPOGRAPHY_FIELDS: CloneableTypographyField[] = [
   'paragraphSpacing',
 ];
 
-const cloneTypographyValue = (value: TypographyTokenValue): TypographyTokenValue => {
+export const cloneTypographyValue = (value: TypographyTokenValue): TypographyTokenValue => {
   const clonedValue: TypographyTokenValue = { ...value };
 
   CLONABLE_TYPOGRAPHY_FIELDS.forEach((key) => {
