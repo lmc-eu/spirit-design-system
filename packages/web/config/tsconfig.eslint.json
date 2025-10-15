@@ -1,4 +1,4 @@
 {
   "extends": "../tsconfig.json",
-  "include": ["../", "../.eslintrc.js", "../.babelrc.js"]
+  "include": ["../", "../eslint.config.mjs", "../.babelrc.js", "../.stylelintrc.mjs"]
 }
