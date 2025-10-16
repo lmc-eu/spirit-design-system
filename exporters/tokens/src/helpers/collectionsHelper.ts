@@ -5,6 +5,44 @@ import {
   TOKEN_COLLECTION_PROPERTY_NAME,
 } from '../constants';
 
+const collectionOptionIdCache = new Map<string, string>();
+
+const cacheCollectionOptions = (collectionProperty?: {
+  name: string;
+  options?: Array<{ id: string; name: string }>;
+}) => {
+  if (!collectionProperty?.options) {
+    return;
+  }
+
+  collectionProperty.options.forEach((option) => {
+    if (!collectionOptionIdCache.has(option.name)) {
+      collectionOptionIdCache.set(option.name, option.id);
+    }
+  });
+};
+
+const resolveCollectionOptionId = (tokens: Token[], collectionName: string): string | undefined => {
+  if (collectionOptionIdCache.has(collectionName)) {
+    return collectionOptionIdCache.get(collectionName);
+  }
+
+  for (const item of tokens) {
+    const collectionProperties = Array.isArray(item.properties) ? item.properties : [];
+    const collectionProperty = collectionProperties.find((prop) => prop.name === TOKEN_COLLECTION_PROPERTY_NAME);
+    cacheCollectionOptions(collectionProperty);
+    const option = collectionProperty?.options?.find((opt) => opt.name === collectionName);
+
+    if (option) {
+      collectionOptionIdCache.set(collectionName, option.id);
+
+      return option.id;
+    }
+  }
+
+  return undefined;
+};
+
 /**
  * Filters tokens based on a specific collection name and an optional exclusion flag.
  *
@@ -14,17 +52,20 @@ import {
  * @returns {Token[]} - Array of filtered tokens.
  */
 export const filterCollections = (tokens: Token[], collectionName: string, exclude: boolean = false): Token[] => {
+  const targetCollectionId = resolveCollectionOptionId(tokens, collectionName);
+
   return tokens.filter((item) => {
-    // Check if the item is a collection
-    const collectionProperty = item.properties?.find((prop) => prop.name === TOKEN_COLLECTION_PROPERTY_NAME);
-
-    // Check if the collection has an option for tokens
-    const tokenOption = collectionProperty?.options?.find((option) => option.name === collectionName);
-
     const collectionId = item.propertyValues?.collection;
-    const tokenOptionId = tokenOption?.id;
+    let matchesCollection: boolean;
+    if (collectionId === undefined || collectionId === null) {
+      matchesCollection = collectionName === TOKEN_COLLECTION_GLOBAL_NAME;
+    } else if (targetCollectionId) {
+      matchesCollection = collectionId === targetCollectionId;
+    } else {
+      matchesCollection = false;
+    }
 
-    return exclude ? collectionId !== tokenOptionId || tokenOption === undefined : collectionId === tokenOptionId;
+    return exclude ? !matchesCollection : matchesCollection;
   });
 };
 

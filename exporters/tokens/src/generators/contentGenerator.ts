@@ -3,7 +3,7 @@ import { FileData } from '../config/fileConfig';
 import { indentAndFormat } from '../formatters/stylesFormatter';
 import { convertToJs, convertToScss, deepMergeObjects } from '../helpers/objectHelper';
 import { generateStylesFromTokens } from './stylesGenerator';
-import { StylesObjectType, generateStylesObjectFromTokens } from './stylesObjectGenerator';
+import { DeviceDimensionMap, type StylesObjectType, generateStylesObjectFromTokens } from './stylesObjectGenerator';
 import { findTokenPrefix } from '../helpers/findTokenPrefix';
 import { generateMixinFromTokens } from './mixinGenerator';
 
@@ -85,6 +85,7 @@ export const generateFileContent = (
   tokenGroups: Array<TokenGroup>,
   fileData: FileData,
   hasJsOutput: boolean,
+  deviceDimensions?: DeviceDimensionMap,
 ) => {
   let styledTokens = '';
   let stylesObject: StylesObjectType = {};
@@ -140,6 +141,7 @@ export const generateFileContent = (
         hasParentPrefix,
         hasJsOutput,
         sortByNumValue,
+        deviceDimensions,
       );
       stylesObject = deepMergeObjects(stylesObject, groupStylesObject);
     });

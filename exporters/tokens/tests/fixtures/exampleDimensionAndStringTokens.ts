@@ -25,7 +25,7 @@ const testProperties = [
     options: [
       {
         id: 'theme-tokens-id',
-        name: 'Theme tokens',
+        name: 'Theme',
       },
       {
         id: 'primitives-id',
@@ -33,7 +33,7 @@ const testProperties = [
       },
       {
         id: 'global-tokens-id',
-        name: 'Global tokens',
+        name: 'Global',
       },
       {
         id: 'device-tokens-id',

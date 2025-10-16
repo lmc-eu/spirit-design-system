@@ -11,7 +11,7 @@ import {
   TypographyTokenValue,
 } from '@supernovaio/sdk-exporters';
 import { exportConfiguration } from '../../config';
-import { TYPOGRAPHY_SUBSTITUTE_FONT } from '../constants';
+import { PIXEL_UNIT, TYPOGRAPHY_SUBSTITUTE_FONT } from '../constants';
 import { getDeviceAlias, getDeviceTokenValue } from './deviceHelpers';
 import { toCamelCase } from './stringHelper';
 
@@ -149,7 +149,7 @@ type TypographyShape = {
   fontFamily: string;
   fontSize: string;
   fontStyle: string;
-  fontWeight: string;
+  fontWeight: string | number;
   lineHeight?: number;
 };
 
@@ -172,12 +172,19 @@ const scssKeyValueTemplate: KeyValueTemplateCallback = (key, value) => {
   return `${formattedKey}: ${formattedValue}`;
 };
 
-const passObjectKeyValueToCallback = <Shape>(object: Shape, callback: KeyValueTemplateCallback) => {
-  return Object.entries(object).map((record) => {
-    const [key, value] = record;
+const passObjectKeyValueToCallback = <Shape extends Record<string, string | number | undefined>>(
+  object: Shape,
+  callback: KeyValueTemplateCallback,
+) => {
+  return Object.entries(object).reduce<string[]>((accumulator, [key, value]) => {
+    if (value === undefined) {
+      return accumulator;
+    }
 
-    return callback(key, value);
-  });
+    accumulator.push(callback(key, value));
+
+    return accumulator;
+  }, []);
 };
 
 /**
@@ -265,22 +272,64 @@ const replaceFontName = (fontFamily: string): string => {
   return override(getExportConfiguration(), `'${fontFamily}', ${TYPOGRAPHY_SUBSTITUTE_FONT}`, 'Font');
 };
 
+const FONT_WEIGHT_MAP: Record<string, number> = {
+  bold: 700,
+  regular: 400,
+  semibold: 600,
+};
+
+const normalizeFontWeight = (fontWeightText: string): number | string => {
+  const normalizedText = fontWeightText.toLowerCase();
+  const normalizedWithoutItalic = normalizedText.replace(/\s*italic$/i, '');
+  const mappedValue = FONT_WEIGHT_MAP[normalizedWithoutItalic];
+
+  if (mappedValue) {
+    return mappedValue;
+  }
+
+  const parsedValue = parseInt(normalizedWithoutItalic, 10);
+
+  return Number.isNaN(parsedValue) ? fontWeightText : parsedValue;
+};
+
+const calculateLineHeightRatio = (
+  fontSize: TypographyTokenValue['fontSize'],
+  lineHeight: TypographyTokenValue['lineHeight'],
+) => {
+  if (!fontSize?.measure || !lineHeight?.measure || fontSize.measure === 0) {
+    return undefined;
+  }
+
+  if (fontSize.unit !== PIXEL_UNIT || lineHeight.unit !== PIXEL_UNIT) {
+    return undefined;
+  }
+
+  const ratio = lineHeight.measure / fontSize.measure;
+
+  return Math.round(ratio * 10) / 10;
+};
+
 export const typographyValue = (
   { fontFamily, fontSize, fontWeight, lineHeight }: TypographyTokenValue,
   isItalic: boolean,
   hasJsOutput: boolean,
 ): string => {
   const fontName = replaceFontName(fontFamily.text);
+  const fontSizeUnit = fontSize?.unit === PIXEL_UNIT ? 'px' : fontSize?.unit || '';
+  const fontSizeMeasure = fontSize?.measure ?? 0;
+  const italicFromWeight = fontWeight?.text?.toLowerCase().includes('italic');
+  const fontWeightValue = normalizeFontWeight(fontWeight.text);
+  const lineHeightRatio = calculateLineHeightRatio(fontSize, lineHeight);
 
   const typographyObject: TypographyShape = {
     fontFamily: `${fontName}`,
-    fontSize: `'${fontSize.measure}${fontSize.unit === 'Pixels' ? 'px' : fontSize.unit}'`,
-    fontStyle: `'${isItalic ? 'italic' : 'normal'}'`,
-    fontWeight: fontWeight.text,
+    fontSize: `'${fontSizeMeasure}${fontSizeUnit}'`,
+    fontStyle: `'${isItalic || italicFromWeight ? 'italic' : 'normal'}'`,
+    fontWeight: fontWeightValue,
   };
 
-  if (lineHeight && lineHeight.measure) {
-    typographyObject.lineHeight = lineHeight.measure / 100;
+  if (lineHeightRatio) {
+    typographyObject.lineHeight = lineHeightRatio;
   }
 
   const baseStyles = passObjectKeyValueToCallback<TypographyShape>(typographyObject, scssKeyValueTemplate);
