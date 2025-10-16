@@ -1,8 +1,24 @@
 @use '@tokens' as tokens;
 @use '../../tools/accessibility';
 
+$_tap-target-size: 40px;
+
 .accessibility-hidden {
     @include accessibility.hide-text();
+}
+
+.accessibility-tap-target {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: max($_tap-target-size, 100%);
+        height: max($_tap-target-size, 100%);
+        translate: -50% -50%;
+    }
 }
 
 [aria-expanded='true'] {
