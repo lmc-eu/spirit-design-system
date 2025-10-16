@@ -218,14 +218,80 @@ afterEach(() => {
 
 👀 See [examples][examples] for a live demo.
 
+## Figma Code Connect
+
+[Figma Code Connect][figma-code-connect] links Spirit React components to their Figma counterparts, showing developers the correct code to use when inspecting designs in [Figma Dev Mode][figma-dev-mode].
+
+### Prerequisites
+
+Before using Code Connect, you need:
+
+1. **Figma Desktop App** - Code Connect requires the Figma desktop application (not the browser version)
+2. **Access Token** - Generate a [personal access token][figma-access-token] from your Figma account settings
+3. **Environment Variable** - Set your token as an environment variable:
+
+```bash
+export FIGMA_ACCESS_TOKEN=your-token-here
+```
+
+Or create a `.env` file in the package root:
+
+```bash
+FIGMA_ACCESS_TOKEN=your-token-here
+```
+
+### Configuration
+
+Code Connect configuration is defined in `figma.config.json`:
+
+### Connected Components
+
+You can see which components are already connected by looking for files with suffix
+`.figma.tsx` in their component directory.
+
+### Publishing to Figma
+
+To publish Code Connect files to Figma:
+
+```bash
+# Publish all Code Connect files
+npx figma connect publish
+
+# Publish specific files only
+npx figma connect publish src/components/Button/Button.figma.tsx
+
+# Unpublish (remove from Figma)
+npx figma connect unpublish
+```
+
+### Viewing in Figma
+
+Once published, developers can:
+
+1. Open the Spirit UI KIT file in Figma Dev Mode
+2. Select any connected component instance
+3. View the corresponding React code in the "Code" tab
+4. Copy the code snippet directly
+
+### Resources
+
+- [Figma Code Connect Documentation][figma-code-connect]
+- [Connecting React Components Guide][figma-react-guide]
+- [Code Connect CLI Reference][figma-cli]
+
 ## License
 
 See the [LICENSE](LICENSE.md) file for information.
 
 [all-deprecations]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/DEPRECATIONS.md
 [examples]: https://spirit-design-system-storybook.netlify.app
+[figma-access-token]: https://help.figma.com/hc/en-us/articles/8085703771159-Manage-personal-access-tokens
+[figma-cli]: https://github.com/figma/code-connect
+[figma-code-connect]: https://developers.figma.com/docs/code-connect/
+[figma-dev-mode]: https://help.figma.com/hc/en-us/articles/15023124644247-Guide-to-Dev-Mode
+[figma-react-guide]: https://developers.figma.com/docs/code-connect/react/
+[react-controlled]: https://reactjs.org/docs/forms.html#controlled-components
+[react-uncontrolled]: https://reactjs.org/docs/uncontrolled-components.html
 [web-docs]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web#readme
 [web-pkg-rebrand]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web#rebranding
 [web-pkg-prefixes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#prefixing-css-class-names
-[react-controlled]: https://reactjs.org/docs/forms.html#controlled-components
-[react-uncontrolled]: https://reactjs.org/docs/uncontrolled-components.html
