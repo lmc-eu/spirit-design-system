@@ -27,8 +27,9 @@ For more details on this approach, see the
 [feature flag documentation][feature-flag-documentation]
 in the Spirit Design System monorepo.
 
-| Flag | Description | Default | SASS flag |
-| ---- | ----------- | ------- | --------- |
+| Flag                                           | Description                                     | Default | SASS flag                                       |
+| ---------------------------------------------- | ----------------------------------------------- | ------- | ----------------------------------------------- |
+| `enable-v5-container-block-formatting-context` | Enforce creating a new block formatting context | `false` | `$enable-v5-container-block-formatting-context` |
 
 ## Turning on Feature Flags in SASS
 
