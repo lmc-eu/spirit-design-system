@@ -55,4 +55,28 @@ describe('CardMedia', () => {
     expect(image).toHaveAttribute('alt', 'description');
     expect(image.parentElement).toHaveClass('CardMedia__canvas');
   });
+
+  it('should have default fit value of cover', () => {
+    render(<CardMedia data-testid="test" />);
+
+    expect(screen.getByTestId('test')).toHaveStyle({ '--spirit-card-media-object-fit': 'cover' });
+  });
+
+  it('should render with custom fit value', () => {
+    render(<CardMedia fit="contain" data-testid="test" />);
+
+    expect(screen.getByTestId('test')).toHaveStyle({ '--spirit-card-media-object-fit': 'contain' });
+  });
+
+  it('should render with backgroundColor', () => {
+    render(<CardMedia backgroundColor="primary" data-testid="test" />);
+
+    expect(screen.getByTestId('test')).toHaveClass('bg-primary');
+  });
+
+  it('should render with accent backgroundColor', () => {
+    render(<CardMedia backgroundColor="emotion-success-basic" data-testid="test" />);
+
+    expect(screen.getByTestId('test')).toHaveClass('bg-emotion-success-basic');
+  });
 });
