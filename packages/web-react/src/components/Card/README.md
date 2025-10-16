@@ -218,13 +218,41 @@ content. This option works with both boxed and non-boxed Card, but is only avail
 🎉 Fun fact: The `isExpanded` and `hasFilledHeight` props produce the same result for non-boxed
 horizontal (and reversed horizontal) Cards. But in all other contexts, the two props behave differently.
 
+### Object Fit
+
+You can control how the media content is resized to fit its container using the `fit` prop.
+Available values are based on the CSS [object-fit][mdn-object-fit] property:
+
+- `contain` — the media is scaled to maintain its aspect ratio while fitting within the container
+- `cover` (default) — the media is sized to maintain its aspect ratio while filling the container (may be clipped)
+
+```jsx
+<CardMedia fit="contain">
+  <img src="https://via.placeholder.com/300x200" alt="" />
+</CardMedia>
+```
+
+For infographics and images with fixed aspect ratios that should not be cropped, use `fit="contain"`.
+
+### Background Color
+
+You can set the background color of the CardMedia container using the `backgroundColor` prop.
+
+```jsx
+<CardMedia backgroundColor="primary">
+  <img src="https://via.placeholder.com/300x200" alt="" />
+</CardMedia>
+```
+
 ### API
 
-| Name                   | Type                                          | Default | Required | Description                                 |
-| ---------------------- | --------------------------------------------- | ------- | -------- | ------------------------------------------- |
-| `hasFilledHeightClass` | `bool`                                        | `false` | ✕        | Whether the image fill the height of a Card |
-| `isExpanded`           | `bool`                                        | `false` | ✕        | Whether the media has space around          |
-| `size`                 | \[[Size dictionary][dictionary-size], `auto`] | `auto`  | ✕        | Size of the image media                     |
+| Name                   | Type                                                                                                                                                                                                   | Default | Required | Description                                                  |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- | -------- | ------------------------------------------------------------ |
+| `backgroundColor`      | \[[Background Color dictionary][dictionary-color] \| [AccentColorNamesType][readme-generated-types] \| [EmotionColorNamesType][readme-generated-types] ✕ [Intensity dictionary][dictionary-intensity]] | —       | ✕        | Background color of the CardMedia                            |
+| `fit`                  | `contain` \| `cover`                                                                                                                                                                                   | `cover` | ✕        | How the media content should be resized to fit its container |
+| `hasFilledHeightClass` | `bool`                                                                                                                                                                                                 | `false` | ✕        | Whether the image fill the height of a Card                  |
+| `isExpanded`           | `bool`                                                                                                                                                                                                 | `false` | ✕        | Whether the media has space around                           |
+| `size`                 | \[[Size dictionary][dictionary-size], `auto`]                                                                                                                                                          | `auto`  | ✕        | Size of the image media                                      |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -461,12 +489,16 @@ When you put it all together:
 ℹ️ A big shout-out to [Ondřej Pohl][ondrej-pohl] for sharing many of these best practices!
 
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
+[dictionary-color]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#color
 [dictionary-direction]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#direction
+[dictionary-intensity]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#intensity
 [dictionary-size]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#size
 [grid]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Grid/README.md
 [heydon-pickering-card]: https://inclusive-components.design/cards/
 [hugo-giraudel-card]: https://kittygiraudel.com/2022/04/02/accessible-cards/
+[mdn-object-fit]: https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit
 [ondrej-pohl]: https://linkedin.com/in/ondrejpohl
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
+[readme-generated-types]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#api-generated-types
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props

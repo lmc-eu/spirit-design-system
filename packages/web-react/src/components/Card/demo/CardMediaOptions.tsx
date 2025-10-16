@@ -145,5 +145,35 @@ export const CardMediaOptions = () => (
         </CardFooter>
       </Card>
     </GridItem>
+
+    <GridItem UNSAFE_className="d-grid" columnEnd={{ tablet: 'span 2', desktop: 'span 4' }}>
+      <Card direction="horizontal" isBoxed>
+        <CardMedia size="medium" isExpanded backgroundColor="emotion-warning-basic" fit="contain">
+          <div className="CardMedia__canvas">
+            <img src="https://picsum.photos/id/200/360/240" alt="" />
+          </div>
+        </CardMedia>
+        <CardBody>
+          <CardEyebrow>Media options</CardEyebrow>
+          <CardTitle isHeading>
+            <CardLink href="#">Medium size, expanded, warning background color, contain object fit</CardLink>
+          </CardTitle>
+          {/* User content */}
+          <p>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean fermentum risus id tortor. Integer lacinia.
+            Sed vel lectus.
+          </p>
+          {/* End user content */}
+        </CardBody>
+        <CardFooter>
+          <ButtonLink href="#" color="primary">
+            Primary
+          </ButtonLink>
+          <ButtonLink href="#" color="secondary">
+            Secondary
+          </ButtonLink>
+        </CardFooter>
+      </Card>
+    </GridItem>
   </Grid>
 );
