@@ -53,5 +53,6 @@ export * from './timeline';
 export * from './toast';
 export * from './toggle';
 export * from './tooltip';
+export * from './truncate';
 export * from './unstableHeader';
 export * from './visuallyHidden';
