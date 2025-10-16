@@ -26,7 +26,7 @@ ControlButtons are composed using utility classes:
 ```html
 <button
   type="button"
-  class="button-unstyled dynamic-color-border dynamic-color-background-interactive rounded-full p-300"
+  class="button-unstyled accessibility-tap-target dynamic-color-background-interactive rounded-full p-300"
   aria-label="Close dialog"
 >
   <svg class="Icon" width="16" height="16" aria-hidden="true">
@@ -41,10 +41,16 @@ ControlButtons are composed using utility classes:
 - `dynamic-color-background-interactive` — Provides hover/active states that adapt to the parent background
 - `rounded-full` — Creates the circular shape
 
+### Recommended Classes
+
+- `accessibility-tap-target` — Ensures the tap target size is large enough without affecting the size of the button
+- `p-*` — Padding to control button size (e.g., `p-300`, `p-500`)
+
 ### Optional Classes
 
-- `dynamic-color-border` — Adds a border (requires `border-100 border-solid`)
-- `p-*` — Padding to control button size (e.g., `p-300`, `p-500`)
+- `border-100 border-solid` — Adds a border (example values)
+- `dynamic-color-border` — Adapts the border color to the parent background,
+  requires border classes above
 
 ## Adapting to Background Colors
 
@@ -55,7 +61,7 @@ Set a background and text color on the parent element:
 <div class="bg-emotion-informative-basic text-emotion-informative-subtle">
   <button
     type="button"
-    class="button-unstyled dynamic-color-background-interactive rounded-full p-300"
+    class="button-unstyled accessibility-tap-target dynamic-color-background-interactive rounded-full p-300"
     aria-label="Close dialog"
   >
     <svg class="Icon" width="16" height="16" aria-hidden="true">
@@ -74,7 +80,7 @@ This works with any pair of available background and text colors.
 ```html
 <button
   type="button"
-  class="button-unstyled dynamic-color-background-interactive rounded-full p-300"
+  class="button-unstyled accessibility-tap-target dynamic-color-background-interactive rounded-full p-300"
   aria-label="Close dialog"
 >
   <svg class="Icon" width="16" height="16" aria-hidden="true">
@@ -88,7 +94,7 @@ This works with any pair of available background and text colors.
 ```html
 <button
   type="button"
-  class="button-unstyled dynamic-color-border dynamic-color-background-interactive border-100 border-solid rounded-full p-300"
+  class="button-unstyled accessibility-tap-target dynamic-color-border dynamic-color-background-interactive border-100 border-solid rounded-full p-300"
   aria-label="Close dialog"
 >
   <svg class="Icon" width="16" height="16" aria-hidden="true">
@@ -103,15 +109,28 @@ Control the size by adjusting padding and icon dimensions:
 
 ### Small (16px Icon)
 
+Icon only:
+
 ```html
 <button
   type="button"
-  class="button-unstyled dynamic-color-background-interactive rounded-full p-300"
+  class="button-unstyled accessibility-tap-target dynamic-color-background-interactive rounded-full p-300"
   aria-label="Close dialog"
 >
   <svg class="Icon" width="16" height="16" aria-hidden="true">
     <use xlink:href="/icons/svg/sprite.svg#close" />
   </svg>
+</button>
+```
+
+Text label (note the typography class and the difference in horizontal padding):
+
+```html
+<button
+  type="button"
+  class="button-unstyled typography-body-small-regular accessibility-tap-target dynamic-color-background-interactive rounded-full px-700 py-300"
+>
+  Close
 </button>
 ```
 
@@ -120,7 +139,7 @@ Control the size by adjusting padding and icon dimensions:
 ```html
 <button
   type="button"
-  class="button-unstyled dynamic-color-background-interactive rounded-full p-500"
+  class="button-unstyled accessibility-tap-target dynamic-color-background-interactive rounded-full p-500"
   aria-label="Close dialog"
 >
   <svg class="Icon" width="16" height="16" aria-hidden="true">
@@ -129,12 +148,23 @@ Control the size by adjusting padding and icon dimensions:
 </button>
 ```
 
+Text label (note the typography class and the difference in horizontal padding):
+
+```html
+<button
+  type="button"
+  class="button-unstyled typography-body-small-regular accessibility-tap-target dynamic-color-background-interactive rounded-full px-800 py-500"
+>
+  Close
+</button>
+```
+
 ### Large (24px Icon)
 
 ```html
 <button
   type="button"
-  class="button-unstyled dynamic-color-background-interactive rounded-full p-500"
+  class="button-unstyled accessibility-tap-target dynamic-color-background-interactive rounded-full p-500"
   aria-label="Close dialog"
 >
   <svg class="Icon" width="24" height="24" aria-hidden="true">
@@ -143,9 +173,24 @@ Control the size by adjusting padding and icon dimensions:
 </button>
 ```
 
+Text label (note the typography class and the difference in horizontal padding):
+
+```html
+<button
+  type="button"
+  class="button-unstyled typography-body-medium-regular accessibility-tap-target dynamic-color-background-interactive rounded-full px-900 py-500"
+>
+  Close
+</button>
+```
+
 ## Accessibility
 
-For icon-only buttons, always include an accessible label using the `aria-label` attribute.
+For icon-only buttons, always include an accessible label, for example, using
+the `aria-label` attribute.
+
+ℹ️ We recommend applying the `accessibility-tap-target` helper class to ensure
+the tap target size of `ControlButton` is large enough.
 
 ## Related Components
 
