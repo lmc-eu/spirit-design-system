@@ -1,4 +1,5 @@
 import { type MouseEvent, type MutableRefObject, type ReactNode } from 'react';
+import { type ObjectFit } from '../constants';
 import {
   type SpiritButtonElementProps,
   type SpiritDivElementProps,
@@ -69,7 +70,7 @@ export interface AttachmentImagePreviewProps {
   imagePreview: string;
   label: string;
   meta?: FileMetadata;
-  imageObjectFit?: 'contain' | 'cover';
+  imageObjectFit?: (typeof ObjectFit)[keyof typeof ObjectFit];
 }
 
 export interface FileUploaderInputBaseProps
@@ -100,7 +101,7 @@ export interface FileUploaderAttachmentBaseProps extends Omit<SpiritLItemElement
   hasImagePreview?: boolean;
   iconName?: string;
   id: string;
-  imageObjectFit?: 'contain' | 'cover';
+  imageObjectFit?: (typeof ObjectFit)[keyof typeof ObjectFit];
   label: string;
   meta?: FileMetadata;
   name: string;
