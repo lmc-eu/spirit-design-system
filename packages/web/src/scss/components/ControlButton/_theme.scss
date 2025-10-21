@@ -1,0 +1,36 @@
+@use 'sass:map';
+@use '@tokens' as tokens;
+@use '../../settings/dictionaries';
+@use '../../tools/tokens' as tokens-tools;
+
+$border-radius: tokens.$radius-full;
+
+$icon-size-small: 16px;
+$icon-size-medium: 16px;
+$icon-size-large: 20px;
+
+$size-dictionary: dictionaries.$size;
+
+$size-config: (
+    small: (
+        height: 24px,
+        padding-x: calc(#{tokens.$space-700} - #{tokens.$border-width-100}),
+        padding-y: calc(#{tokens.$space-300} - #{tokens.$border-width-100}),
+        typography: tokens.$body-small-regular,
+        icon-size: $icon-size-small,
+    ),
+    medium: (
+        height: 32px,
+        padding-x: calc(#{tokens.$space-800} - #{tokens.$border-width-100}),
+        padding-y: calc(#{tokens.$space-500} - #{tokens.$border-width-100}),
+        typography: tokens.$body-small-regular,
+        icon-size: $icon-size-medium,
+    ),
+    large: (
+        height: 36px,
+        padding-x: calc(#{tokens.$space-900} - #{tokens.$border-width-100}),
+        padding-y: calc(#{tokens.$space-500} - #{tokens.$border-width-100}),
+        typography: tokens.$body-medium-regular,
+        icon-size: $icon-size-large,
+    ),
+);
