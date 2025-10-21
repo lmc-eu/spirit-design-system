@@ -22,7 +22,8 @@ export default [
       '**/.nx/**',
       '**/.yarn/**',
       // Ignore the playwright-report directory
-      'playwright-report',
+      '**/playwright-report/**',
+      '**/test-results/**',
       // Ignore vendor directory in `packages/web-twig`
       '**/vendor/**',
 
@@ -57,6 +58,6 @@ export default [
     plugins: {
       import: fixupPluginRules(importPlugin),
     },
-    ...fixupConfigRules(compat.extends('eslint-config-spirit'))[0],
+    ...fixupConfigRules(compat.extends('eslint-config-spirit', 'eslint-config-spirit/style'))[0],
   },
 ];

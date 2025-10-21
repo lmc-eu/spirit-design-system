@@ -4,7 +4,7 @@ module.exports = {
     '@lmc-eu/eslint-config-react',
     '@lmc-eu/eslint-config-typescript',
     '@lmc-eu/eslint-config-typescript/react',
-    'prettier',
+    'eslint-config-spirit/prettier',
   ],
 
   parserOptions: {
