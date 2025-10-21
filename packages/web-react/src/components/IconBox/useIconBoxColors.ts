@@ -1,4 +1,4 @@
-import { accentColors } from '@lmc-eu/spirit-design-tokens';
+import { emotionColors } from '@lmc-eu/spirit-design-tokens';
 import { EmotionColors, Intensity } from '../../constants';
 import { ColorPrefixes } from '../../constants/colors';
 import type {
@@ -24,7 +24,7 @@ const setFullColorName = (prefix: ColorPrefixesType, base: string, intensity: In
   `${prefix}-${base}-${intensity}`;
 
 const derivePrefix = (base: string): ColorPrefixesType =>
-  Object.keys(accentColors).includes(base) ? ColorPrefixes.ACCENT : ColorPrefixes.EMOTION;
+  Object.keys(emotionColors).includes(base) ? ColorPrefixes.EMOTION : ColorPrefixes.ACCENT;
 
 export const useIconBoxColors = (color?: IconBoxColorsType, isSubtle = true): UseIconBoxColorsProps => {
   const intensity: IntensityDictionaryType = isSubtle ? Intensity.SUBTLE : Intensity.BASIC;
