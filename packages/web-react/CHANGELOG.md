@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.21.0"></a>
+
+# [3.21.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.20.0...@lmc-eu/spirit-web-react@3.21.0) (2025-10-22)
+
+### Bug Fixes
+
+- **web-react:** Do not render `label` attribute on TextFieldBaseInput [#DS-2126](https://github.com/lmc-eu/spirit-design-system/issues/DS-2126) ([b222ca3](https://github.com/lmc-eu/spirit-design-system/commit/b222ca3))
+- **web-react:** Function getElement second argument is now optional ([0bfd700](https://github.com/lmc-eu/spirit-design-system/commit/0bfd700))
+- **web-react:** Provide `defaultValue` property instead of `value` on the TextField [#DS-2126](https://github.com/lmc-eu/spirit-design-system/issues/DS-2126) ([4b829ff](https://github.com/lmc-eu/spirit-design-system/commit/4b829ff))
+
+### Chores
+
+- **repo:** Disable usage of ESLint config flat style by packages ([0ab8596](https://github.com/lmc-eu/spirit-design-system/commit/0ab8596))
+- **web-react:** Add ESLint rules to sort imports and add type, auto-fix all files ([76c0222](https://github.com/lmc-eu/spirit-design-system/commit/76c0222))
+
+### Dependencies
+
+- Update all non-major dependencies ([5b7a7d9](https://github.com/lmc-eu/spirit-design-system/commit/5b7a7d9))
+
+### Documentation
+
+- **web-react:** Demo with feature flag to suppress margin-collapsing when using Container [#DS-1905](https://github.com/lmc-eu/spirit-design-system/issues/DS-1905) ([b4194e0](https://github.com/lmc-eu/spirit-design-system/commit/b4194e0))
+
+### Features
+
+- **web-react:** Update UNSTABLE_Truncate component to support multiple truncation modes [#DS-1761](https://github.com/lmc-eu/spirit-design-system/issues/DS-1761) ([6eaf018](https://github.com/lmc-eu/spirit-design-system/commit/6eaf018))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="3.20.0"></a>
 
 # [3.20.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.19.0...@lmc-eu/spirit-web-react@3.20.0) (2025-09-25)

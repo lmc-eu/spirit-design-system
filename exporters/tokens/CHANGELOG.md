@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.4.4"></a>
+
+## [2.4.4](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-tokens-exporter@2.4.3...@almacareer/spirit-tokens-exporter@2.4.4) (2025-10-22)
+
+### Chores
+
+- **repo:** Disable usage of ESLint config flat style by packages ([0ab8596](https://github.com/lmc-eu/spirit-design-system/commit/0ab8596))
+
+### Code Refactoring
+
+- **exporter-tokens:** Refactor the tokens exporter to improve comprehensibility ([528aa08](https://github.com/lmc-eu/spirit-design-system/commit/528aa08))
+
+### Dependencies
+
+- Update all non-major dependencies ([5b7a7d9](https://github.com/lmc-eu/spirit-design-system/commit/5b7a7d9))
+
+### Styles
+
+- **exporter-tokens:** Use eslint-config-spirit intead of relative path to root ESLint config ([d18871a](https://github.com/lmc-eu/spirit-design-system/commit/d18871a))
+
+**Note:** Version bump only for package @almacareer/spirit-tokens-exporter
+
 <a name="2.4.3"></a>
 
 ## [2.4.3](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-tokens-exporter@2.4.2...@almacareer/spirit-tokens-exporter@2.4.3) (2025-09-24)

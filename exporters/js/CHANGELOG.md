@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.17"></a>
+
+## [2.0.17](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-js@2.0.16...@lmc-eu/spirit-exporters-js@2.0.17) (2025-10-22)
+
+### Chores
+
+- **repo:** Disable usage of ESLint config flat style by packages ([0ab8596](https://github.com/lmc-eu/spirit-design-system/commit/0ab8596))
+
+### Dependencies
+
+- Update all non-major dependencies ([5b7a7d9](https://github.com/lmc-eu/spirit-design-system/commit/5b7a7d9))
+
+### Styles
+
+- **repo:** Use `eslint-config-spirit` intead of relative path to root ESLint config in all configs ([8aa3e18](https://github.com/lmc-eu/spirit-design-system/commit/8aa3e18))
+
+### Tests
+
+- **exporter-js:** Update snapshots after Jest upgrade ([7692493](https://github.com/lmc-eu/spirit-design-system/commit/7692493))
+
+**Note:** Version bump only for package @lmc-eu/spirit-exporters-js
+
 <a name="2.0.16"></a>
 
 ## [2.0.16](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-js@2.0.15...@lmc-eu/spirit-exporters-js@2.0.16) (2025-09-24)

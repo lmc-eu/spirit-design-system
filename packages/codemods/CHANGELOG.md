@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.6.3"></a>
+
+## [1.6.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@1.6.2...@lmc-eu/spirit-codemods@1.6.3) (2025-10-22)
+
+### Chores
+
+- **repo:** Disable usage of ESLint config flat style by packages ([0ab8596](https://github.com/lmc-eu/spirit-design-system/commit/0ab8596))
+
+### Dependencies
+
+- Update all non-major dependencies ([5b7a7d9](https://github.com/lmc-eu/spirit-design-system/commit/5b7a7d9))
+
+### Styles
+
+- **codemods:** Migrate ESLint config to flat config style ([3e12b5c](https://github.com/lmc-eu/spirit-design-system/commit/3e12b5c))
+
+**Note:** Version bump only for package @lmc-eu/spirit-codemods
+
 <a name="1.6.2"></a>
 
 ## [1.6.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@1.6.1...@lmc-eu/spirit-codemods@1.6.2) (2025-06-30)

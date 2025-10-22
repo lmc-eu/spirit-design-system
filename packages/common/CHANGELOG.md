@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.4.2"></a>
+
+## [0.4.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-common@0.4.1...@lmc-eu/spirit-common@0.4.2) (2025-10-22)
+
+### Chores
+
+- **repo:** Disable usage of ESLint config flat style by packages ([0ab8596](https://github.com/lmc-eu/spirit-design-system/commit/0ab8596))
+
+### Dependencies
+
+- Update all non-major dependencies ([5b7a7d9](https://github.com/lmc-eu/spirit-design-system/commit/5b7a7d9))
+
+### Styles
+
+- **common:** Migrate ESLint config to flat config style ([e4cc92e](https://github.com/lmc-eu/spirit-design-system/commit/e4cc92e))
+
+**Note:** Version bump only for package @lmc-eu/spirit-common
+
 <a name="0.4.1"></a>
 
 ## [0.4.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-common@0.4.0...@lmc-eu/spirit-common@0.4.1) (2025-06-30)

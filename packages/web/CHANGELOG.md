@@ -3,6 +3,40 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.19.0"></a>
+
+# [3.19.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.18.0...@lmc-eu/spirit-web@3.19.0) (2025-10-22)
+
+### Bug Fixes
+
+- **web:** Inherit text color in reset buttons [#DS-1705](https://github.com/lmc-eu/spirit-design-system/issues/DS-1705) ([7bfc0a9](https://github.com/lmc-eu/spirit-design-system/commit/7bfc0a9))
+
+### Chores
+
+- **repo:** Disable usage of ESLint config flat style by packages ([0ab8596](https://github.com/lmc-eu/spirit-design-system/commit/0ab8596))
+- **web:** Update `sass-embedded` from 1.89.0 to 1.93.2 ([6b643ae](https://github.com/lmc-eu/spirit-design-system/commit/6b643ae))
+
+### Dependencies
+
+- Update all non-major dependencies ([5b7a7d9](https://github.com/lmc-eu/spirit-design-system/commit/5b7a7d9))
+
+### Features
+
+- **web:** Add feature flag to suppress margin-collapsing when using Container [#DS-1905](https://github.com/lmc-eu/spirit-design-system/issues/DS-1905) ([f68cda9](https://github.com/lmc-eu/spirit-design-system/commit/f68cda9))
+- **web:** Change min-width of PricingPlan [#DS-2197](https://github.com/lmc-eu/spirit-design-system/issues/DS-2197) ([07ac34b](https://github.com/lmc-eu/spirit-design-system/commit/07ac34b))
+- **web:** Introduce dynamic background colors [#DS-1705](https://github.com/lmc-eu/spirit-design-system/issues/DS-1705) ([d3cfb42](https://github.com/lmc-eu/spirit-design-system/commit/d3cfb42))
+- **web:** Introduce dynamic border color helper [#DS-2188](https://github.com/lmc-eu/spirit-design-system/issues/DS-2188) ([a39b4f5](https://github.com/lmc-eu/spirit-design-system/commit/a39b4f5))
+
+### Styles
+
+- **web:** Migrate ESLint config to flat config style ([eaec1ec](https://github.com/lmc-eu/spirit-design-system/commit/eaec1ec))
+
+### Tests
+
+- **web:** Update sass-true expect after sass-embedded upgrade ([1275b50](https://github.com/lmc-eu/spirit-design-system/commit/1275b50))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="3.18.0"></a>
 
 # [3.18.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.17.0...@lmc-eu/spirit-web@3.18.0) (2025-09-24)

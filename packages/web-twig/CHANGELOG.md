@@ -3,6 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.10.2"></a>
+
+## [4.10.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@4.10.1...@lmc-eu/spirit-web-twig@4.10.2) (2025-10-22)
+
+### Chores
+
+- **deps:** Bump braces from 3.0.2 to 3.0.3 in /packages/web-twig/demo ([b132f4e](https://github.com/lmc-eu/spirit-design-system/commit/b132f4e))
+- **deps:** Bump micromatch in /packages/web-twig/demo ([bfb564e](https://github.com/lmc-eu/spirit-design-system/commit/bfb564e))
+- **deps:** Bump nanoid from 3.3.6 to 3.3.11 in /packages/web-twig/demo ([fc25135](https://github.com/lmc-eu/spirit-design-system/commit/fc25135))
+- **deps:** Bump serialize-javascript in /packages/web-twig/demo ([9b0e8c8](https://github.com/lmc-eu/spirit-design-system/commit/9b0e8c8))
+- **deps:** Bump tmp from 0.2.1 to 0.2.5 in /packages/web-twig/demo ([e2e02a4](https://github.com/lmc-eu/spirit-design-system/commit/e2e02a4))
+- **web-twig:** Introduce empty dot env file neccessary for Symfony to run ([a543965](https://github.com/lmc-eu/spirit-design-system/commit/a543965))
+- **web-twig:** Update composer and lock files ([c15de76](https://github.com/lmc-eu/spirit-design-system/commit/c15de76))
+
+### Code Refactoring
+
+- **web-twig:** Migrate demo app into package itself ([2bdaa80](https://github.com/lmc-eu/spirit-design-system/commit/2bdaa80)), closes [#DS-1815](https://github.com/lmc-eu/spirit-design-system/issues/DS-1815)
+- **web-twig:** Migrate paths in new docker location ([ab4df03](https://github.com/lmc-eu/spirit-design-system/commit/ab4df03)), closes [#DS-1815](https://github.com/lmc-eu/spirit-design-system/issues/DS-1815)
+- **web-twig:** Rename `stories` to `demo` directory ([4fc9444](https://github.com/lmc-eu/spirit-design-system/commit/4fc9444)), closes [#DS-981](https://github.com/lmc-eu/spirit-design-system/issues/DS-981)
+- **web-twig:** Rename `stories` to `demo` files ([60b5b6c](https://github.com/lmc-eu/spirit-design-system/commit/60b5b6c)), closes [#DS-981](https://github.com/lmc-eu/spirit-design-system/issues/DS-981)
+
+### Dependencies
+
+- Update all non-major dependencies ([5b7a7d9](https://github.com/lmc-eu/spirit-design-system/commit/5b7a7d9))
+
+### Documentation
+
+- **web-twig:** Forgotten Fluid instead of Block ([5178f30](https://github.com/lmc-eu/spirit-design-system/commit/5178f30))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="4.10.1"></a>
 
 ## [4.10.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@4.10.0...@lmc-eu/spirit-web-twig@4.10.1) (2025-09-17)

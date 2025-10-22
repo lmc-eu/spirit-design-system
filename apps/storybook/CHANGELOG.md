@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.2.1"></a>
+
+## [0.2.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-storybook@0.2.0...@lmc-eu/spirit-storybook@0.2.1) (2025-10-22)
+
+### Dependencies
+
+- Update all non-major dependencies ([5b7a7d9](https://github.com/lmc-eu/spirit-design-system/commit/5b7a7d9))
+
+### Documentation
+
+- **storybook:** Document a new feature flag for Container [#DS-1905](https://github.com/lmc-eu/spirit-design-system/issues/DS-1905) ([6aae762](https://github.com/lmc-eu/spirit-design-system/commit/6aae762))
+
+**Note:** Version bump only for package @lmc-eu/spirit-storybook
+
 <a name="0.2.0"></a>
 
 # [0.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-storybook@0.1.10...@lmc-eu/spirit-storybook@0.2.0) (2025-09-25)

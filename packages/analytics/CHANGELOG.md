@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.14"></a>
+
+## [1.0.14](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-analytics@1.0.13...@lmc-eu/spirit-analytics@1.0.14) (2025-10-22)
+
+### Chores
+
+- **repo:** Disable usage of ESLint config flat style by packages ([0ab8596](https://github.com/lmc-eu/spirit-design-system/commit/0ab8596))
+
+### Dependencies
+
+- Update all non-major dependencies ([5b7a7d9](https://github.com/lmc-eu/spirit-design-system/commit/5b7a7d9))
+
+### Styles
+
+- **analytics:** Migrate ESLint config to flat style ([b59bd23](https://github.com/lmc-eu/spirit-design-system/commit/b59bd23))
+
+**Note:** Version bump only for package @lmc-eu/spirit-analytics
+
 <a name="1.0.13"></a>
 
 ## [1.0.13](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-analytics@1.0.12...@lmc-eu/spirit-analytics@1.0.13) (2025-06-30)
