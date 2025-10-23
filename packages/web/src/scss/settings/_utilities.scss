@@ -40,6 +40,8 @@ $utilities: (
                     primary: tokens.$background-primary,
                     secondary: tokens.$background-secondary,
                     tertiary: tokens.$background-tertiary,
+                    neutral-basic: tokens.$neutral-background-basic,
+                    neutral-subtle: tokens.$neutral-background-subtle,
                 )
             ),
     ),
@@ -279,6 +281,8 @@ $utilities: (
                     primary: tokens.$text-primary,
                     secondary: tokens.$text-secondary,
                     tertiary: tokens.$text-tertiary,
+                    neutral-basic: tokens.$neutral-content-basic,
+                    neutral-subtle: tokens.$neutral-content-subtle,
                 )
             ),
     ),
