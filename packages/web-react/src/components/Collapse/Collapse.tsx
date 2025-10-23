@@ -38,13 +38,24 @@ const Collapse = (props: SpiritCollapseProps) => {
   const collapseElementRef: MutableRefObject<HTMLDivElement | null> = useRef(null);
   const collapseHeight = useResizeHeight(collapseElementRef);
 
-  const { classProps } = useCollapseStyleProps(restProps.isOpen);
+  const { classProps, styleProps: collapseStyleProps } = useCollapseStyleProps(
+    restProps.isOpen,
+    ElementTag,
+    collapseHeight,
+  );
   const { ariaProps, props: otherProps } = useCollapseAriaProps(restProps);
   const { styleProps, props: transferProps } = useStyleProps(otherProps);
-  const collapseStyleProps = {
+
+  const mergedCollapseStyleProps = {
     className: styleProps.className,
-    ...{ style: { height: restProps.isOpen ? collapseHeight : 0, ...styleProps.style } },
+    style: { ...collapseStyleProps, ...styleProps.style },
   };
+
+  // For inline elements, when open, render content outside the collapse element
+  const isInlineElement = ElementTag === 'span';
+  if (isInlineElement && restProps.isOpen) {
+    return children;
+  }
 
   return (
     <Transition in={restProps.isOpen} nodeRef={rootElementRef} timeout={transitionDuration}>
@@ -55,7 +66,7 @@ const Collapse = (props: SpiritCollapseProps) => {
           {...mergeStyleProps(ElementTag, {
             classProps: classProps.root,
             styleProps,
-            collapseStyleProps,
+            collapseStyleProps: mergedCollapseStyleProps,
             transitioningStyles: transitioningStyles[transitionState as keyof typeof transitioningStyles],
           })}
           ref={rootElementRef}

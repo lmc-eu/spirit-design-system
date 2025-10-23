@@ -4,15 +4,11 @@
 
 ### Basic
 
-```javascript
-import React, { useState} from 'react';
-import { Button } from '@lmc-eu/spirit-web-react/components';
-
-// ...
+```jsx
+import React, { useState } from 'react';
+import { Button } from '@lmc-eu/spirit-web-react';
 
 const [isOpen, toggle] = useState<boolean>(true);
-
-// ...
 
 <Button onClick={() => toggle(!isOpen)}>Collapse Trigger ({ isOpen ? 'Open' : 'Closed' })</Button>
 <Collapse isOpen={isOpen}>
@@ -22,15 +18,11 @@ const [isOpen, toggle] = useState<boolean>(true);
 
 ### With Toggle From Hook
 
-```javascript
-import React, { useState} from 'react';
-import { Button, Collapse, useCollapse } from '@lmc-eu/spirit-web-react/components';
-
-// ...
+```jsx
+import React, { useState } from 'react';
+import { Button, Collapse, useCollapse } from '@lmc-eu/spirit-web-react';
 
 const { isOpen, toggle } = useCollapse(false);
-
-// ...
 
 <Button onClick={() => toggle(!isOpen)}>Collapse Trigger ({ isOpen ? 'Open' : 'Closed' })</Button>
 <Collapse isOpen={isOpen}>
@@ -40,15 +32,11 @@ const { isOpen, toggle } = useCollapse(false);
 
 ### With Toggle Handler From Hook
 
-```javascript
-import React, { useState} from 'react';
-import { Button, Collapse, useCollapse } from '@lmc-eu/spirit-web-react/components';
-
-// ...
+```jsx
+import React, { useState } from 'react';
+import { Button, Collapse, useCollapse } from '@lmc-eu/spirit-web-react';
 
 const { isOpen, toggleHandler } = useCollapse(false);
-
-// ...
 
 <Button onClick={toggleHandler}>Collapse Trigger ({ isOpen ? 'Open' : 'Closed' })</Button>
 <Collapse isOpen={isOpen}>
@@ -58,15 +46,11 @@ const { isOpen, toggleHandler } = useCollapse(false);
 
 ### Responsive
 
-```javascript
-import React, { useState} from 'react';
-import { Button, Collapse } from '@lmc-eu/spirit-web-react/components';
-
-// ...
+```jsx
+import React, { useState } from 'react';
+import { Button, Collapse } from '@lmc-eu/spirit-web-react';
 
 const [isOpen, toggle] = useState<boolean>(true);
-
-// ...
 
 <Button hideFrom="tablet" onClick={() => toggle(!isOpen)}>
   Collapse Trigger ({ isOpen ? 'Open' : 'Closed' })
@@ -75,6 +59,30 @@ const [isOpen, toggle] = useState<boolean>(true);
   ...
 </Collapse>
 ```
+
+### Inline Expanding
+
+For inline text expansion (useful for "read more" functionality), use `elementType="span"`. This ensures the expanded content appears inline with existing text rather than on a new line.
+
+```jsx
+import React, { useState } from 'react';
+import { Button, Collapse } from '@lmc-eu/spirit-web-react';
+
+const [isOpen, toggle] = useState < boolean > false;
+
+<p>
+  This is some text that continues inline when expanded.{' '}
+  <Button onClick={() => toggle(!isOpen)}>{isOpen ? 'less' : '… more'}</Button>
+  <Collapse id="inline-collapse" isOpen={isOpen} elementType="span">
+    This additional content will appear inline with the existing text when expanded.
+  </Collapse>
+</p>;
+```
+
+Important Notes:
+
+- Use `elementType="span"` for inline behavior (currently the only supported inline element)
+- The collapse element is removed from the DOM when open to prevent content duplication
 
 ## API
 
@@ -94,9 +102,9 @@ and [escape hatches][readme-escape-hatches].
 
 ### Basic
 
-```javascript
+```jsx
 import React, { useState } from 'react';
-import { Button, UncontrolledCollapse } from '@lmc-eu/spirit-web-react/components';
+import { Button, UncontrolledCollapse } from '@lmc-eu/spirit-web-react';
 
 // ...
 
@@ -110,9 +118,9 @@ import { Button, UncontrolledCollapse } from '@lmc-eu/spirit-web-react/component
 </UncontrolledCollapse>;
 ```
 
-```javascript
+```jsx
 import React, { useState } from 'react';
-import { Button, UncontrolledCollapse } from '@lmc-eu/spirit-web-react/components';
+import { Button, UncontrolledCollapse } from '@lmc-eu/spirit-web-react';
 
 // ...
 
