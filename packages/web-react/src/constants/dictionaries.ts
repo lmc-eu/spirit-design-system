@@ -75,6 +75,10 @@ export const ComponentButtonColors = createUppercaseKeyDictionary(componentColor
 
 export const EmotionColors = createUppercaseKeyDictionary(emotionColors);
 
+export const NeutralColors = {
+  NEUTRAL: 'neutral',
+} as const;
+
 export const LinkColors = {
   PRIMARY: 'primary',
   SECONDARY: 'secondary',
