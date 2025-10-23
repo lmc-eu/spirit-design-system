@@ -111,4 +111,184 @@ describe('Collapse', () => {
 
     jest.useRealTimers();
   });
+
+  describe('span element behavior', () => {
+    it('should render content inline when span element is open', () => {
+      render(
+        <div data-testid="container">
+          <span>Before text </span>
+          <Collapse id="collapse" isOpen elementType="span">
+            Inline content
+          </Collapse>
+          <span> after text</span>
+        </div>,
+      );
+
+      const container = screen.getByTestId('container');
+      expect(container).toHaveTextContent('Before text Inline content after text');
+    });
+
+    it('should render content inside hidden span when closed', () => {
+      render(
+        <div>
+          <span>Before text </span>
+          <Collapse id="collapse" isOpen={false} elementType="span" data-testid="test">
+            Hidden content
+          </Collapse>
+          <span> after text</span>
+        </div>,
+      );
+
+      const collapseElement = screen.getByTestId('test');
+      expect(collapseElement).toHaveTextContent('Hidden content');
+      expect(collapseElement).not.toHaveClass('is-open');
+    });
+
+    it('should not render duplicate content when span is open', () => {
+      render(
+        <div data-testid="container">
+          <span>Before text </span>
+          <Collapse id="collapse" isOpen elementType="span">
+            Unique content
+          </Collapse>
+          <span> after text</span>
+        </div>,
+      );
+
+      const container = screen.getByTestId('container');
+      const { textContent } = container;
+      const matches = textContent?.match(/Unique content/g) || [];
+      expect(matches).toHaveLength(1);
+    });
+
+    it('should render content outside collapse element when span is open', () => {
+      render(
+        <div data-testid="container">
+          <span>Before text </span>
+          <Collapse id="collapse" isOpen elementType="span">
+            <span data-testid="inner-content">Inline content</span>
+          </Collapse>
+          <span> after text</span>
+        </div>,
+      );
+
+      const container = screen.getByTestId('container');
+      const innerContent = screen.getByTestId('inner-content');
+      expect(container).toContainElement(innerContent);
+      expect(container).toHaveTextContent('Before text Inline content after text');
+    });
+
+    it('should render content inside collapse element when span is closed', () => {
+      render(
+        <div data-testid="container">
+          <span>Before text </span>
+          <Collapse id="collapse" isOpen={false} elementType="span" data-testid="test">
+            <span data-testid="inner-content">Hidden content</span>
+          </Collapse>
+          <span> after text</span>
+        </div>,
+      );
+
+      const collapseElement = screen.getByTestId('test');
+      const innerContent = screen.getByTestId('inner-content');
+      expect(collapseElement).toContainElement(innerContent);
+    });
+
+    it('should toggle between inline and hidden behavior for span elements', () => {
+      const RenderCollapse = () => {
+        const [isOpen, setIsOpen] = useState(false);
+
+        return (
+          <div data-testid="container">
+            <span>Before text </span>
+            <button type="button" data-testid="toggle" onClick={() => setIsOpen(!isOpen)}>
+              Toggle
+            </button>
+            <Collapse id="collapse" isOpen={isOpen} elementType="span" data-testid="test">
+              Toggle content
+            </Collapse>
+            <span> after text</span>
+          </div>
+        );
+      };
+
+      render(<RenderCollapse />);
+
+      const container = screen.getByTestId('container');
+      const toggleButton = screen.getByTestId('toggle');
+      const collapseElement = screen.getByTestId('test');
+      expect(collapseElement).not.toHaveClass('is-open');
+
+      fireEvent.click(toggleButton);
+
+      expect(screen.queryByTestId('test')).not.toBeInTheDocument();
+      expect(container).toHaveTextContent('Before text ToggleToggle content after text');
+    });
+  });
+
+  describe('div element behavior (unchanged)', () => {
+    it('should continue to work as before for div elements', () => {
+      render(
+        <div data-testid="container">
+          <span>Before text </span>
+          <Collapse id="collapse" isOpen elementType="div" data-testid="test">
+            <span data-testid="inner-content">Block content</span>
+          </Collapse>
+          <span> after text</span>
+        </div>,
+      );
+
+      const collapseElement = screen.getByTestId('test');
+      const innerContent = screen.getByTestId('inner-content');
+      expect(collapseElement).toContainElement(innerContent);
+      expect(collapseElement).toHaveClass('is-open');
+    });
+
+    it('should use height-based transitions for div elements', () => {
+      render(
+        <Collapse id="collapse" isOpen elementType="div" data-testid="test">
+          Block content
+        </Collapse>,
+      );
+
+      const collapseElement = screen.getByTestId('test');
+      expect(collapseElement).toHaveClass('is-open');
+      expect(collapseElement.tagName.toLowerCase()).toBe('div');
+    });
+  });
+
+  describe('elementType prop validation', () => {
+    it('should accept span as elementType when closed', () => {
+      render(
+        <Collapse id="collapse" isOpen={false} elementType="span" data-testid="test">
+          Content
+        </Collapse>,
+      );
+
+      const element = screen.getByTestId('test');
+      expect(element.tagName.toLowerCase()).toBe('span');
+    });
+
+    it('should accept div as elementType', () => {
+      render(
+        <Collapse id="collapse" isOpen elementType="div" data-testid="test">
+          Content
+        </Collapse>,
+      );
+
+      const element = screen.getByTestId('test');
+      expect(element.tagName.toLowerCase()).toBe('div');
+    });
+
+    it('should default to div when elementType is not specified', () => {
+      render(
+        <Collapse id="collapse" isOpen data-testid="test">
+          Content
+        </Collapse>,
+      );
+
+      const element = screen.getByTestId('test');
+      expect(element.tagName.toLowerCase()).toBe('div');
+    });
+  });
 });
