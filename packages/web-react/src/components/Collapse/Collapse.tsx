@@ -41,10 +41,20 @@ const Collapse = (props: SpiritCollapseProps) => {
   const { classProps } = useCollapseStyleProps(restProps.isOpen);
   const { ariaProps, props: otherProps } = useCollapseAriaProps(restProps);
   const { styleProps, props: transferProps } = useStyleProps(otherProps);
+
+  // For span elements, don't use height-based transitions as they use display: none/inline
+  const isSpanElement = ElementTag === 'span';
   const collapseStyleProps = {
     className: styleProps.className,
-    ...{ style: { height: restProps.isOpen ? collapseHeight : 0, ...styleProps.style } },
+    ...(isSpanElement
+      ? { style: styleProps.style } // No height manipulation for span elements
+      : { style: { height: restProps.isOpen ? collapseHeight : 0, ...styleProps.style } }),
   };
+
+  // For span elements, when open, render content outside the collapse element
+  if (isSpanElement && restProps.isOpen) {
+    return children;
+  }
 
   return (
     <Transition in={restProps.isOpen} nodeRef={rootElementRef} timeout={transitionDuration}>

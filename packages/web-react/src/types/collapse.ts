@@ -1,7 +1,7 @@
 import { type ReactNode } from 'react';
 import { type Booleanish, type ChildrenProps, type ClickEvent, type StyleProps } from './shared';
 
-export type CollapseElementType = 'div' | 'article' | 'section' | 'main' | 'header' | 'footer';
+export type CollapseElementType = 'div' | 'span' | 'article' | 'section' | 'main' | 'header' | 'footer';
 
 export type CollapseResponsiveType = undefined | 'mobile' | 'tablet' | 'desktop';
 
