@@ -1,7 +1,10 @@
 import { type ElementType, type JSXElementConstructor } from 'react';
-import { Sizes } from '../constants';
+import { type ObjectFit, Sizes } from '../constants';
 import {
   type AlignmentXDictionaryType,
+  type BackgroundAccentColorsType,
+  type BackgroundColorsDictionaryType,
+  type BackgroundEmotionColorsType,
   type ChildrenProps,
   type DirectionExtendedDictionaryType,
   type StyleProps,
@@ -45,11 +48,19 @@ export interface SpiritCardProps<T extends ElementType = 'article'>
     StyleProps,
     TransferProps {}
 
-// CardMedia types
+export type CardMediaBackgroundColorsType =
+  | BackgroundColorsDictionaryType
+  | BackgroundAccentColorsType
+  | BackgroundEmotionColorsType;
+
+export type CardMediaObjectFitType = (typeof ObjectFit)[keyof typeof ObjectFit];
+
 export interface CardMediaProps {
+  backgroundColor?: CardMediaBackgroundColorsType;
+  fit?: CardMediaObjectFitType;
+  hasFilledHeight?: boolean;
   isExpanded?: boolean;
   size?: CardSizesDictionaryType;
-  hasFilledHeight?: boolean;
 }
 
 export interface SpiritCardMediaProps extends CardMediaProps, ChildrenProps, StyleProps, TransferProps {}

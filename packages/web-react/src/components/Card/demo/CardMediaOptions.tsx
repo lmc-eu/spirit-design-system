@@ -1,4 +1,5 @@
 import React from 'react';
+import { ObjectFit } from '../../../constants';
 import { ButtonLink } from '../../ButtonLink';
 import { Grid, GridItem } from '../../Grid';
 import Card from '../Card';
@@ -121,7 +122,7 @@ export const CardMediaOptions = () => (
     <GridItem UNSAFE_className="d-grid" columnEnd={{ tablet: 'span 2', desktop: 'span 4' }}>
       <Card direction="horizontal" isBoxed>
         <CardMedia size="medium" isExpanded>
-          {MEDIA_IMAGE}
+          <img src="https://picsum.photos/id/200/360/240" alt="" />
         </CardMedia>
         <CardBody>
           <CardEyebrow>Media options</CardEyebrow>
@@ -139,6 +140,32 @@ export const CardMediaOptions = () => (
           <ButtonLink href="#" color="primary">
             Primary
           </ButtonLink>
+          <ButtonLink href="#" color="secondary">
+            Secondary
+          </ButtonLink>
+        </CardFooter>
+      </Card>
+    </GridItem>
+
+    <GridItem UNSAFE_className="d-grid" columnEnd={{ tablet: 'span 2', desktop: 'span 4' }}>
+      <Card direction="horizontal" isBoxed>
+        <CardMedia size="medium" isExpanded backgroundColor="emotion-warning-basic" fit={ObjectFit.CONTAIN}>
+          <img src="https://picsum.photos/id/200/360/240" alt="" />
+        </CardMedia>
+        <CardBody>
+          <CardEyebrow>Media options</CardEyebrow>
+          <CardTitle isHeading>
+            <CardLink href="#">Medium size, expanded, warning background color, contain object fit</CardLink>
+          </CardTitle>
+          {/* User content */}
+          <p>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean fermentum risus id tortor. Integer lacinia.
+            Sed vel lectus.
+          </p>
+          {/* End user content */}
+        </CardBody>
+        <CardFooter>
+          <ButtonLink href="#">Primary</ButtonLink>
           <ButtonLink href="#" color="secondary">
             Secondary
           </ButtonLink>

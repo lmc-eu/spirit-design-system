@@ -1,11 +1,12 @@
 import classNames from 'classnames';
 import { type CSSProperties } from 'react';
+import { type ObjectFit } from '../../constants';
 import { useClassNamePrefix } from '../../hooks';
 import { type FileMetadata, type FileUploaderQueueLimitBehaviorType, type Validation } from '../../types';
 import { FileUploaderCropCSS, IMAGE_DIMENSION } from './constants';
 
 export interface FileUploaderStyleProps extends Validation {
-  imageObjectFit?: 'contain' | 'cover';
+  imageObjectFit?: (typeof ObjectFit)[keyof typeof ObjectFit];
   isDisabled?: boolean;
   isDisabledByQueueLimitBehavior?: boolean;
   isDragAndDropSupported?: boolean;

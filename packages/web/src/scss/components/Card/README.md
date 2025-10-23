@@ -207,6 +207,36 @@ content. This option works with both boxed and non-boxed Card, but is only avail
 🎉 Fun fact: The `.CardMedia--expanded` and `.CardMedia--filledHeight` modifiers produce the same result for non-boxed
 horizontal (and reversed horizontal) Cards. But in all other contexts, the two modifiers behave differently.
 
+### Object Fit
+
+You can control how the media content is resized to fit its container using the `--spirit-card-media-object-fit` CSS custom property.
+Available values are based on the CSS [object-fit][mdn-object-fit] property:
+
+- `cover` (default) — the media is sized to maintain its aspect ratio while filling the container (may be clipped)
+- `contain` — the media is scaled to maintain its aspect ratio while fitting within the container
+
+```html
+<div class="CardMedia CardMedia--auto" style="--spirit-card-media-object-fit: contain;">
+  <div class="CardMedia__canvas">
+    <img src="https://via.placeholder.com/300x200" alt="" />
+  </div>
+</div>
+```
+
+For infographics and images with fixed aspect ratios that should not be cropped, use `--spirit-card-media-object-fit: contain;`.
+
+### Background Color
+
+You can set the background color of the CardMedia container using [background color utility classes][dictionary-color].
+
+```html
+<div class="CardMedia CardMedia--auto bg-primary">
+  <div class="CardMedia__canvas">
+    <img src="https://via.placeholder.com/300x200" alt="" />
+  </div>
+</div>
+```
+
 ## CardLogo
 
 CardLogo is an optional subcomponent that displays a logo. To achieve the best visual result, use the PartnerLogo
@@ -435,9 +465,11 @@ When you put it all together:
 </article>
 ```
 
-[grid]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Grid/README.md
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
+[dictionary-color]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#color
 [dictionary-size]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#size
+[grid]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Grid/README.md
 [heydon-pickering-card]: https://inclusive-components.design/cards/
 [hugo-giraudel-card]: https://kittygiraudel.com/2022/04/02/accessible-cards/
+[mdn-object-fit]: https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit
 [ondrej-pohl]: https://youtu.be/SdlgZFKxs40?feature=shared&t=1010

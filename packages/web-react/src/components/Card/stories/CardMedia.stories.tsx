@@ -1,7 +1,9 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
+import { BackgroundColors, ObjectFit } from '../../../constants';
 import { CardSizes } from '../../../types';
+import { getAccentBackgroundColors, getEmotionBackgroundColors } from '../../../utils';
 import { ButtonLink } from '../../ButtonLink';
 import { Container } from '../../Container';
 import { PartnerLogo } from '../../PartnerLogo';
@@ -15,6 +17,9 @@ import CardTitle from '../CardTitle';
 import { LOGO, MEDIA_IMAGE } from '../demo/constants';
 import ReadMe from '../README.md';
 
+const accentBackgroundColorsObject = getAccentBackgroundColors();
+const emotionBackgroundColorsObject = getEmotionBackgroundColors();
+
 const meta: Meta<typeof CardMedia> = {
   title: 'Components/Card',
   component: CardMedia,
@@ -24,6 +29,28 @@ const meta: Meta<typeof CardMedia> = {
     },
   },
   argTypes: {
+    backgroundColor: {
+      control: 'select',
+      description: 'Background color of the CardMedia.',
+      options: [
+        ...Object.values(BackgroundColors),
+        ...[...Object.values(accentBackgroundColorsObject), ...Object.values(emotionBackgroundColorsObject)],
+        undefined,
+      ],
+      table: {
+        type: {
+          summary: 'BackgroundColorsDictionaryType | AccentColorsType | EmotionColorsType',
+        },
+      },
+    },
+    fit: {
+      control: 'select',
+      description: 'How the media content should be resized to fit its container.',
+      options: [ObjectFit.CONTAIN, ObjectFit.COVER, undefined],
+      table: {
+        defaultValue: { summary: ObjectFit.COVER },
+      },
+    },
     hasFilledHeight: {
       control: 'boolean',
       description: 'Fill the height of the media. Only works when the card direction is not vertical.',
@@ -48,6 +75,8 @@ const meta: Meta<typeof CardMedia> = {
     },
   },
   args: {
+    backgroundColor: undefined,
+    fit: ObjectFit.COVER,
     hasFilledHeight: false,
     isExpanded: false,
     size: CardSizes.AUTO,
