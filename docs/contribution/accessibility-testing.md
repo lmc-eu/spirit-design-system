@@ -5,7 +5,7 @@ Spirit Web React components now include automated accessibility checks powered b
 ## Test Harness
 
 - Jest configuration automatically registers `jest-axe` matchers (including `toHaveNoViolations`) and a custom `toHaveNoAxeViolations` matcher with richer failure output.
-- Reusable helpers live in `packages/web-react/tests/accessibilityTests`. Import `runAxe` from `@local/tests` in component tests.
+- Reusable helpers live in `packages/web-react/tests/testUtils`. Import `runAxe` from `@local/tests` in component tests.
 - Unit tests can be executed with:
 
   ```sh
