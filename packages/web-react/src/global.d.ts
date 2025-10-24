@@ -15,6 +15,26 @@ interface Window {
  */
 
 declare global {
+  namespace jest {
+    type AxeImpactLevel = 'minor' | 'moderate' | 'serious' | 'critical';
+
+    interface AxeMatcherOptions {
+      includedImpacts?: AxeImpactLevel[];
+    }
+
+    interface Matchers<R = void> {
+      toHaveNoAxeViolations(options?: AxeMatcherOptions): R;
+    }
+
+    interface Expect {
+      toHaveNoAxeViolations(options?: AxeMatcherOptions): unknown;
+    }
+
+    interface InverseMatchers<R = void> {
+      toHaveNoAxeViolations(options?: AxeMatcherOptions): R;
+    }
+  }
+
   module '*.md' {
     const content: string;
     export default content;
