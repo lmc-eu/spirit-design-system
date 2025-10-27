@@ -56,10 +56,19 @@ It inherits the `UNSTABLE_Header` height and sets the logo wrapper height to the
 You can use the `ProductLogo` component inside the `UNSTABLE_HeaderLogo` component.
 
 ```jsx
-<UNSTABLE_HeaderLogo href="#">
+<UNSTABLE_HeaderLogo href="#" aria-label="JobBoard homepage">
   <ProductLogo>{/* Logo go here */}</ProductLogo>
 </UNSTABLE_HeaderLogo>
 ```
+
+👉 If the `UNSTABLE_HeaderLogo` is rendered as an anchor element,
+make sure the link has an accessible name so screen reader users know where it leads.
+
+This can be achieved by:
+
+- Adding an `alt` attribute to an `<img>` tag inside (e.g., `<img alt="JobBoard homepage" />`)
+- Including a `<title>` element in an SVG (e.g., `<svg><title>JobBoard homepage</title>...</svg>`)
+- Adding an `aria-label` attribute to the link itself for decorative images
 
 ### API
 
@@ -76,7 +85,7 @@ Use [`Container`][web-react-container] and [`Flex`][web-react-flex] components t
 <UNSTABLE_Header>
   <Container>
     <Flex alignmentX="left" alignmentY="center">
-      <UNSTABLE_HeaderLogo href="#">
+      <UNSTABLE_HeaderLogo href="#" aria-label="JobBoard homepage">
         <ProductLogo>{/* Logo go here */}</ProductLogo>
       </UNSTABLE_HeaderLogo>
       {/* Navigation go here */}
@@ -93,7 +102,7 @@ For example you can make the content centered by setting the `Flex` alignment pr
 ```jsx
 <UNSTABLE_Header>
   <Flex alignmentX="center" alignmentY="center">
-    <UNSTABLE_HeaderLogo href="#">
+    <UNSTABLE_HeaderLogo href="#" aria-label="JobBoard homepage">
       <ProductLogo>{/* Content go here */}</ProductLogo>
     </UNSTABLE_HeaderLogo>
   </Flex>
@@ -106,7 +115,7 @@ Or you can modify the gaps between the content by setting the `Flex` `spacing` p
 <UNSTABLE_Header>
   <Container>
     <Flex alignmentX="left" alignmentY="center" spacing="space-500">
-      <UNSTABLE_HeaderLogo href="#">
+      <UNSTABLE_HeaderLogo href="#" aria-label="JobBoard homepage">
         <ProductLogo>{/* Logo go here */}</ProductLogo>
       </UNSTABLE_HeaderLogo>
       {/* Navigation go here */}
@@ -122,7 +131,7 @@ If you need the whole Header fluid you can do it by adding the `isFluid` prop to
 <UNSTABLE_Header>
   <Container isFluid>
     <Flex alignmentX="left" alignmentY="center" spacing="space-500">
-      <UNSTABLE_HeaderLogo href="#">
+      <UNSTABLE_HeaderLogo href="#" aria-label="JobBoard homepage">
         <ProductLogo>{/* Content go here */}</ProductLogo>
       </UNSTABLE_HeaderLogo>
     </Flex>
@@ -143,7 +152,7 @@ Use the composition mentioned above to create the layout you need.
 <UNSTABLE_Header>
   <Container>
     <Flex alignmentX="left" alignmentY="center" spacing="space-1000">
-      <UNSTABLE_HeaderLogo href="/">
+      <UNSTABLE_HeaderLogo href="/" aria-label="JobBoard homepage">
         <ProductLogo>{/* Logo go here */}</ProductLogo>
       </UNSTABLE_HeaderLogo>
       <Navigation>
