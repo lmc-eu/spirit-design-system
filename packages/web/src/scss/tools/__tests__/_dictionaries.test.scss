@@ -223,9 +223,9 @@
 
             @include test.expect() {
                 // stylelint-disable selector-no-qualifying-type, order/properties-order, no-descending-specificity, no-duplicate-selectors -- We need to allow this to make sass-true work
-                button.link-primary,
-                button.link-secondary,
-                button.link-tertiary {
+                :where(button).link-primary,
+                :where(button).link-secondary,
+                :where(button).link-tertiary {
                     appearance: none;
                     display: inline-flex;
                     flex: none;
@@ -244,22 +244,22 @@
                 }
 
                 @media (hover: hover) {
-                    button.link-primary:hover,
-                    button.link-secondary:hover,
-                    button.link-tertiary:hover {
+                    :where(button).link-primary:hover,
+                    :where(button).link-secondary:hover,
+                    :where(button).link-tertiary:hover {
                         text-decoration: underline;
                     }
                 }
 
-                button.link-primary:active,
-                button.link-secondary:active,
-                button.link-tertiary:active {
+                :where(button).link-primary:active,
+                :where(button).link-secondary:active,
+                :where(button).link-tertiary:active {
                     text-decoration: underline;
                 }
 
-                button.link-primary,
-                button.link-secondary,
-                button.link-tertiary {
+                :where(button).link-primary,
+                :where(button).link-secondary,
+                :where(button).link-tertiary {
                     user-select: text;
                 }
                 // stylelint-enable selector-no-qualifying-type, order/properties-order, no-descending-specificity, no-duplicate-selectors
