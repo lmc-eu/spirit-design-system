@@ -23,7 +23,7 @@ const HeaderWithNavigationAndNestedItems = () => {
       <UNSTABLE_Header>
         <Container>
           <Flex alignmentX="left" alignmentY="stretch" spacing="space-1000">
-            <UNSTABLE_HeaderLogo href="#">
+            <UNSTABLE_HeaderLogo href="#" aria-label="JobBoard homepage">
               <ProductLogo>{defaultSvgLogo}</ProductLogo>
             </UNSTABLE_HeaderLogo>
             <MainHorizontalNavigation />
