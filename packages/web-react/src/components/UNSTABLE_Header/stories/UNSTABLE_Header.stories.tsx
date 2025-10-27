@@ -26,7 +26,7 @@ const meta: Meta<typeof UNSTABLE_Header> = {
   args: {
     hasBottomDivider: false,
     children: (
-      <UNSTABLE_HeaderLogo href="/">
+      <UNSTABLE_HeaderLogo href="/" aria-label="JobBoard homepage">
         <ProductLogo>{defaultSvgLogo}</ProductLogo>
       </UNSTABLE_HeaderLogo>
     ),

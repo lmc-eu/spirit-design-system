@@ -16,6 +16,7 @@ const meta: Meta<typeof UNSTABLE_HeaderLogo> = {
   },
   args: {
     children: <ProductLogo>{defaultSvgLogo}</ProductLogo>,
+    'aria-label': 'JobBoard homepage',
   },
 };
 
