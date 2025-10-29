@@ -22,9 +22,11 @@
     "next": "15.2.2",
     "react": "19.0.0",
     "react-dom": "19.0.0",
+    "rehype-pretty-code": "^0.14.1",
     "remark-gfm": "^4.0.1",
     "sass": "1.85.1",
-    "sass-embedded": "1.85.1"
+    "sass-embedded": "1.85.1",
+    "shiki": "^3.13.0"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "14.2.24",
