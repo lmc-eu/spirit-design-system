@@ -1,37 +1,31 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { runAxe } from '@local/tests';
+import { accessibilityDisabledTest, accessibilityTest, runAxe } from '@local/tests';
 import Link from '../Link';
 
 describe('Link accessibility', () => {
-  it('is accessible with default appearance', async () => {
-    render(
-      <Link href="https://example.com" target="_self">
+  accessibilityTest(
+    (props) => (
+      <Link {...props} href="https://example.com" target="_self">
         Click me
-      </Link>,
-    );
+      </Link>
+    ),
+    'a',
+  );
 
-    const result = await runAxe(screen.getByRole('link'));
-
-    expect(result).toHaveNoAxeViolations();
-  });
+  accessibilityDisabledTest(
+    (props) => (
+      <Link {...props} href="https://example.com">
+        Disabled link
+      </Link>
+    ),
+    'a',
+  );
 
   it('is accessible when opening in a new tab', async () => {
     render(
       <Link href="https://example.com" target="_blank" rel="noreferrer noopener">
         Click me
-      </Link>,
-    );
-
-    const result = await runAxe(screen.getByRole('link'));
-
-    expect(result).toHaveNoAxeViolations();
-  });
-
-  it('is accessible when visually disabled', async () => {
-    render(
-      <Link href="https://example.com" isDisabled aria-disabled="true">
-        Disabled link
       </Link>,
     );
 

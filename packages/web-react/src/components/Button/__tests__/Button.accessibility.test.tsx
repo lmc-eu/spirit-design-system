@@ -1,36 +1,29 @@
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import React from 'react';
-import { runAxe } from '@local/tests';
+import { accessibilityDisabledTest, accessibilityLoadingTest, accessibilityTest, runAxe } from '@local/tests';
+import { Icon } from '../../Icon';
+import { VisuallyHidden } from '../../VisuallyHidden';
 import Button from '../Button';
 
 jest.mock('../../../hooks/useIcon');
 
 describe('Button accessibility', () => {
-  it('is accessible in its default state', async () => {
-    render(<Button>Submit</Button>);
+  accessibilityTest((props) => <Button {...props}>Submit</Button>, 'button');
 
-    const result = await runAxe(screen.getByRole('button'));
+  accessibilityDisabledTest((props) => <Button {...props}>Submit</Button>, 'button');
 
-    expect(result).toHaveNoAxeViolations();
-  });
+  accessibilityLoadingTest((props) => <Button {...props}>Loading</Button>, 'button');
 
-  it('is accessible when disabled', async () => {
-    render(<Button isDisabled>Submit</Button>);
-
-    const result = await runAxe(screen.getByRole('button'));
-
-    expect(result).toHaveNoAxeViolations();
-  });
-
-  it('is accessible while loading when contrast rule is ignored for animated spinner', async () => {
-    render(
-      <Button isLoading aria-live="polite">
-        Loading
+  it('is accessible when rendered as an icon-only action', async () => {
+    const { getByRole } = render(
+      <Button isSymmetrical>
+        <Icon name="hamburger" />
+        <VisuallyHidden>Menu</VisuallyHidden>
       </Button>,
     );
 
-    const result = await runAxe(screen.getByRole('button'));
+    const results = await runAxe(getByRole('button'));
 
-    expect(result).toHaveNoAxeViolations();
+    expect(results).toHaveNoAxeViolations();
   });
 });

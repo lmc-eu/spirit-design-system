@@ -1,30 +1,20 @@
-import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { runAxe } from '@local/tests';
+import { accessibilityValidationStateTest, accessibilityDisabledTest, accessibilityTest } from '@local/tests';
 import Toggle from '../Toggle';
 
 describe('Toggle accessibility', () => {
-  it('is accessible in default state', async () => {
-    render(<Toggle id="toggle" label="Toggle me" helperText="Helper text" />);
+  accessibilityTest(
+    (props) => <Toggle {...props} id="toggle" label="Toggle me" helperText="Helper text" />,
+    'input[type="checkbox"]',
+  );
 
-    const result = await runAxe(screen.getByRole('checkbox'));
+  accessibilityDisabledTest(
+    (props) => <Toggle {...props} id="toggle" label="Toggle me" isChecked />,
+    'input[type="checkbox"]',
+  );
 
-    expect(result).toHaveNoAxeViolations();
-  });
-
-  it('is accessible when checked and disabled', async () => {
-    render(<Toggle id="toggle" label="Toggle me" isChecked isDisabled />);
-
-    const result = await runAxe(screen.getByRole('checkbox'));
-
-    expect(result).toHaveNoAxeViolations();
-  });
-
-  it('is accessible with validation danger', async () => {
-    render(<Toggle id="toggle" label="Toggle me" validationState="danger" validationText="Validation text" />);
-
-    const result = await runAxe(screen.getByRole('checkbox'));
-
-    expect(result).toHaveNoAxeViolations();
-  });
+  accessibilityValidationStateTest(
+    (props) => <Toggle {...props} id="toggle" label="Toggle me" validationText="Validation text" />,
+    'input[type="checkbox"]',
+  );
 });
