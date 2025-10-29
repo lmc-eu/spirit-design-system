@@ -40,7 +40,7 @@ For each component ensure that accessible coverage includes:
 - Validation or error states
 - Interactive states (e.g. toggled, loading)
 
-When adding new stories or props, extend the matching accessibility spec so that regressions are caught automatically.
+When adding new stories or props, extend the matching accessibility specification so that regressions are caught automatically.
 
 ### Handling Known False Positives
 
@@ -70,4 +70,4 @@ expect(result).toHaveNoAxeViolations({
 });
 ```
 
-Refer to the new specs under `src/components/*/__tests__/*accessibility.test.tsx` for concrete examples.
+Refer to the new specifications under `src/components/*/__tests__/*accessibility.test.tsx` for concrete examples.
