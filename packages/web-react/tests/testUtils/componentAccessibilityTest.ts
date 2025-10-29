@@ -13,7 +13,9 @@ export const componentAccessibilityTest = (componentName: string, scenarios: A11
     scenarios.forEach(({ name, render: renderFn, getTarget, axeOptions }) => {
       it(name, async () => {
         const api = renderFn();
-        const target = getTarget ? getTarget(api) : (api.container.firstElementChild as Element | null) ?? api.container;
+        const target = getTarget
+          ? getTarget(api)
+          : ((api.container.firstElementChild as Element | null) ?? api.container);
         const results = await runAxe(target, axeOptions);
 
         expect(results).toHaveNoAxeViolations();

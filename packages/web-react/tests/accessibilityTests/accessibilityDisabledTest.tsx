@@ -3,7 +3,6 @@ import React from 'react';
 import type { ComponentType } from 'react';
 import { runAxe, type RunAxeOptions } from '../testUtils/runAxe';
 
-
 /**
  * Run accessibility checks for a component when it is disabled.
  *
