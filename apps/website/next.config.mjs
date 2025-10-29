@@ -1,12 +1,12 @@
 import { dirname, resolve, join } from 'path';
 import { fileURLToPath } from 'url';
 import createMDX from '@next/mdx';
-import type { NextConfig } from 'next';
 import remarkGfm from 'remark-gfm';
+import rehypePrettyCode from 'rehype-pretty-code';
 
 const pathDir = dirname(fileURLToPath(import.meta.url));
 
-const nextConfig: NextConfig = {
+const nextConfig = {
   transpilePackages: ['@lmc-eu/spirit-web-react'],
   reactStrictMode: true,
   sassOptions: {
@@ -24,7 +24,7 @@ const nextConfig: NextConfig = {
       ...config.resolve,
       alias: {
         ...config.resolve?.alias,
-        '@local': resolve(__dirname, './src'),
+        '@local': resolve(pathDir, './src'),
       },
     };
     config.module.rules.push({
@@ -39,7 +39,7 @@ const nextConfig: NextConfig = {
                   tag: 'use',
                   attribute: 'xlink:href',
                   type: 'src',
-                  filter: (tag: unknown, attribute: string | number, attributes: { [x: string]: string }) => {
+                  filter: (tag, attribute, attributes) => {
                     // Ensure the attribute value exists before calling startsWith
                     const value = attributes[attribute];
 
@@ -57,11 +57,15 @@ const nextConfig: NextConfig = {
   },
 };
 
+const rehypePrettyCodeOptions = {
+  theme: 'github-light',
+};
+
 const withMDX = createMDX({
   extension: /\.(md|mdx)$/,
   options: {
     remarkPlugins: [remarkGfm],
-    rehypePlugins: [],
+    rehypePlugins: [[rehypePrettyCode, rehypePrettyCodeOptions]],
   },
 });
 
