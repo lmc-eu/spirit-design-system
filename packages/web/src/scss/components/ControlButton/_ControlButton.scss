@@ -29,6 +29,10 @@ $_component-name-infix: spirit-string.convert-pascal-case-to-kebab-case($_compon
     }
 }
 
+.ControlButton--hasBackground {
+    background-color: var(--#{tokens.$css-variable-prefix}local-background-color);
+}
+
 .ControlButton--symmetrical {
     flex: none;
     aspect-ratio: 1;
