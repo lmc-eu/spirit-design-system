@@ -39,6 +39,9 @@ export type BackgroundEmotionColorsType<C = undefined> = GenerateColorsType<
   C
 >;
 
+export type TextNeutralColorsType<C = undefined> = 'neutral-basic' | 'neutral-subtle' | C;
+export type BackgroundNeutralColorsType<C = undefined> = 'neutral-basic' | 'neutral-subtle' | C;
+
 export type AccentColorNamesType<C = undefined> = ComponentKeys<typeof accentColors, C>;
 export type ComponentButtonColorNamesType<C = undefined> = ComponentKeys<typeof componentColors.button, C>;
 export type EmotionColorNamesType<C = undefined> = ComponentKeys<typeof emotionColors, C>;

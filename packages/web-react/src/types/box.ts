@@ -4,6 +4,7 @@ import {
   type BackgroundColorsDictionaryType,
   type BackgroundEmotionColorsType,
   type BackgroundGradientsDictionaryType,
+  type BackgroundNeutralColorsType,
   type BorderAccentColorsType,
   type BorderColorsDictionaryType,
   type BorderEmotionColorsType,
@@ -21,7 +22,8 @@ import {
 export type BoxBackgroundColorsType =
   | BackgroundColorsDictionaryType
   | BackgroundAccentColorsType
-  | BackgroundEmotionColorsType;
+  | BackgroundEmotionColorsType
+  | BackgroundNeutralColorsType;
 
 export interface BoxBaseProps extends ChildrenProps, TextColorProps, StyleProps {
   /** The background color of the box. */

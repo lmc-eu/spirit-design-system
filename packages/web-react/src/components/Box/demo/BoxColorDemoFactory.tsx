@@ -5,11 +5,16 @@ import {
   type TextAccentColorsType,
   type TextColorsDictionaryType,
   type TextEmotionColorsType,
+  type TextNeutralColorsType,
 } from '../../../types';
 import Box from '../Box';
 
 type BoxColorDemoType = 'background' | 'text';
-export type BoxTextColorsType = TextAccentColorsType | TextEmotionColorsType | TextColorsDictionaryType;
+export type BoxTextColorsType =
+  | TextAccentColorsType
+  | TextEmotionColorsType
+  | TextNeutralColorsType
+  | TextColorsDictionaryType;
 
 type BoxColorDemoFactoryProps = {
   label: string;

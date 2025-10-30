@@ -3,12 +3,14 @@ import {
   type AccentColorNamesType,
   type BackgroundAccentColorsType,
   type BackgroundEmotionColorsType,
+  type BackgroundNeutralColorsType,
   type BorderAccentColorsType,
   type BorderEmotionColorsType,
   type EmotionColorNamesType,
   type TextAccentColorsType,
   type TextColorsDictionaryType,
   type TextEmotionColorsType,
+  type TextNeutralColorsType,
 } from '../types';
 
 /**
@@ -87,6 +89,28 @@ export const getAccentBorderColors = (): Record<string, BorderAccentColorsType> 
  */
 export const getEmotionBorderColors = (): Record<string, BorderEmotionColorsType> =>
   generateColorsObject(emotionColors, 'border', 'emotion');
+
+/**
+ * Generates an object containing formatted keys for neutral text colors.
+ *
+ * @returns {Record<string, TextNeutralColorsType>} A record of formatted neutral color keys.
+ */
+export const getNeutralTextColors = (): Record<string, TextNeutralColorsType> =>
+  ({
+    NEUTRAL_BASIC: 'neutral-basic',
+    NEUTRAL_SUBTLE: 'neutral-subtle',
+  }) as Record<string, TextNeutralColorsType>;
+
+/**
+ * Generates an object containing formatted keys for neutral background colors.
+ *
+ * @returns {Record<string, BackgroundNeutralColorsType>} A record of formatted neutral color keys.
+ */
+export const getNeutralBackgroundColors = (): Record<string, BackgroundNeutralColorsType> =>
+  ({
+    NEUTRAL_BASIC: 'neutral-basic',
+    NEUTRAL_SUBTLE: 'neutral-subtle',
+  }) as Record<string, BackgroundNeutralColorsType>;
 
 export const getAccentColorNames = () => Object.keys(accentColors) as AccentColorNamesType[];
 export const getEmotionColorNames = () => Object.keys(emotionColors) as EmotionColorNamesType[];
