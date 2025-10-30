@@ -1,7 +1,6 @@
 import { render } from '@testing-library/react';
-import React from 'react';
-import type { ComponentType } from 'react';
-import { runAxe, type RunAxeOptions } from '../testUtils/runAxe';
+import React, { type ComponentType } from 'react';
+import { type RunAxeOptions, runAxe } from '../testUtils/runAxe';
 
 /**
  * Run accessibility checks for a component while it displays a loading state.
@@ -11,6 +10,7 @@ import { runAxe, type RunAxeOptions } from '../testUtils/runAxe';
  * @param axeOptions - Optional axe configuration overrides.
  */
 export const accessibilityLoadingTest = (
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   Component: ComponentType<any>,
   selector: string,
   axeOptions?: RunAxeOptions,

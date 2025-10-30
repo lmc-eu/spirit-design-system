@@ -1,5 +1,5 @@
-import { render } from '@testing-library/react';
-import { runAxe, type RunAxeOptions } from './runAxe';
+import { type render } from '@testing-library/react';
+import { type RunAxeOptions, runAxe } from './runAxe';
 
 interface A11yScenario {
   name: string;

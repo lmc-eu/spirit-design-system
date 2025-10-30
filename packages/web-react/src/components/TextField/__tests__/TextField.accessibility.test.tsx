@@ -1,5 +1,5 @@
 import React from 'react';
-import { accessibilityValidationStateTest, accessibilityDisabledTest, accessibilityTest } from '@local/tests';
+import { accessibilityDisabledTest, accessibilityTest, accessibilityValidationStateTest } from '@local/tests';
 import TextField from '../TextField';
 
 jest.mock('../../../hooks/useIcon');
