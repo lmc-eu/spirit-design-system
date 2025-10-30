@@ -50,13 +50,7 @@ $_chroma-scale-background-selected: 4;
 }
 
 // Mixin to generate dynamic background colors for interactive states.
-// Fall back to static colors when oklch() is not supported.
 @mixin background-interactive {
-    // Set up fallbacks when oklch() is not supported.
-    --#{tokens.$css-variable-prefix}local-background-color-state-default: #{tokens.$background-interactive-state-default};
-    --#{tokens.$css-variable-prefix}local-background-color-state-hover: #{tokens.$background-interactive-state-hover};
-    --#{tokens.$css-variable-prefix}local-background-color-state-active: #{tokens.$background-interactive-state-active};
-
     @supports (color: oklch(from red l c h)) {
         --#{tokens.$css-variable-prefix}local-background-color-state-hover: #{alter-color(
                 $color: var(--#{tokens.$css-variable-prefix}local-background-color),
@@ -68,18 +62,16 @@ $_chroma-scale-background-selected: 4;
                 $lightness-delta: $_lightness-delta-background-state-active,
                 $chroma-scale: $_chroma-scale-background-state-active
             )};
-    }
 
-    background-color: var(--#{tokens.$css-variable-prefix}local-background-color-state-default);
-
-    @media (hover: hover) {
-        &:hover {
-            background-color: var(--#{tokens.$css-variable-prefix}local-background-color-state-hover);
+        @media (hover: hover) {
+            &:hover {
+                background-color: var(--#{tokens.$css-variable-prefix}local-background-color-state-hover);
+            }
         }
-    }
 
-    &:active {
-        background-color: var(--#{tokens.$css-variable-prefix}local-background-color-state-active);
+        &:active {
+            background-color: var(--#{tokens.$css-variable-prefix}local-background-color-state-active);
+        }
     }
 }
 
