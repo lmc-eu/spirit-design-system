@@ -68,12 +68,17 @@ This works with any pair of available background and text colors.
 
 ## Variants
 
-### Subtle (Without Border)
+### With Background
+
+Add the `ControlButton--hasBackground` modifier class to the button to make
+the background visible in the default state. The modifier class reads the
+`--spirit-local-background-color` CSS variable which is typically provided by
+`bg-*` utility class.
 
 ```html
 <button
   type="button"
-  class="ControlButton ControlButton--medium dynamic-color-background-interactive accessibility-tap-target"
+  class="ControlButton ControlButton--medium ControlButton--hasBackground dynamic-color-background-interactive accessibility-tap-target"
   aria-label="Close"
 >
   <svg class="Icon" width="16" height="16" aria-hidden="true">
@@ -82,10 +87,12 @@ This works with any pair of available background and text colors.
 </button>
 ```
 
+This variant is useful for buttons that are layered on top of other elements.
+
 ### With Border
 
 Add the `dynamic-color-border` helper class to the button to make border
-visible:
+visible. The border color will adapt to the background color:
 
 ```html
 <button
