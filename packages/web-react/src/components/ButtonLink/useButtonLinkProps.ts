@@ -1,16 +1,5 @@
-import { type ClickEvent, type SpiritButtonLinkProps } from '../../types';
-
-const handleClick = (event: ClickEvent, isDisabled?: boolean, onClick?: (event: ClickEvent) => void) => {
-  if (isDisabled) {
-    event.preventDefault();
-
-    return;
-  }
-
-  if (onClick) {
-    onClick(event);
-  }
-};
+import { useClick } from '../../hooks';
+import { type SpiritButtonLinkProps } from '../../types';
 
 export type UseButtonLinkProps = Partial<SpiritButtonLinkProps>;
 export type UseButtonLinkReturn = {
@@ -19,6 +8,7 @@ export type UseButtonLinkReturn = {
 
 export const useButtonLinkProps = (props: UseButtonLinkProps): UseButtonLinkReturn => {
   const { elementType, isDisabled, isLoading, onClick, href, target, rel } = props;
+  const handleClick = useClick(isDisabled, onClick);
 
   const additionalProps = {
     role: 'button',
@@ -31,7 +21,7 @@ export const useButtonLinkProps = (props: UseButtonLinkProps): UseButtonLinkRetu
   return {
     buttonLinkProps: {
       ...additionalProps,
-      onClick: (event) => handleClick(event as ClickEvent, isDisabled, onClick),
+      onClick: handleClick,
     },
   };
 };

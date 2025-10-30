@@ -10,7 +10,6 @@ import {
   type BorderStyles,
   type BorderWidths,
   type ComponentButtonColors,
-  type EmotionColors,
   type Emphasis,
   type FillVariants,
   type Intensity,
@@ -83,9 +82,6 @@ export type ComponentButtonColorsDictionaryKeys = keyof typeof ComponentButtonCo
 export type ComponentButtonColorsDictionaryType<C = undefined> =
   | (typeof ComponentButtonColors)[ComponentButtonColorsDictionaryKeys]
   | C;
-
-export type EmotionColorsDictionaryKeys = keyof typeof EmotionColors;
-export type EmotionColorsDictionaryType<C = undefined> = (typeof EmotionColors)[EmotionColorsDictionaryKeys] | C;
 
 export type LinkColorsDictionaryKeys = keyof typeof LinkColors;
 export type LinkColorsDictionaryType<C = undefined> = (typeof LinkColors)[LinkColorsDictionaryKeys] | C;

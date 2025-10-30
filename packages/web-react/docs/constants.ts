@@ -8,6 +8,13 @@ export const DemoButtonComponentColors = {
   PLAIN: 'plain',
 } as const;
 
+export const DemoColorTypes = {
+  BASIC: 'basic',
+  NEUTRAL: 'neutral',
+  EMOTION: 'emotion',
+  ACCENT: 'accent',
+} as const;
+
 export const DemoEmotionColors = {
   SUCCESS: 'success',
   INFORMATIVE: 'informative',

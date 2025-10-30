@@ -1,6 +1,7 @@
 import { type ElementType, type JSXElementConstructor, type ReactNode } from 'react';
 
 export * from './adornments';
+export * from './buttons';
 export * from './colors';
 export * from './columns';
 export * from './dialogs';
