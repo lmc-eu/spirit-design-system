@@ -58,6 +58,8 @@ You can define background color using utility classes `bg-<color>`.
 <div class="bg-primary">Primary Background</div>
 <div class="bg-secondary">Secondary Background</div>
 <div class="bg-tertiary">Tertiary Background</div>
+<div class="bg-neutral-basic">Neutral-basic Background</div>
+<div class="bg-neutral-subtle">Neutral-subtle Background</div>
 ```
 
 ## Background Gradient
