@@ -55,4 +55,5 @@ export * from './toggle';
 export * from './tooltip';
 export * from './truncate';
 export * from './unstableHeader';
+export * from './unstableTable';
 export * from './visuallyHidden';
