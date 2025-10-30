@@ -1,6 +1,7 @@
 import { type ComponentPropsWithRef, type ElementType } from 'react';
 import type {
   ButtonSizesType,
+  ButtonType,
   ChildrenProps,
   ClickEvents,
   ComponentButtonColorNamesType,
@@ -12,7 +13,6 @@ import type {
 export type ButtonColor<C> = ComponentButtonColorNamesType<C> | EmotionColorNamesType<C>;
 /** @deprecated "SizesDictionaryType" fallback will be removed in the next major version. */
 export type ButtonSize<S> = keyof S extends never ? SizesDictionaryType : ButtonSizesType | S;
-export type ButtonType = 'button' | 'submit' | 'reset';
 
 export interface ButtonBaseProps<C = void, S = void> extends ChildrenProps, StyleProps, ClickEvents {
   /** The color of the button. */
