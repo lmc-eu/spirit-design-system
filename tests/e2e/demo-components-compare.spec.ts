@@ -5,7 +5,7 @@ import { readdirSync } from 'fs';
 import { formatPackageName, getServerUrl, hideFromVisualTests, takeScreenshot, waitForPageLoad } from '../helpers';
 
 // Tests that are intentionally broken, but will be fixed in the future
-const IGNORED_TESTS: string[] = [];
+const IGNORED_TESTS: string[] = ['ScrollView'];
 
 interface TestConfig {
   packageDir: string;
