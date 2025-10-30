@@ -1,11 +1,9 @@
 # ControlButton
 
-ControlButton is a simple button designed for secondary actions that adapts to its background color context.
+ControlButton is ideal for interfaces where buttons aren't meant to draw a lot of attention.
+It uses a lighter visual design than [Button][button] and adapts to its background color context.
 
 ## When to Use ControlButton
-
-ControlButton is ideal for interfaces where buttons aren't meant to draw a lot
-of attention.
 
 Use **ControlButton** for:
 

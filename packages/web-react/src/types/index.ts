@@ -9,6 +9,7 @@ export * from './card';
 export * from './checkbox';
 export * from './collapse';
 export * from './container';
+export * from './controlButton';
 export * from './divider';
 export * from './drawer';
 export * from './dropdown';
