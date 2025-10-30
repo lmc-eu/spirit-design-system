@@ -15,6 +15,7 @@ import {
   type FillVariants,
   type Intensity,
   type LinkColors,
+  type NeutralColors,
   type Placements,
   type ShapeVariants,
   type Sizes,
@@ -23,7 +24,7 @@ import {
   type TextColors,
   type ValidationStates,
 } from '../../constants';
-import { type TextAccentColorsType, type TextEmotionColorsType } from './colors';
+import { type TextAccentColorsType, type TextEmotionColorsType, type TextNeutralColorsType } from './colors';
 
 /**
  * Allow autocomplete for string literals.
@@ -90,11 +91,14 @@ export type EmotionColorsDictionaryType<C = undefined> = (typeof EmotionColors)[
 export type LinkColorsDictionaryKeys = keyof typeof LinkColors;
 export type LinkColorsDictionaryType<C = undefined> = (typeof LinkColors)[LinkColorsDictionaryKeys] | C;
 
+export type NeutralColorsDictionaryKeys = keyof typeof NeutralColors;
+export type NeutralColorsDictionaryType<C = undefined> = (typeof NeutralColors)[NeutralColorsDictionaryKeys] | C;
+
 export type TextColorsDictionaryKeys = keyof typeof TextColors;
 export type TextColorsDictionaryType<C = undefined> = (typeof TextColors)[TextColorsDictionaryKeys] | C;
 
 export interface TextColorProps<C = undefined> {
-  textColor?: C | TextAccentColorsType | TextEmotionColorsType | TextColorsDictionaryType;
+  textColor?: C | TextAccentColorsType | TextEmotionColorsType | TextNeutralColorsType | TextColorsDictionaryType;
 }
 
 /* Intensity */
