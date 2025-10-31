@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import React, { useRef } from 'react';
 import { useStyleProps } from '../../hooks';
 import { type SpiritScrollViewProps } from '../../types';
+import { Icon } from '../Icon';
 import { SCROLL_VIEW_DEFAULT_DIRECTION, SCROLL_VIEW_DEFAULT_OVERFLOW_DECORATOR } from './constants';
 import { useScrollPosition } from './useScrollPosition';
 import { useScrollViewStyleProps } from './useScrollViewStyleProps';
@@ -14,6 +15,8 @@ const ScrollView = (props: SpiritScrollViewProps) => {
     direction = SCROLL_VIEW_DEFAULT_DIRECTION,
     isScrollbarDisabled,
     overflowDecorators = SCROLL_VIEW_DEFAULT_OVERFLOW_DECORATOR,
+    hasArrows = false,
+    scrollStep = 300,
     ...restProps
   } = props;
 
@@ -47,6 +50,24 @@ const ScrollView = (props: SpiritScrollViewProps) => {
         </div>
       </div>
       <div className={classProps.overflowDecorators} aria-hidden="true" />
+      {hasArrows && (
+        <div className={classProps.arrows}>
+          <button
+            type="button"
+            className="ControlButton ControlButton--small ControlButton--symmetrical ControlButton--hasBackground accessibility-tap-target dynamic-color-border dynamic-color-background-interactive"
+            aria-label="Scroll left"
+          >
+            <Icon name="chevron-left" />
+          </button>
+          <button
+            type="button"
+            className="ControlButton ControlButton--small ControlButton--symmetrical ControlButton--hasBackground accessibility-tap-target dynamic-color-border dynamic-color-background-interactive"
+            aria-label="Scroll right"
+          >
+            <Icon name="chevron-right" />
+          </button>
+        </div>
+      )}
     </div>
   );
 };

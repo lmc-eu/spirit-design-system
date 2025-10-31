@@ -7,6 +7,8 @@ export interface ScrollViewBaseProps extends ChildrenProps, StyleProps {
   direction?: ScrollViewDirectionType;
   overflowDecorators?: ScrollViewOverflowDecoratorsType;
   isScrollbarDisabled?: boolean;
+  hasArrows?: boolean;
+  scrollStep?: number;
 }
 
 export interface SpiritScrollViewProps extends ScrollViewBaseProps {}
