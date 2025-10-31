@@ -2,6 +2,7 @@
 
 import classNames from 'classnames';
 import React, { useRef } from 'react';
+import { Direction } from '../../constants';
 import { useStyleProps } from '../../hooks';
 import { type SpiritScrollViewProps } from '../../types';
 import { Icon } from '../Icon';
@@ -21,7 +22,7 @@ const ScrollView = (props: SpiritScrollViewProps) => {
   } = props;
 
   const contentReference = useRef(null);
-  const viewportReference = useRef(null);
+  const viewportReference = useRef<HTMLDivElement>(null);
 
   const { isScrolledAtEnd, isScrolledAtStart, onScroll } = useScrollPosition({
     contentReference,
@@ -37,6 +38,16 @@ const ScrollView = (props: SpiritScrollViewProps) => {
   });
   const { styleProps, props: transferProps } = useStyleProps(restProps);
 
+  const handleScrollOnArrowClick = (step: number) => {
+    viewportReference.current?.scrollBy({
+      left: direction === Direction.HORIZONTAL ? step : 0,
+      top: direction === Direction.VERTICAL ? step : 0,
+      behavior: 'smooth',
+    });
+  };
+
+  const isHorizontal = direction === Direction.HORIZONTAL;
+
   return (
     <div {...transferProps} {...styleProps} className={classNames(classProps.root, styleProps.className)}>
       {/* To make scrollable element keyboard accessible, we need to add tabindex to it. */}
@@ -50,21 +61,24 @@ const ScrollView = (props: SpiritScrollViewProps) => {
         </div>
       </div>
       <div className={classProps.overflowDecorators} aria-hidden="true" />
+
       {hasArrows && (
         <div className={classProps.arrows}>
           <button
             type="button"
             className="ControlButton ControlButton--small ControlButton--symmetrical ControlButton--hasBackground accessibility-tap-target dynamic-color-border dynamic-color-background-interactive"
-            aria-label="Scroll left"
+            aria-label={isHorizontal ? 'Scroll left' : 'Scroll up'}
+            onClick={() => handleScrollOnArrowClick(isHorizontal ? -scrollStep : -scrollStep)}
           >
-            <Icon name="chevron-left" />
+            <Icon name={isHorizontal ? 'chevron-left' : 'chevron-up'} />
           </button>
           <button
             type="button"
             className="ControlButton ControlButton--small ControlButton--symmetrical ControlButton--hasBackground accessibility-tap-target dynamic-color-border dynamic-color-background-interactive"
-            aria-label="Scroll right"
+            aria-label={isHorizontal ? 'Scroll right' : 'Scroll down'}
+            onClick={() => handleScrollOnArrowClick(scrollStep)}
           >
-            <Icon name="chevron-right" />
+            <Icon name={isHorizontal ? 'chevron-right' : 'chevron-down'} />
           </button>
         </div>
       )}
