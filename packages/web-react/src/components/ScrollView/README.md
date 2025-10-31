@@ -8,7 +8,7 @@ limit using inline styles for demonstration purposes only.
 
 ### Default (Vertical)
 
-```javascript
+```jsx
 <div style={{ height: '250px' }}>
   <ScrollView>
     <p>
@@ -26,7 +26,7 @@ limit using inline styles for demonstration purposes only.
 
 ### Horizontal
 
-```javascript
+```jsx
 <ScrollView direction="horizontal">
   <p className="py-700" style={{ whiteSpace: 'nowrap' }}>
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
@@ -47,30 +47,80 @@ Shadows are used by default.
 
 You can use borders instead:
 
-```javascript
+```jsx
 <ScrollView overflowDecorators="borders" />
 ```
 
 Or both:
 
-```javascript
+```jsx
 <ScrollView overflowDecorators="both" />
 ```
 
 ## Hiding the Scrollbar
 
-```javascript
+```jsx
 <ScrollView isScrollbarDisabled />
+```
+
+## ScrollView Arrows
+
+Setting `hasArrows` to `true` adds arrow buttons at the start and end of the scrollable area.
+Clicking an arrow moves the viewport by `arrowsScrollStep` value in the ScrollView's direction.
+
+```jsx
+<ScrollView hasArrows arrowsScrollStep={200}>
+  {/* scrollable content */}
+</ScrollView>
+```
+
+### Custom Arrow Labels
+
+You can customize the arrow button labels using the `ariaLabelArrows` prop.
+Note that these labels are not visually displayed — they are used for accessibility purposes only.
+All properties (`top`, `bottom`, `start`, `end`) are optional, and you can define any combination of them.
+
+Default labels are automatically set based on the `direction` prop:
+
+- Horizontal: `Scroll left` and `Scroll right` (uses `start` and `end` properties)
+- Vertical: `Scroll up` and `Scroll down` (uses `top` and `bottom` properties)
+
+You can override all labels:
+
+```jsx
+<ScrollView
+  hasArrows
+  direction="horizontal"
+  ariaLabelArrows={{
+    start: 'Custom scroll left',
+    end: 'Custom scroll right',
+    top: 'Custom scroll up',
+    bottom: 'Custom scroll down',
+  }}
+>
+  {/* scrollable content */}
+</ScrollView>
+```
+
+Or override only one label:
+
+```jsx
+<ScrollView hasArrows direction="horizontal" ariaLabelArrows={{ start: 'Custom scroll left' }}>
+  {/* scrollable content */}
+</ScrollView>
 ```
 
 ## ScrollView Props
 
-| Name                  | Type                                | Default    | Required | Description                        |
-| --------------------- | ----------------------------------- | ---------- | -------- | ---------------------------------- |
-| `children`            | `ReactNode`                         | —          | ✓        | ScrollView children's nodes        |
-| `direction`           | \[`horizontal` \| `vertical`]       | `vertical` | ✕        | Direction of the wrapper           |
-| `isScrollbarDisabled` | `bool`                              | `false`    | ✕        | If true, the Scrollbar is disabled |
-| `overflowDecorators`  | \[`borders` \| `shadows` \| `both`] | `shadows`  | ✕        | ScrollView overflow decorators     |
+| Name                  | Type                                                              | Default    | Required | Description                                   |
+| --------------------- | ----------------------------------------------------------------- | ---------- | -------- | --------------------------------------------- |
+| `ariaLabelArrows`     | `{ top?: string, bottom?: string, start?: string; end?: string }` | —          | ✕        | Custom accessibility labels for arrow buttons |
+| `arrowsScrollStep`    | `number`                                                          | `300`      | ✕        | Scroll step for arrows (pixels)               |
+| `children`            | `ReactNode`                                                       | —          | ✓        | ScrollView children's nodes                   |
+| `direction`           | \[`horizontal` \| `vertical`]                                     | `vertical` | ✕        | Direction of the wrapper                      |
+| `hasArrows`           | `bool`                                                            | `false`    | ✕        | If true, arrows are displayed                 |
+| `isScrollbarDisabled` | `bool`                                                            | `false`    | ✕        | If true, the Scrollbar is disabled            |
+| `overflowDecorators`  | \[`borders` \| `shadows` \| `both`]                               | `shadows`  | ✕        | ScrollView overflow decorators                |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
