@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "vite build --watch",
     "build": "vite build",
-    "lint": "ESLINT_USE_FLAT_CONFIG=false eslint ./",
+    "lint": "eslint ./",
     "lint:fix": "yarn lint --fix",
     "test": "npm-run-all lint test:unit:coverage types",
     "test:unit": "jest",
@@ -24,6 +24,8 @@
     "vite": "6.4.1"
   },
   "devDependencies": {
+    "@eslint/compat": "^1.4.0",
+    "@eslint/eslintrc": "^3.3.1",
     "@lmc-eu/eslint-config-typescript": "2.1.5",
     "@swc/core": "1.11.22",
     "@swc/jest": "0.2.38",
