@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks';
 import { type ScrollViewDirectionType, type ScrollViewOverflowDecoratorsType } from '../../types';
+import { SCROLL_VIEW_DEFAULT_OVERFLOW_DECORATOR } from './constants';
 
 export interface UseScrollViewStyleProps {
   direction: ScrollViewDirectionType;
@@ -17,6 +18,7 @@ export interface UseScrollViewStyleReturn {
     viewport: string;
     content: string;
     overflowDecorators: string;
+    arrows: string;
   };
 }
 
@@ -25,8 +27,8 @@ export const useScrollViewStyleProps = ({
   isScrollbarDisabled,
   isScrolledAtEnd,
   isScrolledAtStart,
-  overflowDecorators,
-}: UseScrollViewStyleProps): UseScrollViewStyleReturn => {
+  overflowDecorators = SCROLL_VIEW_DEFAULT_OVERFLOW_DECORATOR,
+}: Partial<UseScrollViewStyleProps>): UseScrollViewStyleReturn => {
   const scrollViewRootClass = useClassNamePrefix('ScrollView');
   const scrollViewRootDirectionClass = `${scrollViewRootClass}--${direction}`;
   const scrollViewRootScrollbarDisabledClass = `${scrollViewRootClass}--scrollbarDisabled`;
@@ -41,6 +43,7 @@ export const useScrollViewStyleProps = ({
   const scrollViewRootOverflowDecoratorsClass = scrollViewRootOverflowDecoratorsClasses[overflowDecorators];
   const scrollViewAtStartClass = 'is-scrolled-at-start';
   const scrollViewAtEndClass = 'is-scrolled-at-end';
+  const scrollViewArrowsClass = `${scrollViewRootClass}__arrows`;
 
   return {
     classProps: {
@@ -52,6 +55,7 @@ export const useScrollViewStyleProps = ({
       viewport: scrollViewViewportClass,
       content: scrollViewContentClass,
       overflowDecorators: classNames(scrollViewOverflowDecoratorsClass, scrollViewRootOverflowDecoratorsClass),
+      arrows: scrollViewArrowsClass,
     },
   };
 };

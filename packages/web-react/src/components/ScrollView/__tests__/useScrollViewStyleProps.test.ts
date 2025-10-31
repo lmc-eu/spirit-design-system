@@ -22,6 +22,7 @@ describe('useScrollViewStyleProps', () => {
     expect(result.current.classProps.overflowDecorators).toBe(
       'ScrollView__overflowDecorators ScrollView__overflowDecorators--shadows',
     );
+    expect(result.current.classProps.arrows).toBe('ScrollView__arrows');
   });
 
   it('should return horizontal both variants of overflow decorators', () => {

@@ -13,6 +13,51 @@ const meta: Meta<typeof ScrollView> = {
     },
   },
   argTypes: {
+    ariaLabelArrows: {
+      control: 'select',
+      options: [
+        'default',
+        'custom-both-horizontal',
+        'custom-both-vertical',
+        'custom-start',
+        'custom-end',
+        'custom-top',
+        'custom-bottom',
+      ],
+      description: `Labels for the scroll arrows, mainly for accessibility purposes. In the real code you can
+        pass in any object with \`start\`/\`end\` properties for horizontal direction or \`top\`/\`bottom\` properties for vertical direction.
+        In this demo we have predefined options: \`default\`, \`custom-both-horizontal\`, \`custom-both-vertical\`, \`custom-start\`, \`custom-end\`, \`custom-top\`, and \`custom-bottom\`.
+        Please note the predefined options in this demo are not customizable.`,
+      mapping: {
+        default: undefined,
+        'custom-both-horizontal': {
+          start: 'Custom scroll left',
+          end: 'Custom scroll right',
+        },
+        'custom-both-vertical': {
+          top: 'Custom scroll up',
+          bottom: 'Custom scroll down',
+        },
+        'custom-start': {
+          start: 'Custom scroll left',
+        },
+        'custom-end': {
+          end: 'Custom scroll right',
+        },
+        'custom-top': {
+          top: 'Custom scroll up',
+        },
+        'custom-bottom': {
+          bottom: 'Custom scroll down',
+        },
+      },
+    },
+    arrowsScrollStep: {
+      control: 'number',
+      table: {
+        defaultValue: { summary: '300' },
+      },
+    },
     children: {
       control: 'select',
       options: ['vertical', 'horizontal'],
@@ -113,6 +158,12 @@ const meta: Meta<typeof ScrollView> = {
         defaultValue: { summary: 'vertical' },
       },
     },
+    hasArrows: {
+      control: 'boolean',
+      table: {
+        defaultValue: { summary: 'false' },
+      },
+    },
     isScrollbarDisabled: {
       control: 'boolean',
       table: {
@@ -128,8 +179,11 @@ const meta: Meta<typeof ScrollView> = {
     },
   },
   args: {
+    ariaLabelArrows: undefined,
+    arrowsScrollStep: 300,
     children: 'vertical',
     direction: 'vertical',
+    hasArrows: false,
     isScrollbarDisabled: false,
     overflowDecorators: 'shadows',
   },
