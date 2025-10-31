@@ -144,6 +144,84 @@ You can customize the shadows by overriding the following CSS variables:
 --scroll-view-end-shadow-background: linear-gradient(to top, #9400d3 0%, #9400d300 100%);
 ```
 
+## Arrow Controls
+
+You can optionally add arrow controls that appear when the content can be scrolled. Add a `ScrollView__arrows` container as a direct child of `ScrollView` and place two buttons inside. The controls are automatically positioned and shown/hidden based on scroll position.
+
+⚠️ Please note: The ScrollView component does not include JavaScript functionality for the arrow controls. You will need to implement the logic to handle scrolling when the arrows are clicked.
+
+Notes:
+
+- Arrows are overlayed and only become visible when the container is scrolled away from the corresponding edge.
+- When arrows are present, overflow shadow sizes adjust automatically to accommodate the controls.
+- Use descriptive `aria-label` values: "Scroll up/down" for vertical, "Scroll left/right" for horizontal.
+
+### Vertical Arrows
+
+```html
+<div class="ScrollView ScrollView--vertical" data-spirit-toggle="scrollView" data-spirit-direction="vertical">
+  <div class="ScrollView__viewport" data-spirit-element="viewport" tabindex="0">
+    <div class="ScrollView__content" data-spirit-element="content">
+      <!-- … -->
+    </div>
+  </div>
+  <div class="ScrollView__overflowDecorators ScrollView__overflowDecorators--shadows" aria-hidden="true"></div>
+  <div class="ScrollView__arrows">
+    <button
+      type="button"
+      class="ControlButton ControlButton--small ControlButton--symmetrical ControlButton--hasBackground accessibility-tap-target dynamic-color-border dynamic-color-background-interactive"
+      aria-label="Scroll up"
+    >
+      <svg class="Icon" width="16" height="16" aria-hidden="true">
+        <use xlink:href="/assets/icons/svg/sprite.svg#chevron-up" />
+      </svg>
+    </button>
+    <button
+      type="button"
+      class="ControlButton ControlButton--small ControlButton--symmetrical ControlButton--hasBackground accessibility-tap-target dynamic-color-border dynamic-color-background-interactive"
+      aria-label="Scroll down"
+    >
+      <svg class="Icon" width="16" height="16" aria-hidden="true">
+        <use xlink:href="/assets/icons/svg/sprite.svg#chevron-down" />
+      </svg>
+    </button>
+  </div>
+</div>
+```
+
+### Horizontal Arrows
+
+```html
+<div class="ScrollView ScrollView--horizontal" data-spirit-toggle="scrollView" data-spirit-direction="horizontal">
+  <div class="ScrollView__viewport" data-spirit-element="viewport" tabindex="0">
+    <div class="ScrollView__content" data-spirit-element="content">
+      <!-- … -->
+    </div>
+  </div>
+  <div class="ScrollView__overflowDecorators ScrollView__overflowDecorators--shadows" aria-hidden="true"></div>
+  <div class="ScrollView__arrows">
+    <button
+      type="button"
+      class="ControlButton ControlButton--small ControlButton--symmetrical ControlButton--hasBackground accessibility-tap-target dynamic-color-border dynamic-color-background-interactive"
+      aria-label="Scroll left"
+    >
+      <svg class="Icon" width="16" height="16" aria-hidden="true">
+        <use xlink:href="/assets/icons/svg/sprite.svg#chevron-left" />
+      </svg>
+    </button>
+    <button
+      type="button"
+      class="ControlButton ControlButton--small ControlButton--symmetrical ControlButton--hasBackground accessibility-tap-target dynamic-color-border dynamic-color-background-interactive"
+      aria-label="Scroll right"
+    >
+      <svg class="Icon" width="16" height="16" aria-hidden="true">
+        <use xlink:href="/assets/icons/svg/sprite.svg#chevron-right" />
+      </svg>
+    </button>
+  </div>
+</div>
+```
+
 ## Scrollbar
 
 Depending on user's operating system and browser, the scrollbar may be hidden by default or take up space in the container element.
