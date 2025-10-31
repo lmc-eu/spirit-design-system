@@ -44,9 +44,7 @@ export function generateSimple(
   });
 
   if (breakpointsString.length > 0) {
-    tokens = allTokens.sort((a, b) => {
-      return breakpointSort(a, b, breakpointsString, sortByValue);
-    });
+    tokens = allTokens.sort((a, b) => breakpointSort(a, b, breakpointsString, sortByValue));
   }
 
   const vars: string[] = [];
