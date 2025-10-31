@@ -2,9 +2,8 @@ module.exports = {
   extends: [
     'eslint-config-spirit',
     'plugin:@typescript-eslint/recommended',
-    'prettier',
-    'plugin:prettier/recommended',
     '@lmc-eu/eslint-config-jest',
+    'eslint-config-spirit/prettier',
   ],
 
   parser: '@typescript-eslint/parser', // the TypeScript parser we installed earlier
@@ -22,7 +21,7 @@ module.exports = {
     },
   },
 
-  plugins: ['promise', '@typescript-eslint', 'prettier'],
+  plugins: ['promise', '@typescript-eslint'],
   rules: {
     // disable for `scripts` and `config`
     '@typescript-eslint/no-var-requires': 'off',

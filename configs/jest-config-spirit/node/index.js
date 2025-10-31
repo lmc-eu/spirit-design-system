@@ -44,7 +44,8 @@ export const config = {
   // https://jestjs.io/docs/configuration#coveragereporters-arraystring--string-options
   coverageReporters: ['text', 'text-summary', ['lcov', { projectRoot: '<rootDir>/../../' }]],
 
-  // An array of regexp pattern strings that are matched against all module paths before those paths are 'visible' to the loader.
+  // An array of regexp pattern strings that are matched against all module paths
+  // before those paths are 'visible' to the loader.
   // https://jestjs.io/docs/configuration#modulepathignorepatterns-arraystring
   modulePathIgnorePatterns: ['<rootDir>/dist'],
 };
