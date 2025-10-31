@@ -4742,6 +4742,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@lmc-eu/spirit-exporters-js@workspace:exporters/js"
   dependencies:
+    "@eslint/compat": "npm:^1.4.0"
+    "@eslint/eslintrc": "npm:^3.3.1"
     "@swc/core": "npm:1.11.22"
     "@swc/jest": "npm:0.2.38"
     eslint: "npm:8.57.1"
