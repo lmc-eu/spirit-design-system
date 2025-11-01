@@ -4874,6 +4874,8 @@ __metadata:
     "@babel/preset-env": "npm:7.26.9"
     "@babel/preset-react": "npm:7.26.3"
     "@babel/preset-typescript": "npm:7.27.0"
+    "@eslint/compat": "npm:^1.4.0"
+    "@eslint/eslintrc": "npm:^3.3.1"
     "@floating-ui/react": "npm:^0.27.0"
     "@juggle/resize-observer": "npm:3.4.0"
     "@lmc-eu/eslint-config-base": "npm:3.1.3"
