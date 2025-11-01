@@ -1,6 +1,7 @@
 import { accentColors, emotionColors } from '@lmc-eu/spirit-design-tokens';
 import React from 'react';
 import { BackgroundColors, TextColors } from '../../../constants';
+import { type BackgroundNeutralColorsType } from '../../../types';
 import { getAccentBackgroundColors, getEmotionBackgroundColors } from '../../../utils';
 import { Grid } from '../../Grid';
 import BoxColorDemoFactory, { type BoxTextColorsType } from './BoxColorDemoFactory';
@@ -8,6 +9,7 @@ import { collectDefinedColorValues, getComplementaryColor } from './complementar
 
 const accentColorsObject = getAccentBackgroundColors();
 const emotionColorsObject = getEmotionBackgroundColors();
+const neutralBackgroundColors: BackgroundNeutralColorsType[] = ['neutral-basic', 'neutral-subtle'];
 
 const getComplementaryTextColor = (backgroundColor: string): BoxTextColorsType =>
   getComplementaryColor({
@@ -20,6 +22,7 @@ const getComplementaryTextColor = (backgroundColor: string): BoxTextColorsType =
 
 const BoxWithBackgroundColor = () => {
   const accentBackgroundColors = collectDefinedColorValues(accentColorsObject);
+  const backgroundColors = [...Object.values(BackgroundColors), ...neutralBackgroundColors];
   const emotionBackgroundColors = collectDefinedColorValues(emotionColorsObject);
 
   return (
@@ -29,7 +32,7 @@ const BoxWithBackgroundColor = () => {
         <BoxColorDemoFactory
           label="Background colors"
           demoType="background"
-          colorList={Object.values(BackgroundColors)}
+          colorList={backgroundColors}
           getComplementaryColor={getComplementaryTextColor}
         />
         <BoxColorDemoFactory

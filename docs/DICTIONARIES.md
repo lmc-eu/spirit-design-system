@@ -46,6 +46,7 @@ This project uses `dictionaries` to unify props between different components.
 | Component Button Color | `primary`, `secondary`, `tertiary`, `plain`   | ComponentButtonColor |
 | Emotion Color          | `success`, `informative`, `warning`, `danger` | EmotionColor         |
 | Link Color             | `primary`, `secondary`, `tertiary`            | LinkColor            |
+| Neutral Color          | `neutral`                                     | NeutralColor         |
 | Text Color             | `primary`, `secondary`, `tertiary`            | TextColor            |
 
 ### Intensity
