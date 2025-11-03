@@ -3,7 +3,6 @@ import React, { type ComponentType } from 'react';
 import { ClassNamePrefixProvider } from '../../src/context/ClassNamePrefixContext';
 import getElement from '../testUtils/getElement';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const classNamePrefixProviderTest = (Component: ComponentType<any>, className: string, testId?: string) => {
   it('renders with class name prefix', async () => {
     const prefix = 'lmc';

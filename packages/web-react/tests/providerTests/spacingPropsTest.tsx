@@ -2,7 +2,6 @@ import { render, waitFor } from '@testing-library/react';
 import React, { type ComponentType } from 'react';
 import getElement from '../testUtils/getElement';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const spacingPropsTest = (Component: ComponentType<any>, prefix: string, testId?: string) => {
   it.each([
     // spacing, spacingX, spacingY, expectedStyle

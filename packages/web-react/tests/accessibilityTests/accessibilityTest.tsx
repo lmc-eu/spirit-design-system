@@ -10,7 +10,6 @@ import { type RunAxeOptions, runAxe } from '../testUtils/runAxe';
  * @param selector - CSS selector used to resolve the element for axe.
  * @param axeOptions - Optional axe configuration overrides.
  */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const accessibilityTest = (Component: ComponentType<any>, selector: string, axeOptions?: RunAxeOptions) => {
   it('should be accessible in its default state', async () => {
     const { container } = render(<Component />);
