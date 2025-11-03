@@ -33,7 +33,6 @@ const validateHTMLForComponent = (container: HTMLElement) => {
   elements.forEach((element) => validateHTMLAttributes(element));
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const validHtmlAttributesTest = (Component: ComponentType<any>, props: object = {}) => {
   const componentName = getComponentName(Component);
 

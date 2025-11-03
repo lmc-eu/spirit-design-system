@@ -11,7 +11,6 @@ import { type RunAxeOptions, runAxe } from '../testUtils/runAxe';
  * @param axeOptions - Optional axe configuration overrides.
  */
 export const accessibilityDisabledTest = (
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   Component: ComponentType<any>,
   selector: string,
   axeOptions?: RunAxeOptions,

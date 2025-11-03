@@ -2,7 +2,6 @@ import { render, screen } from '@testing-library/react';
 import React, { type ComponentType } from 'react';
 import { getComponentName } from '../testUtils/getComponentName';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const ariaAttributesTest = (Component: ComponentType<any>, props: object = {}) => {
   const componentName = getComponentName(Component);
 

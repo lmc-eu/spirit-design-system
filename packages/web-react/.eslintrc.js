@@ -175,5 +175,13 @@ module.exports = {
         '@typescript-eslint/no-var-requires': 'off',
       },
     },
+    {
+      // Allow generically typed helpers in tests to accept any component factory.
+      // @see https://typescript-eslint.io/rules/no-explicit-any
+      files: ['tests/**/*.{ts,tsx}'],
+      rules: {
+        '@typescript-eslint/no-explicit-any': 'off',
+      },
+    },
   ],
 };

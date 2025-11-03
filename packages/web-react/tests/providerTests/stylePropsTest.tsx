@@ -3,7 +3,6 @@ import React, { type ComponentType } from 'react';
 import getElement from '../testUtils/getElement';
 import { themePropsTest } from './themePropsTest';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const stylePropsTest = (Component: ComponentType<any>, testId?: string) => {
   themePropsTest(Component, testId);
 

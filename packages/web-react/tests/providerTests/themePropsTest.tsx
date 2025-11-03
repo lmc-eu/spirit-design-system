@@ -6,7 +6,6 @@ const DEFAULT_THEME = 'theme-light-default';
 const CAMEL_CASE_THEME = 'themeLightDefault';
 const NORMALIZED_THEME = 'theme-light-default';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const themePropsTest = (Component: ComponentType<any>, testId?: string) => {
   it('renders theme class when theme prop provided', async () => {
     const dom = render(<Component theme={DEFAULT_THEME} />);
