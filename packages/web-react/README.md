@@ -75,6 +75,14 @@ If the component sets a value for any of these attributes, the value passed in w
 
 Most components also accept native HTML attributes based on the component's element type.
 
+## Testing
+
+### Accessibility Testing
+
+- Accessibility tests live alongside component specs under `src/components/**/__tests__/*accessibility.test.tsx`.
+- Use `runAxe` from `@local/tests` and assert with `expect(results).toHaveNoAxeViolations()` to guard against regressions.
+- Detailed authoring guidance is available in [`docs/contribution/accessibility-testing.md`][accessibility-testing].
+
 ## Styling
 
 Spirit components are designed to be consistent across all Alma Career applications. They include built-in styling that has been
@@ -222,6 +230,7 @@ afterEach(() => {
 
 See the [LICENSE](LICENSE.md) file for information.
 
+[accessibility-testing]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/contribution/accessibility-testing.md
 [all-deprecations]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/DEPRECATIONS.md
 [examples]: https://spirit-design-system-storybook.netlify.app
 [web-docs]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web#readme

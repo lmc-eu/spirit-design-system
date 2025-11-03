@@ -63,7 +63,7 @@ TextField with password toggle (button to reveal the password):
 | `placeholder`       | `string`                                                                     | —        | ✕        | Input placeholder                                                       |
 | `ref`               | `ForwardedRef<HTMLInputElement>`                                             | —        | ✕        | Input element reference                                                 |
 | `size`              | [Size dictionary][dictionary-size]                                           | `medium` | ✕        | Size variant                                                            |
-| `type`              | \[`email` \| `number` \| `password` \| `search` \| `tel` \| `text` \| `url`] | —        | ✕        | Input type                                                              |
+| `type`              | \[`email` \| `number` \| `password` \| `search` \| `tel` \| `text` \| `url`] | `text`   | ✕        | Input type                                                              |
 | `validationState`   | [Validation dictionary][dictionary-validation]                               | —        | ✕        | Type of validation state                                                |
 | `validationText`    | \[`ReactNode` \| `ReactNode[]`]                                              | —        | ✕        | Validation text                                                         |
 | `value`             | `string`                                                                     | —        | ✕        | Input value \*                                                          |
