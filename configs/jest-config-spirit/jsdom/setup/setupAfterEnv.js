@@ -1,6 +1,14 @@
 import '@testing-library/jest-dom';
+import { createRequire } from 'module';
 import { TextEncoder, TextDecoder } from 'util';
 import ResizeObserverPolyfill from 'resize-observer-polyfill';
+import { registerA11yMatchers } from '../matchers/index.js';
+
+const require = createRequire(import.meta.url);
+
+if (typeof document !== 'undefined') {
+  require('jest-axe/extend-expect');
+}
 
 /**
  * Maybe we can just mock the ResizeObserver
@@ -8,6 +16,8 @@ import ResizeObserverPolyfill from 'resize-observer-polyfill';
  * @see { link https://github.com/carbon-design-system/carbon/blob/main/config/jest-config-carbon/setup/setup.js#L38-L46 }
  */
 global.ResizeObserver = ResizeObserverPolyfill;
+
+registerA11yMatchers();
 
 /**
  * @todo Place here the content of the `packages/web-react/config/jest/setupTestingLibrary.ts`
