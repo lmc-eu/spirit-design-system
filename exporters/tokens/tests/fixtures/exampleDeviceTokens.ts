@@ -19,7 +19,7 @@ const testToken = {
       options: [
         {
           id: 'theme-tokens-id',
-          name: 'Theme',
+          name: 'Theme tokens',
         },
         {
           id: 'primitives-id',
@@ -27,7 +27,7 @@ const testToken = {
         },
         {
           id: 'global-tokens-id',
-          name: 'Global',
+          name: 'Global tokens',
         },
         {
           id: 'device-tokens-id',
@@ -58,7 +58,7 @@ const testTokenBreakpoint = {
       options: [
         {
           id: 'theme-tokens-id',
-          name: 'Theme',
+          name: 'Theme tokens',
         },
         {
           id: 'primitives-id',
@@ -66,7 +66,7 @@ const testTokenBreakpoint = {
         },
         {
           id: 'global-tokens-id',
-          name: 'Global',
+          name: 'Global tokens',
         },
         {
           id: 'device-tokens-id',
