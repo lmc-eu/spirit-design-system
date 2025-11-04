@@ -196,12 +196,12 @@ focus,`;
   describe('getTokenAlias', () => {
     it('should return token alias for non-numeric', () => {
       const token = exampleTypographyTokens.get('typographyRef2') as Token;
-      expect(getTokenAlias(token, false)).toBe('bold-underline');
+      expect(getTokenAlias(token, false)).toBe('bold-link');
     });
 
     it('should return token alias for non-numeric with js output', () => {
       const token = exampleTypographyTokens.get('typographyRef2') as Token;
-      expect(getTokenAlias(token, true)).toBe('boldUnderline');
+      expect(getTokenAlias(token, true)).toBe('boldLink');
     });
   });
 

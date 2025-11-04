@@ -5,6 +5,7 @@ import { convertToJs, convertToScss, deepMergeObjects } from '../helpers/objectH
 import { generateStylesFromTokens } from './stylesGenerator';
 import { DeviceDimensionMap, type StylesObjectType, generateStylesObjectFromTokens } from './stylesObjectGenerator';
 import { findTokenPrefix } from '../helpers/findTokenPrefix';
+import { filterExcludedTokens } from '../filters/excludedTokens';
 import { generateMixinFromTokens } from './mixinGenerator';
 
 // Add disclaimer to the top of the content
@@ -13,12 +14,13 @@ export const addDisclaimer = (content: string): string => {
 };
 
 export const filterTokensByTypeAndGroup = (tokens: Token[], type: TokenType, group: string) => {
-  return tokens.filter((token) => {
+  const filteredTokens = filterExcludedTokens(tokens);
+
+  return filteredTokens.filter((token) => {
     const hasMatchingType = token.tokenType === type;
     const isInGroup = token.origin?.name?.includes(group);
-    const hasValidTypography = !(token.tokenType === TokenType.typography && token.name.includes('-Underline'));
 
-    return hasMatchingType && isInGroup && hasValidTypography;
+    return hasMatchingType && isInGroup;
   });
 };
 

@@ -96,8 +96,9 @@ The exporter handles specific exceptions to the general logic of token processin
 - Color tokens with multiple references – When processing color tokens containing multiple color references (e.g., gradients with multiple stops), the exporter automatically generates numbered CSS variables for each color.
   These variables follow the pattern `--{tokenPrefix}color-{groupName}-{name}-color-XX`, where `XX` is an incremented counter for each color reference in the token. This ensures that all color components of a token remain
   customizable while maintaining a clear and structured naming convention. Additionally, occurrences of `0px` are normalized to `0` for consistency.
-- Typography tokens with Underline – Typography tokens that include `-Underline` in their name are intentionally excluded from processing. This ensures that these tokens do not interfere with standard typography styling
+- Typography tokens with Link – Typography tokens that include `Link` in their name are intentionally excluded from processing. This ensures that these tokens do not interfere with standard typography styling
   and are not mistakenly included in style mappings.
+- Tokens with `figma-` – Tokens that contain `figma-` in their name are intentionally excluded from processing. This ensures that internal Figma tokens are not included in the exported output.
 - `breakpoint-mobile` token: This token is assigned a fixed value of `0`, deviating from standard processing rules. This ensures compatibility with predefined requirements and reflects its role in responsive design settings.
 
 ### Invariant Token Aliases

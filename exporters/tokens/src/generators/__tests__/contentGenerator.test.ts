@@ -82,7 +82,7 @@ describe('contentGenerator', () => {
       expect(filterTokensByTypeAndGroup(tokens, type, group)).toStrictEqual(expectedTokens);
     });
 
-    it(`should filter ${dataTypographyProviderItems.type} token type and ${dataTypographyProviderItems.group} group and exclude tokens with "-Underline"`, () => {
+    it(`should filter ${dataTypographyProviderItems.type} token type and ${dataTypographyProviderItems.group} group and exclude tokens with "Link" in name`, () => {
       const tokens = Array.from(exampleTypographyTokens.values());
       const expectedTokens = [exampleTypographyTokens.get(dataTypographyProviderItems.tokenIdentifier) as Token];
 
@@ -91,6 +91,15 @@ describe('contentGenerator', () => {
         dataTypographyProviderItems.type,
         dataTypographyProviderItems.group,
       );
+
+      expect(filteredTokens).toStrictEqual(expectedTokens);
+    });
+
+    it('should filter tokens with "figma-" prefix', () => {
+      const tokens = Array.from(exampleDimensionAndStringTokens.values());
+      const expectedTokens = [exampleDimensionAndStringTokens.get('dimensionRef') as Token];
+
+      const filteredTokens = filterTokensByTypeAndGroup(tokens, TokenType.dimension, 'Grid');
 
       expect(filteredTokens).toStrictEqual(expectedTokens);
     });
