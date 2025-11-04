@@ -24,11 +24,11 @@ exampleTypographyTokens.set('typographyRef1', {
 } as TypographyToken);
 exampleTypographyTokens.set('typographyRef2', {
   id: 'typographyRef2',
-  name: 'Bold-Underline',
+  name: 'Bold-Link',
   tokenType: TokenType.typography,
   parentGroupId: '7',
   origin: {
-    name: 'Heading/XLarge/Bold-Underline',
+    name: 'Heading/XLarge/Bold-Link',
   },
   value: {
     fontSize: { unit: 'Pixels', measure: 40, referencedTokenId: 'font-size-id' },

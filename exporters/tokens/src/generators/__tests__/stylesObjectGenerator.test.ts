@@ -10,6 +10,7 @@ import { exampleDimensionAndStringTokens } from '../../../tests/fixtures/example
 import { exampleGroups } from '../../../tests/fixtures/exampleGroups';
 import { exampleTypographyTokens } from '../../../tests/fixtures/exampleTypographyTokens';
 import { sampleConfigurationDefault } from '../../../tests/fixtures/sampleConfiguration';
+import { filterExcludedTokens } from '../../filters/excludedTokens';
 import {
   colorGroupsReducer,
   createGlobalColorsObject,
@@ -82,14 +83,8 @@ describe('stylesObjectGenerator', () => {
               // eslint-disable-next-line quotes -- we are handling special characters
               '(\nfont-family: "\'Inter\', sans-serif",\nfont-size: 40px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.3,\n)',
           },
-          '$heading-xlarge-bold-underline': {
-            mobile:
-              // eslint-disable-next-line quotes -- we are handling special characters
-              '(\nfont-family: "\'Inter\', sans-serif",\nfont-size: 40px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.3,\n)',
-          },
           $styles: {
             'heading-xlarge-bold': '$heading-xlarge-bold',
-            'heading-xlarge-bold-underline': '$heading-xlarge-bold-underline',
             moveToTheEnd: 'true',
           },
         },
@@ -101,14 +96,9 @@ describe('stylesObjectGenerator', () => {
         expectedStyles: {
           styles: {
             headingXlargeBold: 'headingXlargeBold',
-            headingXlargeBoldUnderline: 'headingXlargeBoldUnderline',
             moveToTheEnd: 'true',
           },
           headingXlargeBold: {
-            mobile:
-              "{\nfontFamily: \"'Inter', sans-serif\",\nfontSize: '40px',\nfontStyle: 'normal',\nfontWeight: 700,\nlineHeight: 1.3,\n}",
-          },
-          headingXlargeBoldUnderline: {
             mobile:
               "{\nfontFamily: \"'Inter', sans-serif\",\nfontSize: '40px',\nfontStyle: 'normal',\nfontWeight: 700,\nlineHeight: 1.3,\n}",
           },
@@ -167,7 +157,8 @@ describe('stylesObjectGenerator', () => {
     ];
 
     it.each(dataProvider)('$description', ({ tokens, expectedStyles, hasJsOutput }) => {
-      const styles = generateStylesObjectFromTokens(Array.from(tokens.values()), tokenGroups, true, hasJsOutput, false);
+      const filteredTokens = filterExcludedTokens(Array.from(tokens.values()));
+      const styles = generateStylesObjectFromTokens(filteredTokens, tokenGroups, true, hasJsOutput, false);
 
       expect(styles).toStrictEqual(expectedStyles);
     });

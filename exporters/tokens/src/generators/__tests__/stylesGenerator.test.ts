@@ -15,6 +15,7 @@ import { examplePrefixToken } from '../../../tests/fixtures/examplePrefixToken';
 import { exampleShadowTokens } from '../../../tests/fixtures/exampleShadowTokens';
 import { sampleConfigurationDefault } from '../../../tests/fixtures/sampleConfiguration';
 import { findTokenPrefix } from '../../helpers/findTokenPrefix';
+import { filterExcludedTokens } from '../../filters/excludedTokens';
 import { generateStylesFromTokens, tokenToStyleByType } from '../stylesGenerator';
 
 const mappedTokens: Map<string, Token> = new Map([]);
@@ -250,8 +251,9 @@ describe('stylesGenerator', () => {
       ({ tokens, hasJsOutput, hasMixin, hasParentPrefix, hasTokenPrefix, expectedStyles }) => {
         const prefixTokens = Array.from(examplePrefixToken.values());
         const tokenPrefix = hasTokenPrefix ? findTokenPrefix(prefixTokens) : '';
+        const filteredTokens = filterExcludedTokens(Array.from(tokens.values()));
         const styles = generateStylesFromTokens(
-          Array.from(tokens.values()),
+          filteredTokens,
           mappedTokens,
           tokenGroups,
           tokenPrefix,

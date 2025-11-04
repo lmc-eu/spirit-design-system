@@ -70,6 +70,19 @@ exampleDimensionAndStringTokens.set('stringRef', {
   propertyValues: { collection: 'global-tokens-id' },
 } as unknown as StringToken);
 
+exampleDimensionAndStringTokens.set('figmaTokenRef', {
+  id: 'figmaTokenRef',
+  name: 'figma-internal-token',
+  tokenType: TokenType.dimension,
+  parentGroupId: '3',
+  origin: {
+    name: 'Grid/spacing/figma-internal-token',
+  },
+  value: testDimension,
+  properties: testProperties,
+  propertyValues: { collection: 'global-tokens-id' },
+} as unknown as DimensionToken);
+
 export const exampleInvariantTokens = new Map<string, Token>();
 exampleInvariantTokens.set('radiiRef', {
   id: 'radiiRef',
