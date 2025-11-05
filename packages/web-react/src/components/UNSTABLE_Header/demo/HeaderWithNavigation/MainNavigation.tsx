@@ -1,5 +1,5 @@
 import React from 'react';
-import { Direction, ShapeVariants } from '../../../../constants';
+import { Direction, ShapeVariants, isDirectionHorizontal } from '../../../../constants';
 import { type NavigationActionVariantsType, type SpiritNavigationProps } from '../../../../types';
 import { Navigation, NavigationAction, NavigationItem } from '../../../Navigation';
 
@@ -14,7 +14,7 @@ export const MainNavigation = ({
   <Navigation
     aria-label="Main Navigation"
     direction={direction}
-    {...(direction === Direction.HORIZONTAL ? { hideOn: ['mobile', 'tablet'] } : {})}
+    {...(isDirectionHorizontal(direction) ? { hideOn: ['mobile', 'tablet'] } : {})}
   >
     <NavigationItem>
       <NavigationAction href="#" variant={variant} isSelected>

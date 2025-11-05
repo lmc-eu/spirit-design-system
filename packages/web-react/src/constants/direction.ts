@@ -1,3 +1,5 @@
+import { type DirectionDictionaryType } from '../types';
+
 export const Direction = {
   HORIZONTAL: 'horizontal',
   VERTICAL: 'vertical',
@@ -12,3 +14,6 @@ export enum DirectionAxis {
   X = 'x',
   Y = 'y',
 }
+
+export const isDirectionHorizontal = (direction: DirectionDictionaryType): boolean =>
+  direction === Direction.HORIZONTAL;
