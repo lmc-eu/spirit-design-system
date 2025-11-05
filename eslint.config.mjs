@@ -38,7 +38,6 @@ export default [
       'packages/codemods',
       'packages/common',
       'packages/design-tokens',
-      'packages/form-validations',
       'packages/web',
       'packages/web-react',
       'scripts',
