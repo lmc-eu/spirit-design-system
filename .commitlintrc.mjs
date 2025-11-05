@@ -21,7 +21,6 @@ export default {
         'web-react',
         'web-twig',
         // Use when committing changes/additions/removals to exact exporter
-        'exporter-js',
         'exporter-assets',
         'exporter-tokens',
         // Use when committing changes/additions/removals to exact config
