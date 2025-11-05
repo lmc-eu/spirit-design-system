@@ -4829,25 +4829,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@lmc-eu/spirit-form-validations@workspace:packages/form-validations":
-  version: 0.0.0-use.local
-  resolution: "@lmc-eu/spirit-form-validations@workspace:packages/form-validations"
-  dependencies:
-    "@eslint/compat": "npm:1.4.0"
-    "@eslint/eslintrc": "npm:3.3.1"
-    "@lmc-eu/browserslist-config": "npm:2.0.1"
-    "@types/jest": "npm:30.0.0"
-    eslint: "npm:8.57.1"
-    jest: "npm:30.2.0"
-    npm-run-all2: "npm:6.2.6"
-    sass-embedded: "npm:1.93.2"
-    shx: "npm:0.4.0"
-    tslib: "npm:2.8.1"
-    typescript: "npm:5.7.3"
-    vite: "npm:6.4.1"
-  languageName: unknown
-  linkType: soft
-
 "@lmc-eu/spirit-icons@npm:^0.10.2":
   version: 0.10.2
   resolution: "@lmc-eu/spirit-icons@npm:0.10.2"
