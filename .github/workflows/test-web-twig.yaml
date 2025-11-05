@@ -108,7 +108,7 @@ jobs:
           github-token: ${{ github.token}}
           parallel-finished: true
           flag-name: web-twig
-          carryforward: web, web-react, analytics, design-tokens, icons, common, codemods, form-validations
+          carryforward: web, web-react, analytics, design-tokens, icons, common, codemods
 
   codestyle:
     name: '📐 Analyzing Code Style and Types'
