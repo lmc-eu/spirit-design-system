@@ -1,5 +1,5 @@
 import { type MutableRefObject, type UIEvent, useCallback, useEffect, useState } from 'react';
-import { Direction, Position } from '../../constants';
+import { Position, isDirectionHorizontal } from '../../constants';
 import { useResizeObserver } from '../../hooks';
 import { type PositionType, type ScrollViewDirectionType } from '../../types';
 import { debounce } from '../../utils';
@@ -8,7 +8,7 @@ import { DEBOUNCE_DELAY, EDGE_DETECTION_INACCURACY_PX } from './constants';
 export interface UseScrollPositionProps {
   viewportReference: MutableRefObject<HTMLDivElement | null>;
   contentReference: MutableRefObject<HTMLDivElement | null>;
-  direction?: ScrollViewDirectionType;
+  direction: ScrollViewDirectionType;
 }
 
 export interface UseScrollPositionReturn {
@@ -46,9 +46,9 @@ export const useScrollPosition = ({
   };
 
   const handleScrollViewState = () => {
-    const isDirectionHorizontal = direction === Direction.HORIZONTAL;
-    const scrollPositionStart = isDirectionHorizontal ? Position.LEFT : Position.TOP;
-    const scrollPositionEnd = isDirectionHorizontal ? Position.RIGHT : Position.BOTTOM;
+    const isHorizontal = isDirectionHorizontal(direction);
+    const scrollPositionStart = isHorizontal ? Position.LEFT : Position.TOP;
+    const scrollPositionEnd = isHorizontal ? Position.RIGHT : Position.BOTTOM;
     const currentPosition = getElementsPositionDifference();
 
     if (!currentPosition) {
