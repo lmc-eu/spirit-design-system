@@ -18,6 +18,7 @@ export default [
       '**/node_modules/**',
       '**/dist/**',
       '**/build/**',
+      '**/.coverage/**',
 
       // # Highly recommended to re-include JavaScript dotfiles to lint them
       // # (This will cause .eslintrc.js to be linted by ESLint 🤘)
