@@ -5,12 +5,7 @@
 .EmptyState {
     display: grid;
     justify-content: center;
-    padding: theme.$root-padding;
     text-align: center;
-
-    @include breakpoint.up(map.get(theme.$breakpoints, desktop)) {
-        padding: theme.$root-padding-desktop;
-    }
 }
 
 .EmptyState__section {
