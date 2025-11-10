@@ -3,11 +3,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { TruncateModes } from '../../../types';
 import ReadMe from '../README.md';
-import UNSTABLE_Truncate from '../UNSTABLE_Truncate';
+import Truncate from '../Truncate';
 
-const meta: Meta<typeof UNSTABLE_Truncate> = {
-  title: 'Experimental/UNSTABLE_Truncate',
-  component: UNSTABLE_Truncate,
+const meta: Meta<typeof Truncate> = {
+  title: 'Components/Truncate',
+  component: Truncate,
   parameters: {
     docs: {
       page: () => <Markdown>{ReadMe}</Markdown>,
@@ -21,13 +21,6 @@ const meta: Meta<typeof UNSTABLE_Truncate> = {
       control: 'number',
       table: {
         defaultValue: { summary: '3' },
-      },
-    },
-    lines: {
-      control: 'number',
-      table: {
-        defaultValue: { summary: '3' },
-        category: 'Deprecated',
       },
     },
     mode: {
@@ -54,8 +47,8 @@ const meta: Meta<typeof UNSTABLE_Truncate> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof UNSTABLE_Truncate>;
+type Story = StoryObj<typeof Truncate>;
 
 export const Playground: Story = {
-  name: 'UNSTABLE_Truncate',
+  name: 'Truncate',
 };

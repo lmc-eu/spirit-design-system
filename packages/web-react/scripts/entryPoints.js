@@ -68,8 +68,8 @@ const entryPoints = [
   { dirs: ['components', 'Toast'] },
   { dirs: ['components', 'Toggle'] },
   { dirs: ['components', 'Tooltip'] },
+  { dirs: ['components', 'Truncate'] },
   { dirs: ['components', 'UNSTABLE_Header'] },
-  { dirs: ['components', 'UNSTABLE_Truncate'] },
   { dirs: ['components', 'VisuallyHidden'] },
 ];
 

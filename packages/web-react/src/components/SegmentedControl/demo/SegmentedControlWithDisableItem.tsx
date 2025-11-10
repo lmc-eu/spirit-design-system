@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import DocsStack from '../../../../docs/DocsStack';
 import { FillVariants } from '../../../constants';
 import { type FillVariantDictionaryType } from '../../../types';
-import { UNSTABLE_Truncate } from '../../UNSTABLE_Truncate';
+import { Truncate } from '../../Truncate';
 import SegmentedControl from '../SegmentedControl';
 import SegmentedControlItem from '../SegmentedControlItem';
 
@@ -18,13 +18,19 @@ const SegmentedControlWithDisableItemVariant = ({ variant }: { variant: FillVari
       setSelectedValue={setSelectedValue}
     >
       <SegmentedControlItem id={`segmentedControl-disabled-${variant}-1`} value="value-1">
-        <UNSTABLE_Truncate lines={1}>Label</UNSTABLE_Truncate>
+        <Truncate mode="lines" limit={1}>
+          Label
+        </Truncate>
       </SegmentedControlItem>
       <SegmentedControlItem id={`segmentedControl-disabled-${variant}-2`} value="value-2" isDisabled>
-        <UNSTABLE_Truncate lines={1}>Label</UNSTABLE_Truncate>
+        <Truncate mode="lines" limit={1}>
+          Label
+        </Truncate>
       </SegmentedControlItem>
       <SegmentedControlItem id={`segmentedControl-disabled-${variant}-3`} value="value-3">
-        <UNSTABLE_Truncate lines={1}>Label</UNSTABLE_Truncate>
+        <Truncate mode="lines" limit={1}>
+          Label
+        </Truncate>
       </SegmentedControlItem>
     </SegmentedControl>
   );
