@@ -15,26 +15,22 @@ export interface TruncateStyles<T extends ElementType> {
 }
 
 export const useTruncateStyleProps = <T extends ElementType>(props: SpiritTruncateProps<T>): TruncateStyles<T> => {
-  const { limit, lines, mode = TruncateModes.LINES, ...restProps } = props;
+  const { limit, mode = TruncateModes.LINES, ...restProps } = props;
 
-  // @deprecated remove when lines prop is removed
-  const effectiveMode = lines !== undefined ? TruncateModes.LINES : mode;
-  const effectiveLimit = lines !== undefined ? lines : limit;
-
-  const truncateClassName = useClassNamePrefix(effectiveMode === TruncateModes.LINES ? 'text-truncate-multiline' : '');
+  const truncateClassName = useClassNamePrefix(mode === TruncateModes.LINES ? 'text-truncate-multiline' : '');
   const classProps = truncateClassName;
 
   const truncateStyle: TruncateCSSProperties = {};
 
-  if (effectiveMode === TruncateModes.LINES && effectiveLimit !== undefined) {
-    truncateStyle['--text-truncate-lines'] = effectiveLimit;
+  if (mode === TruncateModes.LINES && limit !== undefined) {
+    truncateStyle['--text-truncate-lines'] = limit;
   }
 
   return {
     classProps,
     props: restProps,
     styleProps: truncateStyle,
-    effectiveMode,
-    effectiveLimit,
+    effectiveMode: mode,
+    effectiveLimit: limit,
   };
 };

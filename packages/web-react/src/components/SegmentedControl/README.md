@@ -75,11 +75,15 @@ and [escape hatches][readme-escape-hatches].
 <UncontrolledSegmentedControl label="Label" name="uncontrolled-example" defaultSelectedValue="value-1" isFluid>
   <SegmentedControlItem key="item-1" id="uncontrolled-segmented-control-1" value="value-1">
     <Icon name="file" boxSize={20} />
-    <UNSTABLE_Truncate lines={1}>Item 1 Label</UNSTABLE_Truncate>
+    <Truncate mode="lines" limit={1}>
+      Item 1 Label
+    </Truncate>
   </SegmentedControlItem>
   <SegmentedControlItem key="item-2" id="uncontrolled-segmented-control-2" value="value-2">
     <Icon name="file" boxSize={20} />
-    <UNSTABLE_Truncate lines={1}>Item 2 Label</UNSTABLE_Truncate>
+    <Truncate mode="lines" limit={1}>
+      Item 2 Label
+    </Truncate>
   </SegmentedControlItem>
 </UncontrolledSegmentedControl>
 ```
@@ -143,22 +147,26 @@ one of the recommended content patterns to ensure correct appearance, alignment,
 
 #### Text Label Only
 
-A simple short text label without any icons or additional elements. We recommend wrapping the label in the `<UNSTABLE_Truncate>` component with `lines={1}` to prevent overflow.
+A simple short text label without any icons or additional elements. We recommend wrapping the label in the `<Truncate>` component with `mode="lines"` and `limit={1}` to prevent overflow.
 
 ```jsx
 <SegmentedControlItem id="segmented-control-item-content-example-1" value="value-1">
-  <UNSTABLE_Truncate lines={1}>Label</UNSTABLE_Truncate>
+  <Truncate mode="lines" limit={1}>
+    Label
+  </Truncate>
 </SegmentedControlItem>
 ```
 
 #### Icon + Text Label
 
-An icon followed by a short text label. We recommend wrapping the label in the `<UNSTABLE_Truncate>` component with `lines={1}` to prevent overflow.
+An icon followed by a short text label. We recommend wrapping the label in the `<Truncate>` component with `mode="lines"` and `limit={1}` to prevent overflow.
 
 ```jsx
 <SegmentedControlItem id="segmented-control-item-content-example-2" value="value-2">
   <Icon name="file" boxSize={20} />
-  <UNSTABLE_Truncate lines={1}>Label</UNSTABLE_Truncate>
+  <Truncate mode="lines" limit={1}>
+    Label
+  </Truncate>
 </SegmentedControlItem>
 ```
 
@@ -189,13 +197,7 @@ and [escape hatches][readme-escape-hatches].
 ## Full Example
 
 ```jsx
-import {
-  Icon,
-  SegmentedControl,
-  SegmentedControlItem,
-  UNSTABLE_Truncate,
-  VisuallyHidden,
-} from '@lmc-eu/spirit-web-react';
+import { Icon, SegmentedControl, SegmentedControlItem, Truncate, VisuallyHidden } from '@lmc-eu/spirit-web-react';
 
 const [selectedValue, setSelectedValue] = useState('value-1');
 
@@ -206,11 +208,15 @@ const [selectedValue, setSelectedValue] = useState('value-1');
   setSelectedValue={setSelectedValue}
 >
   <SegmentedControlItem id="segmented-control-full-example-item-1" value="value-1">
-    <UNSTABLE_Truncate lines={1}>Label 1</UNSTABLE_Truncate>
+    <Truncate mode="lines" limit={1}>
+      Label 1
+    </Truncate>
   </SegmentedControlItem>
   <SegmentedControlItem id="segmented-control-full-example-item-2" value="value-2">
     <Icon name="file" boxSize={20} />
-    <UNSTABLE_Truncate lines={1}>Label 2</UNSTABLE_Truncate>
+    <Truncate mode="lines" limit={1}>
+      Label 2
+    </Truncate>
   </SegmentedControlItem>
   <SegmentedControlItem id="segmented-control-full-example-item-3" value="value-3">
     <Icon name="file" boxSize={20} />

@@ -25,14 +25,6 @@ export interface SpiritTruncateProps<E extends ElementType> extends StyleProps, 
    */
   limit?: PositiveInteger<number>;
   /**
-   * The number of lines on which the text is truncated.
-   *
-   * @deprecated Use mode="lines" and limit instead
-   *
-   * @see PositiveInteger
-   */
-  lines?: PositiveInteger<number>;
-  /**
    * The type of truncation to apply.
    *
    * @see TruncateModes

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Select, Stack, TextField } from '../..';
 import { type TruncateMode, TruncateModes } from '../../../types';
-import UNSTABLE_Truncate from '../UNSTABLE_Truncate';
+import Truncate from '../Truncate';
 
 const TruncateDefault = () => {
   const [mode, setMode] = useState<TruncateMode>(TruncateModes.LINES);
@@ -57,9 +57,9 @@ const TruncateDefault = () => {
           />
         </Stack>
       </form>
-      <UNSTABLE_Truncate limit={limit} mode={mode}>
+      <Truncate limit={limit} mode={mode}>
         {sampleText}
-      </UNSTABLE_Truncate>
+      </Truncate>
     </Stack>
   );
 };

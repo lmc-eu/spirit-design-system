@@ -59,6 +59,6 @@ export * from './Timeline';
 export * from './Toast';
 export * from './Toggle';
 export * from './Tooltip';
+export * from './Truncate';
 export * from './UNSTABLE_Header';
-export * from './UNSTABLE_Truncate';
 export * from './VisuallyHidden';

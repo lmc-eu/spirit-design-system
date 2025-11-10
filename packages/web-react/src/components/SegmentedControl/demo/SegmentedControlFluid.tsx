@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FillVariants } from '../../../constants';
 import { Icon } from '../../Icon';
-import { UNSTABLE_Truncate } from '../../UNSTABLE_Truncate';
+import { Truncate } from '../../Truncate';
 import SegmentedControl from '../SegmentedControl';
 import SegmentedControlItem from '../SegmentedControlItem';
 
@@ -25,7 +25,13 @@ const SegmentedControlFluid = () => {
           value={`value-${index + 1}`}
         >
           <Icon name="file" boxSize={20} />
-          {index === 1 ? <UNSTABLE_Truncate lines={1}>{label}</UNSTABLE_Truncate> : label}
+          {index === 1 ? (
+            <Truncate mode="lines" limit={1}>
+              {label}
+            </Truncate>
+          ) : (
+            label
+          )}
         </SegmentedControlItem>
       ))}
     </SegmentedControl>

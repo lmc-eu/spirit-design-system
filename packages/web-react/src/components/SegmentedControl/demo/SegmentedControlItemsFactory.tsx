@@ -2,7 +2,7 @@ import React, { type FunctionComponent, useState } from 'react';
 import { FillVariants } from '../../../constants';
 import { type FillVariantDictionaryType } from '../../../types';
 import { Icon } from '../../Icon';
-import { UNSTABLE_Truncate } from '../../UNSTABLE_Truncate';
+import { Truncate } from '../../Truncate';
 import { VisuallyHidden } from '../../VisuallyHidden';
 import SegmentedControl from '../SegmentedControl';
 import SegmentedControlItem from '../SegmentedControlItem';
@@ -45,7 +45,11 @@ const SegmentedControlItemsFactory: FunctionComponent<SegmentedControlItemsFacto
               <VisuallyHidden>Label</VisuallyHidden>
             </>
           )}
-          {contentVariant !== 'icon-only' && <UNSTABLE_Truncate lines={1}>Label</UNSTABLE_Truncate>}
+          {contentVariant !== 'icon-only' && (
+            <Truncate mode="lines" limit={1}>
+              Label
+            </Truncate>
+          )}
         </SegmentedControlItem>
       ))}
     </SegmentedControl>
