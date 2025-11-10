@@ -135,3 +135,28 @@ npx @lmc-eu/spirit-codemods -p <path> -t v4/web-react/unstable-toggle-component-
 - <UNSTABLE_Toggle … />
 + <Toggle … />
 ```
+
+<!--lint disable maximum-heading-length-->
+
+### `v4/web-react/unstable-truncate-component-name-and-lines-prop` — UNSTABLE_Truncate to Truncate Component Name and `lines` Prop Change
+
+<!--lint enable maximum-heading-length-->
+
+This codemod updates the `UNSTABLE_Truncate` component name to `Truncate` and replaces the deprecated `lines` prop with `mode="lines"` and `limit={lines}`.
+Use this codemod if you were already using the `UNSTABLE_Truncate` component.
+
+#### Usage
+
+```sh
+npx @lmc-eu/spirit-codemods -p <path> -t v4/web-react/unstable-truncate-component-name-and-lines-prop
+```
+
+#### Example
+
+```diff
+- import { UNSTABLE_Truncate } from '@lmc-eu/spirit-web-react';
++ import { Truncate } from '@lmc-eu/spirit-web-react';
+…
+- <UNSTABLE_Truncate lines={3} … />
++ <Truncate mode="lines" limit={3} … />
+```
