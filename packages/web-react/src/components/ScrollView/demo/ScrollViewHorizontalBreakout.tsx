@@ -4,7 +4,7 @@ import { Grid } from '../../Grid';
 import ScrollView from '../ScrollView';
 
 const ScrollViewHorizontalBreakout = () => (
-  <div className="breakout-container">
+  <div className="breakout-container d-grid">
     <ScrollView direction="horizontal">
       <Grid cols={4} marginBottom="space-900" UNSAFE_style={{ paddingInline: 'var(--container-padding-inline)' }}>
         {[1, 2, 3, 4].map((i) => (
