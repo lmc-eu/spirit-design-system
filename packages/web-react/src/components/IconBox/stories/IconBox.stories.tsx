@@ -80,7 +80,7 @@ const meta: Meta<typeof IconBox> = {
       options: [...Object.values(SizesExtended)],
       table: {
         type: {
-          summary: 'SizeExtendedDictionaryType',
+          summary: 'SizeExtendedDictionaryType | Responsive<`SizeExtendedDictionaryType>',
         },
       },
     },
