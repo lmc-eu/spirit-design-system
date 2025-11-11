@@ -2,7 +2,7 @@
 
 import classNames from 'classnames';
 import React, { type ElementType } from 'react';
-import { EmotionColors, SizesExtended } from '../../constants';
+import { BorderWidths, EmotionColors, SizesExtended } from '../../constants';
 import { useStyleProps } from '../../hooks';
 import type { SpiritIconBoxProps } from '../../types';
 import { Box } from '../Box';
@@ -22,18 +22,17 @@ const defaultProps: Partial<SpiritIconBoxProps> = {
 
 const IconBox = <T extends ElementType = 'div'>(props: SpiritIconBoxProps<T>) => {
   const propsWithDefaults = { ...defaultProps, ...props };
-  const { elementType, shapes, color, iconName, isSubtle, hasBorder, size, ...restProps } = propsWithDefaults;
+  const { elementType, shape, color, iconName, isSubtle, hasBorder, size, ...restProps } = propsWithDefaults;
 
   const { colors } = useIconBoxColors(color, isSubtle);
   const {
-    props: modifiedProps,
     iconBoxStyles: iconBoxStyleProps,
+    props: modifiedProps,
     shapesProps,
     sizeProps: { padding, iconSize },
   } = useIconBoxStyleProps({
     size,
-    hasBorder,
-    shapes,
+    shape,
     ...restProps,
   });
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
@@ -43,15 +42,10 @@ const IconBox = <T extends ElementType = 'div'>(props: SpiritIconBoxProps<T>) =>
       {...otherProps}
       backgroundColor={colors.background}
       elementType={elementType}
-      {...(hasBorder
-        ? {
-            borderWidth: '100',
-            borderColor: colors.border,
-          }
-        : {
-            padding,
-          })}
+      borderColor={hasBorder ? colors.border : undefined}
       borderRadius={shapesProps}
+      borderWidth={hasBorder ? BorderWidths['100'] : undefined}
+      padding={padding}
       textColor={colors.text}
       UNSAFE_className={classNames(styleProps.className, 'd-inline-flex')}
       UNSAFE_style={{

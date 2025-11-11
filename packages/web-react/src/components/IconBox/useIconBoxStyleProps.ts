@@ -1,26 +1,51 @@
-import { borderWidth100, cssVariablePrefix } from '@lmc-eu/spirit-design-tokens';
+import { cssVariablePrefix } from '@lmc-eu/spirit-design-tokens';
 import { type CSSProperties, type ElementType } from 'react';
 import { SizesExtended } from '../../constants';
-import type { SpiritIconBoxProps } from '../../types';
+import type { Responsive, SpaceToken, SpiritIconBoxProps } from '../../types';
 import { IconBoxShapes, IconBoxShapesRadii, IconBoxSizes } from './constants';
 
 export interface UseIconBoxStyleProps<T> {
   iconBoxStyles: CSSProperties;
   props: T;
   shapesProps: (typeof IconBoxShapesRadii)[keyof typeof IconBoxShapesRadii];
-  sizeProps: (typeof IconBoxSizes)[keyof typeof IconBoxSizes];
+  sizeProps:
+    | (typeof IconBoxSizes)[keyof typeof IconBoxSizes]
+    | {
+        padding: Responsive<SpaceToken>;
+        iconSize: Responsive<number>;
+      };
 }
+
+const isResponsiveSize = (size: unknown): size is Responsive<(typeof SizesExtended)[keyof typeof SizesExtended]> =>
+  typeof size === 'object' && size !== null && !Array.isArray(size);
 
 export const useIconBoxStyleProps = (
   props: Partial<SpiritIconBoxProps<ElementType>>,
 ): UseIconBoxStyleProps<Partial<SpiritIconBoxProps<ElementType>>> => {
-  const { shape = IconBoxShapes.ROUNDED, hasBorder = true, size = SizesExtended.MEDIUM, ...restProps } = props || {};
-  const sizeProps = IconBoxSizes[size];
+  const { shape = IconBoxShapes.ROUNDED, size = SizesExtended.MEDIUM, ...restProps } = props || {};
   const shapesProps = IconBoxShapesRadii[shape];
-  const iconBoxStyles: CSSProperties = {};
+  const iconBoxStyles: CSSProperties = {
+    padding: `calc(var(--${cssVariablePrefix}local-padding) - var(--${cssVariablePrefix}local-border-width, 0px)) !important`,
+  };
 
-  if (hasBorder) {
-    iconBoxStyles.padding = `calc(var(--${cssVariablePrefix}${sizeProps.padding}) - ${borderWidth100})`;
+  let sizeProps: UseIconBoxStyleProps<Partial<SpiritIconBoxProps<ElementType>>>['sizeProps'];
+
+  if (isResponsiveSize(size)) {
+    const responsivePadding: Responsive<SpaceToken> = {};
+    const responsiveIconSize: Responsive<number> = {};
+
+    Object.entries(size).forEach(([breakpoint, breakpointSize]) => {
+      const sizeConfig = IconBoxSizes[breakpointSize as keyof typeof IconBoxSizes];
+      responsivePadding[breakpoint as keyof Responsive<SpaceToken>] = sizeConfig.padding as SpaceToken;
+      responsiveIconSize[breakpoint as keyof Responsive<number>] = sizeConfig.iconSize;
+    });
+
+    sizeProps = {
+      padding: responsivePadding,
+      iconSize: responsiveIconSize,
+    };
+  } else {
+    sizeProps = IconBoxSizes[size as keyof typeof IconBoxSizes];
   }
 
   return {
