@@ -2,6 +2,10 @@
 
 [Supernova][supernova-studio] SCSS exporter made for Spirit Design System developed by [Alma Career (formerly LMC)][alma-career].
 
+> [!CAUTION]
+> This package is no longer maintained and is abandoned, effective December 1st 2025.
+> Please, consider migration to a newer version of Spirit and to [Spirit Tokens Exporter][spirit-tokens-exporter].
+
 ## Token Operations
 
 This exported does several operations with tokens:
@@ -40,5 +44,6 @@ Tokens are sorted alphabetically by origin (Figma) name or by name (Supernova). 
 
 The index file contains SCSS forwards of all other outputs.
 
-[supernova-studio]: https://github.com/Supernova-Studio
 [alma-career]: https://github.com/lmc-eu
+[supernova-studio]: https://github.com/Supernova-Studio
+[spirit-tokens-exporter]: https://github.com/lmc-eu/spirit-design-system/tree/main/exporters/tokens
