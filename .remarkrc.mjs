@@ -45,5 +45,10 @@ export default {
     // Maximum length of the titles
     // @see: https://github.com/remarkjs/remark-lint/tree/main/packages/remark-lint-maximum-heading-length
     ['remark-lint-maximum-heading-length', 120],
+
+    // Allow GFM Alerts
+    // @see: https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
+    // @see: https://github.com/remarkjs/remark-lint/tree/main/packages/remark-lint-no-undefined-references
+    ['remark-lint-no-undefined-references', { allow: ['!note', '!tip', '!important', '!warning', '!caution'] }],
   ],
 };
