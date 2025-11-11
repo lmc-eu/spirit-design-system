@@ -30,6 +30,12 @@ You can define size using the `size` prop.
 <IconBox name="search" size="large" />
 ```
 
+You can also define responsive values for the `size` prop using an object:
+
+```jsx
+<IconBox name="search" size={{ mobile: 'small', tablet: 'medium', desktop: 'large' }} />
+```
+
 ## Color
 
 The `color` prop defines the visual style of the IconBox by applying a combination of background color, border color, and icon color.
@@ -81,15 +87,15 @@ import { Box, Icon } from '@lmc-eu/spirit-web-react';
 
 ## API
 
-| Name          | Type                                                                                                                                                | Default  | Required | Description                                    |
-| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------- | ---------------------------------------------- |
-| `color`       | \[[AccentColorNamesType][readme-generated-types] \| [EmotionColorNamesType][readme-generated-types] ✕ [Intensity dictionary][dictionary-intensity]] | -        | ✕        | Color variant of the IconBox                   |
-| `elementType` | `ElementType`                                                                                                                                       | `div`    | ✕        | Type of element                                |
-| `hasBorder`   | `bool`                                                                                                                                              | `true`   | ✕        | Whether the IconBox has a border               |
-| `iconName`    | `string`                                                                                                                                            | ✓        | ✕        | Name of the icon to render                     |
-| `isSubtle`    | `bool`                                                                                                                                              | `true`   | ✕        | Whether the IconBox has a subtle color variant |
-| `shape`       | \[`rounded` \| `circle` \| `square`]                                                                                                                | `circle` | ✕        | Shape of the IconBox                           |
-| `size`        | [Size Extended dictionary][dictionary-size]                                                                                                         | `medium` | ✕        | Size of the IconBox                            |
+| Name          | Type                                                                                                                                                | Default  | Required | Description                                                                                                              |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `color`       | \[[AccentColorNamesType][readme-generated-types] \| [EmotionColorNamesType][readme-generated-types] ✕ [Intensity dictionary][dictionary-intensity]] | -        | ✕        | Color variant of the IconBox                                                                                             |
+| `elementType` | `ElementType`                                                                                                                                       | `div`    | ✕        | Type of element                                                                                                          |
+| `hasBorder`   | `bool`                                                                                                                                              | `true`   | ✕        | Whether the IconBox has a border                                                                                         |
+| `iconName`    | `string`                                                                                                                                            | ✓        | ✕        | Name of the icon to render                                                                                               |
+| `isSubtle`    | `bool`                                                                                                                                              | `true`   | ✕        | Whether the IconBox has a subtle color variant                                                                           |
+| `shape`       | \[`rounded` \| `circle` \| `square`]                                                                                                                | `circle` | ✕        | Shape of the IconBox                                                                                                     |
+| `size`        | \[[Size Extended dictionary][dictionary-size] \| `Responsive<`[Size Extended dictionary][dictionary-size]`>`]                                       | `medium` | ✕        | Size of the IconBox, use object to set responsive values, e.g. `{ mobile: 'small', tablet: 'medium', desktop: 'large' }` |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

@@ -4,6 +4,7 @@ import type {
   AccentColorNamesType,
   ChildrenProps,
   EmotionColorNamesType,
+  SingleOrResponsive,
   SizeExtendedDictionaryType,
   SpiritPolymorphicElementPropsWithRef,
   StyleProps,
@@ -26,7 +27,7 @@ export interface IconBoxBaseProps extends ChildrenProps, StyleProps {
   /** Whether the iconBox is in subtle color scheme */
   isSubtle?: boolean;
   /** The size of the iconBox */
-  size?: SizeExtendedDictionaryType;
+  size?: SingleOrResponsive<SizeExtendedDictionaryType>;
 }
 
 export type IconBoxProps<E extends ElementType> = {

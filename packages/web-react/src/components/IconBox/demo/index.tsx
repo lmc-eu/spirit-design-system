@@ -9,6 +9,7 @@ import DocsSection from '../../../../docs/DocsSection';
 import { IconsProvider } from '../../../context';
 import IconBoxColorVariants from './IconBoxColorVariants';
 import IconBoxDefault from './IconBoxDefault';
+import IconBoxResponsiveSize from './IconBoxResponsiveSize';
 import IconBoxShapes from './IconBoxShapes';
 import IconBoxSizes from './IconBoxSizes';
 import IconBoxWithoutBorder from './IconBoxWithoutBorder';
@@ -21,6 +22,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       </DocsSection>
       <DocsSection title="Sizes">
         <IconBoxSizes />
+      </DocsSection>
+      <DocsSection title="Responsive Sizes">
+        <IconBoxResponsiveSize />
       </DocsSection>
       <DocsSection title="Shapes">
         <IconBoxShapes />
