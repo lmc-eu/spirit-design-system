@@ -4,6 +4,10 @@
 
 > Form validations for Web and Web-Twig packages of the Spirit Design System.
 
+> [!CAUTION]
+> This package is no longer maintained and is abandoned, effective December 1st 2025.
+> There is no replacement planned or provided.
+
 ## Install
 
 ```shell
