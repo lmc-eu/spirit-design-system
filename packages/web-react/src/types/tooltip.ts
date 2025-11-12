@@ -12,6 +12,7 @@ import type {
 export const TOOLTIP_TRIGGER = {
   CLICK: 'click',
   HOVER: 'hover',
+  FOCUS: 'focus',
   MANUAL: 'manual',
   OUTSIDE_PRESS: 'outside-press',
   ESCAPE_KEY: 'escape-key',
@@ -19,7 +20,7 @@ export const TOOLTIP_TRIGGER = {
 
 export interface TooltipPopoverProps extends ChildrenProps, StyleProps {}
 
-export type TooltipTriggerType = 'click' | 'hover' | 'manual';
+export type TooltipTriggerType = 'click' | 'hover' | 'focus' | 'manual';
 
 export interface TooltipTriggerProps extends StyleProps, TransferProps {
   elementType?: ElementTypeProp;

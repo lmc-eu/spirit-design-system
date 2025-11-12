@@ -48,7 +48,16 @@ const meta: Meta<typeof Tooltip> = {
     },
     trigger: {
       control: 'select',
-      options: ['click, hover', 'hover', 'click'],
+      options: ['click, hover', 'hover', 'click', 'focus', 'click, hover, focus', 'hover, focus', 'click, focus'],
+      mapping: {
+        'click, hover': ['click', 'hover'],
+        hover: ['hover'],
+        click: ['click'],
+        focus: ['focus'],
+        'click, hover, focus': ['click', 'hover', 'focus'],
+        'hover, focus': ['hover', 'focus'],
+        'click, focus': ['click', 'focus'],
+      },
       table: { defaultValue: { summary: 'click, hover' } },
     },
   },
@@ -70,7 +79,7 @@ const meta: Meta<typeof Tooltip> = {
     isOpen: false,
     placement: 'bottom',
     positionStrategy: 'absolute',
-    trigger: ['click', 'hover'],
+    trigger: 'click, hover' as unknown as SpiritTooltipProps['trigger'],
   },
 };
 
