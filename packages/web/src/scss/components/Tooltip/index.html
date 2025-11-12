@@ -174,26 +174,25 @@
       <div class="docs-Stack docs-Stack--start">
 
         <p>
-          This tooltip will show on <strong>hover</strong> and <strong>click</strong>.
+          This tooltip will show on <strong>hover</strong>, <strong>click</strong>, and <strong>focus</strong>.
         </p>
-
         <div class="Tooltip d-inline-block" data-spirit-element="tooltip">
           <button
             type="button"
-            id="button-hover-click"
+            id="button-all"
             class="Button Button--primary Button--medium"
-            aria-describedby="tooltip-hover-click"
+            aria-describedby="tooltip-all"
             data-spirit-toggle="tooltip"
-            data-spirit-target="#tooltip-hover-click"
+            data-spirit-target="#tooltip-all"
           >
-            Hover or Click me 😎
+            All triggers 😎
           </button>
           <div
-            id="tooltip-hover-click"
+            id="tooltip-all"
             class="TooltipPopover is-hidden"
             data-spirit-placement="right"
             data-spirit-flip-fallback-placements="bottom"
-            data-spirit-trigger="hover, click"
+            data-spirit-trigger="hover, click, focus"
           >
             Hello there!
             <span class="TooltipPopover__arrow" data-spirit-element="arrow"></span>
@@ -205,7 +204,6 @@
         <p>
           This tooltip will show only on <strong>hover</strong>.
         </p>
-
         <div class="Tooltip d-inline-block" data-spirit-element="tooltip">
           <button
             type="button"
@@ -234,7 +232,6 @@
         <p>
           This tooltip will show only on <strong>click</strong>.
         </p>
-
         <div class="Tooltip d-inline-block" data-spirit-element="tooltip">
           <button
             type="button"
@@ -252,6 +249,34 @@
             data-spirit-placement="right"
             data-spirit-flip-fallback-placements="bottom"
             data-spirit-trigger="click"
+          >
+            Hello there!
+            <span class="TooltipPopover__arrow" data-spirit-element="arrow"></span>
+          </div>
+        </div>
+
+        <br />
+
+        <p>
+          This tooltip will show only on <strong>focus</strong> (use Tab key to focus).
+        </p>
+        <div class="Tooltip d-inline-block" data-spirit-element="tooltip">
+          <button
+            type="button"
+            id="button-focus"
+            class="Button Button--primary Button--medium"
+            aria-describedby="tooltip-focus"
+            data-spirit-toggle="tooltip"
+            data-spirit-target="#tooltip-focus"
+          >
+            Focus me 😎
+          </button>
+          <div
+            id="tooltip-focus"
+            class="TooltipPopover is-hidden"
+            data-spirit-placement="right"
+            data-spirit-flip-fallback-placements="bottom"
+            data-spirit-trigger="focus"
           >
             Hello there!
             <span class="TooltipPopover__arrow" data-spirit-element="arrow"></span>
