@@ -5,6 +5,7 @@ import type { NextConfig } from 'next';
 const pathDir = dirname(fileURLToPath(import.meta.url));
 
 const nextConfig: NextConfig = {
+  outputFileTracingRoot: path.join(__dirname, '../../'),
   transpilePackages: ['@lmc-eu/spirit-web-react'],
   reactStrictMode: true,
   sassOptions: {

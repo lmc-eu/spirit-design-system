@@ -23,7 +23,7 @@
       "@lmc-eu/spirit-web-react": ["../../node_modules/@lmc-eu/spirit-web-react/src"]
     },
     "forceConsistentCasingInFileNames": true,
-    "target": "ES2017"
+    "target": "esnext"
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
