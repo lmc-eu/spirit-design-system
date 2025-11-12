@@ -48,7 +48,7 @@ const meta: Meta<typeof Tooltip> = {
     },
     trigger: {
       control: 'select',
-      options: ['click, hover', 'hover', 'click'],
+      options: ['click, hover', 'hover', 'click', 'focus', 'click, hover, focus', 'hover, focus', 'click, focus'],
       table: { defaultValue: { summary: 'click, hover' } },
     },
   },
@@ -78,7 +78,7 @@ export default meta;
 type Story = StoryObj<SpiritTooltipProps>;
 
 const TooltipWithHooks = (args: SpiritTooltipProps) => {
-  const { children, isOpen } = args;
+  const { children, isOpen, trigger } = args;
   const [isTooltipOpen, setIsTooltipOpen] = useState(isOpen);
 
   const viewportRef = useRef<HTMLDivElement>(null);
@@ -93,6 +93,13 @@ const TooltipWithHooks = (args: SpiritTooltipProps) => {
     }
   }, []);
 
+  // Convert trigger string to array if needed (Storybook controls pass string)
+  let triggerArray = trigger;
+  if (trigger && typeof trigger === 'string') {
+    const triggerString = trigger as string;
+    triggerArray = triggerString.split(', ').map((t: string) => t.trim()) as typeof trigger;
+  }
+
   return (
     <div
       className="bg-secondary"
@@ -103,7 +110,7 @@ const TooltipWithHooks = (args: SpiritTooltipProps) => {
         style={{ position: 'relative', width: '300%', height: '90rem', paddingBlock: '44rem', textAlign: 'center' }}
         ref={contentRef}
       >
-        <Tooltip {...args} isOpen={isOpen || isTooltipOpen} onToggle={setIsTooltipOpen}>
+        <Tooltip {...args} trigger={triggerArray} isOpen={isOpen || isTooltipOpen} onToggle={setIsTooltipOpen}>
           <TooltipTrigger elementType={Button}>Button as anchor</TooltipTrigger>
           <TooltipPopover>{children}</TooltipPopover>
         </Tooltip>

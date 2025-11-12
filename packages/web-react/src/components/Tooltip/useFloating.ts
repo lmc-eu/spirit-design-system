@@ -13,6 +13,7 @@ import {
   useClick,
   useDismiss,
   useFloating as useFloatingUI,
+  useFocus,
   useHover,
   useInteractions,
   useRole,
@@ -72,6 +73,7 @@ export const useFloating = (props: UseTooltipUIProps) => {
 
   const isHoverEnabled = trigger?.includes(TOOLTIP_TRIGGER.HOVER);
   const isClickEnabled = trigger?.includes(TOOLTIP_TRIGGER.CLICK);
+  const isFocusEnabled = trigger?.includes(TOOLTIP_TRIGGER.FOCUS);
 
   const useSafePolygons = (isClickable: boolean) =>
     isClickable
@@ -145,9 +147,10 @@ export const useFloating = (props: UseTooltipUIProps) => {
     enabled: isHoverEnabled,
     handleClose: useSafePolygons(!!isFocusableOnHover),
   });
+  const focus = useFocus(context, { enabled: isFocusEnabled });
   const dismiss = useDismiss(context, { outsidePress: !isDismissible });
   const role = useRole(context, { role: 'tooltip' });
-  const { getReferenceProps, getFloatingProps } = useInteractions([click, hover, dismiss, role]);
+  const { getReferenceProps, getFloatingProps } = useInteractions([click, hover, focus, dismiss, role]);
 
   return {
     context,
