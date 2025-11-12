@@ -61,6 +61,8 @@ __metadata:
   dependencies:
     "@babel/core": "npm:7.26.10"
     "@babel/preset-typescript": "npm:7.27.0"
+    "@eslint/compat": "npm:1.4.0"
+    "@eslint/eslintrc": "npm:3.3.1"
     "@lmc-eu/spirit-design-tokens": "workspace:^"
     "@lmc-eu/spirit-icons": "workspace:^"
     "@lmc-eu/spirit-web": "workspace:^"
