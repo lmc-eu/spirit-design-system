@@ -33,6 +33,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@almacareer/spirit-example-next-with-app-router@workspace:examples/next-with-app-router"
   dependencies:
+    "@eslint/compat": "npm:1.4.0"
+    "@eslint/eslintrc": "npm:3.3.1"
     "@lmc-eu/spirit-design-tokens": "workspace:^"
     "@lmc-eu/spirit-icons": "workspace:^"
     "@lmc-eu/spirit-web": "workspace:^"

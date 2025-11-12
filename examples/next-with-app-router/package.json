@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "ESLINT_USE_FLAT_CONFIG=false next lint"
+    "lint": "eslint",
+    "lint:fix": "yarn lint --fix"
   },
   "dependencies": {
     "@lmc-eu/spirit-design-tokens": "workspace:^",
@@ -20,6 +21,8 @@
     "sass-embedded": "1.93.2"
   },
   "devDependencies": {
+    "@eslint/compat": "1.4.0",
+    "@eslint/eslintrc": "3.3.1",
     "@next/eslint-plugin-next": "14.2.33",
     "@types/node": "20.17.24",
     "@types/react": "18.3.18",
