@@ -35,7 +35,7 @@ const meta: Meta<typeof UncontrolledTooltip> = {
     },
     trigger: {
       control: 'select',
-      options: ['click, hover', 'hover', 'click'],
+      options: ['click, hover', 'hover', 'click', 'focus', 'click, hover, focus', 'hover, focus', 'click, focus'],
       table: { defaultValue: { summary: 'click, hover' } },
     },
   },
@@ -63,7 +63,7 @@ export default meta;
 type Story = StoryObj<typeof UncontrolledTooltip>;
 
 const UncontrolledTooltipWithHooks = (args: Omit<SpiritTooltipProps, 'onToggle'>) => {
-  const { children } = args;
+  const { children, trigger } = args;
 
   const viewportRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -77,6 +77,13 @@ const UncontrolledTooltipWithHooks = (args: Omit<SpiritTooltipProps, 'onToggle'>
     }
   }, []);
 
+  // Convert trigger string to array if needed (Storybook controls pass string)
+  let triggerArray = trigger;
+  if (trigger && typeof trigger === 'string') {
+    const triggerString = trigger as string;
+    triggerArray = triggerString.split(', ').map((t: string) => t.trim()) as typeof trigger;
+  }
+
   return (
     <div
       className="bg-secondary"
@@ -87,7 +94,7 @@ const UncontrolledTooltipWithHooks = (args: Omit<SpiritTooltipProps, 'onToggle'>
         style={{ position: 'relative', width: '300%', height: '90rem', paddingBlock: '44rem', textAlign: 'center' }}
         ref={contentRef}
       >
-        <UncontrolledTooltip {...args}>
+        <UncontrolledTooltip {...args} trigger={triggerArray}>
           <TooltipTrigger elementType={Button}>Button as anchor</TooltipTrigger>
           <TooltipPopover>{children}</TooltipPopover>
         </UncontrolledTooltip>
