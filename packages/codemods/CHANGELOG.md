@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.7.0"></a>
+
+# [1.7.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@1.6.3...@lmc-eu/spirit-codemods@1.7.0) (2025-11-12)
+
+### Features
+
+- **codemods:** Stabilize Truncate component [#DS-1695](https://github.com/lmc-eu/spirit-design-system/issues/DS-1695) ([01939f5](https://github.com/lmc-eu/spirit-design-system/commit/01939f5))
+
+**Note:** Version bump only for package @lmc-eu/spirit-codemods
+
 <a name="1.6.3"></a>
 
 ## [1.6.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@1.6.2...@lmc-eu/spirit-codemods@1.6.3) (2025-10-22)

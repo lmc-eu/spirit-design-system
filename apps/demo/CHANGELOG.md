@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.5.4"></a>
+
+## [1.5.4](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo-app@1.5.3...@lmc-eu/spirit-demo-app@1.5.4) (2025-11-12)
+
+### Dependencies
+
+- Update dependency vite to v6.4.1 [SECURITY] ([2363fc9](https://github.com/lmc-eu/spirit-design-system/commit/2363fc9))
+
+**Note:** Version bump only for package @lmc-eu/spirit-demo-app
+
 <a name="1.5.3"></a>
 
 ## [1.5.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo-app@1.5.2...@lmc-eu/spirit-demo-app@1.5.3) (2025-10-22)

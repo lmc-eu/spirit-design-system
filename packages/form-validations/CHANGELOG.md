@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.1.3"></a>
+
+## [2.1.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@2.1.2...@lmc-eu/spirit-form-validations@2.1.3) (2025-11-12)
+
+### Dependencies
+
+- Update dependency vite to v6.4.1 [SECURITY] ([2363fc9](https://github.com/lmc-eu/spirit-design-system/commit/2363fc9))
+
+### Documentation
+
+- **form-validations:** Introduce abandonment message ([e6ce4a3](https://github.com/lmc-eu/spirit-design-system/commit/e6ce4a3))
+
+**Note:** Version bump only for package @lmc-eu/spirit-form-validations
+
 <a name="2.1.2"></a>
 
 ## [2.1.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@2.1.1...@lmc-eu/spirit-form-validations@2.1.2) (2025-10-22)

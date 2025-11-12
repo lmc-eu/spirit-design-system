@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.18"></a>
+
+## [2.0.18](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-scss@2.0.17...@lmc-eu/spirit-exporters-scss@2.0.18) (2025-11-12)
+
+### Dependencies
+
+- Update dependency vite to v6.4.1 [SECURITY] ([2363fc9](https://github.com/lmc-eu/spirit-design-system/commit/2363fc9))
+
+### Documentation
+
+- **exporter-scss:** Introduce abandonment message ([cebfbed](https://github.com/lmc-eu/spirit-design-system/commit/cebfbed))
+
+### Styles
+
+- **exporter-scss:** Migrate ESLint config to flat config style ([e07bc61](https://github.com/lmc-eu/spirit-design-system/commit/e07bc61))
+
+**Note:** Version bump only for package @lmc-eu/spirit-exporters-scss
+
 <a name="2.0.17"></a>
 
 ## [2.0.17](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-scss@2.0.16...@lmc-eu/spirit-exporters-scss@2.0.17) (2025-10-22)

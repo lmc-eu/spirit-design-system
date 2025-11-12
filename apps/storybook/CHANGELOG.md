@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.2.2"></a>
+
+## [0.2.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-storybook@0.2.1...@lmc-eu/spirit-storybook@0.2.2) (2025-11-12)
+
+### Bug Fixes
+
+- **storybook:** Fix CSS loading order in Storybook [#DS-2189](https://github.com/lmc-eu/spirit-design-system/issues/DS-2189) ([ac51409](https://github.com/lmc-eu/spirit-design-system/commit/ac51409))
+
+### Dependencies
+
+- Update dependency vite to v6.4.1 [SECURITY] ([2363fc9](https://github.com/lmc-eu/spirit-design-system/commit/2363fc9))
+
+**Note:** Version bump only for package @lmc-eu/spirit-storybook
+
 <a name="0.2.1"></a>
 
 ## [0.2.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-storybook@0.2.0...@lmc-eu/spirit-storybook@0.2.1) (2025-10-22)

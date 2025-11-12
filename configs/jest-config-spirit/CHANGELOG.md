@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.1.9"></a>
+
+## [0.1.9](https://github.com/lmc-eu/spirit-design-system/compare/jest-config-spirit@0.1.8...jest-config-spirit@0.1.9) (2025-11-12)
+
+### Tests
+
+- **jest-config:** Introduce Accessibility Testing Setup ([04e0f25](https://github.com/lmc-eu/spirit-design-system/commit/04e0f25))
+
+**Note:** Version bump only for package jest-config-spirit
+
 <a name="0.1.8"></a>
 
 ## [0.1.8](https://github.com/lmc-eu/spirit-design-system/compare/jest-config-spirit@0.1.7...jest-config-spirit@0.1.8) (2025-10-22)

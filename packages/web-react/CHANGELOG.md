@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.22.0"></a>
+
+# [3.22.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.21.0...@lmc-eu/spirit-web-react@3.22.0) (2025-11-12)
+
+### Bug Fixes
+
+- **web-react:** Change IconBox fallback prefix [#DS-2195](https://github.com/lmc-eu/spirit-design-system/issues/DS-2195) ([1236b49](https://github.com/lmc-eu/spirit-design-system/commit/1236b49))
+
+### Code Refactoring
+
+- **eslint:** Turn off rule for test files ([8135f9a](https://github.com/lmc-eu/spirit-design-system/commit/8135f9a))
+- **web-react:** Unify checking of horizontal direction ([474ef9a](https://github.com/lmc-eu/spirit-design-system/commit/474ef9a))
+
+### Features
+
+- **web-react:** Add neutral color support to `Box` component [#DS-2189](https://github.com/lmc-eu/spirit-design-system/issues/DS-2189) ([fc65a42](https://github.com/lmc-eu/spirit-design-system/commit/fc65a42))
+- **web-react:** Allow inline Collapse [#DS-2206](https://github.com/lmc-eu/spirit-design-system/issues/DS-2206) ([c32da49](https://github.com/lmc-eu/spirit-design-system/commit/c32da49))
+- **web-react:** Introduce `ControlButton` component [#DS-2189](https://github.com/lmc-eu/spirit-design-system/issues/DS-2189) ([e33d212](https://github.com/lmc-eu/spirit-design-system/commit/e33d212))
+- **web-react:** Introduce Figma Code Connect [#DS-2192](https://github.com/lmc-eu/spirit-design-system/issues/DS-2192) ([247a0ab](https://github.com/lmc-eu/spirit-design-system/commit/247a0ab))
+- **web-react:** Introduce Figma Code Connect for Alert, Avatar, Divider, Pill and Tag [#DS-1898](https://github.com/lmc-eu/spirit-design-system/issues/DS-1898) ([1ed3309](https://github.com/lmc-eu/spirit-design-system/commit/1ed3309))
+- **web-react:** Introduce ScrollView Arrows [#DS-2118](https://github.com/lmc-eu/spirit-design-system/issues/DS-2118) ([ea411f9](https://github.com/lmc-eu/spirit-design-system/commit/ea411f9))
+- **web-react:** Stabilize Truncate component [#DS-1695](https://github.com/lmc-eu/spirit-design-system/issues/DS-1695) ([dfd1ae9](https://github.com/lmc-eu/spirit-design-system/commit/dfd1ae9))
+- **web,web-react:** Add fit and background color props to CardMedia [#DS-2113](https://github.com/lmc-eu/spirit-design-system/issues/DS-2113) ([abd2f1d](https://github.com/lmc-eu/spirit-design-system/commit/abd2f1d))
+
+### Styles
+
+- **web-react:** Migrate ESLint config to flat config style ([b5746a4](https://github.com/lmc-eu/spirit-design-system/commit/b5746a4))
+- **web-react:** Remove forgotten `.eslintrc.js` config ([8afd559](https://github.com/lmc-eu/spirit-design-system/commit/8afd559))
+
+### Tests
+
+- **web-react:** Introduce Accessibility tests for components ([1ce78d9](https://github.com/lmc-eu/spirit-design-system/commit/1ce78d9))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="3.21.0"></a>
 
 # [3.21.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.20.0...@lmc-eu/spirit-web-react@3.21.0) (2025-10-22)

@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.0.0"></a>
+
+# [3.0.0](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-tokens-exporter@2.4.4...@almacareer/spirit-tokens-exporter@3.0.0) (2025-11-12)
+
+### BREAKING CHANGES
+
+- **exporter:** Migrate to multi-brand typography tokens [#DS-2150](https://github.com/lmc-eu/spirit-design-system/issues/DS-2150) ([9968f38](https://github.com/lmc-eu/spirit-design-system/commit/9968f38))
+
+### Bug Fixes
+
+- **exporter-tokens:** Filter link styles from typography and Figma specific tokens ([023e496](https://github.com/lmc-eu/spirit-design-system/commit/023e496))
+- **exporter-tokens:** Use correct collection names ([59237a6](https://github.com/lmc-eu/spirit-design-system/commit/59237a6))
+
+### Code Refactoring
+
+- **exporter-tokens:** Streamlining the file writing ([72331ce](https://github.com/lmc-eu/spirit-design-system/commit/72331ce))
+
+### Dependencies
+
+- Update dependency vite to v6.4.1 [SECURITY] ([2363fc9](https://github.com/lmc-eu/spirit-design-system/commit/2363fc9))
+
+### Styles
+
+- **exporter-tokens:** Migrate ESLint config to flat config style ([f8f19ee](https://github.com/lmc-eu/spirit-design-system/commit/f8f19ee))
+
+**Note:** Version bump only for package @almacareer/spirit-tokens-exporter
+
 <a name="2.4.4"></a>
 
 ## [2.4.4](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-tokens-exporter@2.4.3...@almacareer/spirit-tokens-exporter@2.4.4) (2025-10-22)

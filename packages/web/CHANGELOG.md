@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.20.0"></a>
+
+# [3.20.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.19.0...@lmc-eu/spirit-web@3.20.0) (2025-11-12)
+
+### Bug Fixes
+
+- **web:** Lower selector of button link helper to apply the link color ([d29c67a](https://github.com/lmc-eu/spirit-design-system/commit/d29c67a))
+- **web:** Remove static fallbacks from the `dynamic-color-background` helper ([e5cd184](https://github.com/lmc-eu/spirit-design-system/commit/e5cd184))
+- **web:** Use button in Collapse more trigger demo ([9600439](https://github.com/lmc-eu/spirit-design-system/commit/9600439))
+
+### Code Refactoring
+
+- **web:** Remove padding from EmptyState [#2249](https://github.com/lmc-eu/spirit-design-system/issues/2249) ([2ce85fe](https://github.com/lmc-eu/spirit-design-system/commit/2ce85fe))
+
+### Features
+
+- **web-react:** Add neutral color support to `Box` component [#DS-2189](https://github.com/lmc-eu/spirit-design-system/issues/DS-2189) ([fc65a42](https://github.com/lmc-eu/spirit-design-system/commit/fc65a42))
+- **web-react:** Introduce `ControlButton` component [#DS-2189](https://github.com/lmc-eu/spirit-design-system/issues/DS-2189) ([e33d212](https://github.com/lmc-eu/spirit-design-system/commit/e33d212))
+- **web,web-react:** Add fit and background color props to CardMedia [#DS-2113](https://github.com/lmc-eu/spirit-design-system/issues/DS-2113) ([abd2f1d](https://github.com/lmc-eu/spirit-design-system/commit/abd2f1d))
+- **web:** Allow `ControlButton` to apply background color in the default state ([123a0fe](https://github.com/lmc-eu/spirit-design-system/commit/123a0fe))
+- **web:** Introduce `ControlButton` component [#DS-2188](https://github.com/lmc-eu/spirit-design-system/issues/DS-2188) ([5f20585](https://github.com/lmc-eu/spirit-design-system/commit/5f20585))
+- **web:** Introduce helper class to ensure minimum tap target size [#DS-2188](https://github.com/lmc-eu/spirit-design-system/issues/DS-2188) ([76c1e4f](https://github.com/lmc-eu/spirit-design-system/commit/76c1e4f))
+- **web:** Introduce ScrollView Arrows [#DS-2117](https://github.com/lmc-eu/spirit-design-system/issues/DS-2117) ([63d3fa0](https://github.com/lmc-eu/spirit-design-system/commit/63d3fa0))
+- **web:** Introduce utility classes for neutral text and background colors [#DS-2188](https://github.com/lmc-eu/spirit-design-system/issues/DS-2188) ([bd97881](https://github.com/lmc-eu/spirit-design-system/commit/bd97881))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="3.19.0"></a>
 
 # [3.19.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.18.0...@lmc-eu/spirit-web@3.19.0) (2025-10-22)

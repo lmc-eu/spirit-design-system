@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.15"></a>
+
+## [1.0.15](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-analytics@1.0.14...@lmc-eu/spirit-analytics@1.0.15) (2025-11-12)
+
+### Styles
+
+- **analytics:** Ignore `.coverage` by ESLint ([3156f05](https://github.com/lmc-eu/spirit-design-system/commit/3156f05))
+
+**Note:** Version bump only for package @lmc-eu/spirit-analytics
+
 <a name="1.0.14"></a>
 
 ## [1.0.14](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-analytics@1.0.13...@lmc-eu/spirit-analytics@1.0.14) (2025-10-22)
