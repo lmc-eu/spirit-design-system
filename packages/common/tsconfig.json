@@ -1,5 +1,5 @@
 {
   "extends": "../../configs/typescript-config-spirit/base",
   "include": ["./", "./.eslintrc.js"],
-  "exclude": ["./node_modules"]
+  "exclude": ["./node_modules", "./eslint.config.js"]
 }
