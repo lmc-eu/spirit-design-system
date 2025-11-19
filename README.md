@@ -42,6 +42,7 @@ See individual [packages](#packages) to learn how to get started.
 | [`@lmc-eu/spirit-icons`][packages-icons]                       | Icons for Spirit Design System                                | [![@lmc-eu/spirit-icons][lmc-eu-si-badge]][lmc-eu-si-npm]              |
 | [`@lmc-eu/spirit-web`][packages-web]                           | CSS and vanilla JS implementation of Spirit Design System     | [![@lmc-eu/spirit-web][lmc-eu-sw-badge]][lmc-eu-sw-npm]                |
 | [`@lmc-eu/spirit-web-react`][packages-web-react]               | React implementation of Spirit Design System components       | [![@lmc-eu/spirit-web-react][lmc-eu-swr-badge]][lmc-eu-swr-npm]        |
+| [`@lmc-eu/spirit-web-twig`][packages-web-twig]                 | Twig implementation of Spirit Design System components        | [![@lmc-eu/spirit-web-twig][lmc-eu-swt-badge]][lmc-eu-swt-packagist]   |
 
 </details>
 
@@ -94,6 +95,7 @@ See the [LICENSE][license] file for information.
 [packages-icons]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/icons
 [packages-web]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web
 [packages-web-react]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react
+[packages-web-twig]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig
 [package.json]: https://github.com/lmc-eu/spirit-design-system/blob/main/package.json
 [sa-badge]: https://img.shields.io/npm/v/%40lmc-eu/spirit-analytics.svg?style=flat-square
 [sa-npm]: https://www.npmjs.com/package/@alma-oss/spirit-analytics
@@ -121,4 +123,6 @@ See the [LICENSE][license] file for information.
 [lmc-eu-sw-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-web
 [lmc-eu-swr-badge]: https://img.shields.io/npm/v/%40lmc-eu/spirit-web-react.svg?style=flat-square
 [lmc-eu-swr-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-web-react
+[lmc-eu-swt-badge]: https://img.shields.io/packagist/v/lmc/spirit-web-twig-bundle.svg?style=flat-square
+[lmc-eu-swt-packagist]: https://packagist.org/packages/lmc/spirit-web-twig-bundle
 [yarn]: https://yarnpkg.com
