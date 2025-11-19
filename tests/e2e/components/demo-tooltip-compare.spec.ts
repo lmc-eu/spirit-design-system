@@ -14,7 +14,7 @@ const runComponentCompareTests = ({ componentsDir, packageName, componentName }:
 
   const formattedPackageName = formatPackageName(packageName);
 
-  test.describe(`Test Tooltip with focus trigger`, () => {
+  test.describe('Test Tooltip with focus trigger', () => {
     test(`Test ${componentName} component focus trigger in ${formattedPackageName} package`, async ({
       page,
     }: {
