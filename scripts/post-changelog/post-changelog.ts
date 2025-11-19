@@ -10,7 +10,7 @@ import slackifyMarkdown from 'slackify-markdown';
 import { $, fetch, argv, path, fs } from 'zx';
 
 const COLOR_CORE = '#00A58E';
-const PACKAGES = ['web', 'web-react', 'web-twig', 'design-tokens', 'icons', 'codemods', 'analytics'];
+const PACKAGES = ['web', 'web-react', 'design-tokens', 'icons', 'codemods', 'analytics'];
 let SLACK_CHANGELOG_WEBHOOK_URL = process.env.SLACK_CHANGELOG_WEBHOOK_URL ?? '';
 // Git lock retry configuration
 const MAX_RETRIES = 5;
