@@ -9,7 +9,7 @@ For full functionality, you need to [provide Spirit JavaScript][js-plugin-readme
 toggling of the Offcanvas component:
 
 ```html
-<script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
+<script src="node_modules/@alma-oss/spirit-web/js/cjs/spirit-web.min.js" async></script>
 ```
 
 ## Usage

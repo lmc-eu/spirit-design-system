@@ -94,8 +94,8 @@ If you are using `forwardRef`, use the `PolymorphicRef` type for the reference.
 
 ```jsx
 import { forwardRef } from 'react
-import { Link } from '@lmc-eu/spirit-web-react';
-import { PolymorphicRef } from '@lmc-eu/spirit-web-react/types';
+import { Link } from '@alma-oss/spirit-web-react';
+import { PolymorphicRef } from '@alma-oss/spirit-web-react/types';
 
 type LinkProps<T extends ElementType = 'button'> = SpiritLinkProps<T, 'tertiary'>;
 

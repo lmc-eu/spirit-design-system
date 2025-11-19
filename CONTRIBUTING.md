@@ -63,7 +63,7 @@ The `footer` is optional. The [Commit Message Footer](#commit-footer) format des
   │       │             │
   │       │             └─⫸ Summary in present tense. Sentence case. No period at the end.
   │       │
-  │       └─⫸ Commit Scope: analytics|design-tokens|form-validations|icons|web|web-react|web-twig|exporter-js|
+  │       └─⫸ Commit Scope: analytics|design-tokens|icons|web|web-react|web-twig|exporter-js|
   |                          exporter-scss|exporter-tokens|exporter-assets|ci|repo
   │
   └─⫸ Commit Type: Feat|Fix|Perf|Revert|Docs|Style|Refactor|Test|Chore|Deps
@@ -103,7 +103,6 @@ The following is the list of supported scopes:
   - `analytics`
   - `codemods`
   - `design-tokens`
-  - `form-validations`
   - `icons`
   - `web`
   - `web-react`
@@ -212,7 +211,7 @@ You can see which components are already connected by looking for files with the
 To connect a new component to Figma:
 
 ```bash
-yarn workspace @lmc-eu/spirit-web-react run figma:connect
+yarn workspace @alma-oss/spirit-web-react run figma:connect
 ```
 
 This will guide you through the process of creating a new Code Connect file. Alternatively, you can create the file manually by following the pattern in existing `*.figma.tsx` files.
@@ -223,10 +222,10 @@ To publish Code Connect files to Figma:
 
 ```bash
 # Publish all Code Connect files
-yarn workspace @lmc-eu/spirit-web-react run figma:publish
+yarn workspace @alma-oss/spirit-web-react run figma:publish
 
 # Unpublish everything
-yarn workspace @lmc-eu/spirit-web-react run figma:unpublish
+yarn workspace @alma-oss/spirit-web-react run figma:unpublish
 ```
 
 See Figma Docs how to unpublish single node.

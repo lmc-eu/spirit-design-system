@@ -13,7 +13,6 @@
 /packages/codemods                @literat @adamkudrna @crishpeen @pavelklibani @curdaj @vmilersky @dlouhak @lmc-eu/spirit-design-system
 /packages/common                  @literat @pavelklibani @curdaj @lmc-eu/spirit-design-system
 /packages/design-tokens           @literat @adamkudrna @crishpeen @curdaj @pavelklibani @katerinarehorkova @vmilersky @dlouhak @lmc-eu/spirit-design-system
-/packages/form-validations        @literat @pavelklibani @curdaj @lmc-eu/spirit-design-system
 /packages/icons                   @literat @adamkudrna @crishpeen @dlouhak @vmilersky @lmc-eu/spirit-design-system
 /packages/web                     @literat @adamkudrna @crishpeen @pavelklibani @curdaj @katerinarehorkova @vmilersky @dlouhak @lmc-eu/spirit-design-system
 /packages/web-react               @literat @pavelklibani @curdaj @katerinarehorkova @vmilersky @dlouhak @lmc-eu/spirit-design-system

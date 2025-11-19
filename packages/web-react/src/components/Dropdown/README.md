@@ -3,7 +3,7 @@
 ## Usage
 
 ```jsx
-import { Dropdown, DropdownTrigger, DropdownPopover } from '@lmc-eu/spirit-web-react/components';
+import { Dropdown, DropdownTrigger, DropdownPopover } from '@alma-oss/spirit-web-react';
 ```
 
 ```jsx
@@ -38,7 +38,7 @@ const onToggle = () => setIsOpen(!isOpen);
 ### Uncontrolled Dropdown
 
 ```jsx
-import { UncontrolledDropdown, DropdownTrigger, DropdownPopover } from '@lmc-eu/spirit-web-react/components';
+import { UncontrolledDropdown, DropdownTrigger, DropdownPopover } from '@alma-oss/spirit-web-react';
 ```
 
 ```jsx

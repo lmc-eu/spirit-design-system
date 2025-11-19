@@ -1,4 +1,4 @@
-import { accentColors, emotionColors } from '@lmc-eu/spirit-design-tokens';
+import { accentColors, emotionColors } from '@alma-oss/spirit-design-tokens';
 import React from 'react';
 import { BackgroundColors, TextColors } from '../../../constants';
 import { getAccentBackgroundColors, getEmotionBackgroundColors, getNeutralBackgroundColors } from '../../../utils';

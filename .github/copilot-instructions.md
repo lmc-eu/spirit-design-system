@@ -28,7 +28,6 @@ packages/
 ├── codemods/           # Migration transforms between versions
 ├── common/             # Shared build scripts and utilities
 ├── design-tokens/      # Design tokens (SCSS/JS/TS)
-├── form-validations/   # Form validation utilities
 ├── icons/              # SVG and React icon library
 ├── web/                # Vanilla CSS/JS implementation
 └── web-react/          # React components library

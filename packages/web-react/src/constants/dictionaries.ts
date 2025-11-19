@@ -1,4 +1,4 @@
-import { componentColors, containers, emotionColors, textColors } from '@lmc-eu/spirit-design-tokens';
+import { componentColors, containers, emotionColors, textColors } from '@alma-oss/spirit-design-tokens';
 
 function createUppercaseKeyDictionary<T extends Record<string, unknown>>(obj: T) {
   return Object.fromEntries(Object.keys(obj).map((key) => [key.toUpperCase(), key])) as {

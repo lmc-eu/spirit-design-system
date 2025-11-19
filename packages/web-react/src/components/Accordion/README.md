@@ -6,8 +6,8 @@
 
 ```javascript
 import React, { useState } from 'react';
-import { Accordion, AccordionItem, AccordionHeader, AccordionContent } from '@lmc-eu/spirit-web-react/components';
-import { AccordionOpenStateType } from '@lmc-eu/spirit-web-react/types';
+import { Accordion, AccordionItem, AccordionHeader, AccordionContent } from '@alma-oss/spirit-web-react';
+import { AccordionOpenStateType } from '@alma-oss/spirit-web-react/types';
 ```
 
 ```typescript
@@ -67,13 +67,8 @@ const [openState, setOpenState] = useState<AccordionOpenStateType>('');
 ### Uncontrolled Accordion (Stay Open)
 
 ```javascript
-import {
-  UncontrolledAccordion,
-  AccordionItem,
-  AccordionHeader,
-  AccordionContent,
-} from '@lmc-eu/spirit-web-react/components';
-import { AccordionOpenStateType } from '@lmc-eu/spirit-web-react/types';
+import { UncontrolledAccordion, AccordionItem, AccordionHeader, AccordionContent } from '@alma-oss/spirit-web-react';
+import { AccordionOpenStateType } from '@alma-oss/spirit-web-react/types';
 ```
 
 ```javascript

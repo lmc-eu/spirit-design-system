@@ -5,7 +5,7 @@ Tooltips are used to provide additional information about an element when the us
 ## Tooltip
 
 ```jsx
-import { Tooltip, TooltipTrigger, TooltipPopover } from '@lmc-eu/spirit-web-react/components';
+import { Tooltip, TooltipTrigger, TooltipPopover } from '@alma-oss/spirit-web-react';
 
 const [open, setOpen] = React.useState(false);
 
@@ -20,7 +20,7 @@ const [open, setOpen] = React.useState(false);
 To display close button, add `isDismissible` prop to the `Tooltip` component.
 
 ```jsx
-import { Tooltip, TooltipTrigger, TooltipPopover, Button } from '@lmc-eu/spirit-web-react/components';
+import { Tooltip, TooltipTrigger, TooltipPopover, Button } from '@alma-oss/spirit-web-react';
 
 const [open, setOpen] = React.useState(false);
 
@@ -63,7 +63,7 @@ If you only want the `click` trigger, you need to specify the trigger, as shown 
 This setup might be preferable when you have a link in your tooltip, for example.
 
 ```jsx
-import { Tooltip, TooltipTrigger, TooltipPopover, Button } from '@lmc-eu/spirit-web-react/components';
+import { Tooltip, TooltipTrigger, TooltipPopover, Button } from '@alma-oss/spirit-web-react';
 
 const [open, setOpen] = React.useState(false);
 

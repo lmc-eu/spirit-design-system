@@ -11,7 +11,7 @@ Basic example usage:
 Advanced example usage:
 
 ```twig
-<ButtonLink color="primary" href="#" isBlock>Primary block ButtonLink</ButtonLink>
+<ButtonLink color="primary" href="#">Primary ButtonLink</ButtonLink>
 ```
 
 Without lexer:
@@ -47,26 +47,19 @@ To span a `ButtonLink` to the full width of its parent, you can use display util
 </Grid>
 ```
 
-## DEPRECATION NOTICE
-
-Property `isBlock` is deprecated and will be removed in the next major release.
-
-For more information, please read the section [How to Make a Fluid ButtonLink](#how-to-make-a-fluid-buttonlink).
-
 ## API
 
-| Name            | Type                                                                                             | Default   | Required | Description                                                                                                                                                       |
-| --------------- | ------------------------------------------------------------------------------------------------ | --------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `color`         | [Action Button Color dictionary][dictionary-color], [Emotion Color dictionary][dictionary-color] | `primary` | ✕        | Color variant                                                                                                                                                     |
-| `href`          | `string`                                                                                         | —         | ✓        | Link URL                                                                                                                                                          |
-| `isBlock`       | `bool`                                                                                           | `false`   | ✕        | [**DEPRECATED**](#deprecation-notice) Span the element to the full width of its parent, see [How to Make a Fluid Button](#how-to-make-a-fluid-buttonlink) section |
-| `isDisabled`    | `bool`                                                                                           | `false`   | ✕        | If true, ButtonLink is disabled                                                                                                                                   |
-| `isLoading`     | `bool`                                                                                           | `false`   | ✕        | If true, ButtonLink is in a loading state, disabled and the Spinner is visible                                                                                    |
-| `isSymmetrical` | `bool`                                                                                           | `false`   | ✕        | If true, ButtonLink has symmetrical dimensions, usually only with an Icon                                                                                         |
-| `rel`           | `string`                                                                                         | `null`    | ✕        | Link relationship                                                                                                                                                 |
-| `size`          | [Size dictionary][dictionary-size]                                                               | `medium`  | ✕        | Size variant                                                                                                                                                      |
-| `target`        | `string`                                                                                         | `null`    | ✕        | Browsing context for the link                                                                                                                                     |
-| `title`         | `string`                                                                                         | `null`    | ✕        | Optional title to display on hover                                                                                                                                |
+| Name            | Type                                                                                             | Default   | Required | Description                                                                    |
+| --------------- | ------------------------------------------------------------------------------------------------ | --------- | -------- | ------------------------------------------------------------------------------ |
+| `color`         | [Action Button Color dictionary][dictionary-color], [Emotion Color dictionary][dictionary-color] | `primary` | ✕        | Color variant                                                                  |
+| `href`          | `string`                                                                                         | —         | ✓        | Link URL                                                                       |
+| `isDisabled`    | `bool`                                                                                           | `false`   | ✕        | If true, ButtonLink is disabled                                                |
+| `isLoading`     | `bool`                                                                                           | `false`   | ✕        | If true, ButtonLink is in a loading state, disabled and the Spinner is visible |
+| `isSymmetrical` | `bool`                                                                                           | `false`   | ✕        | If true, ButtonLink has symmetrical dimensions, usually only with an Icon      |
+| `rel`           | `string`                                                                                         | `null`    | ✕        | Link relationship                                                              |
+| `size`          | [Size dictionary][dictionary-size]                                                               | `medium`  | ✕        | Size variant                                                                   |
+| `target`        | `string`                                                                                         | `null`    | ✕        | Browsing context for the link                                                  |
+| `title`         | `string`                                                                                         | `null`    | ✕        | Optional title to display on hover                                             |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

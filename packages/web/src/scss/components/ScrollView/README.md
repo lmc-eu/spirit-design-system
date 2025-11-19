@@ -7,7 +7,7 @@ ScrollView makes long content scrollable. On its edges, it provides an indicatio
 For full functionality, you need to provide Spirit JavaScript, which will handle toggling of the FileUploader component:
 
 ```html
-<script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
+<script src="node_modules/@alma-oss/spirit-web/js/cjs/spirit-web.min.js" async></script>
 ```
 
 You will find the [full documentation](#javascript-plugin-api) of the plugin below on this page.

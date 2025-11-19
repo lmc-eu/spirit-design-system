@@ -72,7 +72,7 @@ When composing your own version using Box and Icon, make sure the icon behaves a
 - applying appropriate styling to its parent container (e.g `UNSAFE_className="d-flex"` on Box component).
 
 ```jsx
-import { Box, Icon } from '@lmc-eu/spirit-web-react';
+import { Box, Icon } from '@alma-oss/spirit-web-react';
 
 <Box backgroundColor="primary" borderRadius="200" borderWidth="100" padding="space-600">
   <Icon name="search" UNSAFE_className="d-block" />

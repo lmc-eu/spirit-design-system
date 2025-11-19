@@ -1,10 +1,10 @@
 {
-  "name": "@lmc-eu/spirit-analytics",
+  "name": "@alma-oss/spirit-analytics",
   "version": "1.0.15",
   "description": "Analytic tools for Spirit Design System",
   "license": "MIT",
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "keywords": [
     "cli",

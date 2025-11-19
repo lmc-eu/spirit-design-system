@@ -24,7 +24,7 @@ describe('versions', () => {
       // Mock the return value of fs.readFile
       fs.readFile.mockResolvedValue(`
         Some content before
-        https://registry.yarnpkg.com/@lmc-eu/spirit-web-react/-/spirit-web-react-^1.2.0-beta.1.tgz
+        https://registry.yarnpkg.com/@alma-oss/spirit-web-react/-/spirit-web-react-^1.2.0-beta.1.tgz
         Some content after
       `);
 
@@ -53,7 +53,7 @@ describe('versions', () => {
       // Mock the return value of fs.readFile (no matching version found)
       (fs.readFile as jest.Mock).mockResolvedValue(`
         Some content before
-        https://registry.npmjs.org/@lmc-eu/spirit-web-react/-/spirit-web-react-1.0.0.tgz
+        https://registry.npmjs.org/@alma-oss/spirit-web-react/-/spirit-web-react-1.0.0.tgz
         Some content after
       `);
 
