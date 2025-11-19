@@ -2,6 +2,7 @@ import { type ElementType } from 'react';
 import { type LinkTarget } from './link';
 import {
   type ChildrenProps,
+  type SpiritElementProps,
   type SpiritPolymorphicElementPropsWithRef,
   type StyleProps,
   type TransferProps,
@@ -23,7 +24,7 @@ export type HeaderLogoProps<E extends ElementType> = {
   elementType?: E;
 } & HeaderLogoBaseProps;
 
-export interface SpiritHeaderProps extends StyleProps, ChildrenProps {
+export interface SpiritHeaderProps extends SpiritElementProps, ChildrenProps {
   hasBottomDivider?: boolean;
 }
 
