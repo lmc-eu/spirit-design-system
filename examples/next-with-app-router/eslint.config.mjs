@@ -1,5 +1,6 @@
 import { fixupConfigRules } from '@eslint/compat';
 import { FlatCompat } from '@eslint/eslintrc';
+import globals from 'globals';
 
 const compat = new FlatCompat({
   baseDirectory: import.meta.dirname,
@@ -45,15 +46,16 @@ export default [
     ),
   ),
   {
-    env: {
-      jest: true,
-    },
     plugins: ['react-refresh'],
 
     languageOptions: {
       parserOptions: {
         ecmaVersion: 'latest',
         project: './tsconfig.eslint.json',
+      },
+      // @TODO: move this to `@lmc-eu/eslint-config-jest`
+      globals: {
+        ...globals.jest,
       },
     },
     // @TODO: remove `files` and `plugins` when all configs are flat
