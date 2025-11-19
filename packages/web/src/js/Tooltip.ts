@@ -100,11 +100,20 @@ class Tooltip extends BaseComponent {
   }
 
   toggle() {
+    const wasShown = this.isShown();
     this.activeTrigger[TRIGGER_CLICK] = 'click' in this.activeTrigger ? !this.activeTrigger[TRIGGER_CLICK] : true;
     this.activeTrigger[TRIGGER_HOVER] = 'hover' in this.activeTrigger ? !this.activeTrigger[TRIGGER_HOVER] : true;
     this.activeTrigger[TRIGGER_FOCUS] = 'focus' in this.activeTrigger ? !this.activeTrigger[TRIGGER_FOCUS] : true;
 
-    if (this.isShown()) {
+    if (wasShown) {
+      // When toggling off, if focus trigger is enabled and element is focused,
+      // blur it to deactivate the focus trigger so the tooltip can close
+      if (this.triggers?.includes(TRIGGER_FOCUS)) {
+        const trigger = this.getTrigger();
+        if (trigger && trigger === document.activeElement) {
+          trigger.blur();
+        }
+      }
       this.leave();
 
       return;
