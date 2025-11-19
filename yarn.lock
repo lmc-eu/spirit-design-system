@@ -46,6 +46,7 @@ __metadata:
     eslint: "npm:9.39.1"
     eslint-config-next: "npm:14.2.29"
     eslint-config-spirit: "workspace:^"
+    eslint-plugin-react-refresh: "npm:0.4.24"
     globals: "npm:16.5.0"
     next: "npm:15.5.4"
     react: "npm:19.0.0"
@@ -76,6 +77,7 @@ __metadata:
     eslint: "npm:9.39.1"
     eslint-config-next: "npm:14.2.29"
     eslint-config-spirit: "workspace:^"
+    eslint-plugin-react-refresh: "npm:0.4.24"
     globals: "npm:16.5.0"
     next: "npm:15.5.4"
     react: "npm:^18"
@@ -16660,6 +16662,15 @@ __metadata:
   peerDependencies:
     eslint: ">=8.40"
   checksum: 10/88aec8eeaf96f1a09df72a2134dc36dd8ef22a3ceb1ccba7865e63a128596e6be31942925edf896dcd12d0d51b8cb77530293ef4e738b600955a5a5c913f52d8
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-react-refresh@npm:0.4.24":
+  version: 0.4.24
+  resolution: "eslint-plugin-react-refresh@npm:0.4.24"
+  peerDependencies:
+    eslint: ">=8.40"
+  checksum: 10/5e7f0e9e854f1fcf56dcfca5f9e068ba0e1e3f7b47428991d5d5f9549dfc94261d6200fb7a1a1a76861cd787f17f2366dfd4f27a082d7f7815a0201a0b434dd3
   languageName: node
   linkType: hard
 
