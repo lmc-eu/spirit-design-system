@@ -18,7 +18,6 @@ export default {
         'icons',
         'web',
         'web-react',
-        'web-twig',
         // Use when committing changes/additions/removals to exact exporter
         'exporter-assets',
         'exporter-tokens',
