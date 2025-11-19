@@ -12,12 +12,5 @@ Introducing lists containing deprecations and feature flags to be removed in the
 
 - [Deprecations][web-react-deprecations]
 
-<!-- @TODO: Remove ignore when web-twig package is abandoned (https://jira.almacareer.tech/browse/DS-1582). -->
-
-## @lmc-eu/spirit-web-twig
-
-- [Deprecations][web-twig-deprecations]
-
 [web-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/DEPRECATIONS.md
 [web-react-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/DEPRECATIONS.md
-[web-twig-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/DEPRECATIONS.md

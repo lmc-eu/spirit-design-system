@@ -86,10 +86,7 @@ jobs:
         uses: ./.github/actions/setup-node
 
       - name: Unit Tests
-        # Ignoring web-twig tests as they have separated workflow.
-        # See `test-web-twig.yaml` for web-twig unit tests.
-        # @TODO: Remove ignore when web-twig package is abandoned (https://jira.almacareer.tech/browse/DS-1582).
-        run: yarn test:unit --ignore '@lmc-eu/spirit-web-twig'
+        run: yarn test:unit
 
       - name: Publish Web Package Code Coverage
         # When Nx hits its cloud cache, there is no generated coverage to sent, e.g. do not let this crash
@@ -99,7 +96,7 @@ jobs:
           github-token: ${{ github.token}}
           file: ./packages/web/.coverage/lcov.info
           flag-name: web
-          carryforward: web-react, web-twig, analytics, design-tokens, icons, common, codemods, form-validations
+          carryforward: web-react, analytics, design-tokens, icons, common, codemods
 
       - name: Publish Web-React Package Code Coverage
         # When Nx hits its cloud cache, there is no generated coverage to sent, e.g. do not let this crash
@@ -109,7 +106,7 @@ jobs:
           github-token: ${{ github.token}}
           file: ./packages/web-react/.coverage/lcov.info
           flag-name: web-react
-          carryforward: web, web-twig, analytics, design-tokens, icons, common, codemods, form-validations
+          carryforward: web, analytics, design-tokens, icons, common, codemods
 
       - name: Publish Analytics Package Code Coverage
         # When Nx hits its cloud cache, there is no generated coverage to sent, e.g. do not let this crash
@@ -119,7 +116,7 @@ jobs:
           github-token: ${{ github.token}}
           file: ./packages/analytics/.coverage/lcov.info
           flag-name: analytics
-          carryforward: web, web-react, web-twig, design-tokens, icons, common, codemods, form-validations
+          carryforward: web, web-react, design-tokens, icons, common, codemods
 
   format:
     name: 💅 Code Formatting

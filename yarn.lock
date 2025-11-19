@@ -5418,12 +5418,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@lmc-eu/spirit-web-twig@workspace:packages/web-twig":
-  version: 0.0.0-use.local
-  resolution: "@lmc-eu/spirit-web-twig@workspace:packages/web-twig"
-  languageName: unknown
-  linkType: soft
-
 "@lukeed/ms@npm:^2.0.1":
   version: 2.0.2
   resolution: "@lukeed/ms@npm:2.0.2"
