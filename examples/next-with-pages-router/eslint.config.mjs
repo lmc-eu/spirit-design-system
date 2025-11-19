@@ -1,5 +1,6 @@
-import { fixupConfigRules } from '@eslint/compat';
+import { fixupConfigRules, fixupPluginRules } from '@eslint/compat';
 import { FlatCompat } from '@eslint/eslintrc';
+import reactRefresh from 'eslint-plugin-react-refresh';
 import globals from 'globals';
 
 const compat = new FlatCompat({
@@ -46,7 +47,9 @@ export default [
     ),
   ),
   {
-    plugins: ['react-refresh'],
+    plugins: {
+      'react-refresh': fixupPluginRules(reactRefresh),
+    },
 
     languageOptions: {
       parserOptions: {
