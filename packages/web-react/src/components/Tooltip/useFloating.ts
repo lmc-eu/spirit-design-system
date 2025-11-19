@@ -18,11 +18,11 @@ import {
   useInteractions,
   useRole,
 } from '@floating-ui/react';
-import { useState } from 'react';
+import { type HTMLProps, type MouseEvent, type MouseEventHandler, type MutableRefObject, useState } from 'react';
 import { TOOLTIP_TRIGGER, type TooltipTriggerType } from '../../types';
 
 type UseTooltipUIProps = {
-  arrowRef: React.MutableRefObject<HTMLElement | null>;
+  arrowRef: MutableRefObject<HTMLElement | null>;
   cornerOffset?: number;
   flipCrossAxis: boolean;
   flipFallbackAxisSideDirection: 'none' | 'start' | 'end';
@@ -150,7 +150,48 @@ export const useFloating = (props: UseTooltipUIProps) => {
   const focus = useFocus(context, { enabled: isFocusEnabled });
   const dismiss = useDismiss(context, { outsidePress: !isDismissible });
   const role = useRole(context, { role: 'tooltip' });
-  const { getReferenceProps, getFloatingProps } = useInteractions([click, hover, focus, dismiss, role]);
+  const { getReferenceProps: originalGetReferenceProps, getFloatingProps } = useInteractions([
+    click,
+    hover,
+    focus,
+    dismiss,
+    role,
+  ]);
+
+  // Wrap getReferenceProps to ensure clicking focuses the element when focus trigger is enabled
+  // This matches the web JS behavior where clicking a focusable element naturally focuses it
+  const getReferenceProps = (userProps?: HTMLProps<Element>) => {
+    const referenceProps = originalGetReferenceProps(userProps);
+
+    if (isFocusEnabled) {
+      const originalOnMouseDown = referenceProps.onMouseDown as ((event: MouseEvent<Element>) => void) | undefined;
+
+      referenceProps.onMouseDown = ((event: MouseEvent<Element>) => {
+        if (originalOnMouseDown) {
+          originalOnMouseDown(event);
+        }
+
+        const element = event.currentTarget;
+
+        if (element && element !== document.activeElement) {
+          const isFocusable =
+            element instanceof HTMLElement &&
+            (element.tabIndex >= 0 ||
+              element instanceof HTMLButtonElement ||
+              element instanceof HTMLAnchorElement ||
+              element instanceof HTMLInputElement ||
+              element instanceof HTMLSelectElement ||
+              element instanceof HTMLTextAreaElement);
+
+          if (isFocusable) {
+            (element as HTMLElement).focus();
+          }
+        }
+      }) as MouseEventHandler<Element>;
+    }
+
+    return referenceProps;
+  };
 
   return {
     context,
