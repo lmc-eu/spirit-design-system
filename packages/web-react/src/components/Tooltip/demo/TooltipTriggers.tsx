@@ -5,10 +5,10 @@ import TooltipPopover from '../TooltipPopover';
 import TooltipTrigger from '../TooltipTrigger';
 
 const TooltipTriggers = () => {
-  const [openAll, setOpenAll] = useState(false);
-  const [openHover, setOpenHover] = useState(false);
-  const [openClick, setOpenClick] = useState(false);
-  const [openFocus, setOpenFocus] = useState(false);
+  const [isAllOpen, setIsAllOpen] = useState(false);
+  const [isHoverOpen, setIsHoverOpen] = useState(false);
+  const [isClickOpen, setIsClickOpen] = useState(false);
+  const [isFocusOpen, setIsFocusOpen] = useState(false);
 
   return (
     <>
@@ -17,8 +17,8 @@ const TooltipTriggers = () => {
       </p>
       <Tooltip
         id="tooltip-all"
-        isOpen={openAll}
-        onToggle={setOpenAll}
+        isOpen={isAllOpen}
+        onToggle={setIsAllOpen}
         trigger={['hover', 'click', 'focus']}
         placement="right"
         flipFallbackPlacements={['bottom']}
@@ -34,8 +34,8 @@ const TooltipTriggers = () => {
       </p>
       <Tooltip
         id="tooltip-hover"
-        isOpen={openHover}
-        onToggle={setOpenHover}
+        isOpen={isHoverOpen}
+        onToggle={setIsHoverOpen}
         trigger={['hover']}
         placement="right"
         flipFallbackPlacements={['bottom']}
@@ -51,8 +51,8 @@ const TooltipTriggers = () => {
       </p>
       <Tooltip
         id="tooltip-click"
-        isOpen={openClick}
-        onToggle={setOpenClick}
+        isOpen={isClickOpen}
+        onToggle={setIsClickOpen}
         trigger={['click']}
         placement="right"
         flipFallbackPlacements={['bottom']}
@@ -68,8 +68,8 @@ const TooltipTriggers = () => {
       </p>
       <Tooltip
         id="tooltip-focus"
-        isOpen={openFocus}
-        onToggle={setOpenFocus}
+        isOpen={isFocusOpen}
+        onToggle={setIsFocusOpen}
         trigger={['focus']}
         placement="right"
         flipFallbackPlacements={['bottom']}

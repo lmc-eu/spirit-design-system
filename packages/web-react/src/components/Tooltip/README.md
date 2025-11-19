@@ -63,6 +63,10 @@ If you only want the `click` trigger, you need to specify the trigger, as shown 
 This setup might be preferable when you have a link in your tooltip, for example.
 The `focus` trigger is useful for accessibility, showing the tooltip when users navigate to the trigger element using the keyboard (Tab key).
 
+👉 For the `focus` trigger to work properly, the trigger element must be focusable. If you're using a non-focusable element (like a `div` or `span`), make sure to add `tabIndex={0}` to make it keyboard accessible.
+
+👉 'hover' on its own will result in tooltips that cannot be triggered via the keyboard, and should only be used if alternative methods for conveying the same information for keyboard users is present.
+
 ```jsx
 import { Tooltip, TooltipTrigger, TooltipPopover, Button } from '@lmc-eu/spirit-web-react/components';
 
