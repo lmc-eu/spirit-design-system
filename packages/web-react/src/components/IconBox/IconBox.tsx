@@ -1,5 +1,6 @@
 'use client';
 
+import { cssVariablePrefix } from '@lmc-eu/spirit-design-tokens';
 import classNames from 'classnames';
 import React, { type ElementType } from 'react';
 import { EmotionColors, SizesExtended } from '../../constants';
@@ -27,7 +28,6 @@ const IconBox = <T extends ElementType = 'div'>(props: SpiritIconBoxProps<T>) =>
   const { colors } = useIconBoxColors(color, isSubtle);
   const {
     props: modifiedProps,
-    iconBoxStyles: iconBoxStyleProps,
     shapesProps,
     sizeProps: { padding, iconSize },
   } = useIconBoxStyleProps({
@@ -43,20 +43,15 @@ const IconBox = <T extends ElementType = 'div'>(props: SpiritIconBoxProps<T>) =>
       {...otherProps}
       backgroundColor={colors.background}
       elementType={elementType}
-      {...(hasBorder
-        ? {
-            borderWidth: '100',
-            borderColor: colors.border,
-          }
-        : {
-            padding,
-          })}
+      padding={padding}
+      borderWidth={hasBorder ? '100' : undefined}
+      borderColor={hasBorder ? colors.border : undefined}
       borderRadius={shapesProps}
       textColor={colors.text}
       UNSAFE_className={classNames(styleProps.className, 'd-inline-flex')}
       UNSAFE_style={{
         ...styleProps.style,
-        ...iconBoxStyleProps,
+        padding: `calc(var(--${cssVariablePrefix}local-padding) - var(--${cssVariablePrefix}local-border-width, 0px)) !important`, // lol
       }}
     >
       <Icon aria-hidden="true" boxSize={iconSize} name={iconName} />
