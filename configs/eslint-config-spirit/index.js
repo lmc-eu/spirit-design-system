@@ -20,6 +20,7 @@ module.exports = {
   plugins: ['promise', 'react', '@typescript-eslint', 'react-refresh'],
 
   rules: {
+
     /**
      * Set sorting of imports
      *
