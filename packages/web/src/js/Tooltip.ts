@@ -15,9 +15,12 @@ const EVENT_SHOWN = `shown${EVENT_KEY}`;
 const EVENT_CLICK = 'click';
 const EVENT_MOUSEENTER = 'mouseenter';
 const EVENT_MOUSELEAVE = 'mouseleave';
+const EVENT_FOCUS = 'focus';
+const EVENT_BLUR = 'blur';
 
 const TRIGGER_HOVER = 'hover';
 const TRIGGER_CLICK = 'click';
+const TRIGGER_FOCUS = 'focus';
 
 const SELECTOR_ARROW = '[data-spirit-element="arrow"]';
 const SELECTOR_WRAPPER = '[data-spirit-element="tooltip"]';
@@ -97,10 +100,20 @@ class Tooltip extends BaseComponent {
   }
 
   toggle() {
+    const wasShown = this.isShown();
     this.activeTrigger[TRIGGER_CLICK] = 'click' in this.activeTrigger ? !this.activeTrigger[TRIGGER_CLICK] : true;
     this.activeTrigger[TRIGGER_HOVER] = 'hover' in this.activeTrigger ? !this.activeTrigger[TRIGGER_HOVER] : true;
+    this.activeTrigger[TRIGGER_FOCUS] = 'focus' in this.activeTrigger ? !this.activeTrigger[TRIGGER_FOCUS] : true;
 
-    if (this.isShown()) {
+    if (wasShown) {
+      // When toggling off, if focus trigger is enabled and element is focused,
+      // blur it to deactivate the focus trigger so the tooltip can close
+      if (this.triggers?.includes(TRIGGER_FOCUS)) {
+        const trigger = this.getTrigger();
+        if (trigger && trigger === document.activeElement) {
+          trigger.blur();
+        }
+      }
       this.leave();
 
       return;
@@ -177,6 +190,7 @@ class Tooltip extends BaseComponent {
 
     this.activeTrigger[TRIGGER_CLICK] = false;
     this.activeTrigger[TRIGGER_HOVER] = false;
+    this.activeTrigger[TRIGGER_FOCUS] = false;
     this.isHovered = false;
 
     if (this.isWithActiveTrigger()) {
@@ -367,6 +381,7 @@ class Tooltip extends BaseComponent {
     if (event.target && shouldClose) {
       this.activeTrigger[TRIGGER_CLICK] = false;
       this.activeTrigger[TRIGGER_HOVER] = false;
+      this.activeTrigger[TRIGGER_FOCUS] = false;
       this.leave();
     }
   };
@@ -405,6 +420,10 @@ class Tooltip extends BaseComponent {
     if (this.triggers?.includes(TRIGGER_HOVER)) {
       this.addMouseEventListeners();
     }
+
+    if (this.triggers?.includes(TRIGGER_FOCUS)) {
+      this.addFocusEventListeners();
+    }
   }
 
   addClickEventListeners() {
@@ -430,6 +449,22 @@ class Tooltip extends BaseComponent {
     EventHandler.on(trigger, EVENT_MOUSELEAVE, () => {
       const context = Tooltip.getOrCreateInstance(this.element as HTMLElement);
       context.activeTrigger[TRIGGER_HOVER] = false;
+      context.leave();
+    });
+  }
+
+  addFocusEventListeners() {
+    const trigger = this.getTrigger();
+
+    EventHandler.on(trigger, EVENT_FOCUS, () => {
+      const context = Tooltip.getOrCreateInstance(this.element as HTMLElement);
+      context.activeTrigger[TRIGGER_FOCUS] = true;
+      context.enter();
+    });
+
+    EventHandler.on(trigger, EVENT_BLUR, () => {
+      const context = Tooltip.getOrCreateInstance(this.element as HTMLElement);
+      context.activeTrigger[TRIGGER_FOCUS] = false;
       context.leave();
     });
   }
