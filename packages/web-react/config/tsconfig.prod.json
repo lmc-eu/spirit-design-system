@@ -8,10 +8,12 @@
   "exclude": [
     "../docs/**/*",
     "../src/**/__tests__/**/*",
-    "../src/**/*.stories.*",
     "../src/**/stories/**/*",
+    "../src/**/*.stories.*",
     "../src/**/demo/**/*",
     "../src/**/*.demo.*",
+    "../src/**/figma/**/*",
+    "../src/**/*.figma.*",
     "../src/**/*.html",
     "../src/icons/**/*"
   ]
