@@ -41,7 +41,7 @@ export default [
     languageOptions: {
       parserOptions: {
         ecmaVersion: 'latest',
-        project: './tsconfig.json',
+        project: './config/tsconfig.eslint.json',
       },
     },
     // @TODO: remove `files` and `plugins` when all configs are flat
