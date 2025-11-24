@@ -1,5 +1,5 @@
 import React from 'react';
-import type { TimelineMarkerType } from '../../../types';
+import type { SingleOrResponsive, SizesDictionaryType, TimelineMarkerType } from '../../../types';
 import { Button } from '../../Button';
 import { Heading } from '../../Heading';
 import { Icon } from '../../Icon';
@@ -13,12 +13,13 @@ import TimelineStep from '../TimelineStep';
 import type { TimelineDemoStep } from './constants';
 
 interface TimelineDemoFactoryProps {
+  size?: SingleOrResponsive<SizesDictionaryType>;
   steps: TimelineDemoStep[];
   variant: TimelineMarkerType;
 }
 
-const TimelineDemoFactory = ({ steps, variant }: TimelineDemoFactoryProps) => (
-  <Timeline>
+const TimelineDemoFactory = ({ size, steps, variant }: TimelineDemoFactoryProps) => (
+  <Timeline size={size}>
     {steps.map((step, index) => (
       <TimelineStep key={`timeline-step-${index.toString()}`}>
         <TimelineMarker

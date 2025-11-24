@@ -23,12 +23,44 @@ import { Timeline } from '@lmc-eu/spirit-web-react';
 ℹ️ By default, Timeline uses the `<ol>` element for semantic ordered lists.
 You can change it to `<ul>` for unordered timelines using the `elementType` prop.
 
+### Size
+
+The `size` prop controls the size of all markers within the timeline. This applies to all marker types: number markers, dot markers, and icon markers.
+The `size` affects both the marker container dimensions and the marker content.
+
+The default size is `small`, so you can omit the prop if you want to use the default size.
+
+```jsx
+<Timeline size="medium">
+  {/* TimelineStep content */}
+</Timeline>
+
+<Timeline size="large">
+  {/* TimelineStep content */}
+</Timeline>
+```
+
+You can set different marker sizes for different breakpoints using a responsive object:
+
+```jsx
+<Timeline size={{ mobile: 'small', tablet: 'medium', desktop: 'large' }}>{/* TimelineStep content */}</Timeline>
+```
+
+The marker size is controlled via CSS custom properties that are inherited by all TimelineMarker components within the timeline.
+
+The size configuration affects:
+
+- **Number markers**: Marker container size and typography
+- **Dot markers**: Marker container size and dot size
+- **Icon markers**: Marker container and Icon size
+
 ### API
 
-| Name          | Type          | Default | Required | Description        |
-| ------------- | ------------- | ------- | -------- | ------------------ |
-| `children`    | `ReactNode`   | —       | ✓        | Timeline content   |
-| `elementType` | `ElementType` | `ol`    | ✕        | HTML tag to render |
+| Name          | Type                                                                                                                                    | Default | Required | Description                                                                         |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ------- | -------- | ----------------------------------------------------------------------------------- |
+| `children`    | `ReactNode`                                                                                                                             | —       | ✓        | Timeline content                                                                    |
+| `elementType` | `ElementType`                                                                                                                           | `ol`    | ✕        | HTML tag to render                                                                  |
+| `size`        | \[[SizesDictionaryType][readme-generated-types] \| [Responsive][readme-generated-types]<[SizesDictionaryType][readme-generated-types]>] | `small` | ✕        | The size of all markers in the timeline. Can be a single size or responsive object. |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -138,6 +170,8 @@ TimelineMarker supports design token-based color props for consistent theming ac
 | `children`        | `ReactNode`                                                                                                                                                                                                     | —        | ✕        | Marker content (ignored when `variant="dot"`)                              |
 | `textColor`       | \[[TextColorNamesType][readme-generated-types] \| [AccentColorNamesType][readme-generated-types] \| [EmotionColorNamesType][readme-generated-types] ✕ [Intensity dictionary][dictionary-intensity]]             | —        | ✕        | Text color of the marker (applies to all marker types)                     |
 | `variant`         | \[`number` \| `dot` \| `icon`]                                                                                                                                                                                  | `number` | ✕        | Marker variant type                                                        |
+
+ℹ️ The marker size is controlled by the `size` prop on the parent `Timeline` component. The icon or text inside the marker automatically adjusts proportionally with the marker size.
 
 All color props accept values from the [Color dictionary][dictionary-color] and [generated types][readme-generated-types] for accent and emotion colors. Background and border color props are only applied when `variant` is set to `number` or `dot`, while `textColor` works with all marker types. For icon markers, use the Icon component's `color` prop for the icon itself.
 
