@@ -15,7 +15,7 @@ Timeline is a composition of several subcomponents:
 This is the main container of the composition.
 
 ```html
-<ol class="Timeline">
+<ol class="Timeline Timeline--small">
   <!-- TimelineStep -->
   <!-- TimelineStep -->
   <!-- TimelineStep -->
@@ -25,6 +25,39 @@ This is the main container of the composition.
 ℹ️ By default, Timeline uses the `<ol>` element for semantic ordered lists.
 You can change it to `<ul>` for unordered timelines, just make sure the whole Timeline
 composition produces valid and semantic HTML output.
+
+### Size
+
+The `Timeline--<size>` class controls the size of all markers within the timeline. This applies to all marker types: number markers, dot markers, and icon markers.
+The size affects both the marker container dimensions and the marker content.
+
+```html
+<ol class="Timeline Timeline--small">
+  <!-- TimelineStep -->
+</ol>
+
+<ol class="Timeline Timeline--medium">
+  <!-- TimelineStep -->
+</ol>
+
+<ol class="Timeline Timeline--large">
+  <!-- TimelineStep -->
+</ol>
+```
+
+You can set different marker sizes for different breakpoints using `tablet` and `desktop` infixes, e.g. `Timeline--tablet--<size>` or `Timeline--desktop--<size>`.
+
+```html
+<ol class="Timeline Timeline--small Timeline--tablet--medium Timeline--desktop--large">
+  <!-- TimelineStep -->
+</ol>
+```
+
+The size configuration affects:
+
+- **Number markers**: Marker container size and typography
+- **Dot markers**: Marker container size and dot size
+- **Icon markers**: Marker container and Icon size
 
 ## TimelineStep
 
@@ -89,8 +122,10 @@ You can customize the appearance with color utility classes `border-<color>`, `b
 
 ### Icon Markers
 
+Add `TimelineMarker--icon` modifier to control the size of marker icon.
+
 ```html
-<div aria-hidden="true" class="TimelineMarker">
+<div aria-hidden="true" class="TimelineMarker TimelineMarker--icon">
   <svg class="Icon Icon--secondary" width="24" height="24">
     <use xlink:href="/assets/icons/svg/sprite.svg#search"></use>
   </svg>
@@ -129,7 +164,7 @@ Optional main content wrapper for text, buttons, and other elements.
 ## Full Composition
 
 ```html
-<ol class="Timeline">
+<ol class="Timeline Timeline--small">
   <li class="TimelineStep">
     <div aria-hidden="true" class="TimelineMarker TimelineMarker--number">1</div>
     <div class="TimelineHeading">
