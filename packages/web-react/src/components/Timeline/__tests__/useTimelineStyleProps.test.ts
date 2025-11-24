@@ -10,7 +10,7 @@ describe('useTimelineStyleProps', () => {
       content: 'TimelineContent',
       heading: 'TimelineHeading',
       marker: 'TimelineMarker',
-      root: 'Timeline',
+      root: 'Timeline Timeline--small',
       step: 'TimelineStep',
     });
     expect(result.current.props).toEqual({});
@@ -62,5 +62,46 @@ describe('useTimelineStyleProps', () => {
     );
 
     expect(result.current.classProps.marker).toBe('TimelineMarker TimelineMarker--icon text-emotion-success-basic');
+  });
+
+  describe('size prop', () => {
+    it('should apply size class when size is provided', () => {
+      const { result } = renderHook(() =>
+        useTimelineStyleProps({
+          markerSize: 'small',
+        }),
+      );
+
+      expect(result.current.classProps.root).toBe('Timeline Timeline--small');
+    });
+
+    it('should apply responsive size classes when responsive size is provided', () => {
+      const { result } = renderHook(() =>
+        useTimelineStyleProps({
+          markerSize: { mobile: 'small', tablet: 'medium', desktop: 'large' },
+        }),
+      );
+
+      expect(result.current.classProps.root).toBe(
+        'Timeline Timeline--small Timeline--tablet--medium Timeline--desktop--large',
+      );
+    });
+
+    it('should combine size with variant and colors', () => {
+      const { result } = renderHook(() =>
+        useTimelineStyleProps({
+          markerVariant: 'number',
+          markerSize: 'medium',
+          markerBackgroundColor: 'emotion-success-subtle',
+          markerTextColor: 'emotion-success-basic',
+        }),
+      );
+
+      expect(result.current.classProps.marker).toBe(
+        'TimelineMarker TimelineMarker--number bg-emotion-success-subtle text-emotion-success-basic',
+      );
+
+      expect(result.current.classProps.root).toBe('Timeline Timeline--medium');
+    });
   });
 });

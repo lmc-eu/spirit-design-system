@@ -11,6 +11,10 @@ import TimelineColors from './TimelineColors';
 import TimelineDefault from './TimelineDefault';
 import TimelineDots from './TimelineDots';
 import TimelineIcons from './TimelineIcons';
+import TimelineResponsiveSizes from './TimelineResponsiveSizes';
+import TimelineSizes from './TimelineSizes';
+import TimelineSizesDots from './TimelineSizesDots';
+import TimelineSizesIcons from './TimelineSizesIcons';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -26,6 +30,18 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       </DocsSection>
       <DocsSection title="With Icon Component">
         <TimelineIcons />
+      </DocsSection>
+      <DocsSection title="Sizes">
+        <TimelineSizes />
+      </DocsSection>
+      <DocsSection title="Sizes With Dots">
+        <TimelineSizesDots />
+      </DocsSection>
+      <DocsSection title="Sizes With Icon Component">
+        <TimelineSizesIcons />
+      </DocsSection>
+      <DocsSection title="Responsive Sizes">
+        <TimelineResponsiveSizes />
       </DocsSection>
     </IconsProvider>
   </React.StrictMode>,
