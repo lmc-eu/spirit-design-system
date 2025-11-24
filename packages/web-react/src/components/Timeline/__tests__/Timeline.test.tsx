@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
+import { Sizes } from '../../../constants';
 import {
   ariaAttributesTest,
   classNamePrefixProviderTest,
@@ -26,9 +27,10 @@ describe('Timeline', () => {
 
   it('should render with default props', () => {
     render(<Timeline>Item</Timeline>);
+    const timeline = screen.getByRole('list');
 
-    expect(screen.getByRole('list')).toBeInTheDocument();
-    expect(screen.getByRole('list')).toHaveClass('Timeline');
+    expect(timeline).toBeInTheDocument();
+    expect(timeline).toHaveClass('Timeline', 'Timeline--small');
   });
 
   it('should render with default element type ol', () => {
@@ -42,5 +44,47 @@ describe('Timeline', () => {
     render(<Timeline>Item</Timeline>);
 
     expect(screen.getByText('Item')).toBeInTheDocument();
+  });
+
+  describe('size prop', () => {
+    it('should apply size class when size is provided', () => {
+      render(<Timeline size={Sizes.SMALL}>Item</Timeline>);
+      const timeline = screen.getByRole('list');
+
+      expect(timeline).toHaveClass('Timeline', 'Timeline--small');
+    });
+
+    it('should apply medium size class', () => {
+      render(<Timeline size={Sizes.MEDIUM}>Item</Timeline>);
+      const timeline = screen.getByRole('list');
+
+      expect(timeline).toHaveClass('Timeline', 'Timeline--medium');
+    });
+
+    it('should apply large size class', () => {
+      render(<Timeline size={Sizes.LARGE}>Item</Timeline>);
+      const timeline = screen.getByRole('list');
+
+      expect(timeline).toHaveClass('Timeline', 'Timeline--large');
+    });
+
+    it('should apply responsive size classes when responsive size is provided', () => {
+      render(<Timeline size={{ mobile: Sizes.SMALL, tablet: Sizes.MEDIUM, desktop: Sizes.LARGE }}>Item</Timeline>);
+      const timeline = screen.getByRole('list');
+
+      expect(timeline).toHaveClass(
+        'Timeline',
+        'Timeline--small',
+        'Timeline--tablet--medium',
+        'Timeline--desktop--large',
+      );
+    });
+
+    it('should apply partial responsive size classes', () => {
+      render(<Timeline size={{ mobile: Sizes.SMALL, tablet: Sizes.MEDIUM }}>Item</Timeline>);
+      const timeline = screen.getByRole('list');
+
+      expect(timeline).toHaveClass('Timeline', 'Timeline--small', 'Timeline--tablet--medium');
+    });
   });
 });

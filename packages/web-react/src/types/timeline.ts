@@ -8,9 +8,16 @@ import type {
   BorderColorsDictionaryType,
   BorderEmotionColorsType,
   ChildrenProps,
+  SingleOrResponsive,
+  SizesDictionaryType,
   StyleProps,
   TextColorProps,
 } from './shared';
+
+export type TimelineBaseProps = {
+  /** Size of the timeline. */
+  size?: SingleOrResponsive<SizesDictionaryType>;
+};
 
 export type TimelineProps<E extends ElementType> = {
   /**
@@ -53,6 +60,7 @@ export interface TimelineMarkerProps {
 
 export interface SpiritTimelineProps<T extends ElementType = 'ol'>
   extends TimelineProps<T>,
+    TimelineBaseProps,
     ChildrenProps,
     StyleProps {}
 
