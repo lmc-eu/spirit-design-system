@@ -1,5 +1,14 @@
+@use '@tokens' as tokens;
 @use 'theme';
+@use '../../tools/dictionaries';
 
 .Timeline {
     max-width: theme.$timeline-max-width;
 }
+
+@include dictionaries.generate-sizes(
+    $class-name: 'Timeline',
+    $dictionary-values: theme.$size-dictionary,
+    $config: theme.$size-config,
+    $breakpoints: tokens.$breakpoints
+);

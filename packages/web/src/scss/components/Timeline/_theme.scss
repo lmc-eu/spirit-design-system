@@ -1,4 +1,7 @@
 @use '@tokens' as tokens;
+@use '../../settings/dictionaries';
+
+$breakpoints: tokens.$breakpoints;
 
 $timeline-max-width: 800px;
 $timeline-step-gap: tokens.$space-600;
@@ -6,11 +9,8 @@ $timeline-step-gap: tokens.$space-600;
 $timeline-marker-border: tokens.$border-width-200 solid tokens.$border-basic;
 $timeline-marker-dot-color: tokens.$text-secondary;
 $timeline-marker-dot-radius: tokens.$radius-full;
-$timeline-marker-dot-size: 10px;
 $timeline-marker-margin: tokens.$space-600;
 $timeline-marker-radius: tokens.$radius-full;
-$timeline-marker-size: 32px;
-$timeline-marker-typography: tokens.$body-small-semibold;
 
 $timeline-connector-background-color: tokens.$border-basic;
 $timeline-connector-min-height: tokens.$space-600;
@@ -20,3 +20,25 @@ $timeline-heading-padding: tokens.$space-600;
 
 $timeline-content-padding-bottom: tokens.$space-900;
 $timeline-content-padding-top: tokens.$space-600;
+
+$size-dictionary: dictionaries.$size;
+$size-config: (
+    small: (
+        marker-size: 32px,
+        icon-size: 20px,
+        dot-size: 10px,
+        typography: tokens.$body-small-semibold,
+    ),
+    medium: (
+        marker-size: 40px,
+        icon-size: 24px,
+        dot-size: 12px,
+        typography: tokens.$body-medium-semibold,
+    ),
+    large: (
+        marker-size: 56px,
+        icon-size: 28px,
+        dot-size: 16px,
+        typography: tokens.$body-xlarge-semibold,
+    ),
+);

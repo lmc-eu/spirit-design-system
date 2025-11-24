@@ -17,7 +17,7 @@
 // We will remove this attribute selectors and the `:is(.Button, .ControlButton)` selector in the next major version.
 // 2.
 .Icon[style*='#{tokens.$css-variable-prefix}icon-size'],
-:is(.Button, .ControlButton) .Icon:not([style*='#{tokens.$css-variable-prefix}icon-size']) {
+:is(.Button, .ControlButton, .TimelineMarker) .Icon:not([style*='#{tokens.$css-variable-prefix}icon-size']) {
     @include responsive-properties.create-cascade(
         $property: 'width',
         $input-custom-property-base-name: '#{tokens.$css-variable-prefix}icon-size',
