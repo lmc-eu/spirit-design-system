@@ -27,8 +27,8 @@ const meta: Meta<typeof PricingPlanHeader> = {
         in this demo are not customizable.`,
       mapping: {
         buttonLink: (
-          <ButtonLink href="#" size="large">
-            Action
+          <ButtonLink href="#" size="large" id="plan-action" aria-labelledby="plan-action plan-title">
+            Subscribe
           </ButtonLink>
         ),
       },
@@ -58,9 +58,17 @@ const meta: Meta<typeof PricingPlanHeader> = {
       },
     },
     title: {
-      control: 'text',
+      control: 'select',
+      options: ['label', undefined],
       table: {
         defaultValue: { summary: 'undefined' },
+      },
+      description: `This is the place for the content of the PricingPlanHeader title. In the real code
+        you can pass in any children you want. In this demo we have predefined options:
+        \`label\` and \`undefined\`. Please note the predefined options
+        in this demo are not customizable.`,
+      mapping: {
+        label: <span id="plan-title">Premium Plan</span>,
       },
     },
   },
@@ -70,7 +78,7 @@ const meta: Meta<typeof PricingPlanHeader> = {
     note: 'Another supporting text or message',
     price: '39 EUR',
     subtitle: 'Supporting text or message',
-    title: 'Title',
+    title: 'Premium Plan',
   },
 };
 

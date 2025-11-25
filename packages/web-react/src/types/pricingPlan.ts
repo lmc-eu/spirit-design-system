@@ -22,7 +22,7 @@ export interface PricingPlanHeaderBaseProps extends StyleProps {
   /** Subtitle of the plan */
   subtitle?: string;
   /** Title of the plan */
-  title?: string;
+  title?: ReactNode;
 }
 
 export type PricingPlanFeature = {
@@ -53,7 +53,7 @@ export type SpiritPricingPlanProps<E extends ElementType = 'article'> = PricingP
   SpiritPolymorphicElementPropsWithRef<E, PricingPlanProps<E>>;
 export type SpiritPricingPlanHeaderProps<E extends ElementType = 'header'> = PricingPlanProps<E> &
   PricingPlanHeaderBaseProps &
-  SpiritPolymorphicElementPropsWithRef<E, PricingPlanProps<E>>;
+  Omit<SpiritPolymorphicElementPropsWithRef<E, PricingPlanProps<E>>, 'title'>;
 export type SpiritPricingPlanBodyProps<E extends ElementType = 'div'> = PricingPlanProps<E> &
   PricingPlanBodyBaseProps &
   SpiritPolymorphicElementPropsWithRef<E, PricingPlanProps<E>>;

@@ -9,11 +9,11 @@ const PricingPlanDefault = () => (
   <PricingPlan>
     <PricingPlanHeader
       action={
-        <ButtonLink href="#" size="large">
+        <ButtonLink href="#" size="large" id="plan-action" aria-labelledby="plan-action plan-title">
           Get started
         </ButtonLink>
       }
-      title="Plan 1"
+      title={<span id="plan-title">Plan 1</span>}
       subtitle="Supporting text or message"
       price="39 EUR"
       note="Another supporting text or message"

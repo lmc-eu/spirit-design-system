@@ -34,6 +34,23 @@ describe('PricingPlanHeader', () => {
       expect(title).toHaveClass('PricingPlanHeader__title');
     });
 
+    it('should render title as ReactNode', () => {
+      render(
+        <PricingPlanHeader
+          title={
+            <span id="plan-title-test" data-testid="custom-title">
+              Custom Title
+            </span>
+          }
+        />,
+      );
+      const title = screen.getByText('Custom Title');
+
+      expect(title).toBeInTheDocument();
+      expect(title).toHaveAttribute('id', 'plan-title-test');
+      expect(title.parentElement).toHaveClass('PricingPlanHeader__title');
+    });
+
     it('should render subtitle', () => {
       render(<PricingPlanHeader subtitle="Test Subtitle" />);
       const subtitle = screen.getByText('Test Subtitle');
@@ -80,6 +97,25 @@ describe('PricingPlanHeader', () => {
 
       expect(button).toBeInTheDocument();
       expect(button).toHaveClass('Button Button--primary Button--large');
+    });
+
+    it('should support aria-labelledby to achieve better accessibility', () => {
+      render(
+        <PricingPlanHeader
+          title={<span id="plan-title">Premium Plan</span>}
+          action={
+            <ButtonLink href="#" size="large" id="plan-action" aria-labelledby="plan-action plan-title">
+              Subscribe
+            </ButtonLink>
+          }
+        />,
+      );
+      const title = screen.getByText('Premium Plan');
+      // When using aria-labelledby, the accessible name becomes the referenced element's text
+      const button = screen.getByRole('button', { name: 'Subscribe Premium Plan' });
+
+      expect(title).toHaveAttribute('id', 'plan-title');
+      expect(button).toHaveAttribute('aria-labelledby', 'plan-action plan-title');
     });
   });
 
