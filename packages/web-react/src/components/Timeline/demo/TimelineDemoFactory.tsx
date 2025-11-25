@@ -13,12 +13,12 @@ import TimelineStep from '../TimelineStep';
 import type { TimelineDemoStep } from './constants';
 
 interface TimelineDemoFactoryProps {
+  size?: SingleOrResponsive<SizesDictionaryType>;
   steps: TimelineDemoStep[];
   variant: TimelineMarkerType;
-  size?: SingleOrResponsive<SizesDictionaryType>;
 }
 
-const TimelineDemoFactory = ({ steps, variant, size }: TimelineDemoFactoryProps) => (
+const TimelineDemoFactory = ({ size, steps, variant }: TimelineDemoFactoryProps) => (
   <Timeline size={size}>
     {steps.map((step, index) => (
       <TimelineStep key={`timeline-step-${index.toString()}`}>
