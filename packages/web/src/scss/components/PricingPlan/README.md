@@ -86,11 +86,18 @@ include an optional badge and note.
   <div class="PricingPlanHeader__badge">Recommended</div>
 
   <div class="PricingPlanHeader__content">
-    <h3 class="PricingPlanHeader__title">Plan Title</h3>
+    <h3 class="PricingPlanHeader__title" id="plan-title">Plan Title</h3>
     <div class="PricingPlanHeader__subtitle">Supporting text</div>
     <div class="PricingPlanHeader__price">Price Amount</div>
     <div class="PricingPlanHeader__action">
-      <a href="#" class="Button Button--primary Button--large">Call to Action</a>
+      <a
+        href="#"
+        class="Button Button--primary Button--large"
+        id="plan-action"
+        aria-labelledby="plan-action plan-title"
+      >
+        Call to Action
+      </a>
     </div>
     <div class="PricingPlanHeader__note">Additional information</div>
   </div>
@@ -141,11 +148,18 @@ The footer is optional and can contain additional information or disclaimers.
   <div class="PricingPlan__layout">
     <header class="PricingPlanHeader">
       <div class="PricingPlanHeader__content">
-        <h3 class="PricingPlanHeader__title">Plan Title</h3>
+        <h3 class="PricingPlanHeader__title" id="plan-title">Plan Title</h3>
         <div class="PricingPlanHeader__subtitle">Supporting text</div>
         <div class="PricingPlanHeader__price">Price Amount</div>
         <div class="PricingPlanHeader__action">
-          <a href="#" class="Button Button--primary Button--large">Call to Action</a>
+          <a
+            href="#"
+            class="Button Button--primary Button--large"
+            id="plan-action"
+            aria-labelledby="plan-action plan-title"
+          >
+            Call to Action
+          </a>
         </div>
         <div class="PricingPlanHeader__note">Additional information</div>
       </div>
@@ -166,6 +180,37 @@ The footer is optional and can contain additional information or disclaimers.
       </ul>
     </div>
     <footer class="PricingPlanFooter">Footer content</footer>
+  </div>
+</article>
+```
+
+### Accessibility
+
+For better accessibility, it is recommended to link the action button to the plan title using `aria-labelledby`.
+This provides screen reader users with context about which plan the action applies to.
+
+```html
+<article class="PricingPlan">
+  <div class="PricingPlan__layout">
+    <header class="PricingPlanHeader">
+      <div class="PricingPlanHeader__content">
+        <h3 class="PricingPlanHeader__title" id="plan-title">Plan Title</h3>
+        <div class="PricingPlanHeader__subtitle">…</div>
+        <div class="PricingPlanHeader__price">…</div>
+        <div class="PricingPlanHeader__action">
+          <a
+            href="#"
+            class="Button Button--primary Button--large"
+            id="plan-action"
+            aria-labelledby="plan-action plan-title"
+          >
+            Call to Action
+          </a>
+        </div>
+        …
+      </div>
+    </header>
+    …
   </div>
 </article>
 ```
