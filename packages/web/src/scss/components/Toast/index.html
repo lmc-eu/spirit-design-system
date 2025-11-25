@@ -26,8 +26,8 @@
       <div class="Toast Toast--top Toast--center" role="log">
         <div class="Toast__queue">
 
-          <div id="my-hidden-dismissible-toast" class="ToastBar ToastBar--warning ToastBar--dismissible is-hidden">
-            <div class="ToastBar__box">
+          <div id="my-hidden-dismissible-toast" class="ToastBar ToastBar--dismissible is-hidden">
+            <div class="ToastBar__box color-scheme-on-emotion-warning-basic">
               <div class="ToastBar__container">
                 <svg width="20" height="20" aria-hidden="true">
                   <use xlink:href="/assets/icons/svg/sprite.svg#warning"/>
@@ -313,8 +313,8 @@
             </div>
           </template>
 
-          <div id="my-dismissible-toast" class="ToastBar ToastBar--success ToastBar--dismissible is-visible">
-            <div class="ToastBar__box">
+          <div id="my-dismissible-toast" class="ToastBar ToastBar--dismissible is-visible">
+            <div class="ToastBar__box color-scheme-on-emotion-success-basic">
               <div class="ToastBar__container">
                 <svg width="20" height="20" aria-hidden="true">
                   <use xlink:href="/assets/icons/svg/sprite.svg#check-plain"/>
@@ -340,8 +340,8 @@
             </div>
           </div>
 
-          <div id="my-other-dismissible-toast" class="ToastBar ToastBar--informative ToastBar--dismissible is-visible">
-            <div class="ToastBar__box">
+          <div id="my-other-dismissible-toast" class="ToastBar ToastBar--dismissible is-visible">
+            <div class="ToastBar__box colorsheme-on-emotion-informative-basic">
               <div class="ToastBar__container">
                 <svg width="20" height="20" aria-hidden="true">
                   <use xlink:href="/assets/icons/svg/sprite.svg#info"/>
@@ -387,8 +387,8 @@
 
     <div class="docs-Stack docs-Stack--start">
 
-      <div class="ToastBar ToastBar--neutral">
-        <div class="ToastBar__box">
+      <div class="ToastBar">
+        <div class="ToastBar__box color-scheme-on-neutral-basic">
           <div class="ToastBar__container">
             <div class="ToastBar__content">
               <div class="text-truncate-multiline">Message only</div>
@@ -397,8 +397,8 @@
         </div>
       </div>
 
-      <div class="ToastBar ToastBar--neutral">
-        <div class="ToastBar__box">
+      <div class="ToastBar">
+        <div class="ToastBar__box color-scheme-on-neutral-basic">
           <div class="ToastBar__container">
             <div class="ToastBar__content">
               <div class="text-truncate-multiline">Message with action</div>
@@ -408,8 +408,8 @@
         </div>
       </div>
 
-      <div class="ToastBar ToastBar--neutral">
-        <div class="ToastBar__box">
+      <div class="ToastBar">
+        <div class="ToastBar__box color-scheme-on-neutral-basic">
           <div class="ToastBar__container">
             <div class="ToastBar__content">
               <div class="text-truncate-multiline">When the text is long and reaches the maximum width limit, the action
@@ -421,8 +421,8 @@
         </div>
       </div>
 
-      <div class="ToastBar ToastBar--neutral">
-        <div class="ToastBar__box">
+      <div class="ToastBar">
+        <div class="ToastBar__box color-scheme-on-neutral-basic">
           <div class="ToastBar__container">
             <svg width="20" height="20" aria-hidden="true">
               <use xlink:href="/assets/icons/svg/sprite.svg#info"/>
@@ -435,8 +435,8 @@
         </div>
       </div>
 
-      <div id="my-toast-variation-dismissible" class="ToastBar ToastBar--neutral ToastBar--dismissible">
-        <div class="ToastBar__box">
+      <div id="my-toast-variation-dismissible" class="ToastBar ToastBar--dismissible">
+        <div class="ToastBar__box color-scheme-on-neutral-basic">
           <div class="ToastBar__container">
             <div class="ToastBar__content">
               <div class="text-truncate-multiline">Dismissible message</div>
@@ -458,8 +458,8 @@
       </div>
 
       <div id="my-toast-variation-dismissible-with-icon-and-action"
-           class="ToastBar ToastBar--neutral ToastBar--dismissible">
-        <div class="ToastBar__box">
+           class="ToastBar ToastBar--dismissible">
+        <div class="ToastBar__box color-scheme-on-neutral-basic">
           <div class="ToastBar__container">
             <svg width="20" height="20" aria-hidden="true">
               <use xlink:href="/assets/icons/svg/sprite.svg#download"/>
@@ -499,10 +499,10 @@
     <div class="docs-Stack docs-Stack--start">
 
       <!-- TODO: utilities seem to work well, but we need to cover the `data` attribute variants as well: `.ToastBar[data-spirit-color="informative"]`. -->
-      <!-- TODO: create predefined background+text helper classes? -->
+      <!-- Moving the data attribute is a BC! -->
 
       <div id="my-toast-color-neutral" class="ToastBar ToastBar--dismissible">
-        <div class="ToastBar__box bg-neutral-basic text-neutral-subtle">
+        <div class="ToastBar__box color-scheme-on-neutral-basic">
           <div class="ToastBar__container">
             <svg width="20" height="20" aria-hidden="true">
               <use xlink:href="/assets/icons/svg/sprite.svg#info"/>
@@ -514,12 +514,12 @@
           </div>
           <button
             type="button"
-            class="button-unstyled accessibility-tap-target dynamic-color-border dynamic-color-background-interactive rounded-full p-500"
+            class="ControlButton ControlButton--medium ControlButton--symmetrical dynamic-color-background-interactive accessibility-tap-target"
             data-spirit-dismiss="toast"
             aria-controls="my-toast-color-neutral"
             aria-expanded="true"
           >
-            <svg class="Icon" width="20" height="20" aria-hidden="true">
+            <svg class="Icon" width="16" height="16" aria-hidden="true">
               <use xlink:href="/assets/icons/svg/sprite.svg#close" />
             </svg>
             <span class="accessibility-hidden">Close</span>
@@ -528,7 +528,7 @@
       </div>
 
       <div id="my-toast-color-informative" class="ToastBar ToastBar--dismissible">
-        <div class="ToastBar__box bg-emotion-informative-basic text-emotion-informative-subtle">
+        <div class="ToastBar__box color-scheme-on-emotion-informative-basic">
           <div class="ToastBar__container">
             <svg width="20" height="20" aria-hidden="true">
               <use xlink:href="/assets/icons/svg/sprite.svg#info"/>
@@ -540,12 +540,12 @@
           </div>
           <button
             type="button"
-            class="button-unstyled accessibility-tap-target dynamic-color-border dynamic-color-background-interactive rounded-full p-500"
+            class="ControlButton ControlButton--medium ControlButton--symmetrical dynamic-color-background-interactive accessibility-tap-target"
             data-spirit-dismiss="toast"
             aria-controls="my-toast-color-informative"
             aria-expanded="true"
           >
-            <svg class="Icon" width="20" height="20" aria-hidden="true">
+            <svg class="Icon" width="16" height="16" aria-hidden="true">
               <use xlink:href="/assets/icons/svg/sprite.svg#close" />
             </svg>
             <span class="accessibility-hidden">Close</span>
@@ -554,7 +554,7 @@
       </div>
 
       <div id="my-toast-color-success" class="ToastBar ToastBar--dismissible">
-        <div class="ToastBar__box bg-emotion-success-basic text-emotion-success-subtle">
+        <div class="ToastBar__box color-scheme-on-emotion-success-basic">
           <div class="ToastBar__container">
             <svg width="20" height="20" aria-hidden="true">
               <use xlink:href="/assets/icons/svg/sprite.svg#check-plain"/>
@@ -566,12 +566,12 @@
           </div>
           <button
             type="button"
-            class="button-unstyled accessibility-tap-target dynamic-color-border dynamic-color-background-interactive rounded-full p-500"
+            class="ControlButton ControlButton--medium ControlButton--symmetrical dynamic-color-background-interactive accessibility-tap-target"
             data-spirit-dismiss="toast"
             aria-controls="my-toast-color-success"
             aria-expanded="true"
           >
-            <svg class="Icon" width="20" height="20" aria-hidden="true">
+            <svg class="Icon" width="16" height="16" aria-hidden="true">
               <use xlink:href="/assets/icons/svg/sprite.svg#close" />
             </svg>
             <span class="accessibility-hidden">Close</span>
@@ -580,7 +580,7 @@
       </div>
 
       <div id="my-toast-color-warning" class="ToastBar ToastBar--dismissible">
-        <div class="ToastBar__box bg-emotion-warning-basic text-emotion-warning-subtle">
+        <div class="ToastBar__box color-scheme-on-emotion-warning-basic">
           <div class="ToastBar__container">
             <svg width="20" height="20" aria-hidden="true">
               <use xlink:href="/assets/icons/svg/sprite.svg#warning"/>
@@ -592,12 +592,12 @@
           </div>
           <button
             type="button"
-            class="button-unstyled accessibility-tap-target dynamic-color-border dynamic-color-background-interactive rounded-full p-500"
+            class="ControlButton ControlButton--medium ControlButton--symmetrical dynamic-color-background-interactive accessibility-tap-target"
             data-spirit-dismiss="toast"
             aria-controls="my-toast-color-warning"
             aria-expanded="true"
           >
-            <svg class="Icon" width="20" height="20" aria-hidden="true">
+            <svg class="Icon" width="16" height="16" aria-hidden="true">
               <use xlink:href="/assets/icons/svg/sprite.svg#close" />
             </svg>
             <span class="accessibility-hidden">Close</span>
@@ -606,7 +606,7 @@
       </div>
 
       <div id="my-toast-color-danger" class="ToastBar ToastBar--dismissible">
-        <div class="ToastBar__box bg-emotion-danger-basic text-emotion-danger-subtle">
+        <div class="ToastBar__box color-scheme-on-emotion-danger-basic">
           <div class="ToastBar__container">
             <svg width="20" height="20" aria-hidden="true">
               <use xlink:href="/assets/icons/svg/sprite.svg#danger"/>
@@ -618,12 +618,12 @@
           </div>
           <button
             type="button"
-            class="button-unstyled accessibility-tap-target dynamic-color-border dynamic-color-background-interactive rounded-full p-500"
+            class="ControlButton ControlButton--medium ControlButton--symmetrical dynamic-color-background-interactive accessibility-tap-target"
             data-spirit-dismiss="toast"
             aria-controls="my-toast-color-danger"
             aria-expanded="true"
           >
-            <svg class="Icon" width="20" height="20" aria-hidden="true">
+            <svg class="Icon" width="16" height="16" aria-hidden="true">
               <use xlink:href="/assets/icons/svg/sprite.svg#close" />
             </svg>
             <span class="accessibility-hidden">Close</span>

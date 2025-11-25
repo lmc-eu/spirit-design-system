@@ -27,3 +27,10 @@
     overflow-y: auto;
     overscroll-behavior: contain;
 }
+
+// TODO BC alert! Maybe not yet?
+.DrawerPanel__closeButton {
+    align-self: flex-end;
+    margin-inline-end: theme.$drawer-close-button-padding-x;
+    margin-block-start: theme.$drawer-close-button-padding-y;
+}
