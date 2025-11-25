@@ -116,19 +116,21 @@
       <dialog id="drawer-example" class="Drawer Drawer--right" aria-label="example-basic__title">
         <div class="DrawerPanel" data-testid="drawer-panel">
           <div class="DrawerPanel__content">
-            <button
-              type="button"
-              aria-expanded="false"
-              class="Button Button--tertiary Button--medium Button--symmetrical DrawerCloseButton"
-              data-spirit-dismiss="offcanvas"
-              data-spirit-target="#drawer-example"
-              aria-controls="drawer-example"
-            >
-              <svg class="Icon" width="24" height="24" aria-hidden="true">
-                <use xlink:href="/assets/icons/svg/sprite.svg#close" />
-              </svg>
-              <span class="accessibility-hidden">Close</span>
-            </button>
+            <div class="DrawerPanel__closeButton">
+              <button
+                type="button"
+                aria-expanded="false"
+                class="ControlButton ControlButton--large ControlButton--symmetrical dynamic-color-background-interactive dynamic-color-border accessibility-tap-target"
+                data-spirit-dismiss="offcanvas"
+                data-spirit-target="#drawer-example"
+                aria-controls="drawer-example"
+              >
+                <svg class="Icon" width="20" height="20" aria-hidden="true">
+                  <use xlink:href="/assets/icons/svg/sprite.svg#close" />
+                </svg>
+                <span class="accessibility-hidden">Close</span>
+              </button>
+            </div>
             <div class="p-800" data-drawer-demo-content>This is a Drawer content.</div>
           </div>
         </div>

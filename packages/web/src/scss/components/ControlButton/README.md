@@ -21,7 +21,7 @@ ControlButtons are composed using component styles and helper classes:
 ```html
 <button
   type="button"
-  class="ControlButton ControlButton--medium dynamic-color-background-interactive accessibility-tap-target"
+  class="ControlButton ControlButton--medium ControlButton--symmetrical dynamic-color-background-interactive accessibility-tap-target"
   aria-label="Close"
 >
   <svg class="Icon" width="16" height="16" aria-hidden="true">
@@ -52,7 +52,7 @@ parent element:
 <div class="bg-emotion-informative-basic text-emotion-informative-subtle">
   <button
     type="button"
-    class="ControlButton ControlButton--medium dynamic-color-background-interactive accessibility-tap-target"
+    class="ControlButton ControlButton--medium ControlButton--symmetrical dynamic-color-background-interactive accessibility-tap-target"
     aria-label="Close"
   >
     <svg class="Icon" width="16" height="16" aria-hidden="true">
@@ -76,7 +76,7 @@ the background visible in the default state. The modifier class reads the
 ```html
 <button
   type="button"
-  class="ControlButton ControlButton--medium ControlButton--hasBackground dynamic-color-background-interactive accessibility-tap-target"
+  class="ControlButton ControlButton--medium ControlButton--symmetrical ControlButton--hasBackground dynamic-color-background-interactive accessibility-tap-target"
   aria-label="Close"
 >
   <svg class="Icon" width="16" height="16" aria-hidden="true">
@@ -95,7 +95,7 @@ visible. The border color will adapt to the background color:
 ```html
 <button
   type="button"
-  class="ControlButton ControlButton--medium dynamic-color-background-interactive dynamic-color-border accessibility-tap-target"
+  class="ControlButton ControlButton--medium ControlButton--symmetrical dynamic-color-background-interactive dynamic-color-border accessibility-tap-target"
   aria-label="Close"
 >
   <svg class="Icon" width="16" height="16" aria-hidden="true">

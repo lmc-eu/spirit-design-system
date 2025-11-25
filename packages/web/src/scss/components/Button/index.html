@@ -1,6 +1,7 @@
 {{#> web/layout/default title="Button" parentPageName="Components" }}
 
-{{setVar "colors" "primary" "secondary" "tertiary" "plain" "success" "informative" "warning" "danger" }}
+{{setVar "colors" "primary" "secondary" "tertiary" "plain" }}
+{{setVar "emotionColors" "primary" "secondary" "tertiary" "plain" "success" "informative" "warning" "danger" }}
 {{setVar "sizes" "small" "medium" "large" }}
 
 <section class="py-900 py-tablet-1000">
@@ -26,6 +27,23 @@
                 Menu
               </button>
               <button type="button" class="Button Button--{{color}} Button--{{size}} Button--symmetrical">
+                <span class="accessibility-hidden">Menu</span>
+                <svg class="Icon" width="24" height="24" aria-hidden="true">
+                  <use xlink:href="/assets/icons/svg/sprite.svg#hamburger" />
+                </svg>
+              </button>
+            </div>
+            {{/each}}
+            {{#each @root.emotionColors as |color|}}
+            <div>
+              <a href="#" class="Button Button--{{size}}">Button {{color}}</a>
+              <button type="button" class="Button Button--{{size}}">
+                <svg class="Icon mr-400" width="24" height="24" aria-hidden="true">
+                  <use xlink:href="/assets/icons/svg/sprite.svg#hamburger" />
+                </svg>
+                Menu
+              </button>
+              <button type="button" class="Button Button--{{size}} Button--symmetrical">
                 <span class="accessibility-hidden">Menu</span>
                 <svg class="Icon" width="24" height="24" aria-hidden="true">
                   <use xlink:href="/assets/icons/svg/sprite.svg#hamburger" />

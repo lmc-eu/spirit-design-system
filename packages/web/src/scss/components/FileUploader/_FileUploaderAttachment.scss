@@ -47,15 +47,3 @@
     align-items: center;
     justify-content: space-between;
 }
-
-.FileUploaderAttachment__action {
-    @include reset.button();
-    @include accessibility.min-tap-target($size: theme.$attachment-tap-target-size);
-
-    color: inherit;
-
-    &:focus-visible {
-        outline: 0;
-        box-shadow: form-fields-settings.$input-focus-shadow;
-    }
-}
