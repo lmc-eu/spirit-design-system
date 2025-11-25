@@ -14,27 +14,35 @@ export type FileData = {
 export const nonThemedFilesData: FileData[] = [
   {
     fileName: 'borders',
-    tokenTypes: [TokenType.dimension],
+    tokenTypes: [TokenType.dimension, TokenType.borderWidth],
     groupNames: ['Border'],
     hasStylesObject: false,
     sortByNumValue: true,
   },
   {
     fileName: 'other',
-    tokenTypes: [TokenType.dimension, TokenType.string],
+    tokenTypes: [
+      TokenType.dimension,
+      TokenType.string,
+      TokenType.space,
+      TokenType.radius,
+      TokenType.border,
+      TokenType.borderWidth,
+      TokenType.size,
+    ],
     excludeGroupNames: ['Border', 'Radius', 'Spacing'],
     sortByNumValue: true,
   },
   {
     fileName: 'radii',
-    tokenTypes: [TokenType.dimension],
+    tokenTypes: [TokenType.dimension, TokenType.radius],
     groupNames: ['Radius'],
     hasParentPrefix: false,
     sortByNumValue: true,
   },
   {
     fileName: 'spacing',
-    tokenTypes: [TokenType.dimension],
+    tokenTypes: [TokenType.dimension, TokenType.space],
     groupNames: ['Spacing'],
     hasParentPrefix: false,
     sortByNumValue: true,
@@ -67,7 +75,14 @@ export const themedFilesData: FileData[] = [
 export const devicesFilesData: FileData[] = [
   {
     fileName: 'devices',
-    tokenTypes: [TokenType.dimension, TokenType.string],
+    tokenTypes: [
+      TokenType.dimension,
+      TokenType.string,
+      TokenType.size,
+      TokenType.fontSize,
+      TokenType.lineHeight,
+      TokenType.letterSpacing,
+    ],
     sortByNumValue: true,
   },
 ];

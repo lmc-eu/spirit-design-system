@@ -46,16 +46,16 @@ exampleTypographyTokens.set('typographyRef2', {
 
 export const expectedTypographyValue = `(
 font-family: "'Inter', sans-serif",
-font-size: 40px,
+font-size: 2.5rem,
 font-style: italic,
 font-weight: 700,
-line-height: 1.3,
+line-height: 3.25,
 )`;
 
 export const expectedTypographyWithFontReplacement = `(
 font-family: "'Replaced-font', replaced-substitute-font",
-font-size: 40px,
+font-size: 2.5rem,
 font-style: italic,
 font-weight: 700,
-line-height: 1.3,
+line-height: 3.25,
 )`;

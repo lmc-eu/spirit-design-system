@@ -8,6 +8,7 @@ import {
   addAngleVarToGradient,
   addEmptyLineBetweenTokenGroups,
   formatTokenStyleByOutput,
+  getTokenGroup,
   sortTokens,
   tokenVariableName,
   typographyValue,
@@ -232,6 +233,35 @@ describe('tokenHelper', () => {
       ].filter(Boolean) as Token[];
 
       expect(filteredTokens).toStrictEqual(expectedTokens);
+    });
+  });
+
+  describe('getTokenGroup', () => {
+    it('should extract the group name from token origin path', () => {
+      const token = exampleDimensionAndStringTokens.get('dimensionRef') as Token;
+      const group = getTokenGroup(token);
+
+      expect(group).toBe('grid');
+    });
+
+    it('should return lowercase group name', () => {
+      const token = {
+        ...exampleDimensionAndStringTokens.get('dimensionRef'),
+        origin: { name: 'Spacing/Large' },
+      } as Token;
+      const group = getTokenGroup(token);
+
+      expect(group).toBe('spacing');
+    });
+
+    it('should extract first part of path before slash', () => {
+      const token = {
+        ...exampleDimensionAndStringTokens.get('dimensionRef'),
+        origin: { name: 'Group/Subgroup/Token' },
+      } as Token;
+      const group = getTokenGroup(token);
+
+      expect(group).toBe('group');
     });
   });
 });
