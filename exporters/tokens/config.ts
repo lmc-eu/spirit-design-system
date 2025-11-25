@@ -12,6 +12,9 @@ export type ExporterConfiguration = {
    */
   generateOriginalDataFiles: boolean;
 
+  /* Root font size */
+  rootFontSize: string;
+
   /* Search font 1 */
   searchFont1: string;
 

@@ -14,6 +14,7 @@ import { exportConfiguration } from '../../config';
 import { PIXEL_UNIT, TYPOGRAPHY_SUBSTITUTE_FONT } from '../constants';
 import { getDeviceAlias, getDeviceTokenValue } from './deviceHelpers';
 import { toCamelCase } from './stringHelper';
+import { makeRelativeUnit } from './unitHelper';
 
 export const tokenVariableName = (token: Token, tokenGroups: Array<TokenGroup>, hasParentPrefix: boolean): string => {
   let parent;
@@ -29,16 +30,30 @@ export const tokenVariableName = (token: Token, tokenGroups: Array<TokenGroup>, 
   return devicePart !== '' ? getDeviceTokenValue(variableName, devicePart) : variableName;
 };
 
-export const normalizeZeroValueWithUnit = (value: string | number, unit: string): string | number => {
+export const normalizeZeroValueWithUnit = (
+  value: string | number,
+  unit: string,
+  isRelative: boolean,
+): string | number => {
   if (value === 0) {
     return 0;
+  }
+
+  if (isRelative) {
+    return makeRelativeUnit(value);
   }
 
   return `${value}${unit}`;
 };
 
-export const formatTokenStyleByOutput = (name: string, value: string | number, hasJsOutput: boolean, unit?: string) => {
-  const normalizedValue = unit ? normalizeZeroValueWithUnit(value, unit) : value;
+export const formatTokenStyleByOutput = (
+  name: string,
+  value: string | number,
+  hasJsOutput: boolean,
+  unit?: string,
+  isRelative?: boolean,
+) => {
+  const normalizedValue = unit ? normalizeZeroValueWithUnit(value, unit, isRelative) : value;
 
   if (hasJsOutput) {
     return `export const ${toCamelCase(name)} = ${typeof normalizedValue === 'number' ? normalizedValue : `'${normalizedValue}'`};`;

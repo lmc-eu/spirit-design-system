@@ -7,6 +7,13 @@
     "description": "When enabled, the original data files will be generated in the output directory"
   },
   {
+    "key": "rootFontSize",
+    "type": "string",
+    "default": "16",
+    "title": "Root Font Size",
+    "description": "The root font size to use for the project in px"
+  },
+  {
     "key": "searchFont1",
     "type": "string",
     "default": "",
