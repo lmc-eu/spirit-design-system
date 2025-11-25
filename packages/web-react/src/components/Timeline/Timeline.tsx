@@ -1,11 +1,11 @@
 'use client';
 
 import React, { type ElementType } from 'react';
+import { Sizes } from '../../constants';
 import { useStyleProps } from '../../hooks';
 import { type SpiritTimelineProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { useTimelineStyleProps } from './useTimelineStyleProps';
-import { Sizes } from '../../constants';
 
 const defaultProps: Partial<SpiritTimelineProps> = {
   elementType: 'ol',

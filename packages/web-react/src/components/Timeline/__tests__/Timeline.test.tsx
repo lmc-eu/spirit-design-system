@@ -1,7 +1,6 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { Sizes } from '../../../constants';
 import {
   ariaAttributesTest,
   classNamePrefixProviderTest,
@@ -10,6 +9,7 @@ import {
   stylePropsTest,
   validHtmlAttributesTest,
 } from '@local/tests';
+import { Sizes } from '../../../constants';
 import Timeline from '../Timeline';
 
 describe('Timeline', () => {

@@ -34,6 +34,7 @@ export function generateResponsiveClassNames<T extends string>(
         if (breakpoint === 'mobile') {
           return `${componentClass}--${breakpointValue}`;
         }
+
         return `${componentClass}--${breakpoint}--${breakpointValue}`;
       })
       .filter((className) => className !== '');

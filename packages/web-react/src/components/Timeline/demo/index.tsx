@@ -11,9 +11,9 @@ import TimelineColors from './TimelineColors';
 import TimelineDefault from './TimelineDefault';
 import TimelineDots from './TimelineDots';
 import TimelineIcons from './TimelineIcons';
+import TimelineResponsiveSizes from './TimelineResponsiveSizes';
 import TimelineSizes from './TimelineSizes';
 import TimelineSizesIcons from './TimelineSizesIcons';
-import TimelineResponsiveSizes from './TimelineResponsiveSizes';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>

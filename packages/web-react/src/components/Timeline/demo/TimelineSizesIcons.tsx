@@ -9,7 +9,12 @@ const sizes = Object.values(Sizes);
 const TimelineSizesIcons = () => (
   <>
     {SIZE_ICON_STEPS.map((step, index) => (
-      <TimelineDemoFactory key={index} steps={[step]} variant={TIMELINE_MARKER.ICON} size={sizes[index]} />
+      <TimelineDemoFactory
+        key={`size-icon-${sizes[index]}`}
+        steps={[step]}
+        variant={TIMELINE_MARKER.ICON}
+        size={sizes[index]}
+      />
     ))}
   </>
 );

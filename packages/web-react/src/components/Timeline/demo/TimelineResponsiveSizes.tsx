@@ -1,6 +1,6 @@
 import React from 'react';
 import { TIMELINE_MARKER } from '../constants';
-import { RESPONSIVE_SIZE_STEPS, RESPONSIVE_SIZE_ICON_STEPS } from './constants';
+import { RESPONSIVE_SIZE_ICON_STEPS, RESPONSIVE_SIZE_STEPS } from './constants';
 import TimelineDemoFactory from './TimelineDemoFactory';
 
 const TimelineResponsiveSizes = () => (

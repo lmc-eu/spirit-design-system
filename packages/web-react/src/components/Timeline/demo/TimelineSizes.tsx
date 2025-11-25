@@ -9,7 +9,12 @@ const sizes = Object.values(Sizes);
 const TimelineSizes = () => (
   <>
     {SIZE_STEPS.map((step, index) => (
-      <TimelineDemoFactory key={index} steps={[step]} variant={TIMELINE_MARKER.NUMBER} size={sizes[index]} />
+      <TimelineDemoFactory
+        key={`size-${sizes[index]}`}
+        steps={[step]}
+        variant={TIMELINE_MARKER.NUMBER}
+        size={sizes[index]}
+      />
     ))}
   </>
 );
