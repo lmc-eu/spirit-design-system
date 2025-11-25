@@ -78,6 +78,25 @@ import { PricingPlanHeader } from '@lmc-eu/spirit-web-react';
 />;
 ```
 
+### Accessibility
+
+For better accessibility, it is recommended to link the action button to the plan title using `aria-labelledby`. This provides screen reader users with context about which plan the action applies to.
+
+```jsx
+<PricingPlanHeader
+  action={
+    <ButtonLink href="#" size="large" id="plan-action" aria-labelledby="plan-action plan-title">
+      Subscribe
+    </ButtonLink>
+  }
+  title={<span id="plan-title">Premium Plan</span>}
+  subtitle="No additional fee"
+  price="100 €"
+/>
+```
+
+When using a string for the `title`, wrap it in a `span` element with an `id` attribute. For more complex title content (ReactNode), ensure the root element has an `id` attribute that can be referenced by the action's `aria-labelledby`.
+
 ### API
 
 | Name          | Type          | Default  | Required | Description                              |
@@ -88,7 +107,7 @@ import { PricingPlanHeader } from '@lmc-eu/spirit-web-react';
 | `note`        | `string`      | -        | ✕        | Optional note for additional information |
 | `price`       | `string`      | -        | ✕        | Price amount of the plan                 |
 | `subtitle`    | `string`      | -        | ✕        | Subtitle for the plan                    |
-| `title`       | `string`      | -        | ✕        | Title of the plan                        |
+| `title`       | `ReactNode`   | -        | ✕        | Title of the plan                        |
 
 The components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -184,23 +203,23 @@ import { PricingPlan, PricingPlanHeader, PricingPlanBody, PricingPlanFooter } fr
 <PricingPlan isHighlighted>
   <PricingPlanHeader
     action={
-      <ButtonLink href="#" size="large">
+      <ButtonLink href="#" size="large" id="plan-action" aria-labelledby="plan-action plan-title">
         Call to Action
       </ButtonLink>
     }
     badge="Recommended"
-    title="Plan Title"
+    title={<span id="plan-title">Plan</span>}
     subtitle="Supporting text"
     price="Price Amount"
     note="Additional information"
   />
   <PricingPlanBody
     id="tier-1"
-    description="Optional introductory text"
+    description="Brand new features"
     features={[
       {
-        title: 'Feature name',
-        description: 'Feature description',
+        title: 'Compatibility',
+        description: 'Compatible across multiple platforms',
       },
     ]}
   />
