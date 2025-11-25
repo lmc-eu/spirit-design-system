@@ -1,4 +1,14 @@
-import { DimensionToken, Supernova, Token, TokenGroup, TokenTheme, TokenType } from '@supernovaio/sdk-exporters';
+import {
+  DimensionToken,
+  FontSizeToken,
+  LineHeightToken,
+  Supernova,
+  Token,
+  TokenGroup,
+  TokenTheme,
+  TokenType,
+  Unit,
+} from '@supernovaio/sdk-exporters';
 import {
   commonThemedFilesData,
   devicesFilesData,
@@ -17,36 +27,80 @@ import {
 import { filterColorCollections } from '../helpers/colorHelper';
 import { getDeviceAlias, getDeviceThemes } from '../helpers/deviceHelpers';
 import { toCamelCase } from '../helpers/stringHelper';
+import { getFontSizeBaseMap, type FontSizeBaseMap } from '../helpers/unitHelper';
+import { tokenVariableName } from '../helpers/tokenHelper';
 import { generateFileContent } from './contentGenerator';
-import { DeviceDimensionEntries, DeviceDimensionMap } from './stylesObjectGenerator';
+import { DeviceDimensionEntries, DeviceDimensionMap, type DeviceDimensionValue } from './stylesObjectGenerator';
 import { type OutputFile } from '../writers/fileWriter';
 
-const buildDeviceDimensionMap = (tokens: Token[]): DeviceDimensionMap => {
+const isDeviceTypographyUnit = (unit: unknown): unit is DeviceDimensionValue['unit'] => {
+  return unit === Unit.pixels || unit === Unit.percent || unit === Unit.rem;
+};
+
+const toTypographyUnit = (unit: unknown): DeviceDimensionValue['unit'] | null => {
+  return isDeviceTypographyUnit(unit) ? unit : null;
+};
+
+const buildDeviceDimensionMap = (tokens: Token[], tokenGroups: Array<TokenGroup>): DeviceDimensionMap => {
   return tokens.reduce<DeviceDimensionMap>((accumulator, token) => {
-    if (token.tokenType !== TokenType.dimension) {
+    const device = getDeviceAlias(token).toLowerCase();
+    let measure: number | undefined;
+    let unit: DeviceDimensionValue['unit'] | null = null;
+
+    if (![TokenType.dimension, TokenType.fontSize, TokenType.lineHeight].includes(token.tokenType)) {
       return accumulator;
     }
-
-    const device = getDeviceAlias(token).toLowerCase();
 
     if (!device) {
       return accumulator;
     }
 
-    const dimensionToken = token as DimensionToken;
-    const { measure, unit } = dimensionToken.value;
+    switch (token.tokenType) {
+      case TokenType.dimension: {
+        const t = token as DimensionToken;
+        measure = t.value?.measure;
+        unit = toTypographyUnit(t.value?.unit);
+        break;
+      }
 
-    if (typeof measure !== 'number' || !unit) {
+      case TokenType.fontSize: {
+        const t = token as FontSizeToken;
+        measure = t.value?.measure;
+        unit = toTypographyUnit(t.value?.unit);
+        break;
+      }
+
+      case TokenType.lineHeight: {
+        const t = token as LineHeightToken;
+        measure = t.value?.measure;
+        unit = toTypographyUnit(t.value?.unit);
+        break;
+      }
+
+      default:
+        return accumulator;
+    }
+
+    if (measure === undefined || !unit) {
       return accumulator;
     }
 
-    const deviceValues: DeviceDimensionEntries = accumulator.get(token.id) || {};
+    const variableNameWithDeviceSuffix = tokenVariableName(token, tokenGroups, true);
+    const baseVariableName = variableNameWithDeviceSuffix.endsWith(`-${device}`)
+      ? variableNameWithDeviceSuffix.slice(0, -(device.length + 1))
+      : variableNameWithDeviceSuffix;
+    const originKey = token.origin?.name?.toLowerCase();
+
+    const deviceValues: DeviceDimensionEntries = accumulator.get(baseVariableName) || {};
     deviceValues[device] = {
       measure,
       unit,
     };
 
-    accumulator.set(token.id, deviceValues);
+    accumulator.set(baseVariableName, deviceValues);
+    if (originKey) {
+      accumulator.set(originKey, deviceValues);
+    }
 
     return accumulator;
   }, new Map<string, DeviceDimensionEntries>());
@@ -59,9 +113,18 @@ export const generateFiles = (
   filesData: FileData[],
   deviceDimensions?: DeviceDimensionMap,
   hasJsOutput: boolean = false,
+  fontSizeBaseMap?: FontSizeBaseMap,
 ) => {
   return filesData.map((fileData) => {
-    const fileContent = generateFileContent(tokens, mappedTokens, tokenGroups, fileData, hasJsOutput, deviceDimensions);
+    const fileContent = generateFileContent({
+      tokens,
+      mappedTokens,
+      tokenGroups,
+      fileData,
+      hasJsOutput,
+      deviceDimensions,
+      fontSizeBaseMapOverride: fontSizeBaseMap,
+    });
     const fileName = hasJsOutput ? toCamelCase(fileData.fileName) : fileData.fileName;
 
     return {
@@ -158,7 +221,8 @@ export const generateOutputFilesByThemes = async (
   );
 
   const deviceTokens: Token[] = getDeviceThemes(allDevices);
-  const deviceDimensions = buildDeviceDimensionMap(deviceTokens);
+  const deviceDimensions = buildDeviceDimensionMap(deviceTokens, tokenGroups);
+  const fontSizeBaseMap = getFontSizeBaseMap(deviceTokens);
 
   // Generate global files for non-themed tokens
   const globalFiles = generateFiles(
@@ -168,6 +232,7 @@ export const generateOutputFilesByThemes = async (
     nonThemedFilesData,
     deviceDimensions,
     false,
+    fontSizeBaseMap,
   );
   const globalJsFiles = generateFiles(
     filteredGlobalCollections,
@@ -176,6 +241,7 @@ export const generateOutputFilesByThemes = async (
     nonThemedFilesData,
     deviceDimensions,
     true,
+    fontSizeBaseMap,
   );
   const globalBarrelFile = generateBarrelFile(globalFiles);
   const globalJsBarrelFile = generateBarrelFile(globalJsFiles, true);
@@ -217,7 +283,15 @@ export const generateOutputFilesByThemes = async (
 
   // Generate files for each theme
   for (const { themedTokens, theme } of allThemes) {
-    const themeFiles = generateFiles(themedTokens, mappedTokens, tokenGroups, themedFilesData, deviceDimensions, false);
+    const themeFiles = generateFiles(
+      themedTokens,
+      mappedTokens,
+      tokenGroups,
+      themedFilesData,
+      deviceDimensions,
+      false,
+      fontSizeBaseMap,
+    );
     const themeTsFiles = generateFiles(
       themedTokens,
       mappedTokens,
@@ -225,6 +299,7 @@ export const generateOutputFilesByThemes = async (
       themedFilesData,
       deviceDimensions,
       true,
+      fontSizeBaseMap,
     );
     const themeBarrelFile = generateBarrelFile(themeFiles);
     const themeTsBarrelFile = generateBarrelFile(themeTsFiles, true);
@@ -264,6 +339,7 @@ export const generateOutputFilesByThemes = async (
     commonThemedFilesData,
     deviceDimensions,
     false,
+    fontSizeBaseMap,
   );
   const colorTsTokensFile = generateFiles(
     filteredColorCollections,
@@ -272,6 +348,7 @@ export const generateOutputFilesByThemes = async (
     commonThemedFilesData,
     deviceDimensions,
     true,
+    fontSizeBaseMap,
   );
 
   outputFiles.push({ path: `./${SCSS_DIRECTORY}/`, fileName: '@themes.scss', content: rootThemesFileContent });
@@ -309,6 +386,7 @@ export const generateOutputFilesByThemes = async (
       devicesFilesData,
       deviceDimensions,
       false,
+      fontSizeBaseMap,
     );
     const deviceTsFile = generateFiles(
       deviceTokens,
@@ -317,6 +395,7 @@ export const generateOutputFilesByThemes = async (
       devicesFilesData,
       deviceDimensions,
       true,
+      fontSizeBaseMap,
     );
     const deviceBarrelFile = generateBarrelFile(deviceFile);
     const deviceTsBarrelFile = generateBarrelFile(deviceTsFile, true);

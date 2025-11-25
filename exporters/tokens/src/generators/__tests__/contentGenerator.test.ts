@@ -38,7 +38,15 @@ describe('contentGenerator', () => {
         sortByNumValue: false,
       };
 
-      const fileContent = generateFileContent(tokens, mappedTokens, tokenGroups, fileData, false);
+      const fileContent = generateFileContent({
+        tokens,
+        mappedTokens,
+        tokenGroups,
+        fileData,
+        hasJsOutput: false,
+        deviceDimensions: undefined,
+        fontSizeBaseMapOverride: undefined,
+      });
 
       expect(fileContent).toStrictEqual({ content: mockedExpectedResult });
     });
@@ -139,7 +147,7 @@ describe('contentGenerator', () => {
 
       const groups = getGroups(tokens, excludeGroupNames, groupNames);
 
-      expect(groups).toStrictEqual(['Grid']);
+      expect(groups).toStrictEqual(['grid']);
     });
 
     it('should return group names without excluded group names', () => {
@@ -159,7 +167,7 @@ describe('contentGenerator', () => {
 
       const groups = getGroups(tokens, excludeGroupNames, groupNames);
 
-      expect(groups).toStrictEqual(['Grid', 'String']);
+      expect(groups).toStrictEqual(['grid', 'string']);
     });
 
     it('should not return group names', () => {

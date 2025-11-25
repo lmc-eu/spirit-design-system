@@ -11,9 +11,20 @@ import {
   TypographyTokenValue,
 } from '@supernovaio/sdk-exporters';
 import { exportConfiguration } from '../../config';
-import { PIXEL_UNIT, TYPOGRAPHY_SUBSTITUTE_FONT } from '../constants';
+import { FONT_SIZE_BASE_DEFAULT, PIXEL_UNIT, PX_UNIT, TYPOGRAPHY_SUBSTITUTE_FONT } from '../constants';
 import { getDeviceAlias, getDeviceTokenValue } from './deviceHelpers';
 import { toCamelCase } from './stringHelper';
+import { makeRelativeUnit } from './unitHelper';
+
+/**
+ * Extracts the group name from a token's origin path (the first part before '/')
+ * Returns the lowercase group name, or undefined if not available
+ *
+ * @param token
+ */
+export const getTokenGroup = (token: Token): string | undefined => {
+  return token.origin?.name?.split('/')[0].toLowerCase();
+};
 
 export const tokenVariableName = (token: Token, tokenGroups: Array<TokenGroup>, hasParentPrefix: boolean): string => {
   let parent;
@@ -29,16 +40,32 @@ export const tokenVariableName = (token: Token, tokenGroups: Array<TokenGroup>, 
   return devicePart !== '' ? getDeviceTokenValue(variableName, devicePart) : variableName;
 };
 
-export const normalizeZeroValueWithUnit = (value: string | number, unit: string): string | number => {
+export const normalizeZeroValueWithUnit = (
+  value: string | number,
+  unit: string,
+  isRelative: boolean,
+  baseFontSize: number = FONT_SIZE_BASE_DEFAULT,
+): string | number => {
   if (value === 0) {
     return 0;
+  }
+
+  if (isRelative) {
+    return makeRelativeUnit(value, baseFontSize);
   }
 
   return `${value}${unit}`;
 };
 
-export const formatTokenStyleByOutput = (name: string, value: string | number, hasJsOutput: boolean, unit?: string) => {
-  const normalizedValue = unit ? normalizeZeroValueWithUnit(value, unit) : value;
+export const formatTokenStyleByOutput = (
+  name: string,
+  value: string | number,
+  hasJsOutput: boolean,
+  unit?: string,
+  isRelative?: boolean,
+  baseFontSize: number = FONT_SIZE_BASE_DEFAULT,
+) => {
+  const normalizedValue = unit ? normalizeZeroValueWithUnit(value, unit, isRelative ?? false, baseFontSize) : value;
 
   if (hasJsOutput) {
     return `export const ${toCamelCase(name)} = ${typeof normalizedValue === 'number' ? normalizedValue : `'${normalizedValue}'`};`;
@@ -150,7 +177,7 @@ type TypographyShape = {
   fontSize: string;
   fontStyle: string;
   fontWeight: string | number;
-  lineHeight?: number;
+  lineHeight?: string | number;
 };
 
 const jsKeyValueTemplate: KeyValueTemplateCallback = (key, value) => {
@@ -292,44 +319,59 @@ const normalizeFontWeight = (fontWeightText: string): number | string => {
   return Number.isNaN(parsedValue) ? fontWeightText : parsedValue;
 };
 
-const calculateLineHeightRatio = (
-  fontSize: TypographyTokenValue['fontSize'],
-  lineHeight: TypographyTokenValue['lineHeight'],
-) => {
-  if (!fontSize?.measure || !lineHeight?.measure || fontSize.measure === 0) {
+const calculateLineHeightRatio = (lineHeight: TypographyTokenValue['lineHeight'], baseFontSize: number) => {
+  if (!lineHeight?.measure || baseFontSize <= 0) {
     return undefined;
   }
 
-  if (fontSize.unit !== PIXEL_UNIT || lineHeight.unit !== PIXEL_UNIT) {
+  if (lineHeight.unit !== PIXEL_UNIT) {
     return undefined;
   }
 
-  const ratio = lineHeight.measure / fontSize.measure;
+  const ratio = lineHeight.measure / baseFontSize;
 
-  return Math.round(ratio * 10) / 10;
+  return ratio;
 };
 
 export const typographyValue = (
   { fontFamily, fontSize, fontWeight, lineHeight }: TypographyTokenValue,
   isItalic: boolean,
   hasJsOutput: boolean,
+  baseFontSize: number = FONT_SIZE_BASE_DEFAULT,
 ): string => {
   const fontName = replaceFontName(fontFamily.text);
-  const fontSizeUnit = fontSize?.unit === PIXEL_UNIT ? 'px' : fontSize?.unit || '';
+  const fontSizeUnit = fontSize?.unit === PIXEL_UNIT ? PX_UNIT : fontSize?.unit || '';
   const fontSizeMeasure = fontSize?.measure ?? 0;
   const italicFromWeight = fontWeight?.text?.toLowerCase().includes('italic');
   const fontWeightValue = normalizeFontWeight(fontWeight.text);
-  const lineHeightRatio = calculateLineHeightRatio(fontSize, lineHeight);
+
+  let fontSizeValue: string;
+  if (fontSizeUnit === PX_UNIT && fontSizeMeasure > 0 && baseFontSize > 0) {
+    const fontSizeInRem = makeRelativeUnit(fontSizeMeasure, baseFontSize);
+    fontSizeValue = `'${fontSizeInRem}'`;
+  } else {
+    fontSizeValue = `'${fontSizeMeasure}${fontSizeUnit}'`;
+  }
+
+  let lineHeightRatio: number | undefined;
+  if (baseFontSize > 0) {
+    lineHeightRatio = calculateLineHeightRatio(lineHeight, baseFontSize);
+  } else if (fontSize?.measure && lineHeight?.measure && fontSize.measure > 0) {
+    if (fontSize.unit === PIXEL_UNIT && lineHeight.unit === PIXEL_UNIT) {
+      lineHeightRatio = lineHeight.measure / fontSize.measure;
+    }
+  }
+  const lineHeightValue = lineHeightRatio !== undefined ? lineHeightRatio.toFixed(2) : undefined;
 
   const typographyObject: TypographyShape = {
     fontFamily: `${fontName}`,
-    fontSize: `'${fontSizeMeasure}${fontSizeUnit}'`,
+    fontSize: fontSizeValue,
     fontStyle: `'${isItalic || italicFromWeight ? 'italic' : 'normal'}'`,
     fontWeight: fontWeightValue,
   };
 
-  if (lineHeightRatio) {
-    typographyObject.lineHeight = lineHeightRatio;
+  if (lineHeightValue !== undefined) {
+    typographyObject.lineHeight = lineHeightValue;
   }
 
   const baseStyles = passObjectKeyValueToCallback<TypographyShape>(typographyObject, scssKeyValueTemplate);
