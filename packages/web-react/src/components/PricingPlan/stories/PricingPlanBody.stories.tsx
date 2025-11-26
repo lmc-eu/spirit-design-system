@@ -59,7 +59,7 @@ const meta: Meta<typeof PricingPlanBody> = {
 export default meta;
 type Story = StoryObj<typeof PricingPlanBody>;
 
-export const PricingPlanBodyPlayground: Story = {
+export const Playground: Story = {
   name: 'PricingPlanBody',
   render: (args) => (
     <PricingPlan>

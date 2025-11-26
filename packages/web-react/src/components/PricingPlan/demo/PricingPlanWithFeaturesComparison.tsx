@@ -41,11 +41,16 @@ const PricingPlanWithFeaturesComparison = () => {
             <PricingPlan hasComparableFeatures marginBottom={{ mobile: 'space-600', tablet: 'space-0' }}>
               <PricingPlanHeader
                 action={
-                  <ButtonLink href="#" size="large">
+                  <ButtonLink
+                    href="#"
+                    size="large"
+                    id="plan-comparison-1-action"
+                    aria-labelledby="plan-comparison-1-action plan-comparison-1-title"
+                  >
                     Get started
                   </ButtonLink>
                 }
-                title="Plan 1"
+                title={<span id="plan-comparison-1-title">Plan 1</span>}
                 subtitle="Supporting text or message"
                 price={selectedValue === 'monthly' ? '39 EUR' : '35 EUR'}
               />
@@ -73,12 +78,17 @@ const PricingPlanWithFeaturesComparison = () => {
             <PricingPlan hasComparableFeatures marginBottom={{ mobile: 'space-600', tablet: 'space-0' }}>
               <PricingPlanHeader
                 action={
-                  <ButtonLink href="#" size="large">
+                  <ButtonLink
+                    href="#"
+                    size="large"
+                    id="plan-comparison-2-action"
+                    aria-labelledby="plan-comparison-2-action plan-comparison-2-title"
+                  >
                     Get started
                   </ButtonLink>
                 }
                 badge="Recommended"
-                title="Plan 2"
+                title={<span id="plan-comparison-2-title">Plan 2</span>}
                 subtitle="Supporting text or message"
                 price={selectedValue === 'monthly' ? '59 EUR' : '54 EUR'}
               />
@@ -107,11 +117,16 @@ const PricingPlanWithFeaturesComparison = () => {
             <PricingPlan hasComparableFeatures isHighlighted>
               <PricingPlanHeader
                 action={
-                  <ButtonLink href="#" size="large">
+                  <ButtonLink
+                    href="#"
+                    size="large"
+                    id="plan-comparison-3-action"
+                    aria-labelledby="plan-comparison-3-action plan-comparison-3-title"
+                  >
                     Get started
                   </ButtonLink>
                 }
-                title="Plan 3"
+                title={<span id="plan-comparison-3-title">Plan 3</span>}
                 price={selectedValue === 'monthly' ? '99 EUR' : '89 EUR'}
                 note="Another supporting text or message"
               />

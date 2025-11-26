@@ -46,11 +46,11 @@ const meta: Meta<typeof PricingPlan> = {
       <>
         <PricingPlanHeader
           action={
-            <ButtonLink href="#" size="large">
-              Action
+            <ButtonLink href="#" size="large" id="plan-action" aria-labelledby="plan-action plan-title">
+              Subscribe
             </ButtonLink>
           }
-          title="Title"
+          title={<span id="plan-title">Premium plan</span>}
           subtitle="Supporting text or message"
           price="39 EUR"
           note="Another supporting text or message"

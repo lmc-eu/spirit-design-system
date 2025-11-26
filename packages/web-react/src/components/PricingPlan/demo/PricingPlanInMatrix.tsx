@@ -18,11 +18,16 @@ const PricingPlanInMatrix = () => (
         <PricingPlan>
           <PricingPlanHeader
             action={
-              <ButtonLink href="#" size="large">
+              <ButtonLink
+                href="#"
+                size="large"
+                id="plan-matrix-1-action"
+                aria-labelledby="plan-matrix-1-action plan-matrix-1-title"
+              >
                 Get started
               </ButtonLink>
             }
-            title="Plan 1"
+            title={<span id="plan-matrix-1-title">Plan 1</span>}
             subtitle="Supporting text or message"
             price="39 EUR"
           />
@@ -58,12 +63,17 @@ const PricingPlanInMatrix = () => (
         <PricingPlan>
           <PricingPlanHeader
             action={
-              <ButtonLink href="#" size="large">
+              <ButtonLink
+                href="#"
+                size="large"
+                id="plan-matrix-2-action"
+                aria-labelledby="plan-matrix-2-action plan-matrix-2-title"
+              >
                 Get started
               </ButtonLink>
             }
             badge="Recommended"
-            title="Plan 2"
+            title={<span id="plan-matrix-2-title">Plan 2</span>}
             subtitle="Supporting text or message"
             price="59 EUR"
           />
@@ -92,11 +102,16 @@ const PricingPlanInMatrix = () => (
         <PricingPlan isHighlighted>
           <PricingPlanHeader
             action={
-              <ButtonLink href="#" size="large">
+              <ButtonLink
+                href="#"
+                size="large"
+                id="plan-matrix-3-action"
+                aria-labelledby="plan-matrix-3-action plan-matrix-3-title"
+              >
                 Get started
               </ButtonLink>
             }
-            title="Plan 3"
+            title={<span id="plan-matrix-3-title">Plan 3</span>}
             price="99 EUR"
             note="Another supporting text or message"
           />
