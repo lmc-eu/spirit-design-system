@@ -30,13 +30,16 @@ $size-config: (
     small: (
         marker-size: $timeline-marker-size,
         icon-size: $timeline-icon-size,
+        dot-size: $timeline-marker-dot-size,
     ),
     medium: (
         marker-size: 40px,
         icon-size: 24px,
+        dot-size: 12px,
     ),
     large: (
         marker-size: 56px,
         icon-size: 28px,
+        dot-size: 16px,
     ),
 );
