@@ -28,7 +28,8 @@ composition produces valid and semantic HTML output.
 
 ### Size
 
-The `Timeline--<size>` class controls the size of all markers within the timeline.
+The `Timeline--<size>` class controls the size of all markers within the timeline. This applies to all marker types: number markers, dot markers, and icon markers.
+The size affects both the marker container dimensions and the marker content.
 
 ```html
 <ol class="Timeline Timeline--small">
@@ -51,6 +52,12 @@ You can set different marker sizes for different breakpoints using `tablet` and 
   <!-- TimelineStep -->
 </ol>
 ```
+
+The size configuration affects:
+
+- **Number markers**: Marker container size and typography
+- **Dot markers**: Marker container size and dot size
+- **Icon markers**: Marker container and Icon size
 
 ## TimelineStep
 
