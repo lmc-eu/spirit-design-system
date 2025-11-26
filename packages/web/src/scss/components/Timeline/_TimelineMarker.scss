@@ -52,12 +52,6 @@
     color: theme.$timeline-marker-dot-color;
 
     &::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        margin: auto;
-        border-radius: theme.$timeline-marker-dot-radius;
-        background-color: currentcolor;
         @include responsive-properties.create-cascade(
             $property: 'width',
             $input-custom-property-base-name: '#{tokens.$css-variable-prefix}timeline-dot-size',
@@ -70,5 +64,12 @@
             $breakpoints: theme.$breakpoints,
             $fallback-value: theme.$timeline-marker-dot-size
         );
+
+        content: '';
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        border-radius: theme.$timeline-marker-dot-radius;
+        background-color: currentcolor;
     }
 }
