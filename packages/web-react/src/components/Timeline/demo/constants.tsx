@@ -132,6 +132,21 @@ export const SIZE_ICON_STEPS: TimelineDemoStep[] = [
   },
 ];
 
+export const SIZE_DOT_STEPS: TimelineDemoStep[] = [
+  {
+    heading: { text: 'Small Dot Marker' },
+    content: { text: SHORT_LOREM_IPSUM },
+  },
+  {
+    heading: { text: 'Medium Dot Marker' },
+    content: { text: SHORT_LOREM_IPSUM },
+  },
+  {
+    heading: { text: 'Large Dot Marker' },
+    content: { text: SHORT_LOREM_IPSUM },
+  },
+];
+
 export const RESPONSIVE_SIZE_STEPS: TimelineDemoStep[] = [
   {
     marker: { content: '1' },
@@ -144,6 +159,13 @@ export const RESPONSIVE_SIZE_ICON_STEPS: TimelineDemoStep[] = [
   {
     marker: { iconName: 'file' },
     heading: { text: 'Responsive Icon Marker' },
+    content: { text: SHORT_LOREM_IPSUM },
+  },
+];
+
+export const RESPONSIVE_SIZE_DOT_STEPS: TimelineDemoStep[] = [
+  {
+    heading: { text: 'Responsive Dot Marker' },
     content: { text: SHORT_LOREM_IPSUM },
   },
 ];

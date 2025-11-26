@@ -13,6 +13,7 @@ import TimelineDots from './TimelineDots';
 import TimelineIcons from './TimelineIcons';
 import TimelineResponsiveSizes from './TimelineResponsiveSizes';
 import TimelineSizes from './TimelineSizes';
+import TimelineSizesDots from './TimelineSizesDots';
 import TimelineSizesIcons from './TimelineSizesIcons';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
@@ -32,6 +33,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       </DocsSection>
       <DocsSection title="Sizes">
         <TimelineSizes />
+      </DocsSection>
+      <DocsSection title="Sizes With Dots">
+        <TimelineSizesDots />
       </DocsSection>
       <DocsSection title="Sizes With Icon Component">
         <TimelineSizesIcons />
