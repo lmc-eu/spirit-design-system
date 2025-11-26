@@ -26,6 +26,39 @@ This is the main container of the composition.
 You can change it to `<ul>` for unordered timelines, just make sure the whole Timeline
 composition produces valid and semantic HTML output.
 
+### Size
+
+The `Timeline--<size>` class controls the size of all markers within the timeline. This applies to all marker types: number markers, dot markers, and icon markers.
+The size affects both the marker container dimensions and the marker content.
+
+```html
+<ol class="Timeline Timeline--small">
+  <!-- TimelineStep -->
+</ol>
+
+<ol class="Timeline Timeline--medium">
+  <!-- TimelineStep -->
+</ol>
+
+<ol class="Timeline Timeline--large">
+  <!-- TimelineStep -->
+</ol>
+```
+
+You can set different marker sizes for different breakpoints using `tablet` and `desktop` infixes, e.g. `Timeline--tablet--<size>` or `Timeline--desktop--<size>`.
+
+```html
+<ol class="Timeline Timeline--small Timeline--tablet--medium Timeline--desktop--large">
+  <!-- TimelineStep -->
+</ol>
+```
+
+The size configuration affects:
+
+- **Number markers**: Marker container size and typography
+- **Dot markers**: Marker container size and dot size
+- **Icon markers**: Marker container and Icon size
+
 ## TimelineStep
 
 Individual timeline entry that contains a marker and optional content areas.

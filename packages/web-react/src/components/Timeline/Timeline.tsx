@@ -1,6 +1,7 @@
 'use client';
 
 import React, { type ElementType } from 'react';
+import { Sizes } from '../../constants';
 import { useStyleProps } from '../../hooks';
 import { type SpiritTimelineProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
@@ -8,12 +9,13 @@ import { useTimelineStyleProps } from './useTimelineStyleProps';
 
 const defaultProps: Partial<SpiritTimelineProps> = {
   elementType: 'ol',
+  size: Sizes.SMALL,
 };
 
 const Timeline = <T extends ElementType = 'ol'>(props: SpiritTimelineProps<T>) => {
   const propsWithDefaults = { ...defaultProps, ...props };
-  const { elementType: ElementTag = 'ol', children, ...restProps } = propsWithDefaults;
-  const { classProps } = useTimelineStyleProps();
+  const { elementType: ElementTag = 'ol', children, size, ...restProps } = propsWithDefaults;
+  const { classProps } = useTimelineStyleProps({ markerSize: size });
   const { styleProps, props: otherProps } = useStyleProps(restProps);
   const mergedStyleProps = mergeStyleProps(ElementTag, { classProps: classProps.root, styleProps, otherProps });
 

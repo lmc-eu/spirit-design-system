@@ -1,7 +1,8 @@
 import classNames from 'classnames';
 import { type ElementType } from 'react';
 import { useClassNamePrefix } from '../../hooks';
-import { type SpiritTimelineProps, type TimelineMarkerProps } from '../../types';
+import type { SingleOrResponsive, SizesDictionaryType, SpiritTimelineProps, TimelineMarkerProps } from '../../types';
+import { generateResponsiveClassNames } from '../../utils';
 import { TIMELINE_MARKER } from './constants';
 
 export interface UseTimelineStyleProps {
@@ -9,6 +10,7 @@ export interface UseTimelineStyleProps {
   markerBackgroundColor?: TimelineMarkerProps['backgroundColor'];
   markerBorderColor?: TimelineMarkerProps['borderColor'];
   markerTextColor?: TimelineMarkerProps['textColor'];
+  markerSize?: SingleOrResponsive<SizesDictionaryType>;
 }
 
 export interface TimelineStyles<T> {
@@ -25,7 +27,8 @@ export interface TimelineStyles<T> {
 }
 
 export function useTimelineStyleProps(props?: UseTimelineStyleProps): TimelineStyles<SpiritTimelineProps<ElementType>> {
-  const { markerBackgroundColor, markerBorderColor, markerTextColor, markerVariant, ...restProps } = props || {};
+  const { markerBackgroundColor, markerBorderColor, markerTextColor, markerVariant, markerSize, ...restProps } =
+    props || {};
   const timelineClass = useClassNamePrefix('Timeline');
   const contentClass = `${timelineClass}Content`;
   const headingClass = `${timelineClass}Heading`;
@@ -47,12 +50,15 @@ export function useTimelineStyleProps(props?: UseTimelineStyleProps): TimelineSt
     [markerTextColorClass]: !!markerTextColor,
   });
 
+  const sizeClassNames = generateResponsiveClassNames(timelineClass, markerSize);
+  const rootClasses = classNames(timelineClass, ...sizeClassNames);
+
   return {
     classProps: {
       content: contentClass,
       heading: headingClass,
       marker: markerClasses,
-      root: timelineClass,
+      root: rootClasses,
       step: stepClass,
     },
     props: restProps,

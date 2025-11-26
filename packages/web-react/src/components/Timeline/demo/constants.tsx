@@ -92,3 +92,80 @@ export const ICON_STEPS: TimelineDemoStep[] = [
     content: { text: LOREM_IPSUM },
   },
 ];
+
+const SHORT_LOREM_IPSUM =
+  'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.';
+
+export const SIZE_STEPS: TimelineDemoStep[] = [
+  {
+    marker: { content: '1' },
+    heading: { text: 'Small Size' },
+    content: { text: SHORT_LOREM_IPSUM },
+  },
+  {
+    marker: { content: '2' },
+    heading: { text: 'Medium Size' },
+    content: { text: SHORT_LOREM_IPSUM },
+  },
+  {
+    marker: { content: '3' },
+    heading: { text: 'Large Size' },
+    content: { text: SHORT_LOREM_IPSUM },
+  },
+];
+
+export const SIZE_ICON_STEPS: TimelineDemoStep[] = [
+  {
+    marker: { iconName: 'file' },
+    heading: { text: 'Small Icon Marker' },
+    content: { text: SHORT_LOREM_IPSUM },
+  },
+  {
+    marker: { iconName: 'file' },
+    heading: { text: 'Medium Icon Marker' },
+    content: { text: SHORT_LOREM_IPSUM },
+  },
+  {
+    marker: { iconName: 'file' },
+    heading: { text: 'Large Icon Marker' },
+    content: { text: SHORT_LOREM_IPSUM },
+  },
+];
+
+export const SIZE_DOT_STEPS: TimelineDemoStep[] = [
+  {
+    heading: { text: 'Small Dot Marker' },
+    content: { text: SHORT_LOREM_IPSUM },
+  },
+  {
+    heading: { text: 'Medium Dot Marker' },
+    content: { text: SHORT_LOREM_IPSUM },
+  },
+  {
+    heading: { text: 'Large Dot Marker' },
+    content: { text: SHORT_LOREM_IPSUM },
+  },
+];
+
+export const RESPONSIVE_SIZE_STEPS: TimelineDemoStep[] = [
+  {
+    marker: { content: '1' },
+    heading: { text: 'Responsive Marker' },
+    content: { text: SHORT_LOREM_IPSUM },
+  },
+];
+
+export const RESPONSIVE_SIZE_ICON_STEPS: TimelineDemoStep[] = [
+  {
+    marker: { iconName: 'file' },
+    heading: { text: 'Responsive Icon Marker' },
+    content: { text: SHORT_LOREM_IPSUM },
+  },
+];
+
+export const RESPONSIVE_SIZE_DOT_STEPS: TimelineDemoStep[] = [
+  {
+    heading: { text: 'Responsive Dot Marker' },
+    content: { text: SHORT_LOREM_IPSUM },
+  },
+];

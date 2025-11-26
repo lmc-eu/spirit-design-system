@@ -2,6 +2,7 @@ import { cssVariablePrefix } from '@lmc-eu/spirit-design-tokens';
 import { type CSSProperties, type ElementType } from 'react';
 import { SizesExtended } from '../../constants';
 import type { Responsive, SpaceToken, SpiritIconBoxProps } from '../../types';
+import { isResponsive } from '../../utils';
 import { IconBoxShapes, IconBoxShapesRadii, IconBoxSizes } from './constants';
 
 export interface UseIconBoxStyleProps<T> {
@@ -16,9 +17,6 @@ export interface UseIconBoxStyleProps<T> {
       };
 }
 
-const isResponsiveSize = (size: unknown): size is Responsive<(typeof SizesExtended)[keyof typeof SizesExtended]> =>
-  typeof size === 'object' && size !== null && !Array.isArray(size);
-
 export const useIconBoxStyleProps = (
   props: Partial<SpiritIconBoxProps<ElementType>>,
 ): UseIconBoxStyleProps<Partial<SpiritIconBoxProps<ElementType>>> => {
@@ -30,7 +28,7 @@ export const useIconBoxStyleProps = (
 
   let sizeProps: UseIconBoxStyleProps<Partial<SpiritIconBoxProps<ElementType>>>['sizeProps'];
 
-  if (isResponsiveSize(size)) {
+  if (isResponsive<(typeof SizesExtended)[keyof typeof SizesExtended]>(size)) {
     const responsivePadding: Responsive<SpaceToken> = {};
     const responsiveIconSize: Responsive<number> = {};
 

@@ -1,6 +1,7 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
+import { Sizes } from '../../../constants';
 import ReadMe from '../README.md';
 import { Timeline } from '..';
 import { TimelineWithDot, TimelineWithIcon, TimelineWithNumber } from './TimelineParts';
@@ -34,10 +35,19 @@ const meta: Meta<typeof Timeline> = {
       },
       description: 'The HTML element used to render the timeline',
     },
+    size: {
+      control: 'select',
+      options: Object.values(Sizes),
+      table: {
+        defaultValue: { summary: Sizes.SMALL },
+      },
+      description: 'Size of the timeline',
+    },
   },
   args: {
     children: 'With Number',
     elementType: 'ol',
+    size: Sizes.SMALL,
   },
 };
 
