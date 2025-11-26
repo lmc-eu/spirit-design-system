@@ -25,7 +25,8 @@ You can change it to `<ul>` for unordered timelines using the `elementType` prop
 
 ### Size
 
-The `size` prop controls the size of all markers within the timeline.
+The `size` prop controls the size of all markers within the timeline. This applies to all marker types: number markers, dot markers, and icon markers.
+The `size` affects both the marker container dimensions and the marker content.
 
 ```jsx
 <Timeline size="small">
@@ -48,6 +49,12 @@ You can set different marker sizes for different breakpoints using a responsive 
 ```
 
 The marker size is controlled via CSS custom properties that are inherited by all TimelineMarker components within the timeline.
+
+The size configuration affects:
+
+- **Number markers**: Marker container size and typography
+- **Dot markers**: Marker container size and dot size
+- **Icon markers**: Marker container and Icon size
 
 ### API
 
