@@ -2,6 +2,7 @@
 @use 'theme';
 @use '../../tools/breakpoint';
 @use '../../tools/dictionaries';
+@use '../../tools/typography';
 
 .Timeline {
     max-width: theme.$timeline-max-width;
@@ -10,7 +11,15 @@
 @each $size-key, $size-variables in theme.$size-config {
     .Timeline--#{$size-key} {
         @each $property-name, $property-value in $size-variables {
-            --#{tokens.$css-variable-prefix}timeline-#{$property-name}: #{$property-value};
+            @if $property-name == 'typography' {
+                @include typography.generate(
+                    $property-value,
+                    $as-css-variables: true,
+                    $css-variable-infix: 'timeline-typography'
+                );
+            } @else {
+                --#{tokens.$css-variable-prefix}timeline-#{$property-name}: #{$property-value};
+            }
         }
     }
 }
@@ -21,7 +30,15 @@
             @each $size-key, $size-variables in theme.$size-config {
                 .Timeline--#{$breakpoint-name}--#{$size-key} {
                     @each $property-name, $property-value in $size-variables {
-                        --#{tokens.$css-variable-prefix}timeline-#{$property-name}-#{$breakpoint-name}: #{$property-value};
+                        @if $property-name == 'typography' {
+                            @include typography.generate(
+                                $property-value,
+                                $as-css-variables: true,
+                                $css-variable-infix: 'timeline-typography'
+                            );
+                        } @else {
+                            --#{tokens.$css-variable-prefix}timeline-#{$property-name}-#{$breakpoint-name}: #{$property-value};
+                        }
                     }
                 }
             }
