@@ -22,7 +22,7 @@ const transform = (fileInfo: FileInfo, api: API) => {
       }
     });
 
-  return removeParentheses(root.toSource());
+  return removeParentheses(root.toSource({ quote: 'single' }));
 };
 
 export default transform;
