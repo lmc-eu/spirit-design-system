@@ -16,7 +16,7 @@ Introducing version 4 of the _spirit-web_ package.
 
 The Node.js v18 is no longer supported. The minimum required Node.js version is 20.
 
-### Change Package Npm Organization to `@alma-oss`
+### Change Package npm Organization to `@alma-oss`
 
 All usage of `@lmc-eu/spirit-web` should be renamed to `@alma-oss/spirit-web`.
 
@@ -34,6 +34,10 @@ Also update any other imports or references to the package:
 - `@lmc-eu/spirit-web` → `@alma-oss/spirit-web`
 - `@lmc-eu/spirit-web/src/...` → `@alma-oss/spirit-web/src/...`
 
+> ℹ️ Don't forget to also update the [migration guide of the _spirit-design-tokens_ package][migration-guide-design-tokens] for related changes.
+
 ---
 
 Please refer back to these instructions or reach out to our team if you encounter any issues during migration.
+
+[migration-guide-design-tokens]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/migrations/design-tokens/migration-v4.md
