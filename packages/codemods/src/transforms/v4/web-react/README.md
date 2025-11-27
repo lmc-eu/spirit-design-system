@@ -6,6 +6,27 @@ You can find instructions on how to run these codemods in the main package [READ
 
 ## Included Scripts
 
+### `v4/web-react/package-scope-change` — Change Package npm Organization From `@lmc-eu` to `@alma-oss`
+
+This codemod updates all import statements from `@lmc-eu/spirit-web-react` to `@alma-oss/spirit-web-react`.
+
+#### Usage
+
+```sh
+npx @alma-oss/spirit-codemods -p <path> -t v4/web-react/package-scope-change
+```
+
+#### Example
+
+```diff
+- import { Button, Heading, Text } from '@lmc-eu/spirit-web-react';
++ import { Button, Heading, Text } from '@alma-oss/spirit-web-react';
+- import { Avatar } from '@lmc-eu/spirit-web-react/components/Avatar';
++ import { Avatar } from '@alma-oss/spirit-web-react/components/Avatar';
+- import { Flex } from '@lmc-eu/spirit-web-react/src';
++ import { Flex } from '@alma-oss/spirit-web-react/src';
+```
+
 ### `v4/web-react/collapse-isDisposable-prop` — UncontrolledCollapse `hideOnCollapse` to `isDisposable` Prop Change
 
 This codemod updates the `UncontrolledCollapse` component by replacing the `hideOnCollapse` prop with a new `isDisposable` prop.
