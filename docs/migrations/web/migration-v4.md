@@ -8,12 +8,31 @@ Introducing version 4 of the _spirit-web_ package.
 
 - [General Changes](#general-changes)
   - [Dropped Support for Node.js 18](#dropped-support-for-nodejs-18)
+  - [Change Package npm Organization to `@alma-oss`](#change-package-npm-organization-to-alma-oss)
 
 ## General Changes
 
 ### Dropped Support for Node.js 18
 
 The Node.js v18 is no longer supported. The minimum required Node.js version is 20.
+
+### Change Package Npm Organization to `@alma-oss`
+
+All usage of `@lmc-eu/spirit-web` should be renamed to `@alma-oss/spirit-web`.
+
+#### Migration Guide
+
+Update all `@forward` and `@use` directives in your SCSS files:
+
+- `@forward '@lmc-eu/spirit-web/src/scss';` → `@forward '@alma-oss/spirit-web/src/scss';`
+- `@forward '@lmc-eu/spirit-web/scss';` → `@forward '@alma-oss/spirit-web/scss';`
+- `@use '@lmc-eu/spirit-web/src/scss';` → `@use '@alma-oss/spirit-web/src/scss';`
+- `@use '@lmc-eu/spirit-web/scss';` → `@use '@alma-oss/spirit-web/scss';`
+
+Also update any other imports or references to the package:
+
+- `@lmc-eu/spirit-web` → `@alma-oss/spirit-web`
+- `@lmc-eu/spirit-web/src/...` → `@alma-oss/spirit-web/src/...`
 
 ---
 
