@@ -43,5 +43,6 @@ npx @alma-oss/spirit-codemods -p ./src -t v2/web-react/fileuploader-prop-names -
 
 - [Web-React v2 Codemods](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/codemods/src/transforms/v2/web-react/README.md)
 - [Web-React v3 Codemods](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/codemods/src/transforms/v3/web-react/README.md)
+- [Web-React v4 Codemods](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/codemods/src/transforms/v4/web-react/README.md)
 
 [jscodeshift]: https://github.com/facebook/jscodeshift
