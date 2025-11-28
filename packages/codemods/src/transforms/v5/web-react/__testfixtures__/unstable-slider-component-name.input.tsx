@@ -1,8 +1,8 @@
 import React from 'react';
 // @ts-ignore: No declaration -- The library is not installed; we don't need to install it for fixtures.
-import { UNSTABLE_Slider } from '@lmc-eu/spirit-web-react/components/UNSTABLE_Slider';
+import { UNSTABLE_Slider } from '@alma-oss/spirit-web-react/components/UNSTABLE_Slider';
 // @ts-ignore: No declaration -- The library is not installed; we don't need to install it for fixtures.
-import { UNSTABLE_UncontrolledSlider } from '@lmc-eu/spirit-web-react/components/UNSTABLE_UncontrolledSlider';
+import { UNSTABLE_UncontrolledSlider } from '@alma-oss/spirit-web-react/components/UNSTABLE_UncontrolledSlider';
 
 export const MyComponent = () => (
   <>
