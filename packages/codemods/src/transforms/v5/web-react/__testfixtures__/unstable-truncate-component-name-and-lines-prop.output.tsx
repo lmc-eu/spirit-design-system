@@ -6,9 +6,7 @@ const longText = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.';
 
 export const MyComponent = () => (
   <>
-    <Truncate mode="lines" limit={2}>
-      {longText}
-    </Truncate>
+    <Truncate mode="lines" limit={2}>{longText}</Truncate>
     <Truncate elementType="div" mode="lines" limit={3}>
       {longText}
     </Truncate>
