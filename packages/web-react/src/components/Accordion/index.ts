@@ -1,5 +1,3 @@
-'use client';
-
 export * from './useAccordion';
 export * from './useAccordionAriaProps';
 export * from './useAccordionStyleProps';

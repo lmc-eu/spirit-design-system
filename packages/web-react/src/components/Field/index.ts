@@ -1,5 +1,3 @@
-'use client';
-
 export { default as HelperText } from './HelperText';
 export { default as Label } from './Label';
 export { default as useAriaIds } from './useAriaIds';

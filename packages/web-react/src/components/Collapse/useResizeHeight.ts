@@ -1,3 +1,5 @@
+'use client';
+
 import { type RefObject, useState } from 'react';
 import { useResizeObserver } from '../../hooks/useResizeObserver';
 

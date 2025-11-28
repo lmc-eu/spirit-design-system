@@ -1,3 +1,5 @@
+'use client';
+
 import { useContext } from 'react';
 import warning from '../common/utilities/warning';
 import IconsContext from '../context/IconsContext';

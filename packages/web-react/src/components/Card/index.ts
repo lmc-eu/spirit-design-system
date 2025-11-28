@@ -1,5 +1,3 @@
-'use client';
-
 export { default as Card } from './Card';
 export { default as CardArtwork } from './CardArtwork';
 export { default as CardBody } from './CardBody';

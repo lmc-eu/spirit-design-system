@@ -1,3 +1,5 @@
+'use client';
+
 import { type DragEvent, useState } from 'react';
 import { type DragAndDropHandlingProps } from '../types';
 

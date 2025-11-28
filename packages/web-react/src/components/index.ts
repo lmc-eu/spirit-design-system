@@ -1,5 +1,3 @@
-'use client';
-
 export * from './Accordion';
 export * from './ActionGroup';
 export * from './Alert';

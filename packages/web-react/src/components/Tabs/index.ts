@@ -1,5 +1,3 @@
-'use client';
-
 export { default as TabContent } from './TabContent';
 export { default as TabContext } from './TabContext';
 export { default as TabItem } from './TabItem';

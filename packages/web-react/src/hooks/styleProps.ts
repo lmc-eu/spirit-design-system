@@ -1,3 +1,5 @@
+'use client';
+
 import classNames from 'classnames';
 import { type CSSProperties, type HTMLAttributes, useContext } from 'react';
 import { warning } from '../common/utilities';

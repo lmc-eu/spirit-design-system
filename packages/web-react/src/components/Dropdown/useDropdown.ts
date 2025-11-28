@@ -1,3 +1,5 @@
+'use client';
+
 import { type MutableRefObject, useState } from 'react';
 import { useClickOutside } from '../../hooks';
 import { type ClickEvent } from '../../types';

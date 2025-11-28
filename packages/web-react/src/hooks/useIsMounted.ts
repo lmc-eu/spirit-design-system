@@ -1,3 +1,5 @@
+'use client';
+
 /**
  * This implementation is a modified copy of the `usehooks-ts` library
  *
