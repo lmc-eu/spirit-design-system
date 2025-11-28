@@ -1,5 +1,3 @@
-'use client';
-
 export * from './useButtonProps';
 export * from './useButtonStyleProps';
 export { default as Button } from './Button';

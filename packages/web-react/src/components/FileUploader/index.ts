@@ -1,5 +1,3 @@
-'use client';
-
 export { default as FileUploader } from './FileUploader';
 export { default as FileUploaderInput } from './FileUploaderInput';
 export { default as FileUploaderList } from './FileUploaderList';

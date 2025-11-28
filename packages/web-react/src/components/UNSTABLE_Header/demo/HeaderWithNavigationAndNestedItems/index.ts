@@ -1,5 +1,3 @@
-'use client';
-
 export { default as CollapseNavigation } from './CollapseNavigation';
 export { default as MainHorizontalNavigation } from './MainHorizontalNavigation';
 export { default as MainNavigationDropdown } from './MainHorizontalNavigationDropdown';

@@ -1,3 +1,5 @@
+'use client';
+
 import classNames from 'classnames';
 import { type ElementType, useMemo } from 'react';
 import { useClassNamePrefix } from '../../hooks';

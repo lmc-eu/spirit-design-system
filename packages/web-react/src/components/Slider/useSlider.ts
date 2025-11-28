@@ -1,3 +1,5 @@
+'use client';
+
 import { type ChangeEvent, useState } from 'react';
 
 export interface UseSliderReturn {

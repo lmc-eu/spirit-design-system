@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 import { type FileMetadata, type FileQueueValueType, type FileUploaderHandlingProps } from '../../types';
 

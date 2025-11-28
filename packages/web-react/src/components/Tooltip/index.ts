@@ -1,5 +1,3 @@
-'use client';
-
 export { default as Tooltip } from './Tooltip';
 export { default as TooltipCloseButton } from './TooltipCloseButton';
 export { default as TooltipPopover } from './TooltipPopover';

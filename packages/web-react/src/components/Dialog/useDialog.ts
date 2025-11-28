@@ -1,3 +1,5 @@
+'use client';
+
 import { type MutableRefObject, type TransitionEvent, useCallback, useEffect } from 'react';
 import { CLASS_NAME_OPEN } from '../../constants';
 import { useScrollControl } from '../../hooks';

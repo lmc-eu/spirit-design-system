@@ -1,3 +1,5 @@
+'use client';
+
 import { useContext } from 'react';
 import ClassNamePrefixContext from '../context/ClassNamePrefixContext';
 import { applyClassNamePrefix } from '../utils/classname';
