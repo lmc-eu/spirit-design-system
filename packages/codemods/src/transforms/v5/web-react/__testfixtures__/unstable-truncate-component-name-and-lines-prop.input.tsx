@@ -1,6 +1,6 @@
 import React from 'react';
 // @ts-ignore: No declaration -- The library is not installed; we don't need to install it for fixtures.
-import { UNSTABLE_Truncate } from '@alma-oss/spirit-web-react';
+import { UNSTABLE_Truncate } from '@lmc-eu/spirit-web-react';
 
 const longText = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.';
 

@@ -1,9 +1,9 @@
 import React from 'react';
-import { Heading, Text } from '@alma-oss/spirit-web-react/src';
+import { Heading, Text } from '@lmc-eu/spirit-web-react/src';
 // @ts-ignore: No declaration -- The library is not installed; we don't need to install it for fixtures.
-import { UNSTABLE_EmptyState } from '@alma-oss/spirit-web-react/components/UNSTABLE_EmptyState';
+import { UNSTABLE_EmptyState } from '@lmc-eu/spirit-web-react/components/UNSTABLE_EmptyState';
 // @ts-ignore: No declaration -- The library is not installed; we don't need to install it for fixtures.
-import { UNSTABLE_EmptyStateSection } from '@alma-oss/spirit-web-react/components/UNSTABLE_EmptyStateSection';
+import { UNSTABLE_EmptyStateSection } from '@lmc-eu/spirit-web-react/components/UNSTABLE_EmptyStateSection';
 
 export const MyComponent = () => (
   <UNSTABLE_EmptyState spacing="space-900">

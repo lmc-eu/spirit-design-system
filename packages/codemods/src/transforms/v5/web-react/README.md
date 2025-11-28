@@ -30,7 +30,7 @@ This codemod updates `direction` values of `Flex` component by replacing `row` t
 #### Usage
 
 ```sh
-npx @alma-oss/spirit-codemods -p <path> -t v5/web-react/flex-direction-values
+npx @lmc-eu/spirit-codemods -p <path> -t v5/web-react/flex-direction-values
 ```
 
 #### Example
@@ -52,14 +52,14 @@ Use this codemod if you were already using the `UNSTABLE_Avatar` component.
 #### Usage
 
 ```sh
-npx @alma-oss/spirit-codemods -p <path> -t v5/web-react/unstable-avatar-component-name
+npx @lmc-eu/spirit-codemods -p <path> -t v5/web-react/unstable-avatar-component-name
 ```
 
 #### Example
 
 ```diff
-- import { UNSTABLE_Avatar } from '@alma-oss/spirit-web-react';
-+ import { Avatar } from '@alma-oss/spirit-web-react';
+- import { UNSTABLE_Avatar } from '@lmc-eu/spirit-web-react';
++ import { Avatar } from '@lmc-eu/spirit-web-react';
 …
 - <UNSTABLE_Avatar … />
 + <Avatar … />
@@ -73,14 +73,14 @@ Use this codemod if you were already using the `UNSTABLE_Slider` component.
 #### Usage
 
 ```sh
-npx @alma-oss/spirit-codemods -p <path> -t v5/web-react/unstable-slider-component-name
+npx @lmc-eu/spirit-codemods -p <path> -t v5/web-react/unstable-slider-component-name
 ```
 
 #### Example
 
 ```diff
-- import { UNSTABLE_Slider } from '@alma-oss/spirit-web-react';
-+ import { Slider } from '@alma-oss/spirit-web-react';
+- import { UNSTABLE_Slider } from '@lmc-eu/spirit-web-react';
++ import { Slider } from '@lmc-eu/spirit-web-react';
 …
 - <UNSTABLE_Slider … />
 + <Slider … />
@@ -94,22 +94,22 @@ Use this codemod if you were already using the `UNSTABLE_EmptyState` and `UNSTAB
 #### Usage
 
 ```sh
-npx @alma-oss/spirit-codemods -p <path> -t v5/web-react/unstable-emptystate-component-name
+npx @lmc-eu/spirit-codemods -p <path> -t v5/web-react/unstable-emptystate-component-name
 ```
 
 #### Example
 
 ```diff
-- import { UNSTABLE_EmptyState } from '@alma-oss/spirit-web-react';
-+ import { EmptyState } from '@alma-oss/spirit-web-react';
+- import { UNSTABLE_EmptyState } from '@lmc-eu/spirit-web-react';
++ import { EmptyState } from '@lmc-eu/spirit-web-react';
 …
 - <UNSTABLE_EmptyState … />
 + <EmptyState … />
 ```
 
 ```diff
-- import { UNSTABLE_EmptyStateSection } from '@alma-oss/spirit-web-react';
-+ import { EmptyStateSection } from '@alma-oss/spirit-web-react';
+- import { UNSTABLE_EmptyStateSection } from '@lmc-eu/spirit-web-react';
++ import { EmptyStateSection } from '@lmc-eu/spirit-web-react';
 …
 - <UNSTABLE_EmptyStateSection … />
 + <EmptyStateSection … />
@@ -123,14 +123,14 @@ Use this codemod if you were already using the `UNSTABLE_Toggle` component.
 #### Usage
 
 ```sh
-npx @alma-oss/spirit-codemods -p <path> -t v5/web-react/unstable-toggle-component-name
+npx @lmc-eu/spirit-codemods -p <path> -t v5/web-react/unstable-toggle-component-name
 ```
 
 #### Example
 
 ```diff
-- import { UNSTABLE_Toggle } from '@alma-oss/spirit-web-react';
-+ import { Toggle } from '@alma-oss/spirit-web-react';
+- import { UNSTABLE_Toggle } from '@lmc-eu/spirit-web-react';
++ import { Toggle } from '@lmc-eu/spirit-web-react';
 …
 - <UNSTABLE_Toggle … />
 + <Toggle … />
@@ -148,14 +148,14 @@ Use this codemod if you were already using the `UNSTABLE_Truncate` component.
 #### Usage
 
 ```sh
-npx @alma-oss/spirit-codemods -p <path> -t v5/web-react/unstable-truncate-component-name-and-lines-prop
+npx @lmc-eu/spirit-codemods -p <path> -t v5/web-react/unstable-truncate-component-name-and-lines-prop
 ```
 
 #### Example
 
 ```diff
-- import { UNSTABLE_Truncate } from '@alma-oss/spirit-web-react';
-+ import { Truncate } from '@alma-oss/spirit-web-react';
+- import { UNSTABLE_Truncate } from '@lmc-eu/spirit-web-react';
++ import { Truncate } from '@lmc-eu/spirit-web-react';
 …
 - <UNSTABLE_Truncate lines={3} … />
 + <Truncate mode="lines" limit={3} … />
