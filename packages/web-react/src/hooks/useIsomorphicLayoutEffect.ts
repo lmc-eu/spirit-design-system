@@ -1,3 +1,5 @@
+'use client';
+
 /**
  * This file fixes the problem of using useLayoutEffect hook on the server side.
  *

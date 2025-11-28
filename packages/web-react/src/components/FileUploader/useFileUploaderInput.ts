@@ -1,3 +1,5 @@
+'use client';
+
 import { type ChangeEvent, type DragEvent, useEffect, useState } from 'react';
 import { warning } from '../../common/utilities';
 import { useDragAndDrop } from '../../hooks';

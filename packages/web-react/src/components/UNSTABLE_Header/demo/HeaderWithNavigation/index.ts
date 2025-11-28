@@ -1,5 +1,3 @@
-'use client';
-
 export { default as MainNavigation } from './MainNavigation';
 export { default as ProfileNavigation } from './ProfileNavigation';
 export { default as SecondaryHorizontalNavigation } from './SecondaryHorizontalNavigation';

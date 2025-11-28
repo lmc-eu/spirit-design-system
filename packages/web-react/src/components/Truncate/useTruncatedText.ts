@@ -1,3 +1,5 @@
+'use client';
+
 import { type ReactNode, useMemo } from 'react';
 import { type TruncateMode, TruncateModes } from '../../types';
 

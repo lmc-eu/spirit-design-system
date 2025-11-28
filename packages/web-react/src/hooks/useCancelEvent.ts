@@ -1,3 +1,5 @@
+'use client';
+
 import { type MutableRefObject, useCallback } from 'react';
 import { useIsomorphicLayoutEffect } from './useIsomorphicLayoutEffect';
 

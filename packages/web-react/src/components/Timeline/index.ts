@@ -1,5 +1,3 @@
-'use client';
-
 export { default as Timeline } from './Timeline';
 export { default as TimelineContent } from './TimelineContent';
 export { default as TimelineHeading } from './TimelineHeading';

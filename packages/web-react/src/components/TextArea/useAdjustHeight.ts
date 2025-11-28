@@ -1,3 +1,5 @@
+'use client';
+
 import { type FormEvent, type FormEventHandler, type ForwardedRef, type MutableRefObject, useEffect } from 'react';
 
 export interface UseAdjustHeightProps {

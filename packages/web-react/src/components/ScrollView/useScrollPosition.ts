@@ -1,3 +1,5 @@
+'use client';
+
 import { type MutableRefObject, type UIEvent, useCallback, useEffect, useState } from 'react';
 import { Position, isDirectionHorizontal } from '../../constants';
 import { useResizeObserver } from '../../hooks';

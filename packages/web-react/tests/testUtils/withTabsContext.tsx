@@ -1,5 +1,3 @@
-'use client';
-
 import React, { type ElementType } from 'react';
 import { type TabsContextType, TabsProvider } from '../../src';
 

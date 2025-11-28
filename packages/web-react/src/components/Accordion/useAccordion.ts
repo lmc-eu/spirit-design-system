@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 import { type AccordionHandlingProps, type AccordionOpenStateType, type UncontrolledAccordionProps } from '../../types';
 

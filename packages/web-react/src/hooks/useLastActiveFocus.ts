@@ -1,3 +1,5 @@
+'use client';
+
 import { type MutableRefObject, useEffect, useRef } from 'react';
 
 export const useLastActiveFocus = (isOpen: boolean) => {
