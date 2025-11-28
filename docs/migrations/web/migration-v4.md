@@ -16,7 +16,7 @@ Introducing version 4 of the _spirit-web_ package.
 
 The Node.js v18 is no longer supported. The minimum required Node.js version is 20.
 
-### Change Package npm Organization to `@alma-oss`
+### Change Package Npm Organization to `@alma-oss`
 
 All usage of `@lmc-eu/spirit-web` should be renamed to `@alma-oss/spirit-web`.
 
