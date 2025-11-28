@@ -6,14 +6,14 @@ You can find instructions on how to run these codemods in the main package [READ
 
 ## Included Scripts
 
-### `v4/web-react/package-name-change` — Change Package npm Organization from `@lmc-eu` to `@alma-oss`
+### `v4/web-react/package-scope-change` — Change Package npm Organization from `@lmc-eu` to `@alma-oss`
 
 This codemod updates all import statements from `@lmc-eu/spirit-web-react` to `@alma-oss/spirit-web-react`.
 
 #### Usage
 
 ```sh
-npx @alma-oss/spirit-codemods -p <path> -t v4/web-react/package-name-change
+npx @alma-oss/spirit-codemods -p <path> -t v4/web-react/package-scope-change
 ```
 
 #### Example
