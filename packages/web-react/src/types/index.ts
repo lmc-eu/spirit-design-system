@@ -36,6 +36,7 @@ export * from './productLogo';
 export * from './radio';
 export * from './scrollView';
 export * from './section';
+export * from './segmentedControl';
 export * from './select';
 export * from './shared';
 export * from './skeleton';
