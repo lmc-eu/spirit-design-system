@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.4.20"></a>
+
+## [0.4.20](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-example-next-with-app-router@0.4.19...@almacareer/spirit-example-next-with-app-router@0.4.20) (2025-12-01)
+
+### Dependencies
+
+- Update dependency eslint to v9 ([fce4f22](https://github.com/lmc-eu/spirit-design-system/commit/fce4f22))
+
+### Styles
+
+- **repo:** Migrate ESLint config to flat config style of Next.js App Router example ([f4b7a13](https://github.com/lmc-eu/spirit-design-system/commit/f4b7a13))
+- **repo:** Refactor deprecated `env` in ESLint config into `globals` ([73b0b21](https://github.com/lmc-eu/spirit-design-system/commit/73b0b21))
+- **repo:** Refactor usage of plugins in ESLint configs ([736f058](https://github.com/lmc-eu/spirit-design-system/commit/736f058))
+- **repo:** Use eslint prettier configuration instead of the plugin ([3befaea](https://github.com/lmc-eu/spirit-design-system/commit/3befaea))
+
+**Note:** Version bump only for package @almacareer/spirit-example-next-with-app-router
+
 <a name="0.4.19"></a>
 
 ## [0.4.19](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-example-next-with-app-router@0.4.18...@almacareer/spirit-example-next-with-app-router@0.4.19) (2025-11-12)

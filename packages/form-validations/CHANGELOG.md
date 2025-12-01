@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.1.4"></a>
+
+## [2.1.4](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@2.1.3...@lmc-eu/spirit-form-validations@2.1.4) (2025-12-01)
+
+### Dependencies
+
+- Update dependency eslint to v9 ([fce4f22](https://github.com/lmc-eu/spirit-design-system/commit/fce4f22))
+
+### Styles
+
+- **repo:** Use eslint prettier configuration instead of the plugin ([3befaea](https://github.com/lmc-eu/spirit-design-system/commit/3befaea))
+
+**Note:** Version bump only for package @lmc-eu/spirit-form-validations
+
 <a name="2.1.3"></a>
 
 ## [2.1.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@2.1.2...@lmc-eu/spirit-form-validations@2.1.3) (2025-11-12)

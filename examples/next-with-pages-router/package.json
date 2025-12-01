@@ -1,6 +1,6 @@
 {
   "name": "@almacareer/spirit-example-next-with-pages-router",
-  "version": "0.2.28",
+  "version": "0.2.29",
   "description": "This is a [Next.js](https://nextjs.org/) project with demo Spirit Design System components and pages router",
   "private": true,
   "author": "Spirit Design System Team",

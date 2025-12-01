@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.7.1"></a>
+
+## [1.7.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@1.7.0...@lmc-eu/spirit-codemods@1.7.1) (2025-12-01)
+
+### Dependencies
+
+- Update dependency eslint to v9 ([fce4f22](https://github.com/lmc-eu/spirit-design-system/commit/fce4f22))
+
+### Styles
+
+- **repo:** Use eslint prettier configuration instead of the plugin ([3befaea](https://github.com/lmc-eu/spirit-design-system/commit/3befaea))
+
+**Note:** Version bump only for package @lmc-eu/spirit-codemods
+
 <a name="1.7.0"></a>
 
 # [1.7.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@1.6.3...@lmc-eu/spirit-codemods@1.7.0) (2025-11-12)

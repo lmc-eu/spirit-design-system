@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.4.3"></a>
+
+## [0.4.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-common@0.4.2...@lmc-eu/spirit-common@0.4.3) (2025-12-01)
+
+### Chores
+
+- **common:** Migrate to ESLint v9 ([dce8903](https://github.com/lmc-eu/spirit-design-system/commit/dce8903))
+
+### Dependencies
+
+- Update dependency eslint to v9 ([fce4f22](https://github.com/lmc-eu/spirit-design-system/commit/fce4f22))
+
+### Styles
+
+- **repo:** Use eslint prettier configuration instead of the plugin ([3befaea](https://github.com/lmc-eu/spirit-design-system/commit/3befaea))
+
+**Note:** Version bump only for package @lmc-eu/spirit-common
+
 <a name="0.4.2"></a>
 
 ## [0.4.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-common@0.4.1...@lmc-eu/spirit-common@0.4.2) (2025-10-22)

@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.21.0"></a>
+
+# [3.21.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.20.0...@lmc-eu/spirit-web@3.21.0) (2025-12-01)
+
+### Dependencies
+
+- Update dependency eslint to v9 ([fce4f22](https://github.com/lmc-eu/spirit-design-system/commit/fce4f22))
+- Update dependency glob to v10.5.0 [SECURITY] ([a51afa8](https://github.com/lmc-eu/spirit-design-system/commit/a51afa8))
+
+### Features
+
+- **web:** Add focus trigger support to Tooltip component [#DS-2055](https://github.com/lmc-eu/spirit-design-system/issues/DS-2055) ([3693b7e](https://github.com/lmc-eu/spirit-design-system/commit/3693b7e))
+- **web:** Responsive size for IconBox [#DS-2033](https://github.com/lmc-eu/spirit-design-system/issues/DS-2033) ([e0d6dd2](https://github.com/lmc-eu/spirit-design-system/commit/e0d6dd2))
+
+### Styles
+
+- **repo:** Use eslint prettier configuration instead of the plugin ([3befaea](https://github.com/lmc-eu/spirit-design-system/commit/3befaea))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="3.20.0"></a>
 
 # [3.20.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.19.0...@lmc-eu/spirit-web@3.20.0) (2025-11-12)

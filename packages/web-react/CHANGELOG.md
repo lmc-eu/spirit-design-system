@@ -3,6 +3,40 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.23.0"></a>
+
+# [3.23.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.22.0...@lmc-eu/spirit-web-react@3.23.0) (2025-12-01)
+
+### Bug Fixes
+
+- **web-react:** Missing `id` attribute in UNSAFE_Header props typings ([e1c2adb](https://github.com/lmc-eu/spirit-design-system/commit/e1c2adb))
+- **web-react:** Remove `use client` directive from barrel files ([453ed0a](https://github.com/lmc-eu/spirit-design-system/commit/453ed0a)), closes [#DS-2293](https://github.com/lmc-eu/spirit-design-system/issues/DS-2293)
+
+### Chores
+
+- **web-react:** Exclude Figma Code Connect files from build ([ed57084](https://github.com/lmc-eu/spirit-design-system/commit/ed57084))
+
+### Dependencies
+
+- Update dependency eslint to v9 ([fce4f22](https://github.com/lmc-eu/spirit-design-system/commit/fce4f22))
+- Update dependency glob to v10.5.0 [SECURITY] ([a51afa8](https://github.com/lmc-eu/spirit-design-system/commit/a51afa8))
+
+### Documentation
+
+- **web-react:** Provide `aria-label` to `UNSTABLE_HeaderLogo` which leads to the homepage [#DS-2177](https://github.com/lmc-eu/spirit-design-system/issues/DS-2177) ([d197e7f](https://github.com/lmc-eu/spirit-design-system/commit/d197e7f))
+
+### Features
+
+- **web-react:** Add focus trigger support to Tooltip component [#DS-2055](https://github.com/lmc-eu/spirit-design-system/issues/DS-2055) ([485f9b3](https://github.com/lmc-eu/spirit-design-system/commit/485f9b3))
+- **web-react:** Responsive size for IconBox [#DS-2033](https://github.com/lmc-eu/spirit-design-system/issues/DS-2033) ([a376456](https://github.com/lmc-eu/spirit-design-system/commit/a376456))
+- **web:** Responsive size for IconBox [#DS-2033](https://github.com/lmc-eu/spirit-design-system/issues/DS-2033) ([e0d6dd2](https://github.com/lmc-eu/spirit-design-system/commit/e0d6dd2))
+
+### Styles
+
+- **repo:** Use eslint prettier configuration instead of the plugin ([3befaea](https://github.com/lmc-eu/spirit-design-system/commit/3befaea))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="3.22.0"></a>
 
 # [3.22.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.21.0...@lmc-eu/spirit-web-react@3.22.0) (2025-11-12)

@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.19"></a>
+
+## [2.0.19](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-js@2.0.18...@lmc-eu/spirit-exporters-js@2.0.19) (2025-12-01)
+
+### Dependencies
+
+- Update dependency eslint to v9 ([fce4f22](https://github.com/lmc-eu/spirit-design-system/commit/fce4f22))
+
+### Styles
+
+- **repo:** Use eslint prettier configuration instead of the plugin ([3befaea](https://github.com/lmc-eu/spirit-design-system/commit/3befaea))
+
+**Note:** Version bump only for package @lmc-eu/spirit-exporters-js
+
 <a name="2.0.18"></a>
 
 ## [2.0.18](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-js@2.0.17...@lmc-eu/spirit-exporters-js@2.0.18) (2025-11-12)
