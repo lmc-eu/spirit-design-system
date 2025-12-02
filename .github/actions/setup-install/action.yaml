@@ -15,5 +15,4 @@ runs:
           ${{ runner.os }}-yarn-
 
     - name: Install dependencies
-      shell: bash
-      run: yarn --immutable --inline-builds
+      uses: ./.github/actions/deps-install
