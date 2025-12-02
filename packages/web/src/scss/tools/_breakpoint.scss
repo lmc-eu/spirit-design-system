@@ -93,9 +93,10 @@
 // Example: get-modifier('infix, 'mobile', 0) will return ''
 // Example: get-modifier('infix', 'tablet', 768px) will return 'tablet--'
 // Example: get-modifier('suffix', 'tablet', 768px) will return '-tablet'
+// Example: get-modifier('raw', 'tablet', 768px) will return 'tablet'
 //
 // Parameters are:
-// * modifier: [ infix | suffix ]
+// * modifier: [ infix | suffix | raw ]
 // * $name: the breakpoint/modifier name to return (e.g. 'tablet')
 // * $breakpoint-value: the breakpoint value to decide by (in pixels)
 @function get-modifier($modifier, $name, $breakpoint-value) {
@@ -104,7 +105,11 @@
             @return string.unquote($name + '--');
         }
 
-        @return string.unquote('-' + $name);
+        @if $modifier == 'suffix' {
+            @return string.unquote('-' + $name);
+        }
+
+        @return $name;
     }
 
     @return '';
