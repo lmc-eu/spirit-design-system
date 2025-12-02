@@ -1,0 +1,39 @@
+name: 'purge yarn caches'
+description: 'Purge Yarn Caches'
+inputs:
+  runner_os:
+    description: 'Operating system of the runner'
+    required: true
+  exclude_key:
+    description: 'Cache key to exclude from deletion (optional)'
+    required: false
+    default: ''
+runs:
+  using: 'composite'
+  steps:
+    - name: Purge Yarn Caches
+      shell: bash
+      env:
+        EXCLUDE_KEY: ${{ inputs.exclude_key }}
+      run: |
+        echo "🗑️ Purging Yarn caches..."
+
+        # Build jq filter based on exclusion
+        if [ -n "$EXCLUDE_KEY" ]; then
+          FILTER='.[] | select(.key | startswith("${{ inputs.runner_os }}-Yarn-")) | select(.key != "'"$EXCLUDE_KEY"'") | .id'
+        else
+          FILTER='.[] | select(.key | startswith("${{ inputs.runner_os }}-Yarn-")) | .id'
+        fi
+
+        CACHES=$(gh cache list --json id,key --jq "$FILTER")
+
+        if [ -n "$CACHES" ]; then
+          echo "Found caches to delete:"
+          echo "$CACHES" | while read -r cache_id; do
+            echo "Deleting cache ID: $cache_id"
+            gh cache delete "$cache_id" || true
+          done
+          echo "✅ Caches purged successfully"
+        else
+          echo "No caches found to delete"
+        fi

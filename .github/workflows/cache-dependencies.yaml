@@ -1,0 +1,119 @@
+# Caching Dependencies Workflow
+#
+# Yarn cache (zipped tarballs) are stored in ./.yarn/cache, see `.yarnrc.yml`
+# This cache is small and can be efficiently cached in GitHub Actions.
+# This approach is significantly close to Yarn's offline mirror strategy.
+#
+# @see: https://classic.yarnpkg.com/blog/2016/11/24/offline-mirror/
+#
+# The cache is created once per day, or can be manually triggered.
+# Every install on every branch will use the same cache if available.
+# Or install all the dependencies from scratch if not.
+# The thing is, even if same dependencies changed or are missing, only those
+# will be fetched from the network, the rest will be used from the cache.
+#
+# This allow us to have smaller cache size in GitHub Actions Caches.
+#
+# Why not cache node_modules?
+# - node_modules can be large and vary significantly between branches
+#
+# Why not use cache option of actions/setup-node?
+# - it caches Yarn cache correctly in a same way this action does
+# - but the cache is created for every branch separately, leading to
+#   multiple copies of the same cache if multiple branches share the same
+#   dependencies.
+# - @see: https://github.com/actions/setup-node
+
+name: 📦 Cache Dependencies
+
+on:
+  schedule:
+    # every day at 23:00
+    - cron: '0 23 * * *'
+  # allow manual trigger
+  workflow_dispatch:
+    inputs:
+      purge_cache:
+        description: 'Purge all caches before running'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  cache-management:
+    name: 🔄 Update Dependencies Cache
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      actions: write
+      contents: read
+    env:
+      HUSKY: 0
+      CACHE_PATH: ./.yarn/cache
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+
+      - name: Setup Node
+        uses: ./.github/actions/setup-node
+
+      - name: Purge Yarn Caches
+        if: ${{ inputs.purge_cache }}
+        uses: ./.github/actions/purge-cache
+        with:
+          runner_os: ${{ runner.os }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Generate cache key
+        id: cache-key
+        run: |
+          HASH="${{ hashFiles('**/yarn.lock') }}"
+          echo "key=${{ runner.os }}-Yarn-${{ github.ref_name }}-${HASH}" >> $GITHUB_OUTPUT
+          echo "hash=${HASH}" >> $GITHUB_OUTPUT
+
+      - name: Check Cache
+        id: cache-check
+        if: ${{ !inputs.purge_cache }}
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        with:
+          path: ${{ env.CACHE_PATH }}
+          key: ${{ steps.cache-key.outputs.key }}
+          lookup-only: true
+
+      - name: Determine if rebuild needed
+        id: should-rebuild
+        run: |
+          if [[ "${{ inputs.purge_cache }}" == "true" || "${{ steps.cache-check.outputs.cache-hit }}" != "true" ]]; then
+            echo "rebuild=true" >> $GITHUB_OUTPUT
+          else
+            echo "rebuild=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Install Dependencies
+        if: ${{ steps.should-rebuild.outputs.rebuild == 'true' }}
+        uses: ./.github/actions/deps-install
+
+      - name: Save Cache
+        if: ${{ steps.should-rebuild.outputs.rebuild == 'true' }}
+        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        with:
+          path: ${{ env.CACHE_PATH }}
+          key: ${{ steps.cache-key.outputs.key }}
+
+      - name: Purge Yarn Caches
+        if: ${{ !inputs.purge_cache && steps.should-rebuild.outputs.rebuild ==
+          'true' }}
+        uses: ./.github/actions/purge-cache
+        with:
+          runner_os: ${{ runner.os }}
+          exclude_key: ${{ steps.cache-key.outputs.key }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Unchanged Cache
+        if: ${{ steps.should-rebuild.outputs.rebuild == 'false' }}
+        run: |
+          echo "✅ Cache is up to date. Hash: ${{ steps.cache-key.outputs.hash }}"
+          echo "No action needed."
