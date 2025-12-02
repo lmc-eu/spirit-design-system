@@ -558,4 +558,50 @@
             }
         }
     }
+
+    @include test.it('should generate correct responsive size classes based on a config') {
+        @include test.assert() {
+            @include test.output() {
+                @include dictionaries.generate-sizes(
+                    $class-name: 'TestSize',
+                    $dictionary-values: (
+                        'medium',
+                        'large',
+                    ),
+                    $config: (
+                        medium: (
+                            width: 10px,
+                        ),
+                        large: (
+                            width: 20px,
+                        ),
+                    ),
+                    $breakpoints: (
+                        'mobile': 0,
+                        'tablet': 768px,
+                    )
+                );
+            }
+
+            @include test.expect() {
+                .TestSize--medium {
+                    --spirit-test-size-width: 10px;
+                }
+
+                .TestSize--large {
+                    --spirit-test-size-width: 20px;
+                }
+
+                @media (width >= 768px) {
+                    .TestSize--tablet--medium {
+                        --spirit-test-size-width: 10px;
+                    }
+
+                    .TestSize--tablet--large {
+                        --spirit-test-size-width: 20px;
+                    }
+                }
+            }
+        }
+    }
 }

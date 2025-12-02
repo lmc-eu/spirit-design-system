@@ -4,6 +4,7 @@
 @use 'sass:string';
 @use '@tokens' as tokens;
 @use 'alignment';
+@use 'breakpoint';
 @use 'links';
 @use 'list' as spirit-list;
 @use 'placement';
@@ -188,9 +189,24 @@
 // * $config: map of the properties to generate, their value is the suffix of the token variable
 // * $css-variable-infix: infix to use for CSS variables (e.g. 'input' for input fields)
 // * $class-name-infix: infix to add to the class name
-@mixin generate-variants($class-name, $dictionary-values, $config, $css-variable-infix: '', $class-name-infix: '') {
+// * $breakpoints: if provided, generate responsive classes for given breakpoints
+@mixin generate-variants(
+    $class-name,
+    $dictionary-values,
+    $config,
+    $css-variable-infix: '',
+    $class-name-infix: '',
+    $breakpoints: null
+) {
     @if validate-config-keys($dictionary-values, $config) {
         $_base: spirit-string.convert-pascal-case-to-kebab-case(spirit-string.remove-prefix($class-name, 'UNSTABLE_'));
+        $_breakpoints: if(
+            $breakpoints,
+            $breakpoints,
+            (
+                mobile: 0,
+            )
+        );
         $_infix: if(
             $css-variable-infix == '',
             '',
@@ -198,17 +214,23 @@
         );
         $custom-property-base-name: '#{$_base}#{$_infix}';
 
-        @each $key, $variables in $config {
-            .#{spirit-list.to-string(($class-name, $class-name-infix, $key), '--')} {
-                @each $property-name, $property-value in $variables {
-                    @if $property-name == 'typography' {
-                        @include typography.generate(
-                            $property-value,
-                            $as-css-variables: true,
-                            $css-variable-infix: $custom-property-base-name
-                        );
-                    } @else {
-                        --#{tokens.$css-variable-prefix}#{$custom-property-base-name}-#{$property-name}: #{$property-value};
+        @each $breakpoint-name, $breakpoint-value in $_breakpoints {
+            $breakpoint-infix: breakpoint.get-modifier(raw, $breakpoint-name, $breakpoint-value);
+
+            @include breakpoint.up($breakpoint-value) {
+                @each $key, $variables in $config {
+                    .#{spirit-list.to-string(($class-name, $class-name-infix, $breakpoint-infix, $key), '--')} {
+                        @each $property-name, $property-value in $variables {
+                            @if $property-name == 'typography' {
+                                @include typography.generate(
+                                    $property-value,
+                                    $as-css-variables: true,
+                                    $css-variable-infix: $custom-property-base-name
+                                );
+                            } @else {
+                                --#{tokens.$css-variable-prefix}#{$custom-property-base-name}-#{$property-name}: #{$property-value};
+                            }
+                        }
                     }
                 }
             }
@@ -222,6 +244,22 @@
 // * $dictionary-values: list of the dictionary values to validate the $config keys against
 // * $config: map of the properties to generate, their value is the suffix of the token variable
 // * $css-variable-infix: infix to use for CSS variables (e.g. 'input' for input fields)
-@mixin generate-sizes($class-name, $dictionary-values, $config, $css-variable-infix: '') {
-    @include generate-variants($class-name, $dictionary-values, $config, $css-variable-infix);
+// * $class-name-infix: infix to add to the class name
+// * $breakpoints: if provided, generate responsive classes for given breakpoints
+@mixin generate-sizes(
+    $class-name,
+    $dictionary-values,
+    $config,
+    $css-variable-infix: '',
+    $class-name-infix: '',
+    $breakpoints: null
+) {
+    @include generate-variants(
+        $class-name,
+        $dictionary-values,
+        $config,
+        $css-variable-infix,
+        $class-name-infix,
+        $breakpoints
+    );
 }

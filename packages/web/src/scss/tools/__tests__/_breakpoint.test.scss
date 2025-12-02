@@ -197,4 +197,8 @@
     @include test.it('should output a suffix for a non-zero breakpoint value') {
         @include test.assert-equal(breakpoint.get-modifier('suffix', 'tablet', 768px), '-tablet');
     }
+
+    @include test.it('should output a raw modifier for a non-zero breakpoint value') {
+        @include test.assert-equal(breakpoint.get-modifier('raw', 'tablet', 768px), 'tablet');
+    }
 }
