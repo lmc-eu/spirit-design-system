@@ -23,8 +23,6 @@ export default [
       '**/.yarn/**',
       // Ignore the playwright-report directory
       'playwright-report',
-      // Ignore vendor directory in `packages/web-twig`
-      '**/vendor/**',
 
       // Internal output folders
       'static',

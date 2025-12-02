@@ -114,12 +114,7 @@ graduate: ## Graduate a pre-release version of packages to stable
 # --yes` - skip all confirmation prompts
 	$(PKG_MANAGER) $(MONOREPO_TOOL) version --conventional-graduate --create-release github --yes --no-push $(MONOREPO_TOOL_FLAGS) $(MONOREPO_TOOL_NO_PUSH)
 
-ifeq ($(pkg),web-twig)
-publish: ## Publish packages to repository, pass the parameter "pkg=" to publish specific package (supports only `web-twig`), example: make publish pkg=web-twig
-	@$(eval pkg ?=)
-	git push web-twig-readonly `git subtree split --prefix packages/web-twig main`:main
-else
-publish:
+publish: ## Publish packages to repository, use "dist-tag=" parameter to specify distribution tag, example: make publish dist-tag=beta
 	@$(eval pkg ?=)
 	@$(eval dist-tag := $(strip $(dist-tag)))
 	@if [ -n "$(dist-tag)" ]; then \
@@ -127,7 +122,6 @@ publish:
 	else \
 		$(PKG_EXECUTE) $(MONOREPO_TOOL) publish from-package --yes $(MONOREPO_TOOL_FLAGS); \
 	fi
-endif
 
 ## —— Miscellaneous 🛠️ ——————————————————————————————————————————————————————————————
 
