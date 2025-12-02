@@ -3648,9 +3648,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@figma/code-connect@npm:1.3.8":
-  version: 1.3.8
-  resolution: "@figma/code-connect@npm:1.3.8"
+"@figma/code-connect@npm:1.3.11":
+  version: 1.3.11
+  resolution: "@figma/code-connect@npm:1.3.11"
   dependencies:
     boxen: "npm:5.1.1"
     chalk: "npm:^4.1.2"
@@ -3660,7 +3660,7 @@ __metadata:
     dotenv: "npm:^16.3.1"
     fast-fuzzy: "npm:^1.12.0"
     find-up: "npm:^5.0.0"
-    glob: "npm:^10.3.10"
+    glob: "npm:^11.0.4"
     jsdom: "npm:^24.1.1"
     lodash: "npm:4.17.21"
     minimatch: "npm:^9.0.3"
@@ -3676,7 +3676,7 @@ __metadata:
     zod-validation-error: "npm:^3.2.0"
   bin:
     figma: bin/figma
-  checksum: 10/512f7c995a2afa0dd3f6ad0b2e743ceb16187d8b6ee8f0c733c4b0957b1e286d27b195578b1e6e567d2a675b17cadbd5d248d0238fcbc7a58d9bcb9f237aa917
+  checksum: 10/205db466005acab259040d7c72ea760fefe09963d014cbf6676c6ebbdba35cd60dee44ec4b798779b0df723cafbcfdcedb4cf021c298a601e2a49d70065ebc5e
   languageName: node
   linkType: hard
 
@@ -5120,7 +5120,7 @@ __metadata:
     "@babel/preset-typescript": "npm:7.27.0"
     "@eslint/compat": "npm:^1.4.0"
     "@eslint/eslintrc": "npm:^3.3.1"
-    "@figma/code-connect": "npm:1.3.8"
+    "@figma/code-connect": "npm:1.3.11"
     "@floating-ui/react": "npm:^0.27.0"
     "@juggle/resize-observer": "npm:3.4.0"
     "@lmc-eu/eslint-config-base": "npm:3.1.3"
@@ -17895,7 +17895,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"foreground-child@npm:^3.1.0":
+"foreground-child@npm:^3.1.0, foreground-child@npm:^3.3.1":
   version: 3.3.1
   resolution: "foreground-child@npm:3.3.1"
   dependencies:
@@ -18524,6 +18524,22 @@ __metadata:
   bin:
     glob: dist/esm/bin.mjs
   checksum: 10/ab3bccfefcc0afaedbd1f480cd0c4a2c0e322eb3f0aa7ceaa31b3f00b825069f17cf0f1fc8b6f256795074b903f37c0ade37ddda6a176aa57f1c2bbfe7240653
+  languageName: node
+  linkType: hard
+
+"glob@npm:^11.0.4":
+  version: 11.1.0
+  resolution: "glob@npm:11.1.0"
+  dependencies:
+    foreground-child: "npm:^3.3.1"
+    jackspeak: "npm:^4.1.1"
+    minimatch: "npm:^10.1.1"
+    minipass: "npm:^7.1.2"
+    package-json-from-dist: "npm:^1.0.0"
+    path-scurry: "npm:^2.0.0"
+  bin:
+    glob: dist/esm/bin.mjs
+  checksum: 10/da4501819633daff8822c007bb3f93d5c4d2cbc7b15a8e886660f4497dd251a1fb4f53a85fba1e760b31704eff7164aeb2c7a82db10f9f2c362d12c02fe52cf3
   languageName: node
   linkType: hard
 
@@ -20626,6 +20642,15 @@ __metadata:
     "@pkgjs/parseargs":
       optional: true
   checksum: 10/96f8786eaab98e4bf5b2a5d6d9588ea46c4d06bbc4f2eb861fdd7b6b182b16f71d8a70e79820f335d52653b16d4843b29dd9cdcf38ae80406756db9199497cf3
+  languageName: node
+  linkType: hard
+
+"jackspeak@npm:^4.1.1":
+  version: 4.1.1
+  resolution: "jackspeak@npm:4.1.1"
+  dependencies:
+    "@isaacs/cliui": "npm:^8.0.2"
+  checksum: 10/ffceb270ec286841f48413bfb4a50b188662dfd599378ce142b6540f3f0a66821dc9dcb1e9ebc55c6c3b24dc2226c96e5819ba9bd7a241bd29031b61911718c7
   languageName: node
   linkType: hard
 
@@ -22795,6 +22820,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lru-cache@npm:^11.0.0":
+  version: 11.2.4
+  resolution: "lru-cache@npm:11.2.4"
+  checksum: 10/3b2da74c0b6653767f8164c38c4c4f4d7f0cc10c62bfa512663d94a830191ae6a5af742a8d88a8b30d5f9974652d3adae53931f32069139ad24fa2a18a199aca
+  languageName: node
+  linkType: hard
+
 "lru-cache@npm:^3.2.0":
   version: 3.2.0
   resolution: "lru-cache@npm:3.2.0"
@@ -23917,6 +23949,15 @@ __metadata:
   dependencies:
     "@isaacs/brace-expansion": "npm:^5.0.0"
   checksum: 10/d5b8b2538b367f2cfd4aeef27539fddeee58d1efb692102b848e4a968a09780a302c530eb5aacfa8c57f7299155fb4b4e85219ad82664dcef5c66f657111d9b8
+  languageName: node
+  linkType: hard
+
+"minimatch@npm:^10.1.1":
+  version: 10.1.1
+  resolution: "minimatch@npm:10.1.1"
+  dependencies:
+    "@isaacs/brace-expansion": "npm:^5.0.0"
+  checksum: 10/110f38921ea527022e90f7a5f43721838ac740d0a0c26881c03b57c261354fb9a0430e40b2c56dfcea2ef3c773768f27210d1106f1f2be19cde3eea93f26f45e
   languageName: node
   linkType: hard
 
@@ -26292,6 +26333,16 @@ __metadata:
     lru-cache: "npm:^10.2.0"
     minipass: "npm:^5.0.0 || ^6.0.2 || ^7.0.0"
   checksum: 10/5e8845c159261adda6f09814d7725683257fcc85a18f329880ab4d7cc1d12830967eae5d5894e453f341710d5484b8fdbbd4d75181b4d6e1eb2f4dc7aeadc434
+  languageName: node
+  linkType: hard
+
+"path-scurry@npm:^2.0.0":
+  version: 2.0.1
+  resolution: "path-scurry@npm:2.0.1"
+  dependencies:
+    lru-cache: "npm:^11.0.0"
+    minipass: "npm:^7.1.2"
+  checksum: 10/1e9c74e9ccf94d7c16056a5cb2dba9fa23eec1bc221ab15c44765486b9b9975b4cd9a4d55da15b96eadf67d5202e9a2f1cec9023fbb35fe7d9ccd0ff1891f88b
   languageName: node
   linkType: hard
 
