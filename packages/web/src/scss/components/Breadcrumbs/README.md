@@ -42,6 +42,8 @@ Shows where the user is within the app hierarchy.
 
 When you need to shorten the title of the Breadcrumbs item you can use a helper class `text-truncate` with defined width.
 
+For comprehensive guidance on handling text truncation, translations, and multiple string length scenarios, see the [Content Truncating Guidelines][truncation].
+
 ```html
 <!-- … --->
 <li class="d-none d-tablet-flex">
@@ -54,3 +56,5 @@ When you need to shorten the title of the Breadcrumbs item you can use a helper 
 </li>
 <!-- … --->
 ```
+
+[truncation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/TRUNCATING.md#breadcrumbs
