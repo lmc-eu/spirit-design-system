@@ -3,7 +3,7 @@
 Alert presents feedback or important information to users.
 
 ```jsx
-import { Alert } from '@lmc-eu/spirit-web-react/components';
+import { Alert } from '@alma-oss/spirit-web-react';
 ```
 
 ```jsx

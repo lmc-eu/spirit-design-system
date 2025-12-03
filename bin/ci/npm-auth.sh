@@ -12,7 +12,7 @@ set -o errexit
 
 # Authorize npm for publishing
 cat <<NPMRC >> .npmrc
-@lmc-eu:registry=https://registry.npmjs.org/
+@alma-oss:registry=https://registry.npmjs.org/
 //registry.npmjs.org/:_authToken=${NPM_TOKEN}
 NPMRC
 

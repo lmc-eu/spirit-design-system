@@ -2,7 +2,7 @@ import { join, resolve } from 'path';
 import { defineConfig } from 'vite';
 import handlebars from 'vite-plugin-handlebars';
 // Vite config cannot import untranspiled ES modules
-// so `import { SERVERS } from '@lmc-eu/spirit-commmon';` will not work
+// so `import { SERVERS } from '@alma-oss/spirit-commmon';` will not work
 // to make it work the package must be transpiled into CommonJS
 // as a workaround, we can import the file directly
 // @see: https://github.com/vitejs/vite/issues/5370
@@ -26,8 +26,8 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@lmc-eu/spirit-design-tokens': join(pathRelativeToRepositoryRoot, 'packages/design-tokens/src/js'),
-      '@lmc-eu/spirit-icons': join(pathRelativeToRepositoryRoot, 'packages/icons/dist'),
+      '@alma-oss/spirit-design-tokens': join(pathRelativeToRepositoryRoot, 'packages/design-tokens/src/js'),
+      '@alma-oss/spirit-icons': join(pathRelativeToRepositoryRoot, 'packages/icons/dist'),
     },
   },
   plugins: [
@@ -76,7 +76,7 @@ export default defineConfig({
         api: 'modern-compiler',
         loadPaths: [
           join(pathRelativeToRepositoryRoot, 'node_modules'),
-          join(pathRelativeToRepositoryRoot, 'node_modules/@lmc-eu/spirit-design-tokens/src/scss'),
+          join(pathRelativeToRepositoryRoot, 'node_modules/@alma-oss/spirit-design-tokens/src/scss'),
         ],
         // Silence deprecation warnings related to mixed declarations.
         // We’ve disabled these warnings because they are evaluated as false positives in our context.
@@ -98,7 +98,6 @@ export default defineConfig({
         webReactMain: join(pathRelativeToRepositoryRoot, 'packages/web-react/index.html'),
         ...mapKeys(getNestedDirs('../../packages/web-react/src/components', 'index.html'), (key) => `web-react-${key}`),
         webReactIcons: join(pathRelativeToRepositoryRoot, 'packages/web-react/src/icons/index.html'),
-        formValidations: join(pathRelativeToRepositoryRoot, 'packages/form-validations/index.html'),
       },
       output: {
         entryFileNames: `assets/spirit-entry.[hash].js`,

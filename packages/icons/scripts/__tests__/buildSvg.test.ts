@@ -11,11 +11,11 @@ jest.mock('fs', () => ({
   writeFileSync: writeFileSyncMock,
 }));
 
-jest.mock('@lmc-eu/spirit-design-tokens', () => ({
+jest.mock('@alma-oss/spirit-design-tokens', () => ({
   cssVariablePrefix: 'spirit-',
 }));
 
-import { cssVariablePrefix } from '@lmc-eu/spirit-design-tokens';
+import { cssVariablePrefix } from '@alma-oss/spirit-design-tokens';
 
 const buildSvgModule = require('../buildSvg.js');
 

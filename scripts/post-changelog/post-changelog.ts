@@ -134,7 +134,7 @@ async function sendToWebhook({ content, webhookUrl }: { content: object; webhook
  *
  * @returns {string} The formatted changelog string.
  */
-function format(str: string, packageName: string, prefix: string = '@lmc-eu') {
+function format(str: string, packageName: string, prefix: string = '@alma-oss') {
   const output = str
     .replace(
       /^(#+ )(.+)/,

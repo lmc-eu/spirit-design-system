@@ -1,4 +1,4 @@
-export type PackageName = 'web' | 'web-react' | 'form-validations';
+export type PackageName = 'web' | 'web-react';
 export type ServerOptions = { host: string; https: boolean; port: number; path?: string; strictPort?: boolean };
 export type ServerEnvironments = {
   DEVELOPMENT: Record<PackageName, ServerOptions>;
@@ -22,13 +22,6 @@ const SERVERS: ServerEnvironments = {
       port: 3456,
       strictPort: true,
       path: 'packages/web-react/',
-    },
-    // @see: https://vitejs.dev/config/server-options.html
-    'form-validations': {
-      host: 'localhost',
-      https: false,
-      port: 5174,
-      strictPort: true,
     },
   },
   TESTING: {
