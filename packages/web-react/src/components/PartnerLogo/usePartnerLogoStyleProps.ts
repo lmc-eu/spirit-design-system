@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks';
 import { type SpiritPartnerLogoProps } from '../../types';
-import { getSizeClassName } from './getSizeClassName';
+import { generateResponsiveClassNames } from '../../utils';
 
 export interface PartnerLogoStyles<T> {
   classProps: string;
@@ -14,7 +14,7 @@ export const usePartnerLogoStyleProps = (props: SpiritPartnerLogoProps): Partner
   const partnerLogoClass = useClassNamePrefix('PartnerLogo');
   const partnerLogoFluidClass = `${partnerLogoClass}--fluid`;
   const partnerLogoSafeAreaClass = `${partnerLogoClass}--safeArea`;
-  const partnerLogoSizeClass = getSizeClassName(partnerLogoClass, size);
+  const partnerLogoSizeClass = generateResponsiveClassNames(partnerLogoClass, size);
 
   const classProps = classNames(
     partnerLogoClass,
