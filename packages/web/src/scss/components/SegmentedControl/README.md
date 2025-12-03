@@ -124,6 +124,10 @@ Consider using a `Tooltip` to provide additional context for the icons.
 
 Labels should be short and descriptive and are truncated if they are too long.
 
+If your labels are truncating, the content may be too long for this component. Consider shortening the label text, using abbreviations, descriptive icons or switching to a different component (e.g., Select, Radio buttons).
+
+For detailed guidance on handling text truncation, translations, and multiple string length scenarios, see the [Content Truncating Guidelines][truncation].
+
 ```html
 <input type="radio" id="segmented-control-label" name="segmented" value="value" class="SegmentedControlItem__input" />
 <label for="segmented-control-label" class="SegmentedControlItem__label">
@@ -236,4 +240,5 @@ Set `data-spirit-toggle="segmentedControl"` attribute on the `fieldset` element.
 
 Please consult the [main README][web-readme] for how to include JavaScript plugins.
 
+[truncation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/TRUNCATING.md#segmented-control
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md

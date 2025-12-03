@@ -145,6 +145,10 @@ To disable a `SegmentedControlItem`, you can use the `isDisabled` prop.
 While technically any `ReactNode` can be passed as children, the `SegmentedControlItem` should follow
 one of the recommended content patterns to ensure correct appearance, alignment, and accessibility:
 
+If your labels are truncating, the content may be too long for this component. Consider shortening the label text, using abbreviations, descriptive icons or switching to a different component (e.g., Select, Radio buttons).
+
+For detailed guidance on handling text truncation, translations, and multiple string length scenarios, see the [Content Truncating Guidelines][truncation].
+
 #### Text Label Only
 
 A simple short text label without any icons or additional elements. We recommend wrapping the label in the `<Truncate>` component with `mode="lines"` and `limit={1}` to prevent overflow.
@@ -264,3 +268,4 @@ const [selectedValue, setSelectedValue] = useState('value-1');
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props
+[truncation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/TRUNCATING.md#segmented-control
