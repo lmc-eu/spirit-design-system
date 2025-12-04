@@ -10,6 +10,7 @@ import {
 } from '@local/tests';
 import { type SpiritModalProps } from '../../../types';
 import Modal from '../Modal';
+import '@local/tests/mocks/dialog';
 
 describe('Modal', () => {
   const ModalTest = (props: SpiritModalProps) => (

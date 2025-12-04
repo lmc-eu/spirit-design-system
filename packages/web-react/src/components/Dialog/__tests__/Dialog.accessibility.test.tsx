@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { runAxe } from '@local/tests/testUtils/runAxe';
 import Dialog from '../Dialog';
+import '@local/tests/mocks/dialog';
 
 describe('Dialog accessibility', () => {
   it('should be accessible when open', async () => {

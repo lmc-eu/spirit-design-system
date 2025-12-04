@@ -3,6 +3,7 @@ import React from 'react';
 import { runAxe } from '@local/tests/testUtils/runAxe';
 import Drawer from '../Drawer';
 import DrawerPanel from '../DrawerPanel';
+import '@local/tests/mocks/dialog';
 
 describe('Drawer accessibility', () => {
   it('should be accessible when open', async () => {
