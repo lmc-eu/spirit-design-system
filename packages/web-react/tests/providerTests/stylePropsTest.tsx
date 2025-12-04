@@ -17,12 +17,13 @@ export const stylePropsTest = (Component: ComponentType<any>, testId?: string) =
   });
 
   it('renders style with UNSAFE_style', async () => {
-    const testStyle = { color: 'red' };
-    const dom = render(<Component UNSAFE_style={testStyle} />);
+    const providedStyle = { color: 'red' };
+    const expectedStyle = { color: 'rgb(255, 0, 0)' };
+    const dom = render(<Component UNSAFE_style={providedStyle} />);
 
     await waitFor(() => {
       const element = getElement(dom, testId);
-      expect(element).toHaveStyle(testStyle);
+      expect(element).toHaveStyle(expectedStyle);
     });
   });
 
