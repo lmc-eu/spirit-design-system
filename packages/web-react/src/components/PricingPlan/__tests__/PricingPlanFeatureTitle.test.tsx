@@ -4,6 +4,7 @@ import React, { type ComponentProps } from 'react';
 import { classNamePrefixProviderTest, validHtmlAttributesTest } from '@local/tests';
 import { type PricingPlanFeature } from '../../../types/pricingPlan';
 import PricingPlanFeatureTitle from '../PricingPlanFeatureTitle';
+import '@local/tests/mocks/dialog';
 
 const PricingPlanFeatureTitleWithRequiredProps = (props: Partial<ComponentProps<typeof PricingPlanFeatureTitle>>) => (
   <PricingPlanFeatureTitle feature={{ title: 'Test Feature' }} featureId="tier-1-feature-1" {...props} />

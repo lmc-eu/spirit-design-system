@@ -42,19 +42,3 @@ beforeAll(() => {
 afterAll(() => {
   console.error = originalError;
 });
-
-// jsdom not support dialog events
-// @see https://github.com/jsdom/jsdom/issues/3294
-beforeAll(() => {
-  HTMLDialogElement.prototype.show = jest.fn(function mock(this: HTMLDialogElement) {
-    this.open = true;
-  });
-
-  HTMLDialogElement.prototype.showModal = jest.fn(function mock(this: HTMLDialogElement) {
-    this.open = true;
-  });
-
-  HTMLDialogElement.prototype.close = jest.fn(function mock(this: HTMLDialogElement) {
-    this.open = false;
-  });
-});

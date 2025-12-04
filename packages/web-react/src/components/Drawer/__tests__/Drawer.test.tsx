@@ -10,6 +10,7 @@ import {
 } from '@local/tests';
 import { type SpiritDrawerProps } from '../../../types';
 import Drawer from '../Drawer';
+import '@local/tests/mocks/dialog';
 
 const mockedOnClose = jest.fn();
 

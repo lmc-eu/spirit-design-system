@@ -6,6 +6,7 @@ import ModalBody from '../ModalBody';
 import ModalDialog from '../ModalDialog';
 import ModalFooter from '../ModalFooter';
 import ModalHeader from '../ModalHeader';
+import '@local/tests/mocks/dialog';
 
 jest.mock('../../../hooks/useIcon');
 
