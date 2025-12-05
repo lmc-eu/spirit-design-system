@@ -48,16 +48,31 @@ The content of the `Avatar` component can be an image, an icon, or a text string
 
 ### Icon
 
-Add an Icon with correct size.
-
 ```jsx
 <Avatar size="xsmall" aria-label="Profile of Jiří Bárta">
-  <Icon name="profile" boxSize="16" />
+  <Icon name="profile" />
 </Avatar>
 <Avatar aria-label="Profile of Jiří Bárta">
-  <Icon name="profile" boxSize="24" />
+  <Icon name="profile" />
+</Avatar>
+<Avatar aria-label="Profile of Jiří Bárta">
+  <Icon name="profile" boxSize={32} />
 </Avatar>
 ```
+
+#### Avatar and Icon Sizes
+
+The size of the icons is automatically adjusted according to the size of the avatar.
+
+| Avatar Size | Icon Size |
+| ----------- | --------- |
+| xsmall      | 16px      |
+| small       | 20px      |
+| medium      | 24px      |
+| large       | 28px      |
+| xlarge      | 32px      |
+
+You can always override the icon size by setting the [`boxSize`][readme-icon-api] prop on the Icon component.
 
 ℹ️ Don't forget to add the `aria-label` attribute for accessible title.
 
@@ -110,5 +125,6 @@ and [escape hatches][readme-escape-hatches].
 [dictionary-size]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#size
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
+[readme-icon-api]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Icon/README.md#api
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props
 [web-react-icon-documentation]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Icon/README.md#-usage
