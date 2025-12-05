@@ -1,22 +1,19 @@
 import classNames from 'classnames';
-import { type ElementType } from 'react';
 import { useClassNamePrefix } from '../../hooks';
-import { type AvatarSize, type SpiritAvatarProps } from '../../types';
+import { type AvatarBaseProps, type AvatarSize, type AvatarStyleProps } from '../../types';
 import { applySize, compose } from '../../utils';
 
-export interface AvatarStyles<E extends ElementType = ElementType, S = void> {
+export interface AvatarStyle {
   /** className props */
   classProps: string;
   /** props to be passed to the element */
-  props: SpiritAvatarProps<E, S>;
+  props: AvatarBaseProps;
 }
 
 const getAvatarSizeClassname = <S = void>(className: string, size: AvatarSize<S>): string =>
   compose(applySize<AvatarSize<S>>(size))(className);
 
-export function useAvatarStyleProps<E extends ElementType = ElementType, S = void>(
-  props: SpiritAvatarProps<E, S>,
-): AvatarStyles<E, S> {
+export function useAvatarStyleProps<S = void>(props: AvatarStyleProps<S>): AvatarStyle {
   const { isSquare, size, ...restProps } = props;
 
   const avatarClass = useClassNamePrefix('Avatar');
