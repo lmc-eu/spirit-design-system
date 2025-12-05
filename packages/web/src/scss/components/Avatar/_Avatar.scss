@@ -4,6 +4,8 @@
 @use '../../tools/typography';
 
 .Avatar {
+    --#{tokens.$css-variable-prefix}icon-size: var(--#{tokens.$css-variable-prefix}avatar-icon-size);
+
     @include typography.from-css-variables($infix: 'avatar');
 
     display: inline-flex;
