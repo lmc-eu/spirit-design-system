@@ -56,15 +56,28 @@ The content of the `Avatar` component can be an image, an icon, or a text string
 
 ### Icon
 
-Add an icon with correct size.
-
 ```html
 <div class="Avatar Avatar--medium" aria-label="Profile of Jiří Bárta">
-  <svg width="24" height="24" aria-hidden="true">
+  <svg class="Icon" width="24" height="24" aria-hidden="true">
     <use xlink:href="/assets/icons/svg/sprite.svg#profile" />
   </svg>
 </div>
 ```
+
+#### Avatar and Icon Sizes
+
+The size of the icons is automatically adjusted according to the size of the avatar.
+
+| Size   | CSS Class        | Icon Size |
+| ------ | ---------------- | --------- |
+| xsmall | `Avatar--xsmall` | 16px      |
+| small  | `Avatar--small`  | 20px      |
+| medium | `Avatar--medium` | 24px      |
+| large  | `Avatar--large`  | 28px      |
+| xlarge | `Avatar--xlarge` | 32px      |
+
+You can override the icon size by setting the `width` and `height` attributes on the SVG element,
+or by using CSS custom properties as described in the [Icon component documentation][icon-documentation].
 
 ℹ️ Don't forget to add the `aria-label` attribute for accessible title.
 
@@ -99,3 +112,4 @@ using an abbreviation. The `aria-hidden` attribute is set on the text span, beca
 attribute is set on the container and the abbreviation is not useful for screen readers.
 
 [dictionary-size]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#size
+[icon-documentation]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Icon
