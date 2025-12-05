@@ -1,5 +1,10 @@
 import { type ElementType } from 'react';
-import { type ChildrenProps, type SizeExtendedDictionaryType, type StyleProps, type TransferProps } from './shared';
+import {
+  type ChildrenProps,
+  type SizeExtendedDictionaryType,
+  type SpiritPolymorphicElementPropsWithRef,
+  type StyleProps,
+} from './shared';
 
 export type AvatarSize<S> = SizeExtendedDictionaryType<S> | S;
 
@@ -12,13 +17,13 @@ export interface AriaAvatarElementTypeProps<E extends ElementType = 'div'> {
   elementType?: E;
 }
 
-export interface AvatarProps extends ChildrenProps, StyleProps, TransferProps {}
+export interface AvatarProps extends ChildrenProps, StyleProps {}
 
-export interface SpiritAvatarProps<E extends ElementType = 'div', S = void>
-  extends AriaAvatarElementTypeProps<E>,
-    AvatarProps {
-  /** Whether the Avatar should be square. */
-  isSquare?: boolean;
-  /** Size of the Avatar */
-  size?: AvatarSize<S>;
-}
+export type SpiritAvatarProps<E extends ElementType = 'div', S = void> = AriaAvatarElementTypeProps<E> &
+  AvatarProps &
+  SpiritPolymorphicElementPropsWithRef<E, AriaAvatarElementTypeProps<E> & AvatarProps> & {
+    /** Whether the Avatar should be square. */
+    isSquare?: boolean;
+    /** Size of the Avatar */
+    size?: AvatarSize<S>;
+  };

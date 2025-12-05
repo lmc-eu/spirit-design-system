@@ -8,14 +8,14 @@ export interface AvatarStyles<E extends ElementType = ElementType, S = void> {
   /** className props */
   classProps: string;
   /** props to be passed to the element */
-  props: SpiritAvatarProps<E, S>;
+  props: Partial<SpiritAvatarProps<E, S>>;
 }
 
 const getAvatarSizeClassname = <S = void>(className: string, size: AvatarSize<S>): string =>
   compose(applySize<AvatarSize<S>>(size))(className);
 
 export function useAvatarStyleProps<E extends ElementType = ElementType, S = void>(
-  props: SpiritAvatarProps<E, S>,
+  props: Partial<SpiritAvatarProps<E, S>>,
 ): AvatarStyles<E, S> {
   const { isSquare, size, ...restProps } = props;
 
@@ -28,6 +28,6 @@ export function useAvatarStyleProps<E extends ElementType = ElementType, S = voi
 
   return {
     classProps,
-    props: restProps,
+    props: restProps as Partial<SpiritAvatarProps<E, S>>,
   };
 }

@@ -21,7 +21,7 @@ const _Avatar = <T extends ElementType = 'div', S = void>(
 ) => {
   const propsWithDefaults = { ...defaultProps, ...props };
   const { elementType: ElementTag = 'div', children, ...restProps } = propsWithDefaults;
-  const { classProps, props: modifiedProps } = useAvatarStyleProps(restProps);
+  const { classProps, props: modifiedProps } = useAvatarStyleProps(restProps as Partial<SpiritAvatarProps<T, S>>);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
   const mergedStyleProps = mergeStyleProps(ElementTag, { classProps, styleProps });
 
