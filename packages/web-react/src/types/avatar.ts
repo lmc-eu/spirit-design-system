@@ -1,24 +1,33 @@
 import { type ElementType } from 'react';
-import { type ChildrenProps, type SizeExtendedDictionaryType, type StyleProps, type TransferProps } from './shared';
+import {
+  type ChildrenProps,
+  type SizeExtendedDictionaryType,
+  type SpiritPolymorphicComponentPropWithRef,
+  type StyleProps,
+} from './shared';
 
 export type AvatarSize<S> = SizeExtendedDictionaryType<S> | S;
 
-export interface AriaAvatarElementTypeProps<E extends ElementType = 'div'> {
+export interface AvatarBaseProps extends ChildrenProps, StyleProps {}
+
+export interface AvatarStyleProps<S = void> extends AvatarBaseProps {
   /**
-   * The HTML element or React element used to render the Avatar, e.g. 'div', 'span'.
+   * Whether the Avatar should be square.
    *
-   * @default 'div'
+   * @default false
    */
-  elementType?: E;
-}
-
-export interface AvatarProps extends ChildrenProps, StyleProps, TransferProps {}
-
-export interface SpiritAvatarProps<E extends ElementType = 'div', S = void>
-  extends AriaAvatarElementTypeProps<E>,
-    AvatarProps {
-  /** Whether the Avatar should be square. */
   isSquare?: boolean;
-  /** Size of the Avatar */
+  /**
+   * Size of the Avatar
+   *
+   * @default SizesExtended.MEDIUM
+   */
   size?: AvatarSize<S>;
 }
+
+export type AvatarProps<S = void> = AvatarStyleProps<S>;
+
+export type SpiritAvatarProps<E extends ElementType = 'div', S = void> = SpiritPolymorphicComponentPropWithRef<
+  E,
+  AvatarProps<S>
+>;
