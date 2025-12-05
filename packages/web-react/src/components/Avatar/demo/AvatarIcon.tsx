@@ -6,16 +6,16 @@ import { DEMO_SIZES } from '../constants';
 const AvatarIcon = () => (
   <>
     <div className="d-flex" style={{ gap: 'var(--spirit-space-500)' }}>
-      {DEMO_SIZES.map(({ size, boxSize }) => (
+      {DEMO_SIZES.map(({ size }) => (
         <Avatar key={size} elementType="a" href="#" size={size} aria-label="Profile of Jiří Bárta">
-          <Icon name="profile" boxSize={boxSize} />
+          <Icon name="profile" />
         </Avatar>
       ))}
     </div>
     <div className="d-flex" style={{ gap: 'var(--spirit-space-500)' }}>
-      {DEMO_SIZES.map(({ size, boxSize }) => (
+      {DEMO_SIZES.map(({ size }) => (
         <Avatar key={size} isSquare elementType="a" href="#" size={size} aria-label="Profile of Jiří Bárta">
-          <Icon name="profile" boxSize={boxSize} />
+          <Icon name="profile" />
         </Avatar>
       ))}
     </div>
