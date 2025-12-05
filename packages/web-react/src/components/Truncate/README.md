@@ -8,6 +8,9 @@ import { Truncate } from '@lmc-eu/spirit-web-react';
 <Truncate>{/* Text go here */}</Truncate>;
 ```
 
+> **ℹ️ Best Practices:**
+> For comprehensive guidance on when and how to use truncation, handling translations, and component-specific guidelines, see the [Content Truncating Guidelines][truncation].
+
 ## Truncation Modes
 
 The component supports three truncation modes using the `mode` prop:
@@ -123,3 +126,4 @@ and [escape hatches][readme-escape-hatches].
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props
+[truncation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/TRUNCATING.md
