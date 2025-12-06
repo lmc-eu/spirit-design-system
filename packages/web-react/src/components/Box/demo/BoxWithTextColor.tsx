@@ -29,7 +29,7 @@ const BoxWithTextColor = () => {
   return (
     <>
       <p>For demo purposes, the boxes have custom padding.</p>
-      <Grid cols={{ mobile: 1, tablet: 1, desktop: 3 }} gap="space-600">
+      <Grid cols={{ mobile: 1, tablet: 1, desktop: 3 }}>
         <BoxColorDemoFactory
           label="Text colors"
           demoType="text"
