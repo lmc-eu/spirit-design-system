@@ -4,15 +4,15 @@ import { HORIZONTAL_CONTENT, VERTICAL_CONTENT } from './constants';
 
 const ScrollViewHiddenScrollbar = () => (
   <>
-    <div className="mb-1200" style={{ height: '160px' }}>
+    <ScrollView direction="horizontal" isScrollbarDisabled marginBottom="space-1200">
+      <p style={{ whiteSpace: 'nowrap' }}>{HORIZONTAL_CONTENT}</p>
+    </ScrollView>
+
+    <div style={{ height: '160px' }}>
       <ScrollView isScrollbarDisabled>
         <p>{VERTICAL_CONTENT}</p>
       </ScrollView>
     </div>
-
-    <ScrollView direction="horizontal" isScrollbarDisabled>
-      <p style={{ whiteSpace: 'nowrap' }}>{HORIZONTAL_CONTENT}</p>
-    </ScrollView>
   </>
 );
 
