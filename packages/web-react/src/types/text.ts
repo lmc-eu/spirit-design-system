@@ -6,17 +6,11 @@ import type {
   SizeExtendedDictionaryType,
   SizeProps,
   StyleProps,
-  TextAccentColorsType,
-  TextAlignmentType,
-  TextColorNamesType,
   TextColorProps,
-  TextEmotionColorsType,
-  TextHyphensType,
-  TextWordBreakType,
+  TextColorsType,
   TransferProps,
+  TypographyBaseProps,
 } from './shared';
-
-export type TextColorsType<C = undefined> = TextColorNamesType<C> | TextAccentColorsType<C> | TextEmotionColorsType<C>;
 
 export interface TextElementTypeProps<T extends ElementType = 'p'> {
   /**
@@ -31,12 +25,8 @@ export interface TextProps<T extends ElementType = 'p'>
   extends TextElementTypeProps<T>,
     ChildrenProps,
     StyleProps,
-    TransferProps {
-  isTextBalanced?: boolean;
-  textAlignment?: TextAlignmentType;
-  textHyphens?: TextHyphensType;
-  textWordBreak?: TextWordBreakType;
-}
+    TransferProps,
+    TypographyBaseProps {}
 
 export interface SpiritTextProps<T extends ElementType = 'p', S = void, E = void, C = void>
   extends TextProps<T>,

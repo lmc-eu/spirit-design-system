@@ -6,20 +6,13 @@ import type {
   SizeExtendedDictionaryType,
   SizeProps,
   StyleProps,
-  TextAccentColorsType,
-  TextAlignmentType,
-  TextColorNamesType,
   TextColorProps,
-  TextEmotionColorsType,
-  TextHyphensType,
-  TextWordBreakType,
+  TextColorsType,
   TransferProps,
+  TypographyBaseProps,
 } from './shared';
 
-export type HeadingColorsType<C = undefined> =
-  | TextColorNamesType<C>
-  | TextAccentColorsType<C>
-  | TextEmotionColorsType<C>;
+export type HeadingColorsType<C = undefined> = TextColorsType<C>;
 
 export interface HeadingElementTypeProps<T extends ElementType> {
   /**
@@ -32,12 +25,8 @@ export interface HeadingProps<T extends ElementType>
   extends HeadingElementTypeProps<T>,
     ChildrenProps,
     StyleProps,
-    TransferProps {
-  isTextBalanced?: boolean;
-  textAlignment?: TextAlignmentType;
-  textHyphens?: TextHyphensType;
-  textWordBreak?: TextWordBreakType;
-}
+    TransferProps,
+    TypographyBaseProps {}
 
 export interface SpiritHeadingProps<T extends ElementType, S = void, E = void, C = void>
   extends HeadingProps<T>,
