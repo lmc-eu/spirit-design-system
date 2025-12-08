@@ -19,6 +19,7 @@ export * from './responsive';
 export * from './rest';
 export * from './sizes';
 export * from './style';
+export * from './text';
 export * from './tokens';
 
 export interface ChildrenProps {
