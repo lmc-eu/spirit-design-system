@@ -37,9 +37,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: '.nvmrc'
+        uses: ././github/actions/setup-node
 
       - name: Publish Supernova Documentation
         run: npx @supernovaio/cli publish-documentation --apiKey="${{secrets.SUPERNOVA_TOKEN}}" --designSystemId="${{secrets.SUPERNOVA_DS_ID}}"

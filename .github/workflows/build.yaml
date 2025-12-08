@@ -31,17 +31,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Enable Corepack
-        run: corepack enable
-
-      - name: Configure Node
-        uses: actions/setup-node@v4
+      - name: Setup and Install
+        uses: ./.github/actions/setup-install
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'yarn'
-
-      - name: Install dependencies
-        run: yarn --immutable --inline-builds
 
       - name: Build packages
         run: yarn build

@@ -1,5 +1,9 @@
 name: 'setup node'
 description: 'Setup Node'
+inputs:
+  node-version:
+    description: 'Node.js version to use. If not provided, version is read from .nvmrc file'
+    required: false
 runs:
   using: 'composite'
   steps:
@@ -10,7 +14,6 @@ runs:
     - name: Set up Node
       uses: actions/setup-node@v4
       with:
-        node-version-file: '.nvmrc'
+        node-version: ${{ inputs.node-version }}
+        node-version-file: ${{ inputs.node-version == '' && '.nvmrc' || '' }}
         registry-url: 'https://registry.npmjs.org'
-        cache: 'yarn'
-        cache-dependency-path: yarn.lock
