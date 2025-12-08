@@ -46,30 +46,90 @@ describe('ScrollViewArrows', () => {
     expect(screen.getByRole('button', { name: SCROLL_VIEW_ARROWS_LABEL_VERTICAL_END })).toBeInTheDocument();
   });
 
-  it('should call scrollBy with correct values for horizontal arrows', () => {
-    const viewportRef = { current: { scrollBy: jest.fn() } } as unknown as React.RefObject<HTMLDivElement>;
+  it('should call scrollTo with correct values for horizontal arrows', () => {
+    const scrollTo = jest.fn();
+    const viewportRef = {
+      current: {
+        scrollLeft: 0,
+        scrollWidth: 1000,
+        clientWidth: 500,
+        scrollTo,
+      },
+    } as unknown as React.RefObject<HTMLDivElement>;
+
+    jest.useFakeTimers();
 
     render(<ScrollViewArrows direction={Direction.HORIZONTAL} scrollStep={50} viewportRef={viewportRef} />);
 
     fireEvent.click(screen.getByLabelText(SCROLL_VIEW_ARROWS_LABEL_HORIZONTAL_END));
 
-    expect(viewportRef?.current?.scrollBy).toHaveBeenCalledWith({ left: 50, behavior: 'smooth' });
+    // First call cancels ongoing scroll (behavior: 'auto')
+    expect(scrollTo).toHaveBeenCalledWith({ left: 0, behavior: 'auto' });
+
+    // Advance timer to trigger the delayed scrollTo
+    jest.advanceTimersByTime(10);
+
+    // Second call performs the actual scroll (behavior: 'smooth')
+    expect(scrollTo).toHaveBeenCalledWith({ left: 50, behavior: 'smooth' });
+
+    // Reset for next click
+    scrollTo.mockClear();
+    viewportRef.current!.scrollLeft = 50;
 
     fireEvent.click(screen.getByLabelText(SCROLL_VIEW_ARROWS_LABEL_HORIZONTAL_START));
 
-    expect(viewportRef?.current?.scrollBy).toHaveBeenCalledWith({ left: -50, behavior: 'smooth' });
+    // Cancel ongoing scroll
+    expect(scrollTo).toHaveBeenCalledWith({ left: 50, behavior: 'auto' });
+
+    jest.advanceTimersByTime(10);
+
+    // Scroll to new position
+    expect(scrollTo).toHaveBeenCalledWith({ left: 0, behavior: 'smooth' });
+
+    jest.useRealTimers();
   });
 
-  it('should call scrollBy with correct values for vertical arrows', () => {
-    const viewportRef = { current: { scrollBy: jest.fn() } } as unknown as React.RefObject<HTMLDivElement>;
+  it('should call scrollTo with correct values for vertical arrows', () => {
+    const scrollTo = jest.fn();
+    const viewportRef = {
+      current: {
+        scrollTop: 0,
+        scrollHeight: 1000,
+        clientHeight: 500,
+        scrollTo,
+      },
+    } as unknown as React.RefObject<HTMLDivElement>;
+
+    jest.useFakeTimers();
 
     render(<ScrollViewArrows direction={Direction.VERTICAL} scrollStep={40} viewportRef={viewportRef} />);
 
     fireEvent.click(screen.getByLabelText(SCROLL_VIEW_ARROWS_LABEL_VERTICAL_END));
-    expect(viewportRef?.current?.scrollBy).toHaveBeenCalledWith({ top: 40, behavior: 'smooth' });
+
+    // First call cancels ongoing scroll (behavior: 'auto')
+    expect(scrollTo).toHaveBeenCalledWith({ top: 0, behavior: 'auto' });
+
+    // Advance timer to trigger the delayed scrollTo
+    jest.advanceTimersByTime(10);
+
+    // Second call performs the actual scroll (behavior: 'smooth')
+    expect(scrollTo).toHaveBeenCalledWith({ top: 40, behavior: 'smooth' });
+
+    // Reset for next click
+    scrollTo.mockClear();
+    viewportRef.current!.scrollTop = 40;
 
     fireEvent.click(screen.getByLabelText(SCROLL_VIEW_ARROWS_LABEL_VERTICAL_START));
-    expect(viewportRef?.current?.scrollBy).toHaveBeenCalledWith({ top: -40, behavior: 'smooth' });
+
+    // Cancel ongoing scroll
+    expect(scrollTo).toHaveBeenCalledWith({ top: 40, behavior: 'auto' });
+
+    jest.advanceTimersByTime(10);
+
+    // Scroll to new position
+    expect(scrollTo).toHaveBeenCalledWith({ top: 0, behavior: 'smooth' });
+
+    jest.useRealTimers();
   });
 
   it('should have correct class', () => {
