@@ -6,6 +6,7 @@ import {
   classNamePrefixProviderTest,
   elementTypePropsTest,
   restPropsTest,
+  staticPropsTest,
   stylePropsTest,
   validHtmlAttributesTest,
 } from '@local/tests';
@@ -113,6 +114,8 @@ describe('Box', () => {
   ariaAttributesTest(Box);
 
   elementTypePropsTest(Box);
+
+  staticPropsTest(Box, 'Box', 'div');
 
   it('should render children', () => {
     render(<Box>Content</Box>);

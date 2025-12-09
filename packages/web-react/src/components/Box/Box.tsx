@@ -32,5 +32,7 @@ const Box = <T extends ElementType = 'div'>(props: SpiritBoxProps<T>) => {
 };
 
 Box.spiritComponent = 'Box';
+Box.spiritDefaultElement = 'div' as const;
+Box.spiritDefaultProps = null as unknown as SpiritBoxProps<'div'>;
 
 export default Box;
