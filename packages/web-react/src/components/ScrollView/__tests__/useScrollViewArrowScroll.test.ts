@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import React, { createRef } from 'react';
+import { type RefObject, createRef } from 'react';
 import { Direction } from '../../../constants';
 import { useScrollViewArrowScroll } from '../useScrollViewArrowScroll';
 
@@ -32,7 +32,7 @@ describe('useScrollViewArrowScroll', () => {
           clientWidth: 500,
           scrollTo,
         },
-      } as unknown as React.RefObject<HTMLDivElement>;
+      } as unknown as RefObject<HTMLDivElement>;
 
       jest.useFakeTimers();
 
@@ -61,7 +61,7 @@ describe('useScrollViewArrowScroll', () => {
           clientWidth: 500,
           scrollTo,
         },
-      } as unknown as React.RefObject<HTMLDivElement>;
+      } as unknown as RefObject<HTMLDivElement>;
 
       jest.useFakeTimers();
 
@@ -89,7 +89,7 @@ describe('useScrollViewArrowScroll', () => {
           clientWidth: 500,
           scrollTo,
         },
-      } as unknown as React.RefObject<HTMLDivElement>;
+      } as unknown as RefObject<HTMLDivElement>;
 
       jest.useFakeTimers();
 
@@ -114,7 +114,7 @@ describe('useScrollViewArrowScroll', () => {
           clientWidth: 500,
           scrollTo,
         },
-      } as unknown as React.RefObject<HTMLDivElement>;
+      } as unknown as RefObject<HTMLDivElement>;
 
       jest.useFakeTimers();
 
@@ -141,7 +141,7 @@ describe('useScrollViewArrowScroll', () => {
           clientHeight: 500,
           scrollTo,
         },
-      } as unknown as React.RefObject<HTMLDivElement>;
+      } as unknown as RefObject<HTMLDivElement>;
 
       jest.useFakeTimers();
 
@@ -169,7 +169,7 @@ describe('useScrollViewArrowScroll', () => {
           clientHeight: 500,
           scrollTo,
         },
-      } as unknown as React.RefObject<HTMLDivElement>;
+      } as unknown as RefObject<HTMLDivElement>;
 
       jest.useFakeTimers();
 
@@ -197,7 +197,7 @@ describe('useScrollViewArrowScroll', () => {
           clientHeight: 500,
           scrollTo,
         },
-      } as unknown as React.RefObject<HTMLDivElement>;
+      } as unknown as RefObject<HTMLDivElement>;
 
       jest.useFakeTimers();
 
@@ -222,7 +222,7 @@ describe('useScrollViewArrowScroll', () => {
           clientHeight: 500,
           scrollTo,
         },
-      } as unknown as React.RefObject<HTMLDivElement>;
+      } as unknown as RefObject<HTMLDivElement>;
 
       jest.useFakeTimers();
 
@@ -249,7 +249,7 @@ describe('useScrollViewArrowScroll', () => {
           clientWidth: 500,
           scrollTo,
         },
-      } as unknown as React.RefObject<HTMLDivElement>;
+      } as unknown as RefObject<HTMLDivElement>;
 
       jest.useFakeTimers();
 
@@ -292,7 +292,7 @@ describe('useScrollViewArrowScroll', () => {
           clientWidth: 500,
           scrollTo,
         },
-      } as unknown as React.RefObject<HTMLDivElement>;
+      } as unknown as RefObject<HTMLDivElement>;
 
       jest.useFakeTimers();
 
