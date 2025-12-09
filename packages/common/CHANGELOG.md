@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.4.4"></a>
+
+## [0.4.4](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-common@0.4.3...@lmc-eu/spirit-common@0.4.4) (2025-12-09)
+
+### Dependencies
+
+- Update types non-major ([bde3118](https://github.com/lmc-eu/spirit-design-system/commit/bde3118))
+
+**Note:** Version bump only for package @lmc-eu/spirit-common
+
 <a name="0.4.3"></a>
 
 ## [0.4.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-common@0.4.2...@lmc-eu/spirit-common@0.4.3) (2025-12-01)

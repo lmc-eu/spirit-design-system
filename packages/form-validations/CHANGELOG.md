@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.1.5"></a>
+
+## [2.1.5](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@2.1.4...@lmc-eu/spirit-form-validations@2.1.5) (2025-12-09)
+
+### Bug Fixes
+
+- **demo:** Fix sticky footer in demo, unify layouts and fix ScrollView page overflow ([c41a205](https://github.com/lmc-eu/spirit-design-system/commit/c41a205))
+
+**Note:** Version bump only for package @lmc-eu/spirit-form-validations
+
 <a name="2.1.4"></a>
 
 ## [2.1.4](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@2.1.3...@lmc-eu/spirit-form-validations@2.1.4) (2025-12-01)

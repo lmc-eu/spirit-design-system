@@ -3,6 +3,51 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.24.0"></a>
+
+# [3.24.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.23.0...@lmc-eu/spirit-web-react@3.24.0) (2025-12-09)
+
+### Bug Fixes
+
+- **demo:** Fix sticky footer in demo, unify layouts and fix ScrollView page overflow ([c41a205](https://github.com/lmc-eu/spirit-design-system/commit/c41a205))
+
+### Chores
+
+- **web-react:** Update Figma Code Connect package ([d13c544](https://github.com/lmc-eu/spirit-design-system/commit/d13c544))
+
+### Code Refactoring
+
+- **web-react:** Check for responsive value using utils in IconBox [#DS-2248](https://github.com/lmc-eu/spirit-design-system/issues/DS-2248) ([4e094f4](https://github.com/lmc-eu/spirit-design-system/commit/4e094f4))
+- **web-react:** Get responsive value using utils in PartnerLogo [#DS-2217](https://github.com/lmc-eu/spirit-design-system/issues/DS-2217) ([1f330eb](https://github.com/lmc-eu/spirit-design-system/commit/1f330eb))
+
+### Dependencies
+
+- Update types non-major ([bde3118](https://github.com/lmc-eu/spirit-design-system/commit/bde3118))
+
+### Features
+
+- **web-react:** Add Figma Code Connect for Breadcrumbs and Select components [#DS-2270](https://github.com/lmc-eu/spirit-design-system/issues/DS-2270) ([c1fe198](https://github.com/lmc-eu/spirit-design-system/commit/c1fe198))
+- **web-react:** Add Figma Code Connect to TextField, HelperText, Label and ValidationText [#DS-2270](https://github.com/lmc-eu/spirit-design-system/issues/DS-2270) ([3e51284](https://github.com/lmc-eu/spirit-design-system/commit/3e51284))
+- **web-react:** Implement Figma Code Connect for Footer [#DS-2270](https://github.com/lmc-eu/spirit-design-system/issues/DS-2270) ([920e992](https://github.com/lmc-eu/spirit-design-system/commit/920e992))
+- **web-react:** Implement Figma Code Connect for Pagination [#DS-2297](https://github.com/lmc-eu/spirit-design-system/issues/DS-2297) ([e56d24f](https://github.com/lmc-eu/spirit-design-system/commit/e56d24f))
+- **web-react:** Introduce size for Timeline [#DS-2248](https://github.com/lmc-eu/spirit-design-system/issues/DS-2248) ([04d5887](https://github.com/lmc-eu/spirit-design-system/commit/04d5887))
+- **web-react:** Link PricingPlan heading with action button [#DS-2178](https://github.com/lmc-eu/spirit-design-system/issues/DS-2178) ([0f5964d](https://github.com/lmc-eu/spirit-design-system/commit/0f5964d))
+
+### Tests
+
+- **web-react:** Add accessibility tests for button and link components [#DS-2243](https://github.com/lmc-eu/spirit-design-system/issues/DS-2243) ([fe7a202](https://github.com/lmc-eu/spirit-design-system/commit/fe7a202))
+- **web-react:** Add accessibility tests for form components [#DS-2243](https://github.com/lmc-eu/spirit-design-system/issues/DS-2243) ([30cb49c](https://github.com/lmc-eu/spirit-design-system/commit/30cb49c))
+- **web-react:** Add accessibility tests for important accessibility components [#DS-2243](https://github.com/lmc-eu/spirit-design-system/issues/DS-2243) ([a6ed6ba](https://github.com/lmc-eu/spirit-design-system/commit/a6ed6ba))
+- **web-react:** Add accessibility tests for interactive components [#DS-2243](https://github.com/lmc-eu/spirit-design-system/issues/DS-2243) ([e0c4ad4](https://github.com/lmc-eu/spirit-design-system/commit/e0c4ad4))
+- **web-react:** Add accessibility tests for layout and semantic components [#DS-2243](https://github.com/lmc-eu/spirit-design-system/issues/DS-2243) ([0c852b7](https://github.com/lmc-eu/spirit-design-system/commit/0c852b7))
+- **web-react:** Add accessibility tests for navigation components [#DS-2243](https://github.com/lmc-eu/spirit-design-system/issues/DS-2243) ([a686a4d](https://github.com/lmc-eu/spirit-design-system/commit/a686a4d))
+- **web-react:** Add accessibility tests for overlay and dialog components [#DS-2243](https://github.com/lmc-eu/spirit-design-system/issues/DS-2243) ([830c58b](https://github.com/lmc-eu/spirit-design-system/commit/830c58b))
+- **web-react:** Mock dialog element only for specific tests ([249cf95](https://github.com/lmc-eu/spirit-design-system/commit/249cf95))
+- **web-react:** Use diferent environments for SSR testing, not disbaling window object ([091427e](https://github.com/lmc-eu/spirit-design-system/commit/091427e))
+- **web-react:** Use rgb instead of named color and utility class instead of variable ([96378eb](https://github.com/lmc-eu/spirit-design-system/commit/96378eb))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="3.23.0"></a>
 
 # [3.23.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@3.22.0...@lmc-eu/spirit-web-react@3.23.0) (2025-12-01)

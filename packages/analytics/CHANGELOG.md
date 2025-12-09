@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.17"></a>
+
+## [1.0.17](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-analytics@1.0.16...@lmc-eu/spirit-analytics@1.0.17) (2025-12-09)
+
+### Dependencies
+
+- Update types non-major ([bde3118](https://github.com/lmc-eu/spirit-design-system/commit/bde3118))
+
+**Note:** Version bump only for package @lmc-eu/spirit-analytics
+
 <a name="1.0.16"></a>
 
 ## [1.0.16](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-analytics@1.0.15...@lmc-eu/spirit-analytics@1.0.16) (2025-12-01)

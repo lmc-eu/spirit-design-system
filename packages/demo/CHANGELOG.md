@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.1"></a>
+
+## [1.1.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo@1.1.0...@lmc-eu/spirit-demo@1.1.1) (2025-12-09)
+
+### Bug Fixes
+
+- **demo:** Fix sticky footer in demo, unify layouts and fix ScrollView page overflow ([c41a205](https://github.com/lmc-eu/spirit-design-system/commit/c41a205))
+
+**Note:** Version bump only for package @lmc-eu/spirit-demo
+
 <a name="1.1.0"></a>
 
 # [1.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo@1.0.3...@lmc-eu/spirit-demo@1.1.0) (2025-06-09)

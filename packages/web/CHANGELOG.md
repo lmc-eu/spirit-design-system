@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.22.0"></a>
+
+# [3.22.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.21.0...@lmc-eu/spirit-web@3.22.0) (2025-12-09)
+
+### Bug Fixes
+
+- **demo:** Fix sticky footer in demo, unify layouts and fix ScrollView page overflow ([c41a205](https://github.com/lmc-eu/spirit-design-system/commit/c41a205))
+
+### Dependencies
+
+- Update types non-major ([bde3118](https://github.com/lmc-eu/spirit-design-system/commit/bde3118))
+
+### Features
+
+- **web:** Enable Sass generation of responsive variant classes [#DS-2248](https://github.com/lmc-eu/spirit-design-system/issues/DS-2248) ([ac41cfc](https://github.com/lmc-eu/spirit-design-system/commit/ac41cfc))
+- **web:** Introduce size for Timeline [#DS-2248](https://github.com/lmc-eu/spirit-design-system/issues/DS-2248) ([4471859](https://github.com/lmc-eu/spirit-design-system/commit/4471859))
+- **web:** Link PricingPlan heading with action button [#DS-2178](https://github.com/lmc-eu/spirit-design-system/issues/DS-2178) ([0b05c5b](https://github.com/lmc-eu/spirit-design-system/commit/0b05c5b))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="3.21.0"></a>
 
 # [3.21.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.20.0...@lmc-eu/spirit-web@3.21.0) (2025-12-01)

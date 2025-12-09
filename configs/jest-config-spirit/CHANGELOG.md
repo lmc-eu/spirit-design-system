@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.1.10"></a>
+
+## [0.1.10](https://github.com/lmc-eu/spirit-design-system/compare/jest-config-spirit@0.1.9...jest-config-spirit@0.1.10) (2025-12-09)
+
+### Dependencies
+
+- Update dependency jest-environment-jsdom to v30 ([1e21ed7](https://github.com/lmc-eu/spirit-design-system/commit/1e21ed7))
+
+**Note:** Version bump only for package jest-config-spirit
+
 <a name="0.1.9"></a>
 
 ## [0.1.9](https://github.com/lmc-eu/spirit-design-system/compare/jest-config-spirit@0.1.8...jest-config-spirit@0.1.9) (2025-11-12)
