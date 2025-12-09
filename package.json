@@ -73,7 +73,7 @@
     "eslint-plugin-prettier": "5.5.4",
     "husky": "9.1.7",
     "is-ci": "3.0.1",
-    "lerna": "8.2.2",
+    "lerna": "8.2.4",
     "lint-staged": "15.3.0",
     "netlify-cli": "17.38.1",
     "npm-run-all2": "6.2.6",
