@@ -336,8 +336,8 @@ __metadata:
     "@alma-oss/spirit-design-tokens": ^3.0.0
     "@alma-oss/spirit-icons": ^2.0.0
     "@alma-oss/spirit-web": ^3.0.0
-    react: ^17.0.2 || ^18.0.0 || ^19.0.0
-    react-dom: ^17.0.2 || ^18.0.0 || ^19.0.0
+    react: ^18.0.0 || ^19.0.0
+    react-dom: ^18.0.0 || ^19.0.0
   peerDependenciesMeta:
     "@alma-oss/spirit-design-tokens":
       optional: true
