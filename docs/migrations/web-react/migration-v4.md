@@ -19,6 +19,10 @@ Introducing version 4 of the _spirit-web-react_ package.
 
 The Node.js v18 is no longer supported. The minimum required Node.js version is 20.
 
+### Dropped Support for React.js 17
+
+The React.js v17 is no longer supported. The minimum required React.js version is 18.
+
 ### Change Package npm Organization to `@alma-oss`
 
 All usage of `@lmc-eu/spirit-web-react` should be renamed to `@alma-oss/spirit-web-react`.
