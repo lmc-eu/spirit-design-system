@@ -1,7 +1,7 @@
-import { Markdown } from '@storybook/blocks';
+import { Markdown } from '@storybook/addon-docs/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
 import React from 'react';
+import { fn } from 'storybook/test';
 import { type SpiritFileUploaderAttachmentProps, type SpiritFileUploaderProps } from '../../../types';
 import ReadMe from '../README.md';
 import { FileUploader, FileUploaderAttachment, FileUploaderInput, FileUploaderList, useFileQueue } from '..';
