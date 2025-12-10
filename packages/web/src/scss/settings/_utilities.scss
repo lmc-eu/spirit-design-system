@@ -320,6 +320,10 @@ $utilities: (
         class: 'text-wrap',
         values: (
             balance,
+            nowrap,
+            // Pretty isn't fully supported across browsers.
+            // See note in utilities/_utilities.scss.
+            pretty,
         ),
     ),
 );

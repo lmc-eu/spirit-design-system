@@ -2,7 +2,7 @@ import React from 'react';
 import Heading from '../Heading';
 
 const HeadingBalanced = () => (
-  <div style={{ maxWidth: '750px' }}>
+  <div style={{ maxWidth: '650px' }}>
     <Heading elementType="h2" size="xsmall">
       This heading is not balanced. It may not have optimal line breaks and may appear uneven or awkward.
     </Heading>

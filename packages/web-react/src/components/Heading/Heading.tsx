@@ -1,7 +1,7 @@
 'use client';
 
 import React, { type ElementType } from 'react';
-import { Emphasis, SizesExtended, TextStyleProps } from '../../constants';
+import { Emphasis, HeadingStyleProps, SizesExtended, TextStyleProps } from '../../constants';
 import { useStyleProps } from '../../hooks';
 import { type SpiritHeadingProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
@@ -17,7 +17,7 @@ const Heading = <T extends ElementType, S = void, E = void>(props: SpiritHeading
   const { elementType: ElementTag, children, ...restProps } = propsWithDefaults;
   const { classProps, props: modifiedProps } = useHeadingStyleProps({ ...restProps });
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps, {
-    isTextBalanced: TextStyleProps.isTextBalanced,
+    isTextBalanced: HeadingStyleProps.isTextBalanced,
     textAlignment: TextStyleProps.textAlignment,
     textHyphens: TextStyleProps.textHyphens,
     textWordBreak: TextStyleProps.textWordBreak,
