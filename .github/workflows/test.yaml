@@ -95,7 +95,7 @@ jobs:
         if: ${{ hashFiles('./packages/web/.coverage/lcov.info') != '' }}
         uses: coverallsapp/github-action@v2.3.6
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ github.token}}
           file: ./packages/web/.coverage/lcov.info
           flag-name: web
           carryforward: web-react, web-twig, analytics, design-tokens, icons, common, codemods, form-validations
@@ -105,7 +105,7 @@ jobs:
         if: ${{ hashFiles('./packages/web-react/.coverage/lcov.info') != '' }}
         uses: coverallsapp/github-action@v2.3.6
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ github.token}}
           file: ./packages/web-react/.coverage/lcov.info
           flag-name: web-react
           carryforward: web, web-twig, analytics, design-tokens, icons, common, codemods, form-validations
@@ -115,7 +115,7 @@ jobs:
         if: ${{ hashFiles('./packages/analytics/.coverage/lcov.info') != '' }}
         uses: coverallsapp/github-action@v2.3.6
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ github.token}}
           file: ./packages/analytics/.coverage/lcov.info
           flag-name: analytics
           carryforward: web, web-react, web-twig, design-tokens, icons, common, codemods, form-validations
@@ -177,4 +177,4 @@ jobs:
           gh extension install actions/gh-actions-cache
           gh actions-cache delete "${{ env.CACHE_KEY }}" --confirm
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ github.token}}

@@ -96,7 +96,7 @@ jobs:
               body: `Here is the URL of the uploaded artifact: ${{ steps.artifact-upload-step.outputs.artifact-url }}`
             });
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token}}
 
       - name: Notify Slack when failure
         id: Slack
