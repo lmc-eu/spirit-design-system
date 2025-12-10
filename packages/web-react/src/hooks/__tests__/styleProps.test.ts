@@ -168,7 +168,7 @@ describe('styleProps', () => {
 
     expect(result.current.styleProps).toEqual({
       className:
-        'm-100 mx-200 my-400 p-500 px-600 py-700 text-wrap-balance text-center text-hyphens-auto text-word-break-long-words',
+        'm-100 mx-200 my-400 p-500 px-600 py-700 text-wrap-pretty text-center text-hyphens-auto text-word-break-long-words',
       style: undefined,
     });
   });

@@ -35,7 +35,7 @@ describe('Text', () => {
 
   textHyphensPropsTest(Text);
 
-  textIsBalancedPropsTest(Text);
+  textIsBalancedPropsTest(Text, 'text-wrap-pretty');
 
   textWordBreakPropsTest(Text);
 

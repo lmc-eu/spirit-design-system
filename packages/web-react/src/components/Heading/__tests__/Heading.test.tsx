@@ -35,7 +35,7 @@ describe('Heading', () => {
 
   textHyphensPropsTest((props) => <Heading elementType="h1" {...props} />);
 
-  textIsBalancedPropsTest((props) => <Heading elementType="h1" {...props} />);
+  textIsBalancedPropsTest((props) => <Heading elementType="h1" {...props} />, 'text-wrap-balance');
 
   textWordBreakPropsTest((props) => <Heading elementType="h1" {...props} />);
 
