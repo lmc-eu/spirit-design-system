@@ -20,4 +20,4 @@ jobs:
         with:
           configuration-path: .github/pr-labeler.yaml
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token}}

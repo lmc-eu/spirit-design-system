@@ -64,7 +64,7 @@ jobs:
       - name: Publish
         run: make publish
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ github.token}}
           # @TODO: remove automation token when Lerna adds support for OIDC and trusted publishing
           # @see: https://github.com/lerna/lerna/issues/4219
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
