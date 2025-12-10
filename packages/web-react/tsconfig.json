@@ -9,6 +9,10 @@
     // @see: https://www.typescriptlang.org/tsconfig/#module
     "module": "ESNext",
 
+    // Specify how TypeScript looks up a file from a given module specifier.
+    // @see: https://www.typescriptlang.org/tsconfig/#moduleResolution
+    "moduleResolution": "bundler",
+
     "baseUrl": ".",
 
     "paths": {
