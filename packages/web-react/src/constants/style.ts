@@ -27,11 +27,15 @@ export const PaddingStyleProps = {
 } as const;
 
 export const TextStyleProps = {
-  isTextBalanced: 'text-wrap-balance',
+  isTextBalanced: 'text-wrap-pretty',
   textAlignment: 'text',
   textHyphens: 'text-hyphens',
   textWordBreak: 'text-word-break',
 } as const;
+
+export const HeadingStyleProps = {
+  isTextBalanced: 'text-wrap-balance',
+};
 
 export const DisplayStyleProps = {
   hideOn: 'd',

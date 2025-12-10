@@ -77,20 +77,20 @@ It's crucial to combine it with [Text Hyphens](#text-hyphens) to maintain readab
 
 ### Text Balanced Wrapping
 
-Use the `isTextBalanced` prop to enable balanced wrapping for better readability.
+Use the `isTextBalanced` prop to enable improved text wrapping for better readability.
 
 ```jsx
 <Text isTextBalanced>
-  Balanced wrapping is a technique used to optimise the distribution of text across multiple lines, enhancing
-  readability and visual appeal.
+  Text wrapping optimizes the distribution of text across multiple lines, enhancing readability and visual appeal by
+  avoiding orphans and awkward line breaks in body text.
 </Text>
 ```
 
-⚠️ This feature relies on the CSS `text-wrap: balance` property. The [MDN documentation][mdn-text-wrap] notifies:
+ℹ️ For the Text component, `isTextBalanced` applies `text-wrap: pretty`, which is optimized for body text and longer
+paragraphs. This wrapping style minimizes orphans and improves overall readability.
 
-> Because counting characters and balancing them across multiple lines is computationally expensive,
-> this value is only supported for blocks of text spanning a limited number of lines
-> (six or less for Chromium and ten or less for Firefox).
+⚠️ Browser support: The `text-wrap: pretty` property has [limited browser support][mdn-text-wrap-pretty].
+As a fallback, browsers that don't support it will use `text-wrap: balance`.
 
 ## Full Example
 
@@ -146,7 +146,7 @@ const CustomText = (props: SpiritTextProps): JSX.Element => {
 [dictionary-emphasis]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#emphasis
 [dictionary-intensity]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#intensity
 [dictionary-size]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#size
-[mdn-text-wrap]: https://developer.mozilla.org/en-US/docs/Web/CSS/text-wrap
+[mdn-text-wrap-pretty]: https://developer.mozilla.org/en-US/docs/Web/CSS/text-wrap#pretty
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
 [readme-generated-types]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#types-generated-from-design-tokens
