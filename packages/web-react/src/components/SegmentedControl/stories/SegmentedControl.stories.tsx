@@ -1,4 +1,4 @@
-import { Markdown } from '@storybook/blocks';
+import { Markdown } from '@storybook/addon-docs/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { useEffect, useState } from 'react';
 import { FillVariants } from '../../../constants';
