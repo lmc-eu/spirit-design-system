@@ -7,7 +7,8 @@ Status: accepted
 ## Context
 
 Node.js has a regular release cycle which is documented in the [release schedule][node-releases].
-At the time of this writing, there are 2 stable maintained releases: 18, and 20.
+At the time of this writing, there are 2 stable maintained releases: 18, and 20
+(update as of 2025-12-10: current stable maintained version are 20 and 22).
 I will refer you to that documentation to understand how the release cycle works.
 
 Deciding which version of Node.js to use for a project is a trade-off between using the latest features and stability.
