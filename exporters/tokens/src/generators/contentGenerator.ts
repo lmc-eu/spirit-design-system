@@ -7,6 +7,7 @@ import { DeviceDimensionMap, type StylesObjectType, generateStylesObjectFromToke
 import { findTokenPrefix } from '../helpers/findTokenPrefix';
 import { filterExcludedTokens } from '../filters/excludedTokens';
 import { generateMixinFromTokens } from './mixinGenerator';
+import { getFontSizeBaseMap, type FontSizeBaseMap } from '../helpers/unitHelper';
 
 // Add disclaimer to the top of the content
 export const addDisclaimer = (content: string): string => {
@@ -92,6 +93,7 @@ export const generateFileContent = (
   let styledTokens = '';
   let stylesObject: StylesObjectType = {};
   let styledMixin = '';
+  const fontSizeBaseMap = getFontSizeBaseMap(tokens);
   const {
     excludeGroupNames = null,
     groupNames = [''],
@@ -121,6 +123,7 @@ export const generateFileContent = (
           hasParentPrefix,
           sortByNumValue,
           hasJsOutput,
+          fontSizeBaseMap,
         );
         styledTokens += '\n\n';
       }
@@ -144,6 +147,7 @@ export const generateFileContent = (
         hasJsOutput,
         sortByNumValue,
         deviceDimensions,
+        fontSizeBaseMap,
       );
       stylesObject = deepMergeObjects(stylesObject, groupStylesObject);
     });

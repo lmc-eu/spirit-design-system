@@ -30,7 +30,8 @@ import {
   findAllHexColorsInStringAndNormalize,
   transformColorsToVariables,
 } from '../helpers/colorHelper';
-import { replacePxWithRemUnits } from '../helpers/unitHelper';
+import { replacePxWithRemUnits, getFontSizeBaseForBreakpoint, type FontSizeBaseMap } from '../helpers/unitHelper';
+import { getDeviceAlias } from '../helpers/deviceHelpers';
 
 export const tokenToStyleByType = (
   token: Token,
@@ -40,6 +41,7 @@ export const tokenToStyleByType = (
   hasMixin: boolean,
   hasParentPrefix: boolean,
   hasJsOutput: boolean,
+  fontSizeBaseMap: FontSizeBaseMap,
 ): string | null => {
   const hasTokenType = (type: TokenType) => {
     const { tokenType } = token;
@@ -53,8 +55,10 @@ export const tokenToStyleByType = (
     let value = dimensionToken.value?.measure;
     value = handleSpecialCase(name, value);
     const unit = CSSHelper.unitToCSS(dimensionToken.value?.unit);
+    const device = getDeviceAlias(token).toLowerCase() || 'mobile';
+    const baseFontSize = getFontSizeBaseForBreakpoint(fontSizeBaseMap, device);
 
-    return formatTokenStyleByOutput(name, value, hasJsOutput, unit, true);
+    return formatTokenStyleByOutput(name, value, hasJsOutput, unit, true, baseFontSize);
   }
 
   if (hasTokenType(TokenType.radius)) {
@@ -63,8 +67,10 @@ export const tokenToStyleByType = (
     let value = radiusToken.value?.measure;
     value = handleSpecialCase(name, value);
     const unit = CSSHelper.unitToCSS(radiusToken.value?.unit);
+    const device = getDeviceAlias(token).toLowerCase() || 'mobile';
+    const baseFontSize = getFontSizeBaseForBreakpoint(fontSizeBaseMap, device);
 
-    return formatTokenStyleByOutput(name, value, hasJsOutput, unit, true);
+    return formatTokenStyleByOutput(name, value, hasJsOutput, unit, true, baseFontSize);
   }
 
   if (hasTokenType(TokenType.space)) {
@@ -73,8 +79,10 @@ export const tokenToStyleByType = (
     let value = spaceToken.value?.measure;
     value = handleSpecialCase(name, value);
     const unit = CSSHelper.unitToCSS(spaceToken.value?.unit);
+    const device = getDeviceAlias(token).toLowerCase() || 'mobile';
+    const baseFontSize = getFontSizeBaseForBreakpoint(fontSizeBaseMap, device);
 
-    return formatTokenStyleByOutput(name, value, hasJsOutput, unit, true);
+    return formatTokenStyleByOutput(name, value, hasJsOutput, unit, true, baseFontSize);
   }
 
   if (hasTokenType(TokenType.border)) {
@@ -84,7 +92,7 @@ export const tokenToStyleByType = (
     value = handleSpecialCase(name, value);
     const unit = CSSHelper.unitToCSS(borderToken.value?.width?.unit);
 
-    return formatTokenStyleByOutput(name, value, hasJsOutput, unit);
+    return formatTokenStyleByOutput(name, value, hasJsOutput, unit, false);
   }
 
   if (hasTokenType(TokenType.borderWidth)) {
@@ -94,7 +102,7 @@ export const tokenToStyleByType = (
     value = handleSpecialCase(name, value);
     const unit = CSSHelper.unitToCSS(borderWidthToken.value?.unit);
 
-    return formatTokenStyleByOutput(name, value, hasJsOutput, unit);
+    return formatTokenStyleByOutput(name, value, hasJsOutput, unit, false);
   }
 
   if (hasTokenType(TokenType.size)) {
@@ -103,8 +111,10 @@ export const tokenToStyleByType = (
     let value = sizeToken.value?.measure;
     value = handleSpecialCase(name, value);
     const unit = CSSHelper.unitToCSS(sizeToken.value?.unit);
+    const device = getDeviceAlias(token).toLowerCase() || 'mobile';
+    const baseFontSize = getFontSizeBaseForBreakpoint(fontSizeBaseMap, device);
 
-    return formatTokenStyleByOutput(name, value, hasJsOutput, unit);
+    return formatTokenStyleByOutput(name, value, hasJsOutput, unit, true, baseFontSize);
   }
 
   if (hasTokenType(TokenType.fontSize)) {
@@ -113,8 +123,10 @@ export const tokenToStyleByType = (
     let value = fontSizeToken.value?.measure;
     value = handleSpecialCase(name, value);
     const unit = CSSHelper.unitToCSS(fontSizeToken.value?.unit);
+    const device = getDeviceAlias(token).toLowerCase() || 'mobile';
+    const baseFontSize = getFontSizeBaseForBreakpoint(fontSizeBaseMap, device);
 
-    return formatTokenStyleByOutput(name, value, hasJsOutput, unit, true);
+    return formatTokenStyleByOutput(name, value, hasJsOutput, unit, true, baseFontSize);
   }
 
   if (hasTokenType(TokenType.lineHeight)) {
@@ -123,8 +135,10 @@ export const tokenToStyleByType = (
     let value = lineHeightToken.value?.measure;
     value = handleSpecialCase(name, value);
     const unit = CSSHelper.unitToCSS(lineHeightToken.value?.unit);
+    const device = getDeviceAlias(token).toLowerCase() || 'mobile';
+    const baseFontSize = getFontSizeBaseForBreakpoint(fontSizeBaseMap, device);
 
-    return formatTokenStyleByOutput(name, value, hasJsOutput, unit, true);
+    return formatTokenStyleByOutput(name, value, hasJsOutput, unit, true, baseFontSize);
   }
 
   if (hasTokenType(TokenType.letterSpacing)) {
@@ -133,8 +147,10 @@ export const tokenToStyleByType = (
     let value = letterSpacingToken.value?.measure;
     value = handleSpecialCase(name, value);
     const unit = CSSHelper.unitToCSS(letterSpacingToken.value?.unit);
+    const device = getDeviceAlias(token).toLowerCase() || 'mobile';
+    const baseFontSize = getFontSizeBaseForBreakpoint(fontSizeBaseMap, device);
 
-    return formatTokenStyleByOutput(name, value, hasJsOutput, unit);
+    return formatTokenStyleByOutput(name, value, hasJsOutput, unit, true, baseFontSize);
   }
 
   if (hasTokenType(TokenType.string)) {
@@ -181,7 +197,9 @@ export const tokenToStyleByType = (
     const groupName = hasParentPrefix ? undefined : origin?.name?.split('/')[0].toLowerCase();
     shadow = transformColorsToVariables(name, shadow, tokenPrefix, groupName); // add color variables
     shadow = findAllHexColorsInStringAndNormalize(shadow); // find hex codes and normalize them
-    shadow = replacePxWithRemUnits(shadow); // replace px with rem units
+    const device = getDeviceAlias(token).toLowerCase() || 'mobile';
+    const baseFontSize = getFontSizeBaseForBreakpoint(fontSizeBaseMap, device);
+    shadow = replacePxWithRemUnits(shadow, baseFontSize); // replace px with rem units
 
     return formatTokenStyleByOutput(name, shadow, hasJsOutput);
   }
@@ -217,11 +235,21 @@ export const generateStylesFromTokens = (
   hasParentPrefix: boolean,
   sortByNumValue: boolean,
   hasJsOutput: boolean = false,
+  fontSizeBaseMap: FontSizeBaseMap,
 ): string => {
   const sortedTokens = sortTokens(tokens, tokenGroups, hasParentPrefix, sortByNumValue);
 
   const cssTokens = sortedTokens.map((token) => ({
-    css: tokenToStyleByType(token, mappedTokens, tokenGroups, tokenPrefix, hasMixin, hasParentPrefix, hasJsOutput),
+    css: tokenToStyleByType(
+      token,
+      mappedTokens,
+      tokenGroups,
+      tokenPrefix,
+      hasMixin,
+      hasParentPrefix,
+      hasJsOutput,
+      fontSizeBaseMap,
+    ),
     parentGroupId: token.parentGroupId,
   }));
 
