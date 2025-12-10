@@ -40,6 +40,9 @@ jobs:
     if: ${{ needs.has-tags.outputs.has-tag == 'true' }}
     runs-on: ubuntu-24.04
     environment: npm-registry
+    permissions:
+      # create commits and releases
+      contents: write
 
     steps:
       - name: Clone repository
