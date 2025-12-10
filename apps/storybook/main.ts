@@ -1,21 +1,19 @@
 import type { StorybookConfig } from '@storybook/react-vite';
 import react from '@vitejs/plugin-react';
-import { dirname, join, resolve } from 'path';
+import { resolve } from 'path';
+import { fileURLToPath } from 'url';
 import { mergeConfig } from 'vite';
 import markdownRawPlugin from 'vite-raw-plugin';
+
+const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
 const config: StorybookConfig = {
   stories: ['../../packages/**/*.mdx', '../../packages/**/*.stories.@(ts|tsx)'],
 
-  addons: [
-    getAbsolutePath('@storybook/addon-links'),
-    getAbsolutePath('@storybook/addon-essentials'),
-    getAbsolutePath('@storybook/addon-a11y'),
-  ],
+  addons: ['@storybook/addon-docs', '@storybook/addon-a11y'],
 
   core: {
     disableTelemetry: true,
-    builder: '@storybook/builder-vite',
     crossOriginIsolated: false,
   },
 
@@ -53,7 +51,7 @@ const config: StorybookConfig = {
   },
 
   framework: {
-    name: getAbsolutePath('@storybook/react-vite'),
+    name: '@storybook/react-vite',
     options: {},
   },
 
@@ -67,7 +65,3 @@ const config: StorybookConfig = {
 };
 
 export default config;
-
-function getAbsolutePath(value: string): any {
-  return dirname(require.resolve(join(value, 'package.json')));
-}

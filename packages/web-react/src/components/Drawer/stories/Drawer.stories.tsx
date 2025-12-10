@@ -1,7 +1,7 @@
-import { Markdown } from '@storybook/blocks';
+import { Markdown } from '@storybook/addon-docs/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
 import React, { useState } from 'react';
+import { fn } from 'storybook/test';
 import { AlignmentX } from '../../../constants';
 import { type SpiritDrawerProps } from '../../../types';
 import { Button } from '../../Button';
