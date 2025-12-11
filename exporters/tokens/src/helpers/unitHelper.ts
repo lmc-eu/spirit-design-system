@@ -1,4 +1,4 @@
-import { FontSizeToken, Token, TokenType } from '@supernovaio/sdk-exporters';
+import { DimensionToken, FontSizeToken, Token, TokenType } from '@supernovaio/sdk-exporters';
 import { getDeviceAlias } from './deviceHelpers';
 
 export type FontSizeBaseMap = Map<string, number>;
@@ -11,16 +11,25 @@ export type FontSizeBaseMap = Map<string, number>;
 export const getFontSizeBaseMap = (tokens: Token[]): FontSizeBaseMap => {
   const fontSizeBaseMap = new Map<string, number>();
 
+  // Font-size-base tokens can be either FontSize or Dimension type
   const fontSizeBaseTokens = tokens.filter(
     (token) =>
-      token.tokenType === TokenType.fontSize &&
+      (token.tokenType === TokenType.fontSize || token.tokenType === TokenType.dimension) &&
       (token.name.toLowerCase().includes('font-size-base') ||
         token.origin?.name?.toLowerCase().includes('font-size-base')),
-  ) as FontSizeToken[];
+  );
 
   fontSizeBaseTokens.forEach((token) => {
     const device = getDeviceAlias(token).toLowerCase() || 'mobile';
-    const measure = token.value?.measure;
+    let measure: number | undefined;
+
+    if (token.tokenType === TokenType.fontSize) {
+      const fontSizeToken = token as FontSizeToken;
+      measure = fontSizeToken.value?.measure;
+    } else if (token.tokenType === TokenType.dimension) {
+      const dimensionToken = token as DimensionToken;
+      measure = dimensionToken.value?.measure;
+    }
 
     if (typeof measure === 'number' && measure > 0) {
       fontSizeBaseMap.set(device, measure);
@@ -30,14 +39,23 @@ export const getFontSizeBaseMap = (tokens: Token[]): FontSizeBaseMap => {
   if (fontSizeBaseMap.size === 0) {
     const singleFontSizeBase = tokens.find(
       (token) =>
-        token.tokenType === TokenType.fontSize &&
+        (token.tokenType === TokenType.fontSize || token.tokenType === TokenType.dimension) &&
         (token.name.toLowerCase() === 'font-size-base' || token.origin?.name?.toLowerCase() === 'font-size-base'),
-    ) as FontSizeToken | undefined;
+    );
 
-    if (singleFontSizeBase?.value?.measure && typeof singleFontSizeBase.value.measure === 'number') {
-      fontSizeBaseMap.set('mobile', singleFontSizeBase.value.measure);
-      fontSizeBaseMap.set('tablet', singleFontSizeBase.value.measure);
-      fontSizeBaseMap.set('desktop', singleFontSizeBase.value.measure);
+    let measure: number | undefined;
+    if (singleFontSizeBase?.tokenType === TokenType.fontSize) {
+      const fontSizeToken = singleFontSizeBase as FontSizeToken;
+      measure = fontSizeToken.value?.measure;
+    } else if (singleFontSizeBase?.tokenType === TokenType.dimension) {
+      const dimensionToken = singleFontSizeBase as DimensionToken;
+      measure = dimensionToken.value?.measure;
+    }
+
+    if (typeof measure === 'number' && measure > 0) {
+      fontSizeBaseMap.set('mobile', measure);
+      fontSizeBaseMap.set('tablet', measure);
+      fontSizeBaseMap.set('desktop', measure);
     }
   }
 
