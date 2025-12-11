@@ -57,8 +57,15 @@ export const tokenToStyleByType = (
     const unit = CSSHelper.unitToCSS(dimensionToken.value?.unit);
     const device = getDeviceAlias(token).toLowerCase() || 'mobile';
     const baseFontSize = getFontSizeBaseForBreakpoint(fontSizeBaseMap, device);
+    const tokenName = token.name?.toLowerCase() || '';
+    const originName = token.origin?.name?.toLowerCase() || '';
+    const isFontSizeBase =
+      name.toLowerCase().includes('font-size-base') ||
+      tokenName.includes('font-size-base') ||
+      originName.includes('font-size-base');
+    const isRelative = !isFontSizeBase;
 
-    return formatTokenStyleByOutput(name, value, hasJsOutput, unit, true, baseFontSize);
+    return formatTokenStyleByOutput(name, value, hasJsOutput, unit, isRelative, baseFontSize);
   }
 
   if (hasTokenType(TokenType.radius)) {
@@ -125,8 +132,15 @@ export const tokenToStyleByType = (
     const unit = CSSHelper.unitToCSS(fontSizeToken.value?.unit);
     const device = getDeviceAlias(token).toLowerCase() || 'mobile';
     const baseFontSize = getFontSizeBaseForBreakpoint(fontSizeBaseMap, device);
+    const tokenName = token.name?.toLowerCase() || '';
+    const originName = token.origin?.name?.toLowerCase() || '';
+    const isFontSizeBase =
+      name.toLowerCase().includes('font-size-base') ||
+      tokenName.includes('font-size-base') ||
+      originName.includes('font-size-base');
+    const isRelative = !isFontSizeBase;
 
-    return formatTokenStyleByOutput(name, value, hasJsOutput, unit, true, baseFontSize);
+    return formatTokenStyleByOutput(name, value, hasJsOutput, unit, isRelative, baseFontSize);
   }
 
   if (hasTokenType(TokenType.lineHeight)) {
