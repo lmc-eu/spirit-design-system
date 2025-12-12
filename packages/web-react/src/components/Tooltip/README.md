@@ -5,7 +5,7 @@ Tooltips are used to provide additional information about an element when the us
 ## Tooltip
 
 ```jsx
-import { Tooltip, TooltipTrigger, TooltipPopover } from '@lmc-eu/spirit-web-react/components';
+import { Tooltip, TooltipTrigger, TooltipPopover } from '@alma-oss/spirit-web-react';
 
 const [open, setOpen] = React.useState(false);
 
@@ -20,7 +20,7 @@ const [open, setOpen] = React.useState(false);
 To display close button, add `isDismissible` prop to the `Tooltip` component.
 
 ```jsx
-import { Tooltip, TooltipTrigger, TooltipPopover, Button } from '@lmc-eu/spirit-web-react/components';
+import { Tooltip, TooltipTrigger, TooltipPopover, Button } from '@alma-oss/spirit-web-react';
 
 const [open, setOpen] = React.useState(false);
 
@@ -68,7 +68,7 @@ The `focus` trigger is useful for accessibility, showing the tooltip when users 
 👉 'hover' on its own will result in tooltips that cannot be triggered via the keyboard, and should only be used if alternative methods for conveying the same information for keyboard users is present.
 
 ```jsx
-import { Tooltip, TooltipTrigger, TooltipPopover, Button } from '@lmc-eu/spirit-web-react/components';
+import { Tooltip, TooltipTrigger, TooltipPopover, Button } from '@alma-oss/spirit-web-react';
 
 const [open, setOpen] = React.useState(false);
 

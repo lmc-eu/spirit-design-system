@@ -1,4 +1,4 @@
-# @lmc-eu/spirit-common
+# @alma-oss/spirit-common
 
 > Common code, scripts, constants and settings of the Spirit Design System.
 
@@ -11,7 +11,7 @@
 ⚠️ This package is only used as a development dependency of other packages in the Spirit Design System.
 
 ```js
-import { environments } from '@lmc-eu/spirit-common/constants/environments';
+import { environments } from '@alma-oss/spirit-common/constants/environments';
 ```
 
 ## License

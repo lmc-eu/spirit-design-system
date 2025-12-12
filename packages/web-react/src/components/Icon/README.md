@@ -7,21 +7,21 @@ Icons are graphical metaphors or symbols that can be used to complement existing
 To use this component in your project you need to run the following command using [npm][npm]:
 
 ```bash
-npm install -S @lmc-eu/spirit-icons
+npm install -S @alma-oss/spirit-icons
 ```
 
 If you prefer [Yarn][yarn], use the following command instead:
 
 ```bash
-yarn add @lmc-eu/spirit-icons
+yarn add @alma-oss/spirit-icons
 ```
 
 ### Dependencies
 
-`@lmc-eu/spirit-icons` is required as a **peer dependency** to keep package size as low as possible.
-So it will not be automatically installed with `@lmc-eu/spirit-web-react`.
+`@alma-oss/spirit-icons` is required as a **peer dependency** to keep package size as low as possible.
+So it will not be automatically installed with `@alma-oss/spirit-web-react`.
 
-- [`@lmc-eu/spirit-icons`][icons-package] - Spirit Icons package
+- [`@alma-oss/spirit-icons`][icons-package] - Spirit Icons package
 - [`html-react-parser`][html-react-parser-package] - HTML to React parser (avoid usage of `dangerouslySetInnerHTML` on the server side)
 
 ## Usage
@@ -30,8 +30,8 @@ To ensure the `Icon` component functions as expected, wrap your application or t
 You need to pass the icon set to the provider as its value.
 
 ```jsx
-import { Icon, IconsProvider } from '@lmc-eu/spirit-web-react';
-import icons from '@lmc-eu/spirit-icons/icons';
+import { Icon, IconsProvider } from '@alma-oss/spirit-web-react';
+import icons from '@alma-oss/spirit-icons/icons';
 
 <IconsProvider value={icons}>{/* Your Icon, app or component where Icon is used */}</IconsProvider>;
 ```
@@ -39,8 +39,8 @@ import icons from '@lmc-eu/spirit-icons/icons';
 ### Example
 
 ```jsx
-import { Icon, IconsProvider } from '@lmc-eu/spirit-web-react';
-import icons from '@lmc-eu/spirit-icons/icons';
+import { Icon, IconsProvider } from '@alma-oss/spirit-web-react';
+import icons from '@alma-oss/spirit-icons/icons';
 
 <IconsProvider value={icons}>
   <Icon name="warning" />
@@ -56,8 +56,8 @@ Available colors are emotion colors, text colors, and the accent colors defined 
 ### Example
 
 ```jsx
-import { Icon, IconsProvider } from '@lmc-eu/spirit-web-react';
-import icons from '@lmc-eu/spirit-icons/icons';
+import { Icon, IconsProvider } from '@alma-oss/spirit-web-react';
+import icons from '@alma-oss/spirit-icons/icons';
 
 <IconsProvider value={icons}>
   <Icon name="warning" color="warning" />
@@ -67,8 +67,8 @@ import icons from '@lmc-eu/spirit-icons/icons';
 ## Full Example
 
 ```jsx
-import { Icon, IconsProvider } from '@lmc-eu/spirit-web-react';
-import icons from '@lmc-eu/spirit-icons/icons';
+import { Icon, IconsProvider } from '@alma-oss/spirit-web-react';
+import icons from '@alma-oss/spirit-icons/icons';
 
 <IconsProvider value={icons}>
   <Icon name="warning" color="warning" boxSize={{ mobile: 20, tablet: 30, desktop: 40 }} title="Icon Title" />

@@ -391,7 +391,7 @@ import {
   ModalFooter,
   ModalHeader,
   ScrollView,
-} from '@lmc-eu/spirit-web-react/components';
+} from '@alma-oss/spirit-web-react';
 
 const [isOpen, setOpen] = useState(false);
 const toggleModal = () => setOpen(!isOpen);

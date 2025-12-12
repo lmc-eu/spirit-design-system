@@ -8,7 +8,7 @@ The Slider component implements the HTML [range input][mdn-range] element.
 
 ```jsx
 import { useState } from 'react';
-import { Slider } from '@lmc-eu/spirit-web-react/components';
+import { Slider } from '@alma-oss/spirit-web-react';
 
 const [value, setValue] = useState();
 
@@ -25,7 +25,7 @@ You can specify the Slider steps and value range by setting the `min`, `max`, an
 
 ```jsx
 import { useState } from 'react';
-import { Slider } from '@lmc-eu/spirit-web-react/components';
+import { Slider } from '@alma-oss/spirit-web-react';
 
 const [value, setValue] = useState();
 
@@ -124,7 +124,7 @@ and [escape hatches][readme-escape-hatches].
 ### Basic Usage
 
 ```jsx
-import { UncontrolledSlider } from '@lmc-eu/spirit-web-react';
+import { UncontrolledSlider } from '@alma-oss/spirit-web-react';
 
 <UncontrolledSlider id="slider-uncontrolled" label="UncontrolledSlider" />;
 ```

@@ -7,7 +7,7 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
     alias: {
-      '@lmc-eu/spirit-common': path.resolve(__dirname, '../../common/'),
+      '@alma-oss/spirit-common': path.resolve(__dirname, '../../common/'),
     },
   },
   externals: [

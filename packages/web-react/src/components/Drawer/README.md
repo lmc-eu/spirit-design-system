@@ -16,7 +16,7 @@ The Drawer is a composition of several subcomponents:
 ## Drawer
 
 ```jsx
-import { Drawer } from '@lmc-eu/spirit-web-react';
+import { Drawer } from '@alma-oss/spirit-web-react';
 
 const [isOpen, setOpen] = useState(false);
 
@@ -78,7 +78,7 @@ and [escape hatches][readme-escape-hatches].
 The `DrawerCloseButton` component is a button that closes the drawer when clicked.
 
 ```jsx
-import { DrawerCloseButton } from '@lmc-eu/spirit-web-react';
+import { DrawerCloseButton } from '@alma-oss/spirit-web-react';
 
 <DrawerCloseButton />;
 ```
@@ -117,7 +117,7 @@ and [escape hatches][readme-escape-hatches].
 The `DrawerPanel` component is a container for the content that will be displayed in the drawer.
 
 ```jsx
-import { DrawerPanel } from '@lmc-eu/spirit-web-react';
+import { DrawerPanel } from '@alma-oss/spirit-web-react';
 
 <DrawerPanel>{/* Drawer content goes here */}</DrawerPanel>;
 ```
@@ -132,7 +132,7 @@ import { DrawerPanel } from '@lmc-eu/spirit-web-react';
 ## Full Example
 
 ```jsx
-import { Drawer, DrawerPanel, DrawerCloseButton } from '@lmc-eu/spirit-web-react';
+import { Drawer, DrawerPanel, DrawerCloseButton } from '@alma-oss/spirit-web-react';
 
 const [isOpen, setIsOpen] = useState(false);
 

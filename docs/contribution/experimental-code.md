@@ -51,7 +51,7 @@ For teams using these features, they will need to import the functionality by
 using the `UNSTABLE_` prefix. For example:
 
 ```jsx
-import { UNSTABLE_ExampleComponent as ExampleComponent } from '@lmc-eu/spirit-web-react';
+import { UNSTABLE_ExampleComponent as ExampleComponent } from '@alma-oss/spirit-web-react';
 ```
 
 ### Documenting Components and Exports Prefixed with `UNSTABLE_`

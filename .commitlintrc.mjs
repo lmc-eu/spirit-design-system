@@ -15,14 +15,11 @@ export default {
         'codemods',
         'common',
         'design-tokens',
-        'form-validations',
         'icons',
         'web',
         'web-react',
         'web-twig',
         // Use when committing changes/additions/removals to exact exporter
-        'exporter-js',
-        'exporter-scss',
         'exporter-assets',
         'exporter-tokens',
         // Use when committing changes/additions/removals to exact config

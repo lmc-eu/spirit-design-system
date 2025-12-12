@@ -4,7 +4,7 @@ Skeleton is a component that can be used to indicate that the content is loading
 available.
 
 ```jsx
-import { SkeletonText, SkeletonHeading, SkeletonShape } from '@lmc-eu/spirit-web-react/components';
+import { SkeletonText, SkeletonHeading, SkeletonShape } from '@alma-oss/spirit-web-react';
 ```
 
 On the parent element, you must use `aria-busy` and `aria-live` attributes to indicate that the content inside is

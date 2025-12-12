@@ -14,7 +14,7 @@ PricingPlan is a composition of several subcomponents:
 This is the main container of the composition.
 
 ```jsx
-import { PricingPlan } from '@lmc-eu/spirit-web-react';
+import { PricingPlan } from '@alma-oss/spirit-web-react';
 
 <PricingPlan>{/* PricingPlan content go here */}</PricingPlan>;
 ```
@@ -32,7 +32,7 @@ Add `isHighlighted` prop to highlight the PricingPlan.
 Add `hasComparableFeatures` prop and wrap all plans into the `Matrix` layout when displaying multiple plans side by side to ensure proper alignment of features across plans:
 
 ```jsx
-import { PricingPlan, Matrix } from '@lmc-eu/spirit-web-react';
+import { PricingPlan, Matrix } from '@alma-oss/spirit-web-react';
 
 <Matrix>
   <PricingPlan hasComparableFeatures>{/* PricingPlan content go here */}</PricingPlan>
@@ -62,7 +62,7 @@ The header contains the plan's title, subtitle, price, and a call-to-action butt
 On the top of it, the header can also include an optional badge and note.
 
 ```jsx
-import { PricingPlanHeader } from '@lmc-eu/spirit-web-react';
+import { PricingPlanHeader } from '@alma-oss/spirit-web-react';
 
 <PricingPlanHeader
   action={
@@ -118,7 +118,7 @@ and [escape hatches][readme-escape-hatches].
 The body contains the feature list. Each feature consists of a title and a description.
 
 ```jsx
-import { PricingPlanBody } from '@lmc-eu/spirit-web-react';
+import { PricingPlanBody } from '@alma-oss/spirit-web-react';
 
 <PricingPlanBody
   id="tier-1"
@@ -135,7 +135,7 @@ import { PricingPlanBody } from '@lmc-eu/spirit-web-react';
 You can also set the `tooltipContent` or `modalContent` on the feature to provide additional information when the feature title is clicked.
 
 ```jsx
-import { PricingPlanBody } from '@lmc-eu/spirit-web-react';
+import { PricingPlanBody } from '@alma-oss/spirit-web-react';
 
 <PricingPlanBody
   id="tier-1"
@@ -183,7 +183,7 @@ use Modal instead.
 The footer is optional and can contain additional information or disclaimers.
 
 ```jsx
-import { PricingPlanFooter } from '@lmc-eu/spirit-web-react';
+import { PricingPlanFooter } from '@alma-oss/spirit-web-react';
 
 <PricingPlanFooter>{/* Additional information or disclaimers */}</PricingPlanFooter>;
 ```
@@ -198,7 +198,7 @@ import { PricingPlanFooter } from '@lmc-eu/spirit-web-react';
 ## Full Example
 
 ```jsx
-import { PricingPlan, PricingPlanHeader, PricingPlanBody, PricingPlanFooter } from '@lmc-eu/spirit-web-react';
+import { PricingPlan, PricingPlanHeader, PricingPlanBody, PricingPlanFooter } from '@alma-oss/spirit-web-react';
 
 <PricingPlan isHighlighted>
   <PricingPlanHeader

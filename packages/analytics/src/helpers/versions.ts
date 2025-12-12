@@ -9,7 +9,7 @@ export const getVersions = async (pathToFolder: string) => {
     const data = await fs.readFile(lock, 'utf-8');
 
     const matchedVersionArray = data.match(
-      /https:\/\/registry.(yarnpkg.com|npmjs.org)\/@lmc-eu\/spirit-web-react\/-\/spirit-web-react-[~^]?([\dvx*]+(?:[-.](?:[\dx*]+|alpha|beta))*)/g,
+      /https:\/\/registry.(yarnpkg.com|npmjs.org)\/(@lmc-eu|@alma-oss)\/spirit-web-react\/-\/spirit-web-react-[~^]?([\dvx*]+(?:[-.](?:[\dx*]+|alpha|beta))*)/g,
     );
 
     if (matchedVersionArray) {
