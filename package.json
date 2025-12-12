@@ -75,7 +75,7 @@
     "lerna": "9.0.3",
     "lint-staged": "15.3.0",
     "netlify-cli": "17.38.1",
-    "npm-run-all2": "6.2.6",
+    "npm-run-all2": "catalog:script",
     "nx": "22.2.0",
     "prettier": "3.4.2",
     "prettier-config-spirit": "workspace:^",
