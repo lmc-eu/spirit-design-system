@@ -61,7 +61,7 @@ describe('Avatar', () => {
   it('should render Icon', () => {
     render(
       <Avatar title="Jiří Bárta">
-        <Icon name="profile" boxSize="20" />
+        <Icon name="profile" boxSize={20} />
       </Avatar>,
     );
 
