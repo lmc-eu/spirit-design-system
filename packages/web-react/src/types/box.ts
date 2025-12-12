@@ -14,7 +14,7 @@ import {
   type ChildrenProps,
   type SingleOrResponsive,
   type SpaceToken,
-  type SpiritPolymorphicElementPropsWithRef,
+  type SpiritPolymorphicElementPropsWithoutRef,
   type StyleProps,
   type TextColorProps,
 } from './shared';
@@ -64,4 +64,4 @@ export type BoxProps<E extends ElementType> = {
 } & BoxBaseProps;
 
 export type SpiritBoxProps<E extends ElementType = 'div'> = BoxProps<E> &
-  SpiritPolymorphicElementPropsWithRef<E, BoxProps<E>>;
+  SpiritPolymorphicElementPropsWithoutRef<E, BoxProps<E>>;

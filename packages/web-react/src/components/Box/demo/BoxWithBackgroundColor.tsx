@@ -28,7 +28,7 @@ const BoxWithBackgroundColor = () => {
   return (
     <>
       <p>For demo purposes, the boxes have custom padding.</p>
-      <Grid cols={{ desktop: 3, tablet: 1, mobile: 1 }} gap="space-600">
+      <Grid cols={{ desktop: 3, tablet: 1, mobile: 1 }}>
         <BoxColorDemoFactory
           label="Background colors"
           demoType="background"
