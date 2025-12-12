@@ -11,17 +11,17 @@ export const getNestedDirs = (baseDir, mainFile) =>
     (accumulator, dirName) =>
       existsSync(resolve(__dirname, `../${baseDir}/${dirName}/${mainFile}`))
         ? {
-            ...accumulator,
-            [dirName]: resolve(__dirname, `../${baseDir}/${dirName}/${mainFile}`),
-          }
+          ...accumulator,
+          [dirName]: resolve(__dirname, `../${baseDir}/${dirName}/${mainFile}`),
+        }
         : accumulator,
     {},
   );
 
 export const mapKeys = (obj, fn) =>
-  Object.keys(obj).reduce((acc, k) => {
+  Object.keys(obj).reduce((acc, key) => {
     // eslint-disable-next-line no-param-reassign -- it's a reducer
-    acc[fn(obj[k], k, obj)] = obj[k];
+    acc[fn(obj[key], key, obj)] = obj[key];
 
     return acc;
   }, {});
