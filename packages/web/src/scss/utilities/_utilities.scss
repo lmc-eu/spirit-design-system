@@ -24,3 +24,14 @@
         }
     }
 }
+
+// @deprecated We are introducing this fallback until Firefox implements the `text-wrap: pretty` property.
+// Migration: Once fixed in Firefox, remove this fallback.
+// Firefox issue: https://bugzilla.mozilla.org/show_bug.cgi?id=1960910
+// Interop issue: https://github.com/web-platform-tests/interop/issues/1136
+.text-wrap-pretty {
+    @supports not (text-wrap: pretty) {
+        // stylelint-disable-next-line declaration-no-important -- Utilities are always !important.
+        text-wrap: balance !important;
+    }
+}

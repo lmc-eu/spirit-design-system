@@ -83,14 +83,21 @@ It's crucial to combine it with [Text Hyphens](#text-hyphens) to maintain readab
 
 ### Text Balanced Wrapping
 
-Use the `isTextBalanced` prop to enable balanced wrapping for better readability.
+Use the `isTextBalanced` prop to enable balanced wrapping for headings and titles.
 
 ```jsx
 <Heading elementType="h2" isTextBalanced>
-  Balanced wrapping is a technique used to optimise the distribution of text across multiple lines, enhancing
-  readability and visual appeal.
+  Balanced wrapping optimizes the distribution of heading text across multiple lines for better visual appeal
 </Heading>
 ```
+
+ℹ️ For the Heading component, `isTextBalanced` applies `text-wrap: balance`, which is specifically designed for
+shorter text blocks like headings and titles. This creates more visually appealing line breaks by balancing the
+text evenly across lines.
+
+⚠️ Browser support: The [MDN documentation][mdn-text-wrap-balance] notes that balancing text is computationally
+expensive and is only supported for blocks spanning a limited number of lines (six or less for Chromium, ten or
+less for Firefox).
 
 ## Full Example
 
@@ -146,6 +153,7 @@ const CustomText = (props: SpiritHeadingProps): JSX.Element => {
 [dictionary-emphasis]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#emphasis
 [dictionary-intensity]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#intensity
 [dictionary-size]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#size
+[mdn-text-wrap-balance]: https://developer.mozilla.org/en-US/docs/Web/CSS/text-wrap#balance
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
 [readme-generated-types]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#types-generated-from-design-tokens

@@ -143,7 +143,7 @@ describe('useStyleUtilities hook', () => {
       'test-prefix-p-500',
       'test-prefix-px-600',
       'test-prefix-py-700',
-      'test-prefix-text-wrap-balance',
+      'test-prefix-text-wrap-pretty',
       'test-prefix-text-center',
       'test-prefix-text-hyphens-auto',
       'test-prefix-text-word-break-long-words',
