@@ -106,6 +106,8 @@ Additional option is to use helper class `text-truncate` with defined width.
 
 You can also use any of the existing [npm packages which deal with truncating the string][truncate-npm-search].
 
+For comprehensive guidance on handling text truncation, translations, and multiple string length scenarios, see the [Content Truncating Guidelines][truncation].
+
 For detailed information see [Breadcrumbs][breadcrumbs] component.
 
 ## Icons
@@ -117,5 +119,6 @@ please refer to the [Icon component documentation][web-react-icon-documentation]
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props
+[truncation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/TRUNCATING.md#breadcrumbs
 [truncate-npm-search]: https://www.npmjs.com/search?q=truncate
 [web-react-icon-documentation]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Icon/README.md#-usage
