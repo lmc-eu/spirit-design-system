@@ -123,15 +123,29 @@ describe('ScrollView', () => {
       </ScrollView>,
     );
 
-    const viewport = screen.getByTestId('scroll').firstElementChild;
+    const viewport = screen.getByTestId('scroll').firstElementChild as HTMLElement;
     const rightArrow = screen.getByRole('button', { name: SCROLL_VIEW_ARROWS_LABEL_HORIZONTAL_END });
 
-    const scrollBy = jest.fn();
-    Object.defineProperty(viewport!, 'scrollBy', { value: scrollBy, writable: true });
+    const scrollTo = jest.fn();
+    Object.defineProperty(viewport, 'scrollTo', { value: scrollTo, writable: true });
+    Object.defineProperty(viewport, 'scrollLeft', { value: 0, writable: true });
+    Object.defineProperty(viewport, 'scrollWidth', { value: 1000, writable: true });
+    Object.defineProperty(viewport, 'clientWidth', { value: 500, writable: true });
+
+    jest.useFakeTimers();
 
     rightArrow?.click();
 
-    expect(scrollBy).toHaveBeenCalledWith({ left: 100, behavior: 'smooth' });
+    // First call cancels ongoing scroll (behavior: 'auto')
+    expect(scrollTo).toHaveBeenCalledWith({ left: 0, behavior: 'auto' });
+
+    // Advance timer to trigger the delayed scrollTo
+    jest.advanceTimersByTime(10);
+
+    // Second call performs the actual scroll (behavior: 'smooth')
+    expect(scrollTo).toHaveBeenCalledWith({ left: 100, behavior: 'smooth' });
+
+    jest.useRealTimers();
   });
 
   it('should scroll by given scroll step when arrow is clicked (vertical)', () => {
@@ -141,15 +155,29 @@ describe('ScrollView', () => {
       </ScrollView>,
     );
 
-    const viewport = screen.getByTestId('scroll').firstElementChild;
+    const viewport = screen.getByTestId('scroll').firstElementChild as HTMLElement;
     const downArrow = screen.getByRole('button', { name: SCROLL_VIEW_ARROWS_LABEL_VERTICAL_END });
 
-    const scrollBy = jest.fn();
-    Object.defineProperty(viewport!, 'scrollBy', { value: scrollBy, writable: true });
+    const scrollTo = jest.fn();
+    Object.defineProperty(viewport, 'scrollTo', { value: scrollTo, writable: true });
+    Object.defineProperty(viewport, 'scrollTop', { value: 0, writable: true });
+    Object.defineProperty(viewport, 'scrollHeight', { value: 1000, writable: true });
+    Object.defineProperty(viewport, 'clientHeight', { value: 500, writable: true });
+
+    jest.useFakeTimers();
 
     downArrow?.click();
 
-    expect(scrollBy).toHaveBeenCalledWith({ top: 80, behavior: 'smooth' });
+    // First call cancels ongoing scroll (behavior: 'auto')
+    expect(scrollTo).toHaveBeenCalledWith({ top: 0, behavior: 'auto' });
+
+    // Advance timer to trigger the delayed scrollTo
+    jest.advanceTimersByTime(10);
+
+    // Second call performs the actual scroll (behavior: 'smooth')
+    expect(scrollTo).toHaveBeenCalledWith({ top: 80, behavior: 'smooth' });
+
+    jest.useRealTimers();
   });
 
   it('should not render arrows when hasArrows is false', () => {

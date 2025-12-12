@@ -1,11 +1,14 @@
+'use client';
+
 import React from 'react';
 import { isDirectionHorizontal } from '../../constants';
 import { useStyleProps } from '../../hooks';
-import { type ScrollViewArrowsScrollStepType, type SpiritScrollViewArrowsProps } from '../../types';
+import { type SpiritScrollViewArrowsProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { ControlButton } from '../ControlButton';
 import { Icon } from '../Icon';
 import { useScrollViewArrows } from './useScrollViewArrows';
+import { useScrollViewArrowScroll } from './useScrollViewArrowScroll';
 import { useScrollViewStyleProps } from './useScrollViewStyleProps';
 
 const ScrollViewArrows = (props: SpiritScrollViewArrowsProps) => {
@@ -17,14 +20,7 @@ const ScrollViewArrows = (props: SpiritScrollViewArrowsProps) => {
   const mergedStyleProps = mergeStyleProps('button', { classProps: classProps.arrows, styleProps });
   const isHorizontal = isDirectionHorizontal(direction);
   const { arrows } = useScrollViewArrows(isHorizontal, ariaLabelArrows, scrollStep);
-
-  const handleScroll = (step: ScrollViewArrowsScrollStepType) => {
-    const scrollToDirection = isHorizontal ? 'left' : 'top';
-    viewportRef.current?.scrollBy({
-      [scrollToDirection]: step,
-      behavior: 'smooth',
-    });
-  };
+  const { handleScroll } = useScrollViewArrowScroll({ viewportRef, direction });
 
   return (
     <div {...otherProps} {...mergedStyleProps}>
