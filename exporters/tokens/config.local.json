@@ -1,3 +1,4 @@
 {
-  "generateOriginalDataFiles": false
+  "generateOriginalDataFiles": false,
+  "rootFontSize": "16"
 }

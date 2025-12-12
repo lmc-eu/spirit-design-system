@@ -8,6 +8,7 @@ import {
 } from '../helpers/objectHelper';
 import { getDeviceAlias } from '../helpers/deviceHelpers';
 import { sortTokens, tokenVariableName, typographyValue } from '../helpers/tokenHelper';
+import { getFontSizeBaseForBreakpoint, type FontSizeBaseMap } from '../helpers/unitHelper';
 import { toCamelCase, toPlural } from '../helpers/stringHelper';
 import { COLOR_JS_SUFFIX, COLOR_KEY, COLOR_SCSS_SUFFIX, TYPOGRAPHY_KEY } from '../constants';
 
@@ -142,6 +143,7 @@ export const handleTypographyTokens = (
   stylesObjectRef: StylesObjectType,
   hasJsOutput: boolean,
   deviceDimensions?: DeviceDimensionMap,
+  fontSizeBaseMap?: FontSizeBaseMap,
 ): void => {
   const typographyToken = token as TypographyToken;
   const reducedNameParts = tokenNameParts.slice(0, 2);
@@ -149,6 +151,7 @@ export const handleTypographyTokens = (
   const breakpoint = getBreakpoint(tokenNameParts).toLowerCase();
   const isItalic = name.includes('italic');
   const deviceTypographyValues = getDeviceTypographyValues(typographyToken, deviceDimensions);
+  const baseFontSize = fontSizeBaseMap ? getFontSizeBaseForBreakpoint(fontSizeBaseMap, breakpoint) : 16;
 
   let currentObject = stylesObjectRef;
   reducedNameParts.forEach((part, index) => {
@@ -190,14 +193,15 @@ export const handleTypographyTokens = (
               return;
             }
 
-            currentObject[device] = typographyValue(deviceValue, isItalic, hasJsOutput);
+            const deviceBaseFontSize = fontSizeBaseMap ? getFontSizeBaseForBreakpoint(fontSizeBaseMap, device) : 16;
+            currentObject[device] = typographyValue(deviceValue, isItalic, hasJsOutput, deviceBaseFontSize);
           });
 
           return;
         }
       }
 
-      currentObject[breakpoint] = typographyValue(typographyToken.value, isItalic, hasJsOutput);
+      currentObject[breakpoint] = typographyValue(typographyToken.value, isItalic, hasJsOutput, baseFontSize);
     } else {
       currentObject[modifiedPart] = currentObject[modifiedPart] || {};
       currentObject = currentObject[modifiedPart] as StylesObjectType;
@@ -245,6 +249,7 @@ export const createStylesObjectStructureFromTokenNameParts = (
   stylesObjectRef: StylesObjectType,
   hasJsOutput: boolean,
   deviceDimensions?: DeviceDimensionMap,
+  fontSizeBaseMap?: FontSizeBaseMap,
 ): StylesObjectType => {
   const { tokenType, name: tokenName } = token;
   const devicePart = getDeviceAlias(token);
@@ -259,7 +264,7 @@ export const createStylesObjectStructureFromTokenNameParts = (
   }
 
   if (tokenType === TokenType.typography) {
-    handleTypographyTokens(tokenNameParts, token, stylesObjectRef, hasJsOutput, deviceDimensions);
+    handleTypographyTokens(tokenNameParts, token, stylesObjectRef, hasJsOutput, deviceDimensions, fontSizeBaseMap);
   } else {
     handleNonTypographyTokens(tokenNameParts, token, tokenGroups, hasParentPrefix, stylesObjectRef, hasJsOutput);
   }
@@ -307,6 +312,7 @@ export const generateStylesObjectFromTokens = (
   hasJsOutput: boolean,
   sortByNumValue: boolean,
   deviceDimensions?: DeviceDimensionMap,
+  fontSizeBaseMap?: FontSizeBaseMap,
 ): StylesObjectType => {
   const sortedTokens = sortTokens(tokens, tokenGroups, hasParentPrefix, sortByNumValue);
   const stylesObject = sortedTokens.reduce((stylesObjectAccumulator, token) => {
@@ -317,6 +323,7 @@ export const generateStylesObjectFromTokens = (
       {},
       hasJsOutput,
       deviceDimensions,
+      fontSizeBaseMap,
     );
 
     // Merge the current object into the accumulator
