@@ -16,9 +16,13 @@
     "url": "https://github.com/lmc-eu/spirit-design-system.git",
     "directory": "packages/web-react"
   },
-  "main": "./index.cjs",
-  "module": "./index.js",
-  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./package.json": "./package.json"
+  },
   "dependencies": {
     "@floating-ui/react": "^0.27.0",
     "classnames": "^2.3.1",

@@ -5,18 +5,14 @@
 // This script will:
 //
 // - Copy the current root package.json into "dist" after adjusting it for
-//   publishing.
+//   publishing (removing scripts, engines, legacy fields, etc.).
 // - Copy the supporting files from the root into "dist" (e.g. `README.MD`,
 //   `LICENSE`, etc.).
-// - Create a new `package.json` for each sub-set bundle we support, and
-//   store it in the appropriate dist sub-directory.
 
 const fs = require('fs');
 const path = require('path');
 const packageJson = require('../package.json');
-const packageEntryPoints = require('./entryPoints');
-
-const distRoot = `${__dirname}/../dist`;
+const generateExports = require('./generateExports');
 
 // Enable default interpretation of .js files as ECMAScript modules.
 packageJson.type = 'module';
@@ -31,31 +27,21 @@ delete packageJson.scripts;
 delete packageJson.bundlesize;
 delete packageJson.engines;
 
+// Remove legacy fields - we're using exports field instead
+delete packageJson.main;
+delete packageJson.module;
+delete packageJson.types;
+
+// Generate and apply dist exports (replacing source exports from root package.json)
+packageJson.exports = generateExports('dist');
+
 // Copy supporting files into "dist"
 const srcDir = `${__dirname}/..`;
 const destDir = `${srcDir}/dist`;
 fs.copyFileSync(`${srcDir}/README.md`, `${destDir}/README.md`);
 
-// Create individual bundle package.json files, storing them in their
-// associated dist directory. This helps provide a way for the Spirit Web React
-// components, HOC, and various links to be used by themselves, via CommonJS
-// entry point files that only include the exports needed for each bundle.
-
-packageEntryPoints.forEach(({ dirs, bundleName = dirs[dirs.length - 1], sideEffects = false }) => {
-  if (!dirs.length) return;
-  fs.writeFileSync(
-    path.join(distRoot, ...dirs, 'package.json'),
-    `${JSON.stringify(
-      {
-        name: path.posix.join('@lmc-eu', 'spirit-web-react', ...dirs),
-        type: 'module',
-        main: `${bundleName}.cjs`,
-        module: 'index.js',
-        types: 'index.d.ts',
-        sideEffects,
-      },
-      null,
-      2,
-    )}\n`,
-  );
-});
+// Write the modified package.json to dist
+fs.writeFileSync(
+  path.join(destDir, 'package.json'),
+  JSON.stringify(packageJson, null, 2) + '\n',
+);
