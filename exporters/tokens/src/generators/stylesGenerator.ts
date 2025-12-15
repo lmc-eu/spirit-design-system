@@ -32,6 +32,7 @@ import {
 } from '../helpers/colorHelper';
 import { replacePxWithRemUnits, getFontSizeBaseForBreakpoint, type FontSizeBaseMap } from '../helpers/unitHelper';
 import { getDeviceAlias } from '../helpers/deviceHelpers';
+import { FONT_SIZE_BASE } from '../constants';
 
 export const tokenToStyleByType = (
   token: Token,
@@ -60,9 +61,9 @@ export const tokenToStyleByType = (
     const tokenName = token.name?.toLowerCase() || '';
     const originName = token.origin?.name?.toLowerCase() || '';
     const isFontSizeBase =
-      name.toLowerCase().includes('font-size-base') ||
-      tokenName.includes('font-size-base') ||
-      originName.includes('font-size-base');
+      name.toLowerCase().includes(FONT_SIZE_BASE) ||
+      tokenName.includes(FONT_SIZE_BASE) ||
+      originName.includes(FONT_SIZE_BASE);
     const isRelative = !isFontSizeBase;
 
     return formatTokenStyleByOutput(name, value, hasJsOutput, unit, isRelative, baseFontSize);

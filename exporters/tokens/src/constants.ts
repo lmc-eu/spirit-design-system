@@ -2,6 +2,7 @@ export const COLOR_JS_SUFFIX = 'Colors';
 export const COLOR_KEY = 'colors';
 export const COLOR_SCSS_SUFFIX = '-colors';
 export const DEVICES_DIRECTORY = 'devices';
+export const FONT_SIZE_BASE = 'font-size-base';
 export const GLOBAL_DIRECTORY = 'global-tokens';
 export const JS_DIRECTORY = 'js';
 export const JS_INDENTATION = '  ';
