@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.2.5"></a>
+
+## [0.2.5](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-storybook@0.2.4...@lmc-eu/spirit-storybook@0.2.5) (2025-12-15)
+
+Miscellaneous changes
+
+**Note:** Version bump only for package @lmc-eu/spirit-storybook
+
 <a name="0.2.4"></a>
 
 ## [0.2.4](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-storybook@0.2.3...@lmc-eu/spirit-storybook@0.2.4) (2025-12-09)

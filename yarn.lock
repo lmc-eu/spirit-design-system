@@ -5128,7 +5128,7 @@ __metadata:
     "@lmc-eu/eslint-config-typescript": "npm:2.1.5"
     "@lmc-eu/spirit-common": "npm:^0.4.4"
     "@lmc-eu/spirit-demo": "npm:^1.1.1"
-    "@lmc-eu/spirit-web": "npm:^3.22.0"
+    "@lmc-eu/spirit-web": "npm:^3.23.0"
     "@rollup/plugin-node-resolve": "npm:15.3.1"
     "@rollup/plugin-replace": "npm:6.0.2"
     "@rollup/plugin-terser": "npm:0.4.4"
@@ -5201,7 +5201,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@lmc-eu/spirit-web@npm:^3.22.0, @lmc-eu/spirit-web@workspace:^, @lmc-eu/spirit-web@workspace:packages/web":
+"@lmc-eu/spirit-web@npm:^3.23.0, @lmc-eu/spirit-web@workspace:^, @lmc-eu/spirit-web@workspace:packages/web":
   version: 0.0.0-use.local
   resolution: "@lmc-eu/spirit-web@workspace:packages/web"
   dependencies:

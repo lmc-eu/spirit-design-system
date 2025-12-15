@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.23.0"></a>
+
+# [3.23.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.22.0...@lmc-eu/spirit-web@3.23.0) (2025-12-15)
+
+### Documentation
+
+- **web, web-react:** Comprehensive guideline for text truncation DS-1912 ([751809a](https://github.com/lmc-eu/spirit-design-system/commit/751809a))
+
+### Features
+
+- **web, web-react:** Introduce new text wrap modes [#DS-2292](https://github.com/lmc-eu/spirit-design-system/issues/DS-2292) ([69a6cac](https://github.com/lmc-eu/spirit-design-system/commit/69a6cac))
+- **web:** Automatic Icon size in Avatar [#DS-2274](https://github.com/lmc-eu/spirit-design-system/issues/DS-2274) ([f00c24a](https://github.com/lmc-eu/spirit-design-system/commit/f00c24a))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="3.22.0"></a>
 
 # [3.22.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@3.21.0...@lmc-eu/spirit-web@3.22.0) (2025-12-09)

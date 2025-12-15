@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.2.31"></a>
+
+## [0.2.31](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-example-next-with-pages-router@0.2.30...@almacareer/spirit-example-next-with-pages-router@0.2.31) (2025-12-15)
+
+### Dependencies
+
+- Update dependency next to v15.5.8 [SECURITY] ([2545dc0](https://github.com/lmc-eu/spirit-design-system/commit/2545dc0))
+- Update dependency next to v15.5.9 [SECURITY] ([5093de3](https://github.com/lmc-eu/spirit-design-system/commit/5093de3))
+
+**Note:** Version bump only for package @almacareer/spirit-example-next-with-pages-router
+
 <a name="0.2.30"></a>
 
 ## [0.2.30](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-example-next-with-pages-router@0.2.29...@almacareer/spirit-example-next-with-pages-router@0.2.30) (2025-12-09)
