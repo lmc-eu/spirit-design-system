@@ -47,6 +47,11 @@ jobs:
     steps:
       - name: Clone repository
         uses: actions/checkout@v4
+        with:
+          # Even though this is set, shallow clones do not always retrieve all tags correctly
+          fetch-tags: true
+          # So we need to fetch full history, including all tags
+          fetch-depth: 0
 
       - name: Setup Node and Install Dependencies
         uses: ./.github/actions/setup-install
