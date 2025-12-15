@@ -117,8 +117,6 @@ const getDeviceTypographyValues = (
         return byVariableName;
       }
 
-      // Fallback: some setups may produce different variable names between global/device collections,
-      // but keep a stable origin path.
       const originKey = referencedToken.origin?.name?.toLowerCase();
       return originKey ? deviceDimensions.get(originKey) : undefined;
     }

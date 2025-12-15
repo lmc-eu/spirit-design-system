@@ -346,8 +346,6 @@ export const typographyValue = (
     fontSizeValue = `'${fontSizeMeasure}${fontSizeUnit}'`;
   }
 
-  // Prefer unitless line-height (ratio) and format to 2 decimal places.
-  // This keeps typography consistent across devices while remaining independent of the base font-size.
   const lineHeightRatio = calculateLineHeightRatio(fontSize, lineHeight);
   const lineHeightValue = lineHeightRatio !== undefined ? lineHeightRatio.toFixed(2) : undefined;
 
