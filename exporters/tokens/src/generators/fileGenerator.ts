@@ -1,4 +1,13 @@
-import { DimensionToken, Supernova, Token, TokenGroup, TokenTheme, TokenType } from '@supernovaio/sdk-exporters';
+import {
+  DimensionToken,
+  FontSizeToken,
+  LineHeightToken,
+  Supernova,
+  Token,
+  TokenGroup,
+  TokenTheme,
+  TokenType,
+} from '@supernovaio/sdk-exporters';
 import {
   commonThemedFilesData,
   devicesFilesData,
@@ -25,7 +34,7 @@ import { type OutputFile } from '../writers/fileWriter';
 
 const buildDeviceDimensionMap = (tokens: Token[], tokenGroups: Array<TokenGroup>): DeviceDimensionMap => {
   return tokens.reduce<DeviceDimensionMap>((accumulator, token) => {
-    if (token.tokenType !== TokenType.dimension) {
+    if (![TokenType.dimension, TokenType.fontSize, TokenType.lineHeight].includes(token.tokenType)) {
       return accumulator;
     }
 
@@ -35,8 +44,21 @@ const buildDeviceDimensionMap = (tokens: Token[], tokenGroups: Array<TokenGroup>
       return accumulator;
     }
 
-    const dimensionToken = token as DimensionToken;
-    const { measure, unit } = dimensionToken.value;
+    let measure: number | undefined;
+    let unit: string | undefined;
+    if (token.tokenType === TokenType.dimension) {
+      const t = token as DimensionToken;
+      measure = t.value?.measure;
+      unit = t.value?.unit;
+    } else if (token.tokenType === TokenType.fontSize) {
+      const t = token as FontSizeToken;
+      measure = t.value?.measure;
+      unit = t.value?.unit;
+    } else if (token.tokenType === TokenType.lineHeight) {
+      const t = token as LineHeightToken;
+      measure = t.value?.measure;
+      unit = t.value?.unit;
+    }
 
     if (typeof measure !== 'number' || !unit) {
       return accumulator;
@@ -46,6 +68,7 @@ const buildDeviceDimensionMap = (tokens: Token[], tokenGroups: Array<TokenGroup>
     const baseVariableName = variableNameWithDeviceSuffix.endsWith(`-${device}`)
       ? variableNameWithDeviceSuffix.slice(0, -(device.length + 1))
       : variableNameWithDeviceSuffix;
+    const originKey = token.origin?.name?.toLowerCase();
 
     const deviceValues: DeviceDimensionEntries = accumulator.get(baseVariableName) || {};
     deviceValues[device] = {
@@ -54,6 +77,9 @@ const buildDeviceDimensionMap = (tokens: Token[], tokenGroups: Array<TokenGroup>
     };
 
     accumulator.set(baseVariableName, deviceValues);
+    if (originKey) {
+      accumulator.set(originKey, deviceValues);
+    }
 
     return accumulator;
   }, new Map<string, DeviceDimensionEntries>());
