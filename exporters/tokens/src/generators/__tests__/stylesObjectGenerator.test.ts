@@ -81,7 +81,7 @@ describe('stylesObjectGenerator', () => {
           '$heading-xlarge-bold': {
             mobile:
               // eslint-disable-next-line quotes -- we are handling special characters
-              '(\nfont-family: "\'Inter\', sans-serif",\nfont-size: 40px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.3,\n)',
+              '(\nfont-family: "\'Inter\', sans-serif",\nfont-size: 2.50rem,\nfont-style: normal,\nfont-weight: 700,\nline-height: 3.25rem,\n)',
           },
           $styles: {
             'heading-xlarge-bold': '$heading-xlarge-bold',
@@ -100,7 +100,7 @@ describe('stylesObjectGenerator', () => {
           },
           headingXlargeBold: {
             mobile:
-              "{\nfontFamily: \"'Inter', sans-serif\",\nfontSize: '40px',\nfontStyle: 'normal',\nfontWeight: 700,\nlineHeight: 1.3,\n}",
+              "{\nfontFamily: \"'Inter', sans-serif\",\nfontSize: '2.50rem',\nfontStyle: 'normal',\nfontWeight: 700,\nlineHeight: '3.25rem',\n}",
           },
         },
         description: 'should generate object from typography tokens with js output',
@@ -209,7 +209,7 @@ describe('stylesObjectGenerator', () => {
           '$heading-xlarge-bold': {
             mobile:
               // eslint-disable-next-line quotes -- we are handling special characters
-              '(\nfont-family: "\'Inter\', sans-serif",\nfont-size: 40px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.3,\n)',
+              '(\nfont-family: "\'Inter\', sans-serif",\nfont-size: 2.50rem,\nfont-style: normal,\nfont-weight: 700,\nline-height: 3.25rem,\n)',
           },
         },
         description: 'should create object structure from typography token',
@@ -217,7 +217,7 @@ describe('stylesObjectGenerator', () => {
           '$heading-xlarge-bold': {
             mobile:
               // eslint-disable-next-line quotes -- we are handling special characters
-              '(\nfont-family: "\'Inter\', sans-serif",\nfont-size: 32px,\nfont-style: normal,\nfont-weight: 500,\nline-height: 1,\n)',
+              '(\nfont-family: "\'Inter\', sans-serif",\nfont-size: 2.00rem,\nfont-style: normal,\nfont-weight: 500,\nline-height: 2rem,\n)',
           },
         } as StylesObjectType,
         hasJsOutput: false,
@@ -227,14 +227,14 @@ describe('stylesObjectGenerator', () => {
         expectedObject: {
           headingXlargeBold: {
             mobile:
-              "{\nfontFamily: \"'Inter', sans-serif\",\nfontSize: '40px',\nfontStyle: 'normal',\nfontWeight: 700,\nlineHeight: 1.3,\n}",
+              "{\nfontFamily: \"'Inter', sans-serif\",\nfontSize: '2.50rem',\nfontStyle: 'normal',\nfontWeight: 700,\nlineHeight: '3.25rem',\n}",
           },
         },
         description: 'should create object structure from typography token with js output',
         stylesObjectRef: {
           headingXlargeBold: {
             mobile:
-              "{\nfontFamily: \"'Inter', sans-serif\",\nfontSize: '32px',\nfontStyle: 'normal',\nfontWeight: 500,\nlineHeight: 1,\n}",
+              "{\nfontFamily: \"'Inter', sans-serif\",\nfontSize: '2.00rem',\nfontStyle: 'normal',\nfontWeight: 500,\nlineHeight: '2rem',\n}",
           },
         } as StylesObjectType,
         hasJsOutput: true,
@@ -263,7 +263,7 @@ describe('stylesObjectGenerator', () => {
           '$heading-xlarge-bold': {
             mobile:
               // eslint-disable-next-line quotes -- we are handling special characters
-              '(\nfont-family: "\'Inter\', sans-serif",\nfont-size: 40px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.3,\n)',
+              '(\nfont-family: "\'Inter\', sans-serif",\nfont-size: 2.50rem,\nfont-style: normal,\nfont-weight: 700,\nline-height: 3.25rem,\n)',
           },
           exampleRef: 'exampleRef',
         },
@@ -277,7 +277,7 @@ describe('stylesObjectGenerator', () => {
           exampleRef: 'exampleRef',
           headingXlargeBold: {
             mobile:
-              "{\nfontFamily: \"'Inter', sans-serif\",\nfontSize: '40px',\nfontStyle: 'normal',\nfontWeight: 700,\nlineHeight: 1.3,\n}",
+              "{\nfontFamily: \"'Inter', sans-serif\",\nfontSize: '2.50rem',\nfontStyle: 'normal',\nfontWeight: 700,\nlineHeight: '3.25rem',\n}",
           },
         },
         description: 'should generate object from typography tokens with js output',

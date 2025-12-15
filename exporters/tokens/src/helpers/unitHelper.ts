@@ -81,7 +81,10 @@ export const getFontSizeBaseForBreakpoint = (fontSizeBaseMap: FontSizeBaseMap, b
  */
 export const makeRelativeUnit = (value: string | number, baseFontSize: number = 16): string | number => {
   if (baseFontSize && baseFontSize > 0) {
-    return `${Number(value) / Number(baseFontSize)}rem`;
+    const raw = Number(value) / Number(baseFontSize);
+    const rounded = Math.round((raw + Number.EPSILON) * 100) / 100;
+    const normalized = Math.abs(rounded) === 0 ? 0 : rounded;
+    return `${normalized.toFixed(2)}rem`;
   }
 
   return value;

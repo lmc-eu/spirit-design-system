@@ -167,7 +167,7 @@ type TypographyShape = {
   fontSize: string;
   fontStyle: string;
   fontWeight: string | number;
-  lineHeight?: number;
+  lineHeight?: string | number;
 };
 
 const jsKeyValueTemplate: KeyValueTemplateCallback = (key, value) => {
@@ -323,7 +323,7 @@ const calculateLineHeightRatio = (
 
   const ratio = lineHeight.measure / fontSize.measure;
 
-  return Math.round(ratio * 10) / 10;
+  return ratio;
 };
 
 export const typographyValue = (
@@ -337,7 +337,6 @@ export const typographyValue = (
   const fontSizeMeasure = fontSize?.measure ?? 0;
   const italicFromWeight = fontWeight?.text?.toLowerCase().includes('italic');
   const fontWeightValue = normalizeFontWeight(fontWeight.text);
-  const lineHeightRatio = calculateLineHeightRatio(fontSize, lineHeight);
 
   let fontSizeValue: string;
   if (fontSizeUnit === 'px' && fontSizeMeasure > 0 && baseFontSize > 0) {
@@ -347,6 +346,11 @@ export const typographyValue = (
     fontSizeValue = `'${fontSizeMeasure}${fontSizeUnit}'`;
   }
 
+  // Prefer unitless line-height (ratio) and format to 2 decimal places.
+  // This keeps typography consistent across devices while remaining independent of the base font-size.
+  const lineHeightRatio = calculateLineHeightRatio(fontSize, lineHeight);
+  const lineHeightValue = lineHeightRatio !== undefined ? lineHeightRatio.toFixed(2) : undefined;
+
   const typographyObject: TypographyShape = {
     fontFamily: `${fontName}`,
     fontSize: fontSizeValue,
@@ -354,8 +358,8 @@ export const typographyValue = (
     fontWeight: fontWeightValue,
   };
 
-  if (lineHeightRatio) {
-    typographyObject.lineHeight = lineHeightRatio;
+  if (lineHeightValue !== undefined) {
+    typographyObject.lineHeight = lineHeightValue;
   }
 
   const baseStyles = passObjectKeyValueToCallback<TypographyShape>(typographyObject, scssKeyValueTemplate);
