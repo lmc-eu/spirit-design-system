@@ -282,7 +282,8 @@ async function configureWebhookURL() {
 async function publishChangelog(npmPackage: string) {
   try {
     const diff = await executeGitOperationWithRetry(async () => {
-      await simpleGit().fetch(['origin', '--tags', '--force']);
+      // Fetch latest tags from remote (force update since publish step just created them)
+      await simpleGit().fetch(['origin', 'refs/tags/*:refs/tags/*', '--force']);
       const tags = await simpleGit().tags({ '--sort': '-taggerdate' });
       const diff = await getDiff(
         argv.dry ? '@lmc-eu/spirit-web-react@3.1.0' : (tags.latest ?? ''),
