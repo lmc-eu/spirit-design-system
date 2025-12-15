@@ -7,6 +7,7 @@ import {
   TokenGroup,
   TokenTheme,
   TokenType,
+  Unit,
 } from '@supernovaio/sdk-exporters';
 import {
   commonThemedFilesData,
@@ -29,8 +30,16 @@ import { toCamelCase } from '../helpers/stringHelper';
 import { getFontSizeBaseMap, type FontSizeBaseMap } from '../helpers/unitHelper';
 import { tokenVariableName } from '../helpers/tokenHelper';
 import { generateFileContent } from './contentGenerator';
-import { DeviceDimensionEntries, DeviceDimensionMap } from './stylesObjectGenerator';
+import { DeviceDimensionEntries, DeviceDimensionMap, type DeviceDimensionValue } from './stylesObjectGenerator';
 import { type OutputFile } from '../writers/fileWriter';
+
+const isDeviceTypographyUnit = (unit: unknown): unit is DeviceDimensionValue['unit'] => {
+  return unit === Unit.pixels || unit === Unit.percent || unit === Unit.rem;
+};
+
+const toTypographyUnit = (unit: unknown): DeviceDimensionValue['unit'] | null => {
+  return isDeviceTypographyUnit(unit) ? unit : null;
+};
 
 const buildDeviceDimensionMap = (tokens: Token[], tokenGroups: Array<TokenGroup>): DeviceDimensionMap => {
   return tokens.reduce<DeviceDimensionMap>((accumulator, token) => {
@@ -45,19 +54,19 @@ const buildDeviceDimensionMap = (tokens: Token[], tokenGroups: Array<TokenGroup>
     }
 
     let measure: number | undefined;
-    let unit: string | undefined;
+    let unit: DeviceDimensionValue['unit'] | null = null;
     if (token.tokenType === TokenType.dimension) {
       const t = token as DimensionToken;
       measure = t.value?.measure;
-      unit = t.value?.unit;
+      unit = toTypographyUnit(t.value?.unit);
     } else if (token.tokenType === TokenType.fontSize) {
       const t = token as FontSizeToken;
       measure = t.value?.measure;
-      unit = t.value?.unit;
+      unit = toTypographyUnit(t.value?.unit);
     } else if (token.tokenType === TokenType.lineHeight) {
       const t = token as LineHeightToken;
       measure = t.value?.measure;
-      unit = t.value?.unit;
+      unit = toTypographyUnit(t.value?.unit);
     }
 
     if (typeof measure !== 'number' || !unit) {

@@ -50,7 +50,10 @@ const isFontSizeBaseToken = (token: Token, resolvedName: string): boolean => {
 
 export const tokenToStyleByType = (
   token: Token,
-  mappedTokens: Map<string, Token>,
+  // NOTE: @supernovaio/export-helpers brings its own dependency on @supernovaio/sdk-exporters,
+  // which can cause type duplication conflicts. We intentionally keep this as `unknown`
+  // and cast at call sites where required.
+  mappedTokens: Map<string, unknown>,
   tokenGroups: Array<TokenGroup>,
   tokenPrefix: string,
   hasMixin: boolean,
@@ -178,7 +181,7 @@ export const tokenToStyleByType = (
     const cssVariableName = `var(--${tokenPrefix}color-${name})`;
 
     if (hasMixin) {
-      let value = CSSHelper.colorTokenValueToCSS(colorToken.value, mappedTokens, {
+      let value = CSSHelper.colorTokenValueToCSS(colorToken.value, mappedTokens as unknown as Map<string, never>, {
         allowReferences: true,
         decimals: 3,
         colorFormat: ColorFormat.hex8,
@@ -197,7 +200,7 @@ export const tokenToStyleByType = (
     const shadowToken = token as ShadowToken;
     const name = tokenVariableName(token, tokenGroups, hasParentPrefix);
     const { value, origin } = shadowToken;
-    let shadow = CSSHelper.shadowTokenValueToCSS(value, mappedTokens, {
+    let shadow = CSSHelper.shadowTokenValueToCSS(value, mappedTokens as unknown as Map<string, never>, {
       allowReferences: true,
       decimals: 3,
       colorFormat: ColorFormat.hashHex8,
@@ -217,7 +220,7 @@ export const tokenToStyleByType = (
     const gradientToken = token as GradientToken;
     const name = tokenVariableName(token, tokenGroups, hasParentPrefix);
     const { value, origin } = gradientToken;
-    let gradient = CSSHelper.gradientTokenValueToCSS(value, mappedTokens, {
+    let gradient = CSSHelper.gradientTokenValueToCSS(value, mappedTokens as unknown as Map<string, never>, {
       allowReferences: true,
       colorFormat: ColorFormat.hashHex8,
       decimals: 3,
@@ -237,7 +240,7 @@ export const tokenToStyleByType = (
 
 export const generateStylesFromTokens = (
   tokens: Token[],
-  mappedTokens: Map<string, Token>,
+  mappedTokens: Map<string, unknown>,
   tokenGroups: Array<TokenGroup>,
   tokenPrefix: string,
   hasMixin: boolean,

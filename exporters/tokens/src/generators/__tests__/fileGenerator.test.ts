@@ -207,7 +207,7 @@ describe('fileGenerator', () => {
   describe('generateFiles', () => {
     it('should generate files', () => {
       const tokens = Array.from(exampleDimensionAndStringTokens.values());
-      const files = generateFiles(tokens, mappedTokens, tokenGroups, nonThemedFilesData, false, false, undefined);
+      const files = generateFiles(tokens, mappedTokens, tokenGroups, nonThemedFilesData, undefined, false, undefined);
 
       expect(files).toStrictEqual([
         {

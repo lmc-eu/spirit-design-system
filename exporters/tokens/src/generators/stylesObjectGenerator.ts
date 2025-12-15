@@ -1,4 +1,11 @@
-import { Token, TokenGroup, TokenType, TypographyToken, type TypographyTokenValue } from '@supernovaio/sdk-exporters';
+import {
+  Token,
+  TokenGroup,
+  TokenType,
+  TypographyToken,
+  Unit,
+  type TypographyTokenValue,
+} from '@supernovaio/sdk-exporters';
 import {
   formatTypographyName,
   getBreakpoint,
@@ -14,58 +21,31 @@ import { COLOR_JS_SUFFIX, COLOR_KEY, COLOR_SCSS_SUFFIX, TYPOGRAPHY_KEY } from '.
 
 export type StylesObjectType = { [key: string]: (string | object) & { moveToTheEnd?: string } };
 
-type FontSizeUnit = NonNullable<TypographyTokenValue['fontSize']>['unit'];
-type LineHeightUnit = NonNullable<TypographyTokenValue['lineHeight']>['unit'];
-type TypographyUnit = FontSizeUnit | LineHeightUnit;
+type DeviceTypographyUnit = Unit.pixels | Unit.percent | Unit.rem;
 
 export type DeviceDimensionValue = {
   measure: number;
-  unit: TypographyUnit;
+  unit: DeviceTypographyUnit;
 };
 
 export type DeviceDimensionEntries = Record<string, DeviceDimensionValue>;
 
 export type DeviceDimensionMap = Map<string, DeviceDimensionEntries>;
 
-type CloneableTypographyField = keyof Pick<
-  TypographyTokenValue,
-  | 'fontFamily'
-  | 'fontWeight'
-  | 'fontSize'
-  | 'textDecoration'
-  | 'textCase'
-  | 'letterSpacing'
-  | 'lineHeight'
-  | 'paragraphIndent'
-  | 'paragraphSpacing'
->;
-
-const CLONABLE_TYPOGRAPHY_FIELDS: CloneableTypographyField[] = [
-  'fontFamily',
-  'fontWeight',
-  'fontSize',
-  'textDecoration',
-  'textCase',
-  'letterSpacing',
-  'lineHeight',
-  'paragraphIndent',
-  'paragraphSpacing',
-];
-
 export const cloneTypographyValue = (value: TypographyTokenValue): TypographyTokenValue => {
-  const clonedValue: TypographyTokenValue = { ...value };
-
-  CLONABLE_TYPOGRAPHY_FIELDS.forEach((key) => {
-    const fieldValue = value[key];
-
-    if (fieldValue) {
-      clonedValue[key] = { ...fieldValue } as TypographyTokenValue[typeof key];
-    }
-  });
-
-  clonedValue.referencedTokenId = value.referencedTokenId ?? null;
-
-  return clonedValue;
+  return {
+    ...value,
+    fontFamily: value.fontFamily ? { ...value.fontFamily } : value.fontFamily,
+    fontWeight: value.fontWeight ? { ...value.fontWeight } : value.fontWeight,
+    fontSize: value.fontSize ? { ...value.fontSize } : value.fontSize,
+    textDecoration: value.textDecoration ? { ...value.textDecoration } : value.textDecoration,
+    textCase: value.textCase ? { ...value.textCase } : value.textCase,
+    letterSpacing: value.letterSpacing ? { ...value.letterSpacing } : value.letterSpacing,
+    lineHeight: value.lineHeight ? { ...value.lineHeight } : value.lineHeight,
+    paragraphIndent: value.paragraphIndent ? { ...value.paragraphIndent } : value.paragraphIndent,
+    paragraphSpacing: value.paragraphSpacing ? { ...value.paragraphSpacing } : value.paragraphSpacing,
+    referencedTokenId: value.referencedTokenId ?? null,
+  };
 };
 
 const applyDeviceDimension = (
@@ -80,10 +60,25 @@ const applyDeviceDimension = (
     return;
   }
 
-  const existingDimension = clonedValue[key];
+  // Avoid assignment through a union key (`clonedValue[key] = ...`) which would require
+  // satisfying an intersection of all possible value types. Also ensure referencedTokenId exists.
+  if (key === 'fontSize') {
+    const existing = clonedValue.fontSize;
+    const { referencedTokenId: _existingRefId, ...existingWithoutRefId } = existing ?? { referencedTokenId: null };
+    clonedValue.fontSize = {
+      ...existingWithoutRefId,
+      referencedTokenId: existing?.referencedTokenId ?? null,
+      measure: deviceDimension.measure,
+      unit: deviceDimension.unit,
+    };
+    return;
+  }
 
-  clonedValue[key] = {
-    ...existingDimension,
+  const existing = clonedValue.lineHeight;
+  const { referencedTokenId: _existingRefId, ...existingWithoutRefId } = existing ?? { referencedTokenId: null };
+  clonedValue.lineHeight = {
+    ...existingWithoutRefId,
+    referencedTokenId: existing?.referencedTokenId ?? null,
     measure: deviceDimension.measure,
     unit: deviceDimension.unit,
   };
