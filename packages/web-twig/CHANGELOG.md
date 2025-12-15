@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="5.0.0"></a>
+
+# [5.0.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@4.10.2...@lmc-eu/spirit-web-twig@5.0.0) (2025-12-15)
+
+### BREAKING CHANGES
+
+- **repo:** Abandon the form validations packages ([4837966](https://github.com/lmc-eu/spirit-design-system/commit/4837966))
+- **repo:** Drop support for Node.js v18 ([6eebd75](https://github.com/lmc-eu/spirit-design-system/commit/6eebd75))
+- **web-twig:** Remove `isBlock` prop from Button and ButtonLink [#DS-1897](https://github.com/lmc-eu/spirit-design-system/issues/DS-1897) ([82fffa3](https://github.com/lmc-eu/spirit-design-system/commit/82fffa3))
+- **web-twig:** Remove data-spirit-more from Collapse trigger ([e16fb9a](https://github.com/lmc-eu/spirit-design-system/commit/e16fb9a))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="4.10.2"></a>
 
 ## [4.10.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@4.10.1...@lmc-eu/spirit-web-twig@4.10.2) (2025-10-22)

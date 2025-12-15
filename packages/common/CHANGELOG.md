@@ -3,6 +3,100 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.5.0"></a>
+
+# 0.5.0 (2025-12-15)
+
+### BREAKING CHANGES
+
+- **common:** Change package npm organization to alma-oss ([c4e4b55](https://github.com/lmc-eu/spirit-design-system/commit/c4e4b55)), closes [#DS-2173](https://github.com/lmc-eu/spirit-design-system/issues/DS-2173)
+- **repo:** Abandon the form validations packages ([4837966](https://github.com/lmc-eu/spirit-design-system/commit/4837966))
+
+### Chores
+
+- **common:** Add missing typescript dependency ([8452fde](https://github.com/lmc-eu/spirit-design-system/commit/8452fde))
+- **common:** Migrate to ESLint v9 ([dce8903](https://github.com/lmc-eu/spirit-design-system/commit/dce8903))
+- **demo:** Run web-twig demo app on port 80 ([6696722](https://github.com/lmc-eu/spirit-design-system/commit/6696722))
+- **form-validations:** Use common local server configuration ([6dbd751](https://github.com/lmc-eu/spirit-design-system/commit/6dbd751)), closes [#DS-1093](https://github.com/lmc-eu/spirit-design-system/issues/DS-1093)
+- **release:** Publish ([53a9ee1](https://github.com/lmc-eu/spirit-design-system/commit/53a9ee1))
+- **release:** Publish ([a19d876](https://github.com/lmc-eu/spirit-design-system/commit/a19d876))
+- **release:** Publish ([cad6291](https://github.com/lmc-eu/spirit-design-system/commit/cad6291))
+- **release:** Publish ([244c92f](https://github.com/lmc-eu/spirit-design-system/commit/244c92f))
+- **release:** Publish ([c353edd](https://github.com/lmc-eu/spirit-design-system/commit/c353edd))
+- **release:** Publish ([c8909dc](https://github.com/lmc-eu/spirit-design-system/commit/c8909dc))
+- **release:** Publish ([5cf8d9a](https://github.com/lmc-eu/spirit-design-system/commit/5cf8d9a))
+- **release:** Publish ([47883f9](https://github.com/lmc-eu/spirit-design-system/commit/47883f9))
+- **release:** Publish ([60e5c7c](https://github.com/lmc-eu/spirit-design-system/commit/60e5c7c))
+- **release:** Publish ([5805187](https://github.com/lmc-eu/spirit-design-system/commit/5805187))
+- **release:** Publish ([58531cf](https://github.com/lmc-eu/spirit-design-system/commit/58531cf))
+- **release:** Publish ([bceba9e](https://github.com/lmc-eu/spirit-design-system/commit/bceba9e))
+- **release:** Publish ([fd24ed1](https://github.com/lmc-eu/spirit-design-system/commit/fd24ed1))
+- **release:** Publish ([4e6fee7](https://github.com/lmc-eu/spirit-design-system/commit/4e6fee7))
+- **release:** Publish ([4466192](https://github.com/lmc-eu/spirit-design-system/commit/4466192))
+- **release:** Publish ([2c3f91e](https://github.com/lmc-eu/spirit-design-system/commit/2c3f91e))
+- **release:** Publish ([9b44190](https://github.com/lmc-eu/spirit-design-system/commit/9b44190))
+- **release:** Publish ([2054a79](https://github.com/lmc-eu/spirit-design-system/commit/2054a79))
+- **release:** Publish ([23ccda6](https://github.com/lmc-eu/spirit-design-system/commit/23ccda6))
+- **repo:** Add missing deps required by Jest ([953b70e](https://github.com/lmc-eu/spirit-design-system/commit/953b70e))
+- **repo:** Disable usage of ESLint config flat style by packages ([0ab8596](https://github.com/lmc-eu/spirit-design-system/commit/0ab8596))
+
+### Code Refactoring
+
+- **common:** Switch package to the ES module ([edf2ac6](https://github.com/lmc-eu/spirit-design-system/commit/edf2ac6)), closes [#DS-1506](https://github.com/lmc-eu/spirit-design-system/issues/DS-1506)
+- **repo:** Use sharable typescript-config-spirit in tsconfig files ([b53a603](https://github.com/lmc-eu/spirit-design-system/commit/b53a603))
+
+### Dependencies
+
+- Update all non-major dependencies ([5b7a7d9](https://github.com/lmc-eu/spirit-design-system/commit/5b7a7d9))
+- Update all non-major dependencies ([188c30d](https://github.com/lmc-eu/spirit-design-system/commit/188c30d))
+- Update all non-major dependencies ([949b633](https://github.com/lmc-eu/spirit-design-system/commit/949b633))
+- Update all non-major dependencies ([97f71bd](https://github.com/lmc-eu/spirit-design-system/commit/97f71bd))
+- Update all non-major dependencies ([bca6b32](https://github.com/lmc-eu/spirit-design-system/commit/bca6b32))
+- Update all non-major dependencies ([4986e82](https://github.com/lmc-eu/spirit-design-system/commit/4986e82))
+- Update all non-major dependencies ([7876fb8](https://github.com/lmc-eu/spirit-design-system/commit/7876fb8))
+- Update all non-major dependencies ([2ece372](https://github.com/lmc-eu/spirit-design-system/commit/2ece372))
+- Update all non-major dependencies ([7b34614](https://github.com/lmc-eu/spirit-design-system/commit/7b34614))
+- Update all non-major dependencies ([10774a2](https://github.com/lmc-eu/spirit-design-system/commit/10774a2))
+- Update all non-major dependencies ([b971d44](https://github.com/lmc-eu/spirit-design-system/commit/b971d44))
+- Update all non-major dependencies ([67f8357](https://github.com/lmc-eu/spirit-design-system/commit/67f8357))
+- Update dependency eslint to v9 ([fce4f22](https://github.com/lmc-eu/spirit-design-system/commit/fce4f22))
+- Update dependency jest to v30 ([b4d753c](https://github.com/lmc-eu/spirit-design-system/commit/b4d753c))
+- Update types non-major ([bde3118](https://github.com/lmc-eu/spirit-design-system/commit/bde3118))
+- Upgrade dependency @types/node to 20.17.24 ([ab95347](https://github.com/lmc-eu/spirit-design-system/commit/ab95347))
+
+### Documentation
+
+- **common:** Introduce main README file ([05cfb6a](https://github.com/lmc-eu/spirit-design-system/commit/05cfb6a)), closes [#DS-454](https://github.com/lmc-eu/spirit-design-system/issues/DS-454)
+- **common:** Introduce main README file ([b28ff75](https://github.com/lmc-eu/spirit-design-system/commit/b28ff75)), closes [#DS-454](https://github.com/lmc-eu/spirit-design-system/issues/DS-454)
+- **repo:** Rebrand to Alma Career ([4a9a28b](https://github.com/lmc-eu/spirit-design-system/commit/4a9a28b))
+
+### Features
+
+- **common:** Configure https in server constants ([c7824b3](https://github.com/lmc-eu/spirit-design-system/commit/c7824b3))
+- **common:** Introduce `common` package ([47406ed](https://github.com/lmc-eu/spirit-design-system/commit/47406ed)), closes [#DS-454](https://github.com/lmc-eu/spirit-design-system/issues/DS-454)
+- **common:** Introduce `info` and `warning` utilities ([6616257](https://github.com/lmc-eu/spirit-design-system/commit/6616257)), closes [#DS-767](https://github.com/lmc-eu/spirit-design-system/issues/DS-767)
+- **common:** Introduce environment constants ([5bfd63f](https://github.com/lmc-eu/spirit-design-system/commit/5bfd63f))
+- **common:** Read the testings url from the environment ([80d55c8](https://github.com/lmc-eu/spirit-design-system/commit/80d55c8)), closes [#DS-980](https://github.com/lmc-eu/spirit-design-system/issues/DS-980)
+- **common:** Remove support for web-twig package from the servers ([6db8ec6](https://github.com/lmc-eu/spirit-design-system/commit/6db8ec6))
+
+### Styles
+
+- **common:** Migrate ESLint config to flat config style ([e4cc92e](https://github.com/lmc-eu/spirit-design-system/commit/e4cc92e))
+- **common:** Setup package linting and testing ([0480da5](https://github.com/lmc-eu/spirit-design-system/commit/0480da5)), closes [#DS-454](https://github.com/lmc-eu/spirit-design-system/issues/DS-454)
+- **common:** Use sharable ESlint config ([e5207e2](https://github.com/lmc-eu/spirit-design-system/commit/e5207e2))
+- **repo:** Use eslint prettier configuration instead of the plugin ([3befaea](https://github.com/lmc-eu/spirit-design-system/commit/3befaea))
+
+### Tests
+
+- **ci:** Use internal docker host to map localhost ([bcaf99d](https://github.com/lmc-eu/spirit-design-system/commit/bcaf99d))
+- **ci:** Use NODE_ENV instead of CI for running e2e tests ([215de2d](https://github.com/lmc-eu/spirit-design-system/commit/215de2d))
+- **common:** Introduce tests for servers and environments ([997e5b4](https://github.com/lmc-eu/spirit-design-system/commit/997e5b4)), closes [#DS-454](https://github.com/lmc-eu/spirit-design-system/issues/DS-454)
+- **common:** Use jest-config-spirit common preset ([9910870](https://github.com/lmc-eu/spirit-design-system/commit/9910870))
+- Improve HP visual testing ([ffec061](https://github.com/lmc-eu/spirit-design-system/commit/ffec061))
+- **repo:** Use unified demo app for visual testing ([9aeaba3](https://github.com/lmc-eu/spirit-design-system/commit/9aeaba3))
+
+**Note:** Version bump only for package @alma-oss/spirit-common
+
 <a name="0.4.4"></a>
 
 ## [0.4.4](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-common@0.4.3...@lmc-eu/spirit-common@0.4.4) (2025-12-09)

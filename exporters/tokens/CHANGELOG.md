@@ -3,6 +3,113 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.0.0"></a>
+
+# 4.0.0 (2025-12-15)
+
+### BREAKING CHANGES
+
+- **exporter-tokens:** Rename variables-scss exporter to exporter-tokens [#DS-1483](https://github.com/lmc-eu/spirit-design-system/issues/DS-1483) ([e695df8](https://github.com/lmc-eu/spirit-design-system/commit/e695df8))
+- **exporter:** Migrate to multi-brand typography tokens [#DS-2150](https://github.com/lmc-eu/spirit-design-system/issues/DS-2150) ([9968f38](https://github.com/lmc-eu/spirit-design-system/commit/9968f38))
+- **repo:** Change npm organization name to alma-oss ([715a230](https://github.com/lmc-eu/spirit-design-system/commit/715a230)), closes [#DS-2173](https://github.com/lmc-eu/spirit-design-system/issues/DS-2173)
+
+### Bug Fixes
+
+- **exporter-tokens:** Filter link styles from typography and Figma specific tokens ([023e496](https://github.com/lmc-eu/spirit-design-system/commit/023e496))
+- **exporter-tokens:** Fix missing breakpoint map for devices [#DS-2103](https://github.com/lmc-eu/spirit-design-system/issues/DS-2103) ([61f5a61](https://github.com/lmc-eu/spirit-design-system/commit/61f5a61))
+- **exporter-tokens:** Pass all tokens to the `computeTokensByApplyingThemes` so references work ([1abf05c](https://github.com/lmc-eu/spirit-design-system/commit/1abf05c))
+- **exporter-tokens:** Use correct casing in collections filter ([031061a](https://github.com/lmc-eu/spirit-design-system/commit/031061a))
+- **exporter-tokens:** Use correct collection names ([59237a6](https://github.com/lmc-eu/spirit-design-system/commit/59237a6))
+- **exporter-tokens:** Use css-variable-prefix token instead of token-prefix ([a4d33bd](https://github.com/lmc-eu/spirit-design-system/commit/a4d33bd))
+
+### Chores
+
+- **exporter-tokens:** Rebuild exporter ([6043be1](https://github.com/lmc-eu/spirit-design-system/commit/6043be1))
+- **exporter-tokens:** Rebuild exporter ([cc62945](https://github.com/lmc-eu/spirit-design-system/commit/cc62945))
+- **exporter-tokens:** Rebuild exporter ([e64ff16](https://github.com/lmc-eu/spirit-design-system/commit/e64ff16))
+- **exporter-tokens:** Rebuild exporter ([7ffaa27](https://github.com/lmc-eu/spirit-design-system/commit/7ffaa27))
+- **exporter-tokens:** Rebuild exporter after bundler update ([5b7c5a8](https://github.com/lmc-eu/spirit-design-system/commit/5b7c5a8))
+- **exporter-tokens:** Rebuild exporter after dependency updates ([28e9b55](https://github.com/lmc-eu/spirit-design-system/commit/28e9b55))
+- **release:** Publish ([53a9ee1](https://github.com/lmc-eu/spirit-design-system/commit/53a9ee1))
+- **release:** Publish ([a19d876](https://github.com/lmc-eu/spirit-design-system/commit/a19d876))
+- **release:** Publish ([a66062e](https://github.com/lmc-eu/spirit-design-system/commit/a66062e))
+- **release:** Publish ([cad6291](https://github.com/lmc-eu/spirit-design-system/commit/cad6291))
+- **release:** Publish ([270eeee](https://github.com/lmc-eu/spirit-design-system/commit/270eeee))
+- **release:** Publish ([9438534](https://github.com/lmc-eu/spirit-design-system/commit/9438534))
+- **release:** Publish ([244c92f](https://github.com/lmc-eu/spirit-design-system/commit/244c92f))
+- **release:** Publish ([d687f78](https://github.com/lmc-eu/spirit-design-system/commit/d687f78))
+- **release:** Publish ([c353edd](https://github.com/lmc-eu/spirit-design-system/commit/c353edd))
+- **release:** Publish ([c8909dc](https://github.com/lmc-eu/spirit-design-system/commit/c8909dc))
+- **release:** Publish ([c2bc78a](https://github.com/lmc-eu/spirit-design-system/commit/c2bc78a))
+- **release:** Publish ([af2b10b](https://github.com/lmc-eu/spirit-design-system/commit/af2b10b))
+- **release:** Publish ([10eb0cc](https://github.com/lmc-eu/spirit-design-system/commit/10eb0cc))
+- **release:** Publish ([47883f9](https://github.com/lmc-eu/spirit-design-system/commit/47883f9))
+- **release:** Publish ([44eb2e1](https://github.com/lmc-eu/spirit-design-system/commit/44eb2e1))
+- **release:** Publish ([60e5c7c](https://github.com/lmc-eu/spirit-design-system/commit/60e5c7c))
+- **release:** Publish ([5805187](https://github.com/lmc-eu/spirit-design-system/commit/5805187))
+- **repo:** Disable usage of ESLint config flat style by packages ([0ab8596](https://github.com/lmc-eu/spirit-design-system/commit/0ab8596))
+
+### Code Refactoring
+
+- **exporter-tokens:** Refactor the tokens exporter to improve comprehensibility ([528aa08](https://github.com/lmc-eu/spirit-design-system/commit/528aa08))
+- **exporter-tokens:** Streamlining the file writing ([72331ce](https://github.com/lmc-eu/spirit-design-system/commit/72331ce))
+- **repo:** Use sharable typescript-config-spirit in tsconfig files ([b53a603](https://github.com/lmc-eu/spirit-design-system/commit/b53a603))
+
+### Dependencies
+
+- Update @swc/core to 1.9.3 ([11d2829](https://github.com/lmc-eu/spirit-design-system/commit/11d2829))
+- Update all non-major dependencies ([5b7a7d9](https://github.com/lmc-eu/spirit-design-system/commit/5b7a7d9))
+- Update all non-major dependencies ([7f19a02](https://github.com/lmc-eu/spirit-design-system/commit/7f19a02))
+- Update all non-major dependencies ([188c30d](https://github.com/lmc-eu/spirit-design-system/commit/188c30d))
+- Update all non-major dependencies ([da33775](https://github.com/lmc-eu/spirit-design-system/commit/da33775))
+- Update build tools non-major ([cc520b6](https://github.com/lmc-eu/spirit-design-system/commit/cc520b6))
+- Update compile tools non-major ([da7dc28](https://github.com/lmc-eu/spirit-design-system/commit/da7dc28))
+- Update compile tools non-major ([ae28b11](https://github.com/lmc-eu/spirit-design-system/commit/ae28b11))
+- Update compile tools non-major ([06516c5](https://github.com/lmc-eu/spirit-design-system/commit/06516c5))
+- Update compile tools non-major ([c28c207](https://github.com/lmc-eu/spirit-design-system/commit/c28c207))
+- Update dependency @supernovaio/sdk-exporters to v2.0.32 ([2966f5a](https://github.com/lmc-eu/spirit-design-system/commit/2966f5a))
+- Update dependency @supernovaio/sdk-exporters to v2.0.33 ([7f76718](https://github.com/lmc-eu/spirit-design-system/commit/7f76718))
+- Update dependency @supernovaio/sdk-exporters to v2.2.10 ([751d215](https://github.com/lmc-eu/spirit-design-system/commit/751d215))
+- Update dependency @swc/core to v1.10.11 ([325fa04](https://github.com/lmc-eu/spirit-design-system/commit/325fa04))
+- Update dependency @swc/core to v1.10.12 ([b06c4b2](https://github.com/lmc-eu/spirit-design-system/commit/b06c4b2))
+- Update dependency @swc/core to v1.11.21 ([f01c690](https://github.com/lmc-eu/spirit-design-system/commit/f01c690))
+- Update dependency eslint to v9 ([fce4f22](https://github.com/lmc-eu/spirit-design-system/commit/fce4f22))
+- Update dependency jest to v30 ([b4d753c](https://github.com/lmc-eu/spirit-design-system/commit/b4d753c))
+- Update dependency typescript to v5.7.3 ([31fa021](https://github.com/lmc-eu/spirit-design-system/commit/31fa021))
+- Update dependency vite to v6 ([3f88c3f](https://github.com/lmc-eu/spirit-design-system/commit/3f88c3f))
+- Update dependency vite to v6.3.6 [SECURITY] ([3779433](https://github.com/lmc-eu/spirit-design-system/commit/3779433))
+- Update dependency vite to v6.4.1 [SECURITY] ([2363fc9](https://github.com/lmc-eu/spirit-design-system/commit/2363fc9))
+- Update monorepo:supernovaio non-major ([2101c4d](https://github.com/lmc-eu/spirit-design-system/commit/2101c4d))
+- Update monorepo:supernovaio non-major ([509a539](https://github.com/lmc-eu/spirit-design-system/commit/509a539))
+
+### Documentation
+
+- **exporter-tokens:** Document Themes naming rules [#DS-1497](https://github.com/lmc-eu/spirit-design-system/issues/DS-1497) ([ebc0414](https://github.com/lmc-eu/spirit-design-system/commit/ebc0414))
+- **exporter-tokens:** Update to include Devices Tokens section and clarify Theme Tokens [#DS-2103](https://github.com/lmc-eu/spirit-design-system/issues/DS-2103) ([5f297f2](https://github.com/lmc-eu/spirit-design-system/commit/5f297f2))
+- **exporter-tokens:** Update tokens exporter documentation [#DS-1544](https://github.com/lmc-eu/spirit-design-system/issues/DS-1544) ([7003ef5](https://github.com/lmc-eu/spirit-design-system/commit/7003ef5))
+
+### Features
+
+- **design-tokens:** Add new index file for scss device tokens ([a8810c9](https://github.com/lmc-eu/spirit-design-system/commit/a8810c9))
+- **exporter-tokens:** Add `color` prefix to css-variables mixin ([d0c3e8e](https://github.com/lmc-eu/spirit-design-system/commit/d0c3e8e))
+- **exporter-tokens:** Add mixin css-variables to theme colors [#DS-1542](https://github.com/lmc-eu/spirit-design-system/issues/DS-1542) ([6b79489](https://github.com/lmc-eu/spirit-design-system/commit/6b79489))
+- **exporter-tokens:** Export only Theme tokens collection ([3f224f1](https://github.com/lmc-eu/spirit-design-system/commit/3f224f1)), closes [#DS-1543](https://github.com/lmc-eu/spirit-design-system/issues/DS-1543)
+- **exporter-tokens:** Introduce configuration for typography [#DS-1713](https://github.com/lmc-eu/spirit-design-system/issues/DS-1713) ([92dd7a3](https://github.com/lmc-eu/spirit-design-system/commit/92dd7a3))
+- **exporter-tokens:** Introduce devices tokens [#DS-1873](https://github.com/lmc-eu/spirit-design-system/issues/DS-1873) ([4b438ec](https://github.com/lmc-eu/spirit-design-system/commit/4b438ec))
+- **exporter-tokens:** Introduce export of color token maps [#DS-1880](https://github.com/lmc-eu/spirit-design-system/issues/DS-1880) ([e31a5af](https://github.com/lmc-eu/spirit-design-system/commit/e31a5af))
+- **exporter-tokens:** Sort typography tokens and remove unused parameters ([44981ec](https://github.com/lmc-eu/spirit-design-system/commit/44981ec))
+- **exporter-tokens:** Use variable prefix from tokens ([569036e](https://github.com/lmc-eu/spirit-design-system/commit/569036e))
+- **web:** Add minimalistic footer demo [#DS-1574](https://github.com/lmc-eu/spirit-design-system/issues/DS-1574) ([e1751e2](https://github.com/lmc-eu/spirit-design-system/commit/e1751e2))
+
+### Styles
+
+- **exporter-tokens:** Migrate ESLint config to flat config style ([f8f19ee](https://github.com/lmc-eu/spirit-design-system/commit/f8f19ee))
+- **exporter-tokens:** Use eslint-config-spirit intead of relative path to root ESLint config ([d18871a](https://github.com/lmc-eu/spirit-design-system/commit/d18871a))
+- **exporters, docs, examples:** Fix docs by markdown linter ([1915a9f](https://github.com/lmc-eu/spirit-design-system/commit/1915a9f)), closes [#DS-1100](https://github.com/lmc-eu/spirit-design-system/issues/DS-1100)
+- **repo:** Use eslint prettier configuration instead of the plugin ([3befaea](https://github.com/lmc-eu/spirit-design-system/commit/3befaea))
+
+**Note:** Version bump only for package @alma-oss/spirit-tokens-exporter
+
 <a name="3.0.2"></a>
 
 ## [3.0.2](https://github.com/lmc-eu/spirit-design-system/compare/@almacareer/spirit-tokens-exporter@3.0.1...@almacareer/spirit-tokens-exporter@3.0.2) (2025-12-09)
