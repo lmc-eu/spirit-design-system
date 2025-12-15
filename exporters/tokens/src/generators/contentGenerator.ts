@@ -89,11 +89,12 @@ export const generateFileContent = (
   fileData: FileData,
   hasJsOutput: boolean,
   deviceDimensions?: DeviceDimensionMap,
+  fontSizeBaseMapOverride?: FontSizeBaseMap,
 ) => {
   let styledTokens = '';
   let stylesObject: StylesObjectType = {};
   let styledMixin = '';
-  const fontSizeBaseMap = getFontSizeBaseMap(tokens);
+  const fontSizeBaseMap = fontSizeBaseMapOverride ?? getFontSizeBaseMap(tokens);
   const {
     excludeGroupNames = null,
     groupNames = [''],
@@ -148,6 +149,7 @@ export const generateFileContent = (
         sortByNumValue,
         deviceDimensions,
         fontSizeBaseMap,
+        mappedTokens,
       );
       stylesObject = deepMergeObjects(stylesObject, groupStylesObject);
     });

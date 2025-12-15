@@ -158,7 +158,16 @@ describe('stylesObjectGenerator', () => {
 
     it.each(dataProvider)('$description', ({ tokens, expectedStyles, hasJsOutput }) => {
       const filteredTokens = filterExcludedTokens(Array.from(tokens.values()));
-      const styles = generateStylesObjectFromTokens(filteredTokens, tokenGroups, true, hasJsOutput, false);
+      const styles = generateStylesObjectFromTokens(
+        filteredTokens,
+        tokenGroups,
+        true,
+        hasJsOutput,
+        false,
+        undefined,
+        undefined,
+        undefined,
+      );
 
       expect(styles).toStrictEqual(expectedStyles);
     });

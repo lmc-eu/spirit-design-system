@@ -91,7 +91,10 @@ const applyDeviceDimension = (
 
 const getDeviceTypographyValues = (
   typographyToken: TypographyToken,
+  tokenGroups: Array<TokenGroup>,
+  hasParentPrefix: boolean,
   deviceDimensions?: DeviceDimensionMap,
+  tokenById?: Map<string, Token>,
 ): Map<string, TypographyTokenValue> | null => {
   if (!deviceDimensions) {
     return null;
@@ -100,8 +103,23 @@ const getDeviceTypographyValues = (
   const { fontSize, lineHeight } = typographyToken.value;
   const fontSizeReferenceId = fontSize?.referencedTokenId;
   const lineHeightReferenceId = lineHeight?.referencedTokenId;
-  const fontSizeDevices = fontSizeReferenceId ? deviceDimensions.get(fontSizeReferenceId) : undefined;
-  const lineHeightDevices = lineHeightReferenceId ? deviceDimensions.get(lineHeightReferenceId) : undefined;
+
+  const resolveDeviceEntries = (referenceId: string | null | undefined) => {
+    if (!referenceId) {
+      return undefined;
+    }
+
+    const referencedToken = tokenById?.get(referenceId);
+    if (referencedToken) {
+      const baseVariableName = tokenVariableName(referencedToken, tokenGroups, hasParentPrefix);
+      return deviceDimensions.get(baseVariableName);
+    }
+
+    return deviceDimensions.get(referenceId);
+  };
+
+  const fontSizeDevices = resolveDeviceEntries(fontSizeReferenceId);
+  const lineHeightDevices = resolveDeviceEntries(lineHeightReferenceId);
 
   if (!fontSizeDevices && !lineHeightDevices) {
     return null;
@@ -140,17 +158,26 @@ const getDeviceTypographyValues = (
 export const handleTypographyTokens = (
   tokenNameParts: string[],
   token: Token,
+  tokenGroups: Array<TokenGroup>,
+  hasParentPrefix: boolean,
   stylesObjectRef: StylesObjectType,
   hasJsOutput: boolean,
   deviceDimensions?: DeviceDimensionMap,
   fontSizeBaseMap?: FontSizeBaseMap,
+  tokenById?: Map<string, Token>,
 ): void => {
   const typographyToken = token as TypographyToken;
   const reducedNameParts = tokenNameParts.slice(0, 2);
   const name = formatTypographyName(tokenNameParts).toLowerCase();
   const breakpoint = getBreakpoint(tokenNameParts).toLowerCase();
   const isItalic = name.includes('italic');
-  const deviceTypographyValues = getDeviceTypographyValues(typographyToken, deviceDimensions);
+  const deviceTypographyValues = getDeviceTypographyValues(
+    typographyToken,
+    tokenGroups,
+    hasParentPrefix,
+    deviceDimensions,
+    tokenById,
+  );
   const baseFontSize = fontSizeBaseMap ? getFontSizeBaseForBreakpoint(fontSizeBaseMap, breakpoint) : 16;
 
   let currentObject = stylesObjectRef;
@@ -250,6 +277,7 @@ export const createStylesObjectStructureFromTokenNameParts = (
   hasJsOutput: boolean,
   deviceDimensions?: DeviceDimensionMap,
   fontSizeBaseMap?: FontSizeBaseMap,
+  tokenById?: Map<string, Token>,
 ): StylesObjectType => {
   const { tokenType, name: tokenName } = token;
   const devicePart = getDeviceAlias(token);
@@ -264,7 +292,17 @@ export const createStylesObjectStructureFromTokenNameParts = (
   }
 
   if (tokenType === TokenType.typography) {
-    handleTypographyTokens(tokenNameParts, token, stylesObjectRef, hasJsOutput, deviceDimensions, fontSizeBaseMap);
+    handleTypographyTokens(
+      tokenNameParts,
+      token,
+      tokenGroups,
+      hasParentPrefix,
+      stylesObjectRef,
+      hasJsOutput,
+      deviceDimensions,
+      fontSizeBaseMap,
+      tokenById,
+    );
   } else {
     handleNonTypographyTokens(tokenNameParts, token, tokenGroups, hasParentPrefix, stylesObjectRef, hasJsOutput);
   }
@@ -313,6 +351,7 @@ export const generateStylesObjectFromTokens = (
   sortByNumValue: boolean,
   deviceDimensions?: DeviceDimensionMap,
   fontSizeBaseMap?: FontSizeBaseMap,
+  tokenById?: Map<string, Token>,
 ): StylesObjectType => {
   const sortedTokens = sortTokens(tokens, tokenGroups, hasParentPrefix, sortByNumValue);
   const stylesObject = sortedTokens.reduce((stylesObjectAccumulator, token) => {
@@ -324,6 +363,7 @@ export const generateStylesObjectFromTokens = (
       hasJsOutput,
       deviceDimensions,
       fontSizeBaseMap,
+      tokenById,
     );
 
     // Merge the current object into the accumulator
