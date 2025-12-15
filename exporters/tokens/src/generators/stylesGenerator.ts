@@ -34,6 +34,20 @@ import { replacePxWithRemUnits, getFontSizeBaseForBreakpoint, type FontSizeBaseM
 import { getDeviceAlias } from '../helpers/deviceHelpers';
 import { FONT_SIZE_BASE } from '../constants';
 
+const getDeviceKey = (token: Token): string => getDeviceAlias(token).toLowerCase() || 'mobile';
+
+const getBaseFontSize = (fontSizeBaseMap: FontSizeBaseMap, token: Token): number => {
+  return getFontSizeBaseForBreakpoint(fontSizeBaseMap, getDeviceKey(token));
+};
+
+const isFontSizeBaseToken = (token: Token, resolvedName: string): boolean => {
+  const tokenName = token.name?.toLowerCase() || '';
+  const originName = token.origin?.name?.toLowerCase() || '';
+  const resolved = resolvedName.toLowerCase();
+
+  return resolved.includes(FONT_SIZE_BASE) || tokenName.includes(FONT_SIZE_BASE) || originName.includes(FONT_SIZE_BASE);
+};
+
 export const tokenToStyleByType = (
   token: Token,
   mappedTokens: Map<string, Token>,
@@ -56,15 +70,8 @@ export const tokenToStyleByType = (
     let value = dimensionToken.value?.measure;
     value = handleSpecialCase(name, value);
     const unit = CSSHelper.unitToCSS(dimensionToken.value?.unit);
-    const device = getDeviceAlias(token).toLowerCase() || 'mobile';
-    const baseFontSize = getFontSizeBaseForBreakpoint(fontSizeBaseMap, device);
-    const tokenName = token.name?.toLowerCase() || '';
-    const originName = token.origin?.name?.toLowerCase() || '';
-    const isFontSizeBase =
-      name.toLowerCase().includes(FONT_SIZE_BASE) ||
-      tokenName.includes(FONT_SIZE_BASE) ||
-      originName.includes(FONT_SIZE_BASE);
-    const isRelative = !isFontSizeBase;
+    const baseFontSize = getBaseFontSize(fontSizeBaseMap, token);
+    const isRelative = !isFontSizeBaseToken(token, name);
 
     return formatTokenStyleByOutput(name, value, hasJsOutput, unit, isRelative, baseFontSize);
   }
@@ -75,8 +82,7 @@ export const tokenToStyleByType = (
     let value = radiusToken.value?.measure;
     value = handleSpecialCase(name, value);
     const unit = CSSHelper.unitToCSS(radiusToken.value?.unit);
-    const device = getDeviceAlias(token).toLowerCase() || 'mobile';
-    const baseFontSize = getFontSizeBaseForBreakpoint(fontSizeBaseMap, device);
+    const baseFontSize = getBaseFontSize(fontSizeBaseMap, token);
 
     return formatTokenStyleByOutput(name, value, hasJsOutput, unit, true, baseFontSize);
   }
@@ -87,8 +93,7 @@ export const tokenToStyleByType = (
     let value = spaceToken.value?.measure;
     value = handleSpecialCase(name, value);
     const unit = CSSHelper.unitToCSS(spaceToken.value?.unit);
-    const device = getDeviceAlias(token).toLowerCase() || 'mobile';
-    const baseFontSize = getFontSizeBaseForBreakpoint(fontSizeBaseMap, device);
+    const baseFontSize = getBaseFontSize(fontSizeBaseMap, token);
 
     return formatTokenStyleByOutput(name, value, hasJsOutput, unit, true, baseFontSize);
   }
@@ -119,8 +124,7 @@ export const tokenToStyleByType = (
     let value = sizeToken.value?.measure;
     value = handleSpecialCase(name, value);
     const unit = CSSHelper.unitToCSS(sizeToken.value?.unit);
-    const device = getDeviceAlias(token).toLowerCase() || 'mobile';
-    const baseFontSize = getFontSizeBaseForBreakpoint(fontSizeBaseMap, device);
+    const baseFontSize = getBaseFontSize(fontSizeBaseMap, token);
 
     return formatTokenStyleByOutput(name, value, hasJsOutput, unit, true, baseFontSize);
   }
@@ -131,15 +135,8 @@ export const tokenToStyleByType = (
     let value = fontSizeToken.value?.measure;
     value = handleSpecialCase(name, value);
     const unit = CSSHelper.unitToCSS(fontSizeToken.value?.unit);
-    const device = getDeviceAlias(token).toLowerCase() || 'mobile';
-    const baseFontSize = getFontSizeBaseForBreakpoint(fontSizeBaseMap, device);
-    const tokenName = token.name?.toLowerCase() || '';
-    const originName = token.origin?.name?.toLowerCase() || '';
-    const isFontSizeBase =
-      name.toLowerCase().includes('font-size-base') ||
-      tokenName.includes('font-size-base') ||
-      originName.includes('font-size-base');
-    const isRelative = !isFontSizeBase;
+    const baseFontSize = getBaseFontSize(fontSizeBaseMap, token);
+    const isRelative = !isFontSizeBaseToken(token, name);
 
     return formatTokenStyleByOutput(name, value, hasJsOutput, unit, isRelative, baseFontSize);
   }
@@ -150,8 +147,7 @@ export const tokenToStyleByType = (
     let value = lineHeightToken.value?.measure;
     value = handleSpecialCase(name, value);
     const unit = CSSHelper.unitToCSS(lineHeightToken.value?.unit);
-    const device = getDeviceAlias(token).toLowerCase() || 'mobile';
-    const baseFontSize = getFontSizeBaseForBreakpoint(fontSizeBaseMap, device);
+    const baseFontSize = getBaseFontSize(fontSizeBaseMap, token);
 
     return formatTokenStyleByOutput(name, value, hasJsOutput, unit, true, baseFontSize);
   }
@@ -162,8 +158,7 @@ export const tokenToStyleByType = (
     let value = letterSpacingToken.value?.measure;
     value = handleSpecialCase(name, value);
     const unit = CSSHelper.unitToCSS(letterSpacingToken.value?.unit);
-    const device = getDeviceAlias(token).toLowerCase() || 'mobile';
-    const baseFontSize = getFontSizeBaseForBreakpoint(fontSizeBaseMap, device);
+    const baseFontSize = getBaseFontSize(fontSizeBaseMap, token);
 
     return formatTokenStyleByOutput(name, value, hasJsOutput, unit, true, baseFontSize);
   }
@@ -212,8 +207,7 @@ export const tokenToStyleByType = (
     const groupName = hasParentPrefix ? undefined : origin?.name?.split('/')[0].toLowerCase();
     shadow = transformColorsToVariables(name, shadow, tokenPrefix, groupName); // add color variables
     shadow = findAllHexColorsInStringAndNormalize(shadow); // find hex codes and normalize them
-    const device = getDeviceAlias(token).toLowerCase() || 'mobile';
-    const baseFontSize = getFontSizeBaseForBreakpoint(fontSizeBaseMap, device);
+    const baseFontSize = getBaseFontSize(fontSizeBaseMap, token);
     shadow = replacePxWithRemUnits(shadow, baseFontSize); // replace px with rem units
 
     return formatTokenStyleByOutput(name, shadow, hasJsOutput);
