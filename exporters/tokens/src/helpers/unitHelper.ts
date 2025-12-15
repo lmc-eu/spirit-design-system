@@ -84,7 +84,9 @@ export const makeRelativeUnit = (value: string | number, baseFontSize: number = 
     const raw = Number(value) / Number(baseFontSize);
     const rounded = Math.round((raw + Number.EPSILON) * 100) / 100;
     const normalized = Math.abs(rounded) === 0 ? 0 : rounded;
-    return `${normalized.toFixed(2)}rem`;
+    // Format with up to 2 decimal places, but trim trailing zeros (e.g. 2.50rem -> 2.5rem, 2.00rem -> 2rem)
+    const pretty = normalized.toFixed(2).replace(/\.?0+$/, '');
+    return `${pretty}rem`;
   }
 
   return value;
