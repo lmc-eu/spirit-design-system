@@ -20,7 +20,7 @@ const IconBoxColorDemoFactory = ({ label, colorList, isSubtle }: IconBoxColorDem
         }
 
         return (
-          <Flex alignmentY="center" key={color} gap="space-200">
+          <Flex alignmentY="center" key={color}>
             <IconBox iconName="search" color={color} isSubtle={isSubtle} />
             <div>{color}</div>
           </Flex>
