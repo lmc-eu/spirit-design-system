@@ -6,8 +6,8 @@ import {
   type DirectionExtendedDictionaryType,
   type SingleOrResponsive,
   type SpaceToken,
+  type SpiritPolymorphicElementPropsWithRef,
   type StyleProps,
-  type TransferProps,
 } from './shared';
 
 export interface FlexElementTypeProps<T extends ElementType = 'div'> {
@@ -48,8 +48,7 @@ export interface FlexCustomLayoutProps {
 
 export interface FlexProps<T extends ElementType = 'div'> extends FlexElementTypeProps<T>, FlexCustomLayoutProps {}
 
-export interface SpiritFlexProps<T extends ElementType = 'div'>
-  extends FlexProps<T>,
-    ChildrenProps,
-    StyleProps,
-    TransferProps {}
+export type SpiritFlexProps<T extends ElementType = 'div'> = FlexProps<T> &
+  ChildrenProps &
+  StyleProps &
+  SpiritPolymorphicElementPropsWithRef<T, FlexProps<T>>;

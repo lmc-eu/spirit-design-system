@@ -7,7 +7,7 @@ import { type SpiritFlexProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { useFlexStyleProps } from './useFlexStyleProps';
 
-const defaultProps: Partial<SpiritFlexProps> = {
+const defaultProps: SpiritFlexProps = {
   alignmentX: AlignmentXExtended.STRETCH,
   alignmentY: AlignmentYExtended.STRETCH,
   direction: DirectionExtended.HORIZONTAL,
@@ -39,5 +39,7 @@ const Flex = <T extends ElementType = 'div'>(props: SpiritFlexProps<T>): JSX.Ele
 };
 
 Flex.spiritComponent = 'Flex';
+Flex.spiritDefaultElement = 'div' as const;
+Flex.spiritDefaultProps = null as unknown as SpiritFlexProps<'div'>;
 
 export default Flex;
