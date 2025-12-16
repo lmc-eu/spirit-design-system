@@ -20,5 +20,7 @@ const GridItem = <T extends ElementType = 'div'>(props: SpiritGridItemProps<T>):
 };
 
 GridItem.spiritComponent = 'GridItem';
+GridItem.spiritDefaultElement = 'div' as const;
+GridItem.spiritDefaultProps = null as unknown as SpiritGridItemProps<'div'>;
 
 export default GridItem;
