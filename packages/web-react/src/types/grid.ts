@@ -6,8 +6,8 @@ import {
   type GridColumns,
   type SingleOrResponsive,
   type SpaceToken,
+  type SpiritPolymorphicElementPropsWithRef,
   type StyleProps,
-  type TransferProps,
 } from './shared';
 
 export type GridColsBreakpoints = {
@@ -73,14 +73,12 @@ export interface GridItemProps<T extends ElementType = 'div'>
   extends GridItemElementTypeProps<T>,
     GridItemCustomLayoutProps {}
 
-export interface SpiritGridProps<T extends ElementType = 'div'>
-  extends GridProps<T>,
-    ChildrenProps,
-    StyleProps,
-    TransferProps {}
+export type SpiritGridProps<T extends ElementType = 'div'> = GridProps<T> &
+  ChildrenProps &
+  StyleProps &
+  SpiritPolymorphicElementPropsWithRef<T, GridProps<T>>;
 
-export interface SpiritGridItemProps<T extends ElementType = 'div'>
-  extends GridItemProps<T>,
-    ChildrenProps,
-    StyleProps,
-    TransferProps {}
+export type SpiritGridItemProps<T extends ElementType = 'div'> = GridItemProps<T> &
+  ChildrenProps &
+  StyleProps &
+  SpiritPolymorphicElementPropsWithRef<T, GridItemProps<T>>;
