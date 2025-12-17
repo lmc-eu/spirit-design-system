@@ -169,13 +169,14 @@ describe('Modal', () => {
       const dialog = fixtureEl.querySelector('dialog') as HTMLElement;
       const modal = new Modal(dialog);
 
-      const event = new Event('click', { bubbles: true });
+      // Simulate keyboard click (detail === 0)
+      const keyboardClickEvent = new MouseEvent('click', { bubbles: true, detail: 0 });
       const targetElement = modal.element;
-      Object.defineProperty(event, 'target', { writable: false, value: targetElement });
+      Object.defineProperty(keyboardClickEvent, 'target', { writable: false, value: targetElement });
 
       jest.spyOn(modal, 'hide');
 
-      modal.onClick(event);
+      modal.onClick(keyboardClickEvent);
 
       expect(modal.hide).not.toHaveBeenCalled();
     });
@@ -189,15 +190,81 @@ describe('Modal', () => {
       Object.defineProperty(mousedownEvent, 'target', { writable: false, value: dialog });
       modal.onMouseDown(mousedownEvent);
 
-      const clickEvent = new Event('click', { bubbles: true });
+      const mouseClickEvent = new MouseEvent('click', { bubbles: true, detail: 1 });
       const targetElement = modal.element;
-      Object.defineProperty(clickEvent, 'target', { writable: false, value: targetElement });
+      Object.defineProperty(mouseClickEvent, 'target', { writable: false, value: targetElement });
+
+      jest.spyOn(modal, 'hide');
+
+      modal.onClick(mouseClickEvent);
+
+      expect(modal.hide).toHaveBeenCalled();
+    });
+  });
+
+  describe('keyboard accessibility', () => {
+    it('should hide the modal when dismiss button is activated via keyboard (spacebar/enter)', () => {
+      fixtureEl.innerHTML = `
+        <dialog class="Modal">
+          <button data-spirit-dismiss="modal">Close</button>
+        </dialog>
+      `;
+      const dialog = fixtureEl.querySelector('dialog') as HTMLElement;
+      const dismissButton = fixtureEl.querySelector('[data-spirit-dismiss]') as HTMLElement;
+      const modal = new Modal(dialog);
+
+      // Simulate keyboard click (detail === 0, no mousedown event)
+      const keyboardClickEvent = new MouseEvent('click', { bubbles: true, detail: 0 });
+      Object.defineProperty(keyboardClickEvent, 'target', { writable: false, value: dismissButton });
+
+      jest.spyOn(modal, 'hide');
+
+      modal.onClick(keyboardClickEvent);
+
+      expect(modal.hide).toHaveBeenCalled();
+    });
+
+    it('should hide the modal when backdrop is clicked via keyboard', () => {
+      fixtureEl.innerHTML = '<dialog class="Modal"></dialog>';
+      const dialog = fixtureEl.querySelector('dialog') as HTMLElement;
+      const modal = new Modal(dialog);
+
+      // Simulate keyboard click on backdrop (detail === 0)
+      const keyboardClickEvent = new MouseEvent('click', { bubbles: true, detail: 0 });
+      Object.defineProperty(keyboardClickEvent, 'target', { writable: false, value: dialog });
+
+      jest.spyOn(modal, 'hide');
+
+      modal.onClick(keyboardClickEvent);
+
+      expect(modal.hide).toHaveBeenCalled();
+    });
+
+    it('should not hide the modal when click starts inside but ends outside (mouse drag)', () => {
+      fixtureEl.innerHTML = `
+        <dialog class="Modal">
+          <div class="Modal__content">Content</div>
+        </dialog>
+      `;
+      const dialog = fixtureEl.querySelector('dialog') as HTMLElement;
+      const content = fixtureEl.querySelector('.Modal__content') as HTMLElement;
+      const modal = new Modal(dialog);
+
+      // Simulate mousedown on content
+      const mousedownEvent = new Event('mousedown', { bubbles: true });
+      Object.defineProperty(mousedownEvent, 'target', { writable: false, value: content });
+      modal.onMouseDown(mousedownEvent);
+
+      // Simulate mouse click ending on dialog backdrop (different target)
+      const clickEvent = new MouseEvent('click', { bubbles: true, detail: 1 });
+      Object.defineProperty(clickEvent, 'target', { writable: false, value: dialog });
 
       jest.spyOn(modal, 'hide');
 
       modal.onClick(clickEvent);
 
-      expect(modal.hide).toHaveBeenCalled();
+      // Should NOT hide because mousedown started on content, not backdrop
+      expect(modal.hide).not.toHaveBeenCalled();
     });
   });
 });
