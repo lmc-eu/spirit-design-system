@@ -1,5 +1,6 @@
 import { DimensionToken, FontSizeToken, Token, TokenType } from '@supernovaio/sdk-exporters';
 import { getDeviceAlias } from './deviceHelpers';
+import { pxToRem } from '../converters/pxToRemConverter';
 
 export type FontSizeBaseMap = Map<string, number>;
 
@@ -81,12 +82,7 @@ export const getFontSizeBaseForBreakpoint = (fontSizeBaseMap: FontSizeBaseMap, b
  */
 export const makeRelativeUnit = (value: string | number, baseFontSize: number = 16): string | number => {
   if (baseFontSize && baseFontSize > 0) {
-    const raw = Number(value) / Number(baseFontSize);
-    const rounded = Math.round((raw + Number.EPSILON) * 100) / 100;
-    const normalized = Math.abs(rounded) === 0 ? 0 : rounded;
-    const pretty = normalized.toFixed(2).replace(/\.?0+$/, '');
-
-    return `${pretty}rem`;
+    return pxToRem(value, { baseFontSize });
   }
 
   return value;
@@ -99,5 +95,9 @@ export const makeRelativeUnit = (value: string | number, baseFontSize: number = 
  * @returns String with px replaced by rem
  */
 export const replacePxWithRemUnits = (value: string, baseFontSize: number = 16): string => {
-  return value.replace(/(\d+(?:\.\d+)?)px/g, (_, number: string) => makeRelativeUnit(number, baseFontSize) as string);
+  if (!baseFontSize || baseFontSize <= 0) {
+    return value;
+  }
+
+  return value.replace(/(\d+(?:\.\d+)?)px/g, (_, number: string) => pxToRem(number, { baseFontSize }));
 };
