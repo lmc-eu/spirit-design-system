@@ -8,7 +8,7 @@ import { AccordionItemProvider } from './AccordionItemContext';
 import { useAccordionStyleProps } from './useAccordionStyleProps';
 
 const AccordionItem = (props: AccordionItemProps) => {
-  const { children, elementType: ElementTag = 'article', id, ...restProps } = props;
+  const { children, elementType: ElementTag = 'li', id, ...restProps } = props;
 
   const { classProps } = useAccordionStyleProps();
   const { styleProps, props: transferProps } = useStyleProps(restProps);

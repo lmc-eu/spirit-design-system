@@ -42,6 +42,7 @@ export const useAccordionAriaProps = ({ id, isOpen }: AccordionAriaProps): Accor
   const contentProps = {
     id: contentId,
     [NAME_ARIA_LABELEDBY]: headerId,
+    role: 'region',
   };
 
   return {

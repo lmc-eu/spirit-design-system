@@ -8,7 +8,7 @@ import { AccordionProvider } from './AccordionContext';
 import { useAccordionStyleProps } from './useAccordionStyleProps';
 
 const Accordion = (props: AccordionProps) => {
-  const { children, elementType: ElementTag = 'section', open, toggle, ...restProps } = props;
+  const { children, elementType: ElementTag = 'ul', open, toggle, ...restProps } = props;
 
   const { classProps } = useAccordionStyleProps();
   const { styleProps, props: transferProps } = useStyleProps(restProps);
