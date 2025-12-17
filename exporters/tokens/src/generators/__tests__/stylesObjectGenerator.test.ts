@@ -208,7 +208,6 @@ describe('stylesObjectGenerator', () => {
         expectedObject: {
           '$heading-xlarge-bold': {
             mobile:
-              // eslint-disable-next-line quotes -- we are handling special characters
               '(\nfont-family: "\'Inter\', sans-serif",\nfont-size: 2.5rem,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.30,\n)',
           },
         },
@@ -216,7 +215,6 @@ describe('stylesObjectGenerator', () => {
         stylesObjectRef: {
           '$heading-xlarge-bold': {
             mobile:
-              // eslint-disable-next-line quotes -- we are handling special characters
               '(\nfont-family: "\'Inter\', sans-serif",\nfont-size: 2rem,\nfont-style: normal,\nfont-weight: 500,\nline-height: 1.00,\n)',
           },
         } as StylesObjectType,
@@ -265,7 +263,6 @@ describe('stylesObjectGenerator', () => {
         expectedStyles: {
           '$heading-xlarge-bold': {
             mobile:
-              // eslint-disable-next-line quotes -- we are handling special characters
               '(\nfont-family: "\'Inter\', sans-serif",\nfont-size: 40px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.30,\n)',
           },
           exampleRef: 'exampleRef',

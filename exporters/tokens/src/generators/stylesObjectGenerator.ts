@@ -62,8 +62,8 @@ const applyDeviceDimension = (
 
   if (key === 'fontSize') {
     const existing = clonedValue.fontSize;
-    const { referencedTokenId, ...existingWithoutRefId } = existing ?? { referencedTokenId: null };
-    void referencedTokenId;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars -- omit referencedTokenId from spread
+    const { referencedTokenId: _omit, ...existingWithoutRefId } = existing ?? { referencedTokenId: null };
     clonedValue.fontSize = {
       ...existingWithoutRefId,
       referencedTokenId: existing?.referencedTokenId ?? null,
@@ -75,8 +75,8 @@ const applyDeviceDimension = (
   }
 
   const existing = clonedValue.lineHeight;
-  const { referencedTokenId, ...existingWithoutRefId } = existing ?? { referencedTokenId: null };
-  void referencedTokenId;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars -- omit referencedTokenId from spread
+  const { referencedTokenId: _omit, ...existingWithoutRefId } = existing ?? { referencedTokenId: null };
   clonedValue.lineHeight = {
     ...existingWithoutRefId,
     referencedTokenId: existing?.referencedTokenId ?? null,
