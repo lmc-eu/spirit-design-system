@@ -1,5 +1,6 @@
 import { Token, TokenType } from '@supernovaio/sdk-exporters';
 import { pxToRem } from '../converters/pxToRemConverter';
+import { UNIT_FORMAT_RULES } from '../config/unitFormatConfig';
 
 export type UnitFormatContext = {
   token: Token;
@@ -14,21 +15,7 @@ export type UnitFormatRule = {
   converterNames: Array<'pxToRem'>;
 };
 
-export const DEFAULT_UNIT_RULES: UnitFormatRule[] = [
-  {
-    tokenTypes: [
-      TokenType.dimension,
-      TokenType.radius,
-      TokenType.space,
-      TokenType.size,
-      TokenType.fontSize,
-      TokenType.lineHeight,
-      TokenType.letterSpacing,
-    ],
-    shouldConvert: (ctx) => !ctx.isFontSizeBaseToken && ctx.baseFontSize > 0,
-    converterNames: ['pxToRem'],
-  },
-];
+export const DEFAULT_UNIT_RULES: UnitFormatRule[] = UNIT_FORMAT_RULES;
 
 const applyConverters = (
   valuePx: string | number,
