@@ -179,11 +179,13 @@ export const handleTypographyTokens = (
     deviceDimensions,
     tokenById,
   );
-  const baseFontSize = fontSizeBaseMap ? getFontSizeBaseForBreakpoint(fontSizeBaseMap, breakpoint) : 16;
+  // If font-size-base is not provided, keep px values (no px->rem conversion).
+  const shouldConvertToRem = !!fontSizeBaseMap && fontSizeBaseMap.size > 0;
+  const baseFontSize = shouldConvertToRem ? getFontSizeBaseForBreakpoint(fontSizeBaseMap, breakpoint) : 0;
   const fontSizeUnit = typographyToken.value.fontSize?.unit;
   const fontSizeMeasure = typographyToken.value.fontSize?.measure;
   const hasResponsiveBase =
-    !!fontSizeBaseMap &&
+    shouldConvertToRem &&
     new Set(Array.from(fontSizeBaseMap.values())).size > 1 &&
     fontSizeUnit === 'Pixels' &&
     !!fontSizeMeasure;
@@ -223,17 +225,6 @@ export const handleTypographyTokens = (
           ensureDevice(breakpoint);
           ensureDevice('mobile');
 
-          // Stable ordering helps keep diffs smaller
-          const ORDER = ['mobile', 'tablet', 'desktop'];
-          deviceKeys.sort((a, b) => {
-            const ai = ORDER.indexOf(a);
-            const bi = ORDER.indexOf(b);
-            if (ai === -1 && bi === -1) return a.localeCompare(b);
-            if (ai === -1) return 1;
-            if (bi === -1) return -1;
-            return ai - bi;
-          });
-
           deviceKeys.forEach((device) => {
             const deviceValue =
               deviceTypographyValues?.get(device) ||
@@ -245,7 +236,7 @@ export const handleTypographyTokens = (
               return;
             }
 
-            const deviceBaseFontSize = fontSizeBaseMap ? getFontSizeBaseForBreakpoint(fontSizeBaseMap, device) : 16;
+            const deviceBaseFontSize = shouldConvertToRem ? getFontSizeBaseForBreakpoint(fontSizeBaseMap!, device) : 0;
             currentObject[device] = typographyValue(deviceValue, isItalic, hasJsOutput, deviceBaseFontSize);
           });
 
