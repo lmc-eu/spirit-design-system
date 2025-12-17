@@ -60,8 +60,6 @@ const applyDeviceDimension = (
     return;
   }
 
-  // Avoid assignment through a union key (`clonedValue[key] = ...`) which would require
-  // satisfying an intersection of all possible value types. Also ensure referencedTokenId exists.
   if (key === 'fontSize') {
     const existing = clonedValue.fontSize;
     const { referencedTokenId: _existingRefId, ...existingWithoutRefId } = existing ?? { referencedTokenId: null };

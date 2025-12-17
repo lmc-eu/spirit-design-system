@@ -50,9 +50,6 @@ const isFontSizeBaseToken = (token: Token, resolvedName: string): boolean => {
 
 export const tokenToStyleByType = (
   token: Token,
-  // NOTE: @supernovaio/export-helpers brings its own dependency on @supernovaio/sdk-exporters,
-  // which can cause type duplication conflicts. We intentionally keep this as `unknown`
-  // and cast at call sites where required.
   mappedTokens: Map<string, unknown>,
   tokenGroups: Array<TokenGroup>,
   tokenPrefix: string,
