@@ -19,9 +19,9 @@ Building blocks:
 Common wrapper for all items:
 
 ```html
-<section class="Accordion">
+<ul class="Accordion">
   <!-- One or more items inside -->
-</section>
+</ul>
 ```
 
 ### Accordion Item
@@ -29,9 +29,9 @@ Common wrapper for all items:
 Put one or more Accordion items into the Accordion wrapper:
 
 ```html
-<article id="example-1-item-1" class="Accordion__item">
+<li id="example-1-item-1" class="Accordion__item">
   <!-- Item header and content inside -->
-</article>
+</li>
 ```
 
 ### Accordion Item Header
@@ -90,7 +90,7 @@ Finally, create a Collapse instance and put a `div` with `Accordion__content`
 class name inside:
 
 ```html
-<div id="example-1-item-1-collapse" class="Collapse" aria-labelledby="example-1-item-1-header">
+<div id="example-1-item-1-collapse" class="Collapse" role="region" aria-labelledby="example-1-item-1-header">
   <div class="Collapse__content">
     <div class="Accordion__content">
       <!-- Content: start -->
@@ -117,9 +117,9 @@ When you put it all together:
 
 ```html
 <!-- Accordion: start -->
-<section class="Accordion">
+<ul class="Accordion">
   <!-- Accordion item: start -->
-  <article id="example-1-item-1" class="Accordion__item">
+  <li id="example-1-item-1" class="Accordion__item">
     <!-- Accordion item header: start -->
     <h3 id="example-1-item-1-header" class="Accordion__itemHeader">
       <button
@@ -148,7 +148,7 @@ When you put it all together:
     <!-- Accordion item header: end -->
 
     <!-- Accordion item content: start -->
-    <div id="example-1-item-1-collapse" class="Collapse" aria-labelledby="example-1-item-1-header">
+    <div id="example-1-item-1-collapse" class="Collapse" role="region" aria-labelledby="example-1-item-1-header">
       <div class="Collapse__content">
         <div class="Accordion__content">
           <!-- Content: start -->
@@ -164,11 +164,11 @@ When you put it all together:
       </div>
     </div>
     <!-- Accordion item content: end -->
-  </article>
+  </li>
   <!-- Accordion item: end -->
 
   <!-- More Accordion items here… -->
-</section>
+</ul>
 <!-- Accordion: end -->
 ```
 
@@ -180,15 +180,15 @@ Link individual **Collapse items** to their **Accordion parent** via
 First add an `id` to your Accordion wrapper:
 
 ```html
-<section id="accordion" class="Accordion">
+<ul id="accordion" class="Accordion">
   <!-- Accordion items inside -->
-</section>
+</ul>
 ```
 
 Then link it using the `data-spirit-parent` attribute on individual Collapse items:
 
 ```html
-<article class="Accordion__item">
+<li class="Accordion__item">
   <!-- (Accordion item header) -->
   <div class="Collapse" data-spirit-parent="#accordion">
     <div class="Collapse__content">
@@ -197,7 +197,7 @@ Then link it using the `data-spirit-parent` attribute on individual Collapse ite
       </div>
     </div>
   </div>
-</article>
+</li>
 
 <!-- More Accordion items here… -->
 ```
