@@ -11,7 +11,6 @@ export type FontSizeBaseMap = Map<string, number>;
 export const getFontSizeBaseMap = (tokens: Token[]): FontSizeBaseMap => {
   const fontSizeBaseMap = new Map<string, number>();
 
-  // Font-size-base tokens can be either FontSize or Dimension type
   const fontSizeBaseTokens = tokens.filter(
     (token) =>
       (token.tokenType === TokenType.fontSize || token.tokenType === TokenType.dimension) &&
