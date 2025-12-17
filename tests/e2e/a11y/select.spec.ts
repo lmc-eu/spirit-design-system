@@ -1,0 +1,21 @@
+import { test } from '@playwright/test';
+import {
+  assertNoA11yViolations,
+  getWCAG2AAConfig,
+  waitForPageLoad,
+  WEB_REACT_COMPONENTS_URI,
+  WEB_REACT_SERVER_URL,
+} from '../../helpers';
+
+test.describe('Select Accessibility', () => {
+  const testUrl = `${WEB_REACT_SERVER_URL}${WEB_REACT_COMPONENTS_URI}/Select/`;
+  // TODO by @dlouhak: Re-enable 'color-contrast' rule once the tokens are updated to meet contrast requirements
+  // https://jira.almacareer.tech/browse/DS-2317
+  const a11yConfig = { ...getWCAG2AAConfig(), disableRules: ['color-contrast'] };
+
+  test('Select component has no a11y violations', async ({ page }) => {
+    await page.goto(testUrl);
+    await waitForPageLoad(page);
+    await assertNoA11yViolations(page, a11yConfig);
+  });
+});
