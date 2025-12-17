@@ -11,7 +11,7 @@ export type UnitFormatContext = {
 export type UnitFormatRule = {
   tokenTypes: TokenType[];
   shouldConvert: (ctx: UnitFormatContext) => boolean;
-  converters: Array<'pxToRem'>;
+  converterNames: Array<'pxToRem'>;
 };
 
 export const DEFAULT_UNIT_RULES: UnitFormatRule[] = [
@@ -26,17 +26,17 @@ export const DEFAULT_UNIT_RULES: UnitFormatRule[] = [
       TokenType.letterSpacing,
     ],
     shouldConvert: (ctx) => !ctx.isFontSizeBaseToken && ctx.baseFontSize > 0,
-    converters: ['pxToRem'],
+    converterNames: ['pxToRem'],
   },
 ];
 
 const applyConverters = (
   valuePx: string | number,
   ctx: UnitFormatContext,
-  converters: UnitFormatRule['converters'],
+  converterNames: UnitFormatRule['converterNames'],
 ) => {
-  return converters.reduce<string>((acc, name) => {
-    if (name === 'pxToRem') {
+  return converterNames.reduce<string>((acc, converterName) => {
+    if (converterName === 'pxToRem') {
       return pxToRem(acc, { baseFontSize: ctx.baseFontSize });
     }
     return acc;
@@ -74,7 +74,7 @@ export const formatUnitValue = (
     return `${value}${unit}`;
   }
 
-  return applyConverters(value, ctx, rule.converters);
+  return applyConverters(value, ctx, rule.converterNames);
 };
 
 export const replacePxWithRem = (value: string, baseFontSize: number): string => {
