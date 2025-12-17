@@ -286,13 +286,47 @@ describe('stylesObjectGenerator', () => {
         description: 'should generate object from typography tokens with js output',
         hasJsOutput: true,
       },
+      {
+        tokens: exampleTypographyTokens.get('typographyRef1') as TypographyToken,
+        tokenNameParts: ['Heading', 'XLarge', 'Bold'],
+        expectedStyles: {
+          exampleRef: 'exampleRef',
+          headingXlargeBold: {
+            mobile:
+              "{\nfontFamily: \"'Inter', sans-serif\",\nfontSize: '2.86rem',\nfontStyle: 'normal',\nfontWeight: 700,\nlineHeight: 1.30,\n}",
+            tablet:
+              "{\nfontFamily: \"'Inter', sans-serif\",\nfontSize: '2.5rem',\nfontStyle: 'normal',\nfontWeight: 700,\nlineHeight: 1.30,\n}",
+            desktop:
+              "{\nfontFamily: \"'Inter', sans-serif\",\nfontSize: '2.22rem',\nfontStyle: 'normal',\nfontWeight: 700,\nlineHeight: 1.30,\n}",
+          },
+        },
+        description: 'should generate per-breakpoint rem values when font-size-base differs',
+        hasJsOutput: true,
+        fontSizeBaseMap: new Map([
+          ['mobile', 14],
+          ['tablet', 16],
+          ['desktop', 18],
+        ]),
+      },
     ];
 
-    it.each(dataProvider)('$description', ({ tokens, tokenNameParts, expectedStyles, hasJsOutput }) => {
-      const stylesObjectRef = { exampleRef: 'exampleRef' };
-      handleTypographyTokens(tokenNameParts, tokens, tokenGroups, true, stylesObjectRef, hasJsOutput);
-      expect(stylesObjectRef).toStrictEqual(expectedStyles);
-    });
+    it.each(dataProvider)(
+      '$description',
+      ({ tokens, tokenNameParts, expectedStyles, hasJsOutput, fontSizeBaseMap }) => {
+        const stylesObjectRef = { exampleRef: 'exampleRef' };
+        handleTypographyTokens(
+          tokenNameParts,
+          tokens,
+          tokenGroups,
+          true,
+          stylesObjectRef,
+          hasJsOutput,
+          undefined,
+          fontSizeBaseMap,
+        );
+        expect(stylesObjectRef).toStrictEqual(expectedStyles);
+      },
+    );
   });
 
   describe('createGlobalColorsObject', () => {

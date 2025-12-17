@@ -180,6 +180,13 @@ export const handleTypographyTokens = (
     tokenById,
   );
   const baseFontSize = fontSizeBaseMap ? getFontSizeBaseForBreakpoint(fontSizeBaseMap, breakpoint) : 16;
+  const fontSizeUnit = typographyToken.value.fontSize?.unit;
+  const fontSizeMeasure = typographyToken.value.fontSize?.measure;
+  const hasResponsiveBase =
+    !!fontSizeBaseMap &&
+    new Set(Array.from(fontSizeBaseMap.values())).size > 1 &&
+    fontSizeUnit === 'Pixels' &&
+    !!fontSizeMeasure;
 
   let currentObject = stylesObjectRef;
   reducedNameParts.forEach((part, index) => {
@@ -187,21 +194,25 @@ export const handleTypographyTokens = (
     const modifiedPart = index === 0 ? tokenName : part;
 
     if (index === reducedNameParts.length - 1) {
-      if (deviceTypographyValues) {
+      if (deviceTypographyValues || hasResponsiveBase) {
         const baseFontSize = typographyToken.value.fontSize?.measure;
         const baseLineHeight = typographyToken.value.lineHeight?.measure;
-        const hasDeviceVariation = Array.from(deviceTypographyValues.values()).some((value) => {
-          const deviceFontSize = value.fontSize?.measure;
-          const deviceLineHeight = value.lineHeight?.measure;
+        const hasDeviceVariation =
+          !!deviceTypographyValues &&
+          Array.from(deviceTypographyValues.values()).some((value) => {
+            const deviceFontSize = value.fontSize?.measure;
+            const deviceLineHeight = value.lineHeight?.measure;
 
-          return (
-            (deviceFontSize !== undefined && baseFontSize !== undefined && deviceFontSize !== baseFontSize) ||
-            (deviceLineHeight !== undefined && baseLineHeight !== undefined && deviceLineHeight !== baseLineHeight)
-          );
-        });
+            return (
+              (deviceFontSize !== undefined && baseFontSize !== undefined && deviceFontSize !== baseFontSize) ||
+              (deviceLineHeight !== undefined && baseLineHeight !== undefined && deviceLineHeight !== baseLineHeight)
+            );
+          });
 
-        if (hasDeviceVariation) {
-          const deviceKeys = Array.from(deviceTypographyValues.keys());
+        if (hasDeviceVariation || hasResponsiveBase) {
+          const deviceKeys = deviceTypographyValues
+            ? Array.from(deviceTypographyValues.keys())
+            : Array.from(fontSizeBaseMap?.keys() ?? []);
 
           const ensureDevice = (device: string) => {
             if (device && !deviceKeys.includes(device)) {
@@ -212,10 +223,23 @@ export const handleTypographyTokens = (
           ensureDevice(breakpoint);
           ensureDevice('mobile');
 
+          // Stable ordering helps keep diffs smaller
+          const ORDER = ['mobile', 'tablet', 'desktop'];
+          deviceKeys.sort((a, b) => {
+            const ai = ORDER.indexOf(a);
+            const bi = ORDER.indexOf(b);
+            if (ai === -1 && bi === -1) return a.localeCompare(b);
+            if (ai === -1) return 1;
+            if (bi === -1) return -1;
+            return ai - bi;
+          });
+
           deviceKeys.forEach((device) => {
             const deviceValue =
-              deviceTypographyValues.get(device) ||
-              (device === 'mobile' || device === breakpoint ? cloneTypographyValue(typographyToken.value) : undefined);
+              deviceTypographyValues?.get(device) ||
+              (device === 'mobile' || device === breakpoint || hasResponsiveBase
+                ? cloneTypographyValue(typographyToken.value)
+                : undefined);
 
             if (!deviceValue) {
               return;
