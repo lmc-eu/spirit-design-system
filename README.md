@@ -54,6 +54,8 @@ See individual [packages](#packages) to learn how to get started.
 - [Corepack][corepack]
 - [Yarn][yarn]
 - [Lerna][lerna]
+- [Docker][docker]
+- [Docker Compose][docker-compose]
 
 ### 🚀 Start Development
 
@@ -83,6 +85,8 @@ See the [LICENSE][license] file for information.
 [coverage-status]: https://coveralls.io/github/lmc-eu/spirit-design-system?branch=main
 [coverage-status-svg]: https://coveralls.io/repos/github/lmc-eu/spirit-design-system/badge.svg?branch=main
 [corepack]: https://yarnpkg.com/corepack#installation
+[docker]: https://www.docker.com
+[docker-compose]: https://docs.docker.com/compose/
 [lerna]: https://lerna.js.org
 [lerna-svg]: https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg
 [license]: https://github.com/lmc-eu/spirit-design-system/blob/main/LICENSE.md
