@@ -6,6 +6,8 @@ dist
 build
 public
 .github
+playwright-report
+test-results
 
 # Heading capitalization problems
 migration-*

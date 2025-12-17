@@ -1,6 +1,6 @@
 module.exports = {
   include: [
-    'packages/web-react/src/**/*.{jsx,tsx,js,ts}'
+    'packages/web-react/src/**/*.{jsx,tsx,js,ts}',
   ],
   ignore: [
     '**/demo/**/*',
@@ -14,6 +14,6 @@ module.exports = {
         './components/*': 'src/components/*',
       },
       tsconfigPath: 'tsconfig.json',
-    }
-  }
-}
+    },
+  },
+};
