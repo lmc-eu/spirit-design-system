@@ -67,6 +67,20 @@ const formatMeasure = (
   return formatUnitValue(measure, unit, ctx);
 };
 
+const toFormattedTokenStyle = (
+  name: string,
+  value: number | undefined,
+  unit: string | undefined,
+  tokenType: TokenType,
+  baseFontSize: number,
+  token: Token,
+  hasJsOutput: boolean,
+): string | null => {
+  const formattedValue = formatMeasure(token, tokenType, name, value, unit, baseFontSize);
+
+  return formattedValue === undefined ? null : formatTokenStyleByOutput(name, formattedValue, hasJsOutput);
+};
+
 export const tokenToStyleByType = (
   token: Token,
   mappedTokens: Map<string, unknown>,
@@ -90,9 +104,8 @@ export const tokenToStyleByType = (
     value = handleSpecialCase(name, value);
     const unit = CSSHelper.unitToCSS(dimensionToken.value?.unit);
     const baseFontSize = getBaseFontSize(fontSizeBaseMap, token);
-    const formatted = formatMeasure(token, TokenType.dimension, name, value, unit, baseFontSize);
 
-    return formatted === undefined ? null : formatTokenStyleByOutput(name, formatted, hasJsOutput);
+    return toFormattedTokenStyle(name, value, unit, TokenType.dimension, baseFontSize, token, hasJsOutput);
   }
 
   if (hasTokenType(TokenType.radius)) {
@@ -102,9 +115,8 @@ export const tokenToStyleByType = (
     value = handleSpecialCase(name, value);
     const unit = CSSHelper.unitToCSS(radiusToken.value?.unit);
     const baseFontSize = getBaseFontSize(fontSizeBaseMap, token);
-    const formatted = formatMeasure(token, TokenType.radius, name, value, unit, baseFontSize);
 
-    return formatted === undefined ? null : formatTokenStyleByOutput(name, formatted, hasJsOutput);
+    return toFormattedTokenStyle(name, value, unit, TokenType.radius, baseFontSize, token, hasJsOutput);
   }
 
   if (hasTokenType(TokenType.space)) {
@@ -114,9 +126,8 @@ export const tokenToStyleByType = (
     value = handleSpecialCase(name, value);
     const unit = CSSHelper.unitToCSS(spaceToken.value?.unit);
     const baseFontSize = getBaseFontSize(fontSizeBaseMap, token);
-    const formatted = formatMeasure(token, TokenType.space, name, value, unit, baseFontSize);
 
-    return formatted === undefined ? null : formatTokenStyleByOutput(name, formatted, hasJsOutput);
+    return toFormattedTokenStyle(name, value, unit, TokenType.space, baseFontSize, token, hasJsOutput);
   }
 
   if (hasTokenType(TokenType.border)) {
@@ -146,9 +157,8 @@ export const tokenToStyleByType = (
     value = handleSpecialCase(name, value);
     const unit = CSSHelper.unitToCSS(sizeToken.value?.unit);
     const baseFontSize = getBaseFontSize(fontSizeBaseMap, token);
-    const formatted = formatMeasure(token, TokenType.size, name, value, unit, baseFontSize);
 
-    return formatted === undefined ? null : formatTokenStyleByOutput(name, formatted, hasJsOutput);
+    return toFormattedTokenStyle(name, value, unit, TokenType.size, baseFontSize, token, hasJsOutput);
   }
 
   if (hasTokenType(TokenType.fontSize)) {
@@ -158,9 +168,8 @@ export const tokenToStyleByType = (
     value = handleSpecialCase(name, value);
     const unit = CSSHelper.unitToCSS(fontSizeToken.value?.unit);
     const baseFontSize = getBaseFontSize(fontSizeBaseMap, token);
-    const formatted = formatMeasure(token, TokenType.fontSize, name, value, unit, baseFontSize);
 
-    return formatted === undefined ? null : formatTokenStyleByOutput(name, formatted, hasJsOutput);
+    return toFormattedTokenStyle(name, value, unit, TokenType.fontSize, baseFontSize, token, hasJsOutput);
   }
 
   if (hasTokenType(TokenType.lineHeight)) {
@@ -170,9 +179,8 @@ export const tokenToStyleByType = (
     value = handleSpecialCase(name, value);
     const unit = CSSHelper.unitToCSS(lineHeightToken.value?.unit);
     const baseFontSize = getBaseFontSize(fontSizeBaseMap, token);
-    const formatted = formatMeasure(token, TokenType.lineHeight, name, value, unit, baseFontSize);
 
-    return formatted === undefined ? null : formatTokenStyleByOutput(name, formatted, hasJsOutput);
+    return toFormattedTokenStyle(name, value, unit, TokenType.lineHeight, baseFontSize, token, hasJsOutput);
   }
 
   if (hasTokenType(TokenType.letterSpacing)) {
@@ -182,9 +190,8 @@ export const tokenToStyleByType = (
     value = handleSpecialCase(name, value);
     const unit = CSSHelper.unitToCSS(letterSpacingToken.value?.unit);
     const baseFontSize = getBaseFontSize(fontSizeBaseMap, token);
-    const formatted = formatMeasure(token, TokenType.letterSpacing, name, value, unit, baseFontSize);
 
-    return formatted === undefined ? null : formatTokenStyleByOutput(name, formatted, hasJsOutput);
+    return toFormattedTokenStyle(name, value, unit, TokenType.letterSpacing, baseFontSize, token, hasJsOutput);
   }
 
   if (hasTokenType(TokenType.string)) {
