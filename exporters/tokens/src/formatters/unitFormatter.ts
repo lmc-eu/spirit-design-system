@@ -26,6 +26,7 @@ const applyConverters = (
     if (converterName === 'pxToRem') {
       return pxToRem(acc, { baseFontSize: ctx.baseFontSize });
     }
+
     return acc;
   }, String(valuePx));
 };
