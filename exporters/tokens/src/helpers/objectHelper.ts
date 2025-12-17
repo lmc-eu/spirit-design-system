@@ -28,7 +28,6 @@ export const deepMergeObjects = (obj1: StylesObjectType, obj2: StylesObjectType)
   Object.entries(mergedObject).forEach(([key, value]) => {
     if (typeof value === 'object' && value !== null && value.moveToTheEnd === 'true') {
       // Move this entry to endObject
-      // eslint-disable-next-line no-param-reassign -- false positive
       delete value.moveToTheEnd; // Exclude "moveToTheEnd" flag
       endObject[key] = value;
     } else {

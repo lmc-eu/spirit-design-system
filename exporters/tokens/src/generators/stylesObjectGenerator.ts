@@ -62,18 +62,21 @@ const applyDeviceDimension = (
 
   if (key === 'fontSize') {
     const existing = clonedValue.fontSize;
-    const { referencedTokenId: _existingRefId, ...existingWithoutRefId } = existing ?? { referencedTokenId: null };
+    const { referencedTokenId, ...existingWithoutRefId } = existing ?? { referencedTokenId: null };
+    void referencedTokenId;
     clonedValue.fontSize = {
       ...existingWithoutRefId,
       referencedTokenId: existing?.referencedTokenId ?? null,
       measure: deviceDimension.measure,
       unit: deviceDimension.unit,
     };
+
     return;
   }
 
   const existing = clonedValue.lineHeight;
-  const { referencedTokenId: _existingRefId, ...existingWithoutRefId } = existing ?? { referencedTokenId: null };
+  const { referencedTokenId, ...existingWithoutRefId } = existing ?? { referencedTokenId: null };
+  void referencedTokenId;
   clonedValue.lineHeight = {
     ...existingWithoutRefId,
     referencedTokenId: existing?.referencedTokenId ?? null,
@@ -111,6 +114,7 @@ const getDeviceTypographyValues = (
       }
 
       const originKey = referencedToken.origin?.name?.toLowerCase();
+
       return originKey ? deviceDimensions.get(originKey) : undefined;
     }
 
@@ -195,8 +199,8 @@ export const handleTypographyTokens = (
 
     if (index === reducedNameParts.length - 1) {
       if (deviceTypographyValues || hasResponsiveBase) {
-        const baseFontSize = typographyToken.value.fontSize?.measure;
-        const baseLineHeight = typographyToken.value.lineHeight?.measure;
+        const baseFontSizeMeasure = typographyToken.value.fontSize?.measure;
+        const baseLineHeightMeasure = typographyToken.value.lineHeight?.measure;
         const hasDeviceVariation =
           !!deviceTypographyValues &&
           Array.from(deviceTypographyValues.values()).some((value) => {
@@ -204,8 +208,12 @@ export const handleTypographyTokens = (
             const deviceLineHeight = value.lineHeight?.measure;
 
             return (
-              (deviceFontSize !== undefined && baseFontSize !== undefined && deviceFontSize !== baseFontSize) ||
-              (deviceLineHeight !== undefined && baseLineHeight !== undefined && deviceLineHeight !== baseLineHeight)
+              (deviceFontSize !== undefined &&
+                baseFontSizeMeasure !== undefined &&
+                deviceFontSize !== baseFontSizeMeasure) ||
+              (deviceLineHeight !== undefined &&
+                baseLineHeightMeasure !== undefined &&
+                deviceLineHeight !== baseLineHeightMeasure)
             );
           });
 

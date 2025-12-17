@@ -243,8 +243,12 @@ export const generateStylesFromTokens = (
   hasMixin: boolean,
   hasParentPrefix: boolean,
   sortByNumValue: boolean,
-  hasJsOutput: boolean = false,
-  fontSizeBaseMap: FontSizeBaseMap,
+  hasJsOutput: boolean,
+  fontSizeBaseMap: FontSizeBaseMap = new Map([
+    ['mobile', 16],
+    ['tablet', 16],
+    ['desktop', 16],
+  ]),
 ): string => {
   const sortedTokens = sortTokens(tokens, tokenGroups, hasParentPrefix, sortByNumValue);
 

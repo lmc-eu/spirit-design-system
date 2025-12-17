@@ -14,7 +14,7 @@ import { exportConfiguration } from '../../config';
 import { PIXEL_UNIT, TYPOGRAPHY_SUBSTITUTE_FONT } from '../constants';
 import { getDeviceAlias, getDeviceTokenValue } from './deviceHelpers';
 import { toCamelCase } from './stringHelper';
-import { makeRelativeUnit, getFontSizeBaseForBreakpoint, type FontSizeBaseMap, getFontSizeBaseMap } from './unitHelper';
+import { makeRelativeUnit } from './unitHelper';
 
 export const tokenVariableName = (token: Token, tokenGroups: Array<TokenGroup>, hasParentPrefix: boolean): string => {
   let parent;
