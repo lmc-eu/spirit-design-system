@@ -43,30 +43,39 @@ const toTypographyUnit = (unit: unknown): DeviceDimensionValue['unit'] | null =>
 
 const buildDeviceDimensionMap = (tokens: Token[], tokenGroups: Array<TokenGroup>): DeviceDimensionMap => {
   return tokens.reduce<DeviceDimensionMap>((accumulator, token) => {
+    const device = getDeviceAlias(token).toLowerCase();
+    let measure: number | undefined;
+    let unit: DeviceDimensionValue['unit'] | null = null;
+
     if (![TokenType.dimension, TokenType.fontSize, TokenType.lineHeight].includes(token.tokenType)) {
       return accumulator;
     }
-
-    const device = getDeviceAlias(token).toLowerCase();
 
     if (!device) {
       return accumulator;
     }
 
-    let measure: number | undefined;
-    let unit: DeviceDimensionValue['unit'] | null = null;
-    if (token.tokenType === TokenType.dimension) {
-      const t = token as DimensionToken;
-      measure = t.value?.measure;
-      unit = toTypographyUnit(t.value?.unit);
-    } else if (token.tokenType === TokenType.fontSize) {
-      const t = token as FontSizeToken;
-      measure = t.value?.measure;
-      unit = toTypographyUnit(t.value?.unit);
-    } else if (token.tokenType === TokenType.lineHeight) {
-      const t = token as LineHeightToken;
-      measure = t.value?.measure;
-      unit = toTypographyUnit(t.value?.unit);
+    switch (token.tokenType) {
+      case TokenType.dimension: {
+        const t = token as DimensionToken;
+        measure = t.value?.measure;
+        unit = toTypographyUnit(t.value?.unit);
+        break;
+      }
+
+      case TokenType.fontSize: {
+        const t = token as FontSizeToken;
+        measure = t.value?.measure;
+        unit = toTypographyUnit(t.value?.unit);
+        break;
+      }
+
+      case TokenType.lineHeight: {
+        const t = token as LineHeightToken;
+        measure = t.value?.measure;
+        unit = toTypographyUnit(t.value?.unit);
+        break;
+      }
     }
 
     if (typeof measure !== 'number' || !unit) {
