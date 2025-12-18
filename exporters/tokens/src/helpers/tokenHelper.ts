@@ -11,7 +11,7 @@ import {
   TypographyTokenValue,
 } from '@supernovaio/sdk-exporters';
 import { exportConfiguration } from '../../config';
-import { PIXEL_UNIT, TYPOGRAPHY_SUBSTITUTE_FONT } from '../constants';
+import { FONT_SIZE_BASE_DEFAULT, PIXEL_UNIT, TYPOGRAPHY_SUBSTITUTE_FONT } from '../constants';
 import { getDeviceAlias, getDeviceTokenValue } from './deviceHelpers';
 import { toCamelCase } from './stringHelper';
 import { makeRelativeUnit } from './unitHelper';
@@ -330,7 +330,7 @@ export const typographyValue = (
   { fontFamily, fontSize, fontWeight, lineHeight }: TypographyTokenValue,
   isItalic: boolean,
   hasJsOutput: boolean,
-  baseFontSize: number = 16,
+  baseFontSize: number = FONT_SIZE_BASE_DEFAULT,
 ): string => {
   const fontName = replaceFontName(fontFamily.text);
   const fontSizeUnit = fontSize?.unit === PIXEL_UNIT ? 'px' : fontSize?.unit || '';
