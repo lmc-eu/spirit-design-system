@@ -1,0 +1,28 @@
+{
+  "name": "@alma-oss/spirit-workspace-deps",
+  "version": "0.0.1",
+  "description": "Workspace dependencies resolver for Spirit Design System",
+  "type": "module",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lmc-eu/spirit-design-system.git",
+    "directory": "scripts/workspace-deps"
+  },
+  "license": "MIT",
+  "keywords": [
+    "workspace",
+    "dependencies",
+    "resolver"
+  ],
+  "scripts": {
+    "resolve": "tsx ./resolve.ts"
+  },
+  "dependencies": {
+    "tsx": "^4.20.6"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.26",
+    "typescript": "^5.7.3"
+  }
+}
