@@ -10,6 +10,10 @@ type StringTokenProcessorContext = {
 
 /**
  * Processes string tokens (simple text values).
+ *
+ * @param stringToken - The string token to process
+ * @param ctx - Processing context with token groups and output options
+ * @returns {string|null} Formatted token style string or null
  */
 export const processStringToken = (stringToken: StringToken, ctx: StringTokenProcessorContext): string | null => {
   const { tokenGroups, hasParentPrefix, hasJsOutput } = ctx;

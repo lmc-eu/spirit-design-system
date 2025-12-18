@@ -1,4 +1,4 @@
-import { ShadowToken, TokenGroup, TokenType } from '@supernovaio/sdk-exporters';
+import { ShadowToken, TokenGroup } from '@supernovaio/sdk-exporters';
 import { exampleShadowTokens } from '../../../tests/fixtures/exampleShadowTokens';
 import { exampleGroups } from '../../../tests/fixtures/exampleGroups';
 import { sampleConfigurationDefault } from '../../../tests/fixtures/sampleConfiguration';

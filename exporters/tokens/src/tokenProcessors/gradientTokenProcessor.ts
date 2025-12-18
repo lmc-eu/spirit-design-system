@@ -1,7 +1,6 @@
 import { GradientToken, TokenGroup } from '@supernovaio/sdk-exporters';
 import { ColorFormat, CSSHelper } from '@supernovaio/export-helpers';
-import { formatTokenStyleByOutput, tokenVariableName } from '../helpers/tokenHelper';
-import { addAngleVarToGradient } from '../helpers/tokenHelper';
+import { addAngleVarToGradient, formatTokenStyleByOutput, tokenVariableName } from '../helpers/tokenHelper';
 import { transformColorsToVariables, findAllHexColorsInStringAndNormalize } from '../helpers/colorHelper';
 
 type GradientTokenProcessorContext = {
@@ -14,6 +13,10 @@ type GradientTokenProcessorContext = {
 
 /**
  * Processes gradient tokens (with angle variable and color variable transformation).
+ *
+ * @param gradientToken - The gradient token to process
+ * @param ctx - Processing context with token groups, prefix, and output options
+ * @returns {string|null} Formatted token style string or null
  */
 export const processGradientToken = (
   gradientToken: GradientToken,

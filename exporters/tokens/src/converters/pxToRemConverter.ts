@@ -6,6 +6,10 @@ export type PxToRemOptions = {
 /**
  * Converts a pixel value to rem units, rounded to a maximum number of decimals,
  * and trims trailing zeros (e.g. 2.50rem -> 2.5rem, 2.00rem -> 2rem).
+ *
+ * @param valuePx - The pixel value to convert (string or number)
+ * @param options - Conversion options including baseFontSize and decimals
+ * @returns {string} The converted value in rem units
  */
 export const pxToRem = (valuePx: string | number, options: PxToRemOptions): string => {
   const { baseFontSize, decimals = 2 } = options;

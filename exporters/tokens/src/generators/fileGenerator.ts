@@ -76,9 +76,12 @@ const buildDeviceDimensionMap = (tokens: Token[], tokenGroups: Array<TokenGroup>
         unit = toTypographyUnit(t.value?.unit);
         break;
       }
+
+      default:
+        return accumulator;
     }
 
-    if (typeof measure !== 'number' || !unit) {
+    if (measure === undefined || !unit) {
       return accumulator;
     }
 

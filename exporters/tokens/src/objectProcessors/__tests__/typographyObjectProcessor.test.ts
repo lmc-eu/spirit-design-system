@@ -59,7 +59,7 @@ describe('typographyObjectProcessor', () => {
 
       const clonedValue = cloneTypographyValue(originalValue);
 
-      expect(clonedValue.referencedTokenId).toBe(null);
+      expect(clonedValue.referencedTokenId).toBeNull();
       expect(clonedValue.fontSize).toEqual(originalValue.fontSize);
       expect(clonedValue.fontSize).not.toBe(originalValue.fontSize);
     });
@@ -144,7 +144,7 @@ describe('typographyObjectProcessor', () => {
 
       expect(stylesObject).toHaveProperty('$heading-xlarge-bold');
       const typographyObj = stylesObject['$heading-xlarge-bold'] as { [key: string]: unknown };
-      // With responsive base, should create variations for all breakpoints
+
       expect(Object.keys(typographyObj).length).toBeGreaterThan(0);
     });
 
@@ -165,9 +165,9 @@ describe('typographyObjectProcessor', () => {
       handleTypographyTokens(['Heading', 'XLarge', 'Bold-Italic'], token, tokenGroups, true, stylesObject, false);
 
       expect(stylesObject).toHaveProperty('$heading-xlarge-bold-italic');
-
+      // eslint-disable-next-line dot-notation -- $heading-xlarge-bold-italic contains special character
       const typographyObj = stylesObject['$heading-xlarge-bold-italic'] as { [key: string]: unknown };
-      const mobileValue = typographyObj['mobile'] as string;
+      const mobileValue = typographyObj.mobile as string;
 
       expect(mobileValue).toContain('italic');
     });

@@ -13,11 +13,10 @@ import {
 import { CSSHelper } from '@supernovaio/export-helpers';
 import { formatTokenStyleByOutput, tokenVariableName } from '../helpers/tokenHelper';
 import { handleSpecialCase } from '../helpers/specialCaseHelper';
-import { type FontSizeBaseMap } from '../helpers/unitHelper';
+import { getDeviceAlias } from '../helpers/deviceHelpers';
+import { getFontSizeBaseForBreakpoint, type FontSizeBaseMap } from '../helpers/unitHelper';
 import { formatUnitValue, type UnitFormatContext } from '../formatters/unitFormatter';
 import { FONT_SIZE_BASE } from '../constants';
-import { getDeviceAlias } from '../helpers/deviceHelpers';
-import { getFontSizeBaseForBreakpoint } from '../helpers/unitHelper';
 
 type NumericToken =
   | DimensionToken
@@ -70,6 +69,11 @@ const formatMeasure = (
 /**
  * Processes numeric tokens (dimension, radius, space, size, fontSize, lineHeight, letterSpacing)
  * that support rem conversion based on font-size-base.
+ *
+ * @param numericToken - The numeric token to process
+ * @param tokenType - The type of the token
+ * @param ctx - Processing context with token groups, fontSizeBaseMap, and output options
+ * @returns {string|null} Formatted token style string or null
  */
 export const processNumericToken = (
   numericToken: NumericToken,

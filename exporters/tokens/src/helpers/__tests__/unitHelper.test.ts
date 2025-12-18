@@ -1,3 +1,4 @@
+import { Token, TokenType, Unit } from '@supernovaio/sdk-exporters';
 import { FONT_SIZE_BASE_DEFAULT } from '../../constants';
 import {
   createDefaultFontSizeBaseMap,
@@ -7,7 +8,6 @@ import {
   replacePxWithRemUnits,
   type FontSizeBaseMap,
 } from '../unitHelper';
-import { DimensionToken, FontSizeToken, Token, TokenType, Unit } from '@supernovaio/sdk-exporters';
 
 describe('unitHelper', () => {
   describe('createDefaultFontSizeBaseMap', () => {

@@ -34,6 +34,12 @@ const applyConverters = (
 /**
  * Formats a numeric token value with unit. If rules allow, converts px -> rem using configured converters.
  * Returns either `0` (number) for zeros, or a formatted string like `2rem`, `32px`, `50%`, ...
+ *
+ * @param value - The numeric value to format
+ * @param unit - The unit of the value (e.g., 'px', 'rem', '%')
+ * @param ctx - The formatting context (token type, name, etc.)
+ * @param rules - Array of formatting rules to apply
+ * @returns {string|number|undefined} Formatted value as string, number (0 for zeros), or undefined
  */
 export const formatUnitValue = (
   value: number | undefined,

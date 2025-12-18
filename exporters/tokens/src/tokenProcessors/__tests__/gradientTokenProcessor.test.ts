@@ -1,4 +1,4 @@
-import { GradientToken, TokenGroup, TokenType } from '@supernovaio/sdk-exporters';
+import { GradientToken, TokenGroup } from '@supernovaio/sdk-exporters';
 import { exampleGradientTokens } from '../../../tests/fixtures/exampleGradientTokens';
 import { exampleGroups } from '../../../tests/fixtures/exampleGroups';
 import { sampleConfigurationDefault } from '../../../tests/fixtures/sampleConfiguration';

@@ -15,6 +15,10 @@ type ColorTokenProcessorContext = {
 
 /**
  * Processes color tokens (with mixin support or CSS variable fallback).
+ *
+ * @param colorToken - The color token to process
+ * @param ctx - Processing context with token groups and output options
+ * @returns {string|null} Formatted token style string or null
  */
 export const processColorToken = (colorToken: ColorToken, ctx: ColorTokenProcessorContext): string | null => {
   const { tokenGroups, hasParentPrefix, hasJsOutput, tokenPrefix, hasMixin, mappedTokens } = ctx;

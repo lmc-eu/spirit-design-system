@@ -7,8 +7,9 @@ export type FontSizeBaseMap = Map<string, number>;
 
 /**
  * Creates a default FontSizeBaseMap with the same value for all breakpoints.
+ *
  * @param fontSizeBase - Font size base value in px (default: DEFAULT_FONT_SIZE_BASE)
- * @returns FontSizeBaseMap with mobile, tablet, and desktop set to the same value
+ * @returns {Map<string, number>} FontSizeBaseMap with mobile, tablet, and desktop set to the same value
  */
 export const createDefaultFontSizeBaseMap = (fontSizeBase: number = FONT_SIZE_BASE_DEFAULT): FontSizeBaseMap => {
   return new Map([
@@ -20,8 +21,9 @@ export const createDefaultFontSizeBaseMap = (fontSizeBase: number = FONT_SIZE_BA
 
 /**
  * Finds font-size-base token from tokens array
+ *
  * @param tokens - Array of tokens to search in
- * @returns FontSizeBaseMap with breakpoint as key and font-size-base value in px as value
+ * @returns {Map<string, number>} FontSizeBaseMap with breakpoint as key and font-size-base value in px as value
  */
 export const getFontSizeBaseMap = (tokens: Token[]): FontSizeBaseMap => {
   const fontSizeBaseMap = new Map<string, number>();
@@ -47,6 +49,7 @@ export const getFontSizeBaseMap = (tokens: Token[]): FontSizeBaseMap => {
       fontSizeBaseMap.set('mobile', measure);
       fontSizeBaseMap.set('tablet', measure);
       fontSizeBaseMap.set('desktop', measure);
+
       return fontSizeBaseMap;
     }
   }
@@ -86,9 +89,10 @@ export const getFontSizeBaseMap = (tokens: Token[]): FontSizeBaseMap => {
 
 /**
  * Gets font-size-base value for a specific breakpoint
+ *
  * @param fontSizeBaseMap - Map of breakpoint to font-size-base values
  * @param breakpoint - Breakpoint name (mobile, tablet, desktop)
- * @returns Font-size-base value in px, or 0 if not found (0 means no conversion should happen)
+ * @returns {number} Font-size-base value in px, or 0 if not found (0 means no conversion should happen)
  */
 export const getFontSizeBaseForBreakpoint = (fontSizeBaseMap: FontSizeBaseMap, breakpoint: string): number => {
   const normalizedBreakpoint = breakpoint.toLowerCase();
@@ -102,9 +106,10 @@ export const getFontSizeBaseForBreakpoint = (fontSizeBaseMap: FontSizeBaseMap, b
 
 /**
  * Converts a pixel value to rem units based on font-size-base
+ *
  * @param value - Value in pixels to convert
  * @param baseFontSize - Base font size in pixels (default: DEFAULT_FONT_SIZE_BASE)
- * @returns Value in rem units
+ * @returns {string|number} Value in rem units
  */
 export const makeRelativeUnit = (
   value: string | number,
@@ -119,9 +124,10 @@ export const makeRelativeUnit = (
 
 /**
  * Replaces px units with rem units in a string
+ *
  * @param value - String containing px values
  * @param baseFontSize - Base font size in pixels (default: DEFAULT_FONT_SIZE_BASE)
- * @returns String with px replaced by rem
+ * @returns {string} String with px replaced by rem
  */
 export const replacePxWithRemUnits = (value: string, baseFontSize: number = FONT_SIZE_BASE_DEFAULT): string => {
   if (!baseFontSize || baseFontSize <= 0) {

@@ -11,6 +11,10 @@ type BorderTokenProcessorContext = {
 
 /**
  * Processes border and borderWidth tokens (no rem conversion).
+ *
+ * @param borderToken - The border or borderWidth token to process
+ * @param ctx - Processing context with token groups and output options
+ * @returns {string|null} Formatted token style string or null
  */
 export const processBorderToken = (
   borderToken: BorderToken | BorderWidthToken,
@@ -31,12 +35,12 @@ export const processBorderToken = (
   }
 
   const processedNumber = handleSpecialCase(name, value);
-  const rawUnit =
-    'width' in borderToken.value && borderToken.value.width
-      ? borderToken.value.width.unit
-      : 'measure' in borderToken.value && borderToken.value.unit
-        ? borderToken.value.unit
-        : undefined;
+  let rawUnit: string | undefined;
+  if ('width' in borderToken.value && borderToken.value.width) {
+    rawUnit = borderToken.value.width.unit;
+  } else if ('measure' in borderToken.value && borderToken.value.unit) {
+    rawUnit = borderToken.value.unit;
+  }
   const unit = rawUnit ? CSSHelper.unitToCSS(rawUnit) : undefined;
 
   return formatTokenStyleByOutput(name, processedNumber, hasJsOutput, unit, false);

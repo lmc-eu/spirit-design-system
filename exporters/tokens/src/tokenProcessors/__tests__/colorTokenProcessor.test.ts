@@ -1,4 +1,4 @@
-import { ColorToken, TokenGroup, TokenType } from '@supernovaio/sdk-exporters';
+import { ColorToken, TokenGroup } from '@supernovaio/sdk-exporters';
 import { exampleColorsTokens } from '../../../tests/fixtures/exampleColorTokens';
 import { exampleGroups } from '../../../tests/fixtures/exampleGroups';
 import { sampleConfigurationDefault } from '../../../tests/fixtures/sampleConfiguration';

@@ -3,9 +3,8 @@ import { ColorFormat, CSSHelper } from '@supernovaio/export-helpers';
 import { formatTokenStyleByOutput, tokenVariableName } from '../helpers/tokenHelper';
 import { transformColorsToVariables, findAllHexColorsInStringAndNormalize } from '../helpers/colorHelper';
 import { replacePxWithRem } from '../formatters/unitFormatter';
-import { type FontSizeBaseMap } from '../helpers/unitHelper';
 import { getDeviceAlias } from '../helpers/deviceHelpers';
-import { getFontSizeBaseForBreakpoint } from '../helpers/unitHelper';
+import { getFontSizeBaseForBreakpoint, type FontSizeBaseMap } from '../helpers/unitHelper';
 
 type ShadowTokenProcessorContext = {
   tokenGroups: Array<TokenGroup>;
@@ -18,6 +17,7 @@ type ShadowTokenProcessorContext = {
 
 const getDeviceKey = (token: ShadowToken): string => {
   const alias = getDeviceAlias(token as never);
+
   return alias.toLowerCase() || 'mobile';
 };
 
@@ -27,6 +27,10 @@ const getBaseFontSize = (fontSizeBaseMap: FontSizeBaseMap, token: ShadowToken): 
 
 /**
  * Processes shadow tokens (with color variable transformation and px->rem conversion).
+ *
+ * @param shadowToken - The shadow token to process
+ * @param ctx - Processing context with token groups, prefix, fontSizeBaseMap, and output options
+ * @returns {string|null} Formatted token style string or null
  */
 export const processShadowToken = (shadowToken: ShadowToken, ctx: ShadowTokenProcessorContext): string | null => {
   const { tokenGroups, hasParentPrefix, hasJsOutput, tokenPrefix, mappedTokens, fontSizeBaseMap } = ctx;
