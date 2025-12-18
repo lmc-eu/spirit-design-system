@@ -12,17 +12,19 @@ import { exampleTypographyTokens } from '../../../tests/fixtures/exampleTypograp
 import { sampleConfigurationDefault } from '../../../tests/fixtures/sampleConfiguration';
 import { filterExcludedTokens } from '../../filters/excludedTokens';
 import {
+  createStylesObjectStructureFromTokenNameParts,
+  generateStylesObjectFromTokens,
+  StylesObjectType,
+} from '../stylesObjectGenerator';
+import {
+  cloneTypographyValue,
   colorGroupsReducer,
   createGlobalColorsObject,
   createGlobalTypographyObject,
-  createStylesObjectStructureFromTokenNameParts,
-  cloneTypographyValue,
-  generateStylesObjectFromTokens,
   handleTypographyTokens,
   parseGroupName,
-  StylesObjectType,
   typographyGroupReducer,
-} from '../stylesObjectGenerator';
+} from '../../objectProcessors';
 
 const tokenGroups: Array<TokenGroup> = exampleGroups;
 jest.mock('../../../config', () => ({
