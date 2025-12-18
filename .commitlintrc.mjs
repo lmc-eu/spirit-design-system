@@ -1,5 +1,5 @@
 export default {
-  extends: ['@lmc-eu/commitlint-config'],
+  extends: ['@commitlint/config-conventional'],
   ignores: [
     (commit) => commit.includes('[ci-skip]'),
     (commit) => commit.includes('Pull request'),
