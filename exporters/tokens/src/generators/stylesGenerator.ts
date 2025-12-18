@@ -81,7 +81,7 @@ export const tokenToStyleByType = (
 
 export const generateStylesFromTokens = (
   tokens: Token[],
-  mappedTokens: Map<string, unknown>,
+  mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
   tokenPrefix: string,
   hasMixin: boolean,
