@@ -1,5 +1,5 @@
 import { DimensionToken, FontSizeToken, Token, TokenType } from '@supernovaio/sdk-exporters';
-import { FONT_SIZE_BASE_DEFAULT } from '../constants';
+import { FONT_SIZE_BASE, FONT_SIZE_BASE_DEFAULT } from '../constants';
 import { getDeviceAlias } from './deviceHelpers';
 import { pxToRem } from '../converters/pxToRemConverter';
 
@@ -26,12 +26,43 @@ export const createDefaultFontSizeBaseMap = (fontSizeBase: number = FONT_SIZE_BA
 export const getFontSizeBaseMap = (tokens: Token[]): FontSizeBaseMap => {
   const fontSizeBaseMap = new Map<string, number>();
 
-  const fontSizeBaseTokens = tokens.filter(
+  const exactFontSizeBase = tokens.find(
     (token) =>
       (token.tokenType === TokenType.fontSize || token.tokenType === TokenType.dimension) &&
-      (token.name.toLowerCase().includes('font-size-base') ||
-        token.origin?.name?.toLowerCase().includes('font-size-base')),
+      (token.name.toLowerCase() === FONT_SIZE_BASE || token.origin?.name?.toLowerCase() === FONT_SIZE_BASE) &&
+      !getDeviceAlias(token),
   );
+
+  if (exactFontSizeBase) {
+    let measure: number | undefined;
+    if (exactFontSizeBase.tokenType === TokenType.fontSize) {
+      const fontSizeToken = exactFontSizeBase as FontSizeToken;
+      measure = fontSizeToken.value?.measure;
+    } else if (exactFontSizeBase.tokenType === TokenType.dimension) {
+      const dimensionToken = exactFontSizeBase as DimensionToken;
+      measure = dimensionToken.value?.measure;
+    }
+
+    if (typeof measure === 'number' && measure > 0) {
+      fontSizeBaseMap.set('mobile', measure);
+      fontSizeBaseMap.set('tablet', measure);
+      fontSizeBaseMap.set('desktop', measure);
+      return fontSizeBaseMap;
+    }
+  }
+
+  const fontSizeBaseTokens = tokens.filter((token) => {
+    const hasFontSizeBaseName =
+      token.name.toLowerCase().includes('font-size-base') ||
+      token.origin?.name?.toLowerCase().includes('font-size-base');
+    const hasDeviceAlias = !!getDeviceAlias(token);
+
+    return (
+      (token.tokenType === TokenType.fontSize || token.tokenType === TokenType.dimension) &&
+      hasFontSizeBaseName &&
+      hasDeviceAlias
+    );
+  });
 
   fontSizeBaseTokens.forEach((token) => {
     const device = getDeviceAlias(token).toLowerCase() || 'mobile';
@@ -50,29 +81,6 @@ export const getFontSizeBaseMap = (tokens: Token[]): FontSizeBaseMap => {
     }
   });
 
-  if (fontSizeBaseMap.size === 0) {
-    const singleFontSizeBase = tokens.find(
-      (token) =>
-        (token.tokenType === TokenType.fontSize || token.tokenType === TokenType.dimension) &&
-        (token.name.toLowerCase() === 'font-size-base' || token.origin?.name?.toLowerCase() === 'font-size-base'),
-    );
-
-    let measure: number | undefined;
-    if (singleFontSizeBase?.tokenType === TokenType.fontSize) {
-      const fontSizeToken = singleFontSizeBase as FontSizeToken;
-      measure = fontSizeToken.value?.measure;
-    } else if (singleFontSizeBase?.tokenType === TokenType.dimension) {
-      const dimensionToken = singleFontSizeBase as DimensionToken;
-      measure = dimensionToken.value?.measure;
-    }
-
-    if (typeof measure === 'number' && measure > 0) {
-      fontSizeBaseMap.set('mobile', measure);
-      fontSizeBaseMap.set('tablet', measure);
-      fontSizeBaseMap.set('desktop', measure);
-    }
-  }
-
   return fontSizeBaseMap;
 };
 
@@ -80,12 +88,16 @@ export const getFontSizeBaseMap = (tokens: Token[]): FontSizeBaseMap => {
  * Gets font-size-base value for a specific breakpoint
  * @param fontSizeBaseMap - Map of breakpoint to font-size-base values
  * @param breakpoint - Breakpoint name (mobile, tablet, desktop)
- * @returns Font-size-base value in px, or DEFAULT_FONT_SIZE_BASE as default
+ * @returns Font-size-base value in px, or 0 if not found (0 means no conversion should happen)
  */
 export const getFontSizeBaseForBreakpoint = (fontSizeBaseMap: FontSizeBaseMap, breakpoint: string): number => {
   const normalizedBreakpoint = breakpoint.toLowerCase();
 
-  return fontSizeBaseMap.get(normalizedBreakpoint) || fontSizeBaseMap.get('mobile') || FONT_SIZE_BASE_DEFAULT;
+  if (fontSizeBaseMap.size === 0) {
+    return 0;
+  }
+
+  return fontSizeBaseMap.get(normalizedBreakpoint) || fontSizeBaseMap.get('mobile') || 0;
 };
 
 /**
