@@ -34,7 +34,7 @@ export const normalizeZeroValueWithUnit = (
   value: string | number,
   unit: string,
   isRelative: boolean,
-  baseFontSize: number = 16,
+  baseFontSize: number = FONT_SIZE_BASE_DEFAULT,
 ): string | number => {
   if (value === 0) {
     return 0;
@@ -53,7 +53,7 @@ export const formatTokenStyleByOutput = (
   hasJsOutput: boolean,
   unit?: string,
   isRelative?: boolean,
-  baseFontSize: number = 16,
+  baseFontSize: number = FONT_SIZE_BASE_DEFAULT,
 ) => {
   const normalizedValue = unit ? normalizeZeroValueWithUnit(value, unit, isRelative ?? false, baseFontSize) : value;
 

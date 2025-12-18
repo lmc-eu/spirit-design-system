@@ -1,5 +1,6 @@
 import { TokenType } from '@supernovaio/sdk-exporters';
 import { formatUnitValue, replacePxWithRem, type UnitFormatContext, type UnitFormatRule } from '../unitFormatter';
+import { FONT_SIZE_BASE_DEFAULT } from '../../constants';
 
 const tokenStub = {} as unknown as UnitFormatContext['token'];
 
@@ -9,7 +10,7 @@ describe('unitFormatter', () => {
       const ctx: UnitFormatContext = {
         token: tokenStub,
         tokenType: TokenType.dimension,
-        baseFontSize: 16,
+        baseFontSize: FONT_SIZE_BASE_DEFAULT,
         isFontSizeBaseToken: false,
       };
       expect(formatUnitValue(undefined, 'px', ctx, [])).toBeUndefined();
@@ -20,7 +21,7 @@ describe('unitFormatter', () => {
       const ctx: UnitFormatContext = {
         token: tokenStub,
         tokenType: TokenType.dimension,
-        baseFontSize: 16,
+        baseFontSize: FONT_SIZE_BASE_DEFAULT,
         isFontSizeBaseToken: false,
       };
       expect(formatUnitValue(12, undefined, ctx, [])).toBe(12);
@@ -30,7 +31,7 @@ describe('unitFormatter', () => {
       const ctx: UnitFormatContext = {
         token: tokenStub,
         tokenType: TokenType.dimension,
-        baseFontSize: 16,
+        baseFontSize: FONT_SIZE_BASE_DEFAULT,
         isFontSizeBaseToken: false,
       };
       expect(formatUnitValue(50, '%', ctx, [])).toBe('50%');
@@ -41,7 +42,7 @@ describe('unitFormatter', () => {
       const ctx: UnitFormatContext = {
         token: tokenStub,
         tokenType: TokenType.fontSize,
-        baseFontSize: 16,
+        baseFontSize: FONT_SIZE_BASE_DEFAULT,
         isFontSizeBaseToken: false,
       };
       const rules: UnitFormatRule[] = [
@@ -54,7 +55,7 @@ describe('unitFormatter', () => {
       const ctx: UnitFormatContext = {
         token: tokenStub,
         tokenType: TokenType.fontSize,
-        baseFontSize: 16,
+        baseFontSize: FONT_SIZE_BASE_DEFAULT,
         isFontSizeBaseToken: false,
       };
       const rules: UnitFormatRule[] = [
@@ -67,7 +68,7 @@ describe('unitFormatter', () => {
       const ctx: UnitFormatContext = {
         token: tokenStub,
         tokenType: TokenType.fontSize,
-        baseFontSize: 16,
+        baseFontSize: FONT_SIZE_BASE_DEFAULT,
         isFontSizeBaseToken: true,
       };
       const rules: UnitFormatRule[] = [

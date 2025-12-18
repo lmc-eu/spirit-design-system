@@ -94,7 +94,10 @@ export const getFontSizeBaseForBreakpoint = (fontSizeBaseMap: FontSizeBaseMap, b
  * @param baseFontSize - Base font size in pixels (default: DEFAULT_FONT_SIZE_BASE)
  * @returns Value in rem units
  */
-export const makeRelativeUnit = (value: string | number, baseFontSize: number = 16): string | number => {
+export const makeRelativeUnit = (
+  value: string | number,
+  baseFontSize: number = FONT_SIZE_BASE_DEFAULT,
+): string | number => {
   if (baseFontSize && baseFontSize > 0) {
     return pxToRem(value, { baseFontSize });
   }
@@ -108,7 +111,7 @@ export const makeRelativeUnit = (value: string | number, baseFontSize: number = 
  * @param baseFontSize - Base font size in pixels (default: DEFAULT_FONT_SIZE_BASE)
  * @returns String with px replaced by rem
  */
-export const replacePxWithRemUnits = (value: string, baseFontSize: number = 16): string => {
+export const replacePxWithRemUnits = (value: string, baseFontSize: number = FONT_SIZE_BASE_DEFAULT): string => {
   if (!baseFontSize || baseFontSize <= 0) {
     return value;
   }
