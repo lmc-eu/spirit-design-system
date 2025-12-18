@@ -115,7 +115,7 @@ export const generateFileContent = (
 
       // Generate css tokens
       if (tokenType !== TokenType.typography) {
-        styledTokens += generateStylesFromTokens(
+        const generatedStyles = generateStylesFromTokens(
           filteredTokens,
           mappedTokens,
           tokenGroups,
@@ -126,7 +126,10 @@ export const generateFileContent = (
           hasJsOutput,
           fontSizeBaseMap,
         );
-        styledTokens += '\n\n';
+        if (generatedStyles) {
+          styledTokens += generatedStyles;
+          styledTokens += '\n\n';
+        }
       }
 
       // Generate mixin
@@ -155,11 +158,18 @@ export const generateFileContent = (
     });
   });
 
-  let content = styledTokens;
+  // Remove trailing newlines from styledTokens
+  const trimmedStyledTokens = styledTokens.trimEnd();
+  let content = trimmedStyledTokens;
 
   // convert css object to scss or js structure based on file extension
   if (hasStylesObject) {
-    content += hasJsOutput ? generateJsObjectOutput(stylesObject) : generateScssObjectOutput(stylesObject);
+    const objectOutput = hasJsOutput ? generateJsObjectOutput(stylesObject) : generateScssObjectOutput(stylesObject);
+    // Add newline separator only if there's existing content
+    if (content) {
+      content += '\n\n';
+    }
+    content += objectOutput;
   }
 
   if (!hasJsOutput && hasMixin) {
