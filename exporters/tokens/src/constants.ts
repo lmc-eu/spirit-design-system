@@ -3,6 +3,7 @@ export const COLOR_KEY = 'colors';
 export const COLOR_SCSS_SUFFIX = '-colors';
 export const DEVICES_DIRECTORY = 'devices';
 export const FONT_SIZE_BASE = 'font-size-base';
+export const FONT_SIZE_BASE_DEFAULT = 16;
 export const GLOBAL_DIRECTORY = 'global-tokens';
 export const JS_DIRECTORY = 'js';
 export const JS_INDENTATION = '  ';

@@ -1,8 +1,22 @@
 import { DimensionToken, FontSizeToken, Token, TokenType } from '@supernovaio/sdk-exporters';
+import { FONT_SIZE_BASE_DEFAULT } from '../constants';
 import { getDeviceAlias } from './deviceHelpers';
 import { pxToRem } from '../converters/pxToRemConverter';
 
 export type FontSizeBaseMap = Map<string, number>;
+
+/**
+ * Creates a default FontSizeBaseMap with the same value for all breakpoints.
+ * @param fontSizeBase - Font size base value in px (default: DEFAULT_FONT_SIZE_BASE)
+ * @returns FontSizeBaseMap with mobile, tablet, and desktop set to the same value
+ */
+export const createDefaultFontSizeBaseMap = (fontSizeBase: number = FONT_SIZE_BASE_DEFAULT): FontSizeBaseMap => {
+  return new Map([
+    ['mobile', fontSizeBase],
+    ['tablet', fontSizeBase],
+    ['desktop', fontSizeBase],
+  ]);
+};
 
 /**
  * Finds font-size-base token from tokens array
@@ -66,18 +80,18 @@ export const getFontSizeBaseMap = (tokens: Token[]): FontSizeBaseMap => {
  * Gets font-size-base value for a specific breakpoint
  * @param fontSizeBaseMap - Map of breakpoint to font-size-base values
  * @param breakpoint - Breakpoint name (mobile, tablet, desktop)
- * @returns Font-size-base value in px, or 16 as default
+ * @returns Font-size-base value in px, or DEFAULT_FONT_SIZE_BASE as default
  */
 export const getFontSizeBaseForBreakpoint = (fontSizeBaseMap: FontSizeBaseMap, breakpoint: string): number => {
   const normalizedBreakpoint = breakpoint.toLowerCase();
 
-  return fontSizeBaseMap.get(normalizedBreakpoint) || fontSizeBaseMap.get('mobile') || 16;
+  return fontSizeBaseMap.get(normalizedBreakpoint) || fontSizeBaseMap.get('mobile') || FONT_SIZE_BASE_DEFAULT;
 };
 
 /**
  * Converts a pixel value to rem units based on font-size-base
  * @param value - Value in pixels to convert
- * @param baseFontSize - Base font size in pixels (default: 16)
+ * @param baseFontSize - Base font size in pixels (default: DEFAULT_FONT_SIZE_BASE)
  * @returns Value in rem units
  */
 export const makeRelativeUnit = (value: string | number, baseFontSize: number = 16): string | number => {
@@ -91,7 +105,7 @@ export const makeRelativeUnit = (value: string | number, baseFontSize: number = 
 /**
  * Replaces px units with rem units in a string
  * @param value - String containing px values
- * @param baseFontSize - Base font size in pixels (default: 16)
+ * @param baseFontSize - Base font size in pixels (default: DEFAULT_FONT_SIZE_BASE)
  * @returns String with px replaced by rem
  */
 export const replacePxWithRemUnits = (value: string, baseFontSize: number = 16): string => {

@@ -17,7 +17,7 @@ import {
   TokenType,
 } from '@supernovaio/sdk-exporters';
 import { addEmptyLineBetweenTokenGroups, sortTokens } from '../helpers/tokenHelper';
-import { type FontSizeBaseMap } from '../helpers/unitHelper';
+import { type FontSizeBaseMap, createDefaultFontSizeBaseMap } from '../helpers/unitHelper';
 import {
   processNumericToken,
   processBorderToken,
@@ -88,11 +88,7 @@ export const generateStylesFromTokens = (
   hasParentPrefix: boolean,
   sortByNumValue: boolean,
   hasJsOutput: boolean,
-  fontSizeBaseMap: FontSizeBaseMap = new Map([
-    ['mobile', 16],
-    ['tablet', 16],
-    ['desktop', 16],
-  ]),
+  fontSizeBaseMap: FontSizeBaseMap = createDefaultFontSizeBaseMap(),
 ): string => {
   const sortedTokens = sortTokens(tokens, tokenGroups, hasParentPrefix, sortByNumValue);
 
