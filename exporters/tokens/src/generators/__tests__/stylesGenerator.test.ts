@@ -39,7 +39,7 @@ describe('stylesGenerator', () => {
         hasParentPrefix: true,
         hasJsOutput: false,
         hasTokenPrefix: true,
-        expectedStyles: '$grid-spacing-desktop: 2.29rem !default;',
+        expectedStyles: '$grid-spacing-desktop: 1.78rem !default;',
       },
       {
         token: exampleDimensionAndStringTokens.get('dimensionRef') as DimensionToken,
@@ -47,7 +47,7 @@ describe('stylesGenerator', () => {
         hasParentPrefix: false,
         hasJsOutput: false,
         hasTokenPrefix: true,
-        expectedStyles: '$desktop: 2.29rem !default;',
+        expectedStyles: '$desktop: 1.78rem !default;',
       },
       {
         token: exampleDimensionAndStringTokens.get('stringRef') as StringToken,
@@ -83,7 +83,7 @@ describe('stylesGenerator', () => {
         hasParentPrefix: true,
         hasJsOutput: true,
         hasTokenPrefix: false,
-        expectedStyles: "export const gridSpacingDesktop = '2.29rem';",
+        expectedStyles: "export const gridSpacingDesktop = '1.78rem';",
       },
       {
         token: exampleDimensionAndStringTokens.get('dimensionRef') as DimensionToken,
@@ -91,7 +91,7 @@ describe('stylesGenerator', () => {
         hasParentPrefix: false,
         hasJsOutput: true,
         hasTokenPrefix: false,
-        expectedStyles: "export const desktop = '2.29rem';",
+        expectedStyles: "export const desktop = '1.78rem';",
       },
       {
         token: exampleDimensionAndStringTokens.get('stringRef') as StringToken,
@@ -177,7 +177,7 @@ describe('stylesGenerator', () => {
         hasParentPrefix: true,
         hasTokenPrefix: false,
         description: 'should generate styles from tokens',
-        expectedStyles: '$grid-columns: 12 !default;\n\n$grid-spacing-desktop: 2.29rem !default;',
+        expectedStyles: '$grid-columns: 12 !default;\n\n$grid-spacing-desktop: 1.78rem !default;',
       },
       {
         tokens: exampleDimensionAndStringTokens,
@@ -186,7 +186,7 @@ describe('stylesGenerator', () => {
         hasParentPrefix: true,
         hasTokenPrefix: false,
         description: 'should generate styles from tokens with js output',
-        expectedStyles: "export const gridColumns = '12';\n\nexport const gridSpacingDesktop = '2.29rem';",
+        expectedStyles: "export const gridColumns = '12';\n\nexport const gridSpacingDesktop = '1.78rem';",
       },
       {
         tokens: exampleColorsTokens,

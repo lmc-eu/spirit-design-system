@@ -34,7 +34,31 @@ type NumericTokenProcessorContext = {
   fontSizeBaseMap: FontSizeBaseMap;
 };
 
-const getDeviceKey = (token: Token): string => getDeviceAlias(token).toLowerCase() || 'mobile';
+const getDeviceKey = (token: Token): string => {
+  const deviceAlias = getDeviceAlias(token).toLowerCase();
+  if (deviceAlias) {
+    return deviceAlias;
+  }
+
+  const tokenName = token.name?.toLowerCase() || '';
+  const originName = token.origin?.name?.toLowerCase() || '';
+  const combinedName = `${tokenName} ${originName}`;
+
+  if (combinedName.includes('desktop')) {
+    return 'desktop';
+  }
+
+  if (combinedName.includes('tablet')) {
+    return 'tablet';
+  }
+
+  if (combinedName.includes('mobile')) {
+    return 'mobile';
+  }
+
+  // Default fallback to mobile for tokens without breakpoint in name
+  return 'mobile';
+};
 
 const getBaseFontSize = (fontSizeBaseMap: FontSizeBaseMap, token: Token): number => {
   return getFontSizeBaseForBreakpoint(fontSizeBaseMap, getDeviceKey(token));

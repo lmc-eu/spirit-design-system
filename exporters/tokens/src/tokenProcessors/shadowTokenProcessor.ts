@@ -16,9 +16,29 @@ type ShadowTokenProcessorContext = {
 };
 
 const getDeviceKey = (token: ShadowToken): string => {
-  const alias = getDeviceAlias(token as never);
+  const alias = getDeviceAlias(token as never).toLowerCase();
+  if (alias) {
+    return alias;
+  }
 
-  return alias.toLowerCase() || 'mobile';
+  const tokenName = token.name?.toLowerCase() || '';
+  const originName = token.origin?.name?.toLowerCase() || '';
+  const combinedName = `${tokenName} ${originName}`;
+
+  if (combinedName.includes('desktop')) {
+    return 'desktop';
+  }
+
+  if (combinedName.includes('tablet')) {
+    return 'tablet';
+  }
+
+  if (combinedName.includes('mobile')) {
+    return 'mobile';
+  }
+
+  // Default fallback to mobile for tokens without breakpoint in name
+  return 'mobile';
 };
 
 const getBaseFontSize = (fontSizeBaseMap: FontSizeBaseMap, token: ShadowToken): number => {
