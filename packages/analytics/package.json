@@ -22,22 +22,28 @@
     "access": "public",
     "directory": "dist"
   },
-  "main": "./index.cjs",
-  "module": "./index.js",
-  "types": "./index.d.ts",
-  "bin": "./bin/spirit-analytics.js",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": "./dist/bin/spirit-analytics.js",
   "type": "module",
   "exports": {
     ".": {
-      "import": "./index.js",
-      "require": "./index.cjs"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     },
     "./package.json": "./package.json"
   },
+  "files": [
+    "dist",
+    "CHANGELOG.md",
+    "README.md",
+    "package.json"
+  ],
   "scripts": {
     "build": "npm-run-all --serial build:prepare compile build:finalize",
     "build:prepare": "shx rm -rf dist && shx mkdir -p dist",
-    "build:finalize": "shx cp -r package.json README.md src/bin dist/",
+    "build:finalize": "shx cp -r src/bin dist/",
     "compile": "tsup --config ./config/tsup.config.ts",
     "start": "tsup src/index.ts --watch",
     "types": "tsc",
@@ -46,7 +52,8 @@
     "test": "npm-run-all --serial lint test:unit:coverage types",
     "test:unit": "jest",
     "test:unit:watch": "yarn test:unit --watchAll",
-    "test:unit:coverage": "yarn test:unit --coverage"
+    "test:unit:coverage": "yarn test:unit --coverage",
+    "prepack": "yarn workspace @alma-oss/spirit-workspace-deps resolve ./package.json"
   },
   "devDependencies": {
     "@eslint/compat": "^1.4.0",

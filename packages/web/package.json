@@ -21,7 +21,7 @@
   "scripts": {
     "build": "npm-run-all --serial --continue-on-error build:prepare build:design-tokens css js",
     "build:design-tokens": "test ! -f ../design-tokens/esm/index.js && cd ../design-tokens && yarn build || true",
-    "build:prepare": "shx rm -rf dist && shx mkdir -p dist/scss && shx cp package.json README.md dist/ && shx cp -r src/scss dist/ && shx rm -rf dist/scss/**/__tests__",
+    "build:prepare": "shx rm -rf dist && shx mkdir -p dist/scss && shx cp package.json README.md dist/ && yarn workspace @alma-oss/spirit-workspace-deps resolve $PWD/dist/package.json && shx cp -r src/scss dist/ && shx rm -rf dist/scss/**/__tests__",
     "css": "npm-run-all --serial css:lint css:compile css:prefix css:minify",
     "css:lint": "stylelint \"src/**/*.scss\" --cache --cache-location .cache/.stylelintcache",
     "css:lint:fix": "stylelint \"src/**/*.scss\" --fix",

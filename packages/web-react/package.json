@@ -107,7 +107,7 @@
     }
   },
   "scripts": {
-    "build:prepare": "shx rm -rf dist && shx mkdir -p dist && shx cp package.json README.md dist/ ",
+    "build:prepare": "shx rm -rf dist && shx mkdir -p dist && shx cp package.json README.md dist/ && yarn workspace @alma-oss/spirit-workspace-deps resolve $PWD/dist/package.json",
     "build": "npm-run-all --serial build:prepare build:umd build:es2020 build:esNext build:finalize",
     "build:cjs": "yarn rollup --bundleConfigAsCjs",
     "build:umd": "npm-run-all --serial webpack:dev webpack:prod",

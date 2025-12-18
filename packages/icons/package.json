@@ -25,7 +25,7 @@
     "build:svg": "node ./scripts/buildSvg.js",
     "build:clean": "shx rm -rf dist",
     "build:dist": "shx mkdir -p dist/svg dist/react dist/.tmp-svg",
-    "build:copy": "shx cp -r package.json README.md dist/",
+    "build:copy": "shx cp -r package.json README.md dist/ && yarn workspace @alma-oss/spirit-workspace-deps resolve $PWD/dist/package.json",
     "build:react": "svg2react-icon --typescript --no-sub-dir ./dist/.tmp-svg ./dist/react",
     "build:react:clean": "shx rm -rf 'dist/react/**.d.ts dist/react/**.js.map dist/.tmp-svg'",
     "build:const": "node ./scripts/buildConstants.js",

@@ -35,7 +35,7 @@
   "scripts": {
     "build": "npm-run-all --serial build:prepare compile build:finalize",
     "build:prepare": "shx rm -rf dist && shx mkdir -p dist",
-    "build:finalize": "shx cp -r package.json README.md src/bin dist/ && node scripts/copyTransforms.js",
+    "build:finalize": "shx cp -r package.json README.md src/bin dist/ && yarn workspace @alma-oss/spirit-workspace-deps resolve $PWD/dist/package.json && node scripts/copyTransforms.js",
     "compile": "tsup --config ./config/tsup.config.ts",
     "start": "tsup src/index.ts --watch",
     "types": "tsc",
