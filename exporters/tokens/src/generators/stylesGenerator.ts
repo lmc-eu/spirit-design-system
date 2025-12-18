@@ -16,70 +16,16 @@ import {
   TokenGroup,
   TokenType,
 } from '@supernovaio/sdk-exporters';
-import { ColorFormat, CSSHelper } from '@supernovaio/export-helpers';
+import { addEmptyLineBetweenTokenGroups, sortTokens } from '../helpers/tokenHelper';
+import { type FontSizeBaseMap } from '../helpers/unitHelper';
 import {
-  addAngleVarToGradient,
-  addEmptyLineBetweenTokenGroups,
-  formatTokenStyleByOutput,
-  sortTokens,
-  tokenVariableName,
-} from '../helpers/tokenHelper';
-import { handleSpecialCase } from '../helpers/specialCaseHelper';
-import {
-  normalizeColor,
-  findAllHexColorsInStringAndNormalize,
-  transformColorsToVariables,
-} from '../helpers/colorHelper';
-import { getFontSizeBaseForBreakpoint, type FontSizeBaseMap } from '../helpers/unitHelper';
-import { getDeviceAlias } from '../helpers/deviceHelpers';
-import { FONT_SIZE_BASE } from '../constants';
-import { formatUnitValue, replacePxWithRem, type UnitFormatContext } from '../formatters/unitFormatter';
-
-const getDeviceKey = (token: Token): string => getDeviceAlias(token).toLowerCase() || 'mobile';
-
-const getBaseFontSize = (fontSizeBaseMap: FontSizeBaseMap, token: Token): number => {
-  return getFontSizeBaseForBreakpoint(fontSizeBaseMap, getDeviceKey(token));
-};
-
-const isFontSizeBaseToken = (token: Token, resolvedName: string): boolean => {
-  const tokenName = token.name?.toLowerCase() || '';
-  const originName = token.origin?.name?.toLowerCase() || '';
-  const resolved = resolvedName.toLowerCase();
-
-  return resolved.includes(FONT_SIZE_BASE) || tokenName.includes(FONT_SIZE_BASE) || originName.includes(FONT_SIZE_BASE);
-};
-
-const formatMeasure = (
-  token: Token,
-  tokenType: TokenType,
-  name: string,
-  measure: number | undefined,
-  unit: string | undefined,
-  baseFontSize: number,
-) => {
-  const ctx: UnitFormatContext = {
-    token,
-    tokenType,
-    baseFontSize,
-    isFontSizeBaseToken: isFontSizeBaseToken(token, name),
-  };
-
-  return formatUnitValue(measure, unit, ctx);
-};
-
-const toFormattedTokenStyle = (
-  name: string,
-  value: number | undefined,
-  unit: string | undefined,
-  tokenType: TokenType,
-  baseFontSize: number,
-  token: Token,
-  hasJsOutput: boolean,
-): string | null => {
-  const formattedValue = formatMeasure(token, tokenType, name, value, unit, baseFontSize);
-
-  return formattedValue === undefined ? null : formatTokenStyleByOutput(name, formattedValue, hasJsOutput);
-};
+  processNumericToken,
+  processBorderToken,
+  processStringToken,
+  processColorToken,
+  processShadowToken,
+  processGradientToken,
+} from '../tokenProcessors';
 
 export const tokenToStyleByType = (
   token: Token,
@@ -91,179 +37,46 @@ export const tokenToStyleByType = (
   hasJsOutput: boolean,
   fontSizeBaseMap: FontSizeBaseMap,
 ): string | null => {
-  const hasTokenType = (type: TokenType) => {
-    const { tokenType } = token;
-
-    return tokenType === type;
+  const processorContext = {
+    tokenGroups,
+    hasParentPrefix,
+    hasJsOutput,
+    fontSizeBaseMap,
+    tokenPrefix,
+    hasMixin,
+    mappedTokens,
   };
 
-  if (hasTokenType(TokenType.dimension)) {
-    const dimensionToken = token as DimensionToken;
-    const name = tokenVariableName(dimensionToken, tokenGroups, hasParentPrefix);
-    let value = dimensionToken.value?.measure;
-    value = handleSpecialCase(name, value);
-    const unit = CSSHelper.unitToCSS(dimensionToken.value?.unit);
-    const baseFontSize = getBaseFontSize(fontSizeBaseMap, token);
-
-    return toFormattedTokenStyle(name, value, unit, TokenType.dimension, baseFontSize, token, hasJsOutput);
+  switch (token.tokenType) {
+    case TokenType.dimension:
+      return processNumericToken(token as DimensionToken, TokenType.dimension, processorContext);
+    case TokenType.radius:
+      return processNumericToken(token as RadiusToken, TokenType.radius, processorContext);
+    case TokenType.space:
+      return processNumericToken(token as SpaceToken, TokenType.space, processorContext);
+    case TokenType.size:
+      return processNumericToken(token as SizeToken, TokenType.size, processorContext);
+    case TokenType.fontSize:
+      return processNumericToken(token as FontSizeToken, TokenType.fontSize, processorContext);
+    case TokenType.lineHeight:
+      return processNumericToken(token as LineHeightToken, TokenType.lineHeight, processorContext);
+    case TokenType.letterSpacing:
+      return processNumericToken(token as LetterSpacingToken, TokenType.letterSpacing, processorContext);
+    case TokenType.border:
+      return processBorderToken(token as BorderToken, processorContext);
+    case TokenType.borderWidth:
+      return processBorderToken(token as BorderWidthToken, processorContext);
+    case TokenType.string:
+      return processStringToken(token as StringToken, processorContext);
+    case TokenType.color:
+      return processColorToken(token as ColorToken, processorContext);
+    case TokenType.shadow:
+      return processShadowToken(token as ShadowToken, processorContext);
+    case TokenType.gradient:
+      return processGradientToken(token as GradientToken, processorContext);
+    default:
+      return null;
   }
-
-  if (hasTokenType(TokenType.radius)) {
-    const radiusToken = token as RadiusToken;
-    const name = tokenVariableName(radiusToken, tokenGroups, hasParentPrefix);
-    let value = radiusToken.value?.measure;
-    value = handleSpecialCase(name, value);
-    const unit = CSSHelper.unitToCSS(radiusToken.value?.unit);
-    const baseFontSize = getBaseFontSize(fontSizeBaseMap, token);
-
-    return toFormattedTokenStyle(name, value, unit, TokenType.radius, baseFontSize, token, hasJsOutput);
-  }
-
-  if (hasTokenType(TokenType.space)) {
-    const spaceToken = token as SpaceToken;
-    const name = tokenVariableName(spaceToken, tokenGroups, hasParentPrefix);
-    let value = spaceToken.value?.measure;
-    value = handleSpecialCase(name, value);
-    const unit = CSSHelper.unitToCSS(spaceToken.value?.unit);
-    const baseFontSize = getBaseFontSize(fontSizeBaseMap, token);
-
-    return toFormattedTokenStyle(name, value, unit, TokenType.space, baseFontSize, token, hasJsOutput);
-  }
-
-  if (hasTokenType(TokenType.border)) {
-    const borderToken = token as BorderToken;
-    const name = tokenVariableName(borderToken, tokenGroups, hasParentPrefix);
-    let value = borderToken.value?.width?.measure;
-    value = handleSpecialCase(name, value);
-    const unit = CSSHelper.unitToCSS(borderToken.value?.width?.unit);
-
-    return formatTokenStyleByOutput(name, value, hasJsOutput, unit, false);
-  }
-
-  if (hasTokenType(TokenType.borderWidth)) {
-    const borderWidthToken = token as BorderWidthToken;
-    const name = tokenVariableName(borderWidthToken, tokenGroups, hasParentPrefix);
-    let value = borderWidthToken.value?.measure;
-    value = handleSpecialCase(name, value);
-    const unit = CSSHelper.unitToCSS(borderWidthToken.value?.unit);
-
-    return formatTokenStyleByOutput(name, value, hasJsOutput, unit, false);
-  }
-
-  if (hasTokenType(TokenType.size)) {
-    const sizeToken = token as SizeToken;
-    const name = tokenVariableName(sizeToken, tokenGroups, hasParentPrefix);
-    let value = sizeToken.value?.measure;
-    value = handleSpecialCase(name, value);
-    const unit = CSSHelper.unitToCSS(sizeToken.value?.unit);
-    const baseFontSize = getBaseFontSize(fontSizeBaseMap, token);
-
-    return toFormattedTokenStyle(name, value, unit, TokenType.size, baseFontSize, token, hasJsOutput);
-  }
-
-  if (hasTokenType(TokenType.fontSize)) {
-    const fontSizeToken = token as FontSizeToken;
-    const name = tokenVariableName(fontSizeToken, tokenGroups, hasParentPrefix);
-    let value = fontSizeToken.value?.measure;
-    value = handleSpecialCase(name, value);
-    const unit = CSSHelper.unitToCSS(fontSizeToken.value?.unit);
-    const baseFontSize = getBaseFontSize(fontSizeBaseMap, token);
-
-    return toFormattedTokenStyle(name, value, unit, TokenType.fontSize, baseFontSize, token, hasJsOutput);
-  }
-
-  if (hasTokenType(TokenType.lineHeight)) {
-    const lineHeightToken = token as LineHeightToken;
-    const name = tokenVariableName(lineHeightToken, tokenGroups, hasParentPrefix);
-    let value = lineHeightToken.value?.measure;
-    value = handleSpecialCase(name, value);
-    const unit = CSSHelper.unitToCSS(lineHeightToken.value?.unit);
-    const baseFontSize = getBaseFontSize(fontSizeBaseMap, token);
-
-    return toFormattedTokenStyle(name, value, unit, TokenType.lineHeight, baseFontSize, token, hasJsOutput);
-  }
-
-  if (hasTokenType(TokenType.letterSpacing)) {
-    const letterSpacingToken = token as LetterSpacingToken;
-    const name = tokenVariableName(letterSpacingToken, tokenGroups, hasParentPrefix);
-    let value = letterSpacingToken.value?.measure;
-    value = handleSpecialCase(name, value);
-    const unit = CSSHelper.unitToCSS(letterSpacingToken.value?.unit);
-    const baseFontSize = getBaseFontSize(fontSizeBaseMap, token);
-
-    return toFormattedTokenStyle(name, value, unit, TokenType.letterSpacing, baseFontSize, token, hasJsOutput);
-  }
-
-  if (hasTokenType(TokenType.string)) {
-    const stringToken = token as StringToken;
-    const name = tokenVariableName(stringToken, tokenGroups, hasParentPrefix);
-    let value = stringToken.value.text;
-    value = handleSpecialCase(name, value);
-
-    return formatTokenStyleByOutput(name, value, hasJsOutput);
-  }
-
-  if (hasTokenType(TokenType.color)) {
-    const colorToken = token as ColorToken;
-    const name = tokenVariableName(colorToken, tokenGroups, hasParentPrefix);
-    const cssVariableName = `var(--${tokenPrefix}color-${name})`;
-
-    if (hasMixin) {
-      let value = CSSHelper.colorTokenValueToCSS(colorToken.value, mappedTokens as unknown as Map<string, never>, {
-        allowReferences: true,
-        decimals: 3,
-        colorFormat: ColorFormat.hex8,
-        tokenToVariableRef: () => '',
-      });
-
-      value = handleSpecialCase(name, normalizeColor(value));
-
-      return formatTokenStyleByOutput(name, value, hasJsOutput);
-    }
-
-    return hasJsOutput ? formatTokenStyleByOutput(name, cssVariableName, true) : `$${name}: ${cssVariableName};`;
-  }
-
-  if (hasTokenType(TokenType.shadow)) {
-    const shadowToken = token as ShadowToken;
-    const name = tokenVariableName(token, tokenGroups, hasParentPrefix);
-    const { value, origin } = shadowToken;
-    let shadow = CSSHelper.shadowTokenValueToCSS(value, mappedTokens as unknown as Map<string, never>, {
-      allowReferences: true,
-      decimals: 3,
-      colorFormat: ColorFormat.hashHex8,
-      tokenToVariableRef: () => '',
-    });
-    // add group name to the variable if it is not already in the name
-    const groupName = hasParentPrefix ? undefined : origin?.name?.split('/')[0].toLowerCase();
-    shadow = transformColorsToVariables(name, shadow, tokenPrefix, groupName); // add color variables
-    shadow = findAllHexColorsInStringAndNormalize(shadow); // find hex codes and normalize them
-    const baseFontSize = getBaseFontSize(fontSizeBaseMap, token);
-    shadow = replacePxWithRem(shadow, baseFontSize); // replace px with rem units
-
-    return formatTokenStyleByOutput(name, shadow, hasJsOutput);
-  }
-
-  if (hasTokenType(TokenType.gradient)) {
-    const gradientToken = token as GradientToken;
-    const name = tokenVariableName(token, tokenGroups, hasParentPrefix);
-    const { value, origin } = gradientToken;
-    let gradient = CSSHelper.gradientTokenValueToCSS(value, mappedTokens as unknown as Map<string, never>, {
-      allowReferences: true,
-      colorFormat: ColorFormat.hashHex8,
-      decimals: 3,
-      tokenToVariableRef: () => '',
-    });
-    gradient = addAngleVarToGradient(gradient); // add angle variable
-    // add group name to the variable if it is not already in the name
-    const groupName = hasParentPrefix ? undefined : origin?.name?.split('/')[0].toLowerCase();
-    gradient = transformColorsToVariables(name, gradient, tokenPrefix, groupName); // add color variables
-    gradient = findAllHexColorsInStringAndNormalize(gradient); // find hex codes and normalize them
-
-    return formatTokenStyleByOutput(name, gradient, hasJsOutput);
-  }
-
-  return null;
 };
 
 export const generateStylesFromTokens = (
