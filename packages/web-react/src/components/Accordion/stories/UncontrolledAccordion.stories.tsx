@@ -15,7 +15,7 @@ const meta: Meta<typeof UncontrolledAccordion> = {
     elementType: {
       control: 'text',
       table: {
-        defaultValue: { summary: 'section' },
+        defaultValue: { summary: 'ul' },
       },
     },
     stayOpen: {
@@ -24,7 +24,7 @@ const meta: Meta<typeof UncontrolledAccordion> = {
   },
   args: {
     defaultOpen: ['accordion-item-example-1'],
-    elementType: 'section',
+    elementType: 'ul',
   },
 };
 

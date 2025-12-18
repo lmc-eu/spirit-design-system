@@ -14,7 +14,7 @@ const meta: Meta<typeof AccordionItem> = {
     elementType: {
       control: 'text',
       table: {
-        defaultValue: { summary: 'article' },
+        defaultValue: { summary: 'li' },
       },
     },
     id: {
@@ -22,7 +22,7 @@ const meta: Meta<typeof AccordionItem> = {
     },
   },
   args: {
-    elementType: 'article',
+    elementType: 'li',
   },
 };
 

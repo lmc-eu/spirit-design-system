@@ -21,7 +21,7 @@ const meta: Meta<typeof Accordion> = {
     elementType: {
       control: 'text',
       table: {
-        defaultValue: { summary: 'section' },
+        defaultValue: { summary: 'ul' },
       },
     },
     open: {
@@ -32,7 +32,7 @@ const meta: Meta<typeof Accordion> = {
     },
   },
   args: {
-    elementType: 'section',
+    elementType: 'ul',
   },
 };
 

@@ -14,7 +14,7 @@ export interface AccordionItemContextProps {
 
 export interface BaseAccordionProps extends ChildrenProps, StyleProps, TransferProps {}
 
-export interface AccordionProps<T extends ElementType = 'section'>
+export interface AccordionProps<T extends ElementType = 'ul'>
   extends BaseAccordionProps,
     AccordionHandlingProps,
     ElementTypeProps<T> {}
@@ -23,7 +23,7 @@ export interface AccordionHeaderProps<T extends ElementType = 'h3'> extends Base
   slot?: ReactNode;
 }
 
-export interface AccordionItemProps<T extends ElementType = 'article'>
+export interface AccordionItemProps<T extends ElementType = 'li'>
   extends BaseAccordionProps,
     AccordionItemContextProps,
     ElementTypeProps<T> {}
