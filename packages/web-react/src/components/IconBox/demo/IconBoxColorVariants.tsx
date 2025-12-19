@@ -25,7 +25,7 @@ const IconBoxColorVariants = () => {
         />
       </fieldset>
 
-      <Grid cols={{ desktop: 3, mobile: 1 }} gap="space-600">
+      <Grid cols={{ desktop: 3, mobile: 1 }}>
         <IconBoxColorDemoFactory label="Accent colors" colorList={accentColorsObject} isSubtle={isSubtle} />
         <IconBoxColorDemoFactory label="Emotion colors" colorList={emotionColorsObject} isSubtle={isSubtle} />
       </Grid>

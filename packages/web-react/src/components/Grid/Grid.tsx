@@ -7,7 +7,7 @@ import { type SpiritGridProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { useGridStyleProps } from './useGridStyleProps';
 
-const defaultProps: Partial<SpiritGridProps> = {
+const defaultProps: SpiritGridProps = {
   alignmentX: AlignmentXExtended.STRETCH,
   alignmentY: AlignmentYExtended.STRETCH,
   elementType: 'div',
@@ -29,5 +29,7 @@ const Grid = <T extends ElementType = 'div'>(props: SpiritGridProps<T>): JSX.Ele
 };
 
 Grid.spiritComponent = 'Grid';
+Grid.spiritDefaultElement = 'div' as const;
+Grid.spiritDefaultProps = null as unknown as SpiritGridProps<'div'>;
 
 export default Grid;

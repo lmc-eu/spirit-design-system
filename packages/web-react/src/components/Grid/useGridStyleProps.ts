@@ -13,7 +13,7 @@ interface GridCSSProperties extends CSSProperties {
   [key: string]: string | undefined | number;
 }
 
-export interface GridStyles<T> {
+export interface GridStyle<T> {
   /** className props */
   classProps: string;
   /** Props for the grid element. */
@@ -22,7 +22,7 @@ export interface GridStyles<T> {
   styleProps: GridCSSProperties;
 }
 
-export function useGridStyleProps(props: SpiritGridProps<ElementType>): GridStyles<SpiritGridProps<ElementType>> {
+export function useGridStyleProps(props: SpiritGridProps<ElementType>): GridStyle<SpiritGridProps<ElementType>> {
   const { alignmentX, alignmentY, cols, spacing, spacingX, spacingY, ...restProps } = props;
 
   const gridClass = useClassNamePrefix('Grid');
