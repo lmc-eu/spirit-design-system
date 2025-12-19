@@ -42,8 +42,11 @@ class Modal extends BaseComponent {
   // Using `Element | Window` - Property 'hasAttribute' does not exist on type 'EventTarget'.
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onClick(event: Event & { target: any }) {
-    // segregate clicks that may start inside dialog but end outside
-    if (event.target !== this.mouseDownTarget) {
+    // Segregate clicks that may start inside dialog but end outside.
+    // Skip this check for keyboard-triggered clicks (event.detail === 0) to support
+    // spacebar/enter activation of dismiss buttons.
+    const isKeyboardClick = (event as UIEvent)?.detail === 0;
+    if (!isKeyboardClick && event.target !== this.mouseDownTarget) {
       return;
     }
 
