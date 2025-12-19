@@ -8,8 +8,13 @@ import {
   stylePropsTest,
   validHtmlAttributesTest,
 } from '@local/tests';
+import { Direction } from '../../../constants';
 import { type ScrollViewDirectionType, type ScrollViewOverflowDecoratorsType } from '../../../types';
-import { SCROLL_VIEW_ARROWS_LABEL_HORIZONTAL_END, SCROLL_VIEW_ARROWS_LABEL_VERTICAL_END } from '../constants';
+import {
+  SCROLL_CANCEL_DELAY,
+  SCROLL_VIEW_ARROWS_LABEL_HORIZONTAL_END,
+  SCROLL_VIEW_ARROWS_LABEL_VERTICAL_END,
+} from '../constants';
 import ScrollView from '../ScrollView';
 
 describe('ScrollView', () => {
@@ -116,41 +121,70 @@ describe('ScrollView', () => {
     expect(screen.getByTestId('scroll-test').lastElementChild).toHaveClass('ScrollView__arrows');
   });
 
-  it('should scroll by given scroll step when arrow is clicked (horizontal)', () => {
-    render(
-      <ScrollView hasArrows direction="horizontal" arrowsScrollStep={100} data-testid="scroll">
-        <div style={{ width: '1000px' }}>Content</div>
-      </ScrollView>,
-    );
+  it.each([
+    {
+      direction: Direction.HORIZONTAL,
+      scrollStep: 100,
+      contentStyle: { width: '1000px' },
+      arrowLabel: SCROLL_VIEW_ARROWS_LABEL_HORIZONTAL_END,
+      viewportProps: {
+        scrollLeft: 0,
+        scrollWidth: 1000,
+        clientWidth: 500,
+      },
+      expectedScroll: { left: 100 },
+    },
+    {
+      direction: Direction.VERTICAL,
+      scrollStep: 80,
+      contentStyle: { height: '1000px' },
+      arrowLabel: SCROLL_VIEW_ARROWS_LABEL_VERTICAL_END,
+      viewportProps: {
+        scrollTop: 0,
+        scrollHeight: 1000,
+        clientHeight: 500,
+      },
+      expectedScroll: { top: 80 },
+    },
+  ])(
+    'should scroll by given scroll step when arrow is clicked ($direction)',
+    ({ direction, scrollStep, contentStyle, arrowLabel, viewportProps, expectedScroll }) => {
+      render(
+        <ScrollView hasArrows direction={direction} arrowsScrollStep={scrollStep} data-testid="scroll">
+          <div style={contentStyle}>Content</div>
+        </ScrollView>,
+      );
 
-    const viewport = screen.getByTestId('scroll').firstElementChild;
-    const rightArrow = screen.getByRole('button', { name: SCROLL_VIEW_ARROWS_LABEL_HORIZONTAL_END });
+      const viewport = screen.getByTestId('scroll').firstElementChild as HTMLElement;
+      const arrow = screen.getByRole('button', { name: arrowLabel });
 
-    const scrollBy = jest.fn();
-    Object.defineProperty(viewport!, 'scrollBy', { value: scrollBy, writable: true });
+      const scrollTo = jest.fn();
+      viewport.scrollTo = scrollTo;
+      Object.keys(viewportProps).forEach((key) => {
+        Object.defineProperty(viewport, key, {
+          value: viewportProps[key as keyof typeof viewportProps],
+          writable: true,
+        });
+      });
 
-    rightArrow?.click();
+      jest.useFakeTimers();
 
-    expect(scrollBy).toHaveBeenCalledWith({ left: 100, behavior: 'smooth' });
-  });
+      arrow?.click();
 
-  it('should scroll by given scroll step when arrow is clicked (vertical)', () => {
-    render(
-      <ScrollView hasArrows arrowsScrollStep={80} data-testid="scroll">
-        <div style={{ height: '1000px' }}>Content</div>
-      </ScrollView>,
-    );
+      // First call cancels ongoing scroll (behavior: 'auto')
+      const cancelScrollKey = Object.keys(expectedScroll)[0] as 'left' | 'top';
+      const cancelScroll = { [cancelScrollKey]: 0, behavior: 'auto' as const };
+      expect(scrollTo).toHaveBeenCalledWith(cancelScroll);
 
-    const viewport = screen.getByTestId('scroll').firstElementChild;
-    const downArrow = screen.getByRole('button', { name: SCROLL_VIEW_ARROWS_LABEL_VERTICAL_END });
+      // Advance timer to trigger the delayed scrollTo
+      jest.advanceTimersByTime(SCROLL_CANCEL_DELAY);
 
-    const scrollBy = jest.fn();
-    Object.defineProperty(viewport!, 'scrollBy', { value: scrollBy, writable: true });
+      // Second call performs the actual scroll (behavior: 'smooth')
+      expect(scrollTo).toHaveBeenCalledWith({ ...expectedScroll, behavior: 'smooth' });
 
-    downArrow?.click();
-
-    expect(scrollBy).toHaveBeenCalledWith({ top: 80, behavior: 'smooth' });
-  });
+      jest.useRealTimers();
+    },
+  );
 
   it('should not render arrows when hasArrows is false', () => {
     render(<ScrollView>Content</ScrollView>);

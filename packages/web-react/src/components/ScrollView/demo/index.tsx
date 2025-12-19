@@ -19,14 +19,14 @@ import ScrollViewVerticalWithArrows from './ScrollViewVerticalWithArrows';
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <IconsProvider value={icons}>
-      <DocsSection title="Vertical Scrolling">
-        <ScrollViewDefault />
-      </DocsSection>
       <DocsSection title="Horizontal Scrolling">
         <ScrollViewHorizontal />
       </DocsSection>
       <DocsSection title="Horizontal Scrolling with Container Breakout" hasStack={false}>
         <ScrollViewHorizontalBreakout />
+      </DocsSection>
+      <DocsSection title="Vertical Scrolling">
+        <ScrollViewDefault />
       </DocsSection>
       <DocsSection title="Overflow Decorators">
         <ScrollViewOverflowDecorators />
@@ -34,14 +34,14 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <DocsSection title="Hidden Scrollbar">
         <ScrollViewHiddenScrollbar />
       </DocsSection>
-      <DocsSection title="Vertical Scrolling with Arrows">
-        <ScrollViewVerticalWithArrows />
-      </DocsSection>
       <DocsSection title="Horizontal Scrolling with Arrows">
         <ScrollViewHorizontalWithArrows />
       </DocsSection>
       <DocsSection title="Horizontal Scrolling with Arrows and Hidden Scrollbar">
         <ScrollViewHorizontalWithArrowsAndHiddenScrollbar />
+      </DocsSection>
+      <DocsSection title="Vertical Scrolling with Arrows">
+        <ScrollViewVerticalWithArrows />
       </DocsSection>
     </IconsProvider>
   </React.StrictMode>,
