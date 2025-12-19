@@ -43,6 +43,8 @@ jobs:
     permissions:
       # create commits and releases
       contents: write
+    env:
+      NPM_CONFIG_PROVENANCE: true
 
     steps:
       - name: Clone repository
