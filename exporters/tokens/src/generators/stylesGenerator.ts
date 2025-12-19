@@ -1,121 +1,82 @@
 import {
+  BorderToken,
+  BorderWidthToken,
   ColorToken,
   DimensionToken,
+  FontSizeToken,
   GradientToken,
+  LetterSpacingToken,
+  LineHeightToken,
+  RadiusToken,
   ShadowToken,
+  SizeToken,
+  SpaceToken,
   StringToken,
   Token,
   TokenGroup,
   TokenType,
 } from '@supernovaio/sdk-exporters';
-import { ColorFormat, CSSHelper } from '@supernovaio/export-helpers';
+import { addEmptyLineBetweenTokenGroups, sortTokens } from '../helpers/tokenHelper';
+import { type FontSizeBaseMap, createDefaultFontSizeBaseMap } from '../helpers/unitHelper';
 import {
-  addAngleVarToGradient,
-  addEmptyLineBetweenTokenGroups,
-  formatTokenStyleByOutput,
-  sortTokens,
-  tokenVariableName,
-} from '../helpers/tokenHelper';
-import { handleSpecialCase } from '../helpers/specialCaseHelper';
-import {
-  normalizeColor,
-  findAllHexColorsInStringAndNormalize,
-  transformColorsToVariables,
-} from '../helpers/colorHelper';
+  processNumericToken,
+  processBorderToken,
+  processStringToken,
+  processColorToken,
+  processShadowToken,
+  processGradientToken,
+} from '../tokenProcessors';
 
 export const tokenToStyleByType = (
   token: Token,
-  mappedTokens: Map<string, Token>,
+  mappedTokens: Map<string, unknown>,
   tokenGroups: Array<TokenGroup>,
   tokenPrefix: string,
   hasMixin: boolean,
   hasParentPrefix: boolean,
   hasJsOutput: boolean,
+  fontSizeBaseMap: FontSizeBaseMap,
 ): string | null => {
-  const hasTokenType = (type: TokenType) => {
-    const { tokenType } = token;
-
-    return tokenType === type;
+  const processorContext = {
+    tokenGroups,
+    hasParentPrefix,
+    hasJsOutput,
+    fontSizeBaseMap,
+    tokenPrefix,
+    hasMixin,
+    mappedTokens,
   };
 
-  if (hasTokenType(TokenType.dimension)) {
-    const dimensionToken = token as DimensionToken;
-    const name = tokenVariableName(dimensionToken, tokenGroups, hasParentPrefix);
-    let value = dimensionToken.value?.measure;
-    value = handleSpecialCase(name, value);
-    const unit = CSSHelper.unitToCSS(dimensionToken.value?.unit);
-
-    return formatTokenStyleByOutput(name, value, hasJsOutput, unit);
+  switch (token.tokenType) {
+    case TokenType.dimension:
+      return processNumericToken(token as DimensionToken, TokenType.dimension, processorContext);
+    case TokenType.radius:
+      return processNumericToken(token as RadiusToken, TokenType.radius, processorContext);
+    case TokenType.space:
+      return processNumericToken(token as SpaceToken, TokenType.space, processorContext);
+    case TokenType.size:
+      return processNumericToken(token as SizeToken, TokenType.size, processorContext);
+    case TokenType.fontSize:
+      return processNumericToken(token as FontSizeToken, TokenType.fontSize, processorContext);
+    case TokenType.lineHeight:
+      return processNumericToken(token as LineHeightToken, TokenType.lineHeight, processorContext);
+    case TokenType.letterSpacing:
+      return processNumericToken(token as LetterSpacingToken, TokenType.letterSpacing, processorContext);
+    case TokenType.border:
+      return processBorderToken(token as BorderToken, processorContext);
+    case TokenType.borderWidth:
+      return processBorderToken(token as BorderWidthToken, processorContext);
+    case TokenType.string:
+      return processStringToken(token as StringToken, processorContext);
+    case TokenType.color:
+      return processColorToken(token as ColorToken, processorContext);
+    case TokenType.shadow:
+      return processShadowToken(token as ShadowToken, processorContext);
+    case TokenType.gradient:
+      return processGradientToken(token as GradientToken, processorContext);
+    default:
+      return null;
   }
-
-  if (hasTokenType(TokenType.string)) {
-    const stringToken = token as StringToken;
-    const name = tokenVariableName(stringToken, tokenGroups, hasParentPrefix);
-    let value = stringToken.value.text;
-    value = handleSpecialCase(name, value);
-
-    return formatTokenStyleByOutput(name, value, hasJsOutput);
-  }
-
-  if (hasTokenType(TokenType.color)) {
-    const colorToken = token as ColorToken;
-    const name = tokenVariableName(colorToken, tokenGroups, hasParentPrefix);
-    const cssVariableName = `var(--${tokenPrefix}color-${name})`;
-
-    if (hasMixin) {
-      let value = CSSHelper.colorTokenValueToCSS(colorToken.value, mappedTokens, {
-        allowReferences: true,
-        decimals: 3,
-        colorFormat: ColorFormat.hex8,
-        tokenToVariableRef: () => '',
-      });
-
-      value = handleSpecialCase(name, normalizeColor(value));
-
-      return formatTokenStyleByOutput(name, value, hasJsOutput);
-    }
-
-    return hasJsOutput ? formatTokenStyleByOutput(name, cssVariableName, true) : `$${name}: ${cssVariableName};`;
-  }
-
-  if (hasTokenType(TokenType.shadow)) {
-    const shadowToken = token as ShadowToken;
-    const name = tokenVariableName(token, tokenGroups, hasParentPrefix);
-    const { value, origin } = shadowToken;
-    let shadow = CSSHelper.shadowTokenValueToCSS(value, mappedTokens, {
-      allowReferences: true,
-      decimals: 3,
-      colorFormat: ColorFormat.hashHex8,
-      tokenToVariableRef: () => '',
-    });
-    // add group name to the variable if it is not already in the name
-    const groupName = hasParentPrefix ? undefined : origin?.name?.split('/')[0].toLowerCase();
-    shadow = transformColorsToVariables(name, shadow, tokenPrefix, groupName); // add color variables
-    shadow = findAllHexColorsInStringAndNormalize(shadow); // find hex codes and normalize them
-
-    return formatTokenStyleByOutput(name, shadow, hasJsOutput);
-  }
-
-  if (hasTokenType(TokenType.gradient)) {
-    const gradientToken = token as GradientToken;
-    const name = tokenVariableName(token, tokenGroups, hasParentPrefix);
-    const { value, origin } = gradientToken;
-    let gradient = CSSHelper.gradientTokenValueToCSS(value, mappedTokens, {
-      allowReferences: true,
-      colorFormat: ColorFormat.hashHex8,
-      decimals: 3,
-      tokenToVariableRef: () => '',
-    });
-    gradient = addAngleVarToGradient(gradient); // add angle variable
-    // add group name to the variable if it is not already in the name
-    const groupName = hasParentPrefix ? undefined : origin?.name?.split('/')[0].toLowerCase();
-    gradient = transformColorsToVariables(name, gradient, tokenPrefix, groupName); // add color variables
-    gradient = findAllHexColorsInStringAndNormalize(gradient); // find hex codes and normalize them
-
-    return formatTokenStyleByOutput(name, gradient, hasJsOutput);
-  }
-
-  return null;
 };
 
 export const generateStylesFromTokens = (
@@ -126,12 +87,22 @@ export const generateStylesFromTokens = (
   hasMixin: boolean,
   hasParentPrefix: boolean,
   sortByNumValue: boolean,
-  hasJsOutput: boolean = false,
+  hasJsOutput: boolean,
+  fontSizeBaseMap: FontSizeBaseMap = createDefaultFontSizeBaseMap(),
 ): string => {
   const sortedTokens = sortTokens(tokens, tokenGroups, hasParentPrefix, sortByNumValue);
 
   const cssTokens = sortedTokens.map((token) => ({
-    css: tokenToStyleByType(token, mappedTokens, tokenGroups, tokenPrefix, hasMixin, hasParentPrefix, hasJsOutput),
+    css: tokenToStyleByType(
+      token,
+      mappedTokens,
+      tokenGroups,
+      tokenPrefix,
+      hasMixin,
+      hasParentPrefix,
+      hasJsOutput,
+      fontSizeBaseMap,
+    ),
     parentGroupId: token.parentGroupId,
   }));
 

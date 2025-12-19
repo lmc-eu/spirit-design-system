@@ -7,6 +7,7 @@ import { DeviceDimensionMap, type StylesObjectType, generateStylesObjectFromToke
 import { findTokenPrefix } from '../helpers/findTokenPrefix';
 import { filterExcludedTokens } from '../filters/excludedTokens';
 import { generateMixinFromTokens } from './mixinGenerator';
+import { getFontSizeBaseMap, type FontSizeBaseMap } from '../helpers/unitHelper';
 
 // Add disclaimer to the top of the content
 export const addDisclaimer = (content: string): string => {
@@ -88,10 +89,12 @@ export const generateFileContent = (
   fileData: FileData,
   hasJsOutput: boolean,
   deviceDimensions?: DeviceDimensionMap,
+  fontSizeBaseMapOverride?: FontSizeBaseMap,
 ) => {
   let styledTokens = '';
   let stylesObject: StylesObjectType = {};
   let styledMixin = '';
+  const fontSizeBaseMap = fontSizeBaseMapOverride ?? getFontSizeBaseMap(tokens);
   const {
     excludeGroupNames = null,
     groupNames = [''],
@@ -112,7 +115,7 @@ export const generateFileContent = (
 
       // Generate css tokens
       if (tokenType !== TokenType.typography) {
-        styledTokens += generateStylesFromTokens(
+        const generatedStyles = generateStylesFromTokens(
           filteredTokens,
           mappedTokens,
           tokenGroups,
@@ -121,8 +124,12 @@ export const generateFileContent = (
           hasParentPrefix,
           sortByNumValue,
           hasJsOutput,
+          fontSizeBaseMap,
         );
-        styledTokens += '\n\n';
+        if (generatedStyles) {
+          styledTokens += generatedStyles;
+          styledTokens += '\n\n';
+        }
       }
 
       // Generate mixin
@@ -144,16 +151,25 @@ export const generateFileContent = (
         hasJsOutput,
         sortByNumValue,
         deviceDimensions,
+        fontSizeBaseMap,
+        mappedTokens,
       );
       stylesObject = deepMergeObjects(stylesObject, groupStylesObject);
     });
   });
 
-  let content = styledTokens;
+  // Remove trailing newlines from styledTokens
+  const trimmedStyledTokens = styledTokens.trimEnd();
+  let content = trimmedStyledTokens;
 
   // convert css object to scss or js structure based on file extension
   if (hasStylesObject) {
-    content += hasJsOutput ? generateJsObjectOutput(stylesObject) : generateScssObjectOutput(stylesObject);
+    const objectOutput = hasJsOutput ? generateJsObjectOutput(stylesObject) : generateScssObjectOutput(stylesObject);
+    // Add newline separator only if there's existing content
+    if (content) {
+      content += '\n\n';
+    }
+    content += objectOutput;
   }
 
   if (!hasJsOutput && hasMixin) {
