@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.1.0"></a>
+
+# [4.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@alma-oss/spirit-web-react@4.0.0...@alma-oss/spirit-web-react@4.1.0) (2025-12-19)
+
+### Bug Fixes
+
+- **web-react:** Fix incorrect props in Box demos [#DS-2282](https://github.com/lmc-eu/spirit-design-system/issues/DS-2282) ([dc10789](https://github.com/lmc-eu/spirit-design-system/commit/dc10789))
+- **web-react:** Remove TransferProps and refactor types of Avatar [#DS-2282](https://github.com/lmc-eu/spirit-design-system/issues/DS-2282) ([a71491f](https://github.com/lmc-eu/spirit-design-system/commit/a71491f))
+- **web-react:** Use correct Polymorphic type and extend types for Box [#DS-2282](https://github.com/lmc-eu/spirit-design-system/issues/DS-2282) ([df3f6ef](https://github.com/lmc-eu/spirit-design-system/commit/df3f6ef))
+
+### Documentation
+
+- **repo:** Clean badly generated change logs ([f254af8](https://github.com/lmc-eu/spirit-design-system/commit/f254af8))
+- **web-react:** Component readme links ([2614229](https://github.com/lmc-eu/spirit-design-system/commit/2614229))
+
+### Features
+
+- **web-react:** Abstract shared props between Text and Heading into shared type [#DS-2127](https://github.com/lmc-eu/spirit-design-system/issues/DS-2127) ([c107f55](https://github.com/lmc-eu/spirit-design-system/commit/c107f55))
+
+**Note:** Version bump only for package @alma-oss/spirit-web-react
+
 <a name="4.0.0"></a>
 
 # 4.0.0 (2025-12-15)

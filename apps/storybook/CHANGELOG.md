@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.3.1"></a>
+
+## [0.3.1](https://github.com/lmc-eu/spirit-design-system/compare/@alma-oss/spirit-storybook@0.3.0...@alma-oss/spirit-storybook@0.3.1) (2025-12-19)
+
+### Chores
+
+- **deps:** Bump vite from 6.1.0 to 6.3.6 ([6dc2b86](https://github.com/lmc-eu/spirit-design-system/commit/6dc2b86))
+
+### Dependencies
+
+- Update dependency storybook to v8.6.15 [SECURITY] ([a713403](https://github.com/lmc-eu/spirit-design-system/commit/a713403))
+- Update dependency vite to v7.0.8 [SECURITY] ([0a10e98](https://github.com/lmc-eu/spirit-design-system/commit/0a10e98))
+
+### Documentation
+
+- **repo:** Clean badly generated change logs ([f254af8](https://github.com/lmc-eu/spirit-design-system/commit/f254af8))
+
+**Note:** Version bump only for package @alma-oss/spirit-storybook
+
 <a name="0.3.0"></a>
 
 # 0.3.0 (2025-12-15)

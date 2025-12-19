@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.0.1"></a>
+
+## [4.0.1](https://github.com/lmc-eu/spirit-design-system/compare/@alma-oss/spirit-web@4.0.0...@alma-oss/spirit-web@4.0.1) (2025-12-19)
+
+### Chores
+
+- **web:** Fix unresolved workspace protocol ([a5129e2](https://github.com/lmc-eu/spirit-design-system/commit/a5129e2))
+
+### Documentation
+
+- **repo:** Clean badly generated change logs ([f254af8](https://github.com/lmc-eu/spirit-design-system/commit/f254af8))
+
+**Note:** Version bump only for package @alma-oss/spirit-web
+
 <a name="4.0.0"></a>
 
 # 4.0.0 (2025-12-15)

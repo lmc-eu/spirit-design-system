@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.1"></a>
+
+## [2.0.1](https://github.com/lmc-eu/spirit-design-system/compare/@alma-oss/spirit-post-changelog@2.0.0...@alma-oss/spirit-post-changelog@2.0.1) (2025-12-19)
+
+### Chores
+
+- **repo:** Remove web-twig configuration references ([d02b29c](https://github.com/lmc-eu/spirit-design-system/commit/d02b29c))
+
+**Note:** Version bump only for package @alma-oss/spirit-post-changelog
+
 <a name="2.0.0"></a>
 
 # 2.0.0 (2025-12-15)

@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.5.1"></a>
+
+## [0.5.1](https://github.com/lmc-eu/spirit-design-system/compare/@alma-oss/spirit-example-next-with-app-router@0.5.0...@alma-oss/spirit-example-next-with-app-router@0.5.1) (2025-12-19)
+
+### Documentation
+
+- **repo:** Clean badly generated change logs ([f254af8](https://github.com/lmc-eu/spirit-design-system/commit/f254af8))
+
+**Note:** Version bump only for package @alma-oss/spirit-example-next-with-app-router
+
 <a name="0.5.0"></a>
 
 # 0.5.0 (2025-12-15)
