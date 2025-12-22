@@ -1,8 +1,33 @@
 /* eslint-disable no-console */
 import '@testing-library/jest-dom';
 
+jest.mock('../../src/context/IconsContext', () => {
+  // Provide a default icon map for all unit tests (as-if IconsProvider was used globally).
+  // Individual tests can still override this via <IconsProvider value={...}>.
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const React = require('react');
+
+  const icons = new Proxy(
+    {},
+    {
+      get: (_target, prop) => {
+        if (typeof prop !== 'string' || prop.length === 0) return undefined;
+        return '<svg viewBox="0 0 24 24" aria-hidden="true"></svg>';
+      },
+    },
+  );
+
+  const IconsContext = React.createContext(icons);
+
+  return {
+    __esModule: true,
+    default: IconsContext,
+    IconsProvider: IconsContext.Provider,
+    IconsConsumer: IconsContext.Consumer,
+  };
+});
+
 const originalError = console.error;
-const originalWarn = console.warn;
 
 beforeAll(() => {
   console.error = (...args) => {
@@ -38,24 +63,8 @@ beforeAll(() => {
 
     throw new Error(`[${testName}] contains unexpected console.error. Error log details: \n${formattedArgs.join(' ')}`);
   };
-
-  console.warn = (...args) => {
-    // Silence noisy warnings caused by missing IconsProvider in unit tests.
-    // We intentionally do not require consumers to provide real icon assets in unit tests.
-    if (
-      typeof args[0] === 'string' &&
-      /Warning:\s+The\s+.+\s+icon\s+is\s+missing\s+from\s+your\s+assets\s+or\s+icon\s+map\s+provided\s+by\s+the\s+IconsProvider\./.test(
-        args[0],
-      )
-    ) {
-      return;
-    }
-
-    originalWarn.call(console, ...args);
-  };
 });
 
 afterAll(() => {
   console.error = originalError;
-  console.warn = originalWarn;
 });
