@@ -17,6 +17,8 @@ import {
 } from '../constants';
 import ScrollViewArrows from '../ScrollViewArrows';
 
+jest.mock('../../../hooks/useIcon');
+
 describe('ScrollViewArrows', () => {
   classNamePrefixProviderTest(ScrollViewArrows, 'ScrollView__arrows');
 

@@ -14,6 +14,8 @@ import {
 } from '@local/tests';
 import Checkbox from '../Checkbox';
 
+jest.mock('../../../hooks/useIcon');
+
 describe('Checkbox', () => {
   classNamePrefixProviderTest(Checkbox, 'Checkbox');
 
