@@ -2,6 +2,7 @@
 import '@testing-library/jest-dom';
 
 const originalError = console.error;
+const originalWarn = console.warn;
 
 beforeAll(() => {
   console.error = (...args) => {
@@ -37,8 +38,24 @@ beforeAll(() => {
 
     throw new Error(`[${testName}] contains unexpected console.error. Error log details: \n${formattedArgs.join(' ')}`);
   };
+
+  console.warn = (...args) => {
+    // Silence noisy warnings caused by missing IconsProvider in unit tests.
+    // We intentionally do not require consumers to provide real icon assets in unit tests.
+    if (
+      typeof args[0] === 'string' &&
+      /Warning:\s+The\s+.+\s+icon\s+is\s+missing\s+from\s+your\s+assets\s+or\s+icon\s+map\s+provided\s+by\s+the\s+IconsProvider\./.test(
+        args[0],
+      )
+    ) {
+      return;
+    }
+
+    originalWarn.call(console, ...args);
+  };
 });
 
 afterAll(() => {
   console.error = originalError;
+  console.warn = originalWarn;
 });
