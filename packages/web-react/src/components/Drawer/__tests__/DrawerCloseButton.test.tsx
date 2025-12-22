@@ -12,6 +12,8 @@ import {
 } from '@local/tests';
 import DrawerCloseButton from '../DrawerCloseButton';
 
+jest.mock('../../../hooks/useIcon');
+
 describe('DrawerCloseButton', () => {
   classNamePrefixProviderTest(DrawerCloseButton, 'DrawerCloseButton');
 

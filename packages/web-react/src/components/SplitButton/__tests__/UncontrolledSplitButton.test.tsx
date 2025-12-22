@@ -12,6 +12,8 @@ import { ComponentButtonColors, Sizes } from '../../../constants';
 import { type SplitButtonColorType } from '../../../types';
 import UncontrolledSplitButton from '../UncontrolledSplitButton';
 
+jest.mock('../../../hooks/useIcon');
+
 describe('SplitButton', () => {
   const splitButtonColors = Object.values(ComponentButtonColors).filter(
     (color) => color !== ComponentButtonColors.PLAIN,

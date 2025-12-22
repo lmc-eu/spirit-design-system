@@ -12,6 +12,8 @@ import {
 } from '@local/tests';
 import FieldGroup from '../FieldGroup';
 
+jest.mock('../../../hooks/useIcon');
+
 describe('FieldGroup', () => {
   const itemList = (
     <>

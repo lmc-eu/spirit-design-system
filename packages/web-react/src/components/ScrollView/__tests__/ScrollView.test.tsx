@@ -17,6 +17,8 @@ import {
 } from '../constants';
 import ScrollView from '../ScrollView';
 
+jest.mock('../../../hooks/useIcon');
+
 describe('ScrollView', () => {
   classNamePrefixProviderTest(ScrollView, 'ScrollView');
 

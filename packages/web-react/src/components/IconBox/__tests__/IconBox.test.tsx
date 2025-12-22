@@ -13,6 +13,8 @@ import type { IconBoxColorsType, IconBoxShapeType, SizeExtendedDictionaryType } 
 import { IconBoxShapesRadii, IconBoxSizes } from '../constants';
 import IconBox from '../IconBox';
 
+jest.mock('../../../hooks/useIcon');
+
 const sizeTestCasesProvider = Object.entries(IconBoxSizes).map(([size, { iconSize, padding }]) => ({
   size,
   iconSize,

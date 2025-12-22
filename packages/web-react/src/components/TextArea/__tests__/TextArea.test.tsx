@@ -14,6 +14,8 @@ import {
 } from '@local/tests';
 import TextArea from '../TextArea';
 
+jest.mock('../../../hooks/useIcon');
+
 describe('TextArea', () => {
   classNamePrefixProviderTest(TextArea, 'TextArea');
 

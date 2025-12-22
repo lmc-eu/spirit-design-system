@@ -12,6 +12,8 @@ import {
 import { Icon } from '../../Icon';
 import NavigationAvatar from '../NavigationAvatar';
 
+jest.mock('../../../hooks/useIcon');
+
 const avatarContentMock = <Icon name="profile" boxSize={20} />;
 
 describe('NavigationAvatar', () => {

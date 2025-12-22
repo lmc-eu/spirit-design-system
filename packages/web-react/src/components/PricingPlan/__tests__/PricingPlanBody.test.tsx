@@ -11,6 +11,8 @@ import {
 } from '@local/tests';
 import PricingPlanBody from '../PricingPlanBody';
 
+jest.mock('../../../hooks/useIcon');
+
 describe('PricingPlanBody', () => {
   classNamePrefixProviderTest(PricingPlanBody, 'PricingPlanBody');
 
