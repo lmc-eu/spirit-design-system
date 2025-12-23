@@ -4,7 +4,14 @@ import '@testing-library/jest-dom';
 jest.mock('../../src/context/IconsContext', () => {
   // Provide a default icon map for all unit tests (as-if IconsProvider was used globally).
   // Individual tests can still override this via <IconsProvider value={...}>.
-  const React = jest.requireActual('react') as typeof import('react');
+  type ReactLike = {
+    createContext: <T>(defaultValue: T) => {
+      Provider: unknown;
+      Consumer: unknown;
+    };
+  };
+
+  const React = jest.requireActual('react') as ReactLike;
 
   const icons = new Proxy(
     {},
