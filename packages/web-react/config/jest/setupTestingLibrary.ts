@@ -1,10 +1,11 @@
 /* eslint-disable no-console */
 import '@testing-library/jest-dom';
-import * as React from 'react';
 
 jest.mock('../../src/context/IconsContext', () => {
   // Provide a default icon map for all unit tests (as-if IconsProvider was used globally).
   // Individual tests can still override this via <IconsProvider value={...}>.
+  const React = jest.requireActual('react') as typeof import('react');
+
   const icons = new Proxy(
     {},
     {
