@@ -1,17 +1,16 @@
 /* eslint-disable no-console */
 import '@testing-library/jest-dom';
+import * as React from 'react';
 
 jest.mock('../../src/context/IconsContext', () => {
   // Provide a default icon map for all unit tests (as-if IconsProvider was used globally).
   // Individual tests can still override this via <IconsProvider value={...}>.
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const React = require('react');
-
   const icons = new Proxy(
     {},
     {
       get: (_target, prop) => {
         if (typeof prop !== 'string' || prop.length === 0) return undefined;
+
         return '<svg viewBox="0 0 24 24" aria-hidden="true"></svg>';
       },
     },
