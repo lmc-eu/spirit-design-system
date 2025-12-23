@@ -1,6 +1,39 @@
 /* eslint-disable no-console */
 import '@testing-library/jest-dom';
 
+jest.mock('../../src/context/IconsContext', () => {
+  // Provide a default icon map for all unit tests (as-if IconsProvider was used globally).
+  // Individual tests can still override this via <IconsProvider value={...}>.
+  type ReactLike = {
+    createContext: <T>(defaultValue: T) => {
+      Provider: unknown;
+      Consumer: unknown;
+    };
+  };
+
+  const React = jest.requireActual('react') as ReactLike;
+
+  const icons = new Proxy(
+    {},
+    {
+      get: (_target, prop) => {
+        if (typeof prop !== 'string' || prop.length === 0) return undefined;
+
+        return '<svg viewBox="0 0 24 24" aria-hidden="true"></svg>';
+      },
+    },
+  );
+
+  const IconsContext = React.createContext(icons);
+
+  return {
+    __esModule: true,
+    default: IconsContext,
+    IconsProvider: IconsContext.Provider,
+    IconsConsumer: IconsContext.Consumer,
+  };
+});
+
 const originalError = console.error;
 
 beforeAll(() => {
