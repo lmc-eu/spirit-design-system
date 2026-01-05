@@ -1,13 +1,13 @@
 'use client';
 
-import React from 'react';
+import React, { type ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
-import { type AccordionItemProps } from '../../types';
+import { type SpiritAccordionItemProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { AccordionItemProvider } from './AccordionItemContext';
 import { useAccordionStyleProps } from './useAccordionStyleProps';
 
-const AccordionItem = (props: AccordionItemProps) => {
+const AccordionItem = <T extends ElementType = 'article'>(props: SpiritAccordionItemProps<T>) => {
   const { children, elementType: ElementTag = 'article', id, ...restProps } = props;
 
   const { classProps } = useAccordionStyleProps();

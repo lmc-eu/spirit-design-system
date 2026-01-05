@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import React, { useState } from 'react';
-import { type AccordionHeaderProps, type AccordionOpenStateType } from '../../../types';
+import React, { type ElementType, useState } from 'react';
+import { type AccordionOpenStateType, type SpiritAccordionHeaderProps } from '../../../types';
 import { Link } from '../../Link';
 import { Pill } from '../../Pill';
 import toggleValueByType from '../demo/toggleValueByType';
@@ -48,7 +48,7 @@ const meta: Meta<typeof AccordionHeader> = {
 export default meta;
 type Story = StoryObj<typeof AccordionHeader>;
 
-const AccordionWithHooks = (args: AccordionHeaderProps) => {
+const AccordionWithHooks = (args: SpiritAccordionHeaderProps<ElementType>) => {
   const [openState, setOpenState] = useState<AccordionOpenStateType>('accordion-item-example-1');
 
   const toggle = (id: string) => {

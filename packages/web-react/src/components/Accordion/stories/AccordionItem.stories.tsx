@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import React, { useState } from 'react';
-import { type AccordionItemProps, type AccordionOpenStateType } from '../../../types';
+import React, { type ElementType, useState } from 'react';
+import { type AccordionOpenStateType, type SpiritAccordionItemProps } from '../../../types';
 import { Link } from '../../Link';
 import { Pill } from '../../Pill';
 import toggleValueByType from '../demo/toggleValueByType';
@@ -29,7 +29,7 @@ const meta: Meta<typeof AccordionItem> = {
 export default meta;
 type Story = StoryObj<typeof AccordionItem>;
 
-const AccordionWithHooks = (args: AccordionItemProps) => {
+const AccordionWithHooks = (args: SpiritAccordionItemProps<ElementType>) => {
   const [openState, setOpenState] = useState<AccordionOpenStateType>('accordion-item-example-1');
 
   const toggle = (id: string) => {
