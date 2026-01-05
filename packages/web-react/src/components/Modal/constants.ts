@@ -1,0 +1,1 @@
+export const MODAL_CLOSE_BUTTON_LABEL_DEFAULT = 'Close';

@@ -5,6 +5,10 @@ import { type SpiritPaginationButtonLinkProps } from '../../types';
 import { ButtonLink } from '../Button';
 import { Icon } from '../Icon';
 import { VisuallyHidden } from '../VisuallyHidden';
+import {
+  PAGINATION_NEXT_LINK_DEFAULT_ACCESSIBILITY_LABEL,
+  PAGINATION_PREVIOUS_LINK_DEFAULT_ACCESSIBILITY_LABEL,
+} from './constants';
 
 /* We need an exception for components exported with forwardRef */
 /* eslint no-underscore-dangle: ['error', { allow: ['_PaginationButtonLink'] }] */
@@ -12,7 +16,13 @@ const _PaginationButtonLink = <E extends ElementType = 'a'>(
   props: SpiritPaginationButtonLinkProps<E>,
   ref: ForwardedRef<HTMLAnchorElement>,
 ) => {
-  const { direction, accessibilityLabel, ...restProps } = props as unknown as SpiritPaginationButtonLinkProps;
+  const {
+    direction,
+    accessibilityLabel = direction === 'previous'
+      ? PAGINATION_PREVIOUS_LINK_DEFAULT_ACCESSIBILITY_LABEL
+      : PAGINATION_NEXT_LINK_DEFAULT_ACCESSIBILITY_LABEL,
+    ...restProps
+  } = props as unknown as SpiritPaginationButtonLinkProps;
 
   const iconType = {
     previous: 'chevron-left',

@@ -20,7 +20,7 @@ import { image2Base64Preview } from './utils';
 
 const FileUploaderAttachment = (props: SpiritFileUploaderAttachmentProps) => {
   const {
-    editText,
+    editText = DEFAULT_EDIT_BUTTON_LABEL,
     file,
     hasImagePreview,
     iconName = DEFAULT_ICON_NAME,
@@ -32,7 +32,7 @@ const FileUploaderAttachment = (props: SpiritFileUploaderAttachmentProps) => {
     onDismiss,
     onEdit,
     onError,
-    removeText,
+    removeText = DEFAULT_BUTTON_LABEL,
     ...restProps
   } = props;
   const [imagePreview, setImagePreview] = useState<string>('');
@@ -78,12 +78,10 @@ const FileUploaderAttachment = (props: SpiritFileUploaderAttachmentProps) => {
       </span>
       {onEdit && (
         <span className={classProps.attachment.slot}>
-          <AttachmentActionButton onClick={onEditHandler}>
-            {editText || DEFAULT_EDIT_BUTTON_LABEL}
-          </AttachmentActionButton>
+          <AttachmentActionButton onClick={onEditHandler}>{editText}</AttachmentActionButton>
         </span>
       )}
-      <AttachmentDismissButton onClick={dismissHandler}>{removeText || DEFAULT_BUTTON_LABEL}</AttachmentDismissButton>
+      <AttachmentDismissButton onClick={dismissHandler}>{removeText}</AttachmentDismissButton>
     </li>
   );
 };

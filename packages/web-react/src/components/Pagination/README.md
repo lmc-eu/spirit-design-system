@@ -114,12 +114,12 @@ and [escape hatches][readme-escape-hatches].
 
 ## PaginationLink Props
 
-| Name                 | Type          | Default | Required | Description                            |
-| -------------------- | ------------- | ------- | -------- | -------------------------------------- |
-| `accessibilityLabel` | `string`      | `null`  | ✓        | Accessibility label of the link        |
-| `elementType`        | `ElementType` | `a`     | ✕        | Type of an element                     |
-| `isCurrent`          | `bool`        | `null`  | ✕        | If true, the link is marked as current |
-| `pageNumber`         | `number`      | —       | ✓        | Page number, hidden for screen readers |
+| Name                 | Type          | Default                   | Required | Description                            |
+| -------------------- | ------------- | ------------------------- | -------- | -------------------------------------- |
+| `accessibilityLabel` | `string`      | `Go to page {pageNumber}` | ✕        | Accessibility label of the link        |
+| `elementType`        | `ElementType` | `a`                       | ✕        | Type of an element                     |
+| `isCurrent`          | `bool`        | `null`                    | ✕        | If true, the link is marked as current |
+| `pageNumber`         | `number`      | —                         | ✓        | Page number, hidden for screen readers |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -129,10 +129,10 @@ and [escape hatches][readme-escape-hatches].
 
 This component extends the [Button][button] component with directional arrows and a hidden label.
 
-| Name                 | Type                    | Default | Required | Description                                                          |
-| -------------------- | ----------------------- | ------- | -------- | -------------------------------------------------------------------- |
-| `accessibilityLabel` | `string`                | `null`  | ✓        | Accessibility label of the link                                      |
-| `direction`          | \[`previous` \| `next`] | `null`  | ✓        | The direction according to which the corresponding icon is displayed |
+| Name                 | Type                    | Default              | Required | Description                                                          |
+| -------------------- | ----------------------- | -------------------- | -------- | -------------------------------------------------------------------- |
+| `accessibilityLabel` | `string`                | `Previous` \| `Next` | ✕        | Accessibility label of the link (defaults based on direction)        |
+| `direction`          | \[`previous` \| `next`] | `null`               | ✓        | The direction according to which the corresponding icon is displayed |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -164,15 +164,15 @@ and [escape hatches][readme-escape-hatches].
 
 ## UncontrolledPagination Props
 
-| Name                         | Type                           | Default    | Required | Description                                                         |
-| ---------------------------- | ------------------------------ | ---------- | -------- | ------------------------------------------------------------------- |
-| `accessibilityLabel`         | `string`                       | -          | ✕        | Accessibility label of the page links                               |
-| `accessibilityLabelNext`     | `string`                       | `Next`     | ✕        | Accessibility label of the next link                                |
-| `accessibilityLabelPrevious` | `string`                       | `Previous` | ✕        | Accessibility label of the previous link                            |
-| `defaultPage`                | `number`                       | `1`        | ✕        | The number of the page selected as current page at the first render |
-| `onChange`                   | `(pageNumber: number) => void` | -          | ✕        | On page change callback                                             |
-| `totalPages`                 | `number`                       | `0`        | ✓        | Total count of pages                                                |
-| `visiblePages`               | `number`                       | `5`        | ✕        | Number of displayed pages                                           |
+| Name                         | Type                           | Default      | Required | Description                                                         |
+| ---------------------------- | ------------------------------ | ------------ | -------- | ------------------------------------------------------------------- |
+| `accessibilityLabel`         | `string`                       | `Go to page` | ✕        | Accessibility label prefix for the page links                       |
+| `accessibilityLabelNext`     | `string`                       | `Next`       | ✕        | Accessibility label of the next link                                |
+| `accessibilityLabelPrevious` | `string`                       | `Previous`   | ✕        | Accessibility label of the previous link                            |
+| `defaultPage`                | `number`                       | `1`          | ✕        | The number of the page selected as current page at the first render |
+| `onChange`                   | `(pageNumber: number) => void` | -            | ✕        | On page change callback                                             |
+| `totalPages`                 | `number`                       | `0`          | ✓        | Total count of pages                                                |
+| `visiblePages`               | `number`                       | `5`          | ✕        | Number of displayed pages                                           |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

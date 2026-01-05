@@ -2,6 +2,11 @@
 
 import React from 'react';
 import { type ClickEvent, type SpiritUncontrolledPaginationProps } from '../../types';
+import {
+  PAGINATION_LINK_DEFAULT_ACCESSIBILITY_LABEL_PREFIX,
+  PAGINATION_NEXT_LINK_DEFAULT_ACCESSIBILITY_LABEL,
+  PAGINATION_PREVIOUS_LINK_DEFAULT_ACCESSIBILITY_LABEL,
+} from './constants';
 import Pagination from './Pagination';
 import PaginationItem from './PaginationItem';
 import PaginationLink from './PaginationLink';
@@ -11,9 +16,9 @@ import { usePagination } from './usePagination';
 
 const UncontrolledPagination = (props: SpiritUncontrolledPaginationProps): JSX.Element => {
   const {
-    accessibilityLabel,
-    accessibilityLabelPrevious = 'Previous',
-    accessibilityLabelNext = 'Next',
+    accessibilityLabel = PAGINATION_LINK_DEFAULT_ACCESSIBILITY_LABEL_PREFIX,
+    accessibilityLabelPrevious = PAGINATION_PREVIOUS_LINK_DEFAULT_ACCESSIBILITY_LABEL,
+    accessibilityLabelNext = PAGINATION_NEXT_LINK_DEFAULT_ACCESSIBILITY_LABEL,
     defaultPage = 1,
     onChange,
     totalPages = 0,

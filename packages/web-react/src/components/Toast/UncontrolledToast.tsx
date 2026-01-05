@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { type UncontrolledToastProps } from '../../types';
+import { TOAST_BAR_CLOSE_BUTTON_LABEL_DEFAULT } from './constants';
 import Toast from './Toast';
 import ToastBar from './ToastBar';
 import ToastBarLink from './ToastBarLink';
@@ -9,7 +10,13 @@ import ToastBarMessage from './ToastBarMessage';
 import { useToast } from './useToast';
 
 const UncontrolledToast = (props: UncontrolledToastProps) => {
-  const { alignmentX, alignmentY, isCollapsible, closeLabel, ...restProps } = props;
+  const {
+    alignmentX,
+    alignmentY,
+    isCollapsible,
+    closeLabel = TOAST_BAR_CLOSE_BUTTON_LABEL_DEFAULT,
+    ...restProps
+  } = props;
   const { hide, queue } = useToast();
 
   return (
