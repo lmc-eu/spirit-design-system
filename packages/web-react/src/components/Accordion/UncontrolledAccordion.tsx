@@ -1,11 +1,11 @@
 'use client';
 
-import React, { type ElementType } from 'react';
-import { type SpiritUncontrolledAccordionProps } from '../../types';
+import React from 'react';
+import { type UncontrolledAccordionProps } from '../../types';
 import Accordion from './Accordion';
 import { useAccordion } from './useAccordion';
 
-const UncontrolledAccordion = <T extends ElementType = 'section'>(props: SpiritUncontrolledAccordionProps<T>) => {
+const UncontrolledAccordion = (props: UncontrolledAccordionProps) => {
   const { defaultOpen, stayOpen, ...restProps } = props;
 
   const { open, toggle } = useAccordion({ defaultOpen, stayOpen });
