@@ -410,13 +410,13 @@ and [escape hatches][readme-escape-hatches].
 
 ## FileUploaderList Props
 
-| Name                  | Type     | Default | Required | Description                                   |
-| --------------------- | -------- | ------- | -------- | --------------------------------------------- |
-| `attachmentComponent` | `string` | —       | ✓        | A component for rendering a single attachment |
-| `hasImagePreview`     | `bool`   | false   | ✕        | Show image preview in the list                |
-| `id`                  | `string` | —       | ✓        | FileUploaderList id                           |
-| `inputName`           | `string` | —       | ✓        | The name of the input field                   |
-| `label`               | `string` | —       | ✕        | Label for the list                            |
+| Name                  | Type     | Default       | Required | Description                                   |
+| --------------------- | -------- | ------------- | -------- | --------------------------------------------- |
+| `attachmentComponent` | `string` | —             | ✓        | A component for rendering a single attachment |
+| `hasImagePreview`     | `bool`   | false         | ✕        | Show image preview in the list                |
+| `id`                  | `string` | —             | ✓        | FileUploaderList id                           |
+| `inputName`           | `string` | —             | ✓        | The name of the input field                   |
+| `label`               | `string` | `Attachments` | ✕        | Label for the list                            |
 
 The rest of the properties are created from the default `<ul>` element. [More about the element][list-element-docs]
 

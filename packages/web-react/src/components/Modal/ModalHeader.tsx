@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import React from 'react';
 import { useStyleProps } from '../../hooks';
 import { type ModalHeaderProps } from '../../types';
+import { MODAL_CLOSE_BUTTON_LABEL_DEFAULT } from './constants';
 import ModalCloseButton from './ModalCloseButton';
 import { useModalContext } from './ModalContext';
 import { useModalStyleProps } from './useModalStyleProps';
@@ -14,7 +15,7 @@ const defaultProps: ModalHeaderProps = {
 
 const ModalHeader = (props: ModalHeaderProps) => {
   const propsWithDefaults = { ...defaultProps, ...props };
-  const { children, closeLabel, hasCloseButton, ...restProps } = propsWithDefaults;
+  const { children, closeLabel = MODAL_CLOSE_BUTTON_LABEL_DEFAULT, hasCloseButton, ...restProps } = propsWithDefaults;
   const { classProps } = useModalStyleProps();
   const { styleProps, props: otherProps } = useStyleProps(restProps);
   const { id, isOpen, onClose } = useModalContext();

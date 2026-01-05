@@ -162,7 +162,7 @@ Full example:
 | `color`                        | \[`primary` \| `secondary` \| `tertiary` ]   | `primary`      | ✕        | Color variant                                            |
 | `dropdownPlacement`            | [Placement dictionary][dictionary-placement] | `bottom-end`   | ✕        | Placement of the Dropdown                                |
 | `dropdownTriggerIconName`      | `string`                                     | `chevron-down` | ✕        | Name of the icon to be displayed in the Dropdown Trigger |
-| `dropdownTriggerLabel`         | `string`                                     | -              | ✓        | Label of the Dropdown Trigger                            |
+| `dropdownTriggerLabel`         | `string`                                     | `More`         | ✕        | Label of the Dropdown Trigger                            |
 | `id`                           | `string`                                     | -              | ✓        | Id of the Split Button and part of Dropdown id           |
 | `isButtonLabelHidden`          | `bool`                                       | `false`        | ✕ \*     | Whether is button label hidden                           |
 | `isDisabled`                   | `bool`                                       | `false`        | ✕        | Disables the Split Button                                |

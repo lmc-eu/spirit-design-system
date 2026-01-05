@@ -25,16 +25,20 @@ describe('PaginationLink', () => {
   elementTypePropsTest(PaginationLink);
 
   it('should render text children', () => {
-    const dom = render(<PaginationLink accessibilityLabel="" pageNumber={100} />);
+    const dom = render(<PaginationLink pageNumber={100} />);
     const element = dom.container.querySelector('.Pagination__link') as HTMLElement;
+    const visibleSpan = element.querySelector('span[aria-hidden="true"]') as HTMLElement;
 
-    expect(element.textContent).toBe('100');
+    expect(visibleSpan?.textContent).toBe('100');
   });
 
   it('should render text children with accessibility label', () => {
     const dom = render(<PaginationLink accessibilityLabel="Test label" pageNumber={100} />);
     const element = dom.container.querySelector('.Pagination__link') as HTMLElement;
+    const visibleSpan = element.querySelector('span[aria-hidden="true"]') as HTMLElement;
+    const hiddenLabel = element.querySelector('.accessibility-hidden') as HTMLElement;
 
-    expect(element.textContent).toBe('Test label100');
+    expect(visibleSpan?.textContent).toBe('100');
+    expect(hiddenLabel?.textContent).toBe('Test label');
   });
 });
