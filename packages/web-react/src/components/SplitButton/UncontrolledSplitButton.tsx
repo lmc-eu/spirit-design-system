@@ -6,11 +6,13 @@ import { Button } from '../Button';
 import { Dropdown, DropdownPopover, DropdownTrigger } from '../Dropdown';
 import { Icon } from '../Icon';
 import { VisuallyHidden } from '../VisuallyHidden';
+import { UNCONTROLLED_SPLIT_BUTTON_DROPDOWN_TRIGGER_LABEL_DEFAULT } from './constants';
 import SplitButton from './SplitButton';
 
 const defaultProps: Partial<UncontrolledSplitButtonProps> = {
   dropdownPlacement: 'bottom-end',
   dropdownTriggerIconName: 'chevron-down',
+  dropdownTriggerLabel: UNCONTROLLED_SPLIT_BUTTON_DROPDOWN_TRIGGER_LABEL_DEFAULT,
 };
 
 const UncontrolledSplitButton = (props: UncontrolledSplitButtonProps) => {
