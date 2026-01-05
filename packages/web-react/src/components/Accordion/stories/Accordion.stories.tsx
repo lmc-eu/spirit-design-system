@@ -1,7 +1,7 @@
 import { Markdown } from '@storybook/addon-docs/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
-import React, { useState } from 'react';
-import { type AccordionOpenStateType, type AccordionProps } from '../../../types';
+import React, { type ElementType, useState } from 'react';
+import { type AccordionOpenStateType, type SpiritAccordionProps } from '../../../types';
 import { Link } from '../../Link';
 import { Pill } from '../../Pill';
 import toggleValueByType from '../demo/toggleValueByType';
@@ -39,7 +39,7 @@ const meta: Meta<typeof Accordion> = {
 export default meta;
 type Story = StoryObj<typeof Accordion>;
 
-const AccordionWithHooks = (args: AccordionProps) => {
+const AccordionWithHooks = (args: SpiritAccordionProps<ElementType>) => {
   const [openState, setOpenState] = useState<AccordionOpenStateType>('accordion-item-example-1');
 
   const toggle = (id: string) => {

@@ -1,9 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import { type AccordionHandlingProps, type AccordionOpenStateType, type UncontrolledAccordionProps } from '../../types';
+import {
+  type AccordionHandlingProps,
+  type AccordionOpenStateType,
+  type UncontrolledAccordionBaseProps,
+} from '../../types';
 
-export const useAccordion = ({ defaultOpen, stayOpen }: UncontrolledAccordionProps): AccordionHandlingProps => {
+export const useAccordion = ({ defaultOpen, stayOpen }: UncontrolledAccordionBaseProps): AccordionHandlingProps => {
   const [open, setOpen] = useState<AccordionOpenStateType>(defaultOpen);
 
   const toggle = (id: string) => {
