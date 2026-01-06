@@ -63,8 +63,8 @@ The `footer` is optional. The [Commit Message Footer](#commit-footer) format des
   │       │             │
   │       │             └─⫸ Summary in present tense. Sentence case. No period at the end.
   │       │
-  │       └─⫸ Commit Scope: analytics|design-tokens|icons|web|web-react|web-twig|exporter-js|
-  |                          exporter-scss|exporter-tokens|exporter-assets|ci|repo
+  │       └─⫸ Commit Scope: analytics|design-tokens|icons|web|web-react|
+  |                          exporter-tokens|exporter-assets|ci|repo
   │
   └─⫸ Commit Type: Feat|Fix|Perf|Revert|Docs|Style|Refactor|Test|Chore|Deps
 ```
@@ -95,8 +95,6 @@ The following is the list of supported scopes:
 - Apps:
   - `demo`
 - Exporters:
-  - `exporter-js`
-  - `exporter-scss`
   - `exporter-tokens`
   - `exporter-assets`
 - Packages:
@@ -106,7 +104,6 @@ The following is the list of supported scopes:
   - `icons`
   - `web`
   - `web-react`
-  - `web-twig`
 - Repository-wide:
   - `ci`: used for changes that affect the Continuous Integration process and builds
   - `repo`: used for repository-wide changes
@@ -364,8 +361,6 @@ Both manual and automatic workflows are interchangeable.
 If something went wrong you can always go step-by-step through the manual process.
 Both workflows are using the same scripts and commands.
 
-⚠️ Do not forget to also release the `web-twig` package, see [web-twig package release process][web-twig-package-release].
-
 ### Release Notes
 
 Fill in a [template in Slack Canvases][release-notes-template] for the Spirit Release Notes.
@@ -410,4 +405,3 @@ After the release notes are ready, you can publish them (copy&paste from canvas)
 [figma-dev-mode]: https://help.figma.com/hc/en-us/articles/15023124644247-Guide-to-Dev-Mode
 [figma-react-guide]: https://developers.figma.com/docs/code-connect/react/
 [version-action]: https://github.com/lmc-eu/spirit-design-system/actions/workflows/version.yaml
-[web-twig-package-release]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/CONTRIBUTING.md#release-new-version

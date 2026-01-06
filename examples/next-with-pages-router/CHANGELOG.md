@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.3.1"></a>
+
+## [0.3.1](https://github.com/lmc-eu/spirit-design-system/compare/@alma-oss/spirit-example-next-with-pages-router@0.3.0...@alma-oss/spirit-example-next-with-pages-router@0.3.1) (2025-12-19)
+
+### Documentation
+
+- **repo:** Clean badly generated change logs ([f254af8](https://github.com/lmc-eu/spirit-design-system/commit/f254af8))
+
+**Note:** Version bump only for package @alma-oss/spirit-example-next-with-pages-router
+
 <a name="0.3.0"></a>
 
 # 0.3.0 (2025-12-15)
@@ -10,101 +20,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### BREAKING CHANGES
 
 - **repo:** Change npm organization name to alma-oss ([715a230](https://github.com/lmc-eu/spirit-design-system/commit/715a230)), closes [#DS-2173](https://github.com/lmc-eu/spirit-design-system/issues/DS-2173)
-
-### Bug Fixes
-
-- **examples:** Add mandatory elementType to examples ([021932c](https://github.com/lmc-eu/spirit-design-system/commit/021932c))
-- **web-react:** FileUploader document object not found when ssr [#DS-1470](https://github.com/lmc-eu/spirit-design-system/issues/DS-1470) ([5516d61](https://github.com/lmc-eu/spirit-design-system/commit/5516d61))
-
-### Chores
-
-- **deps:** Bump next from 15.5.4 to 15.5.7 ([46c4e2b](https://github.com/lmc-eu/spirit-design-system/commit/46c4e2b))
-- **release:** Publish ([e427731](https://github.com/lmc-eu/spirit-design-system/commit/e427731))
-- **release:** Publish ([53a9ee1](https://github.com/lmc-eu/spirit-design-system/commit/53a9ee1))
-- **release:** Publish ([a19d876](https://github.com/lmc-eu/spirit-design-system/commit/a19d876))
-- **release:** Publish ([a66062e](https://github.com/lmc-eu/spirit-design-system/commit/a66062e))
-- **release:** Publish ([cad6291](https://github.com/lmc-eu/spirit-design-system/commit/cad6291))
-- **release:** Publish ([87e0b8b](https://github.com/lmc-eu/spirit-design-system/commit/87e0b8b))
-- **release:** Publish ([270eeee](https://github.com/lmc-eu/spirit-design-system/commit/270eeee))
-- **release:** Publish ([deee22f](https://github.com/lmc-eu/spirit-design-system/commit/deee22f))
-- **release:** Publish ([8e627fb](https://github.com/lmc-eu/spirit-design-system/commit/8e627fb))
-- **release:** Publish ([9438534](https://github.com/lmc-eu/spirit-design-system/commit/9438534))
-- **release:** Publish ([291af0d](https://github.com/lmc-eu/spirit-design-system/commit/291af0d))
-- **release:** Publish ([da9340b](https://github.com/lmc-eu/spirit-design-system/commit/da9340b))
-- **release:** Publish ([4477c24](https://github.com/lmc-eu/spirit-design-system/commit/4477c24))
-- **release:** Publish ([7621d2a](https://github.com/lmc-eu/spirit-design-system/commit/7621d2a))
-- **release:** Publish ([e45e6b7](https://github.com/lmc-eu/spirit-design-system/commit/e45e6b7))
-- **release:** Publish ([ed04844](https://github.com/lmc-eu/spirit-design-system/commit/ed04844))
-- **release:** Publish ([244c92f](https://github.com/lmc-eu/spirit-design-system/commit/244c92f))
-- **release:** Publish ([d687f78](https://github.com/lmc-eu/spirit-design-system/commit/d687f78))
-- **release:** Publish ([87eeb3f](https://github.com/lmc-eu/spirit-design-system/commit/87eeb3f))
-- **release:** Publish ([c353edd](https://github.com/lmc-eu/spirit-design-system/commit/c353edd))
-- **release:** Publish ([3ad1f8c](https://github.com/lmc-eu/spirit-design-system/commit/3ad1f8c))
-- **release:** Publish ([c8909dc](https://github.com/lmc-eu/spirit-design-system/commit/c8909dc))
-- **release:** Publish ([5cf8d9a](https://github.com/lmc-eu/spirit-design-system/commit/5cf8d9a))
-- **release:** Publish ([c2bc78a](https://github.com/lmc-eu/spirit-design-system/commit/c2bc78a))
-- **release:** Publish ([af2b10b](https://github.com/lmc-eu/spirit-design-system/commit/af2b10b))
-- **release:** Publish ([10eb0cc](https://github.com/lmc-eu/spirit-design-system/commit/10eb0cc))
-- **release:** Publish ([47883f9](https://github.com/lmc-eu/spirit-design-system/commit/47883f9))
-- **release:** Publish ([44eb2e1](https://github.com/lmc-eu/spirit-design-system/commit/44eb2e1))
-- **release:** Publish ([f3f9f73](https://github.com/lmc-eu/spirit-design-system/commit/f3f9f73))
-- **release:** Publish ([2c09d62](https://github.com/lmc-eu/spirit-design-system/commit/2c09d62))
-- **release:** Publish ([7c5b4dd](https://github.com/lmc-eu/spirit-design-system/commit/7c5b4dd))
-- **release:** Publish ([fc8924f](https://github.com/lmc-eu/spirit-design-system/commit/fc8924f))
-- **release:** Publish ([94585f0](https://github.com/lmc-eu/spirit-design-system/commit/94585f0))
-- **release:** Publish ([60e5c7c](https://github.com/lmc-eu/spirit-design-system/commit/60e5c7c))
-- **release:** Publish ([5805187](https://github.com/lmc-eu/spirit-design-system/commit/5805187))
-- **release:** Publish ([58531cf](https://github.com/lmc-eu/spirit-design-system/commit/58531cf))
-- **release:** Publish ([8b3bb00](https://github.com/lmc-eu/spirit-design-system/commit/8b3bb00))
-- **repo:** Disable usage of ESLint config flat style by packages ([0ab8596](https://github.com/lmc-eu/spirit-design-system/commit/0ab8596))
-
-### Dependencies
-
-- **examples:** Update Next.js libs to 14.2.18 ([b2f9b11](https://github.com/lmc-eu/spirit-design-system/commit/b2f9b11))
-- Pin dependencies ([8570d79](https://github.com/lmc-eu/spirit-design-system/commit/8570d79))
-- Pin dependencies ([82dfcb6](https://github.com/lmc-eu/spirit-design-system/commit/82dfcb6))
-- Pin dependencies ([8cdf0f3](https://github.com/lmc-eu/spirit-design-system/commit/8cdf0f3))
-- **repo:** Add missing required dependencies by other packages ([2ae9e26](https://github.com/lmc-eu/spirit-design-system/commit/2ae9e26))
-- Update @babel/preset-typescript to 7.26.0 ([dc96867](https://github.com/lmc-eu/spirit-design-system/commit/dc96867))
-- Update all non-major dependencies ([5b7a7d9](https://github.com/lmc-eu/spirit-design-system/commit/5b7a7d9))
-- Update all non-major dependencies ([e4ed61a](https://github.com/lmc-eu/spirit-design-system/commit/e4ed61a))
-- Update all non-major dependencies ([7f19a02](https://github.com/lmc-eu/spirit-design-system/commit/7f19a02))
-- Update all non-major dependencies ([7a024bf](https://github.com/lmc-eu/spirit-design-system/commit/7a024bf))
-- Update all non-major dependencies ([b59c923](https://github.com/lmc-eu/spirit-design-system/commit/b59c923))
-- Update all non-major dependencies ([188c30d](https://github.com/lmc-eu/spirit-design-system/commit/188c30d))
-- Update all non-major dependencies ([949b633](https://github.com/lmc-eu/spirit-design-system/commit/949b633))
-- Update all non-major dependencies ([97f71bd](https://github.com/lmc-eu/spirit-design-system/commit/97f71bd))
-- Update all non-major dependencies ([bca6b32](https://github.com/lmc-eu/spirit-design-system/commit/bca6b32))
-- Update compile tools non-major ([ae28b11](https://github.com/lmc-eu/spirit-design-system/commit/ae28b11))
-- Update compile tools non-major ([06516c5](https://github.com/lmc-eu/spirit-design-system/commit/06516c5))
-- Update compile tools non-major ([c28c207](https://github.com/lmc-eu/spirit-design-system/commit/c28c207))
-- Update dependency @types/react to v18.3.18 ([f9bbccc](https://github.com/lmc-eu/spirit-design-system/commit/f9bbccc))
-- Update dependency eslint to v9 ([fce4f22](https://github.com/lmc-eu/spirit-design-system/commit/fce4f22))
-- Update dependency eslint-config-next to v14.2.29 ([a995c61](https://github.com/lmc-eu/spirit-design-system/commit/a995c61))
-- Update dependency next to v15.4.7 [SECURITY] ([59821dd](https://github.com/lmc-eu/spirit-design-system/commit/59821dd))
-- Update dependency next to v15.5.8 [SECURITY] ([2545dc0](https://github.com/lmc-eu/spirit-design-system/commit/2545dc0))
-- Update dependency next to v15.5.9 [SECURITY] ([5093de3](https://github.com/lmc-eu/spirit-design-system/commit/5093de3))
-- Update dependency typescript to v5 ([4f4041a](https://github.com/lmc-eu/spirit-design-system/commit/4f4041a))
-- Update dependency typescript to v5.7.3 ([31fa021](https://github.com/lmc-eu/spirit-design-system/commit/31fa021))
-- Update eslint plugins and configs non-major ([c8b42a4](https://github.com/lmc-eu/spirit-design-system/commit/c8b42a4))
-- Update eslint plugins and configs non-major ([44be370](https://github.com/lmc-eu/spirit-design-system/commit/44be370))
-- Update react types ([ea0725c](https://github.com/lmc-eu/spirit-design-system/commit/ea0725c))
-- Update types non-major ([bde3118](https://github.com/lmc-eu/spirit-design-system/commit/bde3118))
-- Upgrade dependency @types/node to 20.17.24 ([ab95347](https://github.com/lmc-eu/spirit-design-system/commit/ab95347))
-- Upgrade dependency @types/react-dom to 18.3.5 ([968f720](https://github.com/lmc-eu/spirit-design-system/commit/968f720))
-
-### Features
-
-- Example NextJS app with pages router [#DS-1393](https://github.com/lmc-eu/spirit-design-system/issues/DS-1393) ([7ba942c](https://github.com/lmc-eu/spirit-design-system/commit/7ba942c))
-
-### Styles
-
-- **exporters, docs, examples:** Fix docs by markdown linter ([1915a9f](https://github.com/lmc-eu/spirit-design-system/commit/1915a9f)), closes [#DS-1100](https://github.com/lmc-eu/spirit-design-system/issues/DS-1100)
-- **repo:** Migrate ESLint config to flat config style of Next.js Pages Router example ([9429ecb](https://github.com/lmc-eu/spirit-design-system/commit/9429ecb))
-- **repo:** Refactor deprecated `env` in ESLint config into `globals` ([73b0b21](https://github.com/lmc-eu/spirit-design-system/commit/73b0b21))
-- **repo:** Refactor usage of plugins in ESLint configs ([736f058](https://github.com/lmc-eu/spirit-design-system/commit/736f058))
-- **repo:** Use `eslint-config-spirit` intead of relative path to root ESLint config in all configs ([8aa3e18](https://github.com/lmc-eu/spirit-design-system/commit/8aa3e18))
-- **repo:** Use eslint prettier configuration instead of the plugin ([3befaea](https://github.com/lmc-eu/spirit-design-system/commit/3befaea))
 
 **Note:** Version bump only for package @alma-oss/spirit-example-next-with-pages-router
 

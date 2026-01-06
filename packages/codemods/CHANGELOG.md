@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.1"></a>
+
+## [2.0.1](https://github.com/lmc-eu/spirit-design-system/compare/@alma-oss/spirit-codemods@2.0.0...@alma-oss/spirit-codemods@2.0.1) (2025-12-19)
+
+### Documentation
+
+- **repo:** Clean badly generated change logs ([f254af8](https://github.com/lmc-eu/spirit-design-system/commit/f254af8))
+
+**Note:** Version bump only for package @alma-oss/spirit-codemods
+
 <a name="2.0.0"></a>
 
 # 2.0.0 (2025-12-15)
@@ -10,127 +20,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### BREAKING CHANGES
 
 - **codemods:** Change package npm organization to alma-oss ([84e6350](https://github.com/lmc-eu/spirit-design-system/commit/84e6350)), closes [#DS-2173](https://github.com/lmc-eu/spirit-design-system/issues/DS-2173)
-- **repo:** Drop support for Node.js v16 ([08788be](https://github.com/lmc-eu/spirit-design-system/commit/08788be)), closes [#DS-466](https://github.com/lmc-eu/spirit-design-system/issues/DS-466)
 - **repo:** Drop support for Node.js v18 ([6eebd75](https://github.com/lmc-eu/spirit-design-system/commit/6eebd75))
-- **web-react:** Drop `HeaderDesktopActions` `color` prop in favor of `isAtEnd` [#DS-1059](https://github.com/lmc-eu/spirit-design-system/issues/DS-1059) ([23d7c27](https://github.com/lmc-eu/spirit-design-system/commit/23d7c27))
-- **web-react:** Rename DropdownModern to Dropdown ([17f4733](https://github.com/lmc-eu/spirit-design-system/commit/17f4733)), closes [#DS-1192](https://github.com/lmc-eu/spirit-design-system/issues/DS-1192)
-- **web-react:** Rename height and maxHeight ModalDialog props and enhance them [#DS-1134](https://github.com/lmc-eu/spirit-design-system/issues/DS-1134) ([35c7d69](https://github.com/lmc-eu/spirit-design-system/commit/35c7d69))
-- **web-react:** Rename TooltipModern to Tooltip ([84c41c2](https://github.com/lmc-eu/spirit-design-system/commit/84c41c2))
-
-### Bug Fixes
-
-- **codemods:** FileuploaderAttachment codemods ([ac4d7e1](https://github.com/lmc-eu/spirit-design-system/commit/ac4d7e1))
-- **codemods:** Fix bug with extra parentheses ([9130a33](https://github.com/lmc-eu/spirit-design-system/commit/9130a33))
-
-### Chores
-
-- **release:** Publish ([53a9ee1](https://github.com/lmc-eu/spirit-design-system/commit/53a9ee1))
-- **release:** Publish ([a19d876](https://github.com/lmc-eu/spirit-design-system/commit/a19d876))
-- **release:** Publish ([a66062e](https://github.com/lmc-eu/spirit-design-system/commit/a66062e))
-- **release:** Publish ([cad6291](https://github.com/lmc-eu/spirit-design-system/commit/cad6291))
-- **release:** Publish ([244c92f](https://github.com/lmc-eu/spirit-design-system/commit/244c92f))
-- **release:** Publish ([d687f78](https://github.com/lmc-eu/spirit-design-system/commit/d687f78))
-- **release:** Publish ([c8909dc](https://github.com/lmc-eu/spirit-design-system/commit/c8909dc))
-- **release:** Publish ([5cf8d9a](https://github.com/lmc-eu/spirit-design-system/commit/5cf8d9a))
-- **release:** Publish ([af2b10b](https://github.com/lmc-eu/spirit-design-system/commit/af2b10b))
-- **release:** Publish ([10eb0cc](https://github.com/lmc-eu/spirit-design-system/commit/10eb0cc))
-- **release:** Publish ([47883f9](https://github.com/lmc-eu/spirit-design-system/commit/47883f9))
-- **release:** Publish ([44eb2e1](https://github.com/lmc-eu/spirit-design-system/commit/44eb2e1))
-- **release:** Publish ([f3f9f73](https://github.com/lmc-eu/spirit-design-system/commit/f3f9f73))
-- **release:** Publish ([fc8924f](https://github.com/lmc-eu/spirit-design-system/commit/fc8924f))
-- **release:** Publish ([94585f0](https://github.com/lmc-eu/spirit-design-system/commit/94585f0))
-- **release:** Publish ([60e5c7c](https://github.com/lmc-eu/spirit-design-system/commit/60e5c7c))
-- **release:** Publish ([5805187](https://github.com/lmc-eu/spirit-design-system/commit/5805187))
-- **release:** Publish ([58531cf](https://github.com/lmc-eu/spirit-design-system/commit/58531cf))
-- **release:** Publish ([8b3bb00](https://github.com/lmc-eu/spirit-design-system/commit/8b3bb00))
-- **release:** Publish ([1f51d81](https://github.com/lmc-eu/spirit-design-system/commit/1f51d81))
-- **release:** Publish ([bceba9e](https://github.com/lmc-eu/spirit-design-system/commit/bceba9e))
-- **release:** Publish ([a7f1361](https://github.com/lmc-eu/spirit-design-system/commit/a7f1361))
-- **release:** Publish ([e1f09bc](https://github.com/lmc-eu/spirit-design-system/commit/e1f09bc))
-- **release:** Publish ([4e6fee7](https://github.com/lmc-eu/spirit-design-system/commit/4e6fee7))
-- **release:** Publish ([4466192](https://github.com/lmc-eu/spirit-design-system/commit/4466192))
-- **release:** Publish ([2c3f91e](https://github.com/lmc-eu/spirit-design-system/commit/2c3f91e))
-- **release:** Publish ([9b44190](https://github.com/lmc-eu/spirit-design-system/commit/9b44190))
-- **release:** Publish ([67e52f8](https://github.com/lmc-eu/spirit-design-system/commit/67e52f8))
-- **release:** Publish ([23f0c9b](https://github.com/lmc-eu/spirit-design-system/commit/23f0c9b))
-- **repo:** Disable usage of ESLint config flat style by packages ([0ab8596](https://github.com/lmc-eu/spirit-design-system/commit/0ab8596))
-
-### Code Refactoring
-
-- **ci:** Yarn no longer supports `pre*` and `post*` scripts ([44b8f1c](https://github.com/lmc-eu/spirit-design-system/commit/44b8f1c))
-- **codemods:** Introduce `testTransform` utility ([d6f5627](https://github.com/lmc-eu/spirit-design-system/commit/d6f5627))
-- **codemods:** Move codemods from v4 to v5 [#DS-2217](https://github.com/lmc-eu/spirit-design-system/issues/DS-2217) ([ce96359](https://github.com/lmc-eu/spirit-design-system/commit/ce96359))
-- **repo:** Use sharable typescript-config-spirit in tsconfig files ([b53a603](https://github.com/lmc-eu/spirit-design-system/commit/b53a603))
-
-### Dependencies
-
-- Pin dependencies ([8570d79](https://github.com/lmc-eu/spirit-design-system/commit/8570d79))
-- **repo:** Add missing required dependencies by other packages ([2ae9e26](https://github.com/lmc-eu/spirit-design-system/commit/2ae9e26))
-- Update all non-major dependencies ([5b7a7d9](https://github.com/lmc-eu/spirit-design-system/commit/5b7a7d9))
-- Update all non-major dependencies ([e4ed61a](https://github.com/lmc-eu/spirit-design-system/commit/e4ed61a))
-- Update all non-major dependencies ([7f19a02](https://github.com/lmc-eu/spirit-design-system/commit/7f19a02))
-- Update all non-major dependencies ([a6df4f7](https://github.com/lmc-eu/spirit-design-system/commit/a6df4f7))
-- Update all non-major dependencies ([188c30d](https://github.com/lmc-eu/spirit-design-system/commit/188c30d))
-- Update all non-major dependencies ([949b633](https://github.com/lmc-eu/spirit-design-system/commit/949b633))
-- Update all non-major dependencies ([97f71bd](https://github.com/lmc-eu/spirit-design-system/commit/97f71bd))
-- Update all non-major dependencies ([bca6b32](https://github.com/lmc-eu/spirit-design-system/commit/bca6b32))
-- Update all non-major dependencies ([4986e82](https://github.com/lmc-eu/spirit-design-system/commit/4986e82))
-- Update all non-major dependencies ([7876fb8](https://github.com/lmc-eu/spirit-design-system/commit/7876fb8))
-- Update all non-major dependencies ([2ece372](https://github.com/lmc-eu/spirit-design-system/commit/2ece372))
-- Update all non-major dependencies ([7b34614](https://github.com/lmc-eu/spirit-design-system/commit/7b34614))
-- Update all non-major dependencies ([10774a2](https://github.com/lmc-eu/spirit-design-system/commit/10774a2))
-- Update all non-major dependencies ([b971d44](https://github.com/lmc-eu/spirit-design-system/commit/b971d44))
-- Update dependency eslint to v9 ([fce4f22](https://github.com/lmc-eu/spirit-design-system/commit/fce4f22))
-- Update dependency execa to v9 ([86ba5ff](https://github.com/lmc-eu/spirit-design-system/commit/86ba5ff))
-- Update dependency jest to v30 ([b4d753c](https://github.com/lmc-eu/spirit-design-system/commit/b4d753c))
-- Update dependency jscodeshift to v17 ([ecfd30c](https://github.com/lmc-eu/spirit-design-system/commit/ecfd30c))
-- Update dependency tsup to v8 ([f5aacf5](https://github.com/lmc-eu/spirit-design-system/commit/f5aacf5))
-- Update dependency typescript to v5.7.3 ([31fa021](https://github.com/lmc-eu/spirit-design-system/commit/31fa021))
-- Update dependency zx to v8 ([8417d97](https://github.com/lmc-eu/spirit-design-system/commit/8417d97))
-- Update types non-major ([bde3118](https://github.com/lmc-eu/spirit-design-system/commit/bde3118))
-- Upgrade dependency @types/node to 20.17.24 ([ab95347](https://github.com/lmc-eu/spirit-design-system/commit/ab95347))
-
-### Documentation
-
-- Change relative path to absolute path in md [#DS-1364](https://github.com/lmc-eu/spirit-design-system/issues/DS-1364) ([ebd2b3f](https://github.com/lmc-eu/spirit-design-system/commit/ebd2b3f))
-- **codemods:** Add list of all current codemods we have [#DS-1214](https://github.com/lmc-eu/spirit-design-system/issues/DS-1214) ([b182527](https://github.com/lmc-eu/spirit-design-system/commit/b182527))
-- **codemods:** Rebrand to Alma Career ([c7b1092](https://github.com/lmc-eu/spirit-design-system/commit/c7b1092))
-
-### Features
-
-- **codemod:** Add `isDisposable` codemod for Collapse ([59296dc](https://github.com/lmc-eu/spirit-design-system/commit/59296dc)), closes [#832](https://github.com/lmc-eu/spirit-design-system/issues/832)
-- **codemod:** Add codemod for Flex direction values ([6324fa1](https://github.com/lmc-eu/spirit-design-system/commit/6324fa1))
-- **codemod:** Add codemod for the Link underlined prop ([b341e7c](https://github.com/lmc-eu/spirit-design-system/commit/b341e7c))
-- **codemods:** Add codemod to remove breakpoint props from Grid [#DS-1068](https://github.com/lmc-eu/spirit-design-system/issues/DS-1068) ([8469fc3](https://github.com/lmc-eu/spirit-design-system/commit/8469fc3))
-- **codemods:** Add codemod to update Tooltip and Dropdown non-flow placements [#DS-1138](https://github.com/lmc-eu/spirit-design-system/issues/DS-1138) ([720b07e](https://github.com/lmc-eu/spirit-design-system/commit/720b07e))
-- **codemods:** Add codemode to replace Grid Span with Grid Item with correct values [#DS-1041](https://github.com/lmc-eu/spirit-design-system/issues/DS-1041) ([a00cddb](https://github.com/lmc-eu/spirit-design-system/commit/a00cddb))
-- **codemods:** Add codemods for Modal deprecations [#DS-1184](https://github.com/lmc-eu/spirit-design-system/issues/DS-1184) [#DS-1201](https://github.com/lmc-eu/spirit-design-system/issues/DS-1201) [#DS-1181](https://github.com/lmc-eu/spirit-design-system/issues/DS-1181) ([fe61e86](https://github.com/lmc-eu/spirit-design-system/commit/fe61e86))
-- **codemods:** Add elementType prop to Heading component ([e586cf5](https://github.com/lmc-eu/spirit-design-system/commit/e586cf5))
-- **codemods:** Add Tabs props rename codemod [#DS-1096](https://github.com/lmc-eu/spirit-design-system/issues/DS-1096) ([f19bdd0](https://github.com/lmc-eu/spirit-design-system/commit/f19bdd0))
-- **codemods:** Add the option to allow visited state in Link [#DS-1501](https://github.com/lmc-eu/spirit-design-system/issues/DS-1501) ([9da61f6](https://github.com/lmc-eu/spirit-design-system/commit/9da61f6))
-- **codemods:** Button and ButtonLink have isSymmetrical prop instead of isSquare [#DS-1484](https://github.com/lmc-eu/spirit-design-system/issues/DS-1484) ([a713fbc](https://github.com/lmc-eu/spirit-design-system/commit/a713fbc))
-- **codemods:** Change Package npm Organization [#DS-2217](https://github.com/lmc-eu/spirit-design-system/issues/DS-2217) ([b36491a](https://github.com/lmc-eu/spirit-design-system/commit/b36491a))
-- **codemods:** Introduce codemods package ([5d59656](https://github.com/lmc-eu/spirit-design-system/commit/5d59656))
-- **codemods:** Introduce ToastBar color inverted to neutral codemod ([7e7bf9c](https://github.com/lmc-eu/spirit-design-system/commit/7e7bf9c))
-- **codemods:** Set isExpandedOnMobile prop of ModalDialog if not already set [#DS-1146](https://github.com/lmc-eu/spirit-design-system/issues/DS-1146) ([9e1a6d5](https://github.com/lmc-eu/spirit-design-system/commit/9e1a6d5))
-- **codemods:** Stabilization of Avatar [#DS-1677](https://github.com/lmc-eu/spirit-design-system/issues/DS-1677) ([af116cf](https://github.com/lmc-eu/spirit-design-system/commit/af116cf))
-- **codemods:** Stabilization of the EmptyState component [#DS-1694](https://github.com/lmc-eu/spirit-design-system/issues/DS-1694) ([97262c8](https://github.com/lmc-eu/spirit-design-system/commit/97262c8))
-- **codemods:** Stabilization of Toggle [#DS-1696](https://github.com/lmc-eu/spirit-design-system/issues/DS-1696) ([5bfeae7](https://github.com/lmc-eu/spirit-design-system/commit/5bfeae7))
-- **codemods:** Stabilize Truncate component [#DS-1695](https://github.com/lmc-eu/spirit-design-system/issues/DS-1695) ([01939f5](https://github.com/lmc-eu/spirit-design-system/commit/01939f5))
-- **codemod:** Stabilization of Slider [#DS-1697](https://github.com/lmc-eu/spirit-design-system/issues/DS-1697) ([e249b07](https://github.com/lmc-eu/spirit-design-system/commit/e249b07))
-- **web-react:** Add spirit-codemod package ([0ddc4fe](https://github.com/lmc-eu/spirit-design-system/commit/0ddc4fe))
-
-### Styles
-
-- **codemods:** Disable markdown heading capitalization for transforms ([91110e2](https://github.com/lmc-eu/spirit-design-system/commit/91110e2)), closes [#DS-1100](https://github.com/lmc-eu/spirit-design-system/issues/DS-1100)
-- **codemods:** Migrate ESLint config to flat config style ([3e12b5c](https://github.com/lmc-eu/spirit-design-system/commit/3e12b5c))
-- **codemods:** Use sharable ESlint config ([aaf4093](https://github.com/lmc-eu/spirit-design-system/commit/aaf4093))
-- **common, codemods, analytics, design-tokens:** Fix docs by markdown linter ([f5941f7](https://github.com/lmc-eu/spirit-design-system/commit/f5941f7))
-- **repo:** Use eslint prettier configuration instead of the plugin ([3befaea](https://github.com/lmc-eu/spirit-design-system/commit/3befaea))
-
-### Tests
-
-- **codemods:** Use jest-config-spirit common preset ([49f22b2](https://github.com/lmc-eu/spirit-design-system/commit/49f22b2))
 
 **Note:** Version bump only for package @alma-oss/spirit-codemods
 

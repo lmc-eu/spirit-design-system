@@ -7,6 +7,7 @@ export * from './loadingPropsTest';
 export * from './requiredPropsTest';
 export * from './restPropsTest';
 export * from './spacingPropsTest';
+export * from './staticPropsTest';
 export * from './stylePropsTest';
 export * from './textAlignmentPropsTest';
 export * from './textHyphensPropsTest';
