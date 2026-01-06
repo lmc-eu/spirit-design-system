@@ -47,6 +47,14 @@ const meta: Meta<typeof Radio> = {
         defaultValue: { summary: 'false' },
       },
     },
+    inputPosition: {
+      control: 'select',
+      options: ['start', 'end'],
+      table: {
+        defaultValue: { summary: 'start' },
+      },
+      description: 'Position of the input element relative to the label. Can also be a responsive object.',
+    },
     label: {
       control: 'text',
     },
@@ -72,6 +80,7 @@ const meta: Meta<typeof Radio> = {
     isChecked: true,
     isItem: false,
     isLabelHidden: false,
+    inputPosition: 'start',
     label: 'Label',
     name: 'Radio',
     validationState: undefined,
