@@ -11,8 +11,6 @@ $_field-name: 'Radio';
 
 .Radio {
     @include form-fields-tools.inline-field-root();
-
-    position: relative;
 }
 
 .Radio__input {
@@ -54,7 +52,6 @@ $_field-name: 'Radio';
 
     position: relative; // 2.
     z-index: 1; // 2.
-    margin-left: form-fields-settings.$inline-field-gap;
 }
 
 @include form-fields-tools.input-field-validation-states($_field-name);
@@ -62,8 +59,6 @@ $_field-name: 'Radio';
 .Radio__label {
     @include form-fields-tools.inline-field-label();
     @include form-fields-tools.stretch();
-
-    margin-left: form-fields-settings.$inline-field-gap;
 }
 
 .Radio__label--hidden {
@@ -76,8 +71,6 @@ $_field-name: 'Radio';
 
 .Radio--item {
     @include form-fields-tools.item();
-
-    position: relative;
 }
 
 .Radio--item:is(.Radio--disabled, .Radio.is-disabled),
@@ -128,3 +121,12 @@ $_field-name: 'Radio';
 .Radio--item:not(.Radio--disabled, .Radio.is-disabled) .Radio__input:is(:hover, :active):not(:checked, :disabled) {
     background-color: form-fields-settings.$input-background-color;
 }
+
+@include form-fields-tools.input-position(
+    $component-class: $_field-name,
+    $positions: (
+        'start': row,
+        'end': row-reverse,
+    ),
+    $default-position: 'start'
+);

@@ -79,23 +79,24 @@ You can add `isDisabled` prop to disable Toggle.
 
 ## API
 
-| Name                | Type                                           | Default | Required | Description                                          |
-| ------------------- | ---------------------------------------------- | ------- | -------- | ---------------------------------------------------- |
-| `autoComplete`      | `string`                                       | -       | ✕        | [Automated assistance in filling][autocomplete-attr] |
-| `hasIndicators`     | `bool`                                         | `false` | ✕        | Whether has visual indicators                        |
-| `hasValidationIcon` | `bool`                                         | `false` | ✕        | Whether to show validation icon                      |
-| `helperText`        | `string`                                       | -       | ✕        | Helper text                                          |
-| `id`                | `string`                                       | -       | ✓        | Input and label identification                       |
-| `isChecked`         | `bool`                                         | `false` | ✕        | Whether is toggle checked                            |
-| `isDisabled`        | `bool`                                         | `false` | ✕        | Whether is toggle disabled                           |
-| `isFluid`           | `bool`                                         | `false` | ✕        | Whether is toggle fluid                              |
-| `isLabelHidden`     | `bool`                                         | `false` | ✕        | Whether is label hidden                              |
-| `label`             | `ReactNode`                                    | -       | ✓        | Label text                                           |
-| `name`              | `string`                                       | -       | ✕        | Input name                                           |
-| `onChange`          | (event: ChangeEvent<HTMLInputElement>) => void | -       | ✕        | Change event handler                                 |
-| `ref`               | `ForwardedRef<HTMLInputElement>`               | -       | ✕        | Input element reference                              |
-| `validationState`   | [Validation dictionary][dictionary-validation] | -       | ✕        | Type of validation state                             |
-| `validationText`    | \[`ReactNode` \| `ReactNode[]`]                | -       | ✕        | Validation text                                      |
+| Name                | Type                                           | Default | Required | Description                                                                               |
+| ------------------- | ---------------------------------------------- | ------- | -------- | ----------------------------------------------------------------------------------------- |
+| `autoComplete`      | `string`                                       | -       | ✕        | [Automated assistance in filling][autocomplete-attr]                                      |
+| `hasIndicators`     | `bool`                                         | `false` | ✕        | Whether has visual indicators                                                             |
+| `hasValidationIcon` | `bool`                                         | `false` | ✕        | Whether to show validation icon                                                           |
+| `helperText`        | `string`                                       | -       | ✕        | Helper text                                                                               |
+| `id`                | `string`                                       | -       | ✓        | Input and label identification                                                            |
+| `inputPosition`     | \[`string` \| `object`]                        | `end`   | ✕        | Position of the input (`start` or `end`), supports [responsive][readme-responsive] values |
+| `isChecked`         | `bool`                                         | `false` | ✕        | Whether is toggle checked                                                                 |
+| `isDisabled`        | `bool`                                         | `false` | ✕        | Whether is toggle disabled                                                                |
+| `isFluid`           | `bool`                                         | `false` | ✕        | Whether is toggle fluid                                                                   |
+| `isLabelHidden`     | `bool`                                         | `false` | ✕        | Whether is label hidden                                                                   |
+| `label`             | `ReactNode`                                    | -       | ✓        | Label text                                                                                |
+| `name`              | `string`                                       | -       | ✕        | Input name                                                                                |
+| `onChange`          | (event: ChangeEvent<HTMLInputElement>) => void | -       | ✕        | Change event handler                                                                      |
+| `ref`               | `ForwardedRef<HTMLInputElement>`               | -       | ✕        | Input element reference                                                                   |
+| `validationState`   | [Validation dictionary][dictionary-validation] | -       | ✕        | Type of validation state                                                                  |
+| `validationText`    | \[`ReactNode` \| `ReactNode[]`]                | -       | ✕        | Validation text                                                                           |
 
 The components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -106,4 +107,5 @@ and [escape hatches][readme-escape-hatches].
 [mdn-checkbox]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
+[readme-responsive]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#responsive-props
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props
