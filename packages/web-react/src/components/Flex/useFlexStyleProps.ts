@@ -15,7 +15,7 @@ interface FlexCSSProperties extends CSSProperties {
   [key: string]: string | undefined | number;
 }
 
-export interface FlexStyles<T> {
+export interface FlexStyle<T> {
   /** className props */
   classProps: string;
   /** Props for the flex element. */
@@ -24,7 +24,7 @@ export interface FlexStyles<T> {
   styleProps: FlexCSSProperties;
 }
 
-export function useFlexStyleProps(props: SpiritFlexProps<ElementType>): FlexStyles<SpiritFlexProps<ElementType>> {
+export function useFlexStyleProps(props: SpiritFlexProps<ElementType>): FlexStyle<SpiritFlexProps<ElementType>> {
   const { alignmentX, alignmentY, direction, spacing, spacingX, spacingY, isWrapping, ...restProps } = props;
 
   // @see https://jira.almacareer.tech/browse/DS-1629

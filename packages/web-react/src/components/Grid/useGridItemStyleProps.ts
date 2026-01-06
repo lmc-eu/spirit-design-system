@@ -23,7 +23,7 @@ const setGridItemStyle = (styleObject: GridItemCSSProperties, baseVarName: strin
   }
 };
 
-export interface GridItemStyles<T> {
+export interface GridItemStyle<T> {
   /** className props */
   classProps: string;
   /** Props for the grid element. */
@@ -34,7 +34,7 @@ export interface GridItemStyles<T> {
 
 export function useGridItemStyleProps(
   props: SpiritGridItemProps<ElementType>,
-): GridItemStyles<SpiritGridItemProps<ElementType>> {
+): GridItemStyle<SpiritGridItemProps<ElementType>> {
   const gridItemClass = useClassNamePrefix('GridItem');
 
   const gridItemStyle: GridItemCSSProperties = {};
