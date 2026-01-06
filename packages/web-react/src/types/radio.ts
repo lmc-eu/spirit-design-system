@@ -4,8 +4,10 @@ import {
   type ChildrenProps,
   type HelperTextProps,
   type InputBaseProps,
+  type InputPositionType,
   type ItemProps,
   type RequiredProps,
+  type SingleOrResponsive,
   type SpiritInputElementPropsWithRef,
   type Validation,
 } from './shared';
@@ -21,6 +23,8 @@ export interface RadioProps
     InputBaseProps,
     RequiredProps,
     Omit<Validation, 'isRequired'> {
+  /** Position of the input element relative to the label */
+  inputPosition?: SingleOrResponsive<InputPositionType>;
   /** Whether the checkbox is checked */
   isChecked?: boolean;
   /** Text of control label */

@@ -9,7 +9,7 @@ describe('useToggleStyleProps', () => {
     const { result } = renderHook(() => useToggleStyleProps(props));
 
     expect(result.current.classProps).toEqual({
-      root: 'Toggle',
+      root: 'Toggle Toggle--inputPositionEnd',
       text: 'Toggle__text',
       input: 'Toggle__input',
       label: 'Toggle__label',
@@ -29,21 +29,21 @@ describe('useToggleStyleProps', () => {
     const props = { id: 'toggle', label: 'text', isDisabled: true } as SpiritToggleProps;
     const { result } = renderHook(() => useToggleStyleProps(props));
 
-    expect(result.current.classProps.root).toBe('Toggle Toggle--disabled');
+    expect(result.current.classProps.root).toBe('Toggle Toggle--inputPositionEnd Toggle--disabled');
   });
 
   it.each([Object.values(ValidationStates)])('should return field with %s', (state) => {
     const props = { validationState: state } as SpiritToggleProps;
     const { result } = renderHook(() => useToggleStyleProps(props));
 
-    expect(result.current.classProps.root).toBe(`Toggle Toggle--${state}`);
+    expect(result.current.classProps.root).toBe(`Toggle Toggle--inputPositionEnd Toggle--${state}`);
   });
 
   it('should return fluid', () => {
     const props = { id: 'toggle', label: 'text', isFluid: true } as SpiritToggleProps;
     const { result } = renderHook(() => useToggleStyleProps(props));
 
-    expect(result.current.classProps.root).toBe('Toggle Toggle--fluid');
+    expect(result.current.classProps.root).toBe('Toggle Toggle--inputPositionEnd Toggle--fluid');
   });
 
   it('should return required', () => {
@@ -58,5 +58,28 @@ describe('useToggleStyleProps', () => {
     const { result } = renderHook(() => useToggleStyleProps(props));
 
     expect(result.current.classProps.input).toBe('Toggle__input Toggle__input--indicators');
+  });
+
+  it('should return field with inputPosition start', () => {
+    const props = { inputPosition: 'start' } as SpiritToggleProps;
+    const { result } = renderHook(() => useToggleStyleProps(props));
+
+    expect(result.current.classProps.root).toBe('Toggle Toggle--inputPositionStart');
+  });
+
+  it('should return field with inputPosition end', () => {
+    const props = { inputPosition: 'end' } as SpiritToggleProps;
+    const { result } = renderHook(() => useToggleStyleProps(props));
+
+    expect(result.current.classProps.root).toBe('Toggle Toggle--inputPositionEnd');
+  });
+
+  it('should return field with responsive inputPosition', () => {
+    const props = { inputPosition: { mobile: 'end', tablet: 'start', desktop: 'end' } } as SpiritToggleProps;
+    const { result } = renderHook(() => useToggleStyleProps(props));
+
+    expect(result.current.classProps.root).toBe(
+      'Toggle Toggle--inputPositionEnd Toggle--tablet--inputPositionStart Toggle--desktop--inputPositionEnd',
+    );
   });
 });

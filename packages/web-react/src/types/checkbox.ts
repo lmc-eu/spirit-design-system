@@ -4,8 +4,10 @@ import {
   type ChildrenProps,
   type HelperTextProps,
   type InputBaseProps,
+  type InputPositionType,
   type ItemProps,
   type RequiredProps,
+  type SingleOrResponsive,
   type SpiritInputElementPropsWithRef,
   type Validation,
   type ValidationTextProp,
@@ -27,6 +29,8 @@ export interface CheckboxProps
   indeterminate?: boolean;
   /** Whether the checkbox is checked */
   isChecked?: boolean;
+  /** Position of the input element relative to the label */
+  inputPosition?: SingleOrResponsive<InputPositionType>;
   /** Text of control label */
   label: ReactNode;
 }

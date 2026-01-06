@@ -19,14 +19,14 @@
 
     <div class="docs-Stack docs-Stack--start">
 
-      <div class="Checkbox">
+      <div class="Checkbox Checkbox--inputPositionStart">
         <input type="checkbox" id="checkbox-default" class="Checkbox__input" name="default" />
         <div class="Checkbox__text">
           <label class="Checkbox__label" for="checkbox-default">Checkbox Label</label>
         </div>
       </div>
 
-      <div class="Checkbox">
+      <div class="Checkbox Checkbox--inputPositionStart">
         <input type="checkbox" id="checkbox-default-checked" class="Checkbox__input" name="defaultChecked" checked />
         <div class="Checkbox__text">
           <label class="Checkbox__label" for="checkbox-default-checked">Checkbox Label</label>
@@ -47,7 +47,7 @@
 
     <div class="docs-Stack docs-Stack--start">
 
-      <div class="Checkbox">
+      <div class="Checkbox Checkbox--inputPositionStart">
         <input type="checkbox" id="checkbox-indeterminate" class="Checkbox__input" name="indeterminate" />
         <div class="Checkbox__text">
           <label class="Checkbox__label" for="checkbox-indeterminate">Checkbox Label</label>
@@ -68,7 +68,7 @@
 
     <div class="docs-Stack docs-Stack--start">
 
-      <div class="Checkbox">
+      <div class="Checkbox Checkbox--inputPositionStart">
         <input type="checkbox" id="checkbox-required" class="Checkbox__input" name="required" required />
         <div class="Checkbox__text">
           <label class="Checkbox__label Checkbox__label--required" for="checkbox-required">Checkbox Label</label>
@@ -89,7 +89,7 @@
 
     <div class="docs-Stack docs-Stack--start">
 
-      <div class="Checkbox">
+      <div class="Checkbox Checkbox--inputPositionStart">
         <input type="checkbox" id="checkbox-hidden-label" class="Checkbox__input" name="hiddenLabel" />
         <div class="Checkbox__text">
           <label class="Checkbox__label Checkbox__label--hidden" for="checkbox-hidden-label">Checkbox Label</label>
@@ -110,7 +110,7 @@
 
     <div class="docs-Stack docs-Stack--start">
 
-      <div class="Checkbox">
+      <div class="Checkbox Checkbox--inputPositionStart">
         <input type="checkbox" id="checkbox-helper-text" class="Checkbox__input" name="helperText" aria-describedby="checkbox-helper-text-helper-text" />
         <div class="Checkbox__text">
           <label class="Checkbox__label" for="checkbox-helper-text">Checkbox Label</label>
@@ -132,14 +132,14 @@
 
     <div class="docs-Stack docs-Stack--start">
 
-      <div class="Checkbox Checkbox--disabled">
+      <div class="Checkbox Checkbox--inputPositionStart Checkbox--disabled">
         <input type="checkbox" id="checkbox-disabled" class="Checkbox__input" name="disabled" disabled />
         <div class="Checkbox__text">
           <label class="Checkbox__label" for="checkbox-disabled">Checkbox Label</label>
         </div>
       </div>
 
-      <div class="Checkbox Checkbox--disabled">
+      <div class="Checkbox Checkbox--inputPositionStart Checkbox--disabled">
         <input
           type="checkbox"
           id="checkbox-disabled-helper-text"
@@ -156,7 +156,7 @@
         </div>
       </div>
 
-      <div class="Checkbox Checkbox--disabled">
+      <div class="Checkbox Checkbox--inputPositionStart Checkbox--disabled">
         <input
           type="checkbox"
           id="checkbox-disabled-indeterminate"
@@ -183,14 +183,14 @@
 
     <div class="docs-Stack docs-Stack--start">
 
-      <div class="Checkbox Checkbox--success">
+      <div class="Checkbox Checkbox--inputPositionStart Checkbox--success">
         <input type="checkbox" id="checkbox-success" class="Checkbox__input" name="success" />
         <div class="Checkbox__text">
           <label class="Checkbox__label" for="checkbox-success">Checkbox Label</label>
         </div>
       </div>
 
-      <div class="Checkbox Checkbox--warning">
+      <div class="Checkbox Checkbox--inputPositionStart Checkbox--warning">
         <input type="checkbox" id="checkbox-warning" class="Checkbox__input" name="warning" aria-describedby="checkbox-warning-validation-text" />
         <div class="Checkbox__text">
           <label class="Checkbox__label" for="checkbox-warning">Checkbox Label</label>
@@ -198,7 +198,7 @@
         </div>
       </div>
 
-      <div class="Checkbox Checkbox--danger">
+      <div class="Checkbox Checkbox--inputPositionStart Checkbox--danger">
         <input type="checkbox" id="checkbox-danger" class="Checkbox__input" name="danger" aria-describedby="checkbox-danger-validation-text" />
         <div class="Checkbox__text">
           <label for="checkbox-danger" class="Checkbox__label">Checkbox Label</label>
@@ -211,7 +211,7 @@
         </div>
       </div>
 
-      <div class="Checkbox Checkbox--warning">
+      <div class="Checkbox Checkbox--inputPositionStart Checkbox--warning">
         <input
           type="checkbox"
           id="checkbox-warning-helper-text"
@@ -277,25 +277,60 @@
 
   <div class="Container">
 
+    <h2 class="docs-Heading">Input Position</h2>
+
+    <div class="docs-Stack docs-Stack--start">
+
+      <div class="Checkbox Checkbox--inputPositionStart">
+        <input type="checkbox" id="checkbox-position-start" class="Checkbox__input" name="positionStart" />
+        <div class="Checkbox__text">
+          <label class="Checkbox__label" for="checkbox-position-start">Input on Start (Default)</label>
+        </div>
+      </div>
+
+      <div class="Checkbox Checkbox--inputPositionEnd">
+        <input type="checkbox" id="checkbox-position-end" class="Checkbox__input" name="positionEnd" />
+        <div class="Checkbox__text">
+          <label class="Checkbox__label" for="checkbox-position-end">Input on End</label>
+        </div>
+      </div>
+
+      <div class="Checkbox Checkbox--inputPositionStart Checkbox--tablet--inputPositionEnd Checkbox--desktop--inputPositionStart">
+        <input type="checkbox" id="checkbox-position-responsive" class="Checkbox__input" name="positionResponsive" />
+        <div class="Checkbox__text">
+          <label class="Checkbox__label" for="checkbox-position-responsive">Responsive Position</label>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="py-900 py-tablet-1000">
+
+  <div class="Container">
+
     <h2 class="docs-Heading">Item</h2>
 
     <div class="docs-Stack docs-Stack--start">
 
-      <div class="Checkbox Checkbox--item">
+      <div class="Checkbox Checkbox--inputPositionStart Checkbox--item">
         <input type="checkbox" id="checkbox-item-default" class="Checkbox__input" name="item" />
         <div class="Checkbox__text">
           <label class="Checkbox__label" for="checkbox-item-default">Checkbox Label</label>
         </div>
       </div>
 
-      <div class="Checkbox Checkbox--item">
+      <div class="Checkbox Checkbox--inputPositionStart Checkbox--item">
         <input type="checkbox" id="checkbox-item-default-checked" class="Checkbox__input" name="itemChecked" checked />
         <div class="Checkbox__text">
           <label class="Checkbox__label" for="checkbox-item-default-checked">Checkbox Label</label>
         </div>
       </div>
 
-      <div class="Checkbox Checkbox--item">
+      <div class="Checkbox Checkbox--inputPositionStart Checkbox--item">
         <input type="checkbox" id="checkbox-item-helper-text" class="Checkbox__input" name="itemWithText" aria-describedby="checkbox-item-helper-text-helper-text" />
         <div class="Checkbox__text">
           <label class="Checkbox__label" for="checkbox-item-helper-text">Checkbox Label</label>

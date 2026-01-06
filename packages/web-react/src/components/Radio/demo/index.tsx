@@ -11,6 +11,7 @@ import RadioDefault from './RadioDefault';
 import RadioDisabled from './RadioDisabled';
 import RadioHelperText from './RadioHelperText';
 import RadioHiddenLabel from './RadioHiddenLabel';
+import RadioInputPosition from './RadioInputPosition';
 import RadioItem from './RadioItem';
 import RadioLongLabelText from './RadioLongLabelText';
 import RadioValidation from './RadioValidation';
@@ -35,6 +36,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       </DocsSection>
       <DocsSection title="Validation State">
         <RadioValidation />
+      </DocsSection>
+      <DocsSection title="Input Position">
+        <RadioInputPosition />
       </DocsSection>
       <DocsSection title="Item">
         <RadioItem />
