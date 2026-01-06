@@ -7,12 +7,12 @@
 $_field-name: 'Toggle';
 
 .Toggle {
-    position: relative;
+    @include form-fields-tools.inline-field-root();
+
     display: flex;
     align-items: start;
     justify-content: space-between;
     max-width: theme.$max-width;
-    margin-block: form-fields-settings.$inline-field-margin-y;
 }
 
 .Toggle--fluid {
@@ -21,7 +21,6 @@ $_field-name: 'Toggle';
 
 .Toggle__text {
     flex: 1;
-    margin-right: form-fields-settings.$inline-field-gap;
 }
 
 .Toggle__label {
@@ -193,3 +192,12 @@ $_field-name: 'Toggle';
 .Toggle:is(.Toggle--disabled, .is-disabled) .Toggle__helperText {
     @include form-fields-tools.helper-text-disabled();
 }
+
+@include form-fields-tools.input-position(
+    $component-class: $_field-name,
+    $positions: (
+        'start': row-reverse,
+        'end': row,
+    ),
+    $default-position: 'end'
+);

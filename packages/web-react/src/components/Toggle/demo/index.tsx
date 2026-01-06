@@ -13,6 +13,7 @@ import ToggleFluid from './ToggleFluid';
 import ToggleHelperText from './ToggleHelperText';
 import ToggleHiddenLabel from './ToggleHiddenLabel';
 import ToggleIndicators from './ToggleIndicators';
+import ToggleInputPosition from './ToggleInputPosition';
 import ToggleRequired from './ToggleRequired';
 import ToggleValidation from './ToggleValidation';
 import ToggleValidationWithIcon from './ToggleValidationWithIcon';
@@ -46,6 +47,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       </DocsSection>
       <DocsSection title="Validation Text with Icon" stackAlignment="stretch">
         <ToggleValidationWithIcon />
+      </DocsSection>
+      <DocsSection title="Input Position" stackAlignment="stretch">
+        <ToggleInputPosition />
       </DocsSection>
     </IconsProvider>
   </React.StrictMode>,

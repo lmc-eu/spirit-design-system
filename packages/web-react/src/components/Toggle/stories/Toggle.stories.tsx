@@ -1,7 +1,7 @@
 import { Markdown } from '@storybook/addon-docs/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { ValidationStates } from '../../../constants';
+import { InputPositions, ValidationStates } from '../../../constants';
 import ReadMe from '../README.md';
 import Toggle from '../Toggle';
 
@@ -28,6 +28,14 @@ const meta: Meta<typeof Toggle> = {
         defaultValue: { summary: 'false' },
       },
     },
+    inputPosition: {
+      control: 'select',
+      options: Object.values(InputPositions),
+      table: {
+        defaultValue: { summary: InputPositions.END },
+      },
+      description: 'Position of the input element relative to the label. Can also be a responsive object.',
+    },
   },
   args: {
     hasIndicators: false,
@@ -38,6 +46,7 @@ const meta: Meta<typeof Toggle> = {
     isDisabled: false,
     isFluid: false,
     isChecked: false,
+    inputPosition: InputPositions.END,
     label: 'Toggle Label',
     validationState: undefined,
     validationText: '',

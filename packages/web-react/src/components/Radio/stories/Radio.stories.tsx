@@ -1,7 +1,7 @@
 import { Markdown } from '@storybook/addon-docs/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { ValidationStates } from '../../../constants';
+import { InputPositions, ValidationStates } from '../../../constants';
 import ReadMe from '../README.md';
 import { Radio } from '..';
 
@@ -22,6 +22,14 @@ const meta: Meta<typeof Radio> = {
     },
     id: {
       control: 'text',
+    },
+    inputPosition: {
+      control: 'select',
+      options: Object.values(InputPositions),
+      table: {
+        defaultValue: { summary: InputPositions.START },
+      },
+      description: 'Position of the input element relative to the label. Can also be a responsive object.',
     },
     isDisabled: {
       control: 'boolean',
@@ -68,8 +76,9 @@ const meta: Meta<typeof Radio> = {
     autoComplete: 'off',
     helperText: 'Helper text',
     id: 'Radio',
-    isDisabled: false,
+    inputPosition: InputPositions.START,
     isChecked: true,
+    isDisabled: false,
     isItem: false,
     isLabelHidden: false,
     label: 'Label',

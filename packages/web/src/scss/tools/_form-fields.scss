@@ -1,6 +1,7 @@
 // 1. Force the color to be printed as-is, without any color adjustment.
 // 2. Put the input above the stretched label.
 // 3. Set the color of the label on the root element so it can be overridden by a helper/utility class.
+// 4. Prepare for the stretched label pseudo element (the `stretch()` mixin).
 
 @use 'sass:map';
 @use 'sass:string';
@@ -63,8 +64,13 @@
 }
 
 @mixin inline-field-root() {
+    position: relative; // 4.
     display: inline-flex;
     margin-block: form-fields-settings.$inline-field-margin-y;
+
+    &:not(:has([class*='__label--hidden'])) {
+        column-gap: form-fields-settings.$inline-field-gap;
+    }
 }
 
 @mixin inline-field-root-disabled() {
@@ -302,5 +308,36 @@
         position: absolute;
         inset: 0;
         z-index: 0;
+    }
+}
+
+// Generates responsive input position classes for form field components.
+// Creates modifier classes (e.g., `.Component--inputPositionStart`, `.Component--tablet--inputPositionEnd`)
+// that control flex-direction to position the input element relative to its label.
+//
+// @deprecated The $positions parameter will be removed when the order of input and label in Toggle HTML are unified.
+// Also, we will make the position modifier classes mandatory in the next version, so the `$default-selector` logic can
+// be deleted.
+// Migration: Remove the $positions parameter here and from the mixin calls. The default
+// ('start': row, 'end': row-reverse) will become the only option. Delete the `$default-selector` logic.
+// https://jira.almacareer.tech/browse/DS-2322
+@mixin input-position($component-class, $positions: ('start': row, 'end': row-reverse), $default-position: 'start') {
+    @each $breakpoint-name, $breakpoint-value in tokens.$breakpoints {
+        $infix: breakpoint.get-modifier('infix', $breakpoint-name, $breakpoint-value);
+
+        @include breakpoint.up($breakpoint-value) {
+            @each $position, $direction in $positions {
+                $default-selector: if(
+                    $position == $default-position,
+                    '.#{$component-class}:not([class*="--inputPosition"])',
+                    null
+                );
+
+                .#{$component-class}--#{$infix}#{spirit-string.convert-kebab-case-to-camel-case(input-position-#{$position})},
+                #{$default-selector} {
+                    flex-direction: $direction;
+                }
+            }
+        }
     }
 }

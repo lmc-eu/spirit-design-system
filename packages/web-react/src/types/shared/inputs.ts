@@ -1,4 +1,5 @@
 import { type AriaRole, type ReactNode } from 'react';
+import { type InputPositions } from '../../constants';
 import { type ValidationStatesDictionaryType } from './dictionaries';
 
 export type ValidationState = ValidationStatesDictionaryType;
@@ -52,3 +53,6 @@ export interface ValidationTextProp {
 export interface RequiredProps {
   id: string;
 }
+
+export type InputPositionKeys = keyof typeof InputPositions;
+export type InputPositionType = (typeof InputPositions)[InputPositionKeys];

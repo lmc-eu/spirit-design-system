@@ -2,6 +2,7 @@ export * from './classes';
 export * from './colors';
 export * from './dictionaries';
 export * from './direction';
+export * from './inputs';
 export * from './media';
 export * from './position';
 export * from './style';

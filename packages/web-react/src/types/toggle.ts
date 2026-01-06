@@ -4,7 +4,9 @@ import {
   type ChildrenProps,
   type HelperTextProps,
   type InputBaseProps,
+  type InputPositionType,
   type RequiredProps,
+  type SingleOrResponsive,
   type SpiritInputElementPropsWithRef,
   type StyleProps,
   type Validation,
@@ -23,6 +25,8 @@ export interface ToggleProps
     StyleProps,
     Validation {
   hasIndicators?: boolean;
+  /** Position of the input element relative to the label */
+  inputPosition?: SingleOrResponsive<InputPositionType>;
   isChecked?: boolean;
   isDisabled?: boolean;
   isFluid?: boolean;
