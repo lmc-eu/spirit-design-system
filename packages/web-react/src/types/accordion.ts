@@ -1,9 +1,9 @@
 import { type ElementType, type ReactNode } from 'react';
 import {
   type ChildrenProps,
-  type SpiritPolymorphicElementPropsWithoutRef,
+  type ElementTypeProps,
+  type SpiritPolymorphicElementPropsWithRef,
   type StyleProps,
-  type TransferProps,
 } from './shared';
 
 export type AccordionOpenStateType = string | string[] | undefined;
@@ -17,50 +17,28 @@ export interface AccordionItemContextProps {
   id: string;
 }
 
-export interface BaseAccordionProps extends ChildrenProps, StyleProps, TransferProps {}
-
-export interface AccordionElementTypeProps<E extends ElementType = 'section'> {
-  /**
-   * The HTML element or React element used to render the accordion, e.g. 'section'.
-   *
-   * @default 'section'
-   */
-  elementType?: E;
-}
+export interface BaseAccordionProps extends ChildrenProps, StyleProps {}
 
 export interface AccordionBaseProps extends BaseAccordionProps, AccordionHandlingProps {}
 
-export type AccordionProps<E extends ElementType> = AccordionElementTypeProps<E> & AccordionBaseProps;
+export type AccordionProps<T extends ElementType> = ElementTypeProps<T> & AccordionBaseProps;
 
-export type SpiritAccordionProps<E extends ElementType = 'section'> = AccordionProps<E> &
-  SpiritPolymorphicElementPropsWithoutRef<E, AccordionProps<E>>;
+export type SpiritAccordionProps<T extends ElementType = 'section'> = AccordionProps<T> &
+  SpiritPolymorphicElementPropsWithRef<T, AccordionProps<T>>;
 
-export type AccordionHeaderProps<E extends ElementType = 'h3'> = {
-  /**
-   * The HTML element or React element used to render the accordion header, e.g. 'h3'.
-   *
-   * @default 'h3'
-   */
-  elementType?: E;
+export type AccordionHeaderProps<T extends ElementType = 'h3'> = ElementTypeProps<T> & {
   slot?: ReactNode;
 } & BaseAccordionProps;
 
-export type SpiritAccordionHeaderProps<E extends ElementType = 'h3'> = AccordionHeaderProps<E> &
-  SpiritPolymorphicElementPropsWithoutRef<E, AccordionHeaderProps<E>>;
+export type SpiritAccordionHeaderProps<T extends ElementType = 'h3'> = AccordionHeaderProps<T> &
+  SpiritPolymorphicElementPropsWithRef<T, AccordionHeaderProps<T>>;
 
 export interface AccordionItemBaseProps extends BaseAccordionProps, AccordionItemContextProps {}
 
-export type AccordionItemProps<E extends ElementType> = {
-  /**
-   * The HTML element or React element used to render the accordion item, e.g. 'article'.
-   *
-   * @default 'article'
-   */
-  elementType?: E;
-} & AccordionItemBaseProps;
+export type AccordionItemProps<T extends ElementType> = ElementTypeProps<T> & AccordionItemBaseProps;
 
-export type SpiritAccordionItemProps<E extends ElementType = 'article'> = AccordionItemProps<E> &
-  SpiritPolymorphicElementPropsWithoutRef<E, AccordionItemProps<E>>;
+export type SpiritAccordionItemProps<T extends ElementType = 'article'> = AccordionItemProps<T> &
+  SpiritPolymorphicElementPropsWithRef<T, AccordionItemProps<T>>;
 
 export interface AccordionContentProps extends BaseAccordionProps {}
 
@@ -69,8 +47,7 @@ export interface UncontrolledAccordionBaseProps extends BaseAccordionProps {
   stayOpen?: boolean;
 }
 
-export type UncontrolledAccordionProps<E extends ElementType> = AccordionElementTypeProps<E> &
-  UncontrolledAccordionBaseProps;
+export type UncontrolledAccordionProps<T extends ElementType> = ElementTypeProps<T> & UncontrolledAccordionBaseProps;
 
-export type SpiritUncontrolledAccordionProps<E extends ElementType = 'section'> = UncontrolledAccordionProps<E> &
-  SpiritPolymorphicElementPropsWithoutRef<E, UncontrolledAccordionProps<E>>;
+export type SpiritUncontrolledAccordionProps<T extends ElementType = 'section'> = UncontrolledAccordionProps<T> &
+  SpiritPolymorphicElementPropsWithRef<T, UncontrolledAccordionProps<T>>;

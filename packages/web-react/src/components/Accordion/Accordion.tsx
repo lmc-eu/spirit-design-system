@@ -27,5 +27,7 @@ const Accordion = <T extends ElementType = 'section'>(props: SpiritAccordionProp
 };
 
 Accordion.spiritComponent = 'Accordion';
+Accordion.spiritDefaultElement = 'section' as const;
+Accordion.spiritDefaultProps = null as unknown as SpiritAccordionProps<'section'>;
 
 export default Accordion;

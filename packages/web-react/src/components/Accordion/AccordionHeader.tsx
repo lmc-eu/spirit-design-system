@@ -15,7 +15,7 @@ const defaultProps: Partial<SpiritAccordionHeaderProps> = {
   elementType: 'h3',
 };
 
-const AccordionHeader = <E extends ElementType = 'h3'>(props: SpiritAccordionHeaderProps<E>) => {
+const AccordionHeader = <T extends ElementType = 'h3'>(props: SpiritAccordionHeaderProps<T>) => {
   const propsWithDefaults = { ...defaultProps, ...props };
   const { elementType: ElementTag = 'h3', children, slot, ...restProps } = propsWithDefaults;
   const { classProps } = useAccordionStyleProps();
@@ -51,5 +51,7 @@ const AccordionHeader = <E extends ElementType = 'h3'>(props: SpiritAccordionHea
 };
 
 AccordionHeader.spiritComponent = 'AccordionHeader';
+AccordionHeader.spiritDefaultElement = 'h3' as const;
+AccordionHeader.spiritDefaultProps = null as unknown as SpiritAccordionHeaderProps<'h3'>;
 
 export default AccordionHeader;
