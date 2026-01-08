@@ -17,9 +17,15 @@ import { sampleConfigurationDefault } from '../../../tests/fixtures/sampleConfig
 import { findTokenPrefix } from '../../helpers/findTokenPrefix';
 import { filterExcludedTokens } from '../../filters/excludedTokens';
 import { generateStylesFromTokens, tokenToStyleByType } from '../stylesGenerator';
+import { type FontSizeBaseMap } from '../../helpers/unitHelper';
 
 const mappedTokens: Map<string, Token> = new Map([]);
 const tokenGroups: Array<TokenGroup> = exampleGroups;
+const fontSizeBaseMap: FontSizeBaseMap = new Map([
+  ['mobile', 14],
+  ['tablet', 16],
+  ['desktop', 18],
+]);
 jest.mock('../../../config', () => ({
   exportConfiguration: sampleConfigurationDefault,
 }));
@@ -33,7 +39,7 @@ describe('stylesGenerator', () => {
         hasParentPrefix: true,
         hasJsOutput: false,
         hasTokenPrefix: true,
-        expectedStyles: '$grid-spacing-desktop: 32px !default;',
+        expectedStyles: '$grid-spacing-desktop: 1.78rem !default;',
       },
       {
         token: exampleDimensionAndStringTokens.get('dimensionRef') as DimensionToken,
@@ -41,7 +47,7 @@ describe('stylesGenerator', () => {
         hasParentPrefix: false,
         hasJsOutput: false,
         hasTokenPrefix: true,
-        expectedStyles: '$desktop: 32px !default;',
+        expectedStyles: '$desktop: 1.78rem !default;',
       },
       {
         token: exampleDimensionAndStringTokens.get('stringRef') as StringToken,
@@ -77,7 +83,7 @@ describe('stylesGenerator', () => {
         hasParentPrefix: true,
         hasJsOutput: true,
         hasTokenPrefix: false,
-        expectedStyles: "export const gridSpacingDesktop = '32px';",
+        expectedStyles: "export const gridSpacingDesktop = '1.78rem';",
       },
       {
         token: exampleDimensionAndStringTokens.get('dimensionRef') as DimensionToken,
@@ -85,7 +91,7 @@ describe('stylesGenerator', () => {
         hasParentPrefix: false,
         hasJsOutput: true,
         hasTokenPrefix: false,
-        expectedStyles: "export const desktop = '32px';",
+        expectedStyles: "export const desktop = '1.78rem';",
       },
       {
         token: exampleDimensionAndStringTokens.get('stringRef') as StringToken,
@@ -109,7 +115,8 @@ describe('stylesGenerator', () => {
         hasParentPrefix: false,
         hasJsOutput: false,
         hasTokenPrefix: true,
-        expectedStyles: '$shadow-100: 0 2px 8px 0 var(--spirit-color-shadows-shadow-100-color-01, #00000026) !default;',
+        expectedStyles:
+          '$shadow-100: 0 0.14rem 0.57rem 0 var(--spirit-color-shadows-shadow-100-color-01, #00000026) !default;',
       },
       {
         token: exampleShadowTokens.get('shadowRef') as ShadowToken,
@@ -117,7 +124,8 @@ describe('stylesGenerator', () => {
         hasParentPrefix: false,
         hasJsOutput: false,
         hasTokenPrefix: false,
-        expectedStyles: '$shadow-100: 0 2px 8px 0 var(--color-shadows-shadow-100-color-01, #00000026) !default;',
+        expectedStyles:
+          '$shadow-100: 0 0.14rem 0.57rem 0 var(--color-shadows-shadow-100-color-01, #00000026) !default;',
       },
       {
         token: exampleGradientTokens.get('gradientRef') as GradientToken,
@@ -152,6 +160,7 @@ describe('stylesGenerator', () => {
           false,
           hasParentPrefix,
           hasJsOutput,
+          fontSizeBaseMap,
         );
 
         expect(styles).toBe(expectedStyles);
@@ -168,7 +177,7 @@ describe('stylesGenerator', () => {
         hasParentPrefix: true,
         hasTokenPrefix: false,
         description: 'should generate styles from tokens',
-        expectedStyles: '$grid-columns: 12 !default;\n\n$grid-spacing-desktop: 32px !default;',
+        expectedStyles: '$grid-columns: 12 !default;\n\n$grid-spacing-desktop: 1.78rem !default;',
       },
       {
         tokens: exampleDimensionAndStringTokens,
@@ -177,7 +186,7 @@ describe('stylesGenerator', () => {
         hasParentPrefix: true,
         hasTokenPrefix: false,
         description: 'should generate styles from tokens with js output',
-        expectedStyles: "export const gridColumns = '12';\n\nexport const gridSpacingDesktop = '32px';",
+        expectedStyles: "export const gridColumns = '12';\n\nexport const gridSpacingDesktop = '1.78rem';",
       },
       {
         tokens: exampleColorsTokens,
@@ -213,7 +222,8 @@ describe('stylesGenerator', () => {
         hasParentPrefix: false,
         hasTokenPrefix: true,
         description: 'should generate styles from tokens with shadows',
-        expectedStyles: '$shadow-100: 0 2px 8px 0 var(--spirit-color-shadows-shadow-100-color-01, #00000026) !default;',
+        expectedStyles:
+          '$shadow-100: 0 0.14rem 0.57rem 0 var(--spirit-color-shadows-shadow-100-color-01, #00000026) !default;',
       },
       {
         tokens: exampleShadowTokens,
@@ -222,7 +232,8 @@ describe('stylesGenerator', () => {
         hasParentPrefix: false,
         hasTokenPrefix: false,
         description: 'should generate styles from tokens with shadows',
-        expectedStyles: '$shadow-100: 0 2px 8px 0 var(--color-shadows-shadow-100-color-01, #00000026) !default;',
+        expectedStyles:
+          '$shadow-100: 0 0.14rem 0.57rem 0 var(--color-shadows-shadow-100-color-01, #00000026) !default;',
       },
       {
         tokens: exampleGradientTokens,
@@ -261,6 +272,7 @@ describe('stylesGenerator', () => {
           hasParentPrefix,
           false,
           hasJsOutput,
+          fontSizeBaseMap,
         );
 
         expect(styles).toBe(expectedStyles);
