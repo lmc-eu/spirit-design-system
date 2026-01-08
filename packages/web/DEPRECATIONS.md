@@ -6,6 +6,14 @@ This document lists all deprecations that will be removed in the next major vers
 
 ## Deprecations
 
+👉 [What are deprecations?][readme-deprecations]
+
+### Button
+
+The `Button--block` modifier will be removed in the next major version.
+
+For more information, see documentation of the [Button][button] component.
+
 ### Collapse `data-spirit-is-disposable`
 
 The `data-spirit-more` attribute was removed, please use `data-spirit-is-disposable` instead.
@@ -63,13 +71,24 @@ If you are using the `Stack` component with dividers, you must wrap each item in
 </div>
 ```
 
-### Button
+### TextField
 
-The `Button--block` modifier will be removed in the next major version.
+The `TextField__passwordToggle__icon--*` modifiers are deprecated in favor of new
+`accessibility-<checked | unchecked>` helpers.
 
-For more information, see documentation for [Button][button] component.
+#### Migration Guide
 
-👉 [What are deprecations?][readme-deprecations]
+```html
+<span class="TextField__passwordToggle__icon TextField__passwordToggle__icon--shown"><!-- … --></span>
+<span class="TextField__passwordToggle__icon TextField__passwordToggle__icon--hidden"><!-- … --></span>
+```
+
+↓
+
+```html
+<span class="TextField__passwordToggle__icon accessibility-unchecked"><!-- … --></span>
+<span class="TextField__passwordToggle__icon accessibility-checked"><!-- … --></span>
+```
 
 [button]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Button/README.md
 [readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#deprecations
