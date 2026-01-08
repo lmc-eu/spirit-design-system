@@ -5,7 +5,7 @@
   "command": {
     "version": {
       "conventionalCommits": true,
-      "changelogPreset": "@lmc-eu/conventional-changelog-lmc-github",
+      "changelogPreset": "conventionalcommits",
       "createRelease": "github",
       "push": false,
       "message": "Chore(release): Publish",
