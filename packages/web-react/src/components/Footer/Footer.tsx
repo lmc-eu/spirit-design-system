@@ -8,7 +8,7 @@ import { type SpiritFooterProps } from '../../types';
 import { PADDING_BOTTOM, PADDING_TOP } from './constants';
 import { useFooterStyleProps } from './useFooterStyleProps';
 
-const defaultStyleProps: Partial<SpiritFooterProps> = {
+const defaultStyleProps: SpiritFooterProps = {
   backgroundColor: BackgroundColors.SECONDARY,
   paddingBottom: PADDING_BOTTOM,
   paddingTop: PADDING_TOP,
@@ -32,5 +32,6 @@ const Footer = (props: SpiritFooterProps) => {
 };
 
 Footer.spiritComponent = 'Footer';
+Footer.spiritDefaultProps = null as unknown as SpiritFooterProps;
 
 export default Footer;
