@@ -55,8 +55,3 @@ export type Booleanish = boolean | 'true' | 'false';
 /* eslint-disable @typescript-eslint/no-explicit-any -- we don't care about the type here */
 export type PositiveInteger<T extends number> = `${T}` extends '0' | `-${any}` | `${any}.${any}` ? never : T;
 /* eslint-enable @typescript-eslint/no-explicit-any */
-
-/**
- * Position of the input element relative to the label.
- */
-export type InputPosition = 'start' | 'end';

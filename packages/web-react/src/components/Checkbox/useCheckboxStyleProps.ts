@@ -17,7 +17,7 @@ export interface CheckboxStyles {
 }
 
 export function useCheckboxStyleProps(props: SpiritCheckboxProps): CheckboxStyles {
-  const { validationState, isItem, isLabelHidden, inputPosition, ...restProps } = props;
+  const { inputPosition, isItem, isLabelHidden, validationState, ...restProps } = props;
   const { isDisabled, isRequired } = restProps;
 
   const checkboxClass = useClassNamePrefix('Checkbox');

@@ -24,6 +24,14 @@ const meta: Meta<typeof Checkbox> = {
     id: {
       control: 'text',
     },
+    inputPosition: {
+      control: 'select',
+      options: ['start', 'end'],
+      table: {
+        defaultValue: { summary: 'start' },
+      },
+      description: 'Position of the input element relative to the label. Can also be a responsive object.',
+    },
     isDisabled: {
       control: 'boolean',
       table: {
@@ -53,14 +61,6 @@ const meta: Meta<typeof Checkbox> = {
       table: {
         defaultValue: { summary: 'false' },
       },
-    },
-    inputPosition: {
-      control: 'select',
-      options: ['start', 'end'],
-      table: {
-        defaultValue: { summary: 'start' },
-      },
-      description: 'Position of the input element relative to the label. Can also be a responsive object.',
     },
     label: {
       control: 'text',
@@ -95,18 +95,18 @@ const meta: Meta<typeof Checkbox> = {
     hasValidationIcon: false,
     helperText: 'Helper text',
     id: 'checkbox',
-    isDisabled: false,
+    inputPosition: 'start',
     isChecked: true,
+    isDisabled: false,
     isItem: false,
     isLabelHidden: false,
     isRequired: false,
-    inputPosition: 'start',
     label: 'Label',
     name: 'checkbox',
+    onChange: () => {},
     validationState: undefined,
     validationText: 'Validation text',
     value: 'checkbox',
-    onChange: () => {},
   },
 };
 

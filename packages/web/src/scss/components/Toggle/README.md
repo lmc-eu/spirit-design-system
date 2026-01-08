@@ -238,8 +238,6 @@ Use responsive breakpoint modifiers to change input position at different screen
 </div>
 ```
 
-Available breakpoints: `mobile`, `tablet`, `desktop`.
-
 [dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
 [mdn-checkbox]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox
 [prefixed]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#prefixing-css-class-names

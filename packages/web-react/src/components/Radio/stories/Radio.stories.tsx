@@ -23,6 +23,14 @@ const meta: Meta<typeof Radio> = {
     id: {
       control: 'text',
     },
+    inputPosition: {
+      control: 'select',
+      options: ['start', 'end'],
+      table: {
+        defaultValue: { summary: 'start' },
+      },
+      description: 'Position of the input element relative to the label. Can also be a responsive object.',
+    },
     isDisabled: {
       control: 'boolean',
       table: {
@@ -47,14 +55,6 @@ const meta: Meta<typeof Radio> = {
         defaultValue: { summary: 'false' },
       },
     },
-    inputPosition: {
-      control: 'select',
-      options: ['start', 'end'],
-      table: {
-        defaultValue: { summary: 'start' },
-      },
-      description: 'Position of the input element relative to the label. Can also be a responsive object.',
-    },
     label: {
       control: 'text',
     },
@@ -76,11 +76,11 @@ const meta: Meta<typeof Radio> = {
     autoComplete: 'off',
     helperText: 'Helper text',
     id: 'Radio',
-    isDisabled: false,
+    inputPosition: 'start',
     isChecked: true,
+    isDisabled: false,
     isItem: false,
     isLabelHidden: false,
-    inputPosition: 'start',
     label: 'Label',
     name: 'Radio',
     validationState: undefined,
