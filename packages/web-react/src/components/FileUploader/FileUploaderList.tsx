@@ -4,11 +4,19 @@ import classNames from 'classnames';
 import React, { useMemo } from 'react';
 import { useStyleProps } from '../../hooks';
 import { type SpiritFileUploaderListProps } from '../../types';
+import { DEFAULT_ATTACHMENT_LIST_LABEL } from './constants';
 import { useFileUploaderContext } from './FileUploaderContext';
 import { useFileUploaderStyleProps } from './useFileUploaderStyleProps';
 
 const FileUploaderList = (props: SpiritFileUploaderListProps) => {
-  const { label, id, attachmentComponent, inputName, hasImagePreview, ...restProps } = props;
+  const {
+    label = DEFAULT_ATTACHMENT_LIST_LABEL,
+    id,
+    attachmentComponent,
+    inputName,
+    hasImagePreview,
+    ...restProps
+  } = props;
 
   const { classProps } = useFileUploaderStyleProps();
   const { styleProps, props: transferProps } = useStyleProps(restProps);
