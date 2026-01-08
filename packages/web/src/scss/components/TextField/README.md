@@ -183,14 +183,14 @@ Then you need to add data attribute `data-spirit-toggle="password"` to the input
       aria-label="Show password"
       data-spirit-toggle="password"
     >
-      <span class="TextField__passwordToggle__icon TextField__passwordToggle__icon--hidden">
-        <svg width="24" height="24" aria-hidden="true">
-          <use xlink:href="/icons/svg/sprite.svg#visibility-on" />
+      <span class="TextField__passwordToggle__icon accessibility-unchecked">
+        <svg width="20" height="20" aria-hidden="true">
+          <use xlink:href="/assets/icons/svg/sprite.svg#visibility-on" />
         </svg>
       </span>
-      <span class="TextField__passwordToggle__icon TextField__passwordToggle__icon--shown">
-        <svg width="24" height="24" aria-hidden="true">
-          <use xlink:href="/icons/svg/sprite.svg#visibility-off" />
+      <span class="TextField__passwordToggle__icon accessibility-checked">
+        <svg width="20" height="20" aria-hidden="true">
+          <use xlink:href="/assets/icons/svg/sprite.svg#visibility-off" />
         </svg>
       </span>
     </button>

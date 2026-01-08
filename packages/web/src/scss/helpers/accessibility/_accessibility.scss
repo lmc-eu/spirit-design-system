@@ -1,3 +1,6 @@
+// 1. Use custom properties to prevent inheritance issues.
+// 2. Remove whitespace from children, for example icons.
+
 @use '@tokens' as tokens;
 @use '../../tools/accessibility';
 
@@ -21,6 +24,7 @@ $_tap-target-size: 40px;
     }
 }
 
+// 1.
 [aria-expanded='true'] {
     --#{tokens.$css-variable-prefix}accessibility-expanded-open-display: initial;
     --#{tokens.$css-variable-prefix}accessibility-expanded-closed-display: none;
@@ -37,4 +41,23 @@ $_tap-target-size: 40px;
 
 [aria-expanded] .accessibility-closed {
     display: var(--#{tokens.$css-variable-prefix}accessibility-expanded-closed-display);
+}
+
+// 1.
+[aria-checked='true'] {
+    --#{tokens.$css-variable-prefix}accessibility-checked-checked-display: inline-flex; // 2.
+    --#{tokens.$css-variable-prefix}accessibility-checked-unchecked-display: none;
+}
+
+[aria-checked='false'] {
+    --#{tokens.$css-variable-prefix}accessibility-checked-checked-display: none;
+    --#{tokens.$css-variable-prefix}accessibility-checked-unchecked-display: inline-flex; // 2.
+}
+
+[aria-checked] .accessibility-checked {
+    display: var(--#{tokens.$css-variable-prefix}accessibility-checked-checked-display);
+}
+
+[aria-checked] .accessibility-unchecked {
+    display: var(--#{tokens.$css-variable-prefix}accessibility-checked-unchecked-display);
 }

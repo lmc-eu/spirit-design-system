@@ -139,13 +139,17 @@ $_field-name: 'TextField';
 }
 
 .TextField__passwordToggle__icon {
+    display: inline-flex;
     pointer-events: none;
 }
 
+// @deprecated: The `TextField__passwordToggle__icon--*` modifiers are deprecated in favor of new
+// `accessibility-<checked | unchecked>` helpers. Does not affect the React implementation.
+// Migration: Delete the shown/hidden modifier classes.
 .TextField__passwordToggle__icon:not(.TextField__passwordToggle__icon--shown, .TextField__passwordToggle__icon--hidden),
 .TextField__passwordToggle__icon--hidden,
 .TextField__passwordToggle__button[aria-checked='true'] > .TextField__passwordToggle__icon--shown {
-    display: flex;
+    display: inline-flex;
 }
 
 // stylelint-disable-next-line no-descending-specificity -- 7.
