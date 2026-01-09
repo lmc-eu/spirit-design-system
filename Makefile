@@ -87,6 +87,9 @@ test-e2e-report: ## Open report for End-to-End tests
 test-e2e-ui: ## Open UI for End-to-End tests
 	./bin/make/e2e.sh --ui
 
+test-e2e-a11y: ## Run accessibility End-to-End tests
+	./bin/make/e2e.sh --testOptions "tests/e2e/a11y/"
+
 types: ## Check types in all packages
 	$(PKG_MANAGER) types
 
