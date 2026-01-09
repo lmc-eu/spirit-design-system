@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { useClassNamePrefix } from '../../hooks';
+import { useClassNamePrefix, useInputPositionClass } from '../../hooks';
 import { type RadioProps, type SpiritRadioProps } from '../../types';
 
 export interface RadioStyles {
@@ -16,13 +16,14 @@ export interface RadioStyles {
 }
 
 export function useRadioStyleProps(props: SpiritRadioProps): RadioStyles {
-  const { isItem, validationState, isLabelHidden, ...restProps } = props;
+  const { isItem, validationState, isLabelHidden, inputPosition, ...restProps } = props;
   const { isDisabled } = restProps;
 
   const radioClass = useClassNamePrefix('Radio');
   const radioDisabledClass = `${radioClass}--disabled`;
   const radioItemClass = `${radioClass}--item`;
   const radioInputClass = `${radioClass}__input`;
+  const radioInputPositionClass = useInputPositionClass(radioClass, inputPosition || 'start');
   const radioLabelClass = `${radioClass}__label`;
   const radioLabelHiddenClass = `${radioClass}__label--hidden`;
   const radioTextClass = `${radioClass}__text`;
@@ -30,6 +31,7 @@ export function useRadioStyleProps(props: SpiritRadioProps): RadioStyles {
   const radioValidationClass = `${radioClass}--${validationState}`;
 
   const rootStyles = classNames(radioClass, {
+    [radioInputPositionClass]: radioInputPositionClass,
     [radioDisabledClass]: isDisabled,
     [radioItemClass]: isItem,
     [radioValidationClass]: validationState,

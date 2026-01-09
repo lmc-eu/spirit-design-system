@@ -52,3 +52,8 @@ export interface ValidationTextProp {
 export interface RequiredProps {
   id: string;
 }
+
+/**
+ * Position of the input element relative to the label.
+ */
+export type InputPosition = 'start' | 'end';

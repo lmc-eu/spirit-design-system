@@ -87,7 +87,7 @@ Item as a link example:
 Radio as a Item:
 
 ```html
-<div class="Radio Radio--item">
+<div class="Radio Radio--inputPositionStart Radio--item">
   <input type="radio" id="radio-item" name="example" class="Radio__input" checked />
   <div class="Radio__text">
     <label class="Radio__label" for="radio-item">Item</label>
@@ -98,7 +98,7 @@ Radio as a Item:
 Checkbox as a Item:
 
 ```html
-<div class="Checkbox Checkbox--item">
+<div class="Checkbox Checkbox--inputPositionStart Checkbox--item">
   <input type="checkbox" id="checkbox-item" class="Checkbox__input" />
   <div class="Checkbox__text">
     <label class="Checkbox__label" for="checkbox-item">Item</label>
