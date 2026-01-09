@@ -4,6 +4,7 @@ import React from 'react';
 import {
   ariaAttributesTest,
   classNamePrefixProviderTest,
+  elementTypePropsTest,
   restPropsTest,
   stylePropsTest,
   validHtmlAttributesTest,
@@ -15,6 +16,8 @@ jest.mock('../../../hooks/useIcon');
 
 describe('AccordionHeader', () => {
   classNamePrefixProviderTest(AccordionHeader, 'Accordion__itemHeader');
+
+  elementTypePropsTest(AccordionHeader);
 
   stylePropsTest(
     (props: Record<string, unknown>) => (
