@@ -43,14 +43,12 @@ The component is based on the [Stack][stack] component and accepts all its prope
     <Icon name="search" isSymbol />
   </EmptyStateSection>
   <EmptyStateSection>
-    <Heading>Heading</Heading>
+    <Heading elementType="h2">Heading</Heading>
     <Text>Description</Text>
   </EmptyStateSection>
   <EmptyStateSection>
     <ActionGroup alignmentX={{ mobile: 'stretch', tablet: 'center' }}>
-      <ButtonLink href="#" color="primary">
-        Primary Action
-      </ButtonLink>
+      <ButtonLink href="#">Primary Action</ButtonLink>
       <ButtonLink href="#" color="secondary">
         Secondary Action
       </ButtonLink>
