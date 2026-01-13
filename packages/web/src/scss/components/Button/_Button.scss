@@ -4,6 +4,7 @@
 @use 'sass:string';
 @use '@tokens' as tokens;
 @use '../../settings/cursors';
+@use '../../tools/breakpoint';
 @use '../../tools/dictionaries';
 @use '../../tools/typography';
 @use 'theme';
@@ -95,10 +96,24 @@ $_component-name: 'Button';
     width: 100%;
 }
 
-.Button--symmetrical {
-    flex: none;
-    aspect-ratio: 1;
-    padding-inline: 0;
+@each $breakpoint-name, $breakpoint-value in theme.$breakpoints {
+    $infix: breakpoint.get-modifier('infix', $breakpoint-name, $breakpoint-value);
+
+    @include breakpoint.up($breakpoint-value) {
+        .Button--#{$infix}symmetrical {
+            flex: none;
+            aspect-ratio: 1;
+            padding-inline: 0;
+        }
+
+        @if $infix != '' {
+            .Button--#{$infix}asymmetrical {
+                flex: auto;
+                aspect-ratio: auto;
+                padding-inline: var(--#{tokens.$css-variable-prefix}button-padding-x);
+            }
+        }
+    }
 }
 
 .Button:is(:disabled, .is-disabled, .Button--disabled):not(.Button--loading) {
