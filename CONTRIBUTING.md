@@ -281,6 +281,8 @@ All commands will execute a Docker command that starts [Playwright][playwright] 
 - Use `make test-e2e-update` to update the snapshots.
 - Use `make test-e2e-report` to generate and serve a report of visual regression testing. Find a report URL in the terminal output.
 
+For detailed information about writing and extending E2E tests, see the [E2E Testing Guidelines][e2e-testing].
+
 👉 Visual snapshots are generated based on the platform, so we need to use the same platform locally and on CI (GitHub Actions).
 
 ⚠️ The version number of the [Playwright][playwright] dependency must be the same in `package.json` file and in the `./bin/make/e2e.sh` to ensure that no additional [Playwright][playwright] dependencies will need to install (browsers are backed in the Docker image). See https://playwright.dev/docs/docker.
@@ -389,6 +391,7 @@ After the release notes are ready, you can publish them (copy&paste from canvas)
 [developer-handbook]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/contribution/development.md
 [dictionary]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md
 [docker]: https://www.docker.com/
+[e2e-testing]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/contribution/e2e-testing.md
 [eslint]: https://eslint.org/
 [jest]: https://jestjs.io/
 [lerna-home]: https://lerna.js.org
