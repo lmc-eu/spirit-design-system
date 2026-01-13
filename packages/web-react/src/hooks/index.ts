@@ -16,5 +16,6 @@ export * from './useLastActiveFocus';
 export * from './useResizeObserver';
 export * from './useScrollControl';
 export * from './useSpacingStyle';
+export * from './useSymmetry';
 export * from './useToggle';
 export * from './useWrapClass';

@@ -51,7 +51,9 @@ const meta: Meta<typeof Button> = {
       control: 'boolean',
     },
     isSymmetrical: {
-      control: 'boolean',
+      control: 'object',
+      description:
+        'Whether the button should be symmetrical. Can be a boolean or an object with breakpoint keys (mobile, tablet, desktop).',
     },
     size: {
       control: 'select',

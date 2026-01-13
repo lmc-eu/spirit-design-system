@@ -7,15 +7,57 @@ import { ButtonLink } from '@alma-oss/spirit-web-react';
 ```
 
 ```jsx
-  <ButtonLink href="#" color="primary">Click me</ButtonLink>
-  <ButtonLink href="#" color="secondary">Click me</ButtonLink>
-  <ButtonLink href="#" color="tertiary">Click me</ButtonLink>
-  <ButtonLink href="#" color="plain">Click me</ButtonLink>
-  <ButtonLink href="#" color="success">Click me</ButtonLink>
-  <ButtonLink href="#" color="informative">Click me</ButtonLink>
-  <ButtonLink href="#" color="warning">Click me</ButtonLink>
-  <ButtonLink href="#" color="danger">Click me</ButtonLink>
+import { ButtonLink } from '@alma-oss/spirit-web-react';
+
+<ButtonLink href="#" color="primary">Button primary</ButtonLink>
+<ButtonLink href="#" color="secondary">Button secondary</ButtonLink>
+<ButtonLink href="#" color="tertiary">Button tertiary</ButtonLink>
+<ButtonLink href="#" color="plain">Button plain</ButtonLink>
+<ButtonLink href="#" color="success">Button success</ButtonLink>
+<ButtonLink href="#" color="informative">Button informative</ButtonLink>
+<ButtonLink href="#" color="warning">Button warning</ButtonLink>
+<ButtonLink href="#" color="danger">Button danger</ButtonLink>
 ```
+
+### Symmetrical ButtonLink
+
+Use the `isSymmetrical` prop to make the button link have equal width and height. This is typically used for icon-only buttons.
+
+```jsx
+<ButtonLink href="#" isSymmetrical>
+  <Icon name="hamburger" />
+  <VisuallyHidden>Menu</VisuallyHidden>
+</ButtonLink>
+```
+
+You can define responsive values for the `isSymmetrical` prop using an object:
+
+```jsx
+<ButtonLink href="#" isSymmetrical={{ tablet: true }}>
+  <Icon name="hamburger" marginRight={{ mobile: 'space-400', tablet: 'space-0' }} />
+  <VisuallyHidden>Menu</VisuallyHidden>
+  <span className="d-tablet-none" aria-hidden="true">
+    Menu
+  </span>
+</ButtonLink>
+```
+
+To turn off symmetrical from a specific breakpoint onwards, set the value to `false`:
+
+```jsx
+<ButtonLink href="#" isSymmetrical={{ mobile: true, tablet: false }}>
+  <Icon name="hamburger" marginRight={{ tablet: 'space-400' }} />
+  <VisuallyHidden>Menu</VisuallyHidden>
+  <span className="d-none d-tablet-inline" aria-hidden="true">
+    Menu
+  </span>
+</ButtonLink>
+```
+
+⚠️ **Accessibility note:** Always use `VisuallyHidden` for the accessible label and add `aria-hidden="true"` to the
+visible text or add `aria-label` to the button. Using `display: none` utility classes (like `d-tablet-none`)
+hides content from screen readers, so the `VisuallyHidden` component ensures the label is always accessible
+regardless of viewport size.
 
 ### How to Make a Fluid ButtonLink
 
@@ -54,7 +96,7 @@ For more information, please read the section [How to Make a Fluid ButtonLink](#
 | `isBlock`       | `bool`                                                                                        | `false`   | ✕        | [**DEPRECATED**](#deprecation-notice) Span the element to the full width of its parent, see [How to Make a Fluid ButtonLink](#how-to-make-a-fluid-buttonlink) section |
 | `isDisabled`    | `bool`                                                                                        | `false`   | ✕        | If true, ButtonLink is disabled                                                                                                                                       |
 | `isLoading`     | `bool`                                                                                        | `false`   | ✕        | If true, ButtonLink is in a loading state, disabled and the Spinner is visible                                                                                        |
-| `isSymmetrical` | `bool`                                                                                        | `false`   | ✕        | If true, ButtonLink has symmetrical dimensions, usually only with an Icon                                                                                             |
+| `isSymmetrical` | \[`bool` \| `Responsive<bool>`]                                                               | `false`   | ✕        | If true, ButtonLink has symmetrical dimensions, use object to set responsive values, e.g. `{ mobile: true, tablet: false }`                                           |
 | `onClick`       | `string`                                                                                      | `null`    | ✕        | JS function to call on click                                                                                                                                          |
 | `ref`           | `ForwardedRef<HTMLAnchorElement>`                                                             | —         | ✕        | Anchor element reference                                                                                                                                              |
 | `size`          | [Size dictionary][dictionary-size]                                                            | `medium`  | ✕        | Size variant                                                                                                                                                          |

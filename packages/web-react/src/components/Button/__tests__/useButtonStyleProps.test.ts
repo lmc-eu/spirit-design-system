@@ -41,4 +41,70 @@ describe('useButtonStyleProps', () => {
 
     consoleWarnMock.mockRestore();
   });
+
+  it('should return responsive symmetrical classes for mobile only', () => {
+    const props = {
+      color: 'primary',
+      size: 'medium',
+      isSymmetrical: { mobile: true },
+    } as SpiritButtonProps;
+    const { result } = renderHook(() => useButtonStyleProps(props));
+
+    expect(result.current.classProps).toBe('Button Button--primary Button--medium Button--symmetrical');
+  });
+
+  it('should return responsive symmetrical classes for multiple breakpoints', () => {
+    const props = {
+      color: 'primary',
+      size: 'medium',
+      isSymmetrical: { mobile: true, tablet: false, desktop: true },
+    } as SpiritButtonProps;
+    const { result } = renderHook(() => useButtonStyleProps(props));
+
+    expect(result.current.classProps).toBe(
+      'Button Button--primary Button--medium Button--symmetrical Button--tablet--asymmetrical Button--desktop--symmetrical',
+    );
+  });
+
+  it('should return responsive symmetrical classes for tablet and desktop only', () => {
+    const props = {
+      color: 'primary',
+      size: 'medium',
+      isSymmetrical: { tablet: true, desktop: true },
+    } as SpiritButtonProps;
+    const { result } = renderHook(() => useButtonStyleProps(props));
+
+    expect(result.current.classProps).toBe(
+      'Button Button--primary Button--medium Button--tablet--symmetrical Button--desktop--symmetrical',
+    );
+  });
+
+  it('should return no a/symmetrical classes when all breakpoints are false', () => {
+    const props = {
+      color: 'primary',
+      size: 'medium',
+      isSymmetrical: { mobile: false, tablet: false, desktop: false },
+    } as SpiritButtonProps;
+    const { result } = renderHook(() => useButtonStyleProps(props));
+
+    expect(result.current.classProps).toBe('Button Button--primary Button--medium');
+  });
+
+  it('should warn when isBlock conflicts with responsive isSymmetrical', () => {
+    process.env.NODE_ENV = 'development';
+
+    const consoleWarnMock = jest.spyOn(global.console, 'warn').mockImplementation();
+
+    const props = {
+      color: 'primary',
+      size: 'medium',
+      isBlock: true,
+      isSymmetrical: { mobile: true, tablet: false },
+    } as SpiritButtonProps;
+    renderHook(() => useButtonStyleProps(props));
+
+    expect(consoleWarnMock).toHaveBeenCalledWith('Warning: isBlock and isSymmetrical props are mutually exclusive');
+
+    consoleWarnMock.mockRestore();
+  });
 });
