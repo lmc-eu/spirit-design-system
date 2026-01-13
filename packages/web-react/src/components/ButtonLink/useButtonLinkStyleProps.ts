@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { type ElementType } from 'react';
 import { warning } from '../../common/utilities';
-import { useClassNamePrefix, useDeprecationMessage } from '../../hooks';
+import { useClassNamePrefix, useDeprecationMessage, useSymmetricalClass } from '../../hooks';
 import { type ButtonColor, type ButtonSize, type SpiritButtonProps } from '../../types';
 import { applyColor, applySize } from '../../utils/classname';
 import { compose } from '../../utils/compose';
@@ -38,22 +38,39 @@ export function useButtonLinkStyleProps<T extends ElementType = 'button', C = vo
   const buttonBlockClass = `${buttonClass}--block`;
   const buttonDisabledClass = `${buttonClass}--disabled`;
   const buttonLoadingClass = `${buttonClass}--loading`;
-  const buttonSymmetricalClass = `${buttonClass}--symmetrical`;
 
-  if (isBlock && isSymmetrical) {
+  const hasSymmetricalActive = () => {
+    if (typeof isSymmetrical === 'boolean') {
+      return isSymmetrical;
+    }
+    if (typeof isSymmetrical === 'object' && isSymmetrical !== null) {
+      return Object.values(isSymmetrical).some((value) => value === true);
+    }
+
+    return false;
+  };
+
+  const isSymmetricalActive = hasSymmetricalActive();
+
+  if (isBlock && isSymmetricalActive) {
     warning(false, 'isBlock and isSymmetrical props are mutually exclusive');
   }
+
+  // @deprecated "isBlock" will be removed in the next major version. Please read component's documentation for more information.
+  const shouldApplyBlock = () => isBlock && !isSymmetricalActive;
+
+  const symmetricalClass = useSymmetricalClass(buttonClass, isSymmetrical);
 
   const classProps = classNames(
     buttonClass,
     getButtonLinkColorClassname(buttonClass, color as ButtonColor<C>),
     getButtonLinkSizeClassname(buttonClass, size as ButtonSize<S>),
     {
-      [buttonBlockClass]: isBlock && !isSymmetrical,
+      [buttonBlockClass]: shouldApplyBlock(),
       [buttonDisabledClass]: isDisabled || isLoading,
       [buttonLoadingClass]: isLoading,
-      [buttonSymmetricalClass]: isSymmetrical && !isBlock,
     },
+    symmetricalClass,
   );
 
   return {

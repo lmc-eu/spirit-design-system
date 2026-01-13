@@ -6,6 +6,7 @@ import type {
   ClickEvents,
   ComponentButtonColorNamesType,
   EmotionColorNamesType,
+  SingleOrResponsive,
   SizesDictionaryType,
   StyleProps,
 } from './shared';
@@ -24,7 +25,7 @@ export interface ButtonBaseProps<C = void, S = void> extends ChildrenProps, Styl
   /** Whether the button should be in a loading state. */
   isLoading?: boolean;
   /** Whether the button should be symmetrical. */
-  isSymmetrical?: boolean;
+  isSymmetrical?: SingleOrResponsive<boolean>;
   /** The size of the button. */
   size?: ButtonSize<S>;
 }
