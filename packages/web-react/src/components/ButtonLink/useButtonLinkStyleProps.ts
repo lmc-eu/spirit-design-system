@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { type ElementType } from 'react';
 import { warning } from '../../common/utilities';
-import { useClassNamePrefix, useDeprecationMessage } from '../../hooks';
+import { useClassNamePrefix, useDeprecationMessage, useSymmetry } from '../../hooks';
 import { type ButtonColor, type ButtonSize, type SpiritButtonProps } from '../../types';
 import { applyColor, applySize } from '../../utils/classname';
 import { compose } from '../../utils/compose';
@@ -38,22 +38,26 @@ export function useButtonLinkStyleProps<T extends ElementType = 'button', C = vo
   const buttonBlockClass = `${buttonClass}--block`;
   const buttonDisabledClass = `${buttonClass}--disabled`;
   const buttonLoadingClass = `${buttonClass}--loading`;
-  const buttonSymmetricalClass = `${buttonClass}--symmetrical`;
 
-  if (isBlock && isSymmetrical) {
+  const { isSymmetricalActive, symmetricalClassName } = useSymmetry(buttonClass, isSymmetrical);
+
+  if (isBlock && isSymmetricalActive) {
     warning(false, 'isBlock and isSymmetrical props are mutually exclusive');
   }
+
+  // @deprecated "isBlock" will be removed in the next major version. Please read component's documentation for more information.
+  const shouldApplyBlock = () => isBlock && !isSymmetricalActive;
 
   const classProps = classNames(
     buttonClass,
     getButtonLinkColorClassname(buttonClass, color as ButtonColor<C>),
     getButtonLinkSizeClassname(buttonClass, size as ButtonSize<S>),
     {
-      [buttonBlockClass]: isBlock && !isSymmetrical,
+      [buttonBlockClass]: shouldApplyBlock(),
       [buttonDisabledClass]: isDisabled || isLoading,
       [buttonLoadingClass]: isLoading,
-      [buttonSymmetricalClass]: isSymmetrical && !isBlock,
     },
+    symmetricalClassName,
   );
 
   return {

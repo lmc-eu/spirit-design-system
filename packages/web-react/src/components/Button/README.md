@@ -9,14 +9,16 @@ import { Button } from '@alma-oss/spirit-web-react';
 ```
 
 ```jsx
-  <Button color="primary">Click me</Button>
-  <Button color="secondary">Click me</Button>
-  <Button color="tertiary">Click me</Button>
-  <Button color="plain">Click me</Button>
-  <Button color="success">Click me</Button>
-  <Button color="informative">Click me</Button>
-  <Button color="warning">Click me</Button>
-  <Button color="danger">Click me</Button>
+import { Button } from '@alma-oss/spirit-web-react';
+
+<Button color="primary">Button primary</Button>
+<Button color="secondary">Button secondary</Button>
+<Button color="tertiary">Button tertiary</Button>
+<Button color="plain">Button plain</Button>
+<Button color="success">Button success</Button>
+<Button color="informative">Button informative</Button>
+<Button color="warning">Button warning</Button>
+<Button color="danger">Button danger</Button>
 ```
 
 ### Example Usage with Third-Party Component
@@ -25,11 +27,52 @@ So if you use a third-party component, the Button will take on all of its proper
 
 ```jsx
 import { RouterLink } from 'react-router-dom';
+import { Button } from '@alma-oss/spirit-web-react';
 
 <Button elementType={RouterLink} to="/">
   Link to home
 </Button>;
 ```
+
+### Symmetrical Button
+
+Use the `isSymmetrical` prop to make the button have equal width and height. This is typically used for icon-only buttons.
+
+```jsx
+<Button isSymmetrical>
+  <Icon name="hamburger" />
+  <VisuallyHidden>Menu</VisuallyHidden>
+</Button>
+```
+
+You can define responsive values for the `isSymmetrical` prop using an object:
+
+```jsx
+<Button isSymmetrical={{ tablet: true }}>
+  <Icon name="hamburger" marginRight={{ mobile: 'space-400', tablet: 'space-0' }} />
+  <VisuallyHidden>Menu</VisuallyHidden>
+  <span className="d-tablet-none" aria-hidden="true">
+    Menu
+  </span>
+</Button>
+```
+
+To turn off symmetrical from a specific breakpoint onwards, set the value to `false`:
+
+```jsx
+<Button isSymmetrical={{ mobile: true, tablet: false }}>
+  <Icon name="hamburger" marginRight={{ tablet: 'space-400' }} />
+  <VisuallyHidden>Menu</VisuallyHidden>
+  <span className="d-none d-tablet-inline" aria-hidden="true">
+    Menu
+  </span>
+</Button>
+```
+
+⚠️ **Accessibility note:** Always use `VisuallyHidden` for the accessible label and add `aria-hidden="true"` to the
+visible text or add `aria-label` to the button. Using `display: none` utility classes (like `d-tablet-none`)
+hides content from screen readers, so the `VisuallyHidden` component ensures the label is always accessible
+regardless of viewport size.
 
 ### How to Make a Fluid Button
 
@@ -67,7 +110,7 @@ For more information, please read the section [How to Make a Fluid Button](#how-
 | `isBlock`       | `bool`                                                                                         | `false`   | ✕        | [**DEPRECATED**](#deprecation-notice) Span the element to the full width of its parent, see [How to Make a Fluid Button](#how-to-make-a-fluid-button) section |
 | `isDisabled`    | `bool`                                                                                         | `false`   | ✕        | If true, Button is disabled                                                                                                                                   |
 | `isLoading`     | `bool`                                                                                         | `false`   | ✕        | If true, Button is in a loading state, disabled and the Spinner is visible                                                                                    |
-| `isSymmetrical` | `bool`                                                                                         | `false`   | ✕        | If true, Button has symmetrical dimensions, usually only with an Icon                                                                                         |
+| `isSymmetrical` | \[`bool` \| `Responsive<bool>`]                                                                | `false`   | ✕        | If true, Button has symmetrical dimensions, use object to set responsive values, e.g. `{ mobile: true, tablet: false }`                                       |
 | `name`          | `string`                                                                                       | —         | ✕        | For use a button as a form data reference                                                                                                                     |
 | `onClick`       | `string`                                                                                       | `null`    | ✕        | JS function to call on click                                                                                                                                  |
 | `ref`           | `ForwardedRef<HTMLButtonElement>`                                                              | —         | ✕        | Button element reference                                                                                                                                      |
