@@ -56,4 +56,52 @@
             }
         }
     }
+
+    @include test.it('should generate input-position classes with correct flex-direction') {
+        @include test.assert() {
+            @include test.output() {
+                @include form-fields.input-position(
+                    $component-class: 'TestComponent',
+                    $positions: (
+                        'start': row,
+                        'end': row-reverse,
+                    ),
+                    $default-position: 'start'
+                );
+            }
+
+            @include test.expect() {
+                .TestComponent--inputPositionStart,
+                .TestComponent:not([class*='--inputPosition']) {
+                    flex-direction: row;
+                }
+
+                .TestComponent--inputPositionEnd {
+                    flex-direction: row-reverse;
+                }
+
+                @media (width >= 768px) {
+                    .TestComponent--tablet--inputPositionStart,
+                    .TestComponent:not([class*='--inputPosition']) {
+                        flex-direction: row;
+                    }
+
+                    .TestComponent--tablet--inputPositionEnd {
+                        flex-direction: row-reverse;
+                    }
+                }
+
+                @media (width >= 1280px) {
+                    .TestComponent--desktop--inputPositionStart,
+                    .TestComponent:not([class*='--inputPosition']) {
+                        flex-direction: row;
+                    }
+
+                    .TestComponent--desktop--inputPositionEnd {
+                        flex-direction: row-reverse;
+                    }
+                }
+            }
+        }
+    }
 }

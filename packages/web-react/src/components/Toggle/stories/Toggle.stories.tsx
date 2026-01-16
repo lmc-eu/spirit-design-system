@@ -28,6 +28,14 @@ const meta: Meta<typeof Toggle> = {
         defaultValue: { summary: 'false' },
       },
     },
+    inputPosition: {
+      control: 'select',
+      options: ['start', 'end'],
+      table: {
+        defaultValue: { summary: 'end' },
+      },
+      description: 'Position of the input element relative to the label. Can also be a responsive object.',
+    },
   },
   args: {
     hasIndicators: false,
@@ -38,6 +46,7 @@ const meta: Meta<typeof Toggle> = {
     isDisabled: false,
     isFluid: false,
     isChecked: false,
+    inputPosition: 'end',
     label: 'Toggle Label',
     validationState: undefined,
     validationText: '',

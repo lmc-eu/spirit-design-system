@@ -12,6 +12,7 @@ import CheckboxDisabled from './CheckboxDisabled';
 import CheckboxHelperText from './CheckboxHelperText';
 import CheckboxHiddenLabel from './CheckboxHiddenLabel';
 import CheckboxIndeterminate from './CheckboxIndeterminate';
+import CheckboxInputPosition from './CheckboxInputPosition';
 import CheckboxItem from './CheckboxItem';
 import CheckboxRequired from './CheckboxRequired';
 import CheckboxValidation from './CheckboxValidation';
@@ -43,6 +44,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       </DocsSection>
       <DocsSection title="Validation Text with Icon">
         <CheckboxValidationWithIcon />
+      </DocsSection>
+      <DocsSection title="Input Position">
+        <CheckboxInputPosition />
       </DocsSection>
     </IconsProvider>
     <DocsSection title="Item">
