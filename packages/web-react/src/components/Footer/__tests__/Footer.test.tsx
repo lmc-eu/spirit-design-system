@@ -4,6 +4,7 @@ import '@testing-library/jest-dom';
 import {
   ariaAttributesTest,
   classNamePrefixProviderTest,
+  elementTypePropsTest,
   restPropsTest,
   stylePropsTest,
   textAlignmentPropsTest,
@@ -24,6 +25,8 @@ describe('Footer', () => {
   validHtmlAttributesTest(Footer);
 
   ariaAttributesTest(Footer);
+
+  elementTypePropsTest(Footer);
 
   it('should render text children', () => {
     render(<Footer>Hello World</Footer>);

@@ -2,11 +2,11 @@ import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks';
 import { type SpiritFooterProps } from '../../types';
 
-export interface UseFooterStyleProps {
+export interface FooterStyle {
   classProps: string;
 }
 
-export const useFooterStyleProps = (props: Partial<SpiritFooterProps>): UseFooterStyleProps => {
+export const useFooterStyleProps = (props: SpiritFooterProps): FooterStyle => {
   const { backgroundColor } = props;
   const footerBackgroundClassName = useClassNamePrefix(`bg-${backgroundColor}`);
 
