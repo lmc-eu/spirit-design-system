@@ -55,7 +55,9 @@ const meta: Meta<typeof ButtonLink> = {
       control: 'boolean',
     },
     isSymmetrical: {
-      control: 'boolean',
+      control: 'object',
+      description:
+        'Whether the button link should be symmetrical. Can be a boolean or an object with breakpoint keys (mobile, tablet, desktop).',
     },
     size: {
       control: 'select',
