@@ -1,33 +1,40 @@
 'use client';
 
-import classNames from 'classnames';
-import React from 'react';
+import React, { type ElementType } from 'react';
 import { BackgroundColors, PaddingStyleProps, TextStyleProps } from '../../constants';
 import { useStyleProps } from '../../hooks';
 import { type SpiritFooterProps } from '../../types';
+import { mergeStyleProps } from '../../utils';
 import { PADDING_BOTTOM, PADDING_TOP } from './constants';
 import { useFooterStyleProps } from './useFooterStyleProps';
 
-const defaultStyleProps: Partial<SpiritFooterProps> = {
+const defaultStyleProps: SpiritFooterProps = {
   backgroundColor: BackgroundColors.SECONDARY,
+  elementType: 'footer',
   paddingBottom: PADDING_BOTTOM,
   paddingTop: PADDING_TOP,
 };
 
-const Footer = (props: SpiritFooterProps) => {
+const Footer = <T extends ElementType = 'footer'>(props: SpiritFooterProps<T>): JSX.Element => {
   const propsWithDefaults = { ...defaultStyleProps, ...props };
-  const { children, backgroundColor, ...restProps } = propsWithDefaults;
+  const {
+    elementType: ElementTag = defaultStyleProps.elementType as ElementType,
+    children,
+    backgroundColor,
+    ...restProps
+  } = propsWithDefaults;
   const { classProps } = useFooterStyleProps({ backgroundColor });
   const { styleProps, props: otherProps } = useStyleProps(restProps, {
     paddingBottom: PaddingStyleProps.paddingBottom,
     paddingTop: PaddingStyleProps.paddingTop,
     textAlignment: TextStyleProps.textAlignment,
   });
+  const mergedStyleProps = mergeStyleProps(ElementTag, { classProps, styleProps, otherProps });
 
   return (
-    <footer {...otherProps} {...styleProps} className={classNames(classProps, styleProps.className)}>
+    <ElementTag {...otherProps} {...mergedStyleProps}>
       {children}
-    </footer>
+    </ElementTag>
   );
 };
 

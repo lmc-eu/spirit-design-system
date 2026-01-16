@@ -1,10 +1,11 @@
+import { type ElementType } from 'react';
 import {
   type BackgroundColorsDictionaryType,
   type ChildrenProps,
   type SpaceToken,
+  type SpiritPolymorphicElementPropsWithRef,
   type StyleProps,
   type TextAlignmentType,
-  type TransferProps,
 } from './shared';
 
 export interface FooterStyleProps {
@@ -14,4 +15,16 @@ export interface FooterStyleProps {
   textAlignment?: TextAlignmentType;
 }
 
-export interface SpiritFooterProps extends FooterStyleProps, ChildrenProps, StyleProps, TransferProps {}
+export interface FooterBaseProps extends FooterStyleProps, ChildrenProps, StyleProps {}
+
+export type FooterProps<E extends ElementType> = {
+  /**
+   * The HTML element or React element used to render the footer, e.g. 'footer', 'div', 'section'.
+   *
+   * @default 'footer'
+   */
+  elementType?: E;
+} & FooterBaseProps;
+
+export type SpiritFooterProps<E extends ElementType = 'footer'> = FooterProps<E> &
+  SpiritPolymorphicElementPropsWithRef<E, FooterProps<E>>;
