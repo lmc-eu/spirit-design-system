@@ -12,17 +12,19 @@ import { exampleTypographyTokens } from '../../../tests/fixtures/exampleTypograp
 import { sampleConfigurationDefault } from '../../../tests/fixtures/sampleConfiguration';
 import { filterExcludedTokens } from '../../filters/excludedTokens';
 import {
+  createStylesObjectStructureFromTokenNameParts,
+  generateStylesObjectFromTokens,
+  StylesObjectType,
+} from '../stylesObjectGenerator';
+import {
+  cloneTypographyValue,
   colorGroupsReducer,
   createGlobalColorsObject,
   createGlobalTypographyObject,
-  createStylesObjectStructureFromTokenNameParts,
-  cloneTypographyValue,
-  generateStylesObjectFromTokens,
   handleTypographyTokens,
   parseGroupName,
-  StylesObjectType,
   typographyGroupReducer,
-} from '../stylesObjectGenerator';
+} from '../../objectProcessors';
 
 const tokenGroups: Array<TokenGroup> = exampleGroups;
 jest.mock('../../../config', () => ({
@@ -80,8 +82,7 @@ describe('stylesObjectGenerator', () => {
         expectedStyles: {
           '$heading-xlarge-bold': {
             mobile:
-              // eslint-disable-next-line quotes -- we are handling special characters
-              '(\nfont-family: "\'Inter\', sans-serif",\nfont-size: 40px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.3,\n)',
+              '(\nfont-family: "\'Inter\', sans-serif",\nfont-size: 40px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.30,\n)',
           },
           $styles: {
             'heading-xlarge-bold': '$heading-xlarge-bold',
@@ -100,7 +101,7 @@ describe('stylesObjectGenerator', () => {
           },
           headingXlargeBold: {
             mobile:
-              "{\nfontFamily: \"'Inter', sans-serif\",\nfontSize: '40px',\nfontStyle: 'normal',\nfontWeight: 700,\nlineHeight: 1.3,\n}",
+              "{\nfontFamily: \"'Inter', sans-serif\",\nfontSize: '40px',\nfontStyle: 'normal',\nfontWeight: 700,\nlineHeight: 1.30,\n}",
           },
         },
         description: 'should generate object from typography tokens with js output',
@@ -158,7 +159,16 @@ describe('stylesObjectGenerator', () => {
 
     it.each(dataProvider)('$description', ({ tokens, expectedStyles, hasJsOutput }) => {
       const filteredTokens = filterExcludedTokens(Array.from(tokens.values()));
-      const styles = generateStylesObjectFromTokens(filteredTokens, tokenGroups, true, hasJsOutput, false);
+      const styles = generateStylesObjectFromTokens(
+        filteredTokens,
+        tokenGroups,
+        true,
+        hasJsOutput,
+        false,
+        undefined,
+        undefined,
+        undefined,
+      );
 
       expect(styles).toStrictEqual(expectedStyles);
     });
@@ -199,16 +209,14 @@ describe('stylesObjectGenerator', () => {
         expectedObject: {
           '$heading-xlarge-bold': {
             mobile:
-              // eslint-disable-next-line quotes -- we are handling special characters
-              '(\nfont-family: "\'Inter\', sans-serif",\nfont-size: 40px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.3,\n)',
+              '(\nfont-family: "\'Inter\', sans-serif",\nfont-size: 40px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.30,\n)',
           },
         },
         description: 'should create object structure from typography token',
         stylesObjectRef: {
           '$heading-xlarge-bold': {
             mobile:
-              // eslint-disable-next-line quotes -- we are handling special characters
-              '(\nfont-family: "\'Inter\', sans-serif",\nfont-size: 32px,\nfont-style: normal,\nfont-weight: 500,\nline-height: 1,\n)',
+              '(\nfont-family: "\'Inter\', sans-serif",\nfont-size: 2rem,\nfont-style: normal,\nfont-weight: 500,\nline-height: 1.00,\n)',
           },
         } as StylesObjectType,
         hasJsOutput: false,
@@ -218,14 +226,14 @@ describe('stylesObjectGenerator', () => {
         expectedObject: {
           headingXlargeBold: {
             mobile:
-              "{\nfontFamily: \"'Inter', sans-serif\",\nfontSize: '40px',\nfontStyle: 'normal',\nfontWeight: 700,\nlineHeight: 1.3,\n}",
+              "{\nfontFamily: \"'Inter', sans-serif\",\nfontSize: '40px',\nfontStyle: 'normal',\nfontWeight: 700,\nlineHeight: 1.30,\n}",
           },
         },
         description: 'should create object structure from typography token with js output',
         stylesObjectRef: {
           headingXlargeBold: {
             mobile:
-              "{\nfontFamily: \"'Inter', sans-serif\",\nfontSize: '32px',\nfontStyle: 'normal',\nfontWeight: 500,\nlineHeight: 1,\n}",
+              "{\nfontFamily: \"'Inter', sans-serif\",\nfontSize: '2rem',\nfontStyle: 'normal',\nfontWeight: 500,\nlineHeight: 1.00,\n}",
           },
         } as StylesObjectType,
         hasJsOutput: true,
@@ -239,6 +247,9 @@ describe('stylesObjectGenerator', () => {
         true,
         stylesObjectRef,
         hasJsOutput,
+        undefined,
+        undefined,
+        undefined,
       );
 
       expect(cssObject).toStrictEqual(expectedObject);
@@ -253,8 +264,7 @@ describe('stylesObjectGenerator', () => {
         expectedStyles: {
           '$heading-xlarge-bold': {
             mobile:
-              // eslint-disable-next-line quotes -- we are handling special characters
-              '(\nfont-family: "\'Inter\', sans-serif",\nfont-size: 40px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.3,\n)',
+              '(\nfont-family: "\'Inter\', sans-serif",\nfont-size: 40px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.30,\n)',
           },
           exampleRef: 'exampleRef',
         },
@@ -268,19 +278,53 @@ describe('stylesObjectGenerator', () => {
           exampleRef: 'exampleRef',
           headingXlargeBold: {
             mobile:
-              "{\nfontFamily: \"'Inter', sans-serif\",\nfontSize: '40px',\nfontStyle: 'normal',\nfontWeight: 700,\nlineHeight: 1.3,\n}",
+              "{\nfontFamily: \"'Inter', sans-serif\",\nfontSize: '40px',\nfontStyle: 'normal',\nfontWeight: 700,\nlineHeight: 1.30,\n}",
           },
         },
         description: 'should generate object from typography tokens with js output',
         hasJsOutput: true,
       },
+      {
+        tokens: exampleTypographyTokens.get('typographyRef1') as TypographyToken,
+        tokenNameParts: ['Heading', 'XLarge', 'Bold'],
+        expectedStyles: {
+          exampleRef: 'exampleRef',
+          headingXlargeBold: {
+            mobile:
+              "{\nfontFamily: \"'Inter', sans-serif\",\nfontSize: '2.86rem',\nfontStyle: 'normal',\nfontWeight: 700,\nlineHeight: 3.71,\n}",
+            tablet:
+              "{\nfontFamily: \"'Inter', sans-serif\",\nfontSize: '2.5rem',\nfontStyle: 'normal',\nfontWeight: 700,\nlineHeight: 3.25,\n}",
+            desktop:
+              "{\nfontFamily: \"'Inter', sans-serif\",\nfontSize: '2.22rem',\nfontStyle: 'normal',\nfontWeight: 700,\nlineHeight: 2.89,\n}",
+          },
+        },
+        description: 'should generate per-breakpoint rem values when font-size-base differs',
+        hasJsOutput: true,
+        fontSizeBaseMap: new Map([
+          ['mobile', 14],
+          ['tablet', 16],
+          ['desktop', 18],
+        ]),
+      },
     ];
 
-    it.each(dataProvider)('$description', ({ tokens, tokenNameParts, expectedStyles, hasJsOutput }) => {
-      const stylesObjectRef = { exampleRef: 'exampleRef' };
-      handleTypographyTokens(tokenNameParts, tokens, stylesObjectRef, hasJsOutput);
-      expect(stylesObjectRef).toStrictEqual(expectedStyles);
-    });
+    it.each(dataProvider)(
+      '$description',
+      ({ tokens, tokenNameParts, expectedStyles, hasJsOutput, fontSizeBaseMap }) => {
+        const stylesObjectRef = { exampleRef: 'exampleRef' };
+        handleTypographyTokens(
+          tokenNameParts,
+          tokens,
+          tokenGroups,
+          true,
+          stylesObjectRef,
+          hasJsOutput,
+          undefined,
+          fontSizeBaseMap,
+        );
+        expect(stylesObjectRef).toStrictEqual(expectedStyles);
+      },
+    );
   });
 
   describe('createGlobalColorsObject', () => {
