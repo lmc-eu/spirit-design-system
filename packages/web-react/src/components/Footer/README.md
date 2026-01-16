@@ -135,6 +135,26 @@ This section is optional and consists of a [Flex][flex] layout with secondary li
 
 👉 Please mind the `aria-label` attribute on the `<nav>` element to provide an accessible label for the navigation.
 
+## Multiple Footers
+
+When you have multiple distinct footers (e.g., product and corporate), you can use the `elementType` prop to structure them semantically. Each footer section should use `elementType="section"` or be a plain `<section>` element, and the entire footer should be wrapped in a `<footer>` HTML tag.
+
+This pattern provides better HTML semantics and accessibility, as each section can have its own structure and styling:
+
+```jsx
+<footer>
+  <Footer elementType="section">{/* Product footer */}</Footer>
+  <section>{/* Corporate footer */}</section>
+</footer>
+```
+
+👉 Good to know:
+
+- The `<footer>` HTML tag provides semantic meaning and indicates the footer region of the page.
+- Each `<Footer elementType="section">` creates a semantic `<section>` element, which helps with document structure and accessibility.
+- Each section can have its own styling props (`backgroundColor`, `padding`, etc.) for visual separation.
+- This pattern is especially useful when you need different background colors or spacing for different sections of the footer.
+
 ## Text Alignment
 
 You can set the text alignment of the Footer using the `textAlignment` prop.
@@ -274,12 +294,13 @@ You can also define responsive values for the `textAlignment` prop using an obje
 
 ### API
 
-| Name              | Type                                                                                              | Default      | Required | Description                                     |
-| ----------------- | ------------------------------------------------------------------------------------------------- | ------------ | -------- | ----------------------------------------------- |
-| `backgroundColor` | [Background Color dictionary][dictionary-background-color]                                        | `secondary`  | ✕        | Sets the background color of the footer         |
-| `paddingBottom`   | `SpaceToken`                                                                                      | `space-1400` | ✕        | Defines the padding at the bottom of the footer |
-| `paddingTop`      | `SpaceToken`                                                                                      | `space-1200` | ✕        | Defines the padding at the top of the footer    |
-| `textAlignment`   | \[[Text Alignment dictionary][dictionary-alignment] \| `Responsive<TextAlignmentDictionaryType>`] | -            | ✕        | Alignment of the text                           |
+| Name              | Type                                                                                              | Default      | Required | Description                                                                                  |
+| ----------------- | ------------------------------------------------------------------------------------------------- | ------------ | -------- | -------------------------------------------------------------------------------------------- |
+| `backgroundColor` | [Background Color dictionary][dictionary-background-color]                                        | `secondary`  | ✕        | Sets the background color of the footer                                                      |
+| `elementType`     | `ElementType`                                                                                     | `footer`     | ✕        | The HTML element or React element used to render the footer, e.g. 'footer', 'div', 'section' |
+| `paddingBottom`   | `SpaceToken`                                                                                      | `space-1400` | ✕        | Defines the padding at the bottom of the footer                                              |
+| `paddingTop`      | `SpaceToken`                                                                                      | `space-1200` | ✕        | Defines the padding at the top of the footer                                                 |
+| `textAlignment`   | \[[Text Alignment dictionary][dictionary-alignment] \| `Responsive<TextAlignmentDictionaryType>`] | -            | ✕        | Alignment of the text                                                                        |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

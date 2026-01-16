@@ -26,6 +26,14 @@ const meta: Meta<typeof Footer> = {
         defaultValue: { summary: BackgroundColors.SECONDARY },
       },
     },
+    elementType: {
+      control: 'text',
+      table: {
+        defaultValue: { summary: 'footer' },
+        type: { summary: 'ElementType' },
+      },
+      description: 'The HTML element or React element used to render the footer, e.g. "footer", "div", "section"',
+    },
     paddingBottom: {
       control: 'text',
       table: {
@@ -49,6 +57,7 @@ const meta: Meta<typeof Footer> = {
   args: {
     children: <Container>Footer content</Container>,
     backgroundColor: BackgroundColors.SECONDARY,
+    elementType: 'footer',
     paddingBottom: PADDING_BOTTOM,
     paddingTop: PADDING_TOP,
     textAlignment: TextAlignments.LEFT,
