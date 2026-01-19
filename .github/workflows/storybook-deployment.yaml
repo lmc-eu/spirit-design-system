@@ -37,11 +37,8 @@ jobs:
       - name: Setup Node and Install Dependencies
         uses: ./.github/actions/setup-install
 
-      - name: Build Design Tokens
-        run: yarn workspace @alma-oss/spirit-design-tokens build
-
-      - name: Build Design Icons
-        run: yarn workspace @alma-oss/spirit-icons build
+      - name: Build Storybook
+        run: yarn lerna run build --scope=@alma-oss/spirit-storybook --include-dependencies
 
       - name: Publish to Chromatic
         id: chromatic
@@ -49,7 +46,7 @@ jobs:
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           workingDir: apps/storybook
-          buildScriptName: build
+          storybookBuildDir: build
 
       - name: Post Storybook Link Comment
         if: github.event_name == 'pull_request'

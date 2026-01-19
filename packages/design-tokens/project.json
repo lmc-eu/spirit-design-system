@@ -1,0 +1,12 @@
+{
+  "name": "@alma-oss/spirit-design-tokens",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/design-tokens/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "outputs": ["{projectRoot}/esm", "{projectRoot}/cjs", "{projectRoot}/scss", "{projectRoot}/types"],
+      "cache": true
+    }
+  }
+}

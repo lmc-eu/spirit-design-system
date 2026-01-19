@@ -1,0 +1,12 @@
+{
+  "name": "@alma-oss/spirit-codemods",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/codemods/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "outputs": ["{projectRoot}/dist"],
+      "cache": true
+    }
+  }
+}

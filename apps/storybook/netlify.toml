@@ -16,11 +16,7 @@ base = "/"
 publish = "apps/storybook/build/"
 
 # Default build command.
-command = """\
-    yarn lerna run build --scope @alma-oss/spirit-design-tokens --skip-nx-cache \
-    && yarn lerna run build --scope @alma-oss/spirit-icons --skip-nx-cache \
-    && yarn lerna run build --scope @alma-oss/spirit-storybook --skip-nx-cache \
-    """
+command = "yarn lerna run build --scope @alma-oss/spirit-storybook --include-dependencies"
 
 # Ignore builds on Netlify
 ignore = "node ../../scripts/ignoreNetlifyBuilds.js"

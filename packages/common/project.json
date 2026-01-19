@@ -1,0 +1,6 @@
+{
+  "name": "@alma-oss/spirit-common",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/common/src",
+  "projectType": "library"
+}

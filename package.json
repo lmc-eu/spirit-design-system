@@ -22,7 +22,7 @@
   ],
   "scripts": {
     "start": "yarn packages:start --ignore '@alma-oss/spirit-example*'",
-    "build": "npm-run-all --serial packages:build:tokens packages:build:libs packages:build:web",
+    "build": "lerna run build --scope '@alma-oss/spirit-*' --ignore '@alma-oss/spirit-example*' --ignore '@alma-oss/spirit-docsite' --ignore @lmc-eu/spirit-demo-app --ignore @alma-oss/spirit-storybook",
     "es:lint": "eslint ./",
     "es:lint:fix": "yarn es:lint --fix",
     "format": "yarn format:check",
@@ -49,15 +49,12 @@
     "packages:test": "lerna run test",
     "packages:test:unit": "lerna run test:unit",
     "packages:types": "lerna run types --no-sort",
-    "packages:build:tokens": "lerna run build --scope '@alma-oss/spirit-design-tokens'",
-    "packages:build:libs": "lerna run build --ignore '@alma-oss/spirit-web*' --ignore=@lmc-eu/spirit-demo-app --ignore=@alma-oss/spirit-storybook --ignore '@alma-oss/spirit-example*' --ignore '@alma-oss/spirit-design-tokens'",
-    "packages:build:web": "lerna run build --scope '@alma-oss/spirit-web*' --ignore=@lmc-eu/spirit-demo-app",
     "packages:publish": "lerna publish",
     "packages:diff": "lerna diff",
     "packages:changed": "lerna changed",
     "packages:list": "lerna ls",
     "post-changelog": "yarn workspace @alma-oss/spirit-post-changelog post-changelog",
-    "release": "npm-run-all --serial packages:build && packages:publish",
+    "release": "npm-run-all --serial build packages:publish",
     "version": "yarn format:fix:changelog"
   },
   "devDependencies": {
