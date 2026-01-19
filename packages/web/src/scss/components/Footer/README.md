@@ -131,6 +131,30 @@ This section is optional and consists of a [Flex][flex] layout with secondary li
 
 👉 Please mind the `aria-label` attribute on the `<nav>` element to provide an accessible label for the navigation.
 
+## Multiple Footers
+
+When you have multiple distinct footers (e.g., product and corporate), you can structure them semantically using `<section>` elements. Each footer section should be a `<section>` element with Footer classes, and the entire footer should be wrapped in a `<footer>` HTML tag.
+
+This pattern provides better HTML semantics and accessibility, as each section can have its own structure and styling:
+
+```html
+<footer>
+  <section class="bg-secondary pt-1400 pb-1200">
+    <!-- Product footer -->
+  </section>
+  <section class="bg-primary pt-1200 pb-1000">
+    <!-- Corporate footer -->
+  </section>
+</footer>
+```
+
+👉 Good to know:
+
+- The `<footer>` HTML tag provides semantic meaning and indicates the footer region of the page.
+- Each `<section>` element helps with document structure and accessibility.
+- Each section can have its own styling classes (`bg-*`, `pt-*`, `pb-*`, etc.) for visual separation.
+- This pattern is especially useful when you need different background colors or spacing for different sections of the footer.
+
 ## Text Alignment
 
 You can use utility classes to align text inside the `Footer`.
