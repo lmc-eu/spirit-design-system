@@ -1,0 +1,13 @@
+{
+  "name": "@alma-oss/spirit-docsite",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/docsite/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "outputs": ["{projectRoot}/.next"],
+      "dependsOn": ["^build"],
+      "cache": true
+    }
+  }
+}
