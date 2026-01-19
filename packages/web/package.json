@@ -99,14 +99,5 @@
     "sass": {
       "optional": true
     }
-  },
-  "nx": {
-    "targets": {
-      "build": {
-        "outputs": [
-          "{projectRoot}/dist"
-        ]
-      }
-    }
   }
 }

@@ -15,13 +15,7 @@ base = "/"
 publish = "/apps/demo/build/"
 
 # Default build command.
-# Default build command.
-command = """\
-    yarn lerna run --scope @alma-oss/spirit-design-tokens build --skip-nx-cache \
-    && yarn lerna run --scope @alma-oss/spirit-icons build --skip-nx-cache \
-    && cp -r packages/icons/dist/svg/. static/assets/icons/svg \
-    && yarn lerna run --scope @lmc-eu/spirit-demo-app build --skip-nx-cache \
-    """
+command = "yarn lerna run build --scope @lmc-eu/spirit-demo-app --include-dependencies"
 
 # Ignore builds on Netlify
 ignore = "node scripts/ignoreNetlifyBuilds.js"
@@ -32,5 +26,5 @@ ignore = """\
     git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF \
     ./packages/web-react/ \
     ./packages/web/ \
-    ./.gihub/workflows/ \
+    ./.github/workflows/ \
     """

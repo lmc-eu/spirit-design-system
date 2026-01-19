@@ -218,6 +218,7 @@ __metadata:
   resolution: "@alma-oss/spirit-storybook@workspace:apps/storybook"
   dependencies:
     "@alma-oss/spirit-design-tokens": "workspace:^"
+    "@alma-oss/spirit-icons": "workspace:^"
     "@alma-oss/spirit-web-react": "workspace:^"
     "@babel/core": "npm:7.26.10"
     "@storybook/addon-a11y": "npm:10.1.6"

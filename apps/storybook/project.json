@@ -1,0 +1,14 @@
+{
+  "name": "@alma-oss/spirit-storybook",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/storybook",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "outputs": ["{projectRoot}/build"],
+      "cache": true,
+      "dependsOn": ["^build", "@alma-oss/spirit-icons:build", "@alma-oss/spirit-web-react:build"]
+    }
+  },
+  "implicitDependencies": ["@alma-oss/spirit-icons", "@alma-oss/spirit-web-react"]
+}

@@ -132,14 +132,5 @@
     "figma:connect": "yarn figma connect",
     "figma:publish": "yarn figma connect publish",
     "figma:unpublish": "yarn figma connect unpublish"
-  },
-  "nx": {
-    "targets": {
-      "build": {
-        "outputs": [
-          "{projectRoot}/dist"
-        ]
-      }
-    }
   }
 }

@@ -1,0 +1,21 @@
+{
+  "name": "@lmc-eu/spirit-demo-app",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/demo",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "outputs": ["{projectRoot}/build"],
+      "cache": true,
+      "dependsOn": ["^build", "copy-icons"]
+    },
+    "copy-icons": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "cp -r packages/icons/dist/svg/. static/assets/icons/svg",
+        "cwd": "{workspaceRoot}"
+      },
+      "dependsOn": ["@alma-oss/spirit-icons:build"]
+    }
+  }
+}
