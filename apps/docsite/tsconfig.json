@@ -5,7 +5,7 @@
     "useUnknownInCatchVariables": false,
     "lib": ["dom", "dom.iterable", "esnext"],
     "strict": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "jsx": "preserve",
     "incremental": true,
     "plugins": [
@@ -14,8 +14,7 @@
       }
     ],
     "paths": {
-      "@local/*": ["./src/*"],
-      "@alma-oss/spirit-web-react": ["../../node_modules/@alma-oss/spirit-web-react/src"]
+      "@local/*": ["./src/*"]
     },
     "forceConsistentCasingInFileNames": true,
     "target": "esnext",
