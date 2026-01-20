@@ -1,5 +1,9 @@
+// 1. Mobile breakpoint does not have an infix and we do not need asymmetrical classes for it, because the
+//    default is already asymmetrical.
+
 @use '@tokens' as tokens;
 @use '../../settings/cursors';
+@use '../../tools/breakpoint';
 @use '../../tools/dictionaries';
 @use '../../tools/reset';
 @use '../../tools/string' as spirit-string;
@@ -33,14 +37,29 @@ $_component-name-infix: spirit-string.convert-pascal-case-to-kebab-case($_compon
     background-color: var(--#{tokens.$css-variable-prefix}local-background-color);
 }
 
-.ControlButton--symmetrical {
-    flex: none;
-    aspect-ratio: 1;
-    padding-inline: 0;
-}
-
 @include dictionaries.generate-sizes(
     $class-name: $_component-name,
     $dictionary-values: theme.$size-dictionary,
     $config: theme.$size-config
 );
+
+@each $breakpoint-name, $breakpoint-value in theme.$breakpoints {
+    $infix: breakpoint.get-modifier('infix', $breakpoint-name, $breakpoint-value);
+
+    @include breakpoint.up($breakpoint-value) {
+        .ControlButton--#{$infix}symmetrical {
+            flex: none;
+            aspect-ratio: 1;
+            padding-inline: 0;
+        }
+
+        // 1.
+        @if $infix != '' {
+            .ControlButton--#{$infix}asymmetrical {
+                flex: auto;
+                aspect-ratio: auto;
+                padding-inline: var(--#{tokens.$css-variable-prefix}#{$_component-name-infix}-padding-x);
+            }
+        }
+    }
+}
