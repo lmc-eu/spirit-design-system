@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { type ElementType } from 'react';
-import { useClassNamePrefix } from '../../hooks';
+import { useClassNamePrefix, useSymmetry } from '../../hooks';
 import { type ControlButtonSize, type SpiritControlButtonProps } from '../../types';
 import { applySize, compose } from '../../utils';
 
@@ -22,10 +22,11 @@ export function useControlButtonStyleProps<T extends ElementType = 'button', S =
   const controlButtonClass = useClassNamePrefix('ControlButton');
   const controlButtonBackgroundClass = `${controlButtonClass}--hasBackground`;
   const controlButtonDisabledClass = `${controlButtonClass}--disabled`;
-  const controlButtonSymmetricalClass = `${controlButtonClass}--symmetrical`;
   const dynamicColorBackgroundInteractiveClass = useClassNamePrefix('dynamic-color-background-interactive');
   const dynamicColorBorderClass = useClassNamePrefix('dynamic-color-border');
   const accessibilityTapTargetClass = useClassNamePrefix('accessibility-tap-target');
+
+  const { symmetricalClassName } = useSymmetry(controlButtonClass, isSymmetrical);
 
   const classProps = classNames(
     controlButtonClass,
@@ -34,10 +35,10 @@ export function useControlButtonStyleProps<T extends ElementType = 'button', S =
     accessibilityTapTargetClass,
     {
       [controlButtonDisabledClass]: isDisabled,
-      [controlButtonSymmetricalClass]: isSymmetrical,
       [controlButtonBackgroundClass]: !isSubtle,
       [dynamicColorBorderClass]: !isSubtle,
     },
+    symmetricalClassName,
   );
 
   return {

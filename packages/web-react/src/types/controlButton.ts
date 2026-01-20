@@ -1,5 +1,12 @@
 import { type ComponentPropsWithRef, type ElementType } from 'react';
-import type { ButtonType, ChildrenProps, ClickEvents, SizesDictionaryType, StyleProps } from './shared';
+import type {
+  ButtonType,
+  ChildrenProps,
+  ClickEvents,
+  SingleOrResponsive,
+  SizesDictionaryType,
+  StyleProps,
+} from './shared';
 
 /** @deprecated "SizesDictionaryType" fallback will be removed in the next major version. */
 export type ControlButtonSize<S> = keyof S extends never ? SizesDictionaryType : 'small' | 'medium' | 'large' | S;
@@ -9,7 +16,7 @@ export interface ControlButtonBaseProps<S = void> extends ChildrenProps, StylePr
   /** Whether the button is in a subtle variant (without border). */
   isSubtle?: boolean;
   /** Whether the button should be symmetrical. */
-  isSymmetrical?: boolean;
+  isSymmetrical?: SingleOrResponsive<boolean>;
   /** The size of the button. */
   size?: ControlButtonSize<S>;
 }

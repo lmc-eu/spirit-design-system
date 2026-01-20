@@ -8,7 +8,7 @@ jest.mock('../../../hooks/useIcon');
 
 describe('ControlButton accessibility', () => {
   const ControlButtonTest = (props: SpiritControlButtonProps) => (
-    <ControlButton {...props} aria-label="Action">
+    <ControlButton {...props} isSymmetrical aria-label="Action">
       <Icon name="close" />
     </ControlButton>
   );

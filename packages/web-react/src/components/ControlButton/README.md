@@ -18,7 +18,7 @@ Do you need size consistency with form controls or a heavier visual? Use [Button
 ```jsx
 import { ControlButton, Icon } from '@alma-oss/spirit-web-react';
 
-<ControlButton aria-label="Close">
+<ControlButton isSymmetrical aria-label="Close">
   <Icon name="close" />
 </ControlButton>;
 ```
@@ -30,7 +30,7 @@ import { ControlButton, Icon } from '@alma-oss/spirit-web-react';
 The default variant with a visible border:
 
 ```jsx
-<ControlButton aria-label="Close">
+<ControlButton isSymmetrical aria-label="Close">
   <Icon name="close" />
 </ControlButton>
 ```
@@ -40,7 +40,7 @@ The default variant with a visible border:
 Remove the border by adding `isSubtle`:
 
 ```jsx
-<ControlButton isSubtle aria-label="Close">
+<ControlButton isSubtle isSymmetrical aria-label="Close">
   <Icon name="close" />
 </ControlButton>
 ```
@@ -50,16 +50,42 @@ Remove the border by adding `isSubtle`:
 ControlButton supports three sizes:
 
 ```jsx
-<ControlButton size="small" aria-label="Close">
+<ControlButton size="small" isSymmetrical aria-label="Close">
   <Icon name="close" />
 </ControlButton>
 
 {/* Default, i.e. medium size */}
-<ControlButton aria-label="Close">
+<ControlButton isSymmetrical aria-label="Close">
   <Icon name="close" />
 </ControlButton>
 
-<ControlButton size="large" aria-label="Close">
+<ControlButton size="large" isSymmetrical aria-label="Close">
+  <Icon name="close" />
+</ControlButton>
+```
+
+## Symmetrical ControlButton
+
+Use the `isSymmetrical` prop to make the control button have equal width and height. This is typically used for icon-only buttons.
+
+```jsx
+<ControlButton isSymmetrical aria-label="Close">
+  <Icon name="close" />
+</ControlButton>
+```
+
+You can define responsive values for the `isSymmetrical` prop using an object:
+
+```jsx
+<ControlButton isSymmetrical={{ tablet: true }} aria-label="Close">
+  <Icon name="close" />
+</ControlButton>
+```
+
+To turn off symmetrical from a specific breakpoint onwards, set the value to `false`:
+
+```jsx
+<ControlButton isSymmetrical={{ mobile: true, tablet: false }} aria-label="Close">
   <Icon name="close" />
 </ControlButton>
 ```
@@ -71,7 +97,7 @@ Set a background and text color on the parent element:
 
 ```jsx
 <Box backgroundColor="emotion-informative-basic" textColor="emotion-informative-subtle">
-  <ControlButton aria-label="Close">
+  <ControlButton isSymmetrical aria-label="Close">
     <Icon name="close" />
   </ControlButton>
 </Box>
@@ -84,24 +110,24 @@ This works with any pair of available background and text colors.
 For icon-only buttons, always include an accessible label using the `aria-label` attribute:
 
 ```jsx
-<ControlButton aria-label="Close dialog">
+<ControlButton isSymmetrical aria-label="Close dialog">
   <Icon name="close" />
 </ControlButton>
 ```
 
 ## API
 
-| Name            | Type                               | Default  | Required | Description                                         |
-| --------------- | ---------------------------------- | -------- | -------- | --------------------------------------------------- |
-| `children`      | `ReactNode`                        | `null`   | ✕        | Content of the button                               |
-| `elementType`   | `ElementType`                      | `button` | ✕        | HTML element type or React component                |
-| `isDisabled`    | `bool`                             | `false`  | ✕        | Whether the button is disabled                      |
-| `isSubtle`      | `bool`                             | `false`  | ✕        | Whether the button is in subtle variant (no border) |
-| `isSymmetrical` | `bool`                             | `false`  | ✕        | Whether the button should be symmetrical            |
-| `onClick`       | `(event: ClickEvent) => void`      | —        | ✕        | Click handler                                       |
-| `ref`           | `ForwardedRef<HTMLButtonElement>`  | —        | ✕        | Button element reference                            |
-| `size`          | [Size dictionary][dictionary-size] | `medium` | ✕        | Size of the button                                  |
-| `type`          | \[`button` \| `submit` \| `reset`] | `button` | ✕        | Type of the button                                  |
+| Name            | Type                               | Default  | Required | Description                                                                                                           |
+| --------------- | ---------------------------------- | -------- | -------- | --------------------------------------------------------------------------------------------------------------------- |
+| `children`      | `ReactNode`                        | `null`   | ✕        | Content of the button                                                                                                 |
+| `elementType`   | `ElementType`                      | `button` | ✕        | HTML element type or React component                                                                                  |
+| `isDisabled`    | `bool`                             | `false`  | ✕        | Whether the button is disabled                                                                                        |
+| `isSubtle`      | `bool`                             | `false`  | ✕        | Whether the button is in subtle variant (no border)                                                                   |
+| `isSymmetrical` | \[`bool` \| `Responsive<bool>`]    | `false`  | ✕        | Whether the button should be symmetrical, use object to set responsive values, e.g. `{ mobile: true, tablet: false }` |
+| `onClick`       | `(event: ClickEvent) => void`      | —        | ✕        | Click handler                                                                                                         |
+| `ref`           | `ForwardedRef<HTMLButtonElement>`  | —        | ✕        | Button element reference                                                                                              |
+| `size`          | [Size dictionary][dictionary-size] | `medium` | ✕        | Size of the button                                                                                                    |
+| `type`          | \[`button` \| `submit` \| `reset`] | `button` | ✕        | Type of the button                                                                                                    |
 
 Check the web implementation of the [ControlButton][web-control-button] component for more information.
 Depending on `elementType`, more props and attributes may be passed to the component.
@@ -116,7 +142,7 @@ The ControlButton component can be rendered as a custom element using the `eleme
 This is useful when you need the styling of a ControlButton but the semantics of another element, such as a link:
 
 ```jsx
-<ControlButton elementType="a" href="/close" aria-label="Close">
+<ControlButton elementType="a" href="/close" isSymmetrical aria-label="Close">
   <Icon name="close" />
 </ControlButton>
 ```
@@ -126,7 +152,7 @@ You can even use a custom component, such as a Link component from a routing lib
 ```jsx
 import { Link } from 'react-router-dom';
 
-<ControlButton elementType={Link} to="/close" aria-label="Close">
+<ControlButton elementType={Link} to="/close" isSymmetrical aria-label="Close">
   <Icon name="close" />
 </ControlButton>;
 ```

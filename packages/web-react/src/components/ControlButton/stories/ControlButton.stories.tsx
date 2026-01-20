@@ -41,10 +41,15 @@ const meta: Meta<typeof ControlButton> = {
       },
     },
     isSymmetrical: {
-      control: 'boolean',
+      control: 'object',
+      description:
+        'Whether the button should be symmetrical. Can be a boolean or responsive object, e.g. `{ mobile: true, tablet: false }`',
       table: {
         defaultValue: {
           summary: 'false',
+        },
+        type: {
+          summary: 'bool | Responsive<bool>',
         },
       },
     },
