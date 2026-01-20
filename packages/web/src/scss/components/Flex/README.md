@@ -181,7 +181,7 @@ This will set the spacing to `var(--spirit-space-800)` for all breakpoints.
 ℹ️ We highly discourage from using absolute values like `--flex-spacing-x: 1rem`. It will work, but you will lose
 the consistency between the spacing and the design tokens.
 
-If you need to set custom spacing from a specific breakpoint, use the `--flex-spacing-x-{breakpoint}` or the `--flex-spacing-y-{breakpoint}`
+If you need to set custom spacing from a specific [breakpoint][dictionary-breakpoint], use the `--flex-spacing-x-{breakpoint}` or the `--flex-spacing-y-{breakpoint}`
 property, e.g. `--flex-spacing-x-tablet: var(--spirit-space-800)`. The breakpoint value must be one of the breakpoint tokens
 except for the `mobile` breakpoint you don't need the suffix at all. The spacing is set to all larger breakpoints
 automatically if you don't set them explicitly. E.g. if you set only `--flex-spacing-x-tablet: var(--spirit-space-800)`
@@ -214,6 +214,7 @@ Custom spacing for each breakpoint:
 </div>
 ```
 
+[dictionary-breakpoint]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#breakpoint
 [mdn-display-flex]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout
 [mdn-display-grid]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment

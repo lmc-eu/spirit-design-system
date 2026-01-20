@@ -117,7 +117,7 @@ building blocks to use:
    1. mobile-only actions, including toggle button by default,
    2. desktop-only actions with primary and secondary action slots.
 2. Inside Header Dialog:
-   1. primary actions slot (all breakpoints),
+   1. primary actions slot (all [breakpoints][dictionary-breakpoint]),
    2. secondary actions slot (all breakpoints).
 
 ## Header Component
@@ -497,6 +497,7 @@ And the complete Header Dialog:
 ✍️ Please do feel free to let us know should you believe this component lacks
 some important capabilities. Thank you! 🙏
 
+[dictionary-breakpoint]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#breakpoint
 [readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#deprecations
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
 [mdn-dialog]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog

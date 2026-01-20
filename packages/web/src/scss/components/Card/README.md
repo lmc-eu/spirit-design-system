@@ -71,7 +71,7 @@ Card can be displayed in a vertical, horizontal, or reversed horizontal layout.
 
 ### Responsive Card Layout
 
-Card layout can be adjusted based on the breakpoint. To create a responsive layout, use the `tablet` and `desktop`
+Card layout can be adjusted based on the [breakpoint][dictionary-breakpoint]. To create a responsive layout, use the `tablet` and `desktop`
 infixes, e.g. `Card--tablet--horizontal` or `Card--desktop--vertical`.
 
 ```html
@@ -466,6 +466,7 @@ When you put it all together:
 ```
 
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
+[dictionary-breakpoint]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#breakpoint
 [dictionary-color]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#color
 [dictionary-size]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#size
 [grid]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Grid/README.md

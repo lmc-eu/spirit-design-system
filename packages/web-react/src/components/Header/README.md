@@ -109,7 +109,7 @@ building blocks to use:
    1. mobile-only actions, including toggle button by default,
    2. desktop-only actions with primary and secondary action slots.
 2. Inside Header Dialog:
-   1. primary actions slot (all breakpoints),
+   1. primary actions slot (all [breakpoints][dictionary-breakpoint]),
    2. secondary actions slot (all breakpoints).
 
 ## Header
@@ -594,6 +594,7 @@ const handleClose = () => setOpen(false);
 This component uses the `Icon` component internally. To ensure correct rendering,
 please refer to the [Icon component documentation][web-react-icon-documentation] for setup instructions.
 
+[dictionary-breakpoint]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#breakpoint
 [mdn-a-element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
 [mdn-api-html-element]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
 [mdn-button-element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button

@@ -90,7 +90,7 @@ This will set the spacing to `var(--spirit-space-800)` for all breakpoints.
 ℹ️ We highly discourage you from using absolute values like `--tabs-spacing: 1rem`. It will work, but you will lose
 the consistency between the spacing and the design tokens.
 
-If you need to set custom spacing from a specific breakpoint, use the `--tabs-spacing-{breakpoint}` property,
+If you need to set custom spacing from a specific [breakpoint][dictionary-breakpoint], use the `--tabs-spacing-{breakpoint}` property,
 e.g. `--tabs-spacing-tablet: var(--spirit-space-800)`. The breakpoint value must be one of the breakpoint tokens
 except for the `mobile` breakpoint you don't need the suffix at all. The spacing is set to all larger breakpoints
 automatically if you don't set them explicitly. E.g. if you set only `--tabs-spacing-tablet: var(--spirit-space-800)`
@@ -131,4 +131,5 @@ plugins.
 
 Or feel free to write the controlling script yourself.
 
+[dictionary-breakpoint]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#breakpoint
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md

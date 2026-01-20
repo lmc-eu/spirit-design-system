@@ -62,10 +62,10 @@ Data attribute `data-spirit-more` is deprecated and will be removed in the next 
 
 ## Wrapper Attributes
 
-| Name                     | Type                     | Default | Required | Description                                                              |
-| ------------------------ | ------------------------ | ------- | -------- | ------------------------------------------------------------------------ |
-| `data-spirit-breakpoint` | \[`tablet` \| `desktop`] | —       | ✕        | Breakpoint on which the collapsed content is forced to reveal \*         |
-| `data-spirit-parent`     | `string`                 | —       | ✕        | A parent element selector that ensures that only one item is opened \*\* |
+| Name                     | Type                     | Default | Required | Description                                                                               |
+| ------------------------ | ------------------------ | ------- | -------- | ----------------------------------------------------------------------------------------- |
+| `data-spirit-breakpoint` | \[`tablet` \| `desktop`] | —       | ✕        | [Breakpoint][dictionary-breakpoint] on which the collapsed content is forced to reveal \* |
+| `data-spirit-parent`     | `string`                 | —       | ✕        | A parent element selector that ensures that only one item is opened \*\*                  |
 
 There can be several triggers, the same rules apply to each.
 
@@ -129,5 +129,6 @@ Please consult [main package README][web-readme] for how to include JavaScript p
 
 Or feel free to write controlling scripts yourself.
 
+[dictionary-breakpoint]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#breakpoint
 [readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#deprecations
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md

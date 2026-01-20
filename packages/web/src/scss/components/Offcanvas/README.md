@@ -53,11 +53,11 @@ const offcanvasList = offcanvasElementList.map(function (offcanvasElement) {
 Options can be passed via data attributes or JavaScript.
 For data attributes, append the option name to `data-spirit-`, as in `data-spirit-breakpoint-desktop="1280"`.
 
-| Name                      | Type      | Default | Description                                                       |
-| ------------------------- | --------- | ------- | ----------------------------------------------------------------- |
-| `breakpoint-desktop`      | `string`  | 1280 \* | Desktop breakpoint on which opened Offcanvas automatically closes |
-| `closableOnBackdropClick` | `boolean` | `true`  | Whether clicking on the backdrop closes the Offcanvas             |
-| `closableOnEscapeKey`     | `boolean` | `true`  | Whether pressing the Escape key closes the Offcanvas              |
+| Name                      | Type      | Default | Description                                                                                |
+| ------------------------- | --------- | ------- | ------------------------------------------------------------------------------------------ |
+| `breakpoint-desktop`      | `string`  | 1280 \* | Desktop [breakpoint][dictionary-breakpoint] on which opened Offcanvas automatically closes |
+| `closableOnBackdropClick` | `boolean` | `true`  | Whether clicking on the backdrop closes the Offcanvas                                      |
+| `closableOnEscapeKey`     | `boolean` | `true`  | Whether pressing the Escape key closes the Offcanvas                                       |
 
 \*: Default value of the design token `other.breakpoint.desktop`. Can be also changed via `--spirit-breakpoint-desktop` CSS custom property.
 This CSS property is pre-defined in our foundation CSS.
@@ -99,4 +99,5 @@ myOffcanvas.addEventListener('hidden.offcanvas', function () {
 });
 ```
 
+[dictionary-breakpoint]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#breakpoint
 [js-plugin-readme]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web#javascript

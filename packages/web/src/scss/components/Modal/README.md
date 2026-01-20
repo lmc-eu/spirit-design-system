@@ -149,7 +149,7 @@ ModalBody holds the actual content of the Modal.
 ModalFooter is the place for actions represented by the Button component. While there always must be a primary Button,
 secondary actions are optional.
 
-👉 Please note the actions are _visually_ ordered from right to left from the tablet breakpoint up. However, the
+👉 Please note the actions are _visually_ ordered from right to left from the tablet [breakpoint][dictionary-breakpoint] up. However, the
 _actual_ order in code is followed when users tab over the interface.
 
 ℹ️ We strongly recommend including the ModalFooter with at least one primary action in every use case to facilitate
@@ -451,6 +451,7 @@ Please consult the [main package README][web-readme] for how to include JavaScri
 
 Or feel free to write controlling scripts yourself.
 
+[dictionary-breakpoint]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#breakpoint
 [mdn-dialog]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
 [mdn-dialog-form]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog#usage_notes
 [scroll-view]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/ScrollView/README.md

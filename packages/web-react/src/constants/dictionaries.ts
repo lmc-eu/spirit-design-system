@@ -37,7 +37,7 @@ export const TextAlignments = {
   RIGHT: 'right',
 } as const;
 
-/* Border Properties */
+/* Border */
 export const BorderColors = {
   BASIC: 'basic',
 } as const;

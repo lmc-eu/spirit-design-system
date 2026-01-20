@@ -1,16 +1,20 @@
 # Dictionaries
 
-This project uses `dictionaries` to unify props between different components.
+This project uses **dictionaries** to unify props across components.
 
-- Every dictionary is always a range. E.g. the dictionary Size content Small, Medium, Large.
-- If at least 1 item is used from the dictionary in a component's property, all the others should be used. E.g. if there are button sizes Medium and Large, there should also be the size Small.
-- A given property is not a dictionary by itself. The property is contained in the dictionary. That is, the Action Primary Default color is contained in the Action Primary dictionary entry.
-- Products can extend their dictionaries.
+- A dictionary defines a **complete set of allowed values.** For example, the [Size](#size) dictionary contains `small`, `medium`, and `large`.
+- When a component uses a dictionary, it should support **all values from that dictionary**. For example, if a Button supports `medium` and `large` sizes, it should also support `small`.
+- **A property value belongs to a dictionary,** not the other way around. For example, the `primary` color value is part of the [Action Color](#color) dictionary.
+- **Some dictionaries are generated from design tokens.** For example, the [Breakpoint](#breakpoint) dictionary is generated from the Breakpoint design token.
+- **Products can extend dictionaries** with additional values.
 
 ## List of Dictionaries
 
+🎨 = Generated from design tokens
+
 - [Alignment](#alignment)
-- [Border Properities](#border-properties)
+- [Border](#border)
+- [Breakpoint](#breakpoint)
 - [Color](#color)
 - [Emphasis](#emphasis)
 - [Gradient](#gradient)
@@ -29,24 +33,30 @@ This project uses `dictionaries` to unify props between different components.
 | AlignmentYExtended | AlignmentY Dictionary + `stretch`, `baseline`      | AlignmentYExtended |
 | TextAlignment      | `left`, `center`, `right`                          | TextAlignment      |
 
-### Border Properties
+### Border
 
-| Dictionary    | Values                                         | Code name    |
-| ------------- | ---------------------------------------------- | ------------ |
-| Border Color  | `basic`                                        | BorderColor  |
-| Border Radius | `0`, `100`, `200`, `300`, `400`, `500`, `full` | BorderRadius |
-| Border Style  | `solid`, `dotted`, `dashed`                    | BorderStyle  |
-| Border Width  | `0`, `100`, `200`                              | BorderWidth  |
+| Dictionary       | Values                                         | Code name    |
+| ---------------- | ---------------------------------------------- | ------------ |
+| Border Color     | `basic`                                        | BorderColor  |
+| Border Radius 🎨 | `0`, `100`, `200`, `300`, `400`, `500`, `full` | BorderRadius |
+| Border Style     | `solid`, `dotted`, `dashed`                    | BorderStyle  |
+| Border Width     | `0`, `100`, `200`                              | BorderWidth  |
+
+### Breakpoint
+
+| Dictionary    | Values                        | Code name  |
+| ------------- | ----------------------------- | ---------- |
+| Breakpoint 🎨 | `mobile`, `tablet`, `desktop` | Breakpoint |
 
 ### Color
 
-| Dictionary             | Values                                        | Code name            |
-| ---------------------- | --------------------------------------------- | -------------------- |
-| Background Color       | `primary`, `secondary`, `tertiary`            | BackgroundColor      |
-| Component Button Color | `primary`, `secondary`, `tertiary`, `plain`   | ComponentButtonColor |
-| Emotion Color          | `success`, `informative`, `warning`, `danger` | EmotionColor         |
-| Link Color             | `primary`, `secondary`, `tertiary`            | LinkColor            |
-| Text Color             | `primary`, `secondary`, `tertiary`            | TextColor            |
+| Dictionary                | Values                                        | Code name            |
+| ------------------------- | --------------------------------------------- | -------------------- |
+| Background Color          | `primary`, `secondary`, `tertiary`            | BackgroundColor      |
+| Component Button Color 🎨 | `primary`, `secondary`, `tertiary`, `plain`   | ComponentButtonColor |
+| Emotion Color 🎨          | `success`, `informative`, `warning`, `danger` | EmotionColor         |
+| Link Color                | `primary`, `secondary`, `tertiary`            | LinkColor            |
+| Text Color 🎨             | `primary`, `secondary`, `tertiary`            | TextColor            |
 
 ### Intensity
 

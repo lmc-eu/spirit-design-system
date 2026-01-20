@@ -83,7 +83,7 @@ Example:
 ### Responsive Alignment
 
 The Toast container can be aligned differently on different screen sizes. Use the `Toast--<breakpoint>--<alignmentX/Y>`
-modifiers to change the alignment of the Toast component starting on a specific screen size, e.g. `Toast--tablet--top`,
+modifiers to change the alignment of the Toast component starting on a specific [breakpoint][dictionary-breakpoint], e.g. `Toast--tablet--top`,
 `Tablet--desktop--left`, etc. (leave the breakpoint empty for alignment on all screen sizes, including mobile screens).
 
 Example:
@@ -464,6 +464,7 @@ myToastEl.addEventListener('hidden.toast', () => {
 toast.hide();
 ```
 
+[dictionary-breakpoint]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#breakpoint
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
 [mdn-role-log]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/log_role
 [mdn-aria-live]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-live

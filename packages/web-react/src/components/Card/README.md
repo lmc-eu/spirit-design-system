@@ -71,7 +71,7 @@ Card can be displayed in a vertical, horizontal, or reversed horizontal layout.
 
 ### Responsive Card Layout
 
-Pass an object to props to set different values for different breakpoints. The values will
+Pass an object to props to set different values for different [breakpoints][dictionary-breakpoint]. The values will
 be applied from mobile to desktop and if not set for a breakpoint, the value from the
 previous breakpoint will be used.
 
@@ -489,6 +489,7 @@ When you put it all together:
 ℹ️ A big shout-out to [Ondřej Pohl][ondrej-pohl] for sharing many of these best practices!
 
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
+[dictionary-breakpoint]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#breakpoint
 [dictionary-color]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#color
 [dictionary-direction]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#direction
 [dictionary-intensity]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#intensity

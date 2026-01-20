@@ -1,6 +1,6 @@
 # Grid
 
-Single column on all breakpoints:
+Single column on all [breakpoints][dictionary-breakpoint]:
 
 ```html
 <div class="Grid Grid--cols-1 Grid--alignmentXStretch Grid--alignmentYStretch">
@@ -342,5 +342,6 @@ variables.
 ```
 
 [alignment-dictionary]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
+[dictionary-breakpoint]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#breakpoint
 [css-tricks-grid]: https://css-tricks.com/snippets/css/complete-guide-grid/
 [grid-mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout
