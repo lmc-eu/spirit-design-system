@@ -59,7 +59,7 @@ export type AlignmentYExtendedDictionaryType<T = undefined> =
 export type TextAlignmentDictionaryKeys = keyof typeof TextAlignments;
 export type TextAlignmentDictionaryType<T = undefined> = (typeof TextAlignments)[TextAlignmentDictionaryKeys] | T;
 
-/* Border Properties */
+/* Border */
 export type BorderColorsDictionaryKeys = keyof typeof BorderColors;
 export type BorderColorsDictionaryType<C = undefined> = (typeof BorderColors)[BorderColorsDictionaryKeys] | C;
 

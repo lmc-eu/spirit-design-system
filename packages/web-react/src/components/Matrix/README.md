@@ -19,7 +19,7 @@ As of now, the following components are compatible with the Matrix layout:
 ## Custom Spacing
 
 You can use the `spacing` prop to apply custom spacing between items in both horizontal and vertical directions. The prop
-accepts either a spacing token (e.g. `space-100`) or an object with breakpoint keys and spacing token values.
+accepts either a spacing token (e.g. `space-100`) or an object with [breakpoint][dictionary-breakpoint] keys and spacing token values.
 
 You can set custom spacing in the horizontal (x-axis) and vertical (y-axis) direction separately using the `spacingX` and `spacingY` props.
 
@@ -121,6 +121,7 @@ On top of the API options, the components accept [additional attributes][readme-
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
+[dictionary-breakpoint]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#breakpoint
 [grid]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Grid/README.md
 [jira-pricing-safari-bug]: https://jira.almacareer.tech/browse/DS-2051
 [mdn-grid]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout

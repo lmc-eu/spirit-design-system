@@ -120,7 +120,7 @@ values or `auto`. We use these props to set global CSS utility classes on the ro
 - `hideOn` - Hide the component only at specific breakpoint(s)
 - `hideFrom` - Hide the component from a specific breakpoint and up
 
-The `hideOn` prop accepts either a single breakpoint token (eg. `mobile`, `tablet`, `desktop`) or an array of breakpoint tokens.
+The `hideOn` prop accepts either a single [breakpoint token][dictionary-breakpoint] (e.g. `mobile`, `tablet`, `desktop`), or an array of breakpoint tokens.
 The `hideFrom` prop accepts a single breakpoint token.
 The component will be hidden from the specified breakpoints up using CSS display utilities.
 
@@ -232,6 +232,7 @@ See the [LICENSE](LICENSE.md) file for information.
 
 [accessibility-testing]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/contribution/accessibility-testing.md
 [all-deprecations]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/DEPRECATIONS.md
+[dictionary-breakpoint]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#breakpoint
 [examples]: https://spirit-design-system-storybook.netlify.app
 [react-controlled]: https://reactjs.org/docs/forms.html#controlled-components
 [react-uncontrolled]: https://reactjs.org/docs/uncontrolled-components.html

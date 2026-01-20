@@ -67,7 +67,7 @@ const selectTab = useCallback((id) => {
 ## Custom Spacing
 
 You can use the `spacing` prop to apply custom spacing between items. The prop
-accepts either a spacing token (e.g. `space-100`) or an object with breakpoint keys and spacing token values.
+accepts either a spacing token (e.g. `space-100`) or an object with [breakpoint][dictionary-breakpoint] keys and spacing token values.
 
 Default spacing:
 
@@ -180,6 +180,7 @@ and [escape hatches][readme-escape-hatches].
 
 For detailed information see [Tabs](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Tabs/README.md) component.
 
+[dictionary-breakpoint]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#breakpoint
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props

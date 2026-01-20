@@ -56,7 +56,7 @@ alignment API consistency.
 
 ## Responsive Direction
 
-To create a responsive layout, pass an object as the value for the `direction` property, using breakpoint keys to specify different layouts for each screen size.
+To create a responsive layout, pass an object as the value for the `direction` property, using [breakpoint][dictionary-breakpoint] keys to specify different layouts for each screen size.
 
 ```jsx
 <Flex direction={{ mobile: 'vertical', tablet: 'horizontal' }}>
@@ -190,6 +190,7 @@ If you need more control over the styling of a component, you can use [style pro
 and [escape hatches][readme-escape-hatches].
 
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
+[dictionary-breakpoint]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#breakpoint
 [dictionary-direction]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#direction
 [mdn-display-flex]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout
 [mdn-display-grid]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout

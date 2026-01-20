@@ -26,7 +26,7 @@ The PartnerLogo component is available in [sizes][dictionary-size].
 
 ## Responsive Size
 
-To create a PartnerLogo with responsive size, pass an object as the value for the `size` property, using breakpoint keys to specify different size for each screen size.
+To create a PartnerLogo with responsive size, pass an object as the value for the `size` property, using [breakpoint][dictionary-breakpoint] keys to specify different size for each screen size.
 
 ```jsx
 <PartnerLogo size={{ mobile: 'small', tablet: 'medium', desktop: 'large' }}>{/* Logo goes here */}</PartnerLogo>
@@ -90,6 +90,7 @@ The components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
+[dictionary-breakpoint]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#breakpoint
 [dictionary-size]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#size
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches

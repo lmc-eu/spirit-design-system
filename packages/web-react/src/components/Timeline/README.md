@@ -40,7 +40,7 @@ The default size is `small`, so you can omit the prop if you want to use the def
 </Timeline>
 ```
 
-You can set different marker sizes for different breakpoints using a responsive object:
+You can set different marker sizes for different [breakpoints][dictionary-breakpoint] using a responsive object:
 
 ```jsx
 <Timeline size={{ mobile: 'small', tablet: 'medium', desktop: 'large' }}>{/* TimelineStep content */}</Timeline>
@@ -163,13 +163,13 @@ TimelineMarker supports design token-based color props for consistent theming ac
 
 ### API
 
-| Name              | Type                                                                                                                                                                                                            | Default  | Required | Description                                                                |
-| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------- | -------------------------------------------------------------------------- |
-| `backgroundColor` | \[[Background Color dictionary][dictionary-color] \| [AccentColorNamesType][readme-generated-types] \| [EmotionColorNamesType][readme-generated-types] ✕ [Intensity dictionary][dictionary-intensity]]          | —        | ✕        | Background color of the marker (only applied with `number`/`dot` variants) |
-| `borderColor`     | \[[Border Color dictionary][dictionary-border-properities] \| [AccentColorNamesType][readme-generated-types] \| [EmotionColorNamesType][readme-generated-types] ✕ [Intensity dictionary][dictionary-intensity]] | —        | ✕        | Border color of the marker (only applied with `number`/`dot` variants)     |
-| `children`        | `ReactNode`                                                                                                                                                                                                     | —        | ✕        | Marker content (ignored when `variant="dot"`)                              |
-| `textColor`       | \[[TextColorNamesType][readme-generated-types] \| [AccentColorNamesType][readme-generated-types] \| [EmotionColorNamesType][readme-generated-types] ✕ [Intensity dictionary][dictionary-intensity]]             | —        | ✕        | Text color of the marker (applies to all marker types)                     |
-| `variant`         | \[`number` \| `dot` \| `icon`]                                                                                                                                                                                  | `number` | ✕        | Marker variant type                                                        |
+| Name              | Type                                                                                                                                                                                                   | Default  | Required | Description                                                                |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- | -------- | -------------------------------------------------------------------------- |
+| `backgroundColor` | \[[Background Color dictionary][dictionary-color] \| [AccentColorNamesType][readme-generated-types] \| [EmotionColorNamesType][readme-generated-types] ✕ [Intensity dictionary][dictionary-intensity]] | —        | ✕        | Background color of the marker (only applied with `number`/`dot` variants) |
+| `borderColor`     | \[[Border Color dictionary][dictionary-border] \| [AccentColorNamesType][readme-generated-types] \| [EmotionColorNamesType][readme-generated-types] ✕ [Intensity dictionary][dictionary-intensity]]    | —        | ✕        | Border color of the marker (only applied with `number`/`dot` variants)     |
+| `children`        | `ReactNode`                                                                                                                                                                                            | —        | ✕        | Marker content (ignored when `variant="dot"`)                              |
+| `textColor`       | \[[TextColorNamesType][readme-generated-types] \| [AccentColorNamesType][readme-generated-types] \| [EmotionColorNamesType][readme-generated-types] ✕ [Intensity dictionary][dictionary-intensity]]    | —        | ✕        | Text color of the marker (applies to all marker types)                     |
+| `variant`         | \[`number` \| `dot` \| `icon`]                                                                                                                                                                         | `number` | ✕        | Marker variant type                                                        |
 
 ℹ️ The marker size is controlled by the `size` prop on the parent `Timeline` component. The icon or text inside the marker automatically adjusts proportionally with the marker size.
 
@@ -278,7 +278,8 @@ Connector lines between timeline items are created using CSS pseudo-elements (::
 
 When using the Timeline without headings, the TimelineContent automatically adjusts its grid placement to span both rows and adds appropriate padding to ensure proper alignment with the TimelineMarker.
 
-[dictionary-border-properities]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#border-properties
+[dictionary-border]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#border
+[dictionary-breakpoint]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#breakpoint
 [dictionary-color]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#color
 [dictionary-intensity]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#intensity
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes

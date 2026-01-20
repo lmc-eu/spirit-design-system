@@ -9,7 +9,7 @@ The Box component is a simple container around content or other components.
 ## Border
 
 You can define border width, color, style using the utility classes `border-<width>`, `border-<color>`, `border-<style>`
-and radius using utility class `rounded-<radius>`. Use `rounded-<breakpoint>-<radius>` classes if you need the radius responsive.
+and radius using utility class `rounded-<radius>`. Use `rounded-<breakpoint>-<radius>` classes if you need the radius responsive for different [breakpoints][dictionary-breakpoint].
 
 ```html
 <div class="border-basic border-100 rounded-200 border-solid border-dashed">Without radius</div>
@@ -78,3 +78,5 @@ Responsive values can be set for each prop using utility classes. For example, `
   Responsive background gradient
 </div>
 ```
+
+[dictionary-breakpoint]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#breakpoint

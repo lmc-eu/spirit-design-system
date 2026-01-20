@@ -86,7 +86,7 @@ For detailed information see [Skeleton][skeleton] component.
 
 [skeleton]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Skeleton/README.md
 [dictionary-size]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#size
-[radius-size]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#border-properties
+[radius-size]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#border
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props

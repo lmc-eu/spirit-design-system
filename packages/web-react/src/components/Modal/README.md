@@ -124,15 +124,15 @@ By default, the docked dialog on mobile screens shrinks to fit the height of its
 
 ### API
 
-| Name                 | Type                    | Default   | Required | Description                                                                                                               |
-| -------------------- | ----------------------- | --------- | -------- | ------------------------------------------------------------------------------------------------------------------------- |
-| `children`           | `ReactNode`             | —         | ✕        | Children node                                                                                                             |
-| `elementType`        | \[`article` \| `form`]  | `article` | ✕        | ModalDialog element type                                                                                                  |
-| `height`             | \[`string` \| `object`] | `null`    | ✕        | Height of the modal. Accepts any valid CSS value or an object with breakpoint keys for responsive values                  |
-| `isDockedOnMobile`   | `bool`                  | `false`   | ✕        | Dock the ModalDialog to the bottom of the screen on mobile                                                                |
-| `isExpandedOnMobile` | `bool`                  | `false`   | ✕        | If true, ModalDialog expands to fit the viewport on mobile                                                                |
-| `isScrollable`       | `bool`                  | `true`    | ✕        | If the ModalDialog should be scrollable. If set to `false`, the dialog will not scroll and will expand to fit the content |
-| `maxHeight`          | \[`string` \| `object`] | `null`    | ✕        | Max height of the modal. Accepts any valid CSS value or an object with breakpoint keys for responsive values              |
+| Name                 | Type                    | Default   | Required | Description                                                                                                                       |
+| -------------------- | ----------------------- | --------- | -------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `children`           | `ReactNode`             | —         | ✕        | Children node                                                                                                                     |
+| `elementType`        | \[`article` \| `form`]  | `article` | ✕        | ModalDialog element type                                                                                                          |
+| `height`             | \[`string` \| `object`] | `null`    | ✕        | Height of the modal. Accepts any valid CSS value or an object with [breakpoint][dictionary-breakpoint] keys for responsive values |
+| `isDockedOnMobile`   | `bool`                  | `false`   | ✕        | Dock the ModalDialog to the bottom of the screen on mobile                                                                        |
+| `isExpandedOnMobile` | `bool`                  | `false`   | ✕        | If true, ModalDialog expands to fit the viewport on mobile                                                                        |
+| `isScrollable`       | `bool`                  | `true`    | ✕        | If the ModalDialog should be scrollable. If set to `false`, the dialog will not scroll and will expand to fit the content         |
+| `maxHeight`          | \[`string` \| `object`] | `null`    | ✕        | Max height of the modal. Accepts any valid CSS value or an object with breakpoint keys for responsive values                      |
 
 Also, all properties of the [`<article>` element][mdn-article] and [`<form>` element][mdn-form] are supported.
 
@@ -429,6 +429,7 @@ This component uses the `Icon` component internally. To ensure correct rendering
 please refer to the [Icon component documentation][web-react-icon-documentation] for setup instructions.
 
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
+[dictionary-breakpoint]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#breakpoint
 [mdn-article]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article
 [mdn-dialog-form]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog#usage_notes
 [mdn-dialog]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog

@@ -62,7 +62,7 @@ Example:
 
 ### Responsive Alignment
 
-Pass an object to props to set different values for different breakpoints. The values will be applied from mobile to
+Pass an object to props to set different values for different [breakpoints][dictionary-breakpoint]. The values will be applied from mobile to
 desktop and if not set for a breakpoint, the value from the previous breakpoint will be used.
 
 Example:
@@ -429,6 +429,7 @@ This component uses the `Icon` component internally. To ensure correct rendering
 please refer to the [Icon component documentation][web-react-icon-documentation] for setup instructions.
 
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
+[dictionary-breakpoint]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#breakpoint
 [icon-package]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/icons
 [mdn-aria-live]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-live
 [mdn-role-log]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/log_role
