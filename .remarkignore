@@ -5,6 +5,8 @@ vendor
 dist
 build
 public
+playwright-report
+test-results
 .github
 playwright-report
 test-results
