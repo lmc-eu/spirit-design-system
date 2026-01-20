@@ -45,7 +45,7 @@ describe('useControlButtonStyleProps', () => {
       false,
       false,
       true,
-      'ControlButton ControlButton--medium dynamic-color-background-interactive accessibility-tap-target ControlButton--symmetrical ControlButton--hasBackground dynamic-color-border',
+      'ControlButton ControlButton--medium dynamic-color-background-interactive accessibility-tap-target ControlButton--hasBackground dynamic-color-border ControlButton--symmetrical',
     ],
     [
       'medium',
@@ -79,5 +79,53 @@ describe('useControlButtonStyleProps', () => {
       'aria-label': 'Close',
       id: 'test-button',
     });
+  });
+
+  it('should return responsive symmetrical classes for mobile only', () => {
+    const props = {
+      size: 'medium',
+      isSymmetrical: { mobile: true },
+    } as SpiritControlButtonProps;
+    const { result } = renderHook(() => useControlButtonStyleProps(props));
+
+    expect(result.current.classProps).toBe(
+      'ControlButton ControlButton--medium dynamic-color-background-interactive accessibility-tap-target ControlButton--hasBackground dynamic-color-border ControlButton--symmetrical',
+    );
+  });
+
+  it('should return responsive symmetrical classes for multiple breakpoints', () => {
+    const props = {
+      size: 'medium',
+      isSymmetrical: { mobile: true, tablet: false, desktop: true },
+    } as SpiritControlButtonProps;
+    const { result } = renderHook(() => useControlButtonStyleProps(props));
+
+    expect(result.current.classProps).toBe(
+      'ControlButton ControlButton--medium dynamic-color-background-interactive accessibility-tap-target ControlButton--hasBackground dynamic-color-border ControlButton--symmetrical ControlButton--tablet--asymmetrical ControlButton--desktop--symmetrical',
+    );
+  });
+
+  it('should return responsive symmetrical classes for tablet and desktop only', () => {
+    const props = {
+      size: 'medium',
+      isSymmetrical: { tablet: true, desktop: true },
+    } as SpiritControlButtonProps;
+    const { result } = renderHook(() => useControlButtonStyleProps(props));
+
+    expect(result.current.classProps).toBe(
+      'ControlButton ControlButton--medium dynamic-color-background-interactive accessibility-tap-target ControlButton--hasBackground dynamic-color-border ControlButton--tablet--symmetrical ControlButton--desktop--symmetrical',
+    );
+  });
+
+  it('should return no a/symmetrical classes when all breakpoints are false', () => {
+    const props = {
+      size: 'medium',
+      isSymmetrical: { mobile: false, tablet: false, desktop: false },
+    } as SpiritControlButtonProps;
+    const { result } = renderHook(() => useControlButtonStyleProps(props));
+
+    expect(result.current.classProps).toBe(
+      'ControlButton ControlButton--medium dynamic-color-background-interactive accessibility-tap-target ControlButton--hasBackground dynamic-color-border',
+    );
   });
 });

@@ -8,12 +8,16 @@ import ReactDOM from 'react-dom/client';
 import DocsSection from '../../../../docs/DocsSection';
 import { IconsProvider } from '../../../context';
 import ControlButtonIcon from './ControlButtonIcon';
+import ControlButtonResponsiveSymmetrical from './ControlButtonResponsiveSymmetrical';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <IconsProvider value={icons}>
       <DocsSection title="Icon" stackAlignment="start">
         <ControlButtonIcon />
+      </DocsSection>
+      <DocsSection title="Responsive Symmetrical" stackAlignment="start">
+        <ControlButtonResponsiveSymmetrical />
       </DocsSection>
     </IconsProvider>
   </React.StrictMode>,

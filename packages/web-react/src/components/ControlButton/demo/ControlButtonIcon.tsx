@@ -11,7 +11,7 @@ const emotionColors = Object.values(DemoEmotionColors);
 const accentColors = getAccentColorNames();
 
 const ControlButtonIcon = () => (
-  <Grid cols={{ mobile: 1, desktop: 3 }} alignmentY="top">
+  <Grid cols={{ mobile: 1, desktop: 3 }} alignmentY="top" spacingY="space-1100">
     <DocsStack stackAlignment="stretch">
       <h3>On Background Colors</h3>
 
