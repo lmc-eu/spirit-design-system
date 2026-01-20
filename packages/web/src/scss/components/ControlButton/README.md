@@ -114,6 +114,82 @@ The following sizes are available:
 | Medium | `ControlButton--medium` | 16px      |
 | Large  | `ControlButton--large`  | 20px      |
 
+## Symmetrical ControlButton
+
+A symmetrical control button has equal width and height, typically used with icon-only buttons.
+
+```html
+<button
+  type="button"
+  class="ControlButton ControlButton--medium ControlButton--symmetrical dynamic-color-background-interactive accessibility-tap-target"
+  aria-label="Close"
+>
+  <svg class="Icon" width="16" height="16" aria-hidden="true">
+    <use xlink:href="/icons/svg/sprite.svg#close" />
+  </svg>
+</button>
+```
+
+### Responsive Symmetrical ControlButton
+
+To create a responsive symmetrical control button, use breakpoint-specific modifiers. The button will be symmetrical at the specified breakpoint and above.
+
+Symmetrical from tablet breakpoint and up:
+
+```html
+<button
+  type="button"
+  class="ControlButton ControlButton--medium ControlButton--tablet--symmetrical dynamic-color-background-interactive accessibility-tap-target"
+  aria-label="Close"
+>
+  <svg class="Icon" width="16" height="16" aria-hidden="true">
+    <use xlink:href="/assets/icons/svg/sprite.svg#close" />
+  </svg>
+</button>
+```
+
+Symmetrical from desktop breakpoint and up:
+
+```html
+<button
+  type="button"
+  class="ControlButton ControlButton--medium ControlButton--desktop--symmetrical dynamic-color-background-interactive accessibility-tap-target"
+  aria-label="Close"
+>
+  <svg class="Icon" width="16" height="16" aria-hidden="true">
+    <use xlink:href="/assets/icons/svg/sprite.svg#close" />
+  </svg>
+</button>
+```
+
+Symmetrical on mobile, not on tablet and up (use modifier class with suffix `--asymmetrical` to stop symmetrical behavior):
+
+```html
+<button
+  type="button"
+  class="ControlButton ControlButton--medium ControlButton--symmetrical ControlButton--tablet--asymmetrical dynamic-color-background-interactive accessibility-tap-target"
+  aria-label="Close"
+>
+  <svg class="Icon" width="16" height="16" aria-hidden="true">
+    <use xlink:href="/icons/svg/sprite.svg#close" />
+  </svg>
+</button>
+```
+
+Symmetrical on mobile and tablet, not on desktop (combine breakpoint-specific classes):
+
+```html
+<button
+  type="button"
+  class="ControlButton ControlButton--medium ControlButton--symmetrical ControlButton--desktop--asymmetrical dynamic-color-background-interactive accessibility-tap-target"
+  aria-label="Close"
+>
+  <svg class="Icon" width="16" height="16" aria-hidden="true">
+    <use xlink:href="/icons/svg/sprite.svg#close" />
+  </svg>
+</button>
+```
+
 ## Accessibility
 
 For icon-only buttons, always include an accessible label, for example, using
