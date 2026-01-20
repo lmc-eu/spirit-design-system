@@ -23,6 +23,7 @@ export * from './Footer';
 export * from './Grid';
 export * from './Header';
 export * from './Heading';
+export * from './Hidden';
 export * from './Icon';
 export * from './IconBox';
 export * from './Item';
