@@ -187,12 +187,11 @@ figma.connect(EmptyState, EMPTY_STATE_NODE_URL, {
 });
 
 figma.connect(EmptyState, EMPTY_STATE_NODE_URL, {
-  props: {
-    variant: {
-      'Show Buttons': true,
-      'Show Illustration': true,
-      'Show Link': true,
-    },
+  props: {},
+  variant: {
+    'Show Buttons': true,
+    'Show Illustration': true,
+    'Show Link': true,
   },
   example: (props) => (
     <EmptyState {...props}>

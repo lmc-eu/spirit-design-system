@@ -25,9 +25,7 @@ const commonProps = {
 };
 
 figma.connect(FieldGroup, FIELD_GROUP_NODE_URL, {
-  props: {
-    ...commonProps,
-  },
+  props: commonProps,
   variant: {
     Type: 'Radio',
   },
@@ -42,9 +40,7 @@ figma.connect(FieldGroup, FIELD_GROUP_NODE_URL, {
 });
 
 figma.connect(FieldGroup, FIELD_GROUP_NODE_URL, {
-  props: {
-    ...commonProps,
-  },
+  props: commonProps,
   variant: {
     Type: 'Checkbox',
   },

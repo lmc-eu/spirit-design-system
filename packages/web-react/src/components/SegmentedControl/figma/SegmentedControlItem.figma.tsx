@@ -23,10 +23,8 @@ const commonProps = {
 };
 
 figma.connect(SegmentedControlItem, SEGMENTED_CONTROL_ITEM_NODE_URL, {
-  props: {
-    ...commonProps,
-    variant: { Icon: true },
-  },
+  props: commonProps,
+  variant: { Icon: true },
   example: ({ labelProps, ...props }) => (
     <SegmentedControlItem {...props}>
       <Icon name="placeholder" />
@@ -38,10 +36,8 @@ figma.connect(SegmentedControlItem, SEGMENTED_CONTROL_ITEM_NODE_URL, {
 });
 
 figma.connect(SegmentedControlItem, SEGMENTED_CONTROL_ITEM_NODE_URL, {
-  props: {
-    ...commonProps,
-    variant: { Icon: false },
-  },
+  props: commonProps,
+  variant: { Icon: false },
   example: ({ labelProps, ...props }) => (
     <SegmentedControlItem {...props}>
       <Truncate mode="lines" limit={1}>
