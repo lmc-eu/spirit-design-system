@@ -1,28 +1,19 @@
 {
-  "extends": ["@lmc-eu", "@lmc-eu:scheduleEveryTwoWeeksBusinessHours", "group:allNonMajor", ":pinOnlyDevDependencies"],
-  "ignorePresets": [":ignoreModulesAndTests"],
-  "ignorePaths": [
-    "**/node_modules/**",
-    "**/bower_components/**",
-    "**/vendor/**",
-    "**/__tests__/**",
-    "**/test/**",
-    "**/tests/**",
-    "**/__fixtures__/**"
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "local>alma-oss/renovate-config",
+    "local>alma-oss/renovate-config:scheduleEveryTwoWeeksBusinessHours",
+    "group:allNonMajor",
+    ":pinOnlyDevDependencies",
+    ":dependencyDashboard"
   ],
+  "ignorePaths": ["**/node_modules/**", "**/__tests__/**", "**/test/**", "**/tests/**", "**/__fixtures__/**"],
   "prConcurrentLimit": 3,
   "packageRules": [
     {
       "groupName": "monorepo:storybook",
       "groupSlug": "monorepo-storybook",
       "matchSourceUrlPrefixes": ["https://github.com/storybookjs/storybook"]
-    },
-    {
-      "groupName": "fixed typescript v4.7.4 in root",
-      "groupSlug": "fixed-typescript-in-root",
-      "matchPackageNames": ["typescript"],
-      "allowedVersions": "4.7.4",
-      "matchPaths": ["+(package.json)"]
     },
     {
       "groupName": "monorepo:supernovaio non-major",
