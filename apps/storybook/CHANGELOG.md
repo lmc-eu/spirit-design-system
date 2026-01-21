@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.3.2"></a>
+
+## [0.3.2](https://github.com/lmc-eu/spirit-design-system/compare/@alma-oss/spirit-storybook@0.3.1...@alma-oss/spirit-storybook@0.3.2) (2026-01-21)
+
+### Chores
+
+- **repo:** Upgrade Storybook to v10 [#DS-2141](https://github.com/lmc-eu/spirit-design-system/issues/DS-2141) ([138a6dc](https://github.com/lmc-eu/spirit-design-system/commit/138a6dc))
+
+### Dependencies
+
+- Update dependency storybook to v10.1.10 [SECURITY] ([429aa1f](https://github.com/lmc-eu/spirit-design-system/commit/429aa1f))
+
+**Note:** Version bump only for package @alma-oss/spirit-storybook
+
 <a name="0.3.1"></a>
 
 ## [0.3.1](https://github.com/lmc-eu/spirit-design-system/compare/@alma-oss/spirit-storybook@0.3.0...@alma-oss/spirit-storybook@0.3.1) (2025-12-19)

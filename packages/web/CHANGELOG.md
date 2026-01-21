@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.1.0"></a>
+
+# [4.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@alma-oss/spirit-web@4.0.1...@alma-oss/spirit-web@4.1.0) (2026-01-21)
+
+### Bug Fixes
+
+- **web:** Trigger Modal dismiss buttons via keyboard [#DS-2070](https://github.com/lmc-eu/spirit-design-system/issues/DS-2070) ([195f5f1](https://github.com/lmc-eu/spirit-design-system/commit/195f5f1))
+
+### Documentation
+
+- **web:** Order of the ScrollView demos has been swapped [#DS-2239](https://github.com/lmc-eu/spirit-design-system/issues/DS-2239) ([a247fd1](https://github.com/lmc-eu/spirit-design-system/commit/a247fd1))
+- **web:** Update Footer README.md [#DS-2133](https://github.com/lmc-eu/spirit-design-system/issues/DS-2133) ([3484c19](https://github.com/lmc-eu/spirit-design-system/commit/3484c19))
+
+### Features
+
+- **web:** Introduce new helper classes to control visibility by `aria-checked` [#DS-596](https://github.com/lmc-eu/spirit-design-system/issues/DS-596) ([632d276](https://github.com/lmc-eu/spirit-design-system/commit/632d276))
+
+**Note:** Version bump only for package @alma-oss/spirit-web
+
 <a name="4.0.1"></a>
 
 ## [4.0.1](https://github.com/lmc-eu/spirit-design-system/compare/@alma-oss/spirit-web@4.0.0...@alma-oss/spirit-web@4.0.1) (2025-12-19)

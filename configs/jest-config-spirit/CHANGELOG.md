@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.2.0"></a>
+
+# [0.2.0](https://github.com/lmc-eu/spirit-design-system/compare/jest-config-spirit@0.1.10...jest-config-spirit@0.2.0) (2026-01-21)
+
+### Features
+
+- **jest-config:** Ignore Figma files for Code Connect from unit test coverage [#DS-2297](https://github.com/lmc-eu/spirit-design-system/issues/DS-2297) ([41d3441](https://github.com/lmc-eu/spirit-design-system/commit/41d3441))
+
+**Note:** Version bump only for package jest-config-spirit
+
 <a name="0.1.10"></a>
 
 ## [0.1.10](https://github.com/lmc-eu/spirit-design-system/compare/jest-config-spirit@0.1.9...jest-config-spirit@0.1.10) (2025-12-09)

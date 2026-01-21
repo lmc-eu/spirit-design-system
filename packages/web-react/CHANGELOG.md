@@ -3,6 +3,53 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.2.0"></a>
+
+# [4.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@alma-oss/spirit-web-react@4.1.0...@alma-oss/spirit-web-react@4.2.0) (2026-01-21)
+
+### Bug Fixes
+
+- **web-react:** Allow ref in Box types [#DS-2321](https://github.com/lmc-eu/spirit-design-system/issues/DS-2321) ([72f604b](https://github.com/lmc-eu/spirit-design-system/commit/72f604b))
+- **web-react:** Drop Transfer Props from Flex component [#DS-2282](https://github.com/lmc-eu/spirit-design-system/issues/DS-2282) ([19c6ed1](https://github.com/lmc-eu/spirit-design-system/commit/19c6ed1))
+- **web-react:** Drop Transfer Props from Grid component [#DS-2282](https://github.com/lmc-eu/spirit-design-system/issues/DS-2282) ([9d59f12](https://github.com/lmc-eu/spirit-design-system/commit/9d59f12))
+- **web-react:** ElementType fix in Accordion [#DS-2181](https://github.com/lmc-eu/spirit-design-system/issues/DS-2181) ([72b6926](https://github.com/lmc-eu/spirit-design-system/commit/72b6926))
+- **web-react:** ElementType fix in Accordion [#DS-2181](https://github.com/lmc-eu/spirit-design-system/issues/DS-2181) ([70f5ddd](https://github.com/lmc-eu/spirit-design-system/commit/70f5ddd))
+- **web-react:** Fix FCC with variants for Skeleton [#DS-2343](https://github.com/lmc-eu/spirit-design-system/issues/DS-2343) ([73dc6c3](https://github.com/lmc-eu/spirit-design-system/commit/73dc6c3))
+- **web-react:** Prevent ScrollView arrows from scrolling beyond content bounds on iOS [#DS-2239](https://github.com/lmc-eu/spirit-design-system/issues/DS-2239) ([0a37dc4](https://github.com/lmc-eu/spirit-design-system/commit/0a37dc4))
+
+### Chores
+
+- **repo:** Upgrade Storybook to v10 [#DS-2141](https://github.com/lmc-eu/spirit-design-system/issues/DS-2141) ([138a6dc](https://github.com/lmc-eu/spirit-design-system/commit/138a6dc))
+- **web-react:** Correct peer dependency versions after major release ([01300b6](https://github.com/lmc-eu/spirit-design-system/commit/01300b6))
+- **web-react:** Upgrade `@figma/code-connect` package [#DS-2343](https://github.com/lmc-eu/spirit-design-system/issues/DS-2343) ([409e78f](https://github.com/lmc-eu/spirit-design-system/commit/409e78f))
+
+### Documentation
+
+- **web-react:** Order of the ScrollView demos has been swapped [#DS-2239](https://github.com/lmc-eu/spirit-design-system/issues/DS-2239) ([ccaed43](https://github.com/lmc-eu/spirit-design-system/commit/ccaed43))
+
+### Features
+
+- **web-react:** Add Checkbox and Radio to Figma Code Connect [#DS-2297](https://github.com/lmc-eu/spirit-design-system/issues/DS-2297) ([dc0850e](https://github.com/lmc-eu/spirit-design-system/commit/dc0850e))
+- **web-react:** Add default aria strings to components ([9c6525c](https://github.com/lmc-eu/spirit-design-system/commit/9c6525c))
+- **web-react:** Add EmptyState and FieldGroup to Figma Code Connect [#DS-2333](https://github.com/lmc-eu/spirit-design-system/issues/DS-2333) ([515f212](https://github.com/lmc-eu/spirit-design-system/commit/515f212))
+- **web-react:** Add Figma Code Connect to ActionGroup and ControlButton [#DS-2333](https://github.com/lmc-eu/spirit-design-system/issues/DS-2333) ([f4ef449](https://github.com/lmc-eu/spirit-design-system/commit/f4ef449))
+- **web-react:** Add Figma Code Connect to Drawer and Modal [#DS-2333](https://github.com/lmc-eu/spirit-design-system/issues/DS-2333) ([bca539f](https://github.com/lmc-eu/spirit-design-system/commit/bca539f))
+- **web-react:** Add Figma Code Connect to Dropdown and SplitButton [#DS-2333](https://github.com/lmc-eu/spirit-design-system/issues/DS-2333) ([cba09f4](https://github.com/lmc-eu/spirit-design-system/commit/cba09f4))
+- **web-react:** Add IconBox, PartnerLogo, ScrollView and Slider to Figma Code Connect [#DS-2297](https://github.com/lmc-eu/spirit-design-system/issues/DS-2297) ([372bca3](https://github.com/lmc-eu/spirit-design-system/commit/372bca3))
+- **web-react:** Add Item to Figma Code Connect [#DS-2343](https://github.com/lmc-eu/spirit-design-system/issues/DS-2343) ([86d003b](https://github.com/lmc-eu/spirit-design-system/commit/86d003b))
+- **web-react:** Add SegmentedControl, Skeleton and Toggle to Figma Code Connect [#DS-2333](https://github.com/lmc-eu/spirit-design-system/issues/DS-2333) ([95d0f24](https://github.com/lmc-eu/spirit-design-system/commit/95d0f24))
+- **web-react:** Add Spinner, Stack and TextArea to Figma Code Connect [#DS-2297](https://github.com/lmc-eu/spirit-design-system/issues/DS-2297) ([caa88d3](https://github.com/lmc-eu/spirit-design-system/commit/caa88d3))
+- **web-react:** Add Timeline to Figma Code Connect [#DS-2343](https://github.com/lmc-eu/spirit-design-system/issues/DS-2343) ([daefcc0](https://github.com/lmc-eu/spirit-design-system/commit/daefcc0))
+- **web-react:** Allow elementType for Footer component [#DS-2133](https://github.com/lmc-eu/spirit-design-system/issues/DS-2133) ([070a3b3](https://github.com/lmc-eu/spirit-design-system/commit/070a3b3))
+- **web-react:** Introduce Figma Code Connect to Tabs, Toast & Tooltip [#DS-2343](https://github.com/lmc-eu/spirit-design-system/issues/DS-2343) ([70e964b](https://github.com/lmc-eu/spirit-design-system/commit/70e964b))
+- **web-react:** Properly mock icons in the unit tests [#DS-2123](https://github.com/lmc-eu/spirit-design-system/issues/DS-2123) ([ce68b17](https://github.com/lmc-eu/spirit-design-system/commit/ce68b17))
+
+### Tests
+
+- **web-react:** Use custom TypeScript configuration for resolving Jest config ([a81b01d](https://github.com/lmc-eu/spirit-design-system/commit/a81b01d))
+
+**Note:** Version bump only for package @alma-oss/spirit-web-react
+
 <a name="4.1.0"></a>
 
 # [4.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@alma-oss/spirit-web-react@4.0.0...@alma-oss/spirit-web-react@4.1.0) (2025-12-19)
