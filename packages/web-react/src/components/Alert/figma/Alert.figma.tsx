@@ -1,5 +1,5 @@
 import figma from '@figma/code-connect';
-import React from 'react';
+import React, { type ReactNode } from 'react';
 import type { SpiritAlertProps } from '../../../types';
 import { Heading } from '../../Heading';
 import { Link } from '../../Link';
@@ -35,8 +35,8 @@ const example = ({
   link = undefined,
   ...props
 }: SpiritAlertProps & {
-  headline?: React.ReactNode;
-  link?: React.ReactNode;
+  headline?: ReactNode;
+  link?: ReactNode;
 }) => (
   <Alert {...props}>
     {headline}
