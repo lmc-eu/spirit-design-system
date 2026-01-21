@@ -8,11 +8,11 @@
       "changelogPreset": "conventionalcommits",
       "createRelease": "github",
       "push": false,
-      "message": "Chore(release): Publish",
+      "message": "chore(release): publish",
       "ignoreChanges": ["yarn.lock"]
     },
     "publish": {
-      "message": "Chore(release): Publish"
+      "message": "chore(release): publish"
     }
   }
 }
