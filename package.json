@@ -67,6 +67,7 @@
     "@omlet/cli": "1.13.4",
     "@playwright/test": "1.56.0",
     "conventional-changelog-conventionalcommits": "9.1.0",
+    "dotenv": "17.2.3",
     "eslint": "9.39.1",
     "eslint-config-spirit": "workspace:^",
     "eslint-plugin-prettier": "5.5.4",

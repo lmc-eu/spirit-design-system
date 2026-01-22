@@ -1,10 +1,23 @@
+import dotenv from 'dotenv';
 import { defineConfig, devices } from '@playwright/test';
 
 /**
- * Read environment variables from file.
+ * Read environment variables from a `.env` file.
  * https://github.com/motdotla/dotenv
  */
-// require('dotenv').config();
+dotenv.config({ path: '.env.local.playwright' });
+
+/**
+ * Parses a string value into a number for worker configuration.
+ *
+ * @param value - The string value to parse (e.g., from an environment variable).
+ * @returns The parsed number, or `undefined` if the value is not a valid number.
+ */
+const parseNumber = (value: string | undefined): number | undefined => {
+  const parsed = parseInt(value ?? '', 10);
+
+  return Number.isNaN(parsed) ? undefined : parsed;
+};
 
 /**
  * See https://playwright.dev/docs/test-configuration.
@@ -15,10 +28,10 @@ export default defineConfig({
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
-  /* Retry on CI only */
-  retries: process.env.CI ? 2 : 0,
-  /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
+  /* Number of retries: use PW_RETRIES if set, default to 2 on CI, otherwise set to 0. */
+  retries: parseNumber(process.env.PW_RETRIES) ?? (process.env.CI ? 2 : 0),
+  /* Configure workers: use PW_WORKERS if set, default to 1 on CI, otherwise Playwright's default. */
+  workers: parseNumber(process.env.PW_WORKERS) ?? (process.env.CI ? 1 : undefined),
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [['html', { open: 'never' }]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
@@ -30,13 +43,13 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
 
-  /* Timeout configuration in ms */
-  timeout: 120000,
+  /* Timeout configuration in ms: use PW_TIMEOUT if set, otherwise default to 120 000 ms (2 minutes). */
+  timeout: parseNumber(process.env.PW_TIMEOUT) ?? 120000,
 
   /* Configure expect() to use in tests */
   expect: {
-    /* Setting the timeout for each test */
-    timeout: 120000,
+    /* Use PW_TIMEOUT if set, otherwise default to 120 000 ms (2 minutes). */
+    timeout: parseNumber(process.env.PW_TIMEOUT) ?? 120000,
   },
 
   /* Configure projects for major browsers */
