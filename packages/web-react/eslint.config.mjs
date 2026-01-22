@@ -225,4 +225,10 @@ export default [
       '@typescript-eslint/no-explicit-any': 'off',
     },
   },
+  {
+    files: ['**/*.figma.*'],
+    rules: {
+      'react-refresh/only-export-components': 'off',
+    },
+  },
 ];
