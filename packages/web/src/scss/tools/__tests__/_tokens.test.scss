@@ -22,6 +22,20 @@ $test-dictionary: key1, key2, key3;
     }
 }
 
+@include test.describe('get-missing-token-warning function') {
+    @include test.it('should log a warning when token do not exist') {
+        @include test.assert-equal(
+            tokens-tools.get-missing-token-warning('test-color'),
+            'Token not found: test-color. Please add it to your design tokens.'
+        );
+    }
+
+    @include test.it('should not log a warning when tokens exist') {
+        // ⚠️ External dependency: touches actual design tokens.
+        @include test.assert-equal(tokens-tools.get-missing-token-warning('breakpoints'), null);
+    }
+}
+
 @include test.describe('generate-css-variables mixin') {
     @include test.it('should generate CSS variables based on the provided map') {
         @include test.assert() {
