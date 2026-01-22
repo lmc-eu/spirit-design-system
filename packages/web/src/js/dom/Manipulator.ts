@@ -54,7 +54,7 @@ const Manipulator = {
     for (const key of spiritKeys) {
       let pureKey = key.replace(/^spirit/, '');
       pureKey = pureKey.charAt(0).toLowerCase() + pureKey.slice(1, pureKey.length);
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
       // @ts-ignore No index signature with a parameter of type 'string' was found on type '{}'.
       attributes[pureKey] = normalizeData(element.dataset[key]);
     }

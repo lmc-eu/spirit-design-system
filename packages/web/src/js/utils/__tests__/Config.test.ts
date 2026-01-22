@@ -142,7 +142,6 @@ describe('Config', () => {
       expect(() => {
         obj.typeCheckConfig(config);
       }).toThrow(
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore Property 'NAME' does not exist on type 'Function'.
         `${obj.constructor.NAME.toUpperCase()}: Option "parent" provided type "number" but expected type "(string|element)".`,
       );
@@ -174,7 +173,7 @@ describe('Config', () => {
       const obj = new DummyConfigClass();
       const config = {
         toggle: true,
-        // eslint-disable-next-line no-undefined -- testing undefined
+
         parent: undefined,
       };
 

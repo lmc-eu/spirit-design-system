@@ -25,5 +25,4 @@ export const clearFixture = () => {
 
 export const createEvent = (eventName: string, parameters = {}) => new Event(eventName, parameters);
 
-// eslint-disable-next-line @typescript-eslint/no-empty-function
 export const noop = () => {};
