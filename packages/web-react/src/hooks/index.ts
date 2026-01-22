@@ -7,7 +7,6 @@ export * from './useClick';
 export * from './useClickOutside';
 export * from './useDeprecationMessage';
 export * from './useDimensionStyle';
-export * from './useDirectionClass';
 export * from './useDragAndDrop';
 export * from './useIcon';
 export * from './useIconName';
