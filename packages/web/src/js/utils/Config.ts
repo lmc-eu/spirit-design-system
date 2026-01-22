@@ -40,7 +40,6 @@ class Config {
     const jsonConfig = isElement(element) ? Manipulator.getDataAttribute(element, 'config') : {}; // try to parse
 
     return {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore Property 'Default' does not exist on type 'Function'.
       ...this.constructor.Default,
       ...(typeof jsonConfig === 'object' ? jsonConfig : {}),
@@ -49,20 +48,16 @@ class Config {
     };
   }
 
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore Property 'DefaultType' does not exist on type 'Function'.
   typeCheckConfig(config: SpiritConfig, configTypes: SpiritConfig = this.constructor.DefaultType) {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore No overload matches this call.
     for (const [property, expectedTypes] of Object.entries(configTypes)) {
       const value = config?.[property];
       const valueType = isElement(value) ? 'element' : toType(value);
 
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore No overload matches this call.
       if (!new RegExp(expectedTypes).test(valueType)) {
         throw new TypeError(
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore Property 'NAME' does not exist on type 'Function'.
           `${this.constructor.NAME.toUpperCase()}: Option "${property}" provided type "${valueType}" but expected type "${expectedTypes}".`,
         );

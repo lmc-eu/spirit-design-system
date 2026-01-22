@@ -268,7 +268,7 @@ class Tooltip extends BaseComponent {
         mainAxis: flipProp,
         crossAxis: flipCrossAxis,
         fallbackAxisSideDirection: flipFallbackAxisSideDirection,
-        /* eslint-disable no-undefined */
+
         fallbackPlacements: flipFallbackPlacements || undefined,
       })
     );

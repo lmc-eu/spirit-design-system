@@ -1,4 +1,3 @@
-/* eslint-disable no-undefined */
 import { clearFixture, getFixture, createEvent, noop } from '../../../tests/helpers/fixture';
 import EventHandler from '../dom/EventHandler';
 import Tooltip from '../Tooltip';

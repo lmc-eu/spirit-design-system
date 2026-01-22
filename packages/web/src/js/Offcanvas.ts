@@ -71,7 +71,6 @@ class Offcanvas extends BaseComponent {
   getBreakpoint() {
     return (
       parseInt(getComputedStyle(document.documentElement).getPropertyValue(VARIABLE_BREAKPOINT_DESKTOP), 10) ||
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore Object is of type 'unknown'.
       this.config?.breakpointDesktop
     );

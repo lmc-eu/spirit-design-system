@@ -24,7 +24,7 @@ describe('Tabs', () => {
       `;
 
       const tabEl = fixtureEl.querySelector('[href="#home"]') as HTMLElement;
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
       // @ts-ignore badly typed BaseComponent constructor
       const tabBySelector = new Tabs('[href="#home"]');
       const tabByElement = new Tabs(tabEl);
@@ -261,7 +261,6 @@ describe('Tabs', () => {
       const tab = new Tabs(tabEl);
       const spy = jest.fn().mockReturnValue('spy');
 
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore Argument of type 'Mock<any, any>' is not assignable to parameter of type 'HTMLElement'.
       tab.activate(null, spy);
       expect(spy).not.toHaveBeenCalled();

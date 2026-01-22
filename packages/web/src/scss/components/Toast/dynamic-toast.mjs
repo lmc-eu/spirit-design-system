@@ -1,4 +1,4 @@
-// eslint-disable no-console -- for demo purposes
+/* eslint-disable no-console -- for demo purposes */
 import Toast from '../../../js/Toast';
 
 export const addDynamicToast = (event, containerId) => {
