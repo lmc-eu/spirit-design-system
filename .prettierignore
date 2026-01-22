@@ -111,3 +111,6 @@ Caddyfile
 .gitattributes
 
 /.nx/workspace-data
+
+# Environment
+.env.*
