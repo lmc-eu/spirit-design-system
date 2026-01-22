@@ -58,7 +58,7 @@ To span a `Button` to the full width of its parent, you can use display utility 
   </svg>
 </a>
 <button type="button" class="Button Button--primary Button--medium Button--loading" disabled>
-  <svg class="Icon mr-400" width="24" height="24" aria-hidden="true">
+  <svg class="Icon" width="24" height="24" aria-hidden="true">
     <use xlink:href="/icons/svg/sprite.svg#hamburger" />
   </svg>
   Menu
@@ -106,7 +106,7 @@ Symmetrical from tablet breakpoint and up:
 
 ```html
 <button type="button" class="Button Button--primary Button--medium Button--tablet--symmetrical">
-  <svg class="Icon mr-400 mr-tablet-0" width="24" height="24" aria-hidden="true">
+  <svg class="Icon" width="24" height="24" aria-hidden="true">
     <use xlink:href="/assets/icons/svg/sprite.svg#hamburger" />
   </svg>
   <span class="accessibility-hidden">Menu</span>
@@ -118,7 +118,7 @@ Symmetrical from desktop breakpoint and up:
 
 ```html
 <button type="button" class="Button Button--primary Button--medium Button--desktop--symmetrical">
-  <svg class="Icon mr-400 mr-desktop-0" width="24" height="24" aria-hidden="true">
+  <svg class="Icon" width="24" height="24" aria-hidden="true">
     <use xlink:href="/assets/icons/svg/sprite.svg#hamburger" />
   </svg>
   <span class="accessibility-hidden">Menu</span>
@@ -130,7 +130,7 @@ Symmetrical on mobile, not on tablet and up (use modifier class with suffix `--a
 
 ```html
 <button type="button" class="Button Button--primary Button--medium Button--symmetrical Button--tablet--asymmetrical">
-  <svg class="Icon mr-tablet-400" width="24" height="24" aria-hidden="true">
+  <svg class="Icon" width="24" height="24" aria-hidden="true">
     <use xlink:href="/icons/svg/sprite.svg#hamburger" />
   </svg>
   <span class="accessibility-hidden">Menu</span>
@@ -142,7 +142,7 @@ Symmetrical on mobile and tablet, not on desktop (combine breakpoint-specific cl
 
 ```html
 <button type="button" class="Button Button--primary Button--medium Button--symmetrical Button--desktop--asymmetrical">
-  <svg class="Icon mr-desktop-400" width="24" height="24" aria-hidden="true">
+  <svg class="Icon" width="24" height="24" aria-hidden="true">
     <use xlink:href="/icons/svg/sprite.svg#hamburger" />
   </svg>
   <span class="accessibility-hidden">Menu</span>
@@ -157,7 +157,7 @@ Symmetrical only on tablet (combine breakpoint-specific classes):
   type="button"
   class="Button Button--primary Button--medium Button--tablet--symmetrical Button--desktop--asymmetrical"
 >
-  <svg class="Icon mr-400 mr-tablet-0 mr-desktop-400" width="24" height="24" aria-hidden="true">
+  <svg class="Icon" width="24" height="24" aria-hidden="true">
     <use xlink:href="/assets/icons/svg/sprite.svg#hamburger" />
   </svg>
   <span class="accessibility-hidden">Menu</span>
@@ -168,3 +168,60 @@ Symmetrical only on tablet (combine breakpoint-specific classes):
 ⚠️ **Accessibility note:** Always use `accessibility-hidden` class for the accessible label and add `aria-hidden="true"`
 to the visible text. Using `display: none` utility classes (like `d-tablet-none`) hides content from screen readers, so
 the `accessibility-hidden` class ensures the label is always accessible regardless of viewport size.
+
+## Custom Spacing
+
+Use CSS custom properties to define custom spacing between button content items (icons and text). Set the `--button-spacing`
+property to one of the spacing token values defined on the `:root` element, e.g. `--button-spacing: var(--spirit-space-600)`.
+This will set the spacing to `var(--spirit-space-600)` for all breakpoints.
+
+Custom spacing:
+
+```html
+<button type="button" class="Button Button--primary Button--medium" style="--button-spacing: var(--spirit-space-600)">
+  <svg class="Icon" width="24" height="24" aria-hidden="true">
+    <use xlink:href="/icons/svg/sprite.svg#hamburger" />
+  </svg>
+  Menu
+</button>
+```
+
+ℹ️ We highly discourage from using absolute values like `--button-spacing: 1rem`. It will work, but you will lose
+the consistency between the spacing and the design tokens.
+
+If you need to set custom spacing from a specific breakpoint, use the `--button-spacing-{breakpoint}` property,
+e.g. `--button-spacing-tablet: var(--spirit-space-800)`. The breakpoint value must be one of the breakpoint tokens
+except for the `mobile` breakpoint where you don't need the suffix at all. The spacing is set to all larger breakpoints
+automatically if you don't set them explicitly. E.g. if you set only `--button-spacing-tablet: var(--spirit-space-800)`
+the spacing will be set to `var(--spirit-space-800)` for `tablet` and `desktop` breakpoints while on the `mobile`
+breakpoint the default spacing will be used.
+
+Custom spacing from tablet up:
+
+```html
+<button
+  type="button"
+  class="Button Button--primary Button--medium"
+  style="--button-spacing-tablet: var(--spirit-space-800)"
+>
+  <svg class="Icon" width="24" height="24" aria-hidden="true">
+    <use xlink:href="/icons/svg/sprite.svg#hamburger" />
+  </svg>
+  Menu
+</button>
+```
+
+Custom spacing for each breakpoint:
+
+```html
+<button
+  type="button"
+  class="Button Button--primary Button--medium"
+  style="--button-spacing: var(--spirit-space-400); --button-spacing-tablet: var(--spirit-space-600); --button-spacing-desktop: var(--spirit-space-800)"
+>
+  <svg class="Icon" width="24" height="24" aria-hidden="true">
+    <use xlink:href="/icons/svg/sprite.svg#hamburger" />
+  </svg>
+  Menu
+</button>
+```
