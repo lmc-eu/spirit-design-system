@@ -20,8 +20,16 @@ const importers = [
   },
 ];
 
+// Suppress @debug messages during tests to avoid flooding test output
+// this logger catches any other stray @debug messages
+const customLogger = {
+  debug: () => {
+    // Intentionally empty to suppress @debug output in tests
+  },
+};
+
 describe('Sass', () => {
   const sassTestFiles = sync(resolve(process.cwd(), 'src/**/*.test.scss'));
 
-  sassTestFiles.forEach((file) => runSass({ describe, it }, file, { importers }));
+  sassTestFiles.forEach((file) => runSass({ describe, it }, file, { importers, logger: customLogger }));
 });
