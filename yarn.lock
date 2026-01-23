@@ -16,18 +16,18 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@alma-oss/spirit-analytics@workspace:packages/analytics"
   dependencies:
-    "@eslint/compat": "npm:^1.4.0"
-    "@eslint/eslintrc": "npm:^3.3.1"
-    "@lmc-eu/eslint-config-jest": "npm:3.0.6"
-    "@types/eslint": "npm:9.6.1"
-    "@types/jest": "catalog:testing"
+    "@eslint/compat": "catalog:lint"
+    "@eslint/eslintrc": "catalog:lint"
+    "@lmc-eu/eslint-config-jest": "catalog:lint"
+    "@types/eslint": "catalog:lint"
+    "@types/jest": "catalog:test"
     "@types/node": "npm:20.19.26"
-    "@typescript-eslint/eslint-plugin": "npm:6.21.0"
-    "@typescript-eslint/parser": "npm:6.21.0"
-    eslint: "npm:9.39.1"
+    "@typescript-eslint/eslint-plugin": "catalog:lint"
+    "@typescript-eslint/parser": "catalog:lint"
+    eslint: "catalog:lint"
     eslint-config-spirit: "workspace:^"
     filedirname: "catalog:script"
-    jest: "catalog:testing"
+    jest: "catalog:test"
     npm-run-all2: "catalog:script"
     react-scanner: "npm:^1.1.0"
     sade: "catalog:script"
@@ -45,20 +45,20 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@alma-oss/spirit-codemods@workspace:packages/codemods"
   dependencies:
-    "@eslint/compat": "npm:1.4.0"
-    "@eslint/eslintrc": "npm:3.3.1"
-    "@lmc-eu/eslint-config-jest": "npm:3.0.6"
-    "@types/eslint": "npm:9.6.1"
-    "@types/jest": "catalog:testing"
+    "@eslint/compat": "catalog:lint"
+    "@eslint/eslintrc": "catalog:lint"
+    "@lmc-eu/eslint-config-jest": "catalog:lint"
+    "@types/eslint": "catalog:lint"
+    "@types/jest": "catalog:test"
     "@types/jscodeshift": "catalog:script"
     "@types/node": "npm:20.19.26"
-    "@typescript-eslint/eslint-plugin": "npm:6.21.0"
-    "@typescript-eslint/parser": "npm:6.21.0"
-    eslint: "npm:9.39.1"
+    "@typescript-eslint/eslint-plugin": "catalog:lint"
+    "@typescript-eslint/parser": "catalog:lint"
+    eslint: "catalog:lint"
     eslint-config-spirit: "workspace:^"
     execa: "catalog:script"
     filedirname: "catalog:script"
-    jest: "catalog:testing"
+    jest: "catalog:test"
     jscodeshift: "catalog:script"
     sade: "catalog:script"
     shx: "catalog:script"
@@ -74,13 +74,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@alma-oss/spirit-common@workspace:packages/common"
   dependencies:
-    "@eslint/compat": "npm:1.4.0"
-    "@eslint/eslintrc": "npm:3.3.1"
-    "@types/jest": "catalog:testing"
+    "@eslint/compat": "catalog:lint"
+    "@eslint/eslintrc": "catalog:lint"
+    "@types/jest": "catalog:test"
     "@types/node": "npm:20.19.26"
-    eslint: "npm:9.39.1"
+    eslint: "catalog:lint"
     eslint-config-spirit: "workspace:^"
-    jest: "catalog:testing"
+    jest: "catalog:test"
     npm-run-all2: "catalog:script"
     ts-node: "catalog:script"
     typescript: "npm:5.7.3"
@@ -91,14 +91,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@alma-oss/spirit-design-tokens@workspace:packages/design-tokens"
   dependencies:
-    "@eslint/compat": "npm:1.4.0"
-    "@eslint/eslintrc": "npm:3.3.1"
-    eslint: "npm:9.39.1"
+    "@eslint/compat": "catalog:lint"
+    "@eslint/eslintrc": "catalog:lint"
+    eslint: "catalog:lint"
     eslint-config-spirit: "workspace:^"
     npm-run-all2: "catalog:script"
     rimraf: "catalog:script"
     shx: "catalog:script"
-    stylelint: "npm:16.14.1"
+    stylelint: "catalog:lint"
     stylelint-config-spirit: "workspace:^"
     typescript: "npm:5.7.3"
     vite: "catalog:build"
@@ -120,16 +120,16 @@ __metadata:
     "@alma-oss/spirit-icons": "workspace:^"
     "@alma-oss/spirit-web": "workspace:^"
     "@alma-oss/spirit-web-react": "workspace:^"
-    "@eslint/compat": "npm:1.4.0"
-    "@eslint/eslintrc": "npm:3.3.1"
+    "@eslint/compat": "catalog:lint"
+    "@eslint/eslintrc": "catalog:lint"
     "@next/eslint-plugin-next": "npm:14.2.33"
     "@types/node": "npm:20.19.26"
     "@types/react": "catalog:frontend"
     "@types/react-dom": "catalog:frontend"
-    eslint: "npm:9.39.1"
+    eslint: "catalog:lint"
     eslint-config-next: "npm:14.2.29"
     eslint-config-spirit: "workspace:^"
-    eslint-plugin-react-refresh: "npm:0.4.24"
+    eslint-plugin-react-refresh: "catalog:lint"
     globals: "npm:16.5.0"
     next: "catalog:frontend"
     react: "catalog:frontend"
@@ -150,17 +150,17 @@ __metadata:
     "@alma-oss/spirit-web-react": "workspace:^"
     "@babel/core": "catalog:build"
     "@babel/preset-typescript": "catalog:build"
-    "@eslint/compat": "npm:1.4.0"
-    "@eslint/eslintrc": "npm:3.3.1"
+    "@eslint/compat": "catalog:lint"
+    "@eslint/eslintrc": "catalog:lint"
     "@next/eslint-plugin-next": "npm:14.2.33"
     "@types/babel__core": "catalog:build"
     "@types/node": "npm:20.19.26"
     "@types/react": "catalog:frontend"
     "@types/react-dom": "catalog:frontend"
-    eslint: "npm:9.39.1"
+    eslint: "catalog:lint"
     eslint-config-next: "npm:14.2.29"
     eslint-config-spirit: "workspace:^"
-    eslint-plugin-react-refresh: "npm:0.4.24"
+    eslint-plugin-react-refresh: "catalog:lint"
     globals: "npm:16.5.0"
     next: "catalog:frontend"
     react: "catalog:frontend"
@@ -174,8 +174,8 @@ __metadata:
   resolution: "@alma-oss/spirit-icons@workspace:packages/icons"
   dependencies:
     "@alma-oss/spirit-design-tokens": "workspace:^"
-    "@types/jest": "catalog:testing"
-    jest: "catalog:testing"
+    "@types/jest": "catalog:test"
+    jest: "catalog:test"
     jest-config-spirit: "workspace:^"
     jsdom: "npm:25.0.1"
     npm-run-all2: "catalog:script"
@@ -241,16 +241,16 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@alma-oss/spirit-tokens-exporter@workspace:exporters/tokens"
   dependencies:
-    "@eslint/compat": "npm:^1.4.0"
-    "@eslint/eslintrc": "npm:^3.3.1"
-    "@lmc-eu/eslint-config-typescript": "npm:2.1.5"
+    "@eslint/compat": "catalog:lint"
+    "@eslint/eslintrc": "catalog:lint"
+    "@lmc-eu/eslint-config-typescript": "catalog:lint"
     "@supernovaio/export-helpers": "npm:1.0.31"
     "@supernovaio/sdk-exporters": "npm:2.2.10"
     "@swc/core": "catalog:build"
     "@swc/jest": "npm:0.2.38"
-    eslint: "npm:9.39.1"
+    eslint: "catalog:lint"
     eslint-config-spirit: "workspace:^"
-    jest: "catalog:testing"
+    jest: "catalog:test"
     jest-config-spirit: "workspace:^"
     npm-run-all2: "catalog:script"
     prettier-config-spirit: "workspace:^"
@@ -269,51 +269,51 @@ __metadata:
     "@babel/preset-env": "catalog:build"
     "@babel/preset-react": "catalog:build"
     "@babel/preset-typescript": "catalog:build"
-    "@eslint/compat": "npm:^1.4.0"
-    "@eslint/eslintrc": "npm:^3.3.1"
+    "@eslint/compat": "catalog:lint"
+    "@eslint/eslintrc": "catalog:lint"
     "@figma/code-connect": "npm:1.3.12"
     "@floating-ui/react": "catalog:frontend"
-    "@juggle/resize-observer": "catalog:testing"
-    "@lmc-eu/eslint-config-base": "npm:3.1.3"
-    "@lmc-eu/eslint-config-jest": "npm:3.0.6"
-    "@lmc-eu/eslint-config-react": "npm:2.0.6"
-    "@lmc-eu/eslint-config-typescript": "npm:2.1.5"
+    "@juggle/resize-observer": "catalog:test"
+    "@lmc-eu/eslint-config-base": "catalog:lint"
+    "@lmc-eu/eslint-config-jest": "catalog:lint"
+    "@lmc-eu/eslint-config-react": "catalog:lint"
+    "@lmc-eu/eslint-config-typescript": "catalog:lint"
     "@rollup/plugin-node-resolve": "catalog:build"
     "@rollup/plugin-replace": "catalog:build"
     "@rollup/plugin-terser": "catalog:build"
     "@storybook/addon-docs": "npm:10.1.6"
     "@storybook/react": "npm:10.1.6"
-    "@testing-library/dom": "catalog:testing"
-    "@testing-library/jest-dom": "catalog:testing"
-    "@testing-library/react": "catalog:testing"
-    "@testing-library/user-event": "catalog:testing"
+    "@testing-library/dom": "catalog:test"
+    "@testing-library/jest-dom": "catalog:test"
+    "@testing-library/react": "catalog:test"
+    "@testing-library/user-event": "catalog:test"
     "@types/babel__core": "catalog:build"
-    "@types/jest": "catalog:testing"
-    "@types/jest-axe": "catalog:testing"
+    "@types/jest": "catalog:test"
+    "@types/jest-axe": "catalog:test"
     "@types/node": "npm:20.19.26"
     "@types/react": "catalog:frontend"
     "@types/react-dom": "catalog:frontend"
     "@types/react-transition-group": "catalog:frontend"
-    "@typescript-eslint/eslint-plugin": "npm:6.21.0"
-    "@typescript-eslint/parser": "npm:6.21.0"
+    "@typescript-eslint/eslint-plugin": "catalog:lint"
+    "@typescript-eslint/parser": "catalog:lint"
     classnames: "catalog:frontend"
-    eslint: "npm:9.39.1"
-    eslint-config-airbnb: "npm:19.0.4"
+    eslint: "catalog:lint"
+    eslint-config-airbnb: "catalog:lint"
     eslint-config-spirit: "workspace:^"
-    eslint-import-resolver-typescript: "npm:3.10.1"
-    eslint-plugin-import: "npm:2.31.0"
-    eslint-plugin-jsx-a11y: "npm:6.10.2"
-    eslint-plugin-promise: "npm:6.6.0"
-    eslint-plugin-react: "npm:7.37.5"
-    eslint-plugin-react-hooks: "npm:4.6.2"
-    eslint-plugin-react-refresh: "npm:0.4.20"
-    eslint-plugin-standard: "npm:5.0.0"
+    eslint-import-resolver-typescript: "catalog:lint"
+    eslint-plugin-import: "catalog:lint"
+    eslint-plugin-jsx-a11y: "catalog:lint"
+    eslint-plugin-promise: "catalog:lint"
+    eslint-plugin-react: "catalog:lint"
+    eslint-plugin-react-hooks: "catalog:lint"
+    eslint-plugin-react-refresh: "catalog:lint"
+    eslint-plugin-standard: "catalog:lint"
     glob: "catalog:script"
     html-dom-parser: "npm:5.0.13"
     html-element-attributes: "npm:3.5.0"
     html-react-parser: "npm:5.1.1"
-    jest: "catalog:testing"
-    jest-axe: "catalog:testing"
+    jest: "catalog:test"
+    jest-axe: "catalog:test"
     npm-run-all2: "catalog:script"
     react: "catalog:frontend"
     react-dom: "catalog:frontend"
@@ -355,8 +355,8 @@ __metadata:
     "@alma-oss/spirit-icons": "npm:^3.0.2"
     "@babel/core": "catalog:build"
     "@csstools/normalize.css": "catalog:frontend"
-    "@eslint/compat": "npm:1.4.0"
-    "@eslint/eslintrc": "npm:3.3.1"
+    "@eslint/compat": "catalog:lint"
+    "@eslint/eslintrc": "catalog:lint"
     "@floating-ui/dom": "catalog:frontend"
     "@lmc-eu/browserslist-config": "catalog:build"
     "@rollup/plugin-babel": "catalog:build"
@@ -364,25 +364,25 @@ __metadata:
     "@rollup/plugin-replace": "catalog:build"
     "@rollup/plugin-terser": "catalog:build"
     "@rollup/plugin-typescript": "catalog:build"
-    "@testing-library/jest-dom": "catalog:testing"
-    "@types/eslint": "npm:9.6.1"
-    "@types/jest": "catalog:testing"
+    "@testing-library/jest-dom": "catalog:test"
+    "@types/eslint": "catalog:lint"
+    "@types/jest": "catalog:test"
     "@types/node": "npm:20.19.26"
     autoprefixer: "catalog:build"
     clean-css-cli: "catalog:build"
     csstype: "npm:3.1.3"
-    eslint: "npm:9.39.1"
+    eslint: "catalog:lint"
     eslint-config-spirit: "workspace:^"
     glob: "catalog:script"
-    jest: "catalog:testing"
+    jest: "catalog:test"
     npm-run-all2: "catalog:script"
     postcss: "catalog:build"
     postcss-cli: "catalog:build"
     rollup: "catalog:build"
     sass-embedded: "catalog:build"
-    sass-true: "catalog:testing"
+    sass-true: "catalog:test"
     shx: "catalog:script"
-    stylelint: "npm:16.14.1"
+    stylelint: "catalog:lint"
     stylelint-config-spirit: "workspace:^"
     ts-node: "catalog:script"
     tslib: "catalog:build"
@@ -3861,7 +3861,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/compat@npm:1.4.0, @eslint/compat@npm:^1.4.0":
+"@eslint/compat@npm:1.4.0":
   version: 1.4.0
   resolution: "@eslint/compat@npm:1.4.0"
   dependencies:
@@ -5381,7 +5381,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lmc-eu/eslint-config-base@npm:3.1.3, @lmc-eu/eslint-config-base@npm:^3.1.1, @lmc-eu/eslint-config-base@npm:^3.1.3":
+"@lmc-eu/eslint-config-base@npm:3.1.3, @lmc-eu/eslint-config-base@npm:^3.1.3":
   version: 3.1.3
   resolution: "@lmc-eu/eslint-config-base@npm:3.1.3"
   dependencies:
@@ -5407,7 +5407,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lmc-eu/eslint-config-react@npm:2.0.6, @lmc-eu/eslint-config-react@npm:^2.0.4":
+"@lmc-eu/eslint-config-react@npm:2.0.6":
   version: 2.0.6
   resolution: "@lmc-eu/eslint-config-react@npm:2.0.6"
   dependencies:
@@ -5425,7 +5425,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lmc-eu/eslint-config-typescript@npm:2.1.5, @lmc-eu/eslint-config-typescript@npm:^2.1.3":
+"@lmc-eu/eslint-config-typescript@npm:2.1.5":
   version: 2.1.5
   resolution: "@lmc-eu/eslint-config-typescript@npm:2.1.5"
   dependencies:
@@ -16566,7 +16566,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-airbnb@npm:19.0.4, eslint-config-airbnb@npm:^19.0.2, eslint-config-airbnb@npm:^19.0.4":
+"eslint-config-airbnb@npm:19.0.4, eslint-config-airbnb@npm:^19.0.2":
   version: 19.0.4
   resolution: "eslint-config-airbnb@npm:19.0.4"
   dependencies:
@@ -16625,30 +16625,30 @@ __metadata:
     "@babel/core": "catalog:build"
     "@babel/eslint-parser": "npm:^7.19.1"
     "@babel/preset-react": "catalog:build"
-    "@lmc-eu/eslint-config-base": "npm:^3.1.1"
-    "@lmc-eu/eslint-config-react": "npm:^2.0.4"
-    "@lmc-eu/eslint-config-typescript": "npm:^2.1.3"
-    "@stylistic/eslint-plugin": "npm:^3.1.0"
+    "@lmc-eu/eslint-config-base": "catalog:lint"
+    "@lmc-eu/eslint-config-react": "catalog:lint"
+    "@lmc-eu/eslint-config-typescript": "catalog:lint"
+    "@stylistic/eslint-plugin": "catalog:lint"
     "@typescript-eslint/eslint-plugin": "npm:^5.59.6"
     "@typescript-eslint/parser": "npm:^5.59.6"
-    eslint: "npm:9.39.1"
-    eslint-config-airbnb: "npm:^19.0.4"
+    eslint: "catalog:lint"
+    eslint-config-airbnb: "catalog:lint"
     eslint-config-airbnb-base: "npm:^15.0.0"
-    eslint-config-prettier: "npm:^9.1.2"
-    eslint-plugin-import: "npm:^2.29.1"
-    eslint-plugin-jest: "npm:^27.0.0"
-    eslint-plugin-jest-dom: "npm:^5.0.0"
-    eslint-plugin-jsdoc: "npm:^48.0.0"
-    eslint-plugin-jsx-a11y: "npm:^6.8.0"
+    eslint-config-prettier: "catalog:lint"
+    eslint-plugin-import: "catalog:lint"
+    eslint-plugin-jest: "catalog:lint"
+    eslint-plugin-jest-dom: "catalog:lint"
+    eslint-plugin-jsdoc: "catalog:lint"
+    eslint-plugin-jsx-a11y: "catalog:lint"
     eslint-plugin-prettier: "npm:^5.0.1"
-    eslint-plugin-promise: "npm:^6.2.0"
-    eslint-plugin-react: "npm:^7.34.1"
-    eslint-plugin-react-hooks: "npm:^4.6.2"
-    eslint-plugin-ssr-friendly: "npm:^1.3.0"
-    eslint-plugin-standard: "npm:^5.0.0"
-    eslint-plugin-storybook: "npm:^0.12.0"
-    eslint-plugin-testing-library: "npm:^6.0.1"
-    eslint-restricted-globals: "npm:^0.2.0"
+    eslint-plugin-promise: "catalog:lint"
+    eslint-plugin-react: "catalog:lint"
+    eslint-plugin-react-hooks: "catalog:lint"
+    eslint-plugin-ssr-friendly: "catalog:lint"
+    eslint-plugin-standard: "catalog:lint"
+    eslint-plugin-storybook: "catalog:lint"
+    eslint-plugin-testing-library: "catalog:lint"
+    eslint-restricted-globals: "catalog:lint"
     prettier: "npm:^3.0.0"
     prettier-config-spirit: "workspace:^"
     typescript: "npm:5.7.3"
@@ -16757,7 +16757,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-import@npm:^2.25.2, eslint-plugin-import@npm:^2.27.5, eslint-plugin-import@npm:^2.28.1, eslint-plugin-import@npm:^2.29.1":
+"eslint-plugin-import@npm:^2.25.2, eslint-plugin-import@npm:^2.27.5, eslint-plugin-import@npm:^2.28.1":
   version: 2.32.0
   resolution: "eslint-plugin-import@npm:2.32.0"
   dependencies:
@@ -16869,7 +16869,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-jsx-a11y@npm:6.10.2, eslint-plugin-jsx-a11y@npm:^6.7.1, eslint-plugin-jsx-a11y@npm:^6.8.0":
+"eslint-plugin-jsx-a11y@npm:6.10.2, eslint-plugin-jsx-a11y@npm:^6.7.1":
   version: 6.10.2
   resolution: "eslint-plugin-jsx-a11y@npm:6.10.2"
   dependencies:
@@ -16934,7 +16934,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-promise@npm:6.6.0, eslint-plugin-promise@npm:^6.2.0":
+"eslint-plugin-promise@npm:6.6.0":
   version: 6.6.0
   resolution: "eslint-plugin-promise@npm:6.6.0"
   peerDependencies:
@@ -16943,7 +16943,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react-hooks@npm:4.6.2, eslint-plugin-react-hooks@npm:^4.6.2":
+"eslint-plugin-react-hooks@npm:4.6.2":
   version: 4.6.2
   resolution: "eslint-plugin-react-hooks@npm:4.6.2"
   peerDependencies:
@@ -16967,15 +16967,6 @@ __metadata:
   peerDependencies:
     eslint: ">=8.40"
   checksum: 10/88aec8eeaf96f1a09df72a2134dc36dd8ef22a3ceb1ccba7865e63a128596e6be31942925edf896dcd12d0d51b8cb77530293ef4e738b600955a5a5c913f52d8
-  languageName: node
-  linkType: hard
-
-"eslint-plugin-react-refresh@npm:0.4.24":
-  version: 0.4.24
-  resolution: "eslint-plugin-react-refresh@npm:0.4.24"
-  peerDependencies:
-    eslint: ">=8.40"
-  checksum: 10/5e7f0e9e854f1fcf56dcfca5f9e068ba0e1e3f7b47428991d5d5f9549dfc94261d6200fb7a1a1a76861cd787f17f2366dfd4f27a082d7f7815a0201a0b434dd3
   languageName: node
   linkType: hard
 
@@ -17007,7 +16998,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react@npm:^7.33.2, eslint-plugin-react@npm:^7.34.1":
+"eslint-plugin-react@npm:^7.33.2":
   version: 7.37.4
   resolution: "eslint-plugin-react@npm:7.37.4"
   dependencies:
@@ -17046,7 +17037,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-standard@npm:5.0.0, eslint-plugin-standard@npm:^5.0.0":
+"eslint-plugin-standard@npm:5.0.0":
   version: 5.0.0
   resolution: "eslint-plugin-standard@npm:5.0.0"
   peerDependencies:
@@ -21160,17 +21151,17 @@ __metadata:
   resolution: "jest-config-spirit@workspace:configs/jest-config-spirit"
   dependencies:
     "@swc/core": "catalog:build"
-    "@swc/jest": "catalog:testing"
-    "@testing-library/jest-dom": "catalog:testing"
-    "@types/jest": "catalog:testing"
-    "@types/jest-axe": "catalog:testing"
-    axe-core: "catalog:testing"
-    jest: "catalog:testing"
-    jest-axe: "catalog:testing"
-    jest-cli: "catalog:testing"
-    jest-environment-jsdom: "catalog:testing"
-    jest-environment-node-single-context: "catalog:testing"
-    resize-observer-polyfill: "catalog:testing"
+    "@swc/jest": "catalog:test"
+    "@testing-library/jest-dom": "catalog:test"
+    "@types/jest": "catalog:test"
+    "@types/jest-axe": "catalog:test"
+    axe-core: "catalog:test"
+    jest: "catalog:test"
+    jest-axe: "catalog:test"
+    jest-cli: "catalog:test"
+    jest-environment-jsdom: "catalog:test"
+    jest-environment-node-single-context: "catalog:test"
+    resize-observer-polyfill: "catalog:test"
   languageName: unknown
   linkType: soft
 
@@ -27504,7 +27495,7 @@ __metadata:
   resolution: "prettier-config-spirit@workspace:configs/prettier-config-spirit"
   dependencies:
     "@lmc-eu/prettier-config": "npm:2.0.1"
-    prettier: "npm:3.4.2"
+    prettier: "catalog:lint"
   languageName: unknown
   linkType: soft
 
@@ -31329,31 +31320,31 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "spirit@workspace:."
   dependencies:
-    "@almacareer/remark-config": "npm:0.1.0"
-    "@axe-core/playwright": "catalog:testing"
-    "@commitlint/cli": "npm:19.8.1"
-    "@commitlint/config-conventional": "npm:20.2.0"
-    "@eslint/compat": "npm:^1.4.0"
-    "@eslint/eslintrc": "npm:^3.3.1"
+    "@almacareer/remark-config": "catalog:lint"
+    "@axe-core/playwright": "catalog:test"
+    "@commitlint/cli": "catalog:lint"
+    "@commitlint/config-conventional": "catalog:lint"
+    "@eslint/compat": "catalog:lint"
+    "@eslint/eslintrc": "catalog:lint"
     "@omlet/cli": "npm:1.13.4"
-    "@playwright/test": "catalog:testing"
-    conventional-changelog-conventionalcommits: "npm:9.1.0"
-    eslint: "npm:9.39.1"
+    "@playwright/test": "catalog:test"
+    conventional-changelog-conventionalcommits: "catalog:lint"
+    eslint: "catalog:lint"
     eslint-config-spirit: "workspace:^"
-    eslint-plugin-prettier: "npm:5.5.4"
-    husky: "npm:9.1.7"
+    eslint-plugin-prettier: "catalog:lint"
+    husky: "catalog:lint"
     is-ci: "catalog:script"
     lerna: "catalog:script"
-    lint-staged: "npm:15.3.0"
+    lint-staged: "catalog:lint"
     netlify-cli: "npm:17.38.1"
     npm-run-all2: "catalog:script"
     nx: "catalog:script"
-    prettier: "npm:3.4.2"
+    prettier: "catalog:lint"
     prettier-config-spirit: "workspace:^"
-    prettier-plugin-toml: "npm:2.0.1"
-    remark-cli: "npm:12.0.1"
-    remark-frontmatter: "npm:5.0.0"
-    remark-lint-heading-capitalization: "npm:1.3.0"
+    prettier-plugin-toml: "catalog:lint"
+    remark-cli: "catalog:lint"
+    remark-frontmatter: "catalog:lint"
+    remark-lint-heading-capitalization: "catalog:lint"
     typescript: "npm:5.7.3"
   languageName: unknown
   linkType: soft
@@ -31996,11 +31987,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "stylelint-config-spirit@workspace:configs/stylelint-config-spirit"
   dependencies:
-    "@almacareer/stylelint-config": "npm:9.1.0"
-    prettier: "npm:3.4.2"
-    stylelint: "npm:16.14.1"
-    stylelint-order: "npm:6.0.4"
-    stylelint-prettier: "npm:5.0.3"
+    "@almacareer/stylelint-config": "catalog:lint"
+    prettier: "catalog:lint"
+    stylelint: "catalog:lint"
+    stylelint-order: "catalog:lint"
+    stylelint-prettier: "catalog:lint"
   peerDependencies:
     stylelint: ^16.0.0
   languageName: unknown

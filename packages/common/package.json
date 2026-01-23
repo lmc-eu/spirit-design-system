@@ -26,13 +26,13 @@
     "types": "tsc"
   },
   "devDependencies": {
-    "@eslint/compat": "1.4.0",
-    "@eslint/eslintrc": "3.3.1",
-    "@types/jest": "catalog:testing",
+    "@eslint/compat": "catalog:lint",
+    "@eslint/eslintrc": "catalog:lint",
+    "@types/jest": "catalog:test",
     "@types/node": "20.19.26",
-    "eslint": "9.39.1",
+    "eslint": "catalog:lint",
     "eslint-config-spirit": "workspace:^",
-    "jest": "catalog:testing",
+    "jest": "catalog:test",
     "npm-run-all2": "catalog:script",
     "ts-node": "catalog:script",
     "typescript": "5.7.3"

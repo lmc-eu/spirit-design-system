@@ -21,16 +21,16 @@
   "module": "./index.js",
   "dependencies": {
     "@swc/core": "catalog:build",
-    "@swc/jest": "catalog:testing",
-    "@testing-library/jest-dom": "catalog:testing",
-    "@types/jest": "catalog:testing",
-    "@types/jest-axe": "catalog:testing",
-    "axe-core": "catalog:testing",
-    "jest": "catalog:testing",
-    "jest-axe": "catalog:testing",
-    "jest-cli": "catalog:testing",
-    "jest-environment-jsdom": "catalog:testing",
-    "jest-environment-node-single-context": "catalog:testing",
-    "resize-observer-polyfill": "catalog:testing"
+    "@swc/jest": "catalog:test",
+    "@testing-library/jest-dom": "catalog:test",
+    "@types/jest": "catalog:test",
+    "@types/jest-axe": "catalog:test",
+    "axe-core": "catalog:test",
+    "jest": "catalog:test",
+    "jest-axe": "catalog:test",
+    "jest-cli": "catalog:test",
+    "jest-environment-jsdom": "catalog:test",
+    "jest-environment-node-single-context": "catalog:test",
+    "resize-observer-polyfill": "catalog:test"
   }
 }
