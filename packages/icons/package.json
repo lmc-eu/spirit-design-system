@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@alma-oss/spirit-design-tokens": "workspace:^",
-    "@types/jest": "catalog:test",
+    "@types/jest": "catalog:types",
     "jest": "catalog:test",
     "jest-config-spirit": "workspace:^",
     "jsdom": "25.0.1",

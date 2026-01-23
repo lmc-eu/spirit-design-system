@@ -69,12 +69,12 @@
     "@rollup/plugin-terser": "catalog:build",
     "@rollup/plugin-typescript": "catalog:build",
     "@testing-library/jest-dom": "catalog:test",
-    "@types/eslint": "catalog:lint",
-    "@types/jest": "catalog:test",
-    "@types/node": "20.19.26",
+    "@types/eslint": "catalog:types",
+    "@types/jest": "catalog:types",
+    "@types/node": "catalog:types",
     "autoprefixer": "catalog:build",
     "clean-css-cli": "catalog:build",
-    "csstype": "3.1.3",
+    "csstype": "catalog:types",
     "eslint": "catalog:lint",
     "eslint-config-spirit": "workspace:^",
     "glob": "catalog:script",
@@ -90,7 +90,7 @@
     "stylelint-config-spirit": "workspace:^",
     "ts-node": "catalog:script",
     "tslib": "catalog:build",
-    "typescript": "5.7.3"
+    "typescript": "catalog:types"
   },
   "peerDependencies": {
     "sass-embedded": ">=1.57.0 < 2"

@@ -46,7 +46,7 @@
     "shx": "catalog:script",
     "stylelint": "catalog:lint",
     "stylelint-config-spirit": "workspace:^",
-    "typescript": "5.7.3",
+    "typescript": "catalog:types",
     "vite": "catalog:build",
     "vite-plugin-dts": "catalog:build"
   }

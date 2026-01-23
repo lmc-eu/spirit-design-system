@@ -52,9 +52,9 @@
     "@eslint/compat": "catalog:lint",
     "@eslint/eslintrc": "catalog:lint",
     "@lmc-eu/eslint-config-jest": "catalog:lint",
-    "@types/eslint": "catalog:lint",
-    "@types/jest": "catalog:test",
-    "@types/node": "20.19.26",
+    "@types/eslint": "catalog:types",
+    "@types/jest": "catalog:types",
+    "@types/node": "catalog:types",
     "@typescript-eslint/eslint-plugin": "catalog:lint",
     "@typescript-eslint/parser": "catalog:lint",
     "eslint": "catalog:lint",
@@ -64,7 +64,7 @@
     "shx": "catalog:script",
     "ts-node": "catalog:script",
     "tsup": "catalog:build",
-    "typescript": "5.7.3"
+    "typescript": "catalog:types"
   },
   "dependencies": {
     "filedirname": "catalog:script",
