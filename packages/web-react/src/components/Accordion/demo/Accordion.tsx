@@ -1,5 +1,5 @@
 // Because there is no `dist` directory during the CI run
-/* eslint-disable import/no-extraneous-dependencies, import/extensions, import/no-unresolved */
+
 import React, { useState } from 'react';
 import { type AccordionOpenStateType } from '../../../types';
 import { Link } from '../../Link';

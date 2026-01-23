@@ -1,4 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies, no-shadow, no-console */
+/* eslint-disable import/no-extraneous-dependencies, no-console */
 import * as fs from 'fs';
 import * as path from 'path';
 import * as recast from 'recast';

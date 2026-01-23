@@ -72,6 +72,5 @@ export const useDeprecationMessage = ({
     }
 
     /* We want to call this hook only once */
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 };
