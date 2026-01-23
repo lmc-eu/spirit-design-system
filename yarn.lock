@@ -20,14 +20,14 @@ __metadata:
     "@eslint/eslintrc": "npm:^3.3.1"
     "@lmc-eu/eslint-config-jest": "npm:3.0.6"
     "@types/eslint": "npm:9.6.1"
-    "@types/jest": "npm:30.0.0"
+    "@types/jest": "catalog:testing"
     "@types/node": "npm:20.19.26"
     "@typescript-eslint/eslint-plugin": "npm:6.21.0"
     "@typescript-eslint/parser": "npm:6.21.0"
     eslint: "npm:9.39.1"
     eslint-config-spirit: "workspace:^"
     filedirname: "npm:^3.0.0"
-    jest: "npm:30.2.0"
+    jest: "catalog:testing"
     npm-run-all2: "catalog:script"
     react-scanner: "npm:^1.1.0"
     sade: "npm:^1.8.1"
@@ -49,7 +49,7 @@ __metadata:
     "@eslint/eslintrc": "npm:3.3.1"
     "@lmc-eu/eslint-config-jest": "npm:3.0.6"
     "@types/eslint": "npm:9.6.1"
-    "@types/jest": "npm:30.0.0"
+    "@types/jest": "catalog:testing"
     "@types/jscodeshift": "npm:^0.12.0"
     "@types/node": "npm:20.19.26"
     "@typescript-eslint/eslint-plugin": "npm:6.21.0"
@@ -58,7 +58,7 @@ __metadata:
     eslint-config-spirit: "workspace:^"
     execa: "npm:^9.0.0"
     filedirname: "npm:^3.0.0"
-    jest: "npm:30.2.0"
+    jest: "catalog:testing"
     jscodeshift: "npm:^17.0.0"
     sade: "npm:^1.8.1"
     shx: "npm:0.4.0"
@@ -76,11 +76,11 @@ __metadata:
   dependencies:
     "@eslint/compat": "npm:1.4.0"
     "@eslint/eslintrc": "npm:3.3.1"
-    "@types/jest": "npm:30.0.0"
+    "@types/jest": "catalog:testing"
     "@types/node": "npm:20.19.26"
     eslint: "npm:9.39.1"
     eslint-config-spirit: "workspace:^"
-    jest: "npm:30.2.0"
+    jest: "catalog:testing"
     npm-run-all2: "catalog:script"
     ts-node: "npm:10.9.2"
     typescript: "npm:5.7.3"
@@ -174,8 +174,8 @@ __metadata:
   resolution: "@alma-oss/spirit-icons@workspace:packages/icons"
   dependencies:
     "@alma-oss/spirit-design-tokens": "workspace:^"
-    "@types/jest": "npm:30.0.0"
-    jest: "npm:30.2.0"
+    "@types/jest": "catalog:testing"
+    jest: "catalog:testing"
     jest-config-spirit: "workspace:^"
     jsdom: "npm:25.0.1"
     npm-run-all2: "catalog:script"
@@ -250,7 +250,7 @@ __metadata:
     "@swc/jest": "npm:0.2.38"
     eslint: "npm:9.39.1"
     eslint-config-spirit: "workspace:^"
-    jest: "npm:30.2.0"
+    jest: "catalog:testing"
     jest-config-spirit: "workspace:^"
     npm-run-all2: "catalog:script"
     prettier-config-spirit: "workspace:^"
@@ -273,7 +273,7 @@ __metadata:
     "@eslint/eslintrc": "npm:^3.3.1"
     "@figma/code-connect": "npm:1.3.12"
     "@floating-ui/react": "catalog:frontend"
-    "@juggle/resize-observer": "npm:3.4.0"
+    "@juggle/resize-observer": "catalog:testing"
     "@lmc-eu/eslint-config-base": "npm:3.1.3"
     "@lmc-eu/eslint-config-jest": "npm:3.0.6"
     "@lmc-eu/eslint-config-react": "npm:2.0.6"
@@ -283,13 +283,13 @@ __metadata:
     "@rollup/plugin-terser": "npm:0.4.4"
     "@storybook/addon-docs": "npm:10.1.6"
     "@storybook/react": "npm:10.1.6"
-    "@testing-library/dom": "npm:10.4.1"
-    "@testing-library/jest-dom": "npm:6.9.1"
-    "@testing-library/react": "npm:16.3.0"
-    "@testing-library/user-event": "npm:14.6.1"
+    "@testing-library/dom": "catalog:testing"
+    "@testing-library/jest-dom": "catalog:testing"
+    "@testing-library/react": "catalog:testing"
+    "@testing-library/user-event": "catalog:testing"
     "@types/babel__core": "npm:7.20.5"
-    "@types/jest": "npm:30.0.0"
-    "@types/jest-axe": "npm:3.5.9"
+    "@types/jest": "catalog:testing"
+    "@types/jest-axe": "catalog:testing"
     "@types/node": "npm:20.19.26"
     "@types/react": "catalog:frontend"
     "@types/react-dom": "catalog:frontend"
@@ -312,8 +312,8 @@ __metadata:
     html-dom-parser: "npm:5.0.13"
     html-element-attributes: "npm:3.5.0"
     html-react-parser: "npm:5.1.1"
-    jest: "npm:30.2.0"
-    jest-axe: "npm:10.0.0"
+    jest: "catalog:testing"
+    jest-axe: "catalog:testing"
     npm-run-all2: "catalog:script"
     react: "catalog:frontend"
     react-dom: "catalog:frontend"
@@ -364,9 +364,9 @@ __metadata:
     "@rollup/plugin-replace": "npm:6.0.2"
     "@rollup/plugin-terser": "npm:0.4.4"
     "@rollup/plugin-typescript": "npm:12.1.4"
-    "@testing-library/jest-dom": "npm:6.9.1"
+    "@testing-library/jest-dom": "catalog:testing"
     "@types/eslint": "npm:9.6.1"
-    "@types/jest": "npm:30.0.0"
+    "@types/jest": "catalog:testing"
     "@types/node": "npm:20.19.26"
     autoprefixer: "npm:10.4.21"
     clean-css-cli: "npm:5.6.3"
@@ -374,13 +374,13 @@ __metadata:
     eslint: "npm:9.39.1"
     eslint-config-spirit: "workspace:^"
     glob: "npm:10.5.0"
-    jest: "npm:30.2.0"
+    jest: "catalog:testing"
     npm-run-all2: "catalog:script"
     postcss: "npm:8.5.6"
     postcss-cli: "npm:11.0.1"
     rollup: "npm:4.34.6"
     sass-embedded: "npm:1.93.2"
-    sass-true: "npm:8.1.0"
+    sass-true: "catalog:testing"
     shx: "npm:0.4.0"
     stylelint: "npm:16.14.1"
     stylelint-config-spirit: "workspace:^"
@@ -8689,21 +8689,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/jest-dom@npm:^6.4.5":
-  version: 6.6.3
-  resolution: "@testing-library/jest-dom@npm:6.6.3"
-  dependencies:
-    "@adobe/css-tools": "npm:^4.4.0"
-    aria-query: "npm:^5.0.0"
-    chalk: "npm:^3.0.0"
-    css.escape: "npm:^1.5.1"
-    dom-accessibility-api: "npm:^0.6.3"
-    lodash: "npm:^4.17.21"
-    redent: "npm:^3.0.0"
-  checksum: 10/1f3427e45870eab9dcc59d6504b780d4a595062fe1687762ae6e67d06a70bf439b40ab64cf58cbace6293a99e3764d4647fdc8300a633b721764f5ce39dade18
-  languageName: node
-  linkType: hard
-
 "@testing-library/react@npm:16.3.0":
   version: 16.3.0
   resolution: "@testing-library/react@npm:16.3.0"
@@ -12727,16 +12712,6 @@ __metadata:
     escape-string-regexp: "npm:^1.0.5"
     supports-color: "npm:^5.3.0"
   checksum: 10/3d1d103433166f6bfe82ac75724951b33769675252d8417317363ef9d54699b7c3b2d46671b772b893a8e50c3ece70c4b933c73c01e81bc60ea4df9b55afa303
-  languageName: node
-  linkType: hard
-
-"chalk@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "chalk@npm:3.0.0"
-  dependencies:
-    ansi-styles: "npm:^4.1.0"
-    supports-color: "npm:^7.1.0"
-  checksum: 10/37f90b31fd655fb49c2bd8e2a68aebefddd64522655d001ef417e6f955def0ed9110a867ffc878a533f2dafea5f2032433a37c8a7614969baa7f8a1cd424ddfc
   languageName: node
   linkType: hard
 
@@ -21185,17 +21160,17 @@ __metadata:
   resolution: "jest-config-spirit@workspace:configs/jest-config-spirit"
   dependencies:
     "@swc/core": "npm:1.11.22"
-    "@swc/jest": "npm:0.2.38"
-    "@testing-library/jest-dom": "npm:^6.4.5"
-    "@types/jest": "npm:30.0.0"
-    "@types/jest-axe": "npm:3.5.9"
-    axe-core: "npm:4.11.0"
-    jest: "npm:30.2.0"
-    jest-axe: "npm:10.0.0"
-    jest-cli: "npm:30.2.0"
-    jest-environment-jsdom: "npm:30.2.0"
-    jest-environment-node-single-context: "npm:29.4.0"
-    resize-observer-polyfill: "npm:^1.5.1"
+    "@swc/jest": "catalog:testing"
+    "@testing-library/jest-dom": "catalog:testing"
+    "@types/jest": "catalog:testing"
+    "@types/jest-axe": "catalog:testing"
+    axe-core: "catalog:testing"
+    jest: "catalog:testing"
+    jest-axe: "catalog:testing"
+    jest-cli: "catalog:testing"
+    jest-environment-jsdom: "catalog:testing"
+    jest-environment-node-single-context: "catalog:testing"
+    resize-observer-polyfill: "catalog:testing"
   languageName: unknown
   linkType: soft
 
@@ -31355,13 +31330,13 @@ __metadata:
   resolution: "spirit@workspace:."
   dependencies:
     "@almacareer/remark-config": "npm:0.1.0"
-    "@axe-core/playwright": "npm:4.11.0"
+    "@axe-core/playwright": "catalog:testing"
     "@commitlint/cli": "npm:19.8.1"
     "@commitlint/config-conventional": "npm:20.2.0"
     "@eslint/compat": "npm:^1.4.0"
     "@eslint/eslintrc": "npm:^3.3.1"
     "@omlet/cli": "npm:1.13.4"
-    "@playwright/test": "npm:1.56.0"
+    "@playwright/test": "catalog:testing"
     conventional-changelog-conventionalcommits: "npm:9.1.0"
     eslint: "npm:9.39.1"
     eslint-config-spirit: "workspace:^"

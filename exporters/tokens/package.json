@@ -31,7 +31,7 @@
     "@swc/jest": "0.2.38",
     "eslint": "9.39.1",
     "eslint-config-spirit": "workspace:^",
-    "jest": "30.2.0",
+    "jest": "catalog:testing",
     "jest-config-spirit": "workspace:^",
     "npm-run-all2": "catalog:script",
     "prettier-config-spirit": "workspace:^",
