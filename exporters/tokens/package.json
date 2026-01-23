@@ -27,7 +27,7 @@
     "@eslint/compat": "^1.4.0",
     "@eslint/eslintrc": "^3.3.1",
     "@lmc-eu/eslint-config-typescript": "2.1.5",
-    "@swc/core": "1.11.22",
+    "@swc/core": "catalog:build",
     "@swc/jest": "0.2.38",
     "eslint": "9.39.1",
     "eslint-config-spirit": "workspace:^",

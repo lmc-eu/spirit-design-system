@@ -20,7 +20,7 @@
   "type": "module",
   "module": "./index.js",
   "dependencies": {
-    "@swc/core": "1.11.22",
+    "@swc/core": "catalog:build",
     "@swc/jest": "catalog:testing",
     "@testing-library/jest-dom": "catalog:testing",
     "@types/jest": "catalog:testing",

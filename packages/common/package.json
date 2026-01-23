@@ -34,7 +34,7 @@
     "eslint-config-spirit": "workspace:^",
     "jest": "catalog:testing",
     "npm-run-all2": "catalog:script",
-    "ts-node": "10.9.2",
+    "ts-node": "catalog:script",
     "typescript": "5.7.3"
   }
 }

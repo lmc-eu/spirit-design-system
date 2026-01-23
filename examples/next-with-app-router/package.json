@@ -17,8 +17,8 @@
     "next": "catalog:frontend",
     "react": "catalog:frontend",
     "react-dom": "catalog:frontend",
-    "sass": "1.93.2",
-    "sass-embedded": "1.93.2"
+    "sass": "catalog:build",
+    "sass-embedded": "catalog:build"
   },
   "devDependencies": {
     "@eslint/compat": "1.4.0",

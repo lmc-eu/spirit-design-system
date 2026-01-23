@@ -47,11 +47,11 @@
     "test:unit:coverage": "yarn test:unit --coverage"
   },
   "dependencies": {
-    "@types/jscodeshift": "^0.12.0",
-    "execa": "^9.0.0",
-    "filedirname": "^3.0.0",
-    "jscodeshift": "^17.0.0",
-    "sade": "^1.8.1",
+    "@types/jscodeshift": "catalog:script",
+    "execa": "catalog:script",
+    "filedirname": "catalog:script",
+    "jscodeshift": "catalog:script",
+    "sade": "catalog:script",
     "zx": "^8.0.0"
   },
   "devDependencies": {
@@ -66,8 +66,8 @@
     "eslint": "9.39.1",
     "eslint-config-spirit": "workspace:^",
     "jest": "catalog:testing",
-    "shx": "0.4.0",
-    "tsup": "8.5.0",
+    "shx": "catalog:script",
+    "tsup": "catalog:build",
     "typescript": "5.7.3"
   }
 }

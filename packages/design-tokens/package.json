@@ -42,12 +42,12 @@
     "eslint": "9.39.1",
     "eslint-config-spirit": "workspace:^",
     "npm-run-all2": "catalog:script",
-    "rimraf": "5.0.10",
-    "shx": "0.4.0",
+    "rimraf": "catalog:script",
+    "shx": "catalog:script",
     "stylelint": "16.14.1",
     "stylelint-config-spirit": "workspace:^",
     "typescript": "5.7.3",
     "vite": "catalog:build",
-    "vite-plugin-dts": "4.5.0"
+    "vite-plugin-dts": "catalog:build"
   }
 }
