@@ -22,8 +22,8 @@
   "dependencies": {
     "@floating-ui/react": "catalog:frontend",
     "classnames": "catalog:frontend",
-    "html-dom-parser": "5.0.13",
-    "html-react-parser": "5.1.1",
+    "html-dom-parser": "catalog:frontend",
+    "html-react-parser": "catalog:frontend",
     "react-transition-group": "catalog:frontend"
   },
   "devDependencies": {
