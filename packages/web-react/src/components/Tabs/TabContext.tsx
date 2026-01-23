@@ -5,9 +5,9 @@ import { type TabId, type TabsContextType, type TabsToggler } from '../../types'
 
 const defaultContext: TabsContextType = {
   selectedId: '',
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-empty-function
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   selectTab: (id: TabId) => {},
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-empty-function
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onSelectionChange: (previousId, currentId) => {},
 };
 
