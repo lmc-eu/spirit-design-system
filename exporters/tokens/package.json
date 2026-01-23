@@ -28,7 +28,7 @@
     "@eslint/eslintrc": "catalog:lint",
     "@lmc-eu/eslint-config-typescript": "catalog:lint",
     "@swc/core": "catalog:build",
-    "@swc/jest": "0.2.38",
+    "@swc/jest": "catalog:test",
     "eslint": "catalog:lint",
     "eslint-config-spirit": "workspace:^",
     "jest": "catalog:test",

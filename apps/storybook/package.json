@@ -30,6 +30,6 @@
     "storybook": "catalog:storybook",
     "typescript": "catalog:types",
     "vite": "catalog:build",
-    "vite-raw-plugin": "1.0.2"
+    "vite-raw-plugin": "catalog:build"
   }
 }

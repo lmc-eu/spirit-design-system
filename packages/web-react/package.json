@@ -71,7 +71,7 @@
     "eslint-plugin-react-refresh": "catalog:lint",
     "eslint-plugin-standard": "catalog:lint",
     "glob": "catalog:script",
-    "html-element-attributes": "3.5.0",
+    "html-element-attributes": "catalog:build",
     "jest": "catalog:test",
     "jest-axe": "catalog:test",
     "npm-run-all2": "catalog:script",

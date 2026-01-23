@@ -74,7 +74,7 @@
     "is-ci": "catalog:script",
     "lerna": "catalog:script",
     "lint-staged": "catalog:lint",
-    "netlify-cli": "17.38.1",
+    "netlify-cli": "catalog:script",
     "npm-run-all2": "catalog:script",
     "nx": "catalog:script",
     "prettier": "catalog:lint",

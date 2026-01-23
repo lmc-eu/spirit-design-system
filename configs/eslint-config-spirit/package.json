@@ -31,7 +31,7 @@
     "@typescript-eslint/eslint-plugin": "^5.59.6",
     "@typescript-eslint/parser": "^5.59.6",
     "eslint-config-airbnb": "catalog:lint",
-    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-base": "catalog:lint",
     "eslint-config-prettier": "catalog:lint",
     "eslint-plugin-import": "catalog:lint",
     "eslint-plugin-jest": "catalog:lint",

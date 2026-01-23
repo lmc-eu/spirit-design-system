@@ -52,7 +52,7 @@
     "filedirname": "catalog:script",
     "jscodeshift": "catalog:script",
     "sade": "catalog:script",
-    "zx": "^8.0.0"
+    "zx": "catalog:script"
   },
   "devDependencies": {
     "@eslint/compat": "catalog:lint",

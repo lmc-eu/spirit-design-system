@@ -26,10 +26,10 @@
     "postcss": "catalog:build",
     "rollup": "catalog:build",
     "sass-embedded": "catalog:build",
-    "sass-true": "8.1.0",
+    "sass-true": "catalog:test",
     "shx": "catalog:script",
     "typescript": "catalog:types",
     "vite": "catalog:build",
-    "vite-plugin-handlebars": "2.0.0"
+    "vite-plugin-handlebars": "catalog:build"
   }
 }

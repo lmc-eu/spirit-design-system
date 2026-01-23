@@ -42,9 +42,9 @@
     "@types/jest": "catalog:types",
     "jest": "catalog:test",
     "jest-config-spirit": "workspace:^",
-    "jsdom": "25.0.1",
+    "jsdom": "catalog:test",
     "npm-run-all2": "catalog:script",
     "shx": "catalog:script",
-    "svg2react-icon": "3.1.178"
+    "svg2react-icon": "catalog:script"
   }
 }
