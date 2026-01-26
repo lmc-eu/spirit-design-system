@@ -1,40 +1,46 @@
 'use client';
 
-import React, { type ElementType, type ReactElement, forwardRef } from 'react';
+import React, { forwardRef, type ElementType, type ReactElement } from 'react';
 import { useStyleProps } from '../../hooks';
-import { type PolymorphicRef, type SpiritHeaderLogoProps } from '../../types';
+import { type HeaderLogoProps, type PolymorphicRef } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { useUnstableHeaderStyleProps } from './useUnstableHeaderStyleProps';
 
-const defaultProps: Partial<SpiritHeaderLogoProps> = {
+const defaultProps: Partial<HeaderLogoProps> = {
   elementType: 'a',
 };
 
 /* We need an exception for components exported with forwardRef */
-/* eslint no-underscore-dangle: ['error', { allow: ['_HeaderLogo'] }] */
-const _HeaderLogo = <E extends ElementType = 'a'>(
-  props: SpiritHeaderLogoProps<E>,
+/* eslint no-underscore-dangle: ['error', { allow: ['HeaderLogoInner'] }] */
+const HeaderLogoInner = <E extends ElementType = 'a'>(
+  props: HeaderLogoProps<E>,
   ref: PolymorphicRef<E>,
 ): ReactElement => {
   const propsWithDefaults = { ...defaultProps, ...props };
   const {
-    elementType: ElementTag = defaultProps.elementType as ElementType,
+    elementType = defaultProps.elementType as ElementType,
     children,
     ...restProps
   } = propsWithDefaults;
+  
+  const Component = elementType as React.ElementType;
+
   const { classProps, props: modifiedProps } = useUnstableHeaderStyleProps(restProps);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
-  const mergedStyleProps = mergeStyleProps(ElementTag, { classProps: classProps.logo, styleProps, otherProps });
+  const mergedStyleProps = mergeStyleProps(Component, { classProps: classProps.logo, styleProps, otherProps });
 
   return (
-    <ElementTag {...otherProps} {...mergedStyleProps} href={restProps.href} ref={ref}>
+    <Component {...otherProps} {...mergedStyleProps} href={restProps.href} ref={ref}>
       {children}
-    </ElementTag>
+    </Component>
   );
 };
 
-const UNSTABLE_HeaderLogo = forwardRef<HTMLAnchorElement, SpiritHeaderLogoProps<ElementType>>(_HeaderLogo);
+const UNSTABLE_HeaderLogo = forwardRef(HeaderLogoInner) as <E extends ElementType = 'a'>(
+  props: HeaderLogoProps<E> & { ref?: PolymorphicRef<E> }
+) => React.ReactElement;
 
 UNSTABLE_HeaderLogo.spiritComponent = 'UNSTABLE_HeaderLogo';
+UNSTABLE_HeaderLogo.displayName = 'UNSTABLE_HeaderLogo';
 
 export default UNSTABLE_HeaderLogo;
