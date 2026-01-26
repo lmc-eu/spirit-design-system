@@ -2,7 +2,7 @@
 
 import React, { forwardRef, type ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
-import { type AccordionItemProps, type PolymorphicRef } from '../../types';
+import { type AccordionItemProps, type PolymorphicRef, type SpiritComponentStaticProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { AccordionItemProvider } from './AccordionItemContext';
 import { useAccordionStyleProps } from './useAccordionStyleProps';
@@ -30,13 +30,12 @@ const AccordionItemInner = <T extends ElementType = 'article'>(
   );
 };
 
-const AccordionItem = forwardRef(AccordionItemInner) as <T extends ElementType = 'article'>(
+const AccordionItem = forwardRef(AccordionItemInner) as unknown as (<T extends ElementType = 'article'>(
   props: AccordionItemProps<T> & { ref?: PolymorphicRef<T> }
-) => React.ReactElement;
+) => React.ReactElement) &
+  SpiritComponentStaticProps;
 
 AccordionItem.spiritComponent = 'AccordionItem';
-AccordionItem.spiritDefaultElement = 'article' as const;
-AccordionItem.spiritDefaultProps = null as unknown as AccordionItemProps<'article'>;
 AccordionItem.displayName = 'AccordionItem';
 
 export default AccordionItem;

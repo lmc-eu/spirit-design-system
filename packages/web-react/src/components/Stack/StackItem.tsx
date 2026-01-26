@@ -2,7 +2,7 @@
 
 import React, { forwardRef, type ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
-import { type PolymorphicRef, type StackItemProps } from '../../types';
+import { type PolymorphicRef, type SpiritComponentStaticProps, type StackItemProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { useStackStyleProps } from './useStackStyleProps';
 
@@ -35,9 +35,10 @@ const StackItemInner = <T extends ElementType = 'div'>(
   );
 };
 
-const StackItem = forwardRef(StackItemInner) as <T extends ElementType = 'div'>(
+const StackItem = forwardRef(StackItemInner) as unknown as (<T extends ElementType = 'div'>(
   props: StackItemProps<T> & { ref?: PolymorphicRef<T> }
-) => React.ReactElement;
+) => React.ReactElement) &
+  SpiritComponentStaticProps;
 
 StackItem.spiritComponent = 'StackItem';
 StackItem.displayName = 'StackItem';

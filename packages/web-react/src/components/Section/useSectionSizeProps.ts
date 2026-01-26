@@ -19,10 +19,10 @@ const sizePaddingMapping: Record<SizeExtendedDictionaryType<never>, { paddingY: 
   [SizesExtended.XLARGE]: { paddingY: { mobile: 'space-1400', tablet: 'space-1600' } },
 };
 
-export const useSectionSizeProps = (props: Partial<SpiritSectionProps<ElementType>>): UseSectionSizeProps => {
+export const useSectionSizeProps = (props: Partial<SpiritSectionProps<ElementType>> = {}): UseSectionSizeProps => {
   const { size } = props;
 
-  const modifiedProps = size ? { ...sizePaddingMapping[size], ...props } : props;
+  const modifiedProps = size ? { ...sizePaddingMapping[size], ...props } : { ...props };
 
   return {
     modifiedProps,

@@ -3,7 +3,7 @@
 import React, { forwardRef, type ElementType } from 'react';
 import { usePropsContext } from '../../context';
 import { useStyleProps } from '../../hooks';
-import { type ButtonProps, type PolymorphicRef } from '../../types';
+import { type ButtonProps, type PolymorphicRef, type SpiritButtonProps, type SpiritComponentStaticProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { Spinner } from '../Spinner';
 import { useButtonProps } from './useButtonProps';
@@ -41,7 +41,7 @@ const ButtonInner = <T extends ElementType = 'button', C = void, S = void>(
   const Component = elementType as React.ElementType;
 
   const { buttonProps } = useButtonProps(restProps);
-  const { classProps, props: modifiedProps } = useButtonStyleProps(restProps);
+  const { classProps, props: modifiedProps } = useButtonStyleProps(propsWithDefaults as SpiritButtonProps<T, C, S>);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
   const mergedStyleProps = mergeStyleProps(Component, { classProps, styleProps, otherProps });
 
@@ -53,9 +53,9 @@ const ButtonInner = <T extends ElementType = 'button', C = void, S = void>(
   );
 };
 
-const Button = forwardRef(ButtonInner) as <T extends ElementType = 'button', C = void, S = void>(
+const Button = forwardRef(ButtonInner) as unknown as (<T extends ElementType = 'button', C = void, S = void>(
   props: ButtonProps<T, C, S> & { ref?: PolymorphicRef<T> }
-) => React.ReactElement;
+) => React.ReactElement) & SpiritComponentStaticProps;
 
 Button.spiritComponent = 'Button';
 Button.displayName = 'Button';

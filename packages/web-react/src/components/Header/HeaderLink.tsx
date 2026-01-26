@@ -2,7 +2,7 @@
 
 import React, { forwardRef, type ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
-import { type HeaderLinkProps, type PolymorphicRef } from '../../types';
+import { type HeaderLinkProps, type PolymorphicRef, type SpiritComponentStaticProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { useHeaderStyleProps } from './useHeaderStyleProps';
 
@@ -31,9 +31,10 @@ const HeaderLinkInner = <E extends ElementType = 'a'>(
   );
 };
 
-const HeaderLink = forwardRef(HeaderLinkInner) as <E extends ElementType = 'a'>(
+const HeaderLink = forwardRef(HeaderLinkInner) as unknown as (<E extends ElementType = 'a'>(
   props: HeaderLinkProps<E> & { ref?: PolymorphicRef<E> }
-) => React.ReactElement;
+) => React.ReactElement) &
+  SpiritComponentStaticProps;
 
 HeaderLink.spiritComponent = 'HeaderLink';
 HeaderLink.displayName = 'HeaderLink';

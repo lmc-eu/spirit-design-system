@@ -3,7 +3,7 @@
 import React, { forwardRef, type ElementType } from 'react';
 import { AlignmentXExtended, AlignmentYExtended, DirectionExtended } from '../../constants';
 import { useStyleProps } from '../../hooks';
-import { type FlexProps, type PolymorphicRef } from '../../types';
+import { type FlexProps, type PolymorphicRef, type SpiritComponentStaticProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { useFlexStyleProps } from './useFlexStyleProps';
 
@@ -46,13 +46,12 @@ const FlexInner = <T extends ElementType = 'div'>(
   );
 };
 
-const Flex = forwardRef(FlexInner) as <T extends ElementType = 'div'>(
+const Flex = forwardRef(FlexInner) as unknown as (<T extends ElementType = 'div'>(
   props: FlexProps<T> & { ref?: PolymorphicRef<T> }
-) => React.ReactElement;
+) => React.ReactElement) &
+  SpiritComponentStaticProps;
 
 Flex.spiritComponent = 'Flex';
-Flex.spiritDefaultElement = 'div' as const;
-Flex.spiritDefaultProps = null as unknown as FlexProps<'div'>;
 Flex.displayName = 'Flex';
 
 export default Flex;

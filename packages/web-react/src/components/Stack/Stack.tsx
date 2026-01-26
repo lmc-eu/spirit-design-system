@@ -2,7 +2,7 @@
 
 import React, { forwardRef, type ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
-import { type PolymorphicRef, type StackProps } from '../../types';
+import { type PolymorphicRef, type SpiritComponentStaticProps, type StackProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { useStackStyleProps } from './useStackStyleProps';
 
@@ -45,9 +45,10 @@ const StackInner = <T extends ElementType = 'div'>(
   );
 };
 
-const Stack = forwardRef(StackInner) as <T extends ElementType = 'div'>(
+const Stack = forwardRef(StackInner) as unknown as (<T extends ElementType = 'div'>(
   props: StackProps<T> & { ref?: PolymorphicRef<T> }
-) => React.ReactElement;
+) => React.ReactElement) &
+  SpiritComponentStaticProps;
 
 Stack.spiritComponent = 'Stack';
 Stack.displayName = 'Stack';

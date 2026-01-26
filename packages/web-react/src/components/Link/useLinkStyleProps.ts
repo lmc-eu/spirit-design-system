@@ -29,6 +29,6 @@ export function useLinkStyleProps<E extends ElementType = 'a', T = void>(props: 
 
   return {
     classProps: className,
-    props: restProps,
+    props: restProps as Partial<LinkProps<E>>,
   };
 }

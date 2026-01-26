@@ -8,6 +8,7 @@ import {
   type PropsWithChildren,
 } from 'react';
 import { type OverloadStyleProps } from './style';
+import { type PolymorphicRef } from './polymorphic';
 
 type ElementTypeProp<E extends ElementType> = {
   elementType?: E;

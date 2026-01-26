@@ -3,7 +3,7 @@
 import React, { forwardRef, type ElementType } from 'react';
 import { AlignmentXExtended, AlignmentYExtended } from '../../constants';
 import { useStyleProps } from '../../hooks';
-import { type GridProps, type PolymorphicRef } from '../../types';
+import { type GridProps, type PolymorphicRef, type SpiritComponentStaticProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { useGridStyleProps } from './useGridStyleProps';
 
@@ -35,13 +35,12 @@ const GridInner = <T extends ElementType = 'div'>(
   );
 };
 
-const Grid = forwardRef(GridInner) as <T extends ElementType = 'div'>(
+const Grid = forwardRef(GridInner) as unknown as (<T extends ElementType = 'div'>(
   props: GridProps<T> & { ref?: PolymorphicRef<T> }
-) => React.ReactElement;
+) => React.ReactElement) &
+  SpiritComponentStaticProps;
 
 Grid.spiritComponent = 'Grid';
-Grid.spiritDefaultElement = 'div' as const;
-Grid.spiritDefaultProps = null as unknown as GridProps<'div'>;
 Grid.displayName = 'Grid';
 
 export default Grid;

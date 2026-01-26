@@ -73,5 +73,5 @@ export type UncontrolledAccordionProps<T extends ElementType = 'section'> = Poly
   UncontrolledAccordionBaseProps
 >;
 
-export type SpiritUncontrolledAccordionProps<T extends ElementType = 'section'> = UncontrolledAccordionProps<T> &
-  SpiritPolymorphicElementPropsWithRef<T, UncontrolledAccordionProps<T>>;
+/** @deprecated Use UncontrolledAccordionProps instead */
+export type SpiritUncontrolledAccordionProps<T extends ElementType = 'section'> = UncontrolledAccordionProps<T>;

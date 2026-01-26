@@ -3,7 +3,7 @@
 import React, { forwardRef, type ElementType } from 'react';
 import { BackgroundColors, PaddingStyleProps, TextStyleProps } from '../../constants';
 import { useStyleProps } from '../../hooks';
-import { type FooterProps, type PolymorphicRef } from '../../types';
+import { type FooterProps, type PolymorphicRef, type SpiritComponentStaticProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { PADDING_BOTTOM, PADDING_TOP } from './constants';
 import { useFooterStyleProps } from './useFooterStyleProps';
@@ -46,9 +46,10 @@ const FooterInner = <T extends ElementType = 'footer'>(
   );
 };
 
-const Footer = forwardRef(FooterInner) as <T extends ElementType = 'footer'>(
+const Footer = forwardRef(FooterInner) as unknown as (<T extends ElementType = 'footer'>(
   props: FooterProps<T> & { ref?: PolymorphicRef<T> }
-) => React.ReactElement;
+) => React.ReactElement) &
+  SpiritComponentStaticProps;
 
 Footer.spiritComponent = 'Footer';
 Footer.displayName = 'Footer';

@@ -2,7 +2,7 @@
 
 import React, { forwardRef, type ElementType, useRef } from 'react';
 import { useStyleProps } from '../../hooks';
-import { type PolymorphicRef, type TooltipProps } from '../../types';
+import { type PolymorphicRef, type SpiritComponentStaticProps, type TooltipProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { TooltipProvider } from './TooltipContext';
 import { useFloating } from './useFloating';
@@ -122,9 +122,10 @@ const TooltipInner = <T extends ElementType = 'div'>(
   );
 };
 
-const Tooltip = forwardRef(TooltipInner) as <T extends ElementType = 'div'>(
+const Tooltip = forwardRef(TooltipInner) as (<T extends ElementType = 'div'>(
   props: TooltipProps<T> & { ref?: PolymorphicRef<T> }
-) => React.ReactElement;
+) => React.ReactElement) &
+  SpiritComponentStaticProps;
 
 Tooltip.spiritComponent = 'Tooltip';
 Tooltip.displayName = 'Tooltip';

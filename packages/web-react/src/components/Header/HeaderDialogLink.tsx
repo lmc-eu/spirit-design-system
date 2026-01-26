@@ -2,7 +2,7 @@
 
 import React, { forwardRef, type ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
-import { type HeaderDialogLinkProps, type PolymorphicRef } from '../../types';
+import { type HeaderDialogLinkProps, type PolymorphicRef, type SpiritComponentStaticProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { useHeaderStyleProps } from './useHeaderStyleProps';
 
@@ -31,9 +31,10 @@ const HeaderDialogLinkInner = <E extends ElementType = 'a'>(
   );
 };
 
-const HeaderDialogLink = forwardRef(HeaderDialogLinkInner) as <E extends ElementType = 'a'>(
+const HeaderDialogLink = forwardRef(HeaderDialogLinkInner) as unknown as (<E extends ElementType = 'a'>(
   props: HeaderDialogLinkProps<E> & { ref?: PolymorphicRef<E> }
-) => React.ReactElement;
+) => React.ReactElement) &
+  SpiritComponentStaticProps;
 
 HeaderDialogLink.spiritComponent = 'HeaderDialogLink';
 HeaderDialogLink.displayName = 'HeaderDialogLink';

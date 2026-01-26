@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React, { forwardRef, type ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
-import { type PolymorphicRef, type TabLinkProps } from '../../types';
+import { type PolymorphicRef, type SpiritComponentStaticProps, type TabLinkProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { useTabsStyleProps } from './useTabsStyleProps';
 
@@ -40,9 +40,10 @@ const TabLinkInner = <E extends ElementType = 'a'>(
   );
 };
 
-const TabLink = forwardRef(TabLinkInner) as <E extends ElementType = 'a'>(
+const TabLink = forwardRef(TabLinkInner) as unknown as (<E extends ElementType = 'a'>(
   props: TabLinkProps<E> & { ref?: PolymorphicRef<E> }
-) => React.ReactElement;
+) => React.ReactElement) &
+  SpiritComponentStaticProps;
 
 TabLink.spiritComponent = 'TabLink';
 TabLink.displayName = 'TabLink';

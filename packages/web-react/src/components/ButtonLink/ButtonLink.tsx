@@ -2,7 +2,7 @@
 
 import React, { forwardRef, type ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
-import { type ButtonLinkProps, type PolymorphicRef } from '../../types';
+import { type ButtonLinkProps, type PolymorphicRef, type SpiritComponentStaticProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { Spinner } from '../Spinner';
 import { useButtonLinkProps } from './useButtonLinkProps';
@@ -50,9 +50,10 @@ const ButtonLinkInner = <T extends ElementType = 'a', C = void, S = void>(
   );
 };
 
-const ButtonLink = forwardRef(ButtonLinkInner) as <T extends ElementType = 'a', C = void, S = void>(
+const ButtonLink = forwardRef(ButtonLinkInner) as unknown as (<T extends ElementType = 'a', C = void, S = void>(
   props: ButtonLinkProps<T, C, S> & { ref?: PolymorphicRef<T> }
-) => React.ReactElement;
+) => React.ReactElement) &
+  SpiritComponentStaticProps;
 
 ButtonLink.spiritComponent = 'ButtonLink';
 ButtonLink.displayName = 'ButtonLink';

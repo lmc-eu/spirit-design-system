@@ -1,6 +1,14 @@
 import { type ComponentPropsWithRef, type ElementType } from 'react';
 
 /**
+ * Static properties that all Spirit components should have
+ */
+export interface SpiritComponentStaticProps {
+  spiritComponent: string;
+  displayName: string;
+}
+
+/**
  * Polymorphic component props type
  *
  * Creates a type that combines:

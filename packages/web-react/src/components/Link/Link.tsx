@@ -2,7 +2,7 @@
 
 import React, { forwardRef, type ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
-import { type LinkProps, type PolymorphicRef } from '../../types';
+import { type LinkProps, type PolymorphicRef, type SpiritComponentStaticProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { useLinkStyleProps } from './useLinkStyleProps';
 
@@ -39,9 +39,10 @@ const LinkInner = <E extends ElementType = 'a', C = void>(
   );
 };
 
-const Link = forwardRef(LinkInner) as <E extends ElementType = 'a', C = void>(
+const Link = forwardRef(LinkInner) as unknown as (<E extends ElementType = 'a', C = void>(
   props: LinkProps<E, C> & { ref?: PolymorphicRef<E> }
-) => React.ReactElement;
+) => React.ReactElement) &
+  SpiritComponentStaticProps;
 
 Link.spiritComponent = 'Link';
 Link.displayName = 'Link';

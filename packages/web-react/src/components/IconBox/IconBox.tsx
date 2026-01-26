@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import React, { forwardRef, type ElementType } from 'react';
 import { BorderWidths, EmotionColors, SizesExtended } from '../../constants';
 import { useStyleProps } from '../../hooks';
-import type { IconBoxProps, PolymorphicRef } from '../../types';
+import type { IconBoxProps, PolymorphicRef, SpiritComponentStaticProps } from '../../types';
 import { Box } from '../Box';
 import { Icon } from '../Icon';
 import { IconBoxShapes } from './constants';
@@ -66,9 +66,10 @@ const IconBoxInner = <T extends ElementType = 'div'>(
   );
 };
 
-const IconBox = forwardRef(IconBoxInner) as <T extends ElementType = 'div'>(
+const IconBox = forwardRef(IconBoxInner) as unknown as (<T extends ElementType = 'div'>(
   props: IconBoxProps<T> & { ref?: PolymorphicRef<T> }
-) => React.ReactElement;
+) => React.ReactElement) &
+  SpiritComponentStaticProps;
 
 IconBox.spiritComponent = 'IconBox';
 IconBox.displayName = 'IconBox';

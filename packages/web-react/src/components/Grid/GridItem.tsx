@@ -2,7 +2,7 @@
 
 import React, { forwardRef, type ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
-import { type GridItemProps, type PolymorphicRef } from '../../types';
+import { type GridItemProps, type PolymorphicRef, type SpiritComponentStaticProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { useGridItemStyleProps } from './useGridItemStyleProps';
 
@@ -30,13 +30,12 @@ const GridItemInner = <T extends ElementType = 'div'>(
   );
 };
 
-const GridItem = forwardRef(GridItemInner) as <T extends ElementType = 'div'>(
+const GridItem = forwardRef(GridItemInner) as unknown as (<T extends ElementType = 'div'>(
   props: GridItemProps<T> & { ref?: PolymorphicRef<T> }
-) => React.ReactElement;
+) => React.ReactElement) &
+  SpiritComponentStaticProps;
 
 GridItem.spiritComponent = 'GridItem';
-GridItem.spiritDefaultElement = 'div' as const;
-GridItem.spiritDefaultProps = null as unknown as GridItemProps<'div'>;
 GridItem.displayName = 'GridItem';
 
 export default GridItem;

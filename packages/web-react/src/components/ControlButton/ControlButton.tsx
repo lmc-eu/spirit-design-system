@@ -3,7 +3,7 @@
 import React, { forwardRef, type ElementType } from 'react';
 import { Sizes } from '../../constants';
 import { useStyleProps } from '../../hooks';
-import { type ControlButtonProps, type PolymorphicRef } from '../../types';
+import { type ControlButtonProps, type PolymorphicRef, type SpiritComponentStaticProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { useControlButtonProps } from './useControlButtonProps';
 import { useControlButtonStyleProps } from './useControlButtonStyleProps';
@@ -44,9 +44,10 @@ const ControlButtonInner = <T extends ElementType = 'button', S = void>(
   );
 };
 
-const ControlButton = forwardRef(ControlButtonInner) as <T extends ElementType = 'button', S = void>(
+const ControlButton = forwardRef(ControlButtonInner) as unknown as (<T extends ElementType = 'button', S = void>(
   props: ControlButtonProps<T, S> & { ref?: PolymorphicRef<T> }
-) => React.ReactElement;
+) => React.ReactElement) &
+  SpiritComponentStaticProps;
 
 ControlButton.spiritComponent = 'ControlButton';
 ControlButton.displayName = 'ControlButton';

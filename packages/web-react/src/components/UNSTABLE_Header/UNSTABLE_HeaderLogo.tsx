@@ -2,7 +2,7 @@
 
 import React, { forwardRef, type ElementType, type ReactElement } from 'react';
 import { useStyleProps } from '../../hooks';
-import { type HeaderLogoProps, type PolymorphicRef } from '../../types';
+import { type HeaderLogoProps, type PolymorphicRef, type SpiritComponentStaticProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { useUnstableHeaderStyleProps } from './useUnstableHeaderStyleProps';
 
@@ -36,9 +36,10 @@ const HeaderLogoInner = <E extends ElementType = 'a'>(
   );
 };
 
-const UNSTABLE_HeaderLogo = forwardRef(HeaderLogoInner) as <E extends ElementType = 'a'>(
+const UNSTABLE_HeaderLogo = forwardRef(HeaderLogoInner) as (<E extends ElementType = 'a'>(
   props: HeaderLogoProps<E> & { ref?: PolymorphicRef<E> }
-) => React.ReactElement;
+) => React.ReactElement) &
+  SpiritComponentStaticProps;
 
 UNSTABLE_HeaderLogo.spiritComponent = 'UNSTABLE_HeaderLogo';
 UNSTABLE_HeaderLogo.displayName = 'UNSTABLE_HeaderLogo';

@@ -3,7 +3,7 @@
 import React, { forwardRef, type ElementType } from 'react';
 import { BackgroundStyleProps, BorderRadiusStyleProps, BorderStyles, PaddingStyleProps } from '../../constants';
 import { useStyleProps } from '../../hooks';
-import { type BoxProps, type PolymorphicRef } from '../../types';
+import { type BoxProps, type PolymorphicRef, type SpiritComponentStaticProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { useBoxStyleProps } from './useBoxStyleProps';
 
@@ -38,13 +38,12 @@ const BoxInner = <T extends ElementType = 'div'>(
   );
 };
 
-const Box = forwardRef(BoxInner) as <T extends ElementType = 'div'>(
+const Box = forwardRef(BoxInner) as unknown as (<T extends ElementType = 'div'>(
   props: BoxProps<T> & { ref?: PolymorphicRef<T> }
-) => React.ReactElement;
+) => React.ReactElement) &
+  SpiritComponentStaticProps;
 
 Box.spiritComponent = 'Box';
-Box.spiritDefaultElement = 'div' as const;
-Box.spiritDefaultProps = null as unknown as BoxProps<'div'>;
 Box.displayName = 'Box';
 
 export default Box;

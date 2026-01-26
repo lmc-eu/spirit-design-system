@@ -2,7 +2,7 @@
 
 import React, { forwardRef, type ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
-import { type AccordionHeaderProps, type PolymorphicRef } from '../../types';
+import { type AccordionHeaderProps, type PolymorphicRef, type SpiritComponentStaticProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { Icon } from '../Icon';
 import { useAccordionContext } from './AccordionContext';
@@ -58,13 +58,12 @@ const AccordionHeaderInner = <T extends ElementType = 'h3'>(
   );
 };
 
-const AccordionHeader = forwardRef(AccordionHeaderInner) as <T extends ElementType = 'h3'>(
+const AccordionHeader = forwardRef(AccordionHeaderInner) as unknown as (<T extends ElementType = 'h3'>(
   props: AccordionHeaderProps<T> & { ref?: PolymorphicRef<T> }
-) => React.ReactElement;
+) => React.ReactElement) &
+  SpiritComponentStaticProps;
 
 AccordionHeader.spiritComponent = 'AccordionHeader';
-AccordionHeader.spiritDefaultElement = 'h3' as const;
-AccordionHeader.spiritDefaultProps = null as unknown as AccordionHeaderProps<'h3'>;
 AccordionHeader.displayName = 'AccordionHeader';
 
 export default AccordionHeader;
