@@ -42,6 +42,7 @@ packages/**/*.hbs
 # Narwal NX files (cache etc.)
 .nx
 /.nx/cache
+/.nx/workspace-data
 
 # Ignore codemods test outputs, because we compare them with generated code which we cannot format
 packages/codemods/src/transforms/**/*.output.tsx
@@ -110,4 +111,5 @@ Caddyfile
 .gitignore
 .gitattributes
 
-/.nx/workspace-data
+# Text files
+*.txt
