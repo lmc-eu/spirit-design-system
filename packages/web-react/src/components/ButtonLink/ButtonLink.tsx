@@ -23,8 +23,8 @@ const defaultProps = {
 };
 
 /* We need an exception for components exported with forwardRef */
-/* eslint no-underscore-dangle: ['error', { allow: ['ButtonLinkInner'] }] */
-const ButtonLinkInner = <T extends ElementType = 'a', C = void, S = void>(
+/* eslint no-underscore-dangle: ['error', { allow: ['_ButtonLink'] }] */
+const _ButtonLink = <T extends ElementType = 'a', C = void, S = void>(
   props: ButtonLinkProps<T, C, S>,
   ref: PolymorphicRef<T>,
 ) => {
@@ -50,7 +50,7 @@ const ButtonLinkInner = <T extends ElementType = 'a', C = void, S = void>(
   );
 };
 
-const ButtonLink = forwardRef(ButtonLinkInner) as unknown as (<T extends ElementType = 'a', C = void, S = void>(
+const ButtonLink = forwardRef(_ButtonLink) as unknown as (<T extends ElementType = 'a', C = void, S = void>(
   props: ButtonLinkProps<T, C, S> & { ref?: PolymorphicRef<T> }
 ) => React.ReactElement) &
   SpiritComponentStaticProps;

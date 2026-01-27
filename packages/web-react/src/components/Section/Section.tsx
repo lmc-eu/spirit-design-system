@@ -17,8 +17,8 @@ const defaultProps = {
 };
 
 /* We need an exception for components exported with forwardRef */
-/* eslint no-underscore-dangle: ['error', { allow: ['SectionInner'] }] */
-const SectionInner = <T extends ElementType = 'section', S = void>(
+/* eslint no-underscore-dangle: ['error', { allow: ['_Section'] }] */
+const _Section = <T extends ElementType = 'section', S = void>(
   props: SectionProps<T, S>,
   ref: PolymorphicRef<T>,
 ) => {
@@ -51,7 +51,7 @@ const SectionInner = <T extends ElementType = 'section', S = void>(
   );
 };
 
-const Section = forwardRef(SectionInner) as unknown as (<T extends ElementType = 'section', S = void>(
+const Section = forwardRef(_Section) as unknown as (<T extends ElementType = 'section', S = void>(
   props: SectionProps<T, S> & { ref?: PolymorphicRef<T> }
 ) => React.ReactElement) &
   SpiritComponentStaticProps;

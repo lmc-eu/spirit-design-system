@@ -21,8 +21,8 @@ const defaultProps = {
 };
 
 /* We need an exception for components exported with forwardRef */
-/* eslint no-underscore-dangle: ['error', { allow: ['IconBoxInner'] }] */
-const IconBoxInner = <T extends ElementType = 'div'>(
+/* eslint no-underscore-dangle: ['error', { allow: ['_IconBox'] }] */
+const _IconBox = <T extends ElementType = 'div'>(
   props: IconBoxProps<T>,
   ref: PolymorphicRef<T>,
 ) => {
@@ -66,7 +66,7 @@ const IconBoxInner = <T extends ElementType = 'div'>(
   );
 };
 
-const IconBox = forwardRef(IconBoxInner) as unknown as (<T extends ElementType = 'div'>(
+const IconBox = forwardRef(_IconBox) as unknown as (<T extends ElementType = 'div'>(
   props: IconBoxProps<T> & { ref?: PolymorphicRef<T> }
 ) => React.ReactElement) &
   SpiritComponentStaticProps;

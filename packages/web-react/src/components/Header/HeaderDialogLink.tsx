@@ -7,8 +7,8 @@ import { mergeStyleProps } from '../../utils';
 import { useHeaderStyleProps } from './useHeaderStyleProps';
 
 /* We need an exception for components exported with forwardRef */
-/* eslint no-underscore-dangle: ['error', { allow: ['HeaderDialogLinkInner'] }] */
-const HeaderDialogLinkInner = <E extends ElementType = 'a'>(
+/* eslint no-underscore-dangle: ['error', { allow: ['_HeaderDialogLink'] }] */
+const _HeaderDialogLink = <E extends ElementType = 'a'>(
   props: HeaderDialogLinkProps<E>,
   ref: PolymorphicRef<E>,
 ): JSX.Element => {
@@ -31,7 +31,7 @@ const HeaderDialogLinkInner = <E extends ElementType = 'a'>(
   );
 };
 
-const HeaderDialogLink = forwardRef(HeaderDialogLinkInner) as unknown as (<E extends ElementType = 'a'>(
+const HeaderDialogLink = forwardRef(_HeaderDialogLink) as unknown as (<E extends ElementType = 'a'>(
   props: HeaderDialogLinkProps<E> & { ref?: PolymorphicRef<E> }
 ) => React.ReactElement) &
   SpiritComponentStaticProps;

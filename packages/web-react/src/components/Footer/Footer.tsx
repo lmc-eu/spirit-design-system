@@ -16,8 +16,8 @@ const defaultProps = {
 };
 
 /* We need an exception for components exported with forwardRef */
-/* eslint no-underscore-dangle: ['error', { allow: ['FooterInner'] }] */
-const FooterInner = <T extends ElementType = 'footer'>(
+/* eslint no-underscore-dangle: ['error', { allow: ['_Footer'] }] */
+const _Footer = <T extends ElementType = 'footer'>(
   props: FooterProps<T>,
   ref: PolymorphicRef<T>,
 ): JSX.Element => {
@@ -46,7 +46,7 @@ const FooterInner = <T extends ElementType = 'footer'>(
   );
 };
 
-const Footer = forwardRef(FooterInner) as unknown as (<T extends ElementType = 'footer'>(
+const Footer = forwardRef(_Footer) as unknown as (<T extends ElementType = 'footer'>(
   props: FooterProps<T> & { ref?: PolymorphicRef<T> }
 ) => React.ReactElement) &
   SpiritComponentStaticProps;

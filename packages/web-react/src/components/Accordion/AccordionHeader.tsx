@@ -16,8 +16,8 @@ const defaultProps: Partial<AccordionHeaderProps> = {
 };
 
 /* We need an exception for components exported with forwardRef */
-/* eslint no-underscore-dangle: ['error', { allow: ['AccordionHeaderInner'] }] */
-const AccordionHeaderInner = <T extends ElementType = 'h3'>(
+/* eslint no-underscore-dangle: ['error', { allow: ['_AccordionHeader'] }] */
+const _AccordionHeader = <T extends ElementType = 'h3'>(
   props: AccordionHeaderProps<T>,
   ref: PolymorphicRef<T>,
 ) => {
@@ -58,7 +58,7 @@ const AccordionHeaderInner = <T extends ElementType = 'h3'>(
   );
 };
 
-const AccordionHeader = forwardRef(AccordionHeaderInner) as unknown as (<T extends ElementType = 'h3'>(
+const AccordionHeader = forwardRef(_AccordionHeader) as unknown as (<T extends ElementType = 'h3'>(
   props: AccordionHeaderProps<T> & { ref?: PolymorphicRef<T> }
 ) => React.ReactElement) &
   SpiritComponentStaticProps;

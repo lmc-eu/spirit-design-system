@@ -11,8 +11,8 @@ const defaultProps: Partial<HeaderLogoProps> = {
 };
 
 /* We need an exception for components exported with forwardRef */
-/* eslint no-underscore-dangle: ['error', { allow: ['HeaderLogoInner'] }] */
-const HeaderLogoInner = <E extends ElementType = 'a'>(
+/* eslint no-underscore-dangle: ['error', { allow: ['_HeaderLogo'] }] */
+const _HeaderLogo = <E extends ElementType = 'a'>(
   props: HeaderLogoProps<E>,
   ref: PolymorphicRef<E>,
 ): ReactElement => {
@@ -36,7 +36,7 @@ const HeaderLogoInner = <E extends ElementType = 'a'>(
   );
 };
 
-const UNSTABLE_HeaderLogo = forwardRef(HeaderLogoInner) as (<E extends ElementType = 'a'>(
+const UNSTABLE_HeaderLogo = forwardRef(_HeaderLogo) as (<E extends ElementType = 'a'>(
   props: HeaderLogoProps<E> & { ref?: PolymorphicRef<E> }
 ) => React.ReactElement) &
   SpiritComponentStaticProps;

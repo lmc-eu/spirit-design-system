@@ -12,8 +12,8 @@ const defaultProps: TabLinkProps = {
 };
 
 /* We need an exception for components exported with forwardRef */
-/* eslint no-underscore-dangle: ['error', { allow: ['TabLinkInner'] }] */
-const TabLinkInner = <E extends ElementType = 'a'>(
+/* eslint no-underscore-dangle: ['error', { allow: ['_TabLink'] }] */
+const _TabLink = <E extends ElementType = 'a'>(
   props: TabLinkProps<E>,
   ref: PolymorphicRef<E>,
 ): JSX.Element => {
@@ -40,7 +40,7 @@ const TabLinkInner = <E extends ElementType = 'a'>(
   );
 };
 
-const TabLink = forwardRef(TabLinkInner) as unknown as (<E extends ElementType = 'a'>(
+const TabLink = forwardRef(_TabLink) as unknown as (<E extends ElementType = 'a'>(
   props: TabLinkProps<E> & { ref?: PolymorphicRef<E> }
 ) => React.ReactElement) &
   SpiritComponentStaticProps;

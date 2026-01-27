@@ -10,8 +10,8 @@ const defaultProps = {
 };
 
 /* We need an exception for components exported with forwardRef */
-/* eslint no-underscore-dangle: ['error', { allow: ['HiddenInner'] }] */
-const HiddenInner = <T extends ElementType = 'span'>(
+/* eslint no-underscore-dangle: ['error', { allow: ['_Hidden'] }] */
+const _Hidden = <T extends ElementType = 'span'>(
   props: HiddenProps<T>,
   ref: PolymorphicRef<T>,
 ) => {
@@ -36,7 +36,7 @@ const HiddenInner = <T extends ElementType = 'span'>(
   );
 };
 
-const Hidden = forwardRef(HiddenInner) as unknown as (<T extends ElementType = 'span'>(
+const Hidden = forwardRef(_Hidden) as unknown as (<T extends ElementType = 'span'>(
   props: HiddenProps<T> & { ref?: PolymorphicRef<T> }
 ) => React.ReactElement) &
   SpiritComponentStaticProps;

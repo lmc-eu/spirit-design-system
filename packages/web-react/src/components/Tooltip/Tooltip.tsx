@@ -9,8 +9,8 @@ import { useFloating } from './useFloating';
 import { useTooltipStyleProps } from './useTooltipStyleProps';
 
 /* We need an exception for components exported with forwardRef */
-/* eslint no-underscore-dangle: ['error', { allow: ['TooltipInner'] }] */
-const TooltipInner = <T extends ElementType = 'div'>(
+/* eslint no-underscore-dangle: ['error', { allow: ['_Tooltip'] }] */
+const _Tooltip = <T extends ElementType = 'div'>(
   props: TooltipProps<T>,
   ref: PolymorphicRef<T>,
 ) => {
@@ -122,7 +122,7 @@ const TooltipInner = <T extends ElementType = 'div'>(
   );
 };
 
-const Tooltip = forwardRef(TooltipInner) as (<T extends ElementType = 'div'>(
+const Tooltip = forwardRef(_Tooltip) as (<T extends ElementType = 'div'>(
   props: TooltipProps<T> & { ref?: PolymorphicRef<T> }
 ) => React.ReactElement) &
   SpiritComponentStaticProps;

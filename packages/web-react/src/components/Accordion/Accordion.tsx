@@ -8,8 +8,8 @@ import { AccordionProvider } from './AccordionContext';
 import { useAccordionStyleProps } from './useAccordionStyleProps';
 
 /* We need an exception for components exported with forwardRef */
-/* eslint no-underscore-dangle: ['error', { allow: ['AccordionInner'] }] */
-const AccordionInner = <T extends ElementType = 'section'>(
+/* eslint no-underscore-dangle: ['error', { allow: ['_Accordion'] }] */
+const _Accordion = <T extends ElementType = 'section'>(
   props: AccordionProps<T>,
   ref: PolymorphicRef<T>,
 ) => {
@@ -33,7 +33,7 @@ const AccordionInner = <T extends ElementType = 'section'>(
   );
 };
 
-const Accordion = forwardRef(AccordionInner) as unknown as (<T extends ElementType = 'section'>(
+const Accordion = forwardRef(_Accordion) as unknown as (<T extends ElementType = 'section'>(
   props: AccordionProps<T> & { ref?: PolymorphicRef<T> }
 ) => React.ReactElement) &
   SpiritComponentStaticProps;

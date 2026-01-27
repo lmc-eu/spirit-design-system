@@ -15,8 +15,8 @@ const defaultProps = {
 };
 
 /* We need an exception for components exported with forwardRef */
-/* eslint no-underscore-dangle: ['error', { allow: ['StackInner'] }] */
-const StackInner = <T extends ElementType = 'div'>(
+/* eslint no-underscore-dangle: ['error', { allow: ['_Stack'] }] */
+const _Stack = <T extends ElementType = 'div'>(
   props: StackProps<T>,
   ref: PolymorphicRef<T>,
 ): JSX.Element => {
@@ -45,7 +45,7 @@ const StackInner = <T extends ElementType = 'div'>(
   );
 };
 
-const Stack = forwardRef(StackInner) as unknown as (<T extends ElementType = 'div'>(
+const Stack = forwardRef(_Stack) as unknown as (<T extends ElementType = 'div'>(
   props: StackProps<T> & { ref?: PolymorphicRef<T> }
 ) => React.ReactElement) &
   SpiritComponentStaticProps;

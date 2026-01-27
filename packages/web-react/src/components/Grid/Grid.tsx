@@ -14,8 +14,8 @@ const defaultProps = {
 };
 
 /* We need an exception for components exported with forwardRef */
-/* eslint no-underscore-dangle: ['error', { allow: ['GridInner'] }] */
-const GridInner = <T extends ElementType = 'div'>(
+/* eslint no-underscore-dangle: ['error', { allow: ['_Grid'] }] */
+const _Grid = <T extends ElementType = 'div'>(
   props: GridProps<T>,
   ref: PolymorphicRef<T>,
 ): JSX.Element => {
@@ -35,7 +35,7 @@ const GridInner = <T extends ElementType = 'div'>(
   );
 };
 
-const Grid = forwardRef(GridInner) as unknown as (<T extends ElementType = 'div'>(
+const Grid = forwardRef(_Grid) as unknown as (<T extends ElementType = 'div'>(
   props: GridProps<T> & { ref?: PolymorphicRef<T> }
 ) => React.ReactElement) &
   SpiritComponentStaticProps;
