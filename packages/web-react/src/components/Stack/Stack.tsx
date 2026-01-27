@@ -29,7 +29,7 @@ const StackInner = <T extends ElementType = 'div'>(
 
   const Component = elementType as React.ElementType;
 
-  const { classProps, props: modifiedProps, styleProps: stackStyle } = useStackStyleProps(restProps);
+  const { classProps, props: modifiedProps, styleProps: stackStyle } = useStackStyleProps(propsWithDefaults);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
   const mergedStyleProps = mergeStyleProps(Component, {
     classProps: classProps.root,

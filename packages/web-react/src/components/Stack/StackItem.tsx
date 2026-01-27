@@ -1,10 +1,9 @@
 'use client';
 
 import React, { forwardRef, type ElementType } from 'react';
-import { useStyleProps } from '../../hooks';
+import { useClassNamePrefix, useStyleProps } from '../../hooks';
 import { type PolymorphicRef, type SpiritComponentStaticProps, type StackItemProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
-import { useStackStyleProps } from './useStackStyleProps';
 
 const defaultProps = {
   elementType: 'div' as const,
@@ -20,10 +19,12 @@ const StackItemInner = <T extends ElementType = 'div'>(
 
   const Component = elementType as React.ElementType;
 
-  const { classProps, props: modifiedProps } = useStackStyleProps(restProps);
-  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+  const stackClass = useClassNamePrefix('Stack');
+  const stackItemClass = `${stackClass}Item`;
+
+  const { styleProps, props: otherProps } = useStyleProps(restProps);
   const mergedStyleProps = mergeStyleProps(Component, {
-    classProps: classProps.item,
+    classProps: stackItemClass,
     styleProps,
     otherProps,
   });

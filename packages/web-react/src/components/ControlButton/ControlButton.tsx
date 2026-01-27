@@ -32,8 +32,8 @@ const ControlButtonInner = <T extends ElementType = 'button', S = void>(
 
   const Component = elementType as React.ElementType;
 
-  const { controlButtonProps } = useControlButtonProps(restProps);
-  const { classProps, props: modifiedProps } = useControlButtonStyleProps(restProps);
+  const { controlButtonProps } = useControlButtonProps(propsWithDefaults);
+  const { classProps, props: modifiedProps } = useControlButtonStyleProps(propsWithDefaults);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
   const mergedStyleProps = mergeStyleProps(Component, { classProps, styleProps, otherProps });
 

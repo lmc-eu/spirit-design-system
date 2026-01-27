@@ -35,7 +35,7 @@ const SectionInner = <T extends ElementType = 'section', S = void>(
   const Component = elementType as React.ElementType;
 
   const { classProps } = useSectionStyleProps({ backgroundColor });
-  const { modifiedProps } = useSectionSizeProps(restProps);
+  const { modifiedProps } = useSectionSizeProps(propsWithDefaults);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps, {
     paddingTop: PaddingStyleProps.paddingTop,
     paddingBottom: PaddingStyleProps.paddingBottom,
@@ -46,7 +46,7 @@ const SectionInner = <T extends ElementType = 'section', S = void>(
 
   return (
     <Component {...otherProps} {...mergedStyleProps} ref={ref}>
-      {hasContainer ? <Container {...containerProps}>{children}</Container> : children}
+      {hasContainer ? <Container {...(containerProps || {})}>{children}</Container> : children}
     </Component>
   );
 };

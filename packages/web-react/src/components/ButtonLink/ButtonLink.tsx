@@ -2,7 +2,7 @@
 
 import React, { forwardRef, type ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
-import { type ButtonLinkProps, type PolymorphicRef, type SpiritComponentStaticProps } from '../../types';
+import { type ButtonLinkProps, type PolymorphicRef, type SpiritButtonLinkProps, type SpiritComponentStaticProps } from '../../types';
 import { mergeStyleProps } from '../../utils';
 import { Spinner } from '../Spinner';
 import { useButtonLinkProps } from './useButtonLinkProps';
@@ -38,7 +38,7 @@ const ButtonLinkInner = <T extends ElementType = 'a', C = void, S = void>(
   const Component = elementType as React.ElementType;
 
   const { buttonLinkProps } = useButtonLinkProps(propsWithDefaults);
-  const { classProps, props: modifiedProps } = useButtonLinkStyleProps(restProps);
+  const { classProps, props: modifiedProps } = useButtonLinkStyleProps(propsWithDefaults as SpiritButtonLinkProps<T, C, S>);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
   const mergedStyleProps = mergeStyleProps(Component, { classProps, styleProps, otherProps });
 

@@ -28,7 +28,7 @@ const LinkInner = <E extends ElementType = 'a', C = void>(
 
   const Component = elementType as React.ElementType;
 
-  const { classProps, props: modifiedProps } = useLinkStyleProps(restProps);
+  const { classProps, props: modifiedProps } = useLinkStyleProps(propsWithDefaults);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
   const mergedStyleProps = mergeStyleProps(Component, { classProps, styleProps, otherProps });
 
