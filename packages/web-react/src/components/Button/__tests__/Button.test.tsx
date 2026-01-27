@@ -51,4 +51,23 @@ describe('Button', () => {
     const element = dom.container.querySelector('button') as HTMLElement;
     expect(element.textContent).toBe('Hello World');
   });
+
+  it('should render with custom spacing', () => {
+    const dom = render(<Button spacing="space-600">Button</Button>);
+
+    const element = dom.container.querySelector('button') as HTMLElement;
+    expect(element).toHaveStyle({ '--button-spacing': 'var(--spirit-space-600)' });
+  });
+
+  it('should render with custom spacing for each breakpoint', () => {
+    const dom = render(
+      <Button spacing={{ mobile: 'space-100', tablet: 'space-1000', desktop: 'space-1200' }}>Button</Button>,
+    );
+
+    const element = dom.container.querySelector('button') as HTMLElement;
+
+    expect(element).toHaveStyle({ '--button-spacing': 'var(--spirit-space-100)' });
+    expect(element).toHaveStyle({ '--button-spacing-tablet': 'var(--spirit-space-1000)' });
+    expect(element).toHaveStyle({ '--button-spacing-desktop': 'var(--spirit-space-1200)' });
+  });
 });
