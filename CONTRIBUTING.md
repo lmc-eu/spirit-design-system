@@ -7,6 +7,7 @@ Here are some tips how to make your contributing efforts efficient and eventuall
 - [Decisions](#decisions)
 - [Project Structure](#project-structure)
 - [Development](#development)
+- [Dev Containers (Experimental)](#dev-containers-experimental)
 - [Commit Conventions](#commit-conventions)
 - [Code Style](#code-style)
 - [Documenting the Components](#documenting-the-components)
@@ -29,6 +30,63 @@ This project is a monorepo managed by [Lerna][lerna-home]. This means that each 
 ## Development
 
 See [Developer Handbook][developer-handbook] for more information about development.
+
+## Dev Containers (Experimental)
+
+This project supports [Dev Containers][dev-containers] for a consistent, containerized development environment.
+
+### Prerequisites
+
+- [Docker Desktop][docker]
+- IDE with Dev Container support (VS Code, JetBrains, etc.)
+
+### Getting Started
+
+1. Open the project in your IDE
+2. Use the "Reopen in Container" option
+3. Wait for the container to build and dependencies to install
+4. Run `make help` to see available commands
+
+The container automatically:
+
+- Installs all project dependencies via [Yarn][yarn]
+- Installs [Playwright][playwright] Chromium browser for E2E testing
+- Installs [GitHub CLI][github-cli] (`gh`) for PR workflows
+- Forwards ports for Vite web server (3456), Storybook (6006), and Playwright UI (9323)
+
+### Running E2E Tests
+
+Since Playwright is installed in the dev container, you can run end-to-end tests directly:
+
+```bash
+yarn test:e2e         # Run all E2E tests
+yarn test:e2e:update  # Run all E2E tests and update snapshots
+yarn test:e2e:ui      # Run with Playwright UI
+```
+
+### Using AI Tools
+
+The Dev Container supports AI-powered coding assistants. You can use tools like [Cursor][cursor], [Claude Code][claude-code],
+[Open Code][open-code], or any other AI coding tool that integrates with Dev Containers.
+
+#### API Keys
+
+The Dev Container is configured to pass through common AI tool API keys from your local machine via the `remoteEnv` setting:
+
+- `ANTHROPIC_API_KEY` — for Claude-based tools (Claude Code, Cursor with Claude, etc.)
+- `OPENAI_API_KEY` — for OpenAI-based tools
+
+Set these environment variables on your local machine before starting the Dev Container:
+
+```bash
+export ANTHROPIC_API_KEY=your-anthropic-api-key
+export OPENAI_API_KEY=your-openai-api-key
+```
+
+#### Installing CLI Tools
+
+Some AI tools like [Claude Code][claude-code] or [Open Code][open-code] are CLI applications that need to be installed
+**inside the dev container**. Refer to their documentation for installation instructions.
 
 ## Commit Conventions
 
@@ -382,10 +440,13 @@ After the release notes are ready, you can publish them (copy&paste from canvas)
 > If you have further questions do not hesitate to open an issue and ask us! ❤️
 
 [act]: https://github.com/nektos/act
+[claude-code]: https://docs.anthropic.com/en/docs/claude-code
+[cursor]: https://www.cursor.com/
 [act-article]: https://www.freecodecamp.org/news/how-to-run-github-actions-locally/
 [conventional-commits]: https://www.conventionalcommits.org
 [commitlint-config]: https://github.com/lmc-eu/code-quality-tools/tree/main/packages/commitlint-config
 [decisions]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/decisions/README.md
+[dev-containers]: https://containers.dev/
 [developer-handbook]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/contribution/development.md
 [dictionary]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md
 [docker]: https://www.docker.com/
@@ -393,6 +454,7 @@ After the release notes are ready, you can publish them (copy&paste from canvas)
 [jest]: https://jestjs.io/
 [lerna-home]: https://lerna.js.org
 [netlify-preview-gist]: https://gist.github.com/adamkudrna/694f3048c1338f07375b9b8af24afe2f
+[open-code]: https://github.com/anthropics/opencode
 [packages]: packages/
 [playwright]: https://playwright.dev/
 [prettier]: https://prettier.io/
@@ -404,4 +466,6 @@ After the release notes are ready, you can publish them (copy&paste from canvas)
 [figma-code-connect]: https://developers.figma.com/docs/code-connect/
 [figma-dev-mode]: https://help.figma.com/hc/en-us/articles/15023124644247-Guide-to-Dev-Mode
 [figma-react-guide]: https://developers.figma.com/docs/code-connect/react/
+[github-cli]: https://cli.github.com/
 [version-action]: https://github.com/lmc-eu/spirit-design-system/actions/workflows/version.yaml
+[yarn]: https://yarnpkg.com/
