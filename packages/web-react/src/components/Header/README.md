@@ -594,7 +594,7 @@ const handleClose = () => setOpen(false);
 This component uses the `Icon` component internally. To ensure correct rendering,
 please refer to the [Icon component documentation][web-react-icon-documentation] for setup instructions.
 
-[dictionary-breakpoint]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#breakpoint
+[dictionary-breakpoint]: https://github.com/alma-oss/spirit-design-system/blob/main/docs/DICTIONARIES.md#breakpoint
 [mdn-a-element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
 [mdn-api-html-element]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
 [mdn-button-element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
