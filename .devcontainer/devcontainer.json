@@ -1,13 +1,11 @@
 {
   "name": "Spirit Design System",
-  "image": "node:20-bookworm",
-
-  "features": {
-    "ghcr.io/devcontainers/features/github-cli:1": {}
+  "build": {
+    "dockerfile": "Dockerfile"
   },
 
-  "postCreateCommand": "corepack enable && corepack install && yarn install && npx playwright install --with-deps chromium",
-  "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+  "postCreateCommand": "corepack install && yarn install && yarn playwright install chromium",
+  "postStartCommand": "sudo chown -R $(id -u):$(id -g) /workspace/node_modules /workspace/.yarn/cache",
 
   "appPort": ["3456:3456", "6006:6006", "9323:9323"],
   "forwardPorts": [3456, 6006, 9323],
@@ -23,13 +21,19 @@
     }
   },
 
+  "remoteUser": "node",
+
+  "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=${containerWorkspaceFolder},type=bind,consistency=delegated",
   "mounts": [
     "source=${localWorkspaceFolderBasename}-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume",
-    "source=${localWorkspaceFolderBasename}-yarn-cache,target=/home/node/.yarn/berry/cache,type=volume"
+    "source=${localWorkspaceFolderBasename}-yarn-cache,target=${containerWorkspaceFolder}/.yarn/cache,type=volume",
+    "source=claude-code-bashhistory-${devcontainerId},target=/commandhistory,type=volume",
+    "source=claude-code-config-${devcontainerId},target=/home/node/.claude,type=volume"
   ],
 
-  "remoteEnv": {
-    "ANTHROPIC_API_KEY": "${localEnv:ANTHROPIC_API_KEY}",
-    "OPENAI_API_KEY": "${localEnv:OPENAI_API_KEY}"
+  "containerEnv": {
+    "NODE_OPTIONS": "--max-old-space-size=4096",
+    "CLAUDE_CONFIG_DIR": "/home/node/.claude"
   }
 }

@@ -111,3 +111,5 @@ Caddyfile
 .gitattributes
 
 /.nx/workspace-data
+
+.zshrc
