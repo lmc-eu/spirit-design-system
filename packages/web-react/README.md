@@ -83,6 +83,10 @@ Most components also accept native HTML attributes based on the component's elem
 - Use `runAxe` from `@local/tests` and assert with `expect(results).toHaveNoAxeViolations()` to guard against regressions.
 - Detailed authoring guidance is available in [`docs/contribution/accessibility-testing.md`][accessibility-testing].
 
+### End-to-End Testing
+
+E2E tests use [Playwright](https://playwright.dev/) for visual regression testing. For detailed information, see [`docs/contribution/e2e-testing.md`][e2e-testing].
+
 ## Styling
 
 Spirit components are designed to be consistent across all Alma Career applications. They include built-in styling that has been
@@ -233,6 +237,7 @@ See the [LICENSE](LICENSE.md) file for information.
 [accessibility-testing]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/contribution/accessibility-testing.md
 [all-deprecations]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/DEPRECATIONS.md
 [dictionary-breakpoint]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#breakpoint
+[e2e-testing]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/contribution/e2e-testing.md
 [examples]: https://spirit-design-system-storybook.netlify.app
 [react-controlled]: https://reactjs.org/docs/forms.html#controlled-components
 [react-uncontrolled]: https://reactjs.org/docs/uncontrolled-components.html
