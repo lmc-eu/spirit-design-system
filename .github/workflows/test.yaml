@@ -29,7 +29,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
       - name: Setup Node and Install Dependencies
         uses: ./.github/actions/setup-install
@@ -39,7 +39,7 @@ jobs:
 
       - name: Save Repository to Cache
         id: save-repository-cache
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
           path: ./
           key: ${{ env.CACHE_KEY }}
@@ -54,7 +54,7 @@ jobs:
 
     steps:
       - name: Restore Repository from Cache
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         id: restore-repository-cache
         with:
           path: ./
@@ -76,7 +76,7 @@ jobs:
 
     steps:
       - name: Restore Repository from Cache
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         id: restore-repository-cache
         with:
           path: ./
@@ -91,7 +91,7 @@ jobs:
       - name: Publish Web Package Code Coverage
         # When Nx hits its cloud cache, there is no generated coverage to sent, e.g. do not let this crash
         if: ${{ hashFiles('./packages/web/.coverage/lcov.info') != '' }}
-        uses: coverallsapp/github-action@v2.3.6
+        uses: coverallsapp/github-action@648a8eb78e6d50909eff900e4ec85cab4524a45b # v2.3.6
         with:
           github-token: ${{ github.token}}
           file: ./packages/web/.coverage/lcov.info
@@ -101,7 +101,7 @@ jobs:
       - name: Publish Web-React Package Code Coverage
         # When Nx hits its cloud cache, there is no generated coverage to sent, e.g. do not let this crash
         if: ${{ hashFiles('./packages/web-react/.coverage/lcov.info') != '' }}
-        uses: coverallsapp/github-action@v2.3.6
+        uses: coverallsapp/github-action@648a8eb78e6d50909eff900e4ec85cab4524a45b # v2.3.6
         with:
           github-token: ${{ github.token}}
           file: ./packages/web-react/.coverage/lcov.info
@@ -111,7 +111,7 @@ jobs:
       - name: Publish Analytics Package Code Coverage
         # When Nx hits its cloud cache, there is no generated coverage to sent, e.g. do not let this crash
         if: ${{ hashFiles('./packages/analytics/.coverage/lcov.info') != '' }}
-        uses: coverallsapp/github-action@v2.3.6
+        uses: coverallsapp/github-action@648a8eb78e6d50909eff900e4ec85cab4524a45b # v2.3.6
         with:
           github-token: ${{ github.token}}
           file: ./packages/analytics/.coverage/lcov.info
@@ -127,7 +127,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
       - name: Setup Node and Install Dependencies
         uses: ./.github/actions/setup-install
@@ -145,7 +145,7 @@ jobs:
 
     steps:
       - name: Restore Repository from Cache
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         id: restore-repository-cache
         with:
           path: ./
@@ -167,7 +167,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
       # @see: https://github.com/actions/cache/blob/main/tips-and-workarounds.md#force-deletion-of-caches-overriding-default-cache-eviction-policy
       - name: Cleanup cache
